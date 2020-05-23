@@ -2,9 +2,11 @@
 .set noreorder
 .set gp=64
 
+.include "macros.inc"
 
-.section .text80300000_ovl20, "ax"
+.section .text, "ax"
 
+glabel func_80300000_ovl20
 /* 2501C0 80300000 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 2501C4 80300004 3C048030 */  lui   $a0, %hi(D_80300170) # $a0, 0x8030
 /* 2501C8 80300008 3C038030 */  lui   $v1, %hi(D_803000E0) # $v1, 0x8030

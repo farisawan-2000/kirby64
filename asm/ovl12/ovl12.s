@@ -3,7 +3,7 @@
 .set gp=64
 
 
-.section .text801DB1E0_ovl12, "ax"
+.section .text, "ax"
 
 /* 1EB520 801DB1E0 00000000 */  nop   
 /* 1EB524 801DB1E4 00000000 */  nop   

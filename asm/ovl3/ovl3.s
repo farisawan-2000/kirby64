@@ -3,7 +3,7 @@
 .set gp=64
 
 
-.section .text80151100_ovl3, "ax"
+.section .text, "ax"
 
 /* 0B1B40 80151100 3C038013 */  lui   $v1, %hi(D_8012E7C0) # $v1, 0x8013
 /* 0B1B44 80151104 2463E7C0 */  addiu $v1, %lo(D_8012E7C0) # addiu $v1, $v1, -0x1840

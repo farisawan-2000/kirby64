@@ -71,7 +71,7 @@ include $(MAKEFILE_SPLIT)
 all: $(BUILD_DIR)/$(TARGET).z64
 
 clean:
-	rm $(call FixPath,$(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).o $(BUILD_DIR)/$(TARGET).bin $(BUILD_DIR)/$(TARGET).map $(BUILD_DIR)/$(TARGET).z64)
+	rm -rf build/
 
 $(BUILD_DIR):
 	mkdir -p $(ALL_DIRS)

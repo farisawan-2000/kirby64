@@ -2,9 +2,11 @@
 .set noreorder
 .set gp=64
 
+.include "macros.inc"
 
-.section .text8009B540_ovl1, "ax"
+.section .text, "ax"
 
+glabel func_8009B540_ovl1
 /* 043790 8009B540 00000000 */  nop   
 /* 043794 8009B544 00000000 */  nop   
 /* 043798 8009B548 00000000 */  nop   

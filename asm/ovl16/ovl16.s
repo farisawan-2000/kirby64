@@ -3,7 +3,7 @@
 .set gp=64
 
 
-.section .text801DB1E0_ovl16, "ax"
+.section .text, "ax"
 
 /* 211490 801DB1E0 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 211494 801DB1E4 AFB20020 */  sw    $s2, 0x20($sp)
