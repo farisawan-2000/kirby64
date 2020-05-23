@@ -10,27 +10,7 @@
 
 .include "globals.inc"
 
-.section .header, "a"
-.byte  0x80, 0x37, 0x12, 0x40 # PI BSD Domain 1 register
-.word  0x0000000F # clock rate setting
-.word  0x80100400 # entry point
-.word  0x00001449 # release
-.word  0x46039FB4 # checksum1
-.word  0x0337822C # checksum2
-.word  0x00000000 # unknown
-.word  0x00000000 # unknown
-.ascii "Kirby64             " # ROM name: 20 bytes
-.word  0x00000000 # unknown
-.word  0x0000004E # cartridge
-.ascii "K4"       # cartridge ID
-.ascii "E"        # country
-.byte  0x00       # version
-
-boot:
-.incbin "bin/boot.bin"
-boot_end:
-
-.section .text80000400_ovl0, "ax"
+.section .text, "ax"
 
 /* 001000 80000400 3C088004 */  lui   $t0, %hi(D_80042B90) # $t0, 0x8004
 /* 001004 80000404 3C090005 */  lui   $t1, (0x000589B0 >> 16) # lui $t1, 5
