@@ -6,13 +6,16 @@ You will need an original copy of the ROM to proceed.
 
 ---
 
-## TODO
-
+## TODO (Abolutely required to become public)
  - Find and incorporate the compiler used for the game
+ - Correctly rip and build textures rather than relying on a huge bin file
+   - Ripping is done; the issue is that they arent being converted for some reason
+   - CI textures need a palette assigned to them; they are currently saved as bins
+ 
+## TODO (Necessary)
  - Disassemble data blocks
  - Put glabels at the start of every function
  - Create [AutoDecompilation](https://github.com/farisawan-2000/auto-decompiler) of the repo and incorporate `GLOBAL_ASM`
- - Correctly rip and build textures rather than relying on a huge bin file
  - Correctly rip and build level files
  - Correctly rip and build all 3D assets
  
