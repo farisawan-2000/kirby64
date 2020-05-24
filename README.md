@@ -6,7 +6,7 @@ You will need an original copy of the ROM to proceed.
 
 ---
 
-## TODO (Abolutely required to become public)
+## TODO (One of these absolutely required to become public)
  - Find and incorporate the compiler used for the game
  - Correctly rip and build textures rather than relying on a huge bin file
    - Ripping is done; the issue is that they arent being converted for some reason
