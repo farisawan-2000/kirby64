@@ -18,6 +18,7 @@ You will need an original copy of the ROM to proceed.
  - Create [AutoDecompilation](https://github.com/farisawan-2000/auto-decompiler) of the repo and incorporate `GLOBAL_ASM`
  - Correctly rip and build level files
  - Correctly rip and build all 3D assets
+ - Clean up `undefined_syms.txt`
  
 ## TODO (non-essential)
  - Get the ROM to a matching state (Currently 41 differences, all `move`s)
