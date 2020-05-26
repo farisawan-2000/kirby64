@@ -1,6 +1,6 @@
 # Kirby 64: The Crystal Shards
 
-This repository contains a work-in-progress non-matching (at the moment) decompilation effort for Kirby 64.
+This repository contains a work-in-progress decompilation effort for Kirby 64.
 
 You will need an original copy of the ROM to proceed.
 
@@ -13,7 +13,6 @@ You will need an original copy of the ROM to proceed.
    - CI textures need a palette assigned to them; they are currently saved as bins.
  
 ## TODO (Necessary)
- - Get the ROM to a matching state (Currently 41 differences, all `move`s)
  - Disassemble data blocks
  - Put glabels at the start of every function
  - Create [AutoDecompilation](https://github.com/farisawan-2000/auto-decompiler) of the repo and incorporate `GLOBAL_ASM`
