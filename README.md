@@ -6,11 +6,12 @@ You will need an original copy of the ROM to proceed.
 
 ---
 
-## TODO (One of these absolutely required to become public)
+## TODO (Absolutely required to become public as a decomp project)
  - Find and incorporate the compiler used for the game
  - Correctly rip and build textures rather than relying on a huge bin file
    - Ripping is done; the issue is that they arent being converted for some reason
    - CI textures need a palette assigned to them; they are currently saved as bins
+ - Get the ROM to a matching state (Currently 41 differences, all `move`s)
  
 ## TODO (Necessary)
  - Disassemble data blocks
@@ -21,5 +22,4 @@ You will need an original copy of the ROM to proceed.
  - Clean up `undefined_syms.txt`
  
 ## TODO (non-essential)
- - Get the ROM to a matching state (Currently 41 differences, all `move`s)
  - Allow shiftability
