@@ -4,3 +4,5 @@ build/*
 *.z64
 textures/*
 bin/*
+.assets-local.txt
+
