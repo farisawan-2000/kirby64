@@ -150,4 +150,10 @@ SECTIONS
    }
    END_SEG(ovl20)
 
+   /* TODO: implement this somehow 
+   .BEGIN_SEG(leveltextures, 0x07000000) {
+      BUILD_DIR/data/textures_1BD5C80.o(.data);
+   }
+   END_SEG(leveltextures)
+   */
 }

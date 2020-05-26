@@ -40,6 +40,7 @@ LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
 ASM_DIRS := asm $(wildcard asm/ovl*)
+TEXTURES_DIR = textures
 
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
@@ -74,13 +75,11 @@ clean:
 	rm -rf build/
 
 $(BUILD_DIR):
-	mkdir -p $(ALL_DIRS)
+	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
-$(BUILD_DIR)/%: %.png | $(BUILD_DIR)
-	$(N64GRAPHICS) -i $@ -g $< -f $(lastword $(subst ., ,$@))
-
-$(BUILD_DIR)/%.o: %.s Makefile $(RAW_TEXTURE_FILES) $(MAKEFILE_SPLIT) | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: %.s Makefile $(MAKEFILE_SPLIT) | $(BUILD_DIR) 
 	$(AS) $(ASFLAGS) -o $@ $<
+
 
 $(BUILD_DIR)/%.o: %.c Makefile.as | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $@ $<
@@ -98,6 +97,7 @@ $(BUILD_DIR)/$(TARGET).bin: $(BUILD_DIR)/$(TARGET).elf
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).bin
 	cp $< $@
 	$(N64CRC) $@
+	sha1sum -c $(TARGET).sha1
 
 $(BUILD_DIR)/$(TARGET).hex: $(TARGET).z64
 	xxd $< > $@
