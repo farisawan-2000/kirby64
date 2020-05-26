@@ -26,6 +26,7 @@ INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 -mips3 $(INCLUDE_FLAGS)
 CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c
 LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --no-check-sections -T undefined_syms.txt
+OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
 ####################### Other Tools #########################
 
@@ -90,12 +91,9 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
 $(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(O_FILES)
 	$(LD) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS)
 
-$(BUILD_DIR)/$(TARGET).bin: $(BUILD_DIR)/$(TARGET).elf
-	$(OBJCOPY) $< $@ -O binary
-
 # final z64 updates checksum
-$(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).bin
-	cp $< $@
+$(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
+	$(OBJCOPY) $< $@ -O binary $(OBJCOPY_FLAGS)
 	$(N64CRC) $@
 	sha1sum -c $(TARGET).sha1
 
@@ -112,3 +110,10 @@ load: $(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
 .PHONY: all clean default diff test
+
+# Remove built-in rules, to improve performance
+MAKEFLAGS += --no-builtin-rules
+
+-include $(DEP_FILES)
+
+print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
