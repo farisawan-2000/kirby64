@@ -8,13 +8,23 @@ VERSION = us
 BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
 
 
-
+# check that either QEMU_IRIX is set or qemu-irix package installed
+ifndef QEMU_IRIX
+  QEMU_IRIX := $(shell which qemu-irix)
+  ifeq (, $(QEMU_IRIX))
+    $(error Please install qemu-irix package or set QEMU_IRIX env var to the full qemu-irix binary path)
+  endif
+endif
 
 
 ##################### Compiler Options #######################
+# TODO: figure out how to use the compiler binaries (and incorporate relevant libraries)
+IRIX_ROOT := tools/mipspro-7.2compiler
+CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
+
 CROSS = mips-linux-gnu-
 AS = $(CROSS)as
-CC = $(CROSS)gcc
+# CC = $(CROSS)gcc
 CPP     := cpp -P -Wno-trigraphs
 LD = $(CROSS)ld
 OBJDUMP = $(CROSS)objdump
@@ -41,15 +51,18 @@ LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
 ASM_DIRS := asm $(wildcard asm/ovl*)
+SRC_DIRS := src
 TEXTURES_DIR = textures
 
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
-O_FILES := $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
+           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
 
 ######################## Targets #############################
 
@@ -82,7 +95,7 @@ $(BUILD_DIR)/%.o: %.s Makefile $(MAKEFILE_SPLIT) | $(BUILD_DIR)
 	$(AS) $(ASFLAGS) -o $@ $<
 
 
-$(BUILD_DIR)/%.o: %.c Makefile.as | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
