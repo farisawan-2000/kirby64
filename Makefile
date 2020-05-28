@@ -20,7 +20,7 @@ endif
 ##################### Compiler Options #######################
 # TODO: figure out how to use the compiler binaries (and incorporate relevant libraries)
 IRIX_ROOT := tools/mipspro-7.2compiler
-CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
+CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/NCC
 
 CROSS = mips-linux-gnu-
 AS = $(CROSS)as
@@ -56,12 +56,12 @@ TEXTURES_DIR = textures
 
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cc))
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
-O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
+O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.cc=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
 
 ######################## Targets #############################
@@ -95,7 +95,7 @@ $(BUILD_DIR)/%.o: %.s Makefile $(MAKEFILE_SPLIT) | $(BUILD_DIR)
 	$(AS) $(ASFLAGS) -o $@ $<
 
 
-$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: %.cc | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
