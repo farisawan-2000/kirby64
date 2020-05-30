@@ -19,8 +19,9 @@ endif
 
 ##################### Compiler Options #######################
 # TODO: figure out how to use the compiler binaries (and incorporate relevant libraries)
-IRIX_ROOT := tools/mipspro-7.2compiler
-CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/NCC
+IRIX_ROOT := tools/ido5.3_compiler
+CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
+
 
 CROSS = mips-linux-gnu-
 AS = $(CROSS)as
@@ -35,7 +36,7 @@ TEXTURES_DIR := textures
 INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 -mips3 $(INCLUDE_FLAGS)
 CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c
-LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --no-check-sections -T undefined_syms.txt
+LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
 ####################### Other Tools #########################
@@ -54,15 +55,28 @@ ASM_DIRS := asm $(wildcard asm/ovl*)
 SRC_DIRS := src
 TEXTURES_DIR = textures
 
+MIPSISET := -mips2 -32
+
+GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(wildcard src/*.c)
+GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cc))
+C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
-O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.cc=.o)) \
+O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+
+
+# FLAGS
+OPT_FLAGS := -O2
+INCLUDE_CFLAGS := -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I src -I .
+TARGET_CFLAGS := -nostdinc -I include/libc -DTARGET_N64
+CFLAGS = -Wab,-r4300_mul -non_shared -G 0 -Xcpluscomm -Xfullwarn -signed $(OPT_FLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) $(MIPSISET)
+
+CC_CHECK := gcc -fsyntax-only -fsigned-char $(CC_CFLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(VERSION_CFLAGS) $(GRUCODE_CFLAGS)
 
 ######################## Targets #############################
 
@@ -88,6 +102,8 @@ all: $(BUILD_DIR)/$(TARGET).z64
 clean:
 	rm -rf build/
 
+$(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
@@ -95,8 +111,9 @@ $(BUILD_DIR)/%.o: %.s Makefile $(MAKEFILE_SPLIT) | $(BUILD_DIR)
 	$(AS) $(ASFLAGS) -o $@ $<
 
 
-$(BUILD_DIR)/%.o: %.cc | $(BUILD_DIR)
-	$(CC) $(CFLAGS) -o $@ $<
+$(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
+	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
 	$(CPP) $(VERSION_CFLAGS) -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<

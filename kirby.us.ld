@@ -144,7 +144,8 @@ SECTIONS
 
    /* 0x80300000 2501C0-2502A0 [E0] */
    .BEGIN_SEG(ovl20, 0x80300000) {
-      BUILD_DIR/asm/ovl20/ovl20.o(.text);
+      BUILD_DIR/src/ovl20.o(.text);
+      BUILD_DIR/asm/kirby.u.2502A0.o(.data);
    }
    END_SEG(ovl20)
 

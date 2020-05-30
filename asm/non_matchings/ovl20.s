@@ -1,11 +1,3 @@
-.set noat
-.set noreorder
-.set gp=64
-
-.include "macros.inc"
-
-.section .text, "ax"
-
 glabel func_80300000_ovl20
 /* 2501C0 80300000 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 2501C4 80300004 3C048030 */  lui   $a0, %hi(D_80300170) # $a0, 0x8030
@@ -66,4 +58,4 @@ glabel func_80300000_ovl20
 /* 250298 803000D8 00000000 */   nop   
 
 /* 25029C 803000DC 00000000 */  nop   
-.incbin "bin/kirby.u.2502A0.bin"
+# .incbin "bin/kirby.u.2502A0.bin"
