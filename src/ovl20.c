@@ -21,7 +21,7 @@ extern u32 func_80300170(void);
 // deobfuscates the function directly after this one and calls it
 // potentially as a piracy/integrity check
 
-// #ifdef MIPS_TO_C
+#ifdef MIPS_TO_C
 void func_80300000_ovl20(void) {
     MIPSLine *temp_v1;
     MIPSLine *temp_a0;
@@ -48,6 +48,6 @@ void func_80300000_ovl20(void) {
         D_800D6EC8 = 1;
     }
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl20.s")
-// #endif
+#else
+GLOBAL_ASM("asm/non_matchings/ovl20.s")
+#endif
