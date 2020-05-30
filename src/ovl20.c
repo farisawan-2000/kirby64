@@ -11,7 +11,7 @@ extern void func_80030020_ovl0(u32 *arg0, u32 arg1);
 extern u32 func_80002E48;
 
 extern u32 func_80300170(void);
-#define FUNC_ADDR_TO_JAL(x) (s32) (((u32) ((s32) &x & 0xFFFFFF) >> 2) | 0xC000000)
+#define FUNC_ADDR_TO_JAL(x) ((((u32)&x & 0xFFFFFF) >> 2) | 0xC000000)
 
 #define ASM_OBFUSCATOR 0xFDB9ECA8
 
