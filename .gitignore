@@ -5,4 +5,5 @@ build/*
 textures/*
 bin/*
 .assets-local.txt
+tools/mipspro*/
 
