@@ -6,4 +6,6 @@ textures/*
 bin/*
 .assets-local.txt
 tools/mipspro*/
+*.o
+__pycache__/*
 
