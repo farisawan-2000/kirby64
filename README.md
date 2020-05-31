@@ -7,7 +7,6 @@ You will need an original copy of the ROM to proceed.
 ---
 
 ## TODO (Absolutely required)
- - Find and incorporate the compiler used for the game
  - Correctly rip and build textures rather than relying on a huge bin file
    - Ripping (at least for level textures) is done; the Makefile just needs a rule to convert them.
    - CI textures need a palette assigned to them; they are currently saved as bins.
@@ -22,3 +21,4 @@ You will need an original copy of the ROM to proceed.
  
 ## TODO (non-essential)
  - Allow shiftability
+ - Convert C code to C++ when the time comes
