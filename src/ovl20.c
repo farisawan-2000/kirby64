@@ -5,8 +5,8 @@ extern u32 D_800D6EC8;
 extern u32 D_80300180;
 extern u32 D_80300170[];
 extern u32 D_803000E0[];
-extern void func_80033B10_ovl0(void *arg0, u32 arg1);
-extern void func_80030020_ovl0(void *arg0, u32 arg1);
+extern void osWritebackDCache(void *arg0, u32 arg1);
+extern void osInvalICache(void *arg0, u32 arg1);
 
 extern u32 func_80002E48;
 
@@ -26,8 +26,8 @@ void func_80300000_ovl20(void) {
 	// sets a jal address at runtime...?
     D_80300170[0x4] = FUNC_ADDR_TO_JAL(func_80002E48);
 
-    func_80030020_ovl0(&D_80300170, 0xC0);
-    func_80033B10_ovl0(&D_80300170, 0xC0);
+    osWritebackDCache(&D_80300170, 0xC0);
+    osInvalICache(&D_80300170, 0xC0);
     D_800D6EC8 = 0;
     if ((*func_80300170)() == 0) {
         D_800D6EC8 = 1;

@@ -1,0 +1,16 @@
+glabel func_8012310C_ovl2
+/* 0ABB7C 8012310C 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 0ABB80 80123110 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 0ABB84 80123114 10800005 */  beqz  $a0, .L8012312C_ovl2
+/* 0ABB88 80123118 00802825 */   move  $a1, $a0
+/* 0ABB8C 8012311C 24040104 */  li    $a0, 260
+/* 0ABB90 80123120 0C029D9E */  jal   func_800A7678_ovl2
+/* 0ABB94 80123124 AFA50018 */   sw    $a1, 0x18($sp)
+/* 0ABB98 80123128 8FA50018 */  lw    $a1, 0x18($sp)
+.L8012312C_ovl2:
+/* 0ABB9C 8012312C 0C02F0A6 */  jal   func_800BC298_ovl2
+/* 0ABBA0 80123130 00A02025 */   move  $a0, $a1
+/* 0ABBA4 80123134 8FBF0014 */  lw    $ra, 0x14($sp)
+/* 0ABBA8 80123138 27BD0018 */  addiu $sp, $sp, 0x18
+/* 0ABBAC 8012313C 03E00008 */  jr    $ra
+/* 0ABBB0 80123140 00000000 */   nop   

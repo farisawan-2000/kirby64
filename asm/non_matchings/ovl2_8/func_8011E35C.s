@@ -1,0 +1,5 @@
+glabel func_8011E35C
+/* 0A6DCC 8011E35C 00001025 */  move  $v0, $zero
+.L8011E360_ovl2:
+/* 0A6DD0 8011E360 03E00008 */  jr    $ra
+/* 0A6DD4 8011E364 00000000 */   nop   

@@ -7198,8 +7198,8 @@
 /* 17B31C 801D783C 0C02ED1A */  jal   func_800BB468_ovl8
 /* 17B320 801D7840 00002825 */   move  $a1, $zero
 .L801D7844_ovl8:
-/* 17B324 801D7844 3C028013 */  lui   $v0, %hi(D_8012E7C0) # $v0, 0x8013
-/* 17B328 801D7848 2442E7C0 */  addiu $v0, %lo(D_8012E7C0) # addiu $v0, $v0, -0x1840
+/* 17B324 801D7844 3C028013 */  lui   $v0, %hi(gKirbyState) # $v0, 0x8013
+/* 17B328 801D7848 2442E7C0 */  addiu $v0, %lo(gKirbyState) # addiu $v0, $v0, -0x1840
 /* 17B32C 801D784C AC400024 */  sw    $zero, 0x24($v0)
 /* 17B330 801D7850 A4400068 */  sh    $zero, 0x68($v0)
 /* 17B334 801D7854 0C05AF49 */  jal   func_8016BD24_ovl8

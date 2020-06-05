@@ -1,0 +1,8 @@
+glabel func_800FF2B4
+/* 087D24 800FF2B4 908B0020 */  lbu   $t3, 0x20($a0)
+.L800FF2B8_ovl2:
+/* 087D28 800FF2B8 356C0001 */  ori   $t4, $t3, 1
+/* 087D2C 800FF2BC A08C0020 */  sb    $t4, 0x20($a0)
+.L800FF2C0_ovl2:
+/* 087D30 800FF2C0 03E00008 */  jr    $ra
+/* 087D34 800FF2C4 00000000 */   nop   

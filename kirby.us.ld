@@ -36,7 +36,15 @@ SECTIONS
 
    /* 0x800F61A0 07EC10-0AC900 [2DCF0] */
    BEGIN_SEG(ovl2, 0x800F61A0) {
-      BUILD_DIR/asm/ovl2/ovl2.o(.text);
+      BUILD_DIR/src/ovl2/ovl2.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_2.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_3.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_4.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_5.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_6.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_7.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_8.o(.text);
+      BUILD_DIR/asm/ovl2/ovl2_data.o(.data);
    }
    END_SEG(ovl2)
 

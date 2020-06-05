@@ -27,10 +27,11 @@ struct VblankHandler
 };
 
 // TODO: populate with actual values
-struct Controller {
-    s16 unk0;
-    s16 unk2;
-    s16 unk4;
+struct KirbyState {
+    u32 actionChange;
+    u32 action;
+    u32 unk8;
+    u32 powerupState;
     u16 buttonPressed;
 };
 

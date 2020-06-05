@@ -156,10 +156,10 @@ glabel func_801DB1E0_ovl17
 /* 226610 801DB420 3C01801E */  lui   $at, %hi(D_801E5524) # $at, 0x801e
 /* 226614 801DB424 C4305524 */  lwc1  $f16, %lo(D_801E5524)($at)
 /* 226618 801DB428 3C01801E */  lui   $at, %hi(D_801E5528) # $at, 0x801e
-/* 22661C 801DB42C 3C128013 */  lui   $s2, %hi(D_8012E7C0) # $s2, 0x8013
+/* 22661C 801DB42C 3C128013 */  lui   $s2, %hi(gKirbyState) # $s2, 0x8013
 /* 226620 801DB430 C4325528 */  lwc1  $f18, %lo(D_801E5528)($at)
 /* 226624 801DB434 8E270000 */  lw    $a3, ($s1)
-/* 226628 801DB438 2652E7C0 */  addiu $s2, %lo(D_8012E7C0) # addiu $s2, $s2, -0x1840
+/* 226628 801DB438 2652E7C0 */  addiu $s2, %lo(gKirbyState) # addiu $s2, $s2, -0x1840
 /* 22662C 801DB43C AE400024 */  sw    $zero, 0x24($s2)
 /* 226630 801DB440 A6400068 */  sh    $zero, 0x68($s2)
 /* 226634 801DB444 8CF90000 */  lw    $t9, ($a3)
@@ -621,8 +621,8 @@ glabel func_801DBA8C_ovl17
 /* 226D08 801DBB18 100000A0 */  b     .L801DBD9C_ovl17
 /* 226D0C 801DBB1C 8FBF0014 */   lw    $ra, 0x14($sp)
 .L801DBB20_ovl17:
-/* 226D10 801DBB20 3C028013 */  lui   $v0, %hi(D_8012E7C0) # $v0, 0x8013
-/* 226D14 801DBB24 2442E7C0 */  addiu $v0, %lo(D_8012E7C0) # addiu $v0, $v0, -0x1840
+/* 226D10 801DBB20 3C028013 */  lui   $v0, %hi(gKirbyState) # $v0, 0x8013
+/* 226D14 801DBB24 2442E7C0 */  addiu $v0, %lo(gKirbyState) # addiu $v0, $v0, -0x1840
 /* 226D18 801DBB28 8C4F0024 */  lw    $t7, 0x24($v0)
 /* 226D1C 801DBB2C 3C0B800D */  lui   $t3, %hi(D_800D7098) # $t3, 0x800d
 /* 226D20 801DBB30 11E00009 */  beqz  $t7, .L801DBB58_ovl17

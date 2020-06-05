@@ -36,7 +36,7 @@ TEXTURES_DIR := textures
 
 INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 -mips3 $(INCLUDE_FLAGS)
-CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
+# CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
