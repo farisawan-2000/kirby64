@@ -3826,8 +3826,8 @@ extern void func_801129F4_ovl2(void);
 extern void *D_800DEF90[];
 extern s32 D_800DD8D0[];
 extern u32 *D_8004A7C4;
-
 extern void func_80112B4C(void);
+
 void func_80118420_ovl2(u32 *arg0) {
     func_80112B4C_ovl2();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
@@ -3947,12 +3947,12 @@ void func_80118638_ovl2(void *arg0) {
     }
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = 0;
     temp_s2 = func_8010E2A0_ovl2(sp54) & 0xFF;
-loop_3:
-    func_8010E288_ovl2(sp54, 0x50);
-    func_8000B6BC_ovl2((s32) (120.0f * D_800D6B14));
-    func_8010E288_ovl2(sp54, temp_s2 & 0xFF);
-    func_8000B6BC_ovl2((s32) (60.0f * D_800D6B14));
-    goto loop_3;
+    while(1){
+        func_8010E288_ovl2(sp54, 0x50);
+        func_8000B6BC_ovl2((s32) (120.0f * D_800D6B14));
+        func_8010E288_ovl2(sp54, temp_s2 & 0xFF);
+        func_8000B6BC_ovl2((s32) (60.0f * D_800D6B14));
+    }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118638_ovl2.s")

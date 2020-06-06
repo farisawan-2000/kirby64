@@ -26,6 +26,7 @@ struct VblankHandler
     OSMesg msg;
 };
 
+// 0x8012E7C0
 // TODO: populate with actual values
 struct KirbyState {
     u32 actionChange; // 0x0
@@ -51,9 +52,11 @@ struct KirbyState {
     u32 unk50;
     u32 unk54;
     u32 unk58;
-    u32 unk5C;
+    u16 unk5C;
+    u16 unk5E;
     u32 unk60;
-    u32 unk64;
+    u16 unk64;
+    u16 unk66;
     u32 unk68;
     u32 unk6C;
     u32 unk70;
