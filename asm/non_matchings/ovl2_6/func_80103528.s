@@ -19,8 +19,8 @@ glabel func_80103528
 /* 08BFDC 8010356C AFA400B0 */  sw    $a0, 0xb0($sp)
 /* 08BFE0 80103570 11CF009F */  beq   $t6, $t7, .L801037F0_ovl2
 /* 08BFE4 80103574 AFA500B4 */   sw    $a1, 0xb4($sp)
-/* 08BFE8 80103578 3C128013 */  lui   $s2, %hi(D_8012BCF8) # $s2, 0x8013
-/* 08BFEC 8010357C 2652BCF8 */  addiu $s2, %lo(D_8012BCF8) # addiu $s2, $s2, -0x4308
+/* 08BFE8 80103578 3C128013 */  lui   $s2, %hi(gCollisionState) # $s2, 0x8013
+/* 08BFEC 8010357C 2652BCF8 */  addiu $s2, %lo(gCollisionState) # addiu $s2, $s2, -0x4308
 /* 08BFF0 80103580 8E420000 */  lw    $v0, ($s2)
 /* 08BFF4 80103584 27B8009C */  addiu $t8, $sp, 0x9c
 /* 08BFF8 80103588 3C018013 */  lui   $at, %hi(D_80128A58) # $at, 0x8013
@@ -190,10 +190,10 @@ glabel func_80103528
 /* 08C258 801037E8 10000045 */  b     .L80103900_ovl2
 /* 08C25C 801037EC 00001025 */   move  $v0, $zero
 .L801037F0_ovl2:
-/* 08C260 801037F0 3C128013 */  lui   $s2, %hi(D_8012BCF8) # $s2, 0x8013
+/* 08C260 801037F0 3C128013 */  lui   $s2, %hi(gCollisionState) # $s2, 0x8013
 /* 08C264 801037F4 3C018013 */  lui   $at, %hi(D_80128A60) # $at, 0x8013
 /* 08C268 801037F8 C4268A60 */  lwc1  $f6, %lo(D_80128A60)($at)
-/* 08C26C 801037FC 2652BCF8 */  addiu $s2, %lo(D_8012BCF8) # addiu $s2, $s2, -0x4308
+/* 08C26C 801037FC 2652BCF8 */  addiu $s2, %lo(gCollisionState) # addiu $s2, $s2, -0x4308
 /* 08C270 80103800 3C0E8013 */  lui   $t6, %hi(D_80129410) # $t6, 0x8013
 /* 08C274 80103804 8DCE9410 */  lw    $t6, %lo(D_80129410)($t6)
 /* 08C278 80103808 8E4F0000 */  lw    $t7, ($s2)

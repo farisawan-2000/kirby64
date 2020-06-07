@@ -1,6 +1,6 @@
 glabel func_801024E8_ovl2
-/* 08AF58 801024E8 3C0E8013 */  lui   $t6, %hi(D_8012BCF8) # $t6, 0x8013
-/* 08AF5C 801024EC 8DCEBCF8 */  lw    $t6, %lo(D_8012BCF8)($t6)
+/* 08AF58 801024E8 3C0E8013 */  lui   $t6, %hi(gCollisionState) # $t6, 0x8013
+/* 08AF5C 801024EC 8DCEBCF8 */  lw    $t6, %lo(gCollisionState)($t6)
 /* 08AF60 801024F0 8DC2002C */  lw    $v0, 0x2c($t6)
 /* 08AF64 801024F4 10400019 */  beqz  $v0, .L8010255C_ovl2
 /* 08AF68 801024F8 00000000 */   nop   

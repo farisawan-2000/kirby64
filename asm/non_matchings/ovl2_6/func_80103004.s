@@ -1,8 +1,8 @@
 glabel func_80103004
 /* 08BA74 80103004 27BDFD80 */  addiu $sp, $sp, -0x280
 /* 08BA78 80103008 AFB50044 */  sw    $s5, 0x44($sp)
-/* 08BA7C 8010300C 3C158013 */  lui   $s5, %hi(D_8012BCF8) # $s5, 0x8013
-/* 08BA80 80103010 26B5BCF8 */  addiu $s5, %lo(D_8012BCF8) # addiu $s5, $s5, -0x4308
+/* 08BA7C 8010300C 3C158013 */  lui   $s5, %hi(gCollisionState) # $s5, 0x8013
+/* 08BA80 80103010 26B5BCF8 */  addiu $s5, %lo(gCollisionState) # addiu $s5, $s5, -0x4308
 /* 08BA84 80103014 8EAF0000 */  lw    $t7, ($s5)
 /* 08BA88 80103018 AFBF0054 */  sw    $ra, 0x54($sp)
 /* 08BA8C 8010301C AFBE0050 */  sw    $fp, 0x50($sp)

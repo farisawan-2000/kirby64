@@ -49,8 +49,8 @@ glabel func_80102570_ovl2
 /* 08B094 80102624 46000386 */  mov.s $f14, $f0
 .L80102628_ovl2:
 /* 08B098 80102628 4602603C */  c.lt.s $f12, $f2
-/* 08B09C 8010262C 3C0F8013 */  lui   $t7, %hi(D_8012BCF8) # $t7, 0x8013
-/* 08B0A0 80102630 8DEFBCF8 */  lw    $t7, %lo(D_8012BCF8)($t7)
+/* 08B09C 8010262C 3C0F8013 */  lui   $t7, %hi(gCollisionState) # $t7, 0x8013
+/* 08B0A0 80102630 8DEFBCF8 */  lw    $t7, %lo(gCollisionState)($t7)
 /* 08B0A4 80102634 450000B9 */  bc1f  .L8010291C_ovl2
 /* 08B0A8 80102638 8DF30030 */   lw    $s3, 0x30($t7)
 /* 08B0AC 8010263C 4602703C */  c.lt.s $f14, $f2

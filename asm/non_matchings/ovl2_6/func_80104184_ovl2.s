@@ -1,13 +1,13 @@
 glabel func_80104184_ovl2
 /* 08CBF4 80104184 27BDFF90 */  addiu $sp, $sp, -0x70
 /* 08CBF8 80104188 27AE0020 */  addiu $t6, $sp, 0x20
-/* 08CBFC 8010418C 3C018013 */  lui   $at, %hi(D_8012BCF8) # $at, 0x8013
+/* 08CBFC 8010418C 3C018013 */  lui   $at, %hi(gCollisionState) # $at, 0x8013
 /* 08CC00 80104190 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 08CC04 80104194 AFA40070 */  sw    $a0, 0x70($sp)
 /* 08CC08 80104198 AFA50074 */  sw    $a1, 0x74($sp)
 /* 08CC0C 8010419C AFA60078 */  sw    $a2, 0x78($sp)
 /* 08CC10 801041A0 AFA7007C */  sw    $a3, 0x7c($sp)
-/* 08CC14 801041A4 AC2EBCF8 */  sw    $t6, %lo(D_8012BCF8)($at)
+/* 08CC14 801041A4 AC2EBCF8 */  sw    $t6, %lo(gCollisionState)($at)
 /* 08CC18 801041A8 8C880000 */  lw    $t0, ($a0)
 /* 08CC1C 801041AC 27AF0028 */  addiu $t7, $sp, 0x28
 /* 08CC20 801041B0 27A90034 */  addiu $t1, $sp, 0x34

@@ -1,11 +1,11 @@
 glabel func_8010221C_ovl2
 /* 08AC8C 8010221C AFA7000C */  sw    $a3, 0xc($sp)
 /* 08AC90 80102220 94820008 */  lhu   $v0, 8($a0)
-/* 08AC94 80102224 3C038013 */  lui   $v1, %hi(D_8012BCF8) # $v1, 0x8013
+/* 08AC94 80102224 3C038013 */  lui   $v1, %hi(gCollisionState) # $v1, 0x8013
 /* 08AC98 80102228 304E0008 */  andi  $t6, $v0, 8
 /* 08AC9C 8010222C 51C0003B */  beql  $t6, $zero, .L8010231C_ovl2
 /* 08ACA0 80102230 00001025 */   move  $v0, $zero
-/* 08ACA4 80102234 8C63BCF8 */  lw    $v1, %lo(D_8012BCF8)($v1)
+/* 08ACA4 80102234 8C63BCF8 */  lw    $v1, %lo(gCollisionState)($v1)
 /* 08ACA8 80102238 9498000E */  lhu   $t8, 0xe($a0)
 /* 08ACAC 8010223C 946F0048 */  lhu   $t7, 0x48($v1)
 /* 08ACB0 80102240 55F80036 */  bnel  $t7, $t8, .L8010231C_ovl2

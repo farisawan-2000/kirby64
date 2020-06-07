@@ -4,7 +4,7 @@ glabel func_80102364_ovl2
 /* 08ADDC 8010236C 3C013F00 */  li    $at, 0x3F000000 # 0.500000
 /* 08ADE0 80102370 44812000 */  mtc1  $at, $f4
 /* 08ADE4 80102374 460C003C */  c.lt.s $f0, $f12
-/* 08ADE8 80102378 3C0E8013 */  lui   $t6, %hi(D_8012BCF8) # $t6, 0x8013
+/* 08ADE8 80102378 3C0E8013 */  lui   $t6, %hi(gCollisionState) # $t6, 0x8013
 /* 08ADEC 8010237C 45020004 */  bc1fl .L80102390_ovl2
 /* 08ADF0 80102380 46000086 */   mov.s $f2, $f0
 /* 08ADF4 80102384 10000002 */  b     .L80102390_ovl2
@@ -15,7 +15,7 @@ glabel func_80102364_ovl2
 /* 08AE04 80102394 00000000 */  nop   
 /* 08AE08 80102398 45030016 */  bc1tl .L801023F4_ovl2
 /* 08AE0C 8010239C 00001025 */   move  $v0, $zero
-/* 08AE10 801023A0 8DCEBCF8 */  lw    $t6, %lo(D_8012BCF8)($t6)
+/* 08AE10 801023A0 8DCEBCF8 */  lw    $t6, %lo(gCollisionState)($t6)
 /* 08AE14 801023A4 8DC2002C */  lw    $v0, 0x2c($t6)
 /* 08AE18 801023A8 1040000F */  beqz  $v0, .L801023E8_ovl2
 /* 08AE1C 801023AC 00000000 */   nop   

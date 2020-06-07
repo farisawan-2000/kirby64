@@ -11,8 +11,8 @@ glabel func_8010203C_ovl2
 /* 08AAD0 80102060 306F0003 */  andi  $t7, $v1, 3
 /* 08AAD4 80102064 11E0003F */  beqz  $t7, .L80102164_ovl2
 /* 08AAD8 80102068 00807025 */   move  $t6, $a0
-/* 08AADC 8010206C 3C028013 */  lui   $v0, %hi(D_8012BCF8) # $v0, 0x8013
-/* 08AAE0 80102070 8C42BCF8 */  lw    $v0, %lo(D_8012BCF8)($v0)
+/* 08AADC 8010206C 3C028013 */  lui   $v0, %hi(gCollisionState) # $v0, 0x8013
+/* 08AAE0 80102070 8C42BCF8 */  lw    $v0, %lo(gCollisionState)($v0)
 /* 08AAE4 80102074 95D80012 */  lhu   $t8, 0x12($t6)
 /* 08AAE8 80102078 9444004A */  lhu   $a0, 0x4a($v0)
 /* 08AAEC 8010207C 5498003A */  bnel  $a0, $t8, .L80102168_ovl2
