@@ -8,4 +8,5 @@ bin/*
 tools/mipspro*/
 *.o
 __pycache__/*
-
+# Use these for scratch work
+*.x
