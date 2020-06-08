@@ -28,15 +28,11 @@ struct VblankHandler
 
 
 typedef f32 Vec3f[3];
-typedef struct {
-    f32 unk0;
-    f32 unk4;
-    f32 unk8;
-    f32 unkC;
-}Vec4f;
 
-struct CollisionStateUnk30 {
-    s32 unk0;
+
+struct CollisionHeader {
+    s16 unk0;
+    s16 unk2;
     s32 unk4;
     s32 unk8;
     s32 unkC;
@@ -48,26 +44,6 @@ struct CollisionStateUnk30 {
     s32 unk24;
 };
 
-struct CollisionState {
-    u32 unk0;
-    u32 unk4;
-
-    f32 unk8;
-    f32 unkC;
-    f32 unk10;
-
-    f32 unk14;
-    f32 unk18;
-    f32 unk1C;
-
-    f32 unk20;
-    f32 unk24;
-    f32 unk28;
-
-    u32 unk2C; // not used in the weird collision function
-
-    struct CollisionStateUnk30 *unk30;
-};
 
 
 // 0x8012E7C0
