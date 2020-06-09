@@ -18,8 +18,8 @@ endif
 
 
 ##################### Compiler Options #######################
-# TODO: figure out how to use the compiler binaries (and incorporate relevant libraries)
-IRIX_ROOT := tools/ido5.3_compiler
+# IRIX_ROOT := tools/ido5.3_compiler
+IRIX_ROOT := tools/ido7.1
 CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
 

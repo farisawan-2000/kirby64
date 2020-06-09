@@ -157,7 +157,7 @@ struct Collision_Header
 // After the level loads the pointers are converted from offsets in the Level Settings Block to virtual addresses in a different RAM location accompanied by other collision data generated.
 
 struct vCollisionHeader {
-    u32 pad;
+    u32 using32BitVertices; // Always 0, since 16 bit vertices are used
     struct Collision_Header header;
 };
 
@@ -278,6 +278,11 @@ struct Kirby_Node
 /*0x20*/    struct Camera_Node    Camera;
 };
 
+typedef struct  {
+    f32 x;
+    f32 y;
+    f32 z;
+} FloatVectorStruct;
 
 // Entity List
 // The entity list is an array of structs which spawn objects as kirby gets in range. It is terminated by an 0x99999999 marker. See Entity IDs for more info. This section is optional and if a not pointed to in the main header will not be used.
@@ -288,20 +293,20 @@ struct CollisionState {
 
     u32 unk4;
 
-    /* 0x08 */ Vec3f currPos;
+    /* 0x08 */ FloatVectorStruct currPos;
 
-    /* 0x14 */ Vec3f nextPos;
+    /* 0x14 */ FloatVectorStruct nextPos;
 
-    /* 0x20 */ Vec3f unkPos;
+    /* 0x20 */ FloatVectorStruct unkPos;
 
-    /* 0x2C */ struct Normal *someNormal; // not used in the weird collision function
+    /* 0x2C */ struct Normal *someNormal;
 
     struct vCollisionHeader *unk30;
 
     struct Normal *unk34;
     struct Normal *unk38;
-    u32 unk3c;
-    u32 unk40;
+    u32 (*unk3C)(void);
+    u32 (*unk40)(void);
     u32 (*unk44)(struct Normal *a0, s32 arg1);
 
 };
