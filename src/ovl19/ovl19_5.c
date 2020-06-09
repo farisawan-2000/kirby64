@@ -28,7 +28,7 @@ extern f32 D_800E41D0[];
 
 
 void func_8022E630_ovl19(s32 arg0) {
-    FloatVectorStruct sp1C;
+    Vector sp1C;
     func_800AECC0_ovl19(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[*D_8004A7C4] = &D_800B4924;
@@ -199,7 +199,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19_5/func_8022EB54_ovl19.s")
 extern f32 D_8022FAA0;
 extern u32 D_8022EE78;
 void func_8022ED10_ovl19(s32 arg0) {
-    FloatVectorStruct sp1C;
+    Vector sp1C;
     func_800AECC0_ovl19(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[*D_8004A7C4] = &D_800B4924;

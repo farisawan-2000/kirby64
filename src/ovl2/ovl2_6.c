@@ -2141,7 +2141,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80103930.s")
 extern u32 func_80101920(void);
 extern u32 func_80102364(struct Normal *a0, s32 arg1);
 #ifdef MIPS_TO_C
-void func_801039E8_ovl2(FloatVectorStruct *arg0, FloatVectorStruct *arg1, struct Normal *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
+void func_801039E8_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
     struct CollisionState newColState;
 
     gCollisionState = &newColState;

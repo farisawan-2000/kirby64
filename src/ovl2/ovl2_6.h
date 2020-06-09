@@ -282,7 +282,7 @@ typedef struct  {
     f32 x;
     f32 y;
     f32 z;
-} FloatVectorStruct;
+} Vector;
 
 // Entity List
 // The entity list is an array of structs which spawn objects as kirby gets in range. It is terminated by an 0x99999999 marker. See Entity IDs for more info. This section is optional and if a not pointed to in the main header will not be used.
@@ -293,11 +293,11 @@ struct CollisionState {
 
     u32 unk4;
 
-    /* 0x08 */ FloatVectorStruct currPos;
+    /* 0x08 */ Vector currPos;
 
-    /* 0x14 */ FloatVectorStruct nextPos;
+    /* 0x14 */ Vector nextPos;
 
-    /* 0x20 */ FloatVectorStruct unkPos;
+    /* 0x20 */ Vector unkPos;
 
     /* 0x2C */ struct Normal *someNormal;
 
