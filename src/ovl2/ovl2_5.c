@@ -18,11 +18,11 @@ void *func_800FDA40_ovl2(void *arg0, f32 arg1, f32 arg2) {
     temp_a3 = gDisplayListHead;
     gDisplayListHead = (void *) (temp_a3 + 8);
     temp_a3->unk4 = arg0;
-    temp_a3->unk0 = 0x1004008;
+    temp_a3->unk0 = 0x01004008;
     temp_a3_2 = gDisplayListHead;
     gDisplayListHead = (void *) (temp_a3_2 + 8);
-    temp_a3_2->unk4 = 0x402;
-    temp_a3_2->unk0 = 0x6040602;
+    temp_a3_2->unk4 = 0x00000402;
+    temp_a3_2->unk0 = 0x06040602;
     return arg0;
 }
 #else
@@ -169,35 +169,13 @@ s32 func_800FDCB0(void *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, 
     temp_a0->unk4 = (s16) temp_f18_3;
     temp_a0->unk-6 = (s16) temp_f6_2;
     temp_a0->unkA = (s16) temp_f6_2;
-    temp_a2 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2 + 8);
-    temp_a2->unk4 = 0;
-    temp_a2->unk0 = 0xE7000000;
-    temp_a2_2 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_2 + 8);
-    temp_a2_2->unk0 = 0xFA000000;
-    temp_a2_2->unk4 = (s32) (arg7 & 0xFF);
-    temp_a2_3 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_3 + 8);
-    temp_a2_3->unk4 = arg0;
-    temp_a2_3->unk0 = 0x1008010;
-    temp_a2_4 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_4 + 8);
-    temp_a2_4->unk4 = 0xC040E;
-    temp_a2_4->unk0 = 0x604060E;
-    temp_a2_5 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_5 + 8);
-    temp_a2_5->unk4 = 0;
-    temp_a2_5->unk0 = 0xE7000000;
-    temp_a2_6 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_6 + 8);
-    temp_a2_6->unk0 = 0xFA000000;
-    temp_a2_6->unk4 = (s32) (arg8 & 0xFF);
-    temp_a2_7 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_a2_7 + 8);
-    temp_a2_7->unk4 = 0x802;
-    temp_a2_7->unk0 = 0x6080A02;
-    return temp_f6_2;
+    gDPPipeSync(gDisplayListHead++);
+    gDPSetPrimColor(gDisplayListHead, 0, 0, 0, 0, 0, arg7 & 0xFF);
+    gSPVertex(gDisplayListHead++, 8, 16, arg0);
+    gSP2Triangles(gDisplayListHead++, 2, 3, 7, 0, 6, 2, 7, 0);
+    gDPPipeSync(gDisplayListHead++);
+    gDPSetPrimColor(gDisplayListHead, 0, 0, 0, 0, 0, arg8 & 0xFF);
+    gSP2Triangles(gDisplayListHead++, 4, 5, 1, 0, 0, 4, 1, 0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDCB0.s")
@@ -273,19 +251,14 @@ void func_800FDFF4_ovl2(s32 arg0) {
 
     if (arg0 != D_8012B9AC->unk30) {
         if (arg0 != 0) {
-            temp_v1 = gDisplayListHead;
-            gDisplayListHead = (void *) (temp_v1 + 8);
-            temp_v1->unk4 = 0;
-            temp_v1->unk0 = 0xE7000000;
+            gDPPipeSync(gDisplayListHead++);
+            gDPSetAlphaCompare(gDisplayListHead++, )
             temp_v1_2 = gDisplayListHead;
             gDisplayListHead = (void *) (temp_v1_2 + 8);
             temp_v1_2->unk0 = 0xE200001C;
             temp_v1_2->unk4 = 0x504340;
         } else {
-            temp_v1_3 = *(void *)0x8004A3D0;
-            *(void *)0x8004A3D0 = (void *) (temp_v1_3 + 8);
-            temp_v1_3->unk4 = 0;
-            temp_v1_3->unk0 = 0xE7000000;
+            gDPPipeSync(gDisplayListHead++);
             temp_v1_4 = *(void *)0x8004A3D0;
             *(void *)0x8004A3D0 = (void *) (temp_v1_4 + 8);
             temp_v1_4->unk0 = 0xE200001C;
@@ -423,8 +396,8 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
     void *phi_a3;
     s32 phi_v1;
     f32 phi_f2;
-    f32 phi_f16;
     f32 phi_f0;
+    f32 phi_f16;
     f32 phi_f16_2;
     f32 phi_f0_2;
 
@@ -768,31 +741,19 @@ void func_800FEF44_ovl2(void *arg0) {
 
     if (arg0->unk3C != 0) {
         D_8012B9AC = &sp3C;
-        temp_v0 = gDisplayListHead;
         sp6C = 0;
-        gDisplayListHead = (void *) (temp_v0 + 8);
-        temp_v0->unk0 = 0xDE000000;
-        temp_v0->unk4 = &D_801246C0;
-        temp_v0_2 = gDisplayListHead;
-        gDisplayListHead = (void *) (temp_v0_2 + 8);
-        temp_v0_2->unk0 = 0xFD900000;
-        temp_v0_2->unk4 = (s32) D_8012B99C;
+        gSPDisplayList(gDisplayListHead++, &D_801246C0);
+        gDPSetTextureImage(gDisplayListHead++, G_IM_FMT_I, G_IM_SIZ_16b, 1, D_8012B99C);
         temp_v0_3 = gDisplayListHead;
         gDisplayListHead = (void *) (temp_v0_3 + 8);
         temp_v0_3->unk4 = 0x7054150;
         temp_v0_3->unk0 = 0xF5900000;
-        temp_v0_4 = gDisplayListHead;
-        gDisplayListHead = (void *) (temp_v0_4 + 8);
-        temp_v0_4->unk4 = 0;
-        temp_v0_4->unk0 = 0xE6000000;
+        gDPLoadSync(gDisplayListHead++);
         temp_v0_5 = gDisplayListHead;
         gDisplayListHead = (void *) (temp_v0_5 + 8);
         temp_v0_5->unk4 = 0x71FF200;
         temp_v0_5->unk0 = 0xF3000000;
-        temp_v0_6 = gDisplayListHead;
-        gDisplayListHead = (void *) (temp_v0_6 + 8);
-        temp_v0_6->unk4 = 0;
-        temp_v0_6->unk0 = 0xE7000000;
+        gDPPipeSync(gDisplayListHead++);
         temp_v0_7 = gDisplayListHead;
         gDisplayListHead = (void *) (temp_v0_7 + 8);
         temp_v0_7->unk4 = 0x54150;
@@ -1033,6 +994,7 @@ loop_3:
     phi_a1 = &D_80124670;
 loop_4:
     temp_a1 = phi_a1 + 0x40;
+
     sp30.unk0 = (s32) phi_a2->unk0;
     sp30.unk4 = (s32) phi_a2->unk4;
     sp30.unkC = (s32) phi_a2->unkC;
@@ -1049,6 +1011,7 @@ loop_4:
     temp_v0_4->unk-3C = (s32) sp30.unk4;
     temp_v0_4->unk-38 = (s32) sp30.unk8;
     temp_v0_4->unk-34 = (s32) sp30.unkC;
+
     sp30.unk4 = (s32) temp_a3->unk-3C;
     sp30.unk0 = (s32) temp_a3->unk-40;
     sp30.unk8 = (s32) temp_a3->unk-38;
@@ -1061,6 +1024,7 @@ loop_4:
     temp_v0_4->unk-2C = (s32) sp30.unk4;
     temp_v0_4->unk-28 = (s32) sp30.unk8;
     temp_v0_4->unk-24 = (s32) sp30.unkC;
+
     sp30.unk4 = (s32) temp_t0->unk-3C;
     sp30.unk0 = (s32) temp_t0->unk-40;
     sp30.unk8 = (s32) temp_t0->unk-38;
@@ -1073,6 +1037,7 @@ loop_4:
     temp_v0_4->unk-1C = (s32) sp30.unk4;
     temp_v0_4->unk-18 = (s32) sp30.unk8;
     temp_v0_4->unk-14 = (s32) sp30.unkC;
+
     sp30.unk4 = (s32) temp_a1->unk-3C;
     sp30.unk0 = (s32) temp_a1->unk-40;
     sp30.unk8 = (s32) temp_a1->unk-38;

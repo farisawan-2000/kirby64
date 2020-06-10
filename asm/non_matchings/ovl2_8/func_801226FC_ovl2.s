@@ -57,8 +57,8 @@ glabel func_801226FC_ovl2
 /* 0AB240 801227D0 8D0D00F0 */  lw    $t5, 0xf0($t0)
 /* 0AB244 801227D4 11A00012 */  beqz  $t5, .L80122820_ovl2
 .L801227D8_ovl2:
-/* 0AB248 801227D8 3C048013 */   lui   $a0, %hi(D_8012E968) # $a0, 0x8013
-/* 0AB24C 801227DC 2484E968 */  addiu $a0, %lo(D_8012E968) # addiu $a0, $a0, -0x1698
+/* 0AB248 801227D8 3C048013 */   lui   $a0, %hi(gPositionState) # $a0, 0x8013
+/* 0AB24C 801227DC 2484E968 */  addiu $a0, %lo(gPositionState) # addiu $a0, $a0, -0x1698
 /* 0AB250 801227E0 0C0432AF */  jal   func_8010CABC_ovl2
 /* 0AB254 801227E4 AFA30094 */   sw    $v1, 0x94($sp)
 /* 0AB258 801227E8 3C058013 */  lui   $a1, %hi(D_8012BCA0) # $a1, 0x8013

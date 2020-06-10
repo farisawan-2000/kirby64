@@ -18,8 +18,8 @@ glabel func_8011FEF8_ovl2
 /* 0A89A0 8011FF30 3C18800F */  lui   $t8, 0x800f
 /* 0A89A4 8011FF34 3C01800F */  lui   $at, 0x800f
 /* 0A89A8 8011FF38 8DE30000 */  lw    $v1, ($t7)
-/* 0A89AC 8011FF3C 3C048013 */  lui   $a0, %hi(D_8012E968) # $a0, 0x8013
-/* 0A89B0 8011FF40 2484E968 */  addiu $a0, %lo(D_8012E968) # addiu $a0, $a0, -0x1698
+/* 0A89AC 8011FF3C 3C048013 */  lui   $a0, %hi(gPositionState) # $a0, 0x8013
+/* 0A89B0 8011FF40 2484E968 */  addiu $a0, %lo(gPositionState) # addiu $a0, $a0, -0x1698
 /* 0A89B4 8011FF44 00031880 */  sll   $v1, $v1, 2
 /* 0A89B8 8011FF48 0303C021 */  addu  $t8, $t8, $v1
 /* 0A89BC 8011FF4C 8F1898E0 */  lw    $t8, -0x6720($t8)
