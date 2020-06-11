@@ -3267,7 +3267,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122CE8_ovl2.s")
 #endif
 
 void func_80122F08(u32 arg0) {
-    if (!(arg0 == 0x20007 && arg0 == 0x20008 && arg0 == 0x20009)) {
+    if (!(arg0 != 0x20007 && arg0 != 0x20008 && arg0 != 0x20009)) {
         func_800A9760_ovl2();
     } else {
         func_800A8EC0_ovl2();
