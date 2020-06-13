@@ -4045,9 +4045,9 @@
 /* 138FF0 80154C60 AC39A560 */   sw    $t9, -0x5aa0($at)
 
 /* 138FF4 80154C64 3C048015 */  lui   $a0, %hi(D_80154E80) # $a0, 0x8015
-/* 138FF8 80154C68 3C05803B */  lui   $a1, %hi(D_803B6900) # $a1, 0x803b
+/* 138FF8 80154C68 3C05803B */  lui   $a1, %hi(gFrameBuffer) # $a1, 0x803b
 /* 138FFC 80154C6C 3C01FFFD */  lui   $at, (0xFFFDA800 >> 16) # lui $at, 0xfffd
-/* 139000 80154C70 24A56900 */  addiu $a1, %lo(D_803B6900) # addiu $a1, $a1, 0x6900
+/* 139000 80154C70 24A56900 */  addiu $a1, %lo(gFrameBuffer) # addiu $a1, $a1, 0x6900
 /* 139004 80154C74 24844E80 */  addiu $a0, %lo(D_80154E80) # addiu $a0, $a0, 0x4e80
 /* 139008 80154C78 3C028016 */  lui   $v0, %hi(D_8015A678) # $v0, 0x8016
 /* 13900C 80154C7C 3421A800 */  ori   $at, (0xFFFDA800 & 0xFFFF) # ori $at, $at, 0xa800

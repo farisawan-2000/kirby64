@@ -26,6 +26,11 @@ struct VblankHandler
     OSMesg msg;
 };
 
+#ifdef AVOID_UB
+    #define BAD_RETURN(cmd) void
+#else
+    #define BAD_RETURN(cmd) cmd
+#endif
 
 typedef f32 Vec3f[3];
 
@@ -50,7 +55,10 @@ struct CollisionHeader {
 // TODO: populate with actual values
 struct KirbyState {
     u32 actionChange; // 0x0
-    u32 action; // 0x4
+    u8 action; // 0x4
+    u8 unk5;
+    u8 unk6;
+    u8 unk7;
     u32 unk8; // 0x8
     u32 powerupState; // 0xC
     u32 unk10;
@@ -180,8 +188,9 @@ struct KirbyState {
     u32 unk1F4;
     u32 unk1F8;
     u32 unk1FC;
-    u32 unk200;
+    u32 viTimer;
     // goes all the way to at least 0x200 monkaS
 };
 
 #endif /* TYPES_H */
+

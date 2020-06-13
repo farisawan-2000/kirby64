@@ -1,3 +1,4 @@
+#include "types.h"
 struct Level
 {
 /*0X0*/ u8    World;
@@ -212,7 +213,7 @@ struct Path_Node_Footer
 {
 /*0x00*/    u32    FlagUnk; //0x200 if *Unk should be used
 /*0x04*/    u32    Num_Node_Sections;
-/*0x08*/    Vec3f  (*Position_Matrix)[];
+/*0x08*/    Vec3f  Position_Matrix;
 /*0x0C*/    f32    Node_Length;
 /*0x10*/    f32    (*Boundary_Matrix)[];
 /*0x14*/    f32    (*Unk)[][5];
