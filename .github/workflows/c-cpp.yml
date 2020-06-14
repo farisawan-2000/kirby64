@@ -14,6 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install Dependencies
-      run: wget https://github.com/camthesaxman/qemu-irix/releases/download/v0.1/qemu-irix && export QEMU_IRIX = ./qemu-irix
+      run: wget https://github.com/camthesaxman/qemu-irix/releases/download/v0.1/qemu-irix && export QEMU_IRIX=./qemu-irix
     - name: make
       run: make
