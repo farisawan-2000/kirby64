@@ -3,7 +3,8 @@
 This repository contains a work-in-progress decompilation effort for Kirby 64.
 
 You will need an original copy of the ROM to proceed.
-
+## Contributing
+ - Pull requests are welcome! Everything in `src/ovl2` is free to work on, including tons of 1-line functions that just need to be in the correct format to match!
 ---
 
 ## TODO (Absolutely required)
