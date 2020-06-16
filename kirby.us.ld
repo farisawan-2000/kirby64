@@ -51,7 +51,12 @@ SECTIONS
 
    /* 0x80151100 0B1B40-0F0D50 [3F210] */
    BEGIN_SEG(ovl3, 0x80151100) {
-      BUILD_DIR/asm/ovl3/ovl3.o(.text);
+      BUILD_DIR/src/ovl3/ovl3.o(.text);
+      BUILD_DIR/src/ovl3/ovl3_1.o(.text);
+      BUILD_DIR/src/ovl3/ovl3_2.o(.text);
+      BUILD_DIR/asm/ovl3/ovl3_3.o(.text);
+      BUILD_DIR/asm/ovl3/ovl3_4.o(.text);
+      BUILD_DIR/asm/ovl3/ovl3_5.o(.text);
    }
    END_SEG(ovl3)
 

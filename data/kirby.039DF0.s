@@ -14726,7 +14726,7 @@ glabel D_8003DE9C
 .word 0x00000000
 
 glabel D_8003DEA0
-.word 0x44BB8000
+.float 1500.0
 
 glabel D_8003DEA4
 .word 0x00000000
