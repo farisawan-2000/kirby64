@@ -62,7 +62,10 @@ struct KirbyState {
     u32 unk8; // 0x8
     u32 powerupState; // 0xC
     u32 unk10;
-    u32 unk14;
+    u8 unk14;
+    u8 unk15;
+    u8 unk16;
+    u8 unk17;
     u32 unk18;
     u32 unk1C;
     s32 turnDirection; // 0x20
