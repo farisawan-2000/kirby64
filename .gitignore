@@ -10,3 +10,4 @@ tools/mipspro*/
 __pycache__/*
 # Use these for scratch work
 *.x
+strings/*
