@@ -49,7 +49,17 @@ struct CollisionHeader {
     s32 unk24;
 };
 
-
+struct Entity {
+   u8 nodeNum;
+   u8 bankID;
+   u8 entityID;
+   u8 action;
+   u16 respawnFlag;
+   u16 saveToEeprom; // TODO: research
+   Vec3f pos;
+   Vec3f angle;
+   Vec3f scale;
+};
 
 // 0x8012E7C0
 // TODO: populate with actual values
@@ -59,7 +69,10 @@ struct KirbyState {
     u8 unk5;
     u8 unk6;
     u8 unk7;
-    u32 unk8; // 0x8
+    u8 unk8;
+    u8 unk9;
+    u8 unkA;
+    u8 unkB;
     u32 powerupState; // 0xC
     u32 unk10;
     u8 unk14;

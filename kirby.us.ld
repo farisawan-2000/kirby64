@@ -32,6 +32,7 @@ SECTIONS
    /* 0x8009B540 043790-066630 [22EA0] */
    BEGIN_SEG(ovl1, 0x8009B540) {
       BUILD_DIR/asm/ovl1/ovl1.o(.text);
+      BUILD_DIR/data/kirby.066630.o(.data);
    }
    END_SEG(ovl1)
 

@@ -9,10 +9,10 @@ print(".section .data")
 rom = 0
 while rom < len(filebuf):
 	myData = filebuf[rom:rom+4]
-	# print("glabel D_"+ str(hex(int(addr,16)+rom))[2:].upper())
+	print("glabel D_"+ str(hex(int(addr,16)+rom))[2:].upper())
 	testFloat = str(struct.unpack('>f', myData))
-	if "nan" not in testFloat and "e" not in testFloat and testFloat != '(0.0,)':
-		print(testFloat, binascii.hexlify(myData))
-	# print(".word 0x"+str(binascii.hexlify(filebuf[rom:rom+4]))[2:-1].upper())
-	# print()
+	# if "nan" not in testFloat and "e" not in testFloat and testFloat != '(0.0,)':
+		# print(testFloat, binascii.hexlify(myData))
+	print(".word 0x"+str(binascii.hexlify(filebuf[rom:rom+4]))[2:-1].upper())
+	print()
 	rom+=4

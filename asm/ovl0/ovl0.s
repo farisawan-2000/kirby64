@@ -63318,4 +63318,3 @@
 /* 039DE8 800391E8 03E00008 */  jr    $ra
 /* 039DEC 800391EC 27BD0028 */   addiu $sp, $sp, 0x28
 # Unknown region 039DF0-043790 [99A0]
-# .incbin "bin/kirby.u.039DF0.bin"

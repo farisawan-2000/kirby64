@@ -38428,5 +38428,3 @@ glabel func_8009B540_ovl1
 
 /* 066628 800BE3D8 00000000 */  nop   
 /* 06662C 800BE3DC 00000000 */  nop   
-# Unknown region 066630-07EC10 [185E0]
-.incbin "bin/kirby.u.066630.bin"
