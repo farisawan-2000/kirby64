@@ -20774,19 +20774,10 @@ glabel D_8003FE1C
 .word 0x00000000
 
 glabel D_8003FE20
-.word 0x30313233
+.asciiz "0123456789abcdef"
 
-glabel D_8003FE24
-.word 0x34353637
-
-glabel D_8003FE28
-.word 0x38396162
-
-glabel D_8003FE2C
-.word 0x63646566
-
-glabel D_8003FE30
-.word 0x00000000
+# glabel D_8003FE30
+# .word 0x00000000
 
 glabel D_8003FE34
 .word 0x30313233
@@ -22055,102 +22046,25 @@ glabel D_800404C8
 .word 0x25640A00
 
 glabel D_800404CC
-.word 0x6F6D474D
-
-glabel D_800404D0
-.word 0x6F76654F
-
-glabel D_800404D4
-.word 0x626A444C
-
-glabel D_800404D8
-.word 0x48656164
-
-glabel D_800404DC
-.word 0x2829203A
-
-glabel D_800404E0
-.word 0x20646C5F
-
-glabel D_800404E4
-.word 0x6C696E6B
-
-glabel D_800404E8
-.word 0x206E756D
-
-glabel D_800404EC
-.word 0x206F7665
-
-glabel D_800404F0
-.word 0x72203A20
-
-glabel D_800404F4
-.word 0x646C5F6C
-
-glabel D_800404F8
-.word 0x696E6B20
-
-glabel D_800404FC
-.word 0x3D202564
-
-glabel D_80040500
-.word 0x203A2069
-
-glabel D_80040504
-.word 0x64203D20
-
-glabel D_80040508
-.word 0x25640A00
+.asciiz "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d\n"
 
 glabel D_8004050C
 .word 0x80009608
-
-glabel D_80040510
 .word 0x80009608
-
-glabel D_80040514
 .word 0x80009608
-
-glabel D_80040518
 .word 0x80009608
-
-glabel D_8004051C
 .word 0x80009608
-
-glabel D_80040520
 .word 0x80009608
-
-glabel D_80040524
 .word 0x80009608
-
-glabel D_80040528
 .word 0x80009608
-
-glabel D_8004052C
 .word 0x80009608
-
-glabel D_80040530
 .word 0x80009608
-
-glabel D_80040534
 .word 0x80009608
-
-glabel D_80040538
 .word 0x80009608
-
-glabel D_8004053C
 .word 0x80009608
-
-glabel D_80040540
 .word 0x80009608
-
-glabel D_80040544
 .word 0x80009608
-
-glabel D_80040548
 .word 0x80009608
-
-glabel D_8004054C
 .word 0x80009608
 
 glabel D_80040550

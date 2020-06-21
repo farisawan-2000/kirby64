@@ -19193,27 +19193,13 @@ glabel D_800C47D0
 .word 0x0000970C
 
 glabel D_800C47D4
-.word 0x800C46A0
-
-glabel D_800C47D8
-.word 0xFFFFFFFF
-
-glabel D_800C47DC
-.word 0x800C46F8
-
-glabel D_800C47E0
+.word D_800C46A0
+.word -1
+.word D_800C46F8
 .word 0x004B3260
-
-glabel D_800C47E4
-.word 0x800C476C
-
-glabel D_800C47E8
+.word D_800C476C
 .word 0x004F01B0
-
-glabel D_800C47EC
-.word 0x800C47BC
-
-glabel D_800C47F0
+.word D_800C47BC
 .word 0x004F3290
 
 glabel D_800C47F4
@@ -28469,27 +28455,13 @@ glabel D_800C7820
 .word 0x000232BC
 
 glabel D_800C7824
-.word 0x800C47F4
-
-glabel D_800C7828
+.word D_800C47F4
 .word 0xFFFFFFFF
-
-glabel D_800C782C
-.word 0x800C4F94
-
-glabel D_800C7830
+.word D_800C4F94
 .word 0x005B5360
-
-glabel D_800C7834
-.word 0x800C5DC4
-
-glabel D_800C7838
+.word D_800C5DC4
 .word 0x00615C40
-
-glabel D_800C783C
-.word 0x800C7814
-
-glabel D_800C7840
+.word D_800C7814
 .word 0x007BACA0
 
 glabel D_800C7844
@@ -54831,14 +54803,14 @@ glabel D_800D0180
 .word 0x000000F0
 
 glabel D_800D0184
-.word 0x800C47D4
-.word 0x800C7824
-.word 0x800C9090
-.word 0x800CAED0
-.word 0x800CC794
-.word 0x800CCCB4
-.word 0x800CE220
-.word 0x800D00A4
+.word D_800C47D4
+.word D_800C7824
+.word D_800C9090
+.word D_800CAED0
+.word D_800CC794
+.word D_800CCCB4
+.word D_800CE220
+.word D_800D00A4
 
 glabel D_800D01A4
 .word 0x00070001
