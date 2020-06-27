@@ -1,4 +1,5 @@
 #include "types.h"
+
 struct Level
 {
 /*0X0*/ u8    World;
@@ -141,18 +142,18 @@ struct Collision_Header
 /*0x4*/    u32       Len_Triangles;
 /*0x8*/    s16       *Vertices;
 /*0xC*/    u32       Len_Vertices;
-/*0x10*/   struct Normal (*Triangle_Normals)[];
-/*0x14*/   u32       Len_Tiangle_Normals;
+/*0x10*/   struct Normal *Triangle_Normals;
+/*0x14*/   u32       Len_Triangle_Normals;
 /*0x18*/   u16       *Triangle_Cells;
 /*0x1C*/   u32       Len_Triangle_Cells;
-/*0x20*/   u16       (*Triangle_Norm_Cells)[];
+/*0x20*/   u16       *Triangle_Norm_Cells;
 /*0x24*/   u32       Len_Triangle_Norm_Cells;
 /*0x28*/   u32       Num_Floor_Norms; //Should be tri norm cells minus 1
-/*0x2C*/   struct DynGeo_List     (*Destructable_Groups)[];
-/*0x30*/   u16       (*Destructable_Indices)[];
-/*0x34*/   struct Water_Data      (*Water_Data)[];
+/*0x2C*/   struct DynGeo_List     Destructable_Groups;
+/*0x30*/   u16       Destructable_Indices;
+/*0x34*/   struct Water_Data      Water_Data;
 /*0x38*/   u32       Len_Water_Data;
-/*0x3C*/   struct Normal          (*Water_Normals)[];
+/*0x3C*/   struct Normal          Water_Normals;
 /*0x40*/   u32       Len_Water_Normals;
 };
 // After the level loads the pointers are converted from offsets in the Level Settings Block to virtual addresses in a different RAM location accompanied by other collision data generated.
@@ -182,7 +183,7 @@ struct Path_Node_Header
 {
 /*0x0*/    struct Kirby_Node          *Kirby_Node;
 /*0x4*/    struct Path_Node_Footer    *Path_Node_Footer;
-/*0x8*/    struct Node_Connectors     (*Node_Connections)[];
+/*0x8*/    struct Node_Connectors     *Node_Connections; // array
 /*0xC*/    u16      Num_Connections;
 /*0xE*/    u16      Self_Connected;
 };
@@ -288,17 +289,24 @@ typedef struct  {
 // Entity List
 // The entity list is an array of structs which spawn objects as kirby gets in range. It is terminated by an 0x99999999 marker. See Entity IDs for more info. This section is optional and if a not pointed to in the main header will not be used.
 
-struct CollisionState {
-    s16 unk0;
-    s16 unk2;
+struct ColStateUnk4 {
+    u32 cell;
+    f32 projection; // how far kirby is from the plane
+    // u16 unk6;
+};
 
-    u32 unk4;
+
+
+struct CollisionState {
+    s32 numCells;
+
+    struct ColStateUnk4 *unk4; // valid hits for normal cells
 
     /* 0x08 */ Vector currPos;
 
     /* 0x14 */ Vector nextPos;
 
-    /* 0x20 */ Vector unkPos;
+    /* 0x20 */ Vector deltaPos;
 
     /* 0x2C */ struct Normal *someNormal;
 
@@ -307,7 +315,7 @@ struct CollisionState {
     struct Normal *unk34;
     struct Normal *unk38;
     u32 (*unk3C)(void);
-    u32 (*unk40)(void);
+    u32 (*unk40)(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
     u32 (*unk44)(struct Normal *a0, s32 arg1);
 
 };
