@@ -24884,7 +24884,7 @@ glabel func_8009B540_ovl1
 /* 05A178 800B1F28 AFAB0010 */  sw    $t3, 0x10($sp)
 /* 05A17C 800B1F2C AFAC0014 */  sw    $t4, 0x14($sp)
 /* 05A180 800B1F30 8FA50028 */  lw    $a1, 0x28($sp)
-/* 05A184 800B1F34 0C00BEF8 */  jal   func_8002FBE0_ovl1
+/* 05A184 800B1F34 0C00BEF8 */  jal   create_thread
 /* 05A188 800B1F38 8FA60034 */   lw    $a2, 0x34($sp)
 /* 05A18C 800B1F3C 8FA2002C */  lw    $v0, 0x2c($sp)
 /* 05A190 800B1F40 3C0FFEDC */  lui   $t7, (0xFEDCBA98 >> 16) # lui $t7, 0xfedc
@@ -35080,7 +35080,7 @@ glabel func_8009B540_ovl1
 /* 06356C 800BB31C 2484CD70 */  addiu $a0, %lo(D_800ECD70) # addiu $a0, $a0, -0x3290
 /* 063570 800BB320 AFB90010 */  sw    $t9, 0x10($sp)
 /* 063574 800BB324 00003825 */  move  $a3, $zero
-/* 063578 800BB328 0C00BEF8 */  jal   func_8002FBE0_ovl1
+/* 063578 800BB328 0C00BEF8 */  jal   create_thread
 /* 06357C 800BB32C AC38D4C4 */   sw    $t8, %lo(D_800ED4C4)($at)
 /* 063580 800BB330 3C0DFEDC */  lui   $t5, (0xFEDCBA98 >> 16) # lui $t5, 0xfedc
 /* 063584 800BB334 35ADBA98 */  ori   $t5, (0xFEDCBA98 & 0xFFFF) # ori $t5, $t5, 0xba98

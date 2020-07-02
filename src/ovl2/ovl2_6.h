@@ -317,5 +317,6 @@ struct CollisionState {
     u32 (*unk3C)(void);
     u32 (*unk40)(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
     u32 (*unk44)(struct Normal *a0, s32 arg1);
-
+    u32 unk48;
+    u32 unk4C;
 };

@@ -24,6 +24,8 @@ SECTIONS
 
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
+      BUILD_DIR/asm/EntryPoint.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_0.o(.text);
       BUILD_DIR/asm/ovl0/ovl0.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }

@@ -63,4 +63,6 @@
 
 #define ABSF(x) (x < 0.f ? -x : x)
 
+#define HW_REG(reg, type) *(volatile type *)(uintptr_t)(reg | 0xa0000000)
+
 #endif
