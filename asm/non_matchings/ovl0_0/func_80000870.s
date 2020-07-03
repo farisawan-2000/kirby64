@@ -28,7 +28,7 @@ glabel func_80000870
 /* 0014D8 800008D8 3C048004 */  lui   $a0, %hi(D_80042D90) # $a0, 0x8004
 /* 0014DC 800008DC 24842D90 */  addiu $a0, %lo(D_80042D90) # addiu $a0, $a0, 0x2d90
 /* 0014E0 800008E0 AC282F78 */  sw    $t0, %lo(D_80042F78)($at)
-/* 0014E4 800008E4 0C00E334 */  jal   func_80038CD0_ovl0
+/* 0014E4 800008E4 0C00E334 */  jal   osStartThread
 /* 0014E8 800008E8 AC292F7C */   sw    $t1, %lo(D_80042F7C)($at)
 /* 0014EC 800008EC 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0014F0 800008F0 27BD0020 */  addiu $sp, $sp, 0x20

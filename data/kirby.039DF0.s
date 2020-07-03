@@ -20281,11 +20281,11 @@ glabel D_8003FB88
 glabel D_8003FB8C
 .word 0x00000000
 
-glabel D_8003FB90
-.word 0x00000000
+glabel osClockRate
+.dword 0x0000000003B9ACA0
 
-glabel D_8003FB94
-.word 0x03B9ACA0
+# glabel D_8003FB94
+# .word 0x03B9ACA0
 
 glabel D_8003FB98
 .word 0x02E6D354
