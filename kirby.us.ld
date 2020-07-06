@@ -18,8 +18,6 @@ OUTPUT_ARCH (mips)
 #define END_NOLOAD(name) \
     _##name##SegNoloadEnd = ADDR(.name.noload) + SIZEOF(.name.noload);
 
-
-
 SECTIONS
 {
    __romPos = 0x0;
