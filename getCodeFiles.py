@@ -16,9 +16,11 @@ while (OVL_TABLE_START < OVL_TABLE_END):
 	RAMStart = '0x'+binascii.hexlify(kirbyBuff[a+8:a+12]).decode("ascii")
 	RAMStart2 = '0x'+binascii.hexlify(kirbyBuff[a+12:a+16]).decode("ascii")
 	RAMEnd = '0x'+binascii.hexlify(kirbyBuff[a+16:a+20]).decode("ascii")
+	RAMEnd2 = '0x'+binascii.hexlify(kirbyBuff[a+16:a+20]).decode("ascii")
 	DataStart = '0x'+binascii.hexlify(kirbyBuff[a+20:a+24]).decode("ascii")
 	DataEnd = '0x'+binascii.hexlify(kirbyBuff[a+24:a+28]).decode("ascii")
 	BSSStart = '0x'+binascii.hexlify(kirbyBuff[a+28:a+32]).decode("ascii")
+	BSSStart2 = '0x'+binascii.hexlify(kirbyBuff[a+28:a+32]).decode("ascii")
 	BSSEnd = '0x'+binascii.hexlify(kirbyBuff[a+32:a+36]).decode("ascii")
 
 	diff = int(RAMEnd, 16) - int(RAMStart, 16)
@@ -28,4 +30,5 @@ while (OVL_TABLE_START < OVL_TABLE_END):
 	ROMEnd2 = str(hex(rommers))
 
 	print(getCodeEntry(ROMStart, ROMEnd, RAMStart, RAMStart2, RAMEnd, RAMEnd2, BSSStart, BSSStart2, BSSEnd))
+	print(RAMEnd, BSSStart, BSSEnd)
 	OVL_TABLE_START += 36

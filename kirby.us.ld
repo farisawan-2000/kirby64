@@ -26,6 +26,7 @@ SECTIONS
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
       BUILD_DIR/src/ovl0/ovl0_0.o(.text);
+      /*BUILD_DIR/src/ovl0/ovl0_0.o(.bss);*/
       BUILD_DIR/asm/ovl0/ovl0.o(.text);
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
@@ -80,7 +81,8 @@ SECTIONS
 
    /* 0x80151100 135490-139150 [3CC0] */
    BEGIN_SEG(ovl6, 0x80151100) {
-      BUILD_DIR/asm/ovl6/ovl6.o(.text);
+      BUILD_DIR/src/ovl6/ovl6.o(.text);
+      BUILD_DIR/data/kirby.139150.o(.data);
    }
    END_SEG(ovl6)
 

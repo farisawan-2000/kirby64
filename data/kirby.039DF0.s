@@ -20284,9 +20284,6 @@ glabel D_8003FB8C
 glabel osClockRate
 .dword 0x0000000003B9ACA0
 
-# glabel D_8003FB94
-# .word 0x03B9ACA0
-
 glabel D_8003FB98
 .word 0x02E6D354
 

@@ -117,7 +117,7 @@ glabel func_80000A44
 /* 001678 80000A78 10000036 */  b     .L80000B54_ovl0
 /* 00167C 80000A7C 00001025 */   move  $v0, $zero
 .L80000A80_ovl0:
-/* 001680 80000A80 0C00C104 */  jal   osViGetCurrentFramebuffer
+/* 001680 80000A80 0C00C104 */  jal   osViGetCurrentFramebuffer_0
 /* 001684 80000A84 00000000 */   nop   
 /* 001688 80000A88 0C00E46C */  jal   osViGetCurrentFramebuffer
 /* 00168C 80000A8C AFA2001C */   sw    $v0, 0x1c($sp)

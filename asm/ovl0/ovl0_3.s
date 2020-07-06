@@ -40505,15 +40505,15 @@ glabel func_800300A0
 /* 030E3C 8003023C 0101C824 */  and   $t9, $t0, $at
 /* 030E40 80030240 13200006 */  beqz  $t9, .L8003025C_ovl0
 /* 030E44 80030244 AFB90030 */   sw    $t9, 0x30($sp)
-/* 030E48 80030248 3C018004 */  lui   $at, %hi(D_8003FB94) # $at, 0x8004
+/* 030E48 80030248 3C018004 */  lui   $at, %hi(osClockRate + 4) # $at, 0x8004
 /* 030E4C 8003024C 03205825 */  move  $t3, $t9
 /* 030E50 80030250 240A0000 */  li    $t2, 0
 /* 030E54 80030254 AC2AFB90 */  sw    $t2, %lo(osClockRate)($at)
-/* 030E58 80030258 AC2BFB94 */  sw    $t3, %lo(D_8003FB94)($at)
+/* 030E58 80030258 AC2BFB94 */  sw    $t3, %lo(osClockRate + 4)($at)
 .L8003025C_ovl0:
 /* 030E5C 8003025C 3C048004 */  lui   $a0, %hi(osClockRate) # $a0, 0x8004
-/* 030E60 80030260 3C058004 */  lui   $a1, %hi(D_8003FB94) # $a1, 0x8004
-/* 030E64 80030264 8CA5FB94 */  lw    $a1, %lo(D_8003FB94)($a1)
+/* 030E60 80030260 3C058004 */  lui   $a1, %hi(osClockRate + 4) # $a1, 0x8004
+/* 030E64 80030264 8CA5FB94 */  lw    $a1, %lo(osClockRate + 4)($a1)
 /* 030E68 80030268 8C84FB90 */  lw    $a0, %lo(osClockRate)($a0)
 /* 030E6C 8003026C 24060000 */  li    $a2, 0
 /* 030E70 80030270 0C00B782 */  jal   func_8002DE08_ovl0
@@ -40527,10 +40527,10 @@ glabel func_800300A0
 /* 030E90 80030290 24070004 */   li    $a3, 4
 /* 030E94 80030294 3C098000 */  lui   $t1, %hi(D_8000030C) # $t1, 0x8000
 /* 030E98 80030298 8D29030C */  lw    $t1, %lo(D_8000030C)($t1)
-/* 030E9C 8003029C 3C018004 */  lui   $at, %hi(D_8003FB94) # $at, 0x8004
+/* 030E9C 8003029C 3C018004 */  lui   $at, %hi(osClockRate + 4) # $at, 0x8004
 /* 030EA0 800302A0 AC22FB90 */  sw    $v0, %lo(osClockRate)($at)
 /* 030EA4 800302A4 15200005 */  bnez  $t1, .L800302BC_ovl0
-/* 030EA8 800302A8 AC23FB94 */   sw    $v1, %lo(D_8003FB94)($at)
+/* 030EA8 800302A8 AC23FB94 */   sw    $v1, %lo(osClockRate + 4)($at)
 /* 030EAC 800302AC 3C048000 */  lui   $a0, %hi(D_8000031C) # $a0, 0x8000
 /* 030EB0 800302B0 2484031C */  addiu $a0, %lo(D_8000031C) # addiu $a0, $a0, 0x31c
 /* 030EB4 800302B4 0C00BA2C */  jal   func_8002E8B0_ovl0

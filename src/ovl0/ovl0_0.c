@@ -1,13 +1,18 @@
 #include <ultra64.h>
 #include <macros.h>
 
+// static .bss
+extern u64 D_80042BC8;
+extern u64 D_80042F78;
+extern u64 D_80043228;
+extern u64 D_80043F88;
 
 extern void create_thread(OSThread *thread, OSId id, void (*entry)(void *), void *arg, void *sp, OSPri pri);
 extern void osStartThread(OSThread *thread);
 
 extern OSThread *D_80043DA0, *D_80043F50;
 
-#define MAGICNUMBER_OVL0 0xFEDCBA98
+#define MAGICNUMBER_OVL0 0x00000000FEDCBA98
 
 OSThread *func_80000460(void) {
     return &D_80043DA0;
@@ -42,10 +47,7 @@ void func_800004E0(s32 arg0) {
     func_8002309C(&D_8003FE80, arg0);
     for(;;);
 }
-extern u64 D_80042BC8;
-extern u64 D_80042F78;
-extern u64 D_80043228;
-extern u64 D_80043F88;
+
 void func_80000510(void) {
     if (D_80042BC8 != MAGICNUMBER_OVL0) {
         func_800004E0(0);
@@ -60,7 +62,6 @@ void func_80000510(void) {
         func_800004E0(5);
     }
 }
-
 
 extern void func_80038980(u32 x);
 extern u32 D_80048CF0;
@@ -83,6 +84,7 @@ extern u32 *D_80048900;
 extern u32 *D_80048A08;
 extern u32 *D_80048A04;
 extern u32 *D_8003DC70;
+
 #ifdef MIPS_TO_C
 void func_800005D8(void *arg0) {
     func_80038980(0xFE);
@@ -116,15 +118,13 @@ GLOBAL_ASM("asm/non_matchings/ovl0_0/func_800005D8.s")
 
 
 extern OSThread *D_80043DA0;
-// extern void func_800005D8(void *);
 extern u32 D_8003DC94;
-// extern void osSetThreadPri(u32 arg0, u32 arg1);
+extern void func_800005D8(void *);
 #ifdef MIPS_TO_C
 void func_800007C8(void *arg0) {
-    u32 x = MAGICNUMBER_OVL0;
     func_80022D98();
     create_thread(&D_80043DA0, (OSId) 5, func_800005D8, arg0, &D_80047F50, (OSPri) 0x32);
-    D_80043F88 = MAGICNUMBER_OVL0; // 00000000 FEDCBA98
+    D_80043F88 = ((u64) (u64) MAGICNUMBER_OVL0); // 00000000 FEDCBA98
     if (D_8003DC94 == 0) {
         osStartThread(&D_80043DA0);
     }
@@ -135,17 +135,18 @@ void func_800007C8(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0_0/func_800007C8.s")
 #endif
 
+
 extern OSThread *D_80042D90;
 extern void *D_80048B00;
 extern void func_800007C8(void *);
 
 #ifdef MIPS_TO_C
 void func_80000870(void) {
-    D_80042BC8 = (u32) MAGICNUMBER_OVL0;
+    u64 x = MAGICNUMBER_OVL0;
+    D_80042BC8 = x;
     func_800300A0();
     create_thread(&D_80042D90, 1, func_800007C8, &D_80048B00, &D_80043040, 0x7F);
-    D_80042F78 = (u32) MAGICNUMBER_OVL0;
-    osStartThread(&D_80042D90);
+    D_80042F78 = x; osStartThread(&D_80042D90);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0_0/func_80000870.s")
