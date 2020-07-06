@@ -25,7 +25,7 @@ u32 pad3[8];
 
 static u64 D_80042F78[0x19];
 
-OSThread *D_80043040;
+OSMesgQueue *D_80043040;
 u32 pad4[0x78];
 
 static u64 D_80043228[0x79];
@@ -48,8 +48,8 @@ static u64 D_80048138[0xF9];
 u32 *D_80048900;
 u32 pad9[0x40];
 
-u8 D_80048A00;
-u8 D_80048A01;
+u8 gSPImemOkay;
+u8 gSPDmemOkay;
 u32 *D_80048A04;
 u32 *D_80048A08;
 u32 pad10[2];
@@ -82,36 +82,36 @@ u16 func_80000478(void) {
 
 #define SP_IMEM 0xA4001000
 
-void func_80000480(void) {
-    D_80048A00 = (HW_REG(SP_IMEM, u32) == 0x17D7) ? 1 : 0;
+void check_sp_imem(void) {
+    gSPImemOkay = (HW_REG(SP_IMEM, u32) == 0x17D7) ? 1 : 0;
 }
 
 #define SP_DMEM 0xA4000000
 
 void func_800004B0(void) {
-    D_80048A01 = (HW_REG(SP_DMEM, s32) == -1) ? 1 : 0;
+    gSPDmemOkay = (HW_REG(SP_DMEM, s32) == -1) ? 1 : 0;
 }
 
 extern void func_8002309C(u32 *a0, s32 arg1);
 extern u32 *D_8003FE80;
 
-void func_800004E0(s32 arg0) {
+void thread_crash_stack_overflow(s32 arg0) {
     func_8002309C(&D_8003FE80, arg0);
-    for(;;);
+    while (1);
 }
 
 void func_80000510(void) {
     if (D_80042BC8[0] != MAGICNUMBER_OVL0) {
-        func_800004E0(0);
+        thread_crash_stack_overflow(0);
     }
     if (D_80042F78[0] != MAGICNUMBER_OVL0) {
-        func_800004E0(1);
+        thread_crash_stack_overflow(1);
     }
     if (D_80043228[0] != MAGICNUMBER_OVL0) {
-        func_800004E0(3);
+        thread_crash_stack_overflow(3);
     }
     if (D_80043F88[0] != MAGICNUMBER_OVL0) {
-        func_800004E0(5);
+        thread_crash_stack_overflow(5);
     }
 }
 
@@ -121,12 +121,12 @@ extern void func_80002EBC(void);
 extern void func_80032280(u32 a, u32 *b, u32 *c, u32 d);
 extern void func_80002BA0(void);
 extern void func_80002E48(u32 x, u32 *y, u32 z);
-extern void func_80000480(void);
+extern void check_sp_imem(void);
 extern void func_800004B0(void);
 extern void func_80033AE0(u32 *x, u32 *y, u32 z);
-extern void *func_80002598(void *);
-extern void *func_8001FD64(void *);
-extern void *func_800051E0(void *);
+extern void func_80002598(void *);
+extern void func_8001FD64(void *);
+extern void func_800051E0(void *);
 
 void func_800005D8(void *arg0) {
     func_80038980(0xFE);
@@ -135,7 +135,7 @@ void func_800005D8(void *arg0) {
     func_80032280(0x96, &D_80048AE8, &D_80048A20, 0x32);
     func_80002BA0();
     func_80002E48(0xB0000B70, &D_80048900, 0x100);
-    func_80000480();
+    check_sp_imem();
     func_800004B0();
     func_80033AE0(&D_80048A08, &D_80048A04, 1);
     create_thread(&D_80043040, 3, func_80002598, 0, &D_800435F0, 0x78);
@@ -159,13 +159,13 @@ void func_800007C8(void *arg0) {
     if (D_8003DC94 == 0) {
         osStartThread(&D_80043DA0);
     }
-    osSetThreadPri(0, 0);
-    for (;;);
+    osSetThreadPri(NULL, OS_PRIORITY_IDLE);
+    while (1);
 }
 
 void func_80000870(void) {
     D_80042BC8[0] = MAGICNUMBER_OVL0;
-    func_800300A0();
+    osInitialize();
     create_thread(&D_80042D90, 1, func_800007C8, &D_80048B00, &D_80043040, 0x7F);
     D_80042F78[0] = MAGICNUMBER_OVL0; osStartThread(&D_80042D90);
 }

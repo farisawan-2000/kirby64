@@ -40394,7 +40394,7 @@ glabel func_80030094
 
 
 
-glabel func_800300A0
+glabel osInitialize
 /* 030CA0 800300A0 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 030CA4 800300A4 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 030CA8 800300A8 240E0001 */  li    $t6, 1
