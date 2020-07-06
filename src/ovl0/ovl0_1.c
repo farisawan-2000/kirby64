@@ -2,11 +2,10 @@
 #include <macros.h>
 
 
-extern void func_80033AE0(u32 *a, u32 *b, u32 c);
 extern u32 *D_80048D70, *D_80048D6C;
 #ifdef MIPS_TO_C
 void func_80002BA0(void) {
-    func_80033AE0(&D_80048D70, &D_80048D6C, 1);
+    osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002BA0.s")

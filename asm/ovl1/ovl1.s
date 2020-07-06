@@ -34878,7 +34878,7 @@ glabel func_8009B540_ovl1
 /* 063284 800BB034 AFA70038 */  sw    $a3, 0x38($sp)
 /* 063288 800BB038 27A4001C */  addiu $a0, $sp, 0x1c
 /* 06328C 800BB03C 27A50034 */  addiu $a1, $sp, 0x34
-/* 063290 800BB040 0C00CEB8 */  jal   func_80033AE0_ovl1
+/* 063290 800BB040 0C00CEB8 */  jal   osCreateMesgQueue
 /* 063294 800BB044 24060001 */   li    $a2, 1
 /* 063298 800BB048 8FA50038 */  lw    $a1, 0x38($sp)
 /* 06329C 800BB04C 240E0001 */  li    $t6, 1

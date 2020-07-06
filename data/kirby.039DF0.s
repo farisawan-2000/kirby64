@@ -20859,41 +20859,13 @@ glabel D_8003FEFC
 
 
 # new file?
+.balign 4
 glabel D_8003FF00
-.word 0x646D6120
+.asciiz "dma pi full %x %x %x\n"
 
-glabel D_8003FF04
-.word 0x70692066
-
-glabel D_8003FF08
-.word 0x756C6C20
-
-glabel D_8003FF0C
-.word 0x25782025
-
-glabel D_8003FF10
-.word 0x78202578
-
-glabel D_8003FF14
-.word 0x0A000000
-
+.balign 4
 glabel D_8003FF18
-.word 0x646D6120
-
-glabel D_8003FF1C
-.word 0x70692066
-
-glabel D_8003FF20
-.word 0x756C6C20
-
-glabel D_8003FF24
-.word 0x25782025
-
-glabel D_8003FF28
-.word 0x78202578
-
-glabel D_8003FF2C
-.word 0x0A000000
+.asciiz "dma pi full %x %x %x\n"
 
 glabel D_8003FF30
 .word 0x80004884
