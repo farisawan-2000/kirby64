@@ -643,8 +643,7 @@ void func_8015314C(s32 arg0, s32 arg1) {
         if (D_8015A7B0 != D_8015A7AC) {
             if (D_8015A7B0 == D_8015A7A8) {
                 fatal_printf(&D_8015A410, temp_a1, arg0);
-loop_4:
-                goto loop_4;
+                while (TRUE);
             }
         }
         temp_v0 = (D_8015A7A8 * 8) + &D_8015A6A8;

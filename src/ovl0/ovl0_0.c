@@ -65,8 +65,7 @@ OSPiHandle *D_80048CF0;
 // extern void osCreateThread(OSThread *thread, OSId id, void (*entry)(void *), void *arg, void *sp, OSPri pri);
 // extern void osStartThread(OSThread *thread);
 
-
-#define MAGICNUMBER_OVL0 0x00000000FEDCBA98
+#define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
 OSThread *func_80000460(void) {
     return &D_80043DA0;
@@ -101,16 +100,16 @@ void thread_crash_stack_overflow(s32 threadNum) {
 }
 
 void func_80000510(void) {
-    if (D_80042BC8[0] != MAGICNUMBER_OVL0) {
+    if (D_80042BC8[0] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(0);
     }
-    if (D_80042F78[0] != MAGICNUMBER_OVL0) {
+    if (D_80042F78[0] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(1);
     }
-    if (D_80043228[0] != MAGICNUMBER_OVL0) {
+    if (D_80043228[0] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(3);
     }
-    if (D_80043F88[0] != MAGICNUMBER_OVL0) {
+    if (D_80043F88[0] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(5);
     }
 }
@@ -126,7 +125,7 @@ extern void func_800051E0(void *);
 
 extern OSPiHandle *osCartRomInit(void);
 
-void func_800005D8(void *arg0) {
+void thread5_main(void *arg0) {
     func_80038980(0xFE);
     D_80048CF0 = osCartRomInit();
     func_80002EBC();
@@ -137,23 +136,23 @@ void func_800005D8(void *arg0) {
     check_sp_dmem();
     func_80033AE0(&D_80048A08, &D_80048A04, 1);
     osCreateThread(&D_80043040, 3, func_80002598, 0, &D_800435F0, 0x78);
-    D_80043228[0] = MAGICNUMBER_OVL0; osStartThread(&D_80043040);
+    D_80043228[0] = STACK_TOP_MAGIC; osStartThread(&D_80043040);
     osRecvMesg(&D_80048A08, 0, 1);
     osCreateThread(&D_800435F0, 4, func_8001FD64, 0, &D_80043DA0, 0x6E);
-    D_800437D8[0] = MAGICNUMBER_OVL0; osStartThread(&D_800435F0);
+    D_800437D8[0] = STACK_TOP_MAGIC; osStartThread(&D_800435F0);
     osRecvMesg(&D_80048A08, 0, 1);
     osCreateThread(&D_80047F50, 6, func_800051E0, 0, &D_80048900, 0x73);
-    D_80048138[0] = MAGICNUMBER_OVL0; osStartThread(&D_80047F50);
+    D_80048138[0] = STACK_TOP_MAGIC; osStartThread(&D_80047F50);
     osRecvMesg(&D_80048A08, 0, 1);
     func_800076D0();
     func_80002D8C(&D_8003DC70);
     func_800A377C(0);
 }
 
-void func_800007C8(void *arg0) {
+void thread1_idle(void *arg0) {
     func_80022D98();
-    osCreateThread(&D_80043DA0, (OSId) 5, func_800005D8, arg0, &D_80047F50, (OSPri) 0x32);
-    D_80043F88[0] = MAGICNUMBER_OVL0;
+    osCreateThread(&D_80043DA0, (OSId) 5, thread5_main, arg0, &D_80047F50, (OSPri) 0x32);
+    D_80043F88[0] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
         osStartThread(&D_80043DA0);
     }
@@ -162,8 +161,8 @@ void func_800007C8(void *arg0) {
 }
 
 void func_80000870(void) {
-    D_80042BC8[0] = MAGICNUMBER_OVL0;
+    D_80042BC8[0] = STACK_TOP_MAGIC;
     osInitialize();
-    osCreateThread(&D_80042D90, 1, func_800007C8, &D_80048B00, &D_80043040, 0x7F);
-    D_80042F78[0] = MAGICNUMBER_OVL0; osStartThread(&D_80042D90);
+    osCreateThread(&D_80042D90, 1, thread1_idle, &D_80048B00, &D_80043040, 0x7F);
+    D_80042F78[0] = STACK_TOP_MAGIC; osStartThread(&D_80042D90);
 }

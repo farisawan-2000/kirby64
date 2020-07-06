@@ -16573,25 +16573,7 @@ glabel D_8015A40C
 .word 0x00000000
 
 glabel D_8015A410
-.word 0x6D6F7669
-
-glabel D_8015A414
-.word 0x653A2054
-
-glabel D_8015A418
-.word 0x6F6F206D
-
-glabel D_8015A41C
-.word 0x616E7920
-
-glabel D_8015A420
-.word 0x66726565
-
-glabel D_8015A424
-.word 0x20646174
-
-glabel D_8015A428
-.word 0x610A0000
+.asciiz "movie: Too many free data\n"
 
 glabel D_8015A42C
 .word 0x80151824
