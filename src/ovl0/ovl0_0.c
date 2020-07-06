@@ -88,15 +88,15 @@ void check_sp_imem(void) {
 
 #define SP_DMEM 0xA4000000
 
-void func_800004B0(void) {
+void check_sp_dmem(void) {
     gSPDmemOkay = (HW_REG(SP_DMEM, s32) == -1) ? 1 : 0;
 }
 
 extern void func_8002309C(u32 *a0, s32 arg1);
 extern u32 *D_8003FE80;
 
-void thread_crash_stack_overflow(s32 arg0) {
-    func_8002309C(&D_8003FE80, arg0);
+void thread_crash_stack_overflow(s32 threadNum) {
+    func_8002309C(&D_8003FE80, threadNum);
     while (1);
 }
 
@@ -118,11 +118,9 @@ void func_80000510(void) {
 extern void func_80038980(u32 x);
 extern u32 func_80035A20(void);
 extern void func_80002EBC(void);
-extern void func_80032280(u32 a, u32 *b, u32 *c, u32 d);
+extern void osCreatePiManager(u32 a, u32 *b, u32 *c, u32 d);
 extern void func_80002BA0(void);
 extern void func_80002E48(u32 x, u32 *y, u32 z);
-extern void check_sp_imem(void);
-extern void func_800004B0(void);
 extern void func_80033AE0(u32 *x, u32 *y, u32 z);
 extern void func_80002598(void *);
 extern void func_8001FD64(void *);
@@ -132,11 +130,11 @@ void func_800005D8(void *arg0) {
     func_80038980(0xFE);
     D_80048CF0 = func_80035A20();
     func_80002EBC();
-    func_80032280(0x96, &D_80048AE8, &D_80048A20, 0x32);
+    osCreatePiManager(0x96, &D_80048AE8, &D_80048A20, 0x32);
     func_80002BA0();
     func_80002E48(0xB0000B70, &D_80048900, 0x100);
     check_sp_imem();
-    func_800004B0();
+    check_sp_dmem();
     func_80033AE0(&D_80048A08, &D_80048A04, 1);
     create_thread(&D_80043040, 3, func_80002598, 0, &D_800435F0, 0x78);
     D_80043228[0] = MAGICNUMBER_OVL0; osStartThread(&D_80043040);

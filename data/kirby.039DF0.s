@@ -1,54 +1,6 @@
 .include "macros.inc"
 .section .data
 
-glabel D_800391F0
-.word 0x3C0EA404
-
-glabel D_800391F4
-.word 0x8DC50010
-
-glabel D_800391F8
-.word 0x27BDFFF8
-
-glabel D_800391FC
-.word 0x30AF0001
-
-glabel D_80039200
-.word 0x15E00003
-
-glabel D_80039204
-.word 0x00000000
-
-glabel D_80039208
-.word 0x10000004
-
-glabel D_8003920C
-.word 0x2402FFFF
-
-glabel D_80039210
-.word 0x3C18A408
-
-glabel D_80039214
-.word 0xAF040000
-
-glabel D_80039218
-.word 0x00001025
-
-glabel D_8003921C
-.word 0x03E00008
-
-glabel D_80039220
-.word 0x27BD0008
-
-glabel D_80039224
-.word 0x00000000
-
-glabel D_80039228
-.word 0x00000000
-
-glabel D_8003922C
-.word 0x00000000
-
 glabel D_80039230
 .word 0x40055800
 
@@ -20773,9 +20725,6 @@ glabel D_8003FE1C
 glabel D_8003FE20
 .asciiz "0123456789abcdef"
 
-# glabel D_8003FE30
-# .word 0x00000000
-
 glabel D_8003FE34
 .word 0x30313233
 
@@ -20834,28 +20783,7 @@ glabel D_8003FE7C
 .word 0x00000000
 
 glabel D_8003FE80
-.word 0x74687265
-
-glabel D_8003FE84
-.word 0x61642073
-
-glabel D_8003FE88
-.word 0x7461636B
-
-glabel D_8003FE8C
-.word 0x206F7665
-
-glabel D_8003FE90
-.word 0x72666C6F
-
-glabel D_8003FE94
-.word 0x77202069
-
-glabel D_8003FE98
-.word 0x64203D20
-
-glabel D_8003FE9C
-.word 0x25640A00
+.asciiz "thread stack overflow  id = %d\n"
 
 glabel D_8003FEA0
 .word 0x7264705F
@@ -20929,6 +20857,8 @@ glabel D_8003FEF8
 glabel D_8003FEFC
 .word 0x00000000
 
+
+# new file?
 glabel D_8003FF00
 .word 0x646D6120
 
