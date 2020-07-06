@@ -54,7 +54,7 @@ loop_5:
         sp54 = phi_s3;
         if (D_80048CDC == 0) {
             if (osEPiStartDma(arg0, &sp48, arg4) == -1) {
-                func_8002309C_ovl0(&D_8003FF00, phi_s3, phi_s2, phi_s1);
+                fatal_printf(&D_8003FF00, phi_s3, phi_s2, phi_s1);
                 for(;;);
             }
         }
@@ -78,7 +78,7 @@ loop_5:
         sp58 = phi_s1_2;
         if (D_80048CDC == 0) {
             if (osEPiStartDma(arg0, &sp48, arg4) == -1) {
-                func_8002309C_ovl0(&D_8003FF18, phi_s3_2, phi_s2_2, phi_s1_2);
+                fatal_printf(&D_8003FF18, phi_s3_2, phi_s2_2, phi_s1_2);
                 for(;;);
             }
         }

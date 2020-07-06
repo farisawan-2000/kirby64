@@ -61,7 +61,7 @@ glabel func_80002BD0
 /* 0038B0 80002CB0 2484FF00 */  addiu $a0, %lo(D_8003FF00) # addiu $a0, $a0, -0x100
 /* 0038B4 80002CB4 02602825 */  move  $a1, $s3
 /* 0038B8 80002CB8 02403025 */  move  $a2, $s2
-/* 0038BC 80002CBC 0C008C27 */  jal   func_8002309C_ovl0
+/* 0038BC 80002CBC 0C008C27 */  jal   fatal_printf
 /* 0038C0 80002CC0 02203825 */   move  $a3, $s1
 .L80002CC4_ovl0:
 /* 0038C4 80002CC4 1000FFFF */  b     .L80002CC4_ovl0
@@ -96,7 +96,7 @@ glabel func_80002BD0
 /* 003930 80002D30 2484FF18 */  addiu $a0, %lo(D_8003FF18) # addiu $a0, $a0, -0xe8
 /* 003934 80002D34 02602825 */  move  $a1, $s3
 /* 003938 80002D38 02403025 */  move  $a2, $s2
-/* 00393C 80002D3C 0C008C27 */  jal   func_8002309C_ovl0
+/* 00393C 80002D3C 0C008C27 */  jal   fatal_printf
 /* 003940 80002D40 02203825 */   move  $a3, $s1
 .L80002D44_ovl0:
 /* 003944 80002D44 1000FFFF */  b     .L80002D44_ovl0

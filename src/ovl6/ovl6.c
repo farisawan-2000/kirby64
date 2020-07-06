@@ -642,7 +642,7 @@ void func_8015314C(s32 arg0, s32 arg1) {
     if (arg0 != -1) {
         if (D_8015A7B0 != D_8015A7AC) {
             if (D_8015A7B0 == D_8015A7A8) {
-                func_8002309C_ovl6(&D_8015A410, temp_a1, arg0);
+                fatal_printf(&D_8015A410, temp_a1, arg0);
 loop_4:
                 goto loop_4;
             }

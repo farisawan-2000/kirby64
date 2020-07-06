@@ -1845,7 +1845,7 @@ glabel func_8000206C
 /* 002E40 80002240 50200006 */  beql  $at, $zero, .L8000225C_ovl0
 /* 002E44 80002244 8CEF0000 */   lw    $t7, ($a3)
 .L80002248_ovl0:
-/* 002E48 80002248 0C008C27 */  jal   func_8002309C_ovl0
+/* 002E48 80002248 0C008C27 */  jal   fatal_printf
 /* 002E4C 8000224C 2484FEA0 */   addiu $a0, %lo(D_8003FEA0) # addiu $a0, $a0, -0x160
 .L80002250_ovl0:
 /* 002E50 80002250 1000FFFF */  b     .L80002250_ovl0

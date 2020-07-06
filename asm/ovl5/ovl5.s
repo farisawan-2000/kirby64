@@ -20,7 +20,7 @@
 /* 103BE0 8015C770 14400006 */  bnez  $v0, .L8015C78C_ovl5
 /* 103BE4 8015C774 00402025 */   move  $a0, $v0
 /* 103BE8 8015C778 3C048019 */  lui   $a0, %hi(D_8018D450) # $a0, 0x8019
-/* 103BEC 8015C77C 0C008C27 */  jal   func_8002309C_ovl5
+/* 103BEC 8015C77C 0C008C27 */  jal   fatal_printf
 /* 103BF0 8015C780 2484D450 */   addiu $a0, %lo(D_8018D450) # addiu $a0, $a0, -0x2bb0
 .L8015C784_ovl5:
 /* 103BF4 8015C784 1000FFFF */  b     .L8015C784_ovl5

@@ -20422,7 +20422,7 @@ glabel func_8001E3D4
 /* 01F024 8001E424 10000005 */  b     .L8001E43C_ovl0
 /* 01F028 8001E428 ACC90004 */   sw    $t1, 4($a2)
 .L8001E42C_ovl0:
-/* 01F02C 8001E42C 0C008C27 */  jal   func_8002309C_ovl0
+/* 01F02C 8001E42C 0C008C27 */  jal   fatal_printf
 /* 01F030 8001E430 24840CE0 */   addiu $a0, %lo(D_80040CE0) # addiu $a0, $a0, 0xce0
 .L8001E434_ovl0:
 /* 01F034 8001E434 1000FFFF */  b     .L8001E434_ovl0
@@ -25585,7 +25585,7 @@ glabel func_80022D98
 /* 0239D4 80022DD4 24846528 */  addiu $a0, %lo(D_80096528) # addiu $a0, $a0, 0x6528
 /* 0239D8 80022DD8 AFAE0010 */  sw    $t6, 0x10($sp)
 /* 0239DC 80022DDC 24050008 */  li    $a1, 8
-/* 0239E0 80022DE0 0C00BEF8 */  jal   create_thread
+/* 0239E0 80022DE0 0C00BEF8 */  jal   osCreateThread
 /* 0239E4 80022DE4 00003825 */   move  $a3, $zero
 /* 0239E8 80022DE8 3C048009 */  lui   $a0, %hi(D_80096528) # $a0, 0x8009
 /* 0239EC 80022DEC 0C00E334 */  jal   osStartThread
@@ -25759,7 +25759,7 @@ glabel func_80023048
 /* 023C6C 8002306C 24846F28 */  addiu $a0, %lo(D_80096F28) # addiu $a0, $a0, 0x6f28
 /* 023C70 80023070 AFAE0010 */  sw    $t6, 0x10($sp)
 /* 023C74 80023074 24050008 */  li    $a1, 8
-/* 023C78 80023078 0C00BEF8 */  jal   create_thread
+/* 023C78 80023078 0C00BEF8 */  jal   osCreateThread
 /* 023C7C 8002307C 00003825 */   move  $a3, $zero
 /* 023C80 80023080 3C048009 */  lui   $a0, %hi(D_80096F28) # $a0, 0x8009
 /* 023C84 80023084 0C00E334 */  jal   osStartThread
@@ -25769,7 +25769,7 @@ glabel func_80023048
 /* 023C94 80023094 03E00008 */  jr    $ra
 /* 023C98 80023098 00000000 */   nop   
 
-glabel func_8002309C
+glabel fatal_printf
 /* 023C9C 8002309C 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 023CA0 800230A0 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 023CA4 800230A4 AFA40028 */  sw    $a0, 0x28($sp)
@@ -42934,7 +42934,7 @@ glabel func_80032278
 /* 032FA4 800323A4 00002825 */  move  $a1, $zero
 /* 032FA8 800323A8 02003825 */  move  $a3, $s0
 /* 032FAC 800323AC AE090008 */  sw    $t1, 8($s0)
-/* 032FB0 800323B0 0C00BEF8 */  jal   create_thread
+/* 032FB0 800323B0 0C00BEF8 */  jal   osCreateThread
 /* 032FB4 800323B4 AFAF0014 */   sw    $t7, 0x14($sp)
 /* 032FB8 800323B8 3C04800A */  lui   $a0, %hi(D_80098EF0) # $a0, 0x800a
 /* 032FBC 800323BC 0C00E334 */  jal   osStartThread
@@ -50327,7 +50327,7 @@ glabel func_8003897C
 /* 0396A0 80038AA0 AFAA0010 */  sw    $t2, 0x10($sp)
 /* 0396A4 80038AA4 00002825 */  move  $a1, $zero
 /* 0396A8 80038AA8 02003825 */  move  $a3, $s0
-/* 0396AC 80038AAC 0C00BEF8 */  jal   create_thread
+/* 0396AC 80038AAC 0C00BEF8 */  jal   osCreateThread
 /* 0396B0 80038AB0 AFAB0014 */   sw    $t3, 0x14($sp)
 /* 0396B4 80038AB4 0C00D4E8 */  jal   func_800353A0_ovl0
 /* 0396B8 80038AB8 00000000 */   nop   
