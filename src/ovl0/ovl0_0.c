@@ -118,7 +118,6 @@ void func_80000510(void) {
 extern void func_80038980(u32 x);
 extern u32 func_80035A20(void);
 extern void func_80002EBC(void);
-extern void osCreatePiManager(u32 a, u32 *b, u32 *c, u32 d);
 extern void func_80002BA0(void);
 extern void func_80002E48(u32 x, u32 *y, u32 z);
 extern void func_80033AE0(u32 *x, u32 *y, u32 z);
