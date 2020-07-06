@@ -11,6 +11,15 @@ OUTPUT_ARCH (mips)
     _##name##SegmentRomEnd = __romPos + SIZEOF(.name); \
     __romPos += SIZEOF(.name);
 
+#define BEGIN_NOLOAD(name) \
+    _##name##SegNoloadStart = ADDR(.name.noload); \
+    .name.noload (NOLOAD) :
+
+#define END_NOLOAD(name) \
+    _##name##SegNoloadEnd = ADDR(.name.noload) + SIZEOF(.name.noload);
+
+
+
 SECTIONS
 {
    __romPos = 0x0;
@@ -26,7 +35,6 @@ SECTIONS
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
       BUILD_DIR/src/ovl0/ovl0_0.o(.text);
-      /*BUILD_DIR/src/ovl0/ovl0_0.o(.bss);*/
       BUILD_DIR/asm/ovl0/ovl0.o(.text);
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
@@ -34,6 +42,10 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }
    END_SEG(ovl0)
+   BEGIN_NOLOAD(ovl0) {
+      BUILD_DIR/src/ovl0/ovl0_0.o(.bss);
+   }
+   END_NOLOAD(ovl0)
 
    /* 0x8009B540 043790-066630 [22EA0] */
    BEGIN_SEG(ovl1, 0x8009B540) {
