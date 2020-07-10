@@ -144,7 +144,7 @@ void thread5_main(void *arg0) {
     D_80048138[0] = STACK_TOP_MAGIC; osStartThread(&D_80047F50);
     osRecvMesg(&D_80048A08, 0, 1);
     func_800076D0();
-    func_80002D8C(&D_8003DC70);
+    load_overlay(&D_8003DC70);
     func_800A377C(0);
 }
 

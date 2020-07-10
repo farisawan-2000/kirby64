@@ -12464,7 +12464,7 @@ glabel func_8009B540_ovl1
 /* 04ED90 800A6B40 00057080 */  sll   $t6, $a1, 2
 /* 04ED94 800A6B44 3C04800C */  lui   $a0, 0x800c
 /* 04ED98 800A6B48 008E2021 */  addu  $a0, $a0, $t6
-/* 04ED9C 800A6B4C 0C000B63 */  jal   func_80002D8C_ovl1
+/* 04ED9C 800A6B4C 0C000B63 */  jal   load_overlay
 /* 04EDA0 800A6B50 8C84E8A0 */   lw    $a0, -0x1760($a0)
 /* 04EDA4 800A6B54 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 04EDA8 800A6B58 27BD0018 */  addiu $sp, $sp, 0x18

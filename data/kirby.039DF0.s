@@ -20315,6 +20315,7 @@ glabel D_8003FBFC
 .word 0x00000000
 
 glabel D_8003FC00
+# .asciiz "                                "
 .word 0x20202020
 
 glabel D_8003FC04
@@ -20342,6 +20343,7 @@ glabel D_8003FC20
 .word 0x00000000
 
 glabel D_8003FC24
+# .asciiz "00000000000000000000000000000000"
 .word 0x30303030
 
 glabel D_8003FC28
@@ -20723,9 +20725,11 @@ glabel D_8003FE1C
 .word 0x00000000
 
 glabel D_8003FE20
+# .asciiz "0123456789abcdef"
 .asciiz "0123456789abcdef"
 
 glabel D_8003FE34
+# .asciiz "0123456789ABCDEF"
 .word 0x30313233
 
 glabel D_8003FE38
@@ -20783,9 +20787,11 @@ glabel D_8003FE7C
 .word 0x00000000
 
 glabel D_8003FE80
+# .asciiz "thread stack overflow  id = %d"
 .asciiz "thread stack overflow  id = %d\n"
 
 glabel D_8003FEA0
+# .asciiz "rdp_output_buff over !! size = %d"
 .word 0x7264705F
 
 glabel D_8003FEA4
@@ -20816,6 +20822,7 @@ glabel D_8003FEC4
 .word 0x79746500
 
 glabel D_8003FEC8
+# .asciiz "?U?}"
 .word 0x3F553F7D
 
 glabel D_8003FECC
@@ -20861,10 +20868,12 @@ glabel D_8003FEFC
 # new file?
 .balign 4
 glabel D_8003FF00
+# .asciiz "dma pi full %x %x %x"
 .asciiz "dma pi full %x %x %x\n"
 
 .balign 4
 glabel D_8003FF18
+# .asciiz "dma pi full %x %x %x"
 .asciiz "dma pi full %x %x %x\n"
 
 glabel D_8003FF30
@@ -20940,6 +20949,7 @@ glabel D_8003FF8C
 .word 0x00000000
 
 glabel D_8003FF90
+# .asciiz "gtl : DLBuffer over flow !  kind = %d  vol = %d byte"
 .word 0x67746C20
 
 glabel D_8003FF94
@@ -20982,6 +20992,7 @@ glabel D_8003FFC4
 .word 0x0A000000
 
 glabel D_8003FFC8
+# .asciiz "gtl : DynamicBuffer over flow !  %d byte"
 .word 0x67746C20
 
 glabel D_8003FFCC
@@ -21015,6 +21026,7 @@ glabel D_8003FFF0
 .word 0x0A000000
 
 glabel D_8003FFF4
+# .asciiz "bad addr sc_rdp_output_len = %x"
 .word 0x62616420
 
 glabel D_8003FFF8
@@ -21042,6 +21054,7 @@ glabel D_80040014
 .word 0x00000000
 
 glabel D_80040018
+# .asciiz "gtl : Buffer size for RDP is zero !!"
 .word 0x67746C20
 
 glabel D_8004001C
@@ -21072,6 +21085,7 @@ glabel D_8004003C
 .word 0x0A000000
 
 glabel D_80040040
+# .asciiz "gtl : not defined SCTaskGfx"
 .word 0x67746C20
 
 glabel D_80040044
@@ -21096,6 +21110,7 @@ glabel D_8004005C
 .word 0x00000000
 
 glabel D_80040060
+# .asciiz "gtl : couldn't get SCTaskGfx"
 .word 0x67746C20
 
 glabel D_80040064
@@ -21120,6 +21135,7 @@ glabel D_8004007C
 .word 0x0A000000
 
 glabel D_80040080
+# .asciiz "gtl : not defined SCTaskGfxEnd"
 .word 0x67746C20
 
 glabel D_80040084
@@ -21144,6 +21160,7 @@ glabel D_8004009C
 .word 0x6E640A00
 
 glabel D_800400A0
+# .asciiz "gtl : not defined SCTaskGfxEnd"
 .word 0x67746C20
 
 glabel D_800400A4
@@ -21168,6 +21185,7 @@ glabel D_800400BC
 .word 0x6E640A00
 
 glabel D_800400C0
+# .asciiz "gtl : ucode isn't included  kind = %d"
 .word 0x67746C20
 
 glabel D_800400C4
@@ -21198,6 +21216,7 @@ glabel D_800400E4
 .word 0x640A0000
 
 glabel D_800400E8
+# .asciiz "gtl : not defined SCTaskGfxEnd"
 .word 0x67746C20
 
 glabel D_800400EC
@@ -21419,31 +21438,15 @@ glabel D_80040208
 glabel D_8004020C
 .word 0x00000000
 
+.balign 4
 glabel D_80040210
-.word 0x6D6C203A
-
-glabel D_80040214
-.word 0x20616C6C
-
-glabel D_80040218
-.word 0x6F63206F
-
-glabel D_8004021C
-.word 0x76657266
-
-glabel D_80040220
-.word 0x6C6F7720
-
-glabel D_80040224
-.word 0x2325640A
-
-glabel D_80040228
-.word 0x00000000
+.asciiz "ml : alloc overflow #%d\n"
 
 glabel D_8004022C
 .word 0x00000000
 
 glabel D_80040230
+# .asciiz "om : couldn't get GObjThread"
 .word 0x6F6D203A
 
 glabel D_80040234
@@ -21468,6 +21471,7 @@ glabel D_8004024C
 .word 0x0A000000
 
 glabel D_80040250
+# .asciiz "om : couldn't get GObjThreadStack"
 .word 0x6F6D203A
 
 glabel D_80040254
@@ -21495,6 +21499,7 @@ glabel D_80040270
 .word 0x6B0A0000
 
 glabel D_80040274
+# .asciiz "om : couldn't get GObjProcess"
 .word 0x6F6D203A
 
 glabel D_80040278
@@ -21519,6 +21524,7 @@ glabel D_80040290
 .word 0x730A0000
 
 glabel D_80040294
+# .asciiz "om : couldn't get OMMtx"
 .word 0x6F6D203A
 
 glabel D_80040298
@@ -21540,6 +21546,7 @@ glabel D_800402AC
 .word 0x00000000
 
 glabel D_800402B0
+# .asciiz "om : couldn't get AObj"
 .word 0x6F6D203A
 
 glabel D_800402B4
@@ -21558,6 +21565,7 @@ glabel D_800402C4
 .word 0x626A0A00
 
 glabel D_800402C8
+# .asciiz "om : couldn't get MObj"
 .word 0x6F6D203A
 
 glabel D_800402CC
@@ -21576,6 +21584,7 @@ glabel D_800402DC
 .word 0x626A0A00
 
 glabel D_800402E0
+# .asciiz "om : couldn't get DObj"
 .word 0x6F6D203A
 
 glabel D_800402E4
@@ -21594,6 +21603,7 @@ glabel D_800402F4
 .word 0x626A0A00
 
 glabel D_800402F8
+# .asciiz "om : couldn't get Camera"
 .word 0x6F6D203A
 
 glabel D_800402FC
@@ -21615,6 +21625,7 @@ glabel D_80040310
 .word 0x0A000000
 
 glabel D_80040314
+# .asciiz "om : GObjProcess's priority is bad value"
 .word 0x6F6D203A
 
 glabel D_80040318
@@ -21648,6 +21659,7 @@ glabel D_8004033C
 .word 0x0A000000
 
 glabel D_80040340
+# .asciiz "om : GObjProcess's kind is bad value"
 .word 0x6F6D203A
 
 glabel D_80040344
@@ -21678,6 +21690,7 @@ glabel D_80040364
 .word 0x0A000000
 
 glabel D_80040368
+# .asciiz "om : GObjProcess's priority is bad value"
 .word 0x6F6D203A
 
 glabel D_8004036C
@@ -21711,6 +21724,7 @@ glabel D_80040390
 .word 0x0A000000
 
 glabel D_80040394
+# .asciiz "om : couldn't add OMMtx for DObj"
 .word 0x6F6D203A
 
 glabel D_80040398
@@ -21738,6 +21752,7 @@ glabel D_800403B4
 .word 0x0A000000
 
 glabel D_800403B8
+# .asciiz "om : couldn't add OMMtx for Camera"
 .word 0x6F6D203A
 
 glabel D_800403BC
@@ -21765,6 +21780,7 @@ glabel D_800403D8
 .word 0x72610A00
 
 glabel D_800403DC
+# .asciiz "omGAddCommon() : link num over : link = %d : id = %d"
 .word 0x6F6D4741
 
 glabel D_800403E0
@@ -21807,6 +21823,7 @@ glabel D_80040410
 .word 0x0A000000
 
 glabel D_80040414
+# .asciiz "omGMoveCommon() : link num over : link = %d : id = %d"
 .word 0x6F6D474D
 
 glabel D_80040418
@@ -21849,6 +21866,7 @@ glabel D_80040448
 .word 0x640A0000
 
 glabel D_8004044C
+# .asciiz "omGLinkObjDLCommon() : dl_link num over : dl_link = %d : id = %d"
 .word 0x6F6D474C
 
 glabel D_80040450
@@ -21900,6 +21918,7 @@ glabel D_8004048C
 .word 0x0A000000
 
 glabel D_80040490
+# .asciiz "omGMoveObjDL() : dl_link num over : dl_link = %d : id = %d"
 .word 0x6F6D474D
 
 glabel D_80040494
@@ -21945,6 +21964,7 @@ glabel D_800404C8
 .word 0x25640A00
 
 glabel D_800404CC
+# .asciiz "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d"
 .asciiz "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d\n"
 
 glabel D_8004050C
@@ -22183,6 +22203,7 @@ glabel D_8004066C
 .word 0x00000000
 
 glabel D_80040670
+# .asciiz "gobjthread stack over  gobjid = %d"
 .word 0x676F626A
 
 glabel D_80040674
@@ -23419,6 +23440,7 @@ glabel D_80040CDC
 .word 0x00000000
 
 glabel D_80040CE0
+# .asciiz "Audio Heap Overflow"
 .word 0x41756469
 
 glabel D_80040CE4
@@ -23455,6 +23477,7 @@ glabel D_80040D0C
 .word 0x00000000
 
 glabel D_80040D10
+# .asciiz "Interrupt"
 .word 0x496E7465
 
 glabel D_80040D14
@@ -23464,6 +23487,7 @@ glabel D_80040D18
 .word 0x74000000
 
 glabel D_80040D1C
+# .asciiz "TLB modification"
 .word 0x544C4220
 
 glabel D_80040D20
@@ -23479,6 +23503,7 @@ glabel D_80040D2C
 .word 0x00000000
 
 glabel D_80040D30
+# .asciiz "TLB exception on load"
 .word 0x544C4220
 
 glabel D_80040D34
@@ -23497,6 +23522,7 @@ glabel D_80040D44
 .word 0x64000000
 
 glabel D_80040D48
+# .asciiz "TLB exception on store"
 .word 0x544C4220
 
 glabel D_80040D4C
@@ -23515,6 +23541,7 @@ glabel D_80040D5C
 .word 0x72650000
 
 glabel D_80040D60
+# .asciiz "Address error on load"
 .word 0x41646472
 
 glabel D_80040D64
@@ -23533,6 +23560,7 @@ glabel D_80040D74
 .word 0x64000000
 
 glabel D_80040D78
+# .asciiz "Address error on store"
 .word 0x41646472
 
 glabel D_80040D7C
@@ -23551,6 +23579,7 @@ glabel D_80040D8C
 .word 0x72650000
 
 glabel D_80040D90
+# .asciiz "Bus error on inst."
 .word 0x42757320
 
 glabel D_80040D94
@@ -23566,6 +23595,7 @@ glabel D_80040DA0
 .word 0x742E0000
 
 glabel D_80040DA4
+# .asciiz "Bus error on data"
 .word 0x42757320
 
 glabel D_80040DA8
@@ -23581,6 +23611,7 @@ glabel D_80040DB4
 .word 0x61000000
 
 glabel D_80040DB8
+# .asciiz "System call exception"
 .word 0x53797374
 
 glabel D_80040DBC
@@ -23599,6 +23630,7 @@ glabel D_80040DCC
 .word 0x6E000000
 
 glabel D_80040DD0
+# .asciiz "Breakpoint exception"
 .word 0x42726561
 
 glabel D_80040DD4
@@ -23617,6 +23649,7 @@ glabel D_80040DE4
 .word 0x00000000
 
 glabel D_80040DE8
+# .asciiz "Reserved instruction"
 .word 0x52657365
 
 glabel D_80040DEC
@@ -23635,6 +23668,7 @@ glabel D_80040DFC
 .word 0x00000000
 
 glabel D_80040E00
+# .asciiz "Coprocessor unusable"
 .word 0x436F7072
 
 glabel D_80040E04
@@ -23653,6 +23687,7 @@ glabel D_80040E14
 .word 0x00000000
 
 glabel D_80040E18
+# .asciiz "Arithmetic overflow"
 .word 0x41726974
 
 glabel D_80040E1C
@@ -23668,6 +23703,7 @@ glabel D_80040E28
 .word 0x6C6F7700
 
 glabel D_80040E2C
+# .asciiz "Trap exception"
 .word 0x54726170
 
 glabel D_80040E30
@@ -23680,6 +23716,7 @@ glabel D_80040E38
 .word 0x6F6E0000
 
 glabel D_80040E3C
+# .asciiz "Virtual coherency on inst."
 .word 0x56697274
 
 glabel D_80040E40
@@ -23701,6 +23738,7 @@ glabel D_80040E54
 .word 0x742E0000
 
 glabel D_80040E58
+# .asciiz "Floating point exception"
 .word 0x466C6F61
 
 glabel D_80040E5C
@@ -23722,6 +23760,7 @@ glabel D_80040E70
 .word 0x00000000
 
 glabel D_80040E74
+# .asciiz "Watchpoint exception"
 .word 0x57617463
 
 glabel D_80040E78
@@ -23740,6 +23779,7 @@ glabel D_80040E88
 .word 0x00000000
 
 glabel D_80040E8C
+# .asciiz "Virtual coherency on data"
 .word 0x56697274
 
 glabel D_80040E90
@@ -23761,6 +23801,7 @@ glabel D_80040EA4
 .word 0x61000000
 
 glabel D_80040EA8
+# .asciiz "Unimplemented operation"
 .word 0x556E696D
 
 glabel D_80040EAC
@@ -23779,6 +23820,7 @@ glabel D_80040EBC
 .word 0x696F6E00
 
 glabel D_80040EC0
+# .asciiz "Invalid operation"
 .word 0x496E7661
 
 glabel D_80040EC4
@@ -23794,6 +23836,7 @@ glabel D_80040ED0
 .word 0x6E000000
 
 glabel D_80040ED4
+# .asciiz "Division by zero"
 .word 0x44697669
 
 glabel D_80040ED8
@@ -23809,6 +23852,7 @@ glabel D_80040EE4
 .word 0x00000000
 
 glabel D_80040EE8
+# .asciiz "Overflow"
 .word 0x4F766572
 
 glabel D_80040EEC
@@ -23818,6 +23862,7 @@ glabel D_80040EF0
 .word 0x00000000
 
 glabel D_80040EF4
+# .asciiz "Underflow"
 .word 0x556E6465
 
 glabel D_80040EF8
@@ -23827,6 +23872,7 @@ glabel D_80040EFC
 .word 0x77000000
 
 glabel D_80040F00
+# .asciiz "Inexact operation"
 .word 0x496E6578
 
 glabel D_80040F04
@@ -23842,6 +23888,7 @@ glabel D_80040F10
 .word 0x6E000000
 
 glabel D_80040F14
+# .asciiz "F%02d:%.3e"
 .word 0x46253032
 
 glabel D_80040F18
@@ -23851,6 +23898,7 @@ glabel D_80040F1C
 .word 0x33650000
 
 glabel D_80040F20
+# .asciiz "F%02d:%08XH"
 .word 0x46253032
 
 glabel D_80040F24
@@ -23860,6 +23908,7 @@ glabel D_80040F28
 .word 0x38584800
 
 glabel D_80040F2C
+# .asciiz "FPCSR:%08XH"
 .word 0x46504353
 
 glabel D_80040F30
@@ -23869,12 +23918,14 @@ glabel D_80040F34
 .word 0x38584800
 
 glabel D_80040F38
+# .asciiz "(%s)"
 .word 0x28257329
 
 glabel D_80040F3C
 .word 0x00000000
 
 glabel D_80040F40
+# .asciiz "THREAD:%d  (%s)"
 .word 0x54485245
 
 glabel D_80040F44
@@ -23887,6 +23938,7 @@ glabel D_80040F4C
 .word 0x25732900
 
 glabel D_80040F50
+# .asciiz "THREAD:%d  (%s)"
 .word 0x54485245
 
 glabel D_80040F54
@@ -23899,6 +23951,7 @@ glabel D_80040F5C
 .word 0x25732900
 
 glabel D_80040F60
+# .asciiz "INF-LOOP"
 .word 0x494E462D
 
 glabel D_80040F64
@@ -23908,6 +23961,7 @@ glabel D_80040F68
 .word 0x00000000
 
 glabel D_80040F6C
+# .asciiz "IP (%02X)"
 .word 0x49502028
 
 glabel D_80040F70
@@ -23917,6 +23971,7 @@ glabel D_80040F74
 .word 0x29000000
 
 glabel D_80040F78
+# .asciiz "RCP (%X)"
 .word 0x52435020
 
 glabel D_80040F7C
@@ -23926,6 +23981,7 @@ glabel D_80040F80
 .word 0x00000000
 
 glabel D_80040F84
+# .asciiz "PC:%08XH   SR:%08XH   VA:%08XH"
 .word 0x50433A25
 
 glabel D_80040F88
@@ -23950,6 +24006,7 @@ glabel D_80040FA0
 .word 0x58480000
 
 glabel D_80040FA4
+# .asciiz "THREAD:%d  (%s)"
 .word 0x54485245
 
 glabel D_80040FA8
@@ -23962,6 +24019,7 @@ glabel D_80040FB0
 .word 0x25732900
 
 glabel D_80040FB4
+# .asciiz "THREAD:%d  (%s)"
 .word 0x54485245
 
 glabel D_80040FB8
@@ -23974,6 +24032,7 @@ glabel D_80040FC0
 .word 0x25732900
 
 glabel D_80040FC4
+# .asciiz "INF-LOOP"
 .word 0x494E462D
 
 glabel D_80040FC8
@@ -23983,6 +24042,7 @@ glabel D_80040FCC
 .word 0x00000000
 
 glabel D_80040FD0
+# .asciiz "PC:%08XH   SR:%08XH   VA:%08XH"
 .word 0x50433A25
 
 glabel D_80040FD4
@@ -24007,6 +24067,7 @@ glabel D_80040FEC
 .word 0x58480000
 
 glabel D_80040FF0
+# .asciiz "IP (%02X)"
 .word 0x49502028
 
 glabel D_80040FF4
@@ -24016,6 +24077,7 @@ glabel D_80040FF8
 .word 0x29000000
 
 glabel D_80040FFC
+# .asciiz "RCP (%X)"
 .word 0x52435020
 
 glabel D_80041000
@@ -24025,6 +24087,7 @@ glabel D_80041004
 .word 0x00000000
 
 glabel D_80041008
+# .asciiz "AT:%08XH   V0:%08XH   V1:%08XH"
 .word 0x41543A25
 
 glabel D_8004100C
@@ -24049,6 +24112,7 @@ glabel D_80041024
 .word 0x58480000
 
 glabel D_80041028
+# .asciiz "A0:%08XH   A1:%08XH   A2:%08XH"
 .word 0x41303A25
 
 glabel D_8004102C
@@ -24073,6 +24137,7 @@ glabel D_80041044
 .word 0x58480000
 
 glabel D_80041048
+# .asciiz "A3:%08XH   T0:%08XH   T1:%08XH"
 .word 0x41333A25
 
 glabel D_8004104C
@@ -24097,6 +24162,7 @@ glabel D_80041064
 .word 0x58480000
 
 glabel D_80041068
+# .asciiz "T2:%08XH   T3:%08XH   T4:%08XH"
 .word 0x54323A25
 
 glabel D_8004106C
@@ -24121,6 +24187,7 @@ glabel D_80041084
 .word 0x58480000
 
 glabel D_80041088
+# .asciiz "T5:%08XH   T6:%08XH   T7:%08XH"
 .word 0x54353A25
 
 glabel D_8004108C
@@ -24145,6 +24212,7 @@ glabel D_800410A4
 .word 0x58480000
 
 glabel D_800410A8
+# .asciiz "S0:%08XH   S1:%08XH   S2:%08XH"
 .word 0x53303A25
 
 glabel D_800410AC
@@ -24169,6 +24237,7 @@ glabel D_800410C4
 .word 0x58480000
 
 glabel D_800410C8
+# .asciiz "S3:%08XH   S4:%08XH   S5:%08XH"
 .word 0x53333A25
 
 glabel D_800410CC
@@ -24193,6 +24262,7 @@ glabel D_800410E4
 .word 0x58480000
 
 glabel D_800410E8
+# .asciiz "S6:%08XH   S7:%08XH   T8:%08XH"
 .word 0x53363A25
 
 glabel D_800410EC
@@ -24217,6 +24287,7 @@ glabel D_80041104
 .word 0x58480000
 
 glabel D_80041108
+# .asciiz "T9:%08XH   GP:%08XH   SP:%08XH"
 .word 0x54393A25
 
 glabel D_8004110C
@@ -24241,6 +24312,7 @@ glabel D_80041124
 .word 0x58480000
 
 glabel D_80041128
+# .asciiz "S8:%08XH   RA:%08XH"
 .word 0x53383A25
 
 glabel D_8004112C
@@ -24256,6 +24328,7 @@ glabel D_80041138
 .word 0x38584800
 
 glabel D_8004113C
+# .asciiz "SP Base %08x"
 .word 0x53502042
 
 glabel D_80041140
@@ -24268,6 +24341,7 @@ glabel D_80041148
 .word 0x00000000
 
 glabel D_8004114C
+# .asciiz "%03d:%02x%02x%02x%02x %.3e"
 .word 0x25303364
 
 glabel D_80041150
@@ -24289,6 +24363,7 @@ glabel D_80041164
 .word 0x33650000
 
 glabel D_80041168
+# .asciiz "%03d:%02x%02x%02x%02x %08x"
 .word 0x25303364
 
 glabel D_8004116C
@@ -24310,6 +24385,7 @@ glabel D_80041180
 .word 0x38780000
 
 glabel D_80041184
+# .asciiz ":%02x%02x%02x%02x %.3e"
 .word 0x3A253032
 
 glabel D_80041188
@@ -24328,6 +24404,7 @@ glabel D_80041198
 .word 0x33650000
 
 glabel D_8004119C
+# .asciiz ":%02x%02x%02x%02x %08x"
 .word 0x3A253032
 
 glabel D_800411A0
@@ -26023,6 +26100,7 @@ glabel D_80041A6C
 .word 0x06A906AA
 
 glabel D_80041A70
+# .asciiz "	U	V	Y	Z	e	f	i	j	"
 .word 0x09550956
 
 glabel D_80041A74
@@ -26137,6 +26215,7 @@ glabel D_80041B04
 .word 0x1C1C1C1C
 
 glabel D_80041B08
+# .asciiz "        "
 .word 0x20202020
 
 glabel D_80041B0C
@@ -26218,6 +26297,7 @@ glabel D_80041B70
 .word 0x686C4C00
 
 glabel D_80041B74
+# .asciiz " +-#0"
 .word 0x202B2D23
 
 glabel D_80041B78
@@ -26713,6 +26793,7 @@ glabel D_80041E04
 .word 0x0F83FFD0
 
 glabel D_80041E08
+# .asciiz "	Zf&"
 .word 0x095A6626
 
 glabel D_80041E0C
@@ -27058,6 +27139,7 @@ glabel D_80041FD0
 .word 0xFFC810B4
 
 glabel D_80041FD4
+# .asciiz "f&	Z"
 .word 0x6626095A
 
 glabel D_80041FD8
@@ -27808,6 +27890,7 @@ glabel D_800423B8
 .word 0x00008000
 
 glabel D_800423BC
+# .asciiz "00@@"
 .word 0x30304040
 
 glabel D_800423C0
@@ -28594,6 +28677,7 @@ glabel D_800427D0
 .word 0x08E80000
 
 glabel D_800427D4
+# .asciiz "00@@"
 .word 0x30304040
 
 glabel D_800427D8
@@ -28948,6 +29032,7 @@ glabel D_800429A8
 .word 0x27000000
 
 glabel D_800429AC
+# .asciiz "5$&("
 .word 0x35242628
 
 glabel D_800429B0

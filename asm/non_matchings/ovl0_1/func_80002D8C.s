@@ -1,4 +1,4 @@
-glabel func_80002D8C
+glabel load_overlay
 /* 00398C 80002D8C 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 003990 80002D90 AFBF0024 */  sw    $ra, 0x24($sp)
 /* 003994 80002D94 AFB00020 */  sw    $s0, 0x20($sp)
