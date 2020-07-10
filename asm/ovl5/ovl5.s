@@ -31775,12 +31775,12 @@
 /* 120B80 80179710 3C018019 */  lui   $at, %hi(D_8018ECF8) # $at, 0x8019
 /* 120B84 80179714 3C10800D */  lui   $s0, %hi(D_800D7178) # $s0, 0x800d
 /* 120B88 80179718 3C12800D */  lui   $s2, %hi(D_800D7178) # $s2, 0x800d
-/* 120B8C 8017971C 3C14800F */  lui   $s4, %hi(D_800EC9F8) # $s4, 0x800f
+/* 120B8C 8017971C 3C14800F */  lui   $s4, %hi(gSaveBuffer1) # $s4, 0x800f
 /* 120B90 80179720 3C17800D */  lui   $s7, %hi(D_800D6B88) # $s7, 0x800d
 /* 120B94 80179724 AFBF0034 */  sw    $ra, 0x34($sp)
 /* 120B98 80179728 A020ECF8 */  sb    $zero, %lo(D_8018ECF8)($at)
 /* 120B9C 8017972C 26F76B88 */  addiu $s7, %lo(D_800D6B88) # addiu $s7, $s7, 0x6b88
-/* 120BA0 80179730 2694C9F8 */  addiu $s4, %lo(D_800EC9F8) # addiu $s4, $s4, -0x3608
+/* 120BA0 80179730 2694C9F8 */  addiu $s4, %lo(gSaveBuffer1) # addiu $s4, $s4, -0x3608
 /* 120BA4 80179734 26527178 */  addiu $s2, %lo(D_800D7178) # addiu $s2, $s2, 0x7178
 /* 120BA8 80179738 26107178 */  addiu $s0, %lo(D_800D7178) # addiu $s0, $s0, 0x7178
 /* 120BAC 8017973C 00008825 */  move  $s1, $zero

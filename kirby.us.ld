@@ -49,7 +49,21 @@ SECTIONS
 
    /* 0x8009B540 043790-066630 [22EA0] */
    BEGIN_SEG(ovl1, 0x8009B540) {
+      . += 0x10;
       BUILD_DIR/asm/ovl1/ovl1.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_1.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_2.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_3.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_4.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_5.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_6.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_7.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_8.o(.text);
+      BUILD_DIR/src/ovl1/ovl1_9.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_10.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_12.o(.text);
+      BUILD_DIR/asm/ovl1/ovl1_13.o(.text);
       BUILD_DIR/data/kirby.066630.o(.data);
    }
    END_SEG(ovl1)
