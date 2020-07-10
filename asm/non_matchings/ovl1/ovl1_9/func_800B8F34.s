@@ -1,4 +1,4 @@
-glabel func_800B8F34
+glabel calc_save_file_checksum
 /* 061184 800B8F34 00047080 */  sll   $t6, $a0, 2
 /* 061188 800B8F38 01C47023 */  subu  $t6, $t6, $a0
 /* 06118C 800B8F3C 000E7080 */  sll   $t6, $t6, 2

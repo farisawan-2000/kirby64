@@ -38,8 +38,8 @@ glabel func_800B86FC
 /* 0609D4 800B8784 00000000 */   nop   
 /* 0609D8 800B8788 3C19800F */  lui   $t9, %hi(gSaveBuffer1) # $t9, 0x800f
 /* 0609DC 800B878C 2739C9F8 */  addiu $t9, %lo(gSaveBuffer1) # addiu $t9, $t9, -0x3608
-/* 0609E0 800B8790 3C18800F */  lui   $t8, %hi(D_800ECBB0) # $t8, 0x800f
-/* 0609E4 800B8794 2718CBB0 */  addiu $t8, %lo(D_800ECBB0) # addiu $t8, $t8, -0x3450
+/* 0609E0 800B8790 3C18800F */  lui   $t8, %hi(gSaveBuffer2) # $t8, 0x800f
+/* 0609E4 800B8794 2718CBB0 */  addiu $t8, %lo(gSaveBuffer2) # addiu $t8, $t8, -0x3450
 /* 0609E8 800B8798 272A01B0 */  addiu $t2, $t9, 0x1b0
 .L800B879C_ovl1:
 /* 0609EC 800B879C 8F290000 */  lw    $t1, ($t9)

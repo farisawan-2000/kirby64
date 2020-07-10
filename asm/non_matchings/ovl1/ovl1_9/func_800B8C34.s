@@ -97,8 +97,8 @@ glabel func_800B8C34
 /* 060FF4 800B8DA4 90440007 */   lbu   $a0, 7($v0)
 /* 060FF8 800B8DA8 8FAF0024 */  lw    $t7, 0x24($sp)
 /* 060FFC 800B8DAC 8FAA0018 */  lw    $t2, 0x18($sp)
-/* 061000 800B8DB0 3C19800F */  lui   $t9, %hi(D_800ECBB0) # $t9, 0x800f
-/* 061004 800B8DB4 2739CBB0 */  addiu $t9, %lo(D_800ECBB0) # addiu $t9, $t9, -0x3450
+/* 061000 800B8DB0 3C19800F */  lui   $t9, %hi(gSaveBuffer2) # $t9, 0x800f
+/* 061004 800B8DB4 2739CBB0 */  addiu $t9, %lo(gSaveBuffer2) # addiu $t9, $t9, -0x3450
 /* 061008 800B8DB8 25F80010 */  addiu $t8, $t7, 0x10
 /* 06100C 800B8DBC 03194821 */  addu  $t1, $t8, $t9
 /* 061010 800B8DC0 254D0054 */  addiu $t5, $t2, 0x54

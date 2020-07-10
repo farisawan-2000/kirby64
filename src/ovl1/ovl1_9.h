@@ -11,7 +11,7 @@ struct EEPHeader {
 
 struct {
     /* 0x000 */ struct EEPHeader header;
-    /* 0x010 */ File file1;
+    /* 0x010 */ File files;
     /* 0x064 */ File file2;
     /* 0x0C0 */ File file3;
 } EEPROM;

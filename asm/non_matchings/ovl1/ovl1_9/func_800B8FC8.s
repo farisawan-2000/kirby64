@@ -1,7 +1,7 @@
 glabel func_800B8FC8
 /* 061218 800B8FC8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 06121C 800B8FCC AFBF0014 */  sw    $ra, 0x14($sp)
-/* 061220 800B8FD0 0C02E3CD */  jal   func_800B8F34_ovl1
+/* 061220 800B8FD0 0C02E3CD */  jal   calc_save_file_checksum
 /* 061224 800B8FD4 AFA40018 */   sw    $a0, 0x18($sp)
 /* 061228 800B8FD8 8FAE0018 */  lw    $t6, 0x18($sp)
 /* 06122C 800B8FDC 8FBF0014 */  lw    $ra, 0x14($sp)

@@ -19,7 +19,7 @@ glabel func_800B87E0
 /* 060A74 800B8824 00008025 */  move  $s0, $zero
 /* 060A78 800B8828 24150003 */  li    $s5, 3
 .L800B882C_ovl1:
-/* 060A7C 800B882C 0C02E3CD */  jal   func_800B8F34_ovl1
+/* 060A7C 800B882C 0C02E3CD */  jal   calc_save_file_checksum
 /* 060A80 800B8830 02002025 */   move  $a0, $s0
 /* 060A84 800B8834 8E6E0064 */  lw    $t6, 0x64($s3)
 /* 060A88 800B8838 00107840 */  sll   $t7, $s0, 1
@@ -38,7 +38,7 @@ glabel func_800B87E0
 /* 060AB8 800B8868 92240007 */  lbu   $a0, 7($s1)
 /* 060ABC 800B886C 0C001340 */  jal   func_80004D00_ovl1
 /* 060AC0 800B8870 24060058 */   li    $a2, 88
-/* 060AC4 800B8874 0C02E3CD */  jal   func_800B8F34_ovl1
+/* 060AC4 800B8874 0C02E3CD */  jal   calc_save_file_checksum
 /* 060AC8 800B8878 02002025 */   move  $a0, $s0
 /* 060ACC 800B887C 8E780064 */  lw    $t8, 0x64($s3)
 /* 060AD0 800B8880 02402825 */  move  $a1, $s2

@@ -58,8 +58,8 @@ glabel func_800B8E00
 /* 061120 800B8ED0 0C00134D */  jal   func_80004D34_ovl1
 /* 061124 800B8ED4 90440007 */   lbu   $a0, 7($v0)
 /* 061128 800B8ED8 8FB9002C */  lw    $t9, 0x2c($sp)
-/* 06112C 800B8EDC 3C0A800F */  lui   $t2, %hi(D_800ECBB0) # $t2, 0x800f
-/* 061130 800B8EE0 254ACBB0 */  addiu $t2, %lo(D_800ECBB0) # addiu $t2, $t2, -0x3450
+/* 06112C 800B8EDC 3C0A800F */  lui   $t2, %hi(gSaveBuffer2) # $t2, 0x800f
+/* 061130 800B8EE0 254ACBB0 */  addiu $t2, %lo(gSaveBuffer2) # addiu $t2, $t2, -0x3450
 /* 061134 800B8EE4 27290010 */  addiu $t1, $t9, 0x10
 /* 061138 800B8EE8 012A5821 */  addu  $t3, $t1, $t2
 /* 06113C 800B8EEC 02007025 */  move  $t6, $s0
