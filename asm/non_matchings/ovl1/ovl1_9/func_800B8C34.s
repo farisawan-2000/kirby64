@@ -1,4 +1,4 @@
-glabel func_800B8C34
+glabel init_save_file_maybe
 /* 060E84 800B8C34 00044080 */  sll   $t0, $a0, 2
 /* 060E88 800B8C38 01044023 */  subu  $t0, $t0, $a0
 /* 060E8C 800B8C3C 00084080 */  sll   $t0, $t0, 2
@@ -76,7 +76,7 @@ glabel func_800B8C34
 /* 060FA0 800B8D50 AFA70020 */  sw    $a3, 0x20($sp)
 /* 060FA4 800B8D54 0C02E4B6 */  jal   func_800B92D8_ovl1
 /* 060FA8 800B8D58 AFA80024 */   sw    $t0, 0x24($sp)
-/* 060FAC 800B8D5C 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 060FAC 800B8D5C 0C02E3F2 */  jal   calc_file_checksum
 /* 060FB0 800B8D60 8FA40038 */   lw    $a0, 0x38($sp)
 /* 060FB4 800B8D64 8FAC0038 */  lw    $t4, 0x38($sp)
 /* 060FB8 800B8D68 8FA70020 */  lw    $a3, 0x20($sp)

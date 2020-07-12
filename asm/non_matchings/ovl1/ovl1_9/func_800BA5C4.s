@@ -19,7 +19,7 @@ glabel func_800BA5C4
 /* 062858 800BA608 8CF90010 */   lw    $t9, 0x10($a3)
 .L800BA60C_ovl1:
 /* 06285C 800BA60C 8FA40038 */  lw    $a0, 0x38($sp)
-/* 062860 800BA610 0C02E30D */  jal   func_800B8C34_ovl1
+/* 062860 800BA610 0C02E30D */  jal   init_save_file_maybe
 /* 062864 800BA614 AFA70024 */   sw    $a3, 0x24($sp)
 /* 062868 800BA618 8FA70024 */  lw    $a3, 0x24($sp)
 /* 06286C 800BA61C 8CF90010 */  lw    $t9, 0x10($a3)
@@ -95,7 +95,7 @@ glabel func_800BA5C4
 /* 062970 800BA720 8FA40038 */  lw    $a0, 0x38($sp)
 /* 062974 800BA724 0C02E4B6 */  jal   func_800B92D8_ovl1
 /* 062978 800BA728 AFA70024 */   sw    $a3, 0x24($sp)
-/* 06297C 800BA72C 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 06297C 800BA72C 0C02E3F2 */  jal   calc_file_checksum
 /* 062980 800BA730 8FA40038 */   lw    $a0, 0x38($sp)
 /* 062984 800BA734 8FAF0038 */  lw    $t7, 0x38($sp)
 /* 062988 800BA738 8FA70024 */  lw    $a3, 0x24($sp)

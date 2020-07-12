@@ -1,4 +1,4 @@
-glabel func_800B8FC8
+glabel calc_file_checksum
 /* 061218 800B8FC8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 06121C 800B8FCC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 061220 800B8FD0 0C02E3CD */  jal   calc_save_file_checksum

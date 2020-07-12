@@ -1,4 +1,4 @@
-glabel func_800B9068
+glabel calc_save_header_checksum
 /* 0612B8 800B9068 3C06800F */  lui   $a2, %hi(gSaveBuffer1) # $a2, 0x800f
 /* 0612BC 800B906C 3C07800F */  lui   $a3, %hi(D_800ECA04) # $a3, 0x800f
 /* 0612C0 800B9070 24E7CA04 */  addiu $a3, %lo(D_800ECA04) # addiu $a3, $a3, -0x35fc

@@ -40,7 +40,7 @@ glabel func_800B8E00
 .L800B8E8C_ovl1:
 /* 0610DC 800B8E8C 00E02025 */  move  $a0, $a3
 /* 0610E0 800B8E90 AFA70040 */  sw    $a3, 0x40($sp)
-/* 0610E4 800B8E94 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 0610E4 800B8E94 0C02E3F2 */  jal   calc_file_checksum
 /* 0610E8 800B8E98 AFA8002C */   sw    $t0, 0x2c($sp)
 /* 0610EC 800B8E9C 8FA70040 */  lw    $a3, 0x40($sp)
 /* 0610F0 800B8EA0 3C18800D */  lui   $t8, %hi(D_800D5150) # $t8, 0x800d

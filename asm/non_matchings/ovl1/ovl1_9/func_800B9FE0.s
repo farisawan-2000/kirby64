@@ -174,7 +174,7 @@ glabel func_800B9FE0
 /* 062498 800BA248 24180001 */  li    $t8, 1
 /* 06249C 800BA24C 01F87004 */  sllv  $t6, $t8, $t7
 /* 0624A0 800BA250 032EC025 */  or    $t8, $t9, $t6
-/* 0624A4 800BA254 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 0624A4 800BA254 0C02E3F2 */  jal   calc_file_checksum
 /* 0624A8 800BA258 A058002E */   sb    $t8, 0x2e($v0)
 /* 0624AC 800BA25C 0C02E247 */  jal   func_800B891C_ovl1
 /* 0624B0 800BA260 8FA400A8 */   lw    $a0, 0xa8($sp)

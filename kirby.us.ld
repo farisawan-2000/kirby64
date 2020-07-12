@@ -59,7 +59,7 @@ SECTIONS
       BUILD_DIR/asm/ovl1/ovl1_6.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_7.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_8.o(.text);
-      BUILD_DIR/src/ovl1/ovl1_9.o(.text);
+      BUILD_DIR/src/ovl1/save_file.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_10.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_12.o(.text);

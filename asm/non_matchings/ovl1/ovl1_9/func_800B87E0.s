@@ -28,7 +28,7 @@ glabel func_800B87E0
 /* 060A94 800B8844 02402825 */   move  $a1, $s2
 /* 060A98 800B8848 0C02E4B6 */  jal   func_800B92D8_ovl1
 /* 060A9C 800B884C 02002025 */   move  $a0, $s0
-/* 060AA0 800B8850 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 060AA0 800B8850 0C02E3F2 */  jal   calc_file_checksum
 /* 060AA4 800B8854 02002025 */   move  $a0, $s0
 /* 060AA8 800B8858 0C02E247 */  jal   func_800B891C_ovl1
 /* 060AAC 800B885C 02002025 */   move  $a0, $s0

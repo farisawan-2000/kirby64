@@ -17,7 +17,7 @@ glabel func_800B9D60
 /* 061FEC 800B9D9C A0286BC0 */  sb    $t0, 0x6bc0($at)
 /* 061FF0 800B9DA0 0C02E4B6 */  jal   func_800B92D8_ovl1
 /* 061FF4 800B9DA4 AFA40018 */   sw    $a0, 0x18($sp)
-/* 061FF8 800B9DA8 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 061FF8 800B9DA8 0C02E3F2 */  jal   calc_file_checksum
 /* 061FFC 800B9DAC 8FA40018 */   lw    $a0, 0x18($sp)
 /* 062000 800B9DB0 0C02E247 */  jal   func_800B891C_ovl1
 /* 062004 800B9DB4 8FA40018 */   lw    $a0, 0x18($sp)

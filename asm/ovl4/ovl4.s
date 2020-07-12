@@ -4954,7 +4954,7 @@
 /* 0FCF14 801559E4 240400ED */   li    $a0, 237
 /* 0FCF18 801559E8 3C05800D */  lui   $a1, %hi(D_800D6B88) # $a1, 0x800d
 /* 0FCF1C 801559EC 24A56B88 */  addiu $a1, %lo(D_800D6B88) # addiu $a1, $a1, 0x6b88
-/* 0FCF20 801559F0 0C02E30D */  jal   func_800B8C34_ovl4
+/* 0FCF20 801559F0 0C02E30D */  jal   init_save_file_maybe
 /* 0FCF24 801559F4 8CA40000 */   lw    $a0, ($a1)
 /* 0FCF28 801559F8 1000007E */  b     .L80155BF4_ovl4
 /* 0FCF2C 801559FC 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -7293,7 +7293,7 @@
 /* 0FF170 80157C40 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0FF174 80157C44 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0FF178 80157C48 3C01800F */  lui   $at, %hi(D_800EC9FC) # $at, 0x800f
-/* 0FF17C 80157C4C 0C02E438 */  jal   func_800B90E0_ovl4
+/* 0FF17C 80157C4C 0C02E438 */  jal   calc_header_checksum
 /* 0FF180 80157C50 AC2EC9FC */   sw    $t6, %lo(D_800EC9FC)($at)
 /* 0FF184 80157C54 0C02E2F7 */  jal   func_800B8BDC_ovl4
 /* 0FF188 80157C58 00000000 */   nop   

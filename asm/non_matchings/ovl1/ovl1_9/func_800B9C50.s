@@ -12,7 +12,7 @@ glabel func_800B9C50
 /* 061EC8 800B9C78 02002025 */   move  $a0, $s0
 /* 061ECC 800B9C7C 0C02E53F */  jal   func_800B94FC_ovl1
 /* 061ED0 800B9C80 02002025 */   move  $a0, $s0
-/* 061ED4 800B9C84 0C02E3F2 */  jal   func_800B8FC8_ovl1
+/* 061ED4 800B9C84 0C02E3F2 */  jal   calc_file_checksum
 /* 061ED8 800B9C88 02002025 */   move  $a0, $s0
 /* 061EDC 800B9C8C 0C02E247 */  jal   func_800B891C_ovl1
 /* 061EE0 800B9C90 02002025 */   move  $a0, $s0
