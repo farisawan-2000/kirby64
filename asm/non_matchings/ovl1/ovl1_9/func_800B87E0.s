@@ -26,7 +26,7 @@ glabel func_800B87E0
 /* 060A8C 800B883C 02CF8821 */  addu  $s1, $s6, $t7
 /* 060A90 800B8840 144E0009 */  bne   $v0, $t6, .L800B8868_ovl1
 /* 060A94 800B8844 02402825 */   move  $a1, $s2
-/* 060A98 800B8848 0C02E4B6 */  jal   func_800B92D8_ovl1
+/* 060A98 800B8848 0C02E4B6 */  jal   verify_save
 /* 060A9C 800B884C 02002025 */   move  $a0, $s0
 /* 060AA0 800B8850 0C02E3F2 */  jal   calc_file_checksum
 /* 060AA4 800B8854 02002025 */   move  $a0, $s0

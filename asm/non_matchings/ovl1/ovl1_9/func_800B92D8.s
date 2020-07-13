@@ -1,4 +1,4 @@
-glabel func_800B92D8
+glabel verify_save
 /* 061528 800B92D8 00047080 */  sll   $t6, $a0, 2
 /* 06152C 800B92DC 01C47023 */  subu  $t6, $t6, $a0
 /* 061530 800B92E0 000E7080 */  sll   $t6, $t6, 2

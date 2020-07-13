@@ -93,7 +93,7 @@ glabel func_800BA5C4
 /* 062968 800BA718 1485FFFA */  bne   $a0, $a1, .L800BA704_ovl1
 /* 06296C 800BA71C 24420004 */   addiu $v0, $v0, 4
 /* 062970 800BA720 8FA40038 */  lw    $a0, 0x38($sp)
-/* 062974 800BA724 0C02E4B6 */  jal   func_800B92D8_ovl1
+/* 062974 800BA724 0C02E4B6 */  jal   verify_save
 /* 062978 800BA728 AFA70024 */   sw    $a3, 0x24($sp)
 /* 06297C 800BA72C 0C02E3F2 */  jal   calc_file_checksum
 /* 062980 800BA730 8FA40038 */   lw    $a0, 0x38($sp)

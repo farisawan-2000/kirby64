@@ -8,7 +8,7 @@ glabel func_800B9C50
 /* 061EB8 800B9C68 AFBF001C */   sw    $ra, 0x1c($sp)
 /* 061EBC 800B9C6C 0C02E5A8 */  jal   func_800B96A0_ovl1
 /* 061EC0 800B9C70 24050001 */   li    $a1, 1
-/* 061EC4 800B9C74 0C02E4B6 */  jal   func_800B92D8_ovl1
+/* 061EC4 800B9C74 0C02E4B6 */  jal   verify_save
 /* 061EC8 800B9C78 02002025 */   move  $a0, $s0
 /* 061ECC 800B9C7C 0C02E53F */  jal   func_800B94FC_ovl1
 /* 061ED0 800B9C80 02002025 */   move  $a0, $s0

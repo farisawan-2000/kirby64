@@ -74,7 +74,7 @@ glabel init_save_file_maybe
 /* 060F98 800B8D48 A040002A */   sb    $zero, 0x2a($v0)
 /* 060F9C 800B8D4C 8FA40038 */  lw    $a0, 0x38($sp)
 /* 060FA0 800B8D50 AFA70020 */  sw    $a3, 0x20($sp)
-/* 060FA4 800B8D54 0C02E4B6 */  jal   func_800B92D8_ovl1
+/* 060FA4 800B8D54 0C02E4B6 */  jal   verify_save
 /* 060FA8 800B8D58 AFA80024 */   sw    $t0, 0x24($sp)
 /* 060FAC 800B8D5C 0C02E3F2 */  jal   calc_file_checksum
 /* 060FB0 800B8D60 8FA40038 */   lw    $a0, 0x38($sp)
