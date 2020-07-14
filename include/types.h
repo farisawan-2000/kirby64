@@ -80,7 +80,7 @@ struct KirbyState {
     u8 unk16;
     u8 unk17;
     u32 unk18;
-    u32 unk1C;
+    u32 floatTimer;
     s32 turnDirection; // 0x20
     u32 unk24;
     u32 unk28;
@@ -157,9 +157,11 @@ struct KirbyState {
     u32 unk138;
     u32 unk13C;
     u32 unk140;
-    u32 unk144;
-    u32 unk148;
-    u32 unk14C;
+
+    f32 unk144;
+    f32 unk148;
+    f32 unk14C;
+
     u8 unk150;
     u8 unk151;
     u8 unk152;
@@ -172,9 +174,11 @@ struct KirbyState {
     u32 unk168;
     u32 unk16C;
     u32 unk170;
-    u32 unk174;
-    u32 unk178;
-    f32 unk17C;
+
+    f32 xSpd;
+    f32 ySpd;
+    f32 zSpd;
+
     u32 unk180;
     u32 unk184;
     u32 unk188;
@@ -194,9 +198,11 @@ struct KirbyState {
     u32 unk1C0;
     u32 unk1C4;
     u32 unk1C8;
-    u32 unk1CC;
-    u32 unk1D0;
-    u32 unk1D4;
+
+    f32 xPos;
+    f32 yPos;
+    f32 zPos;
+
     u32 unk1D8;
     u32 unk1DC;
     u32 unk1E0;
@@ -208,7 +214,6 @@ struct KirbyState {
     u32 unk1F8;
     u32 unk1FC;
     u32 viTimer;
-    // goes all the way to at least 0x200 monkaS
 };
 
 #endif /* TYPES_H */

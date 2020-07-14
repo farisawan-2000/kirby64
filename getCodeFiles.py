@@ -7,6 +7,7 @@ OVL_TABLE_START = 0x66820
 OVL_TABLE_END = 0x66AF0
 
 
+print("ROM Start  |ROM End   |.text Start  |.data Start  |.bss Start  |.bss End")
 kirby = open(sys.argv[1], "rb")
 kirbyBuff = kirby.read()
 while (OVL_TABLE_START < OVL_TABLE_END):
@@ -29,6 +30,6 @@ while (OVL_TABLE_START < OVL_TABLE_END):
 	ROMEnd = str(hex(rommers))
 	ROMEnd2 = str(hex(rommers))
 
-	print(getCodeEntry(ROMStart, ROMEnd, RAMStart, RAMStart2, RAMEnd, RAMEnd2, BSSStart, BSSStart2, BSSEnd))
-	print(RAMEnd, BSSStart, BSSEnd)
+	print("{0:11} {1:10} {2:13} {3:13} {4:13} {5:13} ".format(ROMStart, ROMEnd, RAMStart, RAMEnd, BSSStart, BSSEnd))
+	# print(RAMEnd, BSSStart, BSSEnd)
 	OVL_TABLE_START += 36

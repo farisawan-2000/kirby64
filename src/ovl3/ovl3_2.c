@@ -1473,7 +1473,7 @@ loop_13:
     func_801230E8_ovl3(0x2005F, 0x20060, 1);
     *(&D_800DEF90 + (*D_8004A7C4 * 4)) = &D_800B531C;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk6BD0 = (f32) D_80196FA0;
-    gKirbyState.unk30 = (s32) (gKirbyState.unk30 + 1);
+    gKirbyState.unk30++;
     func_800AFA14_ovl3();
 }
 #else
