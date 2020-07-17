@@ -175,9 +175,7 @@ struct KirbyState {
     u32 unk16C;
     u32 unk170;
 
-    f32 xSpd;
-    f32 ySpd;
-    f32 zSpd;
+    Vec3f vel;
 
     u32 unk180;
     u32 unk184;

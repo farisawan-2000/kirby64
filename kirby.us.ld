@@ -24,7 +24,7 @@ SECTIONS
 
    /* header and boot */
    BEGIN_SEG(boot, 0xA4000000) {
-      BUILD_DIR/asm/rom_header.o(.text);
+      BUILD_DIR/src/rom_header.o(.data);
       BUILD_DIR/asm/boot2.o(.text);
    }
    END_SEG(boot)
@@ -37,8 +37,11 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.text);
+      /*. += 0x8;*/
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
-      BUILD_DIR/asm/ovl0/ovl0_3.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_3.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_4.o(.text);
+      BUILD_DIR/asm/ovl0/ovl0_5.o(.text);
       BUILD_DIR/asm/ovl0/SetPc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }

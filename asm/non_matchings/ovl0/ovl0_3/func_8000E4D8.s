@@ -1,0 +1,5 @@
+glabel func_8000E4D8
+/* 00F0D8 8000E4D8 C4800048 */  lwc1  $f0, 0x48($a0)
+.L8000E4DC_ovl0:
+/* 00F0DC 8000E4DC 03E00008 */  jr    $ra
+/* 00F0E0 8000E4E0 00000000 */   nop   

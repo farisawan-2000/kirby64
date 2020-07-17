@@ -1,0 +1,13 @@
+glabel func_80014AD4
+/* 0156D4 80014AD4 3C013F80 */  li    $at, 0x3F800000 # 1.000000
+/* 0156D8 80014AD8 44812000 */  mtc1  $at, $f4
+/* 0156DC 80014ADC 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 0156E0 80014AE0 3C018005 */  lui   $at, %hi(D_8004AA94) # $at, 0x8005
+/* 0156E4 80014AE4 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 0156E8 80014AE8 E424AA94 */  swc1  $f4, %lo(D_8004AA94)($at)
+/* 0156EC 80014AEC 0C0051F2 */  jal   func_800147C8_ovl0
+/* 0156F0 80014AF0 8C84003C */   lw    $a0, 0x3c($a0)
+/* 0156F4 80014AF4 8FBF0014 */  lw    $ra, 0x14($sp)
+/* 0156F8 80014AF8 27BD0018 */  addiu $sp, $sp, 0x18
+/* 0156FC 80014AFC 03E00008 */  jr    $ra
+/* 015700 80014B00 00000000 */   nop   

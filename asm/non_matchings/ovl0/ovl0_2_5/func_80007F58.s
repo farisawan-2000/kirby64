@@ -1,6 +1,4 @@
-glabel func_80007F58
-/* 008B58 80007F58 00000000 */  nop   
-/* 008B5C 80007F5C 00000000 */  nop   
+glabel func_80007F60
 /* 008B60 80007F60 3C068005 */  lui   $a2, %hi(gObjectThreadMaybe) # $a2, 0x8005
 /* 008B64 80007F64 24C6A540 */  addiu $a2, %lo(gObjectThreadMaybe) # addiu $a2, $a2, -0x5ac0
 /* 008B68 80007F68 8CC30000 */  lw    $v1, ($a2)

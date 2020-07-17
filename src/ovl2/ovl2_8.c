@@ -3109,7 +3109,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 
 
 extern u32 *D_8004A7C4;
-extern u16 D_8012844C[][2];
+extern s16 D_8012844C[][2];
 extern u32 D_800E25D0[];
 extern f32 D_800E2790[], D_800E2950[];
 extern u32 D_800E8AE0[];
@@ -3126,7 +3126,7 @@ void func_80122B40_ovl2(void) {
             phi_a2 = 14;
     } else {
         // TODO: Fix some regalloc over here!
-        if (gKirbyState.unk17C < -12.5f)
+        if (gKirbyState.vel[2] < -12.5f)
             phi_a2 = D_8012844C[gKirbyState.unk10A * 7][1];
         else
             phi_a2 = D_8012844C[gKirbyState.unk10A * 7][0];
