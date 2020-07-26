@@ -49,20 +49,20 @@ glabel func_80018170
 /* 018E2C 8001822C 0C005ED0 */  jal   func_80017B40_ovl0
 /* 018E30 80018230 AC6C0004 */   sw    $t4, 4($v1)
 /* 018E34 80018234 8EAD0080 */  lw    $t5, 0x80($s5)
-/* 018E38 80018238 3C048005 */  lui   $a0, %hi(D_8004A3D4) # $a0, 0x8005
-/* 018E3C 8001823C 2484A3D4 */  addiu $a0, %lo(D_8004A3D4) # addiu $a0, $a0, -0x5c2c
+/* 018E38 80018238 3C048005 */  lui   $a0, %hi(gDisplayListHead2) # $a0, 0x8005
+/* 018E3C 8001823C 2484A3D4 */  addiu $a0, %lo(gDisplayListHead2) # addiu $a0, $a0, -0x5c2c
 /* 018E40 80018240 31AE0020 */  andi  $t6, $t5, 0x20
 /* 018E44 80018244 11C00003 */  beqz  $t6, .L80018254_ovl0
 /* 018E48 80018248 02A02825 */   move  $a1, $s5
 /* 018E4C 8001824C 0C00598F */  jal   func_8001663C_ovl0
 /* 018E50 80018250 24060001 */   li    $a2, 1
 .L80018254_ovl0:
-/* 018E54 80018254 3C118005 */  lui   $s1, %hi(D_8004A3D4) # $s1, 0x8005
+/* 018E54 80018254 3C118005 */  lui   $s1, %hi(gDisplayListHead2) # $s1, 0x8005
 /* 018E58 80018258 3C128005 */  lui   $s2, %hi(D_8004ADA4) # $s2, 0x8005
 /* 018E5C 8001825C 3C028005 */  lui   $v0, %hi(D_8004ADB0) # $v0, 0x8005
 /* 018E60 80018260 2442ADB0 */  addiu $v0, %lo(D_8004ADB0) # addiu $v0, $v0, -0x5250
 /* 018E64 80018264 2652ADA4 */  addiu $s2, %lo(D_8004ADA4) # addiu $s2, $s2, -0x525c
-/* 018E68 80018268 2631A3D4 */  addiu $s1, %lo(D_8004A3D4) # addiu $s1, $s1, -0x5c2c
+/* 018E68 80018268 2631A3D4 */  addiu $s1, %lo(gDisplayListHead2) # addiu $s1, $s1, -0x5c2c
 .L8001826C_ovl0:
 /* 018E6C 8001826C 8E2F0000 */  lw    $t7, ($s1)
 /* 018E70 80018270 26520004 */  addiu $s2, $s2, 4
@@ -82,10 +82,10 @@ glabel func_80018170
 .L800182A8_ovl0:
 /* 018EA8 800182A8 0C005FA1 */  jal   func_80017E84_ovl0
 /* 018EAC 800182AC 02802025 */   move  $a0, $s4
-/* 018EB0 800182B0 3C118005 */  lui   $s1, %hi(D_8004A3D4) # $s1, 0x8005
+/* 018EB0 800182B0 3C118005 */  lui   $s1, %hi(gDisplayListHead2) # $s1, 0x8005
 /* 018EB4 800182B4 3C128005 */  lui   $s2, %hi(D_8004ADA4) # $s2, 0x8005
 /* 018EB8 800182B8 2652ADA4 */  addiu $s2, %lo(D_8004ADA4) # addiu $s2, $s2, -0x525c
-/* 018EBC 800182BC 2631A3D4 */  addiu $s1, %lo(D_8004A3D4) # addiu $s1, $s1, -0x5c2c
+/* 018EBC 800182BC 2631A3D4 */  addiu $s1, %lo(gDisplayListHead2) # addiu $s1, $s1, -0x5c2c
 /* 018EC0 800182C0 24130001 */  li    $s3, 1
 /* 018EC4 800182C4 241E0001 */  li    $fp, 1
 /* 018EC8 800182C8 24170004 */  li    $s7, 4

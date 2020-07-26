@@ -16,8 +16,8 @@ glabel func_80151204
 /* 1355CC 8015123C AC780004 */  sw    $t8, 4($v1)
 /* 1355D0 80151240 35294B50 */  ori   $t1, (0x00504B50 & 0xFFFF) # ori $t1, $t1, 0x4b50
 /* 1355D4 80151244 3739001C */  ori   $t9, (0xE200001C & 0xFFFF) # ori $t9, $t9, 0x1c
-/* 1355D8 80151248 3C068005 */  lui   $a2, %hi(D_8004A3D4) # $a2, 0x8005
-/* 1355DC 8015124C 24C6A3D4 */  addiu $a2, %lo(D_8004A3D4) # addiu $a2, $a2, -0x5c2c
+/* 1355D8 80151248 3C068005 */  lui   $a2, %hi(gDisplayListHead2) # $a2, 0x8005
+/* 1355DC 8015124C 24C6A3D4 */  addiu $a2, %lo(gDisplayListHead2) # addiu $a2, $a2, -0x5c2c
 /* 1355E0 80151250 24050002 */  li    $a1, 2
 /* 1355E4 80151254 AC590000 */  sw    $t9, ($v0)
 /* 1355E8 80151258 0C027A3D */  jal   func_8009E8F4_ovl6

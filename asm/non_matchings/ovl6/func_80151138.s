@@ -12,10 +12,10 @@ glabel func_80151138
 /* 1354EC 8015115C 00000000 */   nop   
 /* 1354F0 80151160 0C00E46C */  jal   osViGetCurrentFramebuffer
 /* 1354F4 80151164 AFA2001C */   sw    $v0, 0x1c($sp)
-/* 1354F8 80151168 3C058016 */  lui   $a1, %hi(D_8015A678) # $a1, 0x8016
-/* 1354FC 8015116C 24A5A678 */  addiu $a1, %lo(D_8015A678) # addiu $a1, $a1, -0x5988
-/* 135500 80151170 3C038005 */  lui   $v1, %hi(D_80048C68) # $v1, 0x8005
-/* 135504 80151174 8C638C68 */  lw    $v1, %lo(D_80048C68)($v1)
+/* 1354F8 80151168 3C058016 */  lui   $a1, %hi(gFrameBuffers) # $a1, 0x8016
+/* 1354FC 8015116C 24A5A678 */  addiu $a1, %lo(gFrameBuffers) # addiu $a1, $a1, -0x5988
+/* 135500 80151170 3C038005 */  lui   $v1, %hi(gCurrFrameBuffer) # $v1, 0x8005
+/* 135504 80151174 8C638C68 */  lw    $v1, %lo(gCurrFrameBuffer)($v1)
 /* 135508 80151178 8CAF0000 */  lw    $t7, ($a1)
 /* 13550C 8015117C 8FAA001C */  lw    $t2, 0x1c($sp)
 /* 135510 80151180 546F0004 */  bnel  $v1, $t7, .L80151194_ovl6

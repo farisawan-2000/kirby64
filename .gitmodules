@@ -1,0 +1,3 @@
+[submodule "libreultra"]
+	path = libreultra
+	url = https://github.com/n64decomp/libreultra/

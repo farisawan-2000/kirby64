@@ -35,20 +35,6 @@ struct VblankHandler
 typedef f32 Vec3f[3];
 
 
-struct CollisionHeader {
-    s16 unk0;
-    s16 unk2;
-    s32 unk4;
-    s32 unk8;
-    s32 unkC;
-    s32 unk10;
-    s32 unk14;
-    s32 unk18;
-    s32 unk1C;
-    s32 unk20;
-    s32 unk24;
-};
-
 struct Entity {
    u8 nodeNum;
    u8 bankID;

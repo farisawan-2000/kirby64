@@ -23,23 +23,23 @@ u32 func_80151138(s32 arg0) {
         return 1;
     }
     sp1C = osViGetCurrentFramebuffer_0();
-    if (D_80048C68 == D_8015A678.unk0) {
+    if (gCurrFrameBuffer == gFrameBuffers[0]) {
         phi_v1 = 1;
     } else {
-        if (D_80048C68 == D_8015A678.unk4) {
+        if (gCurrFrameBuffer == gFrameBuffers[1]) {
             phi_v1 = 2;
         } else {
-            if (D_80048C68 == D_8015A678.unk8) {
+            if (gCurrFrameBuffer == gFrameBuffers[2]) {
 
             }
             phi_v1 = 0;
         }
     }
-    temp_t1 = &D_8015A678 + (phi_v1 * 4);
+    temp_t1 = gFrameBuffers[phi_v1];
     if (osViGetCurrentFramebuffer() != *temp_t1) {
         if (sp1C != *temp_t1) {
             D_80048C5C = (s32) *temp_t1;
-            D_80048C6C = func_800314D0_ovl6(*temp_t1, &D_8015A678);
+            D_80048C6C = func_800314D0_ovl6(*temp_t1, &gFrameBuffers);
             return 1;
         }
     }
@@ -67,7 +67,7 @@ void *func_80151204(void) {
     temp_v0_2->unk0 = 0xE200001C;
     temp_v0_2->unk4 = 0x504B50;
 
-    func_8009E8F4_ovl6(2, &D_8004A3D4);
+    func_8009E8F4_ovl6(2, &gDisplayListHead2);
 
     gDPPipeSync(gDisplayListHead++);
 
@@ -1958,9 +1958,9 @@ u32 func_80154C64(void) {
     u32 phi_return;
 
     temp_t6 = &gFrameBuffer + 0xFFFDA800;
-    D_8015A678.unk0 = temp_t6;
-    D_8015A678.unk4 = &gFrameBuffer;
-    D_8015A678.unk8 = &D_803DA800;
+    gFrameBuffers.unk0 = temp_t6;
+    gFrameBuffers.unk4 = &gFrameBuffer;
+    gFrameBuffers.unk8 = &D_803DA800;
     D_80154E80.unk0 = temp_t6;
     D_80154E80.unk4 = &gFrameBuffer;
     D_80154E80.unk8 = &D_803DA800;

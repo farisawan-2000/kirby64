@@ -4,10 +4,10 @@ glabel func_80154C64
 /* 138FFC 80154C6C 3C01FFFD */  lui   $at, (0xFFFDA800 >> 16) # lui $at, 0xfffd
 /* 139000 80154C70 24A56900 */  addiu $a1, %lo(gFrameBuffer) # addiu $a1, $a1, 0x6900
 /* 139004 80154C74 24844E80 */  addiu $a0, %lo(D_80154E80) # addiu $a0, $a0, 0x4e80
-/* 139008 80154C78 3C028016 */  lui   $v0, %hi(D_8015A678) # $v0, 0x8016
+/* 139008 80154C78 3C028016 */  lui   $v0, %hi(gFrameBuffers) # $v0, 0x8016
 /* 13900C 80154C7C 3421A800 */  ori   $at, (0xFFFDA800 & 0xFFFF) # ori $at, $at, 0xa800
 /* 139010 80154C80 3C088013 */  lui   $t0, %hi(D_8012EB00) # $t0, 0x8013
-/* 139014 80154C84 2442A678 */  addiu $v0, %lo(D_8015A678) # addiu $v0, $v0, -0x5988
+/* 139014 80154C84 2442A678 */  addiu $v0, %lo(gFrameBuffers) # addiu $v0, $v0, -0x5988
 /* 139018 80154C88 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 13901C 80154C8C 00A17021 */  addu  $t6, $a1, $at
 /* 139020 80154C90 3C0F803E */  lui   $t7, %hi(D_803DA800) # $t7, 0x803e

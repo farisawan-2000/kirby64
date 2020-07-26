@@ -1112,14 +1112,14 @@ glabel func_80001774
 /* 0023DC 800017DC 14E10006 */  bne   $a3, $at, .L800017F8_ovl0
 /* 0023E0 800017E0 24638C5C */   addiu $v1, %lo(D_80048C5C) # addiu $v1, $v1, -0x73a4
 /* 0023E4 800017E4 8C790000 */  lw    $t9, ($v1)
-/* 0023E8 800017E8 3C018005 */  lui   $at, %hi(D_80048C68) # $at, 0x8005
-/* 0023EC 800017EC AC398C68 */  sw    $t9, %lo(D_80048C68)($at)
+/* 0023E8 800017E8 3C018005 */  lui   $at, %hi(gCurrFrameBuffer) # $at, 0x8005
+/* 0023EC 800017EC AC398C68 */  sw    $t9, %lo(gCurrFrameBuffer)($at)
 /* 0023F0 800017F0 1000001D */  b     .L80001868_ovl0
 /* 0023F4 800017F4 AC600000 */   sw    $zero, ($v1)
 .L800017F8_ovl0:
-/* 0023F8 800017F8 3C018005 */  lui   $at, %hi(D_80048C68) # $at, 0x8005
+/* 0023F8 800017F8 3C018005 */  lui   $at, %hi(gCurrFrameBuffer) # $at, 0x8005
 /* 0023FC 800017FC 1000001A */  b     .L80001868_ovl0
-/* 002400 80001800 AC278C68 */   sw    $a3, %lo(D_80048C68)($at)
+/* 002400 80001800 AC278C68 */   sw    $a3, %lo(gCurrFrameBuffer)($at)
 .L80001804_ovl0:
 /* 002404 80001804 14E10012 */  bne   $a3, $at, .L80001850_ovl0
 /* 002408 80001808 3C038005 */   lui   $v1, %hi(D_80048C5C) # $v1, 0x8005
@@ -1137,8 +1137,8 @@ glabel func_80001774
 /* 002438 80001838 00000000 */   nop   
 /* 00243C 8000183C AC298C64 */  sw    $t1, %lo(D_80048C64)($at)
 .L80001840_ovl0:
-/* 002440 80001840 3C018005 */  lui   $at, %hi(D_80048C68) # $at, 0x8005
-/* 002444 80001844 AC228C68 */  sw    $v0, %lo(D_80048C68)($at)
+/* 002440 80001840 3C018005 */  lui   $at, %hi(gCurrFrameBuffer) # $at, 0x8005
+/* 002444 80001844 AC228C68 */  sw    $v0, %lo(gCurrFrameBuffer)($at)
 /* 002448 80001848 10000007 */  b     .L80001868_ovl0
 /* 00244C 8000184C AC600000 */   sw    $zero, ($v1)
 .L80001850_ovl0:
@@ -1146,8 +1146,8 @@ glabel func_80001774
 /* 002454 80001854 0C00CFF8 */  jal   osViSwapBuffer
 /* 002458 80001858 AFA70018 */   sw    $a3, 0x18($sp)
 /* 00245C 8000185C 8FA70018 */  lw    $a3, 0x18($sp)
-/* 002460 80001860 3C018005 */  lui   $at, %hi(D_80048C68) # $at, 0x8005
-/* 002464 80001864 AC278C68 */  sw    $a3, %lo(D_80048C68)($at)
+/* 002460 80001860 3C018005 */  lui   $at, %hi(gCurrFrameBuffer) # $at, 0x8005
+/* 002464 80001864 AC278C68 */  sw    $a3, %lo(gCurrFrameBuffer)($at)
 .L80001868_ovl0:
 /* 002468 80001868 0C00C534 */  jal   func_800314D0_ovl0
 /* 00246C 8000186C 00000000 */   nop   
@@ -2124,8 +2124,8 @@ glabel func_80002598
 /* 003220 80002620 254A8C60 */  addiu $t2, %lo(D_80048C60) # addiu $t2, $t2, -0x73a0
 /* 003224 80002624 AD400000 */  sw    $zero, ($t2)
 /* 003228 80002628 AD600000 */  sw    $zero, ($t3)
-/* 00322C 8000262C 3C018005 */  lui   $at, %hi(D_80048C68) # $at, 0x8005
-/* 003230 80002630 AC208C68 */  sw    $zero, %lo(D_80048C68)($at)
+/* 00322C 8000262C 3C018005 */  lui   $at, %hi(gCurrFrameBuffer) # $at, 0x8005
+/* 003230 80002630 AC208C68 */  sw    $zero, %lo(gCurrFrameBuffer)($at)
 /* 003234 80002634 3C018005 */  lui   $at, %hi(D_80048CD0) # $at, 0x8005
 /* 003238 80002638 AC208CD0 */  sw    $zero, %lo(D_80048CD0)($at)
 /* 00323C 8000263C 3C198000 */  lui   $t9, %hi(D_80002AF8) # $t9, 0x8000

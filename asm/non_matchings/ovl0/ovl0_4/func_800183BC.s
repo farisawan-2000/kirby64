@@ -12,12 +12,12 @@ glabel func_800183BC
 /* 018FE4 800183E4 AFB5002C */  sw    $s5, 0x2c($sp)
 /* 018FE8 800183E8 AFB40028 */  sw    $s4, 0x28($sp)
 /* 018FEC 800183EC AFB1001C */  sw    $s1, 0x1c($sp)
-/* 018FF0 800183F0 3C108005 */  lui   $s0, %hi(D_8004A3D4) # $s0, 0x8005
+/* 018FF0 800183F0 3C108005 */  lui   $s0, %hi(gDisplayListHead2) # $s0, 0x8005
 /* 018FF4 800183F4 3C128005 */  lui   $s2, %hi(D_8004ADA4) # $s2, 0x8005
 /* 018FF8 800183F8 3C178005 */  lui   $s7, %hi(D_8004ADB0) # $s7, 0x8005
 /* 018FFC 800183FC 26F7ADB0 */  addiu $s7, %lo(D_8004ADB0) # addiu $s7, $s7, -0x5250
 /* 019000 80018400 2652ADA4 */  addiu $s2, %lo(D_8004ADA4) # addiu $s2, $s2, -0x525c
-/* 019004 80018404 2610A3D4 */  addiu $s0, %lo(D_8004A3D4) # addiu $s0, $s0, -0x5c2c
+/* 019004 80018404 2610A3D4 */  addiu $s0, %lo(gDisplayListHead2) # addiu $s0, $s0, -0x5c2c
 /* 019008 80018408 24130001 */  li    $s3, 1
 /* 01900C 8001840C 3C16DE00 */  lui   $s6, 0xde00
 /* 019010 80018410 3C1EDF00 */  lui   $fp, 0xdf00
@@ -103,10 +103,10 @@ glabel func_800183BC
 /* 019144 80018544 0C005ED0 */  jal   func_80017B40_ovl0
 /* 019148 80018548 AC6B0004 */   sw    $t3, 4($v1)
 /* 01914C 8001854C 3C128005 */  lui   $s2, %hi(D_8004ADA4) # $s2, 0x8005
-/* 019150 80018550 3C108005 */  lui   $s0, %hi(D_8004A3D4) # $s0, 0x8005
+/* 019150 80018550 3C108005 */  lui   $s0, %hi(gDisplayListHead2) # $s0, 0x8005
 /* 019154 80018554 3C028005 */  lui   $v0, %hi(D_8004A3E0) # $v0, 0x8005
 /* 019158 80018558 2442A3E0 */  addiu $v0, %lo(D_8004A3E0) # addiu $v0, $v0, -0x5c20
-/* 01915C 8001855C 2610A3D4 */  addiu $s0, %lo(D_8004A3D4) # addiu $s0, $s0, -0x5c2c
+/* 01915C 8001855C 2610A3D4 */  addiu $s0, %lo(gDisplayListHead2) # addiu $s0, $s0, -0x5c2c
 /* 019160 80018560 2652ADA4 */  addiu $s2, %lo(D_8004ADA4) # addiu $s2, $s2, -0x525c
 .L80018564_ovl0:
 /* 019164 80018564 8E0C0000 */  lw    $t4, ($s0)

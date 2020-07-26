@@ -593,7 +593,7 @@ loop_1:
             if (temp_t0 != 0) {
                 sp20 = temp_a3;
                 sp24 = temp_t0;
-                func_80005DE4_ovl0(&D_8004A3D8, D_8004A444, phi_a2_2, temp_a3);
+                func_80005DE4_ovl0(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
                 temp_v0_7 = gDisplayListHead.unk8;
                 gDisplayListHead.unk8 = (void *) (temp_v0_7 + 8);
                 temp_v0_7->unk0 = 0xDE010000;
@@ -766,7 +766,7 @@ loop_1:
         if ((phi_a2_2 & 4) != 0) {
             if (temp_a3 != 0) {
                 sp24 = temp_a3;
-                func_80005DE4_ovl0(&D_8004A3D8, D_8004A444, phi_a2_2, temp_a3);
+                func_80005DE4_ovl0(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
                 temp_v0_5 = gDisplayListHead.unk8;
                 gDisplayListHead.unk8 = (void *) (temp_v0_5 + 8);
                 temp_v0_5->unk0 = 0xDE010000;
@@ -779,7 +779,7 @@ loop_1:
                     temp_v0_6->unk4 = (s32) D_8004A3EC;
                 } else {
                     sp24 = temp_a3;
-                    func_80005DE4_ovl0(&D_8004A3D8, D_8004A444, phi_a2_2, temp_a3);
+                    func_80005DE4_ovl0(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
                     temp_v0_7 = gDisplayListHead.unk8;
                     gDisplayListHead.unk8 = (void *) (temp_v0_7 + 8);
                     temp_v0_7->unk0 = 0xDE010000;
@@ -797,7 +797,7 @@ loop_1:
                 temp_v1->unk4 = (s32) D_8004A3EC;
             } else {
                 if (D_8004A448 != 0) {
-                    func_80005DE4_ovl0(&D_8004A3D4, D_8004A444, phi_a3);
+                    func_80005DE4_ovl0(&gDisplayListHead2, D_8004A444, phi_a3);
                 }
                 temp_v1_2 = gDisplayListHead.unk4;
                 gDisplayListHead.unk4 = (void *) (temp_v1_2 + 8);
@@ -807,7 +807,7 @@ loop_1:
             D_8004A3E4 = (void *) gDisplayListHead.unk4;
         }
         if (sp20 != 0) {
-            func_80005DE4_ovl0(&D_8004A3DC, D_8004A444);
+            func_80005DE4_ovl0(&gDisplayListHead4, D_8004A444);
             temp_v1_3 = gDisplayListHead.unkC;
             gDisplayListHead.unkC = (void *) (temp_v1_3 + 8);
             temp_v1_3->unk0 = 0xDE010000;

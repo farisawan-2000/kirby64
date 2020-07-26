@@ -119,10 +119,10 @@ glabel func_80005F10
 /* 006CC8 800060C8 11C0002B */  beqz  $t6, .L80006178_ovl0
 /* 006CCC 800060CC 30C70008 */   andi  $a3, $a2, 8
 /* 006CD0 800060D0 11000013 */  beqz  $t0, .L80006120_ovl0
-/* 006CD4 800060D4 3C048005 */   lui   $a0, %hi(D_8004A3D8) # $a0, 0x8005
+/* 006CD4 800060D4 3C048005 */   lui   $a0, %hi(gDisplayListHead3) # $a0, 0x8005
 /* 006CD8 800060D8 3C058005 */  lui   $a1, %hi(D_8004A444) # $a1, 0x8005
 /* 006CDC 800060DC 94A5A444 */  lhu   $a1, %lo(D_8004A444)($a1)
-/* 006CE0 800060E0 2484A3D8 */  addiu $a0, %lo(D_8004A3D8) # addiu $a0, $a0, -0x5c28
+/* 006CE0 800060E0 2484A3D8 */  addiu $a0, %lo(gDisplayListHead3) # addiu $a0, $a0, -0x5c28
 /* 006CE4 800060E4 AFA70020 */  sw    $a3, 0x20($sp)
 /* 006CE8 800060E8 0C001779 */  jal   func_80005DE4_ovl0
 /* 006CEC 800060EC AFA80024 */   sw    $t0, 0x24($sp)

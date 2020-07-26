@@ -18,8 +18,8 @@ struct Entities {
 
 struct Main_Header
 {
-/*0x00*/    struct Collision_Header    *Collision_Header;
-/*0x04*/    struct Node_Header         *Node_Header;
+/*0x00*/    struct CollisionHeader    *collisionHeader;
+/*0x04*/    struct NodeHeader         *nodeHeader;
 /*0x08*/    struct Entities            *Entity_IDs;
 /*0x0C*/    int                        padding;
 };
@@ -136,7 +136,7 @@ struct Water_Data
 // Collision Header
 // The collision header is referred to by the first index inside the main header. The collision header has the following format.
 
-struct Collision_Header
+struct CollisionHeader
 {
 /*0x0*/    struct Col_Triangle    *Triangles;
 /*0x4*/    u32       Len_Triangles;
@@ -160,7 +160,7 @@ struct Collision_Header
 
 struct vCollisionHeader {
     u32 using32BitVertices; // Always 0, since 16 bit vertices are used
-    struct Collision_Header header;
+    struct CollisionHeader header;
 };
 
 // Node Connectors
@@ -176,10 +176,10 @@ struct Node_Connectors
 // Basically if a node is connected on both ends to the same node, there is only one node connector. In this case Go_Forward is used to determine if kirby should be allowed to pass or not. On the other hand Go_Backwards only allows movement through when 0. If there are two connections than backand front connect to different nodes. In that case the first determines backwards connection while the second determines forwards. Go_Backwards now determines all movement, with the same effect as the single node.
 
 
-// Node_Header
+// NodeHeader
 // The level nodes are referred to by the second index in the main header. This section tells the game how to move kirby as you progress through the level and how the camera should act.
 
-struct Path_Node_Header
+struct Path_NodeHeader
 {
 /*0x0*/    struct Kirby_Node          *Kirby_Node;
 /*0x4*/    struct Path_Node_Footer    *Path_Node_Footer;
@@ -187,10 +187,10 @@ struct Path_Node_Header
 /*0xC*/    u16      Num_Connections;
 /*0xE*/    u16      Self_Connected;
 };
-struct Node_Header
+struct NodeHeader
 {
 /*0x0*/    u32    Num_Path_Nodes;
-/*0x4*/    struct Path_Node_Header   (*Path_Node_Header)[];
+/*0x4*/    struct Path_NodeHeader   (*Path_NodeHeader)[];
 /*0x8*/    u8     (*Unk_Bytes)[];
 /*0xC*/    f32    (*Unk_Floats)[];
 };
