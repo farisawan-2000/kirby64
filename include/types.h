@@ -34,6 +34,17 @@ struct VblankHandler
 
 typedef f32 Vec3f[3];
 
+struct Overlay {
+    void *startAddr;
+    void *endAddr;
+    void *textStart;
+    void *textStart2;
+    void *textEnd;
+    void *dataStart;
+    void *dataEnd;
+    void *bssStart;
+    void *bssEnd;
+};
 
 struct Entity {
    u8 nodeNum;

@@ -18,6 +18,7 @@ OUTPUT_ARCH (mips)
 #define END_NOLOAD(name) \
     _##name##SegNoloadEnd = ADDR(.name.noload) + SIZEOF(.name.noload);
 
+
 SECTIONS
 {
    __romPos = 0x0;
@@ -68,9 +69,16 @@ SECTIONS
       BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_12.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_13.o(.text);
-      BUILD_DIR/data/kirby.066630.o(.data);
    }
    END_SEG(ovl1)
+   BEGIN_SEG(ovl1Data, ) {
+      BUILD_DIR/data/kirby.066630.o(.data);
+   }
+   END_SEG(ovl1Data)
+   BEGIN_NOLOAD(ovl1) {
+      BUILD_DIR/asm/ovl1/ovl1.o(.bss);
+   }
+   END_NOLOAD(ovl1)
 
    /* 0x800F61A0 07EC10-0AC900 [2DCF0] */
    BEGIN_SEG(ovl2, 0x800F61A0) {

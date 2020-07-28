@@ -1,17 +1,7 @@
 #include <ultra64.h>
 #include <macros.h>
 
-struct {
-    u32 *startAddr;
-    u32 *endAddr;
-    u32 *textStart;
-    u32 *textStart2;
-    u32 *textEnd;
-    u32 *dataStart;
-    u32 *dataEnd;
-    u32 *bssStart;
-    u32 *bssEnd;
-} Overlay;
+#include "types.h"
 
 extern struct Overlay *D_8003DC70; //TODO: define and put into .data
 extern u32 D_8003DC94;
