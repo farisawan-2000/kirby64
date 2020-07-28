@@ -8,8 +8,7 @@ void func_800FDA40_ovl2(Vtx *vtxList, f32 arg1, f32 arg2) {
     vtxList[1].v.ob[1] = arg2;
     vtxList[2].v.ob[1] = arg1;
     vtxList[3].v.ob[1] = arg1;
-    vtxList+=3;
-    gSPVertex(gDisplayListHeads[0]++, vtxList, 4, 0);
+    gSPVertex(gDisplayListHeads[0]++, vtxList, 4, 0); vtxList +=3;
     gSP2Triangles(gDisplayListHeads[0]++, 2, 3, 1, 0, 0, 2, 1, 0);
 }
 #else

@@ -47,6 +47,25 @@ struct Entity {
    Vec3f scale;
 };
 
+// Addressing
+#define LIST_INDEX(list, index) (list << 16) | index
+#define BANK_INDEX(bank, index) (bank << 16) | index
+#define NULL_STAGE { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,}
+
+struct StageArea {
+  /*0x00*/ u32   liGeoBlockA;      // List-index of primary Geometry Block
+  /*0x04*/ u32   liGeoBlockB;      // List-index of secondary Geometry Block
+  /*0x08*/ u16   skyboxId;         // Skybox ID
+  /*0x0A*/ u16   bgColor; // BG color (loaded from color table at 800D478C)
+  /*0x0C*/ u32   musicId;          // Music ID
+  /*0x10*/ u32   biAreaSetup;      // Bank-index of area stup block 
+  /*0x14*/ u16   deathCamera;     // Determines how far the camera follows kirby when falling into void/death
+  /*0x16*/ u16   unk16;            // Cutscene related?
+  /*0x18*/ u32   biDustSettings;   // Bank-index of Dust particle settings
+  /*0x1C*/ u32   biDustImg;        // Bank-index of Dust particle image
+  /*0x20*/ u32   areaName;         // Pointer to developer ASCII level name
+};
+
 // 0x8012E7C0
 // TODO: populate with actual values
 struct KirbyState {

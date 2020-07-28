@@ -14,3 +14,7 @@
 .macro .word32 x
     .word \x
 .endm
+
+.macro TABLE address, ndatas
+  .word    \address,(\ndatas+1)*4
+.endm

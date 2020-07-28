@@ -53,7 +53,7 @@ LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
 ASM_DIRS := asm data $(wildcard asm/ovl*)
-SRC_DIRS := src $(wildcard src/ovl*)
+SRC_DIRS := src $(wildcard src/ovl*) data
 TEXTURES_DIR = textures
 
 MIPSISET := -mips2 -32
