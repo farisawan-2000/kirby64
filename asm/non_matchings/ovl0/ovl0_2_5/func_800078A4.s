@@ -12,7 +12,7 @@ glabel func_800078A4
 /* 0084CC 800078CC 00C02025 */  move  $a0, $a2
 /* 0084D0 800078D0 AF260004 */  sw    $a2, 4($t9)
 /* 0084D4 800078D4 8FA90018 */  lw    $t1, 0x18($sp)
-/* 0084D8 800078D8 0C00BA2C */  jal   func_8002E8B0_ovl0
+/* 0084D8 800078D8 0C00BA2C */  jal   bzero
 /* 0084DC 800078DC AD280008 */   sw    $t0, 8($t1)
 /* 0084E0 800078E0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0084E4 800078E4 27BD0018 */  addiu $sp, $sp, 0x18

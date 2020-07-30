@@ -3,11 +3,12 @@
 
 #include "types.h"
 
-extern struct Overlay *D_8003DC70; //TODO: define and put into .data
+extern struct Overlay *mainSegOverlay; //TODO: define and put into .data
 extern u32 D_8003DC94;
 
 // .bss
 static u32 pad[4];
+static u32 morepad[0xA];
 static u64 D_80042BC8[0x71];
 
 OSThread *D_80042D90;
@@ -105,7 +106,7 @@ void func_80000510(void) {
 }
 
 extern void func_80038980(u32 x);
-extern void func_80002EBC(void);
+extern void func_80002EBC(void); // Initializes a PI Handle
 extern void func_80002BA0(void);
 extern void func_80002E48(u32 x, u32 *y, u32 z);
 extern void func_80002598(void *);
@@ -134,7 +135,7 @@ void thread5_main(void *arg0) {
     D_80048138[0] = STACK_TOP_MAGIC; osStartThread(&D_80047F50);
     osRecvMesg(&D_80048A08, 0, 1);
     func_800076D0();
-    load_overlay(&D_8003DC70);
+    load_overlay(&mainSegOverlay);
     func_800A377C(0);
 }
 

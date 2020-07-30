@@ -1290,7 +1290,7 @@ glabel func_800019BC
 /* 00265C 80001A5C 3C048005 */  lui   $a0, %hi(D_80048C80) # $a0, 0x8005
 /* 002660 80001A60 14AD0003 */  bne   $a1, $t5, .L80001A70_ovl0
 /* 002664 80001A64 24848C80 */   addiu $a0, %lo(D_80048C80) # addiu $a0, $a0, -0x7380
-/* 002668 80001A68 0C00CEE4 */  jal   func_80033B90_ovl0
+/* 002668 80001A68 0C00CEE4 */  jal   osInvalDCache
 /* 00266C 80001A6C 24050008 */   li    $a1, 8
 .L80001A70_ovl0:
 /* 002670 80001A70 0C000627 */  jal   func_8000189C_ovl0
@@ -1810,7 +1810,7 @@ glabel func_8000206C
 /* 002DB4 800021B4 24848C80 */  addiu $a0, %lo(D_80048C80) # addiu $a0, $a0, -0x7380
 /* 002DB8 800021B8 14C8002D */  bne   $a2, $t0, .L80002270_ovl0
 /* 002DBC 800021BC 00000000 */   nop   
-/* 002DC0 800021C0 0C00CEE4 */  jal   func_80033B90_ovl0
+/* 002DC0 800021C0 0C00CEE4 */  jal   osInvalDCache
 /* 002DC4 800021C4 24050008 */   li    $a1, 8
 /* 002DC8 800021C8 3C038005 */  lui   $v1, %hi(D_80048C80) # $v1, 0x8005
 /* 002DCC 800021CC 3C078005 */  lui   $a3, %hi(D_80048B8C) # $a3, 0x8005

@@ -13,7 +13,7 @@ glabel load_overlay
 /* 0039B8 80002DB8 8E02000C */  lw    $v0, 0xc($s0)
 /* 0039BC 80002DBC 8E0F0010 */  lw    $t7, 0x10($s0)
 /* 0039C0 80002DC0 00402025 */  move  $a0, $v0
-/* 0039C4 80002DC4 0C00CEE4 */  jal   func_80033B90_ovl0
+/* 0039C4 80002DC4 0C00CEE4 */  jal   osInvalDCache
 /* 0039C8 80002DC8 01E22823 */   subu  $a1, $t7, $v0
 .L80002DCC_ovl0:
 /* 0039CC 80002DCC 8E020014 */  lw    $v0, 0x14($s0)
@@ -22,7 +22,7 @@ glabel load_overlay
 /* 0039D8 80002DD8 03021823 */  subu  $v1, $t8, $v0
 /* 0039DC 80002DDC 50600004 */  beql  $v1, $zero, .L80002DF0_ovl0
 /* 0039E0 80002DE0 8E050000 */   lw    $a1, ($s0)
-/* 0039E4 80002DE4 0C00CEE4 */  jal   func_80033B90_ovl0
+/* 0039E4 80002DE4 0C00CEE4 */  jal   osInvalDCache
 /* 0039E8 80002DE8 00602825 */   move  $a1, $v1
 /* 0039EC 80002DEC 8E050000 */  lw    $a1, ($s0)
 .L80002DF0_ovl0:
@@ -42,7 +42,7 @@ glabel load_overlay
 /* 003A20 80002E20 01021823 */  subu  $v1, $t0, $v0
 /* 003A24 80002E24 50600004 */  beql  $v1, $zero, .L80002E38_ovl0
 /* 003A28 80002E28 8FBF0024 */   lw    $ra, 0x24($sp)
-/* 003A2C 80002E2C 0C00BA2C */  jal   func_8002E8B0_ovl0
+/* 003A2C 80002E2C 0C00BA2C */  jal   bzero
 /* 003A30 80002E30 00602825 */   move  $a1, $v1
 /* 003A34 80002E34 8FBF0024 */  lw    $ra, 0x24($sp)
 .L80002E38_ovl0:

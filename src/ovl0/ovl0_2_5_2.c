@@ -11,7 +11,7 @@ extern u32 D_8004A544;
 #ifdef MIPS_TO_C
 void *func_80007F58(void) {
     if (!gObjectThreadMaybe) {
-        fatal_printf(&D_80040230);//, &D_8004A544);//, &gObjectThreadMaybe);
+        fatal_printf(&D_80040230, &D_8004A544, &gObjectThreadMaybe);
         while (TRUE);
     }
     gObjectThreadMaybe = *gObjectThreadMaybe;

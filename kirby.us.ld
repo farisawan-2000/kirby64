@@ -43,6 +43,8 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_3.o(.text);
       BUILD_DIR/src/ovl0/ovl0_4.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_5.o(.text);
+      BUILD_DIR/asm/ovl0/exception.o(.text);
+      BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
       BUILD_DIR/asm/ovl0/SetPc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }

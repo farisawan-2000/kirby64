@@ -25,7 +25,7 @@ glabel func_80002EBC
 /* 003B14 80002F14 A0CA0009 */  sb    $t2, 9($a2)
 /* 003B18 80002F18 ACC00010 */  sw    $zero, 0x10($a2)
 /* 003B1C 80002F1C 24848D0C */  addiu $a0, %lo(D_80048D0C) # addiu $a0, $a0, -0x72f4
-/* 003B20 80002F20 0C00BA2C */  jal   func_8002E8B0_ovl0
+/* 003B20 80002F20 0C00BA2C */  jal   bzero
 /* 003B24 80002F24 24050060 */   li    $a1, 96
 /* 003B28 80002F28 3C068005 */  lui   $a2, 0x8005
 /* 003B2C 80002F2C 0C00C164 */  jal   osEPiLinkHandle
