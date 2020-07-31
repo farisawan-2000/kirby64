@@ -66,19 +66,19 @@ GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002BD0.s")
 extern OSPiHandle *D_80048CF0;
 #include "main.h"
 void load_overlay(Overlay *ovl) {
-    if (ovl->asS32.textEnd - ovl->asS32.textStart != 0) {
-        osInvalICache(ovl->asS32.textStart, ovl->asS32.textEnd - ovl->asS32.textStart);
-        osInvalDCache(ovl->asS32.textStart, ovl->asS32.textEnd - ovl->asS32.textStart);
+    if ((s32) ovl->textEnd - (s32) ovl->textStart != 0) {
+        osInvalICache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
+        osInvalDCache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
     }
-    if (ovl->asS32.dataEnd - ovl->asS32.dataStart != 0) {
-        osInvalDCache(ovl->asS32.dataStart, ovl->asS32.dataEnd - ovl->asS32.dataStart);
+    if ((s32) ovl->dataEnd - (s32) ovl->dataStart != 0) {
+        osInvalDCache((s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
     }
-    if (ovl->asS32.endAddr - ovl->asS32.startAddr != 0) {
-        func_80002BD0_ovl0(D_80048CF0, ovl->asS32.startAddr, ovl->asS32.RAMStart, ovl->asS32.endAddr - ovl->asS32.startAddr, 0);
+    if ((s32) ovl->endAddr - (s32) ovl->startAddr != 0) {
+        func_80002BD0_ovl0(D_80048CF0, (s32) ovl->startAddr, (s32) ovl->RAMStart, (s32) ovl->endAddr - (s32) ovl->startAddr, 0);
     }
     
-    if (ovl->asS32.bssEnd - ovl->asS32.bssStart != 0) {
-        bzero(ovl->asS32.bssStart, ovl->asS32.bssEnd - ovl->asS32.bssStart);
+    if ((s32) ovl->bssEnd - (s32) ovl->bssStart != 0) {
+        bzero((s32) ovl->bssStart, (s32) ovl->bssEnd - (s32) ovl->bssStart);
     }
 }
 
