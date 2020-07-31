@@ -5,7 +5,7 @@ glabel func_80015BCC
 /* 0167D8 80015BD8 3C018005 */  lui   $at, %hi(D_8004AA94) # $at, 0x8005
 /* 0167DC 80015BDC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0167E0 80015BE0 E424AA94 */  swc1  $f4, %lo(D_8004AA94)($at)
-/* 0167E4 80015BE4 0C005623 */  jal   func_8001588C_ovl0
+/* 0167E4 80015BE4 0C005623 */  jal   func_8001588C
 /* 0167E8 80015BE8 8C84003C */   lw    $a0, 0x3c($a0)
 /* 0167EC 80015BEC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0167F0 80015BF0 27BD0018 */  addiu $sp, $sp, 0x18

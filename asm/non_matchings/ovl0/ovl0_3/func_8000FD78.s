@@ -32,7 +32,7 @@ glabel func_8000FD78
 /* 0109EC 8000FDEC 8E09FFF8 */  lw    $t1, -8($s0)
 /* 0109F0 8000FDF0 AE290044 */  sw    $t1, 0x44($s1)
 /* 0109F4 8000FDF4 8E0AFFFC */  lw    $t2, -4($s0)
-/* 0109F8 8000FDF8 0C002FA4 */  jal   func_8000BE90_ovl0
+/* 0109F8 8000FDF8 0C002FA4 */  jal   func_8000BE90
 /* 0109FC 8000FDFC AE2A0048 */   sw    $t2, 0x48($s1)
 /* 010A00 8000FE00 10400004 */  beqz  $v0, .L8000FE14_ovl0
 /* 010A04 8000FE04 00408825 */   move  $s1, $v0

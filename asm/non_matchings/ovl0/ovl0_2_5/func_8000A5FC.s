@@ -9,9 +9,9 @@ glabel func_8000A5FC
 .L8000A618_ovl0:
 /* 00B218 8000A618 8FAE0030 */  lw    $t6, 0x30($sp)
 /* 00B21C 8000A61C AFA40020 */  sw    $a0, 0x20($sp)
-/* 00B220 8000A620 0C002960 */  jal   func_8000A580_ovl0
+/* 00B220 8000A620 0C002960 */  jal   func_8000A580
 /* 00B224 8000A624 AFAE0010 */   sw    $t6, 0x10($sp)
-/* 00B228 8000A628 0C00217E */  jal   func_800085F8_ovl0
+/* 00B228 8000A628 0C00217E */  jal   func_800085F8
 /* 00B22C 8000A62C 8FA40020 */   lw    $a0, 0x20($sp)
 /* 00B230 8000A630 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 00B234 8000A634 27BD0020 */  addiu $sp, $sp, 0x20

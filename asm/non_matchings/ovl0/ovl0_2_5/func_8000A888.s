@@ -20,13 +20,13 @@ glabel func_8000A888
 .L8000A8CC_ovl0:
 /* 00B4CC 8000A8CC 00E02025 */  move  $a0, $a3
 /* 00B4D0 8000A8D0 A3A50027 */  sb    $a1, 0x27($sp)
-/* 00B4D4 8000A8D4 0C0021BB */  jal   func_800086EC_ovl0
+/* 00B4D4 8000A8D4 0C0021BB */  jal   func_800086EC
 /* 00B4D8 8000A8D8 AFA70020 */   sw    $a3, 0x20($sp)
 /* 00B4DC 8000A8DC 93A50027 */  lbu   $a1, 0x27($sp)
 /* 00B4E0 8000A8E0 8FA40020 */  lw    $a0, 0x20($sp)
 /* 00B4E4 8000A8E4 A085000D */  sb    $a1, 0xd($a0)
 /* 00B4E8 8000A8E8 8FAF0028 */  lw    $t7, 0x28($sp)
-/* 00B4EC 8000A8EC 0C00217E */  jal   func_800085F8_ovl0
+/* 00B4EC 8000A8EC 0C00217E */  jal   func_800085F8
 /* 00B4F0 8000A8F0 AC8F0028 */   sw    $t7, 0x28($a0)
 /* 00B4F4 8000A8F4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 00B4F8 8000A8F8 27BD0020 */  addiu $sp, $sp, 0x20

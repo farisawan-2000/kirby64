@@ -12,7 +12,7 @@ glabel func_8000B870
 /* 00C494 8000B894 8FBF001C */   lw    $ra, 0x1c($sp)
 .L8000B898_ovl0:
 /* 00C498 8000B898 8E110000 */  lw    $s1, ($s0)
-/* 00C49C 8000B89C 0C00236A */  jal   func_80008DA8_ovl0
+/* 00C49C 8000B89C 0C00236A */  jal   func_80008DA8
 /* 00C4A0 8000B8A0 02002025 */   move  $a0, $s0
 /* 00C4A4 8000B8A4 1620FFFC */  bnez  $s1, .L8000B898_ovl0
 /* 00C4A8 8000B8A8 02208025 */   move  $s0, $s1

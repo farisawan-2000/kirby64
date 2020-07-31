@@ -18,7 +18,7 @@ glabel func_80015DC4
 /* 016A04 80015E04 E424AA94 */  swc1  $f4, %lo(D_8004AA94)($at)
 /* 016A08 80015E08 AE000000 */  sw    $zero, ($s0)
 /* 016A0C 80015E0C AFA3002C */  sw    $v1, 0x2c($sp)
-/* 016A10 80015E10 0C0052C1 */  jal   func_80014B04_ovl0
+/* 016A10 80015E10 0C0052C1 */  jal   func_80014B04
 /* 016A14 80015E14 AFA60020 */   sw    $a2, 0x20($sp)
 /* 016A18 80015E18 8FA3002C */  lw    $v1, 0x2c($sp)
 /* 016A1C 80015E1C 8FA60020 */  lw    $a2, 0x20($sp)
@@ -44,7 +44,7 @@ glabel func_80015DC4
 /* 016A64 80015E64 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
 /* 016A68 80015E68 02002025 */  move  $a0, $s0
 /* 016A6C 80015E6C AFA3002C */  sw    $v1, 0x2c($sp)
-/* 016A70 80015E70 0C004460 */  jal   func_80011180_ovl0
+/* 016A70 80015E70 0C004460 */  jal   func_80011180
 /* 016A74 80015E74 AFA60020 */   sw    $a2, 0x20($sp)
 /* 016A78 80015E78 8FA3002C */  lw    $v1, 0x2c($sp)
 /* 016A7C 80015E7C AFA20028 */  sw    $v0, 0x28($sp)
@@ -59,7 +59,7 @@ glabel func_80015DC4
 /* 016AA0 80015EA0 5540000E */  bnezl $t2, .L80015EDC_ovl0
 /* 016AA4 80015EA4 8CC40010 */   lw    $a0, 0x10($a2)
 /* 016AA8 80015EA8 AFA3002C */  sw    $v1, 0x2c($sp)
-/* 016AAC 80015EAC 0C004CC0 */  jal   func_80013300_ovl0
+/* 016AAC 80015EAC 0C004CC0 */  jal   func_80013300
 /* 016AB0 80015EB0 AFA60020 */   sw    $a2, 0x20($sp)
 /* 016AB4 80015EB4 8E040000 */  lw    $a0, ($s0)
 /* 016AB8 80015EB8 8FA3002C */  lw    $v1, 0x2c($sp)
@@ -74,7 +74,7 @@ glabel func_80015DC4
 .L80015EDC_ovl0:
 /* 016ADC 80015EDC 50800005 */  beql  $a0, $zero, .L80015EF4_ovl0
 /* 016AE0 80015EE0 8FAE0028 */   lw    $t6, 0x28($sp)
-/* 016AE4 80015EE4 0C0056FF */  jal   func_80015BFC_ovl0
+/* 016AE4 80015EE4 0C0056FF */  jal   func_80015BFC
 /* 016AE8 80015EE8 AFA60020 */   sw    $a2, 0x20($sp)
 /* 016AEC 80015EEC 8FA60020 */  lw    $a2, 0x20($sp)
 /* 016AF0 80015EF0 8FAE0028 */  lw    $t6, 0x28($sp)
@@ -105,7 +105,7 @@ glabel func_80015DC4
 /* 016B48 80015F48 52000007 */  beql  $s0, $zero, .L80015F68_ovl0
 /* 016B4C 80015F4C 8FBF001C */   lw    $ra, 0x1c($sp)
 .L80015F50_ovl0:
-/* 016B50 80015F50 0C0056FF */  jal   func_80015BFC_ovl0
+/* 016B50 80015F50 0C0056FF */  jal   func_80015BFC
 /* 016B54 80015F54 02002025 */   move  $a0, $s0
 /* 016B58 80015F58 8E100008 */  lw    $s0, 8($s0)
 /* 016B5C 80015F5C 1600FFFC */  bnez  $s0, .L80015F50_ovl0

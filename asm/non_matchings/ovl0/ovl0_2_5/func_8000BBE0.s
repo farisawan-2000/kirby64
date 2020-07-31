@@ -12,7 +12,7 @@ glabel func_8000BBE0
 /* 00C804 8000BC04 52000007 */  beql  $s0, $zero, .L8000BC24_ovl0
 /* 00C808 8000BC08 8FBF001C */   lw    $ra, 0x1c($sp)
 .L8000BC0C_ovl0:
-/* 00C80C 8000BC0C 0C00277D */  jal   func_80009DF4_ovl0
+/* 00C80C 8000BC0C 0C00277D */  jal   func_80009DF4
 /* 00C810 8000BC10 02002025 */   move  $a0, $s0
 /* 00C814 8000BC14 8E30003C */  lw    $s0, 0x3c($s1)
 /* 00C818 8000BC18 1600FFFC */  bnez  $s0, .L8000BC0C_ovl0

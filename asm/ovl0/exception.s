@@ -165,7 +165,7 @@ glabel __osException
 /* 02EDBC 8002E1BC 02018024 */   and   $s0, $s0, $at
 /* 02EDC0 8002E1C0 40095800 */  mfc0  $t1, $11
 /* 02EDC4 8002E1C4 40895800 */  mtc0  $t1, $11
-/* 02EDC8 8002E1C8 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EDC8 8002E1C8 0C00B929 */  jal   func_8002E4A4
 /* 02EDCC 8002E1CC 24040018 */   li    $a0, 24
 /* 02EDD0 8002E1D0 3C01FFFF */  lui   $at, (0xFFFF7FFF >> 16) # lui $at, 0xffff
 /* 02EDD4 8002E1D4 34217FFF */  ori   $at, (0xFFFF7FFF & 0xFFFF) # ori $at, $at, 0x7fff
@@ -189,7 +189,7 @@ glabel __osException
 /* 02EE1C 8002E21C 10000082 */  b     .L8002E428_ovl0
 /* 02EE20 8002E220 00000000 */   nop   
 .L8002E224_ovl0:
-/* 02EE24 8002E224 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EE24 8002E224 0C00B929 */  jal   func_8002E4A4
 /* 02EE28 8002E228 00000000 */   nop   
 /* 02EE2C 8002E22C 1000FFD0 */  b     .L8002E170_ovl0
 /* 02EE30 8002E230 00000000 */   nop   
@@ -211,14 +211,14 @@ glabel __osException
 /* 02EE70 8002E270 3231003E */  andi  $s1, $s1, 0x3e
 /* 02EE74 8002E274 11800007 */  beqz  $t4, .L8002E294_ovl0
 /* 02EE78 8002E278 AC290010 */   sw    $t1, %lo(D_A4040010)($at)
-/* 02EE7C 8002E27C 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EE7C 8002E27C 0C00B929 */  jal   func_8002E4A4
 /* 02EE80 8002E280 24040020 */   li    $a0, 32
 /* 02EE84 8002E284 12200038 */  beqz  $s1, .L8002E368_ovl0
 /* 02EE88 8002E288 00000000 */   nop   
 /* 02EE8C 8002E28C 10000005 */  b     .L8002E2A4_ovl0
 /* 02EE90 8002E290 00000000 */   nop   
 .L8002E294_ovl0:
-/* 02EE94 8002E294 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EE94 8002E294 0C00B929 */  jal   func_8002E4A4
 /* 02EE98 8002E298 24040058 */   li    $a0, 88
 /* 02EE9C 8002E29C 12200032 */  beqz  $s1, .L8002E368_ovl0
 /* 02EEA0 8002E2A0 00000000 */   nop   
@@ -228,7 +228,7 @@ glabel __osException
 /* 02EEAC 8002E2AC 3C01A440 */   lui   $at, %hi(D_A4400010) # $at, 0xa440
 /* 02EEB0 8002E2B0 32310037 */  andi  $s1, $s1, 0x37
 /* 02EEB4 8002E2B4 AC200010 */  sw    $zero, %lo(D_A4400010)($at)
-/* 02EEB8 8002E2B8 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EEB8 8002E2B8 0C00B929 */  jal   func_8002E4A4
 /* 02EEBC 8002E2BC 24040038 */   li    $a0, 56
 /* 02EEC0 8002E2C0 12200029 */  beqz  $s1, .L8002E368_ovl0
 /* 02EEC4 8002E2C4 00000000 */   nop   
@@ -240,7 +240,7 @@ glabel __osException
 /* 02EED8 8002E2D8 3C01A450 */  lui   $at, %hi(D_A450000C) # $at, 0xa450
 /* 02EEDC 8002E2DC 3231003B */  andi  $s1, $s1, 0x3b
 /* 02EEE0 8002E2E0 AC29000C */  sw    $t1, %lo(D_A450000C)($at)
-/* 02EEE4 8002E2E4 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EEE4 8002E2E4 0C00B929 */  jal   func_8002E4A4
 /* 02EEE8 8002E2E8 24040030 */   li    $a0, 48
 /* 02EEEC 8002E2EC 1220001E */  beqz  $s1, .L8002E368_ovl0
 /* 02EEF0 8002E2F0 00000000 */   nop   
@@ -250,7 +250,7 @@ glabel __osException
 /* 02EEFC 8002E2FC 3C01A480 */   lui   $at, %hi(D_A4800018) # $at, 0xa480
 /* 02EF00 8002E300 3231003D */  andi  $s1, $s1, 0x3d
 /* 02EF04 8002E304 AC200018 */  sw    $zero, %lo(D_A4800018)($at)
-/* 02EF08 8002E308 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EF08 8002E308 0C00B929 */  jal   func_8002E4A4
 /* 02EF0C 8002E30C 24040028 */   li    $a0, 40
 /* 02EF10 8002E310 12200015 */  beqz  $s1, .L8002E368_ovl0
 /* 02EF14 8002E314 00000000 */   nop   
@@ -262,7 +262,7 @@ glabel __osException
 /* 02EF28 8002E328 3C01A460 */  lui   $at, %hi(D_A4600010) # $at, 0xa460
 /* 02EF2C 8002E32C 3231002F */  andi  $s1, $s1, 0x2f
 /* 02EF30 8002E330 AC290010 */  sw    $t1, %lo(D_A4600010)($at)
-/* 02EF34 8002E334 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EF34 8002E334 0C00B929 */  jal   func_8002E4A4
 /* 02EF38 8002E338 24040040 */   li    $a0, 64
 /* 02EF3C 8002E33C 1220000A */  beqz  $s1, .L8002E368_ovl0
 /* 02EF40 8002E340 00000000 */   nop   
@@ -274,7 +274,7 @@ glabel __osException
 /* 02EF54 8002E354 3C01A430 */  lui   $at, 0xa430
 /* 02EF58 8002E358 3231001F */  andi  $s1, $s1, 0x1f
 /* 02EF5C 8002E35C AC290000 */  sw    $t1, ($at)
-/* 02EF60 8002E360 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EF60 8002E360 0C00B929 */  jal   func_8002E4A4
 /* 02EF64 8002E364 24040048 */   li    $a0, 72
 .L8002E368_ovl0:
 /* 02EF68 8002E368 2401FBFF */  li    $at, -1025
@@ -294,7 +294,7 @@ glabel __osException
 .L8002E3A0_ovl0:
 /* 02EFA0 8002E3A0 240A0001 */  li    $t2, 1
 /* 02EFA4 8002E3A4 AD2A0000 */  sw    $t2, ($t1)
-/* 02EFA8 8002E3A8 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EFA8 8002E3A8 0C00B929 */  jal   func_8002E4A4
 /* 02EFAC 8002E3AC 24040070 */   li    $a0, 112
 /* 02EFB0 8002E3B0 3C0A8004 */  lui   $t2, %hi(__osRunQueue) # $t2, 0x8004
 /* 02EFB4 8002E3B4 8D4AFB58 */  lw    $t2, %lo(__osRunQueue)($t2)
@@ -307,7 +307,7 @@ glabel __osException
 /* 02EFD0 8002E3D0 2401FDFF */  li    $at, -513
 /* 02EFD4 8002E3D4 01014024 */  and   $t0, $t0, $at
 /* 02EFD8 8002E3D8 40886800 */  mtc0  $t0, $13
-/* 02EFDC 8002E3DC 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EFDC 8002E3DC 0C00B929 */  jal   func_8002E4A4
 /* 02EFE0 8002E3E0 24040008 */   li    $a0, 8
 /* 02EFE4 8002E3E4 2401FDFF */  li    $at, -513
 /* 02EFE8 8002E3E8 1000FF61 */  b     .L8002E170_ovl0
@@ -315,7 +315,7 @@ glabel __osException
 /* 02EFF0 8002E3F0 2401FEFF */  li    $at, -257
 /* 02EFF4 8002E3F4 01014024 */  and   $t0, $t0, $at
 /* 02EFF8 8002E3F8 40886800 */  mtc0  $t0, $13
-/* 02EFFC 8002E3FC 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02EFFC 8002E3FC 0C00B929 */  jal   func_8002E4A4
 /* 02F000 8002E400 24040000 */   li    $a0, 0
 /* 02F004 8002E404 2401FEFF */  li    $at, -257
 /* 02F008 8002E408 1000FF59 */  b     .L8002E170_ovl0
@@ -323,7 +323,7 @@ glabel __osException
 .L8002E410_ovl0:
 /* 02F010 8002E410 24090001 */  li    $t1, 1
 /* 02F014 8002E414 A7490012 */  sh    $t1, 0x12($k0)
-/* 02F018 8002E418 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02F018 8002E418 0C00B929 */  jal   func_8002E4A4
 /* 02F01C 8002E41C 24040050 */   li    $a0, 80
 /* 02F020 8002E420 10000001 */  b     .L8002E428_ovl0
 /* 02F024 8002E424 00000000 */   nop   
@@ -359,7 +359,7 @@ glabel __osException
 /* 02F088 8002E488 A7490012 */  sh    $t1, 0x12($k0)
 /* 02F08C 8002E48C 400A4000 */  mfc0  $t2, $8
 /* 02F090 8002E490 AF4A0124 */  sw    $t2, 0x124($k0)
-/* 02F094 8002E494 0C00B929 */  jal   func_8002E4A4_ovl0
+/* 02F094 8002E494 0C00B929 */  jal   func_8002E4A4
 /* 02F098 8002E498 24040060 */   li    $a0, 96
 /* 02F09C 8002E49C 0800B9B9 */  j     __osDispatchThread
 /* 02F0A0 8002E4A0 00000000 */   nop   

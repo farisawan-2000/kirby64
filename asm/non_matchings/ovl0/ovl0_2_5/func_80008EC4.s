@@ -81,7 +81,7 @@ glabel func_80008EC4
 /* 009BD8 80008FD8 A20F0056 */  sb    $t7, 0x56($s0)
 /* 009BDC 80008FDC AFAC0020 */  sw    $t4, 0x20($sp)
 /* 009BE0 80008FE0 AFAA0028 */  sw    $t2, 0x28($sp)
-/* 009BE4 80008FE4 0C0021D5 */  jal   func_80008754_ovl0
+/* 009BE4 80008FE4 0C0021D5 */  jal   func_80008754
 /* 009BE8 80008FE8 AFA90024 */   sw    $t1, 0x24($sp)
 /* 009BEC 80008FEC 8FAE003C */  lw    $t6, 0x3c($sp)
 /* 009BF0 80008FF0 93A30037 */  lbu   $v1, 0x37($sp)

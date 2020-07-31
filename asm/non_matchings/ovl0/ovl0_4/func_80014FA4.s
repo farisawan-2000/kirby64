@@ -14,7 +14,7 @@ glabel func_80014FA4
 /* 015BD4 80014FD4 50400016 */  beql  $v0, $zero, .L80015030_ovl0
 /* 015BD8 80014FD8 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 015BDC 80014FDC AFA20024 */  sw    $v0, 0x24($sp)
-/* 015BE0 80014FE0 0C0052C1 */  jal   func_80014B04_ovl0
+/* 015BE0 80014FE0 0C0052C1 */  jal   func_80014B04
 /* 015BE4 80014FE4 AFA6001C */   sw    $a2, 0x1c($sp)
 /* 015BE8 80014FE8 8FA20024 */  lw    $v0, 0x24($sp)
 /* 015BEC 80014FEC 8FA6001C */  lw    $a2, 0x1c($sp)
@@ -33,7 +33,7 @@ glabel func_80014FA4
 /* 015C1C 8001501C 4503FFFC */  bc1tl .L80015010_ovl0
 /* 015C20 80015020 C4480008 */   lwc1  $f8, 8($v0)
 .L80015024_ovl0:
-/* 015C24 80015024 0C0050F5 */  jal   func_800143D4_ovl0
+/* 015C24 80015024 0C0050F5 */  jal   func_800143D4
 /* 015C28 80015028 8C450004 */   lw    $a1, 4($v0)
 /* 015C2C 8001502C 8FBF0014 */  lw    $ra, 0x14($sp)
 .L80015030_ovl0:

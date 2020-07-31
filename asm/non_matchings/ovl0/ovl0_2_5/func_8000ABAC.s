@@ -28,7 +28,7 @@ glabel func_8000ABAC
 /* 00B814 8000AC14 AC600000 */   sw    $zero, ($v1)
 /* 00B818 8000AC18 AC600000 */  sw    $zero, ($v1)
 .L8000AC1C_ovl0:
-/* 00B81C 8000AC1C 0C0028A7 */  jal   func_8000A29C_ovl0
+/* 00B81C 8000AC1C 0C0028A7 */  jal   func_8000A29C
 /* 00B820 8000AC20 AFA5001C */   sw    $a1, 0x1c($sp)
 /* 00B824 8000AC24 8FA5001C */  lw    $a1, 0x1c($sp)
 .L8000AC28_ovl0:

@@ -8,7 +8,7 @@ glabel func_80002F4C
 /* 003B64 80002F64 3C048005 */  lui   $a0, %hi(D_80048CF8) # $a0, 0x8005
 /* 003B68 80002F68 8FA60024 */  lw    $a2, 0x24($sp)
 /* 003B6C 80002F6C 24848CF8 */  addiu $a0, %lo(D_80048CF8) # addiu $a0, $a0, -0x7308
-/* 003B70 80002F70 0C000AF4 */  jal   func_80002BD0_ovl0
+/* 003B70 80002F70 0C000AF4 */  jal   func_80002BD0
 /* 003B74 80002F74 AFA00010 */   sw    $zero, 0x10($sp)
 /* 003B78 80002F78 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 003B7C 80002F7C 27BD0020 */  addiu $sp, $sp, 0x20

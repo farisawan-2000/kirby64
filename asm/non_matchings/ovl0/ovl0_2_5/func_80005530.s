@@ -37,7 +37,7 @@ glabel func_80005530
 /* 0061B4 800055B4 3C018005 */  lui   $at, %hi(D_8004A44C) # $at, 0x8005
 /* 0061B8 800055B8 AFA4001C */  sw    $a0, 0x1c($sp)
 /* 0061BC 800055BC AFA50028 */  sw    $a1, 0x28($sp)
-/* 0061C0 800055C0 0C001F3D */  jal   func_80007CF4_ovl0
+/* 0061C0 800055C0 0C001F3D */  jal   func_80007CF4
 /* 0061C4 800055C4 AC29A44C */   sw    $t1, %lo(D_8004A44C)($at)
 /* 0061C8 800055C8 8FA4001C */  lw    $a0, 0x1c($sp)
 /* 0061CC 800055CC 8FA50028 */  lw    $a1, 0x28($sp)

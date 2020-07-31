@@ -39,7 +39,7 @@ glabel func_80015BFC
 /* 016888 80015C88 3C078005 */  lui   $a3, 0x8005
 /* 01688C 80015C8C 24E4A3D0 */  addiu $a0, $a3, -0x5c30
 /* 016890 80015C90 AFA60030 */  sw    $a2, 0x30($sp)
-/* 016894 80015C94 0C004460 */  jal   func_80011180_ovl0
+/* 016894 80015C94 0C004460 */  jal   func_80011180
 /* 016898 80015C98 AFA80020 */   sw    $t0, 0x20($sp)
 /* 01689C 80015C9C 3C078005 */  lui   $a3, %hi(gDisplayListHead) # $a3, 0x8005
 /* 0168A0 80015CA0 24E7A3D0 */  addiu $a3, %lo(gDisplayListHead) # addiu $a3, $a3, -0x5c30
@@ -57,7 +57,7 @@ glabel func_80015BFC
 /* 0168D0 80015CD0 57000010 */  bnezl $t8, .L80015D14_ovl0
 /* 0168D4 80015CD4 8CC40010 */   lw    $a0, 0x10($a2)
 /* 0168D8 80015CD8 AFA60030 */  sw    $a2, 0x30($sp)
-/* 0168DC 80015CDC 0C004CC0 */  jal   func_80013300_ovl0
+/* 0168DC 80015CDC 0C004CC0 */  jal   func_80013300
 /* 0168E0 80015CE0 AFA80020 */   sw    $t0, 0x20($sp)
 /* 0168E4 80015CE4 3C078005 */  lui   $a3, %hi(gDisplayListHead) # $a3, 0x8005
 /* 0168E8 80015CE8 24E7A3D0 */  addiu $a3, %lo(gDisplayListHead) # addiu $a3, $a3, -0x5c30
@@ -75,7 +75,7 @@ glabel func_80015BFC
 .L80015D14_ovl0:
 /* 016914 80015D14 50800007 */  beql  $a0, $zero, .L80015D34_ovl0
 /* 016918 80015D18 8FAB002C */   lw    $t3, 0x2c($sp)
-/* 01691C 80015D1C 0C0056FF */  jal   func_80015BFC_ovl0
+/* 01691C 80015D1C 0C0056FF */  jal   func_80015BFC
 /* 016920 80015D20 AFA60030 */   sw    $a2, 0x30($sp)
 /* 016924 80015D24 3C078005 */  lui   $a3, %hi(gDisplayListHead) # $a3, 0x8005
 /* 016928 80015D28 24E7A3D0 */  addiu $a3, %lo(gDisplayListHead) # addiu $a3, $a3, -0x5c30
@@ -112,7 +112,7 @@ glabel func_80015BFC
 /* 016994 80015D94 52000007 */  beql  $s0, $zero, .L80015DB4_ovl0
 /* 016998 80015D98 8FBF001C */   lw    $ra, 0x1c($sp)
 .L80015D9C_ovl0:
-/* 01699C 80015D9C 0C0056FF */  jal   func_80015BFC_ovl0
+/* 01699C 80015D9C 0C0056FF */  jal   func_80015BFC
 /* 0169A0 80015DA0 02002025 */   move  $a0, $s0
 /* 0169A4 80015DA4 8E100008 */  lw    $s0, 8($s0)
 /* 0169A8 80015DA8 1600FFFC */  bnez  $s0, .L80015D9C_ovl0

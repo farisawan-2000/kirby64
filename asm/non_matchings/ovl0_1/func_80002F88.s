@@ -7,7 +7,7 @@ glabel func_80002F88
 /* 003B9C 80002F9C 3C048005 */  lui   $a0, %hi(D_80048CF8) # $a0, 0x8005
 /* 003BA0 80002FA0 240E0001 */  li    $t6, 1
 /* 003BA4 80002FA4 AFAE0010 */  sw    $t6, 0x10($sp)
-/* 003BA8 80002FA8 0C000AF4 */  jal   func_80002BD0_ovl0
+/* 003BA8 80002FA8 0C000AF4 */  jal   func_80002BD0
 /* 003BAC 80002FAC 24848CF8 */   addiu $a0, %lo(D_80048CF8) # addiu $a0, $a0, -0x7308
 /* 003BB0 80002FB0 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 003BB4 80002FB4 27BD0020 */  addiu $sp, $sp, 0x20

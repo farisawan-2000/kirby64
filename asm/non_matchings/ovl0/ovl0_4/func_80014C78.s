@@ -13,7 +13,7 @@ glabel func_80014C78
 /* 0158A4 80014CA4 2484A3D0 */  addiu $a0, %lo(gDisplayListHead) # addiu $a0, $a0, -0x5c30
 /* 0158A8 80014CA8 00C02825 */  move  $a1, $a2
 /* 0158AC 80014CAC AFA60030 */  sw    $a2, 0x30($sp)
-/* 0158B0 80014CB0 0C004460 */  jal   func_80011180_ovl0
+/* 0158B0 80014CB0 0C004460 */  jal   func_80011180
 /* 0158B4 80014CB4 E7A40020 */   swc1  $f4, 0x20($sp)
 /* 0158B8 80014CB8 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
 /* 0158BC 80014CBC 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
@@ -32,7 +32,7 @@ glabel func_80014C78
 /* 0158F0 80014CF0 314B0001 */  andi  $t3, $t2, 1
 /* 0158F4 80014CF4 55600012 */  bnezl $t3, .L80014D40_ovl0
 /* 0158F8 80014CF8 8CC40010 */   lw    $a0, 0x10($a2)
-/* 0158FC 80014CFC 0C004CC0 */  jal   func_80013300_ovl0
+/* 0158FC 80014CFC 0C004CC0 */  jal   func_80013300
 /* 015900 80014D00 AFA60030 */   sw    $a2, 0x30($sp)
 /* 015904 80014D04 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
 /* 015908 80014D08 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
@@ -53,7 +53,7 @@ glabel func_80014C78
 .L80014D40_ovl0:
 /* 015940 80014D40 50800007 */  beql  $a0, $zero, .L80014D60_ovl0
 /* 015944 80014D44 8FA8002C */   lw    $t0, 0x2c($sp)
-/* 015948 80014D48 0C00531E */  jal   func_80014C78_ovl0
+/* 015948 80014D48 0C00531E */  jal   func_80014C78
 /* 01594C 80014D4C AFA60030 */   sw    $a2, 0x30($sp)
 /* 015950 80014D50 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
 /* 015954 80014D54 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
@@ -90,7 +90,7 @@ glabel func_80014C78
 /* 0159C0 80014DC0 52000007 */  beql  $s0, $zero, .L80014DE0_ovl0
 /* 0159C4 80014DC4 8FBF001C */   lw    $ra, 0x1c($sp)
 .L80014DC8_ovl0:
-/* 0159C8 80014DC8 0C00531E */  jal   func_80014C78_ovl0
+/* 0159C8 80014DC8 0C00531E */  jal   func_80014C78
 /* 0159CC 80014DCC 02002025 */   move  $a0, $s0
 /* 0159D0 80014DD0 8E100008 */  lw    $s0, 8($s0)
 /* 0159D4 80014DD4 1600FFFC */  bnez  $s0, .L80014DC8_ovl0

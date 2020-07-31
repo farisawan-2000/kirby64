@@ -21,7 +21,7 @@ glabel func_8000BDF0
 /* 00CA3C 8000BE3C AFA00028 */  sw    $zero, 0x28($sp)
 /* 00CA40 8000BE40 AFA0002C */  sw    $zero, 0x2c($sp)
 /* 00CA44 8000BE44 AFA00030 */  sw    $zero, 0x30($sp)
-/* 00CA48 8000BE48 0C002F4F */  jal   func_8000BD3C_ovl0
+/* 00CA48 8000BE48 0C002F4F */  jal   func_8000BD3C
 /* 00CA4C 8000BE4C AFAF0014 */   sw    $t7, 0x14($sp)
 /* 00CA50 8000BE50 14400003 */  bnez  $v0, .L8000BE60_ovl0
 /* 00CA54 8000BE54 00402025 */   move  $a0, $v0

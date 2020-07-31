@@ -7,9 +7,9 @@ glabel func_8000A764
 .L8000A778_ovl0:
 /* 00B378 8000A778 8FAE0030 */  lw    $t6, 0x30($sp)
 /* 00B37C 8000A77C AFA40020 */  sw    $a0, 0x20($sp)
-/* 00B380 8000A780 0C0029CC */  jal   func_8000A730_ovl0
+/* 00B380 8000A780 0C0029CC */  jal   func_8000A730
 /* 00B384 8000A784 AFAE0010 */   sw    $t6, 0x10($sp)
-/* 00B388 8000A788 0C00217E */  jal   func_800085F8_ovl0
+/* 00B388 8000A788 0C00217E */  jal   func_800085F8
 /* 00B38C 8000A78C 8FA40020 */   lw    $a0, 0x20($sp)
 /* 00B390 8000A790 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 00B394 8000A794 27BD0020 */  addiu $sp, $sp, 0x20

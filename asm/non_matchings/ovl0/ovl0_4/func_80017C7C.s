@@ -18,7 +18,7 @@ glabel func_80017C7C
 /* 0188B8 80017CB8 1420FFF9 */  bnez  $at, .L80017CA0_ovl0
 /* 0188BC 80017CBC AC44FFFC */   sw    $a0, -4($v0)
 /* 0188C0 80017CC0 8FA40048 */  lw    $a0, 0x48($sp)
-/* 0188C4 80017CC4 0C005EDB */  jal   func_80017B6C_ovl0
+/* 0188C4 80017CC4 0C005EDB */  jal   func_80017B6C
 /* 0188C8 80017CC8 8FA5004C */   lw    $a1, 0x4c($sp)
 /* 0188CC 80017CCC 8FBF004C */  lw    $ra, 0x4c($sp)
 /* 0188D0 80017CD0 3C188005 */  lui   $t8, %hi(D_8004A7F8) # $t8, 0x8005
