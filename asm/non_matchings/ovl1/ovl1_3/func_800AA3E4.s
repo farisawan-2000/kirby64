@@ -1,5 +1,0 @@
-glabel func_800AA3E4
-/* 052634 800AA3E4 00001025 */  move  $v0, $zero
-.L800AA3E8_ovl1:
-/* 052638 800AA3E8 03E00008 */  jr    $ra
-/* 05263C 800AA3EC 00000000 */   nop   
