@@ -337,7 +337,7 @@ glabel __osException
 /* 02F040 8002E440 00000000 */   nop   
 /* 02F044 8002E444 3C048004 */  lui   $a0, %hi(__osRunQueue) # $a0, 0x8004
 /* 02F048 8002E448 03402825 */  move  $a1, $k0
-/* 02F04C 8002E44C 0C00B9A3 */  jal   func_8002E68C_ovl0
+/* 02F04C 8002E44C 0C00B9A3 */  jal   __osEnqueueThread
 /* 02F050 8002E450 2484FB58 */   addiu $a0, %lo(__osRunQueue) # addiu $a0, $a0, -0x4a8
 /* 02F054 8002E454 0800B9B9 */  j     __osDispatchThread
 /* 02F058 8002E458 00000000 */   nop   
@@ -408,7 +408,7 @@ glabel func_8002E4A4
 /* 02F13C 8002E53C 00405025 */  move  $t2, $v0
 /* 02F140 8002E540 3C048004 */  lui   $a0, %hi(__osRunQueue) # $a0, 0x8004
 /* 02F144 8002E544 01402825 */  move  $a1, $t2
-/* 02F148 8002E548 0C00B9A3 */  jal   func_8002E68C_ovl0
+/* 02F148 8002E548 0C00B9A3 */  jal   __osEnqueueThread
 /* 02F14C 8002E54C 2484FB58 */   addiu $a0, %lo(__osRunQueue) # addiu $a0, $a0, -0x4a8
 .L8002E550_ovl0:
 /* 02F150 8002E550 02400008 */  jr    $s2
@@ -490,13 +490,13 @@ glabel func_8002E4A4
 .L8002E674_ovl0:
 /* 02F274 8002E674 10800003 */  beqz  $a0, .L8002E684_ovl0
 /* 02F278 8002E678 ACBB0128 */   sw    $k1, 0x128($a1)
-/* 02F27C 8002E67C 0C00B9A3 */  jal   func_8002E68C_ovl0
+/* 02F27C 8002E67C 0C00B9A3 */  jal   __osEnqueueThread
 /* 02F280 8002E680 00000000 */   nop   
 .L8002E684_ovl0:
 /* 02F284 8002E684 0800B9B9 */  j     __osDispatchThread
 /* 02F288 8002E688 00000000 */   nop   
 
-glabel func_8002E68C
+glabel __osEnqueueThread
 /* 02F28C 8002E68C 8C980000 */  lw    $t8, ($a0)
 /* 02F290 8002E690 8CAF0004 */  lw    $t7, 4($a1)
 /* 02F294 8002E694 0080C825 */  move  $t9, $a0
