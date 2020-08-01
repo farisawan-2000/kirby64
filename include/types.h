@@ -47,15 +47,16 @@ struct Overlay {
 };
 
 struct Entity {
-   u8 nodeNum;
-   u8 bankID;
-   u8 entityID;
-   u8 action;
-   u16 respawnFlag;
-   u16 saveToEeprom; // TODO: research
-   Vec3f pos;
-   Vec3f angle;
-   Vec3f scale;
+   /* 0x00  */ u8 nodeNum;
+   /* 0x01  */ u8 bankID;
+   /* 0x02  */ u8 entityID;
+   /* 0x03  */ u8 action;
+   /* 0x04  */ u8 respawnFlag;
+   /* 0x05  */ u8 unk5;
+   /* 0x06  */ s16 saveToEeprom; // TODO: research
+   /* 0x08  */ Vec3f pos;
+   /* 0x14  */ Vec3f angle;
+   /* 0x20  */ Vec3f scale;
 };
 
 // Addressing

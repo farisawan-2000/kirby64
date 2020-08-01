@@ -450,7 +450,7 @@ block_14:
                         if ((*temp_s2 & 0x80) != 0) {
                             *temp_s2 = (u8) (*temp_s2 | 0x80);
                         } else {
-                            if (func_800FC9C0_ovl2(phi_s3, phi_s1) != -1) {
+                            if (spawn_entity(phi_s3, phi_s1) != -1) {
                                 *temp_s2 = (u8)0x81U;
                             }
                         }

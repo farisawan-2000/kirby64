@@ -1,4 +1,4 @@
-glabel func_800FC9C0
+glabel spawn_entity
 /* 085430 800FC9C0 27BDFFC0 */  addiu $sp, $sp, -0x40
 /* 085434 800FC9C4 AFBF003C */  sw    $ra, 0x3c($sp)
 /* 085438 800FC9C8 AFB00038 */  sw    $s0, 0x38($sp)
