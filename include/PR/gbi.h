@@ -22,6 +22,7 @@
 
 #include <PR/ultratypes.h>
 
+
 /*
  * To use the F3DEX ucodes, define F3DEX_GBI before include this file.
  *
@@ -710,6 +711,7 @@
 #define	G_BL_1		2
 #define	G_BL_0		3
 
+
 #define	GBL_c1(m1a, m1b, m2a, m2b)	\
 	(m1a) << 30 | (m1b) << 26 | (m2a) << 22 | (m2b) << 18
 #define	GBL_c2(m1a, m1b, m2a, m2b)	\
@@ -1174,6 +1176,7 @@ typedef union {
     long long int	force_structure_alignment;
 } Mtx;
 
+
 /*
  * Viewport
  */
@@ -1457,6 +1460,9 @@ typedef union {
     Hilite_t	h;
     long int	force_structure_alignment[4];
 } Hilite;
+
+#include <PR/gu.h>
+
 
 #define gdSPDefLights0(ar,ag,ab)					\
 		{ 	{{ {ar,ag,ab},0,{ar,ag,ab},0}},			\
@@ -2401,6 +2407,24 @@ typedef union {
 	gSPBranchLessZrg(pkt, dl, vtx, zval, near, far, flag, 0, G_MAXZ)
 #define	gsSPBranchLessZ(dl, vtx, zval, near, far, flag)			\
 	gsSPBranchLessZrg(dl, vtx, zval, near, far, flag, 0, G_MAXZ)
+
+// temp new macros until we find out what's up with the original
+#define	G_DEPTOZSrgPersp(zval, near, far, flag, zmin, zmax)			\
+			  (unsigned int)((1.0f-(float)(near)/(float)(zval)) / 		\
+			  (1.0f-(float)(near)/(float)(far )))
+
+#define	G_DEPTOZSPersp(zval, near, far, flag) \
+	G_DEPTOZSrgPersp(zval, near, far, flag, 0, G_MAXZ)
+
+
+#define	gsSPBranchLessZrgPersp(dl, vtx, zval, near, far, flag, zmin, zmax)	      \
+{{	_SHIFTL(G_RDPHALF_1,24,8),					      \
+	(uintptr_t)(dl),						}},    \
+{{	_SHIFTL(G_BRANCH_Z,24,8)|_SHIFTL((vtx)*5,12,12)|_SHIFTL((vtx)*2,0,12),\
+	G_DEPTOZSrgPersp(zval, near, far, flag, zmin, zmax)}}
+
+#define	gsSPBranchLessZPersp(dl, vtx, zval, near, far, flag)			\
+	gsSPBranchLessZrgPersp(dl, vtx, zval, near, far, G_BZ_PERSP, 0, G_MAXZ)
 
 /*
  *  gSPBranchLessZraw   Branch DL if (vtx.z) less than or equal (raw zval).

@@ -53,6 +53,7 @@ SECTIONS
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/ovl0_0.o(.bss);
+      /*BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);*/
    }
    END_NOLOAD(ovl0)
 
@@ -215,6 +216,8 @@ SECTIONS
    .BEGIN_SEG(ovl20, 0x80300000) {
       BUILD_DIR/src/ovl20.o(.text);
       BUILD_DIR/asm/kirby.u.2502A0.o(.data);
+      BUILD_DIR/actors/kirby.o(.rodata);
+      BUILD_DIR/asm/kirby.u.7E2D70.o(.data);
    }
    END_SEG(ovl20)
 

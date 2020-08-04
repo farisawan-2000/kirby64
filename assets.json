@@ -23,7 +23,8 @@
 "bin/kirby.u.139150.bin": {"meta": {"size":"0x57a0"}, "offsets":{"us":["0x139150","0x0"]}},
 "bin/kirby.u.1C9B00.bin": {"meta": {"size":"0x2450"}, "offsets":{"us":["0x1C9B00","0x0"]}},
 "bin/kirby.u.1014F0.bin": {"meta": {"size":"0x26c0"}, "offsets":{"us":["0x1014F0","0x0"]}},
-"bin/kirby.u.2502A0.bin": {"meta": {"size":"0x1C3B8B0"}, "offsets":{"us":["0x2502A0","0x0"]}},
+"bin/kirby.u.2502A0.bin": {"meta": {"size":"0x58FA50"}, "offsets":{"us":["0x2502A0","0x0"]}},
+"bin/kirby.u.7E2D70.bin": {"meta": {"size":"0x2000000"}, "offsets":{"us":["0x7E2D70","0x0"]}},
 "bin/kirby_model.bin": {"meta":{"size":"0x1408"}, "offsets":{"us":["0x7E1A20","0x0"]}},
 
 "textures/kirby.0x1c3e48a.i4.png": {"meta": {"dims":[32, 32]}, "offsets":{"us":["0x1c3e48a","0x0"]}},
