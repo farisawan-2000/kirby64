@@ -429,7 +429,7 @@ void func_8000C3D8(struct Animation *anim) {
     struct AnimStack *sp8C;
     u32 *sp88;
     s32 sp84;
-    struct AnimStack *sp80;
+    struct AnimStack *sp80[10];
     u32 *temp_s0;
     f32 temp_f0;
     f32 temp_f10;
@@ -514,20 +514,24 @@ void func_8000C3D8(struct Animation *anim) {
         if (D_800406B4 == anim->scale) {
             anim->scale = -anim->unk7C;
 block_4:
-            sp80 = NULL;
+            sp80[0] = NULL;
             sp84 = 0;
-            for (phi_s0 = &sp88; (u32)phi_s0 != (u32)&anim; phi_s0++) {
-                *phi_s0 = 0;
-            }
-            phi_v0 = anim->unk6C;
-            if (anim->unk6C != 0) {
-                while (phi_v0 != NULL) {
-                    temp_v1 = phi_v0->unk4;
-                    if (temp_v1 > 0 && temp_v1 < 0xB) {
-                        (&sp80[temp_v1])[-1] = *phi_v0;
+            phi_s0 = &sp88;
+            do {
+                *(++phi_s0) = 0;
+                // phi_s0++;
+            } while ((u32) phi_s0 != (u32) &anim);
+            // for (phi_s0 = &sp88; (u32)phi_s0 != (u32)&anim; phi_s0++) {
+            //     *phi_s0 = 0;
+            // }
+            // phi_v0 = anim->unk6C;
+            if (anim->unk6C != NULL) {
+                do {
+                    if (anim->unk6C->unk4 > 0 && anim->unk6C->unk4 < 0xB) {
+                        *(&sp80 + anim->unk6C->unk4)[0] = anim->unk6C;
                     }
-                    phi_v0 = phi_v0->next;
-                }
+                    anim->unk6C = anim->unk6C->next;
+                } while (anim->unk6C != NULL);
             }
 loop_12:
             if (anim->command == 0) {
@@ -560,28 +564,31 @@ loop_14:
                 switch(temp_v0_3) {
                     case 8:
                     case 9:
-                        phi_s2 = (*anim->command << 7) >> 16;
+                        phi_s2 = (*anim->command << 7);
                         temp_f20 = (*anim->command & 0x7FFF);
                         anim->command++;
-                        for (phi_s1 = 0; phi_s1 < 0xA; phi_s1++) {
+                        phi_s1 = 0;
+                        phi_s2 >>= 0x16;
+                        while (phi_s1 < 0xA) {
+                            phi_s1++;
                             if (phi_s2 != 0 && (phi_s2 & 1) != 0) {
-                                temp_s0_2 = &(&sp80)[phi_s1];
-                                if ((&sp80)[phi_s1] == 0) {
+                                // temp_s0_2 = &(&sp80)[phi_s1];
+                                if (sp80[phi_s1] == 0) {
                                     temp_v0_4 = func_800097E0(anim, (phi_s1 + 1) & 0xFF);
-                                    (&sp80)[phi_s1] = temp_v0_4;
+                                    sp80[phi_s1] = temp_v0_4;
                                 }
                                 phi_v1->unk10 = phi_v1->unk14;
-                                (&sp80)[phi_s1]->unk14 = *anim->command;
+                                sp80[phi_s1]->unk14 = *anim->command;
                                 anim->command++;
-                                (&sp80)[phi_s1]->unk18 = (&sp80)[phi_s1]->unk1C;
-                                (&sp80)[phi_s1]->unk1C = 0.0f;
-                                (&sp80)[phi_s1]->unk5 = 3;
+                                sp80[phi_s1]->unk18 = sp80[phi_s1]->unk1C;
+                                sp80[phi_s1]->unk1C = 0.0f;
+                                sp80[phi_s1]->unk5 = 3;
                                 if (temp_f20 != 0.0f) {
-                                    (&sp80)[phi_s1]->unk8 = (1.0f / temp_f20);
+                                    sp80[phi_s1]->unk8 = (1.0f / temp_f20);
                                 }
-                                (&sp80)[phi_s1]->unkC = (-anim->scale - anim->unk78);
-                                phi_s2 >>= 1;
+                                sp80[phi_s1]->unkC = (-anim->scale - anim->unk78);
                             }
+                            phi_s2 >>= 1;
                         }
                         if (temp_v0_3 == 8) {
                             anim->scale += temp_f20;
@@ -732,24 +739,20 @@ loop_14:
                         }
                         break;
                     case 14:
-                        temp_t2 = anim->command + 4;
-                        anim->command = temp_t2;
-                        temp_f0 = -anim->scale;
-                        anim->command = (void *) *temp_t2;
-                        anim->unk7C = temp_f0;
-                        anim->unk4->unk40 = temp_f0;
+                        anim->command++;
+                        // temp_f0 = -anim->scale;
+                        anim->unk7C = -anim->scale;
+                        anim->unk4->unk40 = -anim->scale;
                         if (anim->unk55 != 0) {
-                            if (anim->unk4->unk48 != 0) {
+                            if (anim->unk4->unk48 != NULL) {
                                 anim->unk4->unk48(anim, -2, 0);
                             }
                         }
                         break;
                     case 1:
-                        temp_t8 = anim->command + 4;
-                        anim->command = temp_t8;
-                        anim->command = (void *) *temp_t8;
+                        anim->command++;
                         if (anim->unk55 != 0) {
-                            if (anim->unk4->unk48 != 0) {
+                            if (anim->unk4->unk48 != NULL) {
                                 anim->unk4->unk48(anim, -2, 0);
                             }
                         }
@@ -868,9 +871,9 @@ loop_14:
             }
         } else {
             temp_f2 = (f32) anim->unk78;
-            anim->scale = (f32) (anim->scale - temp_f2);
-            anim->unk7C = (f32) (anim->unk7C + temp_f2);
-            anim->unk4->unk40 = (f32) anim->unk7C;
+            anim->scale = (anim->scale - temp_f2);
+            anim->unk7C = (anim->unk7C + temp_f2);
+            anim->unk4->unk40 = anim->unk7C;
             if (!(0.0f < anim->scale)) {
                 goto block_4;
             }

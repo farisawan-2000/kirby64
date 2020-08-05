@@ -53,7 +53,7 @@ SECTIONS
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/ovl0_0.o(.bss);
-      /*BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);*/
+      BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
 
