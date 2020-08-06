@@ -21,12 +21,12 @@ void func_80020F40(s32 arg0, s32 arg1, s32 arg2, ? arg3) {
         if (arg2 < 0x11) {
             temp_a1 = (arg2 << 5) + &D_8003F440;
             if (*temp_a1 == 0) {
-                phi_v0 = gDisplayListHead;
+                phi_v0 = gDisplayListHeads[0];
             } else {
-                temp_a3 = gDisplayListHead;
+                temp_a3 = gDisplayListHeads[0];
                 temp_a3->unk0 = (s32) ((((((s32) ((D_8003F3C8 + arg0) * D_8004A508) / 0x140) & 0x3FF) << 0xE) | 0xF6000000) | ((((s32) ((arg1 + D_8003F3CC) * D_8004A50C) / 0xF0) & 0x3FF) * 4));
                 temp_a3->unk4 = (s32) (((((s32) ((D_8003F3C0 + arg0) * D_8004A508) / 0x140) & 0x3FF) << 0xE) | ((((s32) ((arg1 + D_8003F3C4) * D_8004A50C) / 0xF0) & 0x3FF) * 4));
-                phi_v0 = gDisplayListHead + 8;
+                phi_v0 = gDisplayListHeads[0] + 8;
             }
             phi_a0 = temp_a1 + 4;
             phi_v1 = &D_8003F3D0;
@@ -57,7 +57,7 @@ loop_6:
                 goto loop_6;
             }
             D_80096520 = temp_v1;
-            gDisplayListHead = phi_v0_3;
+            gDisplayListHeads[0] = phi_v0_3;
         }
     }
 }
@@ -140,64 +140,41 @@ void func_80021764(void *arg0) {
     u32 phi_v0_3;
     s32 phi_s0;
 
-    func_8001663C(&gDisplayListHead, arg0->unk3C, 0, arg0);
-    temp_s1 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1 + 8);
-    temp_s1->unk4 = 0;
-    temp_s1->unk0 = 0xE7000000;
-    temp_s1_2 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_2 + 8);
-    temp_s1_2->unk4 = 0x300000;
-    temp_s1_2->unk0 = 0xE3000A01;
-    temp_s1_3 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_3 + 8);
-    temp_s1_3->unk4 = 0;
-    temp_s1_3->unk0 = 0xE200001C;
-    temp_s0 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s0 + 8);
-    temp_s0->unk0 = 0xF7000000;
-    temp_s0->unk4 = func_800078F0(0xFF0000FF);
+    func_8001663C(&gDisplayListHeads[0], arg0->unk3C, 0, arg0);
+    gDPPipeSync(gDisplayListHeads[0]++);
+    gDPSetCycleType(gDisplayListHeads[0]++, G_CYC_FILL);
+    gDPSetRenderMode(gDisplayListHeads[0]++, G_RM_NOOP, G_RM_NOOP2),
+    gDPSetFillColor(gDisplayListHeads[0]++, func_800078F0(0xFF0000FF);
     func_80021618(0x28, 0x15, (f32) (u32) D_8004A430 * 0.00390625f, 3, 2, 1);
     func_80021618(0x4B, 0x15, (f32) (u32) D_8004A434 * 0.00390625f, 3, 2, 1);
     func_80021618(0x6E, 0x15, (f32) (u32) D_80048C74 * 0.00390625f, 3, 2, 1);
     func_80021618(0x9B, 0x15, ((f32) (u32) D_8004A430 * 0.00390625f) + ((f32) (u32) D_8004A434 * 0.00390625f), 3, 2, 1);
     func_80021618(0xD7, 0x15, (f32) (u32) D_80095DC0 * 0.00390625f, 3, 2, 1);
     func_80021618(0xFA, 0x15, (f32) (u32) D_80048C78 * 0.00390625f, 3, 2, 1);
-    temp_s1_4 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_4 + 8);
-    temp_s1_4->unk4 = 0;
-    temp_s1_4->unk0 = 0xE7000000;
+    gDPPipeSync(gDisplayListHeads[0]++);
     temp_v1 = (u32) D_8004A430 >> 2;
     phi_v0 = temp_v1;
     if (temp_v1 >= 0x101U) {
         phi_v0 = 0x100U;
     }
-    temp_s1_5 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_5 + 8);
-    func_80021668(temp_s1_5, 0x3E, 0x1F, phi_v0 + 0x3E, 0x20);
-    temp_s1_6 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_6 + 8);
-    temp_s1_6->unk4 = 0;
-    temp_s1_6->unk0 = 0xE7000000;
-    temp_s3 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s3 + 8);
-    temp_s3->unk0 = 0xF7000000;
-    temp_s3->unk4 = func_800078F0(0xFF00FFFF);
+    func_80021668(gDisplayListHeads[0]++, 0x3E, 0x1F, phi_v0 + 0x3E, 0x20);
+    gDPPipeSync(gDisplayListHeads[0]++);
+    gDPSetFillColor(gDisplayListHeads[0]++, func_800078F0(0xFF00FFFF);
     temp_v1_2 = (u32) D_8004A434 >> 2;
     if (temp_v1_2 >= 0x101U) {
         phi_v0_2 = 0x100U;
     } else {
         phi_v0_2 = temp_v1_2;
     }
-    temp_s1_7 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_7 + 8);
+    temp_s1_7 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_7 + 8);
     func_80021668(temp_s1_7, 0x3E, 0x21, phi_v0_2 + 0x3E, 0x22);
-    temp_s1_8 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_8 + 8);
+    temp_s1_8 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_8 + 8);
     temp_s1_8->unk4 = 0;
     temp_s1_8->unk0 = 0xE7000000;
-    temp_s3_2 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s3_2 + 8);
+    temp_s3_2 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s3_2 + 8);
     temp_s3_2->unk0 = 0xF7000000;
     temp_s3_2->unk4 = func_800078F0(0xFF00FF);
     temp_v1_3 = (u32) D_80048C74 >> 2;
@@ -206,37 +183,37 @@ void func_80021764(void *arg0) {
     } else {
         phi_v0_3 = temp_v1_3;
     }
-    temp_s1_9 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_9 + 8);
+    temp_s1_9 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_9 + 8);
     func_80021668(temp_s1_9, 0x3E, 0x23, phi_v0_3 + 0x3E, 0x24);
-    temp_s1_10 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_10 + 8);
+    temp_s1_10 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_10 + 8);
     temp_s1_10->unk4 = 0;
     temp_s1_10->unk0 = 0xE7000000;
-    temp_s3_3 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s3_3 + 8);
+    temp_s3_3 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s3_3 + 8);
     temp_s3_3->unk0 = 0xF7000000;
     temp_s3_3->unk4 = func_800078F0(0x101010FF);
     phi_s0 = 0x3E;
 loop_9:
-    temp_s1_11 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_11 + 8);
+    temp_s1_11 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_11 + 8);
     func_80021668(temp_s1_11, phi_s0, 0x1F, phi_s0, 0x24);
     temp_s0_2 = phi_s0 + 0x40;
     phi_s0 = temp_s0_2;
     if (temp_s0_2 != 0x13E) {
         goto loop_9;
     }
-    temp_s1_12 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_12 + 8);
+    temp_s1_12 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_12 + 8);
     temp_s1_12->unk4 = 0;
     temp_s1_12->unk0 = 0xE7000000;
-    temp_s1_13 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_13 + 8);
+    temp_s1_13 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_13 + 8);
     temp_s1_13->unk4 = 0;
     temp_s1_13->unk0 = 0xE3000A01;
-    temp_s1_14 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_s1_14 + 8);
+    temp_s1_14 = gDisplayListHeads[0];
+    gDisplayListHeads[0] = (void *) (temp_s1_14 + 8);
     temp_s1_14->unk0 = 0xE200001C;
     temp_s1_14->unk4 = 0x552078;
 }
@@ -436,7 +413,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_8002206C.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-void func_80022134(s32 arg2, void *arg3) {
+void crash_screen_print_float_reg(s32 arg2, void *arg3) {
     u32 temp_v1;
 
     temp_v1 = ((u32) (*arg3 & 0x7F800000) >> 0x17) - 0x7F;
@@ -458,7 +435,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80022134.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-s32 func_800221BC(s32 arg0) {
+s32 crash_screen_print_fpcsr(s32 arg0) {
     u32 sp18;
     s32 temp_a3;
     s32 temp_v0;
@@ -509,95 +486,78 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80022248.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-void func_800222C4(void *arg0, s32 arg1) {
-    s32 temp_s2;
-    s32 temp_s2_2;
-    s32 temp_v1;
-    s32 temp_v1_2;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    void *temp_s0;
-    void *temp_s0_2;
-    void *temp_s1;
-    void *temp_s1_2;
-    s32 phi_s2;
-    s32 phi_s2_2;
-    void *phi_s0;
-    s32 phi_s1;
-    s32 phi_s2_3;
+void func_800222C4(OSThread *thread, s32 arg1) {
+    s32 cause;
+    __OSThreadContext *tc = &thread->context;
 
-    temp_s2 = (s32) ((((u32) arg0->unk120 >> 2) & 0x1F) << 0x10) >> 0x10;
-    phi_s2 = temp_s2;
-    if (temp_s2 == 0x17) {
-        phi_s2 = 0x10;
+    cause = (tc->cause >> 2) & 0x1F;
+    if (cause == 0x17) {
+        cause = 0x10;
     }
-    phi_s2_2 = phi_s2;
-    if (phi_s2 == 0x1F) {
-        phi_s2_2 = 0x11;
+    if (cause == 0x1F) {
+        cause = 0x11;
     }
     osWritebackDCacheAll();
     if (arg1 != 0) {
         crash_screen_draw_rect(0x19, 0x14, 0x10E, 0x19);
         if (arg1 != 2) {
-            crash_screen_print(0x1E, 0x19, &D_80040F40, arg0->unk14, ((phi_s2_2 * 4) + 0x80040000)->unk-7F4);
+            crash_screen_print(0x1E, 0x19, &D_80040F40, thread->id, ((phi_s2_2 * 4) + 0x80040000)->unk-7F4);
         } else {
-            crash_screen_print(0x1E, 0x19, &D_80040F50, arg0->unk14, &D_80040F60);
+            crash_screen_print(0x1E, 0x19, &D_80040F50, thread->id, &D_80040F60);
         }
         if (phi_s2_2 == 0) {
-            crash_screen_print(0xA0, 0x19, &D_80040F6C, ((u32) arg0->unk120 >> 8) & 0xFF);
+            crash_screen_print(0xA0, 0x19, &D_80040F6C, ((u32) thread->context.cause >> 8) & 0xFF);
             crash_screen_print(0xD2, 0x19, &D_80040F78, 0xA4300008);
         }
-        temp_s1 = arg0 + 0x20;
-        crash_screen_print(0x1E, 0x23, &D_80040F84, temp_s1->unkFC, temp_s1->unkF8, temp_s1->unk104);
+        crash_screen_print(0x1E, 0x23, &D_80040F84, thread->context.pc, thread->context.sr, thread->context.badvaddr);
         osWritebackDCacheAll();
         func_80022248(0, 0);
         func_80022248(0x2030, 0);
     }
-    temp_s1_2 = arg0 + 0x20;
     crash_screen_draw_rect(0x19, 0x14, 0x10E, 0xD2);
     if (arg1 != 2) {
-        crash_screen_print(0x1E, 0x19, &D_80040FA4, arg0->unk14, ((phi_s2_2 * 4) + 0x80040000)->unk-7F4);
+        crash_screen_print(0x1E, 0x19, &D_80040FA4, thread->id, ((phi_s2_2 * 4) + 0x80040000)->unk-7F4);
     } else {
-        crash_screen_print(0x1E, 0x19, &D_80040FB4, arg0->unk14, &D_80040FC4);
+        crash_screen_print(0x1E, 0x19, &D_80040FB4, thread->id, &D_80040FC4);
     }
-    crash_screen_print(0x1E, 0x23, &D_80040FD0, temp_s1_2->unkFC, temp_s1_2->unkF8, temp_s1_2->unk104);
+    crash_screen_print(0x1E, 0x23, &D_80040FD0, tc->pc, tc->sr, tc->badvaddr);
     if (phi_s2_2 == 0) {
-        crash_screen_print(0xA0, 0x19, &D_80040FF0, ((u32) temp_s1_2->unk100 >> 8) & 0xFF);
+        crash_screen_print(0xA0, 0x19, &D_80040FF0, ((u32) tc->cause >> 8) & 0xFF);
         crash_screen_print(0xD2, 0x19, &D_80040FFC, 0xA4300008);
     }
-    crash_screen_print(0x1E, 0x32, &D_80041008, temp_s1_2->unk4, temp_s1_2->unkC, temp_s1_2->unk14);
-    crash_screen_print(0x1E, 0x3C, &D_80041028, temp_s1_2->unk1C, temp_s1_2->unk24, temp_s1_2->unk2C);
-    crash_screen_print(0x1E, 0x46, &D_80041048, temp_s1_2->unk34, temp_s1_2->unk3C, temp_s1_2->unk44);
-    crash_screen_print(0x1E, 0x50, &D_80041068, temp_s1_2->unk4C, temp_s1_2->unk54, temp_s1_2->unk5C);
-    crash_screen_print(0x1E, 0x5A, &D_80041088, temp_s1_2->unk64, temp_s1_2->unk6C, temp_s1_2->unk74);
-    crash_screen_print(0x1E, 0x64, &D_800410A8, temp_s1_2->unk7C, temp_s1_2->unk84, temp_s1_2->unk8C);
-    crash_screen_print(0x1E, 0x6E, &D_800410C8, temp_s1_2->unk94, temp_s1_2->unk9C, temp_s1_2->unkA4);
-    crash_screen_print(0x1E, 0x78, &D_800410E8, temp_s1_2->unkAC, temp_s1_2->unkB4, temp_s1_2->unkBC);
-    crash_screen_print(0x1E, 0x82, &D_80041108, temp_s1_2->unkC4, temp_s1_2->unkCC, temp_s1_2->unkD4);
-    crash_screen_print(0x1E, 0x8C, &D_80041128, temp_s1_2->unkDC, temp_s1_2->unkE4);
-    func_800221BC(temp_s1_2->unk10C);
-    func_80022134(0x1E, 0xAA, 0, temp_s1_2 + 0x114);
-    func_80022134(0x78, 0xAA, 2, temp_s1_2 + 0x11C);
-    func_80022134(0xD2, 0xAA, 4, temp_s1_2 + 0x124);
-    func_80022134(0x1E, 0xB4, 6, temp_s1_2 + 0x12C);
-    func_80022134(0x78, 0xB4, 8, temp_s1_2 + 0x134);
-    func_80022134(0xD2, 0xB4, 0xA, temp_s1_2 + 0x13C);
-    func_80022134(0x1E, 0xBE, 0xC, temp_s1_2 + 0x144);
-    func_80022134(0x78, 0xBE, 0xE, temp_s1_2 + 0x14C);
-    func_80022134(0xD2, 0xBE, 0x10, temp_s1_2 + 0x154);
-    func_80022134(0x1E, 0xC8, 0x12, temp_s1_2 + 0x15C);
-    func_80022134(0x78, 0xC8, 0x14, temp_s1_2 + 0x164);
-    func_80022134(0xD2, 0xC8, 0x16, temp_s1_2 + 0x16C);
-    func_80022134(0x1E, 0xD2, 0x18, temp_s1_2 + 0x174);
-    func_80022134(0x78, 0xD2, 0x1A, temp_s1_2 + 0x17C);
-    func_80022134(0xD2, 0xD2, 0x1C, temp_s1_2 + 0x184);
-    func_80022134(0x1E, 0xDC, 0x1E, temp_s1_2 + 0x18C);
+    crash_screen_print(0x1E, 0x32, &D_80041008, tc->unk4, tc->unkC, tc->unk14);
+    crash_screen_print(0x1E, 0x3C, &D_80041028, tc->unk1C, tc->unk24, tc->unk2C);
+    crash_screen_print(0x1E, 0x46, &D_80041048, tc->unk34, tc->unk3C, tc->unk44);
+    crash_screen_print(0x1E, 0x50, &D_80041068, tc->unk4C, tc->unk54, tc->unk5C);
+    crash_screen_print(0x1E, 0x5A, &D_80041088, tc->unk64, tc->unk6C, tc->unk74);
+    crash_screen_print(0x1E, 0x64, &D_800410A8, tc->unk7C, tc->unk84, tc->unk8C);
+    crash_screen_print(0x1E, 0x6E, &D_800410C8, tc->unk94, tc->unk9C, tc->unkA4);
+    crash_screen_print(0x1E, 0x78, &D_800410E8, tc->unkAC, tc->unkB4, tc->unkBC);
+    crash_screen_print(0x1E, 0x82, &D_80041108, tc->unkC4, tc->unkCC, tc->unkD4);
+    crash_screen_print(0x1E, 0x8C, &D_80041128, tc->unkDC, tc->unkE4);
+    crash_screen_print_fpcsr(tc->fpcsr);
+    crash_screen_print_float_reg(0x1E, 0xAA, 0, &tc->fp0.f.f_even);
+    crash_screen_print_float_reg(0x78, 0xAA, 2, &tc->fp2.f.f_even);
+    crash_screen_print_float_reg(0xD2, 0xAA, 4, &tc->fp4.f.f_even);
+    crash_screen_print_float_reg(0x1E, 0xB4, 6, &tc->fp6.f.f_even);
+    crash_screen_print_float_reg(0x78, 0xB4, 8, &tc->fp8.f.f_even);
+    crash_screen_print_float_reg(0xD2, 0xB4, 0xA, &tc->fp10.f.f_even);
+    crash_screen_print_float_reg(0x1E, 0xBE, 0xC, &tc->fp12.f.f_even);
+    crash_screen_print_float_reg(0x78, 0xBE, 0xE, &tc->fp14.f.f_even);
+    crash_screen_print_float_reg(0xD2, 0xBE, 0x10, &tc->fp16.f.f_even);
+    crash_screen_print_float_reg(0x1E, 0xC8, 0x12, &tc->fp18.f.f_even);
+    crash_screen_print_float_reg(0x78, 0xC8, 0x14, &tc->fp20.f.f_even);
+    crash_screen_print_float_reg(0xD2, 0xC8, 0x16, &tc->fp22.f.f_even);
+    crash_screen_print_float_reg(0x1E, 0xD2, 0x18, &tc->fp24.f.f_even);
+    crash_screen_print_float_reg(0x78, 0xD2, 0x1A, &tc->fp26.f.f_even);
+    crash_screen_print_float_reg(0xD2, 0xD2, 0x1C, &tc->fp28.f.f_even);
+    crash_screen_print_float_reg(0x1E, 0xDC, 0x1E, &tc->fp30.f.f_even);
     osWritebackDCacheAll();
     func_80022248(0, 0);
     func_80022248(0x2030, 0);
     crash_screen_draw_rect(0x19, 0x14, 0x10E, 0xD2);
-    temp_s0 = temp_s1_2->unkD4;
-    crash_screen_print(0x1A, 0x14, &D_8004113C, temp_s1_2->unkD4);
+    temp_s0 = tc->unkD4;
+    crash_screen_print(0x1A, 0x14, &D_8004113C, tc->unkD4);
     phi_s0 = temp_s0;
     phi_s1 = 0x1E;
     phi_s2_3 = 0;
@@ -751,7 +711,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80022B88.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-void func_80022BC4(s32 arg0) {
+void thread8_crash_screen(s32 arg0) {
     ? sp34;
     s32 temp_s0;
     s32 temp_s2;
@@ -806,7 +766,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80022BC4.s")
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
 void func_80022D98(void) {
     osCreateMesgQueue(&D_80096ED8, &D_80096EF0, 1);
-    osCreateThread(&D_80096528, 8, &D_80022BC4, 0, &D_80096ED8, 0xFA);
+    osCreateThread(&D_80096528, 8, &thread8_crash_screen, 0, &D_80096ED8, 0xFA);
     osStartThread(&D_80096528);
 }
 #else

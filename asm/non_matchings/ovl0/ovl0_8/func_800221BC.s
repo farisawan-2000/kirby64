@@ -1,4 +1,4 @@
-glabel func_800221BC
+glabel crash_screen_print_fpcsr
 /* 022DBC 800221BC 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 022DC0 800221C0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 022DC4 800221C4 00803825 */  move  $a3, $a0

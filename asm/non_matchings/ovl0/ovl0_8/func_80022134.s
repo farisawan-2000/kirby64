@@ -1,4 +1,4 @@
-glabel func_80022134
+glabel crash_screen_print_float_reg
 /* 022D34 80022134 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 022D38 80022138 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 022D3C 8002213C AFA60028 */  sw    $a2, 0x28($sp)
