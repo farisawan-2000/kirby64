@@ -95,7 +95,7 @@ SECTIONS
       BUILD_DIR/src/ovl2/ovl2_6.o(.text);
       BUILD_DIR/src/ovl2/ovl2_7.o(.text);
       BUILD_DIR/src/ovl2/ovl2_8.o(.text);
-      BUILD_DIR/asm/ovl2/ovl2_data.o(.data);
+      BUILD_DIR/data/kirby.0AC900.o(.data);
    }
    END_SEG(ovl2)
 

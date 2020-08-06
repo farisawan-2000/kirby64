@@ -859,7 +859,7 @@ void func_8011D0FC_ovl2(struct Animation *anim, s32 arg1, f32 arg2) {
                 if (temp_a0 != 6) {
                     if (temp_a0 != 0x267) {
                         func_800A7678_ovl2(arg2, temp_a0, temp_a3);
-                        return;
+                         return;
                     case 15:
                         sp38 = arg2;
                         temp_v0_2 = (bitwise s32) sp38;

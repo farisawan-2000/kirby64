@@ -13384,7 +13384,9 @@ glabel D_80128440
 .word 0x3F800000
 
 glabel D_80128444
-.word 0x00050267
+.half 0x0005
+glabel D_80128446
+.half 0x0267
 
 glabel D_80128448
 .word 0x00000031

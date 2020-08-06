@@ -1,21 +1,21 @@
-.late_rodata
-glabel jtbl_80128EB0
-.word L8011D39C
-.word L8011D36C
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D130
-.word L8011D3CC_ovl2
-.word L8011D3CC_ovl2
-.word L8011D1C0
-.word L8011D2F4
+# .late_rodata
+# glabel jtbl_80128EB0
+# .word L8011D39C
+# .word L8011D36C
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D130
+# .word L8011D3CC_ovl2
+# .word L8011D3CC_ovl2
+# .word L8011D1C0
+# .word L8011D2F4
 
 .text
 glabel func_8011D0FC_ovl2
