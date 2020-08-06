@@ -11807,7 +11807,7 @@ glabel func_80038C90
 
 /* NEWFILE */
 
-glabel func_80038CA0
+glabel osWritebackDCacheAll
 /* 0398A0 80038CA0 3C088000 */  lui   $t0, %hi(D_80000010) # $t0, 0x8000
 /* 0398A4 80038CA4 240A2000 */  li    $t2, 8192
 /* 0398A8 80038CA8 010A4821 */  addu  $t1, $t0, $t2

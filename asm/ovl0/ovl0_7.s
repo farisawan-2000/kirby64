@@ -1,3 +1,10 @@
+.set noat
+.set noreorder
+.set gp=64
+
+.include "macros.inc"
+
+.section .text, "ax"
 glabel func_8001E3A0
 /* 01EFA0 8001E3A0 24030010 */  li    $v1, 16
 /* 01EFA4 8001E3A4 30AE000F */  andi  $t6, $a1, 0xf
@@ -2108,7 +2115,7 @@ glabel func_8001FD64
 /* 020E24 80020224 00137080 */  sll   $t6, $s3, 2
 /* 020E28 80020228 01D98021 */  addu  $s0, $t6, $t9
 /* 020E2C 8002022C 01F88821 */  addu  $s1, $t7, $t8
-/* 020E30 80020230 0C00E328 */  jal   func_80038CA0
+/* 020E30 80020230 0C00E328 */  jal   osWritebackDCacheAll
 /* 020E34 80020234 00009025 */   move  $s2, $zero
 /* 020E38 80020238 86250000 */  lh    $a1, ($s1)
 /* 020E3C 8002023C 8E040000 */  lw    $a0, ($s0)
@@ -2131,7 +2138,7 @@ glabel func_8001FD64
 /* 020E7C 8002027C 00000000 */   nop   
 /* 020E80 80020280 00009025 */  move  $s2, $zero
 .L80020284_ovl0:
-/* 020E84 80020284 0C00E328 */  jal   func_80038CA0
+/* 020E84 80020284 0C00E328 */  jal   osWritebackDCacheAll
 /* 020E88 80020288 00000000 */   nop   
 /* 020E8C 8002028C 3C048005 */  lui   $a0, %hi(D_80048CB8) # $a0, 0x8005
 /* 020E90 80020290 24848CB8 */  addiu $a0, %lo(D_80048CB8) # addiu $a0, $a0, -0x7348
