@@ -159,7 +159,8 @@ SECTIONS
 
    /* 0x801DB1E0 1E5AA0-1EB3C0 [5920] */
    BEGIN_SEG(ovl11, 0x801DB1E0) {
-      BUILD_DIR/asm/ovl11/ovl11.o(.text);
+      BUILD_DIR/src/ovl11/ovl11.o(.text);
+      BUILD_DIR/asm/ovl11/ovl11_2.o(.text);
    }
    END_SEG(ovl11)
 

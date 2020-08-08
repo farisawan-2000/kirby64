@@ -280,11 +280,7 @@ struct Kirby_Node
 /*0x20*/    struct Camera_Node    Camera;
 };
 
-typedef struct  {
-    f32 x;
-    f32 y;
-    f32 z;
-} Vector;
+
 
 // Entity List
 // The entity list is an array of structs which spawn objects as kirby gets in range. It is terminated by an 0x99999999 marker. See Entity IDs for more info. This section is optional and if a not pointed to in the main header will not be used.

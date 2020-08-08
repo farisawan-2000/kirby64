@@ -34,6 +34,12 @@ struct VblankHandler
 
 typedef f32 Vec3f[3];
 
+typedef struct  {
+    f32 x;
+    f32 y;
+    f32 z;
+} Vector;
+
 struct Overlay {
     void *startAddr;
     void *endAddr;
