@@ -2,7 +2,7 @@ glabel func_801123AC
 /* 09AE1C 801123AC 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 09AE20 801123B0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 09AE24 801123B4 AFA40028 */  sw    $a0, 0x28($sp)
-/* 09AE28 801123B8 0C00D604 */  jal   func_80035810_ovl2
+/* 09AE28 801123B8 0C00D604 */  jal   cosf
 /* 09AE2C 801123BC C48C0024 */   lwc1  $f12, 0x24($a0)
 /* 09AE30 801123C0 8FAF0028 */  lw    $t7, 0x28($sp)
 /* 09AE34 801123C4 C5EC0024 */  lwc1  $f12, 0x24($t7)

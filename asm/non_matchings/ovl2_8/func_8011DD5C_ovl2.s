@@ -168,7 +168,7 @@ glabel func_8011DD5C_ovl2
 /* 0A6A20 8011DFB0 AFA40020 */  sw    $a0, 0x20($sp)
 /* 0A6A24 8011DFB4 AFA50024 */  sw    $a1, 0x24($sp)
 /* 0A6A28 8011DFB8 AFA6001C */  sw    $a2, 0x1c($sp)
-/* 0A6A2C 8011DFBC 0C00D604 */  jal   func_80035810_ovl2
+/* 0A6A2C 8011DFBC 0C00D604 */  jal   cosf
 /* 0A6A30 8011DFC0 E7B00018 */   swc1  $f16, 0x18($sp)
 /* 0A6A34 8011DFC4 44809000 */  mtc1  $zero, $f18
 /* 0A6A38 8011DFC8 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013

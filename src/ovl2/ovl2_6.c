@@ -3194,7 +3194,7 @@ f32 func_80104FB8_ovl2(void *arg0) {
     f32 temp_f4;
     void *temp_v0;
 
-    sp1C = func_80035810_ovl2(arg0->unk24);
+    sp1C = cosf(arg0->unk24);
     temp_f0 = func_8002D6E0_ovl2(arg0->unk24);
     temp_f4 = arg0->unk1C;
     temp_v0 = arg0 + 0x10;
@@ -7401,7 +7401,7 @@ void *func_8010C608(void *arg0) {
     sp24 = phi_f16;
     sp20 = phi_f14;
     sp1C = phi_v1;
-    sp2C = func_80035810_ovl2(arg0->unk24, phi_f14);
+    sp2C = cosf(arg0->unk24, phi_f14);
     temp_f0_2 = func_8002D6E0_ovl2(arg0->unk24, arg0);
     temp_f16 = phi_f16;
     temp_f14 = phi_f14;
@@ -9920,7 +9920,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                     if (-1 == temp_a2->unk5F90) {
                     block_34:
                         sp18 = func_8002D6E0_ovl2(D_800E17D0, phi_a2);
-                        if (0.0f <= (((arg2->unk20 - D_800E2950) * func_80035810_ovl2(D_800E17D0))
+                        if (0.0f <= (((arg2->unk20 - D_800E2950) * cosf(D_800E17D0))
                                      + (sp18 * (arg2->unk18 - D_800E25D0)))) {
                             if (1.0f == D_800E6A10) {
                                 *(void *) 0x800F0000 = -1;

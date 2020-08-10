@@ -2,7 +2,7 @@ func_8002d2f0,osSendMesg
 func_8002d440,osStopThread
 func_8002d500,osRecvMesg
 func_8002d640,osSetIntMask
-func_8002d6e0,__sinf/fsin/sinf
+func_8002d6e0,sinf
 func_8002dca0,__ull_rshift
 func_8002dccc,__ull_rem
 func_8002dd08,__ull_div
@@ -50,7 +50,7 @@ func_80033fe0,osViSwapBuffer
 func_80034030,guMtxXFMF
 func_800340d0,guMtxCatF
 func_80034470,osSpTaskYielded
-func_800344f0,bcmp/_bcmp
+func_800344f0,bcmp
 func_80034610,osGetTime
 func_80034aa0,__osSetGlobalIntMask
 func_80034af0,osAiSetFrequency
@@ -62,7 +62,7 @@ func_80035090,__osResetGlobalIntMask
 func_80035360,__osDisableInt
 func_80035380,__osRestoreInt
 func_800357e0,osPiGetCmdQueue
-func_80035810,__cosf/fcos/cosf
+func_80035810,cosf
 func_80035980,osSetTime
 func_800359b0,osViSetEvent
 func_80035d20,__osSetFpcCsr

@@ -65,7 +65,7 @@ void *func_80112000_ovl2(void) {
     temp_s3 = D_800D799C->unk3C;
     temp_s0 = D_8012D934;
     temp_f28 = -((((temp_s3->unk20 - 2.0f) * 0.5f) * D_80128CD0) / 180.0f) * temp_s3->unk24;
-    temp_f26 = -func_80035810_ovl2(temp_f28);
+    temp_f26 = -cosf(temp_f28);
     temp_s2 = temp_s3 + 0x3C;
     phi_f26 = temp_f26;
     phi_f2 = func_8002D6E0_ovl2(temp_f28);
@@ -86,7 +86,7 @@ loop_1:
     temp_v0->unkC = (f32) -(((temp_s2->unk0 * temp_f20) + (temp_f22 * temp_s2->unk4)) + (temp_f24 * temp_s2->unk8));
     if (phi_s1 != 0x10) {
         temp_f28_2 = -phi_f28;
-        temp_f26_2 = func_80035810_ovl2(temp_f28_2);
+        temp_f26_2 = cosf(temp_f28_2);
         phi_f26 = temp_f26_2;
         phi_f2 = -func_8002D6E0_ovl2(temp_f28_2);
         phi_s1 = phi_s1 + 0x10;
@@ -122,7 +122,7 @@ void *func_801121E0(void) {
     temp_s3 = D_800D799C->unk3C;
     temp_s0 = D_8012D934;
     temp_f28 = -(((temp_s3->unk20 * 0.5f) * D_80128CD4) / 180.0f);
-    temp_f26 = func_80035810_ovl2(temp_f28);
+    temp_f26 = cosf(temp_f28);
     temp_s2 = temp_s3 + 0x3C;
     phi_f26 = temp_f26;
     phi_f2 = func_8002D6E0_ovl2(temp_f28);
@@ -143,7 +143,7 @@ loop_1:
     temp_v0->unkC = (f32) -(((temp_s2->unk0 * temp_f20) + (temp_f22 * temp_s2->unk4)) + (temp_f24 * temp_s2->unk8));
     if (phi_s1 != 0x10) {
         temp_f28_2 = -phi_f28;
-        temp_f26_2 = -func_80035810_ovl2(temp_f28_2);
+        temp_f26_2 = -cosf(temp_f28_2);
         phi_f26 = temp_f26_2;
         phi_f2 = -func_8002D6E0_ovl2(temp_f28_2);
         phi_s1 = phi_s1 + 0x10;
@@ -164,7 +164,7 @@ void *func_801123AC(void *arg0) {
     f32 temp_f6;
     void *temp_v0;
 
-    sp1C = func_80035810_ovl2(arg0->unk24);
+    sp1C = cosf(arg0->unk24);
     temp_f0 = func_8002D6E0_ovl2(arg0->unk24);
     temp_f6 = arg0->unk1C * temp_f0;
     temp_v0 = arg0 + 0x10;
@@ -583,15 +583,15 @@ f32 func_80112CD4_ovl2(s32 arg0, void *arg1) {
     sp30 = temp_v0;
     temp_f20 = func_8002D6E0_ovl2(*temp_v0);
     temp_v0_2 = temp_s1 + &D_800E41D0;
-    temp_f22 = func_80035810_ovl2(*temp_v0);
+    temp_f22 = cosf(*temp_v0);
     sp30 = temp_v0_2;
     sp58 = func_8002D6E0_ovl2(*temp_v0_2);
-    temp_f0 = func_80035810_ovl2(*temp_v0_2);
+    temp_f0 = cosf(*temp_v0_2);
     temp_v0_3 = temp_s1 + &D_800E4390;
     sp30 = temp_v0_3;
     sp4C = temp_f0;
     sp54 = func_8002D6E0_ovl2(*temp_v0_3);
-    temp_f0_2 = func_80035810_ovl2(*temp_v0_3);
+    temp_f0_2 = cosf(*temp_v0_3);
     temp_at = temp_s1 + 0x800E0000;
     temp_at_2 = temp_s1 + 0x800E0000;
     temp_at_3 = temp_s1 + 0x800E0000;
@@ -2378,9 +2378,9 @@ void func_80115F04(void *arg0) {
     sp48 = temp_at->unk4010;
     sp44 = (temp_s0 + 0x800E0000)->unk41D0;
     sp40 = func_8002D6E0_ovl2(temp_at->unk4010);
-    sp3C = func_80035810_ovl2(temp_at->unk4010);
+    sp3C = cosf(temp_at->unk4010);
     sp38 = func_8002D6E0_ovl2(sp44);
-    temp_f4 = sp3C * func_80035810_ovl2(sp44);
+    temp_f4 = sp3C * cosf(sp44);
     sp5C = -sp40;
     sp58 = sp3C * sp38;
     sp60 = temp_f4;

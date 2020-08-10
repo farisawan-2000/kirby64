@@ -1955,7 +1955,7 @@ glabel func_8001FD64
 /* 020BB0 8001FFB0 25EFF348 */  addiu $t7, %lo(D_8003F348) # addiu $t7, $t7, -0xcb8
 /* 020BB4 8001FFB4 00135840 */  sll   $t3, $s3, 1
 /* 020BB8 8001FFB8 016F8821 */  addu  $s1, $t3, $t7
-/* 020BBC 8001FFBC 0C00D184 */  jal   func_80034610
+/* 020BBC 8001FFBC 0C00D184 */  jal   osGetTime
 /* 020BC0 8001FFC0 A6250000 */   sh    $a1, ($s1)
 /* 020BC4 8001FFC4 0013C080 */  sll   $t8, $s3, 2
 /* 020BC8 8001FFC8 3C048009 */  lui   $a0, 0x8009

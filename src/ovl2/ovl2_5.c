@@ -187,7 +187,7 @@ void *func_800FDE6C(void *arg0) {
     f32 temp_f12;
     f32 temp_f14;
 
-    sp2C = func_80035810_ovl2(arg0->unk1C);
+    sp2C = cosf(arg0->unk1C);
     temp_f0 = func_8002D6E0_ovl2(arg0->unk1C, arg0);
     sp18.unk0 = (s32) arg0->unk4;
     temp_f12 = arg0->unk10 * temp_f0;

@@ -349,18 +349,18 @@ void func_8002206C(s32 arg0) {
     temp_v1 = (u32) (u64) temp_ret_3;
     sp18 = temp_ret_3;
     sp1C = temp_v1;
-    func_80035980(0, 0);
-    temp_ret_4 = func_80034610();
+    osSetTime(0, 0);
+    temp_ret_4 = osGetTime();
     temp_v0 = temp_ret_4;
     if (sp18 >= temp_v0) {
-        if ((((temp_v0 >= sp18) && ((u32) (u64) temp_ret_4 < sp1C)) && (temp_ret_5 = func_80034610(), temp_v0_2 = temp_ret_5, ((temp_v0_2 < sp18) == 0))) && (sp18 >= temp_v0_2)) {
+        if ((((temp_v0 >= sp18) && ((u32) (u64) temp_ret_4 < sp1C)) && (temp_ret_5 = osGetTime(), temp_v0_2 = temp_ret_5, ((temp_v0_2 < sp18) == 0))) && (sp18 >= temp_v0_2)) {
 block_5:
             if ((u32) (u64) temp_ret_5 < sp1C) {
                 goto loop_3;
             }
         } else {
 loop_3:
-            temp_ret_5 = func_80034610();
+            temp_ret_5 = osGetTime();
             temp_v0_2 = temp_ret_5;
             if (temp_v0_2 < sp18) {
                 goto loop_3;

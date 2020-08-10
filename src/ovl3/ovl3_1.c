@@ -464,7 +464,7 @@ block_20:
             temp_f18 = (func_8002D6E0_ovl3(phi_t4->unk24) * phi_f2) + ((*D_8004A7C4 * 4) + 0x800E0000)->unk25D0;
             sp44 = temp_f18;
             sp50 = temp_f18;
-            temp_f8 = (func_80035810_ovl3(gPositionState.unk24) * phi_f2) + ((*D_8004A7C4 * 4) + 0x800E0000)->unk2950;
+            temp_f8 = (cosf(gPositionState.unk24) * phi_f2) + ((*D_8004A7C4 * 4) + 0x800E0000)->unk2950;
             sp4C = temp_f8;
             sp58 = temp_f8;
             sp48 = (*(&D_800E2790 + (*D_8004A7C4 * 4)) + sp64->unk4->unk0) + sp64->unk4->unk8;
@@ -2100,7 +2100,7 @@ s32 func_80155838_ovl3(void *arg0, f32 arg1, s32 arg2) {
         sp50 = arg0->unk4;
         if ((temp_a2 & 1) == 0) {
             sp40 = func_8002D6E0_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0, temp_a2);
-            temp_f0 = func_80035810_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0);
+            temp_f0 = cosf(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0);
             sp48 = temp_f0;
             temp_a1 = &sp4C;
             sp4C = arg0->unk0 + (arg1 * sp40);
@@ -2110,7 +2110,7 @@ s32 func_80155838_ovl3(void *arg0, f32 arg1, s32 arg2) {
                 phi_s1_5 = 8;
             }
             sp40 = func_8002D6E0_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + D_80196EC4);
-            temp_f0_2 = func_80035810_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + D_80196EC8);
+            temp_f0_2 = cosf(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + D_80196EC8);
             sp48 = temp_f0_2;
             temp_a1_2 = &sp4C;
             sp4C = arg0->unk0 + (arg1 * sp40);
@@ -2122,10 +2122,10 @@ s32 func_80155838_ovl3(void *arg0, f32 arg1, s32 arg2) {
         } else {
             if (0.0f < arg1) {
                 sp40 = func_8002D6E0_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0, temp_a2);
-                phi_f0 = func_80035810_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0);
+                phi_f0 = cosf(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0);
             } else {
                 sp40 = func_8002D6E0_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + D_80196ECC, temp_a2);
-                phi_f0 = func_80035810_ovl3(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + *(void *)0x80190000);
+                phi_f0 = cosf(((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0 + *(void *)0x80190000);
             }
             sp48 = phi_f0;
             temp_a1_3 = &sp4C;

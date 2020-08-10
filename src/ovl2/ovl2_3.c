@@ -1271,7 +1271,7 @@ void func_800FA608(s32 arg0, void *arg1, void *arg2) {
             func_80019090_ovl2(&sp44, 2, (arg1->unk8 * D_801287F8) / 180.0f);
         }
     } else {
-        sp44 = func_80035810_ovl2((arg1->unk8 * D_801287F0) / 180.0f, arg0);
+        sp44 = cosf((arg1->unk8 * D_801287F0) / 180.0f, arg0);
         sp4C = -func_8002D6E0_ovl2((arg1->unk8 * D_801287F4) / 180.0f);
         sp48 = 0.0f;
     }
@@ -2140,7 +2140,7 @@ loop_3:
     D_80129330.unk0 = (f32) D_801292B0.unk0;
     D_80129330.unk8 = (f32) D_801292B0.unk8;
     D_80129330.unk4 = (f32) (D_801292B0.unk4 + D_80129210.unk14);
-    sp40 = func_80035810_ovl2((D_80129210.unk8 * D_80128830) / 180.0f);
+    sp40 = cosf((D_80129210.unk8 * D_80128830) / 180.0f);
     sp48 = -func_8002D6E0_ovl2((D_80129210.unk8 * D_80128834) / 180.0f);
     sp44 = 0.0f;
     func_80018E70_ovl2(&sp40, -D_80129210.unkC);

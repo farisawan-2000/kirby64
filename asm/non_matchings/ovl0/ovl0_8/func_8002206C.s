@@ -20,9 +20,9 @@ glabel func_8002206C
 /* 022CB4 800220B4 AFA20018 */  sw    $v0, 0x18($sp)
 /* 022CB8 800220B8 AFA3001C */  sw    $v1, 0x1c($sp)
 /* 022CBC 800220BC 24040000 */  li    $a0, 0
-/* 022CC0 800220C0 0C00D660 */  jal   func_80035980
+/* 022CC0 800220C0 0C00D660 */  jal   osSetTime
 /* 022CC4 800220C4 24050000 */   li    $a1, 0
-/* 022CC8 800220C8 0C00D184 */  jal   func_80034610
+/* 022CC8 800220C8 0C00D184 */  jal   osGetTime
 /* 022CCC 800220CC 00000000 */   nop   
 /* 022CD0 800220D0 8FB80018 */  lw    $t8, 0x18($sp)
 /* 022CD4 800220D4 8FB9001C */  lw    $t9, 0x1c($sp)
@@ -34,7 +34,7 @@ glabel func_8002206C
 /* 022CEC 800220EC 5020000E */  beql  $at, $zero, .L80022128_ovl0
 /* 022CF0 800220F0 8FBF0014 */   lw    $ra, 0x14($sp)
 .L800220F4_ovl0:
-/* 022CF4 800220F4 0C00D184 */  jal   func_80034610
+/* 022CF4 800220F4 0C00D184 */  jal   osGetTime
 /* 022CF8 800220F8 00000000 */   nop   
 /* 022CFC 800220FC 8FA80018 */  lw    $t0, 0x18($sp)
 /* 022D00 80022100 8FA9001C */  lw    $t1, 0x1c($sp)

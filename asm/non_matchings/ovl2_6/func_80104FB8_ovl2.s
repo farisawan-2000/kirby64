@@ -2,7 +2,7 @@ glabel func_80104FB8_ovl2
 /* 08DA28 80104FB8 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 08DA2C 80104FBC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 08DA30 80104FC0 AFA40028 */  sw    $a0, 0x28($sp)
-/* 08DA34 80104FC4 0C00D604 */  jal   func_80035810_ovl2
+/* 08DA34 80104FC4 0C00D604 */  jal   cosf
 /* 08DA38 80104FC8 C48C0024 */   lwc1  $f12, 0x24($a0)
 /* 08DA3C 80104FCC 8FAF0028 */  lw    $t7, 0x28($sp)
 /* 08DA40 80104FD0 C5EC0024 */  lwc1  $f12, 0x24($t7)
