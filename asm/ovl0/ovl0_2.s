@@ -92,14 +92,14 @@ glabel func_80003ECC
 /* 004AEC 80003EEC AFB20020 */  sw    $s2, 0x20($sp)
 /* 004AF0 80003EF0 AFB1001C */  sw    $s1, 0x1c($sp)
 /* 004AF4 80003EF4 AFB00018 */  sw    $s0, 0x18($sp)
-/* 004AF8 80003EF8 0C00CAD4 */  jal   osContGetQuery
+/* 004AF8 80003EF8 0C00CAD4 */  jal   osContStartQuery
 /* 004AFC 80003EFC 02C02025 */   move  $a0, $s6
 /* 004B00 80003F00 02C02025 */  move  $a0, $s6
 /* 004B04 80003F04 00002825 */  move  $a1, $zero
 /* 004B08 80003F08 0C00B540 */  jal   osRecvMesg
 /* 004B0C 80003F0C 24060001 */   li    $a2, 1
 /* 004B10 80003F10 3C048005 */  lui   $a0, %hi(D_80048E70) # $a0, 0x8005
-/* 004B14 80003F14 0C00CAF5 */  jal   func_80032BD4
+/* 004B14 80003F14 0C00CAF5 */  jal   osContGetQuery
 /* 004B18 80003F18 24848E70 */   addiu $a0, %lo(D_80048E70) # addiu $a0, $a0, -0x7190
 /* 004B1C 80003F1C 3C108005 */  lui   $s0, %hi(D_80048E70) # $s0, 0x8005
 /* 004B20 80003F20 3C118005 */  lui   $s1, %hi(D_80048EA0) # $s1, 0x8005

@@ -4,7 +4,7 @@ lines2 = []
 with open(sys.argv[1]) as file1:
 	for line in file1:
 		l = line.split(",")
-		lines1.append(l[0])
+		lines1.append("func_"+l[0][-8:].upper())
 		lines2.append(l[1])
 
 print(lines2)

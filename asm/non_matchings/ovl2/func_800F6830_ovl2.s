@@ -52,7 +52,7 @@ glabel func_800F6830_ovl2
 /* 07F368 800F68F8 3C05800D */  lui   $a1, %hi(D_800D6ED0) # $a1, 0x800d
 /* 07F36C 800F68FC 24A56ED0 */  addiu $a1, %lo(D_800D6ED0) # addiu $a1, $a1, 0x6ed0
 /* 07F370 800F6900 00A03025 */  move  $a2, $a1
-/* 07F374 800F6904 0C00D034 */  jal   func_800340D0_ovl2
+/* 07F374 800F6904 0C00D034 */  jal   guMtxCatF
 /* 07F378 800F6908 27A40040 */   addiu $a0, $sp, 0x40
 .L800F690C_ovl2:
 /* 07F37C 800F690C 3C0B8013 */  lui   $t3, %hi(D_801290D8) # $t3, 0x8013

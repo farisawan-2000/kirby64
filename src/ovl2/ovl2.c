@@ -231,7 +231,7 @@ void func_800F6830_ovl2(void) {
         sp3C = D_800D799C->unk3C;
         func_80019EB0_ovl2(&sp40, D_800D799C->unk3C->unk3C, D_800D799C->unk3C->unk40, D_800D799C->unk3C->unk44, D_800D799C->unk3C->unk48, D_800D799C->unk3C->unk4C, D_800D799C->unk3C->unk50, D_800D799C->unk3C->unk54, D_800D799C->unk3C->unk58, D_800D799C->unk3C->unk5C);
         func_8001B008_ovl2(&D_800D6ED0, &sp3A, D_800D799C->unk3C->unk20, D_800D799C->unk3C->unk24, D_800D799C->unk3C->unk28, D_800D799C->unk3C->unk2C, D_800D799C->unk3C->unk30);
-        func_800340D0_ovl2(&sp40, &D_800D6ED0, &D_800D6ED0);
+        guMtxCatF(&sp40, &D_800D6ED0, &D_800D6ED0);
     }
     temp_v1 = (D_801290D8->unkA * 0xC) + &D_800D478C;
     D_800D6B20->unk3C->unk84 = (s32) ((((temp_v1->unk2 << 8) | (temp_v1->unk0 << 0x18)) | (temp_v1->unk1 << 0x10)) | 0xFF);

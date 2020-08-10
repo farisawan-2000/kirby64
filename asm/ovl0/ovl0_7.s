@@ -717,7 +717,7 @@ glabel func_8001ECC0
 /* 01F990 8001ED90 AFA5002C */  sw    $a1, 0x2c($sp)
 /* 01F994 8001ED94 AFA60028 */  sw    $a2, 0x28($sp)
 /* 01F998 8001ED98 46041302 */  mul.s $f12, $f2, $f4
-/* 01F99C 8001ED9C 0C00B5B8 */  jal   func_8002D6E0
+/* 01F99C 8001ED9C 0C00B5B8 */  jal   sinf
 /* 01F9A0 8001EDA0 00000000 */   nop   
 /* 01F9A4 8001EDA4 8FA60028 */  lw    $a2, 0x28($sp)
 /* 01F9A8 8001EDA8 8FA5002C */  lw    $a1, 0x2c($sp)
@@ -917,7 +917,7 @@ glabel func_8001ECC0
 /* 01FC54 8001F054 AFA5002C */  sw    $a1, 0x2c($sp)
 /* 01FC58 8001F058 AFA60028 */  sw    $a2, 0x28($sp)
 /* 01FC5C 8001F05C 46081302 */  mul.s $f12, $f2, $f8
-/* 01FC60 8001F060 0C00B5B8 */  jal   func_8002D6E0
+/* 01FC60 8001F060 0C00B5B8 */  jal   sinf
 /* 01FC64 8001F064 00000000 */   nop   
 /* 01FC68 8001F068 8FA60028 */  lw    $a2, 0x28($sp)
 /* 01FC6C 8001F06C C4D2000C */  lwc1  $f18, 0xc($a2)
@@ -1480,7 +1480,7 @@ glabel func_8001F81C
 /* 020490 8001F890 94440008 */  lhu   $a0, 8($v0)
 /* 020494 8001F894 AFB800E4 */  sw    $t8, 0xe4($sp)
 /* 020498 8001F898 AFB900E8 */  sw    $t9, 0xe8($sp)
-/* 02049C 8001F89C 0C00D2BC */  jal   func_80034AF0
+/* 02049C 8001F89C 0C00D2BC */  jal   osAiSetFrequency
 /* 0204A0 8001F8A0 AFA900EC */   sw    $t1, 0xec($sp)
 /* 0204A4 8001F8A4 3C0C8009 */  lui   $t4, %hi(D_800964D0) # $t4, 0x8009
 /* 0204A8 8001F8A8 918C64D0 */  lbu   $t4, %lo(D_800964D0)($t4)
@@ -1872,7 +1872,7 @@ glabel func_8001FD64
 /* 020A7C 8001FE7C 27DE6458 */  addiu $fp, %lo(D_80096458) # addiu $fp, $fp, 0x6458
 /* 020A80 8001FE80 24150001 */  li    $s5, 1
 .L8001FE84_ovl0:
-/* 020A84 8001FE84 0C00C534 */  jal   func_800314D0
+/* 020A84 8001FE84 0C00C534 */  jal   osGetCount
 /* 020A88 8001FE88 00000000 */   nop   
 /* 020A8C 8001FE8C 3C048004 */  lui   $a0, %hi(D_8003F344) # $a0, 0x8004
 /* 020A90 8001FE90 8C84F344 */  lw    $a0, %lo(D_8003F344)($a0)
@@ -2037,7 +2037,7 @@ glabel func_8001FD64
 /* 020CF8 800200F8 8FCE0000 */  lw    $t6, ($fp)
 /* 020CFC 800200FC ADC00050 */  sw    $zero, 0x50($t6)
 /* 020D00 80020100 8FCD0000 */  lw    $t5, ($fp)
-/* 020D04 80020104 0C00C534 */  jal   func_800314D0
+/* 020D04 80020104 0C00C534 */  jal   osGetCount
 /* 020D08 80020108 ADA00054 */   sw    $zero, 0x54($t5)
 /* 020D0C 8002010C 8FAC006C */  lw    $t4, 0x6c($sp)
 /* 020D10 80020110 24010B9B */  li    $at, 2971

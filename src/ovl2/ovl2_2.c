@@ -871,7 +871,7 @@ f32 func_800F8728_ovl2(s32 arg0, f32 arg1, f32 arg2) {
     sp1C = temp_v1;
     sp34 = temp_t0->unk4;
     func_8001E344_ovl2(&sp28, temp_t0->unk4, *temp_v1);
-    temp_f2 = 1.0f / func_80032B20_ovl2((sp28 * sp28) + (sp30 * sp30));
+    temp_f2 = 1.0f / sqrtf((sp28 * sp28) + (sp30 * sp30));
     temp_f16 = sp28 * temp_f2;
     temp_f4 = sp30 * temp_f2;
     temp_f8 = temp_f16 * arg1;
@@ -893,7 +893,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728_ovl2.s")
     f32 sp18;
 
     if (arg0 != 0) {
-        sp18 = func_8002D6E0_ovl2(arg1);
+        sp18 = sinf(arg1);
         return func_800185E4_ovl2(-((cosf(arg1) * arg0->unk8) + (arg0->unk0 * sp18)) / arg0->unk4, arg0);
     }
     return 0;

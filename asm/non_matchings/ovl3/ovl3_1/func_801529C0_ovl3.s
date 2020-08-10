@@ -198,7 +198,7 @@ glabel func_801529C0_ovl3
 /* 0B36E8 80152CA8 C5820020 */  lwc1  $f2, 0x20($t4)
 .L80152CAC_ovl3:
 /* 0B36EC 80152CAC C58C0024 */  lwc1  $f12, 0x24($t4)
-/* 0B36F0 80152CB0 0C00B5B8 */  jal   func_8002D6E0_ovl3
+/* 0B36F0 80152CB0 0C00B5B8 */  jal   sinf
 /* 0B36F4 80152CB4 E7A2005C */   swc1  $f2, 0x5c($sp)
 /* 0B36F8 80152CB8 3C0F8005 */  lui   $t7, %hi(D_8004A7C4) # $t7, 0x8005
 /* 0B36FC 80152CBC 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)

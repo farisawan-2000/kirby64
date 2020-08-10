@@ -39,7 +39,7 @@ u32 func_80151138(s32 arg0) {
     if (osViGetCurrentFramebuffer() != *temp_t1) {
         if (sp1C != *temp_t1) {
             D_80048C5C = (s32) *temp_t1;
-            D_80048C6C = func_800314D0_ovl6(*temp_t1, &gFrameBuffers);
+            D_80048C6C = osGetCount(*temp_t1, &gFrameBuffers);
             return 1;
         }
     }
@@ -202,11 +202,11 @@ void *func_8015150C(void) {
     sp34.unk0 = (s32) D_8015A56C->unk3C->unk30;
     sp34.unk4 = (s32) D_8015A56C->unk3C->unk34;
     sp34.unk8 = (s32) D_8015A56C->unk3C->unk38;
-    sp30 = func_8002D6E0_ovl6(sp34);
+    sp30 = sinf(sp34);
     sp2C = cosf(sp34);
-    sp28 = func_8002D6E0_ovl6(sp38);
+    sp28 = sinf(sp38);
     sp24 = cosf(sp38);
-    sp20 = func_8002D6E0_ovl6(sp3C);
+    sp20 = sinf(sp3C);
     temp_f0 = cosf(sp3C);
     temp_f2 = sp2C * sp28;
     temp_f16 = (temp_f2 * temp_f0) + (sp30 * sp20);
@@ -216,7 +216,7 @@ void *func_8015150C(void) {
     temp_f8 = sp2C * sp24;
     sp38 = temp_f18;
     sp3C = temp_f8;
-    temp_f2_2 = 100.0f / func_80032B20_ovl6(((temp_f16 * temp_f16) + (temp_f18 * temp_f18)) + (temp_f8 * temp_f8), sp20);
+    temp_f2_2 = 100.0f / sqrtf(((temp_f16 * temp_f16) + (temp_f18 * temp_f18)) + (temp_f8 * temp_f8), sp20);
     D_8015A670->unk10 = (s8) -(s32) (sp34 * temp_f2_2);
     D_8015A670->unk11 = (s8) -(s32) (sp38 * temp_f2_2);
     D_8015A670->unk12 = (s8) -(s32) (sp3C * temp_f2_2);
@@ -283,7 +283,7 @@ void *func_80151CD0(s32 arg0, ? arg1) {
     f32 temp_ret;
 
     func_80018DEC_ovl6(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1, arg0);
-    temp_ret = func_80032B20_ovl6(((sp24 * sp24) + (sp28 * sp28)) + (sp2C * sp2C), sp2C);
+    temp_ret = sqrtf(((sp24 * sp24) + (sp28 * sp28)) + (sp2C * sp2C), sp2C);
     temp_f0 = temp_ret;
     if (temp_f0 == 0.0f) {
         D_8004A3F8.unkC->unk12 = (u8)0;

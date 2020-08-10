@@ -117,7 +117,7 @@ void *func_800A840C(u32 arg0, s32 arg1) {
     temp_v0->unk4->unk8 = 0x10;
     temp_v0->unk4->unkC = 0xFF000000;
     sp1C = temp_v0;
-    func_80033A40_ovl1(temp_v0->unk4 + 0x10, &D_800C4640, 0x10, temp_v0->unk4);
+    memcpy(temp_v0->unk4 + 0x10, &D_800C4640, 0x10, temp_v0->unk4);
     return sp1C;
 }
 #else

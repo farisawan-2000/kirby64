@@ -10,7 +10,7 @@ glabel fatal_printf
 /* 023CBC 800230BC AFA60030 */  sw    $a2, 0x30($sp)
 /* 023CC0 800230C0 AFA70034 */  sw    $a3, 0x34($sp)
 /* 023CC4 800230C4 A02EF688 */  sb    $t6, %lo(D_8003F688)($at)
-/* 023CC8 800230C8 0C00CFF0 */  jal   func_80033FC0
+/* 023CC8 800230C8 0C00CFF0 */  jal   osGetThreadPri
 /* 023CCC 800230CC 00002025 */   move  $a0, $zero
 /* 023CD0 800230D0 AFA20020 */  sw    $v0, 0x20($sp)
 /* 023CD4 800230D4 00002025 */  move  $a0, $zero

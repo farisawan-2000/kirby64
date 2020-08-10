@@ -139,7 +139,7 @@ glabel func_8011DD5C_ovl2
 /* 0A69B8 8011DF48 C46C0130 */  lwc1  $f12, 0x130($v1)
 /* 0A69BC 8011DF4C AFA40020 */  sw    $a0, 0x20($sp)
 /* 0A69C0 8011DF50 AFA50024 */  sw    $a1, 0x24($sp)
-/* 0A69C4 8011DF54 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 0A69C4 8011DF54 0C00B5B8 */  jal   sinf
 /* 0A69C8 8011DF58 AFA6001C */   sw    $a2, 0x1c($sp)
 /* 0A69CC 8011DF5C 44809000 */  mtc1  $zero, $f18
 /* 0A69D0 8011DF60 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013

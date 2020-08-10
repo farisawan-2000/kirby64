@@ -46,7 +46,7 @@ glabel func_80022E04
 /* 023AAC 80022EAC 1420FFF0 */  bnez  $at, .L80022E70_ovl0
 /* 023AB0 80022EB0 0040A025 */   move  $s4, $v0
 /* 023AB4 80022EB4 A2360000 */  sb    $s6, ($s1)
-/* 023AB8 80022EB8 0C00CFF0 */  jal   func_80033FC0
+/* 023AB8 80022EB8 0C00CFF0 */  jal   osGetThreadPri
 /* 023ABC 80022EBC 00002025 */   move  $a0, $zero
 /* 023AC0 80022EC0 00409025 */  move  $s2, $v0
 /* 023AC4 80022EC4 00002025 */  move  $a0, $zero

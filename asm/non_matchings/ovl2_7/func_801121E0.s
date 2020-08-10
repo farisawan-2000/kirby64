@@ -32,7 +32,7 @@ glabel func_801121E0
 /* 09ACC8 80112258 0C00D604 */  jal   cosf
 /* 09ACCC 8011225C 4600E306 */   mov.s $f12, $f28
 /* 09ACD0 80112260 46000686 */  mov.s $f26, $f0
-/* 09ACD4 80112264 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 09ACD4 80112264 0C00B5B8 */  jal   sinf
 /* 09ACD8 80112268 4600E306 */   mov.s $f12, $f28
 /* 09ACDC 8011226C 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 09ACE0 80112270 2672003C */  addiu $s2, $s3, 0x3c
@@ -67,7 +67,7 @@ glabel func_801121E0
 /* 09AD50 801122E0 46109600 */  add.s $f24, $f18, $f16
 /* 09AD54 801122E4 46082180 */  add.s $f6, $f4, $f8
 /* 09AD58 801122E8 4618C282 */  mul.s $f10, $f24, $f24
-/* 09AD5C 801122EC 0C00CAC8 */  jal   func_80032B20_ovl2
+/* 09AD5C 801122EC 0C00CAC8 */  jal   sqrtf
 /* 09AD60 801122F0 460A3300 */   add.s $f12, $f6, $f10
 /* 09AD64 801122F4 4600F083 */  div.s $f2, $f30, $f0
 /* 09AD68 801122F8 C6520000 */  lwc1  $f18, ($s2)
@@ -96,7 +96,7 @@ glabel func_801121E0
 /* 09ADC4 80112354 0C00D604 */  jal   cosf
 /* 09ADC8 80112358 4600E306 */   mov.s $f12, $f28
 /* 09ADCC 8011235C 46000687 */  neg.s $f26, $f0
-/* 09ADD0 80112360 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 09ADD0 80112360 0C00B5B8 */  jal   sinf
 /* 09ADD4 80112364 4600E306 */   mov.s $f12, $f28
 /* 09ADD8 80112368 26310010 */  addiu $s1, $s1, 0x10
 /* 09ADDC 8011236C 1000FFC5 */  b     .L80112284_ovl2

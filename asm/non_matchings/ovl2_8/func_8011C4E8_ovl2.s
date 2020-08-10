@@ -30,7 +30,7 @@ glabel func_8011C4E8_ovl2
 /* 0A4FC8 8011C558 0C00D604 */  jal   cosf
 /* 0A4FCC 8011C55C AFA7009C */   sw    $a3, 0x9c($sp)
 /* 0A4FD0 8011C560 46000586 */  mov.s $f22, $f0
-/* 0A4FD4 8011C564 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 0A4FD4 8011C564 0C00B5B8 */  jal   sinf
 /* 0A4FD8 8011C568 C6AC0018 */   lwc1  $f12, 0x18($s5)
 /* 0A4FDC 8011C56C 8FA7009C */  lw    $a3, 0x9c($sp)
 /* 0A4FE0 8011C570 46000506 */  mov.s $f20, $f0

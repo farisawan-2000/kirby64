@@ -28,7 +28,7 @@ glabel func_8011BF4C_ovl2
 /* 0A4A24 8011BFB4 AFA40100 */   sw    $a0, 0x100($sp)
 /* 0A4A28 8011BFB8 8FAE0100 */  lw    $t6, 0x100($sp)
 /* 0A4A2C 8011BFBC 46000706 */  mov.s $f28, $f0
-/* 0A4A30 8011BFC0 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 0A4A30 8011BFC0 0C00B5B8 */  jal   sinf
 /* 0A4A34 8011BFC4 C5CC0018 */   lwc1  $f12, 0x18($t6)
 /* 0A4A38 8011BFC8 928F0006 */  lbu   $t7, 6($s4)
 /* 0A4A3C 8011BFCC 46000786 */  mov.s $f30, $f0
@@ -97,7 +97,7 @@ glabel func_8011BF4C_ovl2
 /* 0A4B28 8011C0B8 46122681 */  sub.s $f26, $f4, $f18
 /* 0A4B2C 8011C0BC 46083280 */  add.s $f10, $f6, $f8
 /* 0A4B30 8011C0C0 461AD402 */  mul.s $f16, $f26, $f26
-/* 0A4B34 8011C0C4 0C00CAC8 */  jal   func_80032B20_ovl2
+/* 0A4B34 8011C0C4 0C00CAC8 */  jal   sqrtf
 /* 0A4B38 8011C0C8 46105300 */   add.s $f12, $f10, $f16
 /* 0A4B3C 8011C0CC 3C014348 */  li    $at, 0x43480000 # 200.000000
 /* 0A4B40 8011C0D0 44812000 */  mtc1  $at, $f4

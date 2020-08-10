@@ -6,7 +6,7 @@ glabel func_80104FB8_ovl2
 /* 08DA38 80104FC8 C48C0024 */   lwc1  $f12, 0x24($a0)
 /* 08DA3C 80104FCC 8FAF0028 */  lw    $t7, 0x28($sp)
 /* 08DA40 80104FD0 C5EC0024 */  lwc1  $f12, 0x24($t7)
-/* 08DA44 80104FD4 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 08DA44 80104FD4 0C00B5B8 */  jal   sinf
 /* 08DA48 80104FD8 E7A0001C */   swc1  $f0, 0x1c($sp)
 /* 08DA4C 80104FDC 8FA20028 */  lw    $v0, 0x28($sp)
 /* 08DA50 80104FE0 3C018013 */  lui   $at, %hi(D_8012BD04) # $at, 0x8013

@@ -246,7 +246,7 @@ void *func_800F8C70_ovl2(void *arg0) {
             sp4C = (s32) sp50->unkE;
             sp48 = temp_t5->unk4;
             sp2C = temp_v1;
-            temp_f0_2 = func_80032B20_ovl2((temp_f0 * temp_f0) + (temp_f2 * temp_f2), temp_v0->unk0, temp_t5->unk4, sp50->unkE, sp50->unk12, temp_a3);
+            temp_f0_2 = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2), temp_v0->unk0, temp_t5->unk4, sp50->unkE, sp50->unk12, temp_a3);
             *temp_a3 = (?32) sp50->unkE;
             temp_v0_2 = temp_v1 + &D_800E6BD0;
             *temp_v0_2 = (f32) *(temp_t5->unk4->unk10 + (sp50->unk12 * 4));
@@ -1272,7 +1272,7 @@ void func_800FA608(s32 arg0, void *arg1, void *arg2) {
         }
     } else {
         sp44 = cosf((arg1->unk8 * D_801287F0) / 180.0f, arg0);
-        sp4C = -func_8002D6E0_ovl2((arg1->unk8 * D_801287F4) / 180.0f);
+        sp4C = -sinf((arg1->unk8 * D_801287F4) / 180.0f);
         sp48 = 0.0f;
     }
     func_80018E70_ovl2(&sp44, -arg1->unkC);
@@ -1415,7 +1415,7 @@ f32 func_800FA92C_ovl2(s32 arg0, void *arg1, void *arg2) {
             if (phi_v0 != 0) {
                 arg1 = temp_a3_2;
                 sp3C = phi_f2_3;
-                temp_f8 = -func_80032B20_ovl2((sp54 * sp54) + (sp4C * sp4C), sp54, temp_a3_2);
+                temp_f8 = -sqrtf((sp54 * sp54) + (sp4C * sp4C), sp54, temp_a3_2);
                 temp_a0 = &sp4C;
                 sp4C = temp_f8;
                 sp50 = 0.0f;
@@ -1435,7 +1435,7 @@ f32 func_800FA92C_ovl2(s32 arg0, void *arg1, void *arg2) {
         if (arg2->unk34 != 0) {
             arg1 = phi_a3;
             func_80018DEC_ovl2(&sp4C, arg2 + 0x18, arg2 + 0x24, phi_a3);
-            temp_f12_2 = 180.0f - ((func_8001870C_ovl2(func_80032B20_ovl2((sp54 * sp54) + (sp4C * sp4C), sp54), sp50) / D_8012880C) * 180.0f);
+            temp_f12_2 = 180.0f - ((func_8001870C_ovl2(sqrtf((sp54 * sp54) + (sp4C * sp4C), sp54), sp50) / D_8012880C) * 180.0f);
             phi_f12 = temp_f12_2;
             if (temp_f12_2 < arg1->unk38) {
                 sp64 = 1;
@@ -2141,7 +2141,7 @@ loop_3:
     D_80129330.unk8 = (f32) D_801292B0.unk8;
     D_80129330.unk4 = (f32) (D_801292B0.unk4 + D_80129210.unk14);
     sp40 = cosf((D_80129210.unk8 * D_80128830) / 180.0f);
-    sp48 = -func_8002D6E0_ovl2((D_80129210.unk8 * D_80128834) / 180.0f);
+    sp48 = -sinf((D_80129210.unk8 * D_80128834) / 180.0f);
     sp44 = 0.0f;
     func_80018E70_ovl2(&sp40, -D_80129210.unkC);
     func_80018D7C_ovl2(&sp40, &D_80129330);

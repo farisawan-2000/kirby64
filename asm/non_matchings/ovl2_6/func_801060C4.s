@@ -130,7 +130,7 @@ glabel func_801060C4
 /* 08ED24 801062B4 46129282 */  mul.s $f10, $f18, $f18
 /* 08ED28 801062B8 E7B20068 */  swc1  $f18, 0x68($sp)
 /* 08ED2C 801062BC 46082180 */  add.s $f6, $f4, $f8
-/* 08ED30 801062C0 0C00CAC8 */  jal   func_80032B20_ovl2
+/* 08ED30 801062C0 0C00CAC8 */  jal   sqrtf
 /* 08ED34 801062C4 460A3300 */   add.s $f12, $f6, $f10
 /* 08ED38 801062C8 C7A2006C */  lwc1  $f2, 0x6c($sp)
 /* 08ED3C 801062CC C7AE0060 */  lwc1  $f14, 0x60($sp)

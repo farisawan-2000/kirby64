@@ -68,14 +68,14 @@ void *func_80112000_ovl2(void) {
     temp_f26 = -cosf(temp_f28);
     temp_s2 = temp_s3 + 0x3C;
     phi_f26 = temp_f26;
-    phi_f2 = func_8002D6E0_ovl2(temp_f28);
+    phi_f2 = sinf(temp_f28);
     phi_s1 = 0;
     phi_f28 = temp_f28;
 loop_1:
     temp_f20 = temp_s0->unk30 + ((temp_s0->unk0 * phi_f26) + (temp_s0->unk20 * phi_f2));
     temp_f22 = temp_s0->unk34 + ((temp_s0->unk4 * phi_f26) + (temp_s0->unk24 * phi_f2));
     temp_f24 = temp_s0->unk38 + ((temp_s0->unk8 * phi_f26) + (temp_s0->unk28 * phi_f2));
-    temp_f2 = 1.0f / func_80032B20_ovl2(((temp_f20 * temp_f20) + (temp_f22 * temp_f22)) + (temp_f24 * temp_f24));
+    temp_f2 = 1.0f / sqrtf(((temp_f20 * temp_f20) + (temp_f22 * temp_f22)) + (temp_f24 * temp_f24));
     temp_v0 = (D_8012D934 + phi_s1) + 0x60;
     temp_f20 = temp_f20 * temp_f2;
     temp_f22 = temp_f22 * temp_f2;
@@ -88,7 +88,7 @@ loop_1:
         temp_f28_2 = -phi_f28;
         temp_f26_2 = cosf(temp_f28_2);
         phi_f26 = temp_f26_2;
-        phi_f2 = -func_8002D6E0_ovl2(temp_f28_2);
+        phi_f2 = -sinf(temp_f28_2);
         phi_s1 = phi_s1 + 0x10;
         phi_f28 = temp_f28_2;
         goto loop_1;
@@ -125,14 +125,14 @@ void *func_801121E0(void) {
     temp_f26 = cosf(temp_f28);
     temp_s2 = temp_s3 + 0x3C;
     phi_f26 = temp_f26;
-    phi_f2 = func_8002D6E0_ovl2(temp_f28);
+    phi_f2 = sinf(temp_f28);
     phi_s1 = 0;
     phi_f28 = temp_f28;
 loop_1:
     temp_f20 = temp_s0->unk30 + ((temp_s0->unk10 * phi_f26) + (temp_s0->unk20 * phi_f2));
     temp_f22 = temp_s0->unk34 + ((temp_s0->unk14 * phi_f26) + (temp_s0->unk24 * phi_f2));
     temp_f24 = temp_s0->unk38 + ((temp_s0->unk18 * phi_f26) + (temp_s0->unk28 * phi_f2));
-    temp_f2 = 1.0f / func_80032B20_ovl2(((temp_f20 * temp_f20) + (temp_f22 * temp_f22)) + (temp_f24 * temp_f24));
+    temp_f2 = 1.0f / sqrtf(((temp_f20 * temp_f20) + (temp_f22 * temp_f22)) + (temp_f24 * temp_f24));
     temp_v0 = (D_8012D934 + phi_s1) + 0x60;
     temp_f20 = temp_f20 * temp_f2;
     temp_f22 = temp_f22 * temp_f2;
@@ -145,7 +145,7 @@ loop_1:
         temp_f28_2 = -phi_f28;
         temp_f26_2 = -cosf(temp_f28_2);
         phi_f26 = temp_f26_2;
-        phi_f2 = -func_8002D6E0_ovl2(temp_f28_2);
+        phi_f2 = -sinf(temp_f28_2);
         phi_s1 = phi_s1 + 0x10;
         phi_f28 = temp_f28_2;
         goto loop_1;
@@ -165,7 +165,7 @@ void *func_801123AC(void *arg0) {
     void *temp_v0;
 
     sp1C = cosf(arg0->unk24);
-    temp_f0 = func_8002D6E0_ovl2(arg0->unk24);
+    temp_f0 = sinf(arg0->unk24);
     temp_f6 = arg0->unk1C * temp_f0;
     temp_v0 = arg0 + 0x10;
     D_8012D934->unk40 = temp_f6;
@@ -581,16 +581,16 @@ f32 func_80112CD4_ovl2(s32 arg0, void *arg1) {
     temp_s1 = arg0 * 4;
     temp_v0 = temp_s1 + &D_800E4010;
     sp30 = temp_v0;
-    temp_f20 = func_8002D6E0_ovl2(*temp_v0);
+    temp_f20 = sinf(*temp_v0);
     temp_v0_2 = temp_s1 + &D_800E41D0;
     temp_f22 = cosf(*temp_v0);
     sp30 = temp_v0_2;
-    sp58 = func_8002D6E0_ovl2(*temp_v0_2);
+    sp58 = sinf(*temp_v0_2);
     temp_f0 = cosf(*temp_v0_2);
     temp_v0_3 = temp_s1 + &D_800E4390;
     sp30 = temp_v0_3;
     sp4C = temp_f0;
-    sp54 = func_8002D6E0_ovl2(*temp_v0_3);
+    sp54 = sinf(*temp_v0_3);
     temp_f0_2 = cosf(*temp_v0_3);
     temp_at = temp_s1 + 0x800E0000;
     temp_at_2 = temp_s1 + 0x800E0000;
@@ -2377,9 +2377,9 @@ void func_80115F04(void *arg0) {
     temp_at = temp_s0 + 0x800E0000;
     sp48 = temp_at->unk4010;
     sp44 = (temp_s0 + 0x800E0000)->unk41D0;
-    sp40 = func_8002D6E0_ovl2(temp_at->unk4010);
+    sp40 = sinf(temp_at->unk4010);
     sp3C = cosf(temp_at->unk4010);
-    sp38 = func_8002D6E0_ovl2(sp44);
+    sp38 = sinf(sp44);
     temp_f4 = sp3C * cosf(sp44);
     sp5C = -sp40;
     sp58 = sp3C * sp38;

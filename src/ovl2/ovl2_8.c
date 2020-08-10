@@ -300,7 +300,7 @@ s32 func_8011BF4C_ovl2(void *arg0, void *arg1) {
         temp_s7 = temp_s4->unk8;
         spE8 = temp_s7;
         temp_f28 = cosf(arg0->unk18);
-        temp_f30 = func_8002D6E0_ovl2(arg0->unk18);
+        temp_f30 = sinf(arg0->unk18);
         if ((temp_s4->unk6 & 2) != 0) {
             spDC.unk0 = (s32) arg0->unkC;
             spDC.unk4 = (s32) arg0->unk10;
@@ -325,7 +325,7 @@ loop_6:
             temp_f22 = ((temp_f0 * temp_f30) + arg0->unk0) - temp_f10;
             temp_f24 = (phi_s7->unk8 + arg0->unk4) - spD0;
             temp_f26 = ((temp_f0 * temp_f28) + arg0->unk8) - temp_f18;
-            temp_f18_2 = func_80032B20_ovl2(((temp_f22 * temp_f22) + (temp_f24 * temp_f24)) + (temp_f26 * temp_f26)) / 200.0f;
+            temp_f18_2 = sqrtf(((temp_f22 * temp_f22) + (temp_f24 * temp_f24)) + (temp_f26 * temp_f26)) / 200.0f;
             spB4.unk0 = (bitwise s32) spCC.unk0;
             spB4.unk4 = (bitwise s32) (&spCC)[1];
             spB4.unk8 = (bitwise s32) (&spCC)[2];
@@ -533,7 +533,7 @@ void func_8011C4E8_ovl2(s32 arg0, void *arg1) {
         temp_v0->unk4 = &D_80126E68;
         sp9C = arg1->unk1C;
         temp_f22 = cosf(arg1->unk18, arg1->unk1C);
-        temp_f20 = func_8002D6E0_ovl2(arg1->unk18);
+        temp_f20 = sinf(arg1->unk18);
         if ((arg1->unk1C->unk6 & 2) != 0) {
             sp80.unk0 = (s32) arg1->unkC;
             sp80.unk4 = (s32) arg1->unk10;
@@ -1363,7 +1363,7 @@ block_24:
         phi_a2 = 1;
     }
     sp1C = phi_a2;
-    temp_f0 = func_8002D6E0_ovl2(gKirbyState.unk130, phi_a2);
+    temp_f0 = sinf(gKirbyState.unk130, phi_a2);
     temp_a0 = arg0;
     temp_a1 = arg1;
     temp_a2 = phi_a2;

@@ -65,7 +65,7 @@ glabel func_800FBBB8
 /* 08471C 800FBCAC 44812000 */  mtc1  $at, $f4
 /* 084720 800FBCB0 46105482 */  mul.s $f18, $f10, $f16
 /* 084724 800FBCB4 E7A00040 */  swc1  $f0, 0x40($sp)
-/* 084728 800FBCB8 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 084728 800FBCB8 0C00B5B8 */  jal   sinf
 /* 08472C 800FBCBC 46049303 */   div.s $f12, $f18, $f4
 /* 084730 800FBCC0 C62A000C */  lwc1  $f10, 0xc($s1)
 /* 084734 800FBCC4 44804000 */  mtc1  $zero, $f8

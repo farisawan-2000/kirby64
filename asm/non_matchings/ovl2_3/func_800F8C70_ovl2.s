@@ -86,7 +86,7 @@ glabel func_800F8C70_ovl2
 /* 08182C 800F8DBC AFA40048 */  sw    $a0, 0x48($sp)
 /* 081830 800F8DC0 46021482 */  mul.s $f18, $f2, $f2
 /* 081834 800F8DC4 AFA3002C */  sw    $v1, 0x2c($sp)
-/* 081838 800F8DC8 0C00CAC8 */  jal   func_80032B20_ovl2
+/* 081838 800F8DC8 0C00CAC8 */  jal   sqrtf
 /* 08183C 800F8DCC 46125300 */   add.s $f12, $f10, $f18
 /* 081840 800F8DD0 8FA5004C */  lw    $a1, 0x4c($sp)
 /* 081844 800F8DD4 8FA70028 */  lw    $a3, 0x28($sp)

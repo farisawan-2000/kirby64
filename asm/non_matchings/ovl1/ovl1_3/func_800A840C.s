@@ -52,7 +52,7 @@ glabel func_800A840C
 /* 050718 800A84C8 AF0F000C */  sw    $t7, 0xc($t8)
 /* 05071C 800A84CC 8C640004 */  lw    $a0, 4($v1)
 /* 050720 800A84D0 AFA3001C */  sw    $v1, 0x1c($sp)
-/* 050724 800A84D4 0C00CE90 */  jal   func_80033A40_ovl1
+/* 050724 800A84D4 0C00CE90 */  jal   memcpy
 /* 050728 800A84D8 24840010 */   addiu $a0, $a0, 0x10
 /* 05072C 800A84DC 8FA2001C */  lw    $v0, 0x1c($sp)
 .L800A84E0_ovl1:

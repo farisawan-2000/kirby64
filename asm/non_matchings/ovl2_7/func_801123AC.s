@@ -6,7 +6,7 @@ glabel func_801123AC
 /* 09AE2C 801123BC C48C0024 */   lwc1  $f12, 0x24($a0)
 /* 09AE30 801123C0 8FAF0028 */  lw    $t7, 0x28($sp)
 /* 09AE34 801123C4 C5EC0024 */  lwc1  $f12, 0x24($t7)
-/* 09AE38 801123C8 0C00B5B8 */  jal   func_8002D6E0_ovl2
+/* 09AE38 801123C8 0C00B5B8 */  jal   sinf
 /* 09AE3C 801123CC E7A0001C */   swc1  $f0, 0x1c($sp)
 /* 09AE40 801123D0 8FA20028 */  lw    $v0, 0x28($sp)
 /* 09AE44 801123D4 3C038013 */  lui   $v1, %hi(D_8012D934) # $v1, 0x8013

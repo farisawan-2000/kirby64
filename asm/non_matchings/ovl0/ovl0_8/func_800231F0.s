@@ -7,7 +7,7 @@ glabel func_800231F0
 /* 023E04 80023204 3C018004 */  lui   $at, %hi(D_8003F688) # $at, 0x8004
 /* 023E08 80023208 AFB00014 */  sw    $s0, 0x14($sp)
 /* 023E0C 8002320C A02EF688 */  sb    $t6, %lo(D_8003F688)($at)
-/* 023E10 80023210 0C00CFF0 */  jal   func_80033FC0
+/* 023E10 80023210 0C00CFF0 */  jal   osGetThreadPri
 /* 023E14 80023214 00002025 */   move  $a0, $zero
 /* 023E18 80023218 AFA20024 */  sw    $v0, 0x24($sp)
 /* 023E1C 8002321C 00002025 */  move  $a0, $zero

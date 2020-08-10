@@ -1,7 +1,7 @@
 glabel func_80021F80
 /* 022B80 80021F80 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 022B84 80021F84 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 022B88 80021F88 0C00CE90 */  jal   func_80033A40
+/* 022B88 80021F88 0C00CE90 */  jal   memcpy
 /* 022B8C 80021F8C AFA60020 */   sw    $a2, 0x20($sp)
 /* 022B90 80021F90 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 022B94 80021F94 8FAE0020 */  lw    $t6, 0x20($sp)

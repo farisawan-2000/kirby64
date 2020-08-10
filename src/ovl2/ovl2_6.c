@@ -563,7 +563,7 @@ f32 func_80100EE4_ovl2(s32 arg0) {
                / (((D_800D799C->unk3C->unk20 * D_80128A3C) / 180.0f) * D_800D799C->unk3C->unk24);
     sp38 = temp_f18;
     temp_ret = func_8001870C_ovl2(D_800D7B20.unk4 - D_800D7B20.unk10,
-                                  func_80032B20_ovl2((sp28 * sp28) + (sp24 * sp24), phi_f14, 1));
+                                  sqrtf((sp28 * sp28) + (sp24 * sp24), phi_f14, 1));
     sp34 = temp_ret / ((D_800D799C->unk3C->unk20 * D_80128A40) / 180.0f);
     phi_return = temp_ret;
     if (D_8012B9B0 != 0) {
@@ -3138,14 +3138,14 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80104C24_ovl2.s")
         sp5C = temp_f4;
         temp_f18 = sp74 - arg0->unk8;
         sp60 = temp_f18;
-        if (func_80032B20_ovl2(((temp_f8 * temp_f8) + (temp_f4 * temp_f4)) + (temp_f18 * temp_f18))
+        if (sqrtf(((temp_f8 * temp_f8) + (temp_f4 * temp_f4)) + (temp_f18 * temp_f18))
             < D_80128A74) {
             func_80112A40_ovl2(*arg7, arg0, &sp44);
             sp58 = arg1->unk0 - (arg0->unk0 + sp44);
             sp5C = arg1->unk4 - (arg0->unk4 + sp48);
             sp60 = arg1->unk8 - (arg0->unk8 + sp4C);
         }
-        temp_f0 = func_80032B20_ovl2(((sp58 * sp58) + (sp5C * sp5C)) + (sp60 * sp60), sp5C);
+        temp_f0 = sqrtf(((sp58 * sp58) + (sp5C * sp5C)) + (sp60 * sp60), sp5C);
         if (temp_f0 < *(void *) 0x80130000) {
             phi_f2 = 0.0f;
         } else {
@@ -3195,7 +3195,7 @@ f32 func_80104FB8_ovl2(void *arg0) {
     void *temp_v0;
 
     sp1C = cosf(arg0->unk24);
-    temp_f0 = func_8002D6E0_ovl2(arg0->unk24);
+    temp_f0 = sinf(arg0->unk24);
     temp_f4 = arg0->unk1C;
     temp_v0 = arg0 + 0x10;
     D_8012BD04 = (f32)(temp_f4 * temp_f0);
@@ -3642,7 +3642,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801057C4.s")
     temp_f0 = arg1->unk0 - arg0->unk0;
     temp_f2 = arg1->unk4 - arg0->unk4;
     temp_f14 = arg1->unk8 - arg0->unk8;
-    temp_f0_2 = func_80032B20_ovl2(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
+    temp_f0_2 = sqrtf(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
                                    temp_f14);
     temp_f28 = temp_f0_2;
     if (temp_f0_2 == 0.0f) {
@@ -3695,7 +3695,7 @@ loop_3:
             temp_f0_5 = sp140 - sp14C;
             temp_f24_2 = sp144 - sp150;
             temp_f22_2 = sp148 - sp154;
-            temp_f0_6 = func_80032B20_ovl2(((temp_f0_5 * temp_f0_5) + (temp_f24_2 * temp_f24_2))
+            temp_f0_6 = sqrtf(((temp_f0_5 * temp_f0_5) + (temp_f24_2 * temp_f24_2))
                                            + (temp_f22_2 * temp_f22_2));
             spE4 = sp150;
             temp_f2_3 = 10.0f / temp_f0_6;
@@ -3823,7 +3823,7 @@ loop_3:
     temp_f0_10 = sp140 - sp14C;
     temp_f22_3 = sp144 - sp150;
     temp_f24_3 = sp148 - sp154;
-    temp_f0_11 = func_80032B20_ovl2(((temp_f0_10 * temp_f0_10) + (temp_f22_3 * temp_f22_3))
+    temp_f0_11 = sqrtf(((temp_f0_10 * temp_f0_10) + (temp_f22_3 * temp_f22_3))
                                     + (temp_f24_3 * temp_f24_3));
     if (phi_f28 <= temp_f0_11) {
         temp_f2_5 = phi_f28 / temp_f0_11;
@@ -3909,7 +3909,7 @@ s32 func_801060C4(void *arg0, void *arg1) {
                 sp64 = temp_f16;
                 sp68 = temp_f18;
                 temp_f2 = sp6C
-                          / func_80032B20_ovl2(((temp_f14 * temp_f14) + (temp_f16 * temp_f16))
+                          / sqrtf(((temp_f14 * temp_f14) + (temp_f16 * temp_f16))
                                                    + (temp_f18 * temp_f18),
                                                temp_f14);
                 temp_a1 = &sp74;
@@ -4237,7 +4237,7 @@ s32 func_80106930(void *arg0, void *arg1) {
                 sp64 = temp_f16;
                 sp68 = temp_f18;
                 temp_f2 = sp6C
-                          / func_80032B20_ovl2(((temp_f14 * temp_f14) + (temp_f16 * temp_f16))
+                          / sqrtf(((temp_f14 * temp_f14) + (temp_f16 * temp_f16))
                                                    + (temp_f18 * temp_f18),
                                                temp_f14);
                 temp_a1 = &sp74;
@@ -4639,7 +4639,7 @@ void *func_801073C4(void *arg0, void *arg1) {
                 sp6C = temp_f14;
                 sp70 = temp_f16;
                 temp_f8 = sp78
-                          / func_80032B20_ovl2(((temp_f2 * temp_f2) + (temp_f14 * temp_f14))
+                          / sqrtf(((temp_f2 * temp_f2) + (temp_f14 * temp_f14))
                                                    + (temp_f16 * temp_f16),
                                                temp_f14);
                 sp38 = sp98;
@@ -5101,7 +5101,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80107F94.s")
     temp_f0 = arg1->unk0 - arg0->unk0;
     temp_f2 = arg1->unk4 - arg0->unk4;
     temp_f14 = arg1->unk8 - arg0->unk8;
-    temp_f0_2 = func_80032B20_ovl2(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
+    temp_f0_2 = sqrtf(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
                                    temp_f14);
     temp_f28 = temp_f0_2;
     if (temp_f0_2 == 0.0f) {
@@ -5157,7 +5157,7 @@ loop_3:
             spE4.unk8 = (bitwise s32)(&sp144)[2];
             spE4.unk4 = (bitwise s32)(&sp144)[1];
             temp_f2_3 = 10.0f
-                        / func_80032B20_ovl2(((temp_f0_5 * temp_f0_5) + (temp_f20_2 * temp_f20_2))
+                        / sqrtf(((temp_f0_5 * temp_f0_5) + (temp_f20_2 * temp_f20_2))
                                              + (temp_f24_2 * temp_f24_2));
             temp_a1 = &spD8;
             temp_f8 = temp_f20_2 * temp_f2_3;
@@ -5188,7 +5188,7 @@ loop_3:
                     return 1;
                 }
             }
-            temp_f2_4 = 1.0f / func_80032B20_ovl2((temp_f0_5 * temp_f0_5) + (temp_f24_2 * temp_f24_2));
+            temp_f2_4 = 1.0f / sqrtf((temp_f0_5 * temp_f0_5) + (temp_f24_2 * temp_f24_2));
             temp_a0 = &spC4;
             temp_a1_2 = &spB8;
             if (0.0f < arg3) {
@@ -5288,7 +5288,7 @@ loop_3:
     temp_f0_9 = sp138 - sp144;
     temp_f22 = sp13C - sp148;
     temp_f24_3 = sp140 - sp14C;
-    temp_f0_10 = func_80032B20_ovl2(((temp_f0_9 * temp_f0_9) + (temp_f22 * temp_f22))
+    temp_f0_10 = sqrtf(((temp_f0_9 * temp_f0_9) + (temp_f22 * temp_f22))
                                     + (temp_f24_3 * temp_f24_3));
     if (phi_f28 <= temp_f0_10) {
         temp_f2_5 = phi_f28 / temp_f0_10;
@@ -5377,7 +5377,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80108078.s")
     temp_f0 = arg1->unk0 - arg0->unk0;
     temp_f2 = arg1->unk4 - arg0->unk4;
     temp_f14 = arg1->unk8 - arg0->unk8;
-    temp_f0_2 = func_80032B20_ovl2(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
+    temp_f0_2 = sqrtf(((temp_f0 * temp_f0) + (temp_f2 * temp_f2)) + (temp_f14 * temp_f14),
                                    temp_f14);
     temp_f30 = temp_f0_2;
     if (temp_f0_2 == 0.0f) {
@@ -5405,7 +5405,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80108078.s")
             temp_f0_3 = sp104 - sp11C;
             temp_f2_2 = sp108 - sp120;
             temp_f14_2 = sp10C - sp124;
-            temp_f0_4 = func_80032B20_ovl2(((temp_f0_3 * temp_f0_3) + (temp_f2_2 * temp_f2_2))
+            temp_f0_4 = sqrtf(((temp_f0_3 * temp_f0_3) + (temp_f2_2 * temp_f2_2))
                                                + (temp_f14_2 * temp_f14_2),
                                            temp_f14_2);
             if (phi_f30 <= temp_f0_4) {
@@ -5424,7 +5424,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80108078.s")
                     spD8.unk8 = (bitwise s32)(&sp11C)[2];
                     spD8.unk4 = (bitwise s32)(&sp11C)[1];
                     temp_f2_3 = 10.0f
-                                / func_80032B20_ovl2(((temp_f0_5 * temp_f0_5) + (temp_f24 * temp_f24))
+                                / sqrtf(((temp_f0_5 * temp_f0_5) + (temp_f24 * temp_f24))
                                                      + (temp_f22 * temp_f22));
                     temp_a1 = &spCC;
                     temp_f6 = temp_f24 * temp_f2_3;
@@ -5448,7 +5448,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80108078.s")
                         }
                     }
                     temp_f2_4 =
-                        1.0f / func_80032B20_ovl2((temp_f0_5 * temp_f0_5) + (temp_f22 * temp_f22));
+                        1.0f / sqrtf((temp_f0_5 * temp_f0_5) + (temp_f22 * temp_f22));
                     temp_a0 = &spB4;
                     temp_a1_2 = &spA8;
                     if (0.0f < arg3) {
@@ -5617,7 +5617,7 @@ s32 func_80108E08(void *arg0, void *arg1) {
                 sp78 = 1;
                 sp6C = temp_f16;
                 temp_f10 = sp74
-                           / func_80032B20_ovl2(((temp_f2 * temp_f2) + (temp_f14 * temp_f14))
+                           / sqrtf(((temp_f2 * temp_f2) + (temp_f14 * temp_f14))
                                                     + (temp_f16 * temp_f16),
                                                 temp_f14);
                 temp_f6 = temp_f2 * temp_f10;
@@ -7402,7 +7402,7 @@ void *func_8010C608(void *arg0) {
     sp20 = phi_f14;
     sp1C = phi_v1;
     sp2C = cosf(arg0->unk24, phi_f14);
-    temp_f0_2 = func_8002D6E0_ovl2(arg0->unk24, arg0);
+    temp_f0_2 = sinf(arg0->unk24, arg0);
     temp_f16 = phi_f16;
     temp_f14 = phi_f14;
     temp_f6 = temp_f14 * temp_f0_2;
@@ -9919,7 +9919,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                     phi_a2 = temp_a2->unk5F90;
                     if (-1 == temp_a2->unk5F90) {
                     block_34:
-                        sp18 = func_8002D6E0_ovl2(D_800E17D0, phi_a2);
+                        sp18 = sinf(D_800E17D0, phi_a2);
                         if (0.0f <= (((arg2->unk20 - D_800E2950) * cosf(D_800E17D0))
                                      + (sp18 * (arg2->unk18 - D_800E25D0)))) {
                             if (1.0f == D_800E6A10) {
