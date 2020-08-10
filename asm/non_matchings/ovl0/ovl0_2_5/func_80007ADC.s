@@ -16,7 +16,7 @@ glabel func_80007ADC
 /* 008714 80007B14 3C048005 */  lui   $a0, %hi(D_80048CB8) # $a0, 0x8005
 /* 008718 80007B18 8FA50018 */  lw    $a1, 0x18($sp)
 /* 00871C 80007B1C 24848CB8 */  addiu $a0, %lo(D_80048CB8) # addiu $a0, $a0, -0x7348
-/* 008720 80007B20 0C00B4BC */  jal   func_8002D2F0
+/* 008720 80007B20 0C00B4BC */  jal   osSendMesg
 /* 008724 80007B24 00003025 */   move  $a2, $zero
 .L80007B28_ovl0:
 /* 008728 80007B28 8FBF0014 */  lw    $ra, 0x14($sp)

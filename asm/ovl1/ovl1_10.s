@@ -389,7 +389,7 @@ glabel func_800BAC0C
 /* 062F30 800BACE0 00003025 */  move  $a2, $zero
 /* 062F34 800BACE4 50800004 */  beql  $a0, $zero, .L800BACF8_ovl1
 /* 062F38 800BACE8 8FBF0024 */   lw    $ra, 0x24($sp)
-/* 062F3C 800BACEC 0C00B4BC */  jal   func_8002D2F0_ovl1
+/* 062F3C 800BACEC 0C00B4BC */  jal   osSendMesg
 /* 062F40 800BACF0 8E450004 */   lw    $a1, 4($s2)
 /* 062F44 800BACF4 8FBF0024 */  lw    $ra, 0x24($sp)
 .L800BACF8_ovl1:
@@ -649,7 +649,7 @@ glabel func_800BB028
 /* 0632A8 800BB058 2484D4C8 */  addiu $a0, %lo(D_800ED4C8) # addiu $a0, $a0, -0x2b38
 /* 0632AC 800BB05C 00003025 */  move  $a2, $zero
 /* 0632B0 800BB060 ACAE0004 */  sw    $t6, 4($a1)
-/* 0632B4 800BB064 0C00B4BC */  jal   func_8002D2F0_ovl1
+/* 0632B4 800BB064 0C00B4BC */  jal   osSendMesg
 /* 0632B8 800BB068 ACAF0008 */   sw    $t7, 8($a1)
 /* 0632BC 800BB06C 27A4001C */  addiu $a0, $sp, 0x1c
 /* 0632C0 800BB070 00002825 */  move  $a1, $zero

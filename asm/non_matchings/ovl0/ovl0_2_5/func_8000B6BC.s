@@ -29,7 +29,7 @@ glabel func_8000B6BC
 /* 00C320 8000B720 02202025 */  move  $a0, $s1
 .L8000B724_ovl0:
 /* 00C324 8000B724 24050001 */  li    $a1, 1
-/* 00C328 8000B728 0C00B4BC */  jal   func_8002D2F0
+/* 00C328 8000B728 0C00B4BC */  jal   osSendMesg
 /* 00C32C 8000B72C 00003025 */   move  $a2, $zero
 /* 00C330 8000B730 0C00B510 */  jal   osStopThread
 /* 00C334 8000B734 00002025 */   move  $a0, $zero

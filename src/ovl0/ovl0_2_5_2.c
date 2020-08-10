@@ -2846,7 +2846,7 @@ void *func_8000B6BC(s32 arg0) {
     if (arg0 != 0) {
         phi_s0 = arg0;
 loop_5:
-        func_8002D2F0(&D_8004A7E0, 1, 0);
+        osSendMesg(&D_8004A7E0, 1, 0);
         temp_s0 = phi_s0 - 1;
         phi_s0 = temp_s0;
         phi_return = osStopThread(0);

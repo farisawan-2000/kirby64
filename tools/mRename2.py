@@ -3,10 +3,9 @@ lines1 = []
 lines2 = []
 with open(sys.argv[1]) as file1:
 	for line in file1:
-		lines1.append(line[:-1])
-with open(sys.argv[2]) as file2:
-	for line in file2:
-		lines2.append(line[:-1])
+		l = line.split(",")
+		lines1.append(l[0])
+		lines2.append(l[1])
 
 print(lines2)
 for i in range(len(lines1)):
