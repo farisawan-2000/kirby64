@@ -1,8 +1,8 @@
 glabel func_80152138
 /* 1364C8 80152138 27BDFF68 */  addiu $sp, $sp, -0x98
 /* 1364CC 8015213C AFB00018 */  sw    $s0, 0x18($sp)
-/* 1364D0 80152140 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 1364D4 80152144 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 1364D0 80152140 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 1364D4 80152144 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 1364D8 80152148 8E020000 */  lw    $v0, ($s0)
 /* 1364DC 8015214C AFBF0024 */  sw    $ra, 0x24($sp)
 /* 1364E0 80152150 AFB20020 */  sw    $s2, 0x20($sp)

@@ -64,7 +64,7 @@ extern f32 D_800E2790[];
 extern f32 D_800E3910[];
 extern u32 D_800D6E64;
 extern f32 D_8022FA94;
-extern u32 func_801A0880_ovl19(void);
+// extern u32 func_801A0880_ovl19(s32 arg0);
 #ifdef MIPS_TO_C
 void func_8022E798_ovl19(s32 arg0) {
     struct EntityThing *temp = D_800E9AA0[D_800E0D50[*D_8004A7C4]];
@@ -126,7 +126,7 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     D_800E17D0[*D_8004A7C4] = 0.0f;
     D_800E41D0[*D_8004A7C4] = (f32) D_800E17D0[*D_8004A7C4];
     D_800DF150[*D_8004A7C4] = &D_8022EB54;
-    func_800AA018_ovl19(0x105F0, &D_800E17D0);
+    func_800AA018_ovl19(0x105F0);
     func_800AA018_ovl19(0x105F1);
     sp20->unk34 = func_800A8100_ovl19(0, 2, 0x34, arg0->unk3C);
     func_800AFA14_ovl19();

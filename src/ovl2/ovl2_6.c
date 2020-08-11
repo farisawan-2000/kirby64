@@ -71,7 +71,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF64C.s")
 #endif
 
 #include "PR/gbi.h"
-extern Gfx *gDisplayListHead;
+extern Gfx *gDisplayListHeads;
 struct SomeColorThing {
     u32 unk0;
     u32 unk4;
@@ -96,53 +96,53 @@ struct SomeColorThing {
 #define G_CC_UNK2 0, 0, 0, PRIMITIVE, 0, 0, 0, TEXEL0
 #ifdef MIPS_TO_C
 void *func_800FF71C_ovl2(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
-    gDPPipeSync(gDisplayListHead++);
+    gDPPipeSync(gDisplayListHeads++);
     {
-        Gfx *temp_v0_2 = (Gfx *) (gDisplayListHead++);
+        Gfx *temp_v0_2 = (Gfx *) (gDisplayListHeads++);
         temp_v0_2->words.w1 = 0;
         temp_v0_2->words.w0 = 0xE3000A01;
     }
     if ((arg0->unk13 & 2) != 0) {
         {
-            Gfx *temp_v0_3 = (Gfx *) (gDisplayListHead++);
+            Gfx *temp_v0_3 = (Gfx *) (gDisplayListHeads++);
             temp_v0_3->words.w1 = 0x00504240;
             temp_v0_3->words.w0 = 0xE200001C;
         }
         {
-            Gfx *temp_v0_4 = (Gfx *) (gDisplayListHead++);
+            Gfx *temp_v0_4 = (Gfx *) (gDisplayListHeads++);
             temp_v0_4->words.w1 = 0x0000000A;
             temp_v0_4->words.w0 = 0x0B000000;
         }
     } else {
         {
-            Gfx *temp_v0_5 = (Gfx *) (gDisplayListHead++);
+            Gfx *temp_v0_5 = (Gfx *) (gDisplayListHeads++);
             temp_v0_5->words.w0 = 0xE200001C;
             temp_v0_5->words.w1 = 0x0F0A4000;
         }
         {
-            Gfx *temp_v0_6 = (Gfx *) (gDisplayListHead++);
+            Gfx *temp_v0_6 = (Gfx *) (gDisplayListHeads++);
             temp_v0_6->words.w1 = 8;
             temp_v0_6->words.w0 = 0xB000000;
         }
     }
     if ((arg2 & 3) != 0) {
         if ((arg2 & 1) != 0) {
-            gDPSetPrimColor(gDisplayListHead++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16,
+            gDPSetPrimColor(gDisplayListHeads++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16,
                             arg0->unk17);
-            gDPSetEnvColor(gDisplayListHead++, arg0->unk18, arg0->unk19, arg0->unk1A, arg0->unk1B);
-            gDPSetCombineMode(gDisplayListHead++, G_CC_BLENDPEDECALA, G_CC_BLENDPEDECALA);
+            gDPSetEnvColor(gDisplayListHeads++, arg0->unk18, arg0->unk19, arg0->unk1A, arg0->unk1B);
+            gDPSetCombineMode(gDisplayListHeads++, G_CC_BLENDPEDECALA, G_CC_BLENDPEDECALA);
             return;
         }
-        gDPSetPrimColor(gDisplayListHead++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
-        gDPSetCombineMode(gDisplayListHead++, G_CC_UNK1, G_CC_UNK1);
+        gDPSetPrimColor(gDisplayListHeads++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
+        gDPSetCombineMode(gDisplayListHeads++, G_CC_UNK1, G_CC_UNK1);
         return;
     }
     if (arg1 == 4) {
-        gDPSetPrimColor(gDisplayListHead++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
-        gDPSetCombineMode(gDisplayListHead++, G_CC_UNK2, G_CC_UNK2);
+        gDPSetPrimColor(gDisplayListHeads++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
+        gDPSetCombineMode(gDisplayListHeads++, G_CC_UNK2, G_CC_UNK2);
         return;
     }
-    gDPSetCombineMode(gDisplayListHead++, G_CC_DECALRGBA, G_CC_DECALRGBA);
+    gDPSetCombineMode(gDisplayListHeads++, G_CC_DECALRGBA, G_CC_DECALRGBA);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF71C_ovl2.s")
@@ -244,7 +244,7 @@ void func_80100790(void *arg0) {
                             if (temp_s3->unk14 < temp_f6) {
                                 sp80 = temp_s3->unk14;
                             }
-                            func_800FF9B4_ovl2(&gDisplayListHead, temp_s1, temp_s5, temp_s3 + 8,
+                            func_800FF9B4_ovl2(&gDisplayListHeads, temp_s1, temp_s5, temp_s3 + 8,
                                                phi_s0->unk28, phi_s0->unk2C);
                             if (sp80 != temp_s3->unk14) {
                                 goto loop_14;
@@ -253,8 +253,8 @@ void func_80100790(void *arg0) {
                         }
                     block_20:
                         if (phi_s6 != 0) {
-                            temp_v1_2 = gDisplayListHead;
-                            gDisplayListHead = (void *) (temp_v1_2 + 8);
+                            temp_v1_2 = gDisplayListHeads;
+                            gDisplayListHeads = (void *) (temp_v1_2 + 8);
                             temp_v1_2->unk4 = 0;
                             temp_v1_2->unk0 = 0xE3001001;
                         }
@@ -268,7 +268,7 @@ void func_80100790(void *arg0) {
                             func_800FF71C_ovl2(phi_s0, temp_s1_2->unk16, temp_v1->unkF);
                             temp_s6_2 = func_800ACE1C_ovl2(temp_s1_2->unk16,
                                                            (phi_s0 + (phi_s0->unk12 * 0x60)) + 0x68);
-                            func_800FF9B4_ovl2(&gDisplayListHead, temp_s1_2, temp_s5, temp_s3 + 8,
+                            func_800FF9B4_ovl2(&gDisplayListHeads, temp_s1_2, temp_s5, temp_s3 + 8,
                                                phi_s0->unk28, phi_s0->unk2C);
                             phi_s6 = temp_s6_2;
                             goto block_20;

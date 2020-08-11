@@ -264,15 +264,15 @@ u32 func_800A73B0(void) {
     u32 temp_t1;
 
     D_800D7B6C = (s32) D_8004A404;
-    D_800D7B70 = (int *) gDisplayListHead->unk0;
-    D_800D7B74 = (int *) gDisplayListHead[1];
+    D_800D7B70 = (int *) gDisplayListHeads->unk0;
+    D_800D7B74 = (int *) gDisplayListHeads[1];
     func_8000AAE0_ovl1();
     func_800AC610_ovl1();
     temp_t1 = D_8004A404 - D_800D7B6C;
     temp_at = (u32) D_800D7B78 < temp_t1;
     D_800D7B6C = temp_t1;
-    D_800D7B70 = (u32) (gDisplayListHead->unk0 - D_800D7B70);
-    D_800D7B74 = (u32) (gDisplayListHead[1] - D_800D7B74);
+    D_800D7B70 = (u32) (gDisplayListHeads->unk0 - D_800D7B70);
+    D_800D7B74 = (u32) (gDisplayListHeads[1] - D_800D7B74);
     if (temp_at != 0) {
         D_800D7B78 = temp_t1;
     }

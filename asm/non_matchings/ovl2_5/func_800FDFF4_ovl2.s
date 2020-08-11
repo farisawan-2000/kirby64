@@ -7,8 +7,8 @@ glabel func_800FDFF4_ovl2
 /* 086A78 800FE008 00000000 */   nop   
 /* 086A7C 800FE00C 10800013 */  beqz  $a0, .L800FE05C_ovl2
 /* 086A80 800FE010 3C078005 */   lui   $a3, 0x8005
-/* 086A84 800FE014 3C078005 */  lui   $a3, %hi(gDisplayListHead) # $a3, 0x8005
-/* 086A88 800FE018 24E7A3D0 */  addiu $a3, %lo(gDisplayListHead) # addiu $a3, $a3, -0x5c30
+/* 086A84 800FE014 3C078005 */  lui   $a3, %hi(gDisplayListHeads) # $a3, 0x8005
+/* 086A88 800FE018 24E7A3D0 */  addiu $a3, %lo(gDisplayListHeads) # addiu $a3, $a3, -0x5c30
 /* 086A8C 800FE01C 8CE30000 */  lw    $v1, ($a3)
 /* 086A90 800FE020 3C19E700 */  lui   $t9, 0xe700
 /* 086A94 800FE024 3C09E200 */  lui   $t1, (0xE200001C >> 16) # lui $t1, 0xe200

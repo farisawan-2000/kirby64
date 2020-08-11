@@ -1981,11 +1981,11 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB118.s")
 void func_800AB120(void *arg0) {
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads;
+    gDisplayListHeads = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) ((*arg0 * 4) + 0x800E0000)->unk-B30;
-    func_800141D4_ovl1(&gDisplayListHead);
+    func_800141D4_ovl1(&gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB120.s")
@@ -1997,15 +1997,15 @@ void func_800AB174(void *arg0) {
     void *temp_a2;
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead.unk0;
-    gDisplayListHead.unk0 = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads.unk0;
+    gDisplayListHeads.unk0 = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    temp_a2 = gDisplayListHead.unk4;
-    gDisplayListHead.unk4 = (void *) (temp_a2 + 8);
+    temp_a2 = gDisplayListHeads.unk4;
+    gDisplayListHeads.unk4 = (void *) (temp_a2 + 8);
     temp_a2->unk0 = 0xDB060010;
     temp_a2->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    func_80014768_ovl1(temp_a2, &gDisplayListHead);
+    func_80014768_ovl1(temp_a2, &gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB174.s")
@@ -2016,11 +2016,11 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB174.s")
 void func_800AB1F0(void *arg0) {
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads;
+    gDisplayListHeads = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) ((*arg0 * 4) + 0x800E0000)->unk-B30;
-    func_80014B4C_ovl1(&gDisplayListHead);
+    func_80014B4C_ovl1(&gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB1F0.s")
@@ -2032,15 +2032,15 @@ void func_800AB244(void *arg0) {
     void *temp_a2;
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead.unk0;
-    gDisplayListHead.unk0 = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads.unk0;
+    gDisplayListHeads.unk0 = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    temp_a2 = gDisplayListHead.unk4;
-    gDisplayListHead.unk4 = (void *) (temp_a2 + 8);
+    temp_a2 = gDisplayListHeads.unk4;
+    gDisplayListHeads.unk4 = (void *) (temp_a2 + 8);
     temp_a2->unk0 = 0xDB060010;
     temp_a2->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    func_80014FA4_ovl1(temp_a2, &gDisplayListHead);
+    func_80014FA4_ovl1(temp_a2, &gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB244.s")
@@ -2051,11 +2051,11 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB244.s")
 void func_800AB2C0(void *arg0) {
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads;
+    gDisplayListHeads = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) ((*arg0 * 4) + 0x800E0000)->unk-B30;
-    func_800143A4_ovl1(&gDisplayListHead);
+    func_800143A4_ovl1(&gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB2C0.s")
@@ -2067,15 +2067,15 @@ void func_800AB314(void *arg0) {
     void *temp_a2;
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead.unk0;
-    gDisplayListHead.unk0 = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads.unk0;
+    gDisplayListHeads.unk0 = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    temp_a2 = gDisplayListHead.unk4;
-    gDisplayListHead.unk4 = (void *) (temp_a2 + 8);
+    temp_a2 = gDisplayListHeads.unk4;
+    gDisplayListHeads.unk4 = (void *) (temp_a2 + 8);
     temp_a2->unk0 = 0xDB060010;
     temp_a2->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    func_80014AD4_ovl1(temp_a2, &gDisplayListHead);
+    func_80014AD4_ovl1(temp_a2, &gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB314.s")
@@ -2104,11 +2104,11 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB398.s")
 void func_800AB3A0(void *arg0) {
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead;
-    gDisplayListHead = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads;
+    gDisplayListHeads = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) ((*arg0 * 4) + 0x800E0000)->unk-B30;
-    func_8001585C_ovl1(&gDisplayListHead);
+    func_8001585C_ovl1(&gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB3A0.s")
@@ -2120,15 +2120,15 @@ void func_800AB3F4(void *arg0) {
     void *temp_a2;
     void *temp_v1;
 
-    temp_v1 = gDisplayListHead.unk0;
-    gDisplayListHead.unk0 = (void *) (temp_v1 + 8);
+    temp_v1 = gDisplayListHeads.unk0;
+    gDisplayListHeads.unk0 = (void *) (temp_v1 + 8);
     temp_v1->unk0 = 0xDB060010;
     temp_v1->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    temp_a2 = gDisplayListHead.unk4;
-    gDisplayListHead.unk4 = (void *) (temp_a2 + 8);
+    temp_a2 = gDisplayListHeads.unk4;
+    gDisplayListHeads.unk4 = (void *) (temp_a2 + 8);
     temp_a2->unk0 = 0xDB060010;
     temp_a2->unk4 = (s32) *(&D_800DF4D0 + (*arg0 * 4));
-    func_80015BCC_ovl1(temp_a2, &gDisplayListHead);
+    func_80015BCC_ovl1(temp_a2, &gDisplayListHeads);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB3F4.s")

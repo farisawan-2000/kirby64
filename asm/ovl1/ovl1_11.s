@@ -94,8 +94,8 @@ glabel func_800BB588
 glabel func_800BB6B0
 /* 063900 800BB6B0 27BDFF78 */  addiu $sp, $sp, -0x88
 /* 063904 800BB6B4 AFB00018 */  sw    $s0, 0x18($sp)
-/* 063908 800BB6B8 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 06390C 800BB6BC 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 063908 800BB6B8 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 06390C 800BB6BC 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 063910 800BB6C0 8E020000 */  lw    $v0, ($s0)
 /* 063914 800BB6C4 AFBF0024 */  sw    $ra, 0x24($sp)
 /* 063918 800BB6C8 AFB20020 */  sw    $s2, 0x20($sp)

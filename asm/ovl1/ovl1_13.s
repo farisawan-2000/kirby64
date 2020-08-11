@@ -694,11 +694,11 @@ glabel func_800BC800
 glabel func_800BC9A4
 /* 064BF4 800BC9A4 8C8E0000 */  lw    $t6, ($a0)
 /* 064BF8 800BC9A8 3C18800F */  lui   $t8, 0x800f
-/* 064BFC 800BC9AC 3C088005 */  lui   $t0, %hi(gDisplayListHead) # $t0, 0x8005
+/* 064BFC 800BC9AC 3C088005 */  lui   $t0, %hi(gDisplayListHeads) # $t0, 0x8005
 /* 064C00 800BC9B0 000E7880 */  sll   $t7, $t6, 2
 /* 064C04 800BC9B4 030FC021 */  addu  $t8, $t8, $t7
 /* 064C08 800BC9B8 8F189AA0 */  lw    $t8, -0x6560($t8)
-/* 064C0C 800BC9BC 2508A3D0 */  addiu $t0, %lo(gDisplayListHead) # addiu $t0, $t0, -0x5c30
+/* 064C0C 800BC9BC 2508A3D0 */  addiu $t0, %lo(gDisplayListHeads) # addiu $t0, $t0, -0x5c30
 /* 064C10 800BC9C0 8D020000 */  lw    $v0, ($t0)
 /* 064C14 800BC9C4 13000023 */  beqz  $t8, .L800BCA54_ovl1
 /* 064C18 800BC9C8 3C19E700 */   lui   $t9, 0xe700

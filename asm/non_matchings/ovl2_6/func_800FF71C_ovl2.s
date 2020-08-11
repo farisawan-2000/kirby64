@@ -1,6 +1,6 @@
 glabel func_800FF71C_ovl2
-/* 08818C 800FF71C 3C038005 */  lui   $v1, %hi(gDisplayListHead) # $v1, 0x8005
-/* 088190 800FF720 2463A3D0 */  addiu $v1, %lo(gDisplayListHead) # addiu $v1, $v1, -0x5c30
+/* 08818C 800FF71C 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
+/* 088190 800FF720 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30
 /* 088194 800FF724 8C620000 */  lw    $v0, ($v1)
 /* 088198 800FF728 AFA50004 */  sw    $a1, 4($sp)
 /* 08819C 800FF72C AFA60008 */  sw    $a2, 8($sp)

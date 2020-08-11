@@ -527,8 +527,8 @@ void func_8011C4E8_ovl2(s32 arg0, void *arg1) {
     u32 phi_s4;
 
     if (arg1->unk1C != 0) {
-        temp_v0 = gDisplayListHead.unk8;
-        gDisplayListHead.unk8 = (void *) (temp_v0 + 8);
+        temp_v0 = gDisplayListHeads.unk8;
+        gDisplayListHeads.unk8 = (void *) (temp_v0 + 8);
         temp_v0->unk0 = 0xDE000000;
         temp_v0->unk4 = &D_80126E68;
         sp9C = arg1->unk1C;
@@ -560,12 +560,12 @@ loop_5:
             sp68 = (phi_s0->unkC * temp_f22) + (bitwise f32) arg1->unk8;
             temp_a3 = phi_a3;
             if (func_8011C344_ovl2(temp_s1, temp_a1, temp_a2, phi_a3) != 0) {
-                temp_v0_2 = gDisplayListHead.unk8;
-                gDisplayListHead.unk8 = (void *) (temp_v0_2 + 8);
+                temp_v0_2 = gDisplayListHeads.unk8;
+                gDisplayListHeads.unk8 = (void *) (temp_v0_2 + 8);
                 temp_v0_2->unk4 = temp_s1;
                 temp_v0_2->unk0 = 0xDA380000;
-                temp_v0_3 = gDisplayListHead.unk8;
-                gDisplayListHead.unk8 = (void *) (temp_v0_3 + 8);
+                temp_v0_3 = gDisplayListHeads.unk8;
+                gDisplayListHeads.unk8 = (void *) (temp_v0_3 + 8);
                 temp_v0_3->unk4 = &D_80126E90;
                 temp_v0_3->unk0 = 0xDE000000;
                 D_8004A3F8.unkC = (s32) (D_8004A3F8.unkC + 0x40);
@@ -577,8 +577,8 @@ loop_5:
                 goto loop_5;
             }
         }
-        temp_v0_4 = gDisplayListHead.unk8;
-        gDisplayListHead.unk8 = (void *) (temp_v0_4 + 8);
+        temp_v0_4 = gDisplayListHeads.unk8;
+        gDisplayListHeads.unk8 = (void *) (temp_v0_4 + 8);
         temp_v0_4->unk0 = 0xDE000000;
         temp_v0_4->unk4 = &D_80126EB0;
     }

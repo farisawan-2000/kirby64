@@ -1,8 +1,8 @@
 glabel func_801524C8
 /* 136858 801524C8 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 13685C 801524CC AFB00014 */  sw    $s0, 0x14($sp)
-/* 136860 801524D0 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 136864 801524D4 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 136860 801524D0 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 136864 801524D4 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 136868 801524D8 8E020000 */  lw    $v0, ($s0)
 /* 13686C 801524DC AFB10018 */  sw    $s1, 0x18($sp)
 /* 136870 801524E0 AFBF0024 */  sw    $ra, 0x24($sp)

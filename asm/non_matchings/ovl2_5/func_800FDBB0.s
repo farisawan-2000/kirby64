@@ -20,8 +20,8 @@ glabel func_800FDBB0
 /* 086668 800FDBF8 46105402 */  mul.s $f16, $f10, $f16
 /* 08666C 800FDBFC 46127480 */  add.s $f18, $f14, $f18
 /* 086670 800FDC00 44056000 */  mfc1  $a1, $f12
-/* 086674 800FDC04 3C0B8005 */  lui   $t3, %hi(gDisplayListHead) # $t3, 0x8005
-/* 086678 800FDC08 256BA3D0 */  addiu $t3, %lo(gDisplayListHead) # addiu $t3, $t3, -0x5c30
+/* 086674 800FDC04 3C0B8005 */  lui   $t3, %hi(gDisplayListHeads) # $t3, 0x8005
+/* 086678 800FDC08 256BA3D0 */  addiu $t3, %lo(gDisplayListHeads) # addiu $t3, $t3, -0x5c30
 /* 08667C 800FDC0C A4850022 */  sh    $a1, 0x22($a0)
 /* 086680 800FDC10 4600948D */  trunc.w.s $f18, $f18
 /* 086684 800FDC14 A4850032 */  sh    $a1, 0x32($a0)

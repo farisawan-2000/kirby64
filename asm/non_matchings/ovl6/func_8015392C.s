@@ -1,10 +1,10 @@
 glabel func_8015392C
 /* 137CBC 8015392C 8C8E003C */  lw    $t6, 0x3c($a0)
-/* 137CC0 80153930 3C0B8005 */  lui   $t3, %hi(gDisplayListHead) # $t3, 0x8005
+/* 137CC0 80153930 3C0B8005 */  lui   $t3, %hi(gDisplayListHeads) # $t3, 0x8005
 /* 137CC4 80153934 3C0DE200 */  lui   $t5, (0xE200001C >> 16) # lui $t5, 0xe200
 /* 137CC8 80153938 8DC20080 */  lw    $v0, 0x80($t6)
 /* 137CCC 8015393C 35AD001C */  ori   $t5, (0xE200001C & 0xFFFF) # ori $t5, $t5, 0x1c
-/* 137CD0 80153940 256BA3D0 */  addiu $t3, %lo(gDisplayListHead) # addiu $t3, $t3, -0x5c30
+/* 137CD0 80153940 256BA3D0 */  addiu $t3, %lo(gDisplayListHeads) # addiu $t3, $t3, -0x5c30
 /* 137CD4 80153944 904F005B */  lbu   $t7, 0x5b($v0)
 /* 137CD8 80153948 3C0CE700 */  lui   $t4, 0xe700
 /* 137CDC 8015394C 24420008 */  addiu $v0, $v0, 8

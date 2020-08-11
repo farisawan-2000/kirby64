@@ -8,11 +8,11 @@ glabel func_800143D4
 /* 014FEC 800143EC 10A000D9 */  beqz  $a1, .L80014754_ovl0
 /* 014FF0 800143F0 AFAE0030 */   sw    $t6, 0x30($sp)
 /* 014FF4 800143F4 908F0054 */  lbu   $t7, 0x54($a0)
-/* 014FF8 800143F8 3C038005 */  lui   $v1, %hi(gDisplayListHead) # $v1, 0x8005
+/* 014FF8 800143F8 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
 /* 014FFC 800143FC 55E000D6 */  bnezl $t7, .L80014758_ovl0
 /* 015000 80014400 8FBF001C */   lw    $ra, 0x1c($sp)
 /* 015004 80014404 8CB80000 */  lw    $t8, ($a1)
-/* 015008 80014408 2463A3D0 */  addiu $v1, %lo(gDisplayListHead) # addiu $v1, $v1, -0x5c30
+/* 015008 80014408 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30
 /* 01500C 8001440C 02002825 */  move  $a1, $s0
 /* 015010 80014410 0018C880 */  sll   $t9, $t8, 2
 /* 015014 80014414 00792021 */  addu  $a0, $v1, $t9
@@ -21,8 +21,8 @@ glabel func_800143D4
 /* 015020 80014420 0C004460 */  jal   func_80011180
 /* 015024 80014424 AFA9002C */   sw    $t1, 0x2c($sp)
 /* 015028 80014428 8FA7003C */  lw    $a3, 0x3c($sp)
-/* 01502C 8001442C 3C038005 */  lui   $v1, %hi(gDisplayListHead) # $v1, 0x8005
-/* 015030 80014430 2463A3D0 */  addiu $v1, %lo(gDisplayListHead) # addiu $v1, $v1, -0x5c30
+/* 01502C 8001442C 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
+/* 015030 80014430 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30
 /* 015034 80014434 8CE50000 */  lw    $a1, ($a3)
 /* 015038 80014438 8CEF0004 */  lw    $t7, 4($a3)
 /* 01503C 8001443C 8FA9002C */  lw    $t1, 0x2c($sp)
@@ -42,8 +42,8 @@ glabel func_800143D4
 /* 015074 80014474 0C004CC0 */  jal   func_80013300
 /* 015078 80014478 AFB80020 */   sw    $t8, 0x20($sp)
 /* 01507C 8001447C 8FA7003C */  lw    $a3, 0x3c($sp)
-/* 015080 80014480 3C038005 */  lui   $v1, %hi(gDisplayListHead) # $v1, 0x8005
-/* 015084 80014484 2463A3D0 */  addiu $v1, %lo(gDisplayListHead) # addiu $v1, $v1, -0x5c30
+/* 015080 80014480 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
+/* 015084 80014484 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30
 /* 015088 80014488 8CF90000 */  lw    $t9, ($a3)
 /* 01508C 8001448C 8FAC0034 */  lw    $t4, 0x34($sp)
 /* 015090 80014490 8FA80028 */  lw    $t0, 0x28($sp)

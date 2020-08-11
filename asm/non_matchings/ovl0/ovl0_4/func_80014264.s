@@ -3,11 +3,11 @@ glabel func_80014264
 /* 014E68 80014268 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 014E6C 8001426C AFB00018 */  sw    $s0, 0x18($sp)
 /* 014E70 80014270 908E0054 */  lbu   $t6, 0x54($a0)
-/* 014E74 80014274 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
+/* 014E74 80014274 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
 /* 014E78 80014278 00803025 */  move  $a2, $a0
 /* 014E7C 8001427C 31CF0002 */  andi  $t7, $t6, 2
 /* 014E80 80014280 15E00038 */  bnez  $t7, .L80014364_ovl0
-/* 014E84 80014284 2610A3D0 */   addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 014E84 80014284 2610A3D0 */   addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 014E88 80014288 3C018005 */  lui   $at, %hi(D_8004AA94) # $at, 0x8005
 /* 014E8C 8001428C C424AA94 */  lwc1  $f4, %lo(D_8004AA94)($at)
 /* 014E90 80014290 02002025 */  move  $a0, $s0

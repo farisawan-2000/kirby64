@@ -1,8 +1,8 @@
 glabel func_80021764
 /* 022364 80021764 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 022368 80021768 AFB20024 */  sw    $s2, 0x24($sp)
-/* 02236C 8002176C 3C128005 */  lui   $s2, %hi(gDisplayListHead) # $s2, 0x8005
-/* 022370 80021770 2652A3D0 */  addiu $s2, %lo(gDisplayListHead) # addiu $s2, $s2, -0x5c30
+/* 02236C 8002176C 3C128005 */  lui   $s2, %hi(gDisplayListHeads) # $s2, 0x8005
+/* 022370 80021770 2652A3D0 */  addiu $s2, %lo(gDisplayListHeads) # addiu $s2, $s2, -0x5c30
 /* 022374 80021774 AFBF002C */  sw    $ra, 0x2c($sp)
 /* 022378 80021778 AFB30028 */  sw    $s3, 0x28($sp)
 /* 02237C 8002177C AFB10020 */  sw    $s1, 0x20($sp)

@@ -70,8 +70,8 @@ glabel func_800183BC
 /* 0190C0 800184C0 00000000 */   nop   
 /* 0190C4 800184C4 0C00167E */  jal   func_800059F8
 /* 0190C8 800184C8 00000000 */   nop   
-/* 0190CC 800184CC 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 0190D0 800184D0 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 0190CC 800184CC 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 0190D0 800184D0 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 0190D4 800184D4 02002025 */  move  $a0, $s0
 /* 0190D8 800184D8 02A02825 */  move  $a1, $s5
 /* 0190DC 800184DC 0C005A50 */  jal   func_80016940

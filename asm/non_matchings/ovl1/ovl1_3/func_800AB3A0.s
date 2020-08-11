@@ -1,6 +1,6 @@
 glabel func_800AB3A0
-/* 0535F0 800AB3A0 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
-/* 0535F4 800AB3A4 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
+/* 0535F0 800AB3A0 3C058005 */  lui   $a1, %hi(gDisplayListHeads) # $a1, 0x8005
+/* 0535F4 800AB3A4 24A5A3D0 */  addiu $a1, %lo(gDisplayListHeads) # addiu $a1, $a1, -0x5c30
 /* 0535F8 800AB3A8 8CA30000 */  lw    $v1, ($a1)
 /* 0535FC 800AB3AC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 053600 800AB3B0 3C0FDB06 */  lui   $t7, (0xDB060010 >> 16) # lui $t7, 0xdb06

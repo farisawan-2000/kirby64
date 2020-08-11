@@ -168,38 +168,9 @@ glabel D_801E0BD8
 glabel D_801E0BDC
 .word 0x00000000
 
+
 glabel D_801E0BE0
-.word 0x72657157
-
-glabel D_801E0BE4
-.word 0x68697370
-
-glabel D_801E0BE8
-.word 0x794A7254
-
-glabel D_801E0BEC
-.word 0x726B2020
-
-glabel D_801E0BF0
-.word 0x52657175
-
-glabel D_801E0BF4
-.word 0x65737420
-
-glabel D_801E0BF8
-.word 0x4572726F
-
-glabel D_801E0BFC
-.word 0x7221215B
-
-glabel D_801E0C00
-.word 0x626F7373
-
-glabel D_801E0C04
-.word 0x322E6363
-
-glabel D_801E0C08
-.word 0x5D0A0000
+.asciiz "reqWhispyJrTrk  Request Error!![boss2.cc]"
 
 glabel D_801E0C0C
 .word 0x44278000

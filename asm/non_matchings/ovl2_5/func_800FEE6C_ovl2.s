@@ -26,9 +26,9 @@ glabel func_800FEE6C_ovl2
 /* 087930 800FEEC0 8C8D000C */   lw    $t5, 0xc($a0)
 /* 087934 800FEEC4 8C880014 */  lw    $t0, 0x14($a0)
 /* 087938 800FEEC8 24010001 */  li    $at, 1
-/* 08793C 800FEECC 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
+/* 08793C 800FEECC 3C058005 */  lui   $a1, %hi(gDisplayListHeads) # $a1, 0x8005
 /* 087940 800FEED0 11010004 */  beq   $t0, $at, .L800FEEE4_ovl2
-/* 087944 800FEED4 24A5A3D0 */   addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
+/* 087944 800FEED4 24A5A3D0 */   addiu $a1, %lo(gDisplayListHeads) # addiu $a1, $a1, -0x5c30
 /* 087948 800FEED8 8C890008 */  lw    $t1, 8($a0)
 /* 08794C 800FEEDC 5120000A */  beql  $t1, $zero, .L800FEF08_ovl2
 /* 087950 800FEEE0 8C8D000C */   lw    $t5, 0xc($a0)

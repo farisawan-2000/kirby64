@@ -111,6 +111,7 @@ SECTIONS
       BUILD_DIR/asm/ovl3/ovl3_3.o(.text);
       BUILD_DIR/asm/ovl3/ovl3_4.o(.text);
       BUILD_DIR/asm/ovl3/ovl3_5.o(.text);
+      BUILD_DIR/data/kirby.0F0D50.o(.data);
    }
    END_SEG(ovl3)
 
@@ -159,7 +160,7 @@ SECTIONS
 
    /* 0x801DB1E0 1E5AA0-1EB3C0 [5920] */
    BEGIN_SEG(ovl11, 0x801DB1E0) {
-      BUILD_DIR/src/ovl11/ovl11.o(.text);
+      BUILD_DIR/src/ovl11/boss2.o(.text);
       BUILD_DIR/asm/ovl11/ovl11_2.o(.text);
    }
    END_SEG(ovl11)

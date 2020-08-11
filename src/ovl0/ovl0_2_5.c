@@ -162,7 +162,7 @@ void *func_80005530(void) {
     temp_a3 = (D_8004A450 << 5) + &D_8004A390;
     phi_v0 = temp_a3;
     phi_a1 = &D_8004A3E0;
-    phi_a0 = (u32) &gDisplayListHead;
+    phi_a0 = (u32) &gDisplayListHeads;
 loop_1:
     temp_v1 = *phi_v0;
     temp_a0 = phi_a0 + 4;
@@ -180,7 +180,7 @@ loop_1:
 loop_3:
     if (phi_v0_2->unk4 != 0) {
         temp_a1_2 = phi_v1 * 4;
-        temp_a0_2 = temp_a1_2 + &gDisplayListHead;
+        temp_a0_2 = temp_a1_2 + &gDisplayListHeads;
         sp1C = temp_a0_2;
         sp28 = temp_a1_2;
         D_8004A44C = (s32) *temp_a0_2;
@@ -219,7 +219,7 @@ u32 func_8000561C(void) {
     s32 phi_v1;
 
     phi_v0 = (D_8004A450 << 5) + &D_8004A390;
-    phi_a0 = &gDisplayListHead;
+    phi_a0 = &gDisplayListHeads;
     phi_v1 = 0;
 loop_1:
     temp_a3 = phi_v0->unk0;
@@ -523,7 +523,7 @@ void func_80005F10(void) {
     ? phi_a0;
     s32 phi_a2_3;
 
-    phi_v1 = &gDisplayListHead;
+    phi_v1 = &gDisplayListHeads;
     phi_v0 = &D_8004A3E0;
     phi_a2_3 = 0;
 loop_1:
@@ -546,9 +546,9 @@ loop_1:
         if (temp_t8 != 0) {
             if ((phi_a2 & 4) != 0) {
                 sp80 = phi_a2;
-                func_80005DE4(&gDisplayListHead, func_80005C64(&D_8004A3F0, phi_a2));
-                temp_v0_2 = gDisplayListHead.unk0;
-                gDisplayListHead.unk0 = (void *) (temp_v0_2 + 8);
+                func_80005DE4(&gDisplayListHeads, func_80005C64(&D_8004A3F0, phi_a2));
+                temp_v0_2 = gDisplayListHeads.unk0;
+                gDisplayListHeads.unk0 = (void *) (temp_v0_2 + 8);
                 temp_v0_2->unk0 = 0xDE010000;
                 temp_v0_2->unk4 = (s32) D_8004A3E0.unk8;
                 phi_a2_2 = phi_a2;
@@ -558,26 +558,26 @@ loop_1:
                         sp80 = phi_a2;
                         func_80005DE4(0x8004A3D0, D_8004A444, phi_a2);
                     }
-                    temp_v0_3 = gDisplayListHead.unk0;
-                    gDisplayListHead.unk0 = (void *) (temp_v0_3 + 8);
+                    temp_v0_3 = gDisplayListHeads.unk0;
+                    gDisplayListHeads.unk0 = (void *) (temp_v0_3 + 8);
                     temp_v0_3->unk0 = 0xDE010000;
                     temp_v0_3->unk4 = (s32) D_8004A3E0.unk4;
                 } else {
                     if ((phi_a2 & 8) != 0) {
                         sp80 = phi_a2;
-                        func_80005DE4(&gDisplayListHead, func_80005C64(&D_8004A3F0, phi_a2));
-                        temp_v0_4 = gDisplayListHead.unk0;
-                        gDisplayListHead.unk0 = (void *) (temp_v0_4 + 8);
+                        func_80005DE4(&gDisplayListHeads, func_80005C64(&D_8004A3F0, phi_a2));
+                        temp_v0_4 = gDisplayListHeads.unk0;
+                        gDisplayListHeads.unk0 = (void *) (temp_v0_4 + 8);
                         temp_v0_4->unk0 = 0xDE010000;
                         temp_v0_4->unk4 = (s32) D_8004A3E0.unkC;
                         phi_a2_2 = phi_a2;
                     } else {
-                        temp_v0_5 = gDisplayListHead.unk0;
-                        gDisplayListHead.unk0 = (void *) (temp_v0_5 + 8);
+                        temp_v0_5 = gDisplayListHeads.unk0;
+                        gDisplayListHeads.unk0 = (void *) (temp_v0_5 + 8);
                         temp_v0_5->unk4 = 0;
                         temp_v0_5->unk0 = 0xE9000000;
-                        temp_v0_6 = gDisplayListHead.unk0;
-                        gDisplayListHead.unk0 = (void *) (temp_v0_6 + 8);
+                        temp_v0_6 = gDisplayListHeads.unk0;
+                        gDisplayListHeads.unk0 = (void *) (temp_v0_6 + 8);
                         temp_v0_6->unk4 = 0;
                         temp_v0_6->unk0 = 0xDF000000;
                         phi_a2_2 = phi_a2;
@@ -594,23 +594,23 @@ loop_1:
                 sp20 = temp_a3;
                 sp24 = temp_t0;
                 func_80005DE4(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
-                temp_v0_7 = gDisplayListHead.unk8;
-                gDisplayListHead.unk8 = (void *) (temp_v0_7 + 8);
+                temp_v0_7 = gDisplayListHeads.unk8;
+                gDisplayListHeads.unk8 = (void *) (temp_v0_7 + 8);
                 temp_v0_7->unk0 = 0xDE010000;
                 temp_v0_7->unk4 = (s32) D_8004A3E0.unk4;
             } else {
                 if (temp_a3 != 0) {
-                    temp_v0_8 = gDisplayListHead.unk8;
-                    gDisplayListHead.unk8 = (void *) (temp_v0_8 + 8);
+                    temp_v0_8 = gDisplayListHeads.unk8;
+                    gDisplayListHeads.unk8 = (void *) (temp_v0_8 + 8);
                     temp_v0_8->unk0 = 0xDE010000;
                     temp_v0_8->unk4 = (s32) D_8004A3E0.unkC;
                 } else {
-                    temp_v0_9 = gDisplayListHead.unk8;
-                    gDisplayListHead.unk8 = (void *) (temp_v0_9 + 8);
+                    temp_v0_9 = gDisplayListHeads.unk8;
+                    gDisplayListHeads.unk8 = (void *) (temp_v0_9 + 8);
                     temp_v0_9->unk4 = 0;
                     temp_v0_9->unk0 = 0xE9000000;
-                    temp_v0_10 = gDisplayListHead.unk8;
-                    gDisplayListHead.unk8 = (void *) (temp_v0_10 + 8);
+                    temp_v0_10 = gDisplayListHeads.unk8;
+                    gDisplayListHeads.unk8 = (void *) (temp_v0_10 + 8);
                     temp_v0_10->unk4 = 0;
                     temp_v0_10->unk0 = 0xDF000000;
                 }
@@ -621,27 +621,27 @@ loop_1:
             if ((phi_a2_2 & 8) != 0) {
                 sp20 = phi_a2_2 & 8;
                 sp24 = phi_a2_2 & 2;
-                func_80005DE4(&gDisplayListHead, func_80005C64(phi_a2_2 & 8));
-                temp_v0_11 = gDisplayListHead.unk4;
-                gDisplayListHead.unk4 = (void *) (temp_v0_11 + 8);
+                func_80005DE4(&gDisplayListHeads, func_80005C64(phi_a2_2 & 8));
+                temp_v0_11 = gDisplayListHeads.unk4;
+                gDisplayListHeads.unk4 = (void *) (temp_v0_11 + 8);
                 temp_v0_11->unk0 = 0xDE010000;
                 temp_v0_11->unk4 = (s32) D_8004A3E0.unkC;
                 phi_t2 = &D_8004A3E0;
             } else {
-                temp_v0_12 = gDisplayListHead.unk4;
-                gDisplayListHead.unk4 = (void *) (temp_v0_12 + 8);
+                temp_v0_12 = gDisplayListHeads.unk4;
+                gDisplayListHeads.unk4 = (void *) (temp_v0_12 + 8);
                 temp_v0_12->unk4 = 0;
                 temp_v0_12->unk0 = 0xE9000000;
-                temp_v0_13 = gDisplayListHead.unk4;
-                gDisplayListHead.unk4 = (void *) (temp_v0_13 + 8);
+                temp_v0_13 = gDisplayListHeads.unk4;
+                gDisplayListHeads.unk4 = (void *) (temp_v0_13 + 8);
                 temp_v0_13->unk4 = 0;
                 temp_v0_13->unk0 = 0xDF000000;
                 phi_t2 = &D_8004A3E0;
             }
         }
         if ((phi_a2_2 & 8) != 0) {
-            gDPFullSync(gDisplayListHead++);
-            gSPEndDisplayList(gDisplayListHead++);
+            gDPFullSync(gDisplayListHeads++);
+            gSPEndDisplayList(gDisplayListHeads++);
         }
         if (sp2C != 0) {
             phi_t1 = 0;
@@ -662,7 +662,7 @@ block_33:
             }
         }
         temp_a2_2 = phi_t1 * 4;
-        temp_v1 = &gDisplayListHead + temp_a2_2;
+        temp_v1 = &gDisplayListHeads + temp_a2_2;
         temp_a1 = *temp_v1;
         *temp_v1 = (void *) (temp_a1 + 8);
         temp_a1->unk0 = 0xDE000000;
@@ -672,10 +672,10 @@ block_33:
         temp_v0_16->unk0 = 0xDE010000;
         temp_v0_16->unk4 = (s32) *(phi_t2 + temp_a2_2);
         func_80005CC0(phi_a0, temp_a1, temp_a2_2, phi_a2_2 & 8);
-        D_8004A3E0.unk0 = (s32) gDisplayListHead.unk0;
-        D_8004A3E0.unk8 = (void *) gDisplayListHead.unk8;
-        D_8004A3E0.unk4 = (void *) gDisplayListHead.unk4;
-        D_8004A3E0.unkC = (void *) gDisplayListHead.unkC;
+        D_8004A3E0.unk0 = (s32) gDisplayListHeads.unk0;
+        D_8004A3E0.unk8 = (void *) gDisplayListHeads.unk8;
+        D_8004A3E0.unk4 = (void *) gDisplayListHeads.unk4;
+        D_8004A3E0.unkC = (void *) gDisplayListHeads.unkC;
     }
     func_8000561C();
 }
@@ -709,7 +709,7 @@ void func_8000630C(void) {
     s32 phi_a2_3;
 
     func_8000561C();
-    phi_v1 = &gDisplayListHead;
+    phi_v1 = &gDisplayListHeads;
     phi_v0 = &D_8004A3E0;
     phi_a2_3 = 0;
 loop_1:
@@ -730,9 +730,9 @@ loop_1:
         if ((phi_a2 & 1) != 0) {
             if ((phi_a2 & 4) != 0) {
                 sp50 = phi_a2;
-                func_80005DE4(&gDisplayListHead, func_80005C64(&D_8004A3F0, phi_a2));
-                temp_v0_2 = gDisplayListHead.unk0;
-                gDisplayListHead.unk0 = (void *) (temp_v0_2 + 8);
+                func_80005DE4(&gDisplayListHeads, func_80005C64(&D_8004A3F0, phi_a2));
+                temp_v0_2 = gDisplayListHeads.unk0;
+                gDisplayListHeads.unk0 = (void *) (temp_v0_2 + 8);
                 temp_v0_2->unk0 = 0xDE010000;
                 temp_v0_2->unk4 = (s32) D_8004A3E8;
                 phi_a2_2 = phi_a2;
@@ -742,17 +742,17 @@ loop_1:
                         sp50 = phi_a2;
                         func_80005DE4(0x8004A3D0, D_8004A444, phi_a2);
                     }
-                    temp_v0_3 = gDisplayListHead.unk0;
-                    gDisplayListHead.unk0 = (void *) (temp_v0_3 + 8);
+                    temp_v0_3 = gDisplayListHeads.unk0;
+                    gDisplayListHeads.unk0 = (void *) (temp_v0_3 + 8);
                     temp_v0_3->unk0 = 0xDE010000;
                     temp_v0_3->unk4 = (s32) D_8004A3E4;
                 } else {
                     phi_a2_2 = phi_a2;
                     if ((phi_a2 & 8) != 0) {
                         sp50 = phi_a2;
-                        func_80005DE4(&gDisplayListHead, func_80005C64(&D_8004A3F0, phi_a2));
-                        temp_v0_4 = gDisplayListHead.unk0;
-                        gDisplayListHead.unk0 = (void *) (temp_v0_4 + 8);
+                        func_80005DE4(&gDisplayListHeads, func_80005C64(&D_8004A3F0, phi_a2));
+                        temp_v0_4 = gDisplayListHeads.unk0;
+                        gDisplayListHeads.unk0 = (void *) (temp_v0_4 + 8);
                         temp_v0_4->unk0 = 0xDE010000;
                         temp_v0_4->unk4 = (s32) D_8004A3EC;
                         phi_a2_2 = phi_a2;
@@ -767,52 +767,52 @@ loop_1:
             if (temp_a3 != 0) {
                 sp24 = temp_a3;
                 func_80005DE4(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
-                temp_v0_5 = gDisplayListHead.unk8;
-                gDisplayListHead.unk8 = (void *) (temp_v0_5 + 8);
+                temp_v0_5 = gDisplayListHeads.unk8;
+                gDisplayListHeads.unk8 = (void *) (temp_v0_5 + 8);
                 temp_v0_5->unk0 = 0xDE010000;
                 temp_v0_5->unk4 = (s32) D_8004A3E4;
             } else {
                 if (sp20 != 0) {
-                    temp_v0_6 = gDisplayListHead.unk8;
-                    gDisplayListHead.unk8 = (void *) (temp_v0_6 + 8);
+                    temp_v0_6 = gDisplayListHeads.unk8;
+                    gDisplayListHeads.unk8 = (void *) (temp_v0_6 + 8);
                     temp_v0_6->unk0 = 0xDE010000;
                     temp_v0_6->unk4 = (s32) D_8004A3EC;
                 } else {
                     sp24 = temp_a3;
                     func_80005DE4(&gDisplayListHead3, D_8004A444, phi_a2_2, temp_a3);
-                    temp_v0_7 = gDisplayListHead.unk8;
-                    gDisplayListHead.unk8 = (void *) (temp_v0_7 + 8);
+                    temp_v0_7 = gDisplayListHeads.unk8;
+                    gDisplayListHeads.unk8 = (void *) (temp_v0_7 + 8);
                     temp_v0_7->unk0 = 0xDE010000;
-                    temp_v0_7->unk4 = (s32) gDisplayListHead.unk0;
+                    temp_v0_7->unk4 = (s32) gDisplayListHeads.unk0;
                 }
             }
-            D_8004A3E8 = (void *) gDisplayListHead.unk8;
+            D_8004A3E8 = (void *) gDisplayListHeads.unk8;
         }
         if (phi_a3 != 0) {
             if (sp20 != 0) {
-                func_80005DE4(&gDisplayListHead, func_80005C64(phi_a3));
-                temp_v1 = gDisplayListHead.unk4;
-                gDisplayListHead.unk4 = (void *) (temp_v1 + 8);
+                func_80005DE4(&gDisplayListHeads, func_80005C64(phi_a3));
+                temp_v1 = gDisplayListHeads.unk4;
+                gDisplayListHeads.unk4 = (void *) (temp_v1 + 8);
                 temp_v1->unk0 = 0xDE010000;
                 temp_v1->unk4 = (s32) D_8004A3EC;
             } else {
                 if (D_8004A448 != 0) {
                     func_80005DE4(&gDisplayListHead2, D_8004A444, phi_a3);
                 }
-                temp_v1_2 = gDisplayListHead.unk4;
-                gDisplayListHead.unk4 = (void *) (temp_v1_2 + 8);
+                temp_v1_2 = gDisplayListHeads.unk4;
+                gDisplayListHeads.unk4 = (void *) (temp_v1_2 + 8);
                 temp_v1_2->unk0 = 0xDE010000;
-                temp_v1_2->unk4 = (s32) gDisplayListHead.unk0;
+                temp_v1_2->unk4 = (s32) gDisplayListHeads.unk0;
             }
-            D_8004A3E4 = (void *) gDisplayListHead.unk4;
+            D_8004A3E4 = (void *) gDisplayListHeads.unk4;
         }
         if (sp20 != 0) {
             func_80005DE4(&gDisplayListHead4, D_8004A444);
-            temp_v1_3 = gDisplayListHead.unkC;
-            gDisplayListHead.unkC = (void *) (temp_v1_3 + 8);
+            temp_v1_3 = gDisplayListHeads.unkC;
+            gDisplayListHeads.unkC = (void *) (temp_v1_3 + 8);
             temp_v1_3->unk0 = 0xDE010000;
-            temp_v1_3->unk4 = (s32) gDisplayListHead.unk0;
-            D_8004A3EC = (void *) gDisplayListHead.unkC;
+            temp_v1_3->unk4 = (s32) gDisplayListHeads.unk0;
+            D_8004A3EC = (void *) gDisplayListHeads.unkC;
         }
     }
     D_8004A448 = (u16)0;
@@ -1450,7 +1450,7 @@ loop_3:
     temp_v0_2->unk-20 = 0;
     temp_v0_2->unk-1C = 0;
     phi_v0_2 = temp_v0_2;
-    if (temp_v0_2 != &gDisplayListHead) {
+    if (temp_v0_2 != &gDisplayListHeads) {
         goto loop_3;
     }
     D_80049308 = 0;

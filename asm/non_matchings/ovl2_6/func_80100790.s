@@ -23,9 +23,9 @@ glabel func_80100790
 /* 089254 801007E4 01F89821 */   addu  $s3, $t7, $t8
 /* 089258 801007E8 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 08925C 801007EC 3C1EE300 */  lui   $fp, (0xE3001001 >> 16) # lui $fp, 0xe300
-/* 089260 801007F0 3C148005 */  lui   $s4, %hi(gDisplayListHead) # $s4, 0x8005
+/* 089260 801007F0 3C148005 */  lui   $s4, %hi(gDisplayListHeads) # $s4, 0x8005
 /* 089264 801007F4 4481B000 */  mtc1  $at, $f22
-/* 089268 801007F8 2694A3D0 */  addiu $s4, %lo(gDisplayListHead) # addiu $s4, $s4, -0x5c30
+/* 089268 801007F8 2694A3D0 */  addiu $s4, %lo(gDisplayListHeads) # addiu $s4, $s4, -0x5c30
 /* 08926C 801007FC 37DE1001 */  ori   $fp, (0xE3001001 & 0xFFFF) # ori $fp, $fp, 0x1001
 /* 089270 80100800 24170060 */  li    $s7, 96
 /* 089274 80100804 27B50074 */  addiu $s5, $sp, 0x74

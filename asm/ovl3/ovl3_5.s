@@ -11303,8 +11303,8 @@ glabel func_801760FC_ovl3
 /* 0D6D1C 801762DC 00000000 */   nop   
 
 glabel func_801762E0_ovl3
-/* 0D6D20 801762E0 3C088005 */  lui   $t0, %hi(gDisplayListHead) # $t0, 0x8005
-/* 0D6D24 801762E4 2508A3D0 */  addiu $t0, %lo(gDisplayListHead) # addiu $t0, $t0, -0x5c30
+/* 0D6D20 801762E0 3C088005 */  lui   $t0, %hi(gDisplayListHeads) # $t0, 0x8005
+/* 0D6D24 801762E4 2508A3D0 */  addiu $t0, %lo(gDisplayListHeads) # addiu $t0, $t0, -0x5c30
 /* 0D6D28 801762E8 8D030000 */  lw    $v1, ($t0)
 /* 0D6D2C 801762EC AFA40000 */  sw    $a0, ($sp)
 /* 0D6D30 801762F0 3C09E700 */  lui   $t1, 0xe700
@@ -39694,4 +39694,4 @@ glabel func_8018F368_ovl3
 /* 0F0D48 80190308 03E00008 */  jr    $ra
 /* 0F0D4C 8019030C 00000000 */   nop   
 # Unknown region 0F0D50-0F8630 [78E0]
-.incbin "bin/kirby.u.0F0D50.bin"
+# .incbin "bin/kirby.u.0F0D50.bin"

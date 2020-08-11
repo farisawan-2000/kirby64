@@ -9,14 +9,14 @@ glabel func_80014C78
 /* 015894 80014C94 15E00046 */  bnez  $t7, .L80014DB0_ovl0
 /* 015898 80014C98 3C018005 */   lui   $at, %hi(D_8004AA94) # $at, 0x8005
 /* 01589C 80014C9C C424AA94 */  lwc1  $f4, %lo(D_8004AA94)($at)
-/* 0158A0 80014CA0 3C048005 */  lui   $a0, %hi(gDisplayListHead) # $a0, 0x8005
-/* 0158A4 80014CA4 2484A3D0 */  addiu $a0, %lo(gDisplayListHead) # addiu $a0, $a0, -0x5c30
+/* 0158A0 80014CA0 3C048005 */  lui   $a0, %hi(gDisplayListHeads) # $a0, 0x8005
+/* 0158A4 80014CA4 2484A3D0 */  addiu $a0, %lo(gDisplayListHeads) # addiu $a0, $a0, -0x5c30
 /* 0158A8 80014CA8 00C02825 */  move  $a1, $a2
 /* 0158AC 80014CAC AFA60030 */  sw    $a2, 0x30($sp)
 /* 0158B0 80014CB0 0C004460 */  jal   func_80011180
 /* 0158B4 80014CB4 E7A40020 */   swc1  $f4, 0x20($sp)
-/* 0158B8 80014CB8 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
-/* 0158BC 80014CBC 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
+/* 0158B8 80014CB8 3C058005 */  lui   $a1, %hi(gDisplayListHeads) # $a1, 0x8005
+/* 0158BC 80014CBC 24A5A3D0 */  addiu $a1, %lo(gDisplayListHeads) # addiu $a1, $a1, -0x5c30
 /* 0158C0 80014CC0 8FA60030 */  lw    $a2, 0x30($sp)
 /* 0158C4 80014CC4 1200001D */  beqz  $s0, .L80014D3C_ovl0
 /* 0158C8 80014CC8 AFA2002C */   sw    $v0, 0x2c($sp)
@@ -34,8 +34,8 @@ glabel func_80014C78
 /* 0158F8 80014CF8 8CC40010 */   lw    $a0, 0x10($a2)
 /* 0158FC 80014CFC 0C004CC0 */  jal   func_80013300
 /* 015900 80014D00 AFA60030 */   sw    $a2, 0x30($sp)
-/* 015904 80014D04 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
-/* 015908 80014D08 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
+/* 015904 80014D04 3C058005 */  lui   $a1, %hi(gDisplayListHeads) # $a1, 0x8005
+/* 015908 80014D08 24A5A3D0 */  addiu $a1, %lo(gDisplayListHeads) # addiu $a1, $a1, -0x5c30
 /* 01590C 80014D0C 8CA30000 */  lw    $v1, ($a1)
 /* 015910 80014D10 8FA60030 */  lw    $a2, 0x30($sp)
 /* 015914 80014D14 3C0DDE00 */  lui   $t5, 0xde00
@@ -55,8 +55,8 @@ glabel func_80014C78
 /* 015944 80014D44 8FA8002C */   lw    $t0, 0x2c($sp)
 /* 015948 80014D48 0C00531E */  jal   func_80014C78
 /* 01594C 80014D4C AFA60030 */   sw    $a2, 0x30($sp)
-/* 015950 80014D50 3C058005 */  lui   $a1, %hi(gDisplayListHead) # $a1, 0x8005
-/* 015954 80014D54 24A5A3D0 */  addiu $a1, %lo(gDisplayListHead) # addiu $a1, $a1, -0x5c30
+/* 015950 80014D50 3C058005 */  lui   $a1, %hi(gDisplayListHeads) # $a1, 0x8005
+/* 015954 80014D54 24A5A3D0 */  addiu $a1, %lo(gDisplayListHeads) # addiu $a1, $a1, -0x5c30
 /* 015958 80014D58 8FA60030 */  lw    $a2, 0x30($sp)
 /* 01595C 80014D5C 8FA8002C */  lw    $t0, 0x2c($sp)
 .L80014D60_ovl0:

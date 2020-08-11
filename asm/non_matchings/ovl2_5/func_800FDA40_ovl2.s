@@ -1,9 +1,9 @@
 glabel func_800FDA40_ovl2
 /* 0864B0 800FDA40 44857000 */  mtc1  $a1, $f14
 /* 0864B4 800FDA44 44866000 */  mtc1  $a2, $f12
-/* 0864B8 800FDA48 3C098005 */  lui   $t1, %hi(gDisplayListHead) # $t1, 0x8005
+/* 0864B8 800FDA48 3C098005 */  lui   $t1, %hi(gDisplayListHeads) # $t1, 0x8005
 /* 0864BC 800FDA4C 4600718D */  trunc.w.s $f6, $f14
-/* 0864C0 800FDA50 2529A3D0 */  addiu $t1, %lo(gDisplayListHead) # addiu $t1, $t1, -0x5c30
+/* 0864C0 800FDA50 2529A3D0 */  addiu $t1, %lo(gDisplayListHeads) # addiu $t1, $t1, -0x5c30
 /* 0864C4 800FDA54 3C190100 */  lui   $t9, (0x01004008 >> 16) # lui $t9, 0x100
 /* 0864C8 800FDA58 4600610D */  trunc.w.s $f4, $f12
 /* 0864CC 800FDA5C 44053000 */  mfc1  $a1, $f6

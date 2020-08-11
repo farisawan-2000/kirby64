@@ -11,8 +11,8 @@ glabel func_80018170
 /* 018D94 80018194 AFB20020 */  sw    $s2, 0x20($sp)
 /* 018D98 80018198 AFB1001C */  sw    $s1, 0x1c($sp)
 /* 018D9C 8001819C 8C95003C */  lw    $s5, 0x3c($a0)
-/* 018DA0 800181A0 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 018DA4 800181A4 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 018DA0 800181A0 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 018DA4 800181A4 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 018DA8 800181A8 0080A025 */  move  $s4, $a0
 /* 018DAC 800181AC 02002025 */  move  $a0, $s0
 /* 018DB0 800181B0 00003025 */  move  $a2, $zero

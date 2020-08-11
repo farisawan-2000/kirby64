@@ -40,8 +40,8 @@ glabel func_80014DF0
 /* 015A84 80014E84 4503FFF9 */  bc1tl .L80014E6C_ovl0
 /* 015A88 80014E88 8E180000 */   lw    $t8, ($s0)
 .L80014E8C_ovl0:
-/* 015A8C 80014E8C 3C108005 */  lui   $s0, %hi(gDisplayListHead) # $s0, 0x8005
-/* 015A90 80014E90 2610A3D0 */  addiu $s0, %lo(gDisplayListHead) # addiu $s0, $s0, -0x5c30
+/* 015A8C 80014E8C 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
+/* 015A90 80014E90 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 015A94 80014E94 02002025 */  move  $a0, $s0
 /* 015A98 80014E98 AFA3002C */  sw    $v1, 0x2c($sp)
 /* 015A9C 80014E9C 0C004460 */  jal   func_80011180
