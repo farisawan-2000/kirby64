@@ -96,14 +96,20 @@ struct KirbyState {
     u8 unk9;
     u8 unkA;
     u8 unkB;
-    u32 powerupState; // 0xC
+    s8 powerupState; // 0xC
+    u8 unkD;
+    u8 unkE;
+    u8 unkF;
     u32 unk10;
     u8 unk14;
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    u32 unk18;
-    u32 floatTimer;
+    u8 unk18;
+    u8 unk19;
+    u8 unk1A;
+    u8 unk1B;
+    u32 floatTimer; // 0x1C
     s32 turnDirection; // 0x20
     u32 unk24;
     u32 unk28;
@@ -124,7 +130,8 @@ struct KirbyState {
     u32 unk60;
     u16 unk64;
     u16 unk66;
-    u32 unk68;
+    u16 unk68;
+    u16 unk6A;
     u32 unk6C;
     u32 unk70;
     u32 unk74;

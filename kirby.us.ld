@@ -48,10 +48,10 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       BUILD_DIR/asm/ovl0/exception.o(.text);
+      /*libreultra/build/2.0I/libultra_rom.a:__osDequeueThread.o(.text);*/
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
       BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
       BUILD_DIR/asm/ovl0/lib/__osSPSetPc.o(.text);
-      /*libreultra/build/2.0I/libultra.a:*(.text);*/
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }
    END_SEG(ovl0)

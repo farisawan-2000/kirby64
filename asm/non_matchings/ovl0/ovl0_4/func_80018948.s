@@ -1,4 +1,4 @@
-glabel inv_cosf
+glabel secf
 /* 019548 80018948 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 01954C 8001894C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 019550 80018950 0C00D604 */  jal   cosf

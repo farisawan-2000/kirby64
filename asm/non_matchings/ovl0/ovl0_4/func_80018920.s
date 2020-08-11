@@ -1,4 +1,4 @@
-glabel inv_sinf
+glabel cscf
 /* 019520 80018920 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 019524 80018924 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 019528 80018928 0C00B5B8 */  jal   sinf
