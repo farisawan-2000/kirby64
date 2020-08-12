@@ -1,0 +1,20 @@
+glabel func_8018E36C_ovl3
+/* 0EEDAC 8018E36C 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 0EEDB0 8018E370 44866000 */  mtc1  $a2, $f12
+/* 0EEDB4 8018E374 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 0EEDB8 8018E378 14A00009 */  bnez  $a1, .L8018E3A0_ovl3
+/* 0EEDBC 8018E37C AFA40018 */   sw    $a0, 0x18($sp)
+/* 0EEDC0 8018E380 44802000 */  mtc1  $zero, $f4
+/* 0EEDC4 8018E384 00000000 */  nop   
+/* 0EEDC8 8018E388 46046032 */  c.eq.s $f12, $f4
+/* 0EEDCC 8018E38C 00000000 */  nop   
+/* 0EEDD0 8018E390 45030004 */  bc1tl .L8018E3A4_ovl3
+/* 0EEDD4 8018E394 8FBF0014 */   lw    $ra, 0x14($sp)
+/* 0EEDD8 8018E398 0C058CAE */  jal   func_801632B8_ovl3
+/* 0EEDDC 8018E39C 2404000A */   li    $a0, 10
+.L8018E3A0_ovl3:
+/* 0EEDE0 8018E3A0 8FBF0014 */  lw    $ra, 0x14($sp)
+.L8018E3A4_ovl3:
+/* 0EEDE4 8018E3A4 27BD0018 */  addiu $sp, $sp, 0x18
+/* 0EEDE8 8018E3A8 03E00008 */  jr    $ra
+/* 0EEDEC 8018E3AC 00000000 */   nop   

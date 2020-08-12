@@ -110,10 +110,14 @@ SECTIONS
       BUILD_DIR/src/ovl3/ovl3_2.o(.text);
       BUILD_DIR/asm/ovl3/ovl3_3.o(.text);
       BUILD_DIR/asm/ovl3/ovl3_4.o(.text);
-      BUILD_DIR/asm/ovl3/ovl3_5.o(.text);
+      BUILD_DIR/src/ovl3/ovl3_5.o(.text);
       BUILD_DIR/data/kirby.0F0D50.o(.data);
    }
    END_SEG(ovl3)
+   BEGIN_NOLOAD(ovl3) {
+      BUILD_DIR/src/ovl3/ovl3_5.o(.rodata);
+   }
+   END_NOLOAD(ovl3)
 
    /* 0x80151100 0F8630-1014F0 [8EC0] */
    BEGIN_SEG(ovl4, 0x80151100) {

@@ -135,9 +135,9 @@ struct KirbyState {
     u32 unk6C;
     u32 unk70;
     u32 unk74;
-    u32 unk78;
-    u32 unk7C;
-    u32 unk80;
+    f32 unk78;
+    f32 unk7C;
+    f32 unk80;
     u32 unk84;
     u32 unk88;
     u32 unk8C;
@@ -197,7 +197,7 @@ struct KirbyState {
     u8 unk152;
     u8 unk153;
     u32 unk154;
-    u32 unk158;
+    f32 unk158;
     u32 unk15C;
     u32 unk160;
     u32 unk164;
