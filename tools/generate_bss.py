@@ -10,6 +10,7 @@ bssLimit = 0
 numFiles = 0
 f = open(sys.argv[1]+"_bss.s", "w+")
 f.write(".include \"macros.inc\"\n")
+f.write(".section .bss\n")
 # f.write("#include \"prevent_bss_reordering.h\"\n")
 while addrStart < addrEnd:
 	f.write("glabel D_"+ str(hex(addrStart))[2:].upper()+ specificOvl+"\n.word 0x00000000\n\n")

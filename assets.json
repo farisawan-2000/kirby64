@@ -23,9 +23,24 @@
 "bin/kirby.u.139150.bin": {"meta": {"size":"0x57a0"}, "offsets":{"us":["0x139150","0x0"]}},
 "bin/kirby.u.1C9B00.bin": {"meta": {"size":"0x2450"}, "offsets":{"us":["0x1C9B00","0x0"]}},
 "bin/kirby.u.1014F0.bin": {"meta": {"size":"0x26c0"}, "offsets":{"us":["0x1014F0","0x0"]}},
-"bin/kirby.u.2502A0.bin": {"meta": {"size":"0x58FA50"}, "offsets":{"us":["0x2502A0","0x0"]}},
-"bin/kirby.u.7E2D70.bin": {"meta": {"size":"0x2000000"}, "offsets":{"us":["0x7E2D70","0x0"]}},
+
+"bin/kirby.u.250320.bin": {"meta": {"size":"0x58990"}, "offsets":{"us":["0x250320","0x0"]}},
+
+"bin/kirby.u.2A8CB0.bin": {"meta": {"size":"0x8860"}, "offsets":{"us":["0x2A8CB0","0x0"]}},
+
+"bin/kirby.u.2B1510.bin": {"meta": {"size":"0x12FEF0"}, "offsets":{"us":["0x2B1510","0x0"]}},
+
+"bin/kirby.u.3E1400.bin": {"meta": {"size":"0x57C0"}, "offsets":{"us":["0x3E1400","0x0"]}},
+
+"bin/kirby.u.3E6BC0.bin": {"meta": {"size":"0xB89D0"}, "offsets":{"us":["0x3E6BC0","0x0"]}},
+
+"bin/kirby.u.49F590.bin": {"meta": {"size":"0xEA0"}, "offsets":{"us":["0x49F590","0x0"]}},
+"bin/kirby.u.4A0430.bin": {"meta": {"size":"0x3730"}, "offsets":{"us":["0x4A0430","0x0"]}},
+"bin/kirby.u.4A3B60.bin": {"meta": {"size":"0x6D90"}, "offsets":{"us":["0x4A3B60","0x0"]}},
+"bin/kirby.u.4AA8F0.bin": {"meta": {"size":"0x335400"}, "offsets":{"us":["0x4AA8F0","0x0"]}},
+
 "bin/kirby_model.bin": {"meta":{"size":"0x1408"}, "offsets":{"us":["0x7E1A20","0x0"]}},
+"bin/kirby.u.7E2D70.bin": {"meta": {"size":"0x16A8DE0"}, "offsets":{"us":["0x7E2D70","0x0"]}},
 
 "textures/kirby.0x1c3e48a.i4.png": {"meta": {"dims":[32, 32]}, "offsets":{"us":["0x1c3e48a","0x0"]}},
 "textures/kirby.0x1c3e68a.ia4.png": {"meta": {"dims":[32, 64]}, "offsets":{"us":["0x1c3e68a","0x0"]}},

@@ -228,14 +228,61 @@ SECTIONS
    END_SEG(ovl19)
 
    /* 0x80300000 2501C0-2502A0 [E0] */
-   .BEGIN_SEG(ovl20, 0x80300000) {
+   BEGIN_SEG(ovl20, 0x80300000) {
       BUILD_DIR/src/ovl20.o(.text);
-      BUILD_DIR/asm/kirby.u.2502A0.o(.data);
+   }
+   END_SEG(ovl20)
+   BEGIN_SEG(ovl20Data, _ovl20SegmentEnd){
+      BUILD_DIR/data/kirby.ovl20.o(.data);
+   }
+   END_SEG(ovl20Data)
+   BEGIN_NOLOAD(ovl20) {
+      BUILD_DIR/asm/ovl20/ovl20_bss.o(.bss);
+   }
+   END_NOLOAD(ovl20)
+
+   BEGIN_SEG(data_250320, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.250320.o(.data);
+   }
+   END_SEG(data_250320)
+   BEGIN_SEG(data_2A8CB0, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.2A8CB0.o(.data);
+   }
+   END_SEG(data_2A8CB0)
+   BEGIN_SEG(data_2B1510, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.2B1510.o(.data);
+   }
+   END_SEG(data_2B1510)
+   BEGIN_SEG(data_3E1400, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.3E1400.o(.data);
+   }
+   END_SEG(data_3E1400)
+   BEGIN_SEG(data_3E6BC0, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.3E6BC0.o(.data);
+   }
+   END_SEG(data_3E6BC0)
+   BEGIN_SEG(data_49F590, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.49F590.o(.data);
+   }
+   END_SEG(data_49F590)
+   BEGIN_SEG(data_4A0430, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.4A0430.o(.data);
+   }
+   END_SEG(data_4A0430)
+   BEGIN_SEG(data_4A3B60, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
+   }
+   END_SEG(data_4A3B60)
+   BEGIN_SEG(data_4AA8F0, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.4AA8F0.o(.data);
+   }
+   END_SEG(data_4AA8F0)
+
+   BEGIN_SEG(kirby_and_after, 0) {
       BUILD_DIR/actors/kirby.o(.rodata);
       BUILD_DIR/asm/kirby.u.7E2D70.o(.data);
    }
-   END_SEG(ovl20)
-
+   END_SEG(kirby_and_after)
    /* TODO: implement this somehow 
    .BEGIN_SEG(leveltextures, 0x07000000) {
       BUILD_DIR/data/textures_1BD5C80.o(.data);

@@ -1,10 +1,11 @@
 #include <ultra64.h>
-#include "macros.h"
+// #include "macros.h"
+#include "types.h"
 
 extern u32 D_800D6EC8;
-extern u32 D_80300180;
-extern u32 D_80300170[];
 extern u32 D_803000E0[];
+extern u32 D_80300170[0x30];
+extern u32 D_80300180;
 extern void osWritebackDCache(void *arg0, u32 arg1);
 extern void osInvalICache(void *arg0, u32 arg1);
 
@@ -14,6 +15,9 @@ extern u32 func_80300170(void);
 #define FUNC_ADDR_TO_JAL(x) ((((u32)&x & 0xFFFFFF) >> 2) | 0xC000000)
 
 #define ASM_OBFUSCATOR 0xFDB9ECA8
+
+// Testing for shiftability
+extern struct KirbyState gKirbyState;
 
 // deobfuscates the function directly after this one and calls it
 // potentially as a piracy/integrity check
@@ -32,4 +36,6 @@ void func_80300000_ovl20(void) {
     if ((*func_80300170)() == 0) {
         D_800D6EC8 = 1;
     }
+    // if (gKirbyState)
+    // gKirbyState.floatTimer = 0xF0;
 }
