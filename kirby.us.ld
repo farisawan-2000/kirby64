@@ -80,12 +80,12 @@ SECTIONS
       BUILD_DIR/asm/ovl1/ovl1_13.o(.text);
    }
    END_SEG(ovl1)
-   BEGIN_SEG(ovl1Data, ) {
+   BEGIN_SEG(ovl1Data, 0x800BE3E0) {
       BUILD_DIR/data/kirby.066630.o(.data);
    }
    END_SEG(ovl1Data)
    BEGIN_NOLOAD(ovl1) {
-      BUILD_DIR/asm/ovl1/ovl1.o(.bss);
+      BUILD_DIR/asm/ovl1/ovl1_bss.o(.bss);
    }
    END_NOLOAD(ovl1)
 
@@ -122,8 +122,13 @@ SECTIONS
    /* 0x80151100 0F8630-1014F0 [8EC0] */
    BEGIN_SEG(ovl4, 0x80151100) {
       BUILD_DIR/asm/ovl4/ovl4.o(.text);
+      BUILD_DIR/data/kirby.1014F0.o(.data);
    }
    END_SEG(ovl4)
+   BEGIN_NOLOAD(ovl4) {
+      BUILD_DIR/src/ovl4/ovl4_bss.o(.bss);
+   }
+   END_NOLOAD(ovl4)
 
    /* 0x8015C740 103BB0-12D410 [29860] */
    BEGIN_SEG(ovl5, 0x8015C740) {

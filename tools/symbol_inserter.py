@@ -9,6 +9,8 @@ checking_symbols = [
 	"sw",
 	"sb",
 	"sh",
+	"ld",
+	"sd"
 ]
 
 stagedRegs = {}
@@ -90,5 +92,6 @@ for i in sys.argv[1:]: # xargs support lul
 				# print(line[:-1], "bruh", lineList[lineNum])
 			lineNum-=1
 	e = open(sys.argv[1], 'w')
-	print(''.join(lineList[::-1]))
+	e.write(''.join(lineList[::-1]))
+	e.close()
 	stagedRegs = {}
