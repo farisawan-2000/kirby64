@@ -265,10 +265,10 @@ SECTIONS
       BUILD_DIR/asm/data/kirby.u.49F590.o(.data);
    }
    END_SEG(data_49F590)
-   BEGIN_SEG(data_4A0430, 0) { /*TODO: get a good addr for this*/
-      BUILD_DIR/asm/data/kirby.u.4A0430.o(.data);
+   BEGIN_SEG(data_4A0340, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.4A0340.o(.data);
    }
-   END_SEG(data_4A0430)
+   END_SEG(data_4A0340)
    BEGIN_SEG(data_4A3B60, 0) { /*TODO: get a good addr for this*/
       BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
    }
