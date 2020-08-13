@@ -283,6 +283,11 @@ SECTIONS
       BUILD_DIR/asm/kirby.u.7E2D70.o(.data);
    }
    END_SEG(kirby_and_after)
+
+   BEGIN_SEG(data_1116010, 0) { /*TODO: get a good addr for this*/
+      BUILD_DIR/asm/data/kirby.u.1116010.o(.data);
+   }
+   END_SEG(data_1116010)   
    /* TODO: implement this somehow 
    .BEGIN_SEG(leveltextures, 0x07000000) {
       BUILD_DIR/data/textures_1BD5C80.o(.data);
