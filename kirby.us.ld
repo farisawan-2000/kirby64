@@ -6,6 +6,9 @@ OUTPUT_ARCH (mips)
     _##name##SegmentRomStart = __romPos; \
     .name addr : AT(__romPos)
 
+#define MARK(name) \
+    _##name##RomStart = __romPos;
+
 #define END_SEG(name) \
     _##name##SegmentEnd = ADDR(.name) + SIZEOF(.name); \
     _##name##SegmentRomEnd = __romPos + SIZEOF(.name); \
