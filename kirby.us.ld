@@ -6,8 +6,9 @@ OUTPUT_ARCH (mips)
     _##name##SegmentRomStart = __romPos; \
     .name addr : AT(__romPos)
 
-#define MARK(name) \
-    _##name##RomStart = __romPos;
+#define MARK(name, prevName) \
+    _##name##_RomStart = __romPos; \
+    _##prevName##_RomEnd = __romPos;
 
 #define END_SEG(name) \
     _##name##SegmentEnd = ADDR(.name) + SIZEOF(.name); \
@@ -276,21 +277,21 @@ SECTIONS
       BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
    }
    END_SEG(data_4A3B60)
-   BEGIN_SEG(data_4AA8F0, 0) { /*TODO: get a good addr for this*/
-      BUILD_DIR/asm/data/kirby.u.4AA8F0.o(.data);
+   BEGIN_SEG(bank_data, __romPos) { /*TODO: get a good addr for this*/
+      BUILD_DIR/data/banks.o(.data);
    }
-   END_SEG(data_4AA8F0)
+   END_SEG(bank_data)
 
-   BEGIN_SEG(kirby_and_after, 0) {
+   /*BEGIN_SEG(kirby_and_after, 0) {
       BUILD_DIR/actors/kirby.o(.rodata);
       BUILD_DIR/asm/kirby.u.7E2D70.o(.data);
    }
    END_SEG(kirby_and_after)
 
-   BEGIN_SEG(data_1116010, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_1116010, 0) {
       BUILD_DIR/asm/data/kirby.u.1116010.o(.data);
    }
-   END_SEG(data_1116010)   
+   END_SEG(data_1116010)   */
    /* TODO: implement this somehow 
    .BEGIN_SEG(leveltextures, 0x07000000) {
       BUILD_DIR/data/textures_1BD5C80.o(.data);

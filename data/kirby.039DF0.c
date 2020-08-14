@@ -2,6 +2,7 @@
 
 #include "types.h"
 #include "segments.h"
+#include "banks.h"
 #include "src/ovl0/main.h"
 
 u32 D_80039230 = 0x40055800;
@@ -12317,6 +12318,8 @@ u32 D_8003F330 = 0x00000000;
 
 u32 D_8003F334 = 0x00000000;
 
+
+
 u32 D_8003F338 = 0x00000001;
 
 u32 D_8003F33C = 0x00000000;
@@ -12361,7 +12364,7 @@ u32 *D_8003F3A8 = _data_4A0340SegmentRomStart;
 u32 *D_8003F3AC = _data_4A3B60SegmentRomStart;
 
 u32 *D_8003F3B0 = _data_4A3B60SegmentRomStart;
-u32 *D_8003F3B4 = _data_4AA8F0SegmentRomStart;
+u32 *D_8003F3B4 = &bank_0_index_1_geo;
 u32 D_8003F3B8 = 0x00000000;
 u32 D_8003F3BC = 0x00000000;
 

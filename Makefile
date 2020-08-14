@@ -53,7 +53,13 @@ LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data
-SRC_DIRS := src $(wildcard src/ovl*) data  wildcard actors
+SRC_DIRS := src $(wildcard src/ovl*) data  wildcard
+
+BIN_DIRS := bin/geo bin/image bin/misc bin/anim
+
+DATA_DIRS := actors
+DATA_FILES := $(foreach dir,$(DATA_DIRS),$(wildcard $(dir)/*.c))
+
 TEXTURES_DIR = textures
 
 MIPSISET := -mips2 -32
@@ -69,6 +75,8 @@ BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+
+ACTOR_FILES := $(foreach file,$(DATA_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 
 # FLAGS
@@ -107,6 +115,10 @@ clean:
 
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+
+$(BUILD_DIR)/actors/%.o: $(BUILD_DIR)/actors/%.c
+	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -153,3 +165,4 @@ MAKEFLAGS += --no-builtin-rules
 
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
+
