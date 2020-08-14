@@ -1,6 +1,7 @@
 ../*
 **/**/*.bin
 build/*
+assets/*
 *.z64
 textures/*
 bin/*
