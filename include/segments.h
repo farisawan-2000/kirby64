@@ -24,6 +24,7 @@ extern u8 _data_49F590SegmentRomStart[];
 extern u8 _data_4A0340SegmentRomStart[];
 extern u8 _data_4A3B60SegmentRomStart[];
 extern u8 _data_4AA8F0SegmentRomStart[];
+extern u8 _data_1116010SegmentRomStart[];
 
 extern u8 _data_250320SegmentRomEnd[];
 extern u8 _data_2A8CB0SegmentRomEnd[];
