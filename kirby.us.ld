@@ -280,14 +280,14 @@ SECTIONS
    END_SEG(data_4A3B60)
 
    BEGIN_SEG(bank_data, __romPos) { /*TODO: get a good addr for this*/
-      BUILD_DIR/data/banks/bank0.o(.data);
-      BUILD_DIR/data/banks/bank1.o(.data);
-      BUILD_DIR/data/banks/bank2.o(.data);
-      BUILD_DIR/data/banks/bank3.o(.data);
-      BUILD_DIR/data/banks/bank4.o(.data);
-      BUILD_DIR/data/banks/bank5.o(.data);
-      BUILD_DIR/data/banks/bank6.o(.data);
-      BUILD_DIR/data/banks/bank7.o(.data);
+      BUILD_DIR/asm/banks/bank0.o(.data);
+      BUILD_DIR/asm/banks/bank1.o(.data);
+      BUILD_DIR/asm/banks/bank2.o(.data);
+      BUILD_DIR/asm/banks/bank3.o(.data);
+      BUILD_DIR/asm/banks/bank4.o(.data);
+      BUILD_DIR/asm/banks/bank5.o(.data);
+      BUILD_DIR/asm/banks/bank6.o(.data);
+      BUILD_DIR/asm/banks/bank7.o(.data);
    }
    END_SEG(bank_data)
 

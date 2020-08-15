@@ -2,6 +2,7 @@
 #include "segments.h"
 #include "banks.h"
 
+
 u32 *D_800C46A8[] = {
 	bank_0_index_1_geo,
 	bank_0_index_2_geo,

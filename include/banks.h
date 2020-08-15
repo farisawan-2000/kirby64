@@ -1,4 +1,20 @@
+#ifndef BANKS_H
+#define BANKS_H
+
 #include <ultra64.h>
+
+struct BankHeader {
+	void *geoBlockAddr;
+	void *geoROMOffset;
+	void *imageBlockAddr;
+	void *imageROMOffset;
+	void *animBlockAddr;
+	void *animROMOffset;
+	void *miscBlockAddr;
+	void *miscROMOffset;
+	u64 pad;
+};
+
 extern u32 bank_0_index_1_geo[];
 extern u32 bank_0_index_2_geo[];
 extern u32 bank_0_index_3_geo[];
@@ -10550,3 +10566,4 @@ extern u32 bank_7_index_236_misc[];
 extern u32 bank_7_index_237_misc[];
 extern u32 bank_7_index_238_misc[];
 extern u32 bank_7_index_239_misc[];
+#endif
