@@ -13,6 +13,7 @@ glabel D_80300168
 glabel D_8030016C
 .space 4
 
+glabel func_80300170
 glabel D_80300170
 .space 4
 

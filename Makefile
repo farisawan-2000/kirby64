@@ -87,6 +87,8 @@ CFLAGS = -Wab,-r4300_mul -non_shared -G0 -Xcpluscomm -Xfullwarn -signed $(OPT_FL
 
 CC_CHECK := gcc -fsyntax-only -fsigned-char $(CC_CFLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(VERSION_CFLAGS) $(GRUCODE_CFLAGS)
 
+CC_TEST := gcc -Wall
+
 ######################## Targets #############################
 
 NOEXTRACT ?= 0
@@ -128,6 +130,7 @@ $(BUILD_DIR)/%.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/data/%.o: data/%.c
+# 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c

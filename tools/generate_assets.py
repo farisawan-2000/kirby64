@@ -148,7 +148,7 @@ with open(sys.argv[1]) as f:
 # x.write(generateLink())
 # x.close()
 print()
-for i in range(7):
+# for i in range(8):
 # 	generateLink(i)
-	printBank(i)
+printBank(7)
 # genCFile(0)
