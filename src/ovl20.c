@@ -16,9 +16,6 @@ extern u32 func_80300170(void);
 
 #define ASM_OBFUSCATOR 0xFDB9ECA8
 
-// Testing for shiftability
-extern struct KirbyState gKirbyState;
-
 // deobfuscates the function directly after this one and calls it
 // potentially as a piracy/integrity check
 void func_80300000_ovl20(void) {
@@ -36,6 +33,4 @@ void func_80300000_ovl20(void) {
     if ((*func_80300170)() == 0) {
         D_800D6EC8 = 1;
     }
-    // if (gKirbyState)
-    // gKirbyState.floatTimer = 0xF0;
 }
