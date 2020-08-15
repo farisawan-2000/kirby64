@@ -84,7 +84,7 @@ SECTIONS
       BUILD_DIR/asm/ovl1/ovl1_13.o(.text);
    }
    END_SEG(ovl1)
-   BEGIN_SEG(ovl1Data, 0x800BE3E0) {
+   BEGIN_SEG(ovl1Data, _ovl1SegmentEnd) {
       BUILD_DIR/data/kirby.066630.o(.data);
    }
    END_SEG(ovl1Data)

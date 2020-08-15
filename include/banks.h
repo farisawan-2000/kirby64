@@ -12,7 +12,6 @@ struct BankHeader {
 	void *animROMOffset;
 	void *miscBlockAddr;
 	void *miscROMOffset;
-	u64 pad;
 };
 
 extern u32 bank_0_index_1_geo[];

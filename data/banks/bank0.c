@@ -2,8 +2,9 @@
 #include "segments.h"
 #include "banks.h"
 
-
-u32 *D_800C46A8[] = {
+u32 *D_800C46A0[] = {
+	NULL,
+	NULL,
 	bank_0_index_1_geo,
 	bank_0_index_2_geo,
 	bank_0_index_2_geo,
@@ -138,22 +139,19 @@ u32 D_800C47D0 = 0x0000970C;
 
 
 
-u32 D_800C47D4 = 0x800C46A0;
+u32 *D_800C47D4 = &D_800C46A0;
 
 u32 D_800C47D8 = 0xFFFFFFFF;
 
-u32 D_800C47DC = 0x800C46F8;
+u32 *D_800C47DC = &D_800C46F8;
 
 u32 *D_800C47E0 = bank_0_index_1_image;
 
-u32 D_800C47E4 = 0x800C476C;
+u32 *D_800C47E4 = &D_800C476C;
 
 u32 *D_800C47E8 = bank_0_index_1_anim;
 
-u32 D_800C47EC = 0x800C47BC;
+u32 *D_800C47EC = &D_800C47BC;
 
 u32 *D_800C47F0 = bank_0_index_1_misc;
 
-u32 D_800C47F4 = 0x00000000;
-
-u32 D_800C47F8 = 0x00000000;
