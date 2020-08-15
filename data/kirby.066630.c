@@ -10739,518 +10739,264 @@ u32 D_800C7844 = 0x00000000;
 
 u32 D_800C7848 = 0x00000000;
 
-
-u32 D_800C784C = 0x007DDF60;
-
-u32 D_800C7850 = 0x007DE680;
-
-u32 D_800C7854 = 0x007DE680;
-
-u32 D_800C7858 = 0x007DEC30;
-
-u32 D_800C785C = 0x007DEC30;
-
-u32 D_800C7860 = 0x007DEE90;
-
-u32 D_800C7864 = 0x007DEE90;
-
-u32 D_800C7868 = 0x007DF300;
-
-u32 D_800C786C = 0x007DF300;
-
-u32 D_800C7870 = 0x007DF770;
-
-u32 D_800C7874 = 0x007DF770;
-
-u32 D_800C7878 = 0x007DFA70;
-
-u32 D_800C787C = 0x007DFA70;
-
-u32 D_800C7880 = 0x007E38C0;
-
-u32 D_800C7884 = 0x007E38C0;
-
-u32 D_800C7888 = 0x007E6FB0;
-
-u32 D_800C788C = 0x007E6FB0;
-
-u32 D_800C7890 = 0x007EA860;
-
-u32 D_800C7894 = 0x007EA860;
-
-u32 D_800C7898 = 0x007EBB50;
-
-u32 D_800C789C = 0x007EBB50;
-
-u32 D_800C78A0 = 0x007EFF50;
-
-u32 D_800C78A4 = 0x007EFF50;
-
-u32 D_800C78A8 = 0x007F0FC0;
-
-u32 D_800C78AC = 0x007F0FC0;
-
-u32 D_800C78B0 = 0x007F2CA0;
-
-u32 D_800C78B4 = 0x007F2CA0;
-
-u32 D_800C78B8 = 0x007F4200;
-
-u32 D_800C78BC = 0x007F4200;
-
-u32 D_800C78C0 = 0x007F5920;
-
-u32 D_800C78C4 = 0x007F5920;
-
-u32 D_800C78C8 = 0x007F7360;
-
-u32 D_800C78CC = 0x007F7360;
-
-u32 D_800C78D0 = 0x007F8970;
-
-u32 D_800C78D4 = 0x007F8970;
-
-u32 D_800C78D8 = 0x007F9EF0;
-
-u32 D_800C78DC = 0x007F9EF0;
-
-u32 D_800C78E0 = 0x007FB980;
-
-u32 D_800C78E4 = 0x007FB980;
-
-u32 D_800C78E8 = 0x007FC640;
-
-u32 D_800C78EC = 0x007FC640;
-
-u32 D_800C78F0 = 0x008004E0;
-
-u32 D_800C78F4 = 0x008004E0;
-
-u32 D_800C78F8 = 0x00801F00;
-
-u32 D_800C78FC = 0x00801F00;
-
-u32 D_800C7900 = 0x00804930;
-
-u32 D_800C7904 = 0x00804930;
-
-u32 D_800C7908 = 0x00807FB0;
-
-u32 D_800C790C = 0x00807FB0;
-
-u32 D_800C7910 = 0x008095B0;
-
-u32 D_800C7914 = 0x008095B0;
-
-u32 D_800C7918 = 0x0080B820;
-
-u32 D_800C791C = 0x0080B820;
-
-u32 D_800C7920 = 0x0080CE50;
-
-u32 D_800C7924 = 0x0080CE50;
-
-u32 D_800C7928 = 0x0080E6A0;
-
-u32 D_800C792C = 0x0080E6A0;
-
-u32 D_800C7930 = 0x00810200;
-
-u32 D_800C7934 = 0x00810200;
-
-u32 D_800C7938 = 0x00811DB0;
-
-u32 D_800C793C = 0x00811DB0;
-
-u32 D_800C7940 = 0x00813780;
-
-u32 D_800C7944 = 0x00813780;
-
-u32 D_800C7948 = 0x00815B30;
-
-u32 D_800C794C = 0x00815B30;
-
-u32 D_800C7950 = 0x00817B00;
-
-u32 D_800C7954 = 0x00817B00;
-
-u32 D_800C7958 = 0x0081A2F0;
-
-u32 D_800C795C = 0x0081A2F0;
-
-u32 D_800C7960 = 0x0081C750;
-
-u32 D_800C7964 = 0x0081C750;
-
-u32 D_800C7968 = 0x0081E810;
-
-u32 D_800C796C = 0x0081E810;
-
-u32 D_800C7970 = 0x008211D0;
-
-u32 D_800C7974 = 0x008211D0;
-
-u32 D_800C7978 = 0x00822F10;
-
-u32 D_800C797C = 0x00822F10;
-
-u32 D_800C7980 = 0x00824210;
-
-u32 D_800C7984 = 0x00824210;
-
-u32 D_800C7988 = 0x00825FA0;
-
-u32 D_800C798C = 0x00825FA0;
-
-u32 D_800C7990 = 0x00827640;
-
-u32 D_800C7994 = 0x00827640;
-
-u32 D_800C7998 = 0x00829660;
-
-u32 D_800C799C = 0x00829660;
-
-u32 D_800C79A0 = 0x0082BBB0;
-
-u32 D_800C79A4 = 0x0082BBB0;
-
-u32 D_800C79A8 = 0x0082BEA0;
-
-u32 D_800C79AC = 0x0082BEA0;
-
-u32 D_800C79B0 = 0x0082C580;
-
-u32 D_800C79B4 = 0x0082C580;
-
-u32 D_800C79B8 = 0x0082CC70;
-
-u32 D_800C79BC = 0x0082CC70;
-
-u32 D_800C79C0 = 0x0082CED0;
-
-u32 D_800C79C4 = 0x0082CED0;
-
-u32 D_800C79C8 = 0x0082D3C0;
-
-u32 D_800C79CC = 0x0082D3C0;
-
-u32 D_800C79D0 = 0x0082DCF0;
-
-u32 D_800C79D4 = 0x0082DCF0;
-
-u32 D_800C79D8 = 0x0082E280;
-
-u32 D_800C79DC = 0x0082E280;
-
-u32 D_800C79E0 = 0x0082E5A0;
-
-u32 D_800C79E4 = 0x0082E5A0;
-
-u32 D_800C79E8 = 0x0082EAA0;
-
-u32 D_800C79EC = 0x0082EAA0;
-
-u32 D_800C79F0 = 0x0082EFF0;
-
-u32 D_800C79F4 = 0x0082EFF0;
-
-u32 D_800C79F8 = 0x0082F370;
-
-u32 D_800C79FC = 0x0082F370;
-
-u32 D_800C7A00 = 0x0082F5B0;
-
-u32 D_800C7A04 = 0x0082F5B0;
-
-u32 D_800C7A08 = 0x0082FA30;
-
-u32 D_800C7A0C = 0x0082FA30;
-
-u32 D_800C7A10 = 0x0082FD90;
-
-u32 D_800C7A14 = 0x0082FD90;
-
-u32 D_800C7A18 = 0x008300E0;
-
-u32 D_800C7A1C = 0x008300E0;
-
-u32 D_800C7A20 = 0x00831190;
-
-u32 D_800C7A24 = 0x00831190;
-
-u32 D_800C7A28 = 0x008314D0;
-
-u32 D_800C7A2C = 0x008314D0;
-
-u32 D_800C7A30 = 0x008319E0;
-
-u32 D_800C7A34 = 0x008319E0;
-
-u32 D_800C7A38 = 0x00832010;
-
-u32 D_800C7A3C = 0x00832010;
-
-u32 D_800C7A40 = 0x00832550;
-
-u32 D_800C7A44 = 0x00832550;
-
-u32 D_800C7A48 = 0x00832FC0;
-
-u32 D_800C7A4C = 0x00832FC0;
-
-u32 D_800C7A50 = 0x008333C0;
-
-u32 D_800C7A54 = 0x008333C0;
-
-u32 D_800C7A58 = 0x008339E0;
-
-u32 D_800C7A5C = 0x008339E0;
-
-u32 D_800C7A60 = 0x00834C50;
-
-u32 D_800C7A64 = 0x00834C50;
-
-u32 D_800C7A68 = 0x00835950;
-
-u32 D_800C7A6C = 0x00835950;
-
-u32 D_800C7A70 = 0x008362A0;
-
-u32 D_800C7A74 = 0x008362A0;
-
-u32 D_800C7A78 = 0x008363D0;
-
-u32 D_800C7A7C = 0x008363D0;
-
-u32 D_800C7A80 = 0x008367A0;
-
-u32 D_800C7A84 = 0x008367A0;
-
-u32 D_800C7A88 = 0x00837310;
-
-u32 D_800C7A8C = 0x00837310;
-
-u32 D_800C7A90 = 0x008379E0;
-
-u32 D_800C7A94 = 0x008379E0;
-
-u32 D_800C7A98 = 0x00838490;
-
-u32 D_800C7A9C = 0x00838490;
-
-u32 D_800C7AA0 = 0x00838930;
-
-u32 D_800C7AA4 = 0x00838930;
-
-u32 D_800C7AA8 = 0x00838E40;
-
-u32 D_800C7AAC = 0x00838E40;
-
-u32 D_800C7AB0 = 0x00839490;
-
-u32 D_800C7AB4 = 0x00839490;
-
-u32 D_800C7AB8 = 0x00839C20;
-
-u32 D_800C7ABC = 0x00839C20;
-
-u32 D_800C7AC0 = 0x0083A370;
-
-u32 D_800C7AC4 = 0x0083A370;
-
-u32 D_800C7AC8 = 0x0083AA50;
-
-u32 D_800C7ACC = 0x0083AA50;
-
-u32 D_800C7AD0 = 0x0083AD40;
-
-u32 D_800C7AD4 = 0x0083AD40;
-
-u32 D_800C7AD8 = 0x0083B0E0;
-
-u32 D_800C7ADC = 0x0083B0E0;
-
-u32 D_800C7AE0 = 0x0083B490;
-
-u32 D_800C7AE4 = 0x0083B490;
-
-u32 D_800C7AE8 = 0x0083BB70;
-
-u32 D_800C7AEC = 0x0083BB70;
-
-u32 D_800C7AF0 = 0x0083C5D0;
-
-u32 D_800C7AF4 = 0x0083C5D0;
-
-u32 D_800C7AF8 = 0x0083D130;
-
-u32 D_800C7AFC = 0x0083D130;
-
-u32 D_800C7B00 = 0x0083DC90;
-
-u32 D_800C7B04 = 0x0083DC90;
-
-u32 D_800C7B08 = 0x0083E520;
-
-u32 D_800C7B0C = 0x0083E520;
-
-u32 D_800C7B10 = 0x0083EC20;
-
-u32 D_800C7B14 = 0x0083EC20;
-
-u32 D_800C7B18 = 0x0083F020;
-
-u32 D_800C7B1C = 0x0083F020;
-
-u32 D_800C7B20 = 0x0083F6D0;
-
-u32 D_800C7B24 = 0x0083F6D0;
-
-u32 D_800C7B28 = 0x0083FC70;
-
-u32 D_800C7B2C = 0x0083FC70;
-
-u32 D_800C7B30 = 0x00840440;
-
-u32 D_800C7B34 = 0x00840440;
-
-u32 D_800C7B38 = 0x008409C0;
-
-u32 D_800C7B3C = 0x008409C0;
-
-u32 D_800C7B40 = 0x00841260;
-
-u32 D_800C7B44 = 0x00841260;
-
-u32 D_800C7B48 = 0x00842FB0;
-
-u32 D_800C7B4C = 0x00842FB0;
-
-u32 D_800C7B50 = 0x008431C0;
-
-u32 D_800C7B54 = 0x008431C0;
-
-u32 D_800C7B58 = 0x00843410;
-
-u32 D_800C7B5C = 0x00843410;
-
-u32 D_800C7B60 = 0x00843A00;
-
-u32 D_800C7B64 = 0x00843A00;
-
-u32 D_800C7B68 = 0x00844940;
-
-u32 D_800C7B6C = 0x00844940;
-
-u32 D_800C7B70 = 0x00845680;
-
-u32 D_800C7B74 = 0x00845680;
-
-u32 D_800C7B78 = 0x00845DB0;
-
-u32 D_800C7B7C = 0x00845DB0;
-
-u32 D_800C7B80 = 0x00846250;
-
-u32 D_800C7B84 = 0x00846250;
-
-u32 D_800C7B88 = 0x00846710;
-
-u32 D_800C7B8C = 0x00846710;
-
-u32 D_800C7B90 = 0x0084A340;
-
-u32 D_800C7B94 = 0x0084A340;
-
-u32 D_800C7B98 = 0x0084B060;
-
-u32 D_800C7B9C = 0x0084B060;
-
-u32 D_800C7BA0 = 0x0084D7D0;
-
-u32 D_800C7BA4 = 0x0084D7D0;
-
-u32 D_800C7BA8 = 0x008503A0;
-
-u32 D_800C7BAC = 0x008503A0;
-
-u32 D_800C7BB0 = 0x00850860;
-
-u32 D_800C7BB4 = 0x00850860;
-
-u32 D_800C7BB8 = 0x00850D50;
-
-u32 D_800C7BBC = 0x00850D50;
-
-u32 D_800C7BC0 = 0x00854770;
-
-u32 D_800C7BC4 = 0x00854770;
-
-u32 D_800C7BC8 = 0x008555A0;
-
-u32 D_800C7BCC = 0x008555A0;
-
-u32 D_800C7BD0 = 0x00855780;
-
-u32 D_800C7BD4 = 0x00855780;
-
-u32 D_800C7BD8 = 0x00855A20;
-
-u32 D_800C7BDC = 0x00855A20;
-
-u32 D_800C7BE0 = 0x00855CC0;
-
-u32 D_800C7BE4 = 0x00855CC0;
-
-u32 D_800C7BE8 = 0x00855F60;
-
-u32 D_800C7BEC = 0x00855F60;
-
-u32 D_800C7BF0 = 0x00856200;
-
-u32 D_800C7BF4 = 0x00856200;
-
-u32 D_800C7BF8 = 0x008564A0;
-
-u32 D_800C7BFC = 0x008564A0;
-
-u32 D_800C7C00 = 0x00856740;
-
-u32 D_800C7C04 = 0x00856740;
-
-u32 D_800C7C08 = 0x008569E0;
-
-u32 D_800C7C0C = 0x008569E0;
-
-u32 D_800C7C10 = 0x00857630;
-
-u32 D_800C7C14 = 0x00857630;
-
-u32 D_800C7C18 = 0x008578A0;
-
-u32 D_800C7C1C = 0x008578A0;
-
-u32 D_800C7C20 = 0x00857B10;
-
-u32 D_800C7C24 = 0x00857B10;
-
-u32 D_800C7C28 = 0x00857D80;
-
-u32 D_800C7C2C = 0x00857D80;
-
-u32 D_800C7C30 = 0x00857FF0;
-
-u32 D_800C7C34 = 0x00857FF0;
-
-u32 D_800C7C38 = 0x00858260;
-
-u32 D_800C7C3C = 0x00858260;
-
-u32 D_800C7C40 = 0x008584D0;
-
-u32 D_800C7C44 = 0x008584D0;
-
-u32 D_800C7C48 = 0x00858740;
+u32 D_800C784C[256] = { 
+	bank_2_index_1_geo,
+	bank_2_index_2_geo,
+	bank_2_index_2_geo,
+	bank_2_index_3_geo,
+	bank_2_index_3_geo,
+	bank_2_index_4_geo,
+	bank_2_index_4_geo,
+	bank_2_index_5_geo,
+	bank_2_index_5_geo,
+	bank_2_index_6_geo,
+	bank_2_index_6_geo,
+	bank_2_index_7_geo,
+	bank_2_index_7_geo,
+	bank_2_index_8_geo,
+	bank_2_index_8_geo,
+	bank_2_index_9_geo,
+	bank_2_index_9_geo,
+	bank_2_index_10_geo,
+	bank_2_index_10_geo,
+	bank_2_index_11_geo,
+	bank_2_index_11_geo,
+	bank_2_index_12_geo,
+	bank_2_index_12_geo,
+	bank_2_index_13_geo,
+	bank_2_index_13_geo,
+	bank_2_index_14_geo,
+	bank_2_index_14_geo,
+	bank_2_index_15_geo,
+	bank_2_index_15_geo,
+	bank_2_index_16_geo,
+	bank_2_index_16_geo,
+	bank_2_index_17_geo,
+	bank_2_index_17_geo,
+	bank_2_index_18_geo,
+	bank_2_index_18_geo,
+	bank_2_index_19_geo,
+	bank_2_index_19_geo,
+	bank_2_index_20_geo,
+	bank_2_index_20_geo,
+	bank_2_index_21_geo,
+	bank_2_index_21_geo,
+	bank_2_index_22_geo,
+	bank_2_index_22_geo,
+	bank_2_index_23_geo,
+	bank_2_index_23_geo,
+	bank_2_index_24_geo,
+	bank_2_index_24_geo,
+	bank_2_index_25_geo,
+	bank_2_index_25_geo,
+	bank_2_index_26_geo,
+	bank_2_index_26_geo,
+	bank_2_index_27_geo,
+	bank_2_index_27_geo,
+	bank_2_index_28_geo,
+	bank_2_index_28_geo,
+	bank_2_index_29_geo,
+	bank_2_index_29_geo,
+	bank_2_index_30_geo,
+	bank_2_index_30_geo,
+	bank_2_index_31_geo,
+	bank_2_index_31_geo,
+	bank_2_index_32_geo,
+	bank_2_index_32_geo,
+	bank_2_index_33_geo,
+	bank_2_index_33_geo,
+	bank_2_index_34_geo,
+	bank_2_index_34_geo,
+	bank_2_index_35_geo,
+	bank_2_index_35_geo,
+	bank_2_index_36_geo,
+	bank_2_index_36_geo,
+	bank_2_index_37_geo,
+	bank_2_index_37_geo,
+	bank_2_index_38_geo,
+	bank_2_index_38_geo,
+	bank_2_index_39_geo,
+	bank_2_index_39_geo,
+	bank_2_index_40_geo,
+	bank_2_index_40_geo,
+	bank_2_index_41_geo,
+	bank_2_index_41_geo,
+	bank_2_index_42_geo,
+	bank_2_index_42_geo,
+	bank_2_index_43_geo,
+	bank_2_index_43_geo,
+	bank_2_index_44_geo,
+	bank_2_index_44_geo,
+	bank_2_index_45_geo,
+	bank_2_index_45_geo,
+	bank_2_index_46_geo,
+	bank_2_index_46_geo,
+	bank_2_index_47_geo,
+	bank_2_index_47_geo,
+	bank_2_index_48_geo,
+	bank_2_index_48_geo,
+	bank_2_index_49_geo,
+	bank_2_index_49_geo,
+	bank_2_index_50_geo,
+	bank_2_index_50_geo,
+	bank_2_index_51_geo,
+	bank_2_index_51_geo,
+	bank_2_index_52_geo,
+	bank_2_index_52_geo,
+	bank_2_index_53_geo,
+	bank_2_index_53_geo,
+	bank_2_index_54_geo,
+	bank_2_index_54_geo,
+	bank_2_index_55_geo,
+	bank_2_index_55_geo,
+	bank_2_index_56_geo,
+	bank_2_index_56_geo,
+	bank_2_index_57_geo,
+	bank_2_index_57_geo,
+	bank_2_index_58_geo,
+	bank_2_index_58_geo,
+	bank_2_index_59_geo,
+	bank_2_index_59_geo,
+	bank_2_index_60_geo,
+	bank_2_index_60_geo,
+	bank_2_index_61_geo,
+	bank_2_index_61_geo,
+	bank_2_index_62_geo,
+	bank_2_index_62_geo,
+	bank_2_index_63_geo,
+	bank_2_index_63_geo,
+	bank_2_index_64_geo,
+	bank_2_index_64_geo,
+	bank_2_index_65_geo,
+	bank_2_index_65_geo,
+	bank_2_index_66_geo,
+	bank_2_index_66_geo,
+	bank_2_index_67_geo,
+	bank_2_index_67_geo,
+	bank_2_index_68_geo,
+	bank_2_index_68_geo,
+	bank_2_index_69_geo,
+	bank_2_index_69_geo,
+	bank_2_index_70_geo,
+	bank_2_index_70_geo,
+	bank_2_index_71_geo,
+	bank_2_index_71_geo,
+	bank_2_index_72_geo,
+	bank_2_index_72_geo,
+	bank_2_index_73_geo,
+	bank_2_index_73_geo,
+	bank_2_index_74_geo,
+	bank_2_index_74_geo,
+	bank_2_index_75_geo,
+	bank_2_index_75_geo,
+	bank_2_index_76_geo,
+	bank_2_index_76_geo,
+	bank_2_index_77_geo,
+	bank_2_index_77_geo,
+	bank_2_index_78_geo,
+	bank_2_index_78_geo,
+	bank_2_index_79_geo,
+	bank_2_index_79_geo,
+	bank_2_index_80_geo,
+	bank_2_index_80_geo,
+	bank_2_index_81_geo,
+	bank_2_index_81_geo,
+	bank_2_index_82_geo,
+	bank_2_index_82_geo,
+	bank_2_index_83_geo,
+	bank_2_index_83_geo,
+	bank_2_index_84_geo,
+	bank_2_index_84_geo,
+	bank_2_index_85_geo,
+	bank_2_index_85_geo,
+	bank_2_index_86_geo,
+	bank_2_index_86_geo,
+	bank_2_index_87_geo,
+	bank_2_index_87_geo,
+	bank_2_index_88_geo,
+	bank_2_index_88_geo,
+	bank_2_index_89_geo,
+	bank_2_index_89_geo,
+	bank_2_index_90_geo,
+	bank_2_index_90_geo,
+	bank_2_index_91_geo,
+	bank_2_index_91_geo,
+	bank_2_index_92_geo,
+	bank_2_index_92_geo,
+	bank_2_index_93_geo,
+	bank_2_index_93_geo,
+	bank_2_index_94_geo,
+	bank_2_index_94_geo,
+	bank_2_index_95_geo,
+	bank_2_index_95_geo,
+	bank_2_index_96_geo,
+	bank_2_index_96_geo,
+	bank_2_index_97_geo,
+	bank_2_index_97_geo,
+	bank_2_index_98_geo,
+	bank_2_index_98_geo,
+	bank_2_index_99_geo,
+	bank_2_index_99_geo,
+	bank_2_index_100_geo,
+	bank_2_index_100_geo,
+	bank_2_index_101_geo,
+	bank_2_index_101_geo,
+	bank_2_index_102_geo,
+	bank_2_index_102_geo,
+	bank_2_index_103_geo,
+	bank_2_index_103_geo,
+	bank_2_index_104_geo,
+	bank_2_index_104_geo,
+	bank_2_index_105_geo,
+	bank_2_index_105_geo,
+	bank_2_index_106_geo,
+	bank_2_index_106_geo,
+	bank_2_index_107_geo,
+	bank_2_index_107_geo,
+	bank_2_index_108_geo,
+	bank_2_index_108_geo,
+	bank_2_index_109_geo,
+	bank_2_index_109_geo,
+	bank_2_index_110_geo,
+	bank_2_index_110_geo,
+	bank_2_index_111_geo,
+	bank_2_index_111_geo,
+	bank_2_index_112_geo,
+	bank_2_index_112_geo,
+	bank_2_index_113_geo,
+	bank_2_index_113_geo,
+	bank_2_index_114_geo,
+	bank_2_index_114_geo,
+	bank_2_index_115_geo,
+	bank_2_index_115_geo,
+	bank_2_index_116_geo,
+	bank_2_index_116_geo,
+	bank_2_index_117_geo,
+	bank_2_index_117_geo,
+	bank_2_index_118_geo,
+	bank_2_index_118_geo,
+	bank_2_index_119_geo,
+	bank_2_index_119_geo,
+	bank_2_index_120_geo,
+	bank_2_index_120_geo,
+	bank_2_index_121_geo,
+	bank_2_index_121_geo,
+	bank_2_index_122_geo,
+	bank_2_index_122_geo,
+	bank_2_index_123_geo,
+	bank_2_index_123_geo,
+	bank_2_index_124_geo,
+	bank_2_index_124_geo,
+	bank_2_index_125_geo,
+	bank_2_index_125_geo,
+	bank_2_index_126_geo,
+	bank_2_index_126_geo,
+	bank_2_index_127_geo,
+	bank_2_index_127_geo,
+	bank_2_index_128_geo,
+	bank_2_index_128_geo,
+	bank_2_index_1_image,
+};
 
 u32 D_800C7C4C = 0x00000000;
 
@@ -13867,789 +13613,403 @@ u32 D_800C90B0 = 0x00000000;
 u32 D_800C90B4 = 0x00000000;
 
 
-u32 D_800C90B8 = 0x0096C2D0;
 
-u32 D_800C90BC = 0x0096C750;
+u32 D_800C90B8[392] = { 
+	bank_3_index_1_geo,
+	bank_3_index_2_geo,
+	bank_3_index_2_geo,
+	bank_3_index_3_geo,
+	bank_3_index_3_geo,
+	bank_3_index_4_geo,
+	bank_3_index_4_geo,
+	bank_3_index_5_geo,
+	bank_3_index_5_geo,
+	bank_3_index_6_geo,
+	bank_3_index_6_geo,
+	bank_3_index_7_geo,
+	bank_3_index_7_geo,
+	bank_3_index_8_geo,
+	bank_3_index_8_geo,
+	bank_3_index_9_geo,
+	bank_3_index_9_geo,
+	bank_3_index_10_geo,
+	bank_3_index_10_geo,
+	bank_3_index_11_geo,
+	bank_3_index_11_geo,
+	bank_3_index_12_geo,
+	bank_3_index_12_geo,
+	bank_3_index_13_geo,
+	bank_3_index_13_geo,
+	bank_3_index_14_geo,
+	bank_3_index_14_geo,
+	bank_3_index_15_geo,
+	bank_3_index_15_geo,
+	bank_3_index_16_geo,
+	bank_3_index_16_geo,
+	bank_3_index_17_geo,
+	bank_3_index_17_geo,
+	bank_3_index_18_geo,
+	bank_3_index_18_geo,
+	bank_3_index_19_geo,
+	bank_3_index_19_geo,
+	bank_3_index_20_geo,
+	bank_3_index_20_geo,
+	bank_3_index_21_geo,
+	bank_3_index_21_geo,
+	bank_3_index_22_geo,
+	bank_3_index_22_geo,
+	bank_3_index_23_geo,
+	bank_3_index_23_geo,
+	bank_3_index_24_geo,
+	bank_3_index_24_geo,
+	bank_3_index_25_geo,
+	bank_3_index_25_geo,
+	bank_3_index_26_geo,
+	bank_3_index_26_geo,
+	bank_3_index_27_geo,
+	bank_3_index_27_geo,
+	bank_3_index_28_geo,
+	bank_3_index_28_geo,
+	bank_3_index_29_geo,
+	bank_3_index_29_geo,
+	bank_3_index_30_geo,
+	bank_3_index_30_geo,
+	bank_3_index_31_geo,
+	bank_3_index_31_geo,
+	bank_3_index_32_geo,
+	bank_3_index_32_geo,
+	bank_3_index_33_geo,
+	bank_3_index_33_geo,
+	bank_3_index_34_geo,
+	bank_3_index_34_geo,
+	bank_3_index_35_geo,
+	bank_3_index_35_geo,
+	bank_3_index_36_geo,
+	bank_3_index_36_geo,
+	bank_3_index_37_geo,
+	bank_3_index_37_geo,
+	bank_3_index_38_geo,
+	bank_3_index_38_geo,
+	bank_3_index_39_geo,
+	bank_3_index_39_geo,
+	bank_3_index_40_geo,
+	bank_3_index_40_geo,
+	bank_3_index_41_geo,
+	bank_3_index_41_geo,
+	bank_3_index_42_geo,
+	bank_3_index_42_geo,
+	bank_3_index_43_geo,
+	bank_3_index_43_geo,
+	bank_3_index_44_geo,
+	bank_3_index_44_geo,
+	bank_3_index_45_geo,
+	bank_3_index_45_geo,
+	bank_3_index_46_geo,
+	bank_3_index_46_geo,
+	bank_3_index_47_geo,
+	bank_3_index_47_geo,
+	bank_3_index_48_geo,
+	bank_3_index_48_geo,
+	bank_3_index_49_geo,
+	bank_3_index_49_geo,
+	bank_3_index_50_geo,
+	bank_3_index_50_geo,
+	bank_3_index_51_geo,
+	bank_3_index_51_geo,
+	bank_3_index_52_geo,
+	bank_3_index_52_geo,
+	bank_3_index_53_geo,
+	bank_3_index_53_geo,
+	bank_3_index_54_geo,
+	bank_3_index_54_geo,
+	bank_3_index_55_geo,
+	bank_3_index_55_geo,
+	bank_3_index_56_geo,
+	bank_3_index_56_geo,
+	bank_3_index_57_geo,
+	bank_3_index_57_geo,
+	bank_3_index_58_geo,
+	bank_3_index_58_geo,
+	bank_3_index_59_geo,
+	bank_3_index_59_geo,
+	bank_3_index_60_geo,
+	bank_3_index_60_geo,
+	bank_3_index_61_geo,
+	bank_3_index_61_geo,
+	bank_3_index_62_geo,
+	bank_3_index_62_geo,
+	bank_3_index_63_geo,
+	bank_3_index_63_geo,
+	bank_3_index_64_geo,
+	bank_3_index_64_geo,
+	bank_3_index_65_geo,
+	bank_3_index_65_geo,
+	bank_3_index_66_geo,
+	bank_3_index_66_geo,
+	bank_3_index_67_geo,
+	bank_3_index_67_geo,
+	bank_3_index_68_geo,
+	bank_3_index_68_geo,
+	bank_3_index_69_geo,
+	bank_3_index_69_geo,
+	bank_3_index_70_geo,
+	bank_3_index_70_geo,
+	bank_3_index_71_geo,
+	bank_3_index_71_geo,
+	bank_3_index_72_geo,
+	bank_3_index_72_geo,
+	bank_3_index_73_geo,
+	bank_3_index_73_geo,
+	bank_3_index_74_geo,
+	bank_3_index_74_geo,
+	bank_3_index_75_geo,
+	bank_3_index_75_geo,
+	bank_3_index_76_geo,
+	bank_3_index_76_geo,
+	bank_3_index_77_geo,
+	bank_3_index_77_geo,
+	bank_3_index_78_geo,
+	bank_3_index_78_geo,
+	bank_3_index_79_geo,
+	bank_3_index_79_geo,
+	bank_3_index_80_geo,
+	bank_3_index_80_geo,
+	bank_3_index_81_geo,
+	bank_3_index_81_geo,
+	bank_3_index_82_geo,
+	bank_3_index_82_geo,
+	bank_3_index_83_geo,
+	bank_3_index_83_geo,
+	bank_3_index_84_geo,
+	bank_3_index_84_geo,
+	bank_3_index_85_geo,
+	bank_3_index_85_geo,
+	bank_3_index_86_geo,
+	bank_3_index_86_geo,
+	bank_3_index_87_geo,
+	bank_3_index_87_geo,
+	bank_3_index_88_geo,
+	bank_3_index_88_geo,
+	bank_3_index_89_geo,
+	bank_3_index_89_geo,
+	bank_3_index_90_geo,
+	bank_3_index_90_geo,
+	bank_3_index_91_geo,
+	bank_3_index_91_geo,
+	bank_3_index_92_geo,
+	bank_3_index_92_geo,
+	bank_3_index_93_geo,
+	bank_3_index_93_geo,
+	bank_3_index_94_geo,
+	bank_3_index_94_geo,
+	bank_3_index_95_geo,
+	bank_3_index_95_geo,
+	bank_3_index_96_geo,
+	bank_3_index_96_geo,
+	bank_3_index_97_geo,
+	bank_3_index_97_geo,
+	bank_3_index_98_geo,
+	bank_3_index_98_geo,
+	bank_3_index_99_geo,
+	bank_3_index_99_geo,
+	bank_3_index_100_geo,
+	bank_3_index_100_geo,
+	bank_3_index_101_geo,
+	bank_3_index_101_geo,
+	bank_3_index_102_geo,
+	bank_3_index_102_geo,
+	bank_3_index_103_geo,
+	bank_3_index_103_geo,
+	bank_3_index_104_geo,
+	bank_3_index_104_geo,
+	bank_3_index_105_geo,
+	bank_3_index_105_geo,
+	bank_3_index_106_geo,
+	bank_3_index_106_geo,
+	bank_3_index_107_geo,
+	bank_3_index_107_geo,
+	bank_3_index_108_geo,
+	bank_3_index_108_geo,
+	bank_3_index_109_geo,
+	bank_3_index_109_geo,
+	bank_3_index_110_geo,
+	bank_3_index_110_geo,
+	bank_3_index_111_geo,
+	bank_3_index_111_geo,
+	bank_3_index_112_geo,
+	bank_3_index_112_geo,
+	bank_3_index_113_geo,
+	bank_3_index_113_geo,
+	bank_3_index_114_geo,
+	bank_3_index_114_geo,
+	bank_3_index_115_geo,
+	bank_3_index_115_geo,
+	bank_3_index_116_geo,
+	bank_3_index_116_geo,
+	bank_3_index_117_geo,
+	bank_3_index_117_geo,
+	bank_3_index_118_geo,
+	bank_3_index_118_geo,
+	bank_3_index_119_geo,
+	bank_3_index_119_geo,
+	bank_3_index_120_geo,
+	bank_3_index_120_geo,
+	bank_3_index_121_geo,
+	bank_3_index_121_geo,
+	bank_3_index_122_geo,
+	bank_3_index_122_geo,
+	bank_3_index_123_geo,
+	bank_3_index_123_geo,
+	bank_3_index_124_geo,
+	bank_3_index_124_geo,
+	bank_3_index_125_geo,
+	bank_3_index_125_geo,
+	bank_3_index_126_geo,
+	bank_3_index_126_geo,
+	bank_3_index_127_geo,
+	bank_3_index_127_geo,
+	bank_3_index_128_geo,
+	bank_3_index_128_geo,
+	bank_3_index_129_geo,
+	bank_3_index_129_geo,
+	bank_3_index_130_geo,
+	bank_3_index_130_geo,
+	bank_3_index_131_geo,
+	bank_3_index_131_geo,
+	bank_3_index_132_geo,
+	bank_3_index_132_geo,
+	bank_3_index_133_geo,
+	bank_3_index_133_geo,
+	bank_3_index_134_geo,
+	bank_3_index_134_geo,
+	bank_3_index_135_geo,
+	bank_3_index_135_geo,
+	bank_3_index_136_geo,
+	bank_3_index_136_geo,
+	bank_3_index_137_geo,
+	bank_3_index_137_geo,
+	bank_3_index_138_geo,
+	bank_3_index_138_geo,
+	bank_3_index_139_geo,
+	bank_3_index_139_geo,
+	bank_3_index_140_geo,
+	bank_3_index_140_geo,
+	bank_3_index_141_geo,
+	bank_3_index_141_geo,
+	bank_3_index_142_geo,
+	bank_3_index_142_geo,
+	bank_3_index_143_geo,
+	bank_3_index_143_geo,
+	bank_3_index_144_geo,
+	bank_3_index_144_geo,
+	bank_3_index_145_geo,
+	bank_3_index_145_geo,
+	bank_3_index_146_geo,
+	bank_3_index_146_geo,
+	bank_3_index_147_geo,
+	bank_3_index_147_geo,
+	bank_3_index_148_geo,
+	bank_3_index_148_geo,
+	bank_3_index_149_geo,
+	bank_3_index_149_geo,
+	bank_3_index_150_geo,
+	bank_3_index_150_geo,
+	bank_3_index_151_geo,
+	bank_3_index_151_geo,
+	bank_3_index_152_geo,
+	bank_3_index_152_geo,
+	bank_3_index_153_geo,
+	bank_3_index_153_geo,
+	bank_3_index_154_geo,
+	bank_3_index_154_geo,
+	bank_3_index_155_geo,
+	bank_3_index_155_geo,
+	bank_3_index_156_geo,
+	bank_3_index_156_geo,
+	bank_3_index_157_geo,
+	bank_3_index_157_geo,
+	bank_3_index_158_geo,
+	bank_3_index_158_geo,
+	bank_3_index_159_geo,
+	bank_3_index_159_geo,
+	bank_3_index_160_geo,
+	bank_3_index_160_geo,
+	bank_3_index_161_geo,
+	bank_3_index_161_geo,
+	bank_3_index_162_geo,
+	bank_3_index_162_geo,
+	bank_3_index_163_geo,
+	bank_3_index_163_geo,
+	bank_3_index_164_geo,
+	bank_3_index_164_geo,
+	bank_3_index_165_geo,
+	bank_3_index_165_geo,
+	bank_3_index_166_geo,
+	bank_3_index_166_geo,
+	bank_3_index_167_geo,
+	bank_3_index_167_geo,
+	bank_3_index_168_geo,
+	bank_3_index_168_geo,
+	bank_3_index_169_geo,
+	bank_3_index_169_geo,
+	bank_3_index_170_geo,
+	bank_3_index_170_geo,
+	bank_3_index_171_geo,
+	bank_3_index_171_geo,
+	bank_3_index_172_geo,
+	bank_3_index_172_geo,
+	bank_3_index_173_geo,
+	bank_3_index_173_geo,
+	bank_3_index_174_geo,
+	bank_3_index_174_geo,
+	bank_3_index_175_geo,
+	bank_3_index_175_geo,
+	bank_3_index_176_geo,
+	bank_3_index_176_geo,
+	bank_3_index_177_geo,
+	bank_3_index_177_geo,
+	bank_3_index_178_geo,
+	bank_3_index_178_geo,
+	bank_3_index_179_geo,
+	bank_3_index_179_geo,
+	bank_3_index_180_geo,
+	bank_3_index_180_geo,
+	bank_3_index_181_geo,
+	bank_3_index_181_geo,
+	bank_3_index_182_geo,
+	bank_3_index_182_geo,
+	bank_3_index_183_geo,
+	bank_3_index_183_geo,
+	bank_3_index_184_geo,
+	bank_3_index_184_geo,
+	bank_3_index_185_geo,
+	bank_3_index_185_geo,
+	bank_3_index_186_geo,
+	bank_3_index_186_geo,
+	bank_3_index_187_geo,
+	bank_3_index_187_geo,
+	bank_3_index_188_geo,
+	bank_3_index_188_geo,
+	bank_3_index_189_geo,
+	bank_3_index_189_geo,
+	bank_3_index_190_geo,
+	bank_3_index_190_geo,
+	bank_3_index_191_geo,
+	bank_3_index_191_geo,
+	bank_3_index_192_geo,
+	bank_3_index_192_geo,
+	bank_3_index_193_geo,
+	bank_3_index_193_geo,
+	bank_3_index_194_geo,
+	bank_3_index_194_geo,
+	bank_3_index_195_geo,
+	bank_3_index_195_geo,
+	bank_3_index_196_geo,
+	bank_3_index_196_geo,
+	bank_3_index_1_image,
+};
 
-u32 D_800C90C0 = 0x0096C750;
 
-u32 D_800C90C4 = 0x0096D120;
-
-u32 D_800C90C8 = 0x0096D120;
-
-u32 D_800C90CC = 0x0096DB70;
-
-u32 D_800C90D0 = 0x0096DB70;
-
-u32 D_800C90D4 = 0x0096E360;
-
-u32 D_800C90D8 = 0x0096E360;
-
-u32 D_800C90DC = 0x0096FCF0;
-
-u32 D_800C90E0 = 0x0096FCF0;
-
-u32 D_800C90E4 = 0x00971930;
-
-u32 D_800C90E8 = 0x00971930;
-
-u32 D_800C90EC = 0x00972450;
-
-u32 D_800C90F0 = 0x00972450;
-
-u32 D_800C90F4 = 0x00973410;
-
-u32 D_800C90F8 = 0x00973410;
-
-u32 D_800C90FC = 0x00978710;
-
-u32 D_800C9100 = 0x00978710;
-
-u32 D_800C9104 = 0x0097B4C0;
-
-u32 D_800C9108 = 0x0097B4C0;
-
-u32 D_800C910C = 0x0097C5C0;
-
-u32 D_800C9110 = 0x0097C5C0;
-
-u32 D_800C9114 = 0x00981140;
-
-u32 D_800C9118 = 0x00981140;
-
-u32 D_800C911C = 0x00982890;
-
-u32 D_800C9120 = 0x00982890;
-
-u32 D_800C9124 = 0x00985F00;
-
-u32 D_800C9128 = 0x00985F00;
-
-u32 D_800C912C = 0x009878D0;
-
-u32 D_800C9130 = 0x009878D0;
-
-u32 D_800C9134 = 0x0098A5E0;
-
-u32 D_800C9138 = 0x0098A5E0;
-
-u32 D_800C913C = 0x0098F8A0;
-
-u32 D_800C9140 = 0x0098F8A0;
-
-u32 D_800C9144 = 0x0098FB10;
-
-u32 D_800C9148 = 0x0098FB10;
-
-u32 D_800C914C = 0x009912B0;
-
-u32 D_800C9150 = 0x009912B0;
-
-u32 D_800C9154 = 0x009914D0;
-
-u32 D_800C9158 = 0x009914D0;
-
-u32 D_800C915C = 0x00991820;
-
-u32 D_800C9160 = 0x00991820;
-
-u32 D_800C9164 = 0x00991A40;
-
-u32 D_800C9168 = 0x00991A40;
-
-u32 D_800C916C = 0x00991C60;
-
-u32 D_800C9170 = 0x00991C60;
-
-u32 D_800C9174 = 0x00991E80;
-
-u32 D_800C9178 = 0x00991E80;
-
-u32 D_800C917C = 0x009920A0;
-
-u32 D_800C9180 = 0x009920A0;
-
-u32 D_800C9184 = 0x009922C0;
-
-u32 D_800C9188 = 0x009922C0;
-
-u32 D_800C918C = 0x009924E0;
-
-u32 D_800C9190 = 0x009924E0;
-
-u32 D_800C9194 = 0x009926E0;
-
-u32 D_800C9198 = 0x009926E0;
-
-u32 D_800C919C = 0x009928D0;
-
-u32 D_800C91A0 = 0x009928D0;
-
-u32 D_800C91A4 = 0x00992B70;
-
-u32 D_800C91A8 = 0x00992B70;
-
-u32 D_800C91AC = 0x00992DF0;
-
-u32 D_800C91B0 = 0x00992DF0;
-
-u32 D_800C91B4 = 0x009949A0;
-
-u32 D_800C91B8 = 0x009949A0;
-
-u32 D_800C91BC = 0x00994C60;
-
-u32 D_800C91C0 = 0x00994C60;
-
-u32 D_800C91C4 = 0x00994F20;
-
-u32 D_800C91C8 = 0x00994F20;
-
-u32 D_800C91CC = 0x009951E0;
-
-u32 D_800C91D0 = 0x009951E0;
-
-u32 D_800C91D4 = 0x009954A0;
-
-u32 D_800C91D8 = 0x009954A0;
-
-u32 D_800C91DC = 0x00995760;
-
-u32 D_800C91E0 = 0x00995760;
-
-u32 D_800C91E4 = 0x00995A20;
-
-u32 D_800C91E8 = 0x00995A20;
-
-u32 D_800C91EC = 0x00995CE0;
-
-u32 D_800C91F0 = 0x00995CE0;
-
-u32 D_800C91F4 = 0x00995FA0;
-
-u32 D_800C91F8 = 0x00995FA0;
-
-u32 D_800C91FC = 0x00996260;
-
-u32 D_800C9200 = 0x00996260;
-
-u32 D_800C9204 = 0x00996520;
-
-u32 D_800C9208 = 0x00996520;
-
-u32 D_800C920C = 0x009967D0;
-
-u32 D_800C9210 = 0x009967D0;
-
-u32 D_800C9214 = 0x00996A70;
-
-u32 D_800C9218 = 0x00996A70;
-
-u32 D_800C921C = 0x00998DC0;
-
-u32 D_800C9220 = 0x00998DC0;
-
-u32 D_800C9224 = 0x00999080;
-
-u32 D_800C9228 = 0x00999080;
-
-u32 D_800C922C = 0x00999340;
-
-u32 D_800C9230 = 0x00999340;
-
-u32 D_800C9234 = 0x00999600;
-
-u32 D_800C9238 = 0x00999600;
-
-u32 D_800C923C = 0x009998C0;
-
-u32 D_800C9240 = 0x009998C0;
-
-u32 D_800C9244 = 0x00999B80;
-
-u32 D_800C9248 = 0x00999B80;
-
-u32 D_800C924C = 0x00999E40;
-
-u32 D_800C9250 = 0x00999E40;
-
-u32 D_800C9254 = 0x0099A100;
-
-u32 D_800C9258 = 0x0099A100;
-
-u32 D_800C925C = 0x0099A3C0;
-
-u32 D_800C9260 = 0x0099A3C0;
-
-u32 D_800C9264 = 0x0099A680;
-
-u32 D_800C9268 = 0x0099A680;
-
-u32 D_800C926C = 0x0099A940;
-
-u32 D_800C9270 = 0x0099A940;
-
-u32 D_800C9274 = 0x0099ABF0;
-
-u32 D_800C9278 = 0x0099ABF0;
-
-u32 D_800C927C = 0x0099AE90;
-
-u32 D_800C9280 = 0x0099AE90;
-
-u32 D_800C9284 = 0x0099C340;
-
-u32 D_800C9288 = 0x0099C340;
-
-u32 D_800C928C = 0x0099C600;
-
-u32 D_800C9290 = 0x0099C600;
-
-u32 D_800C9294 = 0x0099C8C0;
-
-u32 D_800C9298 = 0x0099C8C0;
-
-u32 D_800C929C = 0x0099CB80;
-
-u32 D_800C92A0 = 0x0099CB80;
-
-u32 D_800C92A4 = 0x0099CE40;
-
-u32 D_800C92A8 = 0x0099CE40;
-
-u32 D_800C92AC = 0x0099D100;
-
-u32 D_800C92B0 = 0x0099D100;
-
-u32 D_800C92B4 = 0x0099D3C0;
-
-u32 D_800C92B8 = 0x0099D3C0;
-
-u32 D_800C92BC = 0x0099D680;
-
-u32 D_800C92C0 = 0x0099D680;
-
-u32 D_800C92C4 = 0x0099D940;
-
-u32 D_800C92C8 = 0x0099D940;
-
-u32 D_800C92CC = 0x0099DC00;
-
-u32 D_800C92D0 = 0x0099DC00;
-
-u32 D_800C92D4 = 0x0099DEC0;
-
-u32 D_800C92D8 = 0x0099DEC0;
-
-u32 D_800C92DC = 0x0099E170;
-
-u32 D_800C92E0 = 0x0099E170;
-
-u32 D_800C92E4 = 0x0099E410;
-
-u32 D_800C92E8 = 0x0099E410;
-
-u32 D_800C92EC = 0x0099FD70;
-
-u32 D_800C92F0 = 0x0099FD70;
-
-u32 D_800C92F4 = 0x009A0030;
-
-u32 D_800C92F8 = 0x009A0030;
-
-u32 D_800C92FC = 0x009A02F0;
-
-u32 D_800C9300 = 0x009A02F0;
-
-u32 D_800C9304 = 0x009A05B0;
-
-u32 D_800C9308 = 0x009A05B0;
-
-u32 D_800C930C = 0x009A0870;
-
-u32 D_800C9310 = 0x009A0870;
-
-u32 D_800C9314 = 0x009A0B30;
-
-u32 D_800C9318 = 0x009A0B30;
-
-u32 D_800C931C = 0x009A0DF0;
-
-u32 D_800C9320 = 0x009A0DF0;
-
-u32 D_800C9324 = 0x009A10B0;
-
-u32 D_800C9328 = 0x009A10B0;
-
-u32 D_800C932C = 0x009A1370;
-
-u32 D_800C9330 = 0x009A1370;
-
-u32 D_800C9334 = 0x009A1630;
-
-u32 D_800C9338 = 0x009A1630;
-
-u32 D_800C933C = 0x009A18F0;
-
-u32 D_800C9340 = 0x009A18F0;
-
-u32 D_800C9344 = 0x009A1BA0;
-
-u32 D_800C9348 = 0x009A1BA0;
-
-u32 D_800C934C = 0x009A1E40;
-
-u32 D_800C9350 = 0x009A1E40;
-
-u32 D_800C9354 = 0x009A36B0;
-
-u32 D_800C9358 = 0x009A36B0;
-
-u32 D_800C935C = 0x009A3970;
-
-u32 D_800C9360 = 0x009A3970;
-
-u32 D_800C9364 = 0x009A3D70;
-
-u32 D_800C9368 = 0x009A3D70;
-
-u32 D_800C936C = 0x009A4030;
-
-u32 D_800C9370 = 0x009A4030;
-
-u32 D_800C9374 = 0x009A42F0;
-
-u32 D_800C9378 = 0x009A42F0;
-
-u32 D_800C937C = 0x009A45B0;
-
-u32 D_800C9380 = 0x009A45B0;
-
-u32 D_800C9384 = 0x009A49B0;
-
-u32 D_800C9388 = 0x009A49B0;
-
-u32 D_800C938C = 0x009A4C70;
-
-u32 D_800C9390 = 0x009A4C70;
-
-u32 D_800C9394 = 0x009A4F30;
-
-u32 D_800C9398 = 0x009A4F30;
-
-u32 D_800C939C = 0x009A51E0;
-
-u32 D_800C93A0 = 0x009A51E0;
-
-u32 D_800C93A4 = 0x009A53D0;
-
-u32 D_800C93A8 = 0x009A53D0;
-
-u32 D_800C93AC = 0x009A5D00;
-
-u32 D_800C93B0 = 0x009A5D00;
-
-u32 D_800C93B4 = 0x009A6030;
-
-u32 D_800C93B8 = 0x009A6030;
-
-u32 D_800C93BC = 0x009A6360;
-
-u32 D_800C93C0 = 0x009A6360;
-
-u32 D_800C93C4 = 0x009A6690;
-
-u32 D_800C93C8 = 0x009A6690;
-
-u32 D_800C93CC = 0x009A69C0;
-
-u32 D_800C93D0 = 0x009A69C0;
-
-u32 D_800C93D4 = 0x009A6D00;
-
-u32 D_800C93D8 = 0x009A6D00;
-
-u32 D_800C93DC = 0x009A7030;
-
-u32 D_800C93E0 = 0x009A7030;
-
-u32 D_800C93E4 = 0x009A74B0;
-
-u32 D_800C93E8 = 0x009A74B0;
-
-u32 D_800C93EC = 0x009A7740;
-
-u32 D_800C93F0 = 0x009A7740;
-
-u32 D_800C93F4 = 0x009A79C0;
-
-u32 D_800C93F8 = 0x009A79C0;
-
-u32 D_800C93FC = 0x009A7C40;
-
-u32 D_800C9400 = 0x009A7C40;
-
-u32 D_800C9404 = 0x009A80C0;
-
-u32 D_800C9408 = 0x009A80C0;
-
-u32 D_800C940C = 0x009A8560;
-
-u32 D_800C9410 = 0x009A8560;
-
-u32 D_800C9414 = 0x009A8A00;
-
-u32 D_800C9418 = 0x009A8A00;
-
-u32 D_800C941C = 0x009A8CF0;
-
-u32 D_800C9420 = 0x009A8CF0;
-
-u32 D_800C9424 = 0x009A8FE0;
-
-u32 D_800C9428 = 0x009A8FE0;
-
-u32 D_800C942C = 0x009A92D0;
-
-u32 D_800C9430 = 0x009A92D0;
-
-u32 D_800C9434 = 0x009A9750;
-
-u32 D_800C9438 = 0x009A9750;
-
-u32 D_800C943C = 0x009A9BD0;
-
-u32 D_800C9440 = 0x009A9BD0;
-
-u32 D_800C9444 = 0x009AA050;
-
-u32 D_800C9448 = 0x009AA050;
-
-u32 D_800C944C = 0x009AA370;
-
-u32 D_800C9450 = 0x009AA370;
-
-u32 D_800C9454 = 0x009AA7E0;
-
-u32 D_800C9458 = 0x009AA7E0;
-
-u32 D_800C945C = 0x009AADB0;
-
-u32 D_800C9460 = 0x009AADB0;
-
-u32 D_800C9464 = 0x009AB410;
-
-u32 D_800C9468 = 0x009AB410;
-
-u32 D_800C946C = 0x009AB770;
-
-u32 D_800C9470 = 0x009AB770;
-
-u32 D_800C9474 = 0x009ABBB0;
-
-u32 D_800C9478 = 0x009ABBB0;
-
-u32 D_800C947C = 0x009AC010;
-
-u32 D_800C9480 = 0x009AC010;
-
-u32 D_800C9484 = 0x009AC260;
-
-u32 D_800C9488 = 0x009AC260;
-
-u32 D_800C948C = 0x009AC890;
-
-u32 D_800C9490 = 0x009AC890;
-
-u32 D_800C9494 = 0x009ACF80;
-
-u32 D_800C9498 = 0x009ACF80;
-
-u32 D_800C949C = 0x009AD700;
-
-u32 D_800C94A0 = 0x009AD700;
-
-u32 D_800C94A4 = 0x009ADF40;
-
-u32 D_800C94A8 = 0x009ADF40;
-
-u32 D_800C94AC = 0x009AE250;
-
-u32 D_800C94B0 = 0x009AE250;
-
-u32 D_800C94B4 = 0x009AE570;
-
-u32 D_800C94B8 = 0x009AE570;
-
-u32 D_800C94BC = 0x009AE880;
-
-u32 D_800C94C0 = 0x009AE880;
-
-u32 D_800C94C4 = 0x009AEB90;
-
-u32 D_800C94C8 = 0x009AEB90;
-
-u32 D_800C94CC = 0x009AF200;
-
-u32 D_800C94D0 = 0x009AF200;
-
-u32 D_800C94D4 = 0x009AF810;
-
-u32 D_800C94D8 = 0x009AF810;
-
-u32 D_800C94DC = 0x009AFDB0;
-
-u32 D_800C94E0 = 0x009AFDB0;
-
-u32 D_800C94E4 = 0x009B0370;
-
-u32 D_800C94E8 = 0x009B0370;
-
-u32 D_800C94EC = 0x009B0610;
-
-u32 D_800C94F0 = 0x009B0610;
-
-u32 D_800C94F4 = 0x009B08B0;
-
-u32 D_800C94F8 = 0x009B08B0;
-
-u32 D_800C94FC = 0x009B0B50;
-
-u32 D_800C9500 = 0x009B0B50;
-
-u32 D_800C9504 = 0x009B0DF0;
-
-u32 D_800C9508 = 0x009B0DF0;
-
-u32 D_800C950C = 0x009B1090;
-
-u32 D_800C9510 = 0x009B1090;
-
-u32 D_800C9514 = 0x009B1330;
-
-u32 D_800C9518 = 0x009B1330;
-
-u32 D_800C951C = 0x009B1990;
-
-u32 D_800C9520 = 0x009B1990;
-
-u32 D_800C9524 = 0x009B2310;
-
-u32 D_800C9528 = 0x009B2310;
-
-u32 D_800C952C = 0x009B2560;
-
-u32 D_800C9530 = 0x009B2560;
-
-u32 D_800C9534 = 0x009B27B0;
-
-u32 D_800C9538 = 0x009B27B0;
-
-u32 D_800C953C = 0x009B2A00;
-
-u32 D_800C9540 = 0x009B2A00;
-
-u32 D_800C9544 = 0x009B2C50;
-
-u32 D_800C9548 = 0x009B2C50;
-
-u32 D_800C954C = 0x009B2EB0;
-
-u32 D_800C9550 = 0x009B2EB0;
-
-u32 D_800C9554 = 0x009B30F0;
-
-u32 D_800C9558 = 0x009B30F0;
-
-u32 D_800C955C = 0x009B3340;
-
-u32 D_800C9560 = 0x009B3340;
-
-u32 D_800C9564 = 0x009B35D0;
-
-u32 D_800C9568 = 0x009B35D0;
-
-u32 D_800C956C = 0x009B3860;
-
-u32 D_800C9570 = 0x009B3860;
-
-u32 D_800C9574 = 0x009B3AF0;
-
-u32 D_800C9578 = 0x009B3AF0;
-
-u32 D_800C957C = 0x009B3D40;
-
-u32 D_800C9580 = 0x009B3D40;
-
-u32 D_800C9584 = 0x009B3FD0;
-
-u32 D_800C9588 = 0x009B3FD0;
-
-u32 D_800C958C = 0x009B4260;
-
-u32 D_800C9590 = 0x009B4260;
-
-u32 D_800C9594 = 0x009B44F0;
-
-u32 D_800C9598 = 0x009B44F0;
-
-u32 D_800C959C = 0x009B6620;
-
-u32 D_800C95A0 = 0x009B6620;
-
-u32 D_800C95A4 = 0x009B6950;
-
-u32 D_800C95A8 = 0x009B6950;
-
-u32 D_800C95AC = 0x009B6C70;
-
-u32 D_800C95B0 = 0x009B6C70;
-
-u32 D_800C95B4 = 0x009B6F90;
-
-u32 D_800C95B8 = 0x009B6F90;
-
-u32 D_800C95BC = 0x009B72B0;
-
-u32 D_800C95C0 = 0x009B72B0;
-
-u32 D_800C95C4 = 0x009B75D0;
-
-u32 D_800C95C8 = 0x009B75D0;
-
-u32 D_800C95CC = 0x009B78F0;
-
-u32 D_800C95D0 = 0x009B78F0;
-
-u32 D_800C95D4 = 0x009B7C10;
-
-u32 D_800C95D8 = 0x009B7C10;
-
-u32 D_800C95DC = 0x009B7F30;
-
-u32 D_800C95E0 = 0x009B7F30;
-
-u32 D_800C95E4 = 0x009B8250;
-
-u32 D_800C95E8 = 0x009B8250;
-
-u32 D_800C95EC = 0x009B8540;
-
-u32 D_800C95F0 = 0x009B8540;
-
-u32 D_800C95F4 = 0x009B8900;
-
-u32 D_800C95F8 = 0x009B8900;
-
-u32 D_800C95FC = 0x009B8BF0;
-
-u32 D_800C9600 = 0x009B8BF0;
-
-u32 D_800C9604 = 0x009B9170;
-
-u32 D_800C9608 = 0x009B9170;
-
-u32 D_800C960C = 0x009B93C0;
-
-u32 D_800C9610 = 0x009B93C0;
-
-u32 D_800C9614 = 0x009B96A0;
-
-u32 D_800C9618 = 0x009B96A0;
-
-u32 D_800C961C = 0x009B9A40;
-
-u32 D_800C9620 = 0x009B9A40;
-
-u32 D_800C9624 = 0x009BA020;
-
-u32 D_800C9628 = 0x009BA020;
-
-u32 D_800C962C = 0x009BA650;
-
-u32 D_800C9630 = 0x009BA650;
-
-u32 D_800C9634 = 0x009BAEA0;
-
-u32 D_800C9638 = 0x009BAEA0;
-
-u32 D_800C963C = 0x009BB5B0;
-
-u32 D_800C9640 = 0x009BB5B0;
-
-u32 D_800C9644 = 0x009BCB10;
-
-u32 D_800C9648 = 0x009BCB10;
-
-u32 D_800C964C = 0x009BE300;
-
-u32 D_800C9650 = 0x009BE300;
-
-u32 D_800C9654 = 0x009BF890;
-
-u32 D_800C9658 = 0x009BF890;
-
-u32 D_800C965C = 0x009C19D0;
-
-u32 D_800C9660 = 0x009C19D0;
-
-u32 D_800C9664 = 0x009C30B0;
-
-u32 D_800C9668 = 0x009C30B0;
-
-u32 D_800C966C = 0x009CB090;
-
-u32 D_800C9670 = 0x009CB090;
-
-u32 D_800C9674 = 0x009CCB20;
-
-u32 D_800C9678 = 0x009CCB20;
-
-u32 D_800C967C = 0x009CCC50;
-
-u32 D_800C9680 = 0x009CCC50;
-
-u32 D_800C9684 = 0x009CCD80;
-
-u32 D_800C9688 = 0x009CCD80;
-
-u32 D_800C968C = 0x009CCF10;
-
-u32 D_800C9690 = 0x009CCF10;
-
-u32 D_800C9694 = 0x009CD120;
-
-u32 D_800C9698 = 0x009CD120;
-
-u32 D_800C969C = 0x009CF150;
-
-u32 D_800C96A0 = 0x009CF150;
-
-u32 D_800C96A4 = 0x009D13D0;
-
-u32 D_800C96A8 = 0x009D13D0;
-
-u32 D_800C96AC = 0x009D1E70;
-
-u32 D_800C96B0 = 0x009D1E70;
-
-u32 D_800C96B4 = 0x009D38F0;
-
-u32 D_800C96B8 = 0x009D38F0;
-
-u32 D_800C96BC = 0x009D3C40;
-
-u32 D_800C96C0 = 0x009D3C40;
-
-u32 D_800C96C4 = 0x009D6CC0;
-
-u32 D_800C96C8 = 0x009D6CC0;
-
-u32 D_800C96CC = 0x009D7180;
-
-u32 D_800C96D0 = 0x009D7180;
-
-u32 D_800C96D4 = 0x009D8CB0;
 
 u32 D_800C96D8 = 0x00000000;
 
@@ -17741,617 +17101,316 @@ u32 D_800CAEF0 = 0x00000000;
 u32 D_800CAEF4 = 0x00000000;
 
 
-u32 D_800CAEF8 = 0x00BDE710;
 
-u32 D_800CAEFC = 0x00BDE9D0;
+u32 D_800CAEF8[306] = { 
+	bank_4_index_1_geo,
+	bank_4_index_2_geo,
+	bank_4_index_2_geo,
+	bank_4_index_3_geo,
+	bank_4_index_3_geo,
+	bank_4_index_4_geo,
+	bank_4_index_4_geo,
+	bank_4_index_5_geo,
+	bank_4_index_5_geo,
+	bank_4_index_6_geo,
+	bank_4_index_6_geo,
+	bank_4_index_7_geo,
+	bank_4_index_7_geo,
+	bank_4_index_8_geo,
+	bank_4_index_8_geo,
+	bank_4_index_9_geo,
+	bank_4_index_9_geo,
+	bank_4_index_10_geo,
+	bank_4_index_10_geo,
+	bank_4_index_11_geo,
+	bank_4_index_11_geo,
+	bank_4_index_12_geo,
+	bank_4_index_12_geo,
+	bank_4_index_13_geo,
+	bank_4_index_13_geo,
+	bank_4_index_14_geo,
+	bank_4_index_14_geo,
+	bank_4_index_15_geo,
+	bank_4_index_15_geo,
+	bank_4_index_16_geo,
+	bank_4_index_16_geo,
+	bank_4_index_17_geo,
+	bank_4_index_17_geo,
+	bank_4_index_18_geo,
+	bank_4_index_18_geo,
+	bank_4_index_19_geo,
+	bank_4_index_19_geo,
+	bank_4_index_20_geo,
+	bank_4_index_20_geo,
+	bank_4_index_21_geo,
+	bank_4_index_21_geo,
+	bank_4_index_22_geo,
+	bank_4_index_22_geo,
+	bank_4_index_23_geo,
+	bank_4_index_23_geo,
+	bank_4_index_24_geo,
+	bank_4_index_24_geo,
+	bank_4_index_25_geo,
+	bank_4_index_25_geo,
+	bank_4_index_26_geo,
+	bank_4_index_26_geo,
+	bank_4_index_27_geo,
+	bank_4_index_27_geo,
+	bank_4_index_28_geo,
+	bank_4_index_28_geo,
+	bank_4_index_29_geo,
+	bank_4_index_29_geo,
+	bank_4_index_30_geo,
+	bank_4_index_30_geo,
+	bank_4_index_31_geo,
+	bank_4_index_31_geo,
+	bank_4_index_32_geo,
+	bank_4_index_32_geo,
+	bank_4_index_33_geo,
+	bank_4_index_33_geo,
+	bank_4_index_34_geo,
+	bank_4_index_34_geo,
+	bank_4_index_35_geo,
+	bank_4_index_35_geo,
+	bank_4_index_36_geo,
+	bank_4_index_36_geo,
+	bank_4_index_37_geo,
+	bank_4_index_37_geo,
+	bank_4_index_38_geo,
+	bank_4_index_38_geo,
+	bank_4_index_39_geo,
+	bank_4_index_39_geo,
+	bank_4_index_40_geo,
+	bank_4_index_40_geo,
+	bank_4_index_41_geo,
+	bank_4_index_41_geo,
+	bank_4_index_42_geo,
+	bank_4_index_42_geo,
+	bank_4_index_43_geo,
+	bank_4_index_43_geo,
+	bank_4_index_44_geo,
+	bank_4_index_44_geo,
+	bank_4_index_45_geo,
+	bank_4_index_45_geo,
+	bank_4_index_46_geo,
+	bank_4_index_46_geo,
+	bank_4_index_47_geo,
+	bank_4_index_47_geo,
+	bank_4_index_48_geo,
+	bank_4_index_48_geo,
+	bank_4_index_49_geo,
+	bank_4_index_49_geo,
+	bank_4_index_50_geo,
+	bank_4_index_50_geo,
+	bank_4_index_51_geo,
+	bank_4_index_51_geo,
+	bank_4_index_52_geo,
+	bank_4_index_52_geo,
+	bank_4_index_53_geo,
+	bank_4_index_53_geo,
+	bank_4_index_54_geo,
+	bank_4_index_54_geo,
+	bank_4_index_55_geo,
+	bank_4_index_55_geo,
+	bank_4_index_56_geo,
+	bank_4_index_56_geo,
+	bank_4_index_57_geo,
+	bank_4_index_57_geo,
+	bank_4_index_58_geo,
+	bank_4_index_58_geo,
+	bank_4_index_59_geo,
+	bank_4_index_59_geo,
+	bank_4_index_60_geo,
+	bank_4_index_60_geo,
+	bank_4_index_61_geo,
+	bank_4_index_61_geo,
+	bank_4_index_62_geo,
+	bank_4_index_62_geo,
+	bank_4_index_63_geo,
+	bank_4_index_63_geo,
+	bank_4_index_64_geo,
+	bank_4_index_64_geo,
+	bank_4_index_65_geo,
+	bank_4_index_65_geo,
+	bank_4_index_66_geo,
+	bank_4_index_66_geo,
+	bank_4_index_67_geo,
+	bank_4_index_67_geo,
+	bank_4_index_68_geo,
+	bank_4_index_68_geo,
+	bank_4_index_69_geo,
+	bank_4_index_69_geo,
+	bank_4_index_70_geo,
+	bank_4_index_70_geo,
+	bank_4_index_71_geo,
+	bank_4_index_71_geo,
+	bank_4_index_72_geo,
+	bank_4_index_72_geo,
+	bank_4_index_73_geo,
+	bank_4_index_73_geo,
+	bank_4_index_74_geo,
+	bank_4_index_74_geo,
+	bank_4_index_75_geo,
+	bank_4_index_75_geo,
+	bank_4_index_76_geo,
+	bank_4_index_76_geo,
+	bank_4_index_77_geo,
+	bank_4_index_77_geo,
+	bank_4_index_78_geo,
+	bank_4_index_78_geo,
+	bank_4_index_79_geo,
+	bank_4_index_79_geo,
+	bank_4_index_80_geo,
+	bank_4_index_80_geo,
+	bank_4_index_81_geo,
+	bank_4_index_81_geo,
+	bank_4_index_82_geo,
+	bank_4_index_82_geo,
+	bank_4_index_83_geo,
+	bank_4_index_83_geo,
+	bank_4_index_84_geo,
+	bank_4_index_84_geo,
+	bank_4_index_85_geo,
+	bank_4_index_85_geo,
+	bank_4_index_86_geo,
+	bank_4_index_86_geo,
+	bank_4_index_87_geo,
+	bank_4_index_87_geo,
+	bank_4_index_88_geo,
+	bank_4_index_88_geo,
+	bank_4_index_89_geo,
+	bank_4_index_89_geo,
+	bank_4_index_90_geo,
+	bank_4_index_90_geo,
+	bank_4_index_91_geo,
+	bank_4_index_91_geo,
+	bank_4_index_92_geo,
+	bank_4_index_92_geo,
+	bank_4_index_93_geo,
+	bank_4_index_93_geo,
+	bank_4_index_94_geo,
+	bank_4_index_94_geo,
+	bank_4_index_95_geo,
+	bank_4_index_95_geo,
+	bank_4_index_96_geo,
+	bank_4_index_96_geo,
+	bank_4_index_97_geo,
+	bank_4_index_97_geo,
+	bank_4_index_98_geo,
+	bank_4_index_98_geo,
+	bank_4_index_99_geo,
+	bank_4_index_99_geo,
+	bank_4_index_100_geo,
+	bank_4_index_100_geo,
+	bank_4_index_101_geo,
+	bank_4_index_101_geo,
+	bank_4_index_102_geo,
+	bank_4_index_102_geo,
+	bank_4_index_103_geo,
+	bank_4_index_103_geo,
+	bank_4_index_104_geo,
+	bank_4_index_104_geo,
+	bank_4_index_105_geo,
+	bank_4_index_105_geo,
+	bank_4_index_106_geo,
+	bank_4_index_106_geo,
+	bank_4_index_107_geo,
+	bank_4_index_107_geo,
+	bank_4_index_108_geo,
+	bank_4_index_108_geo,
+	bank_4_index_109_geo,
+	bank_4_index_109_geo,
+	bank_4_index_110_geo,
+	bank_4_index_110_geo,
+	bank_4_index_111_geo,
+	bank_4_index_111_geo,
+	bank_4_index_112_geo,
+	bank_4_index_112_geo,
+	bank_4_index_113_geo,
+	bank_4_index_113_geo,
+	bank_4_index_114_geo,
+	bank_4_index_114_geo,
+	bank_4_index_115_geo,
+	bank_4_index_115_geo,
+	bank_4_index_116_geo,
+	bank_4_index_116_geo,
+	bank_4_index_117_geo,
+	bank_4_index_117_geo,
+	bank_4_index_118_geo,
+	bank_4_index_118_geo,
+	bank_4_index_119_geo,
+	bank_4_index_119_geo,
+	bank_4_index_120_geo,
+	bank_4_index_120_geo,
+	bank_4_index_121_geo,
+	bank_4_index_121_geo,
+	bank_4_index_122_geo,
+	bank_4_index_122_geo,
+	bank_4_index_123_geo,
+	bank_4_index_123_geo,
+	bank_4_index_124_geo,
+	bank_4_index_124_geo,
+	bank_4_index_125_geo,
+	bank_4_index_125_geo,
+	bank_4_index_126_geo,
+	bank_4_index_126_geo,
+	bank_4_index_127_geo,
+	bank_4_index_127_geo,
+	bank_4_index_128_geo,
+	bank_4_index_128_geo,
+	bank_4_index_129_geo,
+	bank_4_index_129_geo,
+	bank_4_index_130_geo,
+	bank_4_index_130_geo,
+	bank_4_index_131_geo,
+	bank_4_index_131_geo,
+	bank_4_index_132_geo,
+	bank_4_index_132_geo,
+	bank_4_index_133_geo,
+	bank_4_index_133_geo,
+	bank_4_index_134_geo,
+	bank_4_index_134_geo,
+	bank_4_index_135_geo,
+	bank_4_index_135_geo,
+	bank_4_index_136_geo,
+	bank_4_index_136_geo,
+	bank_4_index_137_geo,
+	bank_4_index_137_geo,
+	bank_4_index_138_geo,
+	bank_4_index_138_geo,
+	bank_4_index_139_geo,
+	bank_4_index_139_geo,
+	bank_4_index_140_geo,
+	bank_4_index_140_geo,
+	bank_4_index_141_geo,
+	bank_4_index_141_geo,
+	bank_4_index_142_geo,
+	bank_4_index_142_geo,
+	bank_4_index_143_geo,
+	bank_4_index_143_geo,
+	bank_4_index_144_geo,
+	bank_4_index_144_geo,
+	bank_4_index_145_geo,
+	bank_4_index_145_geo,
+	bank_4_index_146_geo,
+	bank_4_index_146_geo,
+	bank_4_index_147_geo,
+	bank_4_index_147_geo,
+	bank_4_index_148_geo,
+	bank_4_index_148_geo,
+	bank_4_index_149_geo,
+	bank_4_index_149_geo,
+	bank_4_index_150_geo,
+	bank_4_index_150_geo,
+	bank_4_index_151_geo,
+	bank_4_index_151_geo,
+	bank_4_index_152_geo,
+	bank_4_index_152_geo,
+	bank_4_index_153_geo,
+	bank_4_index_153_geo,
+	bank_4_index_1_image,
+};
 
-u32 D_800CAF00 = 0x00BDE9D0;
-
-u32 D_800CAF04 = 0x00BE2BC0;
-
-u32 D_800CAF08 = 0x00BE2BC0;
-
-u32 D_800CAF0C = 0x00BE5120;
-
-u32 D_800CAF10 = 0x00BE5120;
-
-u32 D_800CAF14 = 0x00BE6E80;
-
-u32 D_800CAF18 = 0x00BE6E80;
-
-u32 D_800CAF1C = 0x00BE86D0;
-
-u32 D_800CAF20 = 0x00BE86D0;
-
-u32 D_800CAF24 = 0x00BEBBB0;
-
-u32 D_800CAF28 = 0x00BEBBB0;
-
-u32 D_800CAF2C = 0x00BEDFC0;
-
-u32 D_800CAF30 = 0x00BEDFC0;
-
-u32 D_800CAF34 = 0x00BF0080;
-
-u32 D_800CAF38 = 0x00BF0080;
-
-u32 D_800CAF3C = 0x00BF3DA0;
-
-u32 D_800CAF40 = 0x00BF3DA0;
-
-u32 D_800CAF44 = 0x00BF6630;
-
-u32 D_800CAF48 = 0x00BF6630;
-
-u32 D_800CAF4C = 0x00BF8380;
-
-u32 D_800CAF50 = 0x00BF8380;
-
-u32 D_800CAF54 = 0x00BF9B80;
-
-u32 D_800CAF58 = 0x00BF9B80;
-
-u32 D_800CAF5C = 0x00BFABA0;
-
-u32 D_800CAF60 = 0x00BFABA0;
-
-u32 D_800CAF64 = 0x00BFB3B0;
-
-u32 D_800CAF68 = 0x00BFB3B0;
-
-u32 D_800CAF6C = 0x00BFB9E0;
-
-u32 D_800CAF70 = 0x00BFB9E0;
-
-u32 D_800CAF74 = 0x00C033C0;
-
-u32 D_800CAF78 = 0x00C033C0;
-
-u32 D_800CAF7C = 0x00C08170;
-
-u32 D_800CAF80 = 0x00C08170;
-
-u32 D_800CAF84 = 0x00C0BAF0;
-
-u32 D_800CAF88 = 0x00C0BAF0;
-
-u32 D_800CAF8C = 0x00C0F500;
-
-u32 D_800CAF90 = 0x00C0F500;
-
-u32 D_800CAF94 = 0x00C117A0;
-
-u32 D_800CAF98 = 0x00C117A0;
-
-u32 D_800CAF9C = 0x00C15410;
-
-u32 D_800CAFA0 = 0x00C15410;
-
-u32 D_800CAFA4 = 0x00C189A0;
-
-u32 D_800CAFA8 = 0x00C189A0;
-
-u32 D_800CAFAC = 0x00C1E440;
-
-u32 D_800CAFB0 = 0x00C1E440;
-
-u32 D_800CAFB4 = 0x00C22600;
-
-u32 D_800CAFB8 = 0x00C22600;
-
-u32 D_800CAFBC = 0x00C25A30;
-
-u32 D_800CAFC0 = 0x00C25A30;
-
-u32 D_800CAFC4 = 0x00C279E0;
-
-u32 D_800CAFC8 = 0x00C279E0;
-
-u32 D_800CAFCC = 0x00C29B30;
-
-u32 D_800CAFD0 = 0x00C29B30;
-
-u32 D_800CAFD4 = 0x00C2BBE0;
-
-u32 D_800CAFD8 = 0x00C2BBE0;
-
-u32 D_800CAFDC = 0x00C2DC50;
-
-u32 D_800CAFE0 = 0x00C2DC50;
-
-u32 D_800CAFE4 = 0x00C2FDE0;
-
-u32 D_800CAFE8 = 0x00C2FDE0;
-
-u32 D_800CAFEC = 0x00C31D70;
-
-u32 D_800CAFF0 = 0x00C31D70;
-
-u32 D_800CAFF4 = 0x00C32000;
-
-u32 D_800CAFF8 = 0x00C32000;
-
-u32 D_800CAFFC = 0x00C321E0;
-
-u32 D_800CB000 = 0x00C321E0;
-
-u32 D_800CB004 = 0x00C3A0F0;
-
-u32 D_800CB008 = 0x00C3A0F0;
-
-u32 D_800CB00C = 0x00C4C660;
-
-u32 D_800CB010 = 0x00C4C660;
-
-u32 D_800CB014 = 0x00C4CB10;
-
-u32 D_800CB018 = 0x00C4CB10;
-
-u32 D_800CB01C = 0x00C4CCF0;
-
-u32 D_800CB020 = 0x00C4CCF0;
-
-u32 D_800CB024 = 0x00C51D60;
-
-u32 D_800CB028 = 0x00C51D60;
-
-u32 D_800CB02C = 0x00C53E30;
-
-u32 D_800CB030 = 0x00C53E30;
-
-u32 D_800CB034 = 0x00C55E50;
-
-u32 D_800CB038 = 0x00C55E50;
-
-u32 D_800CB03C = 0x00C5F260;
-
-u32 D_800CB040 = 0x00C5F260;
-
-u32 D_800CB044 = 0x00C5FE70;
-
-u32 D_800CB048 = 0x00C5FE70;
-
-u32 D_800CB04C = 0x00C60C40;
-
-u32 D_800CB050 = 0x00C60C40;
-
-u32 D_800CB054 = 0x00C61A40;
-
-u32 D_800CB058 = 0x00C61A40;
-
-u32 D_800CB05C = 0x00C62310;
-
-u32 D_800CB060 = 0x00C62310;
-
-u32 D_800CB064 = 0x00C62F50;
-
-u32 D_800CB068 = 0x00C62F50;
-
-u32 D_800CB06C = 0x00C721C0;
-
-u32 D_800CB070 = 0x00C721C0;
-
-u32 D_800CB074 = 0x00C73620;
-
-u32 D_800CB078 = 0x00C73620;
-
-u32 D_800CB07C = 0x00C73750;
-
-u32 D_800CB080 = 0x00C73750;
-
-u32 D_800CB084 = 0x00C74340;
-
-u32 D_800CB088 = 0x00C74340;
-
-u32 D_800CB08C = 0x00C79060;
-
-u32 D_800CB090 = 0x00C79060;
-
-u32 D_800CB094 = 0x00C79B10;
-
-u32 D_800CB098 = 0x00C79B10;
-
-u32 D_800CB09C = 0x00C7B030;
-
-u32 D_800CB0A0 = 0x00C7B030;
-
-u32 D_800CB0A4 = 0x00C7B290;
-
-u32 D_800CB0A8 = 0x00C7B290;
-
-u32 D_800CB0AC = 0x00C8B190;
-
-u32 D_800CB0B0 = 0x00C8B190;
-
-u32 D_800CB0B4 = 0x00C8B2C0;
-
-u32 D_800CB0B8 = 0x00C8B2C0;
-
-u32 D_800CB0BC = 0x00C8B910;
-
-u32 D_800CB0C0 = 0x00C8B910;
-
-u32 D_800CB0C4 = 0x00C8BA40;
-
-u32 D_800CB0C8 = 0x00C8BA40;
-
-u32 D_800CB0CC = 0x00C8DB20;
-
-u32 D_800CB0D0 = 0x00C8DB20;
-
-u32 D_800CB0D4 = 0x00C9A050;
-
-u32 D_800CB0D8 = 0x00C9A050;
-
-u32 D_800CB0DC = 0x00C9A1B0;
-
-u32 D_800CB0E0 = 0x00C9A1B0;
-
-u32 D_800CB0E4 = 0x00C9B860;
-
-u32 D_800CB0E8 = 0x00C9B860;
-
-u32 D_800CB0EC = 0x00C9C050;
-
-u32 D_800CB0F0 = 0x00C9C050;
-
-u32 D_800CB0F4 = 0x00C9E530;
-
-u32 D_800CB0F8 = 0x00C9E530;
-
-u32 D_800CB0FC = 0x00C9E7E0;
-
-u32 D_800CB100 = 0x00C9E7E0;
-
-u32 D_800CB104 = 0x00CA6690;
-
-u32 D_800CB108 = 0x00CA6690;
-
-u32 D_800CB10C = 0x00CA7520;
-
-u32 D_800CB110 = 0x00CA7520;
-
-u32 D_800CB114 = 0x00CA7670;
-
-u32 D_800CB118 = 0x00CA7670;
-
-u32 D_800CB11C = 0x00CA7D40;
-
-u32 D_800CB120 = 0x00CA7D40;
-
-u32 D_800CB124 = 0x00CA8980;
-
-u32 D_800CB128 = 0x00CA8980;
-
-u32 D_800CB12C = 0x00CAF080;
-
-u32 D_800CB130 = 0x00CAF080;
-
-u32 D_800CB134 = 0x00CB2520;
-
-u32 D_800CB138 = 0x00CB2520;
-
-u32 D_800CB13C = 0x00CB2B00;
-
-u32 D_800CB140 = 0x00CB2B00;
-
-u32 D_800CB144 = 0x00CB3A50;
-
-u32 D_800CB148 = 0x00CB3A50;
-
-u32 D_800CB14C = 0x00CB7640;
-
-u32 D_800CB150 = 0x00CB7640;
-
-u32 D_800CB154 = 0x00CB7F10;
-
-u32 D_800CB158 = 0x00CB7F10;
-
-u32 D_800CB15C = 0x00CB85E0;
-
-u32 D_800CB160 = 0x00CB85E0;
-
-u32 D_800CB164 = 0x00CBF840;
-
-u32 D_800CB168 = 0x00CBF840;
-
-u32 D_800CB16C = 0x00CBF970;
-
-u32 D_800CB170 = 0x00CBF970;
-
-u32 D_800CB174 = 0x00CC1F20;
-
-u32 D_800CB178 = 0x00CC1F20;
-
-u32 D_800CB17C = 0x00CC6E30;
-
-u32 D_800CB180 = 0x00CC6E30;
-
-u32 D_800CB184 = 0x00CC8C10;
-
-u32 D_800CB188 = 0x00CC8C10;
-
-u32 D_800CB18C = 0x00CCA690;
-
-u32 D_800CB190 = 0x00CCA690;
-
-u32 D_800CB194 = 0x00CCB9E0;
-
-u32 D_800CB198 = 0x00CCB9E0;
-
-u32 D_800CB19C = 0x00CD1850;
-
-u32 D_800CB1A0 = 0x00CD1850;
-
-u32 D_800CB1A4 = 0x00CD6400;
-
-u32 D_800CB1A8 = 0x00CD6400;
-
-u32 D_800CB1AC = 0x00CD8620;
-
-u32 D_800CB1B0 = 0x00CD8620;
-
-u32 D_800CB1B4 = 0x00CDA410;
-
-u32 D_800CB1B8 = 0x00CDA410;
-
-u32 D_800CB1BC = 0x00CDAAB0;
-
-u32 D_800CB1C0 = 0x00CDAAB0;
-
-u32 D_800CB1C4 = 0x00CDEC90;
-
-u32 D_800CB1C8 = 0x00CDEC90;
-
-u32 D_800CB1CC = 0x00CE3870;
-
-u32 D_800CB1D0 = 0x00CE3870;
-
-u32 D_800CB1D4 = 0x00CED670;
-
-u32 D_800CB1D8 = 0x00CED670;
-
-u32 D_800CB1DC = 0x00CEE4E0;
-
-u32 D_800CB1E0 = 0x00CEE4E0;
-
-u32 D_800CB1E4 = 0x00CEF120;
-
-u32 D_800CB1E8 = 0x00CEF120;
-
-u32 D_800CB1EC = 0x00CEF550;
-
-u32 D_800CB1F0 = 0x00CEF550;
-
-u32 D_800CB1F4 = 0x00CF2280;
-
-u32 D_800CB1F8 = 0x00CF2280;
-
-u32 D_800CB1FC = 0x00CF92D0;
-
-u32 D_800CB200 = 0x00CF92D0;
-
-u32 D_800CB204 = 0x00CF98F0;
-
-u32 D_800CB208 = 0x00CF98F0;
-
-u32 D_800CB20C = 0x00CFB1B0;
-
-u32 D_800CB210 = 0x00CFB1B0;
-
-u32 D_800CB214 = 0x00CFC420;
-
-u32 D_800CB218 = 0x00CFC420;
-
-u32 D_800CB21C = 0x00CFF7B0;
-
-u32 D_800CB220 = 0x00CFF7B0;
-
-u32 D_800CB224 = 0x00D00C30;
-
-u32 D_800CB228 = 0x00D00C30;
-
-u32 D_800CB22C = 0x00D05BD0;
-
-u32 D_800CB230 = 0x00D05BD0;
-
-u32 D_800CB234 = 0x00D0C020;
-
-u32 D_800CB238 = 0x00D0C020;
-
-u32 D_800CB23C = 0x00D10430;
-
-u32 D_800CB240 = 0x00D10430;
-
-u32 D_800CB244 = 0x00D10D30;
-
-u32 D_800CB248 = 0x00D10D30;
-
-u32 D_800CB24C = 0x00D11050;
-
-u32 D_800CB250 = 0x00D11050;
-
-u32 D_800CB254 = 0x00D16A30;
-
-u32 D_800CB258 = 0x00D16A30;
-
-u32 D_800CB25C = 0x00D17AE0;
-
-u32 D_800CB260 = 0x00D17AE0;
-
-u32 D_800CB264 = 0x00D1B3B0;
-
-u32 D_800CB268 = 0x00D1B3B0;
-
-u32 D_800CB26C = 0x00D1D720;
-
-u32 D_800CB270 = 0x00D1D720;
-
-u32 D_800CB274 = 0x00D26780;
-
-u32 D_800CB278 = 0x00D26780;
-
-u32 D_800CB27C = 0x00D28730;
-
-u32 D_800CB280 = 0x00D28730;
-
-u32 D_800CB284 = 0x00D2FAA0;
-
-u32 D_800CB288 = 0x00D2FAA0;
-
-u32 D_800CB28C = 0x00D38440;
-
-u32 D_800CB290 = 0x00D38440;
-
-u32 D_800CB294 = 0x00D38760;
-
-u32 D_800CB298 = 0x00D38760;
-
-u32 D_800CB29C = 0x00D47400;
-
-u32 D_800CB2A0 = 0x00D47400;
-
-u32 D_800CB2A4 = 0x00D489C0;
-
-u32 D_800CB2A8 = 0x00D489C0;
-
-u32 D_800CB2AC = 0x00D48BA0;
-
-u32 D_800CB2B0 = 0x00D48BA0;
-
-u32 D_800CB2B4 = 0x00D4DA10;
-
-u32 D_800CB2B8 = 0x00D4DA10;
-
-u32 D_800CB2BC = 0x00D4EEE0;
-
-u32 D_800CB2C0 = 0x00D4EEE0;
-
-u32 D_800CB2C4 = 0x00D50330;
-
-u32 D_800CB2C8 = 0x00D50330;
-
-u32 D_800CB2CC = 0x00D50490;
-
-u32 D_800CB2D0 = 0x00D50490;
-
-u32 D_800CB2D4 = 0x00D51C80;
-
-u32 D_800CB2D8 = 0x00D51C80;
-
-u32 D_800CB2DC = 0x00D52CC0;
-
-u32 D_800CB2E0 = 0x00D52CC0;
-
-u32 D_800CB2E4 = 0x00D55370;
-
-u32 D_800CB2E8 = 0x00D55370;
-
-u32 D_800CB2EC = 0x00D5FFB0;
-
-u32 D_800CB2F0 = 0x00D5FFB0;
-
-u32 D_800CB2F4 = 0x00D63520;
-
-u32 D_800CB2F8 = 0x00D63520;
-
-u32 D_800CB2FC = 0x00D63840;
-
-u32 D_800CB300 = 0x00D63840;
-
-u32 D_800CB304 = 0x00D65780;
-
-u32 D_800CB308 = 0x00D65780;
-
-u32 D_800CB30C = 0x00D6A070;
-
-u32 D_800CB310 = 0x00D6A070;
-
-u32 D_800CB314 = 0x00D6EB60;
-
-u32 D_800CB318 = 0x00D6EB60;
-
-u32 D_800CB31C = 0x00D7CB40;
-
-u32 D_800CB320 = 0x00D7CB40;
-
-u32 D_800CB324 = 0x00D7CFE0;
-
-u32 D_800CB328 = 0x00D7CFE0;
-
-u32 D_800CB32C = 0x00D82980;
-
-u32 D_800CB330 = 0x00D82980;
-
-u32 D_800CB334 = 0x00D82BF0;
-
-u32 D_800CB338 = 0x00D82BF0;
-
-u32 D_800CB33C = 0x00D879A0;
-
-u32 D_800CB340 = 0x00D879A0;
-
-u32 D_800CB344 = 0x00D87CE0;
-
-u32 D_800CB348 = 0x00D87CE0;
-
-u32 D_800CB34C = 0x00D88460;
-
-u32 D_800CB350 = 0x00D88460;
-
-u32 D_800CB354 = 0x00D8A440;
-
-u32 D_800CB358 = 0x00D8A440;
-
-u32 D_800CB35C = 0x00D90580;
-
-u32 D_800CB360 = 0x00D90580;
-
-u32 D_800CB364 = 0x00D946D0;
-
-u32 D_800CB368 = 0x00D946D0;
-
-u32 D_800CB36C = 0x00D95520;
-
-u32 D_800CB370 = 0x00D95520;
-
-u32 D_800CB374 = 0x00D97620;
-
-u32 D_800CB378 = 0x00D97620;
-
-u32 D_800CB37C = 0x00D9CA40;
-
-u32 D_800CB380 = 0x00D9CA40;
-
-u32 D_800CB384 = 0x00D9E730;
-
-u32 D_800CB388 = 0x00D9E730;
-
-u32 D_800CB38C = 0x00D9EAD0;
-
-u32 D_800CB390 = 0x00D9EAD0;
-
-u32 D_800CB394 = 0x00DA09D0;
-
-u32 D_800CB398 = 0x00DA09D0;
-
-u32 D_800CB39C = 0x00DA2110;
-
-u32 D_800CB3A0 = 0x00DA2110;
-
-u32 D_800CB3A4 = 0x00DA3690;
-
-u32 D_800CB3A8 = 0x00DA3690;
-
-u32 D_800CB3AC = 0x00DA5160;
-
-u32 D_800CB3B0 = 0x00DA5160;
-
-u32 D_800CB3B4 = 0x00DA5D30;
-
-u32 D_800CB3B8 = 0x00DA5D30;
-
-u32 D_800CB3BC = 0x00DA5E60;
 
 u32 D_800CB3C0 = 0x00000000;
 
@@ -21569,1181 +20628,600 @@ u32 D_800CCCD4 = 0x00000000;
 u32 D_800CCCD8 = 0x00000000;
 
 
-u32 D_800CCCDC = 0x01195E60;
 
-u32 D_800CCCE0 = 0x01196F40;
+u32 D_800CCCDC[588] = { 
+	bank_6_index_1_geo,
+	bank_6_index_2_geo,
+	bank_6_index_2_geo,
+	bank_6_index_3_geo,
+	bank_6_index_3_geo,
+	bank_6_index_4_geo,
+	bank_6_index_4_geo,
+	bank_6_index_5_geo,
+	bank_6_index_5_geo,
+	bank_6_index_6_geo,
+	bank_6_index_6_geo,
+	bank_6_index_7_geo,
+	bank_6_index_7_geo,
+	bank_6_index_8_geo,
+	bank_6_index_8_geo,
+	bank_6_index_9_geo,
+	bank_6_index_9_geo,
+	bank_6_index_10_geo,
+	bank_6_index_10_geo,
+	bank_6_index_11_geo,
+	bank_6_index_11_geo,
+	bank_6_index_12_geo,
+	bank_6_index_12_geo,
+	bank_6_index_13_geo,
+	bank_6_index_13_geo,
+	bank_6_index_14_geo,
+	bank_6_index_14_geo,
+	bank_6_index_15_geo,
+	bank_6_index_15_geo,
+	bank_6_index_16_geo,
+	bank_6_index_16_geo,
+	bank_6_index_17_geo,
+	bank_6_index_17_geo,
+	bank_6_index_18_geo,
+	bank_6_index_18_geo,
+	bank_6_index_19_geo,
+	bank_6_index_19_geo,
+	bank_6_index_20_geo,
+	bank_6_index_20_geo,
+	bank_6_index_21_geo,
+	bank_6_index_21_geo,
+	bank_6_index_22_geo,
+	bank_6_index_22_geo,
+	bank_6_index_23_geo,
+	bank_6_index_23_geo,
+	bank_6_index_24_geo,
+	bank_6_index_24_geo,
+	bank_6_index_25_geo,
+	bank_6_index_25_geo,
+	bank_6_index_26_geo,
+	bank_6_index_26_geo,
+	bank_6_index_27_geo,
+	bank_6_index_27_geo,
+	bank_6_index_28_geo,
+	bank_6_index_28_geo,
+	bank_6_index_29_geo,
+	bank_6_index_29_geo,
+	bank_6_index_30_geo,
+	bank_6_index_30_geo,
+	bank_6_index_31_geo,
+	bank_6_index_31_geo,
+	bank_6_index_32_geo,
+	bank_6_index_32_geo,
+	bank_6_index_33_geo,
+	bank_6_index_33_geo,
+	bank_6_index_34_geo,
+	bank_6_index_34_geo,
+	bank_6_index_35_geo,
+	bank_6_index_35_geo,
+	bank_6_index_36_geo,
+	bank_6_index_36_geo,
+	bank_6_index_37_geo,
+	bank_6_index_37_geo,
+	bank_6_index_38_geo,
+	bank_6_index_38_geo,
+	bank_6_index_39_geo,
+	bank_6_index_39_geo,
+	bank_6_index_40_geo,
+	bank_6_index_40_geo,
+	bank_6_index_41_geo,
+	bank_6_index_41_geo,
+	bank_6_index_42_geo,
+	bank_6_index_42_geo,
+	bank_6_index_43_geo,
+	bank_6_index_43_geo,
+	bank_6_index_44_geo,
+	bank_6_index_44_geo,
+	bank_6_index_45_geo,
+	bank_6_index_45_geo,
+	bank_6_index_46_geo,
+	bank_6_index_46_geo,
+	bank_6_index_47_geo,
+	bank_6_index_47_geo,
+	bank_6_index_48_geo,
+	bank_6_index_48_geo,
+	bank_6_index_49_geo,
+	bank_6_index_49_geo,
+	bank_6_index_50_geo,
+	bank_6_index_50_geo,
+	bank_6_index_51_geo,
+	bank_6_index_51_geo,
+	bank_6_index_52_geo,
+	bank_6_index_52_geo,
+	bank_6_index_53_geo,
+	bank_6_index_53_geo,
+	bank_6_index_54_geo,
+	bank_6_index_54_geo,
+	bank_6_index_55_geo,
+	bank_6_index_55_geo,
+	bank_6_index_56_geo,
+	bank_6_index_56_geo,
+	bank_6_index_57_geo,
+	bank_6_index_57_geo,
+	bank_6_index_58_geo,
+	bank_6_index_58_geo,
+	bank_6_index_59_geo,
+	bank_6_index_59_geo,
+	bank_6_index_60_geo,
+	bank_6_index_60_geo,
+	bank_6_index_61_geo,
+	bank_6_index_61_geo,
+	bank_6_index_62_geo,
+	bank_6_index_62_geo,
+	bank_6_index_63_geo,
+	bank_6_index_63_geo,
+	bank_6_index_64_geo,
+	bank_6_index_64_geo,
+	bank_6_index_65_geo,
+	bank_6_index_65_geo,
+	bank_6_index_66_geo,
+	bank_6_index_66_geo,
+	bank_6_index_67_geo,
+	bank_6_index_67_geo,
+	bank_6_index_68_geo,
+	bank_6_index_68_geo,
+	bank_6_index_69_geo,
+	bank_6_index_69_geo,
+	bank_6_index_70_geo,
+	bank_6_index_70_geo,
+	bank_6_index_71_geo,
+	bank_6_index_71_geo,
+	bank_6_index_72_geo,
+	bank_6_index_72_geo,
+	bank_6_index_73_geo,
+	bank_6_index_73_geo,
+	bank_6_index_74_geo,
+	bank_6_index_74_geo,
+	bank_6_index_75_geo,
+	bank_6_index_75_geo,
+	bank_6_index_76_geo,
+	bank_6_index_76_geo,
+	bank_6_index_77_geo,
+	bank_6_index_77_geo,
+	bank_6_index_78_geo,
+	bank_6_index_78_geo,
+	bank_6_index_79_geo,
+	bank_6_index_79_geo,
+	bank_6_index_80_geo,
+	bank_6_index_80_geo,
+	bank_6_index_81_geo,
+	bank_6_index_81_geo,
+	bank_6_index_82_geo,
+	bank_6_index_82_geo,
+	bank_6_index_83_geo,
+	bank_6_index_83_geo,
+	bank_6_index_84_geo,
+	bank_6_index_84_geo,
+	bank_6_index_85_geo,
+	bank_6_index_85_geo,
+	bank_6_index_86_geo,
+	bank_6_index_86_geo,
+	bank_6_index_87_geo,
+	bank_6_index_87_geo,
+	bank_6_index_88_geo,
+	bank_6_index_88_geo,
+	bank_6_index_89_geo,
+	bank_6_index_89_geo,
+	bank_6_index_90_geo,
+	bank_6_index_90_geo,
+	bank_6_index_91_geo,
+	bank_6_index_91_geo,
+	bank_6_index_92_geo,
+	bank_6_index_92_geo,
+	bank_6_index_93_geo,
+	bank_6_index_93_geo,
+	bank_6_index_94_geo,
+	bank_6_index_94_geo,
+	bank_6_index_95_geo,
+	bank_6_index_95_geo,
+	bank_6_index_96_geo,
+	bank_6_index_96_geo,
+	bank_6_index_97_geo,
+	bank_6_index_97_geo,
+	bank_6_index_98_geo,
+	bank_6_index_98_geo,
+	bank_6_index_99_geo,
+	bank_6_index_99_geo,
+	bank_6_index_100_geo,
+	bank_6_index_100_geo,
+	bank_6_index_101_geo,
+	bank_6_index_101_geo,
+	bank_6_index_102_geo,
+	bank_6_index_102_geo,
+	bank_6_index_103_geo,
+	bank_6_index_103_geo,
+	bank_6_index_104_geo,
+	bank_6_index_104_geo,
+	bank_6_index_105_geo,
+	bank_6_index_105_geo,
+	bank_6_index_106_geo,
+	bank_6_index_106_geo,
+	bank_6_index_107_geo,
+	bank_6_index_107_geo,
+	bank_6_index_108_geo,
+	bank_6_index_108_geo,
+	bank_6_index_109_geo,
+	bank_6_index_109_geo,
+	bank_6_index_110_geo,
+	bank_6_index_110_geo,
+	bank_6_index_111_geo,
+	bank_6_index_111_geo,
+	bank_6_index_112_geo,
+	bank_6_index_112_geo,
+	bank_6_index_113_geo,
+	bank_6_index_113_geo,
+	bank_6_index_114_geo,
+	bank_6_index_114_geo,
+	bank_6_index_115_geo,
+	bank_6_index_115_geo,
+	bank_6_index_116_geo,
+	bank_6_index_116_geo,
+	bank_6_index_117_geo,
+	bank_6_index_117_geo,
+	bank_6_index_118_geo,
+	bank_6_index_118_geo,
+	bank_6_index_119_geo,
+	bank_6_index_119_geo,
+	bank_6_index_120_geo,
+	bank_6_index_120_geo,
+	bank_6_index_121_geo,
+	bank_6_index_121_geo,
+	bank_6_index_122_geo,
+	bank_6_index_122_geo,
+	bank_6_index_123_geo,
+	bank_6_index_123_geo,
+	bank_6_index_124_geo,
+	bank_6_index_124_geo,
+	bank_6_index_125_geo,
+	bank_6_index_125_geo,
+	bank_6_index_126_geo,
+	bank_6_index_126_geo,
+	bank_6_index_127_geo,
+	bank_6_index_127_geo,
+	bank_6_index_128_geo,
+	bank_6_index_128_geo,
+	bank_6_index_129_geo,
+	bank_6_index_129_geo,
+	bank_6_index_130_geo,
+	bank_6_index_130_geo,
+	bank_6_index_131_geo,
+	bank_6_index_131_geo,
+	bank_6_index_132_geo,
+	bank_6_index_132_geo,
+	bank_6_index_133_geo,
+	bank_6_index_133_geo,
+	bank_6_index_134_geo,
+	bank_6_index_134_geo,
+	bank_6_index_135_geo,
+	bank_6_index_135_geo,
+	bank_6_index_136_geo,
+	bank_6_index_136_geo,
+	bank_6_index_137_geo,
+	bank_6_index_137_geo,
+	bank_6_index_138_geo,
+	bank_6_index_138_geo,
+	bank_6_index_139_geo,
+	bank_6_index_139_geo,
+	bank_6_index_140_geo,
+	bank_6_index_140_geo,
+	bank_6_index_141_geo,
+	bank_6_index_141_geo,
+	bank_6_index_142_geo,
+	bank_6_index_142_geo,
+	bank_6_index_143_geo,
+	bank_6_index_143_geo,
+	bank_6_index_144_geo,
+	bank_6_index_144_geo,
+	bank_6_index_145_geo,
+	bank_6_index_145_geo,
+	bank_6_index_146_geo,
+	bank_6_index_146_geo,
+	bank_6_index_147_geo,
+	bank_6_index_147_geo,
+	bank_6_index_148_geo,
+	bank_6_index_148_geo,
+	bank_6_index_149_geo,
+	bank_6_index_149_geo,
+	bank_6_index_150_geo,
+	bank_6_index_150_geo,
+	bank_6_index_151_geo,
+	bank_6_index_151_geo,
+	bank_6_index_152_geo,
+	bank_6_index_152_geo,
+	bank_6_index_153_geo,
+	bank_6_index_153_geo,
+	bank_6_index_154_geo,
+	bank_6_index_154_geo,
+	bank_6_index_155_geo,
+	bank_6_index_155_geo,
+	bank_6_index_156_geo,
+	bank_6_index_156_geo,
+	bank_6_index_157_geo,
+	bank_6_index_157_geo,
+	bank_6_index_158_geo,
+	bank_6_index_158_geo,
+	bank_6_index_159_geo,
+	bank_6_index_159_geo,
+	bank_6_index_160_geo,
+	bank_6_index_160_geo,
+	bank_6_index_161_geo,
+	bank_6_index_161_geo,
+	bank_6_index_162_geo,
+	bank_6_index_162_geo,
+	bank_6_index_163_geo,
+	bank_6_index_163_geo,
+	bank_6_index_164_geo,
+	bank_6_index_164_geo,
+	bank_6_index_165_geo,
+	bank_6_index_165_geo,
+	bank_6_index_166_geo,
+	bank_6_index_166_geo,
+	bank_6_index_167_geo,
+	bank_6_index_167_geo,
+	bank_6_index_168_geo,
+	bank_6_index_168_geo,
+	bank_6_index_169_geo,
+	bank_6_index_169_geo,
+	bank_6_index_170_geo,
+	bank_6_index_170_geo,
+	bank_6_index_171_geo,
+	bank_6_index_171_geo,
+	bank_6_index_172_geo,
+	bank_6_index_172_geo,
+	bank_6_index_173_geo,
+	bank_6_index_173_geo,
+	bank_6_index_174_geo,
+	bank_6_index_174_geo,
+	bank_6_index_175_geo,
+	bank_6_index_175_geo,
+	bank_6_index_176_geo,
+	bank_6_index_176_geo,
+	bank_6_index_177_geo,
+	bank_6_index_177_geo,
+	bank_6_index_178_geo,
+	bank_6_index_178_geo,
+	bank_6_index_179_geo,
+	bank_6_index_179_geo,
+	bank_6_index_180_geo,
+	bank_6_index_180_geo,
+	bank_6_index_181_geo,
+	bank_6_index_181_geo,
+	bank_6_index_182_geo,
+	bank_6_index_182_geo,
+	bank_6_index_183_geo,
+	bank_6_index_183_geo,
+	bank_6_index_184_geo,
+	bank_6_index_184_geo,
+	bank_6_index_185_geo,
+	bank_6_index_185_geo,
+	bank_6_index_186_geo,
+	bank_6_index_186_geo,
+	bank_6_index_187_geo,
+	bank_6_index_187_geo,
+	bank_6_index_188_geo,
+	bank_6_index_188_geo,
+	bank_6_index_189_geo,
+	bank_6_index_189_geo,
+	bank_6_index_190_geo,
+	bank_6_index_190_geo,
+	bank_6_index_191_geo,
+	bank_6_index_191_geo,
+	bank_6_index_192_geo,
+	bank_6_index_192_geo,
+	bank_6_index_193_geo,
+	bank_6_index_193_geo,
+	bank_6_index_194_geo,
+	bank_6_index_194_geo,
+	bank_6_index_195_geo,
+	bank_6_index_195_geo,
+	bank_6_index_196_geo,
+	bank_6_index_196_geo,
+	bank_6_index_197_geo,
+	bank_6_index_197_geo,
+	bank_6_index_198_geo,
+	bank_6_index_198_geo,
+	bank_6_index_199_geo,
+	bank_6_index_199_geo,
+	bank_6_index_200_geo,
+	bank_6_index_200_geo,
+	bank_6_index_201_geo,
+	bank_6_index_201_geo,
+	bank_6_index_202_geo,
+	bank_6_index_202_geo,
+	bank_6_index_203_geo,
+	bank_6_index_203_geo,
+	bank_6_index_204_geo,
+	bank_6_index_204_geo,
+	bank_6_index_205_geo,
+	bank_6_index_205_geo,
+	bank_6_index_206_geo,
+	bank_6_index_206_geo,
+	bank_6_index_207_geo,
+	bank_6_index_207_geo,
+	bank_6_index_208_geo,
+	bank_6_index_208_geo,
+	bank_6_index_209_geo,
+	bank_6_index_209_geo,
+	bank_6_index_210_geo,
+	bank_6_index_210_geo,
+	bank_6_index_211_geo,
+	bank_6_index_211_geo,
+	bank_6_index_212_geo,
+	bank_6_index_212_geo,
+	bank_6_index_213_geo,
+	bank_6_index_213_geo,
+	bank_6_index_214_geo,
+	bank_6_index_214_geo,
+	bank_6_index_215_geo,
+	bank_6_index_215_geo,
+	bank_6_index_216_geo,
+	bank_6_index_216_geo,
+	bank_6_index_217_geo,
+	bank_6_index_217_geo,
+	bank_6_index_218_geo,
+	bank_6_index_218_geo,
+	bank_6_index_219_geo,
+	bank_6_index_219_geo,
+	bank_6_index_220_geo,
+	bank_6_index_220_geo,
+	bank_6_index_221_geo,
+	bank_6_index_221_geo,
+	bank_6_index_222_geo,
+	bank_6_index_222_geo,
+	bank_6_index_223_geo,
+	bank_6_index_223_geo,
+	bank_6_index_224_geo,
+	bank_6_index_224_geo,
+	bank_6_index_225_geo,
+	bank_6_index_225_geo,
+	bank_6_index_226_geo,
+	bank_6_index_226_geo,
+	bank_6_index_227_geo,
+	bank_6_index_227_geo,
+	bank_6_index_228_geo,
+	bank_6_index_228_geo,
+	bank_6_index_229_geo,
+	bank_6_index_229_geo,
+	bank_6_index_230_geo,
+	bank_6_index_230_geo,
+	bank_6_index_231_geo,
+	bank_6_index_231_geo,
+	bank_6_index_232_geo,
+	bank_6_index_232_geo,
+	bank_6_index_233_geo,
+	bank_6_index_233_geo,
+	bank_6_index_234_geo,
+	bank_6_index_234_geo,
+	bank_6_index_235_geo,
+	bank_6_index_235_geo,
+	bank_6_index_236_geo,
+	bank_6_index_236_geo,
+	bank_6_index_237_geo,
+	bank_6_index_237_geo,
+	bank_6_index_238_geo,
+	bank_6_index_238_geo,
+	bank_6_index_239_geo,
+	bank_6_index_239_geo,
+	bank_6_index_240_geo,
+	bank_6_index_240_geo,
+	bank_6_index_241_geo,
+	bank_6_index_241_geo,
+	bank_6_index_242_geo,
+	bank_6_index_242_geo,
+	bank_6_index_243_geo,
+	bank_6_index_243_geo,
+	bank_6_index_244_geo,
+	bank_6_index_244_geo,
+	bank_6_index_245_geo,
+	bank_6_index_245_geo,
+	bank_6_index_246_geo,
+	bank_6_index_246_geo,
+	bank_6_index_247_geo,
+	bank_6_index_247_geo,
+	bank_6_index_248_geo,
+	bank_6_index_248_geo,
+	bank_6_index_249_geo,
+	bank_6_index_249_geo,
+	bank_6_index_250_geo,
+	bank_6_index_250_geo,
+	bank_6_index_251_geo,
+	bank_6_index_251_geo,
+	bank_6_index_252_geo,
+	bank_6_index_252_geo,
+	bank_6_index_253_geo,
+	bank_6_index_253_geo,
+	bank_6_index_254_geo,
+	bank_6_index_254_geo,
+	bank_6_index_255_geo,
+	bank_6_index_255_geo,
+	bank_6_index_256_geo,
+	bank_6_index_256_geo,
+	bank_6_index_257_geo,
+	bank_6_index_257_geo,
+	bank_6_index_258_geo,
+	bank_6_index_258_geo,
+	bank_6_index_259_geo,
+	bank_6_index_259_geo,
+	bank_6_index_260_geo,
+	bank_6_index_260_geo,
+	bank_6_index_261_geo,
+	bank_6_index_261_geo,
+	bank_6_index_262_geo,
+	bank_6_index_262_geo,
+	bank_6_index_263_geo,
+	bank_6_index_263_geo,
+	bank_6_index_264_geo,
+	bank_6_index_264_geo,
+	bank_6_index_265_geo,
+	bank_6_index_265_geo,
+	bank_6_index_266_geo,
+	bank_6_index_266_geo,
+	bank_6_index_267_geo,
+	bank_6_index_267_geo,
+	bank_6_index_268_geo,
+	bank_6_index_268_geo,
+	bank_6_index_269_geo,
+	bank_6_index_269_geo,
+	bank_6_index_270_geo,
+	bank_6_index_270_geo,
+	bank_6_index_271_geo,
+	bank_6_index_271_geo,
+	bank_6_index_272_geo,
+	bank_6_index_272_geo,
+	bank_6_index_273_geo,
+	bank_6_index_273_geo,
+	bank_6_index_274_geo,
+	bank_6_index_274_geo,
+	bank_6_index_275_geo,
+	bank_6_index_275_geo,
+	bank_6_index_276_geo,
+	bank_6_index_276_geo,
+	bank_6_index_277_geo,
+	bank_6_index_277_geo,
+	bank_6_index_278_geo,
+	bank_6_index_278_geo,
+	bank_6_index_279_geo,
+	bank_6_index_279_geo,
+	bank_6_index_280_geo,
+	bank_6_index_280_geo,
+	bank_6_index_281_geo,
+	bank_6_index_281_geo,
+	bank_6_index_282_geo,
+	bank_6_index_282_geo,
+	bank_6_index_283_geo,
+	bank_6_index_283_geo,
+	bank_6_index_284_geo,
+	bank_6_index_284_geo,
+	bank_6_index_285_geo,
+	bank_6_index_285_geo,
+	bank_6_index_286_geo,
+	bank_6_index_286_geo,
+	bank_6_index_287_geo,
+	bank_6_index_287_geo,
+	bank_6_index_288_geo,
+	bank_6_index_288_geo,
+	bank_6_index_289_geo,
+	bank_6_index_289_geo,
+	bank_6_index_290_geo,
+	bank_6_index_290_geo,
+	bank_6_index_291_geo,
+	bank_6_index_291_geo,
+	bank_6_index_292_geo,
+	bank_6_index_292_geo,
+	bank_6_index_293_geo,
+	bank_6_index_293_geo,
+	bank_6_index_294_geo,
+	bank_6_index_294_geo,
+	bank_6_index_1_image,
+};
 
-u32 D_800CCCE4 = 0x01196F40;
 
-u32 D_800CCCE8 = 0x01197F90;
 
-u32 D_800CCCEC = 0x01197F90;
-
-u32 D_800CCCF0 = 0x0119A5F0;
-
-u32 D_800CCCF4 = 0x0119A5F0;
-
-u32 D_800CCCF8 = 0x0119AC50;
-
-u32 D_800CCCFC = 0x0119AC50;
-
-u32 D_800CCD00 = 0x0119B310;
-
-u32 D_800CCD04 = 0x0119B310;
-
-u32 D_800CCD08 = 0x0119C5B0;
-
-u32 D_800CCD0C = 0x0119C5B0;
-
-u32 D_800CCD10 = 0x0119CC60;
-
-u32 D_800CCD14 = 0x0119CC60;
-
-u32 D_800CCD18 = 0x0119DDD0;
-
-u32 D_800CCD1C = 0x0119DDD0;
-
-u32 D_800CCD20 = 0x0119E2A0;
-
-u32 D_800CCD24 = 0x0119E2A0;
-
-u32 D_800CCD28 = 0x0119E770;
-
-u32 D_800CCD2C = 0x0119E770;
-
-u32 D_800CCD30 = 0x0119F3B0;
-
-u32 D_800CCD34 = 0x0119F3B0;
-
-u32 D_800CCD38 = 0x0119F710;
-
-u32 D_800CCD3C = 0x0119F710;
-
-u32 D_800CCD40 = 0x0119FC90;
-
-u32 D_800CCD44 = 0x0119FC90;
-
-u32 D_800CCD48 = 0x0119FF40;
-
-u32 D_800CCD4C = 0x0119FF40;
-
-u32 D_800CCD50 = 0x011A01F0;
-
-u32 D_800CCD54 = 0x011A01F0;
-
-u32 D_800CCD58 = 0x011A0950;
-
-u32 D_800CCD5C = 0x011A0950;
-
-u32 D_800CCD60 = 0x011A10A0;
-
-u32 D_800CCD64 = 0x011A10A0;
-
-u32 D_800CCD68 = 0x011A17F0;
-
-u32 D_800CCD6C = 0x011A17F0;
-
-u32 D_800CCD70 = 0x011A1F40;
-
-u32 D_800CCD74 = 0x011A1F40;
-
-u32 D_800CCD78 = 0x011A2070;
-
-u32 D_800CCD7C = 0x011A2070;
-
-u32 D_800CCD80 = 0x011A21A0;
-
-u32 D_800CCD84 = 0x011A21A0;
-
-u32 D_800CCD88 = 0x011A22D0;
-
-u32 D_800CCD8C = 0x011A22D0;
-
-u32 D_800CCD90 = 0x011A2400;
-
-u32 D_800CCD94 = 0x011A2400;
-
-u32 D_800CCD98 = 0x011A2530;
-
-u32 D_800CCD9C = 0x011A2530;
-
-u32 D_800CCDA0 = 0x011A2660;
-
-u32 D_800CCDA4 = 0x011A2660;
-
-u32 D_800CCDA8 = 0x011A2790;
-
-u32 D_800CCDAC = 0x011A2790;
-
-u32 D_800CCDB0 = 0x011A28C0;
-
-u32 D_800CCDB4 = 0x011A28C0;
-
-u32 D_800CCDB8 = 0x011A2E60;
-
-u32 D_800CCDBC = 0x011A2E60;
-
-u32 D_800CCDC0 = 0x011A33E0;
-
-u32 D_800CCDC4 = 0x011A33E0;
-
-u32 D_800CCDC8 = 0x011A3980;
-
-u32 D_800CCDCC = 0x011A3980;
-
-u32 D_800CCDD0 = 0x011A3F10;
-
-u32 D_800CCDD4 = 0x011A3F10;
-
-u32 D_800CCDD8 = 0x011A4470;
-
-u32 D_800CCDDC = 0x011A4470;
-
-u32 D_800CCDE0 = 0x011A4AB0;
-
-u32 D_800CCDE4 = 0x011A4AB0;
-
-u32 D_800CCDE8 = 0x011A50A0;
-
-u32 D_800CCDEC = 0x011A50A0;
-
-u32 D_800CCDF0 = 0x011A5B00;
-
-u32 D_800CCDF4 = 0x011A5B00;
-
-u32 D_800CCDF8 = 0x011A61F0;
-
-u32 D_800CCDFC = 0x011A61F0;
-
-u32 D_800CCE00 = 0x011A6890;
-
-u32 D_800CCE04 = 0x011A6890;
-
-u32 D_800CCE08 = 0x011A6B30;
-
-u32 D_800CCE0C = 0x011A6B30;
-
-u32 D_800CCE10 = 0x011A7E90;
-
-u32 D_800CCE14 = 0x011A7E90;
-
-u32 D_800CCE18 = 0x011A91F0;
-
-u32 D_800CCE1C = 0x011A91F0;
-
-u32 D_800CCE20 = 0x011AA550;
-
-u32 D_800CCE24 = 0x011AA550;
-
-u32 D_800CCE28 = 0x011AB8B0;
-
-u32 D_800CCE2C = 0x011AB8B0;
-
-u32 D_800CCE30 = 0x011ABB00;
-
-u32 D_800CCE34 = 0x011ABB00;
-
-u32 D_800CCE38 = 0x011ABD50;
-
-u32 D_800CCE3C = 0x011ABD50;
-
-u32 D_800CCE40 = 0x011AC150;
-
-u32 D_800CCE44 = 0x011AC150;
-
-u32 D_800CCE48 = 0x011AC4D0;
-
-u32 D_800CCE4C = 0x011AC4D0;
-
-u32 D_800CCE50 = 0x011AC800;
-
-u32 D_800CCE54 = 0x011AC800;
-
-u32 D_800CCE58 = 0x011ACB30;
-
-u32 D_800CCE5C = 0x011ACB30;
-
-u32 D_800CCE60 = 0x011ACE60;
-
-u32 D_800CCE64 = 0x011ACE60;
-
-u32 D_800CCE68 = 0x011AD190;
-
-u32 D_800CCE6C = 0x011AD190;
-
-u32 D_800CCE70 = 0x011AD4C0;
-
-u32 D_800CCE74 = 0x011AD4C0;
-
-u32 D_800CCE78 = 0x011AD7F0;
-
-u32 D_800CCE7C = 0x011AD7F0;
-
-u32 D_800CCE80 = 0x011ADB20;
-
-u32 D_800CCE84 = 0x011ADB20;
-
-u32 D_800CCE88 = 0x011AE990;
-
-u32 D_800CCE8C = 0x011AE990;
-
-u32 D_800CCE90 = 0x011AFB00;
-
-u32 D_800CCE94 = 0x011AFB00;
-
-u32 D_800CCE98 = 0x011B0C70;
-
-u32 D_800CCE9C = 0x011B0C70;
-
-u32 D_800CCEA0 = 0x011B1AE0;
-
-u32 D_800CCEA4 = 0x011B1AE0;
-
-u32 D_800CCEA8 = 0x011B1F80;
-
-u32 D_800CCEAC = 0x011B1F80;
-
-u32 D_800CCEB0 = 0x011B2420;
-
-u32 D_800CCEB4 = 0x011B2420;
-
-u32 D_800CCEB8 = 0x011B28C0;
-
-u32 D_800CCEBC = 0x011B28C0;
-
-u32 D_800CCEC0 = 0x011B2D60;
-
-u32 D_800CCEC4 = 0x011B2D60;
-
-u32 D_800CCEC8 = 0x011B3200;
-
-u32 D_800CCECC = 0x011B3200;
-
-u32 D_800CCED0 = 0x011B3870;
-
-u32 D_800CCED4 = 0x011B3870;
-
-u32 D_800CCED8 = 0x011B3E40;
-
-u32 D_800CCEDC = 0x011B3E40;
-
-u32 D_800CCEE0 = 0x011B5EA0;
-
-u32 D_800CCEE4 = 0x011B5EA0;
-
-u32 D_800CCEE8 = 0x011B6220;
-
-u32 D_800CCEEC = 0x011B6220;
-
-u32 D_800CCEF0 = 0x011B6620;
-
-u32 D_800CCEF4 = 0x011B6620;
-
-u32 D_800CCEF8 = 0x011B6B70;
-
-u32 D_800CCEFC = 0x011B6B70;
-
-u32 D_800CCF00 = 0x011B7F20;
-
-u32 D_800CCF04 = 0x011B7F20;
-
-u32 D_800CCF08 = 0x011B92D0;
-
-u32 D_800CCF0C = 0x011B92D0;
-
-u32 D_800CCF10 = 0x011BA680;
-
-u32 D_800CCF14 = 0x011BA680;
-
-u32 D_800CCF18 = 0x011BBA30;
-
-u32 D_800CCF1C = 0x011BBA30;
-
-u32 D_800CCF20 = 0x011BCDE0;
-
-u32 D_800CCF24 = 0x011BCDE0;
-
-u32 D_800CCF28 = 0x011BE190;
-
-u32 D_800CCF2C = 0x011BE190;
-
-u32 D_800CCF30 = 0x011BED70;
-
-u32 D_800CCF34 = 0x011BED70;
-
-u32 D_800CCF38 = 0x011BF950;
-
-u32 D_800CCF3C = 0x011BF950;
-
-u32 D_800CCF40 = 0x011C0550;
-
-u32 D_800CCF44 = 0x011C0550;
-
-u32 D_800CCF48 = 0x011C11B0;
-
-u32 D_800CCF4C = 0x011C11B0;
-
-u32 D_800CCF50 = 0x011C1D90;
-
-u32 D_800CCF54 = 0x011C1D90;
-
-u32 D_800CCF58 = 0x011C2970;
-
-u32 D_800CCF5C = 0x011C2970;
-
-u32 D_800CCF60 = 0x011C3570;
-
-u32 D_800CCF64 = 0x011C3570;
-
-u32 D_800CCF68 = 0x011C41D0;
-
-u32 D_800CCF6C = 0x011C41D0;
-
-u32 D_800CCF70 = 0x011C4DB0;
-
-u32 D_800CCF74 = 0x011C4DB0;
-
-u32 D_800CCF78 = 0x011C5990;
-
-u32 D_800CCF7C = 0x011C5990;
-
-u32 D_800CCF80 = 0x011C6590;
-
-u32 D_800CCF84 = 0x011C6590;
-
-u32 D_800CCF88 = 0x011C71F0;
-
-u32 D_800CCF8C = 0x011C71F0;
-
-u32 D_800CCF90 = 0x011C7DD0;
-
-u32 D_800CCF94 = 0x011C7DD0;
-
-u32 D_800CCF98 = 0x011C89B0;
-
-u32 D_800CCF9C = 0x011C89B0;
-
-u32 D_800CCFA0 = 0x011C95B0;
-
-u32 D_800CCFA4 = 0x011C95B0;
-
-u32 D_800CCFA8 = 0x011CA210;
-
-u32 D_800CCFAC = 0x011CA210;
-
-u32 D_800CCFB0 = 0x011CADF0;
-
-u32 D_800CCFB4 = 0x011CADF0;
-
-u32 D_800CCFB8 = 0x011CB9D0;
-
-u32 D_800CCFBC = 0x011CB9D0;
-
-u32 D_800CCFC0 = 0x011CC5D0;
-
-u32 D_800CCFC4 = 0x011CC5D0;
-
-u32 D_800CCFC8 = 0x011CD230;
-
-u32 D_800CCFCC = 0x011CD230;
-
-u32 D_800CCFD0 = 0x011CD410;
-
-u32 D_800CCFD4 = 0x011CD410;
-
-u32 D_800CCFD8 = 0x011CDF30;
-
-u32 D_800CCFDC = 0x011CDF30;
-
-u32 D_800CCFE0 = 0x011CE290;
-
-u32 D_800CCFE4 = 0x011CE290;
-
-u32 D_800CCFE8 = 0x011CE660;
-
-u32 D_800CCFEC = 0x011CE660;
-
-u32 D_800CCFF0 = 0x011CFE60;
-
-u32 D_800CCFF4 = 0x011CFE60;
-
-u32 D_800CCFF8 = 0x011D15B0;
-
-u32 D_800CCFFC = 0x011D15B0;
-
-u32 D_800CD000 = 0x011D1D40;
-
-u32 D_800CD004 = 0x011D1D40;
-
-u32 D_800CD008 = 0x011D2640;
-
-u32 D_800CD00C = 0x011D2640;
-
-u32 D_800CD010 = 0x011D31E0;
-
-u32 D_800CD014 = 0x011D31E0;
-
-u32 D_800CD018 = 0x011D3930;
-
-u32 D_800CD01C = 0x011D3930;
-
-u32 D_800CD020 = 0x011D4710;
-
-u32 D_800CD024 = 0x011D4710;
-
-u32 D_800CD028 = 0x011D4FC0;
-
-u32 D_800CD02C = 0x011D4FC0;
-
-u32 D_800CD030 = 0x011D5BD0;
-
-u32 D_800CD034 = 0x011D5BD0;
-
-u32 D_800CD038 = 0x011D6A70;
-
-u32 D_800CD03C = 0x011D6A70;
-
-u32 D_800CD040 = 0x011D6DD0;
-
-u32 D_800CD044 = 0x011D6DD0;
-
-u32 D_800CD048 = 0x011D7460;
-
-u32 D_800CD04C = 0x011D7460;
-
-u32 D_800CD050 = 0x011D77C0;
-
-u32 D_800CD054 = 0x011D77C0;
-
-u32 D_800CD058 = 0x011D7E50;
-
-u32 D_800CD05C = 0x011D7E50;
-
-u32 D_800CD060 = 0x011D81B0;
-
-u32 D_800CD064 = 0x011D81B0;
-
-u32 D_800CD068 = 0x011D8840;
-
-u32 D_800CD06C = 0x011D8840;
-
-u32 D_800CD070 = 0x011D8BA0;
-
-u32 D_800CD074 = 0x011D8BA0;
-
-u32 D_800CD078 = 0x011D9230;
-
-u32 D_800CD07C = 0x011D9230;
-
-u32 D_800CD080 = 0x011D9590;
-
-u32 D_800CD084 = 0x011D9590;
-
-u32 D_800CD088 = 0x011D9C20;
-
-u32 D_800CD08C = 0x011D9C20;
-
-u32 D_800CD090 = 0x011D9F80;
-
-u32 D_800CD094 = 0x011D9F80;
-
-u32 D_800CD098 = 0x011DA610;
-
-u32 D_800CD09C = 0x011DA610;
-
-u32 D_800CD0A0 = 0x011DA970;
-
-u32 D_800CD0A4 = 0x011DA970;
-
-u32 D_800CD0A8 = 0x011DB000;
-
-u32 D_800CD0AC = 0x011DB000;
-
-u32 D_800CD0B0 = 0x011DB400;
-
-u32 D_800CD0B4 = 0x011DB400;
-
-u32 D_800CD0B8 = 0x011DB800;
-
-u32 D_800CD0BC = 0x011DB800;
-
-u32 D_800CD0C0 = 0x011DBC00;
-
-u32 D_800CD0C4 = 0x011DBC00;
-
-u32 D_800CD0C8 = 0x011DC000;
-
-u32 D_800CD0CC = 0x011DC000;
-
-u32 D_800CD0D0 = 0x011DC400;
-
-u32 D_800CD0D4 = 0x011DC400;
-
-u32 D_800CD0D8 = 0x011DC800;
-
-u32 D_800CD0DC = 0x011DC800;
-
-u32 D_800CD0E0 = 0x011DCB60;
-
-u32 D_800CD0E4 = 0x011DCB60;
-
-u32 D_800CD0E8 = 0x011DCEC0;
-
-u32 D_800CD0EC = 0x011DCEC0;
-
-u32 D_800CD0F0 = 0x011DD220;
-
-u32 D_800CD0F4 = 0x011DD220;
-
-u32 D_800CD0F8 = 0x011DD580;
-
-u32 D_800CD0FC = 0x011DD580;
-
-u32 D_800CD100 = 0x011DD8E0;
-
-u32 D_800CD104 = 0x011DD8E0;
-
-u32 D_800CD108 = 0x011DE660;
-
-u32 D_800CD10C = 0x011DE660;
-
-u32 D_800CD110 = 0x011DEA80;
-
-u32 D_800CD114 = 0x011DEA80;
-
-u32 D_800CD118 = 0x011DEEB0;
-
-u32 D_800CD11C = 0x011DEEB0;
-
-u32 D_800CD120 = 0x011DF300;
-
-u32 D_800CD124 = 0x011DF300;
-
-u32 D_800CD128 = 0x011DF8A0;
-
-u32 D_800CD12C = 0x011DF8A0;
-
-u32 D_800CD130 = 0x011DFDF0;
-
-u32 D_800CD134 = 0x011DFDF0;
-
-u32 D_800CD138 = 0x011E0180;
-
-u32 D_800CD13C = 0x011E0180;
-
-u32 D_800CD140 = 0x011E0510;
-
-u32 D_800CD144 = 0x011E0510;
-
-u32 D_800CD148 = 0x011E08B0;
-
-u32 D_800CD14C = 0x011E08B0;
-
-u32 D_800CD150 = 0x011E0C80;
-
-u32 D_800CD154 = 0x011E0C80;
-
-u32 D_800CD158 = 0x011E1020;
-
-u32 D_800CD15C = 0x011E1020;
-
-u32 D_800CD160 = 0x011E17A0;
-
-u32 D_800CD164 = 0x011E17A0;
-
-u32 D_800CD168 = 0x011E1FD0;
-
-u32 D_800CD16C = 0x011E1FD0;
-
-u32 D_800CD170 = 0x011E2750;
-
-u32 D_800CD174 = 0x011E2750;
-
-u32 D_800CD178 = 0x011E2ED0;
-
-u32 D_800CD17C = 0x011E2ED0;
-
-u32 D_800CD180 = 0x011E39E0;
-
-u32 D_800CD184 = 0x011E39E0;
-
-u32 D_800CD188 = 0x011E43D0;
-
-u32 D_800CD18C = 0x011E43D0;
-
-u32 D_800CD190 = 0x011E4EE0;
-
-u32 D_800CD194 = 0x011E4EE0;
-
-u32 D_800CD198 = 0x011E57A0;
-
-u32 D_800CD19C = 0x011E57A0;
-
-u32 D_800CD1A0 = 0x011E6060;
-
-u32 D_800CD1A4 = 0x011E6060;
-
-u32 D_800CD1A8 = 0x011E6920;
-
-u32 D_800CD1AC = 0x011E6920;
-
-u32 D_800CD1B0 = 0x011E71E0;
-
-u32 D_800CD1B4 = 0x011E71E0;
-
-u32 D_800CD1B8 = 0x011E7AA0;
-
-u32 D_800CD1BC = 0x011E7AA0;
-
-u32 D_800CD1C0 = 0x011E8360;
-
-u32 D_800CD1C4 = 0x011E8360;
-
-u32 D_800CD1C8 = 0x011E8990;
-
-u32 D_800CD1CC = 0x011E8990;
-
-u32 D_800CD1D0 = 0x011E8E00;
-
-u32 D_800CD1D4 = 0x011E8E00;
-
-u32 D_800CD1D8 = 0x011E9290;
-
-u32 D_800CD1DC = 0x011E9290;
-
-u32 D_800CD1E0 = 0x011E96F0;
-
-u32 D_800CD1E4 = 0x011E96F0;
-
-u32 D_800CD1E8 = 0x011E9B10;
-
-u32 D_800CD1EC = 0x011E9B10;
-
-u32 D_800CD1F0 = 0x011E9F50;
-
-u32 D_800CD1F4 = 0x011E9F50;
-
-u32 D_800CD1F8 = 0x011EA390;
-
-u32 D_800CD1FC = 0x011EA390;
-
-u32 D_800CD200 = 0x011EA7B0;
-
-u32 D_800CD204 = 0x011EA7B0;
-
-u32 D_800CD208 = 0x011EA8E0;
-
-u32 D_800CD20C = 0x011EA8E0;
-
-u32 D_800CD210 = 0x011EAEA0;
-
-u32 D_800CD214 = 0x011EAEA0;
-
-u32 D_800CD218 = 0x011EAFD0;
-
-u32 D_800CD21C = 0x011EAFD0;
-
-u32 D_800CD220 = 0x011EB820;
-
-u32 D_800CD224 = 0x011EB820;
-
-u32 D_800CD228 = 0x011EC150;
-
-u32 D_800CD22C = 0x011EC150;
-
-u32 D_800CD230 = 0x011ECA60;
-
-u32 D_800CD234 = 0x011ECA60;
-
-u32 D_800CD238 = 0x011ED390;
-
-u32 D_800CD23C = 0x011ED390;
-
-u32 D_800CD240 = 0x011EDCB0;
-
-u32 D_800CD244 = 0x011EDCB0;
-
-u32 D_800CD248 = 0x011EE5E0;
-
-u32 D_800CD24C = 0x011EE5E0;
-
-u32 D_800CD250 = 0x011EEF10;
-
-u32 D_800CD254 = 0x011EEF10;
-
-u32 D_800CD258 = 0x011EF820;
-
-u32 D_800CD25C = 0x011EF820;
-
-u32 D_800CD260 = 0x011F0150;
-
-u32 D_800CD264 = 0x011F0150;
-
-u32 D_800CD268 = 0x011F0A40;
-
-u32 D_800CD26C = 0x011F0A40;
-
-u32 D_800CD270 = 0x011F1370;
-
-u32 D_800CD274 = 0x011F1370;
-
-u32 D_800CD278 = 0x011F1C80;
-
-u32 D_800CD27C = 0x011F1C80;
-
-u32 D_800CD280 = 0x011F25B0;
-
-u32 D_800CD284 = 0x011F25B0;
-
-u32 D_800CD288 = 0x011F3AB0;
-
-u32 D_800CD28C = 0x011F3AB0;
-
-u32 D_800CD290 = 0x011F5130;
-
-u32 D_800CD294 = 0x011F5130;
-
-u32 D_800CD298 = 0x011F6020;
-
-u32 D_800CD29C = 0x011F6020;
-
-u32 D_800CD2A0 = 0x011F6CB0;
-
-u32 D_800CD2A4 = 0x011F6CB0;
-
-u32 D_800CD2A8 = 0x011F9710;
-
-u32 D_800CD2AC = 0x011F9710;
-
-u32 D_800CD2B0 = 0x011FA610;
-
-u32 D_800CD2B4 = 0x011FA610;
-
-u32 D_800CD2B8 = 0x011FA810;
-
-u32 D_800CD2BC = 0x011FA810;
-
-u32 D_800CD2C0 = 0x011FAA70;
-
-u32 D_800CD2C4 = 0x011FAA70;
-
-u32 D_800CD2C8 = 0x011FAC70;
-
-u32 D_800CD2CC = 0x011FAC70;
-
-u32 D_800CD2D0 = 0x011FAF60;
-
-u32 D_800CD2D4 = 0x011FAF60;
-
-u32 D_800CD2D8 = 0x011FB260;
-
-u32 D_800CD2DC = 0x011FB260;
-
-u32 D_800CD2E0 = 0x011FB680;
-
-u32 D_800CD2E4 = 0x011FB680;
-
-u32 D_800CD2E8 = 0x011FB9D0;
-
-u32 D_800CD2EC = 0x011FB9D0;
-
-u32 D_800CD2F0 = 0x011FBD50;
-
-u32 D_800CD2F4 = 0x011FBD50;
-
-u32 D_800CD2F8 = 0x011FC0D0;
-
-u32 D_800CD2FC = 0x011FC0D0;
-
-u32 D_800CD300 = 0x011FC510;
-
-u32 D_800CD304 = 0x011FC510;
-
-u32 D_800CD308 = 0x011FC950;
-
-u32 D_800CD30C = 0x011FC950;
-
-u32 D_800CD310 = 0x011FCD80;
-
-u32 D_800CD314 = 0x011FCD80;
-
-u32 D_800CD318 = 0x011FD1C0;
-
-u32 D_800CD31C = 0x011FD1C0;
-
-u32 D_800CD320 = 0x011FD600;
-
-u32 D_800CD324 = 0x011FD600;
-
-u32 D_800CD328 = 0x011FDA40;
-
-u32 D_800CD32C = 0x011FDA40;
-
-u32 D_800CD330 = 0x011FDE80;
-
-u32 D_800CD334 = 0x011FDE80;
-
-u32 D_800CD338 = 0x011FE2A0;
-
-u32 D_800CD33C = 0x011FE2A0;
-
-u32 D_800CD340 = 0x011FE5D0;
-
-u32 D_800CD344 = 0x011FE5D0;
-
-u32 D_800CD348 = 0x011FE900;
-
-u32 D_800CD34C = 0x011FE900;
-
-u32 D_800CD350 = 0x011FEAF0;
-
-u32 D_800CD354 = 0x011FEAF0;
-
-u32 D_800CD358 = 0x011FECE0;
-
-u32 D_800CD35C = 0x011FECE0;
-
-u32 D_800CD360 = 0x011FF1F0;
-
-u32 D_800CD364 = 0x011FF1F0;
-
-u32 D_800CD368 = 0x011FF520;
-
-u32 D_800CD36C = 0x011FF520;
-
-u32 D_800CD370 = 0x011FF870;
-
-u32 D_800CD374 = 0x011FF870;
-
-u32 D_800CD378 = 0x011FFBA0;
-
-u32 D_800CD37C = 0x011FFBA0;
-
-u32 D_800CD380 = 0x011FFED0;
-
-u32 D_800CD384 = 0x011FFED0;
-
-u32 D_800CD388 = 0x01200200;
-
-u32 D_800CD38C = 0x01200200;
-
-u32 D_800CD390 = 0x01200530;
-
-u32 D_800CD394 = 0x01200530;
-
-u32 D_800CD398 = 0x01200860;
-
-u32 D_800CD39C = 0x01200860;
-
-u32 D_800CD3A0 = 0x01200ED0;
-
-u32 D_800CD3A4 = 0x01200ED0;
-
-u32 D_800CD3A8 = 0x01201000;
-
-u32 D_800CD3AC = 0x01201000;
-
-u32 D_800CD3B0 = 0x012017E0;
-
-u32 D_800CD3B4 = 0x012017E0;
-
-u32 D_800CD3B8 = 0x01201910;
-
-u32 D_800CD3BC = 0x01201910;
-
-u32 D_800CD3C0 = 0x01201F40;
-
-u32 D_800CD3C4 = 0x01201F40;
-
-u32 D_800CD3C8 = 0x01202070;
-
-u32 D_800CD3CC = 0x01202070;
-
-u32 D_800CD3D0 = 0x012028C0;
-
-u32 D_800CD3D4 = 0x012028C0;
-
-u32 D_800CD3D8 = 0x012029F0;
-
-u32 D_800CD3DC = 0x012029F0;
-
-u32 D_800CD3E0 = 0x01202B20;
-
-u32 D_800CD3E4 = 0x01202B20;
-
-u32 D_800CD3E8 = 0x01202C50;
-
-u32 D_800CD3EC = 0x01202C50;
-
-u32 D_800CD3F0 = 0x01202D80;
-
-u32 D_800CD3F4 = 0x01202D80;
-
-u32 D_800CD3F8 = 0x01202EB0;
-
-u32 D_800CD3FC = 0x01202EB0;
-
-u32 D_800CD400 = 0x012033C0;
-
-u32 D_800CD404 = 0x012033C0;
-
-u32 D_800CD408 = 0x01203E00;
-
-u32 D_800CD40C = 0x01203E00;
-
-u32 D_800CD410 = 0x01205070;
-
-u32 D_800CD414 = 0x01205070;
-
-u32 D_800CD418 = 0x012062E0;
-
-u32 D_800CD41C = 0x012062E0;
-
-u32 D_800CD420 = 0x01207550;
-
-u32 D_800CD424 = 0x01207550;
-
-u32 D_800CD428 = 0x012087C0;
-
-u32 D_800CD42C = 0x012087C0;
-
-u32 D_800CD430 = 0x012088F0;
-
-u32 D_800CD434 = 0x012088F0;
-
-u32 D_800CD438 = 0x01209D90;
-
-u32 D_800CD43C = 0x01209D90;
-
-u32 D_800CD440 = 0x01209EC0;
-
-u32 D_800CD444 = 0x01209EC0;
-
-u32 D_800CD448 = 0x0120B300;
-
-u32 D_800CD44C = 0x0120B300;
-
-u32 D_800CD450 = 0x0120B430;
-
-u32 D_800CD454 = 0x0120B430;
-
-u32 D_800CD458 = 0x0120C870;
-
-u32 D_800CD45C = 0x0120C870;
-
-u32 D_800CD460 = 0x0120C9A0;
-
-u32 D_800CD464 = 0x0120C9A0;
-
-u32 D_800CD468 = 0x0120DDE0;
-
-u32 D_800CD46C = 0x0120DDE0;
-
-u32 D_800CD470 = 0x0120DF10;
-
-u32 D_800CD474 = 0x0120DF10;
-
-u32 D_800CD478 = 0x0120F350;
-
-u32 D_800CD47C = 0x0120F350;
-
-u32 D_800CD480 = 0x0120F480;
-
-u32 D_800CD484 = 0x0120F480;
-
-u32 D_800CD488 = 0x012108C0;
-
-u32 D_800CD48C = 0x012108C0;
-
-u32 D_800CD490 = 0x012141D0;
-
-u32 D_800CD494 = 0x012141D0;
-
-u32 D_800CD498 = 0x01214380;
-
-u32 D_800CD49C = 0x01214380;
-
-u32 D_800CD4A0 = 0x01214650;
-
-u32 D_800CD4A4 = 0x01214650;
-
-u32 D_800CD4A8 = 0x01214920;
-
-u32 D_800CD4AC = 0x01214920;
-
-u32 D_800CD4B0 = 0x01214AD0;
-
-u32 D_800CD4B4 = 0x01214AD0;
-
-u32 D_800CD4B8 = 0x01218180;
-
-u32 D_800CD4BC = 0x01218180;
-
-u32 D_800CD4C0 = 0x0121B850;
-
-u32 D_800CD4C4 = 0x0121B850;
-
-u32 D_800CD4C8 = 0x0121EF20;
-
-u32 D_800CD4CC = 0x0121EF20;
-
-u32 D_800CD4D0 = 0x012225F0;
-
-u32 D_800CD4D4 = 0x012225F0;
-
-u32 D_800CD4D8 = 0x01225C70;
-
-u32 D_800CD4DC = 0x01225C70;
-
-u32 D_800CD4E0 = 0x01229340;
-
-u32 D_800CD4E4 = 0x01229340;
-
-u32 D_800CD4E8 = 0x0122A300;
-
-u32 D_800CD4EC = 0x0122A300;
-
-u32 D_800CD4F0 = 0x0122B390;
-
-u32 D_800CD4F4 = 0x0122B390;
-
-u32 D_800CD4F8 = 0x0122C350;
-
-u32 D_800CD4FC = 0x0122C350;
-
-u32 D_800CD500 = 0x0122D600;
-
-u32 D_800CD504 = 0x0122D600;
-
-u32 D_800CD508 = 0x0122E7E0;
-
-u32 D_800CD50C = 0x0122E7E0;
-
-u32 D_800CD510 = 0x0122ECD0;
-
-u32 D_800CD514 = 0x0122ECD0;
-
-u32 D_800CD518 = 0x0122F1C0;
-
-u32 D_800CD51C = 0x0122F1C0;
-
-u32 D_800CD520 = 0x0122F6B0;
-
-u32 D_800CD524 = 0x0122F6B0;
-
-u32 D_800CD528 = 0x0122FBA0;
-
-u32 D_800CD52C = 0x0122FBA0;
-
-u32 D_800CD530 = 0x01230430;
-
-u32 D_800CD534 = 0x01230430;
-
-u32 D_800CD538 = 0x01230920;
-
-u32 D_800CD53C = 0x01230920;
-
-u32 D_800CD540 = 0x01230E10;
-
-u32 D_800CD544 = 0x01230E10;
-
-u32 D_800CD548 = 0x01231300;
-
-u32 D_800CD54C = 0x01231300;
-
-u32 D_800CD550 = 0x012317F0;
-
-u32 D_800CD554 = 0x012317F0;
-
-u32 D_800CD558 = 0x01232080;
-
-u32 D_800CD55C = 0x01232080;
-
-u32 D_800CD560 = 0x01233080;
-
-u32 D_800CD564 = 0x01233080;
-
-u32 D_800CD568 = 0x012331F0;
-
-u32 D_800CD56C = 0x012331F0;
-
-u32 D_800CD570 = 0x01233320;
-
-u32 D_800CD574 = 0x01233320;
-
-u32 D_800CD578 = 0x01233EF0;
-
-u32 D_800CD57C = 0x01233EF0;
-
-u32 D_800CD580 = 0x01234020;
-
-u32 D_800CD584 = 0x01234020;
-
-u32 D_800CD588 = 0x01234C10;
-
-u32 D_800CD58C = 0x01234C10;
-
-u32 D_800CD590 = 0x012355C0;
-
-u32 D_800CD594 = 0x012355C0;
-
-u32 D_800CD598 = 0x01235850;
-
-u32 D_800CD59C = 0x01235850;
-
-u32 D_800CD5A0 = 0x01235AE0;
-
-u32 D_800CD5A4 = 0x01235AE0;
-
-u32 D_800CD5A8 = 0x01235EA0;
-
-u32 D_800CD5AC = 0x01235EA0;
-
-u32 D_800CD5B0 = 0x01236260;
-
-u32 D_800CD5B4 = 0x01236260;
-
-u32 D_800CD5B8 = 0x01236480;
-
-u32 D_800CD5BC = 0x01236480;
-
-u32 D_800CD5C0 = 0x012366A0;
-
-u32 D_800CD5C4 = 0x012366A0;
-
-u32 D_800CD5C8 = 0x01236850;
-
-u32 D_800CD5CC = 0x01236850;
-
-u32 D_800CD5D0 = 0x01236A00;
-
-u32 D_800CD5D4 = 0x01236A00;
-
-u32 D_800CD5D8 = 0x01236BF0;
-
-u32 D_800CD5DC = 0x01236BF0;
-
-u32 D_800CD5E0 = 0x01236DE0;
-
-u32 D_800CD5E4 = 0x01236DE0;
-
-u32 D_800CD5E8 = 0x012370B0;
-
-u32 D_800CD5EC = 0x012370B0;
-
-u32 D_800CD5F0 = 0x01237390;
-
-u32 D_800CD5F4 = 0x01237390;
-
-u32 D_800CD5F8 = 0x012377B0;
-
-u32 D_800CD5FC = 0x012377B0;
-
-u32 D_800CD600 = 0x01237A80;
-
-u32 D_800CD604 = 0x01237A80;
-
-u32 D_800CD608 = 0x01237D50;
 
 u32 D_800CD60C = 0x00000000;
 
