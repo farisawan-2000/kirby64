@@ -245,42 +245,49 @@ SECTIONS
    }
    END_NOLOAD(ovl20)
 
-   BEGIN_SEG(data_250320, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_250320, 0) {
       BUILD_DIR/asm/data/kirby.u.250320.o(.data);
    }
    END_SEG(data_250320)
-   BEGIN_SEG(data_2A8CB0, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_2A8CB0, 0) {
       BUILD_DIR/asm/data/kirby.u.2A8CB0.o(.data);
    }
    END_SEG(data_2A8CB0)
 
-   BEGIN_SEG(data_2B1510, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_2B1510, 0) {
       BUILD_DIR/asm/data/kirby.u.2B1510.o(.data);
    }
    END_SEG(data_2B1510)
-   
-   BEGIN_SEG(data_3E1400, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_3E1400, 0) {
       BUILD_DIR/asm/data/kirby.u.3E1400.o(.data);
    }
    END_SEG(data_3E1400)
-   BEGIN_SEG(data_3E6BC0, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_3E6BC0, 0) {
       BUILD_DIR/asm/data/kirby.u.3E6BC0.o(.data);
    }
    END_SEG(data_3E6BC0)
-   BEGIN_SEG(data_49F590, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_49F590, 0) {
       BUILD_DIR/asm/data/kirby.u.49F590.o(.data);
    }
    END_SEG(data_49F590)
-   BEGIN_SEG(data_4A0340, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_4A0340, 0) {
       BUILD_DIR/asm/data/kirby.u.4A0340.o(.data);
    }
    END_SEG(data_4A0340)
-   BEGIN_SEG(data_4A3B60, 0) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(data_4A3B60, 0) {
       BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
    }
    END_SEG(data_4A3B60)
+
    BEGIN_SEG(bank_data, __romPos) { /*TODO: get a good addr for this*/
-      BUILD_DIR/data/banks.o(.data);
+      BUILD_DIR/data/banks/bank0.o(.data);
+      BUILD_DIR/data/banks/bank1.o(.data);
+      BUILD_DIR/data/banks/bank2.o(.data);
+      BUILD_DIR/data/banks/bank3.o(.data);
+      BUILD_DIR/data/banks/bank4.o(.data);
+      BUILD_DIR/data/banks/bank5.o(.data);
+      BUILD_DIR/data/banks/bank6.o(.data);
+      BUILD_DIR/data/banks/bank7.o(.data);
    }
    END_SEG(bank_data)
 

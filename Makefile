@@ -52,7 +52,7 @@ LOADER = loader64
 LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
-ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data
+ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data data/banks
 SRC_DIRS := src $(wildcard src/ovl*) data  wildcard
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
