@@ -253,10 +253,12 @@ SECTIONS
       BUILD_DIR/asm/data/kirby.u.2A8CB0.o(.data);
    }
    END_SEG(data_2A8CB0)
+
    BEGIN_SEG(data_2B1510, 0) { /*TODO: get a good addr for this*/
       BUILD_DIR/asm/data/kirby.u.2B1510.o(.data);
    }
    END_SEG(data_2B1510)
+   
    BEGIN_SEG(data_3E1400, 0) { /*TODO: get a good addr for this*/
       BUILD_DIR/asm/data/kirby.u.3E1400.o(.data);
    }

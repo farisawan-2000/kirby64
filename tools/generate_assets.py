@@ -54,11 +54,13 @@ def getAddrs(l):
 	return x1.strip()
 
 def printBank(n):
-	print(
-		"u32 "+geoBlocks[n]+"[] = \n"+
-		"\n".join(["\t"+i+"RomStart,\n\t"+i+"RomEnd," for i in banks[n]])+
-		"\n};"
-	)
+	if n!= 5:
+		print(
+			"u32 "+geoBlocks[n]+"["+str(len(banks[n])*2)+"] = \n"+
+			"\t"+banks[n][0]+",\n"+
+			"\n".join(["\t"+i+",\n\t"+i+"," for i in banks[n][1:]])+
+			"\n};"
+		)
 
 def generateLink(b):
 	toReturn = ""
@@ -121,32 +123,32 @@ with open(sys.argv[1]) as f:
 		if "*" in line:
 			path = getSection(line)
 		else:
-			tempBank = getBank(line)
-			tempIndex = getIndex(line)
-			# print(".balign 2")
-			offset = getAddrs(line)
-			# print(str(hex(prevOff)))
-			# if prevOff == 0:
-				# printAsset(fullPath, "0xA70", offset)
-				# prevOff = 0x4AB360
-				# prevOff = 0x4AA8F0
-			# else:
-			cache = prevOff
-			printAsset(fullPath, str(hex(int(offset, 16) - cache)), str(hex(prevOff)))
-			fullPath = "assets/"+path+"/"+prefix+getBank(line)+"/"+getIndex(line)+"/block.bin"
-			prevOff = int(offset, 16)
-			# print("glabel bank_"+getBank(line)+"_index_"+getIndex(line)+"_"+path+" # "+offset)
-			# f2.write("extern u32 bank_"+getBank(line)+"_index_"+getIndex(line)+"_"+path+"[];\n")
-			# print(".incbin \""+fullPath+"\"\n")
-			# printAsset(fullPath, size, offset)
+			# tempBank = getBank(line)
+			# tempIndex = getIndex(line)
+			# # print(".balign 2")
+			# offset = getAddrs(line)
+			# # print(str(hex(prevOff)))
+			# # if prevOff == 0:
+			# 	# printAsset(fullPath, "0xA70", offset)
+			# 	# prevOff = 0x4AB360
+			# 	# prevOff = 0x4AA8F0
+			# # else:
+			# cache = prevOff
+			# printAsset(fullPath, str(hex(int(offset, 16) - cache)), str(hex(prevOff)))
+			# fullPath = "assets/"+path+"/"+prefix+getBank(line)+"/"+getIndex(line)+"/block.bin"
+			# prevOff = int(offset, 16)
+			# # print("glabel bank_"+getBank(line)+"_index_"+getIndex(line)+"_"+path+" # "+offset)
+			# # f2.write("extern u32 bank_"+getBank(line)+"_index_"+getIndex(line)+"_"+path+"[];\n")
+			# # print(".incbin \""+fullPath+"\"\n")
+			# # printAsset(fullPath, size, offset)
 			if "geo" in path:
-				banks[int(getBank(line))].append("_"+prefix+getBank(line)+"_index_"+getIndex(line))
+				banks[int(getBank(line))].append(""+prefix+getBank(line)+"_index_"+getIndex(line)+"_"+path)
 
 # x = open("kirby.us.inc.ld", "w+")
 # x.write(generateLink())
 # x.close()
 print()
-# for i in range(7):
+for i in range(7):
 # 	generateLink(i)
-# 	printBank(i)
+	printBank(i)
 # genCFile(0)
