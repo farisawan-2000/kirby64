@@ -12335,12 +12335,11 @@ u32 D_8003F350 = 0x8004ADC0;
 u32 D_8003F354 = 0x0004B000;
 u32 D_8003F358 = 0x7D001018;
 u32 D_8003F35C = 0x40400818;
-
 u32 D_8003F360 = 0x00003214;
+
 u32 *D_8003F364 = _data_3E1400SegmentRomStart;
 u32 *D_8003F368 = _data_3E6BC0SegmentRomStart;
 u32 *D_8003F36C = _data_3E6BC0SegmentRomStart;
-
 u32 *D_8003F370 = _data_2A8CB0SegmentRomStart;
 u32 *D_8003F374 = _data_2B1510SegmentRomStart;
 u32 *D_8003F378 = _data_2B1510SegmentRomStart;
@@ -12360,9 +12359,9 @@ u32 *D_8003F3A0 = _data_49F590SegmentRomStart;
 u32 *D_8003F3A4 = _data_4A0340SegmentRomStart;
 u32 *D_8003F3A8 = _data_4A0340SegmentRomStart;
 u32 *D_8003F3AC = _data_4A3B60SegmentRomStart;
-
 u32 *D_8003F3B0 = _data_4A3B60SegmentRomStart;
-u32 *D_8003F3B4 = &bank_0_index_1_geo;
+
+u32 *D_8003F3B4 = bank_0_index_1_geo;
 u32 D_8003F3B8 = 0x00000000;
 u32 D_8003F3BC = 0x00000000;
 
