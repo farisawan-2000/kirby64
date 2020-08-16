@@ -16,7 +16,7 @@ extern void *D_80048D8C, *D_80048D88;
 extern u32 D_80048CDC;
 // an actual DMA Copy
 #ifdef MIPS_TO_C
-void func_80002BD0(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 writeback) {
+void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 writeback) {
     u32 sp58;
     void *sp54;
     void *sp50;
@@ -70,7 +70,7 @@ void load_overlay(Overlay *ovl) {
         osInvalDCache((s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
     }
     if ((s32) ovl->endAddr - (s32) ovl->startAddr != 0) {
-        func_80002BD0(D_80048CF0, (s32) ovl->startAddr, (s32) ovl->RAMStart, (s32) ovl->endAddr - (s32) ovl->startAddr, 0);
+        dma_copy(D_80048CF0, (s32) ovl->startAddr, (s32) ovl->RAMStart, (s32) ovl->endAddr - (s32) ovl->startAddr, 0);
     }
     
     if ((s32) ovl->bssEnd - (s32) ovl->bssStart != 0) {
@@ -78,12 +78,12 @@ void load_overlay(Overlay *ovl) {
     }
 }
 
-void func_80002E48(u32* arg0, u32* arg1, u32 arg2) {
-    func_80002BD0(D_80048CF0, arg0, arg1, arg2, 0);
+void func_80002E48(void *arg0, void *arg1, u32 arg2) {
+    dma_copy(D_80048CF0, arg0, arg1, arg2, 0);
 }
 
-void func_80002E84(u32* arg0, u32* arg1, u32 arg2) {
-    func_80002BD0(D_80048CF0, arg1, arg0, arg2, 1);
+void func_80002E84(void *arg0, void *arg1, u32 arg2) {
+    dma_copy(D_80048CF0, arg1, arg0, arg2, 1);
 }
 extern OSPiHandle D_80048CF8;
 extern u32 *D_80048D0C; // another PI Handle?
@@ -106,11 +106,11 @@ OSPiHandle *func_80002EBC(void) {
 }
 
 void func_80002F4C(s32 arg0, s32 arg1, s32 arg2) {
-    func_80002BD0(&D_80048CF8, arg0, arg1, arg2, 0);
+    dma_copy(&D_80048CF8, arg0, arg1, arg2, 0);
 }
 
 void func_80002F88(s32 arg0, s32 arg1, s32 arg2) {
-    func_80002BD0(&D_80048CF8, arg1, arg0, arg2, 1);
+    dma_copy(&D_80048CF8, arg1, arg0, arg2, 1);
 }
 
 #ifdef MIPS_TO_C

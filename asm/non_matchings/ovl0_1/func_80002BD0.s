@@ -1,4 +1,4 @@
-glabel func_80002BD0
+glabel dma_copy
 /* 0037D0 80002BD0 27BDFFA0 */  addiu $sp, $sp, -0x60
 /* 0037D4 80002BD4 3C018005 */  lui   $at, %hi(D_80048D88) # $at, 0x8005
 /* 0037D8 80002BD8 AC258D88 */  sw    $a1, %lo(D_80048D88)($at)

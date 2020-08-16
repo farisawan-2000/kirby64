@@ -1,5 +1,4 @@
 #include <ultra64.h>
-// #include "macros.h"
 #include "types.h"
 
 extern u32 D_800D6EC8;

@@ -50,7 +50,12 @@ def handleStagedLine(l, ls):
 	xtok = [i.strip() for i in x2.split(',')]
 
 	hi = xtok[1]+'0000'
-	lo = stagedRegs[xtok[0]][0]
+	try:
+		lo = stagedRegs[xtok[0]][0]
+	except Exception as e:
+		print(stagedRegs)
+		print(l, ls[len(ls) - lineNum])
+		exit(1)
 	hint = int(hi, 16)
 	lont = int(lo, 16)
 	addr = hint + lont
@@ -72,7 +77,7 @@ def handleStagedLine(l, ls):
 	ls[paradigm - stagedRegs[xtok[0]][1]] = line2+"\n"
 	# print(lineNum, stagedRegs[xtok[0]][1])
 	# print(ls[paradigm - lineNum][:-1])
-	print(line1, line2)
+	# print(line1, line2)
 
 
 for i in sys.argv[1:]: # xargs support lul
