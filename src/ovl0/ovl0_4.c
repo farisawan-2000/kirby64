@@ -4251,10 +4251,7 @@ loop_1:
     gDisplayListHeads->unk4 = (void *) (gDisplayListHeads + 0x10);
     gDisplayListHeads = (void *) (gDisplayListHeads + 0x10);
     func_800171E0(&gDisplayListHeads, temp_s5);
-    temp_s1_4 = gDisplayListHeads;
-    gDisplayListHeads = (void *) (temp_s1_4 + 8);
-    temp_s1_4->unk4 = 0;
-    temp_s1_4->unk0 = 0xDF000000;
+    gSPEndDisplayList(gDisplayListHeads[0]++);
     D_8004ADB0->unk0 = 0xDE010000;
     D_8004ADB0->unk4 = (void *) gDisplayListHeads;
     func_80017B40(temp_s5, 0);
@@ -4286,80 +4283,55 @@ f32 tanf(f32 x) {
 extern f32 D_80040C38, D_80040C3C;
 extern f32 D_80040C20, D_80040C24, D_80040C28, D_80040C2C, D_80040C30, D_80040C34;
 
-// Almost matched, just need to figure out how to get the compiler to put yDivx2 in $f0
-#ifdef MIPS_TO_C
-f32 atanf(f32 yDivx) {
+f32 atanf(f32 yDivX) {
+    f32 yDivX2;
+    f32 result;
     s32 phi_v0;
-    f32 yDivx2;
-    f32 temp_f2;
 
-    if (yDivx == 0.0f) {
-        return 0.0f;
-    }
+    if (yDivX == 0.0f) return 0.0f;
     
     phi_v0 = 1;
 
-    if (1.0f < yDivx) {
-        yDivx = 1.0f / yDivx;
-    } else if (yDivx < -1.0f) {
-        yDivx = 1.0f / yDivx;
+    if (yDivX > 1.0f) {
+        yDivX = 1.0f / yDivX;
+    } else if (yDivX < -1.0f) {
+        yDivX = 1.0f / yDivX;
         phi_v0 = 2;
     } else {
         phi_v0 = 0;
     }
-    yDivx2 = yDivx * yDivx;
-    temp_f2 = (yDivx2 / (yDivx2 / (yDivx2 / (yDivx2 / (yDivx2 / (yDivx2 / D_80040C20 + D_80040C24) + D_80040C28) + D_80040C2C) + D_80040C30) + D_80040C34) + 1.0f) * yDivx;
+    yDivX2 = yDivX * yDivX;
+    result = (yDivX2 / (yDivX2 / (yDivX2 / (yDivX2 / (yDivX2 / (yDivX2 / D_80040C20 + D_80040C24) + D_80040C28) + D_80040C2C) + D_80040C30) + D_80040C34) + 1) * yDivX;
     switch (phi_v0) {
-        default: return yDivx2;
-        case 0: return temp_f2; 
-        case 1: return D_80040C38 - temp_f2; 
-        case 2: return D_80040C3C - temp_f2;
+        case 0: return result; 
+        case 1: return D_80040C38 - result; // pi/2 - result
+        case 2: return D_80040C3C - result; // -pi/2 - result
+        default: return;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_800185E4.s")
-#endif
 
 f32 atanf(f32);
 extern f32 D_80040C40;
 extern f32 D_80040C44;
 
 f32 atan2f(f32 y, f32 x) {
-    f32 temp_f0;
+    f32 yDivX;
     s32 phi_v0;
-    f32 phi_f12;
     s32 phi_v0_2;
 
     if (0.0f < x) {
         return atanf(y / x);
     }
     if (x < 0.0f) {
-        temp_f0 = y / x;
-        if (y < 0.0f) {
-            phi_v0 = -1;
-        }
-        else {
-            phi_v0 = 1;
-        }
-        if (temp_f0 < 0.0f) {
-            phi_f12 = -temp_f0;
-        } else {
-            phi_f12 = temp_f0;
-        }
+        yDivX = y / x;
+        phi_v0 = ((y < 0.0f) ? -1 : 1);
+
         // pi - atanf() * phi_v0
-        return (D_80040C40 - atanf(phi_f12)) * phi_v0;
+        return (D_80040C40 - atanf(ABSF(yDivX))) * phi_v0;
     }
     if (y != 0.0f) {
-        if (y < 0.0f) {
-            phi_v0_2 = -1;
-        }
-        else {
-            phi_v0_2 = 1;
-        }
-        // * pi/2
-        return phi_v0_2 * D_80040C44;
-    }
-    return 0.0f;
+        return ((y < 0.0f) ? -1 : 1) * D_80040C44; // pi / 2
+    } else return 0.0f;
 }
 
 

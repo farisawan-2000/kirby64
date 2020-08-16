@@ -61,7 +61,7 @@
 // another way of converting virtual to physical
 #define VIRTUAL_TO_PHYSICAL2(addr)  ((u8 *)(addr) - 0x80000000U)
 
-#define ABSF(x) (x < 0.f ? -x : x)
+#define ABSF(x) (x < 0.0f ? -x : x)
 
 #define HW_REG(reg, type) *(volatile type *)(uintptr_t)(reg | 0xa0000000)
 
