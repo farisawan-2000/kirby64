@@ -3958,7 +3958,7 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017C7C.s")
 #endif
 
-extern Gfx* gDisplayListHeads[];
+extern Gfx *gDisplayListHeads[4];
 
 extern struct UnkStruct8004A7F8 D_8004A7F8[];
 // TODO: figure out datatype to pass into gSPDisplayList
@@ -3966,16 +3966,16 @@ extern struct UnkStruct8004A7F8 D_8004A7F8[];
 void func_80017DB0(s32 arg0) {
     struct UnkStruct8004A7F8 *temp_v1 = D_8004A7F8[arg0];
     if (temp_v1->unk4) {
-        gSPDisplayList(gDisplayListHeads++, temp_v1->unk4);
+        gSPDisplayList(gDisplayListHeads[0]++, temp_v1->unk4);
     }
     if (temp_v1->unk8) {
-        gSPDisplayList(gDisplayListHead2++, temp_v1->unk8);
+        gSPDisplayList(gDisplayListHeads[1]++, temp_v1->unk8);
     }
     if (temp_v1->unkC) {
-        gSPDisplayList(gDisplayListHead3++, temp_v1->unkC);
+        gSPDisplayList(gDisplayListHeads[2]++, temp_v1->unkC);
     }
     if (temp_v1->unk10) {
-        gSPDisplayList(gDisplayListHead4++, temp_v1->unk10);
+        gSPDisplayList(gDisplayListHeads[3]++, temp_v1->unk10);
     }
 }
 #else
@@ -4044,46 +4044,40 @@ void func_80017F78(struct unk80017B40 *arg0) {
     }
 }
 
-void func_80016940(s32, void*, s32);
-void func_800171E0(s32, void*);
+void func_80016940(s32, void *, s32);
+void func_800171E0(s32, void *);
 
 void func_80017FEC(struct unk80017FEC *arg0, s32 arg1, s32 arg2) {
     struct unk80017B40 *temp_s0;
-    u32 phi_a1;
 
     temp_s0 = arg0->unk3C;
     func_80016940(arg1, temp_s0, arg2);
     func_800171E0(arg1, temp_s0);
     func_80017B40(temp_s0, arg2);
-    if ((temp_s0->unk80 & 8) != 0)
-    {
-        phi_a1 = 1;
-    }
-    else
-    {
-        phi_a1 = 0;
-    }    
-    func_80017E84(arg0, phi_a1);
+
+    func_80017E84(arg0, (temp_s0->unk80 & 8) != 0 ? 1 : 0);
     func_80017F78(temp_s0);
 }
 
-void func_8001806C(void* arg0) {
+void func_8001806C(struct unk80017FEC *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[0], 0);
 }
 
-void func_80018094(void* arg0) {
+void func_80018094(struct unk80017FEC *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[1], 1);
 }
 
-void func_800180BC(void* arg0) {
+void func_800180BC(struct unk80017FEC *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[2], 2);
 }
 
-void func_800180E4(void* arg0) {
+void func_800180E4(struct unk80017FEC *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[3], 3);
 }
 
 extern Gfx* gDisplayListHead2;
+
+// #define gDisplayListHead2 gDisplayListHeads[2]
 
 void func_8001810C(void) {
     void* sp1C;
@@ -4295,9 +4289,9 @@ extern f32 D_80040C20, D_80040C24, D_80040C28, D_80040C2C, D_80040C30, D_80040C3
 // Almost matched, just need to figure out how to get the compiler to put yDivx2 in $f0
 #ifdef MIPS_TO_C
 f32 atanf(f32 yDivx) {
+    s32 phi_v0;
     f32 yDivx2;
     f32 temp_f2;
-    s32 phi_v0;
 
     if (yDivx == 0.0f) {
         return 0.0f;
