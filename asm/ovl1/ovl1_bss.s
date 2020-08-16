@@ -47202,7 +47202,13 @@ glabel D_800E5F8C
 .word 0x00000000
 
 glabel D_800E5F90
-.word 0x00000000
+.byte 0
+glabel D_800E5F91
+.byte 0
+glabel D_800E5F92
+.byte 0
+glabel D_800E5F93
+.byte 0
 
 glabel D_800E5F94
 .word 0x00000000
