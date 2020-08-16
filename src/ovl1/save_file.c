@@ -27,33 +27,31 @@ void func_800B86FC(void) {
     if (calc_save_header_checksum() != gSaveBuffer1.header.checksum) {
         func_800B9008_ovl1();
     }
+
     phi_v0 = &gSaveBuffer1;
-    phi_v1_2 = 0;
+    phi_v1 = 0;
 loop_3:
-    temp_v0 = phi_v0 + 0x58;
-    phi_v1 = phi_v1_2;
+    phi_v0 += 0x58;
     if (0x99999999 != phi_v0->unk14) {
-        phi_v1 = phi_v1_2 + 1;
+        phi_v1++;
     }
-    phi_v0 = temp_v0;
-    phi_v1_2 = phi_v1;
-    if (temp_v0 != &D_800ECB00) {
+    if (phi_v0 != &D_800ECB00) {
         goto loop_3;
     }
+
     D_800ECA00 = phi_v1;
     calc_header_checksum(0x99999999, &D_800ECB00);
     func_800B8BDC_ovl1();
     phi_t9 = &gSaveBuffer1;
     phi_t8 = &gSaveBuffer2;
 loop_7:
-    temp_t9 = phi_t9 + 0xC;
-    temp_t8 = phi_t8 + 0xC;
+    phi_t9 += 0xC;
+    phi_t8 += 0xC;
     temp_t8->unk-C = (s32) *phi_t9;
     temp_t8->unk-8 = (s32) temp_t9->unk-8;
     temp_t8->unk-4 = (s32) temp_t9->unk-4;
-    phi_t9 = temp_t9;
     phi_t8 = temp_t8;
-    if (temp_t9 != (&gSaveBuffer1 + 0x1B0)) {
+    if (phi_t9 != (&gSaveBuffer1 + 0x1B0)) {
         goto loop_7;
     }
     temp_t8->unk0 = (s32) temp_t9->unk0;
@@ -466,14 +464,19 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9008.s")
 
 #ifdef NON_MATCHING
 u32 calc_save_header_checksum(void) {
-    u32 *i = &gSaveBuffer1.header.head[0];
-    u32 *saveEnd = &gSaveBuffer1.header.checksum;
+    s32 *i = gSaveBuffer1.header.head;
+    s32 *saveEnd = &gSaveBuffer1.header.checksum;
     u32 resultBuffer = SAVE_CHECKSUM_MAGIC;
     while (i != saveEnd) {
         resultBuffer += *i;
         i++;
     }
     return resultBuffer;
+    // s32 *i = gSaveBuffer1.header.head;
+    // s32 *saveEnd = &gSaveBuffer1.header.checksum;
+    // u32 resultBuffer;
+    // for (resultBuffer = SAVE_CHECKSUM_MAGIC; i != saveEnd; i++) resultBuffer+=*i;
+    // return resultBuffer;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9068.s")
@@ -594,7 +597,7 @@ void verify_save(s32 fileNum) {
     }
     gSaveBuffer1.files[fileNum].shards[23] = (u8)0;
     gSaveBuffer1.files[fileNum].shards[3] = (u8)0;
-    gSaveBuffer1.files[fileNum].data3B = (u8)0;
+    gSaveBuffer1.files[fileNum].data38[3] = (u8)0;
     percent = 0;
     if (gSaveBuffer1.files[fileNum].cutscenesWatched & 2) {
         percent = 2;
@@ -618,15 +621,15 @@ void verify_save(s32 fileNum) {
             //     goto loop_9;
         // }
     if (gSaveBuffer1.files[fileNum].world >= 8) {
-        gSaveBuffer1.files[fileNum].data3A = 1;
-        gSaveBuffer1.files[fileNum].data39 = 1;
+        gSaveBuffer1.files[fileNum].data38[2] = 1;
+        gSaveBuffer1.files[fileNum].data38[1] = 1;
     }
     if (gSaveBuffer1.files[fileNum].world < 6) {
-        gSaveBuffer1.files[fileNum].data3A = 0;
-        gSaveBuffer1.files[fileNum].data39 = 0;
+        gSaveBuffer1.files[fileNum].data38[2] = 0;
+        gSaveBuffer1.files[fileNum].data38[1] = 0;
     }
 
-
+    // problematic loop; might have to regenerate in m2c
     for (i = 0; i < 16; i++) {
         if (gSaveBuffer1.files[fileNum].shards[8] != 0) {
             percent += D_800BE5A8[i];
@@ -641,11 +644,11 @@ void verify_save(s32 fileNum) {
 
     gSaveBuffer1.files[fileNum].percentComplete = percent;
     gSaveBuffer1.files[fileNum].data13 = 0U;
-    if (gSaveBuffer1.files[fileNum].data39 != 0) {
+    if (gSaveBuffer1.files[fileNum].data38[1] != 0) {
         gSaveBuffer1.files[fileNum].data13 = 1U;
     }
     gSaveBuffer1.files[fileNum].data14 = 0U;
-    if (gSaveBuffer1.files[fileNum].data3A != 0) {
+    if (gSaveBuffer1.files[fileNum].data38[2] != 0) {
         gSaveBuffer1.files[fileNum].data14 = 1U;
     }
 }
