@@ -231,9 +231,12 @@ SECTIONS
       BUILD_DIR/asm/ovl19/ovl19_3.o(.text);
       BUILD_DIR/asm/ovl19/ovl19_4.o(.text);
       BUILD_DIR/src/ovl19/ovl19_5.o(.text);
-      BUILD_DIR/data/kirby.ovl19.data.o(.data);
    }
    END_SEG(ovl19)
+   BEGIN_SEG(ovl19Data, _ovl19SegmentEnd) {
+      BUILD_DIR/data/kirby.ovl19.data.o(.data);
+   }
+   END_SEG(ovl19Data)
    BEGIN_NOLOAD(ovl19) {
       BUILD_DIR/asm/ovl19/ovl19_bss.o(.bss);
    }
