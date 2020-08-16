@@ -106,6 +106,10 @@ SECTIONS
       BUILD_DIR/data/kirby.0AC900.o(.data);
    }
    END_SEG(ovl2)
+   BEGIN_NOLOAD(ovl2) {
+      BUILD_DIR/asm/ovl2/ovl2_bss.o(.bss);
+   }
+   END_NOLOAD(ovl2)
 
    /* 0x80151100 0B1B40-0F0D50 [3F210] */
    BEGIN_SEG(ovl3, 0x80151100) {
@@ -227,9 +231,13 @@ SECTIONS
       BUILD_DIR/asm/ovl19/ovl19_3.o(.text);
       BUILD_DIR/asm/ovl19/ovl19_4.o(.text);
       BUILD_DIR/src/ovl19/ovl19_5.o(.text);
-      BUILD_DIR/asm/ovl19/ovl19_data.o(.data);
+      BUILD_DIR/data/kirby.ovl19.data.o(.data);
    }
    END_SEG(ovl19)
+   BEGIN_NOLOAD(ovl19) {
+      BUILD_DIR/asm/ovl19/ovl19_bss.o(.bss);
+   }
+   END_NOLOAD(ovl19)
 
    /* 0x80300000 2501C0-2502A0 [E0] */
    BEGIN_SEG(ovl20, 0x80300000) {
