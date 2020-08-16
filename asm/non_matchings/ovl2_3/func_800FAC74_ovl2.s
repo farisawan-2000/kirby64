@@ -213,7 +213,7 @@ glabel func_800FAC74_ovl2
 /* 0839E8 800FAF78 AFA70060 */   sw    $a3, 0x60($sp)
 /* 0839EC 800FAF7C C7AE0038 */  lwc1  $f14, 0x38($sp)
 /* 0839F0 800FAF80 C7AC0040 */  lwc1  $f12, 0x40($sp)
-/* 0839F4 800FAF84 0C0061C3 */  jal   atan2f_ovl2
+/* 0839F4 800FAF84 0C0061C3 */  jal   atan2f
 /* 0839F8 800FAF88 46007387 */   neg.s $f14, $f14
 /* 0839FC 800FAF8C 3C018013 */  lui   $at, %hi(D_80128818) # $at, 0x8013
 /* 083A00 800FAF90 C42E8818 */  lwc1  $f14, %lo(D_80128818)($at)

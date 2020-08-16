@@ -1393,7 +1393,7 @@ f32 func_800FA92C_ovl2(s32 arg0, void *arg1, void *arg2) {
             arg1 = temp_a3;
             func_80018DEC_ovl2(&sp4C, arg2, temp_a2, temp_a3);
             temp_a3_2 = arg1;
-            temp_f12 = (atan2f_ovl2(sp54, -sp4C) / D_80128804) * 180.0f;
+            temp_f12 = (atan2f(sp54, -sp4C) / D_80128804) * 180.0f;
             phi_f2 = temp_f12;
             if (temp_f12 < 0.0f) {
                 phi_f2 = temp_f12 + 360.0f;
@@ -1435,7 +1435,7 @@ f32 func_800FA92C_ovl2(s32 arg0, void *arg1, void *arg2) {
         if (arg2->unk34 != 0) {
             arg1 = phi_a3;
             func_80018DEC_ovl2(&sp4C, arg2 + 0x18, arg2 + 0x24, phi_a3);
-            temp_f12_2 = 180.0f - ((atan2f_ovl2(sqrtf((sp54 * sp54) + (sp4C * sp4C), sp54), sp50) / D_8012880C) * 180.0f);
+            temp_f12_2 = 180.0f - ((atan2f(sqrtf((sp54 * sp54) + (sp4C * sp4C), sp54), sp50) / D_8012880C) * 180.0f);
             phi_f12 = temp_f12_2;
             if (temp_f12_2 < arg1->unk38) {
                 sp64 = 1;
@@ -1596,7 +1596,7 @@ block_32:
     arg0 = temp_a3;
     func_80018DEC_ovl2(temp_f12_2, &sp38, arg2 + 0x18, arg2 + 0x24, temp_a3);
     temp_a3_2 = arg0;
-    temp_f12_3 = (atan2f_ovl2(sp40, -sp38) / D_80128818) * 180.0f;
+    temp_f12_3 = (atan2f(sp40, -sp38) / D_80128818) * 180.0f;
     phi_f2_3 = temp_f12_3;
     if (temp_f12_3 < 0.0f) {
         phi_f2_3 = temp_f12_3 + 360.0f;
@@ -1871,7 +1871,7 @@ block_65:
         D_801293B0 = temp_f12_5;
     }
     func_80018DEC_ovl2(temp_f12_5, D_80128820, &sp28, arg2 + 0x18, arg2 + 0x24, &D_801293AC);
-    temp_f12_6 = (atan2f_ovl2(sp30, -sp28) / D_80128824) * 180.0f;
+    temp_f12_6 = (atan2f(sp30, -sp28) / D_80128824) * 180.0f;
     phi_f2_9 = temp_f12_6;
     if (temp_f12_6 < 0.0f) {
         phi_f2_9 = temp_f12_6 + 360.0f;

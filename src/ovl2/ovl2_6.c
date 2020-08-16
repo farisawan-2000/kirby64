@@ -539,8 +539,8 @@ f32 func_80100EE4_ovl2(s32 arg0) {
     sp3C = D_800D7B38.unk10;
     sp28 = temp_f16;
     sp24 = D_800D7B20.unk8 - D_800D7B20.unk14;
-    sp30 = atan2f_ovl2(D_800D7B38.unk8 - D_800D7B38.unk14, D_800D7B38.unk0 - D_800D7B38.unkC);
-    sp2C = atan2f_ovl2(sp24, sp28);
+    sp30 = atan2f(D_800D7B38.unk8 - D_800D7B38.unk14, D_800D7B38.unk0 - D_800D7B38.unkC);
+    sp2C = atan2f(sp24, sp28);
     sp1C = func_80100E7C_ovl2(sp30);
     temp_v0 = func_80100E7C_ovl2(sp2C);
     if (sp1C == 1) {
@@ -562,7 +562,7 @@ f32 func_80100EE4_ovl2(s32 arg0) {
     temp_f18 = (sp30 - phi_f14)
                / (((D_800D799C->unk3C->unk20 * D_80128A3C) / 180.0f) * D_800D799C->unk3C->unk24);
     sp38 = temp_f18;
-    temp_ret = atan2f_ovl2(D_800D7B20.unk4 - D_800D7B20.unk10,
+    temp_ret = atan2f(D_800D7B20.unk4 - D_800D7B20.unk10,
                                   sqrtf((sp28 * sp28) + (sp24 * sp24), phi_f14, 1));
     sp34 = temp_ret / ((D_800D799C->unk3C->unk20 * D_80128A40) / 180.0f);
     phi_return = temp_ret;
