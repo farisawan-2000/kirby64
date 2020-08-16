@@ -894,7 +894,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728_ovl2.s")
 
     if (arg0 != 0) {
         sp18 = sinf(arg1);
-        return func_800185E4_ovl2(-((cosf(arg1) * arg0->unk8) + (arg0->unk0 * sp18)) / arg0->unk4, arg0);
+        return atanf_ovl2(-((cosf(arg1) * arg0->unk8) + (arg0->unk0 * sp18)) / arg0->unk4, arg0);
     }
     return 0;
 }
