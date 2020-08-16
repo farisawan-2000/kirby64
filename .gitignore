@@ -9,6 +9,7 @@ bin/*
 tools/mipspro*/
 *.o
 __pycache__/*
+.vscode/*
 # Use these for scratch work
 *.x
 strings/*
