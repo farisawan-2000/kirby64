@@ -67631,7 +67631,7 @@ glabel D_800EC9F0
 glabel D_800EC9F4
 .word 0x00000000
 
-glabel D_800EC9F8
+glabel gSaveBuffer1
 .word 0x00000000
 
 glabel D_800EC9FC
@@ -67970,7 +67970,7 @@ glabel D_800ECBA8
 glabel D_800ECBAC
 .word 0x00000000
 
-glabel D_800ECBB0
+glabel gSaveBuffer2
 .word 0x00000000
 
 glabel D_800ECBB4
