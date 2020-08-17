@@ -1068,41 +1068,9 @@ glabel D_8022F698
 glabel D_8022F69C
 .word 0x00000000
 
+.balign 4
 glabel D_8022F6A0
-.word 0x72657148
-
-glabel D_8022F6A4
-.word 0x656C7043
-
-glabel D_8022F6A8
-.word 0x68696C64
-
-glabel D_8022F6AC
-.word 0x54726B20
-
-glabel D_8022F6B0
-.word 0x20526571
-
-glabel D_8022F6B4
-.word 0x75657374
-
-glabel D_8022F6B8
-.word 0x20457272
-
-glabel D_8022F6BC
-.word 0x6F722121
-
-glabel D_8022F6C0
-.word 0x5B68656C
-
-glabel D_8022F6C4
-.word 0x706C6962
-
-glabel D_8022F6C8
-.word 0x2E63635D
-
-glabel D_8022F6CC
-.word 0x0A000000
+.asciiz "reqHelpChildTrk  Request Error!![helplib.cc]\n"
 
 glabel D_8022F6D0
 .word 0x4426AA3D
@@ -1116,38 +1084,9 @@ glabel D_8022F6D8
 glabel D_8022F6DC
 .word 0x00000000
 
+.balign 4
 glabel D_8022F6E0
-.word 0x48656C70
-
-glabel D_8022F6E4
-.word 0x65722045
-
-glabel D_8022F6E8
-.word 0x66666563
-
-glabel D_8022F6EC
-.word 0x74205265
-
-glabel D_8022F6F0
-.word 0x71756573
-
-glabel D_8022F6F4
-.word 0x74204572
-
-glabel D_8022F6F8
-.word 0x726F7221
-
-glabel D_8022F6FC
-.word 0x5B68656C
-
-glabel D_8022F700
-.word 0x70656666
-
-glabel D_8022F704
-.word 0x2E63635D
-
-glabel D_8022F708
-.word 0x0A000000
+.asciiz "Helper Effect Request Error![helpeff.cc]\n"
 
 glabel D_8022F70C
 .float 0.2
@@ -1164,38 +1103,9 @@ glabel D_8022F718
 glabel D_8022F71C
 .word 0x00000000
 
+.balign 4
 glabel D_8022F720
-.word 0x64726177
-
-glabel D_8022F724
-.word 0x4974656D
-
-glabel D_8022F728
-.word 0x52657120
-
-glabel D_8022F72C
-.word 0x20526571
-
-glabel D_8022F730
-.word 0x75657374
-
-glabel D_8022F734
-.word 0x20457272
-
-glabel D_8022F738
-.word 0x6F722121
-
-glabel D_8022F73C
-.word 0x5B68656C
-
-glabel D_8022F740
-.word 0x7065722E
-
-glabel D_8022F744
-.word 0x63635D0A
-
-glabel D_8022F748
-.word 0x00000000
+.asciiz "drawItemReq  Request Error!![helper.cc]\n"
 
 glabel D_8022F74C
 .float 0.2
