@@ -1435,16 +1435,7 @@ glabel D_8022F96C
 .float 65535.0
 
 glabel D_8022F970
-.word 0x4E6F204C
-
-glabel D_8022F974
-.word 0x69737420
-
-glabel D_8022F978
-.word 0x49643A25
-
-glabel D_8022F97C
-.word 0x640A0000
+.asciiz "No List Id:%d\n"
 
 glabel D_8022F980
 .word 0x3D6147AE
