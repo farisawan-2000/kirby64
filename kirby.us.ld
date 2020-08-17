@@ -223,6 +223,14 @@ SECTIONS
       BUILD_DIR/asm/ovl18/ovl18.o(.text);
    }
    END_SEG(ovl18)
+   BEGIN_SEG(ovl18Data, _ovl18SegmentEnd) {
+      BUILD_DIR/data/ovl18/data.o(.data);
+   }
+   END_SEG(ovl18Data)
+   BEGIN_NOLOAD(ovl18) {
+      BUILD_DIR/asm/ovl18/ovl18_bss.o(.bss);
+   }
+   END_NOLOAD(ovl18)
 
    /* 0x8021DF20 23E630-24F750 [11120] */
    BEGIN_SEG(ovl19, 0x8021DF20) {
@@ -302,22 +310,6 @@ SECTIONS
    }
    END_SEG(bank_data)
 
-   /*BEGIN_SEG(kirby_and_after, 0) {
-      BUILD_DIR/actors/kirby.o(.rodata);
-      BUILD_DIR/asm/kirby.u.7E2D70.o(.data);
-   }
-   END_SEG(kirby_and_after)
-
-   BEGIN_SEG(data_1116010, 0) {
-      BUILD_DIR/asm/data/kirby.u.1116010.o(.data);
-   }
-   END_SEG(data_1116010)   */
-   /* TODO: implement this somehow 
-   .BEGIN_SEG(leveltextures, 0x07000000) {
-      BUILD_DIR/data/textures_1BD5C80.o(.data);
-   }
-   END_SEG(leveltextures)
-   */
    /DISCARD/ :
    {
       *(*);

@@ -25,6 +25,15 @@ extern u8 _ovl19DataSegmentEnd[];
 extern u8 _ovl19SegNoloadStart[];
 extern u8 _ovl19SegNoloadEnd[];
 
+extern u8 _ovl18SegmentRomStart[];
+extern u8 _ovl18DataSegmentRomEnd[];
+extern u8 _ovl18SegmentStart[];
+extern u8 _ovl18SegmentStart[];
+extern u8 _ovl18SegmentEnd[];
+extern u8 _ovl18SegmentEnd[];
+extern u8 _ovl18DataSegmentEnd[];
+extern u8 _ovl18SegNoloadStart[];
+extern u8 _ovl18SegNoloadEnd[];
 
 extern u8 _data_250320SegmentRomStart[];
 extern u8 _data_2A8CB0SegmentRomStart[];
