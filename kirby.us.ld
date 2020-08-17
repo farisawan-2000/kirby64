@@ -248,11 +248,11 @@ SECTIONS
    }
    END_SEG(ovl20)
    BEGIN_SEG(ovl20Data, _ovl20SegmentEnd){
-      BUILD_DIR/data/kirby.ovl20.o(.data);
+      BUILD_DIR/src/ovl20.o(.data);
    }
    END_SEG(ovl20Data)
    BEGIN_NOLOAD(ovl20) {
-      BUILD_DIR/asm/ovl20/ovl20_bss.o(.bss);
+      BUILD_DIR/src/ovl20.o(.bss);
    }
    END_NOLOAD(ovl20)
 
