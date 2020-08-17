@@ -4234,7 +4234,7 @@ glabel func_800B26D8
 /* 05AA84 800B2834 1473FFC5 */  bne   $v1, $s3, .L800B274C_ovl1
 /* 05AA88 800B2838 00608025 */   move  $s0, $v1
 /* 05AA8C 800B283C C7AC0098 */  lwc1  $f12, 0x98($sp)
-/* 05AA90 800B2840 0C006203 */  jal   asinf_ovl1
+/* 05AA90 800B2840 0C006203 */  jal   asinf
 /* 05AA94 800B2844 46006307 */   neg.s $f12, $f12
 /* 05AA98 800B2848 3C01800D */  lui   $at, %hi(D_800D67D4) # $at, 0x800d
 /* 05AA9C 800B284C C42267D4 */  lwc1  $f2, %lo(D_800D67D4)($at)
