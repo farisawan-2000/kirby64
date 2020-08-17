@@ -66,7 +66,7 @@ glabel func_80121F50
 /* 0AAAB4 80122044 46004287 */  neg.s $f10, $f8
 /* 0AAAB8 80122048 E50A0000 */  swc1  $f10, ($t0)
 .L8012204C_ovl2:
-/* 0AAABC 8012204C 0C029D9E */  jal   func_800A7678_ovl2
+/* 0AAABC 8012204C 0C029D9E */  jal   func_800A7678
 /* 0AAAC0 80122050 24040118 */   li    $a0, 280
 /* 0AAAC4 80122054 3C068013 */  lui   $a2, %hi(gKirbyState) # $a2, 0x8013
 /* 0AAAC8 80122058 24C6E7C0 */  addiu $a2, %lo(gKirbyState) # addiu $a2, $a2, -0x1840

@@ -9988,7 +9988,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                     func_80122F94_ovl2(0x15, 0x16, phi_a3);
                     gKirbyState.unk34 = (s32)(gKirbyState.unk34 & -8);
                     func_8011DC5C_ovl2();
-                    func_800A7678_ovl2(0x1E9);
+                    func_800A7678(0x1E9);
                     goto block_31;
                 } else {
                     if ((arg1->unk10 & 1) != 0) {

@@ -8,7 +8,7 @@
 extern void func_800AECC0_ovl19(f32 arg0);
 extern void func_800AED20_ovl19(f32 arg0);
 extern void func_8000B6BC_ovl19(u32 arg0);
-extern void func_800A7678_ovl19(u32 arg0);
+extern void func_800A7678(u32 arg0);
 extern void func_8019F000_ovl19(struct EntityThing800E9AA0 *arg0, f32 *arg1, u32 arg2, f32 arg3);
 
 extern f32 D_800D6B10;
@@ -37,7 +37,7 @@ void func_8022E630_ovl19(s32 arg0) {
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;
-    func_800A7678_ovl19(0x1F6);
+    func_800A7678(0x1F6);
     func_8019F000_ovl19(D_800E9AA0[D_800E0D50[D_8004A7C4->unk0]], &sp1C, 0x28, -0.85f);
     D_800E6D90[D_8004A7C4->unk0] = D_8022FA90;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
@@ -104,7 +104,7 @@ void func_8022E798_ovl19(s32 arg0) {
                 temp_f2 = D_800E3E50[temp_v1_3];
                 ((temp_v1_3 * 4) + 0x800E0000)->unk3C90 = temp_f2;
                 ((*temp_v0_2 * 4) + 0x800E0000)->unk3AD0 = temp_f2;
-                func_800A7678_ovl19(0x260);
+                func_800A7678(0x260);
                 return;
             }
         }
@@ -140,7 +140,7 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     sp24.z = 0.0f;
     sp24.y = 30.0f;
     sp24.x = 0.0f;
-    func_800A7678_ovl19(0x1F6);
+    func_800A7678(0x1F6);
     func_8019F000_ovl19(D_800E9AA0[D_800E0D50[D_8004A7C4->unk0]], &sp24, 0x14, -0.45f);
     D_800E6D90[D_8004A7C4->unk0] = (f32) D_8022FA98;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
@@ -191,7 +191,7 @@ void func_8022EB54_ovl19(s32 arg0) {
                 temp_f2 = D_800E3E50[temp_v1_3];
                 ((temp_v1_3 * 4) + 0x800E0000)->unk3C90 = temp_f2;
                 ((*temp_v0_2 * 4) + 0x800E0000)->unk3AD0 = temp_f2;
-                func_800A7678_ovl19(0x260);
+                func_800A7678(0x260);
                 return;
             }
         }
@@ -216,7 +216,7 @@ void func_8022ED10_ovl19(s32 arg0) {
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;
-    func_800A7678_ovl19(0x1F6);
+    func_800A7678(0x1F6);
     func_8019F000_ovl19(D_800E9AA0[D_800E0D50[D_8004A7C4->unk0]], &sp1C, 0x28, -0.85f);
     D_800E6D90[D_8004A7C4->unk0] = D_8022FAA0;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
@@ -265,7 +265,7 @@ void func_8022EE78_ovl19(s32 arg0) {
                 temp_f2 = D_800E3E50[temp_v1_3];
                 ((temp_v1_3 * 4) + 0x800E0000)->unk3C90 = temp_f2;
                 ((*temp_v0_2 * 4) + 0x800E0000)->unk3AD0 = temp_f2;
-                func_800A7678_ovl19(0x260);
+                func_800A7678(0x260);
                 return;
             }
         }

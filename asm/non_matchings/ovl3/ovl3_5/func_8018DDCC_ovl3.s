@@ -39,7 +39,7 @@ glabel func_8018DDCC_ovl3
 /* 0EE8A0 8018DE60 E62A0078 */   swc1  $f10, 0x78($s1)
 /* 0EE8A4 8018DE64 240D0002 */  li    $t5, 2
 /* 0EE8A8 8018DE68 AE2D0154 */  sw    $t5, 0x154($s1)
-/* 0EE8AC 8018DE6C 0C029D9E */  jal   func_800A7678_ovl3
+/* 0EE8AC 8018DE6C 0C029D9E */  jal   func_800A7678
 /* 0EE8B0 8018DE70 24040042 */   li    $a0, 66
 /* 0EE8B4 8018DE74 3C040002 */  lui   $a0, (0x00020274 >> 16) # lui $a0, 2
 /* 0EE8B8 8018DE78 3C050002 */  lui   $a1, (0x00020275 >> 16) # lui $a1, 2
@@ -70,7 +70,7 @@ glabel func_8018DDCC_ovl3
 /* 0EE918 8018DED8 5500FFF9 */  bnezl $t0, .L8018DEC0_ovl3
 /* 0EE91C 8018DEDC 92390017 */   lbu   $t9, 0x17($s1)
 .L8018DEE0_ovl3:
-/* 0EE920 8018DEE0 0C029D9E */  jal   func_800A7678_ovl3
+/* 0EE920 8018DEE0 0C029D9E */  jal   func_800A7678
 /* 0EE924 8018DEE4 24040043 */   li    $a0, 67
 /* 0EE928 8018DEE8 3C040002 */  lui   $a0, (0x00020278 >> 16) # lui $a0, 2
 /* 0EE92C 8018DEEC 3C050002 */  lui   $a1, (0x00020279 >> 16) # lui $a1, 2

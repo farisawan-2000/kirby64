@@ -315,7 +315,7 @@ block_48:
                     goto block_48;
                 }
                 ((*phi_a1_4 * 4) + 0x800E0000)->unk-CF0 = &D_80122CA0;
-                func_800A7678_ovl3(0x10B, phi_a1_4);
+                func_800A7678(0x10B, phi_a1_4);
                 if (gKirbyState.unk3C == 3) {
                     ((*D_8004A7C4 * 4) + 0x800E0000)->unk64D0 = 0.0f;
                     temp_v0_12 = *D_8004A7C4 * 4;
@@ -337,7 +337,7 @@ block_48:
                     phi_at = (*D_8004A7C4 * 4) + 0x800E0000;
                 }
                 phi_at->unk3C90 = 16.0f;
-                func_800A7678_ovl3(0xF7, D_8004A7C4, &D_800E3750, 1);
+                func_800A7678(0xF7, D_8004A7C4, &D_800E3750, 1);
                 gKirbyState.unk40 = 8.0f;
                 if (gKirbyState.unk4 != 0) {
                     if (gKirbyState.unk4 != 1) {
@@ -546,7 +546,7 @@ block_35:
                 if (((temp_v1_6 + 0x800F0000)->unk-7520 & 6) != 0) {
                     func_80122F6C_ovl3(0, 1);
                 } else {
-                    func_800A7678_ovl3(0x149);
+                    func_800A7678(0x149);
                     *(&D_800E3750 + (*D_8004A7C4 * 4)) = 0.0f;
                     temp_v1_7 = *D_8004A7C4 * 4;
                     (temp_v1_7 + 0x800E0000)->unk3210 = (f32) *(&D_800E3750 + temp_v1_7);
@@ -1092,7 +1092,7 @@ void func_80158C40_ovl3(s32 arg0) {
     func_80157C5C_ovl3(arg0);
     func_800FBE1C_ovl3();
     func_800FA414_ovl3(3);
-    func_800A7678_ovl3(0x1EF);
+    func_800A7678(0x1EF);
     func_800AFA14_ovl3();
 }
 #else
@@ -1280,7 +1280,7 @@ loop_19:
     ((*phi_v1 * 4) + 0x800E0000)->unk3210 = 12.0f;
     ((*phi_v1 * 4) + 0x800E0000)->unk3750 = (f32) D_80196F94;
     ((*phi_v1 * 4) + 0x800E0000)->unk3C90 = 16.0f;
-    func_800A7678_ovl3(0xF7);
+    func_800A7678(0xF7);
     if (D_8012E7C4 != 0) {
         if (D_8012E7C4 != 1) {
             if (D_8012E7C4 != 2) {
@@ -1571,7 +1571,7 @@ loop_1:
     ((((*D_8004A7C4 * 4) + 0x800E0000)->unkD50 * 4) + 0x800F0000)->unk-7FA0 = 2;
     func_8000B6BC_ovl3(0x1A);
     func_801230E8_ovl3(0x2009F, 0x200A0, 0);
-    func_800A7678_ovl3(0x259);
+    func_800A7678(0x259);
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210 = 70.0f;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3750 = 0.0f;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3C90 = 70.0f;

@@ -103,7 +103,7 @@ glabel func_801DE548_ovl11
 /* 1E8F94 801DE6D4 002C0821 */  addu  $at, $at, $t4
 /* 1E8F98 801DE6D8 E42A3750 */  swc1  $f10, 0x3750($at)
 .L801DE6DC_ovl11:
-/* 1E8F9C 801DE6DC 0C029D9E */  jal   func_800A7678_ovl11
+/* 1E8F9C 801DE6DC 0C029D9E */  jal   func_800A7678
 /* 1E8FA0 801DE6E0 240401EC */   li    $a0, 492
 /* 1E8FA4 801DE6E4 8E0D0000 */  lw    $t5, ($s0)
 /* 1E8FA8 801DE6E8 8DAF0000 */  lw    $t7, ($t5)

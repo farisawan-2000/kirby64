@@ -28,7 +28,7 @@ glabel func_801DDA4C_ovl11
 /* 1E8374 801DDAB4 8D04001C */  lw    $a0, 0x1c($t0)
 /* 1E8378 801DDAB8 50810008 */  beql  $a0, $at, .L801DDADC_ovl11
 /* 1E837C 801DDABC 8C4A0000 */   lw    $t2, ($v0)
-/* 1E8380 801DDAC0 0C029D9E */  jal   func_800A7678_ovl11
+/* 1E8380 801DDAC0 0C029D9E */  jal   func_800A7678
 /* 1E8384 801DDAC4 AFA50024 */   sw    $a1, 0x24($sp)
 /* 1E8388 801DDAC8 8FA50024 */  lw    $a1, 0x24($sp)
 /* 1E838C 801DDACC 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005

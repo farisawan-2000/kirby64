@@ -86,7 +86,7 @@ glabel func_8015A144_ovl3
 /* 0BACCC 8015A28C 3484009F */  ori   $a0, (0x0002009F & 0xFFFF) # ori $a0, $a0, 0x9f
 /* 0BACD0 8015A290 0C048C3A */  jal   func_801230E8_ovl3
 /* 0BACD4 8015A294 00003025 */   move  $a2, $zero
-/* 0BACD8 8015A298 0C029D9E */  jal   func_800A7678_ovl3
+/* 0BACD8 8015A298 0C029D9E */  jal   func_800A7678
 /* 0BACDC 8015A29C 24040259 */   li    $a0, 601
 /* 0BACE0 8015A2A0 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 0BACE4 8015A2A4 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

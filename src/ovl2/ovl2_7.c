@@ -2523,12 +2523,12 @@ void func_801162F4(void *arg0) {
     D_80129210.unkC = (f32) D_80128D14;
     D_80129210.unk14 = (f32) D_80128D18;
     func_8000B6BC_ovl2(0x14);
-    func_800A7678_ovl2(0x183);
+    func_800A7678(0x183);
     func_8000B6BC_ovl2(0x28);
     *(&D_800DF150 + (*D_8004A7C4 * 4)) = &D_80116260;
     func_800AF27C_ovl2();
     *(&D_800DF150 + (*D_8004A7C4 * 4)) = 0;
-    func_800A7678_ovl2(0x181);
+    func_800A7678(0x181);
     func_80008DA8_ovl2(0);
 }
 #else
@@ -3230,7 +3230,7 @@ void *func_80117570_ovl2(void *arg0) {
         phi_return = temp_v0;
         if (temp_t1 == 0) {
             sp1C = temp_v1;
-            temp_ret_2 = func_800A7678_ovl2(0xC);
+            temp_ret_2 = func_800A7678(0xC);
             (temp_v1 + 0x800E0000)->unk3750 = -0.5f;
             (temp_v1 + 0x800E0000)->unk3C90 = (f32) D_80128D38;
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = &D_801173F4;
@@ -5458,7 +5458,7 @@ void func_8011A2F4_ovl2(void *arg0) {
             func_800AA018_ovl2(temp_v1->unk8);
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = (s32) temp_v1->unk14;
             D_800D6F24 = (s32) (temp_v0->unk77A0 - 0xBF);
-            func_800A7678_ovl2(0x1FD);
+            func_800A7678(0x1FD);
         }
     }
 }
@@ -5689,7 +5689,7 @@ void func_8011A7A8_ovl2(void *arg0) {
             func_800AA018_ovl2(temp_v1->unk8);
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = (s32) temp_v1->unk14;
             D_800D6F24 = (s32) (temp_v0->unk77A0 - 0xCD);
-            func_800A7678_ovl2(0x1FD);
+            func_800A7678(0x1FD);
         }
     }
 }
