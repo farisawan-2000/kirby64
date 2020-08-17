@@ -19,34 +19,31 @@ struct unk8000BE90Func {
 };
 
 #ifdef MIPS_TO_C
-// Almost matched
-u32 func_8000BE90(struct unk8000BE90Func *arg0) {
-    if (arg0->unk10 != 0) {
+// Almost matched (need to load arg0 into v0)
+u32 func_8000BE90(struct unk8000BE90Func *arg0)
+{
+    if (arg0->unk10) {
         return arg0->unk10;
-    }
-    if (arg0->unk8 != 0) {
+    } else if (arg0->unk8) {
         return arg0->unk8;
-    }
-    while (1)
-    {
-        if ((void*)1 == arg0->unk14) {
-            return 0;
-        }
-        if (arg0->unk14->unk8 != 0) {
-            return arg0->unk14->unk8;
-        }
-        else
-        {
+    } else {
+        for (;;) {
+            if (arg0->unk14 == ((void *) 1)) {
+                return 0;
+            }
+            if (arg0->unk14->unk8) {
+                return arg0->unk14->unk8;
+            }
             arg0 = arg0->unk14;
         }
-    }
+    }  return arg0->unk14;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
 #endif
 
 
-u32 func_8000BE90(struct unk8000BE90Func*);
+// u32 func_8000BE90(struct unk8000BE90Func*);
 
 struct unk8000BEF4Func {
     u8 filler[0x3C];
@@ -206,33 +203,26 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000C144.s")
 
 extern f32 D_800406A8;
 
-void func_8000C10C(void*, void*, f32);
+void func_8000C10C(struct unk8000BEF4Func *, void*, f32);
 
 #ifdef MIPS_TO_C
-// Almost matched, some instructions are in the wrong order but trying to move them messes it all up
+// Find out how the load to D_800406A8 comes after arg0->unk40 is set
 void func_8000C17C(struct unk8000BEF4Func *arg0, void **arg1, f32 arg2) {
-    void **phi_s1;
-    struct unk8000BE90Func *phi_s0;
-    s8 phi_s2;
-    float f22;
-    float f20;
+    struct unk8000BE90Func *phi_s0 = arg0->unk3C;
+    u8 phi_s2 = 1;
+    f32 f20 = arg2, f22 = D_800406A8;
 
-    phi_s0 = arg0->unk3C;
-    phi_s1 = arg1;
-    phi_s2 = (u8)1;
-    f20 = arg2;
     arg0->unk40 = f20;
-    f22 = D_800406A8;
-    while (phi_s0 != 0) {
-        if (*phi_s1 != 0) {
-            func_8000C10C(phi_s0, *phi_s1, f20);
+    while (phi_s0) {
+        if (*arg1 != 0) {
+            func_8000C10C(phi_s0, *arg1, arg2);
             phi_s0->unk55 = phi_s2;
-            phi_s2 = (u8)0;
+            phi_s2 = 0;
         } else {
             phi_s0->unk74 = f22;
-            phi_s0->unk55 = (u8)0;
+            phi_s0->unk55 = 0;
         }
-        phi_s1 = phi_s1 + 1;
+        arg1++;
         phi_s0 = func_8000BE90(phi_s0);
     }
 }
@@ -807,7 +797,7 @@ loop_14:
             } else {
                 goto block_116;
             }
-        } else {
+        }
             temp_f2 = (f32) anim->unk78;
             anim->scale = (anim->scale - temp_f2);
             anim->unk7C = (anim->unk7C + temp_f2);
@@ -815,7 +805,6 @@ loop_14:
             if (!(0.0f < anim->scale)) {
                 goto block_4;
             }
-        }
     }
 }
 #else

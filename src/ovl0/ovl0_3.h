@@ -32,7 +32,7 @@ struct Animation {
       f32 unk40;
       u32 unk44;
       void (*unk48)(struct Animation *a0, u32 a1, u32 a2);
-    } *unk4;
+  } *unk4;
   u32 unk8;
   u32 unkC;
   u32 unk10[4];

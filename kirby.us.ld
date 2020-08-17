@@ -154,6 +154,7 @@ SECTIONS
    /* 0x80198880 13E8F0-168840 [29F50] */
    BEGIN_SEG(ovl7, 0x80198880) {
       BUILD_DIR/asm/ovl7/ovl7.o(.text);
+      BUILD_DIR/data/ovl7/data.o(.data);
    }
    END_SEG(ovl7)
 

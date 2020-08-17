@@ -47,7 +47,6 @@ void func_8022E630_ovl19(s32 arg0) {
     func_800AFA14_ovl19();
 }
 
-
 extern f32 D_800E3750[];
 extern f32 D_800E3590[];
 extern f32 D_800E33D0[];
