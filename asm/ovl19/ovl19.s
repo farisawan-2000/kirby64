@@ -374,6 +374,8 @@ glabel func_8021E2D0_ovl19
 /* 23EBB8 8021E4A8 03E00008 */  jr    $ra
 /* 23EBBC 8021E4AC 00000000 */   nop   
 
+# hidden file boundary?
+
 glabel func_8021E4B0_ovl19
 /* 23EBC0 8021E4B0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 23EBC4 8021E4B4 AFBF0014 */  sw    $ra, 0x14($sp)

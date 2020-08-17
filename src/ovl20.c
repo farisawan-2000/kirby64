@@ -23,7 +23,7 @@ extern u32 func_80300170(void);
 #define ASM_DEOBFUSCATOR 0xFDB9ECA8
 
 // deobfuscates the function directly after this one and calls it
-// potentially as a piracy/integrity check
+// potentially as a piracy/tamper check
 void func_80300000_ovl20(void) {
     u32 i;
 	for (i = 0; i < ARRAY_COUNT(D_80300170); i++) {
