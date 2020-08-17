@@ -1309,14 +1309,14 @@ glabel D_8022F7DC
 .word 0x00000000
 
 glabel jtbl_8022F7E0
-.word 0x802234F0
-.word 0x802235C0
-.word 0x80223764
-.word 0x80223818
-.word 0x80223884
-.word 0x802239C4
-.word 0x8022342C
-.word 0x80223C04
+.word L802234F0_ovl19
+.word L802235C0_ovl19
+.word L80223764_ovl19
+.word L80223818_ovl19
+.word L80223884_ovl19
+.word L802239C4_ovl19
+.word L8022342C_ovl19
+.word L80223C04_ovl19
 
 glabel D_8022F800
 .word 0x3D2E147B
@@ -1352,14 +1352,14 @@ glabel D_8022F828
 .word 0x3E32B8C3
 
 glabel jtbl_8022F82C
-.word 0x80224144
-.word 0x80224198
-.word 0x802241C0
-.word 0x802241EC
-.word 0x80224254
-.word 0x80224398
-.word 0x80224294
-.word 0x80224334
+.word L80224144_ovl19
+.word L80224198_ovl19
+.word L802241C0_ovl19
+.word L802241EC_ovl19
+.word L80224254_ovl19
+.word L80224398_ovl19
+.word L80224294_ovl19
+.word L80224334_ovl19
 
 glabel D_8022F84C
 .word 0x40490FDB
@@ -1371,14 +1371,14 @@ glabel D_8022F854
 .word 0x40490FDB
 
 glabel jtbl_8022F858
-.word 0x80224CB8
-.word 0x80224D88
-.word 0x80224F28
-.word 0x80224FDC
-.word 0x80225048
-.word 0x80225188
-.word 0x80224B14
-.word 0x802253C4
+.word L80224CB8_ovl19
+.word L80224D88_ovl19
+.word L80224F28_ovl19
+.word L80224FDC_ovl19
+.word L80225048_ovl19
+.word L80225188_ovl19
+.word L80224B14_ovl19
+.word L802253C4_ovl19
 
 glabel D_8022F878
 .float 0.2
@@ -1414,14 +1414,14 @@ glabel D_8022F8A0
 .word 0x3E32B8C3
 
 glabel jtbl_8022F8A4
-.word 0x8022590C
-.word 0x80225960
-.word 0x80225988
-.word 0x802259B4
-.word 0x80225A1C
-.word 0x80225AC0
-.word 0x80225C7C
-.word 0x80225A5C
+.word L8022590C_ovl19
+.word L80225960_ovl19
+.word L80225988_ovl19
+.word L802259B4_ovl19
+.word L80225A1C_ovl19
+.word L80225AC0_ovl19
+.word L80225C7C_ovl19
+.word L80225A5C_ovl19
 
 glabel D_8022F8C4
 .word 0x3EE66666
@@ -1430,14 +1430,14 @@ glabel D_8022F8C8
 .float 0.025
 
 glabel jtbl_8022F8CC
-.word 0x8022633C
-.word 0x802263D4
-.word 0x80226574
-.word 0x8022662C
-.word 0x80226698
-.word 0x802267DC
-.word 0x80226A80
-.word 0x80226A1C
+.word L8022633C_ovl19
+.word L802263D4_ovl19
+.word L80226574_ovl19
+.word L8022662C_ovl19
+.word L80226698_ovl19
+.word L802267DC_ovl19
+.word L80226A80_ovl19
+.word L80226A1C_ovl19
 
 glabel D_8022F8EC
 .word 0xBF7B0CDD
@@ -1467,14 +1467,14 @@ glabel D_8022F90C
 .word 0xBF7B0CDD
 
 glabel jtbl_8022F910
-.word 0x80226C78
-.word 0x80226CD4
-.word 0x80226CF8
-.word 0x80226D28
-.word 0x80226D9C
-.word 0x80226E48
-.word 0x80226E48
-.word 0x80226DE4
+.word L80226C78_ovl19
+.word L80226CD4_ovl19
+.word L80226CF8_ovl19
+.word L80226D28_ovl19
+.word L80226D9C_ovl19
+.word L80226E48_ovl19
+.word L80226E48_ovl19
+.word L80226DE4_ovl19
 
 glabel D_8022F930
 .float 0.1
@@ -1570,11 +1570,11 @@ glabel D_8022F9A8
 .float 65535.0
 
 glabel jtbl_8022F9AC
-.word 0x8022B024
-.word 0x8022B080
-.word 0x8022B0EC
-.word 0x8022B14C
-.word 0x8022B1C0
+.word L8022B024_ovl19
+.word L8022B080_ovl19
+.word L8022B0EC_ovl19
+.word L8022B14C_ovl19
+.word L8022B1C0_ovl19
 
 glabel D_8022F9C0
 .word 0xBF7B0CDD
@@ -1586,12 +1586,12 @@ glabel D_8022F9C8
 .float 65535.0
 
 glabel jtbl_8022F9CC
-.word 0x8022B664
-.word 0x8022B664
-.word 0x8022B714
-.word 0x8022B78C
-.word 0x8022B7F0
-.word 0x8022B86C
+.word L8022B664_ovl19
+.word L8022B664_ovl19
+.word L8022B714_ovl19
+.word L8022B78C_ovl19
+.word L8022B7F0_ovl19
+.word L8022B86C_ovl19
 
 glabel D_8022F9E4
 .float 65535.0

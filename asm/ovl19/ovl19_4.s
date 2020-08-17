@@ -2123,6 +2123,7 @@ glabel func_8022AEA0_ovl19
 /* 24B728 8022B018 8C2BF9AC */ lw $t3, %lo(jtbl_8022F9AC)($at)
 /* 24B72C 8022B01C 01600008 */  jr    $t3
 /* 24B730 8022B020 00000000 */   nop   
+glabel L8022B024_ovl19
 /* 24B734 8022B024 44800000 */  mtc1  $zero, $f0
 /* 24B738 8022B028 3C01800E */ lui $at, %hi(D_800E3210)
 /* 24B73C 8022B02C 00230821 */  addu  $at, $at, $v1
@@ -2146,6 +2147,7 @@ glabel func_8022AEA0_ovl19
 /* 24B784 8022B074 00003025 */   move  $a2, $zero
 /* 24B788 8022B078 10000084 */  b     .L8022B28C_ovl19
 /* 24B78C 8022B07C 00000000 */   nop   
+glabel L8022B080_ovl19
 /* 24B790 8022B080 3C01800F */ lui $at, %hi(D_800E8920)
 /* 24B794 8022B084 00230821 */  addu  $at, $at, $v1
 /* 24B798 8022B088 3C040002 */  lui   $a0, (0x00020386 >> 16) # lui $a0, 2
@@ -2174,6 +2176,7 @@ glabel func_8022AEA0_ovl19
 /* 24B7F0 8022B0E0 00003025 */   move  $a2, $zero
 /* 24B7F4 8022B0E4 10000069 */  b     .L8022B28C_ovl19
 /* 24B7F8 8022B0E8 00000000 */   nop   
+glabel L8022B0EC_ovl19
 /* 24B7FC 8022B0EC 3C040002 */  lui   $a0, (0x00020384 >> 16) # lui $a0, 2
 /* 24B800 8022B0F0 0C02AA4D */  jal   func_800AA934_ovl19
 /* 24B804 8022B0F4 34840384 */   ori   $a0, (0x00020384 & 0xFFFF) # ori $a0, $a0, 0x384
@@ -2199,6 +2202,7 @@ glabel func_8022AEA0_ovl19
 /* 24B850 8022B140 00003025 */   move  $a2, $zero
 /* 24B854 8022B144 10000051 */  b     .L8022B28C_ovl19
 /* 24B858 8022B148 00000000 */   nop   
+glabel L8022B14C_ovl19
 /* 24B85C 8022B14C 3C040002 */  lui   $a0, (0x00020388 >> 16) # lui $a0, 2
 /* 24B860 8022B150 3C050002 */  lui   $a1, (0x00020069 >> 16) # lui $a1, 2
 /* 24B864 8022B154 34A50069 */  ori   $a1, (0x00020069 & 0xFFFF) # ori $a1, $a1, 0x69
@@ -2228,6 +2232,7 @@ glabel func_8022AEA0_ovl19
 /* 24B8C4 8022B1B4 3C018013 */  lui   $at, %hi(D_8012E80C) # $at, 0x8013
 /* 24B8C8 8022B1B8 10000034 */  b     .L8022B28C_ovl19
 /* 24B8CC 8022B1BC AC22E80C */   sw    $v0, %lo(D_8012E80C)($at)
+glabel L8022B1C0_ovl19
 /* 24B8D0 8022B1C0 3C014080 */  li    $at, 0x40800000 # 4.000000
 /* 24B8D4 8022B1C4 44810000 */  mtc1  $at, $f0
 /* 24B8D8 8022B1C8 3C01800E */ lui $at, %hi(D_800E6A10)
@@ -2538,6 +2543,8 @@ glabel func_8022B4C4_ovl19
 /* 24BD68 8022B658 8C2BF9CC */ lw $t3, %lo(jtbl_8022F9CC)($at)
 /* 24BD6C 8022B65C 01600008 */  jr    $t3
 /* 24BD70 8022B660 00000000 */   nop   
+glabel L8022B664_ovl19
+glabel L8022B664_ovl19
 /* 24BD74 8022B664 44805000 */  mtc1  $zero, $f10
 /* 24BD78 8022B668 3C01800E */ lui $at, %hi(D_800E3210)
 /* 24BD7C 8022B66C 00230821 */  addu  $at, $at, $v1
@@ -2583,6 +2590,7 @@ glabel func_8022B4C4_ovl19
 /* 24BE18 8022B708 00003025 */   move  $a2, $zero
 /* 24BE1C 8022B70C 10000065 */  b     .L8022B8A4_ovl19
 /* 24BE20 8022B710 00000000 */   nop   
+glabel L8022B714_ovl19
 /* 24BE24 8022B714 A1000007 */  sb    $zero, 7($t0)
 /* 24BE28 8022B718 8C590000 */  lw    $t9, ($v0)
 /* 24BE2C 8022B71C 3C01800F */ lui $at, %hi(D_800E8920)
@@ -2614,6 +2622,7 @@ glabel func_8022B4C4_ovl19
 /* 24BE90 8022B780 00003025 */   move  $a2, $zero
 /* 24BE94 8022B784 10000047 */  b     .L8022B8A4_ovl19
 /* 24BE98 8022B788 00000000 */   nop   
+glabel L8022B78C_ovl19
 /* 24BE9C 8022B78C 3C040002 */  lui   $a0, (0x00020390 >> 16) # lui $a0, 2
 /* 24BEA0 8022B790 A1000007 */  sb    $zero, 7($t0)
 /* 24BEA4 8022B794 0C02AA4D */  jal   func_800AA934_ovl19
@@ -2640,6 +2649,7 @@ glabel func_8022B4C4_ovl19
 /* 24BEF4 8022B7E4 00003025 */   move  $a2, $zero
 /* 24BEF8 8022B7E8 1000002E */  b     .L8022B8A4_ovl19
 /* 24BEFC 8022B7EC 00000000 */   nop   
+glabel L8022B7F0_ovl19
 /* 24BF00 8022B7F0 3C040002 */  lui   $a0, (0x00020394 >> 16) # lui $a0, 2
 /* 24BF04 8022B7F4 3C050002 */  lui   $a1, (0x00020069 >> 16) # lui $a1, 2
 /* 24BF08 8022B7F8 A1000007 */  sb    $zero, 7($t0)
@@ -2671,6 +2681,7 @@ glabel func_8022B4C4_ovl19
 /* 24BF70 8022B860 2508E7C0 */  addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840
 /* 24BF74 8022B864 1000000F */  b     .L8022B8A4_ovl19
 /* 24BF78 8022B868 AD02004C */   sw    $v0, 0x4c($t0)
+glabel L8022B86C_ovl19
 /* 24BF7C 8022B86C 3C040002 */  lui   $a0, (0x0002037E >> 16) # lui $a0, 2
 /* 24BF80 8022B870 3C050002 */  lui   $a1, (0x00020069 >> 16) # lui $a1, 2
 /* 24BF84 8022B874 34A50069 */  ori   $a1, (0x00020069 & 0xFFFF) # ori $a1, $a1, 0x69
