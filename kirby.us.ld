@@ -222,6 +222,13 @@ SECTIONS
    /* 0x8021DF20 2308C0-239D80 [94C0] */
    BEGIN_SEG(ovl18, 0x8021DF20) {
       BUILD_DIR/asm/ovl18/ovl18.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_1.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_2.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_3.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_4.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_5.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_6.o(.text);
+      BUILD_DIR/asm/ovl18/ovl18_7.o(.text);
    }
    END_SEG(ovl18)
    BEGIN_SEG(ovl18Data, _ovl18SegmentEnd) {

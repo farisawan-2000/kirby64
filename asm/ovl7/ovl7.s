@@ -45696,7 +45696,6 @@ glabel func_801C26BC_ovl7
 /* 168834 801C27C4 03E00008 */  jr    $ra
 /* 168838 801C27C8 00000000 */   nop   
 
-glabel func_801C27CC_ovl7
 /* 16883C 801C27CC 00000000 */  nop   
 # Unknown region 168840-174740 [BF00]
 # .incbin "bin/kirby.u.168840.bin"
