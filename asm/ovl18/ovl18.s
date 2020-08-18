@@ -1423,7 +1423,6 @@ glabel func_8021F35C_ovl18
 /* 231D8C 8021F3EC 03E00008 */  jr    $ra
 /* 231D90 8021F3F0 00001025 */   move  $v0, $zero
 
-glabel func_8021F3F4_ovl18
 /* 231D94 8021F3F4 24020001 */  li    $v0, 1
 .L8021F3F8_ovl18:
 /* 231D98 8021F3F8 03E00008 */  jr    $ra
@@ -2095,7 +2094,6 @@ glabel func_8021FD48_ovl18
 /* 232750 8021FDB0 03E00008 */  jr    $ra
 /* 232754 8021FDB4 E4324010 */ swc1 $f18, %lo(D_800E4010)($at)
 
-glabel func_8021FDB8_ovl18
 /* 232758 8021FDB8 8C6B0004 */  lw    $t3, 4($v1)
 .L8021FDBC_ovl18:
 /* 23275C 8021FDBC 3C018023 */  lui   $at, %hi(D_8022BB88) # $at, 0x8023
