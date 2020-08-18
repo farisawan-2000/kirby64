@@ -2,24 +2,19 @@
 
 This repository contains a work-in-progress decompilation effort for Kirby 64.
 
-You will need an original copy of the ROM to proceed.
+You will need an original copy of the ROM to proceed; The setup instructions are the same as [n64decomp/sm64](https://github.com/n64decomp/sm64)
+
 ## Contributing
- - Pull requests are welcome! Everything in `src/` is free to work on, including tons of 1-line functions that just need to be in the correct format to match!
+ - Pull requests are welcome! Everything is fair game to work on, including tons of 1-line and stub functions in `src/` that make for an easy PR! ;)
 ---
 
-## TODO (Absolutely required)
- - Correctly rip and build textures rather than relying on a huge bin file
-   - Ripping (at least for level textures) is done; the Makefile just needs a rule to convert them.
-   - CI textures need a palette assigned to them; they are currently saved as bins.
+## TODO (Required)
+ - Disassemble every asset that's extracted, or convert them into images and build them
+ - Work on ASM shiftability and struct documentation (Asset shiftability is done!)
  
 ## TODO (Necessary)
- - Allow shiftability
- - Disassemble data blocks
- - Put glabels at the start of every function
- - Create [AutoDecompilation](https://github.com/farisawan-2000/auto-decompiler) of the repo
- - Correctly rip and build level files
- - Correctly rip and build all 3D assets
+ - Actually decompile the code
  - Clean up `undefined_syms.txt`
  
 ## TODO (non-essential)
- - Convert C code to C++ when the time comes
+ - Convert C code to C++ when the time comes (For this, we need knowledge on how `cfront` on IRIX works)
