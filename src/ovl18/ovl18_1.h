@@ -42,10 +42,12 @@ extern s32 D_800EBBE0[];
 extern f32 D_800E2950[];
 extern f32 D_800EAC20[];
 
-extern s32 D_800EAA60[];
-extern f32 D_800E2790[];
+extern f32 D_800EAA60[];
 
+
+extern f32 D_800E2790[];
 extern f32 D_800EA6E0[];
+
 extern f32 D_800EA8A0[];
 
 extern f32 D_800EAFA0[];
@@ -67,7 +69,7 @@ extern s32 D_800E9720[];
 extern s32 D_800B7790;
 
 extern s32 D_800E9560[];
-
+extern s32 D_802218E4;
 extern f32 D_800D6B10;
 
 f32 func_801D650C_ovl18(s32);
