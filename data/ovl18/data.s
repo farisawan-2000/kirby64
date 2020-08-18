@@ -13585,28 +13585,7 @@ glabel D_8022BB9C
 .word 0x00000000
 
 glabel D_8022BBA0
-.word 0x656E6554
-
-glabel D_8022BBA4
-.word 0x75726E43
-
-glabel D_8022BBA8
-.word 0x6F6D6D6F
-
-glabel D_8022BBAC
-.word 0x6E204572
-
-glabel D_8022BBB0
-.word 0x726F7220
-
-glabel D_8022BBB4
-.word 0x6672616D
-
-glabel D_8022BBB8
-.word 0x653D2530
-
-glabel D_8022BBBC
-.word 0x32640A00
+.asciiz "eneTurnCommon Error frame=%02d\n"
 
 glabel D_8022BBC0
 .word 0x481C4000
