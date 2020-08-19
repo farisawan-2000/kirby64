@@ -14,31 +14,29 @@ extern u32 D_801CB4DC;
 extern u32 D_800E0D50[];
 void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0);
 
-// Check notes here; other than that it's all regalloc
+// regalloc moment, one rogue instruction
 #ifdef MIPS_TO_C
 void func_80221E90_ovl18(s32 arg0) {
+    u32 temp_a3;
+
     D_800E48D0[D_8004A7C4->unk0] = 2.0f;
     D_800E4550[D_8004A7C4->unk0] = D_800E4710[D_8004A7C4->unk0] = D_800E48D0[D_8004A7C4->unk0];
     D_800DF150[D_8004A7C4->unk0] = &func_80222168_ovl18;
     D_800E1B50[D_8004A7C4->unk0]->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->unk0] = 0;
-    if (D_800DD710[D_800E0D50[D_8004A7C4->unk0]] != -1) {
-        if (D_8004A7C4->unk0 != D_800EBBE0[D_800E0D50[D_8004A7C4->unk0]]) {
-block_2:
-            // how many arguments does this have?
-            func_8019D958_ovl18(D_8004A7C4->unk0 & 0xFFFF, D_800E0D50[D_8004A7C4->unk0]); //, D_8004A7C4->unk0, D_800E0D50[D_8004A7C4->unk0]);
-        }
-    } else {
-        goto block_2;
+    temp_a3 = D_800E0D50[D_8004A7C4->unk0];
+
+    if ((D_800DD710[D_800E0D50[D_8004A7C4->unk0]] == -1) || (D_8004A7C4->unk0 != D_800EBBE0[D_800E0D50[D_8004A7C4->unk0]])) {
+        func_8019D958_ovl18(D_8004A7C4->unk0 & 0xFFFF); //, temp_a1, D_8004A7C4->unk0, temp_a3, temp_a1);
     }
 
-    // actual problematic block (x = x???)
-    D_800E6A10[D_8004A7C4->unk0] = D_800E6A10[D_8004A7C4->unk0];
-    D_800EA6E0[D_8004A7C4->unk0] = D_800EADE0[D_8004A7C4->unk0];
-    D_800E5F90[D_8004A7C4->unk0] = D_800E5F90[D_8004A7C4->unk0];
-    D_800E6BD0[D_8004A7C4->unk0] = D_800E6BD0[D_8004A7C4->unk0];
+    // This line is the issue
+    D_800E6A10[D_8004A7C4->unk0] = D_800E6A10[temp_a3];
 
-    func_800B33F4_ovl18(D_800E6A10, D_8004A7C4->unk0, D_800E5F90, D_800E6BD0);
+    D_800EA6E0[D_8004A7C4->unk0] = D_800EADE0[temp_a3];
+    D_800E5F90[D_8004A7C4->unk0] = D_800E5F90[temp_a3];
+    D_800E6BD0[D_8004A7C4->unk0] = D_800E6BD0[temp_a3];
+    func_800B33F4_ovl18(D_800E6A10, temp_a3 * 4, D_800E5F90, D_800E6BD0);
     func_800A9864_ovl18(0x10089, 0x23, 0x10);
     func_800AA018_ovl18(0x1051C);
     D_800E64D0[D_8004A7C4->unk0] = sinf(D_800EA6E0[D_8004A7C4->unk0]) * 30.0f;

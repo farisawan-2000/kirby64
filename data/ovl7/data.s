@@ -27081,7 +27081,7 @@ glabel D_801CB4D4
 glabel D_801CB4D8
 .word 0x80199688
 
-glabel D_801CB4DC
+# glabel D_801CB4DC
 .word 0xFFFFFFFF
 
 glabel D_801CB4E0

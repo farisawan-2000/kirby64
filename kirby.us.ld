@@ -224,7 +224,7 @@ SECTIONS
       BUILD_DIR/asm/ovl18/ovl18.o(.text);
       BUILD_DIR/src/ovl18/ovl18_1.o(.text);
       BUILD_DIR/src/ovl18/ovl18_2.o(.text);
-      BUILD_DIR/asm/ovl18/ovl18_3.o(.text);
+      BUILD_DIR/src/ovl18/ovl18_3.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_4.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_5.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_6.o(.text);
