@@ -11913,12 +11913,14 @@ u32 D_8003F398 = 0x00000000;
 u32 D_8003F39C = 0x00000000;
 
 u32 *D_8003F3A0 = _data_49F590SegmentRomStart;
-u32 *D_8003F3A4 = _data_4A0340SegmentRomStart;
-u32 *D_8003F3A8 = _data_4A0340SegmentRomStart;
-u32 *D_8003F3AC = _data_4A3B60SegmentRomStart;
-u32 *D_8003F3B0 = _data_4A3B60SegmentRomStart;
+u32 *D_8003F3A4 = _data_49F590SegmentRomEnd;
 
-u32 *D_8003F3B4 = bank_0_index_1_geo;
+u32 *D_8003F3A8 = _data_4A0340SegmentRomStart;
+u32 *D_8003F3AC = _data_4A0340SegmentRomEnd;
+
+u32 *D_8003F3B0 = _data_4A3B60SegmentRomStart;
+u32 *D_8003F3B4 = _data_4A3B60SegmentRomEnd;
+
 u32 D_8003F3B8 = 0x00000000;
 u32 D_8003F3BC = 0x00000000;
 

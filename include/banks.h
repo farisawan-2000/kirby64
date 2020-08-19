@@ -14,6 +14,8 @@ struct BankHeader {
 	void *miscROMOffset;
 };
 
+
+
 extern u32 bank_0_index_1_geo[];
 extern u32 bank_0_index_2_geo[];
 extern u32 bank_0_index_3_geo[];
@@ -10565,4 +10567,12 @@ extern u32 bank_7_index_236_misc[];
 extern u32 bank_7_index_237_misc[];
 extern u32 bank_7_index_238_misc[];
 extern u32 bank_7_index_239_misc[];
+
+#define IMAGE_OFFSET(bnum, sym) ((u32)&sym - (u32)&bank_##bnum##_index_1_image)
+#define ANIM_OFFSET(bnum, sym) (u32)&sym - (u32)&bank_##bnum(_index_1_anim)
+#define MISC_OFFSET(bnum, sym) (u32)&sym - (u32)&bank_##bnum(_index_1_misc)
+
 #endif
+
+
+
