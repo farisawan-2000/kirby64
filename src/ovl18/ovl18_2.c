@@ -32,7 +32,6 @@ void func_80221E90_ovl18(s32 arg0) {
 
     // This line is the issue
     D_800E6A10[D_8004A7C4->unk0] = D_800E6A10[temp_a3];
-
     D_800EA6E0[D_8004A7C4->unk0] = D_800EADE0[temp_a3];
     D_800E5F90[D_8004A7C4->unk0] = D_800E5F90[temp_a3];
     D_800E6BD0[D_8004A7C4->unk0] = D_800E6BD0[temp_a3];
