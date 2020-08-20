@@ -13701,12 +13701,13 @@ glabel D_8022BC50
 glabel D_8022BC54
 .word 0x3F490FDB
 
+
 glabel jtbl_8022BC58
-.word L80225BA8_ovl18
-.word L80225BA8_ovl18
-.word L80225BBC_ovl18
-.word L80225BD0_ovl18
-.word L80225BD0_ovl18
+.word 0x80225BA8
+.word 0x80225BA8
+.word 0x80225BBC
+.word 0x80225BD0
+.word 0x80225BD0
 
 glabel D_8022BC6C
 .word 0x00000000

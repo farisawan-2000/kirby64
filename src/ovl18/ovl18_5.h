@@ -1,0 +1,9 @@
+extern s32 D_8022AA84;
+extern f32 D_8022BC40;
+extern f32 D_8022BC44;
+extern f32 D_800E3AD0[];
+extern f32 D_800E3050[];
+extern f32 D_800E3590[];
+extern f32 D_800E3750[];
+extern f32 D_8022BC50;
+extern f32 D_8022BC4C;

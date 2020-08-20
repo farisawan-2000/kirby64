@@ -225,8 +225,9 @@ SECTIONS
       BUILD_DIR/src/ovl18/ovl18_1.o(.text);
       BUILD_DIR/src/ovl18/ovl18_2.o(.text);
       BUILD_DIR/src/ovl18/ovl18_3.o(.text);
-      BUILD_DIR/asm/ovl18/ovl18_4.o(.text);
-      BUILD_DIR/asm/ovl18/ovl18_5.o(.text);
+      BUILD_DIR/src/ovl18/ovl18_4.o(.text);
+      /*. += 0x10;*/
+      BUILD_DIR/src/ovl18/ovl18_5.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_6.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_7.o(.text);
    }
@@ -237,6 +238,7 @@ SECTIONS
    END_SEG(ovl18Data)
    BEGIN_NOLOAD(ovl18) {
       BUILD_DIR/asm/ovl18/ovl18_bss.o(.bss);
+      BUILD_DIR/src/ovl18/ovl18_5.o(.rodata);
    }
    END_NOLOAD(ovl18)
 

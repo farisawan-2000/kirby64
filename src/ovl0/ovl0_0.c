@@ -2,6 +2,7 @@
 #include <macros.h>
 
 #include "types.h"
+#include "main.h"
 
 extern struct Overlay *mainSegOverlay; //TODO: define and put into .data
 extern u32 D_8003DC94;
@@ -51,12 +52,6 @@ u32 pad12[0x6];
 void *D_80048B00;
 u32 pad13[0x7C];
 OSPiHandle *D_80048CF0;
-
-
-// extern void osCreateThread(OSThread *thread, OSId id, void (*entry)(void *), void *arg, void *sp, OSPri pri);
-// extern void osStartThread(OSThread *thread);
-
-#define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
 OSThread *func_80000460(void) {
     return &D_80043DA0;

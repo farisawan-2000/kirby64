@@ -115,6 +115,10 @@ all: $(BUILD_DIR)/$(TARGET).z64
 clean:
 	rm -rf build/
 
+softclean:
+	rm -rf build/us/src/
+	rm -rf build/us/asm/
+
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
