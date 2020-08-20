@@ -1,9 +1,11 @@
 #include <ultra64.h>
 #include <macros.h>
+#include "ovl0_2_5.h"
 
 extern void *D_8004A48C;
 extern void func_80000A44(void);
 extern u32 *gObjectThreadMaybe;
+
 
 void func_80005350(void *arg0) {
     if (arg0 != 0) {
