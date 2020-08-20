@@ -2,21 +2,6 @@
 #include <macros.h>
 #include "ovl0_3.h"
 
-struct unk8000BE90Func {
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-    struct unk8000BE90Func* unk14;
-    u8 filler[0x55 - 0x14 - 0x04];
-    s8 unk55;
-    u8 filler2[0x74 - 0x55 - 0x01];
-    f32 unk74;
-    f32 unk78;
-    u32 unk7C;
-    struct unk8000BF3CFunc* unk80;
-};
 
 #ifdef MIPS_TO_C
 // Almost matched (need to load arg0 into v0)
