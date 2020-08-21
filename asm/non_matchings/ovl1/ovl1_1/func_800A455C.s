@@ -1,4 +1,4 @@
-glabel func_800A455C
+glabel vec3_dist_square
 /* 04C7AC 800A455C C4A40000 */  lwc1  $f4, ($a1)
 /* 04C7B0 800A4560 C4860000 */  lwc1  $f6, ($a0)
 /* 04C7B4 800A4564 C4A80004 */  lwc1  $f8, 4($a1)

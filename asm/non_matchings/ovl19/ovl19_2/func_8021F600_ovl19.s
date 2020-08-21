@@ -31,7 +31,7 @@ glabel func_8021F600_ovl19
 /* 23FD84 8021F674 E7A80020 */  swc1  $f8, 0x20($sp)
 /* 23FD88 8021F678 C44A0010 */  lwc1  $f10, 0x10($v0)
 /* 23FD8C 8021F67C 27A50020 */  addiu $a1, $sp, 0x20
-/* 23FD90 8021F680 0C029157 */  jal   func_800A455C_ovl19
+/* 23FD90 8021F680 0C029157 */  jal   vec3_dist_square
 /* 23FD94 8021F684 E7AA0028 */   swc1  $f10, 0x28($sp)
 /* 23FD98 8021F688 3C0147C8 */  li    $at, 0x47C80000 # 102400.000000
 /* 23FD9C 8021F68C 44818000 */  mtc1  $at, $f16

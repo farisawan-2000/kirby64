@@ -6,8 +6,8 @@
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
 struct ObjThread_sub1B8 {
-    u8 filler[0x34];
-    u64 stackTop; // is this entire struct like a mini-stack in itself?
+    // what looks like an mini thread stack, based on the last value in here being set to STACK_TOP_MAGIC
+    u64 stack[0x20];
 };
 
 struct ObjThread {

@@ -1,4 +1,4 @@
-glabel func_800A4534
+glabel vec3_mag_square
 /* 04C784 800A4534 C4820000 */  lwc1  $f2, ($a0)
 /* 04C788 800A4538 C48C0004 */  lwc1  $f12, 4($a0)
 /* 04C78C 800A453C C48E0008 */  lwc1  $f14, 8($a0)

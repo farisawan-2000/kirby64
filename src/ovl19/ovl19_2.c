@@ -204,7 +204,7 @@ void func_8021F600_ovl19(s32 arg0) {
             sp24 = 0.0f;
             sp20 = (bitwise f32) temp_v0->unk8;
             sp28 = (bitwise f32) temp_v0->unk10;
-            if (func_800A455C_ovl19(&sp2C, &sp20) < 102400.0f) {
+            if (vec3_dist_square(&sp2C, &sp20) < 102400.0f) {
                 temp_v0_2 = (D_8004A7C4->unk0 * 4) + &D_800E98E0;
                 *temp_v0_2 = *temp_v0_2 + 1;
             }
@@ -427,7 +427,7 @@ void *func_8021FE5C_ovl19(s32 arg0) {
                 sp24 = 0.0f;
                 sp20 = *(&D_800E25D0 + (*temp_v0 * 4));
                 sp28 = *(&D_800E2950 + (*temp_v0 * 4));
-                temp_ret = func_800A455C_ovl19(&sp2C, temp_a1, &gKirbyState, &D_800E2950);
+                temp_ret = vec3_dist_square(&sp2C, temp_a1, &gKirbyState, &D_800E2950);
                 phi_return = (bitwise void *) temp_ret;
                 if (temp_ret < 6400.0f) {
                     gKirbyState.unk17 = 1;

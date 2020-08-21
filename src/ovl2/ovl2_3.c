@@ -830,7 +830,7 @@ void func_800F9C54_ovl2(s32 arg0, ? arg1, s32 arg2) {
     ? sp18;
 
     func_8001E300_ovl2(arg1, &sp18, arg0, arg1);
-    func_800A455C_ovl2(arg2, &sp18);
+    vec3_dist_square(arg2, &sp18);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F9C54_ovl2.s")
@@ -1013,7 +1013,7 @@ f32 func_800F9F80(s32 arg0, s32 arg1, ? arg2) {
     func_80018DEC_ovl2(&sp2C, arg2, arg1);
     func_80018DEC_ovl2(&sp20, arg0, arg1);
     sp1C = func_800A44BC_ovl2(&sp2C, &sp20);
-    return sp1C / func_800A4534_ovl2(&sp2C);
+    return sp1C / vec3_mag_square(&sp2C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F9F80.s")
@@ -1068,9 +1068,9 @@ void func_800F9FDC(void *arg0, s32 arg1, s32 arg2, s32 arg3) {
     func_8001E300_ovl2(&sp4C, arg0, (bitwise s32) spAC);
     func_8001E300_ovl2(&sp40, arg0, (bitwise s32) spA8);
     func_8001E300_ovl2(&sp58, arg0, phi_f20);
-    sp8C = func_800A455C_ovl2(&sp4C, arg1);
-    sp90 = func_800A455C_ovl2(&sp58, arg1);
-    temp_f0 = func_800A455C_ovl2(&sp40, arg1);
+    sp8C = vec3_dist_square(&sp4C, arg1);
+    sp90 = vec3_dist_square(&sp58, arg1);
+    temp_f0 = vec3_dist_square(&sp40, arg1);
     if (sp8C < temp_f0) {
         phi_f12 = sp8C;
         phi_f2_2 = spAC;

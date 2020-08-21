@@ -9,7 +9,7 @@ glabel func_800F9C54_ovl2
 /* 0826E0 800F9C70 0C0078C0 */  jal   func_8001E300_ovl2
 /* 0826E4 800F9C74 27A40018 */   addiu $a0, $sp, 0x18
 /* 0826E8 800F9C78 8FA40030 */  lw    $a0, 0x30($sp)
-/* 0826EC 800F9C7C 0C029157 */  jal   func_800A455C_ovl2
+/* 0826EC 800F9C7C 0C029157 */  jal   vec3_dist_square
 /* 0826F0 800F9C80 27A50018 */   addiu $a1, $sp, 0x18
 /* 0826F4 800F9C84 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0826F8 800F9C88 27BD0028 */  addiu $sp, $sp, 0x28
