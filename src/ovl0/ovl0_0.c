@@ -52,6 +52,9 @@ u32 pad12[0x6];
 void *D_80048B00;
 u32 pad13[0x7C];
 OSPiHandle *D_80048CF0;
+u8 pad_before_8F28[0x80048F28 - 0x80048CF0 - 0x20];
+u8 D_80048F28, D_80048F29, D_80048F2A, D_80048F2B;
+
 
 OSThread *func_80000460(void) {
     return &D_80043DA0;
