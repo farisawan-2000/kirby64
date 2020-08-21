@@ -5,14 +5,19 @@
 
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
+struct ObjThread_sub1B8 {
+    u8 filler[0x34];
+    u64 stackTop; // is this entire struct like a mini-stack in itself?
+};
+
 struct ObjThread {
     struct ObjThread *unk0;
     u32 unk4;
     OSThread *unk8;
     u8 filler[0x1B8 - 0x04 - 0x08];
     // This might be a u8 pointer
-    u64* unk1B8;
-    u32 unk1BC;
+    struct ObjThread_sub1B8 *unk1B8;
+    s32 unk1BC;
 };
 
 struct ObjThreadStack {
