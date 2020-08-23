@@ -13,12 +13,12 @@ glabel func_800F89C0
 /* 08145C 800F89EC 00000000 */  nop   
 /* 081460 800F89F0 45000005 */  bc1f  .L800F8A08_ovl2
 /* 081464 800F89F4 00000000 */   nop   
-/* 081468 800F89F8 0C0063EF */  jal   func_80018FBC_ovl2
+/* 081468 800F89F8 0C0063EF */  jal   vec3_angle_diff
 /* 08146C 800F89FC 00E02825 */   move  $a1, $a3
 /* 081470 800F8A00 10000005 */  b     .L800F8A18_ovl2
 /* 081474 800F8A04 8FBF0014 */   lw    $ra, 0x14($sp)
 .L800F8A08_ovl2:
-/* 081478 800F8A08 0C0063EF */  jal   func_80018FBC_ovl2
+/* 081478 800F8A08 0C0063EF */  jal   vec3_angle_diff
 /* 08147C 800F8A0C 00E02825 */   move  $a1, $a3
 /* 081480 800F8A10 46000007 */  neg.s $f0, $f0
 /* 081484 800F8A14 8FBF0014 */  lw    $ra, 0x14($sp)

@@ -372,7 +372,7 @@ void func_80225958_ovl18(void) {
     D_800E9560[temp_v1_2] = temp_a3;
     sp30 = 0.0f;
     sp2C = -6.0f;
-    func_80019090_ovl18(temp_a0_2, 4, temp_a3 * D_8022BC54, temp_a3);
+    vec3_get_euler_rotation(temp_a0_2, 4, temp_a3 * D_8022BC54, temp_a3);
     D_800E3050[D_8004A7C4->unk0] = sp2C;
     D_800E3210[D_8004A7C4->unk0] = sp30;
     D_800E8920[D_8004A7C4->unk0] = 0;

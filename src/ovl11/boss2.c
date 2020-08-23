@@ -151,7 +151,7 @@ void func_801DB5C8_ovl11(void) {
 
     sp2C.x = sp2C.y = 0.0f;
     sp2C.z = 2.0f;
-    func_80019090_ovl11(&sp2C, 2, D_800E41D0[*D_8004A7C4]);
+    vec3_get_euler_rotation(&sp2C, 2, D_800E41D0[*D_8004A7C4]);
     sp20.x = D_800E25D0[0] - D_800E25D0[*D_8004A7C4];
     sp20.y = 0.0f;
     sp20.z = D_800E2950[0] - D_800E2950[*D_8004A7C4];
@@ -538,7 +538,7 @@ void func_801DBFA4_ovl11(s32 arg0, s32 arg1, f32 arg2) {
             sp20 = 60.0f;
             sp24 = 60.0f;
             sp1C = 0.0f;
-            func_80019090_ovl11(arg2, temp_a0, 2, ((*D_8004A7C4 * 4) + 0x800E0000)->unk41D0);
+            vec3_get_euler_rotation(arg2, temp_a0, 2, ((*D_8004A7C4 * 4) + 0x800E0000)->unk41D0);
             temp_v0 = func_801ACD90_ovl11(0x20, 0, &sp1C);
             if (temp_v0 != 0) {
                 *(&D_800E41D0 + (temp_v0 * 4)) = (f32) *(&D_800E41D0 + (*D_8004A7C4 * 4));
@@ -1213,7 +1213,7 @@ void func_801DD1CC_ovl11(s32 arg0) {
     sp24 = 0.0f;
     sp28 = 200.0f;
     sp2C = 160.0f;
-    func_80019090_ovl11(temp_a0, 2, temp_f0);
+    vec3_get_euler_rotation(temp_a0, 2, temp_f0);
     temp_v0_2 = func_801ACD90_ovl11(0x21, 0, &sp24);
     if (temp_v0_2 != 0) {
         ((temp_v0_2 * 4) + 0x800E0000)->unk41D0 = sp20;
@@ -1449,7 +1449,7 @@ void func_801DD840_ovl11(s32 arg0, s32 arg1, f32 arg2) {
             sp20 = 60.0f;
             sp24 = 60.0f;
             sp1C = 0.0f;
-            func_80019090_ovl11(arg2, temp_a0, 2, ((*D_8004A7C4 * 4) + 0x800E0000)->unk41D0);
+            vec3_get_euler_rotation(arg2, temp_a0, 2, ((*D_8004A7C4 * 4) + 0x800E0000)->unk41D0);
             temp_v0 = func_801ACD90_ovl11(0x1F, 0, &sp1C);
             if (temp_v0 != 0) {
                 *(&D_800E41D0 + (temp_v0 * 4)) = (f32) *(&D_800E41D0 + (*D_8004A7C4 * 4));

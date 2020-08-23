@@ -67,9 +67,9 @@ f32 func_800F89C0(s32 arg0, s32 arg1) {
 
     func_80019740_ovl2(&sp1C);
     if (0.0f < sp20) {
-        return func_80018FBC_ovl2(arg1, arg0, arg0);
+        return vec3_angle_diff(arg1, arg0, arg0);
     }
-    return -func_80018FBC_ovl2(arg1, arg0, arg0);
+    return -vec3_angle_diff(arg1, arg0, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F89C0.s")
@@ -1265,7 +1265,7 @@ void func_800FA608(s32 arg0, Vector *arg1, Vector *arg2) {
             func_8001E344_ovl2(&sp44, (D_80129114->unk4 + ((temp_v0 + 0x800E0000)->unk5F90 * 0x10))->unk4, (temp_v0 + 0x800E0000)->unk6BD0, arg0);
             sp48 = 0.0f;
             vec3_normalize(&sp44);
-            func_80019090_ovl2(&sp44, 2, (arg1->unk8 * D_801287F8) / 180.0f);
+            vec3_get_euler_rotation(&sp44, 2, (arg1->unk8 * D_801287F8) / 180.0f);
         }
     } else {
         sp44 = cosf((arg1->unk8 * D_801287F0) / 180.0f, arg0);

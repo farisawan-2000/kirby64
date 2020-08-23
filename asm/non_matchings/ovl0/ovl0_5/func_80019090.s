@@ -1,4 +1,4 @@
-glabel func_80019090
+glabel vec3_get_euler_rotation
 /* 019C90 80019090 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 019C94 80019094 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 019C98 80019098 AFA60030 */  sw    $a2, 0x30($sp)

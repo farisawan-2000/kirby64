@@ -24,7 +24,7 @@ glabel func_801DD1CC_ovl11
 /* 1E7AE4 801DD224 24050002 */  li    $a1, 2
 /* 1E7AE8 801DD228 E7A80024 */  swc1  $f8, 0x24($sp)
 /* 1E7AEC 801DD22C E7AA0028 */  swc1  $f10, 0x28($sp)
-/* 1E7AF0 801DD230 0C006424 */  jal   func_80019090_ovl11
+/* 1E7AF0 801DD230 0C006424 */  jal   vec3_get_euler_rotation
 /* 1E7AF4 801DD234 E7B0002C */   swc1  $f16, 0x2c($sp)
 /* 1E7AF8 801DD238 24040021 */  li    $a0, 33
 /* 1E7AFC 801DD23C 00002825 */  move  $a1, $zero

@@ -10243,7 +10243,7 @@
 /* 1D5834 801E4AC4 00C83021 */  addu  $a2, $a2, $t0
 /* 1D5838 801E4AC8 8CC641D0 */  lw    $a2, 0x41d0($a2)
 /* 1D583C 801E4ACC 24050002 */  li    $a1, 2
-/* 1D5840 801E4AD0 0C006424 */  jal   func_80019090_ovl10
+/* 1D5840 801E4AD0 0C006424 */  jal   vec3_get_euler_rotation
 /* 1D5844 801E4AD4 AFA30044 */   sw    $v1, 0x44($sp)
 /* 1D5848 801E4AD8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D584C 801E4ADC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -13033,7 +13033,7 @@
 /* 1D8214 801E74A4 24050004 */  li    $a1, 4
 /* 1D8218 801E74A8 E7A20044 */  swc1  $f2, 0x44($sp)
 /* 1D821C 801E74AC E7A20040 */  swc1  $f2, 0x40($sp)
-/* 1D8220 801E74B0 0C006424 */  jal   func_80019090_ovl10
+/* 1D8220 801E74B0 0C006424 */  jal   vec3_get_euler_rotation
 /* 1D8224 801E74B4 E7A8003C */   swc1  $f8, 0x3c($sp)
 /* 1D8228 801E74B8 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 1D822C 801E74BC 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
@@ -14286,7 +14286,7 @@
 /* 1D9514 801E87A4 24050004 */  li    $a1, 4
 /* 1D9518 801E87A8 E7A20044 */  swc1  $f2, 0x44($sp)
 /* 1D951C 801E87AC E7A20040 */  swc1  $f2, 0x40($sp)
-/* 1D9520 801E87B0 0C006424 */  jal   func_80019090_ovl10
+/* 1D9520 801E87B0 0C006424 */  jal   vec3_get_euler_rotation
 /* 1D9524 801E87B4 E7A8003C */   swc1  $f8, 0x3c($sp)
 /* 1D9528 801E87B8 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 1D952C 801E87BC 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)

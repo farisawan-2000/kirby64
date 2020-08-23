@@ -23,7 +23,7 @@ glabel func_801DBFA4_ovl11
 /* 1E68B8 801DBFF8 24050002 */  li    $a1, 2
 /* 1E68BC 801DBFFC 00194080 */  sll   $t0, $t9, 2
 /* 1E68C0 801DC000 00C83021 */  addu  $a2, $a2, $t0
-/* 1E68C4 801DC004 0C006424 */  jal   func_80019090_ovl11
+/* 1E68C4 801DC004 0C006424 */  jal   vec3_get_euler_rotation
 /* 1E68C8 801DC008 8CC641D0 */   lw    $a2, 0x41d0($a2)
 /* 1E68CC 801DC00C 24040020 */  li    $a0, 32
 /* 1E68D0 801DC010 00002825 */  move  $a1, $zero

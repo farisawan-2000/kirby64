@@ -1,4 +1,4 @@
-glabel func_80018FBC
+glabel vec3_angle_diff
 /* 019BBC 80018FBC 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 019BC0 80018FC0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 019BC4 80018FC4 AFA5002C */  sw    $a1, 0x2c($sp)

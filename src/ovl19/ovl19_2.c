@@ -1267,7 +1267,7 @@ f32 func_80221A74_ovl19(void) {
     sp38 = 0.0f;
     sp34 = 0.0f;
     sp3C = 2.0f;
-    func_80019090_ovl19(&sp34, 2, (bitwise s32) D_800E41D0[D_8004A7C4->unk0]);
+    vec3_get_euler_rotation(&sp34, 2, (bitwise s32) D_800E41D0[D_8004A7C4->unk0]);
     temp_v0 = D_8004A7C4->unk0;
     sp2C = 0.0f;
     sp28 = D_800E25D0 - *(&D_800E25D0 + (*temp_v0 * 4));
