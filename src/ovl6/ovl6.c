@@ -268,7 +268,7 @@ void *func_80151CD0(s32 arg0, ? arg1) {
     f32 temp_f2;
     f32 temp_ret;
 
-    func_80018DEC_ovl6(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1, arg0);
+    vec3_sub(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1, arg0);
     temp_ret = sqrtf(((sp24 * sp24) + (sp28 * sp28)) + (sp2C * sp2C), sp2C);
     temp_f0 = temp_ret;
     if (temp_f0 == 0.0f) {

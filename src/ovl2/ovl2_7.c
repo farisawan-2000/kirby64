@@ -14,7 +14,7 @@ f32 func_80111F10_ovl2(void) {
 
     temp_s0 = D_8012D934;
     sp5C = D_800D799C->unk3C;
-    func_80018E24_ovl2(&sp4C, D_800D799C->unk3C + 0x48, D_800D799C->unk3C + 0x3C);
+    vec3_sub_normalize(&sp4C, D_800D799C->unk3C + 0x48, D_800D799C->unk3C + 0x3C);
     temp_a0 = D_800D799C->unk3C + 0x54;
     sp20 = temp_a0;
     func_80019740_ovl2(temp_a0, &sp4C, &sp40);

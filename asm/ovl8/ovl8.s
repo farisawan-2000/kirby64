@@ -2371,7 +2371,7 @@
 /* 176A90 801D2FB0 0C03E270 */  jal   func_800F89C0_ovl8
 /* 176A94 801D2FB4 E7A80034 */   swc1  $f8, 0x34($sp)
 /* 176A98 801D2FB8 E7A00028 */  swc1  $f0, 0x28($sp)
-/* 176A9C 801D2FBC 0C006328 */  jal   func_80018CA0_ovl8
+/* 176A9C 801D2FBC 0C006328 */  jal   vec3_normalize
 /* 176AA0 801D2FC0 27A40038 */   addiu $a0, $sp, 0x38
 /* 176AA4 801D2FC4 27A40038 */  addiu $a0, $sp, 0x38
 /* 176AA8 801D2FC8 24050002 */  li    $a1, 2

@@ -9,7 +9,7 @@ glabel func_80151CD0
 /* 13607C 80151CEC 00A03025 */  move  $a2, $a1
 /* 136080 80151CF0 8DE5003C */  lw    $a1, 0x3c($t7)
 /* 136084 80151CF4 27A40024 */  addiu $a0, $sp, 0x24
-/* 136088 80151CF8 0C00637B */  jal   func_80018DEC_ovl6
+/* 136088 80151CF8 0C00637B */  jal   vec3_sub
 /* 13608C 80151CFC 24A5001C */   addiu $a1, $a1, 0x1c
 /* 136090 80151D00 C7A00024 */  lwc1  $f0, 0x24($sp)
 /* 136094 80151D04 C7A20028 */  lwc1  $f2, 0x28($sp)

@@ -74,14 +74,14 @@ glabel func_800FBBB8
 /* 084740 800FBCD0 E7A60048 */  swc1  $f6, 0x48($sp)
 /* 084744 800FBCD4 44058000 */  mfc1  $a1, $f16
 /* 084748 800FBCD8 27A40040 */  addiu $a0, $sp, 0x40
-/* 08474C 800FBCDC 0C00639C */  jal   func_80018E70_ovl2
+/* 08474C 800FBCDC 0C00639C */  jal   vec3_mul_scale
 /* 084750 800FBCE0 E7A80044 */   swc1  $f8, 0x44($sp)
 /* 084754 800FBCE4 27A40040 */  addiu $a0, $sp, 0x40
-/* 084758 800FBCE8 0C00635F */  jal   func_80018D7C_ovl2
+/* 084758 800FBCE8 0C00635F */  jal   vec3_add
 /* 08475C 800FBCEC 02002825 */   move  $a1, $s0
 /* 084760 800FBCF0 27A40028 */  addiu $a0, $sp, 0x28
 /* 084764 800FBCF4 02002825 */  move  $a1, $s0
-/* 084768 800FBCF8 0C00637B */  jal   func_80018DEC_ovl2
+/* 084768 800FBCF8 0C00637B */  jal   vec3_sub
 /* 08476C 800FBCFC 27A60040 */   addiu $a2, $sp, 0x40
 /* 084770 800FBD00 8FA4004C */  lw    $a0, 0x4c($sp)
 /* 084774 800FBD04 27A50028 */  addiu $a1, $sp, 0x28

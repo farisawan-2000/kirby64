@@ -17,10 +17,6 @@ extern u32 D_80048CDC;
 // an actual DMA Copy
 #ifdef MIPS_TO_C
 void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 writeback) {
-    u32 sp58;
-    void *sp54;
-    void *sp50;
-    void *sp4C;
     OSIoMesg sp48;
 
     D_80048D88 = physAddr;
@@ -38,8 +34,9 @@ void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 writ
                     fatal_printf(&D_8003FF00, vAddr, physAddr, size);
                     while (1);
                 }
+            } else {
+                osRecvMesg(&D_80048D70, 0, 1);
             }
-            osRecvMesg(&D_80048D70, 0, 1);
             size -= 0x10000;
             vAddr =  (s32) vAddr + 0x10000;
             physAddr = (s32) physAddr + 0x10000;

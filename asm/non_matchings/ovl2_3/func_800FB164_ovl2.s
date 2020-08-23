@@ -397,7 +397,7 @@ glabel func_800FB164_ovl2
 .L800FB704_ovl2:
 /* 084174 800FB704 27A40028 */  addiu $a0, $sp, 0x28
 /* 084178 800FB708 25850018 */  addiu $a1, $t4, 0x18
-/* 08417C 800FB70C 0C00637B */  jal   func_80018DEC_ovl2
+/* 08417C 800FB70C 0C00637B */  jal   vec3_sub
 /* 084180 800FB710 25860024 */   addiu $a2, $t4, 0x24
 /* 084184 800FB714 C7AE0028 */  lwc1  $f14, 0x28($sp)
 /* 084188 800FB718 C7AC0030 */  lwc1  $f12, 0x30($sp)

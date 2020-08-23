@@ -172,7 +172,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_3/func_80222A54_ovl18.s")
 void func_80222B10_ovl18(s32 arg0) {
     struct UnkStruct800E1B50 *temp_a1 = D_800E1B50[D_8004A7C4->unk0];
 
-    D_800E9AA0[D_8004A7C4->unk0] = NULL;
+    D_800E9AA0[D_8004A7C4->unk0] = 0;
     D_800E9C60[D_8004A7C4->unk0] = 1;
     temp_a1->unk98 = &D_8022A9F4;
     D_800DDFD0[D_8004A7C4->unk0] = 0;

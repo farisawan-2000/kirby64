@@ -1,4 +1,4 @@
-glabel func_800A44BC
+glabel vec3_dot_product
 /* 04C70C 800A44BC C4840000 */  lwc1  $f4, ($a0)
 /* 04C710 800A44C0 C4A60000 */  lwc1  $f6, ($a1)
 /* 04C714 800A44C4 C48A0004 */  lwc1  $f10, 4($a0)

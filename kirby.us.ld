@@ -37,7 +37,7 @@ SECTIONS
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
-      BUILD_DIR/src/ovl0/ovl0_0.o(.text);
+      BUILD_DIR/src/ovl0/main.o(.text);
       BUILD_DIR/asm/ovl0/ovl0.o(.text);
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
@@ -46,8 +46,8 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_3.o(.text);
       BUILD_DIR/src/ovl0/ovl0_4.o(.text);
-      BUILD_DIR/asm/ovl0/ovl0_5.o(.text);
-      BUILD_DIR/asm/ovl0/ovl0_6.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_5.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_6.o(.text);
       BUILD_DIR/src/ovl0/ovl0_7.o(.text);
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
@@ -60,7 +60,7 @@ SECTIONS
    }
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
-      BUILD_DIR/src/ovl0/ovl0_0.o(.bss);
+      BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
@@ -229,7 +229,7 @@ SECTIONS
       /*. += 0x10;*/
       BUILD_DIR/src/ovl18/ovl18_5.o(.text);
       BUILD_DIR/asm/ovl18/ovl18_6.o(.text);
-      BUILD_DIR/asm/ovl18/ovl18_7.o(.text);
+      BUILD_DIR/src/ovl18/ovl18_7.o(.text);
    }
    END_SEG(ovl18)
    BEGIN_SEG(ovl18Data, _ovl18SegmentEnd) {

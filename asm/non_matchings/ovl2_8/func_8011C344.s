@@ -16,7 +16,7 @@ glabel func_8011C344
 /* 0A4DEC 8011C37C C4A60008 */  lwc1  $f6, 8($a1)
 /* 0A4DF0 8011C380 C4C40008 */  lwc1  $f4, 8($a2)
 /* 0A4DF4 8011C384 46062201 */  sub.s $f8, $f4, $f6
-/* 0A4DF8 8011C388 0C00634F */  jal   func_80018D3C_ovl2
+/* 0A4DF8 8011C388 0C00634F */  jal   vec3_mag
 /* 0A4DFC 8011C38C E7A8004C */   swc1  $f8, 0x4c($sp)
 /* 0A4E00 8011C390 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 0A4E04 8011C394 44811000 */  mtc1  $at, $f2
@@ -49,7 +49,7 @@ glabel func_8011C344
 /* 0A4E68 8011C3F8 E7A20030 */  swc1  $f2, 0x30($sp)
 /* 0A4E6C 8011C3FC E7A00034 */  swc1  $f0, 0x34($sp)
 .L8011C400_ovl2:
-/* 0A4E70 8011C400 0C006328 */  jal   func_80018CA0_ovl2
+/* 0A4E70 8011C400 0C006328 */  jal   vec3_normalize
 /* 0A4E74 8011C404 27A40044 */   addiu $a0, $sp, 0x44
 /* 0A4E78 8011C408 27A4002C */  addiu $a0, $sp, 0x2c
 /* 0A4E7C 8011C40C 27A50044 */  addiu $a1, $sp, 0x44

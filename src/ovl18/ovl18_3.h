@@ -31,7 +31,7 @@ extern f32 D_8022AC5C[];
 extern f32 D_800E17D0[];
 extern f32 D_800E41D0[];
 
-extern s32 *D_800E9AA0[];
+extern s32 D_800E9AA0[];
 
 extern s32 D_800E93A0[];
 extern s32 D_800E9C60[];

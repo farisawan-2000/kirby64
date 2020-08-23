@@ -1164,7 +1164,7 @@ glabel func_801DC2D0_ovl17
 /* 2274DC 801DC2EC 8DCF0004 */  lw    $t7, 4($t6)
 /* 2274E0 801DC2F0 AC8F0004 */  sw    $t7, 4($a0)
 /* 2274E4 801DC2F4 8DD80008 */  lw    $t8, 8($t6)
-/* 2274E8 801DC2F8 0C006328 */  jal   func_80018CA0_ovl17
+/* 2274E8 801DC2F8 0C006328 */  jal   vec3_normalize
 /* 2274EC 801DC2FC AC980008 */   sw    $t8, 8($a0)
 /* 2274F0 801DC300 3C198005 */  lui   $t9, %hi(D_8004A7C4) # $t9, 0x8005
 /* 2274F4 801DC304 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)
@@ -1451,7 +1451,7 @@ glabel func_801DC724_ovl17
 /* 227930 801DC740 8DCF0004 */  lw    $t7, 4($t6)
 /* 227934 801DC744 AC8F0004 */  sw    $t7, 4($a0)
 /* 227938 801DC748 8DD80008 */  lw    $t8, 8($t6)
-/* 22793C 801DC74C 0C006328 */  jal   func_80018CA0_ovl17
+/* 22793C 801DC74C 0C006328 */  jal   vec3_normalize
 /* 227940 801DC750 AC980008 */   sw    $t8, 8($a0)
 /* 227944 801DC754 3C198005 */  lui   $t9, %hi(D_8004A7C4) # $t9, 0x8005
 /* 227948 801DC758 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)
@@ -6274,7 +6274,7 @@ glabel func_801E0CE8_ovl17
 /* 22C0A4 801E0EB4 0008C880 */  sll   $t9, $t0, 2
 /* 22C0A8 801E0EB8 00390821 */  addu  $at, $at, $t9
 /* 22C0AC 801E0EBC C42AAA60 */  lwc1  $f10, -0x55a0($at)
-/* 22C0B0 801E0EC0 0C006328 */  jal   func_80018CA0_ovl17
+/* 22C0B0 801E0EC0 0C006328 */  jal   vec3_normalize
 /* 22C0B4 801E0EC4 E7AA0034 */   swc1  $f10, 0x34($sp)
 /* 22C0B8 801E0EC8 8FAA0038 */  lw    $t2, 0x38($sp)
 /* 22C0BC 801E0ECC 27A4002C */  addiu $a0, $sp, 0x2c
@@ -6282,7 +6282,7 @@ glabel func_801E0CE8_ovl17
 /* 22C0C4 801E0ED4 00000000 */  nop   
 /* 22C0C8 801E0ED8 468020A0 */  cvt.s.w $f2, $f4
 /* 22C0CC 801E0EDC 44051000 */  mfc1  $a1, $f2
-/* 22C0D0 801E0EE0 0C00639C */  jal   func_80018E70_ovl17
+/* 22C0D0 801E0EE0 0C00639C */  jal   vec3_mul_scale
 /* 22C0D4 801E0EE4 E7A20020 */   swc1  $f2, 0x20($sp)
 /* 22C0D8 801E0EE8 3C014170 */  li    $at, 0x41700000 # 15.000000
 /* 22C0DC 801E0EEC 44816000 */  mtc1  $at, $f12
@@ -7064,7 +7064,7 @@ glabel func_801E1960_ovl17
 .L801E1A58_ovl17:
 /* 22CC48 801E1A58 00000000 */  nop   
 .L801E1A5C_ovl17:
-/* 22CC4C 801E1A5C 0C006328 */  jal   func_80018CA0_ovl17
+/* 22CC4C 801E1A5C 0C006328 */  jal   vec3_normalize
 /* 22CC50 801E1A60 E7A20034 */   swc1  $f2, 0x34($sp)
 /* 22CC54 801E1A64 3C0141C0 */  li    $at, 0x41C00000 # 24.000000
 /* 22CC58 801E1A68 44816000 */  mtc1  $at, $f12
@@ -8702,7 +8702,7 @@ glabel func_801E30BC_ovl17
 glabel func_801E328C_ovl17
 /* 22E47C 801E328C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 22E480 801E3290 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 22E484 801E3294 0C006328 */  jal   func_80018CA0_ovl17
+/* 22E484 801E3294 0C006328 */  jal   vec3_normalize
 /* 22E488 801E3298 AFA40018 */   sw    $a0, 0x18($sp)
 /* 22E48C 801E329C 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 22E490 801E32A0 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
@@ -8749,7 +8749,7 @@ glabel func_801E3324_ovl17
 /* 22E52C 801E333C 00808025 */  move  $s0, $a0
 /* 22E530 801E3340 E4800000 */  swc1  $f0, ($a0)
 /* 22E534 801E3344 E4800004 */  swc1  $f0, 4($a0)
-/* 22E538 801E3348 0C006328 */  jal   func_80018CA0_ovl17
+/* 22E538 801E3348 0C006328 */  jal   vec3_normalize
 /* 22E53C 801E334C E4840008 */   swc1  $f4, 8($a0)
 /* 22E540 801E3350 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 22E544 801E3354 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
@@ -8821,7 +8821,7 @@ glabel func_801E343C_ovl17
 /* 22E644 801E3454 00808025 */  move  $s0, $a0
 /* 22E648 801E3458 E4800000 */  swc1  $f0, ($a0)
 /* 22E64C 801E345C E4800004 */  swc1  $f0, 4($a0)
-/* 22E650 801E3460 0C006328 */  jal   func_80018CA0_ovl17
+/* 22E650 801E3460 0C006328 */  jal   vec3_normalize
 /* 22E654 801E3464 E4840008 */   swc1  $f4, 8($a0)
 /* 22E658 801E3468 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 22E65C 801E346C 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
@@ -10436,7 +10436,7 @@ glabel func_801E49B8_ovl17
 /* 22FDF4 801E4C04 00AB6821 */  addu  $t5, $a1, $t3
 /* 22FDF8 801E4C08 C5A40000 */  lwc1  $f4, ($t5)
 /* 22FDFC 801E4C0C 46002187 */  neg.s $f6, $f4
-/* 22FE00 801E4C10 0C006328 */  jal   func_80018CA0_ovl17
+/* 22FE00 801E4C10 0C006328 */  jal   vec3_normalize
 /* 22FE04 801E4C14 E7A60038 */   swc1  $f6, 0x38($sp)
 /* 22FE08 801E4C18 3C014170 */  li    $at, 0x41700000 # 15.000000
 /* 22FE0C 801E4C1C 44811000 */  mtc1  $at, $f2

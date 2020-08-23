@@ -5,14 +5,14 @@ glabel func_800F9F80
 /* 0829FC 800F9F8C AFA40038 */  sw    $a0, 0x38($sp)
 /* 082A00 800F9F90 00C02825 */  move  $a1, $a2
 /* 082A04 800F9F94 8FA6003C */  lw    $a2, 0x3c($sp)
-/* 082A08 800F9F98 0C00637B */  jal   func_80018DEC_ovl2
+/* 082A08 800F9F98 0C00637B */  jal   vec3_sub
 /* 082A0C 800F9F9C 27A4002C */   addiu $a0, $sp, 0x2c
 /* 082A10 800F9FA0 27A40020 */  addiu $a0, $sp, 0x20
 /* 082A14 800F9FA4 8FA50038 */  lw    $a1, 0x38($sp)
-/* 082A18 800F9FA8 0C00637B */  jal   func_80018DEC_ovl2
+/* 082A18 800F9FA8 0C00637B */  jal   vec3_sub
 /* 082A1C 800F9FAC 8FA6003C */   lw    $a2, 0x3c($sp)
 /* 082A20 800F9FB0 27A4002C */  addiu $a0, $sp, 0x2c
-/* 082A24 800F9FB4 0C02912F */  jal   func_800A44BC_ovl2
+/* 082A24 800F9FB4 0C02912F */  jal   vec3_dot_product
 /* 082A28 800F9FB8 27A50020 */   addiu $a1, $sp, 0x20
 /* 082A2C 800F9FBC E7A0001C */  swc1  $f0, 0x1c($sp)
 /* 082A30 800F9FC0 0C02914D */  jal   vec3_mag_square
