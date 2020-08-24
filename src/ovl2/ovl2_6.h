@@ -2,10 +2,10 @@
 
 struct Level
 {
-/*0X0*/ u8    World;
-/*0X1*/ u8    Level;
-/*0X2*/ u8    Area;
-/*0X3*/ u8    WarpID;
+/*0X0*/ u8    world;
+/*0X1*/ u8    level;
+/*0X2*/ u8    area;
+/*0X3*/ u8    warpID;
 };
 
 
@@ -20,8 +20,8 @@ struct Main_Header
 {
 /*0x00*/    struct CollisionHeader    *collisionHeader;
 /*0x04*/    struct NodeHeader         *nodeHeader;
-/*0x08*/    struct Entities            *Entity_IDs;
-/*0x0C*/    int                        padding;
+/*0x08*/    struct Entities           *entityIDs;
+/*0x0C*/    int                       force_structure_alignment;
 };
 // Collision
 // Collision is handled by several different lists that combine to create the level geometry.
@@ -34,16 +34,16 @@ struct Main_Header
 // Triangles
 // Triangles are made by connecting 3 vertices referenced by their index. (e.g. 0,1,2 is made up of vertices 0,1 and 2 in the list). Every Triangle has a struct that has additional parameters telling the game how to handle collision.
 
-struct Col_Triangle
+struct CollisionTriangle
 {
-/*0x0*/     u16    Vertex[3];
-/*0x6*/     u16    Polygon_Number;
-/*0x8*/     u16    Normal_Type;          //(1 forward norm, 2 back norm, 4 no shadow, 8 non solid)
-/*0xA*/     u16    Collision_Type_Index; //based on col type this num references array pos
-/*0xC*/     u16    Break_Particle;       //(seen in DEDEDE hammer break)
+/*0x0*/     u16    vertex[3];
+/*0x6*/     u16    polyCount;
+/*0x8*/     u16    normalType;          //(1 forward norm, 2 back norm, 4 no shadow, 8 non solid)
+/*0xA*/     u16    collisionIndex; //based on col type this num references array pos
+/*0xC*/     u16    breakParticle;       //(seen in DEDEDE hammer break)
 /*0xE*/     u16    Halt_Movement;        //Stops kirby from moving/triggers automatic behavior.
-/*0x10*/    s16    Col_Param1;           //ex.Amount to move kirby while on certain col types or Break Condition
-/*0x12*/    u16    Collision_Type;       //see col type list
+/*0x10*/    s16    collisionParameter;           //ex.Amount to move kirby while on certain col types or Break Condition
+/*0x12*/    u16    collisionType;       //see col type list
 };
 // The following is a list of Collision_Type values known.
 
@@ -79,16 +79,19 @@ struct Normal
 // There should be an equal amount of items in the triangle list and triangle group list.
 
 // Normal Groups
-// The normal groups are a binary space partition tree of the level normals and corresponding triangles associated with those normals. Each normal group represents a node in the tree, and has a right and left child based on whether the ensemble of triangles is in front or behind the parent node.
+// The normal groups are a binary space partition tree of the level normals and corresponding triangles
+// associated with those normals. Each normal group represents a node in the tree, and has a right and
+// left child based on whether the ensemble of triangles is in front or behind the parent node.
 
-// The first index of the normal group is (-1,-2,-3,-4), the search through the tree starts at the last member in the array, indices of zero refer to leaf nodes.
+// The first index of the normal group is (-1,-2,-3,-4), the search through the tree starts at the last
+// member in the array, indices of zero refer to leaf nodes.
 
-struct Norm_Group
+struct NormalGroup
 {
-/*0x0*/  u16  Normal_Index;
-/*0x2*/  u16  Left_Child;
-/*0x4*/  u16  Right_Child;
-/*0x6*/  u16  Tri_Cell_Index;
+/*0x0*/  u16  normalIndex;
+/*0x2*/  u16  leftIndex;
+/*0x4*/  u16  rightIndex;
+/*0x6*/  u16  triCellIndex;
 };
 // Destructable Geometry Groups
 // A Destructable Geo list is referenced by certain collision types using 0xA inside the col tri struct. This is so instead of destroying one triangle, all connected geometry is edited as a single rigid body.
@@ -138,7 +141,7 @@ struct Water_Data
 
 struct CollisionHeader
 {
-/*0x0*/    struct Col_Triangle    *Triangles;
+/*0x0*/    struct CollisionTriangle    *Triangles;
 /*0x4*/    u32       Len_Triangles;
 /*0x8*/    s16       *Vertices;
 /*0xC*/    u32       Len_Vertices;
@@ -179,7 +182,7 @@ struct Node_Connectors
 // NodeHeader
 // The level nodes are referred to by the second index in the main header. This section tells the game how to move kirby as you progress through the level and how the camera should act.
 
-struct Path_NodeHeader
+struct PathNodeHeader
 {
 /*0x0*/    struct Kirby_Node          *Kirby_Node;
 /*0x4*/    struct Path_Node_Footer    *Path_Node_Footer;
@@ -189,10 +192,10 @@ struct Path_NodeHeader
 };
 struct NodeHeader
 {
-/*0x0*/    u32    Num_Path_Nodes;
-/*0x4*/    struct Path_NodeHeader   (*Path_NodeHeader)[];
-/*0x8*/    u8     (*Unk_Bytes)[];
-/*0xC*/    f32    (*Unk_Floats)[];
+/*0x0*/    u32    pathNodeCount;
+/*0x4*/    struct PathNodeHeader (*pathHeader)[];
+/*0x8*/    u8     (*unkU8Array)[];
+/*0xC*/    f32    (*unkF32Array)[];
 };
 // Path Node Headers
 // Pathing nodes are sections of the level that have a defined path and camera movement for kirby as he progresses through the level.
