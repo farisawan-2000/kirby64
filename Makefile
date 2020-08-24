@@ -23,7 +23,14 @@ IRIX_ROOT := tools/ido7.1
 CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
 
-CROSS = mips-linux-gnu-
+ifeq ($(shell type mips-linux-gnu-ld >/dev/null 2>/dev/null; echo $$?), 0)
+  CROSS := mips-linux-gnu-
+else ifeq ($(shell type mips64-linux-gnu-ld >/dev/null 2>/dev/null; echo $$?), 0)
+  CROSS := mips64-linux-gnu-
+else
+  CROSS := mips64-elf-
+endif
+
 AS = $(CROSS)as
 # CC = $(CROSS)gcc
 CPP     := cpp -P -Wno-trigraphs
@@ -112,6 +119,8 @@ include $(MAKEFILE_SPLIT)
 
 all: $(BUILD_DIR)/$(TARGET).z64
 
+hexdump: $(BUILD_DIR)/$(TARGET).hex
+
 clean:
 	rm -rf build/
 
@@ -154,7 +163,7 @@ $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 	$(N64CRC) $@
 	sha1sum -c $(TARGET).sha1
 
-$(BUILD_DIR)/$(TARGET).hex: $(TARGET).z64
+$(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
 	xxd $< > $@
 
 $(BUILD_DIR)/$(TARGET).objdump: $(BUILD_DIR)/$(TARGET).elf
@@ -162,10 +171,10 @@ $(BUILD_DIR)/$(TARGET).objdump: $(BUILD_DIR)/$(TARGET).elf
 
 $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
-test: $(TARGET).z64
+test: $(BUILD_DIR)/$(TARGET).z64
 	$(EMULATOR) $(EMU_FLAGS) $<
 
-load: $(TARGET).z64
+load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
 .PHONY: all clean default diff test
