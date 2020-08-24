@@ -104,15 +104,12 @@ f32 vec3_angle_diff(Vector *arg0, Vector *arg1) {
     else return 0.0f;
 }
 
+// I'm sorry, this function is too beautiful to not align like this
 Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle) {
-    f32 xResult;
-    f32 yResult;
-    f32 zResult;
-    f32 sinAngle;
-    f32 cosAngle;
+    f32 xResult, yResult, zResult;
+    f32 sinAngle    = sinf(angle);
+    f32 cosAngle    = cosf(angle);
 
-    sinAngle = sinf(angle);
-    cosAngle = cosf(angle);
     switch (axis) {
         case 1:
             xResult = arg0->x;
@@ -133,7 +130,7 @@ Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle) {
     arg0->x = xResult;
     arg0->y = yResult;
     arg0->z = zResult;
-    return arg0;
+    return       arg0;
 }
 
 Vector *vec3_negate(Vector *arg0) {

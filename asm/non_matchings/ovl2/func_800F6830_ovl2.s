@@ -34,7 +34,7 @@ glabel func_800F6830_ovl2
 /* 07F320 800F68B0 E7B00020 */  swc1  $f16, 0x20($sp)
 /* 07F324 800F68B4 C452005C */  lwc1  $f18, 0x5c($v0)
 /* 07F328 800F68B8 AFA2003C */  sw    $v0, 0x3c($sp)
-/* 07F32C 800F68BC 0C0067AC */  jal   func_80019EB0_ovl2
+/* 07F32C 800F68BC 0C0067AC */  jal   guLookAtF
 /* 07F330 800F68C0 E7B20024 */   swc1  $f18, 0x24($sp)
 /* 07F334 800F68C4 8FA2003C */  lw    $v0, 0x3c($sp)
 /* 07F338 800F68C8 3C04800D */  lui   $a0, %hi(D_800D6ED0) # $a0, 0x800d

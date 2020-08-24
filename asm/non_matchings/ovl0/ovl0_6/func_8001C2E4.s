@@ -7,7 +7,7 @@ glabel func_8001C2E4
 /* 01CEF8 8001C2F8 8FA70030 */  lw    $a3, 0x30($sp)
 /* 01CEFC 8001C2FC 8FA6002C */  lw    $a2, 0x2c($sp)
 /* 01CF00 8001C300 8FA50028 */  lw    $a1, 0x28($sp)
-/* 01CF04 8001C304 0C006EEB */  jal   func_8001BBAC
+/* 01CF04 8001C304 0C006EEB */  jal   guRotateRPYF
 /* 01CF08 8001C308 AFA40018 */   sw    $a0, 0x18($sp)
 /* 01CF0C 8001C30C 8FA40018 */  lw    $a0, 0x18($sp)
 /* 01CF10 8001C310 C7A4001C */  lwc1  $f4, 0x1c($sp)

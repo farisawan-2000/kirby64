@@ -5,7 +5,7 @@ glabel func_8001CE68
 /* 01DA74 8001CE74 AFA60020 */  sw    $a2, 0x20($sp)
 /* 01DA78 8001CE78 AFA70024 */  sw    $a3, 0x24($sp)
 /* 01DA7C 8001CE7C 8FA50028 */  lw    $a1, 0x28($sp)
-/* 01DA80 8001CE80 0C007368 */  jal   func_8001CDA0
+/* 01DA80 8001CE80 0C007368 */  jal   create_z_rotation_matrix
 /* 01DA84 8001CE84 AFA40018 */   sw    $a0, 0x18($sp)
 /* 01DA88 8001CE88 8FA40018 */  lw    $a0, 0x18($sp)
 /* 01DA8C 8001CE8C C7A4001C */  lwc1  $f4, 0x1c($sp)

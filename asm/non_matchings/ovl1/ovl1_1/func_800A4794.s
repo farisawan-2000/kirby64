@@ -68,7 +68,7 @@ glabel func_800A4794
 /* 04CADC 800A488C 44050000 */  mfc1  $a1, $f0
 .L800A4890_ovl1:
 /* 04CAE0 800A4890 8E060034 */  lw    $a2, 0x34($s0)
-/* 04CAE4 800A4894 0C006EEB */  jal   func_8001BBAC_ovl1
+/* 04CAE4 800A4894 0C006EEB */  jal   guRotateRPYF
 /* 04CAE8 800A4898 8E070038 */   lw    $a3, 0x38($s0)
 /* 04CAEC 800A489C 02202025 */  move  $a0, $s1
 /* 04CAF0 800A48A0 02402825 */  move  $a1, $s2

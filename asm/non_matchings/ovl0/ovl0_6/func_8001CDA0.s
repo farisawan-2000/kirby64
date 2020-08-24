@@ -1,4 +1,4 @@
-glabel func_8001CDA0
+glabel create_z_rotation_matrix
 /* 01D9A0 8001CDA0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 01D9A4 8001CDA4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 01D9A8 8001CDA8 AFA50024 */  sw    $a1, 0x24($sp)

@@ -838,7 +838,7 @@ void func_800037F0(u32 arg0, u32 arg1, u8* arg2, u32 arg3) {
 void func_80003838(u32 arg0, u32 arg1) {
     u8 sp18[0x400];
 
-    func_800037F0(arg0, arg1, sp18, 0x400);
+    func_800037F0(arg0, arg1, sp18, ARRAY_COUNT(sp18));
 }
 
 #ifdef MIPS_TO_C

@@ -1,4 +1,4 @@
-glabel func_80019EB0
+glabel guLookAtF
 /* 01AAB0 80019EB0 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 01AAB4 80019EB4 AFA5004C */  sw    $a1, 0x4c($sp)
 /* 01AAB8 80019EB8 C7A6004C */  lwc1  $f6, 0x4c($sp)

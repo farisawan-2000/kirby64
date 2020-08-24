@@ -229,7 +229,7 @@ void func_800F6830_ovl2(void) {
     D_800D6F44 = (u16) D_80048F20.unk4;
     if (D_800D7B68 != 0) {
         sp3C = D_800D799C->unk3C;
-        func_80019EB0_ovl2(&sp40, D_800D799C->unk3C->unk3C, D_800D799C->unk3C->unk40, D_800D799C->unk3C->unk44, D_800D799C->unk3C->unk48, D_800D799C->unk3C->unk4C, D_800D799C->unk3C->unk50, D_800D799C->unk3C->unk54, D_800D799C->unk3C->unk58, D_800D799C->unk3C->unk5C);
+        guLookAtF(&sp40, D_800D799C->unk3C->unk3C, D_800D799C->unk3C->unk40, D_800D799C->unk3C->unk44, D_800D799C->unk3C->unk48, D_800D799C->unk3C->unk4C, D_800D799C->unk3C->unk50, D_800D799C->unk3C->unk54, D_800D799C->unk3C->unk58, D_800D799C->unk3C->unk5C);
         func_8001B008_ovl2(&D_800D6ED0, &sp3A, D_800D799C->unk3C->unk20, D_800D799C->unk3C->unk24, D_800D799C->unk3C->unk28, D_800D799C->unk3C->unk2C, D_800D799C->unk3C->unk30);
         guMtxCatF(&sp40, &D_800D6ED0, &D_800D6ED0);
     }

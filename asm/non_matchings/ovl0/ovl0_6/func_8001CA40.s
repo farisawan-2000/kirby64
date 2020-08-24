@@ -1,4 +1,4 @@
-glabel func_8001CA40
+glabel create_yz_rotation_matrix
 /* 01D640 8001CA40 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 01D644 8001CA44 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 01D648 8001CA48 AFB00018 */  sw    $s0, 0x18($sp)

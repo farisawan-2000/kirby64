@@ -68,7 +68,7 @@ SECTIONS
    /* 0x8009B540 043790-066630 [22EA0] */
    BEGIN_SEG(ovl1, 0x8009B540) {
       . += 0x10;
-      BUILD_DIR/asm/ovl1/ovl1.o(.text);
+      BUILD_DIR/src/ovl1/ovl1.o(.text);
       BUILD_DIR/src/ovl1/ovl1_1.o(.text);
       BUILD_DIR/src/ovl1/ovl1_2.o(.text);
       BUILD_DIR/src/ovl1/ovl1_3.o(.text);

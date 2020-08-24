@@ -6,7 +6,7 @@ glabel func_8001CB0C
 /* 01D71C 8001CB1C AFA40058 */  sw    $a0, 0x58($sp)
 /* 01D720 8001CB20 44056000 */  mfc1  $a1, $f12
 /* 01D724 8001CB24 44067000 */  mfc1  $a2, $f14
-/* 01D728 8001CB28 0C007290 */  jal   func_8001CA40
+/* 01D728 8001CB28 0C007290 */  jal   create_yz_rotation_matrix
 /* 01D72C 8001CB2C 27A40018 */   addiu $a0, $sp, 0x18
 /* 01D730 8001CB30 27A40018 */  addiu $a0, $sp, 0x18
 /* 01D734 8001CB34 0C006718 */  jal   func_80019C60

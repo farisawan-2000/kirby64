@@ -207,7 +207,7 @@
 /* 103E9C 8015CA2C C60A0058 */  lwc1  $f10, 0x58($s0)
 /* 103EA0 8015CA30 E7AA0020 */  swc1  $f10, 0x20($sp)
 /* 103EA4 8015CA34 C604005C */  lwc1  $f4, 0x5c($s0)
-/* 103EA8 8015CA38 0C0067AC */  jal   func_80019EB0_ovl5
+/* 103EA8 8015CA38 0C0067AC */  jal   guLookAtF
 /* 103EAC 8015CA3C E7A40024 */   swc1  $f4, 0x24($sp)
 /* 103EB0 8015CA40 27A40058 */  addiu $a0, $sp, 0x58
 /* 103EB4 8015CA44 27A50098 */  addiu $a1, $sp, 0x98
