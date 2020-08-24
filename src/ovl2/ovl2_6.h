@@ -118,7 +118,7 @@ struct DynGeo_List
 // Water Data
 // Water data is an array of water structs that will determine how kirby collides with water. Normals and a bounding box are used instead of polygons to determine collision. First kirby has to be inside the bounding box inside the water data struct. Then the normals are used. Normals are different than collision triangle geometry in that they define an infinite plane. The normal planes intersect to create a closed surface which is used as the collision check.
 
-struct Water_Data
+struct WaterData
 {
 /*0x0*/    u16    Num_Normals;
 /*0x2*/    u16    Norm_Array_Index;
@@ -154,8 +154,8 @@ struct CollisionHeader
 /*0x28*/   u32       Num_Floor_Norms; //Should be tri norm cells minus 1
 /*0x2C*/   struct DynGeo_List     Destructable_Groups;
 /*0x30*/   u16       Destructable_Indices;
-/*0x34*/   struct Water_Data      Water_Data;
-/*0x38*/   u32       Len_Water_Data;
+/*0x34*/   struct WaterData      WaterData;
+/*0x38*/   u32       Len_WaterData;
 /*0x3C*/   struct Normal          Water_Normals;
 /*0x40*/   u32       Len_Water_Normals;
 };
