@@ -47,18 +47,18 @@ struct CollisionTriangle
 };
 // The following is a list of Collision_Type values known.
 
-// 0x0 - default
-// 0x1 - wall ladder
-// 0x2 - rope
-// 0x3 - death floor
-// 0x4 - Platform you can jump through/Fall Through
-// 0x8 - warp
-// 0x9 - STAR BLOCK/Breakable Blocks
-// 0xD - Breakable Ceiling/Breaks when launched through
-// 0x10 - DEDEDE hammer break
-// 0x12 - move kirby backwards while on top
-// 0x13 - move kirby forwards while on top
-// 0x14 - Platform with custom movement (seems to be in some sort of object list separate from normal level geometry)
+#define COL_TYPE_DEFAULT 0x0  // - default
+#define COL_TYPE_WALL_LADDER 0x1  // - wall ladder
+#define COL_TYPE_ROPE 0x2  // - rope
+#define COL_TYPE_DEATH_FLOOR 0x3  // - death floor
+#define COL_TYPE_SEMI_SOLID 0x4  // - Platform you can jump through/Fall Through
+#define COL_TYPE_WARP 0x8  // - warp
+#define COL_TYPE_BREAKABLE 0x9  // - STAR BLOCK/Breakable Blocks
+#define COL_TYPE_BREAKABLE_CEILING 0xD  // - Breakable Ceiling/Breaks when launched through
+#define COL_TYPE_HAMMER_BREAKABLE 0x10 // - DEDEDE hammer break
+#define COL_TYPE_BACKWARD_CONVEYOR 0x12 // - move kirby backwards while on top
+#define COL_TYPE_FORWARD_CONVEYOR 0x13 // - move kirby forwards while on top
+#define COL_TYPE_CUSTOM_14 0x14 // - Platform with custom movement (seems to be in some sort of object list separate from normal level geometry)
 
 // The triangle list begins with a placeholder struct of (0,1,2,3,4,5,6,7,8,9)
 
@@ -316,7 +316,8 @@ struct CollisionState {
     u32 (*unk3C)(void);
     u32 (*unk40)(struct CollisionTriangle *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
     u32 (*unk44)(struct Normal *a0, s32 arg1);
-    u32 unk48;
+    u16 unk48;
+    u16 unk4A;
     u32 unk4C;
 };
 
@@ -325,3 +326,4 @@ struct CollisionState {
 #define BACKWARD_NORMAL     (1 << 1)
 #define NO_SHADOW           (1 << 2)
 #define NON_SOLID           (1 << 3)
+
