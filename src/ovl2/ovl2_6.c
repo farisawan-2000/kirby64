@@ -1096,6 +1096,7 @@ extern u32 D_8012BD00;
 // TODO: 
 // 1. What does this function actually check? Would be useful in documenting unk40 in CollisionState
 // 2. is arg2 a Vector or a Normal?
+// 3. There's a few rogue "return 0;" statements, but idk what to replace them with
 u32 func_80101920_ovl2(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) {
     u16 temp_v0 = arg0->normalType;
 
