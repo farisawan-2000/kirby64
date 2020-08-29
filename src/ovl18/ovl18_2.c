@@ -11,7 +11,7 @@ struct UnkStruct80222168_ovl18 {
 extern f32 D_800E64D0[];
 extern s32 D_800DD710[];
 extern u32 D_801CB4DC;
-extern u32 D_800E0D50[];
+extern s32 D_800E0D50[];
 void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0);
 
 // regalloc moment, one rogue instruction

@@ -73,10 +73,12 @@ extern f32 D_8022BC04;
 extern s32 D_800DE510[];
 extern s32 D_800E9720[];
 extern s32 D_800B7790;
+extern s32 D_8022A988;
 
-extern u32 D_800E9560[];
+extern s32 D_800E9560[];
 extern s32 D_802218E4;
 extern f32 D_800D6B10;
+extern f32 D_8022BBFC;
 
 f32 func_801D650C_ovl18(s32);
 void func_80220424_ovl18(void);
@@ -88,6 +90,7 @@ void func_8022ABC0_ovl18(void);
 void func_80220AA8_ovl18(s32);
 void func_800B1EC8_ovl18(s32, void (*c));
 s32 func_8019B738_ovl18(f32, s32);
+void func_80221440_ovl18(void);
 
 extern s32 D_800B72AC;
 extern s32 D_800B7138;
