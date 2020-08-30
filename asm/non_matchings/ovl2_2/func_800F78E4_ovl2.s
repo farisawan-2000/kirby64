@@ -436,13 +436,13 @@ glabel func_800F78E4_ovl2
 /* 0809D0 800F7F60 8C2D8738 */  lw    $t5, -0x78c8($at)
 /* 0809D4 800F7F64 01A00008 */  jr    $t5
 /* 0809D8 800F7F68 00000000 */   nop   
-/* 0809DC 800F7F6C 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 0809DC 800F7F6C 0C029AC8 */  jal   load_overlay
 /* 0809E0 800F7F70 24040007 */   li    $a0, 7
-/* 0809E4 800F7F74 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 0809E4 800F7F74 0C029AC8 */  jal   load_overlay
 /* 0809E8 800F7F78 24040010 */   li    $a0, 16
 /* 0809EC 800F7F7C 1000003B */  b     .L800F806C_ovl2
 /* 0809F0 800F7F80 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 0809F4 800F7F84 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 0809F4 800F7F84 0C029AC8 */  jal   load_overlay
 /* 0809F8 800F7F88 24040007 */   li    $a0, 7
 /* 0809FC 800F7F8C 3C0F800C */  lui   $t7, %hi(D_800BE500) # $t7, 0x800c
 /* 080A00 800F7F90 8DEFE500 */  lw    $t7, %lo(D_800BE500)($t7)
@@ -454,51 +454,51 @@ glabel func_800F78E4_ovl2
 /* 080A18 800F7FA8 8C2F8760 */  lw    $t7, -0x78a0($at)
 /* 080A1C 800F7FAC 01E00008 */  jr    $t7
 /* 080A20 800F7FB0 00000000 */   nop   
-/* 080A24 800F7FB4 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A24 800F7FB4 0C029AC8 */  jal   load_overlay
 /* 080A28 800F7FB8 2404000A */   li    $a0, 10
 /* 080A2C 800F7FBC 1000002B */  b     .L800F806C_ovl2
 /* 080A30 800F7FC0 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A34 800F7FC4 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A34 800F7FC4 0C029AC8 */  jal   load_overlay
 /* 080A38 800F7FC8 2404000B */   li    $a0, 11
 /* 080A3C 800F7FCC 10000027 */  b     .L800F806C_ovl2
 /* 080A40 800F7FD0 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A44 800F7FD4 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A44 800F7FD4 0C029AC8 */  jal   load_overlay
 /* 080A48 800F7FD8 2404000C */   li    $a0, 12
 /* 080A4C 800F7FDC 10000023 */  b     .L800F806C_ovl2
 /* 080A50 800F7FE0 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A54 800F7FE4 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A54 800F7FE4 0C029AC8 */  jal   load_overlay
 /* 080A58 800F7FE8 2404000D */   li    $a0, 13
 /* 080A5C 800F7FEC 1000001F */  b     .L800F806C_ovl2
 /* 080A60 800F7FF0 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A64 800F7FF4 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A64 800F7FF4 0C029AC8 */  jal   load_overlay
 /* 080A68 800F7FF8 2404000E */   li    $a0, 14
 /* 080A6C 800F7FFC 1000001B */  b     .L800F806C_ovl2
 /* 080A70 800F8000 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A74 800F8004 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A74 800F8004 0C029AC8 */  jal   load_overlay
 /* 080A78 800F8008 2404000F */   li    $a0, 15
 /* 080A7C 800F800C 10000017 */  b     .L800F806C_ovl2
 /* 080A80 800F8010 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A84 800F8014 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A84 800F8014 0C029AC8 */  jal   load_overlay
 /* 080A88 800F8018 24040007 */   li    $a0, 7
-/* 080A8C 800F801C 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A8C 800F801C 0C029AC8 */  jal   load_overlay
 /* 080A90 800F8020 24040009 */   li    $a0, 9
 /* 080A94 800F8024 10000011 */  b     .L800F806C_ovl2
 /* 080A98 800F8028 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080A9C 800F802C 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080A9C 800F802C 0C029AC8 */  jal   load_overlay
 /* 080AA0 800F8030 24040008 */   li    $a0, 8
-/* 080AA4 800F8034 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080AA4 800F8034 0C029AC8 */  jal   load_overlay
 /* 080AA8 800F8038 24040012 */   li    $a0, 18
 /* 080AAC 800F803C 1000000B */  b     .L800F806C_ovl2
 /* 080AB0 800F8040 8FBF0014 */   lw    $ra, 0x14($sp)
 .L800F8044_ovl2:
-/* 080AB4 800F8044 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080AB4 800F8044 0C029AC8 */  jal   load_overlay
 /* 080AB8 800F8048 24040008 */   li    $a0, 8
 /* 080ABC 800F804C 3C0E800D */  lui   $t6, %hi(D_800D6F3C) # $t6, 0x800d
 /* 080AC0 800F8050 8DCE6F3C */  lw    $t6, %lo(D_800D6F3C)($t6)
 /* 080AC4 800F8054 29C10003 */  slti  $at, $t6, 3
 /* 080AC8 800F8058 54200004 */  bnezl $at, .L800F806C_ovl2
 /* 080ACC 800F805C 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 080AD0 800F8060 0C029AC8 */  jal   func_800A6B20_ovl2
+/* 080AD0 800F8060 0C029AC8 */  jal   load_overlay
 /* 080AD4 800F8064 24040012 */   li    $a0, 18
 .L800F8068_ovl2:
 /* 080AD8 800F8068 8FBF0014 */  lw    $ra, 0x14($sp)

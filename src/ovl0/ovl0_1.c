@@ -58,7 +58,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002BD0.s")
 
 extern OSPiHandle *D_80048CF0;
 #include "main.h"
-void load_overlay(Overlay *ovl) {
+void dma_overlay_load(Overlay *ovl) {
     if ((s32) ovl->textEnd - (s32) ovl->textStart != 0) {
         osInvalICache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
         osInvalDCache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
@@ -75,8 +75,8 @@ void load_overlay(Overlay *ovl) {
     }
 }
 
-void func_80002E48(void *arg0, void *arg1, u32 arg2) {
-    dma_copy(D_80048CF0, arg0, arg1, arg2, 0);
+void func_80002E48(void *physAddr, void *vAddr, u32 size) {
+    dma_copy(D_80048CF0, physAddr, vAddr, size, 0);
 }
 
 void func_80002E84(void *arg0, void *arg1, u32 arg2) {

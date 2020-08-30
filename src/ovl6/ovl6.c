@@ -978,10 +978,7 @@ void *func_8015392C(void *arg0) {
     temp_t7 = arg0->unk3C->unk80->unk5B;
     temp_v0 = arg0->unk3C->unk80 + 8;
     if (temp_t7 != 0) {
-        temp_a0 = gDisplayListHeads.unk4;
-        gDisplayListHeads.unk4 = (void *) (temp_a0 + 8);
-        temp_a0->unk4 = 0;
-        temp_a0->unk0 = 0xE7000000;
+        gDPPipeSync(gDisplayListHeads[1]++);
         temp_a0_2 = gDisplayListHeads.unk4;
         gDisplayListHeads.unk4 = (void *) (temp_a0_2 + 8);
         temp_a0_2->unk4 = 0xFFFDF6FB;
@@ -998,10 +995,7 @@ void *func_8015392C(void *arg0) {
         gDisplayListHeads.unk4 = (void *) (temp_a0_5 + 8);
         temp_a0_5->unk4 = 0x28028;
         temp_a0_5->unk0 = 0xF64D8398;
-        temp_a0_6 = gDisplayListHeads.unk4;
-        gDisplayListHeads.unk4 = (void *) (temp_a0_6 + 8);
-        temp_a0_6->unk4 = 0;
-        temp_a0_6->unk0 = 0xE7000000;
+        gDPPipeSync(gDisplayListHeads[1]++);
         temp_a0_7 = gDisplayListHeads.unk4;
         gDisplayListHeads.unk4 = (void *) (temp_a0_7 + 8);
         temp_a0_7->unk4 = 0x5049D8;

@@ -1,9 +1,9 @@
 glabel func_800A9AA8
 /* 051CF8 800A9AA8 00047402 */  srl   $t6, $a0, 0x10
 /* 051CFC 800A9AAC 000E7880 */  sll   $t7, $t6, 2
-/* 051D00 800A9AB0 3C02800D */  lui   $v0, 0x800d
+/* 051D00 800A9AB0 3C02800D */ lui $v0, %hi(D_800D0184)
 /* 051D04 800A9AB4 004F1021 */  addu  $v0, $v0, $t7
-/* 051D08 800A9AB8 8C420184 */  lw    $v0, 0x184($v0)
+/* 051D08 800A9AB8 8C420184 */ lw $v0, %lo(D_800D0184)($v0)
 /* 051D0C 800A9ABC 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 051D10 800A9AC0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 051D14 800A9AC4 8C430018 */  lw    $v1, 0x18($v0)

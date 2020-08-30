@@ -302,7 +302,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B8C08.s")
 #endif
 
 extern void calc_file_checksum(u32 fileNum);
-extern u16 D_800D5150[];
+extern u8 D_800D5150[]; // TODO: get correct type for this
 #ifdef MIPS_TO_C
 void init_save_file_maybe(u32 fileNum) {
     s32 i;
@@ -313,8 +313,8 @@ void init_save_file_maybe(u32 fileNum) {
     gSaveBuffer1.files[fileNum].data8 = 0;
     gSaveBuffer1.files[fileNum].cutscenesWatched = 1;
     gSaveBuffer1.files[fileNum].percentComplete = 0;
-    gSaveBuffer1.files[fileNum].data11 = 1;
-    gSaveBuffer1.files[fileNum].data12 = 0;
+    gSaveBuffer1.files[fileNum].soundSetting = 1;
+    gSaveBuffer1.files[fileNum].hudDisplay = 0;
     gSaveBuffer1.files[fileNum].data13 = 0;
     gSaveBuffer1.files[fileNum].data14 = 0;
     gSaveBuffer1.files[fileNum].data15 = 0;

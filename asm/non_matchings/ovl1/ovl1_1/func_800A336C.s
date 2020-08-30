@@ -24,7 +24,7 @@ glabel func_800A336C
 /* 04B614 800A33C4 3C04800D */  lui   $a0, %hi(D_800D6B88) # $a0, 0x800d
 /* 04B618 800A33C8 0C02E714 */  jal   func_800B9C50_ovl1
 /* 04B61C 800A33CC 8C846B88 */   lw    $a0, %lo(D_800D6B88)($a0)
-/* 04B620 800A33D0 0C029AC8 */  jal   func_800A6B20_ovl1
+/* 04B620 800A33D0 0C029AC8 */  jal   load_overlay
 /* 04B624 800A33D4 24040004 */   li    $a0, 4
 /* 04B628 800A33D8 3C19800C */  lui   $t9, %hi(D_800BE500) # $t9, 0x800c
 /* 04B62C 800A33DC 8F39E500 */  lw    $t9, %lo(D_800BE500)($t9)

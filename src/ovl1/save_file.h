@@ -4,8 +4,8 @@ typedef struct {
     /* 0x8; */  u32 data8;
     /* 0xC; */  u32 cutscenesWatched;
     /* 0x10 */  u8 percentComplete;
-                u8 data11;
-                u8 data12;
+                u8 soundSetting;
+                u8 hudDisplay;
                 u8 data13;
                 
     /* 0x14 */  u8 data14;

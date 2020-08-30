@@ -26,7 +26,7 @@ glabel func_800A36C0
 /* 04B96C 800A371C ADD90000 */  sw    $t9, ($t6)
 /* 04B970 800A3720 ADD80004 */  sw    $t8, 4($t6)
 .L800A3724_ovl1:
-/* 04B974 800A3724 0C029AC8 */  jal   func_800A6B20_ovl1
+/* 04B974 800A3724 0C029AC8 */  jal   load_overlay
 /* 04B978 800A3728 24040004 */   li    $a0, 4
 /* 04B97C 800A372C 8E040000 */  lw    $a0, ($s0)
 /* 04B980 800A3730 0C055358 */  jal   func_80154D60_ovl1
