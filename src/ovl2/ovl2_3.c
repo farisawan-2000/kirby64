@@ -61,6 +61,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F88C8.s")
 #endif
 
 
+// gets the angle difference between two vectors, and
+// negates the result if the cross product has a negative Y component
 f32 func_800F89C0(Vector *arg0, Vector *arg1) {
     Vector sp1C;
 
@@ -329,7 +331,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F8E6C_ovl2.s")
 #include "ovl2_6.h"
 extern s32 D_80129118;
 extern struct Normal *D_80129114[];
-extern void func_8001E300_ovl2(s32 a, f32 b);
+extern void func_8001E300(s32 a, f32 b);
 
 #ifdef MIPS_TO_C
 u32 func_800F9020_ovl2(Vector *arg0, s32 arg1, f32 arg2) {
@@ -339,7 +341,7 @@ u32 func_800F9020_ovl2(Vector *arg0, s32 arg1, f32 arg2) {
         arg0->x = 0.0f;
         return 1;
     }
-    func_8001E300_ovl2(arg2, D_80129114[arg1]->y);
+    func_8001E300(arg2, D_80129114[arg1]->y);
     return 0;
 }
 #else

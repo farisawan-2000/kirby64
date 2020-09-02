@@ -110,7 +110,7 @@ Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle) {
     f32 sinAngle    = sinf(angle);
     f32 cosAngle    = cosf(angle);
 
-    switch (axis) {
+    switch  (axis) {
         case AXIS_X:
             xResult = arg0->x;
             yResult = (arg0->y * cosAngle) - (arg0->z * sinAngle);
@@ -209,13 +209,13 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
 
 // granularly negates components of a vector
 Vector *func_80019380(Vector *arg0, s32 flag) {
-    if (flag & 1) {
+    if (flag & AXIS_X) {
         arg0->x = -arg0->x;
     }
-    if (flag & 2) {
+    if (flag & AXIS_Y) {
         arg0->y = -arg0->y;
     }
-    if (flag & 4) {
+    if (flag & AXIS_Z) {
         arg0->z = -arg0->z;
     }
     return arg0;
