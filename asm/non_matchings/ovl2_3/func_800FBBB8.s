@@ -86,7 +86,7 @@ glabel func_800FBBB8
 /* 084770 800FBD00 8FA4004C */  lw    $a0, 0x4c($sp)
 /* 084774 800FBD04 27A50028 */  addiu $a1, $sp, 0x28
 /* 084778 800FBD08 27A60034 */  addiu $a2, $sp, 0x34
-/* 08477C 800FBD0C 0C0065D0 */  jal   func_80019740_ovl2
+/* 08477C 800FBD0C 0C0065D0 */  jal   vec3_normalized_cross_product
 /* 084780 800FBD10 24840054 */   addiu $a0, $a0, 0x54
 /* 084784 800FBD14 3C0142B4 */  li    $at, 0x42B40000 # 90.000000
 /* 084788 800FBD18 44812000 */  mtc1  $at, $f4

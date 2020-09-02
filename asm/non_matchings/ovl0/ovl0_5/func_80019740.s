@@ -1,4 +1,4 @@
-glabel func_80019740
+glabel vec3_normalized_cross_product
 /* 01A340 80019740 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 01A344 80019744 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 01A348 80019748 C4840004 */  lwc1  $f4, 4($a0)

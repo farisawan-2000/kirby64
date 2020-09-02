@@ -155,7 +155,7 @@ void func_801DB5C8_ovl11(void) {
     sp20.x = D_800E25D0[0] - D_800E25D0[*D_8004A7C4];
     sp20.y = 0.0f;
     sp20.z = D_800E2950[0] - D_800E2950[*D_8004A7C4];
-    func_800F89C0_ovl11(&sp2C, &sp20, &D_800E2950);
+    func_800F89C0(&sp2C, &sp20, &D_800E2950);
 }
 
 #ifdef MIPS_TO_C

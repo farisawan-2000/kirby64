@@ -3,6 +3,7 @@
 
 Vector *vec3_sub(Vector *, Vector *, Vector *);
 f32 vec3_dot_product(Vector *, Vector *);
+f32 vec3_angle_diff(Vector *, Vector *);
 
 extern f32 vec3_mag_square(Vector *);
 

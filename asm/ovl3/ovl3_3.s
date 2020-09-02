@@ -4858,7 +4858,7 @@ glabel func_8015ED2C_ovl3
 /* 0BFF78 8015F538 1000000F */  b     .L8015F578_ovl3
 /* 0BFF7C 8015F53C ADD80008 */   sw    $t8, 8($t6)
 .L8015F540_ovl3:
-/* 0BFF80 8015F540 0C0065D0 */  jal   func_80019740_ovl3
+/* 0BFF80 8015F540 0C0065D0 */  jal   vec3_normalized_cross_product
 /* 0BFF84 8015F544 27A6004C */   addiu $a2, $sp, 0x4c
 /* 0BFF88 8015F548 3C018019 */  li    $at, 0x80190000 # -0.000000
 /* 0BFF8C 8015F54C C42A70B0 */  lwc1  $f10, %lo(D_801970B0)($at)
@@ -5633,7 +5633,7 @@ glabel func_8015FD58_ovl3
 /* 0C0B00 801600C0 10000008 */  b     .L801600E4_ovl3
 /* 0C0B04 801600C4 AF2B0008 */   sw    $t3, 8($t9)
 .L801600C8_ovl3:
-/* 0C0B08 801600C8 0C0065D0 */  jal   func_80019740_ovl3
+/* 0C0B08 801600C8 0C0065D0 */  jal   vec3_normalized_cross_product
 /* 0C0B0C 801600CC 27A60034 */   addiu $a2, $sp, 0x34
 /* 0C0B10 801600D0 3C063DB2 */  lui   $a2, (0x3DB2B8C3 >> 16) # lui $a2, 0x3db2
 /* 0C0B14 801600D4 34C6B8C3 */  ori   $a2, (0x3DB2B8C3 & 0xFFFF) # ori $a2, $a2, 0xb8c3

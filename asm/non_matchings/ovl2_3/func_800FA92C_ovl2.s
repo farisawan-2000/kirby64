@@ -185,7 +185,7 @@ glabel func_800FA92C_ovl2
 /* 083650 800FABE0 8FA4006C */  lw    $a0, 0x6c($sp)
 /* 083654 800FABE4 E7AC0038 */  swc1  $f12, 0x38($sp)
 /* 083658 800FABE8 E7B20050 */  swc1  $f18, 0x50($sp)
-/* 08365C 800FABEC 0C0065D0 */  jal   func_80019740_ovl2
+/* 08365C 800FABEC 0C0065D0 */  jal   vec3_normalized_cross_product
 /* 083660 800FABF0 24840054 */   addiu $a0, $a0, 0x54
 /* 083664 800FABF4 3C0142B4 */  li    $at, 0x42B40000 # 90.000000
 /* 083668 800FABF8 C7AC0038 */  lwc1  $f12, 0x38($sp)

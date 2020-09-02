@@ -3,7 +3,7 @@ glabel func_800F89C0
 /* 081434 800F89C4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 081438 800F89C8 AFA5002C */  sw    $a1, 0x2c($sp)
 /* 08143C 800F89CC 27A6001C */  addiu $a2, $sp, 0x1c
-/* 081440 800F89D0 0C0065D0 */  jal   func_80019740_ovl2
+/* 081440 800F89D0 0C0065D0 */  jal   vec3_normalized_cross_product
 /* 081444 800F89D4 AFA40028 */   sw    $a0, 0x28($sp)
 /* 081448 800F89D8 44802000 */  mtc1  $zero, $f4
 /* 08144C 800F89DC C7A60020 */  lwc1  $f6, 0x20($sp)
