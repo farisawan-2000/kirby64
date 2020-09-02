@@ -3,7 +3,7 @@ import sys, os,binascii, struct
 addrEnd = int(sys.argv[3], 16)
 addrStart = int(sys.argv[2], 16)
 
-specificOvl = ""
+specificOvl = "_ovl10"
 
 
 bssLimit = 0

@@ -347,7 +347,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x8021DF00,
 		(void*) 0x8021DF10,
 	},
-	{
+	{ // Adeleine?
 		(void*) 0x001CBF50,
 		(void*) 0x001E5AA0,
 		(void*) 0x801DB1E0,
