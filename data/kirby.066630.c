@@ -358,7 +358,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x801F4D30,
 		(void*) 0x801F4DB0,
 	},
-	{
+	{ // whispy woods
 		(void*) 0x001E5AA0,
 		(void*) 0x001EB520,
 		(void*) 0x801DB1E0,
@@ -402,7 +402,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x801E3150,
 		(void*) 0x801E3160,
 	},
-	{
+	{ // HR-H/HR-E
 		(void*) 0x00205D40,
 		(void*) 0x00211490,
 		(void*) 0x801DB1E0,
@@ -413,7 +413,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x801E6930,
 		(void*) 0x801E6940,
 	},
-	{
+	{ // Miracle Matter
 		(void*) 0x00211490,
 		(void*) 0x002263D0,
 		(void*) 0x801DB1E0,
@@ -424,7 +424,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x801F0120,
 		(void*) 0x801F0230,
 	},
-	{
+	{ // Zero Two
 		(void*) 0x002263D0,
 		(void*) 0x002308C0,
 		(void*) 0x801DB1E0,
