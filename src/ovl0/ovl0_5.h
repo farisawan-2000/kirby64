@@ -2,6 +2,12 @@
 #define VEC_UTILS_H
 
 Vector *vec3_sub(Vector *, Vector *, Vector *);
+Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle);
+
+#define AXIS_X	1
+#define AXIS_Y	2
+#define AXIS_Z	4
+
 f32 vec3_dot_product(Vector *, Vector *);
 f32 vec3_angle_diff(Vector *, Vector *);
 

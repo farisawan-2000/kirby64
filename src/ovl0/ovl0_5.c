@@ -111,17 +111,17 @@ Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle) {
     f32 cosAngle    = cosf(angle);
 
     switch (axis) {
-        case 1:
+        case AXIS_X:
             xResult = arg0->x;
             yResult = (arg0->y * cosAngle) - (arg0->z * sinAngle);
             zResult = (arg0->y * sinAngle) + (arg0->z * cosAngle);
             break;
-        case 2:
+        case AXIS_Y:
             xResult = (arg0->x * cosAngle) + (arg0->z * sinAngle);
             yResult = arg0->y;
             zResult = (arg0->z * cosAngle) - (arg0->x * sinAngle);
             break;
-        case 4:
+        case AXIS_Z:
             xResult = (arg0->x * cosAngle) - (arg0->y * sinAngle);
             yResult = (arg0->x * sinAngle) + (arg0->y * cosAngle);
             zResult = arg0->z;
