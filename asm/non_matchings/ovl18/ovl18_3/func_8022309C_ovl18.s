@@ -1,5 +1,5 @@
 glabel func_8022309C_ovl18
-/* 235A3C 8022309C 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 235A3C func_8022309C_ovl18 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 235A40 802230A0 44866000 */  mtc1  $a2, $f12
 /* 235A44 802230A4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 235A48 802230A8 14A0002F */  bnez  $a1, .L80223168_ovl18

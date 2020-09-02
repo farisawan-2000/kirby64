@@ -1003,7 +1003,7 @@ void *func_801588D0_ovl3(s32 arg0) {
     *temp_v0 = (s32) (*temp_v0 - 1);
     phi_return = temp_v0;
     if (temp_a0 != 0) {
-        phi_return = func_8022E58C_ovl3(temp_a0);
+        phi_return = func_8022E58C_ovl19(temp_a0);
     }
     return phi_return;
 }

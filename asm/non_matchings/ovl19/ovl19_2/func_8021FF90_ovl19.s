@@ -18,10 +18,10 @@ glabel func_8021FF90_ovl19
 /* 2406E0 8021FFD0 C420F768 */  lwc1  $f0, %lo(D_8022F768)($at)
 /* 2406E4 8021FFD4 8C480000 */  lw    $t0, ($v0)
 /* 2406E8 8021FFD8 3C01800E */ lui $at, %hi(D_800DF150)
-/* 2406EC 8021FFDC 3C198022 */  lui   $t9, %hi(D_80220138) # $t9, 0x8022
+/* 2406EC 8021FFDC 3C198022 */  lui   $t9, %hi(func_80220138_ovl19) # $t9, 0x8022
 /* 2406F0 8021FFE0 00084880 */  sll   $t1, $t0, 2
 /* 2406F4 8021FFE4 00290821 */  addu  $at, $at, $t1
-/* 2406F8 8021FFE8 27390138 */  addiu $t9, %lo(D_80220138) # addiu $t9, $t9, 0x138
+/* 2406F8 8021FFE8 27390138 */  addiu $t9, %lo(func_80220138_ovl19) # addiu $t9, $t9, 0x138
 /* 2406FC 8021FFEC AC39F150 */ sw $t9, %lo(D_800DF150)($at)
 /* 240700 8021FFF0 8C4A0000 */  lw    $t2, ($v0)
 /* 240704 8021FFF4 44802000 */  mtc1  $zero, $f4

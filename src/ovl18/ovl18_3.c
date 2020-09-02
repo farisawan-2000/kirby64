@@ -9,6 +9,8 @@ void func_802226E0_ovl18(void);
 void func_80223B4C_ovl18(s32 arg0);
 void func_802239CC_ovl18(s32 arg0);
 void func_80222A54_ovl18(s32 arg0);
+void func_8022383C_ovl18(void);
+void func_8022309C_ovl18(s32 arg0, s32 arg1, f32 arg2);
 
 void func_80222220_ovl18(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B72AC;
@@ -292,7 +294,7 @@ void func_80223178_ovl18(s32 arg0) {
     func_800AED20_ovl18(D_800D6B10);
     func_800A9EA4_ovl18(0x100CA);
     func_800A9EA4_ovl18(0x100C9);
-    D_800DF310[D_8004A7C4->unk0] = &D_8022309C;
+    D_800DF310[D_8004A7C4->unk0] = &func_8022309C_ovl18;
     func_800AFA14_ovl18();
 }
 
@@ -388,7 +390,7 @@ void func_8022372C_ovl18(s32 arg0) {
 
     func_8021F4A0_ovl18();
     sp1C->unk98 = &D_8022AA60;
-    D_800DF150[D_8004A7C4->unk0] = &D_8022383C;
+    D_800DF150[D_8004A7C4->unk0] = &func_8022383C_ovl18;
     D_800E48D0[D_8004A7C4->unk0] = 1.5f;
     D_800E4550[D_8004A7C4->unk0] = D_800E4710[D_8004A7C4->unk0] = D_800E48D0[D_8004A7C4->unk0];
     D_800DDC50[D_8004A7C4->unk0] = 0;

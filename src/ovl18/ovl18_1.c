@@ -5,6 +5,8 @@
 #include "ovl18_3.h"
 #include "ovl18_5.h"
 
+void func_802218E4_ovl18(s32 arg0);
+
 void func_802201C0_ovl18(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B72AC;
     D_800DF150[D_8004A7C4->unk0] = &func_80220424_ovl18;
@@ -495,7 +497,7 @@ void func_80221758_ovl18(s32 arg0) {
 void func_802217A0_ovl18(s32 arg0) {
     func_8021F4A0_ovl18();
     func_801A3280_ovl18();
-    D_800DF150[D_8004A7C4->unk0] = &D_802218E4;
+    D_800DF150[D_8004A7C4->unk0] = &func_802218E4_ovl18;
     D_800E48D0[D_8004A7C4->unk0] = 2.0f;
     D_800E4710[D_8004A7C4->unk0] = D_800E48D0[D_8004A7C4->unk0];
     D_800E4550[D_8004A7C4->unk0] = D_800E48D0[D_8004A7C4->unk0];

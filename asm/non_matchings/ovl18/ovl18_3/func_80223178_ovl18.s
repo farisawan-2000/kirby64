@@ -52,10 +52,10 @@ glabel func_80223178_ovl18
 /* 235BDC 8022323C 348400C9 */   ori   $a0, (0x000100C9 & 0xFFFF) # ori $a0, $a0, 0xc9
 /* 235BE0 80223240 3C0D8005 */  lui   $t5, %hi(D_8004A7C4) # $t5, 0x8005
 /* 235BE4 80223244 8DADA7C4 */  lw    $t5, %lo(D_8004A7C4)($t5)
-/* 235BE8 80223248 3C0C8022 */  lui   $t4, %hi(D_8022309C) # $t4, 0x8022
+/* 235BE8 80223248 3C0C8022 */  lui   $t4, %hi(func_8022309C_ovl18) # $t4, 0x8022
 /* 235BEC 8022324C 3C01800E */ lui $at, %hi(D_800DF310)
 /* 235BF0 80223250 8DAE0000 */  lw    $t6, ($t5)
-/* 235BF4 80223254 258C309C */  addiu $t4, %lo(D_8022309C) # addiu $t4, $t4, 0x309c
+/* 235BF4 80223254 258C309C */  addiu $t4, %lo(func_8022309C_ovl18) # addiu $t4, $t4, 0x309c
 /* 235BF8 80223258 000E7880 */  sll   $t7, $t6, 2
 /* 235BFC 8022325C 002F0821 */  addu  $at, $at, $t7
 /* 235C00 80223260 0C02BE85 */  jal   func_800AFA14_ovl18
