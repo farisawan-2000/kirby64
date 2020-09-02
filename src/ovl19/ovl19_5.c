@@ -18,7 +18,7 @@ extern f32 D_800E6D90[];
 extern u32 D_800B4924;
 extern f32 D_8022FA90;
 extern f32 D_800E17D0[];
-extern u32 D_8022E798;
+extern u32 func_8022E798_ovl19;
 
 extern struct EntityThing800E9AA0 *D_800E9AA0[];
 extern u32 D_800E0D50[];
@@ -42,7 +42,7 @@ void func_8022E630_ovl19(s32 arg0) {
     D_800E6D90[D_8004A7C4->unk0] = D_8022FA90;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
     D_800E41D0[D_8004A7C4->unk0] = D_800E17D0[D_8004A7C4->unk0];
-    D_800DF150[D_8004A7C4->unk0] = &D_8022E798;
+    D_800DF150[D_8004A7C4->unk0] = &func_8022E798_ovl19;
     func_800AA018_ovl19(0x105EF);
     func_800AFA14_ovl19();
 }
@@ -117,7 +117,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19_5/func_8022E798_ovl19.s")
 #endif
 
 extern f32 D_8022FA98;
-extern void *D_8022EB54;
+extern void *func_8022EB54_ovl19;
 extern struct CollisionState *D_800E1B50[];
 void func_8022E954_ovl19(struct CollisionState *arg0) {
     Vector sp24;
@@ -144,7 +144,7 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     D_800E6D90[D_8004A7C4->unk0] = (f32) D_8022FA98;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
     D_800E41D0[D_8004A7C4->unk0] = (f32) D_800E17D0[D_8004A7C4->unk0];
-    D_800DF150[D_8004A7C4->unk0] = &D_8022EB54;
+    D_800DF150[D_8004A7C4->unk0] = &func_8022EB54_ovl19;
     func_800AA018_ovl19(0x105F0);
     func_800AA018_ovl19(0x105F1);
     sp20->unk34 = func_800A8100_ovl19(0, 2, 0x34, arg0->unk3C);
@@ -204,7 +204,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19_5/func_8022EB54_ovl19.s")
 #endif
 
 extern f32 D_8022FAA0;
-extern u32 D_8022EE78;
+extern u32 func_8022EE78_ovl19;
 void func_8022ED10_ovl19(s32 arg0) {
     Vector sp1C;
     func_800AECC0_ovl19(D_800D6B10);
@@ -220,7 +220,7 @@ void func_8022ED10_ovl19(s32 arg0) {
     D_800E6D90[D_8004A7C4->unk0] = D_8022FAA0;
     D_800E17D0[D_8004A7C4->unk0] = 0.0f;
     D_800E41D0[D_8004A7C4->unk0] = D_800E17D0[D_8004A7C4->unk0];
-    D_800DF150[D_8004A7C4->unk0] = &D_8022EE78;
+    D_800DF150[D_8004A7C4->unk0] = &func_8022EE78_ovl19;
     func_800AA018_ovl19(0x10601);
     func_800AFA14_ovl19();
 }

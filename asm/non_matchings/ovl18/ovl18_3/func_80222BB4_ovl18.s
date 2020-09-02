@@ -43,8 +43,8 @@ glabel func_80222BB4_ovl18
 /* 2355F4 80222C54 AC2ADC50 */ sw $t2, %lo(D_800DDC50)($at)
 .L80222C58_ovl18:
 /* 2355F8 80222C58 8C4D0000 */  lw    $t5, ($v0)
-/* 2355FC 80222C5C 3C058022 */  lui   $a1, %hi(D_802228F8) # $a1, 0x8022
-/* 235600 80222C60 24A528F8 */  addiu $a1, %lo(D_802228F8) # addiu $a1, $a1, 0x28f8
+/* 2355FC 80222C5C 3C058022 */  lui   $a1, %hi(func_802228F8_ovl18) # $a1, 0x8022
+/* 235600 80222C60 24A528F8 */  addiu $a1, %lo(func_802228F8_ovl18) # addiu $a1, $a1, 0x28f8
 /* 235604 80222C64 000D7080 */  sll   $t6, $t5, 2
 /* 235608 80222C68 008E2021 */  addu  $a0, $a0, $t6
 /* 23560C 80222C6C 0C02C7B2 */  jal   func_800B1EC8_ovl18

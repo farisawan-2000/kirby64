@@ -67,7 +67,7 @@ glabel D_80123EE4
 .word 0x800A73B0
 
 glabel D_80123EE8
-.word 0x8022FB50
+.word D_8022FB50
 
 glabel D_80123EEC
 .word 0x00000000
@@ -172,7 +172,7 @@ glabel D_80123F70
 .word 0x800A73B0
 
 glabel D_80123F74
-.word 0x8022FB50
+.word D_8022FB50
 
 glabel D_80123F78
 .word 0x00000000
@@ -1051,49 +1051,49 @@ glabel D_80124404
 .word 0x801D8014
 
 glabel D_80124408
-.word 0x8022641C
+.word func_8022641C_ovl18
 
 glabel D_8012440C
-.word 0x80225DE0
+.word func_80225DE0_ovl18
 
 glabel D_80124410
-.word 0x802201C0
+.word func_802201C0_ovl18
 
 glabel D_80124414
-.word 0x80222510
+.word func_80222510_ovl18
 
 glabel D_80124418
-.word 0x80222898
+.word func_80222898_ovl18
 
 glabel D_8012441C
-.word 0x80220728
+.word func_80220728_ovl18
 
 glabel D_80124420
-.word 0x80222220
+.word func_80222220_ovl18
 
 glabel D_80124424
-.word 0x80221288
+.word func_80221288_ovl18
 
 glabel D_80124428
-.word 0x80223684
+.word func_80223684_ovl18
 
 glabel D_8012442C
-.word 0x80224AF4
+.word func_80224AF4_ovl18
 
 glabel D_80124430
-.word 0x80224580
+.word func_80224580_ovl18
 
 glabel D_80124434
-.word 0x802250EC
+.word func_802250EC_ovl18
 
 glabel D_80124438
-.word 0x802216C8
+.word func_802216C8_ovl18
 
 glabel D_8012443C
-.word 0x80225418
+.word func_80225418_ovl18
 
 glabel D_80124440
-.word 0x8022396C
+.word func_8022396C_ovl18
 
 glabel D_80124444
 .word 0x801EC9E0
@@ -1351,28 +1351,28 @@ glabel D_80124594
 .word 0x8021FC7C
 
 glabel D_80124598
-.word 0x8022023C
+.word func_8022023C_ovl19
 
 glabel D_8012459C
-.word 0x802209A0
+.word func_802209A0_ovl19
 
 glabel D_801245A0
-.word 0x80220F48
+.word func_80220F48_ovl19
 
 glabel D_801245A4
-.word 0x8022170C
+.word func_8022170C_ovl19
 
 glabel D_801245A8
-.word 0x80221DDC
+.word func_80221DDC_ovl19
 
 glabel D_801245AC
 .word 0x800FCF04
 
 glabel D_801245B0
-.word 0x802224BC
+.word func_802224BC_ovl19
 
 glabel D_801245B4
-.word 0x80222A54
+.word func_80222A54_ovl18
 
 glabel D_801245B8
 .word 0x00000000

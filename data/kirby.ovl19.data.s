@@ -31,13 +31,21 @@ glabel D_8022F07C
 glabel D_8022F080
 .word func_8021EF44_ovl19
 .word func_8021F174_ovl19
+
+glabel D_8022F088
 .word func_8021F3F8_ovl19
 .word func_8021F3F8_ovl19
+
 .word func_8021F3F8_ovl19
 .word func_8021F6D8_ovl19
 .word func_8021F8A4_ovl19
+
+glabel D_8022F09C
 .word func_8021FCC0_ovl19
+
 .word func_8021FF90_ovl19
+
+glabel D_8022F0A4
 .word func_80220280_ovl19
 .word func_8022054C_ovl19
 .word func_80220814_ovl19
@@ -77,6 +85,8 @@ glabel D_8022F0D8
 .word func_80220B40_ovl19
 .word func_80220D54_ovl19
 .word func_80220E14_ovl19
+
+glabel D_8022F0E8
 .word func_80220F8C_ovl19
 .word func_802211A0_ovl19
 .word func_80221480_ovl19
@@ -135,12 +145,20 @@ BANK_INDEX 2, 0x3FD
 
 glabel D_8022F13C
 .word func_80221750_ovl19
+
 .word func_80221CA8_ovl19
+
+glabel D_8022F144
 .word func_80221E20_ovl19
 .word func_80222108_ovl19
+
+glabel D_8022F14C
 .word func_802225A4_ovl19
+
 .word func_802227F0_ovl19
 .word func_80222918_ovl19
+
+glabel D_8022F158
 .word func_80222A98_ovl19
 .word func_80222E3C_ovl19
 .word func_80223020_ovl19
@@ -859,13 +877,21 @@ glabel D_8022F514
 glabel D_8022F518
 .word func_80223200_ovl19
 .word func_802248C0_ovl19
+# 20
+
 .word func_802260FC_ovl19
+
+glabel D_8022F524
 .word func_80223E68_ovl19
 .word func_80225620_ovl19
 .word func_80226AA8_ovl19
+
+glabel D_8022F530
 .word func_80224564_ovl19
 .word func_80225DF8_ovl19
 .word func_80226FFC_ovl19
+
+glabel D_8022F53C
 .word func_802245A0_ovl19
 .word func_80225E38_ovl19
 .word func_8022703C_ovl19
@@ -953,28 +979,38 @@ glabel D_8022F5B0
 .word func_80229C20_ovl19
 .word func_80229E20_ovl19
 .word func_8022A018_ovl19
+
 .word func_8022D584_ovl19
 .word func_8022A410_ovl19
 .word func_8022A8FC_ovl19
 .word func_8022AC78_ovl19
+
 .word func_8022D584_ovl19
 .word func_8022AD34_ovl19
 .word func_8022D584_ovl19
 .word func_8022D584_ovl19
+# E
 .word func_8022D584_ovl19
 .word func_8022AEA0_ovl19
 .word func_8022B4C4_ovl19
 .word func_8022BB04_ovl19
+
 .word func_8022D584_ovl19
 .word func_8022D584_ovl19
 .word func_8022D584_ovl19
 .word func_8022D584_ovl19
+
+#F600
 .word func_8022C3BC_ovl19
 .word func_8022CA10_ovl19
 .word func_8022CE18_ovl19
 .word func_8022BD44_ovl19
+
+
 .word func_8022D19C_ovl19
 .word func_8022D448_ovl19
+
+glabel D_8022F618
 .word func_80229A54_ovl19
 .word func_80229C9C_ovl19
 .word func_80229F08_ovl19

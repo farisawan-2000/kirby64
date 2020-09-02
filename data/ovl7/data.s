@@ -607,49 +607,49 @@ glabel D_801C2AF4
 .word 0x801C3914
 
 glabel D_801C2AF8
-.word 0x80229D04
+.word D_80229D04
 
 glabel D_801C2AFC
-.word 0x80229CC0
+.word D_80229CC0
 
 glabel D_801C2B00
-.word 0x80229880
+.word D_80229880
 
 glabel D_801C2B04
-.word 0x80229A18
+.word D_80229A18
 
 glabel D_801C2B08
-.word 0x80229A5C
+.word D_80229A5C
 
 glabel D_801C2B0C
-.word 0x80229908
+.word D_80229908
 
 glabel D_801C2B10
-.word 0x802299D4
+.word D_802299D4
 
 glabel D_801C2B14
-.word 0x8022994C
+.word D_8022994C
 
 glabel D_801C2B18
-.word 0x80229AE4
+.word D_80229AE4
 
 glabel D_801C2B1C
-.word 0x80229BB0
+.word D_80229BB0
 
 glabel D_801C2B20
-.word 0x80229B6C
+.word D_80229B6C
 
 glabel D_801C2B24
-.word 0x80229BF4
+.word D_80229BF4
 
 glabel D_801C2B28
-.word 0x80229990
+.word D_80229990
 
 glabel D_801C2B2C
-.word 0x80229C7C
+.word D_80229C7C
 
 glabel D_801C2B30
-.word 0x80229B28
+.word D_80229B28
 
 glabel D_801C2B34
 .word 0x801C3958
@@ -832,10 +832,10 @@ glabel D_801C2C20
 .word 0x801D81E0
 
 glabel D_801C2C24
-.word 0x802298C4
+.word D_802298C4
 
 glabel D_801C2C28
-.word 0x80229AA0
+.word D_80229AA0
 
 glabel D_801C2C2C
 .word 0x801D7D14
@@ -901,7 +901,7 @@ glabel D_801C2C7C
 .word 0x801C4B54
 
 glabel D_801C2C80
-.word 0x80229C38
+.word D_80229C38
 
 glabel D_801C2C84
 .word 0x00000000
@@ -33139,10 +33139,10 @@ glabel D_801CD464
 .word 0x801E2410
 
 glabel D_801CD468
-.word 0x80221E90
+.word func_80221E90_ovl18
 
 glabel D_801CD46C
-.word 0x80224320
+.word func_80224320_ovl18
 
 glabel D_801CD470
 .word 0x801E7F20
@@ -33208,7 +33208,7 @@ glabel D_801CD4C0
 .word 0x801B19F8
 
 glabel D_801CD4C4
-.word 0x80225C00
+.word func_80225C00_ovl18
 
 glabel D_801CD4C8
 .word 0x00000000
@@ -33964,13 +33964,13 @@ glabel D_801CD8B0
 .word 0x801BD838
 
 glabel D_801CD8B4
-.word 0x8022E630
+.word func_8022E630_ovl19
 
 glabel D_801CD8B8
 .word 0x801BDB50
 
 glabel D_801CD8BC
-.word 0x8022E954
+.word func_8022E954_ovl19
 
 glabel D_801CD8C0
 .word 0x801BE10C
@@ -33997,7 +33997,7 @@ glabel D_801CD8DC
 .word 0x801BF1A0
 
 glabel D_801CD8E0
-.word 0x8022ED10
+.word func_8022ED10_ovl19
 
 glabel D_801CD8E4
 .word 0x00000000

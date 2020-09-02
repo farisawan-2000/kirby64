@@ -162,7 +162,7 @@ struct CollisionHeader
 // After the level loads the pointers are converted from offsets in the Level Settings Block to virtual addresses in a different RAM location accompanied by other collision data generated.
 
 struct vCollisionHeader {
-    u32 using32BitVertices; // Always 0, since 16 bit vertices are used
+    u32 usingFloatVertices; // Always 0, since 16 bit vertices are used
     struct CollisionHeader header;
 };
 

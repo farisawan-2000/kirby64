@@ -64,7 +64,7 @@ glabel func_8016BF60_ovl3
 /* 0CCA94 8016C054 1000000A */  b     .L8016C080_ovl3
 /* 0CCA98 8016C058 90E90004 */   lbu   $t1, 4($a3)
 .L8016C05C_ovl3:
-/* 0CCA9C 8016C05C 0C089FCE */  jal   func_80227F38_ovl3
+/* 0CCA9C 8016C05C 0C089FCE */  jal   func_80227F38_ovl19
 /* 0CCAA0 8016C060 00000000 */   nop   
 /* 0CCAA4 8016C064 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CCAA8 8016C068 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
