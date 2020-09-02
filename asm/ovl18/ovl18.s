@@ -7,7 +7,6 @@
 .section .text, "ax"
 
 glabel func_8021DF20_ovl18
-# nop
 /* 2308C0 8021DF20 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 2308C4 8021DF24 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 2308C8 8021DF28 AFA40020 */  sw    $a0, 0x20($sp)
