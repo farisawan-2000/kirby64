@@ -175,7 +175,7 @@ SECTIONS
       BUILD_DIR/asm/ovl10/ovl10.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_1.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_2.o(.text);
-      BUILD_DIR/asm/ovl10/ovl10_3.o(.text);
+      BUILD_DIR/src/ovl10/ovl10_3.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_4.o(.text);
       BUILD_DIR/data/ovl10/data.o(.data);
    }
