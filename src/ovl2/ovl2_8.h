@@ -1,3 +1,6 @@
+#ifndef OVL2_8_HEADER
+#define OVL2_8_HEADER
+
 struct PositionState {
 /*0x0*/  u32    padding;
 /*0x4*/  f32 	kirbyFootPos[3]; //Position of kirby at feet/back
@@ -12,3 +15,6 @@ struct PositionState {
 /*0x57*/ u8     unkPad2[3]; //0x000000 constant
 /*0x58*/ u32    VI_Timer; //the VI
 };
+extern f32 D_80128EFC,D_80128EF8;
+
+#endif
