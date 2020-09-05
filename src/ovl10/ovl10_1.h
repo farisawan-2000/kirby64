@@ -31,7 +31,6 @@ extern s32 D_800E0490[];
 
 extern s32 D_800EA520[];
 
-
 extern s32 D_801F39F4_ovl10;
 extern s32 D_801F4094_ovl10;
 

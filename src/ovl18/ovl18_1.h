@@ -1,10 +1,17 @@
+struct Sub800E1B50 {
+	u32 unk0[4];
+	f32 unk10;
+};
 struct UnkStruct800E1B50 {
 	u8 pad[0x3C];
 	u8 unk3C;
 	u8 unk3D;
 	u8 unk3E;
 	u8 unk3F;
-	u8 pad2 [0x8C - 0x3C - 4];
+	u8 pad2 [0x8C - 0x3C - 4 - 0xC];
+	struct Sub800E1B50 *unk80;
+	s32 unk84;
+	s32 unk88;
 	s32 *unk8C;
 	u32 unk90;
 	u32 unk94;
@@ -78,6 +85,8 @@ extern s32 D_8022A988;
 extern s32 D_800E9560[];
 extern f32 D_800D6B10;
 extern f32 D_8022BBFC;
+
+extern s32 D_800B68AC;
 
 f32 func_801D650C_ovl18(s32);
 void func_80220424_ovl18(void);

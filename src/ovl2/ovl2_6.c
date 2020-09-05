@@ -10429,20 +10429,14 @@ void *func_80111C88_ovl2(void *arg0, ?32 arg1) {
     s32 phi_a0;
     s32 phi_a1;
 
-    if (arg0->unk0 != 0) {
-        phi_v0 = 1;
-    } else {
-        phi_v0 = 0;
-    }
+    phi_v0 = (arg0->unk0 != 0) ? 1 : 0;
     if (((phi_v0 + D_8012CF28) + arg0->unk4) >= 0xB) {
         func_800A4270_ovl2(&D_80128C54, arg0);
-    loop_5:
-        goto loop_5;
+        while (1);
     }
     if (D_8012D0C4 == 5) {
         func_800A4270_ovl2(&D_80128C84, arg0);
-    loop_8:
-        goto loop_8;
+        while (1);
     }
     temp_a2 = (D_8012D0C4 * 0x28) + &D_8012D0C8;
     temp_a2->unk0 = arg1;
