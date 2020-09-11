@@ -35,7 +35,7 @@ glabel crash_screen_print
 /* 022C24 80022024 93060000 */  lbu   $a2, ($t8)
 /* 022C28 80022028 50D40004 */  beql  $a2, $s4, .L8002203C_ovl0
 /* 022C2C 8002202C 2610FFFF */   addiu $s0, $s0, -1
-/* 022C30 80022030 0C008780 */  jal   func_80021E00
+/* 022C30 80022030 0C008780 */  jal   crash_screen_draw_glyph
 /* 022C34 80022034 02A02825 */   move  $a1, $s5
 /* 022C38 80022038 2610FFFF */  addiu $s0, $s0, -1
 .L8002203C_ovl0:

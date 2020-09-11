@@ -52,7 +52,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       BUILD_DIR/asm/ovl0/exception.o(.text);
-      /*libreultra/build/2.0I/libultra_rom.a:__osDequeueThread.o(.text);*/
+      BUILD_DIR/libultra_rom.a:bcopy.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
       BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
       BUILD_DIR/asm/ovl0/lib/__osSPSetPc.o(.text);
@@ -64,6 +64,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
+
 
    /* 0x8009B540 043790-066630 [22EA0] */
    BEGIN_SEG(ovl1, 0x8009B540) {

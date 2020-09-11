@@ -1,4 +1,4 @@
-glabel func_8002206C
+glabel crash_screen_sleep
 /* 022C6C 8002206C 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 022C70 80022070 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 022C74 80022074 AFA40020 */  sw    $a0, 0x20($sp)

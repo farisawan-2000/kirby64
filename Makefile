@@ -152,9 +152,8 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
 	$(CPP) $(VERSION_CFLAGS) -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<
-	cp libreultra/build/2.0I/libultra_rom.a $(BUILD_DIR)/libultra_rom.a
 
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT)
+$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra_rom.a
 	$(LD) -L ultra_rom $(LDFLAGS) -o $@ $(O_FILES) $(LIBS)
 
 # final z64 updates checksum

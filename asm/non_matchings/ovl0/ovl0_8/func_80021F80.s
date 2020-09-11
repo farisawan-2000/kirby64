@@ -1,4 +1,4 @@
-glabel func_80021F80
+glabel write_to_buf
 /* 022B80 80021F80 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 022B84 80021F84 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 022B88 80021F88 0C00CE90 */  jal   memcpy

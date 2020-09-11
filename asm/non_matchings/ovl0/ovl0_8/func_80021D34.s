@@ -33,6 +33,7 @@ glabel crash_screen_draw_rect
 /* 0229A8 80021DA8 14A2FFFD */  bne   $a1, $v0, .L80021DA0_ovl0
 /* 0229AC 80021DAC 24630002 */   addiu $v1, $v1, 2
 /* 0229B0 80021DB0 10460007 */  beq   $v0, $a2, .L80021DD0_ovl0
+# nop
 .L80021DB4_ovl0:
 /* 0229B4 80021DB4 24420004 */   addiu $v0, $v0, 4
 /* 0229B8 80021DB8 A4640002 */  sh    $a0, 2($v1)

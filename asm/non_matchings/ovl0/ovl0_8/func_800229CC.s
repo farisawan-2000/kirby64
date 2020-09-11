@@ -1,7 +1,7 @@
-glabel func_800229CC
+glabel get_crashed_thread
 /* 0235CC 800229CC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0235D0 800229D0 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0235D4 800229D4 0C00D33C */  jal   func_80034CF0
+/* 0235D4 800229D4 0C00D33C */  jal   __osGetCurrFaultedThread
 /* 0235D8 800229D8 00000000 */   nop   
 /* 0235DC 800229DC 8C4E0004 */  lw    $t6, 4($v0)
 /* 0235E0 800229E0 2404FFFF */  li    $a0, -1

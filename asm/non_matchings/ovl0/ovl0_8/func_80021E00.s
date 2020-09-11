@@ -1,4 +1,4 @@
-glabel func_80021E00
+glabel crash_screen_draw_glyph
 /* 022A00 80021E00 24010005 */  li    $at, 5
 /* 022A04 80021E04 00C1001A */  div   $zero, $a2, $at
 /* 022A08 80021E08 00007812 */  mflo  $t7
