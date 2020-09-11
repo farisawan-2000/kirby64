@@ -252,6 +252,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80021764.s")
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80021CB4.s")
 #endif
 
+// hidden file boundary?
+
 extern struct {
     OSThread thread;
     u64 stack[0x800 / sizeof(u64)];
