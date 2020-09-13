@@ -1,4 +1,5 @@
 #include <ultra64.h>
+extern void EntryPoint(void);
 struct struct_internal_header_t
 {
     /* 0x00 */ u32 BSD_DOM1_CONFIG;
