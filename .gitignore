@@ -1,6 +1,7 @@
 ../*
 **/**/*.bin
 build/*
+tools/GeoFromBin*
 assets/*
 *.z64
 textures/*
