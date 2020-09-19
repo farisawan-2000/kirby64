@@ -10,9 +10,9 @@ glabel func_800FCA84_ovl2
 /* 085514 800FCAA4 10200033 */  beqz  $at, .L800FCB74_ovl2
 /* 085518 800FCAA8 AFAE001C */   sw    $t6, 0x1c($sp)
 /* 08551C 800FCAAC 000E7880 */  sll   $t7, $t6, 2
-/* 085520 800FCAB0 3C018013 */  lui   $at, 0x8013
+/* 085520 800FCAB0 3C018013 */  lui   $at, %hi(D_801288B4)
 /* 085524 800FCAB4 002F0821 */  addu  $at, $at, $t7
-/* 085528 800FCAB8 8C2F88B4 */  lw    $t7, -0x774c($at)
+/* 085528 800FCAB8 8C2F88B4 */  lw    $t7, %lo(D_801288B4)($at)
 /* 08552C 800FCABC 01E00008 */  jr    $t7
 /* 085530 800FCAC0 00000000 */   nop   
 /* 085534 800FCAC4 93B8003B */  lbu   $t8, 0x3b($sp)
