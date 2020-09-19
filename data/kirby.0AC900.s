@@ -14237,31 +14237,26 @@ glabel D_801288AC
 glabel D_801288B0
 .word 0x32640A00
 
+/*glabel jtbl_801288B4
+.word .L800FCAC4_ovl2
+.word .L800FCAE4_ovl2
+.word .L800FCB04_ovl2
+.word .L800FCB24_ovl2
+.word .L800FCB74_ovl2
+.word .L800FCB44_ovl2
+.word .L800FCB74_ovl2
+.word .L800FCB4C_ovl2
+.word .L800FCB6C_ovl2*/
+
 glabel D_801288B4
 .word 0x800FCAC4
-
-glabel D_801288B8
 .word 0x800FCAE4
-
-glabel D_801288BC
 .word 0x800FCB04
-
-glabel D_801288C0
 .word 0x800FCB24
-
-glabel D_801288C4
 .word 0x800FCB74
-
-glabel D_801288C8
 .word 0x800FCB44
-
-glabel D_801288CC
 .word 0x800FCB74
-
-glabel D_801288D0
 .word 0x800FCB4C
-
-glabel D_801288D4
 .word 0x800FCB6C
 
 glabel D_801288D8
