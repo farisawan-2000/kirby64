@@ -1,10 +1,5 @@
 .include "macros.inc"
 .section .data
-glabel D_801288D8
-.word 0x477FFF00
-
-glabel D_801288DC
-.word 0x00000000
 
 glabel D_801288E0
 .word 0x4578706C
