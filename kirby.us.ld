@@ -52,8 +52,11 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       BUILD_DIR/asm/ovl0/exception.o(.text);
-      BUILD_DIR/libultra_rom.a:bcopy.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
+      BUILD_DIR/libultra.a:bcopy.o(.text);
+      BUILD_DIR/libultra.a:copy.o(.text);
+      BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
+      BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
       BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
       BUILD_DIR/asm/ovl0/lib/__osSPSetPc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
