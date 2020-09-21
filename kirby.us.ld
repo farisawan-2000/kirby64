@@ -34,6 +34,7 @@ SECTIONS
    }
    END_SEG(boot)
 
+
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
@@ -51,11 +52,29 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_7.o(.text);
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
+      /*BUILD_DIR/libultra.a:exceptasm.o(.text);*/
       BUILD_DIR/asm/ovl0/exception.o(.text);
-      BUILD_DIR/libultra_rom.a:bcopy.o(.text);
+      BUILD_DIR/libultra.a:thread.o(.text);
+      BUILD_DIR/libultra.a:bzero.o(.text);
+      BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
+      /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
+
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
-      BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
-      BUILD_DIR/asm/ovl0/lib/__osSPSetPc.o(.text);
+
+      /* TODO: fix a nonmatching  */
+      /*BUILD_DIR/libultra.a:timerintr.o(.text);*/
+      BUILD_DIR/libultra.a:setglobalintmask.o(.text);
+      BUILD_DIR/libultra.a:aisetfreq.o(.text);
+      BUILD_DIR/libultra.a:normalize.o(.text);
+      BUILD_DIR/asm/ovl0/last_2_ovl0_funcs.o(.text);
+
+      BUILD_DIR/libultra.a:bcopy.o(.text);
+      BUILD_DIR/libultra.a:copy.o(.text);
+      BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
+      BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
+      /*BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);*/
+      BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
+      BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }
    END_SEG(ovl0)

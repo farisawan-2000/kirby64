@@ -44,7 +44,7 @@ TEXTURES_DIR := textures
 INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
-LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
+LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --accept-unknown-input-arch --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
 ####################### Other Tools #########################
@@ -135,6 +135,9 @@ $(BUILD_DIR):
 # 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 # 	$(CC) -c $(CFLAGS) -o $@ $<
 
+$(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
+	cp $< $@
+
 $(BUILD_DIR)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
 
@@ -153,11 +156,8 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
 	$(CPP) $(VERSION_CFLAGS) -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<
 
- $(BUILD_DIR)/libultra_rom.a: libreultra/build/2.0I/libultra_rom.a
-	cp libreultra/build/2.0I/libultra_rom.a $(BUILD_DIR)/libultra_rom.a
-
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra_rom.a
-	$(LD) -L ultra_rom $(LDFLAGS) -o $@ $(O_FILES) $(LIBS)
+$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a
+	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf

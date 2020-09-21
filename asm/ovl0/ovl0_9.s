@@ -11496,8 +11496,8 @@ glabel func_8002D638
 /* 02E23C 8002D63C 00000000 */  nop   
 /* 02E240 8002D640 400C6000 */  mfc0  $t4, $12
 /* 02E244 8002D644 3182FF01 */  andi  $v0, $t4, 0xff01
-/* 02E248 8002D648 3C088004 */  lui   $t0, %hi(D_8003FBA0) # $t0, 0x8004
-/* 02E24C 8002D64C 2508FBA0 */  addiu $t0, %lo(D_8003FBA0) # addiu $t0, $t0, -0x460
+/* 02E248 8002D648 3C088004 */  lui   $t0, %hi(__OSGlobalIntMask) # $t0, 0x8004
+/* 02E24C 8002D64C 2508FBA0 */  addiu $t0, %lo(__OSGlobalIntMask) # addiu $t0, $t0, -0x460
 /* 02E250 8002D650 8D0B0000 */  lw    $t3, ($t0)
 /* 02E254 8002D654 2401FFFF */  li    $at, -1
 /* 02E258 8002D658 01614026 */  xor   $t0, $t3, $at
