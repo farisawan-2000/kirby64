@@ -56,6 +56,7 @@ SECTIONS
       BUILD_DIR/asm/ovl0/exception.o(.text);
       BUILD_DIR/libultra.a:thread.o(.text);
       BUILD_DIR/libultra.a:bzero.o(.text);
+      /* Not being included for some reason */
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
       /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
 
@@ -72,7 +73,21 @@ SECTIONS
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
-      /*BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);*/
+
+      BUILD_DIR/libultra.a:dpsetnextbuf.o(.text);
+      BUILD_DIR/libultra.a:dp.o(.text);
+      BUILD_DIR/libultra.a:spsetstat.o(.text);
+      BUILD_DIR/libultra.a:spgetstat.o(.text);
+      /* TODO: sort .data and .rodata so static vars are honored */
+      /*BUILD_DIR/libultra.a:vimgr.o(.text); */
+      BUILD_DIR/asm/ovl0/vi_manager.o(.text);
+      BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
+      BUILD_DIR/libultra.a:writebackdcacheall.o(.text);
+      BUILD_DIR/libultra.a:startthread.o(.text);
+      BUILD_DIR/libultra.a:visetyscale.o(.text);
+      BUILD_DIR/libultra.a:aisetnextbuf.o(.text);
+      BUILD_DIR/libultra.a:ai.o(.text);
+      BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);

@@ -103,7 +103,7 @@ void func_80000510(void) {
     }
 }
 
-extern void func_80038980(u32 x);
+extern void osCreateViManager(OSPri x);
 extern void func_80002EBC(void); // Initializes a PI Handle
 extern void func_80002BA0(void);
 extern void func_80002E48(u32 x, u32 *y, u32 z);
@@ -114,7 +114,7 @@ extern void func_800051E0(void *);
 extern OSPiHandle *osCartRomInit(void);
 
 void thread5_main(void *arg0) {
-    func_80038980(0xFE);
+    osCreateViManager(0xFE);
     D_80048CF0 = osCartRomInit();
     func_80002EBC();
     osCreatePiManager(0x96, &D_80048AE8, &D_80048A20, 0x32);
