@@ -63,6 +63,7 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
+
       /* TODO: fix a nonmatching  */
       /*BUILD_DIR/libultra.a:timerintr.o(.text);*/
       BUILD_DIR/libultra.a:setglobalintmask.o(.text);
@@ -75,6 +76,7 @@ SECTIONS
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
+      BUILD_DIR/libultra.a:epirawwrite.o(.text);
       BUILD_DIR/libultra.a:settimer.o(.text);
       BUILD_DIR/libultra.a:xldtob.o(.text);
       . += 0x10;
@@ -86,7 +88,7 @@ SECTIONS
       BUILD_DIR/libultra.a:spsetstat.o(.text);
       BUILD_DIR/libultra.a:spgetstat.o(.text);
       /* TODO: sort .data and .rodata so static vars are honored */
-      /*BUILD_DIR/libultra.a:vimgr.o(.text); */
+      /*BUILD_DIR/libultra.a:vimgr.o(.text);*/
       BUILD_DIR/asm/ovl0/vi_manager.o(.text);
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
       BUILD_DIR/libultra.a:writebackdcacheall.o(.text);
@@ -106,6 +108,10 @@ SECTIONS
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
+      BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
+      /*BUILD_DIR/libultra.a:vimgr.o(.bss);*/
+      BUILD_DIR/asm/ovl0/vimgr_bss.o(.bss);
+      BUILD_DIR/asm/ovl0/ovl0_bss_end.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)

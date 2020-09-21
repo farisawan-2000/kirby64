@@ -1003,7 +1003,6 @@ D_A460002C = 0xA460002C;
 D_A4600030 = 0xA4600030;
 D_8009A0C0 = 0x8009A0C0;
 
-osEPiRawWriteIo = 0x800376C0;
 osEPiRawReadIo = 0x80036E30;
 
 func_80037030 = 0x80037030;
@@ -1072,19 +1071,12 @@ __ull_rem = 0x8002DCCC;
 
 D_A410000C = 0xA410000C;
 D_A4100004 = 0xA4100004;
-/*__osTimerServicesInit = 0x800346A0;*/
-viEventBuf = 0x8009B4A8;
-viEventQueue = 0x8009B490;
-viCounterMsg = 0x8009B4D8;
-viRetraceMsg = 0x8009B4C0;
-viThread = 0x8009A2E0;
+
+
 D_80038B00 = 0x80038B00;
 __osViInit = 0x800353A0;
 
 retrace = 0x8009B4F0;
-D_8009FFFF = 0x8009FFFF;
-/*__osTimerInterrupt = 0x8003472C;*/
-/*__osAiDeviceBusy = 0x80038F30;*/
 func_80039124 = 0x80039124;
 func_80005400_ovl1 = 0x80005400;
 D_800D6AEA = 0x800D6AEA;
