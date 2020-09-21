@@ -51,14 +51,17 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_7.o(.text);
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
+      /*BUILD_DIR/libultra.a:exceptasm.o(.text);*/
       BUILD_DIR/asm/ovl0/exception.o(.text);
+      BUILD_DIR/libultra.a:thread.o(.text);
+      BUILD_DIR/libultra.a:bzero.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
       BUILD_DIR/libultra.a:bcopy.o(.text);
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
       BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
-      BUILD_DIR/asm/ovl0/lib/__osSPSetPc.o(.text);
+      BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }
    END_SEG(ovl0)

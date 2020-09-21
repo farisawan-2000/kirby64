@@ -5,79 +5,6 @@
 
 .section .text, "ax"
 
-glabel __osDequeueThread
-/* 02F470 8002E870 00803025 */  move  $a2, $a0
-/* 02F474 8002E874 8CC70000 */  lw    $a3, ($a2)
-/* 02F478 8002E878 27BDFFF8 */  addiu $sp, $sp, -8
-/* 02F47C 8002E87C 10E0000A */  beqz  $a3, .L8002E8A8_ovl0
-/* 02F480 8002E880 00000000 */   nop   
-.L8002E884_ovl0:
-/* 02F484 8002E884 14E50004 */  bne   $a3, $a1, .L8002E898_ovl0
-/* 02F488 8002E888 00000000 */   nop   
-/* 02F48C 8002E88C 8CAE0000 */  lw    $t6, ($a1)
-/* 02F490 8002E890 10000005 */  b     .L8002E8A8_ovl0
-/* 02F494 8002E894 ACCE0000 */   sw    $t6, ($a2)
-.L8002E898_ovl0:
-/* 02F498 8002E898 00E03025 */  move  $a2, $a3
-/* 02F49C 8002E89C 8CC70000 */  lw    $a3, ($a2)
-/* 02F4A0 8002E8A0 14E0FFF8 */  bnez  $a3, .L8002E884_ovl0
-/* 02F4A4 8002E8A4 00000000 */   nop   
-.L8002E8A8_ovl0:
-/* 02F4A8 8002E8A8 03E00008 */  jr    $ra
-/* 02F4AC 8002E8AC 27BD0008 */   addiu $sp, $sp, 8
-
-glabel bzero
-/* 02F4B0 8002E8B0 28A1000C */  slti  $at, $a1, 0xc
-/* 02F4B4 8002E8B4 1420001D */  bnez  $at, .L8002E92C_ovl0
-/* 02F4B8 8002E8B8 00041823 */   negu  $v1, $a0
-/* 02F4BC 8002E8BC 30630003 */  andi  $v1, $v1, 3
-/* 02F4C0 8002E8C0 10600003 */  beqz  $v1, .L8002E8D0_ovl0
-/* 02F4C4 8002E8C4 00A32823 */   subu  $a1, $a1, $v1
-/* 02F4C8 8002E8C8 A8800000 */  swl   $zero, ($a0)
-/* 02F4CC 8002E8CC 00832021 */  addu  $a0, $a0, $v1
-.L8002E8D0_ovl0:
-/* 02F4D0 8002E8D0 2401FFE0 */  li    $at, -32
-/* 02F4D4 8002E8D4 00A13824 */  and   $a3, $a1, $at
-/* 02F4D8 8002E8D8 10E0000C */  beqz  $a3, .L8002E90C_ovl0
-/* 02F4DC 8002E8DC 00A72823 */   subu  $a1, $a1, $a3
-/* 02F4E0 8002E8E0 00E43821 */  addu  $a3, $a3, $a0
-.L8002E8E4_ovl0:
-/* 02F4E4 8002E8E4 24840020 */  addiu $a0, $a0, 0x20
-/* 02F4E8 8002E8E8 AC80FFE0 */  sw    $zero, -0x20($a0)
-/* 02F4EC 8002E8EC AC80FFE4 */  sw    $zero, -0x1c($a0)
-/* 02F4F0 8002E8F0 AC80FFE8 */  sw    $zero, -0x18($a0)
-/* 02F4F4 8002E8F4 AC80FFEC */  sw    $zero, -0x14($a0)
-/* 02F4F8 8002E8F8 AC80FFF0 */  sw    $zero, -0x10($a0)
-/* 02F4FC 8002E8FC AC80FFF4 */  sw    $zero, -0xc($a0)
-/* 02F500 8002E900 AC80FFF8 */  sw    $zero, -8($a0)
-/* 02F504 8002E904 1487FFF7 */  bne   $a0, $a3, .L8002E8E4_ovl0
-/* 02F508 8002E908 AC80FFFC */   sw    $zero, -4($a0)
-.L8002E90C_ovl0:
-/* 02F50C 8002E90C 2401FFFC */  li    $at, -4
-/* 02F510 8002E910 00A13824 */  and   $a3, $a1, $at
-/* 02F514 8002E914 10E00005 */  beqz  $a3, .L8002E92C_ovl0
-/* 02F518 8002E918 00A72823 */   subu  $a1, $a1, $a3
-/* 02F51C 8002E91C 00E43821 */  addu  $a3, $a3, $a0
-.L8002E920_ovl0:
-/* 02F520 8002E920 24840004 */  addiu $a0, $a0, 4
-/* 02F524 8002E924 1487FFFE */  bne   $a0, $a3, .L8002E920_ovl0
-/* 02F528 8002E928 AC80FFFC */   sw    $zero, -4($a0)
-.L8002E92C_ovl0:
-/* 02F52C 8002E92C 18A00005 */  blez  $a1, .L8002E944_ovl0
-/* 02F530 8002E930 00000000 */   nop   
-/* 02F534 8002E934 00A42821 */  addu  $a1, $a1, $a0
-.L8002E938_ovl0:
-/* 02F538 8002E938 24840001 */  addiu $a0, $a0, 1
-/* 02F53C 8002E93C 1485FFFE */  bne   $a0, $a1, .L8002E938_ovl0
-/* 02F540 8002E940 A080FFFF */   sb    $zero, -1($a0)
-.L8002E944_ovl0:
-/* 02F544 8002E944 03E00008 */  jr    $ra
-/* 02F548 8002E948 00000000 */   nop   
-
-/* 02F54C 8002E94C 00000000 */  nop   
-
-/* NEWFILE */
-
 glabel func_8002E950
 /* 02F550 8002E950 3C0A800A */  lui   $t2, %hi(D_8009A1D4) # $t2, 0x800a
 /* 02F554 8002E954 254AA1D4 */  addiu $t2, %lo(D_8009A1D4) # addiu $t2, $t2, -0x5e2c
@@ -4754,9 +4681,9 @@ glabel osSetEventMesg
 /* 0336C4 80032AC4 0C00D4D8 */  jal   __osDisableInt
 /* 0336C8 80032AC8 AFB00018 */   sw    $s0, 0x18($sp)
 /* 0336CC 80032ACC 8FAE0028 */  lw    $t6, 0x28($sp)
-/* 0336D0 80032AD0 3C18800A */  lui   $t8, %hi(D_8009A0E0) # $t8, 0x800a
+/* 0336D0 80032AD0 3C18800A */  lui   $t8, %hi(__osEventStateTab) # $t8, 0x800a
 /* 0336D4 80032AD4 8FA8002C */  lw    $t0, 0x2c($sp)
-/* 0336D8 80032AD8 2718A0E0 */  addiu $t8, %lo(D_8009A0E0) # addiu $t8, $t8, -0x5f20
+/* 0336D8 80032AD8 2718A0E0 */  addiu $t8, %lo(__osEventStateTab) # addiu $t8, $t8, -0x5f20
 /* 0336DC 80032ADC 000E78C0 */  sll   $t7, $t6, 3
 /* 0336E0 80032AE0 01F8C821 */  addu  $t9, $t7, $t8
 /* 0336E4 80032AE4 AFB90020 */  sw    $t9, 0x20($sp)
