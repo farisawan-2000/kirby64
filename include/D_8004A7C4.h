@@ -32,7 +32,7 @@ struct UnkStruct8004A7C4_3C {
 };
 
 struct UnkStruct8004A7C4 {
-	hiLo unk0;
+	u32 unk0;
 	u8 filler[0x38];
 	struct UnkStruct8004A7C4_3C *unk3C;
 };

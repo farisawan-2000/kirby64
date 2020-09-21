@@ -2613,7 +2613,7 @@ s32 func_800FCA84_ovl2(s32 arg0, u8 bankID, u8 entID,
     if (temp_v0 == -1) {
         return -1;
     }
-    else {
+
     if (++D_800D6E10 >= 0x100) {
         D_800D6E10 = 1;
     }
@@ -2635,9 +2635,7 @@ s32 func_800FCA84_ovl2(s32 arg0, u8 bankID, u8 entID,
     D_800E4390[temp_v0] = (*angle)[2];
     D_800E91E0[temp_v0] = saveToEeprom;
     D_800E4550[temp_v0] = D_800E4710[temp_v0] = D_800E48D0[temp_v0] = *scale[0];
-    
     return temp_v0;
-    }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800FCA84_ovl2.s")
@@ -2688,7 +2686,7 @@ extern s8 D_800E76C0[];
 extern u32 D_801290E8;
 
 void *func_800FCE50_ovl2(void) {
-    u8 index = D_800E76C0[D_8004A7C4->unk0.asU32];
+    u8 index = D_800E76C0[D_8004A7C4->unk0];
     Struct_801290E0 *str;
 
     if (index != 0xFF) {
@@ -2704,7 +2702,7 @@ void *func_800FCE50_ovl2(void) {
 }
 
 void func_800FCED8_ovl2(UNUSED s32 arg0) {
-    func_800B1900_ovl2(D_8004A7C4->unk0.asU16[1]);
+    func_800B1900_ovl2((u16)D_8004A7C4->unk0);
 }
 
 void func_800FCF04_ovl2(UNUSED s32 arg0) {
@@ -2715,35 +2713,35 @@ extern u32 D_801242D0;
 
 void func_800FCF0C(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 0x6B, &D_801242D0);
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 0x6B, &D_801242D0);
 }
 
 extern u32 D_8012447C;
 
 void func_800FCF58_ovl2(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 3, &D_8012447C);
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 3, &D_8012447C);
 }
 
 extern u32 D_80124488;
 
 void func_800FCFA4_ovl2(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 7, &D_80124488);
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 7, &D_80124488);
 }
 
 extern u32 D_801244A4;
 
 void func_800FCFF0_ovl2(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 0xE, &D_801244A4);
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 0xE, &D_801244A4);
 }
 
 extern u32 D_801244DC;
 
 void func_800FD03C_ovl2(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 0x2C, &D_801244DC);
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 0x2C, &D_801244DC);
 }
 
 #ifdef MIPS_TO_C
@@ -2802,22 +2800,22 @@ extern void func_800E3910(void);
 void func_800FD194(s32 arg0) {
     f32 temp1, temp2;
 
-    D_800E3910[D_8004A7C4->unk0.asU32] = 0.0f;
-    temp1 = D_800E3910[D_8004A7C4->unk0.asU32];
-    D_800E3750[D_8004A7C4->unk0.asU32] = temp1;
-    D_800E3590[D_8004A7C4->unk0.asU32] = temp1;
-    D_800E33D0[D_8004A7C4->unk0.asU32] = temp1;
-    D_800E3210[D_8004A7C4->unk0.asU32] = temp1;
-    D_800E3050[D_8004A7C4->unk0.asU32] = temp1;
-    D_800E3E50[D_8004A7C4->unk0.asU32] = 65535.0f;
-    temp2 = D_800E3E50[D_8004A7C4->unk0.asU32];
-    D_800E3C90[D_8004A7C4->unk0.asU32] = temp2;
-    D_800E3AD0[D_8004A7C4->unk0.asU32] = temp2;
-    D_800E6690[D_8004A7C4->unk0.asU32] = 0.0f;
+    D_800E3910[D_8004A7C4->unk0] = 0.0f;
+    temp1 = D_800E3910[D_8004A7C4->unk0];
+    D_800E3750[D_8004A7C4->unk0] = temp1;
+    D_800E3590[D_8004A7C4->unk0] = temp1;
+    D_800E33D0[D_8004A7C4->unk0] = temp1;
+    D_800E3210[D_8004A7C4->unk0] = temp1;
+    D_800E3050[D_8004A7C4->unk0] = temp1;
+    D_800E3E50[D_8004A7C4->unk0] = 65535.0f;
+    temp2 = D_800E3E50[D_8004A7C4->unk0];
+    D_800E3C90[D_8004A7C4->unk0] = temp2;
+    D_800E3AD0[D_8004A7C4->unk0] = temp2;
+    D_800E6690[D_8004A7C4->unk0] = 0.0f;
     
-    D_800E64D0[D_8004A7C4->unk0.asU32] = D_800E6690[D_8004A7C4->unk0.asU32];
-    D_800E6850[D_8004A7C4->unk0.asU32] = 65535.0f;
-    D_800E0490[D_8004A7C4->unk0.asU32] = 0;
-    D_801D02AC[D_8004A7C4->unk0.asU32][0] = 0;
-    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0.asU32], 0xB, &D_8012458C, D_800E3910);
+    D_800E64D0[D_8004A7C4->unk0] = D_800E6690[D_8004A7C4->unk0];
+    D_800E6850[D_8004A7C4->unk0] = 65535.0f;
+    D_800E0490[D_8004A7C4->unk0] = 0;
+    D_801D02AC[D_8004A7C4->unk0][0] = 0;
+    func_800A447C_ovl2(D_800E77A0[D_8004A7C4->unk0], 0xB, &D_8012458C, D_800E3910);
 }
