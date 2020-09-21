@@ -51,6 +51,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_6.o(.text);
       BUILD_DIR/src/ovl0/ovl0_7.o(.text);
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
+
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       /*BUILD_DIR/libultra.a:exceptasm.o(.text);*/
       BUILD_DIR/asm/ovl0/exception.o(.text);
@@ -74,6 +75,9 @@ SECTIONS
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
+      BUILD_DIR/libultra.a:settimer.o(.text);
+      BUILD_DIR/libultra.a:xldtob.o(.text);
+      . += 0x10;
       BUILD_DIR/libultra.a:ldiv.o(.text);
       BUILD_DIR/libultra.a:xlitob.o(.text);
       BUILD_DIR/libultra.a:sirawwrite.o(.text);
@@ -96,6 +100,8 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
+      BUILD_DIR/libultra.a:xldtob.o(.rodata);
+      BUILD_DIR/data/kirby.039DF0.3.o(.data);
    }
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
