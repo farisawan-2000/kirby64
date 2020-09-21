@@ -34,6 +34,7 @@ SECTIONS
    }
    END_SEG(boot)
 
+
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
@@ -55,7 +56,17 @@ SECTIONS
       BUILD_DIR/asm/ovl0/exception.o(.text);
       BUILD_DIR/libultra.a:thread.o(.text);
       BUILD_DIR/libultra.a:bzero.o(.text);
+      BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
+      BUILD_DIR/libultra.a:leointerrupt.o(.text);
+
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
+
+      BUILD_DIR/libultra.a:timerintr.o(.text);
+      BUILD_DIR/libultra.a:setglobalintmask.o(.text);
+      BUILD_DIR/libultra.a:aisetfreq.o(.text);
+      BUILD_DIR/libultra.a:normalize.o(.text);
+      BUILD_DIR/asm/ovl0/last_2_ovl0_funcs.o(.text);
+
       BUILD_DIR/libultra.a:bcopy.o(.text);
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);

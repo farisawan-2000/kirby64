@@ -2876,10 +2876,10 @@ glabel osSetTimer
 /* 0384D0 800378D0 8FA80020 */  lw    $t0, 0x20($sp)
 /* 0384D4 800378D4 8FB9003C */  lw    $t9, 0x3c($sp)
 /* 0384D8 800378D8 AD19001C */  sw    $t9, 0x1c($t0)
-/* 0384DC 800378DC 0C00D246 */  jal   func_80034918
+/* 0384DC 800378DC 0C00D246 */  jal   __osInsertTimer
 /* 0384E0 800378E0 8FA40020 */   lw    $a0, 0x20($sp)
-/* 0384E4 800378E4 3C0A8004 */  lui   $t2, %hi(D_8003FC50) # $t2, 0x8004
-/* 0384E8 800378E8 8D4AFC50 */  lw    $t2, %lo(D_8003FC50)($t2)
+/* 0384E4 800378E4 3C0A8004 */  lui   $t2, %hi(__osTimerList) # $t2, 0x8004
+/* 0384E8 800378E8 8D4AFC50 */  lw    $t2, %lo(__osTimerList)($t2)
 /* 0384EC 800378EC AFA20018 */  sw    $v0, 0x18($sp)
 /* 0384F0 800378F0 AFA3001C */  sw    $v1, 0x1c($sp)
 /* 0384F4 800378F4 8FA90020 */  lw    $t1, 0x20($sp)
@@ -2887,7 +2887,7 @@ glabel osSetTimer
 /* 0384FC 800378FC 15690004 */  bne   $t3, $t1, .L80037910_ovl0
 /* 038500 80037900 00000000 */   nop   
 /* 038504 80037904 8FA40018 */  lw    $a0, 0x18($sp)
-/* 038508 80037908 0C00D229 */  jal   func_800348A4
+/* 038508 80037908 0C00D229 */  jal   __osSetTimerIntr
 /* 03850C 8003790C 8FA5001C */   lw    $a1, 0x1c($sp)
 .L80037910_ovl0:
 /* 038510 80037910 8FBF0014 */  lw    $ra, 0x14($sp)
@@ -4097,7 +4097,7 @@ glabel func_8003897C
 /* 039598 80038998 AFA40030 */  sw    $a0, 0x30($sp)
 /* 03959C 8003899C 55C00054 */  bnezl $t6, .L80038AF0_ovl0
 /* 0395A0 800389A0 8FBF0024 */   lw    $ra, 0x24($sp)
-/* 0395A4 800389A4 0C00D1A8 */  jal   func_800346A0
+/* 0395A4 800389A4 0C00D1A8 */  jal   __osTimerServicesInit
 /* 0395A8 800389A8 00000000 */   nop   
 /* 0395AC 800389AC 3C018004 */  lui   $at, %hi(D_8003FE6C) # $at, 0x8004
 /* 0395B0 800389B0 3C04800A */  lui   $a0, %hi(D_8009B490) # $a0, 0x800a
@@ -4275,7 +4275,7 @@ glabel func_80038B00
 /* 039838 80038C38 1000FFCE */  b     .L80038B74_ovl0
 /* 03983C 80038C3C AE2F0004 */   sw    $t7, 4($s1)
 .L80038C40_ovl0:
-/* 039840 80038C40 0C00D1CB */  jal   func_8003472C
+/* 039840 80038C40 0C00D1CB */  jal   __osTimerInterrupt
 /* 039844 80038C44 00000000 */   nop   
 /* 039848 80038C48 1000FFCB */  b     .L80038B78_ovl0
 /* 03984C 80038C4C 8EE4000C */   lw    $a0, 0xc($s7)
