@@ -61,7 +61,8 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
-      BUILD_DIR/libultra.a:timerintr.o(.text);
+      /* TODO: fix a nonmatching */
+      /*BUILD_DIR/libultra.a:timerintr.o(.text);*/
       BUILD_DIR/libultra.a:setglobalintmask.o(.text);
       BUILD_DIR/libultra.a:aisetfreq.o(.text);
       BUILD_DIR/libultra.a:normalize.o(.text);
