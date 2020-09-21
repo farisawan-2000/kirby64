@@ -57,11 +57,11 @@ SECTIONS
       BUILD_DIR/libultra.a:thread.o(.text);
       BUILD_DIR/libultra.a:bzero.o(.text);
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
-      BUILD_DIR/libultra.a:leointerrupt.o(.text);
+      /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
-      /* TODO: fix a nonmatching */
+      /* TODO: fix a nonmatching  */
       /*BUILD_DIR/libultra.a:timerintr.o(.text);*/
       BUILD_DIR/libultra.a:setglobalintmask.o(.text);
       BUILD_DIR/libultra.a:aisetfreq.o(.text);
@@ -72,7 +72,8 @@ SECTIONS
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
-      BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);
+      /*BUILD_DIR/asm/ovl0/lib/osViGetCurrentFramebuffer.o(.text);*/
+      BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
    }

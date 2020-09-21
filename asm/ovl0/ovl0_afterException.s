@@ -6177,8 +6177,9 @@ glabel bcmp
 /* 035204 80034604 03E00008 */  jr    $ra
 /* 035208 80034608 24020001 */   li    $v0, 1
 
-glabel func_8003460C
 /* 03520C 8003460C 00000000 */  nop   
+
+glabel osGetTime
 /* 035210 80034610 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 035214 80034614 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 035218 80034618 0C00D4D8 */  jal   __osDisableInt
