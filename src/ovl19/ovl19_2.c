@@ -299,7 +299,7 @@ block_2:
         if (temp_v0 != -1) {
             func_800B1900_ovl19(temp_v0 & 0xFFFF, temp_v0);
         }
-        return func_800A4270_ovl19(&D_8022F720);
+        return print_error_stub(&D_8022F720);
     }
     if (temp_v0 == -1) {
         goto block_2;

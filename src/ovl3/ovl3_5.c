@@ -2815,7 +2815,7 @@ u32 func_80172234_ovl3(s32 arg0) {
     } else {
         temp_v0_7 = gKirbyState.unkB;
         if (temp_v0_7 == 0) {
-            func_800A4270_ovl3(&D_801972F8, &gKirbyState);
+            print_error_stub(&D_801972F8, &gKirbyState);
 loop_27:
             goto loop_27;
         }
@@ -7109,7 +7109,7 @@ loop_5:
             temp_f4 = arg0->unk40 * 0.5f;
             if (temp_f4 >= 0x18) {
                 sp38 = temp_f4;
-                func_800A4270_ovl3(&D_80197570, temp_f4, temp_f4);
+                print_error_stub(&D_80197570, temp_f4, temp_f4);
 block_34:
                 phi_a3 = sp38;
             } else {

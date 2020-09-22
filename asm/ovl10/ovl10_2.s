@@ -948,7 +948,7 @@ glabel func_801E3A64_ovl10
 .L801E3AFC_ovl10:
 /* 1D486C 801E3AFC 3C04801F */  lui   $a0, %hi(D_801F4A80) # $a0, 0x801f
 /* 1D4870 801E3B00 24844A80 */  addiu $a0, %lo(D_801F4A80) # addiu $a0, $a0, 0x4a80
-/* 1D4874 801E3B04 0C02909C */  jal   func_800A4270_ovl10
+/* 1D4874 801E3B04 0C02909C */  jal   print_error_stub
 /* 1D4878 801E3B08 AFA30044 */   sw    $v1, 0x44($sp)
 /* 1D487C 801E3B0C 8FA30044 */  lw    $v1, 0x44($sp)
 /* 1D4880 801E3B10 0C02C640 */  jal   func_800B1900_ovl10
@@ -1070,7 +1070,7 @@ glabel func_801E3C2C_ovl10
 /* 1D4A38 801E3CC8 3C04801F */  lui   $a0, %hi(D_801F4AB0) # $a0, 0x801f
 /* 1D4A3C 801E3CCC 15A00007 */  bnez  $t5, .L801E3CEC_ovl10
 /* 1D4A40 801E3CD0 00000000 */   nop   
-/* 1D4A44 801E3CD4 0C02909C */  jal   func_800A4270_ovl10
+/* 1D4A44 801E3CD4 0C02909C */  jal   print_error_stub
 /* 1D4A48 801E3CD8 24844AB0 */   addiu $a0, %lo(D_801F4AB0) # addiu $a0, $a0, 0x4ab0
 /* 1D4A4C 801E3CDC 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 1D4A50 801E3CE0 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
@@ -1343,7 +1343,7 @@ glabel func_801E409C_ovl10
 .L801E40CC_ovl10:
 /* 1D4E3C 801E40CC 3C04801F */  lui   $a0, %hi(D_801F4AC8) # $a0, 0x801f
 /* 1D4E40 801E40D0 24844AC8 */  addiu $a0, %lo(D_801F4AC8) # addiu $a0, $a0, 0x4ac8
-/* 1D4E44 801E40D4 0C02909C */  jal   func_800A4270_ovl10
+/* 1D4E44 801E40D4 0C02909C */  jal   print_error_stub
 /* 1D4E48 801E40D8 AFA30018 */   sw    $v1, 0x18($sp)
 /* 1D4E4C 801E40DC 8FA30018 */  lw    $v1, 0x18($sp)
 /* 1D4E50 801E40E0 0C02C640 */  jal   func_800B1900_ovl10
@@ -7773,12 +7773,12 @@ glabel func_801E9ECC_ovl10
 /* 1DAD88 801EA018 E42864D0 */   swc1  $f8, 0x64d0($at)
 .L801EA01C_ovl10:
 /* 1DAD8C 801EA01C 3C04801F */  lui   $a0, %hi(D_801F4AF4) # $a0, 0x801f
-/* 1DAD90 801EA020 0C02909C */  jal   func_800A4270_ovl10
+/* 1DAD90 801EA020 0C02909C */  jal   print_error_stub
 /* 1DAD94 801EA024 24844AF4 */   addiu $a0, %lo(D_801F4AF4) # addiu $a0, $a0, 0x4af4
 /* 1DAD98 801EA028 10000004 */  b     .L801EA03C_ovl10
 /* 1DAD9C 801EA02C 8FBF0014 */   lw    $ra, 0x14($sp)
 .L801EA030_ovl10:
-/* 1DADA0 801EA030 0C02909C */  jal   func_800A4270_ovl10
+/* 1DADA0 801EA030 0C02909C */  jal   print_error_stub
 /* 1DADA4 801EA034 24844B08 */   addiu $a0, $a0, 0x4b08
 .L801EA038_ovl10:
 /* 1DADA8 801EA038 8FBF0014 */  lw    $ra, 0x14($sp)

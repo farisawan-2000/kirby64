@@ -13,7 +13,7 @@ glabel func_80152070_ovl3
 /* 0B2ADC 8015209C 00C03825 */   move  $a3, $a2
 /* 0B2AE0 801520A0 3C048019 */  lui   $a0, %hi(D_80196E10) # $a0, 0x8019
 /* 0B2AE4 801520A4 24846E10 */  addiu $a0, %lo(D_80196E10) # addiu $a0, $a0, 0x6e10
-/* 0B2AE8 801520A8 0C02909C */  jal   func_800A4270_ovl3
+/* 0B2AE8 801520A8 0C02909C */  jal   print_error_stub
 /* 0B2AEC 801520AC 24050010 */   li    $a1, 16
 /* 0B2AF0 801520B0 10000017 */  b     .L80152110_ovl3
 /* 0B2AF4 801520B4 00001025 */   move  $v0, $zero

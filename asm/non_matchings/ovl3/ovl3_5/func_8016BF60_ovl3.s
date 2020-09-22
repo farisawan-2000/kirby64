@@ -357,7 +357,7 @@ glabel func_8016BF60_ovl3
 /* 0CCECC 8016C48C AD8A0000 */   sw    $t2, ($t4)
 .L8016C490_ovl3:
 /* 0CCED0 8016C490 3C048019 */  lui   $a0, %hi(D_801972D0) # $a0, 0x8019
-/* 0CCED4 8016C494 0C02909C */  jal   func_800A4270_ovl3
+/* 0CCED4 8016C494 0C02909C */  jal   print_error_stub
 /* 0CCED8 8016C498 248472D0 */   addiu $a0, %lo(D_801972D0) # addiu $a0, $a0, 0x72d0
 /* 0CCEDC 8016C49C 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 0CCEE0 8016C4A0 2508A7C4 */  addiu $t0, %lo(D_8004A7C4) # addiu $t0, $t0, -0x583c

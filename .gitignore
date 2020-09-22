@@ -8,6 +8,7 @@ textures/*
 bin/*
 .assets-local.txt
 tools/mipspro*/
+tools/n64graphics
 *.o
 __pycache__/*
 .vscode/*

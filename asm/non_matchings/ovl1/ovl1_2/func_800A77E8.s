@@ -25,7 +25,7 @@ glabel func_800A77E8
 /* 04FA8C 800A783C 3C04800D */  lui   $a0, %hi(D_800D5D34) # $a0, 0x800d
 /* 04FA90 800A7840 24845D34 */  addiu $a0, %lo(D_800D5D34) # addiu $a0, $a0, 0x5d34
 /* 04FA94 800A7844 00E02825 */  move  $a1, $a3
-/* 04FA98 800A7848 0C02909C */  jal   func_800A4270_ovl1
+/* 04FA98 800A7848 0C02909C */  jal   print_error_stub
 /* 04FA9C 800A784C AFA60020 */   sw    $a2, 0x20($sp)
 /* 04FAA0 800A7850 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 04FAA4 800A7854 8FA60020 */  lw    $a2, 0x20($sp)

@@ -58,7 +58,7 @@ glabel func_800FD570
 /* 0860B8 800FD648 14410006 */  bne   $v0, $at, .L800FD664_ovl2
 /* 0860BC 800FD64C 00402025 */   move  $a0, $v0
 /* 0860C0 800FD650 3C048013 */  lui   $a0, %hi(D_801288E0) # $a0, 0x8013
-/* 0860C4 800FD654 0C02909C */  jal   func_800A4270_ovl2
+/* 0860C4 800FD654 0C02909C */  jal   print_error_stub
 /* 0860C8 800FD658 248488E0 */   addiu $a0, %lo(D_801288E0) # addiu $a0, $a0, -0x7720
 /* 0860CC 800FD65C 10000039 */  b     .L800FD744_ovl2
 /* 0860D0 800FD660 00001025 */   move  $v0, $zero

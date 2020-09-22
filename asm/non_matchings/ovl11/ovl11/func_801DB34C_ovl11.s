@@ -40,7 +40,7 @@ glabel func_801DB34C_ovl11
 .L801DB3E0_ovl11:
 /* 1E5CA0 801DB3E0 3C04801E */  lui   $a0, %hi(D_801E0BE0) # $a0, 0x801e
 /* 1E5CA4 801DB3E4 24840BE0 */  addiu $a0, %lo(D_801E0BE0) # addiu $a0, $a0, 0xbe0
-/* 1E5CA8 801DB3E8 0C02909C */  jal   func_800A4270_ovl11
+/* 1E5CA8 801DB3E8 0C02909C */  jal   print_error_stub
 /* 1E5CAC 801DB3EC AFA60050 */   sw    $a2, 0x50($sp)
 /* 1E5CB0 801DB3F0 8FA60050 */  lw    $a2, 0x50($sp)
 /* 1E5CB4 801DB3F4 0C02C640 */  jal   func_800B1900_ovl11

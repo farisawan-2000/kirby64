@@ -37,7 +37,7 @@ glabel func_80220F68_ovl18
 /* 23398C 80220FEC 3C048023 */   lui   $a0, %hi(D_8022BBA0) # $a0, 0x8023
 /* 233990 80220FF0 2484BBA0 */  addiu $a0, %lo(D_8022BBA0) # addiu $a0, $a0, -0x4460
 /* 233994 80220FF4 AFA50020 */  sw    $a1, 0x20($sp)
-/* 233998 80220FF8 0C02909C */  jal   func_800A4270_ovl18
+/* 233998 80220FF8 0C02909C */  jal   print_error_stub
 /* 23399C 80220FFC AFA8001C */   sw    $t0, 0x1c($sp)
 /* 2339A0 80221000 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 2339A4 80221004 8CC6A7C4 */  lw    $a2, %lo(D_8004A7C4)($a2)
