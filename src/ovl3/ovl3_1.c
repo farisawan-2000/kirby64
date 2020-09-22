@@ -13,7 +13,7 @@
 
     temp_a2 = arg2 & 0xFF;
     if (temp_a2 >= 0x11) {
-        func_800A4270_ovl3(arg3, &D_80196E10, 0x10, temp_a2, temp_a2);
+        print_error_stub(arg3, &D_80196E10, 0x10, temp_a2, temp_a2);
         return 0;
     }
     phi_a1 = 0;
@@ -50,7 +50,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80152070_ovl3.s")
 
     temp_a2 = arg2 & 0xFF;
     if (temp_a2 >= 0x11) {
-        func_800A4270_ovl3(arg3, &D_80196E3C, 0x10, temp_a2, temp_a2);
+        print_error_stub(arg3, &D_80196E3C, 0x10, temp_a2, temp_a2);
         return 0;
     }
     if (temp_a2 > 0) {
@@ -87,7 +87,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80152124_ovl3.s")
 
     temp_a2 = arg2 & 0xFF;
     if (temp_a2 >= 0x11) {
-        func_800A4270_ovl3(arg3, &D_80196E68, 0x10, temp_a2, temp_a2);
+        print_error_stub(arg3, &D_80196E68, 0x10, temp_a2, temp_a2);
         return 0;
     }
     phi_a1 = 0;
@@ -124,7 +124,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_801521F0_ovl3.s")
 
     temp_a2 = arg2 & 0xFF;
     if (temp_a2 >= 0x11) {
-        func_800A4270_ovl3(arg3, &D_80196E94, 0x10, temp_a2, temp_a2);
+        print_error_stub(arg3, &D_80196E94, 0x10, temp_a2, temp_a2);
         return 0;
     }
     phi_a1 = 0;

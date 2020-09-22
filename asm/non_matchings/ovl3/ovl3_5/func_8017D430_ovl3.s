@@ -257,7 +257,7 @@ glabel func_8017D430_ovl3
 /* 0DE22C 8017D7EC 14200006 */  bnez  $at, .L8017D808_ovl3
 /* 0DE230 8017D7F0 000760C0 */   sll   $t4, $a3, 3
 /* 0DE234 8017D7F4 00E02825 */  move  $a1, $a3
-/* 0DE238 8017D7F8 0C02909C */  jal   func_800A4270_ovl3
+/* 0DE238 8017D7F8 0C02909C */  jal   print_error_stub
 /* 0DE23C 8017D7FC AFA70038 */   sw    $a3, 0x38($sp)
 /* 0DE240 8017D800 1000002C */  b     .L8017D8B4_ovl3
 /* 0DE244 8017D804 8FA70038 */   lw    $a3, 0x38($sp)

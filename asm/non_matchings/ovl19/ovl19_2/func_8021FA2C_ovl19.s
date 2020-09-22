@@ -27,7 +27,7 @@ glabel func_8021FA2C_ovl19
 /* 24019C 8021FA8C 30E4FFFF */   andi  $a0, $a3, 0xffff
 .L8021FA90_ovl19:
 /* 2401A0 8021FA90 3C048023 */  lui   $a0, %hi(D_8022F720) # $a0, 0x8023
-/* 2401A4 8021FA94 0C02909C */  jal   func_800A4270_ovl19
+/* 2401A4 8021FA94 0C02909C */  jal   print_error_stub
 /* 2401A8 8021FA98 2484F720 */   addiu $a0, %lo(D_8022F720) # addiu $a0, $a0, -0x8e0
 /* 2401AC 8021FA9C 10000074 */  b     .L8021FC70_ovl19
 /* 2401B0 8021FAA0 8FBF0014 */   lw    $ra, 0x14($sp)

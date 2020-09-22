@@ -105,7 +105,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD418_ovl2.s")
         arg3 = phi_f14;
         temp_v0_2 = func_800FD9D4_ovl2(phi_f12, phi_f14, 0);
         if (temp_v0_2 == -1) {
-            func_800A4270_ovl2(arg2, arg3, &D_801288E0);
+            print_error_stub(arg2, arg3, &D_801288E0);
             return 0;
         }
         temp_v1 = temp_v0_2 * 4;
@@ -153,7 +153,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD570.s")
             (temp_v1 + 0x800E0000)->unk2950 = arg3;
             return 1;
         }
-        func_800A4270_ovl2(arg1, arg2, &D_8012890C, arg0);
+        print_error_stub(arg1, arg2, &D_8012890C, arg0);
         return 0;
     }
     if (temp_v0 != &D_80124630) {
@@ -187,7 +187,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD754_ovl2.s")
             (temp_v1 + 0x800E0000)->unk4390 = arg6;
             return 1;
         }
-        func_800A4270_ovl2(&D_8012893C, arg0);
+        print_error_stub(&D_8012893C, arg0);
     }
     return 0;
 }
@@ -225,7 +225,7 @@ s32 func_800FD9D4_ovl2(s32 arg0) {
     temp_v0 = temp_ret;
     if (temp_v0 == -1) {
         sp1C = temp_v0;
-        func_800A4270_ovl2(&D_8012896C);
+        print_error_stub(&D_8012896C);
     } else {
         ((temp_v0 * 4) + 0x800E0000)->unk-23B0 = arg0;
     }

@@ -139,7 +139,7 @@ glabel func_80156594_ovl3
 /* 0B71D8 80156798 10000003 */  b     .L801567A8_ovl3
 /* 0B71DC 8015679C AC2AE4F8 */   sw    $t2, %lo(D_800BE4F8)($at)
 .L801567A0_ovl3:
-/* 0B71E0 801567A0 0C02909C */  jal   func_800A4270_ovl3
+/* 0B71E0 801567A0 0C02909C */  jal   print_error_stub
 /* 0B71E4 801567A4 24846EE0 */   addiu $a0, $a0, 0x6ee0
 .L801567A8_ovl3:
 /* 0B71E8 801567A8 8FBF0014 */  lw    $ra, 0x14($sp)

@@ -3143,7 +3143,7 @@ void func_80122A10_ovl2(s32 arg0) {
             return;
         }
     }
-    func_800A4270_ovl2(&D_80128DC0, 5, D_8012E894, arg0);
+    print_error_stub(&D_80128DC0, 5, D_8012E894, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A10_ovl2.s")

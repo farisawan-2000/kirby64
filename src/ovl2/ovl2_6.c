@@ -9858,7 +9858,7 @@ s32 func_80110CCC(void *arg0, void *arg1, void *arg2) {
                 if (arg1->unk9 != 1) {
                     if (arg1->unk9 != 2) {
                         if (arg1->unk9 != 3) {
-                            return func_800A4270_ovl2(&D_80128AF0, arg1->unk9, arg1);
+                            return print_error_stub(&D_80128AF0, arg1->unk9, arg1);
                         }
                         if ((arg0->unk14 & 4) != 0) {
                             arg2->unk2 = (u8) 9;
@@ -10159,12 +10159,12 @@ void *func_80111574(void *arg0, s32 arg1) {
         phi_v0 = 0;
     }
     if (((phi_v0 + D_8012D190) + arg0->unk4) >= 0x1A) {
-        func_800A4270_ovl2(&D_80128B58, arg0, &D_8012D190);
+        print_error_stub(&D_80128B58, arg0, &D_8012D190);
     loop_5:
         goto loop_5;
     }
     if (D_8012D584 == 5) {
-        func_800A4270_ovl2(&D_80128B88, arg0, &D_8012D190);
+        print_error_stub(&D_80128B88, arg0, &D_8012D190);
     loop_8:
         goto loop_8;
     }
@@ -10247,12 +10247,12 @@ void *func_801117BC(void *arg0, s32 arg1) {
         phi_v0 = 0;
     }
     if (((phi_v0 + D_8012D190) + arg0->unk4) >= 0x1A) {
-        func_800A4270_ovl2(&D_80128BAC, arg0, &D_8012D190);
+        print_error_stub(&D_80128BAC, arg0, &D_8012D190);
     loop_5:
         goto loop_5;
     }
     if (D_8012D588 == 0xA) {
-        func_800A4270_ovl2(&D_80128BDC, arg0, &D_8012D190);
+        print_error_stub(&D_80128BDC, arg0, &D_8012D190);
     loop_8:
         goto loop_8;
     }
@@ -10335,12 +10335,12 @@ void *func_80111A04(void *arg0, s32 arg1) {
         phi_v0 = 0;
     }
     if (((phi_v0 + D_8012D190) + arg0->unk4) >= 0x1A) {
-        func_800A4270_ovl2(&D_80128C00, arg0, &D_8012D190);
+        print_error_stub(&D_80128C00, arg0, &D_8012D190);
     loop_5:
         goto loop_5;
     }
     if (D_8012D58C == 0xA) {
-        func_800A4270_ovl2(&D_80128C30, arg0, &D_8012D190);
+        print_error_stub(&D_80128C30, arg0, &D_8012D190);
     loop_8:
         goto loop_8;
     }
@@ -10431,11 +10431,11 @@ void *func_80111C88_ovl2(void *arg0, ?32 arg1) {
 
     phi_v0 = (arg0->unk0 != 0) ? 1 : 0;
     if (((phi_v0 + D_8012CF28) + arg0->unk4) >= 0xB) {
-        func_800A4270_ovl2(&D_80128C54, arg0);
+        print_error_stub(&D_80128C54, arg0);
         while (1);
     }
     if (D_8012D0C4 == 5) {
-        func_800A4270_ovl2(&D_80128C84, arg0);
+        print_error_stub(&D_80128C84, arg0);
         while (1);
     }
     temp_a2 = (D_8012D0C4 * 0x28) + &D_8012D0C8;

@@ -14168,7 +14168,23 @@ glabel D_80128850
 glabel D_80128854
 .word 0x3C23D70A
 
-glabel D_80128858
+/*glabel jtbl_80128858
+.word .L800FC9A8_ovl2
+.word .L800FC9A8_ovl2
+.word .L800FC844_ovl2
+.word .L800FC854_ovl2
+.word .L800FC864_ovl2
+.word .L800FC9A8_ovl2
+.word .L800FC884_ovl2
+.word .L800FC9A0_ovl2
+.word .L800FC9A0_ovl2
+.word .L800FC9A0_ovl2
+.word .L800FC9A0_ovl2
+.word .L800FC874_ovl2
+.word .L800FC990_ovl2
+.word .L800FC980_ovl2*/
+
+glabel jtbl_80128858
 .word 0x800FC9A8
 
 glabel D_8012885C
