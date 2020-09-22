@@ -14209,30 +14209,3 @@ glabel D_80128888
 
 glabel D_8012888C
 .word 0x800FC980
-
-glabel D_80128890
-.word 0x73657455
-
-glabel D_80128894
-.word 0x70446973
-
-glabel D_80128898
-.word 0x706F7365
-
-glabel D_8012889C
-.word 0x20666169
-
-glabel D_801288A0
-.word 0x6C65642E
-
-glabel D_801288A4
-.word 0x20446973
-
-glabel D_801288A8
-.word 0x54797065
-
-glabel D_801288AC
-.word 0x203D2530
-
-glabel D_801288B0
-.word 0x32640A00
