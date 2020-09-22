@@ -155,7 +155,9 @@ SECTIONS
       BUILD_DIR/src/ovl2/ovl2_6.o(.text);
       BUILD_DIR/src/ovl2/ovl2_7.o(.text);
       BUILD_DIR/src/ovl2/ovl2_8.o(.text);
-      BUILD_DIR/data/kirby.0AC900.o(.data);
+      BUILD_DIR/data/kirby.0AC900_1.o(.data);
+      BUILD_DIR/src/ovl2/ovl2_3.o(.rodata);
+      BUILD_DIR/data/kirby.0AC900_2.o(.data);
    }
    END_SEG(ovl2)
    BEGIN_NOLOAD(ovl2) {

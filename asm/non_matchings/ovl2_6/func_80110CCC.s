@@ -67,7 +67,7 @@ glabel func_80110CCC
 /* 099830 80110DC0 10000030 */  b     .L80110E84_ovl2
 /* 099834 80110DC4 A0C00002 */   sb    $zero, 2($a2)
 .L80110DC8_ovl2:
-/* 099838 80110DC8 0C02909C */  jal   func_800A4270_ovl2
+/* 099838 80110DC8 0C02909C */  jal   print_error_stub
 /* 09983C 80110DCC 24848AF0 */   addiu $a0, %lo(D_80128AF0) # addiu $a0, $a0, -0x7510
 /* 099840 80110DD0 1000002D */  b     .L80110E88_ovl2
 /* 099844 80110DD4 8FBF0014 */   lw    $ra, 0x14($sp)

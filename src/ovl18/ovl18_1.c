@@ -343,7 +343,7 @@ u8 func_80220F68_ovl18(s32 arg0) {
         if (1 == phi_t6) {
             arg0 = temp_a1;
             sp1C = temp_t0_2;
-            func_800A4270_ovl18(&D_8022BBA0, temp_a1, temp_a2, temp_a3);
+            print_error_stub(&D_8022BBA0, temp_a1, temp_a2, temp_a3);
             temp_a2_2 = D_8004A7C4;
             phi_a1 = arg0 + 1;
             phi_v0 = temp_t0_2->unk3C;

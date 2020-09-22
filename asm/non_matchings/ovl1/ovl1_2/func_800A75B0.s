@@ -47,7 +47,7 @@ glabel func_800A75B0
 /* 04F8A4 800A7654 10000004 */  b     .L800A7668_ovl1
 /* 04F8A8 800A7658 00001025 */   move  $v0, $zero
 .L800A765C_ovl1:
-/* 04F8AC 800A765C 0C02909C */  jal   func_800A4270_ovl1
+/* 04F8AC 800A765C 0C02909C */  jal   print_error_stub
 /* 04F8B0 800A7660 24845CC0 */   addiu $a0, %lo(D_800D5CC0) # addiu $a0, $a0, 0x5cc0
 .L800A7664_ovl1:
 /* 04F8B4 800A7664 00001025 */  move  $v0, $zero

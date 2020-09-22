@@ -1368,7 +1368,7 @@
 .L801D20B0_ovl8:
 /* 175B90 801D20B0 3C04801E */  lui   $a0, %hi(D_801DB080) # $a0, 0x801e
 /* 175B94 801D20B4 2484B080 */  addiu $a0, %lo(D_801DB080) # addiu $a0, $a0, -0x4f80
-/* 175B98 801D20B8 0C02909C */  jal   func_800A4270_ovl8
+/* 175B98 801D20B8 0C02909C */  jal   print_error_stub
 /* 175B9C 801D20BC AFA80018 */   sw    $t0, 0x18($sp)
 /* 175BA0 801D20C0 8FA80018 */  lw    $t0, 0x18($sp)
 /* 175BA4 801D20C4 0C02C640 */  jal   func_800B1900_ovl8

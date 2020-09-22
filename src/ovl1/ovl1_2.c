@@ -347,7 +347,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7554.s")
                 if (arg1 == 0) {
 
                 } else {
-                    func_800A4270_ovl1(&D_800D5CC0);
+                    print_error_stub(&D_800D5CC0);
                 }
             }
         }
@@ -364,11 +364,11 @@ void func_800A7678(s32 arg0) {
     void *temp_v0;
 
     if (arg0 == 0x99999999) {
-        func_800A4270_ovl1(&D_800D5CE0, arg0);
+        print_error_stub(&D_800D5CE0, arg0);
         return;
     }
     if ((arg0 << 0) < 0) {
-        func_800A4270_ovl1(&D_800D5CF8, arg0);
+        print_error_stub(&D_800D5CF8, arg0);
         return;
     }
     temp_v0 = (arg0 * 2) + 0x800C0000;
@@ -376,7 +376,7 @@ void func_800A7678(s32 arg0) {
         func_80023CB0_ovl1(temp_v0->unk40 & 0xFFFF, arg0);
         return;
     }
-    func_800A4270_ovl1(&D_800D5D14, arg0);
+    print_error_stub(&D_800D5D14, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7678.s")
@@ -434,7 +434,7 @@ void func_800A77E8(s32 arg0, void *arg1, void *arg2) {
             return;
         }
     } else {
-        func_800A4270_ovl1(&D_800D5D34, arg0, arg0);
+        print_error_stub(&D_800D5D34, arg0, arg0);
         *arg1 = 0;
     }
     *arg2 = (u16)0;

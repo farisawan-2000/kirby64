@@ -4680,7 +4680,7 @@ glabel func_8022D584_ovl19
 /* 24DCB4 8022D5A4 000FC080 */  sll   $t8, $t7, 2
 /* 24DCB8 8022D5A8 00B82821 */  addu  $a1, $a1, $t8
 /* 24DCBC 8022D5AC 8CA5DC50 */ lw $a1, %lo(D_800DDC50)($a1)
-/* 24DCC0 8022D5B0 0C02909C */  jal   func_800A4270_ovl19
+/* 24DCC0 8022D5B0 0C02909C */  jal   print_error_stub
 /* 24DCC4 8022D5B4 2484F970 */   addiu $a0, %lo(D_8022F970) # addiu $a0, $a0, -0x690
 /* 24DCC8 8022D5B8 3C198005 */  lui   $t9, %hi(D_8004A7C4) # $t9, 0x8005
 /* 24DCCC 8022D5BC 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)

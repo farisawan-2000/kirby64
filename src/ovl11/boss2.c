@@ -101,7 +101,7 @@ loop_1:
     if (temp_v0 >= 0x3C) {
 block_3:
         sp50 = temp_v0;
-        func_800A4270_ovl11(&D_801E0BE0, temp_v0);
+        print_error_stub(&D_801E0BE0, temp_v0);
         func_800B1900_ovl11(temp_v0 & 0xFFFF, temp_v0);
         return;
     }

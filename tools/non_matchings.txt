@@ -439,7 +439,7 @@ asm/non_matchings/ovl1/ovl1_1/func_800A34C8.s
 asm/non_matchings/ovl1/ovl1_1/func_800A36C0.s
 asm/non_matchings/ovl1/ovl1_1/func_800A377C.s
 asm/non_matchings/ovl1/ovl1_1/func_800A41B0.s
-asm/non_matchings/ovl1/ovl1_1/func_800A4270.s
+asm/non_matchings/ovl1/ovl1_1/print_error_stub.s
 asm/non_matchings/ovl1/ovl1_1/func_800A428C.s
 asm/non_matchings/ovl1/ovl1_1/func_800A4414.s
 asm/non_matchings/ovl1/ovl1_1/func_800A4598.s

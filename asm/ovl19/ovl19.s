@@ -273,7 +273,7 @@ glabel func_8021E2D0_ovl19
 .L8021E320_ovl19:
 /* 23EA30 8021E320 3C048023 */  lui   $a0, %hi(D_8022F6A0) # $a0, 0x8023
 /* 23EA34 8021E324 2484F6A0 */  addiu $a0, %lo(D_8022F6A0) # addiu $a0, $a0, -0x960
-/* 23EA38 8021E328 0C02909C */  jal   func_800A4270_ovl19
+/* 23EA38 8021E328 0C02909C */  jal   print_error_stub
 /* 23EA3C 8021E32C AFA6001C */   sw    $a2, 0x1c($sp)
 /* 23EA40 8021E330 1000005A */  b     .L8021E49C_ovl19
 /* 23EA44 8021E334 8FA6001C */   lw    $a2, 0x1c($sp)
@@ -1069,7 +1069,7 @@ glabel func_8021EE88_ovl19
 .L8021EEC8_ovl19:
 /* 23F5D8 8021EEC8 3C048023 */  lui   $a0, %hi(D_8022F6E0) # $a0, 0x8023
 /* 23F5DC 8021EECC 2484F6E0 */  addiu $a0, %lo(D_8022F6E0) # addiu $a0, $a0, -0x920
-/* 23F5E0 8021EED0 0C02909C */  jal   func_800A4270_ovl19
+/* 23F5E0 8021EED0 0C02909C */  jal   print_error_stub
 /* 23F5E4 8021EED4 AFA3001C */   sw    $v1, 0x1c($sp)
 /* 23F5E8 8021EED8 8FA3001C */  lw    $v1, 0x1c($sp)
 .L8021EEDC_ovl19:

@@ -21,7 +21,7 @@ glabel func_80111C88_ovl2
 /* 09A73C 80111CCC 2529D0C4 */   addiu $t1, %lo(D_8012D0C4) # addiu $t1, $t1, -0x2f3c
 /* 09A740 80111CD0 3C048013 */  lui   $a0, %hi(D_80128C54) # $a0, 0x8013
 /* 09A744 80111CD4 24848C54 */  addiu $a0, %lo(D_80128C54) # addiu $a0, $a0, -0x73ac
-/* 09A748 80111CD8 0C02909C */  jal   func_800A4270_ovl2
+/* 09A748 80111CD8 0C02909C */  jal   print_error_stub
 /* 09A74C 80111CDC 00001025 */   move  $v0, $zero
 .L80111CE0_ovl2:
 /* 09A750 80111CE0 1000FFFF */  b     .L80111CE0_ovl2
@@ -34,7 +34,7 @@ glabel func_80111C88_ovl2
 /* 09A768 80111CF8 00025880 */   sll   $t3, $v0, 2
 /* 09A76C 80111CFC 3C048013 */  lui   $a0, %hi(D_80128C84) # $a0, 0x8013
 /* 09A770 80111D00 24848C84 */  addiu $a0, %lo(D_80128C84) # addiu $a0, $a0, -0x737c
-/* 09A774 80111D04 0C02909C */  jal   func_800A4270_ovl2
+/* 09A774 80111D04 0C02909C */  jal   print_error_stub
 /* 09A778 80111D08 00001025 */   move  $v0, $zero
 .L80111D0C_ovl2:
 /* 09A77C 80111D0C 1000FFFF */  b     .L80111D0C_ovl2
