@@ -163,7 +163,8 @@ $(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/li
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 	$(OBJCOPY) $< $@ -O binary $(OBJCOPY_FLAGS)
 	$(N64CRC) $@
-	sha1sum -c $(TARGET).sha1
+	@python3 tools/progress2.py -m
+	@sha1sum -c $(TARGET).sha1
 
 $(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
 	xxd $< > $@

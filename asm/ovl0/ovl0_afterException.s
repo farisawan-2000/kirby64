@@ -1591,7 +1591,7 @@ glabel __osSiRawReadIo
 glabel osSpTaskYield
 /* 0312A0 800306A0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0312A4 800306A4 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0312A8 800306A8 0C00E258 */  jal   func_80038960
+/* 0312A8 800306A8 0C00E258 */  jal   __osSpSetStatus
 /* 0312AC 800306AC 24040400 */   li    $a0, 1024
 /* 0312B0 800306B0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0312B4 800306B4 27BD0018 */  addiu $sp, $sp, 0x18
@@ -5596,7 +5596,7 @@ glabel func_80033D8C
 /* 0349E4 80033DE4 24080008 */  li    $t0, 8
 /* 0349E8 80033DE8 A5280010 */  sh    $t0, 0x10($t1)
 /* 0349EC 80033DEC 8FA40028 */  lw    $a0, 0x28($sp)
-/* 0349F0 80033DF0 0C00B963 */  jal   func_8002E58C
+/* 0349F0 80033DF0 0C00B963 */  jal   __osEnqueueAndYield
 /* 0349F4 80033DF4 24840004 */   addiu $a0, $a0, 4
 /* 0349F8 80033DF8 10000005 */  b     .L80033E10_ovl0
 /* 0349FC 80033DFC 00000000 */   nop   
@@ -5714,7 +5714,7 @@ glabel osSetThreadPri
 /* 034B90 80033F90 24080002 */  li    $t0, 2
 /* 034B94 80033F94 3C048004 */  lui   $a0, %hi(__osRunQueue) # $a0, 0x8004
 /* 034B98 80033F98 A5A80010 */  sh    $t0, 0x10($t5)
-/* 034B9C 80033F9C 0C00B963 */  jal   func_8002E58C
+/* 034B9C 80033F9C 0C00B963 */  jal   __osEnqueueAndYield
 /* 034BA0 80033FA0 2484FB58 */   addiu $a0, %lo(__osRunQueue) # addiu $a0, $a0, -0x4a8
 .L80033FA4_ovl0:
 /* 034BA4 80033FA4 0C00D4E0 */  jal   __osRestoreInt
@@ -6059,7 +6059,7 @@ glabel func_80034464
 /* 03506C 8003446C 00000000 */  nop   
 /* 035070 80034470 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 035074 80034474 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 035078 80034478 0C00E25C */  jal   func_80038970
+/* 035078 80034478 0C00E25C */  jal   __osSpGetStatus
 /* 03507C 8003447C AFA40020 */   sw    $a0, 0x20($sp)
 /* 035080 80034480 AFA2001C */  sw    $v0, 0x1c($sp)
 /* 035084 80034484 8FAE001C */  lw    $t6, 0x1c($sp)

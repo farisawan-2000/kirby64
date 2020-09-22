@@ -11281,7 +11281,7 @@ glabel func_8002D2E4
 /* 02DF48 8002D348 24080008 */  li    $t0, 8
 /* 02DF4C 8002D34C A5280010 */  sh    $t0, 0x10($t1)
 /* 02DF50 8002D350 8FA40038 */  lw    $a0, 0x38($sp)
-/* 02DF54 8002D354 0C00B963 */  jal   func_8002E58C
+/* 02DF54 8002D354 0C00B963 */  jal   __osEnqueueAndYield
 /* 02DF58 8002D358 24840004 */   addiu $a0, $a0, 4
 /* 02DF5C 8002D35C 10000005 */  b     .L8002D374_ovl0
 /* 02DF60 8002D360 00000000 */   nop   
@@ -11381,7 +11381,7 @@ glabel func_8002D43C
 /* 02E0A8 8002D4A8 8F39FB60 */  lw    $t9, %lo(__osRunningThread)($t9)
 /* 02E0AC 8002D4AC 24180001 */  li    $t8, 1
 /* 02E0B0 8002D4B0 00002025 */  move  $a0, $zero
-/* 02E0B4 8002D4B4 0C00B963 */  jal   func_8002E58C
+/* 02E0B4 8002D4B4 0C00B963 */  jal   __osEnqueueAndYield
 /* 02E0B8 8002D4B8 A7380010 */   sh    $t8, 0x10($t9)
 /* 02E0BC 8002D4BC 10000008 */  b     .L8002D4E0_ovl0
 /* 02E0C0 8002D4C0 00000000 */   nop   
@@ -11430,7 +11430,7 @@ glabel osRecvMesg
 /* 02E154 8002D554 8D08FB60 */  lw    $t0, %lo(__osRunningThread)($t0)
 /* 02E158 8002D558 24190008 */  li    $t9, 8
 /* 02E15C 8002D55C A5190010 */  sh    $t9, 0x10($t0)
-/* 02E160 8002D560 0C00B963 */  jal   func_8002E58C
+/* 02E160 8002D560 0C00B963 */  jal   __osEnqueueAndYield
 /* 02E164 8002D564 8FA40028 */   lw    $a0, 0x28($sp)
 /* 02E168 8002D568 8FA90028 */  lw    $t1, 0x28($sp)
 /* 02E16C 8002D56C 8D2A0008 */  lw    $t2, 8($t1)
@@ -11780,7 +11780,7 @@ glabel osSpTaskStartGo
 /* 02E640 8002DA40 8FA4001C */  lw    $a0, 0x1c($sp)
 /* 02E644 8002DA44 0C00C008 */  jal   osWritebackDCache
 /* 02E648 8002DA48 24050040 */   li    $a1, 64
-/* 02E64C 8002DA4C 0C00E258 */  jal   func_80038960
+/* 02E64C 8002DA4C 0C00E258 */  jal   __osSpSetStatus
 /* 02E650 8002DA50 24042B00 */   li    $a0, 11008
 /* 02E654 8002DA54 3C040400 */  lui   $a0, (0x04001000 >> 16) # lui $a0, 0x400
 /* 02E658 8002DA58 0C00E47C */  jal   __osSpSetPc
@@ -11866,7 +11866,7 @@ glabel func_8002DB4C
 /* 02E76C 8002DB6C 1440FFFD */  bnez  $v0, .L8002DB64_ovl0
 /* 02E770 8002DB70 00000000 */   nop   
 .L8002DB74_ovl0:
-/* 02E774 8002DB74 0C00E258 */  jal   func_80038960
+/* 02E774 8002DB74 0C00E258 */  jal   __osSpSetStatus
 /* 02E778 8002DB78 24040125 */   li    $a0, 293
 /* 02E77C 8002DB7C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 02E780 8002DB80 27BD0018 */  addiu $sp, $sp, 0x18
