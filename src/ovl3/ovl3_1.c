@@ -452,8 +452,8 @@ void func_801529C0_ovl3(void) {
     }
     *(&D_800E2790 + (*phi_t1 * 4)) = (f32) phi_t4->unk8;
     temp_v1_2 = *phi_t1 * 4;
-    if (((((temp_v1_2 + 0x800F0000)->unk-76E0 != 0) || !((temp_v1_2 + 0x800E0000)->unk3210 <= 0.0f)) || (0.0f == (temp_v1_2 + 0x800E0000)->unk64D0)) || (gKirbyState.unkA0 != 0)) {
-        if (gKirbyState.unkA0 == 0x12) {
+    if (((((temp_v1_2 + 0x800F0000)->unk-76E0 != 0) || !((temp_v1_2 + 0x800E0000)->unk3210 <= 0.0f)) || (0.0f == (temp_v1_2 + 0x800E0000)->unk64D0)) || (gKirbyState.powerupInUse != 0)) {
+        if (gKirbyState.powerupInUse == 0x12) {
 block_20:
             if (1.0f == (temp_v1_2 + 0x800E0000)->unk6A10) {
                 phi_f2 = phi_t4->unk1C;
