@@ -735,11 +735,11 @@ void func_80220814_ovl19(s32 arg0) {
 loop_1:
     func_800AA018_ovl19(0x203E3);
 loop_2:
-    if (0x1F == gKirbyState.unkA0) {
+    if (0x1F == gKirbyState.powerupInUse) {
         if (D_800E98E0 < 3) {
             func_800AA018_ovl19(0x203E2);
 loop_5:
-            if (gKirbyState.unkA0 == 0) {
+            if (gKirbyState.powerupInUse == 0) {
                 goto loop_1;
             }
             if (D_800E98E0 >= 3) {
