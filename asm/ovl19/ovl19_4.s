@@ -4288,9 +4288,9 @@ glabel func_8022CE18_ovl19
 /* 24D70C 8022CFFC E4284010 */ swc1 $f8, %lo(D_800E4010)($at)
 /* 24D710 8022D000 0C029FAD */  jal   func_800A7EB4_ovl19
 /* 24D714 8022D004 00000000 */   nop   
-/* 24D718 8022D008 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
+/* 24D718 8022D008 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
 /* 24D71C 8022D00C 44800000 */  mtc1  $zero, $f0
-/* 24D720 8022D010 C42A6E50 */  lwc1  $f10, %lo(D_800D6E50)($at)
+/* 24D720 8022D010 C42A6E50 */  lwc1  $f10, %lo(gKirbyHp)($at)
 /* 24D724 8022D014 3C0A8005 */  lui   $t2, %hi(D_8004A7C4) # $t2, 0x8005
 /* 24D728 8022D018 460A0032 */  c.eq.s $f0, $f10
 /* 24D72C 8022D01C 00000000 */  nop   

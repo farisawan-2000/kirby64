@@ -239,7 +239,7 @@ void func_800F6830_ovl2(void) {
     func_800BBF60_ovl2(&D_800BE4EC);
     if (D_800BE544 >= 0) {
         if (D_800BE4F8 == 1) {
-            if (0.0f != D_800D6E50) {
+            if (0.0f != gKirbyHp) {
                 if (func_800F8560_ovl2() != 3) {
                     if (D_800BE544 == 0) {
                         if ((D_80048F22 & 0x1000) != 0) {

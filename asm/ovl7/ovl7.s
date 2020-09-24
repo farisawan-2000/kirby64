@@ -7279,8 +7279,8 @@ glabel func_8019F130_ovl7
 /* 145258 8019F1E8 00000000 */   nop   
 
 glabel func_8019F1EC_ovl7
-/* 14525C 8019F1EC 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 145260 8019F1F0 C4266E50 */  lwc1  $f6, %lo(D_800D6E50)($at)
+/* 14525C 8019F1EC 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 145260 8019F1F0 C4266E50 */  lwc1  $f6, %lo(gKirbyHp)($at)
 /* 145264 8019F1F4 44802000 */  mtc1  $zero, $f4
 /* 145268 8019F1F8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 14526C 8019F1FC AFBF0014 */  sw    $ra, 0x14($sp)

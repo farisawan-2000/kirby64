@@ -35,9 +35,9 @@ glabel func_800BBFE0
 /* 064294 800BC044 24636E8C */  addiu $v1, %lo(D_800D6E8C) # addiu $v1, $v1, 0x6e8c
 /* 064298 800BC048 8C780000 */  lw    $t8, ($v1)
 /* 06429C 800BC04C 44801000 */  mtc1  $zero, $f2
-/* 0642A0 800BC050 3C02800D */  lui   $v0, %hi(D_800D6E50) # $v0, 0x800d
+/* 0642A0 800BC050 3C02800D */  lui   $v0, %hi(gKirbyHp) # $v0, 0x800d
 /* 0642A4 800BC054 44983000 */  mtc1  $t8, $f6
-/* 0642A8 800BC058 24426E50 */  addiu $v0, %lo(D_800D6E50) # addiu $v0, $v0, 0x6e50
+/* 0642A8 800BC058 24426E50 */  addiu $v0, %lo(gKirbyHp) # addiu $v0, $v0, 0x6e50
 /* 0642AC 800BC05C 3C0140C0 */  li    $at, 0x40C00000 # 6.000000
 /* 0642B0 800BC060 46803220 */  cvt.s.w $f8, $f6
 /* 0642B4 800BC064 46081032 */  c.eq.s $f2, $f8
@@ -187,8 +187,8 @@ glabel func_800BC240
 /* 0644A4 800BC254 AC4F0000 */   sw    $t7, ($v0)
 
 glabel func_800BC258
-/* 0644A8 800BC258 3C03800D */  lui   $v1, %hi(D_800D6E4C) # $v1, 0x800d
-/* 0644AC 800BC25C 24636E4C */  addiu $v1, %lo(D_800D6E4C) # addiu $v1, $v1, 0x6e4c
+/* 0644A8 800BC258 3C03800D */  lui   $v1, %hi(gKirbyLives) # $v1, 0x800d
+/* 0644AC 800BC25C 24636E4C */  addiu $v1, %lo(gKirbyLives) # addiu $v1, $v1, 0x6e4c
 /* 0644B0 800BC260 8C6E0000 */  lw    $t6, ($v1)
 /* 0644B4 800BC264 01C41021 */  addu  $v0, $t6, $a0
 /* 0644B8 800BC268 04410003 */  bgez  $v0, .L800BC278_ovl1
@@ -1922,8 +1922,8 @@ glabel func_800BDB18
 .L800BDB64_ovl1:
 /* 065DB4 800BDB64 3C0F800C */  lui   $t7, %hi(D_800BE508) # $t7, 0x800c
 /* 065DB8 800BDB68 8DEFE508 */  lw    $t7, %lo(D_800BE508)($t7)
-/* 065DBC 800BDB6C 3C12800D */  lui   $s2, %hi(D_800D6E50) # $s2, 0x800d
-/* 065DC0 800BDB70 26526E50 */  addiu $s2, %lo(D_800D6E50) # addiu $s2, $s2, 0x6e50
+/* 065DBC 800BDB6C 3C12800D */  lui   $s2, %hi(gKirbyHp) # $s2, 0x800d
+/* 065DC0 800BDB70 26526E50 */  addiu $s2, %lo(gKirbyHp) # addiu $s2, $s2, 0x6e50
 /* 065DC4 800BDB74 15E00004 */  bnez  $t7, .L800BDB88_ovl1
 /* 065DC8 800BDB78 3C18800C */   lui   $t8, %hi(D_800BE4FC) # $t8, 0x800c
 /* 065DCC 800BDB7C 8F18E4FC */  lw    $t8, %lo(D_800BE4FC)($t8)
