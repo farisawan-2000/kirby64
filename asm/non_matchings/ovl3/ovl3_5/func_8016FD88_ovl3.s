@@ -50,7 +50,7 @@ glabel func_8016FD88_ovl3
 /* 0D0888 8016FE48 1061002C */  beq   $v1, $at, .L8016FEFC_ovl3
 /* 0D088C 8016FE4C 3C050002 */   lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0D0890 8016FE50 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0D0894 8016FE54 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0D0894 8016FE54 0C02A9E3 */  jal   func_800AA78C
 /* 0D0898 8016FE58 3C064040 */   lui   $a2, 0x4040
 /* 0D089C 8016FE5C 3C050002 */  lui   $a1, (0x00020106 >> 16) # lui $a1, 2
 /* 0D08A0 8016FE60 34A50106 */  ori   $a1, (0x00020106 & 0xFFFF) # ori $a1, $a1, 0x106

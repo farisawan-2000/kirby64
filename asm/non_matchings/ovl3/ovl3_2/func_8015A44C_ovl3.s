@@ -120,7 +120,7 @@ glabel func_8015A44C_ovl3
 /* 0BB064 8015A624 34840089 */  ori   $a0, (0x00020089 & 0xFFFF) # ori $a0, $a0, 0x89
 /* 0BB068 8015A628 15610003 */  bne   $t3, $at, .L8015A638_ovl3
 /* 0BB06C 8015A62C 34A50007 */   ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0BB070 8015A630 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0BB070 8015A630 0C02A9E3 */  jal   func_800AA78C
 /* 0BB074 8015A634 3C0640C0 */   lui   $a2, 0x40c0
 .L8015A638_ovl3:
 /* 0BB078 8015A638 3C040002 */  lui   $a0, (0x00020089 >> 16) # lui $a0, 2
@@ -167,7 +167,7 @@ glabel func_8015A44C_ovl3
 /* 0BB114 8015A6D4 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
 /* 0BB118 8015A6D8 02002025 */  move  $a0, $s0
 /* 0BB11C 8015A6DC 3C0640C0 */  lui   $a2, 0x40c0
-/* 0BB120 8015A6E0 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0BB120 8015A6E0 0C02A9E3 */  jal   func_800AA78C
 /* 0BB124 8015A6E4 E4263C90 */   swc1  $f6, 0x3c90($at)
 /* 0BB128 8015A6E8 3C050002 */  lui   $a1, (0x000200A8 >> 16) # lui $a1, 2
 /* 0BB12C 8015A6EC 34A500A8 */  ori   $a1, (0x000200A8 & 0xFFFF) # ori $a1, $a1, 0xa8
@@ -230,7 +230,7 @@ glabel func_8015A44C_ovl3
 /* 0BB20C 8015A7CC 000EC880 */  sll   $t9, $t6, 2
 /* 0BB210 8015A7D0 00390821 */  addu  $at, $at, $t9
 /* 0BB214 8015A7D4 3C064040 */  lui   $a2, 0x4040
-/* 0BB218 8015A7D8 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0BB218 8015A7D8 0C02A9E3 */  jal   func_800AA78C
 /* 0BB21C 8015A7DC E4263C90 */   swc1  $f6, 0x3c90($at)
 /* 0BB220 8015A7E0 3C040002 */  lui   $a0, (0x00020089 >> 16) # lui $a0, 2
 /* 0BB224 8015A7E4 3C050002 */  lui   $a1, (0x0002008A >> 16) # lui $a1, 2
@@ -290,7 +290,7 @@ glabel func_8015A44C_ovl3
 /* 0BB2E8 8015A8A8 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0BB2EC 8015A8AC 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
 /* 0BB2F0 8015A8B0 02002025 */  move  $a0, $s0
-/* 0BB2F4 8015A8B4 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0BB2F4 8015A8B4 0C02A9E3 */  jal   func_800AA78C
 /* 0BB2F8 8015A8B8 3C0640C0 */   lui   $a2, 0x40c0
 /* 0BB2FC 8015A8BC 3C050002 */  lui   $a1, (0x000200A4 >> 16) # lui $a1, 2
 /* 0BB300 8015A8C0 34A500A4 */  ori   $a1, (0x000200A4 & 0xFFFF) # ori $a1, $a1, 0xa4

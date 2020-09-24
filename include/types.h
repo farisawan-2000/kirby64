@@ -143,14 +143,18 @@ struct KirbyState {
     u32 unk8C;
     u32 powerup; //0x90
     u32 currentInhale; //0x94
-    u32 unk98;
-    u32 unk9C;
-    u32 unkA0;
+    u32 firstInhale; //0x98
+    u32 secondInhale; //0x9C
+    u32 powerupInUse; //0xA0
     u32 unkA4;
     u32 unkA8;
-    u32 unkAC;
-    u32 unkB0;
-    u32 unkB4;
+    u32 isHoldingObject; //0xAC
+    u8 isInhaling; //0xB0
+    u8 isInhalingBlock; //0xB1
+    u8 unkB2;
+    u8 numberInhaling; //0xB3
+    u16 numberInhaled; //0xB4
+    u16 unkB6;
     u32 unkB8;
     u32 unkBC;
     u32 unkC0;
