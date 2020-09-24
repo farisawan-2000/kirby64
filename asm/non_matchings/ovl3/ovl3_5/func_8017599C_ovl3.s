@@ -271,7 +271,7 @@ glabel func_8017599C_ovl3
 /* 0D67C4 80175D84 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0D67C8 80175D88 8FA40034 */  lw    $a0, 0x34($sp)
 /* 0D67CC 80175D8C 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0D67D0 80175D90 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0D67D0 80175D90 0C02A9E3 */  jal   func_800AA78C
 /* 0D67D4 80175D94 3C064040 */   lui   $a2, 0x4040
 /* 0D67D8 80175D98 0C02BB30 */  jal   func_800AECC0_ovl3
 /* 0D67DC 80175D9C C7AC0024 */   lwc1  $f12, 0x24($sp)
