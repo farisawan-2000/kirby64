@@ -5,7 +5,7 @@
 .include "macros.inc"
 
 .section .text, "ax"
-glabel func_800BBFE0
+glabel change_kirby_hp
 /* 064230 800BBFE0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 064234 800BBFE4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 064238 800BBFE8 0C0062AB */  jal   func_80018AAC_ovl1

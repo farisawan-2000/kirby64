@@ -311,7 +311,7 @@ void func_800A3150(s32 arg0) {
     D_800D6B8C = D_800D6B88;
     D_800D6B88 = -1;
     func_800A2C80_ovl1();
-    func_800A2CE4_ovl1();
+    func_800A2CE4();
     func_800A2D5C_ovl1();
     func_800A2D68_ovl1();
     load_overlay(0x12);
@@ -414,7 +414,7 @@ loop_4:
                 if (func_80227308_ovl1(1) == 1) {
                     goto loop_4;
                 }
-                func_800A2CE4_ovl1();
+                func_800A2CE4();
                 func_800B96A0_ovl1(D_800D6B88, 0);
                 D_800BE4F0 = D_800BE4F4;
             }

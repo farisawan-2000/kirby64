@@ -2144,13 +2144,13 @@ void func_801708A0_ovl3(s32 arg0, s32 arg1, f32 arg2) {
                 if (temp_f12 < 0.0f) {
                     temp_f0 = gKirbyHp;
                     if (1.0f <= (temp_f0 + temp_f12)) {
-                        func_800BBFE0_ovl3(temp_f12);
+                        change_kirby_hp(temp_f12);
                     } else {
-                        func_800BBFE0_ovl3(-(temp_f0 - 1.0f));
+                        change_kirby_hp(-(temp_f0 - 1.0f));
                     }
                     func_800A7678(0xDA);
                 } else {
-                    func_800BBFE0_ovl3(temp_f12);
+                    change_kirby_hp(temp_f12);
                 }
                 gKirbyState.unk84 = 0.0f;
             }

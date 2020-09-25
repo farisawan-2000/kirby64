@@ -1374,7 +1374,7 @@ glabel func_801F0050_ovl10
 /* 1E197C 801F0C0C 14F90005 */  bne   $a3, $t9, .L801F0C24_ovl10
 /* 1E1980 801F0C10 3C0140C0 */   li    $at, 0x40C00000 # 6.000000
 /* 1E1984 801F0C14 44816000 */  mtc1  $at, $f12
-/* 1E1988 801F0C18 0C02EFF8 */  jal   func_800BBFE0_ovl10
+/* 1E1988 801F0C18 0C02EFF8 */  jal   change_kirby_hp
 /* 1E198C 801F0C1C AFA70030 */   sw    $a3, 0x30($sp)
 /* 1E1990 801F0C20 8FA70030 */  lw    $a3, 0x30($sp)
 .L801F0C24_ovl10:
@@ -1383,7 +1383,7 @@ glabel func_801F0050_ovl10
 /* 1E199C 801F0C2C 14EB0005 */  bne   $a3, $t3, .L801F0C44_ovl10
 /* 1E19A0 801F0C30 3C013F80 */   li    $at, 0x3F800000 # 1.000000
 /* 1E19A4 801F0C34 44816000 */  mtc1  $at, $f12
-/* 1E19A8 801F0C38 0C02EFF8 */  jal   func_800BBFE0_ovl10
+/* 1E19A8 801F0C38 0C02EFF8 */  jal   change_kirby_hp
 /* 1E19AC 801F0C3C AFA70030 */   sw    $a3, 0x30($sp)
 /* 1E19B0 801F0C40 8FA70030 */  lw    $a3, 0x30($sp)
 .L801F0C44_ovl10:
