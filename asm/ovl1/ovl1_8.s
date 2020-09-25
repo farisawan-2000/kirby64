@@ -2414,8 +2414,8 @@ glabel func_800B531C
 /* 05DB14 800B58C4 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 05DB18 800B58C8 E4282790 */  swc1  $f8, 0x2790($at)
 .L800B58CC_ovl1:
-/* 05DB1C 800B58CC 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 05DB20 800B58D0 C4306E50 */  lwc1  $f16, %lo(D_800D6E50)($at)
+/* 05DB1C 800B58CC 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 05DB20 800B58D0 C4306E50 */  lwc1  $f16, %lo(gKirbyHp)($at)
 /* 05DB24 800B58D4 44805000 */  mtc1  $zero, $f10
 /* 05DB28 800B58D8 00000000 */  nop   
 /* 05DB2C 800B58DC 46105032 */  c.eq.s $f10, $f16

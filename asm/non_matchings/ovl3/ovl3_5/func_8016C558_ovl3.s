@@ -76,9 +76,9 @@ glabel func_8016C558_ovl3
 /* 0CD0A8 8016C668 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CD0AC 8016C66C 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 0CD0B0 8016C670 15800013 */  bnez  $t4, .L8016C6C0_ovl3
-/* 0CD0B4 8016C674 3C01800D */   lui   $at, %hi(D_800D6E50) # $at, 0x800d
+/* 0CD0B4 8016C674 3C01800D */   lui   $at, %hi(gKirbyHp) # $at, 0x800d
 /* 0CD0B8 8016C678 44804000 */  mtc1  $zero, $f8
-/* 0CD0BC 8016C67C C42A6E50 */  lwc1  $f10, %lo(D_800D6E50)($at)
+/* 0CD0BC 8016C67C C42A6E50 */  lwc1  $f10, %lo(gKirbyHp)($at)
 /* 0CD0C0 8016C680 460A4032 */  c.eq.s $f8, $f10
 /* 0CD0C4 8016C684 00000000 */  nop   
 /* 0CD0C8 8016C688 4501000D */  bc1t  .L8016C6C0_ovl3

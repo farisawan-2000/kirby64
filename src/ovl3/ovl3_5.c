@@ -81,7 +81,7 @@ s32 func_8016C558_ovl3(s32 arg0) {
     func_80121D3C_ovl3();
     func_801212A4_ovl3();
     if (D_800D6B54 == 0) {
-        if (D_800D6E50 != 0.0f) {
+        if (gKirbyHp != 0.0f) {
             if (gKirbyState.unk15C != 0) {
                 if (gKirbyState.unk14 == 0) {
                     func_8011D4A4_ovl3(gKirbyState.unk158, &gKirbyState);
@@ -2142,7 +2142,7 @@ void func_801708A0_ovl3(s32 arg0, s32 arg1, f32 arg2) {
             temp_f12 = (bitwise f32) gKirbyState.unk84;
             if (0.0f != temp_f12) {
                 if (temp_f12 < 0.0f) {
-                    temp_f0 = D_800D6E50;
+                    temp_f0 = gKirbyHp;
                     if (1.0f <= (temp_f0 + temp_f12)) {
                         func_800BBFE0_ovl3(temp_f12);
                     } else {
@@ -4366,7 +4366,7 @@ void func_80176490_ovl3(s32 arg0) {
             gKirbyState.unk30 = 0;
         }
     }
-    if ((0.0f == D_800D6E50) && (0.0f != ((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk7B20)) {
+    if ((0.0f == gKirbyHp) && (0.0f != ((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk7B20)) {
         func_800A7678(0xDC);
     } else {
         if (gKirbyState.unkD4 >= 2) {

@@ -4,13 +4,13 @@ glabel func_800A2CE4
 /* 04AF3C 800A2CEC 3C01800D */  lui   $at, %hi(D_800D6B88) # $at, 0x800d
 /* 04AF40 800A2CF0 240F0003 */  li    $t7, 3
 /* 04AF44 800A2CF4 AC2E6B88 */  sw    $t6, %lo(D_800D6B88)($at)
-/* 04AF48 800A2CF8 3C01800D */  lui   $at, %hi(D_800D6E4C) # $at, 0x800d
-/* 04AF4C 800A2CFC AC2F6E4C */  sw    $t7, %lo(D_800D6E4C)($at)
+/* 04AF48 800A2CF8 3C01800D */  lui   $at, %hi(gKirbyLives) # $at, 0x800d
+/* 04AF4C 800A2CFC AC2F6E4C */  sw    $t7, %lo(gKirbyLives)($at)
 /* 04AF50 800A2D00 3C0140C0 */  li    $at, 0x40C00000 # 6.000000
 /* 04AF54 800A2D04 44812000 */  mtc1  $at, $f4
-/* 04AF58 800A2D08 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
+/* 04AF58 800A2D08 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
 /* 04AF5C 800A2D0C 44800000 */  mtc1  $zero, $f0
-/* 04AF60 800A2D10 E4246E50 */  swc1  $f4, %lo(D_800D6E50)($at)
+/* 04AF60 800A2D10 E4246E50 */  swc1  $f4, %lo(gKirbyHp)($at)
 /* 04AF64 800A2D14 3C01800D */  lui   $at, %hi(D_800D6E54) # $at, 0x800d
 /* 04AF68 800A2D18 AC206E54 */  sw    $zero, %lo(D_800D6E54)($at)
 /* 04AF6C 800A2D1C 3C01800D */  lui   $at, %hi(D_800D6E58) # $at, 0x800d

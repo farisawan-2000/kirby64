@@ -878,10 +878,10 @@ glabel D_800D6E44
 glabel D_800D6E48
 .word 0x00000000
 
-glabel D_800D6E4C
+glabel gKirbyLives
 .word 0x00000000
 
-glabel D_800D6E50
+glabel gKirbyHp
 .word 0x00000000
 
 glabel D_800D6E54
