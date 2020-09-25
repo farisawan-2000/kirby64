@@ -309,7 +309,7 @@ block_2:
         *(&D_800E77A0 + (temp_v0 * 2)) = 5;
         *(&D_800E7880 + temp_v0) = 1;
     } else {
-        if (6.0f == D_800D6E50) {
+        if (6.0f == gKirbyHp) {
             *(&D_800E77A0 + (temp_v0 * 2)) = 9;
             *(&D_800E7880 + temp_v0) = 1;
         } else {

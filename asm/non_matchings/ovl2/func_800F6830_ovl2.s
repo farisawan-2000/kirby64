@@ -92,8 +92,8 @@ glabel func_800F6830_ovl2
 /* 07F404 800F6994 8F18E4F8 */  lw    $t8, %lo(D_800BE4F8)($t8)
 /* 07F408 800F6998 24010001 */  li    $at, 1
 /* 07F40C 800F699C 1701002C */  bne   $t8, $at, .L800F6A50_ovl2
-/* 07F410 800F69A0 3C01800D */   lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 07F414 800F69A4 C4306E50 */  lwc1  $f16, %lo(D_800D6E50)($at)
+/* 07F410 800F69A0 3C01800D */   lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 07F414 800F69A4 C4306E50 */  lwc1  $f16, %lo(gKirbyHp)($at)
 /* 07F418 800F69A8 44805000 */  mtc1  $zero, $f10
 /* 07F41C 800F69AC 00000000 */  nop   
 /* 07F420 800F69B0 46105032 */  c.eq.s $f10, $f16

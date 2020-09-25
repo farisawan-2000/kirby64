@@ -661,7 +661,7 @@ void *func_8011C8F8(void) {
     D_800D6F10 = 0;
     D_8012EADC = 0;
     D_8012EAE0 = 0;
-    ((*D_8004A7C4 * 4) + 0x800E0000)->unk7B20 = (f32) D_800D6E50;
+    ((*D_8004A7C4 * 4) + 0x800E0000)->unk7B20 = (f32) gKirbyHp;
     ((*D_8004A7C4 * 4) + 0x800F0000)->unk-76E0 = 1;
     ((*D_8004A7C4 * 4) + 0x800F0000)->unk-7520 = 0;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk7CE0 = 0;
@@ -1989,7 +1989,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120AF8_ovl2.s")
     if (gKirbyState.powerup != 0) {
         phi_v1 = 0;
         if (gKirbyState.powerupInUse == 0) {
-            gKirbyState.unkE0 = (s16) (u32) D_800D6E50;
+            gKirbyState.unkE0 = (s16) (u32) gKirbyHp;
             if (gKirbyState.unkDE == 0) {
                 gKirbyState.unkDE = (s16) (((gKirbyState.unkE0 * 4) + 0x80130000)->unk-7CB8 + 0x2D);
                 return 0;

@@ -106,11 +106,11 @@ glabel func_800BBC6C
 /* 063F5C 800BBD0C 3C01800C */  lui   $at, %hi(D_800BE4FC) # $at, 0x800c
 /* 063F60 800BBD10 AC2EE4FC */  sw    $t6, %lo(D_800BE4FC)($at)
 /* 063F64 800BBD14 8CAF0020 */  lw    $t7, 0x20($a1)
-/* 063F68 800BBD18 3C01800D */  lui   $at, %hi(D_800D6E4C) # $at, 0x800d
-/* 063F6C 800BBD1C AC2F6E4C */  sw    $t7, %lo(D_800D6E4C)($at)
+/* 063F68 800BBD18 3C01800D */  lui   $at, %hi(gKirbyLives) # $at, 0x800d
+/* 063F6C 800BBD1C AC2F6E4C */  sw    $t7, %lo(gKirbyLives)($at)
 /* 063F70 800BBD20 C4A40024 */  lwc1  $f4, 0x24($a1)
-/* 063F74 800BBD24 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 063F78 800BBD28 E4246E50 */  swc1  $f4, %lo(D_800D6E50)($at)
+/* 063F74 800BBD24 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 063F78 800BBD28 E4246E50 */  swc1  $f4, %lo(gKirbyHp)($at)
 /* 063F7C 800BBD2C 8CB80028 */  lw    $t8, 0x28($a1)
 /* 063F80 800BBD30 3C01800D */  lui   $at, %hi(D_800D6E54) # $at, 0x800d
 /* 063F84 800BBD34 AC386E54 */  sw    $t8, %lo(D_800D6E54)($at)

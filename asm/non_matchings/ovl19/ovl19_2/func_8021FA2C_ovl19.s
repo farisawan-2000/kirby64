@@ -52,8 +52,8 @@ glabel func_8021FA2C_ovl19
 .L8021FAE8_ovl19:
 /* 2401F8 8021FAE8 3C0140C0 */  li    $at, 0x40C00000 # 6.000000
 /* 2401FC 8021FAEC 44812000 */  mtc1  $at, $f4
-/* 240200 8021FAF0 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 240204 8021FAF4 C4266E50 */  lwc1  $f6, %lo(D_800D6E50)($at)
+/* 240200 8021FAF0 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 240204 8021FAF4 C4266E50 */  lwc1  $f6, %lo(gKirbyHp)($at)
 /* 240208 8021FAF8 3C01800E */ lui $at, %hi(D_800E77A0)
 /* 24020C 8021FAFC 00024840 */  sll   $t1, $v0, 1
 /* 240210 8021FB00 46062032 */  c.eq.s $f4, $f6

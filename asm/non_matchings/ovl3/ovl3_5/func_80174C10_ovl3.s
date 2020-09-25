@@ -302,7 +302,7 @@ glabel func_80174C10_ovl3
 /* 0D5AB0 80175070 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0D5AB4 80175074 8FA4002C */  lw    $a0, 0x2c($sp)
 /* 0D5AB8 80175078 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0D5ABC 8017507C 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0D5ABC 8017507C 0C02A9E3 */  jal   func_800AA78C
 /* 0D5AC0 80175080 3C064040 */   lui   $a2, 0x4040
 /* 0D5AC4 80175084 0C02BB30 */  jal   func_800AECC0_ovl3
 /* 0D5AC8 80175088 C7AC001C */   lwc1  $f12, 0x1c($sp)

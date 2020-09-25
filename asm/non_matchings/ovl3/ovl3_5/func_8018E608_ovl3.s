@@ -132,7 +132,7 @@ glabel func_8018E608_ovl3
 /* 0EF244 8018E804 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0EF248 8018E808 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
 /* 0EF24C 8018E80C 02202025 */  move  $a0, $s1
-/* 0EF250 8018E810 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF250 8018E810 0C02A9E3 */  jal   func_800AA78C
 /* 0EF254 8018E814 3C0640C0 */   lui   $a2, 0x40c0
 /* 0EF258 8018E818 3C050002 */  lui   $a1, (0x0002004E >> 16) # lui $a1, 2
 /* 0EF25C 8018E81C 34A5004E */  ori   $a1, (0x0002004E & 0xFFFF) # ori $a1, $a1, 0x4e
@@ -196,13 +196,13 @@ glabel func_8018E608_ovl3
 /* 0EF334 8018E8F4 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0EF338 8018E8F8 4406A000 */  mfc1  $a2, $f20
 /* 0EF33C 8018E8FC 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0EF340 8018E900 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF340 8018E900 0C02A9E3 */  jal   func_800AA78C
 /* 0EF344 8018E904 02802025 */   move  $a0, $s4
 /* 0EF348 8018E908 10000004 */  b     .L8018E91C_ovl3
 /* 0EF34C 8018E90C 00000000 */   nop   
 .L8018E910_ovl3:
 /* 0EF350 8018E910 4406A000 */  mfc1  $a2, $f20
-/* 0EF354 8018E914 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF354 8018E914 0C02A9E3 */  jal   func_800AA78C
 /* 0EF358 8018E918 34A50007 */   ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
 .L8018E91C_ovl3:
 /* 0EF35C 8018E91C 10000002 */  b     .L8018E928_ovl3
@@ -306,7 +306,7 @@ glabel func_8018E608_ovl3
 /* 0EF4C0 8018EA80 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0EF4C4 8018EA84 4406A000 */  mfc1  $a2, $f20
 /* 0EF4C8 8018EA88 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0EF4CC 8018EA8C 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF4CC 8018EA8C 0C02A9E3 */  jal   func_800AA78C
 /* 0EF4D0 8018EA90 02202025 */   move  $a0, $s1
 /* 0EF4D4 8018EA94 3C050002 */  lui   $a1, (0x0002005A >> 16) # lui $a1, 2
 /* 0EF4D8 8018EA98 34A5005A */  ori   $a1, (0x0002005A & 0xFFFF) # ori $a1, $a1, 0x5a
@@ -500,7 +500,7 @@ glabel func_8018E608_ovl3
 /* 0EF7AC 8018ED6C 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0EF7B0 8018ED70 4406A000 */  mfc1  $a2, $f20
 /* 0EF7B4 8018ED74 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
-/* 0EF7B8 8018ED78 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF7B8 8018ED78 0C02A9E3 */  jal   func_800AA78C
 /* 0EF7BC 8018ED7C 3484004B */   ori   $a0, (0x0002004B & 0xFFFF) # ori $a0, $a0, 0x4b
 /* 0EF7C0 8018ED80 3C040002 */  lui   $a0, (0x0002004B >> 16) # lui $a0, 2
 /* 0EF7C4 8018ED84 3C050002 */  lui   $a1, (0x0002004C >> 16) # lui $a1, 2
@@ -610,7 +610,7 @@ glabel func_8018E608_ovl3
 /* 0EF958 8018EF18 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
 /* 0EF95C 8018EF1C 34A50007 */  ori   $a1, (0x00020007 & 0xFFFF) # ori $a1, $a1, 7
 /* 0EF960 8018EF20 02002025 */  move  $a0, $s0
-/* 0EF964 8018EF24 0C02A9E3 */  jal   func_800AA78C_ovl3
+/* 0EF964 8018EF24 0C02A9E3 */  jal   func_800AA78C
 /* 0EF968 8018EF28 3C0640C0 */   lui   $a2, 0x40c0
 /* 0EF96C 8018EF2C 3C050002 */  lui   $a1, (0x00020058 >> 16) # lui $a1, 2
 /* 0EF970 8018EF30 34A50058 */  ori   $a1, (0x00020058 & 0xFFFF) # ori $a1, $a1, 0x58

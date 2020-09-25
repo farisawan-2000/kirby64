@@ -1640,7 +1640,8 @@ void func_80101400_ovl2(u32 numFloorNorms);
 
 // TODO: fix types; fill the stack
 #ifdef NON_MATCHING
-u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
+u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal **arg2, s32 *arg3) {
+    u32 filler[0x76];
     struct ColStateUnk4 sp9C;
     s32 sp94;
     s32 sp90;
@@ -1648,20 +1649,10 @@ u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
     s32 sp88;
     struct CollisionTriangle *sp78;
     Vector sp68;
-    f32 *temp_a2;
-    f32 *temp_s7;
     f32 temp_f20;
-    f32 temp_f22;
-    s32 *temp_s6;
     struct Normal *temp_s0;
     s32 temp_s2;
-    s32 temp_v1;
-    struct CollisionState *temp_v0;
     u16 temp_s1;
-    u16 temp_t7;
-    u32 temp_s4;
-    u16 *temp_v1_2;
-    s32 phi_s3;
     f32 phi_f22;
     u32 phi_s4;
 
@@ -1677,7 +1668,7 @@ u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
             sp8C = gCollisionState->unk30->header.Triangle_Norm_Cells;
             // phi_f22 = *arg0;
             // temp_s7 = &sp68;
-            temp_s6 = &sp88;
+            //temp_s6 = &sp88;
             for(phi_s4 = 0; phi_s4 < gCollisionState->numCells; phi_s4++) {
                 temp_s1 = gCollisionState->unk4[phi_s4].cell;
                 // sp88 = gCollisionState->numCells = sp8C[temp_s1 * 4 + 3];
@@ -1685,11 +1676,11 @@ u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
                 if (sp88 != 0) {
                     temp_f20 = gCollisionState->unk4[phi_s4].projection;
                     if (temp_f20 < phi_f22) {
-                        temp_s0 = &gCollisionState->unk30->header.Triangle_Normals[*temp_v1_2];
+                        temp_s0 = &gCollisionState->unk30->header.Triangle_Normals[sp8C[temp_s1 * 4]];
                         sp68.x = (gCollisionState->deltaPos.x * temp_f20) + gCollisionState->currPos.x;
                         sp68.y = (gCollisionState->deltaPos.y * temp_f20) + gCollisionState->currPos.y;
                         sp68.z = (gCollisionState->deltaPos.z * temp_f20) + gCollisionState->currPos.z;
-                        temp_s2 = func_80102570_ovl2(temp_s0, temp_s6, &sp68, gCollisionState->unk3C, &sp78);
+                        temp_s2 = func_80102570_ovl2(temp_s0, &sp88, &sp68, gCollisionState->unk3C, &sp78);
                         if (sp78 != 0) {
                             if (gCollisionState->unk40(sp78, temp_s0, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
                                 sp94 = temp_s1;
@@ -1697,7 +1688,7 @@ u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
                                 phi_f22 = temp_f20;
                             } else if (temp_s2 != 0) {
                                 sp88++;
-                                func_80102570_ovl2(temp_s0, temp_s6, &sp68, gCollisionState->unk3C, &sp78);
+                                func_80102570_ovl2(temp_s0, &sp88, &sp68, gCollisionState->unk3C, &sp78);
                                 if (sp78 != 0) {
                                     if (gCollisionState->unk40(sp78, temp_s0, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
                                         sp94 = temp_s1;
@@ -1712,7 +1703,7 @@ u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal *arg2, s32 *arg3) {
             }
             if (phi_f22 != *arg0) {
                 if (arg2 != 0) {
-                    arg2->x = gCollisionState->unk30->header.Triangle_Normals[sp8C[sp94]].x;
+                    *arg2 = &gCollisionState->unk30->header.Triangle_Normals[sp8C[sp94 * 4]];
                 }
                 if (arg3 != 0) {
                     arg3[0] = sp90;
@@ -9383,7 +9374,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80110138_ovl2.s")
                         }
                         if (D_8012E7C5 != 0x15) {
                             if (func_801103C4_ovl2(temp_s0) == 0) {
-                                if (0.0f != D_800D6E50) {
+                                if (0.0f != gKirbyHp) {
                                     goto block_12;
                                 }
                             }
@@ -9400,7 +9391,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80110138_ovl2.s")
                             arg0->unk18 = sp54;
                             return 1;
                         }
-                        if (0.0f != D_800D6E50) {
+                        if (0.0f != gKirbyHp) {
                             goto block_20;
                         }
                     } else {

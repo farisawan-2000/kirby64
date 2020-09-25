@@ -48,8 +48,8 @@ glabel func_8011C8F8
 /* 0A5420 8011C9B0 3C018013 */  lui   $at, %hi(D_8012EAE0) # $at, 0x8013
 /* 0A5424 8011C9B4 AC20EAE0 */  sw    $zero, %lo(D_8012EAE0)($at)
 /* 0A5428 8011C9B8 8C4D0000 */  lw    $t5, ($v0)
-/* 0A542C 8011C9BC 3C01800D */  lui   $at, %hi(D_800D6E50) # $at, 0x800d
-/* 0A5430 8011C9C0 C4246E50 */  lwc1  $f4, %lo(D_800D6E50)($at)
+/* 0A542C 8011C9BC 3C01800D */  lui   $at, %hi(gKirbyHp) # $at, 0x800d
+/* 0A5430 8011C9C0 C4246E50 */  lwc1  $f4, %lo(gKirbyHp)($at)
 /* 0A5434 8011C9C4 3C01800E */  lui   $at, 0x800e
 /* 0A5438 8011C9C8 000D7880 */  sll   $t7, $t5, 2
 /* 0A543C 8011C9CC 002F0821 */  addu  $at, $at, $t7
