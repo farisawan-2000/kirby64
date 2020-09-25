@@ -139,7 +139,7 @@ glabel func_801105E8_ovl2
 /* 09924C 801107DC AFA70020 */   sw    $a3, 0x20($sp)
 /* 099250 801107E0 8FA70020 */  lw    $a3, 0x20($sp)
 /* 099254 801107E4 C4EC0008 */  lwc1  $f12, 8($a3)
-/* 099258 801107E8 0C02EFF8 */  jal   func_800BBFE0_ovl2
+/* 099258 801107E8 0C02EFF8 */  jal   change_kirby_hp
 /* 09925C 801107EC 46006307 */   neg.s $f12, $f12
 /* 099260 801107F0 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 099264 801107F4 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840
