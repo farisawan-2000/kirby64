@@ -1530,11 +1530,9 @@ asm/non_matchings/ovl2_8/func_8011C4E8_ovl2.s
 asm/non_matchings/ovl2_8/func_8011C720.s
 asm/non_matchings/ovl2_8/func_8011C838_ovl2.s
 asm/non_matchings/ovl2_8/func_8011C87C_ovl2.s
-asm/non_matchings/ovl2_8/func_8011C8D0.s
 asm/non_matchings/ovl2_8/func_8011C8F8.s
 asm/non_matchings/ovl2_8/func_8011CCB8.s
 asm/non_matchings/ovl2_8/func_8011CF58_ovl2.s
-asm/non_matchings/ovl2_8/func_8011CFE0_ovl2.s
 asm/non_matchings/ovl2_8/func_8011CFF4.s
 asm/non_matchings/ovl2_8/func_8011D0FC_ovl2.s
 asm/non_matchings/ovl2_8/func_8011D40C_ovl2.s
@@ -1547,10 +1545,8 @@ asm/non_matchings/ovl2_8/func_8011DAF8.s
 asm/non_matchings/ovl2_8/func_8011DC04_ovl2.s
 asm/non_matchings/ovl2_8/func_8011DC30_ovl2.s
 asm/non_matchings/ovl2_8/func_8011DCD0.s
-asm/non_matchings/ovl2_8/func_8011DD18.s
 asm/non_matchings/ovl2_8/func_8011DD5C_ovl2.s
 asm/non_matchings/ovl2_8/func_8011E0E8_ovl2.s
-asm/non_matchings/ovl2_8/func_8011E190_ovl2.s
 asm/non_matchings/ovl2_8/func_8011E1E8_ovl2.s
 asm/non_matchings/ovl2_8/func_8011E234_ovl2.s
 asm/non_matchings/ovl2_8/func_8011E244.s
@@ -1602,8 +1598,6 @@ asm/non_matchings/ovl2_8/func_80122CE8_ovl2.s
 asm/non_matchings/ovl2_8/func_80122FB0.s
 asm/non_matchings/ovl2_8/func_80123004_ovl2.s
 asm/non_matchings/ovl2_8/func_8012307C_ovl2.s
-asm/non_matchings/ovl2_8/func_801230E8_ovl2.s
-asm/non_matchings/ovl2_8/func_8012310C_ovl2.s
 asm/non_matchings/ovl2_8/func_80123144_ovl2.s
 asm/non_matchings/ovl2_8/func_80123170_ovl2.s
 asm/non_matchings/ovl2_8/func_801231D8.s
