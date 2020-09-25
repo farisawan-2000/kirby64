@@ -9696,7 +9696,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                     arg0 = phi_a3;
                     func_8011DC5C_ovl2(0x15, arg1, phi_a3);
                     temp_a3_2 = arg0;
-                    if (func_800BBFE0_ovl2(-arg0->unk8, arg0) == 0) {
+                    if (change_kirby_hp(-arg0->unk8, arg0) == 0) {
                         if (gKirbyState.unk5 != 0x15) {
                             D_800E83E0 = 1;
                             if (gKirbyState.unk28 == 0) {
