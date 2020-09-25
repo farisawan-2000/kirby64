@@ -15,6 +15,11 @@ struct PositionState {
 /*0x57*/ u8     unkPad2[3]; //0x000000 constant
 /*0x58*/ u32    VI_Timer; //the VI
 };
+extern struct PositionState gPositionState;
+extern struct KirbyState gKirbyState;
 extern f32 D_80128EFC,D_80128EF8;
+extern u32 D_800BE4F0, D_800D6F34;
+
+void func_8012310C_ovl2(s32 currentInhale);
 
 #endif

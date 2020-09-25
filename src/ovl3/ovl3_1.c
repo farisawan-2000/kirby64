@@ -336,7 +336,7 @@ s32 func_80152828_ovl3(void *arg0, void *arg1) {
         temp_a2->unk1C = (f32) arg0->unk10;
         temp_a2->unk20 = (f32) arg0->unkC;
     }
-    if ((gKirbyState.unk34 & 1) != 0) {
+    if ((gKirbyState.isTurning & 1) != 0) {
         temp_a2->unk24 = (f32) gKirbyState.unk7C;
     } else {
         temp_a2->unk24 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0;
@@ -1136,7 +1136,7 @@ s32 func_80153B98_ovl3(void) {
         gPositionState.unk1C = (f32) temp_a1->unk490->unk4->unk10;
         gPositionState.unk20 = (f32) temp_a1->unk490->unk4->unkC;
     }
-    if ((gKirbyState.unk34 & 1) != 0) {
+    if ((gKirbyState.isTurning & 1) != 0) {
         gPositionState.unk24 = (f32) gKirbyState.unk7C;
     } else {
         gPositionState.unk24 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0;
@@ -1257,7 +1257,7 @@ s32 func_80153FC8_ovl3(void) {
         gPositionState.unk1C = (f32) temp_a1->unk490->unk4->unk10;
         gPositionState.unk20 = (f32) temp_a1->unk490->unk4->unkC;
     }
-    if ((gKirbyState.unk34 & 1) != 0) {
+    if ((gKirbyState.isTurning & 1) != 0) {
         gPositionState.unk24 = (f32) gKirbyState.unk7C;
     } else {
         gPositionState.unk24 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0;

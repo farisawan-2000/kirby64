@@ -9614,7 +9614,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                 }
                 gKirbyState.unk24 = 1;
                 func_80122F94_ovl2(0x15, 0x16, arg0);
-                gKirbyState.unk34 = (s32)(gKirbyState.unk34 & -8);
+                gKirbyState.isTurning = (s32)(gKirbyState.isTurning & -8);
                 func_8011DC5C_ovl2();
             block_31:
                 phi_v1 = &gKirbyState;
@@ -9693,7 +9693,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                 if (0.0f == phi_a3->unk8) {
                     gKirbyState.unk24 = 1;
                     func_80122F94_ovl2(0x15, 0x16, phi_a3);
-                    gKirbyState.unk34 = (s32)(gKirbyState.unk34 & -8);
+                    gKirbyState.isTurning = (s32)(gKirbyState.isTurning & -8);
                     func_8011DC5C_ovl2();
                     func_800A7678(0x1E9);
                     goto block_31;
@@ -9728,7 +9728,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                         if (gKirbyState.unk28 == 0) {
                             arg0 = temp_a3_2;
                             func_80122F94_ovl2(0x14, 0x16, temp_a3_2);
-                            gKirbyState.unk34 = (s32)(gKirbyState.unk34 & -8);
+                            gKirbyState.isTurning = (s32)(gKirbyState.isTurning & -8);
                             phi_v1 = &gKirbyState;
                             if (0.0f != arg0->unk8) {
                                 func_80120BCC_ovl2(arg0);

@@ -108,8 +108,8 @@ block_10:
         if (gKirbyState.powerupInUse != 0x13) {
             if (D_800D6FAC == 0) {
                 if ((D_800D6FE8.unk2 & 0x8000) != 0) {
-                    if (gKirbyState.unk1C != 0) {
-                        if (gKirbyState.unk4 == 0) {
+                    if (gKirbyState.floatTimer != 0) {
+                        if (gKirbyState.action == 0) {
                             if ((temp_v0 + 0x800F0000)->unk-76E0 == 0) {
                                 gKirbyState.unk7 = (u8)0;
                                 gKirbyState.unk44 = 0;
