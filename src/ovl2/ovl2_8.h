@@ -17,8 +17,12 @@ struct PositionState {
 };
 extern struct PositionState gPositionState;
 extern struct KirbyState gKirbyState;
-extern f32 D_80128EFC,D_80128EF8;
+extern f32 D_80128EFC, D_80128EF8;
 extern u32 D_800BE4F0, D_800D6F34;
+extern u32 D_8012E818, D_8012E81C, D_8012E820, D_8012E824, D_800E8920;
+extern s16 D_8012E922;
+extern u16 D_8012E8C2;
+extern u8 D_8012E9B8;
 
 void func_8012310C_ovl2(s32 currentInhale);
 
