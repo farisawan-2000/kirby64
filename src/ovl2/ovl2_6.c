@@ -1638,10 +1638,10 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80102570_ovl2.s")
 void func_80101400_ovl2(u32 numFloorNorms);
 
 
-// TODO: fix types; fill the stack
+// TODO: regalloc
 #ifdef NON_MATCHING
 u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal **arg2, s32 *arg3) {
-    u32 filler[0x76];
+    u8 filler[0x1D8];
     struct ColStateUnk4 sp9C;
     s32 sp94;
     s32 sp90;
