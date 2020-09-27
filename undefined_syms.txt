@@ -779,7 +779,6 @@ crash_screen_draw_rect = 0x80021D34;
 func_80022248 = 0x80022248;
 crash_screen_print_fpcsr = 0x800221BC;
 crash_screen_print_float_reg = 0x80022134;
-__osGetCurrFaultedThread = 0x80034CF0;
 func_80022A58 = 0x80022A58;
 D_80096ED8 = 0x80096ED8;
 get_crashed_thread = 0x800229CC;
@@ -897,9 +896,7 @@ D_8002C044 = 0x8002C044;
 func_8002C9FC = 0x8002C9FC;
 func_8002A508 = 0x8002A508;
 func_800275C0 = 0x800275C0;
-__osDisableInt = 0x80035360;
 __osEnqueueAndYield = 0x8002E58C;
-__osRestoreInt = 0x80035380;
 D_A430000C = 0xA430000C;
 D_80097950 = 0x80097950;
 func_8002D8A0 = 0x8002D8A0;
@@ -1023,7 +1020,6 @@ __osBaseCounter = 0x8009A208;
 D_8009A204 = 0x8009A204;
 __osCurrentTime = 0x8009A200;
 __osViIntrCount = 0x8009A20C;
-__osSetCompare = 0x80034CE0;
 __osTimerCounter = 0x8009A210;
 __osSetTimerIntr = 0x800348A4;
 __osInsertTimer = 0x80034918;
@@ -1074,7 +1070,6 @@ D_A4100004 = 0xA4100004;
 
 
 D_80038B00 = 0x80038B00;
-__osViInit = 0x800353A0;
 
 retrace = 0x8009B4F0;
 func_80039124 = 0x80039124;

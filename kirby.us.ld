@@ -69,11 +69,14 @@ SECTIONS
       BUILD_DIR/libultra.a:setglobalintmask.o(.text);
       BUILD_DIR/libultra.a:aisetfreq.o(.text);
       BUILD_DIR/libultra.a:normalize.o(.text);
-      BUILD_DIR/asm/ovl0/last_2_ovl0_funcs.o(.text);
-
+      BUILD_DIR/libultra.a:setcompare.o(.text);
+      BUILD_DIR/libultra.a:getactivequeue.o(.text);
       BUILD_DIR/libultra.a:bcopy.o(.text);
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
+      BUILD_DIR/asm/ovl0/1_func_after_bcopy.o(.text);
+      BUILD_DIR/libultra.a:interrupt.o(.text);
+      
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
       BUILD_DIR/libultra.a:epirawwrite.o(.text);

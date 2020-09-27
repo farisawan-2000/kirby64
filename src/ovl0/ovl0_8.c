@@ -626,7 +626,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_800222C4.s")
 OSThread *get_crashed_thread(void) {
     OSThread *thread;
 
-    thread = __osGetCurrFaultedThread();
+    thread = __osGetActiveQueue();
     while (thread->priority != -1) {
         if (thread->priority > OS_PRIORITY_IDLE && thread->priority < OS_PRIORITY_MAX
             && (thread->flags & 3) != 0) {
