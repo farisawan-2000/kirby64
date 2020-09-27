@@ -3,7 +3,7 @@
 .set gp=64
 .include "macros.inc"
 
-.section .text, "ax" 
+.section .text, "ax"  
 
 glabel osCreateViManager
 /* 039580 80038980 27BDFFD0 */  addiu $sp, $sp, -0x30

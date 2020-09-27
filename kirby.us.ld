@@ -63,9 +63,18 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
-
-      /* TODO: fix a nonmatching  */
-      /*BUILD_DIR/libultra.a:timerintr.o(.text);*/
+      BUILD_DIR/libultra.a:sp.o(.text);
+      BUILD_DIR/libultra.a:si.o(.text);
+      BUILD_DIR/libultra.a:jammesg.o(.text);
+      BUILD_DIR/libultra.a:setthreadpri.o(.text);
+      BUILD_DIR/libultra.a:getthreadpri.o(.text);
+      BUILD_DIR/libultra.a:viswapbuf.o(.text);
+      BUILD_DIR/libultra.a:mtxcatf.o(.text);
+      BUILD_DIR/libultra.a:epirawdma.o(.text);
+      BUILD_DIR/libultra.a:sptaskyielded.o(.text);
+      BUILD_DIR/libultra.a:bcmp.o(.text);
+      BUILD_DIR/libultra.a:gettime.o(.text);
+      BUILD_DIR/libultra.a:timerintr.o(.text);
       BUILD_DIR/libultra.a:setglobalintmask.o(.text);
       BUILD_DIR/libultra.a:aisetfreq.o(.text);
       BUILD_DIR/libultra.a:normalize.o(.text);
@@ -88,6 +97,7 @@ SECTIONS
       BUILD_DIR/libultra.a:cosf.o(.text);
       BUILD_DIR/libultra.a:settime.o(.text);
       BUILD_DIR/libultra.a:visetevent.o(.text);
+      BUILD_DIR/libultra.a:cartrominit.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
@@ -115,6 +125,7 @@ SECTIONS
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
+      BUILD_DIR/libultra.a:timerintr.o(.data);
 
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
@@ -133,7 +144,10 @@ SECTIONS
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
+      BUILD_DIR/libultra.a:timerintr.o(.bss);
+      BUILD_DIR/libultra.a:cartrominit.o(.bss);
       /*BUILD_DIR/libultra.a:vimgr.o(.bss);*/
+      BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
       BUILD_DIR/asm/ovl0/vimgr_bss.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss_end.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
