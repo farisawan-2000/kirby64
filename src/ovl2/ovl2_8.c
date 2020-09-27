@@ -616,8 +616,8 @@ void *func_8011C87C_ovl2(void) {
     void *phi_a0;
 
     gKirbyState.unk4 = (u8)0;
-    gKirbyState.isHoldingObject = 0;
-    gKirbyState.unkA8 = 0;
+    gKirbyState.isHoldingEntity = 0;
+    gKirbyState.inhaledEntityData = 0;
     gKirbyState.secondInhale = 0;
     gKirbyState.firstInhale = 0;
     gKirbyState.currentInhale = 0;
@@ -673,11 +673,11 @@ void *func_8011C8F8(void) {
     gKirbyState.previousAction = (u8)0;
     temp_t7 = 0 & 0xFF;
     if (D_800BE4F0 == 0x21) {
-        gKirbyState.powerupInUse = 0;
-        gKirbyState.powerup = 0;
+        gKirbyState.abilityInUse = 0;
+        gKirbyState.ability = 0;
     } else {
-        gKirbyState.powerupInUse = 0;
-        gKirbyState.powerup = (s32) D_800D6E54;
+        gKirbyState.abilityInUse = 0;
+        gKirbyState.ability = (s32) D_800D6E54;
     }
     gKirbyState.unk7 = (u8)0;
     gKirbyState.unk24 = 0;
@@ -715,7 +715,7 @@ void *func_8011C8F8(void) {
     gKirbyState.unkDE = (u16)0;
     gKirbyState.unk70 = 0;
     gKirbyState.unk74 = 0;
-    gKirbyState.powerupState = (u8)0;
+    gKirbyState.abilityState = (u8)0;
     gKirbyState.unk18 = (s8) temp_t7;
     gKirbyState.unk17 = (s8) temp_t7;
     gKirbyState.unkB = (u8)0;
@@ -1217,8 +1217,8 @@ void func_8011DCD0(void) {
 
 void func_8011DD18(s32 arg0) {
     if (D_800BE4F0 != 0x21) {
-        if (arg0 != gKirbyState.powerup) {
-            gKirbyState.powerup = arg0;
+        if (arg0 != gKirbyState.ability) {
+            gKirbyState.ability = arg0;
             func_8012310C_ovl2(arg0);
         }
     }
@@ -1258,7 +1258,7 @@ void func_8011DD5C_ovl2(void *arg0, void *arg1) {
         gKirbyState.unk13C = 0.0f;
         gKirbyState.unk153 = (u8)0;
         gKirbyState.unk138 = (f32) gKirbyState.unk13C;
-        if (gKirbyState.powerupInUse != 0x1B) {
+        if (gKirbyState.abilityInUse != 0x1B) {
             if (gKirbyState.unk102 != 0x12) {
                 if (gKirbyState.unk102 != 0x13) {
 block_15:
@@ -1292,7 +1292,7 @@ block_15:
         *arg0 = 0.0f;
         return;
     }
-    if (gKirbyState.powerupInUse == 2) {
+    if (gKirbyState.abilityInUse == 2) {
 block_20:
         *arg1 = 0.0f;
         *arg0 = 0.0f;
@@ -1300,13 +1300,13 @@ block_20:
         gKirbyState.unk138 = (f32) gKirbyState.unk13C;
         return;
     }
-    if (gKirbyState.powerupInUse == 0xF) {
+    if (gKirbyState.abilityInUse == 0xF) {
         goto block_20;
     }
-    if (gKirbyState.powerupInUse == 0x14) {
+    if (gKirbyState.abilityInUse == 0x14) {
         goto block_20;
     }
-    if (gKirbyState.powerupInUse == 0x1B) {
+    if (gKirbyState.abilityInUse == 0x1B) {
         goto block_20;
     }
     if ((gKirbyState.isTurning & 0x4000) != 0) {
@@ -1414,7 +1414,7 @@ void func_8011E190_ovl2(void) {
 		temp_a0 = gKirbyState.currentInhale;
 		temp_v0 = gKirbyState.currentInhale;
         if (temp_v0 != 0) {
-            gKirbyState.powerup = (s32) gKirbyState.currentInhale;
+            gKirbyState.ability = (s32) gKirbyState.currentInhale;
             func_8012310C_ovl2(temp_a0);
         }
         gKirbyState.secondInhale = 0;
@@ -1538,7 +1538,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011E374.s")
 f32 func_8011E438(void) {
     gKirbyState.unk4 = (u8)0;
     gKirbyState.unk17 = (u8)1;
-    gKirbyState.powerupInUse = 0;
+    gKirbyState.abilityInUse = 0;
     func_80122F94_ovl2(0x48, 0x1C);
     D_800E6850 = 0.0f;
     D_800E6690 = (f32) D_800E6850;
@@ -1558,14 +1558,14 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011E438.s")
 void func_8011E4E4(u32 arg0) {
     gKirbyState.unk17 = 1;
     gKirbyState.unk18 = 1;
-    gKirbyState.powerupState = arg0;
+    gKirbyState.abilityState = arg0;
     gKirbyState.unk68 = 1;
 }
 
 void func_8011E504(void) {
     gKirbyState.unk17 = 0;
     gKirbyState.unk18 = 0;
-    gKirbyState.powerupState = 0;
+    gKirbyState.abilityState = 0;
     gKirbyState.unk24 = 0;
     gKirbyState.unk68 = 0;
 }
@@ -1612,7 +1612,7 @@ f32 func_8011E548_ovl2(void) {
                 phi_f14 = *(void *)0x80130000;
             }
             if (D_800D6FAC == 0) {
-                if (gKirbyState.powerupInUse == 0) {
+                if (gKirbyState.abilityInUse == 0) {
                     if ((D_800D6FEA & 0x4000) != 0) {
                         gKirbyState.unkA = (u8)1;
                     }
@@ -1725,7 +1725,7 @@ f32 func_8011E978_ovl2(f32 arg0, f32 arg1) {
     phi_return = (bitwise f32) gKirbyState.isTurning;
     if ((gKirbyState.isTurning & 1) != 0) {
         if (D_800D6FAC == 0) {
-            if (gKirbyState.powerupInUse == 0) {
+            if (gKirbyState.abilityInUse == 0) {
                 if ((D_800D6FEA & 0x4000) != 0) {
                     gKirbyState.unkA = (u8)1;
                 }
@@ -1924,18 +1924,18 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120AF8_ovl2.s")
     ? phi_v1;
 
     phi_v1 = 0;
-    if (gKirbyState.powerup != 0) {
+    if (gKirbyState.ability != 0) {
         phi_v1 = 0;
-        if (gKirbyState.powerupInUse == 0) {
+        if (gKirbyState.abilityInUse == 0) {
             gKirbyState.unkE0 = (s16) (u32) gKirbyHp;
             if (gKirbyState.unkDE == 0) {
                 gKirbyState.unkDE = (s16) (((gKirbyState.unkE0 * 4) + 0x80130000)->unk-7CB8 + 0x2D);
                 return 0;
             }
-            gKirbyState.unkDD = (s8) gKirbyState.powerup;
+            gKirbyState.unkDD = (s8) gKirbyState.ability;
             gKirbyState.unkDE = (u16)0;
             gKirbyState.unkDC = (u8)1;
-            gKirbyState.powerup = 0;
+            gKirbyState.ability = 0;
             phi_v1 = 1;
         }
     }
@@ -2147,11 +2147,11 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121194_ovl2.s")
 //generated by mips_to_c commit 09d006c9da5d6bbcd31ac6ca5c9165c1a8533a83
 ? func_8012122C_ovl2(void) {
     if (gKirbyState.unk17 != 0) {
-        if (gKirbyState.powerupState != 0) {
+        if (gKirbyState.abilityState != 0) {
             return 3;
         }
     }
-    if (gKirbyState.powerupState != 0) {
+    if (gKirbyState.abilityState != 0) {
         return 2;
     }
     if (gKirbyState.unk17 != 0) {
@@ -2166,7 +2166,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8012122C_ovl2.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 09d006c9da5d6bbcd31ac6ca5c9165c1a8533a83
 void *func_80121284_ovl2(s8 arg0) {
-    if (gKirbyState.powerupState == 0) {
+    if (gKirbyState.abilityState == 0) {
         gKirbyState.unk17 = arg0;
     }
     return &gKirbyState;
@@ -2722,9 +2722,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
                 func_8010DC00_ovl2(sp38, &sp54);
                 if (sp58 == 0.0f) {
                     if (0.0f < temp_f0) {
-                        if (gKirbyState.powerupInUse != 6) {
-                            if (gKirbyState.powerupInUse != 0x1B) {
-                                if (gKirbyState.powerupInUse != 0x21) {
+                        if (gKirbyState.abilityInUse != 6) {
+                            if (gKirbyState.abilityInUse != 0x1B) {
+                                if (gKirbyState.abilityInUse != 0x21) {
                                     if (-1.0f == ((*D_8004A7C4 * 4) + 0x800E0000)->unk6A10) {
                                         if ((gKirbyState.isTurning & 1) == 0) {
                                             gKirbyState.isTurning = (s32) (gKirbyState.isTurning | 1);
@@ -2739,9 +2739,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
                         }
                         gKirbyState.unkB = (u8)4;
                     } else {
-                        if (gKirbyState.powerupInUse != 6) {
-                            if (gKirbyState.powerupInUse != 0x1B) {
-                                if (gKirbyState.powerupInUse != 0x21) {
+                        if (gKirbyState.abilityInUse != 6) {
+                            if (gKirbyState.abilityInUse != 0x1B) {
+                                if (gKirbyState.abilityInUse != 0x21) {
                                     if (1.0f == ((*D_8004A7C4 * 4) + 0x800E0000)->unk6A10) {
                                         if ((gKirbyState.isTurning & 1) == 0) {
                                             gKirbyState.isTurning = (s32) (gKirbyState.isTurning | 1);

@@ -565,9 +565,9 @@ block_35:
         gKirbyState.unkB = (u8)0;
         D_800BE4FC = 0;
         phi_return = &gKirbyState;
-        if (gKirbyState.powerupState != 0) {
+        if (gKirbyState.abilityState != 0) {
             gKirbyState.unk17 = (u8)1;
-            phi_return = func_80122F6C_ovl3(gKirbyState.powerupState, 0x1C, phi_a3);
+            phi_return = func_80122F6C_ovl3(gKirbyState.abilityState, 0x1C, phi_a3);
         }
     }
     return phi_return;
@@ -789,7 +789,7 @@ block_6:
     }
     if (gKirbyState.unk44 != 0) {
         temp_ret = func_80122F6C_ovl3(0, 1);
-        gKirbyState.powerupState = (u8)0;
+        gKirbyState.abilityState = (u8)0;
         phi_return = temp_ret;
     }
     return phi_return;
@@ -1072,7 +1072,7 @@ void *func_80158B10_ovl3(s32 arg0) {
             return &gKirbyState;
         }
         gKirbyState.unk17 = (u8)1;
-        gKirbyState.powerupState = (u8)0;
+        gKirbyState.abilityState = (u8)0;
         gKirbyState.unk0 = -1;
         D_800D6FB2 = (s16) (u8)1;
         gKirbyState.unk44 = -1;
@@ -1109,7 +1109,7 @@ void func_80158CA8_ovl3(s32 arg0) {
     temp_v1 = *D_8004A7C4 * 4;
     (temp_v1 + 0x800E0000)->unk3210 = (f32) *(&D_800E3750 + temp_v1);
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3C90 = (f32) D_80196F70;
-    gKirbyState.powerupState = (u8)0;
+    gKirbyState.abilityState = (u8)0;
     gKirbyState.unk0 = -1;
     D_800D6FB2 = (u16)1;
     gKirbyState.unk44 = -1;
@@ -1158,7 +1158,7 @@ void func_80158EEC_ovl3(s32 arg0) {
         temp_v1 = (*D_8004A7C4 * 4) + &D_800E9720;
         *temp_v1 = (s32) (*temp_v1 - 1);
         if (*temp_v1 == 0) {
-            gKirbyState.powerupState = (u8)0;
+            gKirbyState.abilityState = (u8)0;
             gKirbyState.unk17 = (u8)1;
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk5F90 = 3;
             *(&D_800E6D90 + (*D_8004A7C4 * 4)) = (f32) D_80196F78;
@@ -1524,7 +1524,7 @@ void *func_80159EF0_ovl3(s32 arg0) {
         func_80122F6C_ovl3(0, 1);
         func_80152348_ovl3(0x41A00000);
         gKirbyState.unk17 = (u8)0;
-        gKirbyState.powerupState = (u8)0;
+        gKirbyState.abilityState = (u8)0;
         gKirbyState.unk24 = 0;
         gKirbyState.unk68 = (u16)0;
         ((*D_8004A7C4 * 4) + 0x800E0000)->unkD50 = -1;
@@ -1754,10 +1754,10 @@ block_9:
                 gKirbyState.action = (u8)0x1DU;
                 gKirbyState.unk2C = 0x1E;
             } else {
-                if (gKirbyState.powerupInUse != 0) {
+                if (gKirbyState.abilityInUse != 0) {
                     func_8011E0E8_ovl3(0x1E, 0x1C, &gKirbyState);
                     func_8011DC5C_ovl3();
-                    gKirbyState.powerupInUse = 0;
+                    gKirbyState.abilityInUse = 0;
                 }
                 func_80122F6C_ovl3(0x46, 0x1D, &gKirbyState);
             }
@@ -1768,9 +1768,9 @@ block_9:
             goto block_9;
         }
         if ((gKirbyState.unkB != 3) && (gKirbyState.unkB != 4)) {
-            if (gKirbyState.powerupState != 0) {
+            if (gKirbyState.abilityState != 0) {
                 if (0x1C != gKirbyState.action) {
-                    if ((gKirbyState.powerupInUse != 0) && (gKirbyState.powerupInUse != 0x12)) {
+                    if ((gKirbyState.abilityInUse != 0) && (gKirbyState.abilityInUse != 0x12)) {
 
                     } else {
                         if (gKirbyState.action != 0x1A) {
@@ -1789,7 +1789,7 @@ block_9:
                                 }
                             }
                             if (phi_a0 != 0) {
-                                func_80122F6C_ovl3(gKirbyState.powerupState, 0x1C, &gKirbyState);
+                                func_80122F6C_ovl3(gKirbyState.abilityState, 0x1C, &gKirbyState);
                                 return 1;
                             }
                         }
@@ -1798,7 +1798,7 @@ block_9:
             }
         } else {
             if (gKirbyState.action != 0x1A) {
-                if ((gKirbyState.powerupInUse == 0) || (gKirbyState.powerupInUse == 0x12)) {
+                if ((gKirbyState.abilityInUse == 0) || (gKirbyState.abilityInUse == 0x12)) {
                     if (gKirbyState.action == 0x1B) {
 block_21:
                         *(&D_800E3750 + (*D_8004A7C4 * 4)) = 0.0f;

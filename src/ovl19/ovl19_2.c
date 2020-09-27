@@ -59,7 +59,7 @@ u32 func_8021F0A4_ovl19(s32 arg0) {
         if (D_800E5F90 == 0xA) {
             gKirbyState.unk3C = 0;
             gKirbyState.unk17 = 1;
-            gKirbyState.powerupState = 0x4F;
+            gKirbyState.abilityState = 0x4F;
             gKirbyState.unk68 = 1;
             *D_800E0D50 = *temp_v0_2;
             *(&D_800E8060 + (*temp_v0_2 * 4)) = 1;
@@ -432,7 +432,7 @@ void *func_8021FE5C_ovl19(s32 arg0) {
                 if (temp_ret < 6400.0f) {
                     gKirbyState.unk17 = 1;
                     temp_v0_2 = (D_8004A7C4->unk0 * 4) + &D_800E98E0;
-                    gKirbyState.powerupState = 0;
+                    gKirbyState.abilityState = 0;
                     gKirbyState.unk68 = 1;
                     *temp_v0_2 = *temp_v0_2 + 1;
                     phi_return = temp_v0_2;
@@ -735,11 +735,11 @@ void func_80220814_ovl19(s32 arg0) {
 loop_1:
     func_800AA018_ovl19(0x203E3);
 loop_2:
-    if (0x1F == gKirbyState.powerupInUse) {
+    if (0x1F == gKirbyState.abilityInUse) {
         if (D_800E98E0 < 3) {
             func_800AA018_ovl19(0x203E2);
 loop_5:
-            if (gKirbyState.powerupInUse == 0) {
+            if (gKirbyState.abilityInUse == 0) {
                 goto loop_1;
             }
             if (D_800E98E0 >= 3) {
@@ -1430,7 +1430,7 @@ void func_80222038_ovl19(s32 arg0) {
     if (D_800E5F90 == 6) {
         *D_800E0D50 = D_8004A7C4->unk0;
         gKirbyState.unk17 = 1;
-        gKirbyState.powerupState = 0x50;
+        gKirbyState.abilityState = 0x50;
         gKirbyState.unk68 = 1;
         if (-1.0f == *D_800E6A10) {
             if ((gKirbyState.isTurning & 1)) {
@@ -1801,7 +1801,7 @@ void *func_80222CE0_ovl19(s32 arg0) {
         phi_v1 = temp_v1;
         if (D_800E5F90 == 5) {
             gKirbyState.unk17 = 1;
-            gKirbyState.powerupState = 0x51;
+            gKirbyState.abilityState = 0x51;
             *D_800E0D50 = *temp_a0;
             *(&D_800E8060 + (*temp_a0 * 4)) = 1;
             gKirbyState.unk68 = 1;
