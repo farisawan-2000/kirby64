@@ -76,7 +76,15 @@ SECTIONS
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/1_func_after_bcopy.o(.text);
       BUILD_DIR/libultra.a:interrupt.o(.text);
-      
+
+      BUILD_DIR/libultra.a:vi.o(.text);
+
+      /* TODO: match this */
+      /*BUILD_DIR/libultra.a:viswapcontext.o(.text);*/
+      BUILD_DIR/asm/ovl0/__osViSwapContext.o(.text);
+
+
+      BUILD_DIR/libultra.a:pigetcmdq.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
       BUILD_DIR/libultra.a:epirawwrite.o(.text);
@@ -103,6 +111,12 @@ SECTIONS
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
       BUILD_DIR/data/kirby.039DF0.o(.data);
+
+      BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
+      BUILD_DIR/libultra.a:vimodempallan1.o(.data);
+      BUILD_DIR/libultra.a:vi.o(.data);
+      BUILD_DIR/libultra.a:vimodepallan1.o(.data);
+      BUILD_DIR/data/kirby.039DF0.1.5.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
@@ -391,3 +405,4 @@ SECTIONS
       *(*);
    }
 }
+

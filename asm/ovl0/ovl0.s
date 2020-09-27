@@ -2155,9 +2155,9 @@ glabel func_80002598
 /* 00329C 8000269C 100000A1 */  b     .L80002924_ovl0
 /* 0032A0 800026A0 24848BA8 */   addiu $a0, %lo(D_80048BA8) # addiu $a0, $a0, -0x7458
 .L800026A4_ovl0:
-/* 0032A4 800026A4 3C0D8004 */  lui   $t5, %hi(D_8003FC60) # $t5, 0x8004
+/* 0032A4 800026A4 3C0D8004 */  lui   $t5, %hi(osViModeNtscLan1) # $t5, 0x8004
 /* 0032A8 800026A8 27A20030 */  addiu $v0, $sp, 0x30
-/* 0032AC 800026AC 25ADFC60 */  addiu $t5, %lo(D_8003FC60) # addiu $t5, $t5, -0x3a0
+/* 0032AC 800026AC 25ADFC60 */  addiu $t5, %lo(osViModeNtscLan1) # addiu $t5, $t5, -0x3a0
 /* 0032B0 800026B0 24848BA8 */  addiu $a0, $a0, -0x7458
 /* 0032B4 800026B4 25B90048 */  addiu $t9, $t5, 0x48
 /* 0032B8 800026B8 0040C025 */  move  $t8, $v0
@@ -2270,10 +2270,10 @@ glabel func_80002598
 /* 003448 80002848 10000036 */  b     .L80002924_ovl0
 /* 00344C 8000284C AF0C0004 */   sw    $t4, 4($t8)
 .L80002850_ovl0:
-/* 003450 80002850 3C0E8004 */  lui   $t6, %hi(D_8003FCB0) # $t6, 0x8004
+/* 003450 80002850 3C0E8004 */  lui   $t6, %hi(osViModeMpalLan1) # $t6, 0x8004
 /* 003454 80002854 27A20030 */  addiu $v0, $sp, 0x30
 /* 003458 80002858 3C048005 */  lui   $a0, %hi(D_80048BA8) # $a0, 0x8005
-/* 00345C 8000285C 25CEFCB0 */  addiu $t6, %lo(D_8003FCB0) # addiu $t6, $t6, -0x350
+/* 00345C 8000285C 25CEFCB0 */  addiu $t6, %lo(osViModeMpalLan1) # addiu $t6, $t6, -0x350
 /* 003460 80002860 24848BA8 */  addiu $a0, %lo(D_80048BA8) # addiu $a0, $a0, -0x7458
 /* 003464 80002864 25CC0048 */  addiu $t4, $t6, 0x48
 /* 003468 80002868 0040C025 */  move  $t8, $v0

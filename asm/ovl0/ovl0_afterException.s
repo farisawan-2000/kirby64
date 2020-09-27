@@ -3623,8 +3623,8 @@ glabel func_80032278
 /* 032E7C 8003227C 00000000 */  nop   
 /* 032E80 80032280 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 032E84 80032284 AFB00020 */  sw    $s0, 0x20($sp)
-/* 032E88 80032288 3C108004 */  lui   $s0, %hi(D_8003FBC0) # $s0, 0x8004
-/* 032E8C 8003228C 2610FBC0 */  addiu $s0, %lo(D_8003FBC0) # addiu $s0, $s0, -0x440
+/* 032E88 80032288 3C108004 */  lui   $s0, %hi(__osPiDevMgr) # $s0, 0x8004
+/* 032E8C 8003228C 2610FBC0 */  addiu $s0, %lo(__osPiDevMgr) # addiu $s0, $s0, -0x440
 /* 032E90 80032290 8E0E0000 */  lw    $t6, ($s0)
 /* 032E94 80032294 AFBF0024 */  sw    $ra, 0x24($sp)
 /* 032E98 80032298 AFA40030 */  sw    $a0, 0x30($sp)
@@ -5200,8 +5200,8 @@ glabel func_800338B8
 /* 0344B8 800338B8 00000000 */  nop   
 /* 0344BC 800338BC 00000000 */  nop   
 /* 0344C0 800338C0 27BDFFD8 */  addiu $sp, $sp, -0x28
-/* 0344C4 800338C4 3C0E8004 */  lui   $t6, %hi(D_8003FBC0) # $t6, 0x8004
-/* 0344C8 800338C8 8DCEFBC0 */  lw    $t6, %lo(D_8003FBC0)($t6)
+/* 0344C4 800338C4 3C0E8004 */  lui   $t6, %hi(__osPiDevMgr) # $t6, 0x8004
+/* 0344C8 800338C8 8DCEFBC0 */  lw    $t6, %lo(__osPiDevMgr)($t6)
 /* 0344CC 800338CC AFBF001C */  sw    $ra, 0x1c($sp)
 /* 0344D0 800338D0 AFA40028 */  sw    $a0, 0x28($sp)
 /* 0344D4 800338D4 AFA5002C */  sw    $a1, 0x2c($sp)
