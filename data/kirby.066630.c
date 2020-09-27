@@ -281,7 +281,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x8015C680,
 		(void*) 0x8015C730,
 	},
-	{
+	{ // Kirby
 		(void*) 0x00103BB0,
 		(void*) 0x00135490,
 		(void*) 0x8015C740,
@@ -457,7 +457,7 @@ struct Overlay D_800BE5D0[20] = {
 		_ovl18SegNoloadStart,
 		_ovl18SegNoloadEnd,
 	},
-	{
+	{ // Tamper Check
 		_ovl20SegmentRomStart,
 		_ovl20DataSegmentRomEnd,
 		_ovl20SegmentStart,
