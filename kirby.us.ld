@@ -85,6 +85,10 @@ SECTIONS
 
 
       BUILD_DIR/libultra.a:pigetcmdq.o(.text);
+      BUILD_DIR/libultra.a:cosf.o(.text);
+      BUILD_DIR/libultra.a:settime.o(.text);
+      BUILD_DIR/libultra.a:visetevent.o(.text);
+
       BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
 
       BUILD_DIR/libultra.a:epirawwrite.o(.text);
@@ -119,6 +123,9 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.1.5.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
+      BUILD_DIR/libultra.a:cosf.o(.rodata);
+      BUILD_DIR/libultra.a:libm_vals.o(.rodata);
+      BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.3.o(.data);
    }
@@ -405,4 +412,5 @@ SECTIONS
       *(*);
    }
 }
+
 

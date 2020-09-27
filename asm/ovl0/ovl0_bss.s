@@ -1,7 +1,5 @@
 .include "macros.inc"
 .section .bss
-glabel D_80048F2C
-.word 0x00000000
 
 glabel D_80048F30
 .word 0x00000000
@@ -249375,16 +249373,16 @@ glabel D_8009A1F8
 glabel D_8009A1FC
 .word 0x00000000
 
-glabel D_8009A200
+glabel __osCurrentTime
 .word 0x00000000
 
 glabel D_8009A204
 .word 0x00000000
 
-glabel D_8009A208
+glabel __osBaseCounter
 .word 0x00000000
 
-glabel D_8009A20C
+glabel __osViIntrCount
 .word 0x00000000
 
 glabel D_8009A210
@@ -249398,6 +249396,7 @@ glabel D_8009A218
 
 glabel D_8009A21C
 .word 0x00000000
+
 
 glabel D_8009A220
 .word 0x00000000

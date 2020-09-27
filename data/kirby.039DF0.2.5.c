@@ -1,0 +1,10 @@
+#include <PR/ultratypes.h>
+
+u32 D_80041CD0 = 0x3F8012EF;
+
+u32 D_80041CD4 = 0x3F7FDA28;
+
+u32 D_80041CD8 = 0x00000000;
+
+u32 D_80041CDC = 0x00000000;
+
