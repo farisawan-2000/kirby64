@@ -1,4 +1,4 @@
-glabel func_800BD2F4
+glabel draw_kirby_stars
 /* 065544 800BD2F4 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 065548 800BD2F8 AFB1001C */  sw    $s1, 0x1c($sp)
 /* 06554C 800BD2FC 00808825 */  move  $s1, $a0

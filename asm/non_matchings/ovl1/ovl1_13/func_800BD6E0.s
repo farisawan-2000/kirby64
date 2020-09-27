@@ -69,7 +69,7 @@ glabel func_800BD6E0
 /* 065A2C 800BD7DC 3C01800D */  lui   $at, %hi(D_800D6EC0) # $at, 0x800d
 /* 065A30 800BD7E0 AC206EC0 */  sw    $zero, %lo(D_800D6EC0)($at)
 .L800BD7E4_ovl1:
-/* 065A34 800BD7E4 0C02F43A */  jal   func_800BD0E8_ovl1
+/* 065A34 800BD7E4 0C02F43A */  jal   draw_hp_segment
 /* 065A38 800BD7E8 00000000 */   nop   
 .L800BD7EC_ovl1:
 /* 065A3C 800BD7EC 8FBF0014 */  lw    $ra, 0x14($sp)
