@@ -87,16 +87,16 @@ struct StageArea {
 // 0x8012E7C0
 // TODO: populate with actual values
 struct KirbyState {
-    u32 actionChange; // 0x0
-    u8 action; // 0x4
-    u8 unk5;
-    u8 unk6;
+    u32 actionChange;		// 0x0
+    u8 unk4;
+    u8 action;				// 0x5
+    u8 previousAction;		// 0x6
     u8 unk7;
     u8 unk8;
     u8 unk9;
     u8 unkA;
     u8 unkB;
-    s8 powerupState; // 0xC
+    s8 powerupState;			// 0xC
     u8 unkD;
     u8 unkE;
     u8 unkF;
@@ -109,13 +109,13 @@ struct KirbyState {
     u8 unk19;
     u8 unk1A;
     u8 unk1B;
-    u32 floatTimer; // 0x1C
-    s32 turnDirection; // 0x20
+    u32 floatTimer;			// 0x1C
+    s32 turnDirection;		// 0x20
     u32 unk24;
     u32 unk28;
     u32 unk2C;
     u32 unk30;
-    u32 isTurning; // 0x34
+    u32 isTurning;			// 0x34
     f32 unk38;
     u32 unk3C;
     u32 unk40;
@@ -141,19 +141,19 @@ struct KirbyState {
     u32 unk84;
     u32 unk88;
     u32 unk8C;
-    u32 powerup; //0x90
-    u32 currentInhale; //0x94
-    u32 firstInhale; //0x98
-    u32 secondInhale; //0x9C
-    u32 powerupInUse; //0xA0
+    u32 powerup;				// 0x90
+    u32 currentInhale;		// 0x94
+    u32 firstInhale;			// 0x98
+    u32 secondInhale;		// 0x9C
+    u32 powerupInUse;		// 0xA0
     u32 unkA4;
     u32 unkA8;
-    u32 isHoldingObject; //0xAC
-    u8 isInhaling; //0xB0
-    u8 isInhalingBlock; //0xB1
+    u32 isHoldingObject;	// 0xAC
+    u8 isInhaling;			// 0xB0
+    u8 isInhalingBlock;		// 0xB1
     u8 unkB2;
-    u8 numberInhaling; //0xB3
-    u16 numberInhaled; //0xB4
+    u8 numberInhaling;		// 0xB3
+    u16 numberInhaled;		// 0xB4
     u16 unkB6;
     u32 unkB8;
     u32 unkBC;
@@ -209,7 +209,7 @@ struct KirbyState {
     u32 unk16C;
     u32 unk170;
 
-    Vec3f vel;
+    Vec3f vel;				// 0x74
 
     u32 unk180;
     u32 unk184;
@@ -223,7 +223,7 @@ struct KirbyState {
     u32 unk1A4;
 	
 	
-    u32 unk1A8; //PositionState goes from here until the end
+    u32 unk1A8;				//PositionState goes from here until the end
     u32 unk1AC;
     u32 unk1B0;
     u32 unk1B4;
@@ -233,9 +233,9 @@ struct KirbyState {
     u32 unk1C4;
     u32 unk1C8;
 
-    f32 xPos;
-    f32 yPos;
-    f32 zPos;
+    f32 xPos;					// 0x1CC
+    f32 yPos;					// 0x1D0
+    f32 zPos;					// 0x1D4
 
     u32 unk1D8;
     u32 unk1DC;
@@ -247,7 +247,7 @@ struct KirbyState {
     u32 unk1F4;
     u32 unk1F8;
     u32 unk1FC;
-    u32 viTimer;
+    u32 viTimer;				// 0x200
 };
 
 #endif /* TYPES_H */
