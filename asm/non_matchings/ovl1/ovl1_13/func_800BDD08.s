@@ -1,7 +1,7 @@
 glabel func_800BDD08
 /* 065F58 800BDD08 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 065F5C 800BDD0C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 065F60 800BDD10 0C02F598 */  jal   func_800BD660_ovl1
+/* 065F60 800BDD10 0C02F598 */  jal   draw_kirby_lives
 /* 065F64 800BDD14 00000000 */   nop   
 /* 065F68 800BDD18 3C0E800D */  lui   $t6, %hi(D_800D6B30) # $t6, 0x800d
 /* 065F6C 800BDD1C 85CE6B30 */  lh    $t6, %lo(D_800D6B30)($t6)

@@ -1,4 +1,4 @@
-glabel func_800BCFD8
+glabel draw_lives_digit
 /* 065228 800BCFD8 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
 /* 06522C 800BCFDC 8DCE6BB0 */  lw    $t6, %lo(D_800D6BB0)($t6)
 /* 065230 800BCFE0 27BDFFE8 */  addiu $sp, $sp, -0x18

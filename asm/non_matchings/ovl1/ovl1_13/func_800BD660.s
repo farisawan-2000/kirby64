@@ -1,4 +1,4 @@
-glabel func_800BD660
+glabel draw_kirby_lives
 /* 0658B0 800BD660 3C03800D */  lui   $v1, %hi(D_800D6EA0) # $v1, 0x800d
 /* 0658B4 800BD664 24636EA0 */  addiu $v1, %lo(D_800D6EA0) # addiu $v1, $v1, 0x6ea0
 /* 0658B8 800BD668 3C02800D */  lui   $v0, %hi(D_800D6E88) # $v0, 0x800d
@@ -20,14 +20,14 @@ glabel func_800BD660
 /* 0658F0 800BD6A0 00C1001A */  div   $zero, $a2, $at
 /* 0658F4 800BD6A4 00002812 */  mflo  $a1
 /* 0658F8 800BD6A8 24040022 */  li    $a0, 34
-/* 0658FC 800BD6AC 0C02F3F6 */  jal   func_800BCFD8_ovl1
+/* 0658FC 800BD6AC 0C02F3F6 */  jal   draw_lives_digit
 /* 065900 800BD6B0 AFA60018 */   sw    $a2, 0x18($sp)
 /* 065904 800BD6B4 8FA60018 */  lw    $a2, 0x18($sp)
 /* 065908 800BD6B8 2401000A */  li    $at, 10
 /* 06590C 800BD6BC 24040034 */  li    $a0, 52
 /* 065910 800BD6C0 00C1001A */  div   $zero, $a2, $at
 /* 065914 800BD6C4 00002810 */  mfhi  $a1
-/* 065918 800BD6C8 0C02F3F6 */  jal   func_800BCFD8_ovl1
+/* 065918 800BD6C8 0C02F3F6 */  jal   draw_lives_digit
 /* 06591C 800BD6CC 00000000 */   nop   
 .L800BD6D0_ovl1:
 /* 065920 800BD6D0 8FBF0014 */  lw    $ra, 0x14($sp)

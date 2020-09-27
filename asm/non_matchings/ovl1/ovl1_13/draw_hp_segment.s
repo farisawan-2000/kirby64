@@ -1,4 +1,4 @@
-glabel func_800BD0E8
+glabel draw_hp_segment
 /* 065338 800BD0E8 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
 /* 06533C 800BD0EC 8DCF6BB0 */  lw    $t7, %lo(D_800D6BB0)($t6)
 /* 065340 800BD0F0 27BDFFE8 */  addiu $sp, $sp, -0x18

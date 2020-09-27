@@ -70,7 +70,7 @@ glabel func_800BDB18
 /* 065E60 800BDC10 10400029 */  beqz  $v0, .L800BDCB8_ovl1
 /* 065E64 800BDC14 02002025 */   move  $a0, $s0
 .L800BDC18_ovl1:
-/* 065E68 800BDC18 0C02F43A */  jal   func_800BD0E8_ovl1
+/* 065E68 800BDC18 0C02F43A */  jal   draw_hp_segment
 /* 065E6C 800BDC1C 24050001 */   li    $a1, 1
 /* 065E70 800BDC20 4448F800 */  cfc1  $t0, $31
 /* 065E74 800BDC24 24020001 */  li    $v0, 1
@@ -120,7 +120,7 @@ glabel func_800BDB18
 /* 065F14 800BDCC4 3C01800D */  lui   $at, %hi(D_800D6E8C) # $at, 0x800d
 /* 065F18 800BDCC8 AC226E8C */  sw    $v0, %lo(D_800D6E8C)($at)
 .L800BDCCC_ovl1:
-/* 065F1C 800BDCCC 0C02F4BD */  jal   func_800BD2F4_ovl1
+/* 065F1C 800BDCCC 0C02F4BD */  jal   draw_kirby_stars
 /* 065F20 800BDCD0 02202025 */   move  $a0, $s1
 /* 065F24 800BDCD4 8E6A0000 */  lw    $t2, ($s3)
 /* 065F28 800BDCD8 8FBF0024 */  lw    $ra, 0x24($sp)
