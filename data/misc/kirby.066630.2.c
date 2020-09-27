@@ -113,6 +113,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,   4),       LIST_INDEX(0,   0),        5,       127,       0x27,       BANK_INDEX(7,  62),       60,     CHAR_BOSS,       BANK_INDEX(7,  37),       BANK_INDEX(7,  38),       0x800D5E24,   },
     {   LIST_INDEX(7,   5),       LIST_INDEX(0,   0),        6,       127,       0x18,       BANK_INDEX(7,  63),       60,     STAGE_END,       BANK_INDEX(7,  13),       BANK_INDEX(7,  14),       0x800D5E30,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,   6),       LIST_INDEX(0,   0),        7,       127,       0x12,       BANK_INDEX(7,  64),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E34,   },
     {   LIST_INDEX(7,   7),       LIST_INDEX(0,   0),        0,       127,       0x12,       BANK_INDEX(7,  65),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E40,   },
     {   LIST_INDEX(7,   8),       LIST_INDEX(0,   0),        0,       127,       0x12,       BANK_INDEX(7,  66),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E4C,   },
@@ -121,6 +122,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  11),       LIST_INDEX(0,   0),        8,       127,       0x28,       BANK_INDEX(7,  69),       60,     CHAR_BOSS,       BANK_INDEX(7,  25),       BANK_INDEX(7,  26),       0x800D5E70,   },
     {   LIST_INDEX(7,  12),       LIST_INDEX(0,   0),        9,       127,       0x18,       BANK_INDEX(7,  70),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E78,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  13),       LIST_INDEX(0,   0),       10,       127,         13,       BANK_INDEX(7,  71),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E7C,   },
     {   LIST_INDEX(7,  14),       LIST_INDEX(0,   0),        0,       127,        0x8,       BANK_INDEX(7,  72),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E88,   },
     {   LIST_INDEX(7,  15),       LIST_INDEX(0,   0),        0,       127,        0x8,       BANK_INDEX(7,  73),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E94,   },
@@ -132,8 +134,10 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  21),       LIST_INDEX(0,   0),       12,       127,       0x29,       BANK_INDEX(7,  79),       60,     CHAR_BOSS,       BANK_INDEX(7,   7),       BANK_INDEX(7,   8),       0x800D5EE0,   },
     {   LIST_INDEX(7,  22),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7,  80),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5EEC,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  23),       LIST_INDEX(0,   0),       13,       127,        0x1,       BANK_INDEX(7,  81),       60,    WORLD_BOSS,       BANK_INDEX(7,  11),       BANK_INDEX(7,  12),       0x800D5EF0,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  24),       LIST_INDEX(0,   0),       14,       127,        0xc,       BANK_INDEX(7,  82),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5EFC,   },
     {   LIST_INDEX(7,  25),       LIST_INDEX(0,   0),       15,       127,        0xc,       BANK_INDEX(7,  83),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F08,   },
     {   LIST_INDEX(7,  26),       LIST_INDEX(0,   0),        0,       127,       0x22,       BANK_INDEX(7,  84),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F14,   },
@@ -141,6 +145,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  28),       LIST_INDEX(0,   0),       16,       127,        0xc,       BANK_INDEX(7,  86),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F2C,   },
     {   LIST_INDEX(7,  29),       LIST_INDEX(0,   0),       17,       127,       0x18,       BANK_INDEX(7,  87),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F38,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  30),       LIST_INDEX(0,   0),       18,       127,       0x13,       BANK_INDEX(7,  88),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F3C,   },
     {   LIST_INDEX(7,  31),       LIST_INDEX(0,   0),       19,       127,       0x13,       BANK_INDEX(7,  89),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  47),       BANK_INDEX(7,  48),       0x800D5F48,   },
     {   LIST_INDEX(7,  32),       LIST_INDEX(0,   0),        0,       127,       0x13,       BANK_INDEX(7,  90),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F54,   },
@@ -149,6 +154,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  36),       LIST_INDEX(0,   0),        0,       127,       0x13,       BANK_INDEX(7,  93),       60,      DDD_RIDE,       BANK_INDEX(7,  47),       BANK_INDEX(7,  48),       0x800D5F78,   },
     {   LIST_INDEX(7,  37),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7,  94),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F88,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  38),       LIST_INDEX(0,   0),        0,       127,        0x8,       BANK_INDEX(7,  95),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F8C,   },
     {   LIST_INDEX(7,  39),       LIST_INDEX(0,   0),        0,       127,        0x8,       BANK_INDEX(7,  96),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5F98,   },
     {   LIST_INDEX(7,  40),       LIST_INDEX(0,   0),        0,       127,       0x22,       BANK_INDEX(7,  97),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5FA4,   },
@@ -159,6 +165,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  47),       LIST_INDEX(0,   0),        0,       127,        0x8,       BANK_INDEX(7, 102),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  57),       BANK_INDEX(7,  58),       0x800D5FE0,   },
     {   LIST_INDEX(7,  48),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 103),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5FEC,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  49),       LIST_INDEX(0,   0),       20,       127,        0xc,       BANK_INDEX(7, 104),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  15),       BANK_INDEX(7,  16),       0x800D5FF0,   },
     {   LIST_INDEX(7,  50),       LIST_INDEX(7,  51),        0,       127,       0x11,       BANK_INDEX(7, 105),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6000,   },
     {   LIST_INDEX(7,  52),       LIST_INDEX(7,  53),        0,       127,       0x11,       BANK_INDEX(7, 106),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6010,   },
@@ -169,8 +176,10 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  58),       LIST_INDEX(0,   0),        0,       127,       0x11,       BANK_INDEX(7, 111),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6060,   },
     {   LIST_INDEX(7,  59),       LIST_INDEX(0,   0),       22,       127,       0x18,       BANK_INDEX(7, 112),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6070,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  60),       LIST_INDEX(0,   0),       23,       127,        0x1,       BANK_INDEX(7, 113),       60,    WORLD_BOSS,       BANK_INDEX(7,  23),       BANK_INDEX(7,  24),       0x800D6074,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  61),       LIST_INDEX(7,  62),       24,       127,        0xa,       BANK_INDEX(7, 114),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D607C,   },
     {   LIST_INDEX(7,  63),       LIST_INDEX(0,   0),       24,       127,        0xa,       BANK_INDEX(7, 115),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D608C,   },
     {   LIST_INDEX(7,  64),       LIST_INDEX(0,   0),        0,       127,        0xa,       BANK_INDEX(7, 116),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  49),       BANK_INDEX(7,  50),       0x800D609C,   },
@@ -179,6 +188,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  68),       LIST_INDEX(0,   0),       24,       127,        0xa,       BANK_INDEX(7, 119),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  49),       BANK_INDEX(7,  50),       0x800D60CC,   },
     {   LIST_INDEX(7,  69),       LIST_INDEX(0,   0),       25,       127,       0x18,       BANK_INDEX(7, 120),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D60DC,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  70),       LIST_INDEX(7,  71),       27,       127,        0xf,       BANK_INDEX(7, 121),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  21),       BANK_INDEX(7,  22),       0x800D60E0,   },
     {   LIST_INDEX(7,  72),       LIST_INDEX(7,  73),        0,       127,        0xf,       BANK_INDEX(7, 122),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  21),       BANK_INDEX(7,  22),       0x800D60EC,   },
     {   LIST_INDEX(7,  74),       LIST_INDEX(0,   0),        0,       127,       0x22,       BANK_INDEX(7, 123),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D60F8,   },
@@ -187,6 +197,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  77),       LIST_INDEX(7,  78),       26,       127,        0xf,       BANK_INDEX(7, 126),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  21),       BANK_INDEX(7,  22),       0x800D611C,   },
     {   LIST_INDEX(7,  79),       LIST_INDEX(0,   0),       30,       127,       0x18,       BANK_INDEX(7, 127),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6128,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  80),       LIST_INDEX(0,   0),        0,       127,        0xa,       BANK_INDEX(7, 128),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D612C,   },
     {   LIST_INDEX(7,  81),       LIST_INDEX(7,  82),       31,       127,        0xa,       BANK_INDEX(7, 129),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6138,   },
     {   LIST_INDEX(7,  83),       LIST_INDEX(0,   0),        0,       127,        0xa,       BANK_INDEX(7, 130),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  55),       BANK_INDEX(7,  56),       0x800D6144,   },
@@ -196,6 +207,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  88),       LIST_INDEX(7,  89),        0,       127,        0xa,       BANK_INDEX(7, 134),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6174,   },
     {   LIST_INDEX(7,  90),       LIST_INDEX(0,   0),       34,       127,       0x18,       BANK_INDEX(7, 135),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6180,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  91),       LIST_INDEX(0,   0),       35,        57,       0x13,       BANK_INDEX(7, 136),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  39),       BANK_INDEX(7,  40),       0x800D6184,   },
     {   LIST_INDEX(7,  92),       LIST_INDEX(0,   0),       36,       127,       0x13,       BANK_INDEX(7, 137),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  39),       BANK_INDEX(7,  40),       0x800D6194,   },
     {   LIST_INDEX(7,  93),       LIST_INDEX(0,   0),        0,       127,       0x13,       BANK_INDEX(7, 138),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  39),       BANK_INDEX(7,  40),       0x800D61A4,   },
@@ -204,8 +216,10 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7,  96),       LIST_INDEX(0,   0),        0,       127,       0x13,       BANK_INDEX(7, 141),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  39),       BANK_INDEX(7,  40),       0x800D61D4,   },
     {   LIST_INDEX(7,  97),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 142),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D61E4,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  98),       LIST_INDEX(0,   0),        0,       127,        0x1,       BANK_INDEX(7, 143),        0,    WORLD_BOSS,       BANK_INDEX(7,  51),       BANK_INDEX(7,  52),       0x800D61E8,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7,  99),       LIST_INDEX(0,   0),       37,       127,         13,       BANK_INDEX(7, 144),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   3),       BANK_INDEX(7,   4),       0x800D61F0,   },
     {   LIST_INDEX(7, 100),       LIST_INDEX(0,   0),       38,        19,         13,       BANK_INDEX(7, 145),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D61FC,   },
     {   LIST_INDEX(7, 101),       LIST_INDEX(0,   0),       39,        19,         13,       BANK_INDEX(7, 146),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6208,   },
@@ -214,6 +228,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 104),       LIST_INDEX(0,   0),       42,        19,         13,       BANK_INDEX(7, 149),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D622C,   },
     {   LIST_INDEX(7, 105),       LIST_INDEX(0,   0),       43,       127,       0x18,       BANK_INDEX(7, 150),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6238,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 106),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 151),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D623C,   },
     {   LIST_INDEX(7, 107),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 152),        0, MINECART_RIDE,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6248,   },
     {   LIST_INDEX(7, 108),       LIST_INDEX(7, 109),        0,       127,        0xb,       BANK_INDEX(7, 153),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  41),       BANK_INDEX(7,  42),       0x800D6258,   },
@@ -223,6 +238,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 113),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 157),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6288,   },
     {   LIST_INDEX(7, 114),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 158),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6294,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 115),       LIST_INDEX(7, 116),       44,         5,        0xc,       BANK_INDEX(7, 159),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6298,   },
     {   LIST_INDEX(7, 117),       LIST_INDEX(0,   0),       45,         5,        0xc,       BANK_INDEX(7, 160),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D62A4,   },
     {   LIST_INDEX(7, 118),       LIST_INDEX(0,   0),       47,         5,        0xc,       BANK_INDEX(7, 161),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D62B0,   },
@@ -230,6 +246,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 120),       LIST_INDEX(0,   0),       46,         5,        0xc,       BANK_INDEX(7, 163),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D62C8,   },
     {   LIST_INDEX(7, 121),       LIST_INDEX(0,   0),       48,         5,       0x18,       BANK_INDEX(7, 164),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D62D4,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 122),       LIST_INDEX(0,   0),       49,       127,        0xb,       BANK_INDEX(7, 165),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  29),       BANK_INDEX(7,  30),       0x800D62D8,   },
     {   LIST_INDEX(7, 123),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 166),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  29),       BANK_INDEX(7,  30),       0x800D62E4,   },
     {   LIST_INDEX(7, 124),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 167),       60,      DDD_RIDE,       BANK_INDEX(7,  29),       BANK_INDEX(7,  30),       0x800D62F0,   },
@@ -239,8 +256,10 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 128),       LIST_INDEX(0,   0),        0,       127,        0xb,       BANK_INDEX(7, 171),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  29),       BANK_INDEX(7,  30),       0x800D6320,   },
     {   LIST_INDEX(7, 129),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 172),       60,     STAGE_END,       BANK_INDEX(7,  29),       BANK_INDEX(7,  30),       0x800D632C,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 130),       LIST_INDEX(0,   0),        0,       127,        0x1,       BANK_INDEX(7, 173),       60,    WORLD_BOSS,       BANK_INDEX(7,  53),       BANK_INDEX(7,  54),       0x800D6330,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 131),       LIST_INDEX(0,   0),       50,       127,       0x10,       BANK_INDEX(7, 174),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   1),       BANK_INDEX(7,   2),       0x800D633C,   },
     {   LIST_INDEX(7, 132),       LIST_INDEX(7, 133),       51,       127,       0x10,       BANK_INDEX(7, 175),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   1),       BANK_INDEX(7,   2),       0x800D6348,   },
     {   LIST_INDEX(7, 134),       LIST_INDEX(0,   0),        0,        51,       0x10,       BANK_INDEX(7, 176),        0,     SLED_RIDE,       BANK_INDEX(7,   1),       BANK_INDEX(7,   2),       0x800D6354,   },
@@ -249,6 +268,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 138),       LIST_INDEX(7, 139),       50,       127,       0x10,       BANK_INDEX(7, 179),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   1),       BANK_INDEX(7,   2),       0x800D6378,   },
     {   LIST_INDEX(7, 140),       LIST_INDEX(0,   0),       53,       127,       0x18,       BANK_INDEX(7, 180),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6384,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 141),       LIST_INDEX(0,   0),       54,        55,        0xe,       BANK_INDEX(7, 181),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6388,   },
     {   LIST_INDEX(7, 142),       LIST_INDEX(0,   0),       56,        55,        0xe,       BANK_INDEX(7, 182),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  33),       BANK_INDEX(7,  34),       0x800D6394,   },
     {   LIST_INDEX(7, 143),       LIST_INDEX(0,   0),       55,        55,        0xe,       BANK_INDEX(7, 183),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D63A0,   },
@@ -257,6 +277,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 146),       LIST_INDEX(0,   0),        0,         5,       0x22,       BANK_INDEX(7, 186),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D63C4,   },
     {   LIST_INDEX(7, 147),       LIST_INDEX(0,   0),       59,        55,       0x18,       BANK_INDEX(7, 187),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D63D0,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 148),       LIST_INDEX(0,   0),       60,         5,       0x10,       BANK_INDEX(7, 188),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   9),       BANK_INDEX(7,  10),       0x800D63D4,   },
     {   LIST_INDEX(7, 149),       LIST_INDEX(0,   0),       61,         5,       0x10,       BANK_INDEX(7, 189),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   9),       BANK_INDEX(7,  10),       0x800D63E4,   },
     {   LIST_INDEX(7, 150),       LIST_INDEX(0,   0),        0,       127,       0x10,       BANK_INDEX(7, 190),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D63F4,   },
@@ -267,6 +288,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 156),       LIST_INDEX(0,   0),       62,         5,       0x10,       BANK_INDEX(7, 195),       60,  NORMAL_LEVEL,       BANK_INDEX(7,   9),       BANK_INDEX(7,  10),       0x800D6444,   },
     {   LIST_INDEX(7, 157),       LIST_INDEX(0,   0),        0,         5,       0x18,       BANK_INDEX(7, 196),       60,     STAGE_END,       BANK_INDEX(7,   9),       BANK_INDEX(7,  10),       0x800D6454,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 158),       LIST_INDEX(0,   0),       63,       127,       0x10,       BANK_INDEX(7, 197),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  35),       BANK_INDEX(7,  36),       0x800D6458,   },
     {   LIST_INDEX(7, 159),       LIST_INDEX(0,   0),        0,       127,       0x15,       BANK_INDEX(7, 198),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  35),       BANK_INDEX(7,  36),       0x800D6468,   },
     {   LIST_INDEX(7, 160),       LIST_INDEX(7, 161),        0,       127,       0x15,       BANK_INDEX(7, 199),       60,      DDD_RIDE,       BANK_INDEX(7,  35),       BANK_INDEX(7,  36),       0x800D6478,   },
@@ -276,13 +298,16 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 166),       LIST_INDEX(7, 167),        0,       127,       0x15,       BANK_INDEX(7, 203),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  35),       BANK_INDEX(7,  36),       0x800D64B8,   },
     {   LIST_INDEX(7, 168),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 204),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D64C8,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 169),       LIST_INDEX(0,   0),       65,       127,        0x1,       BANK_INDEX(7, 205),        0,    WORLD_BOSS,       BANK_INDEX(7,  19),       BANK_INDEX(7,  20),       0x800D64CC,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 170),       LIST_INDEX(7, 171),       66,       127,         13,       BANK_INDEX(7, 206),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  43),       BANK_INDEX(7,  44),       0x800D64D4,   },
     {   LIST_INDEX(7, 172),       LIST_INDEX(0,   0),        0,       127,       0x22,       BANK_INDEX(7, 207),       60,     MINI_BOSS,       BANK_INDEX(7,  43),       BANK_INDEX(7,  44),       0x800D64E0,   },
     {   LIST_INDEX(7, 173),       LIST_INDEX(0,   0),       67,       127,         13,       BANK_INDEX(7, 208),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  43),       BANK_INDEX(7,  44),       0x800D64EC,   },
     {   LIST_INDEX(7, 174),       LIST_INDEX(0,   0),       69,       127,       0x18,       BANK_INDEX(7, 209),       60,     STAGE_END,       BANK_INDEX(7,  43),       BANK_INDEX(7,  44),       0x800D64F8,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 175),       LIST_INDEX(7, 176),       70,       127,       0x14,       BANK_INDEX(7, 210),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D64FC,   },
     {   LIST_INDEX(7, 177),       LIST_INDEX(7, 178),        0,       127,       0x14,       BANK_INDEX(7, 211),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D650C,   },
     {   LIST_INDEX(7, 179),       LIST_INDEX(7, 180),        0,       127,       0x14,       BANK_INDEX(7, 212),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D651C,   },
@@ -291,6 +316,7 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 184),       LIST_INDEX(0,   0),        0,       127,       0x14,       BANK_INDEX(7, 215),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D654C,   },
     {   LIST_INDEX(7, 185),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 216),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D655C,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 186),       LIST_INDEX(0,   0),        0,       127,       0x16,       BANK_INDEX(7, 217),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6560,   },
     {   LIST_INDEX(7, 187),       LIST_INDEX(0,   0),        0,       127,       0x16,       BANK_INDEX(7, 218),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6570,   },
     {   LIST_INDEX(7, 188),       LIST_INDEX(0,   0),        0,       127,       0x16,       BANK_INDEX(7, 219),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6580,   },
@@ -304,22 +330,27 @@ struct StageArea D_800D01A4[0xD5] = {
     {   LIST_INDEX(7, 196),       LIST_INDEX(0,   0),        0,       127,       0x16,       BANK_INDEX(7, 227),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6600,   },
     {   LIST_INDEX(7, 197),       LIST_INDEX(0,   0),        0,       127,       0x18,       BANK_INDEX(7, 228),       60,     STAGE_END,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6610,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 198),       LIST_INDEX(0,   0),        0,       127,       0x3d,       BANK_INDEX(7, 229),       60,    WORLD_BOSS,       BANK_INDEX(7,  27),       BANK_INDEX(7,  28),       0x800D6614,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 199),       LIST_INDEX(7, 200),       71,       127,       0x3c,       BANK_INDEX(7, 230),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6620,   },
     {   LIST_INDEX(7, 201),       LIST_INDEX(7, 202),       71,       127,       0x3c,       BANK_INDEX(7, 231),        0,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6628,   },
     {   LIST_INDEX(7, 203),       LIST_INDEX(0,   0),       71,       127,        0x2,       BANK_INDEX(7, 232),       60,    FINAL_BOSS,       BANK_INDEX(7,   5),       BANK_INDEX(7,   6),       0x800D6630,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 204),       LIST_INDEX(0,   0),        0,       127,       0x27,       BANK_INDEX(7, 233),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6638,   },
     {   LIST_INDEX(7, 205),       LIST_INDEX(0,   0),        0,       127,       0x27,       BANK_INDEX(7, 234),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6640,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 206),       LIST_INDEX(0,   0),       72,       127,       0x20,       BANK_INDEX(7, 235),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6648,   },
     STAGE_TERMINATOR,
+
     {   LIST_INDEX(7, 207),       LIST_INDEX(0,   0),        0,         1,       0x27,       BANK_INDEX(7, 236),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6654,   },
     {   LIST_INDEX(7, 208),       LIST_INDEX(0,   0),        0,       127,       0x27,       BANK_INDEX(7, 237),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6660,   },
     {   LIST_INDEX(7, 209),       LIST_INDEX(0,   0),        0,       127,       0x27,       BANK_INDEX(7, 238),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D666C,   },
     {   LIST_INDEX(7, 210),       LIST_INDEX(0,   0),        1,       127,       0x27,       BANK_INDEX(7, 239),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D6674,   },
-    STAGE_TERMINATOR,  
+    STAGE_TERMINATOR,
 };
 
 struct StageArea *D_800D1F98[][12] = {
