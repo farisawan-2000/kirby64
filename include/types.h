@@ -221,7 +221,9 @@ struct KirbyState {
     u32 unk19C;
     u32 unk1A0;
     u32 unk1A4;
-    u32 unk1A8;
+	
+	
+    u32 unk1A8; //PositionState goes from here until the end
     u32 unk1AC;
     u32 unk1B0;
     u32 unk1B4;
