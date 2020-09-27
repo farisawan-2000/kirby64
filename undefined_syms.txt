@@ -9774,7 +9774,6 @@ D_80043F50 = 0x80043F50;
 
 gCrashScreen = 0x800966D8;
 
-func_80300170 = D_80300170;
 D_8022FB50 = _ovl19SegNoloadEnd;
 D_80042BC8_0 = 0x80042BC8;
 
@@ -9804,3 +9803,7 @@ D_800E3750 = 0x800E3750;
 D_800E3210 = 0x800E3210;
 D_800E64D0 = 0x800E64D0;
 D_800E6690 = 0x800E6690;
+
+
+/* Reserved section for symbols that wont need to be removed */
+func_80300170 = D_80300170;
