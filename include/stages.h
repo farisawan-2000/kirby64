@@ -13,15 +13,15 @@ struct StageArea {
   /*0x0C*/ u32   musicId;          // Music ID
   /*0x10*/ u32   biAreaSetup;      // Bank-index of area stup block 
   /*0x14*/ u16   deathCamera;     // Determines how far the camera follows kirby when falling into void/death
-  /*0x16*/ u16   unk16;            // Cutscene related?
+  /*0x16*/ u16   stageContents;            // Cutscene related?
   /*0x18*/ u32   biDustSettings;   // Bank-index of Dust particle settings
   /*0x1C*/ u32   biDustImg;        // Bank-index of Dust particle image
   /*0x20*/ u32   areaName;         // Pointer to developer ASCII level name
 };
 
-// unk16 defines
+// stageContents defines
 
-#define NORMAL_LEVEL   0  // Normal Gameplay
+#define NORMAL_LEVEL    0  // Normal Gameplay
 #define CHAR_BOSS       1 // DDD/Adeleine Boss (1-2-6,1-3-9)
 #define WORLD_BOSS      2 // End of World Boss
 #define STAGE_END       3 // End of stage (carpet with prizes)
