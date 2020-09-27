@@ -9445,7 +9445,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80110150_ovl2.s")
             if (D_800E7CE0[arg0] != 0) {
                 return 1;
             }
-            if (gKirbyState.unk5 == 0x16) {
+            if (gKirbyState.action == 0x16) {
                 return 1;
             }
             if (gKirbyState.unk68 == 1) {
@@ -9595,7 +9595,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                         return;
                     }
                 }
-                if (gKirbyState.unk5 == 0x15) {
+                if (gKirbyState.action == 0x15) {
                 block_14:
                     D_800E83E0 = 0;
                     return;
@@ -9697,7 +9697,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                     func_8011DC5C_ovl2(0x15, arg1, phi_a3);
                     temp_a3_2 = arg0;
                     if (change_kirby_hp(-arg0->unk8, arg0) == 0) {
-                        if (gKirbyState.unk5 != 0x15) {
+                        if (gKirbyState.action != 0x15) {
                             D_800E83E0 = 1;
                             if (gKirbyState.unk28 == 0) {
                                 func_80122F94_ovl2(0x16, 0x17, temp_a3_2);
@@ -9710,7 +9710,7 @@ void func_801105E8_ovl2(void *arg0, void *arg1, void *arg2) {
                             goto block_52;
                         }
                     } else {
-                        if (gKirbyState.unk5 == 0x15) {
+                        if (gKirbyState.action == 0x15) {
                             D_800E83E0 = 0;
                             return;
                         }
