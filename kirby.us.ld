@@ -61,8 +61,12 @@ SECTIONS
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
       /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
 
+ 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
+      BUILD_DIR/libultra.a:devmgr.o(.text);
+
+      BUILD_DIR/libultra.a:pirawdma.o(.text);
 
       BUILD_DIR/libultra.a:seteventmesg.o(.text);
       BUILD_DIR/libultra.a:sqrtf.o(.text);
@@ -71,7 +75,7 @@ SECTIONS
       BUILD_DIR/asm/ovl0/xprintf.o(.text);
       BUILD_DIR/libultra.a:epidma.o(.text);
       BUILD_DIR/asm/ovl0/potential_leo_function.o(.text);
-      BUILD_DIR/libultra.a:string.o(.text);
+      BUILD_DIR/libultra.a:string.o(.text); 
       BUILD_DIR/libultra.a:createmesgqueue.o(.text);
       BUILD_DIR/libultra.a:invalicache.o(.text);
       BUILD_DIR/libultra.a:invaldcache.o(.text);
@@ -149,6 +153,8 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.1.5.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
+      BUILD_DIR/libultra.a:devmgr.o(.rodata);
+      BUILD_DIR/data/kirby.039DF0.2.1.o(.data);
       BUILD_DIR/libultra.a:cosf.o(.rodata);
       BUILD_DIR/libultra.a:libm_vals.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.5.o(.data);

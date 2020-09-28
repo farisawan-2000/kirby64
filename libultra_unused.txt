@@ -1,0 +1,2 @@
+EXTERN(__osDevMgrMain);
+EXTERN(osPiRawStartDma);
