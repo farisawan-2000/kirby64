@@ -445,8 +445,8 @@ glabel __osLeoAbnormalResume
 /* 02FB80 8002EF80 27BD0018 */   addiu $sp, $sp, 0x18
 
 glabel __osLeoResume
-/* 02FB84 8002EF84 3C04800A */  lui   $a0, %hi(__osEventStateTab) # $a0, 0x800a
-/* 02FB88 8002EF88 8C84A120 */  lw    $a0, %lo(__osEventStateTab)($a0)
+/* 02FB84 8002EF84 3C04800A */  lui   $a0, %hi(__osEventStateTab_later_in_array) # $a0, 0x800a
+/* 02FB88 8002EF88 8C84A120 */  lw    $a0, %lo(__osEventStateTab_later_in_array)($a0)
 /* 02FB8C 8002EF8C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 02FB90 8002EF90 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 02FB94 8002EF94 50800027 */  beql  $a0, $zero, .L8002F034_ovl0

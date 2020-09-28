@@ -63,6 +63,14 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
+
+      BUILD_DIR/libultra.a:seteventmesg.o(.text);
+      BUILD_DIR/libultra.a:sqrtf.o(.text);
+      BUILD_DIR/asm/ovl0/set_pc_abstraction.o(.text);
+      BUILD_DIR/libultra.a:contquery.o(.text);
+      BUILD_DIR/asm/ovl0/xprintf.o(.text);
+      BUILD_DIR/libultra.a:epidma.o(.text);
+      BUILD_DIR/asm/ovl0/potential_leo_function.o(.text);
       BUILD_DIR/libultra.a:string.o(.text);
       BUILD_DIR/libultra.a:createmesgqueue.o(.text);
       BUILD_DIR/libultra.a:invalicache.o(.text);
@@ -129,9 +137,11 @@ SECTIONS
       BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
+
+
+
       BUILD_DIR/data/kirby.039DF0.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
-
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
       BUILD_DIR/libultra.a:vi.o(.data);
@@ -149,6 +159,8 @@ SECTIONS
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
+      BUILD_DIR/libultra.a:seteventmesg.o(.bss);
+      BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
       BUILD_DIR/libultra.a:timerintr.o(.bss);
       BUILD_DIR/libultra.a:cartrominit.o(.bss);
       /*BUILD_DIR/libultra.a:vimgr.o(.bss);*/

@@ -365,8 +365,8 @@ glabel __osException
 /* 02F0A0 8002E4A0 00000000 */   nop   
 
 glabel send_mesg
-/* 02F0A4 8002E4A4 3C0A800A */  lui   $t2, %hi(__osEventStateTab_what) # $t2, 0x800a
-/* 02F0A8 8002E4A8 254AA0E0 */  addiu $t2, %lo(__osEventStateTab_what) # addiu $t2, $t2, -0x5f20
+/* 02F0A4 8002E4A4 3C0A800A */  lui   $t2, %hi(__osEventStateTab) # $t2, 0x800a
+/* 02F0A8 8002E4A8 254AA0E0 */  addiu $t2, %lo(__osEventStateTab) # addiu $t2, $t2, -0x5f20
 /* 02F0AC 8002E4AC 01445021 */  addu  $t2, $t2, $a0
 /* 02F0B0 8002E4B0 8D490000 */  lw    $t1, ($t2)
 /* 02F0B4 8002E4B4 03E09025 */  move  $s2, $ra

@@ -244897,7 +244897,7 @@ glabel D_80098AA8
 glabel D_80098AAC
 .word 0x00000000
 
-glabel D_80098AB0
+glabel __osContPifRam
 .word 0x00000000
 
 glabel D_80098AB4
@@ -244945,7 +244945,7 @@ glabel D_80098AE8
 glabel D_80098AEC
 .word 0x00000000
 
-glabel D_80098AF0
+glabel __osContLastCmd
 .word 0x00000000
 
 glabel D_80098AF4
@@ -249157,194 +249157,7 @@ glabel D_8009A0D8
 glabel D_8009A0DC
 .word 0x00000000
 
-glabel D_8009A0E0
-.word 0x00000000
 
-glabel D_8009A0E4
-.word 0x00000000
 
-glabel D_8009A0E8
-.word 0x00000000
 
-glabel D_8009A0EC
-.word 0x00000000
 
-glabel D_8009A0F0
-.word 0x00000000
-
-glabel D_8009A0F4
-.word 0x00000000
-
-glabel D_8009A0F8
-.word 0x00000000
-
-glabel D_8009A0FC
-.word 0x00000000
-
-glabel D_8009A100
-.word 0x00000000
-
-glabel D_8009A104
-.word 0x00000000
-
-glabel D_8009A108
-.word 0x00000000
-
-glabel D_8009A10C
-.word 0x00000000
-
-glabel D_8009A110
-.word 0x00000000
-
-glabel D_8009A114
-.word 0x00000000
-
-glabel D_8009A118
-.word 0x00000000
-
-glabel D_8009A11C
-.word 0x00000000
-
-glabel D_8009A120
-.word 0x00000000
-
-glabel D_8009A124
-.word 0x00000000
-
-glabel D_8009A128
-.word 0x00000000
-
-glabel D_8009A12C
-.word 0x00000000
-
-glabel D_8009A130
-.word 0x00000000
-
-glabel D_8009A134
-.word 0x00000000
-
-glabel D_8009A138
-.word 0x00000000
-
-glabel D_8009A13C
-.word 0x00000000
-
-glabel D_8009A140
-.word 0x00000000
-
-glabel D_8009A144
-.word 0x00000000
-
-glabel D_8009A148
-.word 0x00000000
-
-glabel D_8009A14C
-.word 0x00000000
-
-glabel D_8009A150
-.word 0x00000000
-
-glabel D_8009A154
-.word 0x00000000
-
-glabel D_8009A158
-.word 0x00000000
-
-glabel D_8009A15C
-.word 0x00000000
-
-glabel D_8009A160
-.word 0x00000000
-
-glabel D_8009A164
-.word 0x00000000
-
-glabel D_8009A168
-.word 0x00000000
-
-glabel D_8009A16C
-.word 0x00000000
-
-glabel D_8009A170
-.word 0x00000000
-
-glabel D_8009A174
-.word 0x00000000
-
-glabel D_8009A178
-.word 0x00000000
-
-glabel D_8009A17C
-.word 0x00000000
-
-glabel D_8009A180
-.word 0x00000000
-
-glabel D_8009A184
-.word 0x00000000
-
-glabel D_8009A188
-.word 0x00000000
-
-glabel D_8009A18C
-.word 0x00000000
-
-glabel D_8009A190
-.word 0x00000000
-
-glabel D_8009A194
-.word 0x00000000
-
-glabel D_8009A198
-.word 0x00000000
-
-glabel D_8009A19C
-.word 0x00000000
-
-glabel D_8009A1A0
-.word 0x00000000
-
-glabel D_8009A1A4
-.word 0x00000000
-
-glabel D_8009A1A8
-.word 0x00000000
-
-glabel D_8009A1AC
-.word 0x00000000
-
-glabel D_8009A1B0
-.word 0x00000000
-
-glabel D_8009A1B4
-.word 0x00000000
-
-glabel D_8009A1B8
-.word 0x00000000
-
-glabel D_8009A1BC
-.word 0x00000000
-
-glabel D_8009A1C0
-.word 0x00000000
-
-glabel D_8009A1C4
-.word 0x00000000
-
-glabel D_8009A1C8
-.word 0x00000000
-
-glabel D_8009A1CC
-.word 0x00000000
-
-glabel D_8009A1D0
-.word 0x00000000
-
-glabel D_8009A1D4
-.word 0x00000000
-
-glabel D_8009A1D8
-.word 0x00000000
-
-glabel D_8009A1DC
-.word 0x00000000
