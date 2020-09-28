@@ -4005,13 +4005,10 @@ glabel D_8004A404
 
 glabel D_8004A408
 .word 0x00000000
-
 glabel D_8004A40C
 .word 0x00000000
-
 glabel D_8004A410
 .word 0x00000000
-
 glabel D_8004A414
 .word 0x00000000
 
