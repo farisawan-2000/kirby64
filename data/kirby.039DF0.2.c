@@ -113,6 +113,9 @@ u32 D_8003FF88 = 0x00000000;
 
 u32 D_8003FF8C = 0x00000000;
 
+
+// ovl0_2_5.c rodata
+
 u8 D_8003FF90[] = "gtl : DLBuffer over flow !  kind = %d  vol = %d byte\n";
 u8 D_8003FFC8[] = "gtl : DynamicBuffer over flow !  %d byte\n";
 u8 D_8003FFF4[] = "bad addr sc_rdp_output_len = %x\n";
@@ -124,7 +127,9 @@ u8 D_800400A0[] = "gtl : not defined SCTaskGfxEnd\n";
 u8 D_800400C0[] = "gtl : ucode isn't included  kind = %d\n";
 u8 D_800400E8[] = "gtl : not defined SCTaskGfxEnd\n";
 
-u32 D_80040108 = 0x80005BE4;
+
+// rodata for func_80005A98
+u32 jtbl_80040108 = 0x80005BE4;
 u32 D_8004010C = 0x80005C00;
 u32 D_80040110 = 0x80005BE4;
 u32 D_80040114 = 0x80005C00;
@@ -141,7 +146,9 @@ u32 D_8004013C = 0x80005C00;
 u32 D_80040140 = 0x80005BE4;
 u32 D_80040144 = 0x80005C00;
 
-u32 D_80040148 = 0x80005CAC;
+
+// rodata for func_80005C64
+u32 jtbl_80040148 = 0x80005CAC;
 u32 D_8004014C = 0x80005CB4;
 u32 D_80040150 = 0x80005CAC;
 u32 D_80040154 = 0x80005CB4;
@@ -157,7 +164,9 @@ u32 D_80040178 = 0x80005CAC;
 u32 D_8004017C = 0x80005CB4;
 u32 D_80040180 = 0x80005CAC;
 
-u32 D_80040184 = 0x80005D94;
+
+// rodata for func_80005CC0
+u32 jtbl_80040184 = 0x80005D94;
 u32 D_80040188 = 0x80005D5C;
 u32 D_8004018C = 0x80005D94;
 u32 D_80040190 = 0x80005D5C;

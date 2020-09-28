@@ -1,3 +1,24 @@
+# .late_rodata
+# glabel jtbl_80040108 
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005C0C_ovl0
+# .word L80005C0C_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+
+
+.text
 glabel func_80005A98
 /* 006698 80005A98 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00669C 80005A9C AFBF001C */  sw    $ra, 0x1c($sp)
@@ -83,11 +104,12 @@ glabel func_80005A98
 /* 0067C4 80005BC4 10200011 */  beqz  $at, .L80005C0C_ovl0
 /* 0067C8 80005BC8 AE080040 */   sw    $t0, 0x40($s0)
 /* 0067CC 80005BCC 0006C080 */  sll   $t8, $a2, 2
-/* 0067D0 80005BD0 3C018004 */  lui   $at, 0x8004
+/* 0067D0 80005BD0 3C018004 */  lui   $at, %hi(jtbl_80040108)
 /* 0067D4 80005BD4 00380821 */  addu  $at, $at, $t8
-/* 0067D8 80005BD8 8C380108 */  lw    $t8, 0x108($at)
+/* 0067D8 80005BD8 8C380108 */  lw    $t8, %lo(jtbl_80040108)($at)
 /* 0067DC 80005BDC 03000008 */  jr    $t8
 /* 0067E0 80005BE0 00000000 */   nop   
+.L80005BE4_ovl0:
 /* 0067E4 80005BE4 8FA20034 */  lw    $v0, 0x34($sp)
 /* 0067E8 80005BE8 AE020050 */  sw    $v0, 0x50($s0)
 /* 0067EC 80005BEC 8FB90038 */  lw    $t9, 0x38($sp)
@@ -95,6 +117,7 @@ glabel func_80005A98
 /* 0067F4 80005BF4 00594021 */  addu  $t0, $v0, $t9
 /* 0067F8 80005BF8 10000004 */  b     .L80005C0C_ovl0
 /* 0067FC 80005BFC AE080054 */   sw    $t0, 0x54($s0)
+.L80005C00_ovl0:
 /* 006800 80005C00 AE000050 */  sw    $zero, 0x50($s0)
 /* 006804 80005C04 AE000054 */  sw    $zero, 0x54($s0)
 /* 006808 80005C08 AE000074 */  sw    $zero, 0x74($s0)
