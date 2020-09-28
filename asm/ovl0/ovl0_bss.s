@@ -244951,7 +244951,7 @@ glabel D_80098AF0
 glabel D_80098AF4
 .word 0x00000000
 
-glabel D_80098AF8
+glabel __osEepromTimer
 .word 0x00000000
 
 glabel D_80098AFC
@@ -244975,7 +244975,7 @@ glabel D_80098B10
 glabel D_80098B14
 .word 0x00000000
 
-glabel D_80098B18
+glabel __osEepromTimerQ
 .word 0x00000000
 
 glabel D_80098B1C
@@ -244993,7 +244993,7 @@ glabel D_80098B28
 glabel D_80098B2C
 .word 0x00000000
 
-glabel D_80098B30
+glabel __osEepromTimerMsg
 .word 0x00000000
 
 glabel D_80098B34

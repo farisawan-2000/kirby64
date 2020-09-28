@@ -63,6 +63,11 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
+      BUILD_DIR/libultra.a:string.o(.text);
+      BUILD_DIR/libultra.a:createmesgqueue.o(.text);
+      BUILD_DIR/libultra.a:invalicache.o(.text);
+      BUILD_DIR/libultra.a:invaldcache.o(.text);
+      BUILD_DIR/libultra.a:conteeplongwrite.o(.text);
       BUILD_DIR/libultra.a:sp.o(.text);
       BUILD_DIR/libultra.a:si.o(.text);
       BUILD_DIR/libultra.a:jammesg.o(.text);
