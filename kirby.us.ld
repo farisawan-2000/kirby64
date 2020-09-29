@@ -34,7 +34,6 @@ SECTIONS
    }
    END_SEG(boot)
 
-
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
@@ -57,11 +56,13 @@ SECTIONS
       BUILD_DIR/asm/ovl0/exception.o(.text);
       BUILD_DIR/libultra.a:thread.o(.text);
       BUILD_DIR/libultra.a:bzero.o(.text);
-      /* Not being included for some reason */
+
+      /* TODO: match this */
+      /* leointerrupt.o has all 3 functions commented out, so be sure to
+         fix that if you're attempting to match */
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
       /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
 
- 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
       BUILD_DIR/libultra.a:devmgr.o(.text);
@@ -167,6 +168,8 @@ SECTIONS
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
+      BUILD_DIR/libultra.a:leointerrupt.o(.bss);
+      BUILD_DIR/asm/ovl0/bss_after_leointerrupt.o(.bss);
       BUILD_DIR/libultra.a:seteventmesg.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
       BUILD_DIR/libultra.a:timerintr.o(.bss);

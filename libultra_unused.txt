@@ -1,2 +1,5 @@
 EXTERN(__osDevMgrMain);
 EXTERN(osPiRawStartDma);
+EXTERN(__osLeoInterrupt);
+EXTERN(__osLeoAbnormalResume);
+EXTERN(__osLeoResume);

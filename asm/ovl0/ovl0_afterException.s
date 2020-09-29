@@ -3618,9 +3618,9 @@ glabel func_800320D0
 /* 032E70 80032270 03E00008 */  jr    $ra
 /* 032E74 80032274 27BD0078 */   addiu $sp, $sp, 0x78
 
-glabel func_80032278
 /* 032E78 80032278 00000000 */  nop   
 /* 032E7C 8003227C 00000000 */  nop   
+glabel osCreatePiManager
 /* 032E80 80032280 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 032E84 80032284 AFB00020 */  sw    $s0, 0x20($sp)
 /* 032E88 80032288 3C108004 */  lui   $s0, %hi(__osPiDevMgr) # $s0, 0x8004
