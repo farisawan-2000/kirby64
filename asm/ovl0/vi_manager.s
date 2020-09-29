@@ -4,7 +4,7 @@
 .include "macros.inc"
 
 .section .text, "ax"  
-
+ 
 glabel osCreateViManager
 /* 039580 80038980 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 039584 80038984 AFB00020 */  sw    $s0, 0x20($sp)

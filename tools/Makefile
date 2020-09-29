@@ -8,10 +8,19 @@ iplfontutil_CFLAGS := -O2 # faster compile time
 n64graphics_SOURCES := n64graphics.c utils.c
 n64graphics_CFLAGS  := -DN64GRAPHICS_STANDALONE
 
-all: $(PROGRAMS)
+ifeq (, $(shell which armips 2> /dev/null))
+CXX_PROGRAMS += armips
+endif
+
+default: all
+
+all: $(PROGRAMS) $(CXX_PROGRAMS)
+
+armips: armips.cpp
+	$(CXX) $(CXXFLAGS) -fno-exceptions -fno-rtti -pipe $^ -o $@ -lpthread $(ARMIPS_FLAGS)
 
 clean:
-	$(RM) $(PROGRAMS)
+	$(RM) $(PROGRAMS) $(CXXPROGRAMS)
 
 define COMPILE
 $(1): $($1_SOURCES)

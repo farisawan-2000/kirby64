@@ -6,10 +6,11 @@ OUTPUT_ARCH (mips)
     _##name##SegmentRomStart = __romPos; \
     .name addr : AT(__romPos)
 
-#define MARK(name, prevName) \
-    _##name##_RomStart = __romPos; \
-    _##prevName##_RomEnd = __romPos;
 
+/*#define MARK(name, prevName) \
+    _##name##_RomStart = __romPos; \
+    _##prevName##_RomEnd = __romPos;*/
+ 
 #define END_SEG(name) \
     _##name##SegmentEnd = ADDR(.name) + SIZEOF(.name); \
     _##name##SegmentRomEnd = __romPos + SIZEOF(.name); \
@@ -130,7 +131,8 @@ SECTIONS
       BUILD_DIR/libultra.a:dp.o(.text);
       BUILD_DIR/libultra.a:spsetstat.o(.text);
       BUILD_DIR/libultra.a:spgetstat.o(.text);
-      /* TODO: match this */
+
+      /* TODO: match this (rename the function if you're doing this) */
       /*BUILD_DIR/libultra.a:vimgr.o(.text);*/
       BUILD_DIR/asm/ovl0/vi_manager.o(.text);
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
@@ -146,7 +148,9 @@ SECTIONS
 
 
       BUILD_DIR/data/kirby.039DF0.o(.data);
-      UCODE_TEXT_OFILES
+      #define UCODE_TEXT
+         #include "kirby.ucode.ld"
+      #undef UCODE_TEXT
       /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data); */
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
@@ -168,7 +172,9 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.3.o(.data);
-      UCODE_DATA_OFILES
+      #define UCODE_DATA
+         #include "kirby.ucode.ld"
+      #undef UCODE_DATA
    }
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {

@@ -1,3 +1,6 @@
 [submodule "libreultra"]
 	path = libreultra
 	url = https://github.com/farisawan-2000/libreultra/
+[submodule "f3dex2"]
+	path = f3dex2
+	url = https://github.com/Mr-Wiseguy/f3dex2

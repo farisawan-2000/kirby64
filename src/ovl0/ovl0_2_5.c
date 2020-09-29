@@ -459,7 +459,6 @@ extern OSMesgQueue *D_80048CB8;
 extern u32 D_80049760[]; // TODO; is this a different type?
 extern u32 D_80049358[];
 extern const char D_800400C0[];
-extern u32 D_80049308;
 extern u32 D_80049320;
 extern u32 D_8004A3F4;
 extern u32 D_80048900;
