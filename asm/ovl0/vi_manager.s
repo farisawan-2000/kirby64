@@ -17,10 +17,10 @@ glabel osCreateViManager
 /* 0395A0 800389A0 8FBF0024 */   lw    $ra, 0x24($sp)
 /* 0395A4 800389A4 0C00D1A8 */  jal   __osTimerServicesInit
 /* 0395A8 800389A8 00000000 */   nop   
-/* 0395AC 800389AC 3C018004 */  lui   $at, %hi(viThreadStack) # $at, 0x8004
+/* 0395AC 800389AC 3C018004 */  lui   $at, %hi(D_8003FE6C) # $at, 0x8004
 /* 0395B0 800389B0 3C04800A */  lui   $a0, %hi(viEventQueue) # $a0, 0x800a
 /* 0395B4 800389B4 3C05800A */  lui   $a1, %hi(viEventBuf) # $a1, 0x800a
-/* 0395B8 800389B8 AC20FE6C */  sw    $zero, %lo(viThreadStack)($at)
+/* 0395B8 800389B8 AC20FE6C */  sw    $zero, %lo(D_8003FE6C)($at)
 /* 0395BC 800389BC 24A5B4A8 */  addiu $a1, %lo(viEventBuf) # addiu $a1, $a1, -0x4b58
 /* 0395C0 800389C0 2484B490 */  addiu $a0, %lo(viEventQueue) # addiu $a0, $a0, -0x4b70
 /* 0395C4 800389C4 0C00CEB8 */  jal   osCreateMesgQueue
@@ -216,3 +216,21 @@ glabel viMgrMain
 
 /* 03988C 80038C8C 00000000 */  nop   
 
+# .section .bss
+# glabel viThread
+# .skip 0x1B0
+
+# glabel D_8003FE6C_2
+# .skip 0x1000
+
+# glabel viEventQueue
+# .skip 24
+
+# glabel viEventBuf
+# .skip 24
+
+# glabel viRetraceMsg
+# .skip 24
+
+# glabel viCounterMsg
+# .skip 40

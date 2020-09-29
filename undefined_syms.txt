@@ -9750,7 +9750,7 @@ D_800E3750 = 0x800E3750;
 D_800E3210 = 0x800E3210;
 D_800E64D0 = 0x800E64D0;
 D_800E6690 = 0x800E6690;
-
+D_8003FE6C = 0x8003FE6C;
 
 /* Reserved section for symbols that wont need to be removed */
 func_80300170 = D_80300170;

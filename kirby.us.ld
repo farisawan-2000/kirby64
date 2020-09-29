@@ -130,7 +130,7 @@ SECTIONS
       BUILD_DIR/libultra.a:dp.o(.text);
       BUILD_DIR/libultra.a:spsetstat.o(.text);
       BUILD_DIR/libultra.a:spgetstat.o(.text);
-      /* TODO: sort .data and .rodata so static vars are honored */
+      /* TODO: match this */
       /*BUILD_DIR/libultra.a:vimgr.o(.text);*/
       BUILD_DIR/asm/ovl0/vi_manager.o(.text);
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
@@ -153,6 +153,7 @@ SECTIONS
       BUILD_DIR/libultra.a:vimodepallan1.o(.data);
       BUILD_DIR/data/kirby.039DF0.1.5.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
+      BUILD_DIR/libultra.a:vimgr.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data);
@@ -175,9 +176,9 @@ SECTIONS
       BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
       BUILD_DIR/libultra.a:timerintr.o(.bss);
       BUILD_DIR/libultra.a:cartrominit.o(.bss);
-      /*BUILD_DIR/libultra.a:vimgr.o(.bss);*/
       BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
-      BUILD_DIR/asm/ovl0/vimgr_bss.o(.bss);
+      BUILD_DIR/libultra.a:vimgr.o(.bss);
+      /*BUILD_DIR/asm/ovl0/vi_manager.o(.bss);*/
       BUILD_DIR/asm/ovl0/ovl0_bss_end.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
