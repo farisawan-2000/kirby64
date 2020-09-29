@@ -1,6 +1,6 @@
 #include "types.h"
 #include "segments.h"
-
+ 
 u32 D_800BE3E0 = 0x00000000;
 
 u32 D_800BE3E4 = 0x00000000;
