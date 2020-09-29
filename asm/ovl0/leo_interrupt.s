@@ -495,3 +495,8 @@ glabel __osLeoResume
 /* 02FC34 8002F034 27BD0018 */  addiu $sp, $sp, 0x18
 /* 02FC38 8002F038 03E00008 */  jr    $ra
 /* 02FC3C 8002F03C 00000000 */   nop   
+
+
+.section .bss
+glabel leoDiskStack
+.skip 4096

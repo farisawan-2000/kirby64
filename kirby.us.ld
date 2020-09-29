@@ -168,7 +168,8 @@ SECTIONS
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
-      BUILD_DIR/libultra.a:leointerrupt.o(.bss);
+      BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);
+      /*BUILD_DIR/libultra.a:leointerrupt.o(.bss);*/
       BUILD_DIR/asm/ovl0/bss_after_leointerrupt.o(.bss);
       BUILD_DIR/libultra.a:seteventmesg.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
