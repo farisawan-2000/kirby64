@@ -83,5 +83,12 @@ struct DObj {
 struct Camera {
     struct Camera *unk0;
 };
+ 
+struct Unk_Ovl0_2_5 { // used a lot in this file
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+};
 
 #endif

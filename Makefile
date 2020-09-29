@@ -77,11 +77,23 @@ GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
+UCODE_BASE_DIR := ucode
+UCODES := F3DEX2_2.04H L3DEX2_2.04H S2DEX2_2.04
+
+UCODE_DIRS := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode))
+UCODE_TEXT_FILES := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode)/$(ucode).code)
+UCODE_DATA_FILES := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode)/$(ucode).data)
+
+UCODE_TEXT_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_TEXT_FILES:.code=.code.o))
+UCODE_DATA_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_DATA_FILES:.data=.data.o))
+
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+
+D_FILES := $(O_FILES:.o=.d)
 
 ACTOR_FILES := $(foreach file,$(DATA_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
@@ -92,7 +104,7 @@ INCLUDE_CFLAGS := -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I src -I .
 TARGET_CFLAGS := -nostdinc -I include/libc -DTARGET_N64 -DF3DEX_GBI_2
 CFLAGS = -Wab,-r4300_mul -non_shared -G0 -Xcpluscomm -Xfullwarn -signed $(OPT_FLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) $(MIPSISET)
 
-CC_CHECK := gcc -fsyntax-only -fsigned-char $(CC_CFLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(VERSION_CFLAGS) $(GRUCODE_CFLAGS)
+CC_CHECK := gcc -fsyntax-only -fsigned-char -m32 $(CC_CFLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(VERSION_CFLAGS) $(GRUCODE_CFLAGS)
 
 CC_TEST := gcc -Wall
 
@@ -106,8 +118,8 @@ ifeq ($(DUMMY),FAIL)
 endif
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone)
-DUMMY != mkdir -p $(BUILD_DIR)/$(ALL_DIRS)
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+DUMMY != mkdir -p $(ALL_DIRS)
 
 DUMMY != make -C libreultra -j4
 
@@ -153,10 +165,14 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
-	$(CPP) $(VERSION_CFLAGS) -DBUILD_DIR=$(BUILD_DIR) -MMD -MP -MT $@ -MF $@.d -o $@ $<
+$(BUILD_DIR)/$(UCODE_BASE_DIR)/%.o : $(UCODE_BASE_DIR)/%
+	$(OBJCOPY) -I binary -O elf32-big $< $@
 
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT)
+	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
+	-DBUILD_DIR=$(BUILD_DIR) -DUCODE_TEXT_OFILES="$(addsuffix ;,$(UCODE_TEXT_O_FILES))" -DUCODE_DATA_OFILES="$(addsuffix ;,$(UCODE_DATA_O_FILES))"
+
+$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra
 
 # final z64 updates checksum
@@ -185,6 +201,7 @@ load: $(BUILD_DIR)/$(TARGET).z64
 # Remove built-in rules, to improve performance
 MAKEFLAGS += --no-builtin-rules
 
+-include $(D_FILES)
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 

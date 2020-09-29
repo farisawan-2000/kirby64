@@ -42,7 +42,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.text);
-      /*. += 0x8;*/
+      BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_3.o(.text);
       BUILD_DIR/src/ovl0/ovl0_4.o(.text);
@@ -146,6 +146,9 @@ SECTIONS
 
 
       BUILD_DIR/data/kirby.039DF0.o(.data);
+      UCODE_TEXT_OFILES
+      /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data); */
+      BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
@@ -156,6 +159,7 @@ SECTIONS
       BUILD_DIR/libultra.a:vimgr.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
+      BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data);
       BUILD_DIR/libultra.a:devmgr.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.1.o(.data);
@@ -164,6 +168,7 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.3.o(.data);
+      UCODE_DATA_OFILES
    }
    END_SEG(ovl0)
    BEGIN_NOLOAD(ovl0) {
