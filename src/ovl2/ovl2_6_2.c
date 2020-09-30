@@ -277,56 +277,47 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101400_ovl2.s")
 
 #include "ovl0/ovl0_5.h"
 extern u32 D_8012BD00;
-u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3);
-// #ifdef MIPS_TO_C
+
+// TODO: either put these in ovl0_5.h, or use the ones already there
+#define PVPDP(a, b) ( a->x*b->x +  a->y*b->y +  a->z*b->z)
+#define NVPDP(a, b) (-a->x*b->x + -a->y*b->y + -a->z*b->z)
+
+u32 func_80101920(struct CollisionTriangle *triangle, struct Normal *arg1, Vector *arg2, struct Normal *arg3);
+#ifdef NON_MATCHING
 u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) {
-    if (!(arg0->normalType & NON_SOLID)) {
-        if (((arg0->normalType & NO_SHADOW) != 0) && ((D_8012BD00 >> 31) == 0)) {
+    u32 code = arg0->normalType;
+
+    if (!(code & NON_SOLID)) {
+        if ((code & NO_SHADOW) && (D_8012BD00 >> 31) == 0) {
             return 0;
         }
-        if (arg0->normalType & 3) {
-            if (arg0->normalType == 3) {
-                if ((arg3 != NULL) && (arg2 != NULL)) {
-                    if (0.0f < VEC_DOT(arg1, arg3)) {
-                        if (0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2)) {
-                            return 0;
-                        }
-                    } else if (0.0f < VEC_DOT(arg1, arg2)) {
-                        return 0;
-                    }
+        code &= 3;
+        if (code != 0) {
+            if ((code == DOUBLE_SIDED_NORMAL) && arg3 && arg2) {
+                if ((0.0f < VEC_DOT(arg1, arg3) && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2))) {
+                    return 0;
+                }
+                if (0.0f < VEC_DOT(arg1, arg2)) {
+                    return 0;
                 }
                 return 1;
             }
-            if (arg0->normalType & FORWARD_NORMAL) {
-                if (!arg2 || !(0.0f < VEC_DOT(arg1, arg2))) {
-
-                } else {
-                    return 0;
-                }
-                if (arg3 && (0.0f < VEC_DOT(arg1, arg3))) {
+            else if (code & FORWARD_NORMAL) {
+                if (arg2 && (0.0f < VEC_DOT(arg1, arg2)) || arg3 && (0.0f < VEC_DOT(arg1, arg3))) {
                     return 0;
                 }
             } else {
-                if (arg2 || !(0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2))) {
-
-                    return 0;
-                } else {
-                }
-                if (arg3 && (0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg3))) {
+                if (arg2 && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2) || arg3 && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg3)) {
                     return 0;
                 }
             }
             return 1;
         }
-    }
-    return 0;
+    } else return 0;
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
-// #endif
-
-#define PVPDP(a, b) ( a->x*b->x +  a->y*b->y +  a->z*b->z)
-#define NVPDP(a, b) (-a->x*b->x + -a->y*b->y + -a->z*b->z)
+#else
+GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
+#endif
 
 u32 func_80101BA0_ovl2(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
     u32 code = triangle->normalType;
