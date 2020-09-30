@@ -7,6 +7,8 @@ BUILD_DIR_BASE = build
 VERSION = us
 BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
 
+GRUCODE := F3DEX2_2.04H
+
 
 # check that either QEMU_IRIX is set or qemu-irix package installed
 ifndef QEMU_IRIX
@@ -78,14 +80,14 @@ S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
 UCODE_BASE_DIR := ucode
-UCODES := F3DEX2_2.04H L3DEX2_2.04H S2DEX2_2.04
+UCODES := L3DEX2_2.04H S2DEX2_2.04
 
-UCODE_DIRS := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode))
+UCODE_DIRS := $(foreach ucode,$(UCODES) $(GRUCODE),$(UCODE_BASE_DIR)/$(ucode))
 UCODE_TEXT_FILES := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode)/$(ucode).code)
 UCODE_DATA_FILES := $(foreach ucode,$(UCODES),$(UCODE_BASE_DIR)/$(ucode)/$(ucode).data)
 
-UCODE_TEXT_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_TEXT_FILES:.code=.code.o))
-UCODE_DATA_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_DATA_FILES:.data=.data.o))
+UCODE_TEXT_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_TEXT_FILES:.code=.code.o)) $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).code.o
+UCODE_DATA_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_DATA_FILES:.data=.data.o)) $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).data.o
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
@@ -121,7 +123,20 @@ endif
 ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
 
+# Checking if submodules exist
+DUMMY != ls libreultra >/dev/null || echo FAIL
+ifeq ($(DUMMY),FAIL)
+  $(error Missing submodule libreultra. Please run 'git submodule update --init')
+endif
+
+DUMMY != ls f3dex2 >/dev/null || echo FAIL
+ifeq ($(DUMMY),FAIL)
+  $(error Missing submodule f3dex2. Please run 'git submodule update --init')
+endif
+
+# Making submodules
 DUMMY != make -C libreultra -j4
+DUMMY != make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 
 default: all
 
@@ -136,6 +151,12 @@ hexdump: $(BUILD_DIR)/$(TARGET).hex
 clean:
 	rm -rf build/
 
+distclean:
+	rm -rf build/
+	make -C tools clean
+	make -C libreultra clean
+	make -C f3dex2 clean
+
 softclean:
 	rm -rf build/us/src/
 	rm -rf build/us/asm/
@@ -149,6 +170,9 @@ $(BUILD_DIR):
 
 $(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
 	cp $< $@
+
+$(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
+	$(OBJCOPY) -I binary -O elf32-big $< $@
 
 $(BUILD_DIR)/%.o: %.s
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -170,7 +194,7 @@ $(BUILD_DIR)/$(UCODE_BASE_DIR)/%.o : $(UCODE_BASE_DIR)/%
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
-	-DBUILD_DIR=$(BUILD_DIR) -DUCODE_TEXT_OFILES="$(addsuffix ;,$(UCODE_TEXT_O_FILES))" -DUCODE_DATA_OFILES="$(addsuffix ;,$(UCODE_DATA_O_FILES))"
+	-DBUILD_DIR=$(BUILD_DIR)
 
 $(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra
