@@ -74,12 +74,12 @@ void *func_801512F0(void) {
 
     func_8009B99C_ovl6(0x200);
     func_800A04B8_ovl6(0x10);
-    temp_v0 = func_8000A180_ovl6(0, 0, 0x18, 0x80000000);
+    temp_v0 = func_8000A180(0, 0, 0x18, 0x80000000);
     sp2C = temp_v0;
     sp24 = &D_80151204;
     func_8000A5FC_ovl6(temp_v0, &D_80151204, 0x10, 8, 0x10);
     sp2C->unk30 = 1;
-    temp_v0_2 = func_8000A180_ovl6(0, 0, 0x18, 0x80000000);
+    temp_v0_2 = func_8000A180(0, 0, 0x18, 0x80000000);
     sp2C = temp_v0_2;
     func_8000A5FC_ovl6(temp_v0_2, &D_80151204, 0x10, 0x10, 0x10);
     sp2C->unk30 = 2;
@@ -1098,7 +1098,7 @@ void func_80153C28(void) {
             func_8000A904_ovl6(D_800DE44C, 0xC, 0);
             D_800DE44C->unk2C = &D_8015392C;
             if (D_8015A6A0 == 0) {
-                D_8015A6A0 = func_8000A180_ovl6(0, &D_80153B80, 0, 0x80000000);
+                D_8015A6A0 = func_8000A180(0, &D_80153B80, 0, 0x80000000);
             }
         }
     }
@@ -1554,7 +1554,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154628.s")
 void func_80154690(void) {
     func_800A41B0_ovl6(0x3F800000);
     func_80154628_ovl6();
-    func_8000A180_ovl6(1, &D_801544E8, 1, 0x80000000);
+    func_8000A180(1, &D_801544E8, 1, 0x80000000);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80154690.s")

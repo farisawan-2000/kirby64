@@ -28,7 +28,7 @@ glabel func_800F64B0_ovl2
 /* 07EF88 800F6518 24A562A4 */  addiu $a1, %lo(D_800F62A4) # addiu $a1, $a1, 0x62a4
 /* 07EF8C 800F651C 00002025 */  move  $a0, $zero
 /* 07EF90 800F6520 2406001A */  li    $a2, 26
-/* 07EF94 800F6524 0C002860 */  jal   func_8000A180_ovl2
+/* 07EF94 800F6524 0C002860 */  jal   func_8000A180
 /* 07EF98 800F6528 3C078000 */   lui   $a3, 0x8000
 /* 07EF9C 800F652C 0C02B812 */  jal   func_800AE048_ovl2
 /* 07EFA0 800F6530 24040040 */   li    $a0, 64

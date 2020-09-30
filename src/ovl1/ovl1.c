@@ -314,7 +314,7 @@ loop_3:
     if (func_8000B688_ovl1(-6) != 0) {
         return 0;
     }
-    return func_8000A180_ovl1(-6, &D_8009E834, 0, 0x80000000);
+    return func_8000A180(-6, &D_8009E834, 0, 0x80000000);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1/func_8009B99C.s")
@@ -941,7 +941,7 @@ loop_1:
     }
     D_800D6AE2 = 0;
     D_800D6AE8 = 0;
-    return func_8000A180_ovl1(-7, &D_800A09AC, 0, 0x80000000);
+    return func_8000A180(-7, &D_800A09AC, 0, 0x80000000);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1/func_800A04B8.s")

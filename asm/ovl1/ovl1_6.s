@@ -525,7 +525,7 @@ glabel func_800AE7A8
 /* 056B0C 800AE8BC 01823021 */  addu  $a2, $t4, $v0
 /* 056B10 800AE8C0 30C600FF */  andi  $a2, $a2, 0xff
 /* 056B14 800AE8C4 24A50D24 */  addiu $a1, %lo(D_800B0D24) # addiu $a1, $a1, 0xd24
-/* 056B18 800AE8C8 0C002860 */  jal   func_8000A180_ovl1
+/* 056B18 800AE8C8 0C002860 */  jal   func_8000A180
 /* 056B1C 800AE8CC 00003825 */   move  $a3, $zero
 /* 056B20 800AE8D0 8FA30028 */  lw    $v1, 0x28($sp)
 /* 056B24 800AE8D4 3C01800E */  lui   $at, 0x800e

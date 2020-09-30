@@ -4269,7 +4269,7 @@ void *func_80176398_ovl3(void) {
     void *temp_v0;
     void *temp_v1;
 
-    temp_v0_2 = func_8000A180_ovl3(2, 0, 0x19, 0x80000000);
+    temp_v0_2 = func_8000A180(2, 0, 0x19, 0x80000000);
     if (temp_v0_2 != 0) {
         func_8000A5FC_ovl3(temp_v0_2, &D_801762E0, 0xC, 0x80000000, -1);
     }

@@ -48,7 +48,7 @@ glabel func_8009B99C
 /* 043C90 8009BA40 24A5E834 */  addiu $a1, %lo(D_8009E834) # addiu $a1, $a1, -0x17cc
 /* 043C94 8009BA44 2404FFFA */  li    $a0, -6
 /* 043C98 8009BA48 00003025 */  move  $a2, $zero
-/* 043C9C 8009BA4C 0C002860 */  jal   func_8000A180_ovl1
+/* 043C9C 8009BA4C 0C002860 */  jal   func_8000A180
 /* 043CA0 8009BA50 3C078000 */   lui   $a3, 0x8000
 .L8009BA54_ovl1:
 /* 043CA4 8009BA54 8FBF001C */  lw    $ra, 0x1c($sp)

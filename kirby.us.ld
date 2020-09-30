@@ -273,6 +273,7 @@ SECTIONS
       BUILD_DIR/src/ovl2/ovl2_4.o(.text);
       BUILD_DIR/src/ovl2/ovl2_5.o(.text);
       BUILD_DIR/src/ovl2/ovl2_6.o(.text);
+      BUILD_DIR/src/ovl2/ovl2_6_2.o(.text);
       BUILD_DIR/src/ovl2/ovl2_7.o(.text);
       BUILD_DIR/src/ovl2/ovl2_8.o(.text);
       BUILD_DIR/data/kirby.0AC900_1.o(.data);

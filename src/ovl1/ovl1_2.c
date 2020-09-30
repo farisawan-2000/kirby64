@@ -490,7 +490,7 @@ void *func_800A78D0(s32 arg0) {
     D_800D6FB8 = func_800A04B8_ovl1(0x40);
     func_8000A29C_ovl1(D_800D6FB4);
     func_8000A29C_ovl1(D_800D6FB8);
-    temp_v0_2 = func_8000A180_ovl1(-7, 0, 0x18, 0);
+    temp_v0_2 = func_8000A180(-7, 0, 0x18, 0);
     D_800D6FB8 = temp_v0_2;
     D_800D6FB4 = temp_v0_2;
     sp2C = &D_8009E834;
@@ -499,7 +499,7 @@ void *func_800A78D0(s32 arg0) {
     func_80008A18_ovl1(D_800D6FB8, &D_800A09AC, 1, 0);
     func_80008A18_ovl1(D_800D6FB8, &D_8009E834, 1, 0);
     func_80008A18_ovl1(D_800D6FB8, &D_800A09AC, 1, 0);
-    temp_v0_3 = func_8000A180_ovl1(0, 0, 0x18, 0x80000000);
+    temp_v0_3 = func_8000A180(0, 0, 0x18, 0x80000000);
     temp_s0 = temp_v0_3;
     func_8000A5FC_ovl1(temp_v0_3, &D_800A7ABC, 0x10, 0xC, -1);
     temp_s0->unk30 = 0xF;
