@@ -696,8 +696,8 @@ void *func_8011C8F8(void) {
     gKirbyState.unkE = (u8)0;
     gKirbyState.unkA4 = 0;
     gKirbyState.unk10 = 0;
-    gKirbyState.unkD6 = (s16) -1;
-    gKirbyState.unkD4 = (u16)0;
+    gKirbyState.damageFlashTimer = (s16) -1;
+    gKirbyState.damageType = (u16)0;
     gKirbyState.unk48 = 0;
     gKirbyState.unk50 = 0;
     gKirbyState.unk4C = 0;
@@ -709,10 +709,10 @@ void *func_8011C8F8(void) {
     gKirbyState.unk5C = (u16)0;
     gKirbyState.unk68 = (u16)0;
     gKirbyState.unk6A = (u16)0;
-    gKirbyState.unkDC = (u8)0;
-    gKirbyState.unkDD = (u8)0;
-    gKirbyState.unkE0 = (u16)0;
-    gKirbyState.unkDE = (u16)0;
+    gKirbyState.isTakingDamage = (u8)0;
+    gKirbyState.droppedAbility = (u8)0;
+    gKirbyState.hpAfterDamage = (u16)0;
+    gKirbyState.abilityDropTimer = (u16)0;
     gKirbyState.unk70 = 0;
     gKirbyState.unk74 = 0;
     gKirbyState.abilityState = (u8)0;
@@ -1259,8 +1259,8 @@ void func_8011DD5C_ovl2(void *arg0, void *arg1) {
         gKirbyState.unk153 = (u8)0;
         gKirbyState.unk138 = (f32) gKirbyState.unk13C;
         if (gKirbyState.abilityInUse != 0x1B) {
-            if (gKirbyState.unk102 != 0x12) {
-                if (gKirbyState.unk102 != 0x13) {
+            if (gKirbyState.floorType != 0x12) {
+                if (gKirbyState.floorType != 0x13) {
 block_15:
                     *arg1 = 0.0f;
                     *arg0 = 0.0f;
@@ -1271,7 +1271,7 @@ block_15:
                 goto block_15;
             }
             *arg1 = 0.0f;
-            if (gKirbyState.unk102 != 0x13) {
+            if (gKirbyState.floorType != 0x13) {
                 temp_f10 = (f32) gKirbyState.unk114->unk10;
                 phi_f10_2 = temp_f10;
                 if ((s32) gKirbyState.unk114->unk10 < 0) {
@@ -1494,7 +1494,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011E31C_ovl2.s")
 #endif
 
 s32 func_8011E340(void) {
-    if (gKirbyState.unkE8 != 0) {
+    if (gKirbyState.floorCollisionNext != 0) {
         return gKirbyState.unk114;
     } else {
 		return 0;
@@ -1797,17 +1797,17 @@ u16 func_8011EBD4_ovl2(void) {
     void *temp_v0_2;
     u16 phi_return;
 
-    if (gKirbyState.unkD2 == 0) {
+    if (gKirbyState.isFullJump == 0) {
         if ((D_800D6FE8 & 0x8000) != 0) {
             if (gKirbyState.unk17 == 0) {
-                gKirbyState.unkD0 = (s16) (gKirbyState.unkD0 + 1);
-                return gKirbyState.unkD2;
+                gKirbyState.jumpHeight = (s16) (gKirbyState.jumpHeight + 1);
+                return gKirbyState.isFullJump;
             }
         }
-        phi_return = gKirbyState.unkD2;
-        if ((s32) gKirbyState.unkD0 < 0x11) {
-            gKirbyState.unkD2 = (u16) (gKirbyState.unkD2 + 1);
-            temp_f0 = (f32) (0x12 - gKirbyState.unkD0);
+        phi_return = gKirbyState.isFullJump;
+        if ((s32) gKirbyState.jumpHeight < 0x11) {
+            gKirbyState.isFullJump = (u16) (gKirbyState.isFullJump + 1);
+            temp_f0 = (f32) (0x12 - gKirbyState.jumpHeight);
             if (8.0f == gKirbyState.unkCC) {
                 temp_v0 = (*D_8004A7C4 * 4) + &D_800E3210;
                 *temp_v0 = (f32) (*temp_v0 + (((D_80128F50 * temp_f0) + gKirbyState.unkCC) - 2.0f));
@@ -1927,14 +1927,14 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120AF8_ovl2.s")
     if (gKirbyState.ability != 0) {
         phi_v1 = 0;
         if (gKirbyState.abilityInUse == 0) {
-            gKirbyState.unkE0 = (s16) (u32) gKirbyHp;
-            if (gKirbyState.unkDE == 0) {
-                gKirbyState.unkDE = (s16) (((gKirbyState.unkE0 * 4) + 0x80130000)->unk-7CB8 + 0x2D);
+            gKirbyState.hpAfterDamage = (s16) (u32) gKirbyHp;
+            if (gKirbyState.abilityDropTimer == 0) {
+                gKirbyState.abilityDropTimer = (s16) (((gKirbyState.hpAfterDamage * 4) + 0x80130000)->unk-7CB8 + 0x2D);
                 return 0;
             }
-            gKirbyState.unkDD = (s8) gKirbyState.ability;
-            gKirbyState.unkDE = (u16)0;
-            gKirbyState.unkDC = (u8)1;
+            gKirbyState.droppedAbility = (s8) gKirbyState.ability;
+            gKirbyState.abilityDropTimer = (u16)0;
+            gKirbyState.isTakingDamage = (u8)1;
             gKirbyState.ability = 0;
             phi_v1 = 1;
         }
@@ -2019,8 +2019,8 @@ void *func_80120E74_ovl2(s32 arg0) {
 
     func_800F90C0_ovl2(*D_8004A7C4, &D_800D7058);
     func_800A7BF4_ovl2(&D_800D7B98, &D_800D7058);
-    if ((u16)-1 == gKirbyState.unkD6) {
-        if (gKirbyState.unkD4 == 0) {
+    if ((u16)-1 == gKirbyState.damageFlashTimer) {
+        if (gKirbyState.damageType == 0) {
             if (((*D_8004A7C4 * 4) + 0x800E0000)->unk7CE0 != 0) {
                 phi_v0 = 1;
                 if ((D_800BE4EC & 2) != 0) {
@@ -2033,38 +2033,38 @@ void *func_80120E74_ovl2(s32 arg0) {
             }
             return func_800F90C0_ovl2(*D_8004A7C4, &D_800D7010);
         }
-        gKirbyState.unkD6 = (u16)-2;
+        gKirbyState.damageFlashTimer = (u16)-2;
     }
-    if (gKirbyState.unkD6 == -2) {
-        gKirbyState.unkDA = (u16)0xFFFFU;
+    if (gKirbyState.damageFlashTimer == -2) {
+        gKirbyState.damagePaletteIndex = (u16)0xFFFFU;
         ((*D_8004A7C4 * 4) + 0x800E0000)->unk7CE0 = 0;
-        gKirbyState.unkD8 = (u16)1;
-        gKirbyState.unkD6 = (s16) ((gKirbyState.unkD4 * 0xC) + 0x80130000)->unk-7C10;
+        gKirbyState.damagePaletteTimer = (u16)1;
+        gKirbyState.damageFlashTimer = (s16) ((gKirbyState.damageType * 0xC) + 0x80130000)->unk-7C10;
     } else {
-        gKirbyState.unkD6 = (s16) (gKirbyState.unkD6 - 1);
-        if (gKirbyState.unkD6 == 0) {
-            gKirbyState.unkD4 = (u16)0;
-            gKirbyState.unkD6 = (u16)-1;
+        gKirbyState.damageFlashTimer = (s16) (gKirbyState.damageFlashTimer - 1);
+        if (gKirbyState.damageFlashTimer == 0) {
+            gKirbyState.damageType = (u16)0;
+            gKirbyState.damageFlashTimer = (u16)-1;
             return &gKirbyState;
         }
     }
-    temp_v1 = (gKirbyState.unkD4 * 0xC) + &D_801283E8;
+    temp_v1 = (gKirbyState.damageType * 0xC) + &D_801283E8;
     if ((u16)-1 == temp_v1->unk4) {
         return func_800F90C0_ovl2(*D_8004A7C4, &D_800D7010);
     }
-    gKirbyState.unkD8 = (s16) (gKirbyState.unkD8 - 1);
-    if (gKirbyState.unkD8 == 0) {
-        temp_t3 = gKirbyState.unkDA + 1;
+    gKirbyState.damagePaletteTimer = (s16) (gKirbyState.damagePaletteTimer - 1);
+    if (gKirbyState.damagePaletteTimer == 0) {
+        temp_t3 = gKirbyState.damagePaletteIndex + 1;
         temp_v1_2 = temp_t3 & 0xFFFF;
-        gKirbyState.unkDA = temp_t3;
+        gKirbyState.damagePaletteIndex = temp_t3;
         phi_v1 = temp_v1_2;
         if (temp_v1_2 == temp_v1->unk4) {
-            gKirbyState.unkDA = (u16)0U;
+            gKirbyState.damagePaletteIndex = (u16)0U;
             phi_v1 = 0 & 0xFFFF;
         }
-        gKirbyState.unkD8 = (s16) (temp_v1->unk0 + (phi_v1 * 0x10))->unkC;
+        gKirbyState.damagePaletteTimer = (s16) (temp_v1->unk0 + (phi_v1 * 0x10))->unkC;
     }
-    return func_800A5404_ovl2(&D_800D7010, (gKirbyState.unkDA * 0x10) + temp_v1->unk0, temp_v1->unk0);
+    return func_800A5404_ovl2(&D_800D7010, (gKirbyState.damagePaletteIndex * 0x10) + temp_v1->unk0, temp_v1->unk0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120E74_ovl2.s")
@@ -2221,15 +2221,15 @@ f32 func_801212A4_ovl2(void) {
             }
         } else {
             phi_return_3 = (bitwise f32) temp_ret;
-            if (gKirbyState.unkE4 != 0) {
+            if (gKirbyState.ceilingCollisionNext != 0) {
                 phi_return_3 = (bitwise f32) temp_ret;
-                if (gKirbyState.unkE8 != 0) {
+                if (gKirbyState.floorCollisionNext != 0) {
                     phi_return_3 = (bitwise f32) temp_ret;
                     if (gKirbyState.action != 0x1D) {
-                        phi_return_3 = (bitwise f32) gKirbyState.unk100;
-                        if (gKirbyState.unk100 != 4) {
-                            phi_return_3 = (bitwise f32) gKirbyState.unk100;
-                            if (gKirbyState.unk100 != 5) {
+                        phi_return_3 = (bitwise f32) gKirbyState.ceilingType;
+                        if (gKirbyState.ceilingType != 4) {
+                            phi_return_3 = (bitwise f32) gKirbyState.ceilingType;
+                            if (gKirbyState.ceilingType != 5) {
                                 change_kirby_hp(0xC0C00000, &gKirbyState);
                                 return func_80122F6C_ovl2(0x16, 0x17);
                             }
@@ -2238,9 +2238,9 @@ f32 func_801212A4_ovl2(void) {
                 }
             }
             phi_return_2 = phi_return_3;
-            if (gKirbyState.unkEC != 0) {
+            if (gKirbyState.rightCollisionNext != 0) {
                 phi_return_2 = phi_return_3;
-                if (gKirbyState.unkF0 != 0) {
+                if (gKirbyState.leftCollisionNext != 0) {
                     phi_return_2 = (bitwise f32) 2;
                     if (2 != gKirbyState.unk104) {
                         phi_return_2 = (bitwise f32) 2;
@@ -2645,11 +2645,11 @@ void func_80121F50(void) {
     s32 phi_v0;
     void *phi_a2;
 
-    if (gKirbyState.unkDC != 0) {
-        if ((s32) gKirbyState.unkDD < 8) {
-            phi_v0 = func_801BBFE4_ovl2(gKirbyState.unkDD, &gKirbyState);
+    if (gKirbyState.isTakingDamage != 0) {
+        if ((s32) gKirbyState.droppedAbility < 8) {
+            phi_v0 = func_801BBFE4_ovl2(gKirbyState.droppedAbility, &gKirbyState);
         } else {
-            phi_v0 = func_801BC27C_ovl2(gKirbyState.unkDD, 0, &gKirbyState);
+            phi_v0 = func_801BC27C_ovl2(gKirbyState.droppedAbility, 0, &gKirbyState);
         }
         temp_a2 = &gKirbyState;
         phi_a2 = temp_a2;
@@ -2670,9 +2670,9 @@ void func_80121F50(void) {
         func_800BC298_ovl2(phi_a2->unk90, phi_a2);
         return;
     }
-    gKirbyState.unkDE = (s16) (gKirbyState.unkDE - 1);
-    if ((s32) gKirbyState.unkDE <= 0) {
-        gKirbyState.unkDE = (u16)0;
+    gKirbyState.abilityDropTimer = (s16) (gKirbyState.abilityDropTimer - 1);
+    if ((s32) gKirbyState.abilityDropTimer <= 0) {
+        gKirbyState.abilityDropTimer = (u16)0;
     }
 }
 #else
@@ -2798,10 +2798,10 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8012209C_ovl2.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 09d006c9da5d6bbcd31ac6ca5c9165c1a8533a83
 ? func_80122460_ovl2(void) {
-    if (gKirbyState.unkE4 != 0) {
+    if (gKirbyState.ceilingCollisionNext != 0) {
         if (0.0f < ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210) {
-            if (gKirbyState.unk100 != 4) {
-                if (gKirbyState.unk100 == 5) {
+            if (gKirbyState.ceilingType != 4) {
+                if (gKirbyState.ceilingType == 5) {
 block_4:
                     if (func_8010D8A4_ovl2(&gPositionState) != 0) {
                         return 1;
@@ -2812,9 +2812,9 @@ block_4:
             }
         } else {
 block_6:
-            if (gKirbyState.unkE8 != 0) {
+            if (gKirbyState.floorCollisionNext != 0) {
                 if (((*D_8004A7C4 * 4) + 0x800E0000)->unk3210 <= 0.0f) {
-                    if (gKirbyState.unk102 == 4) {
+                    if (gKirbyState.floorType == 4) {
                         if (func_8010D8A4_ovl2(&gPositionState) != 0) {
                             return 1;
                         }
@@ -2867,12 +2867,12 @@ loop_4:
                 temp_t0->unk0 = (s32) temp_t3->unk0;
                 temp_at = (*D_8004A7C4 * 4) + 0x800E0000;
                 if (1.0f == temp_at->unk6A10) {
-                    if (gKirbyState.unkEC == 0) {
+                    if (gKirbyState.rightCollisionNext == 0) {
 block_7:
                         phi_a1 = 0;
                         if (-1.0f == temp_at->unk6A10) {
                             phi_a1 = 0;
-                            if (gKirbyState.unkF0 != 0) {
+                            if (gKirbyState.leftCollisionNext != 0) {
 block_9:
                                 sp74 = 0;
                                 phi_a1 = 0;
@@ -2968,12 +2968,12 @@ loop_4:
                 temp_t1->unk0 = (s32) temp_t4->unk0;
                 temp_at = (*D_8004A7C4 * 4) + 0x800E0000;
                 if (1.0f == temp_at->unk6A10) {
-                    if (gKirbyState.unkEC == 0) {
+                    if (gKirbyState.rightCollisionNext == 0) {
 block_7:
                         phi_v1 = 0;
                         if (-1.0f == temp_at->unk6A10) {
                             phi_v1 = 0;
-                            if (gKirbyState.unkF0 != 0) {
+                            if (gKirbyState.leftCollisionNext != 0) {
 block_9:
                                 sp94 = 0;
                                 phi_v1 = 0;
