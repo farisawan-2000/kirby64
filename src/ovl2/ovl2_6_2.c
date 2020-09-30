@@ -321,18 +321,18 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
 
 u32 func_80101BA0_ovl2(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
     u32 code = triangle->normalType;
-    if (!(code & 0x0008U)) {
-        if ((code & 0x0004U) && D_8012BD00 >> 31 == 0) {
+    if (!(code & NON_SOLID)) {
+        if ((code & NO_SHADOW) && D_8012BD00 >> 31 == 0) {
             return 0;
         }
         else
         {
-            code &= 0x0003U;
-            if (code != 0x0000U) {
-                if (code == 0x0003U) {
+            code &= DOUBLE_SIDED_NORMAL;
+            if (code != 0) {
+                if (code == DOUBLE_SIDED_NORMAL) {
                     return 0;
                 }
-                if (code & 0x0001U) {
+                if (code & FORWARD_NORMAL) {
                     if ((va != NULL && PVPDP(normal, va) > 0.0F) || (vb != NULL && PVPDP(normal, vb) > 0.0F)) {
                         return 0;
                     }
