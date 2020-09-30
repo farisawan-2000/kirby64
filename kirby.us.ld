@@ -6,15 +6,30 @@ OUTPUT_ARCH (mips)
     _##name##SegmentRomStart = __romPos; \
     .name addr : AT(__romPos)
 
-
-/*#define MARK(name, prevName) \
-    _##name##_RomStart = __romPos; \
-    _##prevName##_RomEnd = __romPos;*/
- 
 #define END_SEG(name) \
     _##name##SegmentEnd = ADDR(.name) + SIZEOF(.name); \
     _##name##SegmentRomEnd = __romPos + SIZEOF(.name); \
     __romPos += SIZEOF(.name);
+
+#define BEGIN_UCODE_TEXT(name, addr) \
+    name##TextStart = ADDR(.name); \
+    name##TextRomStart = __romPos; \
+    .name addr : AT(__romPos)
+
+#define END_UCODE_TEXT(name) \
+    name##TextEnd = ADDR(.name) + SIZEOF(.name); \
+    name##TextRomEnd = __romPos + SIZEOF(.name); \
+    __romPos += SIZEOF(.name);
+
+#define BEGIN_UCODE_DATA(name, addr) \
+    name##DataStart = ADDR(.name##_data); \
+    name##DataRomStart = __romPos; \
+    .name##_data addr : AT(__romPos)
+
+#define END_UCODE_DATA(name) \
+    name##DataEnd = ADDR(.name) + SIZEOF(.name##_data); \
+    name##DataRomEnd = __romPos + SIZEOF(.name##_data); \
+    __romPos += SIZEOF(.name##_data);
 
 #define BEGIN_NOLOAD(name) \
     _##name##SegNoloadStart = ADDR(.name.noload); \
@@ -144,13 +159,28 @@ SECTIONS
       BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
-
-
-
+   }
+   END_SEG(ovl0)
+   BEGIN_SEG(ovl0Data1, _ovl0SegmentEnd) {
       BUILD_DIR/data/kirby.039DF0.o(.data);
-      #define UCODE_TEXT
-         #include "kirby.ucode.ld"
-      #undef UCODE_TEXT
+   }
+   END_SEG(ovl0Data1)
+
+   /* RSP microcodes */
+   BEGIN_UCODE_TEXT(gspF3DEX2_fifo, _ovl0Data1SegmentEnd) {
+      BUILD_DIR/ucode/F3DEX2_2.04H/F3DEX2_2.04H.code.o;
+   }
+   END_UCODE_TEXT(gspF3DEX2_fifo)
+   BEGIN_UCODE_TEXT(gspL3DEX2_fifo, gspF3DEX2_fifoTextEnd) {
+      BUILD_DIR/ucode/L3DEX2_2.04H/L3DEX2_2.04H.code.o(*);
+   }
+   END_UCODE_TEXT(gspL3DEX2_fifo)
+   BEGIN_UCODE_TEXT(gspS2DEX2_fifo, gspL3DEX2_fifoTextEnd) {
+      BUILD_DIR/ucode/S2DEX2_2.04/S2DEX2_2.04.code.o(*);
+   }
+   END_UCODE_TEXT(gspS2DEX2_fifo)
+
+   BEGIN_SEG(ovl0Data2, gspS2DEX2_fifoTextEnd) {
       /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data); */
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
@@ -172,11 +202,22 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.3.o(.data);
-      #define UCODE_DATA
-         #include "kirby.ucode.ld"
-      #undef UCODE_DATA
    }
-   END_SEG(ovl0)
+   END_SEG(ovl0Data2)
+
+   BEGIN_UCODE_DATA(gspF3DEX2_fifo, _ovl0Data2SegmentEnd) {
+      BUILD_DIR/ucode/F3DEX2_2.04H/F3DEX2_2.04H.data.o(*);
+   }
+   END_UCODE_DATA(gspF3DEX2_fifo)
+   BEGIN_UCODE_DATA(gspL3DEX2_fifo, gspL3DEX2_fifoDataEnd) {
+      BUILD_DIR/ucode/L3DEX2_2.04H/L3DEX2_2.04H.data.o(*);
+   }
+   END_UCODE_DATA(gspL3DEX2_fifo)
+   BEGIN_UCODE_DATA(gspS2DEX2_fifo, gspS2DEX2_fifoDataEnd) {
+      BUILD_DIR/ucode/S2DEX2_2.04/S2DEX2_2.04.data.o(*);
+   }
+   END_UCODE_DATA(gspS2DEX2_fifo)
+
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
