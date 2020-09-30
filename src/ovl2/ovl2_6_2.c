@@ -335,48 +335,37 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
 #endif
 
-u8 func_80101BA0_ovl2(void *arg0, void *arg1, void *arg2, void *arg3);
-#ifdef MIPS_TO_C
-? func_80101BA0_ovl2(void *arg0, void *arg1, void *arg2, void *arg3) {
-    u16 temp_v0;
+#define PVPDP(a, b) ( a->x*b->x +  a->y*b->y +  a->z*b->z)
+#define NVPDP(a, b) (-a->x*b->x + -a->y*b->y + -a->z*b->z)
 
-    temp_v0 = arg0->unk8;
-    if ((temp_v0 & 8) == 0) {
-        if (((temp_v0 & 4) != 0) && ((D_8012BD00 >> 0x1F) == 0)) {
+u32 func_80101BA0_ovl2(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
+    u32 code = triangle->normalType;
+    if (!(code & 0x0008U)) {
+        if ((code & 0x0004U) && D_8012BD00 >> 31 == 0) {
             return 0;
         }
-        temp_v0 = temp_v0 & 3;
-        if (temp_v0 != 0) {
-            if (temp_v0 == 3) {
-                return 0;
-            }
-            if ((temp_v0 & 1) != 0) {
-                if ((arg2 == 0) || !(0.0f < ((arg1->unk0 * arg2->unk0) + (arg1->unk4 * arg2->unk4) + (arg1->unk8 * arg2->unk8)))) {
-
+        else
+        {
+            code &= 0x0003U;
+            if (code != 0x0000U) {
+                if (code == 0x0003U) {
+                    return 0;
+                }
+                if (code & 0x0001U) {
+                    if ((va != NULL && PVPDP(normal, va) > 0.0F) || (vb != NULL && PVPDP(normal, vb) > 0.0F)) {
+                        return 0;
+                    }
                 } else {
-                    return 0;
+                    if ((va != NULL && NVPDP(normal, va) > 0.0F) || (vb != NULL && NVPDP(normal, vb) > 0.0F)) {
+                        return 0;
+                    }
                 }
-                if ((arg3 != 0) && (0.0f < ((arg1->unk0 * arg3->unk0) + (arg1->unk4 * arg3->unk4) + (arg1->unk8 * arg3->unk8)))) {
-                    return 0;
-                }
-            } else {
-                if ((arg2 == 0) || !(0.0f < ((-arg1->unk0 * arg2->unk0) + (-arg1->unk4 * arg2->unk4) + (-arg1->unk8 * arg2->unk8)))) {
-
-                } else {
-                    return 0;
-                }
-                if ((arg3 != 0) && (0.0f < ((-arg1->unk0 * arg3->unk0) + (-arg1->unk4 * arg3->unk4) + (-arg1->unk8 * arg3->unk8)))) {
-                    return 0;
-                }
+                return 1;
             }
-            return 1;
         }
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101BA0_ovl2.s")
-#endif
 
 u8 func_80101D50_ovl2(struct CollisionTriangle *arg0, u32 arg1, u32 arg2, u32 arg3) {
     if (!(arg0->normalType & NON_SOLID)) {
@@ -881,92 +870,87 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80102570_ovl2.s")
 
 void func_80101400_ovl2(u32 numFloorNorms);
 
+extern s32
+func_80102570_ovl2(
+struct Normal *,
+s32 *,
+Vector *,
+u32 (*)(void),
+struct CollisionTriangle **
+);
 
-// TODO: regalloc
-#ifdef NON_MATCHING
-u32 func_80103004(f32 *arg0, Vector *arg1, struct Normal **arg2, s32 *arg3) {
-    u8 filler[0x1D8];
+u32 func_80103004(f32 *MAXLRP, Vector *arg1, struct Normal **arg2, struct CollisionTriangle **arg3) {
+    u32 SP0[119];
     struct ColStateUnk4 sp9C;
-    s32 sp94;
-    s32 sp90;
-    u16 *sp8C;
-    s32 sp88;
-    struct CollisionTriangle *sp78;
-    Vector sp68;
-    f32 temp_f20;
-    struct Normal *temp_s0;
-    s32 temp_s2;
-    u16 temp_s1;
-    f32 phi_f22;
-    u32 phi_s4;
-
-    phi_f22 = *arg0;
+    f32 maxlevel = *MAXLRP;
     gCollisionState->numCells = 0;
     gCollisionState->unk4 = &sp9C;
     VEC_SUB(gCollisionState->deltaPos, gCollisionState->nextPos, gCollisionState->currPos)
     if (IS_ZERO_VECTOR(gCollisionState->deltaPos)) {
         return 0;
-    } else {
-        func_80101400_ovl2(gCollisionState->unk30->header.Num_Floor_Norms);
-        if (gCollisionState->numCells != 0) {
-            sp8C = gCollisionState->unk30->header.Triangle_Norm_Cells;
-            // phi_f22 = *arg0;
-            // temp_s7 = &sp68;
-            //temp_s6 = &sp88;
-            for(phi_s4 = 0; phi_s4 < gCollisionState->numCells; phi_s4++) {
-                temp_s1 = gCollisionState->unk4[phi_s4].cell;
-                // sp88 = gCollisionState->numCells = sp8C[temp_s1 * 4 + 3];
-                sp88 = sp8C[temp_s1 * 4 + 3];
-                if (sp88 != 0) {
-                    temp_f20 = gCollisionState->unk4[phi_s4].projection;
-                    if (temp_f20 < phi_f22) {
-                        temp_s0 = &gCollisionState->unk30->header.Triangle_Normals[sp8C[temp_s1 * 4]];
-                        sp68.x = (gCollisionState->deltaPos.x * temp_f20) + gCollisionState->currPos.x;
-                        sp68.y = (gCollisionState->deltaPos.y * temp_f20) + gCollisionState->currPos.y;
-                        sp68.z = (gCollisionState->deltaPos.z * temp_f20) + gCollisionState->currPos.z;
-                        temp_s2 = func_80102570_ovl2(temp_s0, &sp88, &sp68, gCollisionState->unk3C, &sp78);
-                        if (sp78 != 0) {
-                            if (gCollisionState->unk40(sp78, temp_s0, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
-                                sp94 = temp_s1;
-                                sp90 = sp78;
-                                phi_f22 = temp_f20;
-                            } else if (temp_s2 != 0) {
-                                sp88++;
-                                func_80102570_ovl2(temp_s0, &sp88, &sp68, gCollisionState->unk3C, &sp78);
-                                if (sp78 != 0) {
-                                    if (gCollisionState->unk40(sp78, temp_s0, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
-                                        sp94 = temp_s1;
-                                        sp90 = sp78;
-                                        phi_f22 = temp_f20;
-                                    }
+    }
+    func_80101400_ovl2(gCollisionState->unk30->header.Num_Floor_Norms);
+    if (gCollisionState->numCells != 0) {
+        u32 sp94;
+        struct CollisionTriangle *sp90;
+        struct bgmaprecord *sp8C = gCollisionState->unk30->header.Triangle_Norm_Cells;
+        s32 sp88;
+        u16 cell;
+        f32 LEVEL;
+        struct Normal *N;
+        struct CollisionTriangle *sp78;
+        s32 temp_s2;
+        Vector sp68;
+        u32 i;
+        for (i = 0; i < (unsigned)gCollisionState->numCells; i++) {
+            cell = gCollisionState->unk4[i].cell;
+            sp88 = sp8C[cell].code;
+            if (sp88 != 0) {
+                LEVEL = gCollisionState->unk4[i].projection;
+                if (LEVEL < maxlevel) {
+                    N = &gCollisionState->unk30->header.Triangle_Normals[sp8C[cell].index];
+                    sp68.x = (gCollisionState->deltaPos.x * LEVEL) + gCollisionState->currPos.x;
+                    sp68.y = (gCollisionState->deltaPos.y * LEVEL) + gCollisionState->currPos.y;
+                    sp68.z = (gCollisionState->deltaPos.z * LEVEL) + gCollisionState->currPos.z;
+                    temp_s2 = func_80102570_ovl2(N, &sp88, &sp68, gCollisionState->unk3C, &sp78);
+                    if (sp78 != 0) {
+                        if (gCollisionState->unk40(sp78, N, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
+                            sp94 = cell;
+                            sp90 = sp78;
+                            maxlevel = LEVEL;
+                        } else if (temp_s2 != 0) {
+                            sp88++;
+                            func_80102570_ovl2(N, &sp88, &sp68, gCollisionState->unk3C, &sp78);
+                            if (sp78 != 0) {
+                                if (gCollisionState->unk40(sp78, N, &gCollisionState->deltaPos, gCollisionState->someNormal) != 0) {
+                                    sp94 = cell;
+                                    sp90 = sp78;
+                                    maxlevel = LEVEL;
                                 }
                             }
                         }
                     }
                 }
             }
-            if (phi_f22 != *arg0) {
-                if (arg2 != 0) {
-                    *arg2 = &gCollisionState->unk30->header.Triangle_Normals[sp8C[sp94 * 4]];
-                }
-                if (arg3 != 0) {
-                    arg3[0] = sp90;
-                }
-                *arg0 = phi_f22;
-                if (arg1 != 0) {
-                    arg1->x = (gCollisionState->deltaPos.x * phi_f22) + gCollisionState->currPos.x;
-                    arg1->y = (gCollisionState->deltaPos.y * phi_f22) + gCollisionState->currPos.y;
-                    arg1->z = (gCollisionState->deltaPos.z * phi_f22) + gCollisionState->currPos.z;
-                }
-                return 1;
+        }
+        if (*MAXLRP != maxlevel) {
+            if (arg2 != 0) {
+                *arg2 = &gCollisionState->unk30->header.Triangle_Normals[sp8C[sp94].index];
             }
+            if (arg3 != 0) {
+                *arg3 = sp90;
+            }
+            *MAXLRP = maxlevel;
+            if (arg1 != 0) {
+                arg1->x = (gCollisionState->deltaPos.x * maxlevel) + gCollisionState->currPos.x;
+                arg1->y = (gCollisionState->deltaPos.y * maxlevel) + gCollisionState->currPos.y;
+                arg1->z = (gCollisionState->deltaPos.z * maxlevel) + gCollisionState->currPos.z;
+            }
+            return 1;
         }
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80103004.s")
-#endif
 
 #ifdef MIPS_TO_C
 ? func_801033A8(void *arg0, void *arg1, void *arg2) {

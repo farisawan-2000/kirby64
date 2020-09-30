@@ -139,6 +139,14 @@ struct WaterData
 // Collision Header
 // The collision header is referred to by the first index inside the main header. The collision header has the following format.
 
+struct bgmaprecord
+{
+    u16 index;
+    u16 part1;
+    u16 part2;
+    u16 code;
+};
+
 struct CollisionHeader
 {
 /*0x0*/    struct CollisionTriangle    *Triangles;
@@ -149,7 +157,7 @@ struct CollisionHeader
 /*0x14*/   u32       Len_Triangle_Normals;
 /*0x18*/   u16       *Triangle_Cells;
 /*0x1C*/   u32       Len_Triangle_Cells;
-/*0x20*/   u16       *Triangle_Norm_Cells;
+/*0x20*/   struct bgmaprecord *Triangle_Norm_Cells;
 /*0x24*/   u32       Len_Triangle_Norm_Cells;
 /*0x28*/   u32       Num_Floor_Norms; //Should be tri norm cells minus 1
 /*0x2C*/   struct DynGeo_List     Destructable_Groups;
@@ -289,7 +297,7 @@ struct Kirby_Node
 // The entity list is an array of structs which spawn objects as kirby gets in range. It is terminated by an 0x99999999 marker. See Entity IDs for more info. This section is optional and if a not pointed to in the main header will not be used.
 
 struct ColStateUnk4 {
-    u32 cell;
+    u16 cell;
     f32 projection; // how far kirby is from the plane
     // u16 unk6;
 };
