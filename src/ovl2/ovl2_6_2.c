@@ -277,26 +277,16 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101400_ovl2.s")
 
 #include "ovl0/ovl0_5.h"
 extern u32 D_8012BD00;
-u32 func_80101920(Vector *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3);
-#ifdef MIPS_TO_C
+u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3);
+// #ifdef MIPS_TO_C
 u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) {
-    f32 temp_f0;
-    f32 temp_f12;
-    f32 temp_f2;
-    u16 temp_v0;
-
-    temp_v0 = arg0->normalType;
-    if ((temp_v0 & NON_SOLID) == 0) {
-        if (((temp_v0 & NO_SHADOW) != 0) && ((D_8012BD00 >> 31) == 0)) {
+    if (!(arg0->normalType & NON_SOLID)) {
+        if (((arg0->normalType & NO_SHADOW) != 0) && ((D_8012BD00 >> 31) == 0)) {
             return 0;
         }
-        temp_v0 &= 3;
-        if (temp_v0 != 0) {
-            if (temp_v0 == 3) {
-                if ((arg3 != 0) && (arg2 != 0)) {
-                    temp_f0 = arg1->x;
-                    temp_f2 = arg1->y;
-                    temp_f12 = arg1->z;
+        if (arg0->normalType & 3) {
+            if (arg0->normalType == 3) {
+                if ((arg3 != NULL) && (arg2 != NULL)) {
                     if (0.0f < VEC_DOT(arg1, arg3)) {
                         if (0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2)) {
                             return 0;
@@ -307,8 +297,8 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
                 }
                 return 1;
             }
-            if ((temp_v0 & 1) != 0) {
-                if (arg2 || !(0.0f < VEC_DOT(arg1, arg2))) {
+            if (arg0->normalType & FORWARD_NORMAL) {
+                if (!arg2 || !(0.0f < VEC_DOT(arg1, arg2))) {
 
                 } else {
                     return 0;
@@ -319,10 +309,10 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
             } else {
                 if (arg2 || !(0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2))) {
 
-                } else {
                     return 0;
+                } else {
                 }
-                if ((arg3 != 0) && (0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg3))) {
+                if (arg3 && (0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg3))) {
                     return 0;
                 }
             }
@@ -331,9 +321,9 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
+// #endif
 
 u8 func_80101BA0_ovl2(void *arg0, void *arg1, void *arg2, void *arg3);
 #ifdef MIPS_TO_C
