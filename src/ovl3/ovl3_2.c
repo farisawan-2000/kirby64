@@ -128,11 +128,11 @@ block_134:
                     temp_v0_3 = *D_8004A7C4 * 4;
                     (temp_v0_3 + 0x800E0000)->unk64D0 = (f32) ((temp_v0_3 + 0x800E0000)->unk6A10 * 10.0f);
                     phi_a1_2 = D_8004A7C4;
-                    if (gKirbyState.unkFC == 0) {
+                    if (gKirbyState.horizontalCollision == 0) {
 loop_99:
                         func_800F8E6C_ovl3(arg0);
                         func_80153FC8_ovl3();
-                        if (gKirbyState.unkFC == 0) {
+                        if (gKirbyState.horizontalCollision == 0) {
                             goto loop_99;
                         }
                         phi_a1_2 = D_8004A7C4;
@@ -199,11 +199,11 @@ loop_99:
                 temp_v0_7 = *D_8004A7C4 * 4;
                 (temp_v0_7 + 0x800E0000)->unk64D0 = (f32) ((temp_v0_7 + 0x800E0000)->unk6A10 * 10.0f);
                 phi_a1_3 = D_8004A7C4;
-                if (gKirbyState.unkFC == 0) {
+                if (gKirbyState.horizontalCollision == 0) {
 loop_72:
                     func_800F8E6C_ovl3(arg0);
                     func_80153FC8_ovl3();
-                    if (gKirbyState.unkFC == 0) {
+                    if (gKirbyState.horizontalCollision == 0) {
                         goto loop_72;
                     }
                     phi_a1_3 = D_8004A7C4;

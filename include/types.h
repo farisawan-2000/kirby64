@@ -144,19 +144,25 @@ struct KirbyState {
     u32 unkC4;
     u32 unkC8;
     u32 unkCC;
-    u32 unkD0;
-    u32 unkD4;
-    u32 unkD8;
-    u32 unkDC;
-    u32 unkE0;
-    u32 unkE4;
-    u32 unkE8;
-    u32 unkEC;
-    u32 unkF0;
-    u32 unkF4;
-    u32 unkF8;
-    u32 unkFC;
-    u32 unk100;
+    u16 jumpHeight;				// 0xD0
+    u16 isFullJump;				// 0xD2
+    u16 damageType;				// 0xD4
+    u16 damageFlashTimer;		// 0xD6
+    u16 damagePaletteTimer;	// 0xD8
+    u16 damagePaletteIndex;	// 0xDA
+    u8 isTakingDamage;			// 0xDC
+    u8 droppedAbility;			// 0xDD
+    u16 abilityDropTimer;		// 0xDE
+    u32 hpAfterDamage;			// 0xE0
+    u32 ceilingCollisionNext;	// 0xE4
+    u32 floorCollisionNext;	// 0xE8
+    u32 rightCollisionNext;	// 0xEC
+    u32 leftCollisionNext;		// 0xF0
+    u32 levelCollisionFlags;	// 0xF4
+    u32 verticalCollision;		// 0xF8
+    u32 horizontalCollision;	// 0xFC
+    u16 ceilingType;				// 0x100
+    u16 floorType;				// 0x102
     u32 unk104;
     u16 unk108;
     u16 unk10A;
