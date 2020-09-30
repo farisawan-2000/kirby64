@@ -467,7 +467,8 @@ extern u32 D_80048900;
 extern u16 D_8004A448;
 extern u32 D_8004A438, D_8004A43C;
 extern u32 D_8004A450;
-#ifdef MIPS_TO_C
+
+#ifdef NON_MATCHING
 void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     // s32 temp_v1;
     Gfx *temp_v0;
@@ -543,7 +544,7 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005A98.s")
 #endif
 
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING
 u32 func_80005C64(void) {
     u16 phi_v1;
     u32 toReturn;
@@ -575,7 +576,7 @@ u32 func_80005C64(void) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005C64.s")
 #endif
 
-#ifdef MIPS_TO_C
+#ifdef NEEDS_RODATA
 void func_80005CC0(s32 arg0, s32 arg1) {
     u32 phi_a2;
     u32 phi_v0 = 1;
