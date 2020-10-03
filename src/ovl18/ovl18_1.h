@@ -3,7 +3,10 @@ struct Sub800E1B50 {
 	f32 unk10;
 };
 struct UnkStruct800E1B50 {
-	u8 pad[0x3C];
+	f32 unk0;
+	f32 unk4;
+	f32 unk8;
+	u8 pad[0x30];
 	u8 unk3C;
 	u8 unk3D;
 	u8 unk3E;

@@ -456,7 +456,7 @@ void func_80223BB8_ovl18(void) {
     s32 x;
     u32 phi_v1 = 1;
     if (D_800E93A0[D_8004A7C4->unk0] != -1) {
-        x = func_80018A44_ovl18(3, D_8004A7C4->unk0, &D_800E93A0);
+        x = random_soft_s32_range(3, D_8004A7C4->unk0, &D_800E93A0);
         if (x + 1 == D_800E93A0[D_8004A7C4->unk0]) {
             phi_v1 = x;
             if (x >= 3) {

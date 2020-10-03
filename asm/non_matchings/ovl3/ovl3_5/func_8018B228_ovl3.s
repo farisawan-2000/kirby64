@@ -142,7 +142,7 @@ glabel func_8018B228_ovl3
 /* 0EBE8C 8018B44C 10400041 */  beqz  $v0, .L8018B554_ovl3
 /* 0EBE90 8018B450 00000000 */   nop   
 .L8018B454_ovl3:
-/* 0EBE94 8018B454 0C006291 */  jal   func_80018A44_ovl3
+/* 0EBE94 8018B454 0C006291 */  jal   random_soft_s32_range
 /* 0EBE98 8018B458 24040006 */   li    $a0, 6
 /* 0EBE9C 8018B45C 24580002 */  addiu $t8, $v0, 2
 /* 0EBEA0 8018B460 3C01800D */  lui   $at, %hi(D_800D71F8) # $at, 0x800d

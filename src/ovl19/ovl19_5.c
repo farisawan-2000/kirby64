@@ -7,7 +7,7 @@
 
 extern void func_800AECC0_ovl19(f32 arg0);
 extern void func_800AED20_ovl19(f32 arg0);
-extern void func_8000B6BC_ovl19(u32 arg0);
+extern void func_8000B6BC(u32 arg0);
 extern void func_800A7678(u32 arg0);
 extern void func_8019F000_ovl19(struct EntityThing800E9AA0 *arg0, f32 *arg1, u32 arg2, f32 arg3);
 
@@ -33,7 +33,7 @@ void func_8022E630_ovl19(s32 arg0) {
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->unk0] = &D_800B4924;
     D_800E6A10[D_8004A7C4->unk0] = 1.0f;
-    func_8000B6BC_ovl19(0x60);
+    func_8000B6BC(0x60);
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;
@@ -130,10 +130,10 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     D_800E6A10[D_8004A7C4->unk0] = 1.0f;
     func_800AA018_ovl19(0x105F0);
     func_800AA018_ovl19(0x105F1);
-    func_8000B6BC_ovl19(1);
+    func_8000B6BC(1);
     func_800AECC0_ovl19(0);
     func_800AED20_ovl19(0);
-    func_8000B6BC_ovl19(0x5F);
+    func_8000B6BC(0x5F);
     func_800AECC0_ovl19(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     sp24.z = 0.0f;
@@ -211,7 +211,7 @@ void func_8022ED10_ovl19(s32 arg0) {
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->unk0] = &D_800B4924;
     D_800E6A10[D_8004A7C4->unk0] = 1.0f;
-    func_8000B6BC_ovl19(0x60);
+    func_8000B6BC(0x60);
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;

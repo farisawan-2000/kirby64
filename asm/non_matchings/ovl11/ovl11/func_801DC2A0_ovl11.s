@@ -2,7 +2,7 @@ glabel func_801DC2A0_ovl11
 /* 1E6B60 801DC2A0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 1E6B64 801DC2A4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1E6B68 801DC2A8 E7AC0018 */  swc1  $f12, 0x18($sp)
-/* 1E6B6C 801DC2AC 0C006291 */  jal   func_80018A44_ovl11
+/* 1E6B6C 801DC2AC 0C006291 */  jal   random_soft_s32_range
 /* 1E6B70 801DC2B0 24040006 */   li    $a0, 6
 /* 1E6B74 801DC2B4 28410003 */  slti  $at, $v0, 3
 /* 1E6B78 801DC2B8 14200003 */  bnez  $at, .L801DC2C8_ovl11

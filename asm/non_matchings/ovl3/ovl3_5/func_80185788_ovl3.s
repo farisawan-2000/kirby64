@@ -79,7 +79,7 @@ glabel func_80185788_ovl3
 /* 0E62F4 801858B4 00000000 */   nop   
 /* 0E62F8 801858B8 3C01800F */  lui   $at, 0x800f
 /* 0E62FC 801858BC 00230821 */  addu  $at, $at, $v1
-/* 0E6300 801858C0 0C002DAF */  jal   func_8000B6BC_ovl3
+/* 0E6300 801858C0 0C002DAF */  jal   func_8000B6BC
 /* 0E6304 801858C4 AC299560 */   sw    $t1, -0x6aa0($at)
 /* 0E6308 801858C8 10000002 */  b     .L801858D4_ovl3
 /* 0E630C 801858CC 00000000 */   nop   

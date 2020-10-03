@@ -634,7 +634,7 @@ s32 func_801DC2A0_ovl11(f32 arg0) {
     s32 phi_v0_4;
     s32 phi_return_3;
 
-    temp_v0 = func_80018A44_ovl11(6);
+    temp_v0 = random_soft_s32_range(6);
     if (temp_v0 >= 3) {
         phi_v0 = 2;
         phi_return_3 = 2;
@@ -999,7 +999,7 @@ void func_801DCB04_ovl11(s32 arg0) {
     D_800E9E20[*D_8004A7C4] = 0;
     D_800E9FE0[*D_8004A7C4] = 0;
     D_800DDFD0[*D_8004A7C4] = 0;
-    func_8000B6BC_ovl11(0x2D);
+    func_8000B6BC(0x2D);
     func_800AA018_ovl11(0x103E6);
     func_800AA864_ovl11(0x103E5, 1);
     func_800AA018_ovl11(0x10402);
@@ -1274,7 +1274,7 @@ loop_3:
         phi_s4 = phi_v0 & 0xFF;
 loop_7:
         temp_s4 = (phi_s4 + 1) & 0xFF;
-        temp_f20 = ((func_800189E4_ovl11() * temp_f22) + phi_f20) + temp_f24;
+        temp_f20 = ((random_soft_f32() * temp_f22) + phi_f20) + temp_f24;
         *(&sp68 + (phi_s4 * 4)) = temp_f20;
         phi_f20 = temp_f20;
         phi_s4 = temp_s4;
@@ -1287,8 +1287,8 @@ loop_7:
     phi_s6 = 8;
 loop_9:
     temp_s5 = arg0 + phi_s4_2;
-    temp_s5->unk0 = (s8) (func_80018A44_ovl11(4) + 4);
-    temp_ret = func_80018A44_ovl11(phi_s3);
+    temp_s5->unk0 = (s8) (random_soft_s32_range(4) + 4);
+    temp_ret = random_soft_s32_range(phi_s3);
     temp_v1 = &sp88 + (temp_ret & 0xFF);
     temp_s5->unk8 = (u8) *temp_v1;
     temp_s6 = (phi_s6 - 1) & 0xFF;
@@ -1776,7 +1776,7 @@ s32 func_801DE258_ovl11(void) {
         *(&D_800E9560 + temp_v1) = (s32) *temp_t9;
         return *temp_t9;
     }
-    temp_ret = func_80018A44_ovl11(2, &D_800E9560);
+    temp_ret = random_soft_s32_range(2, &D_800E9560);
     temp_v0 = temp_ret;
     temp_v1_2 = *D_8004A7C4 * 4;
     temp_t1 = &D_800E9560 + temp_v1_2;
@@ -1812,7 +1812,7 @@ void func_801DE33C_ovl11(s32 arg0) {
     func_800B3520_ovl11(1);
     if (temp_s0->unk3C != 0) {
 loop_1:
-        func_8000B6BC_ovl11(1);
+        func_8000B6BC(1);
         if (temp_s0->unk3C != 0) {
             goto loop_1;
         }
@@ -1895,7 +1895,7 @@ void func_801DE548_ovl11(s32 arg0) {
     func_800A7678(0x1EC);
     if (*(&D_800E9E20 + (*D_8004A7C4 * 4)) == 0) {
 loop_6:
-        func_8000B6BC_ovl11(1);
+        func_8000B6BC(1);
         if (*(&D_800E9E20 + (*D_8004A7C4 * 4)) == 0) {
             goto loop_6;
         }
@@ -2270,7 +2270,7 @@ void func_801DF204_ovl11(s32 arg0) {
     func_800AF27C_ovl11();
     func_800AECC0_ovl11(0);
     func_800AED20_ovl11(0);
-    func_8000B6BC_ovl11(0x14);
+    func_8000B6BC(0x14);
     func_800AECC0_ovl11(D_800D6B10);
     func_800AED20_ovl11(D_800D6B10);
     ((*D_8004A7C4 * 4) + 0x800F0000)->unk-61E0 = 1;

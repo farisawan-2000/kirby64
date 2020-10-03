@@ -110,6 +110,8 @@ CC_CHECK := gcc -fsyntax-only -fsigned-char -m32 $(CC_CFLAGS) $(TARGET_CFLAGS) $
 
 CC_TEST := gcc -Wall
 
+
+$(BUILD_DIR)/src/ovl18/ovl18_5.o: CFLAGS += -use_readonly_const
 ######################## Targets #############################
 
 NOEXTRACT ?= 0

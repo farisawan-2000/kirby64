@@ -50,7 +50,7 @@ void func_80220490_ovl18(s32 arg0) {
 
 // regalloc moment
 #ifdef MIPS_TO_C
-void func_802204F8_ovl18(s32 arg0) {
+void func_802204F8_ovl18(u32 arg0) {
     if (D_800E98E0[D_8004A7C4->unk0] > 0) {
         D_800E98E0[D_8004A7C4->unk0]--;
     }
@@ -86,7 +86,7 @@ void func_802205AC_ovl18(s32 arg0) {
     func_800AED20_ovl18(0.0f);
     D_800EBBE0[D_8004A7C4->unk0] = func_801ACC34_ovl18(0x2E, 0);
     func_800A7678(0xA6);
-    func_8000B6BC_ovl18(4);
+    func_8000B6BC(4);
     func_800AECC0_ovl18(D_800D6B10);
     func_800AED20_ovl18(D_800D6B10);
     func_800AA154_ovl18(0x10023);
@@ -263,7 +263,7 @@ void func_80220B00_ovl18(s32 arg0) {
 
             }
         }
-        func_8000B6BC_ovl18(1);
+        func_8000B6BC(1);
     }
 }
 #else
@@ -469,7 +469,7 @@ void func_80221498_ovl18(s32 arg0) {
         D_800E3C90[D_8004A7C4->unk0] = 4.5f;
         func_800A7678(0x167);
         while (D_800E8920[D_8004A7C4->unk0] == 0) {
-            func_8000B6BC_ovl18(1);
+            func_8000B6BC(1);
         }
         D_800E6A10[D_8004A7C4->unk0] = -D_800E6A10[D_8004A7C4->unk0];
     }

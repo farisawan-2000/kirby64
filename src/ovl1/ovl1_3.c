@@ -1523,7 +1523,7 @@ void *func_800AA3F0(void *arg0) {
 
 loop_1:
     if (D_800D5DE0 != arg0->unk74) {
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         goto loop_1;
     }
     temp_a0 = *D_8004A7C4 * 4;
@@ -1608,7 +1608,7 @@ void func_800AA608(void *arg0, s32 arg1, ? arg2, u32 arg3, f32 arg4) {
     func_800B1FD0_ovl1(arg0, *(temp_v1 + 0x800E0000)->unk-970, arg2, (temp_v1 + 0x800E0000)->unk-5F0, arg4);
 loop_4:
     if (D_800D5DE4 != arg0->unk74) {
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         goto loop_4;
     }
 }
@@ -1732,7 +1732,7 @@ void func_800AAB3C(void *arg0, ? arg3, f32 arg4) {
     func_800AA96C_ovl1(arg3, arg3, arg4);
 loop_1:
     if (D_800D5DE8 != (*(((*D_8004A7C4 * 4) + 0x800E0000)->unk-430 + (*arg0 * 4)))->unk74) {
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         goto loop_1;
     }
 }
@@ -1961,7 +1961,7 @@ void func_800AAFC4(s32 arg0, ? arg2) {
     func_800AAF34_ovl1(arg2, arg2);
 loop_1:
     if (D_800D5DF4 != ((((s32) (arg0 - 0xA) >> 1) * 4) + 0x800D0000)->unk79D8->unk74) {
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         goto loop_1;
     }
 }
@@ -1974,7 +1974,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AAFC4.s")
 void func_800AB040(s32 arg0) {
 loop_1:
     if (D_800D5DF8 != ((((s32) (arg0 - 0xA) >> 1) * 4) + 0x800D0000)->unk79D8->unk74) {
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         goto loop_1;
     }
 }

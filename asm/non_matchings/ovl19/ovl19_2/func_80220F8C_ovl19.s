@@ -14,20 +14,20 @@ glabel func_80220F8C_ovl19
 /* 2416CC 80220FBC 00380821 */  addu  $at, $at, $t8
 /* 2416D0 80220FC0 17200018 */  bnez  $t9, .L80221024_ovl19
 /* 2416D4 80220FC4 AC2098E0 */ sw $zero, %lo(D_800E98E0)($at)
-/* 2416D8 80220FC8 0C006291 */  jal   func_80018A44_ovl19
+/* 2416D8 80220FC8 0C006291 */  jal   random_soft_s32_range
 /* 2416DC 80220FCC 24040007 */   li    $a0, 7
 /* 2416E0 80220FD0 3C10800D */  lui   $s0, %hi(D_800D6F18) # $s0, 0x800d
 /* 2416E4 80220FD4 26106F18 */  addiu $s0, %lo(D_800D6F18) # addiu $s0, $s0, 0x6f18
 /* 2416E8 80220FD8 AE020000 */  sw    $v0, ($s0)
 .L80220FDC_ovl19:
-/* 2416EC 80220FDC 0C006291 */  jal   func_80018A44_ovl19
+/* 2416EC 80220FDC 0C006291 */  jal   random_soft_s32_range
 /* 2416F0 80220FE0 24040007 */   li    $a0, 7
 /* 2416F4 80220FE4 8E080000 */  lw    $t0, ($s0)
 /* 2416F8 80220FE8 AE020004 */  sw    $v0, 4($s0)
 /* 2416FC 80220FEC 1102FFFB */  beq   $t0, $v0, .L80220FDC_ovl19
 /* 241700 80220FF0 00000000 */   nop   
 .L80220FF4_ovl19:
-/* 241704 80220FF4 0C006291 */  jal   func_80018A44_ovl19
+/* 241704 80220FF4 0C006291 */  jal   random_soft_s32_range
 /* 241708 80220FF8 24040007 */   li    $a0, 7
 /* 24170C 80220FFC 8E0A0000 */  lw    $t2, ($s0)
 /* 241710 80221000 AE020008 */  sw    $v0, 8($s0)

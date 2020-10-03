@@ -40,10 +40,10 @@ void func_80221E90_ovl18(s32 arg0) {
     func_800AA018_ovl18(0x1051C);
     D_800E64D0[D_8004A7C4->unk0] = sinf(D_800EA6E0[D_8004A7C4->unk0]) * 30.0f;
     D_800E3210[D_8004A7C4->unk0] = cosf(D_800EA6E0[D_8004A7C4->unk0]) * 30.0f;
-    func_8000B6BC_ovl18(1);
+    func_8000B6BC(1);
     D_800E64D0[D_8004A7C4->unk0] = sinf(D_800EA6E0[D_8004A7C4->unk0]) * 6.0f;
     D_800E3210[D_8004A7C4->unk0] = cosf(D_800EA6E0[D_8004A7C4->unk0]) * 6.0f;
-    func_8000B6BC_ovl18(0x3C);
+    func_8000B6BC(0x3C);
     D_801ACF84_ovl18(arg0);
 }
 #else

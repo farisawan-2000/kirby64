@@ -42,7 +42,7 @@ glabel func_801831EC_ovl3
 /* 0E3CCC 8018328C 24010002 */   li    $at, 2
 /* 0E3CD0 80183290 1461005C */  bne   $v1, $at, .L80183404_ovl3
 /* 0E3CD4 80183294 00000000 */   nop   
-/* 0E3CD8 80183298 0C006291 */  jal   func_80018A44_ovl3
+/* 0E3CD8 80183298 0C006291 */  jal   random_soft_s32_range
 /* 0E3CDC 8018329C 24040008 */   li    $a0, 8
 /* 0E3CE0 801832A0 8E650000 */  lw    $a1, ($s3)
 /* 0E3CE4 801832A4 3C11800F */  lui   $s1, %hi(D_800E9C60) # $s1, 0x800f
@@ -72,7 +72,7 @@ glabel func_801831EC_ovl3
 /* 0E3D40 80183300 261071F8 */  addiu $s0, %lo(D_800D71F8) # addiu $s0, $s0, 0x71f8
 /* 0E3D44 80183304 26319C60 */  addiu $s1, %lo(D_800E9C60) # addiu $s1, $s1, -0x63a0
 .L80183308_ovl3:
-/* 0E3D48 80183308 0C006291 */  jal   func_80018A44_ovl3
+/* 0E3D48 80183308 0C006291 */  jal   random_soft_s32_range
 /* 0E3D4C 8018330C 24040008 */   li    $a0, 8
 /* 0E3D50 80183310 8E650000 */  lw    $a1, ($s3)
 /* 0E3D54 80183314 AE020000 */  sw    $v0, ($s0)
@@ -107,7 +107,7 @@ glabel func_801831EC_ovl3
 /* 0E3DC4 80183384 26319C60 */  addiu $s1, %lo(D_800E9C60) # addiu $s1, $s1, -0x63a0
 /* 0E3DC8 80183388 26529AA0 */  addiu $s2, %lo(D_800E9AA0) # addiu $s2, $s2, -0x6560
 .L8018338C_ovl3:
-/* 0E3DCC 8018338C 0C006291 */  jal   func_80018A44_ovl3
+/* 0E3DCC 8018338C 0C006291 */  jal   random_soft_s32_range
 /* 0E3DD0 80183390 24040008 */   li    $a0, 8
 /* 0E3DD4 80183394 8E650000 */  lw    $a1, ($s3)
 /* 0E3DD8 80183398 AE020000 */  sw    $v0, ($s0)

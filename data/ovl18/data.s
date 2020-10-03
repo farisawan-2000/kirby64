@@ -13656,10 +13656,10 @@ glabel D_8022BBFC
 .word 0x3F59999A
 
 glabel D_8022BC00
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC04
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC08
 .word 0x00000000
@@ -13668,34 +13668,34 @@ glabel D_8022BC0C
 .word 0x00000000
 
 glabel D_8022BC10
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC14
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC18
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC1C
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC20
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC24
 .word 0x40C90FDB
 
 glabel D_8022BC28
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC2C
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC30
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC34
-.word 0x477FFF00
+.float 65535.0
 
 glabel D_8022BC38
 .word 0x00000000
@@ -13703,56 +13703,8 @@ glabel D_8022BC38
 glabel D_8022BC3C
 .word 0x00000000
 
-glabel D_8022BC40
-.word 0x477FFF00
-
-glabel D_8022BC44
-.word 0x477FFF00
-
-glabel D_8022BC48
-.word 0x477FFF00
-
-glabel D_8022BC4C
-.word 0x3FC90FDB
-
-glabel D_8022BC50
-.word 0x477FFF00
-
-glabel D_8022BC54
-.word 0x3F490FDB
 
 
-glabel jtbl_8022BC58
-.word L80225BA8_ovl18
-.word L80225BA8_ovl18
-.word L80225BBC_ovl18
-.word L80225BD0_ovl18
-.word L80225BD0_ovl18
 
-glabel D_8022BC6C
-.word 0x00000000
 
-glabel D_8022BC70
-.word 0x477FFF00
-
-glabel D_8022BC74
-.word 0xBF266666
-
-glabel D_8022BC78
-.word 0x00000000
-
-glabel D_8022BC7C
-.word 0x00000000
-
-glabel D_8022BC80
-.word 0xBE818938
-
-glabel D_8022BC84
-.word 0x477FFF00
-
-glabel D_8022BC88
-.word 0xFF7FFFFF
-
-glabel D_8022BC8C
-.word 0x477FFF00
 

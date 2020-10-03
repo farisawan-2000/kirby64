@@ -271,7 +271,7 @@ glabel func_8016C558_ovl3
 /* 0CD38C 8016C94C 240F00F0 */  li    $t7, 240
 /* 0CD390 8016C950 51A0000A */  beql  $t5, $zero, .L8016C97C_ovl3
 /* 0CD394 8016C954 ACEF001C */   sw    $t7, 0x1c($a3)
-/* 0CD398 8016C958 0C006291 */  jal   func_80018A44_ovl3
+/* 0CD398 8016C958 0C006291 */  jal   random_soft_s32_range
 /* 0CD39C 8016C95C 2404003C */   li    $a0, 60
 /* 0CD3A0 8016C960 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CD3A4 8016C964 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

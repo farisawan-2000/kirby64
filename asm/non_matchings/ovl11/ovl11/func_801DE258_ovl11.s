@@ -20,7 +20,7 @@ glabel func_801DE258_ovl11
 /* 1E8B60 801DE2A0 10000022 */  b     .L801DE32C_ovl11
 /* 1E8B64 801DE2A4 AD020000 */   sw    $v0, ($t0)
 .L801DE2A8_ovl11:
-/* 1E8B68 801DE2A8 0C006291 */  jal   func_80018A44_ovl11
+/* 1E8B68 801DE2A8 0C006291 */  jal   random_soft_s32_range
 /* 1E8B6C 801DE2AC 24040002 */   li    $a0, 2
 /* 1E8B70 801DE2B0 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 1E8B74 801DE2B4 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)

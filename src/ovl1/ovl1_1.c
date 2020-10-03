@@ -1594,7 +1594,7 @@ u8 func_800A57C8(s32 arg0) {
     u8 temp_ret;
     u8 temp_v0;
 
-    func_8000B6BC_ovl1(1);
+    func_8000B6BC(1);
 loop_1:
     D_800D6B2E = D_800D6B2E + D_800D6B2C;
     temp_v0_2 = D_800D6B2E;
@@ -1604,7 +1604,7 @@ loop_1:
         if (temp_v0_2 >= 0xFF) {
             D_800D6B2E = 0xFF;
         } else {
-            func_8000B6BC_ovl1(1);
+            func_8000B6BC(1);
             goto loop_1;
         }
     }
@@ -1612,19 +1612,19 @@ loop_1:
     temp_v0 = D_800D6B2B;
     if (temp_v0 == 0) {
         D_800D6B24 = 0;
-        func_8000B6BC_ovl1(1);
+        func_8000B6BC(1);
         func_8000A29C_ovl1(D_8004A7C4);
-        return func_8000B6BC_ovl1(1);
+        return func_8000B6BC(1);
     }
     if (temp_v0 == 1) {
-        return func_8000B6BC_ovl1(1);
+        return func_8000B6BC(1);
     }
     if (temp_v0 != 2) {
         return temp_v0;
     }
-    func_8000B6BC_ovl1(1);
+    func_8000B6BC(1);
     func_800067B8_ovl1();
-    temp_ret = func_8000B6BC_ovl1(1);
+    temp_ret = func_8000B6BC(1);
     D_800D6B24 = 0;
     return temp_ret;
 }
