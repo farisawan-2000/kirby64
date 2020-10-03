@@ -1,4 +1,4 @@
-glabel func_800BD374
+glabel draw_star_segments
 /* 0655C4 800BD374 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
 /* 0655C8 800BD378 8DCF6BB0 */  lw    $t7, %lo(D_800D6BB0)($t6)
 /* 0655CC 800BD37C 27BDFFE8 */  addiu $sp, $sp, -0x18

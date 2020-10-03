@@ -19,8 +19,8 @@ glabel func_800A34C8
 /* 04B75C 800A350C E4206E58 */  swc1  $f0, %lo(D_800D6E58)($at)
 /* 04B760 800A3510 3C01800D */  lui   $at, %hi(D_800D6E5C) # $at, 0x800d
 /* 04B764 800A3514 E4206E5C */  swc1  $f0, %lo(D_800D6E5C)($at)
-/* 04B768 800A3518 3C01800D */  lui   $at, %hi(D_800D6E60) # $at, 0x800d
-/* 04B76C 800A351C AC206E60 */  sw    $zero, %lo(D_800D6E60)($at)
+/* 04B768 800A3518 3C01800D */  lui   $at, %hi(gKirbyStars) # $at, 0x800d
+/* 04B76C 800A351C AC206E60 */  sw    $zero, %lo(gKirbyStars)($at)
 /* 04B770 800A3520 3C01800D */  lui   $at, %hi(D_800D6B7C) # $at, 0x800d
 /* 04B774 800A3524 AC206B7C */  sw    $zero, %lo(D_800D6B7C)($at)
 /* 04B778 800A3528 3C18800C */  lui   $t8, %hi(D_800BE438) # $t8, 0x800c

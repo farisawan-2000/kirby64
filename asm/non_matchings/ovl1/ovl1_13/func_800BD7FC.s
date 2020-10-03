@@ -13,10 +13,10 @@ glabel func_800BD7FC
 /* 065A78 800BD828 3C12800F */  lui   $s2, %hi(D_800F4D10) # $s2, 0x800f
 /* 065A7C 800BD82C 26524D10 */  addiu $s2, %lo(D_800F4D10) # addiu $s2, $s2, 0x4d10
 /* 065A80 800BD830 8E430000 */  lw    $v1, ($s2)
-/* 065A84 800BD834 3C05800D */  lui   $a1, %hi(D_800D6E60) # $a1, 0x800d
+/* 065A84 800BD834 3C05800D */  lui   $a1, %hi(gKirbyStars) # $a1, 0x800d
 /* 065A88 800BD838 AE200000 */  sw    $zero, ($s1)
 /* 065A8C 800BD83C 1060001A */  beqz  $v1, .L800BD8A8_ovl1
-/* 065A90 800BD840 24A56E60 */   addiu $a1, %lo(D_800D6E60) # addiu $a1, $a1, 0x6e60
+/* 065A90 800BD840 24A56E60 */   addiu $a1, %lo(gKirbyStars) # addiu $a1, $a1, 0x6e60
 .L800BD844_ovl1:
 /* 065A94 800BD844 24620001 */  addiu $v0, $v1, 1
 /* 065A98 800BD848 0002C880 */  sll   $t9, $v0, 2
@@ -39,7 +39,7 @@ glabel func_800BD7FC
 /* 065AD4 800BD884 2412001E */  li    $s2, 30
 /* 065AD8 800BD888 02002025 */  move  $a0, $s0
 .L800BD88C_ovl1:
-/* 065ADC 800BD88C 0C02F4DD */  jal   func_800BD374_ovl1
+/* 065ADC 800BD88C 0C02F4DD */  jal   draw_star_segments
 /* 065AE0 800BD890 02202825 */   move  $a1, $s1
 /* 065AE4 800BD894 26100001 */  addiu $s0, $s0, 1
 /* 065AE8 800BD898 5612FFFC */  bnel  $s0, $s2, .L800BD88C_ovl1
@@ -62,7 +62,7 @@ glabel func_800BD7FC
 /* 065B28 800BD8D8 AE000000 */  sw    $zero, ($s0)
 /* 065B2C 800BD8DC 0C029D9E */  jal   func_800A7678
 /* 065B30 800BD8E0 24040001 */   li    $a0, 1
-/* 065B34 800BD8E4 0C02F096 */  jal   func_800BC258_ovl1
+/* 065B34 800BD8E4 0C02F096 */  jal   change_kirby_lives
 /* 065B38 800BD8E8 24040001 */   li    $a0, 1
 /* 065B3C 800BD8EC 1000FFD5 */  b     .L800BD844_ovl1
 /* 065B40 800BD8F0 8E430000 */   lw    $v1, ($s2)
@@ -73,7 +73,7 @@ glabel func_800BD7FC
 /* 065B50 800BD900 24040117 */   li    $a0, 279
 /* 065B54 800BD904 8E040000 */  lw    $a0, ($s0)
 /* 065B58 800BD908 24050001 */  li    $a1, 1
-/* 065B5C 800BD90C 0C02F4DD */  jal   func_800BD374_ovl1
+/* 065B5C 800BD90C 0C02F4DD */  jal   draw_star_segments
 /* 065B60 800BD910 2484FFFF */   addiu $a0, $a0, -1
 .L800BD914_ovl1:
 /* 065B64 800BD914 8FBF0024 */  lw    $ra, 0x24($sp)
