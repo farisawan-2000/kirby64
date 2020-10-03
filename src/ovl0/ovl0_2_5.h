@@ -91,4 +91,13 @@ struct Unk_Ovl0_2_5 { // used a lot in this file
     u32 unkC;
 };
 
+// TODO: See if this struct can be merged with another existing one
+struct unk800083CCFunc {
+    u32 unk0;
+    struct unk800083CCFunc* unk4;
+    struct unk800083CCFunc* unk8;
+    u8 unkC;
+    u8 filler[3];
+    u32 unk10;
+};
 #endif

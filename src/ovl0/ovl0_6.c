@@ -1772,40 +1772,40 @@ void create_yz_rotation_matrix(Mat4 arg0, f32 yRot, f32 zRot) {
     f32 sy;
     f32 sz;
     f32 cy;
-    f32 temp_f0;
+    // f32 temp_f0;
     f32 cz;
-    f32 temp_f4;
+    // f32 temp_f4;
 
     sy = sinf(yRot);
     cy = cosf(yRot);
     sz = sinf(zRot);
     cz = cosf(zRot);
 
-    // MAT4_SET(arg0,
-    //     cy*cz, cy*sz, -sy, arg0[3][2],
-    //     -sz, cz, 0.0f, arg0[3][2],
-    //     sy*cz, sy*sz, cy, arg0[3][2],
-    //     arg0[3][2], arg0[3][2], 0.0f, 1.0f
-    //     );
+    MAT4_SET(arg0,
+        cy*cz, cy*sz, -sy, arg0[3][2],
+        -sz, cz, 0.0f, arg0[3][2],
+        sy*cz, sy*sz, cy, arg0[3][2],
+        arg0[3][2], arg0[3][2], 0.0f, 1.0f
+        );
 
-    arg0->unk14 = cz;
-    arg0->unk38 = 0.0f;
-    // arg0->unk0 = cy * cz;
-    temp_f0 = arg0->unk38;
-    // arg0->unk4 = cy * sz;
-    arg0->unk10 = -sz;
-    arg0->unk8 = -sy;
-    arg0->unk20 = sy * cz;
-    arg0->unk24 = sy * sz;
-    arg0->unk28 = cy;
-    arg0->unk18 = 0.0f;
-    arg0->unk34 = temp_f0;
-    arg0->unk30 = temp_f0;
-    arg0->unk2C = temp_f0;
-    arg0->unk1C = temp_f0;
-    arg0->unkC = temp_f0;
-    arg0->unk3C = 1.0f;
-    return temp_f0;
+    // arg0->unk14 = cz;
+    // arg0->unk38 = 0.0f;
+    // // arg0->unk0 = cy * cz;
+    // temp_f0 = arg0->unk38;
+    // // arg0->unk4 = cy * sz;
+    // arg0->unk10 = -sz;
+    // arg0->unk8 = -sy;
+    // arg0->unk20 = sy * cz;
+    // arg0->unk24 = sy * sz;
+    // arg0->unk28 = cy;
+    // arg0->unk18 = 0.0f;
+    // arg0->unk34 = temp_f0;
+    // arg0->unk30 = temp_f0;
+    // arg0->unk2C = temp_f0;
+    // arg0->unk1C = temp_f0;
+    // arg0->unkC = temp_f0;
+    // arg0->unk3C = 1.0f;
+    // return temp_f0;
 
 }
 #else

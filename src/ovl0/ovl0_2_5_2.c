@@ -300,15 +300,7 @@ void func_800083A0(struct unk8004A678Addr *arg0) {
 extern void* D_8004A578[];
 extern void* D_8004A5F8[];
 
-// TODO: See if this struct can be merged with another existing one
-struct unk800083CCFunc {
-    u32 unk0;
-    struct unk800083CCFunc* unk4;
-    struct unk800083CCFunc* unk8;
-    u8 unkC;
-    u8 filler[3];
-    u32 unk10;
-};
+
 
 void func_800083CC(struct unk800083CCFunc *arg0, struct unk800083CCFunc *arg1) {
     void *temp_v0;

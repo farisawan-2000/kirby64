@@ -3,6 +3,10 @@
 #include <ultra64.h>
 #include <PR/gs2dex.h>
 #include "ovl2_6.h"
+#include "ovl18/ovl18_1.h"
+#include "ovl18/ovl18_3.h"
+#include "ovl18/ovl18_5.h"
+
 extern struct CollisionState *gCollisionState;
 extern f32 D_80128A50;
 #ifdef MIPS_TO_C
@@ -645,16 +649,87 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801024E8_ovl2.s")
 #ifdef MIPS_TO_C
 u8 func_80102570_ovl2(struct Normal *arg0, u16 *arg1, Vector *currPos, s32 arg3, struct CollisionTriangle *arg4) {
     struct CollisionTriangle *sp64;
+    f32 temp_f0;
+    f32 temp_f0_2;
+    f32 temp_f0_3;
+    f32 temp_f0_4;
+    f32 temp_f0_5;
+    f32 temp_f0_6;
+    f32 temp_f12;
+    f32 temp_f12_2;
+    f32 temp_f12_3;
+    f32 temp_f14;
+    f32 temp_f14_2;
+    f32 temp_f14_3;
+    f32 temp_f16;
+    f32 temp_f16_2;
+    f32 temp_f16_3;
+    f32 temp_f18;
+    f32 temp_f18_2;
+    f32 temp_f18_3;
     f32 temp_f20;
+    f32 temp_f20_2;
     f32 temp_f22;
+    f32 temp_f22_2;
     f32 temp_f28;
-    s32 temp_v0;
+    f32 temp_f28_2;
+    f32 temp_f28_3;
+    f32 temp_f28_4;
+    f32 temp_f28_5;
+    f32 temp_f28_6;
+    f32 temp_f2;
+    f32 temp_f2_2;
+    f32 temp_f2_3;
+    f32 temp_f30;
+    f32 temp_f30_2;
+    f32 temp_f30_3;
+    s16 *temp_v0;
+    s16 *temp_v0_2;
+    s16 *temp_v0_3;
+    s16 temp_a0_2;
+    s16 temp_a0_4;
+    s16 temp_a0_6;
+    s16 temp_a1_2;
+    s16 temp_a1_4;
+    s16 temp_a1_6;
+    s16 temp_t1;
+    s16 temp_t1_2;
+    s16 temp_t1_3;
+    s16 temp_t2;
+    s16 temp_t2_2;
+    s16 temp_t2_3;
+    s16 temp_t3;
+    s16 temp_t3_2;
+    s16 temp_t3_3;
+    s16 temp_t4;
+    s16 temp_t4_2;
+    s16 temp_t4_3;
+    s32 temp_s7;
+    struct CollisionTriangle *temp_s5;
+    struct CollisionTriangle *temp_t6;
+    struct CollisionTriangle *temp_t6_2;
+    struct vCollisionHeader *temp_s3;
     u16 temp_t5;
-    s32 *temp_a0;
-    s32 *temp_a1;
-    u16 *temp_a2;
-    u16 *temp_a3;
-    u16 *temp_t0;
+    u16 temp_t5_2;
+    u16 temp_t5_3;
+    void *temp_a0;
+    void *temp_a0_3;
+    void *temp_a0_5;
+    void *temp_a1;
+    void *temp_a1_3;
+    void *temp_a1_5;
+    void *temp_a2;
+    void *temp_a2_2;
+    void *temp_a2_3;
+    void *temp_a2_4;
+    void *temp_a2_5;
+    void *temp_a2_6;
+    void *temp_a3;
+    void *temp_a3_2;
+    void *temp_a3_3;
+    void *temp_t0;
+    void *temp_t0_2;
+    void *temp_t0_3;
     f32 phi_f12;
     f32 phi_f2;
     f32 phi_f14;
@@ -665,177 +740,245 @@ u8 func_80102570_ovl2(struct Normal *arg0, u16 *arg1, Vector *currPos, s32 arg3,
     f32 phi_f10;
     s32 phi_s4;
     s32 phi_s7;
-    f32 *v1, *v2, *v3;
+    u16 *phi_s2_2;
+    s32 phi_s4_2;
+    s32 phi_s7_2;
+    u16 *phi_s2_3;
+    f32 phi_f20_2;
+    f32 phi_f22_2;
+    f32 phi_f8_2;
+    f32 phi_f10_2;
+    s32 phi_s4_3;
+    s32 phi_s7_3;
 
-    phi_f2  = ABSF(arg0->x);
-    phi_f12 = ABSF(arg0->y);
-    phi_f14 = ABSF(arg0->z);
+    temp_f0 = arg0->x;
+    temp_s7 = *arg1;
+    if (temp_f0 < 0.0f) {
+        phi_f2 = -temp_f0;
+    } else {
+        phi_f2 = temp_f0;
+    }
+    temp_f0_2 = arg0->y;
+    if (temp_f0_2 < 0.0f) {
+        phi_f12 = -temp_f0_2;
+    } else {
+        phi_f12 = temp_f0_2;
+    }
+    temp_f0_3 = arg0->z;
+    if (temp_f0_3 < 0.0f) {
+        phi_f14 = -temp_f0_3;
+    } else {
+        phi_f14 = temp_f0_3;
+    }
+    temp_s3 = gCollisionState->unk30;
     if (!(phi_f12 < phi_f2)) {
-block8:
+block_28:
         if (!(phi_f14 < phi_f12)) {
-            phi_s2 = &gCollisionState->unk30->header.Triangle_Cells[*arg1];
-            phi_s4 = *arg1 * 2;
-            phi_s7 = *arg1;
-loop7:
-            temp_t5 = *phi_s2;
-            temp_v0 = temp_t5 & 0x7FFF;
-            sp64 = &gCollisionState->unk30->header.Triangles[temp_v0];
-            if (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] == arg3) {
+            phi_s2_3 = &temp_s3->header.Triangle_Cells[temp_s7];
+            phi_s4_3 = temp_s7 * 2;
+            phi_s7_3 = temp_s7;
+loop_57:
+            temp_t5_3 = *phi_s2_3;
+            temp_t6_2 = &temp_s3->header.Triangles[temp_t5_3 & 0x7FFF];
+            sp64 = temp_t6_2;
+            if (temp_t6_2 == arg3) {
 block_70:
-                if ((temp_t5 & 0x8000) != 0) {
-                    arg4->vertex[0] = 0;
+                if ((temp_t5_3 & 0x8000) != 0) {
+                    arg4->vertex = NULL;
                     return 0;
                 }
-                phi_s2 += 2;
-                phi_s4 += 2;
-                phi_s7 += 1;
-                goto loop7;
+                phi_s2_3 = phi_s2_3 + 2;
+                phi_s4_3 = phi_s4_3 + 2;
+                phi_s7_3 = phi_s7_3 + 1;
+                goto loop_57;
             }
-            if (gCollisionState->unk30->usingFloatVertices != 0) {
-                v1 = (f32*)(gCollisionState->unk30->header.Vertices[gCollisionState->unk30->header.Triangles[temp_v0].vertex[0]*3]);
-                v2 = (f32*)(gCollisionState->unk30->header.Vertices[gCollisionState->unk30->header.Triangles[temp_v0].vertex[1]*3]);
-                v3 = (f32*)(gCollisionState->unk30->header.Vertices[gCollisionState->unk30->header.Triangles[temp_v0].vertex[2]*3]);
-                phi_f20 = ((v2[0] - v1[0]) * (currPos->y - v1[1])) - ((currPos->x - v1[0]) * (v2[1] - v1[1]));
-                phi_f22 = ((v3[0] - v2[0]) * (currPos->y - v2[1])) - ((currPos->x - v2[0]) * (v3[1] - v2[1]));
-                phi_f8 = (v1[0] - v3[0]) * (currPos->y - v3[1]);
-                phi_f10 = (currPos->x - v3[0]) * (v1[1] - v3[1]);
+            temp_v0_3 = temp_s3->header.Vertices;
+            temp_f0_6 = currPos->y;
+            temp_f12_3 = currPos->x;
+            if (temp_s3->using32BitVertices != 0) {
+                temp_a0_5 = temp_v0_3 + (temp_t6_2->vertex * 0xC);
+                temp_f2_3 = temp_a0_5->unk0;
+                temp_f14_3 = temp_a0_5->unk4;
+                temp_a1_5 = temp_v0_3 + (temp_t6_2->unk2 * 0xC);
+                temp_f28_5 = temp_a1_5->unk0;
+                temp_f30_3 = temp_a1_5->unk4;
+                temp_a2_5 = temp_v0_3 + (temp_t6_2->unk4 * 0xC);
+                temp_f16_3 = temp_a2_5->unk0;
+                temp_f18_3 = temp_a2_5->unk4;
+                phi_f20_2 = ((temp_f28_5 - temp_f2_3) * (temp_f0_6 - temp_f14_3)) - ((temp_f12_3 - temp_f2_3) * (temp_f30_3 - temp_f14_3));
+                phi_f22_2 = ((temp_f16_3 - temp_f28_5) * (temp_f0_6 - temp_f30_3)) - ((temp_f12_3 - temp_f28_5) * (temp_f18_3 - temp_f30_3));
+                phi_f8_2 = (temp_f2_3 - temp_f16_3) * (temp_f0_6 - temp_f18_3);
+                phi_f10_2 = (temp_f12_3 - temp_f16_3) * (temp_f14_3 - temp_f18_3);
             } else {
-                temp_a2 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] * 6);
-                temp_a3 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[1] * 6);
-                temp_t0 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[2] * 6);
-                phi_f20 = ((temp_a3[0] - temp_a2[0]) * (currPos->y - temp_a2[1])) - ((currPos->x - temp_a2[0]) * (temp_a3[1] - temp_a2[1]));
-                phi_f22 = ((temp_t0[0] - temp_a3[0]) * (currPos->y - temp_a3[1])) - ((currPos->x - temp_a3[0]) * (temp_t0[1] - temp_a3[1]));
-                phi_f8 =  (temp_a2[0] - temp_t0[0]) * (currPos->y - temp_t0[1]);
-                phi_f10 = (currPos->x - temp_t0[0]) * (temp_a2[1] - temp_t0[1]);
+                temp_a2_6 = temp_v0_3 + (temp_t6_2->vertex * 6);
+                temp_t2_3 = temp_a2_6->unk2;
+                temp_t1_3 = temp_a2_6->unk0;
+                temp_a3_3 = temp_v0_3 + (temp_t6_2->unk2 * 6);
+                temp_a0_6 = temp_a3_3->unk0;
+                temp_a1_6 = temp_a3_3->unk2;
+                temp_t0_3 = temp_v0_3 + (temp_t6_2->unk4 * 6);
+                temp_t3_3 = temp_t0_3->unk0;
+                temp_t4_3 = temp_t0_3->unk2;
+                phi_f20_2 = ((temp_a0_6 - temp_t1_3) * (temp_f0_6 - temp_t2_3)) - ((temp_f12_3 - temp_t1_3) * (temp_a1_6 - temp_t2_3));
+                phi_f22_2 = ((temp_t3_3 - temp_a0_6) * (temp_f0_6 - temp_a1_6)) - ((temp_f12_3 - temp_a0_6) * (temp_t4_3 - temp_a1_6));
+                phi_f8_2 = (temp_t1_3 - temp_t3_3) * (temp_f0_6 - temp_t4_3);
+                phi_f10_2 = (temp_f12_3 - temp_t3_3) * (temp_t2_3 - temp_t4_3);
             }
-            temp_f28 = phi_f8 - phi_f10;
-            if ((!(phi_f20 <= 0.5f) || !(phi_f22 <= 0.5f)) || !(temp_f28 <= 0.5f)) {
-                if (((-0.5f <= phi_f20) && (-0.5f <= phi_f22)) && (-0.5f <= temp_f28)) {
+            temp_f28_6 = phi_f8_2 - phi_f10_2;
+            if (!(phi_f20_2 <= 0.5f) || !(phi_f22_2 <= 0.5f) || !(temp_f28_6 <= 0.5f)) {
+                if ((-0.5f <= phi_f20_2) && (-0.5f <= phi_f22_2) && (-0.5f <= temp_f28_6)) {
 
                 } else {
                     goto block_70;
                 }
             }
-            arg4->vertex[0] = (u16 *) sp64;
-            if ((*(gCollisionState->unk30->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
-                *arg1 = phi_s7;
+            arg4->vertex = sp64;
+            if ((*(temp_s3->header.Triangle_Cells + phi_s4_3) & 0x8000) == 0) {
+                *arg1 = phi_s7_3;
                 return 1;
             }
             return 0;
         }
-        phi_s2 = &gCollisionState->unk30->header.Triangle_Cells[*arg1];
-        phi_s4 = *arg1 * 2;
-        phi_s7 = *arg1;
-loop0:
-        temp_t5 = *phi_s2;
-        temp_v0 = temp_t5 & 0x7FFF;
-        if (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] == arg3) {
-block3:
-            if ((temp_t5 & 0x8000) != 0) {
-                arg4->vertex[0] = 0;
+        phi_s2_2 = &temp_s3->header.Triangle_Cells[temp_s7];
+        phi_s4_2 = temp_s7 * 2;
+        phi_s7_2 = temp_s7;
+loop_30:
+        temp_t5_2 = *phi_s2_2;
+        temp_s5 = &temp_s3->header.Triangles[temp_t5_2 & 0x7FFF];
+        if (temp_s5 == arg3) {
+block_53:
+            if ((temp_t5_2 & 0x8000) != 0) {
+                arg4->vertex = NULL;
                 return 0;
             }
-            phi_s2 += 2;
-            phi_s4 += 2;
-            phi_s7 += 1;
-            goto loop0;
+            phi_s2_2 = phi_s2_2 + 2;
+            phi_s4_2 = phi_s4_2 + 2;
+            phi_s7_2 = phi_s7_2 + 1;
+            goto loop_30;
         }
-        if (gCollisionState->unk30->usingFloatVertices == 0) {
-            temp_a2 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] * 6);
-            temp_a3 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[1] * 6);
-            temp_t0 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[2] * 6);
-            temp_f20 = ((temp_a3[0] - temp_a2[0]) * (currPos->z - temp_a2[2])) - ((currPos->x - temp_a2[0]) * (temp_a3[2] - temp_a2[2]));
-            temp_f22 = ((temp_t0[0] - temp_a3[0]) * (currPos->z - temp_a3[2])) - ((currPos->x - temp_a3[0]) * (temp_t0[2] - temp_a3[2]));
-            if ((temp_f20 <= 0.5f) && (temp_f22 <= 0.5f)) {
-                if ((((temp_a2[0] - temp_t0[0]) * (currPos->z - temp_t0[2])) - ((currPos->x - temp_t0[0]) * (temp_a2[2] - temp_t0[2]))) <= 0.5f) {
-                    arg4->vertex[0] = (u16 *) &gCollisionState->unk30->header.Triangles[temp_v0];
-                    if ((*(gCollisionState->unk30->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
-                        *arg1 = phi_s7;
+        temp_v0_2 = temp_s3->header.Vertices;
+        temp_f2_2 = currPos->z;
+        temp_f12_2 = currPos->x;
+        if (temp_s3->using32BitVertices == 0) {
+            temp_a2_4 = temp_v0_2 + (temp_s5->vertex * 6);
+            temp_t4_2 = temp_a2_4->unk4;
+            temp_t3_2 = temp_a2_4->unk0;
+            temp_a3_2 = temp_v0_2 + (temp_s5->unk2 * 6);
+            temp_a0_4 = temp_a3_2->unk0;
+            temp_a1_4 = temp_a3_2->unk4;
+            temp_t0_2 = temp_v0_2 + (temp_s5->unk4 * 6);
+            temp_t1_2 = temp_t0_2->unk0;
+            temp_t2_2 = temp_t0_2->unk4;
+            temp_f20_2 = ((temp_a0_4 - temp_t3_2) * (temp_f2_2 - temp_t4_2)) - ((temp_f12_2 - temp_t3_2) * (temp_a1_4 - temp_t4_2));
+            temp_f22_2 = ((temp_t1_2 - temp_a0_4) * (temp_f2_2 - temp_a1_4)) - ((temp_f12_2 - temp_a0_4) * (temp_t2_2 - temp_a1_4));
+            if ((temp_f20_2 <= 0.5f) && (temp_f22_2 <= 0.5f)) {
+                if ((((temp_t3_2 - temp_t1_2) * (temp_f2_2 - temp_t2_2)) - ((temp_f12_2 - temp_t1_2) * (temp_t4_2 - temp_t2_2))) <= 0.5f) {
+                    arg4->vertex = temp_s5;
+                    if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
+                        *arg1 = phi_s7_2;
                         return 1;
                     }
                     return 0;
                 }
-            } else {
-                if (((-0.5f <= temp_f20) && (-0.5f <= temp_f22)) && (-0.5f <= (((temp_a2[0] - temp_t0[0]) * (currPos->z - temp_t0[2])) - ((currPos->x - temp_t0[0]) * (temp_a2[2] - temp_t0[2]))))) {
-                    arg4->vertex[0] = (u16 *) &gCollisionState->unk30->header.Triangles[temp_v0];
-                    if ((*(gCollisionState->unk30->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
-                        *arg1 = phi_s7;
-                        return 1;
-                    }
-                    return 0;
+            } else if ((-0.5f <= temp_f20_2) && (-0.5f <= temp_f22_2) && (-0.5f <= (((temp_t3_2 - temp_t1_2) * (temp_f2_2 - temp_t2_2)) - ((temp_f12_2 - temp_t1_2) * (temp_t4_2 - temp_t2_2))))) {
+                arg4->vertex = temp_s5;
+                if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
+                    *arg1 = phi_s7_2;
+                    return 1;
                 }
+                return 0;
             }
-            goto block3;
+            goto block_53;
         }
-        v1 = (f32 *)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] * 0xC));
-        v2 = (f32 *)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[1] * 0xC));
-        v3 = (f32 *)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[2] * 0xC));
-        temp_f20 = ((v2[0] - v1[0]) * (currPos->z - v1[2])) - ((currPos->x - v1[0]) * (v2[2] - v1[2]));
-        temp_f22 = ((v3[0] - v2[0]) * (currPos->z - v2[2])) - ((currPos->x - v2[0]) * (v3[2] - v2[2]));
-        temp_f28 = ((v1[0] - v3[0]) * (currPos->z - v3[2])) - ((currPos->x - v3[0]) * (v1[2] - v3[2]));
-        if ((!(temp_f20 <= 0.5f) || !(temp_f22 <= 0.5f)) || !(temp_f28 <= 0.5f)) {
-            if (((-0.5f <= temp_f20) && (-0.5f <= temp_f22)) && (-0.5f <= temp_f28)) {
+        temp_a0_3 = temp_v0_2 + (temp_s5->vertex * 0xC);
+        temp_f0_5 = temp_a0_3->unk0;
+        temp_f14_2 = temp_a0_3->unk8;
+        temp_a1_3 = temp_v0_2 + (temp_s5->unk2 * 0xC);
+        temp_f28_3 = temp_a1_3->unk0;
+        temp_f30_2 = temp_a1_3->unk8;
+        temp_a2_3 = temp_v0_2 + (temp_s5->unk4 * 0xC);
+        temp_f16_2 = temp_a2_3->unk0;
+        temp_f18_2 = temp_a2_3->unk8;
+        temp_f20 = ((temp_f28_3 - temp_f0_5) * (temp_f2_2 - temp_f14_2)) - ((temp_f12_2 - temp_f0_5) * (temp_f30_2 - temp_f14_2));
+        temp_f22 = ((temp_f16_2 - temp_f28_3) * (temp_f2_2 - temp_f30_2)) - ((temp_f12_2 - temp_f28_3) * (temp_f18_2 - temp_f30_2));
+        temp_f28_4 = ((temp_f0_5 - temp_f16_2) * (temp_f2_2 - temp_f18_2)) - ((temp_f12_2 - temp_f16_2) * (temp_f14_2 - temp_f18_2));
+        if (!(temp_f20 <= 0.5f) || !(temp_f22 <= 0.5f) || !(temp_f28_4 <= 0.5f)) {
+            if ((-0.5f <= temp_f20) && (-0.5f <= temp_f22) && (-0.5f <= temp_f28_4)) {
 
             } else {
-                goto block3;
+                goto block_53;
             }
         }
-        arg4->vertex[0] = (u16 *) &gCollisionState->unk30->header.Triangles[temp_v0];
-        if ((*(gCollisionState->unk30->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
-            *arg1 = phi_s7;
-            return (u8)1U;
+        arg4->vertex = temp_s5;
+        if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
+            *arg1 = phi_s7_2;
+            return 1;
         }
-        return (u8)0U;
+        return 0;
     }
     if (!(phi_f14 < phi_f2)) {
-        goto block8;
+        goto block_28;
     }
-    phi_s2 = &gCollisionState->unk30->header.Triangle_Cells[*arg1];
-    phi_s4 = *arg1 * 2;
-    phi_s7 = *arg1;
+    phi_s2 = &temp_s3->header.Triangle_Cells[temp_s7];
+    phi_s4 = temp_s7 * 2;
+    phi_s7 = temp_s7;
 loop_12:
     temp_t5 = *phi_s2;
-    temp_v0 = temp_t5 & 0x7FFF;
-    sp64 = &gCollisionState->unk30->header.Triangles[temp_v0];
-    if (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] == arg3) {
-block5:
+    temp_t6 = &temp_s3->header.Triangles[temp_t5 & 0x7FFF];
+    sp64 = temp_t6;
+    if (temp_t6 == arg3) {
+block_25:
         if ((temp_t5 & 0x8000) != 0) {
-            arg4->vertex[0] = 0;
-            return (u8)0U;
+            arg4->vertex = NULL;
+            return 0;
         }
         phi_s2 = phi_s2 + 2;
         phi_s4 = phi_s4 + 2;
         phi_s7 = phi_s7 + 1;
         goto loop_12;
     }
-    if (gCollisionState->unk30->usingFloatVertices != 0) {
-        v1 = (f32*)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] * 0xC));
-        v2 = (f32*)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[1] * 0xC));
-        v3 = (f32*)(gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[2] * 0xC));
-        phi_f20 = ((v2[1] - v1[1]) * (currPos->z - v1[2])) - ((currPos->y - v1[1]) * (v2[2] - v1[2]));
-        phi_f22 = ((v3[1] - v2[1]) * (currPos->z - v2[2])) - ((currPos->y - v2[1]) * (v3[2] - v2[2]));
-        phi_f8 = (v1[1] - v3[1]) * (currPos->z - v3[2]);
-        phi_f10 = (currPos->y - v3[1]) * (v1[2] - v3[2]);
+    temp_v0 = temp_s3->header.Vertices;
+    temp_f2 = currPos->z;
+    temp_f0_4 = currPos->y;
+    if (temp_s3->using32BitVertices != 0) {
+        temp_a0 = temp_v0 + (temp_t6->vertex * 0xC);
+        temp_f12 = temp_a0->unk4;
+        temp_f14 = temp_a0->unk8;
+        temp_a1 = temp_v0 + (temp_t6->unk2 * 0xC);
+        temp_f28 = temp_a1->unk4;
+        temp_f30 = temp_a1->unk8;
+        temp_a2 = temp_v0 + (temp_t6->unk4 * 0xC);
+        temp_f16 = temp_a2->unk4;
+        temp_f18 = temp_a2->unk8;
+        phi_f20 = ((temp_f28 - temp_f12) * (temp_f2 - temp_f14)) - ((temp_f0_4 - temp_f12) * (temp_f30 - temp_f14));
+        phi_f22 = ((temp_f16 - temp_f28) * (temp_f2 - temp_f30)) - ((temp_f0_4 - temp_f28) * (temp_f18 - temp_f30));
+        phi_f8 = (temp_f12 - temp_f16) * (temp_f2 - temp_f18);
+        phi_f10 = (temp_f0_4 - temp_f16) * (temp_f14 - temp_f18);
     } else {
-        temp_a2 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[0] * 6);
-        temp_a3 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[1] * 6);
-        temp_t0 = gCollisionState->unk30->header.Vertices + (gCollisionState->unk30->header.Triangles[temp_v0].vertex[2] * 6);
-        phi_f20 = ((temp_a3[1] - temp_a2[1]) * (currPos->z - temp_a2[2])) - ((currPos->y - temp_a2[1]) * (temp_a3[2] - temp_a2[2]));
-        phi_f22 = ((temp_t0[1] - temp_a3[1]) * (currPos->z - temp_a3[2])) - ((currPos->y - temp_a3[1]) * (temp_t0[2] - temp_a3[2]));
-        phi_f8 = (temp_a2[1] - temp_t0[1]) * (currPos->z - temp_t0[2]);
-        phi_f10 = (currPos->y - temp_t0[1]) * (temp_a2[2] - temp_t0[2]);
+        temp_a2_2 = temp_v0 + (temp_t6->vertex * 6);
+        temp_t2 = temp_a2_2->unk4;
+        temp_t1 = temp_a2_2->unk2;
+        temp_a3 = temp_v0 + (temp_t6->unk2 * 6);
+        temp_a0_2 = temp_a3->unk2;
+        temp_a1_2 = temp_a3->unk4;
+        temp_t0 = temp_v0 + (temp_t6->unk4 * 6);
+        temp_t3 = temp_t0->unk2;
+        temp_t4 = temp_t0->unk4;
+        phi_f20 = ((temp_a0_2 - temp_t1) * (temp_f2 - temp_t2)) - ((temp_f0_4 - temp_t1) * (temp_a1_2 - temp_t2));
+        phi_f22 = ((temp_t3 - temp_a0_2) * (temp_f2 - temp_a1_2)) - ((temp_f0_4 - temp_a0_2) * (temp_t4 - temp_a1_2));
+        phi_f8 = (temp_t1 - temp_t3) * (temp_f2 - temp_t4);
+        phi_f10 = (temp_f0_4 - temp_t3) * (temp_t2 - temp_t4);
     }
-    // calculate the last subtraction later?
-    temp_f28 = phi_f8 - phi_f10;
-    if ((!(phi_f20 <= 0.5f) || !(phi_f22 <= 0.5f)) || !(temp_f28 <= 0.5f)) {
-        if (((-0.5f <= phi_f20) && (-0.5f <= phi_f22)) && (-0.5f <= temp_f28)) {
+    temp_f28_2 = phi_f8 - phi_f10;
+    if (!(phi_f20 <= 0.5f) || !(phi_f22 <= 0.5f) || !(temp_f28_2 <= 0.5f)) {
+        if ((-0.5f <= phi_f20) && (-0.5f <= phi_f22) && (-0.5f <= temp_f28_2)) {
 
         } else {
-            goto block5;
+            goto block_25;
         }
     }
-    arg4->vertex[0] = sp64;
-    if ((*(gCollisionState->unk30->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
+    arg4->vertex = sp64;
+    if ((*(temp_s3->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
         *arg1 = phi_s7;
         return 1;
     }
@@ -1311,7 +1454,7 @@ void func_80103F58_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, struct 
 #ifdef MIPS_TO_C
 void func_80104010_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
     void *sp64;
-    u32 (*)(Vector *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
+    u32 (*)(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
     ?32 sp5C;
     ?32 sp58;
     s32 sp54;
@@ -1404,7 +1547,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80104184_ovl2.s")
 #ifdef MIPS_TO_C
 void func_8010423C_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
     void *sp64;
-    u32 (*)(Vector *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
+    u32 (*)(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
     ?32 sp5C;
     ?32 sp58;
     ?32 sp54;
@@ -1435,7 +1578,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010423C_ovl2.s")
 #ifdef MIPS_TO_C
 void func_801042F4_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7, s32 arg8) {
     void *sp64;
-    u32 (*)(Vector *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
+    u32 (*)(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) sp60;
     ?32 sp5C;
     s32 sp58;
     ?32 sp54;
@@ -6870,29 +7013,30 @@ u8 func_8010E2A0_ovl2(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E2A0_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-f32 func_8010E2B8_ovl2(void *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6) {
-    arg0->unk30 = arg1;
-    arg0->unk34 = arg2;
-    arg0->unk38 = arg3;
-    arg0->unk0 = arg4;
-    arg0->unk14 = arg5;
-    arg0->unk4 = 0.0f;
-    arg0->unk8 = 0.0f;
-    arg0->unkC = 0.0f;
-    arg0->unk10 = 0.0f;
-    arg0->unk18 = 0.0f;
-    arg0->unk1C = 0.0f;
-    arg0->unk20 = 0.0f;
-    arg0->unk24 = 0.0f;
-    arg0->unk2C = 0.0f;
-    arg0->unk3C = 1.0f;
-    arg0->unk28 = arg6;
-    return 0.0f;
+// Creates matrix with format:
+// {   sx  , 0.0f, 0.0f, 0.0f,
+//     0.0f, sy  , 0.0f, 0.0f,
+//     0.0f, 0.0f, sz  , 0.0f,
+//     tx  , ty  , tz  , 1.0f }
+void mtx_create_translate_scale(f32 arg0[4][4], f32 tx, f32 ty, f32 tz, f32 sx, f32 sy, f32 sz) {
+    arg0[3][0] = tx;
+    arg0[3][1] = ty;
+    arg0[3][2] = tz;
+    arg0[0][0] = sx;
+    arg0[1][1] = sy;
+    arg0[2][2] = sz;
+
+    arg0[0][1] = 0.0f;
+    arg0[0][2] = 0.0f;
+    arg0[0][3] = 0.0f;
+    arg0[1][0] = 0.0f;
+    arg0[1][2] = 0.0f;
+    arg0[1][3] = 0.0f;
+    arg0[2][0] = 0.0f;
+    arg0[2][1] = 0.0f;
+    arg0[2][3] = 0.0f;
+    arg0[3][3] = 1.0f;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E2B8_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8010E324(s32 arg0, void *arg1) {
@@ -7038,22 +7182,14 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E5B0_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-s32 func_8010E6F0(void *arg0, s32 arg1) {
-    s32 temp_v0;
-
-    temp_v0 = arg1 * 4;
-    arg0->unk0 = arg0->unk0 + (temp_v0 + 0x800E0000)->unk25D0;
-    arg0->unk4 = arg0->unk4 + (temp_v0 + 0x800E0000)->unk2790;
-    arg0->unk8 = arg0->unk8 + (temp_v0 + 0x800E0000)->unk2950;
-    return temp_v0;
+s32 func_8010E6F0(Vector *arg0, s32 arg1) {
+    arg0->x += D_800E25D0[arg1];
+    arg0->y += D_800E2790[arg1];
+    arg0->z += D_800E2950[arg1];
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E6F0.s")
-#endif
 
 #ifdef MIPS_TO_C
-u8 func_8010E740(void *arg0, s32 arg1) {
+u8 func_8010E740(Vector *arg0, s32 arg1) {
     s32 sp24;
     void *sp20;
     s32 temp_a1;
@@ -7066,10 +7202,10 @@ u8 func_8010E740(void *arg0, s32 arg1) {
     void *phi_a3;
     u8 phi_return;
 
-    temp_v1 = arg0->unk8;
+    temp_v1 = (bitwise s32) arg0->z;
     temp_a2 = arg1;
     if (temp_v1 == -1) {
-        temp_v0 = arg0->unk4;
+        temp_v0 = (bitwise u8) arg0->y;
         phi_return = temp_v0;
         if (temp_v0 != 0) {
             phi_return = temp_v0;
@@ -7081,7 +7217,7 @@ u8 func_8010E740(void *arg0, s32 arg1) {
             }
         }
     } else if (temp_v1 == -2) {
-        temp_v0_2 = arg0->unk4;
+        temp_v0_2 = (bitwise u8) arg0->y;
         if (temp_v0_2 != 0) {
             if (temp_v0_2 != 1) {
                 if (temp_v0_2 != 2) {
@@ -7108,10 +7244,10 @@ u8 func_8010E740(void *arg0, s32 arg1) {
         } else if (temp_a2 == D_8012D580) {
             phi_a3 = &D_801249B0;
         } else {
-            *0x80124990 = 0;
-            phi_a3 = 0x80124990;
+            D_80124990 = 0;
+            phi_a3 = D_80124990;
         }
-        temp_v0_3 = arg0->unk4;
+        temp_v0_3 = (bitwise u8) arg0->y;
         if (temp_v0_3 != 0) {
             if (temp_v0_3 != 1) {
                 if (temp_v0_3 != 2) {
@@ -7130,7 +7266,7 @@ u8 func_8010E740(void *arg0, s32 arg1) {
             phi_return = func_8010E5B0_ovl2(arg0 + 0xC, phi_a1, temp_a2, phi_a3);
         }
     }
-    arg0->unk0 = 1;
+    arg0->x = 1;
     return phi_return;
 }
 #else
@@ -7138,43 +7274,42 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E740.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_8010E8F0_ovl2(void *arg0, f32 arg1, void *arg2, f32 arg3, void *arg4) {
+u8 func_8010E8F0_ovl2(Vector *arg0, f32 arg1, Vector *arg2, f32 arg3, Vector *arg4) {
     f32 temp_f0;
-    f32 temp_f12;
-    f32 temp_f14;
-    f32 temp_f16;
+    f32 dy;
+    f32 dz;
+    f32 dx;
     f32 temp_f18;
     f32 temp_f2;
 
-    temp_f18 = arg2->unk0;
+    // temp_f18 = arg2->x;
     temp_f2 = arg1 + arg3;
-    temp_f16 = arg0->unk0 - temp_f18;
-    if (temp_f2 < temp_f16) {
+    dx = arg0->x - arg2->x;
+    if (!((arg1 + arg3) < dx)) {
         return 0;
     }
-    temp_f0 = -temp_f2;
-    if (temp_f16 < temp_f0) {
+    if (dx < -(arg1 + arg3)) {
         return 0;
     }
-    temp_f12 = arg0->unk4 - arg2->unk4;
-    if (temp_f2 < temp_f12) {
+    dy = arg0->y - arg2->y;
+    if ((arg1 + arg3) < dy) {
         return 0;
     }
-    if (temp_f12 < temp_f0) {
+    if (dy < -(arg1 + arg3)) {
         return 0;
     }
-    temp_f14 = arg0->unk8 - arg2->unk8;
-    if (temp_f2 < temp_f14) {
+    dz = arg0->z - arg2->z;
+    if ((arg1 + arg3) < dz) {
         return 0;
     }
-    if (temp_f14 < temp_f0) {
+    if (dz < -(arg1 + arg3)) {
         return 0;
     }
-    if (((temp_f16 * temp_f16) + (temp_f12 * temp_f12) + (temp_f14 * temp_f14)) <= (temp_f2 * temp_f2)) {
+    if (((dx * dx) + (dy * dy) + (dz * dz)) <= ((arg1 + arg3) * (arg1 + arg3))) {
         if (arg4 != 0) {
-            arg4->unk0 = (temp_f16 * 0.5f) + temp_f18;
-            arg4->unk4 = (temp_f12 * 0.5f) + arg2->unk4;
-            arg4->unk8 = (temp_f14 * 0.5f) + arg2->unk8;
+            arg4->x = (dx * 0.5f) + arg2->x;
+            arg4->y = (dy * 0.5f) + arg2->y;
+            arg4->z = (dz * 0.5f) + arg2->z;
         }
         return 1;
     }
@@ -7184,13 +7319,19 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E740.s")
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E8F0_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8010EA20_ovl2(void *arg0, void *arg1, s32 arg2) {
-    func_8010E8F0_ovl2(arg0 + 0xC, arg0->unk18, arg1 + 0xC, arg1->unk18, arg2);
+struct Unk_Ovl_2_6 {
+    f32 x;
+    f32 unk4;
+    f32 unk8;
+    Vector unkC;
+    f32 unk18;
+};
+
+void func_8010E8F0_ovl2(Vector *, f32, Vector *, f32, s32 *);
+// TODO: get types
+void func_8010EA20_ovl2(struct Unk_Ovl_2_6 *arg0, struct Unk_Ovl_2_6 *arg1, Vector *arg2) {
+    func_8010E8F0_ovl2(((Vector *)arg0) + 1, arg0->unk18, ((Vector *)arg1) + 1, arg1->unk18, arg2);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010EA20_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 f32 func_8010EA68_ovl2(void *arg0, void *arg1, void *arg2) {

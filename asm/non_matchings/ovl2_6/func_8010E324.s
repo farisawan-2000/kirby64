@@ -43,7 +43,7 @@ glabel func_8010E324
 /* 096E38 8010E3C8 46045182 */  mul.s $f6, $f10, $f4
 /* 096E3C 8010E3CC E7B00014 */  swc1  $f16, 0x14($sp)
 /* 096E40 8010E3D0 44073000 */  mfc1  $a3, $f6
-/* 096E44 8010E3D4 0C0438AE */  jal   func_8010E2B8_ovl2
+/* 096E44 8010E3D4 0C0438AE */  jal   mtx_create_translate_scale
 /* 096E48 8010E3D8 00000000 */   nop   
 /* 096E4C 8010E3DC 8E250004 */  lw    $a1, 4($s1)
 /* 096E50 8010E3E0 8E260008 */  lw    $a2, 8($s1)
@@ -117,7 +117,7 @@ glabel func_8010E324
 /* 096F60 8010E4F0 E7A00010 */  swc1  $f0, 0x10($sp)
 /* 096F64 8010E4F4 E7A60018 */  swc1  $f6, 0x18($sp)
 /* 096F68 8010E4F8 44072000 */  mfc1  $a3, $f4
-/* 096F6C 8010E4FC 0C0438AE */  jal   func_8010E2B8_ovl2
+/* 096F6C 8010E4FC 0C0438AE */  jal   mtx_create_translate_scale
 /* 096F70 8010E500 00000000 */   nop   
 /* 096F74 8010E504 8FAD0050 */  lw    $t5, 0x50($sp)
 /* 096F78 8010E508 C6280008 */  lwc1  $f8, 8($s1)

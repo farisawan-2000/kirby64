@@ -1,4 +1,4 @@
-glabel func_8010E2B8_ovl2
+glabel mtx_create_translate_scale
 /* 096D28 8010E2B8 44856000 */  mtc1  $a1, $f12
 /* 096D2C 8010E2BC 44867000 */  mtc1  $a2, $f14
 /* 096D30 8010E2C0 AFA7000C */  sw    $a3, 0xc($sp)
