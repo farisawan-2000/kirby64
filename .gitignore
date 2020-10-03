@@ -9,6 +9,8 @@ bin/*
 .assets-local.txt
 tools/mipspro*/
 tools/n64graphics
+tools/armips
+tools/iplfontutil
 *.o
 __pycache__/*
 .vscode/*
