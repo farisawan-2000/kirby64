@@ -34,7 +34,7 @@ glabel func_8011890C_ovl2
 /* 0A13FC 8011898C 46062202 */  mul.s $f8, $f4, $f6
 /* 0A1400 80118990 4600428D */  trunc.w.s $f10, $f8
 /* 0A1404 80118994 44045000 */  mfc1  $a0, $f10
-/* 0A1408 80118998 0C002DAF */  jal   func_8000B6BC_ovl2
+/* 0A1408 80118998 0C002DAF */  jal   func_8000B6BC
 /* 0A140C 8011899C 00000000 */   nop   
 /* 0A1410 801189A0 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 0A1414 801189A4 0C02BB30 */  jal   func_800AECC0_ovl2
@@ -66,7 +66,7 @@ glabel func_8011890C_ovl2
 /* 0A1478 80118A08 46069202 */  mul.s $f8, $f18, $f6
 /* 0A147C 80118A0C 4600428D */  trunc.w.s $f10, $f8
 /* 0A1480 80118A10 44045000 */  mfc1  $a0, $f10
-/* 0A1484 80118A14 0C002DAF */  jal   func_8000B6BC_ovl2
+/* 0A1484 80118A14 0C002DAF */  jal   func_8000B6BC
 /* 0A1488 80118A18 00000000 */   nop   
 /* 0A148C 80118A1C 0C02BB30 */  jal   func_800AECC0_ovl2
 /* 0A1490 80118A20 4600A306 */   mov.s $f12, $f20

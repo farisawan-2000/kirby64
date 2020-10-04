@@ -3,7 +3,7 @@ glabel func_80117DA0_ovl2
 /* 0A0814 80117DA4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A0818 80117DA8 0C045E0D */  jal   func_80117834_ovl2
 /* 0A081C 80117DAC AFA40018 */   sw    $a0, 0x18($sp)
-/* 0A0820 80117DB0 0C002DAF */  jal   func_8000B6BC_ovl2
+/* 0A0820 80117DB0 0C002DAF */  jal   func_8000B6BC
 /* 0A0824 80117DB4 2404001E */   li    $a0, 30
 /* 0A0828 80117DB8 0C045E41 */  jal   func_80117904_ovl2
 /* 0A082C 80117DBC 8FA40018 */   lw    $a0, 0x18($sp)

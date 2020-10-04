@@ -1,7 +1,7 @@
 glabel change_kirby_hp
 /* 064230 800BBFE0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 064234 800BBFE4 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 064238 800BBFE8 0C0062AB */  jal   func_80018AAC_ovl1
+/* 064238 800BBFE8 0C0062AB */  jal   random_u16
 /* 06423C 800BBFEC E7AC0018 */   swc1  $f12, 0x18($sp)
 /* 064240 800BBFF0 304E0003 */  andi  $t6, $v0, 3
 /* 064244 800BBFF4 24010003 */  li    $at, 3

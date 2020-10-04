@@ -121,10 +121,10 @@ glabel func_800B9FE0
 /* 0623D4 800BA184 00000000 */   nop   
 /* 0623D8 800BA188 26520001 */  addiu $s2, $s2, 1
 .L800BA18C_ovl1:
-/* 0623DC 800BA18C 0C006291 */  jal   func_80018A44_ovl1
+/* 0623DC 800BA18C 0C006291 */  jal   random_soft_s32_range
 /* 0623E0 800BA190 02402025 */   move  $a0, $s2
 /* 0623E4 800BA194 00408825 */  move  $s1, $v0
-/* 0623E8 800BA198 0C006291 */  jal   func_80018A44_ovl1
+/* 0623E8 800BA198 0C006291 */  jal   random_soft_s32_range
 /* 0623EC 800BA19C 02402025 */   move  $a0, $s2
 /* 0623F0 800BA1A0 02622021 */  addu  $a0, $s3, $v0
 /* 0623F4 800BA1A4 908E0000 */  lbu   $t6, ($a0)
@@ -135,7 +135,7 @@ glabel func_800B9FE0
 /* 062408 800BA1B8 A06E0000 */  sb    $t6, ($v1)
 /* 06240C 800BA1BC 1601FFF3 */  bne   $s0, $at, .L800BA18C_ovl1
 /* 062410 800BA1C0 A0850000 */   sb    $a1, ($a0)
-/* 062414 800BA1C4 0C006291 */  jal   func_80018A44_ovl1
+/* 062414 800BA1C4 0C006291 */  jal   random_soft_s32_range
 /* 062418 800BA1C8 02402025 */   move  $a0, $s2
 /* 06241C 800BA1CC 02627821 */  addu  $t7, $s3, $v0
 /* 062420 800BA1D0 91F00000 */  lbu   $s0, ($t7)

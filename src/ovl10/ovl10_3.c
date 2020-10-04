@@ -39,7 +39,7 @@ void func_801EF3F0_ovl10(s32 arg0) {
     }
     D_800E8920[D_8004A7C4->unk0] = 0;
     while (D_800E8920[D_8004A7C4->unk0] == 0) {
-        func_8000B6BC_ovl10(1);
+        func_8000B6BC(1);
     }
     D_800E64D0[D_8004A7C4->unk0] *= D_801F4C30;
     D_800E3210[D_8004A7C4->unk0] = D_801F4C34;
@@ -47,10 +47,10 @@ void func_801EF3F0_ovl10(s32 arg0) {
     D_800E3C90[D_8004A7C4->unk0] = 8.0f;
     D_800E8920[D_8004A7C4->unk0] = 0;
     while (D_800E8920[D_8004A7C4->unk0] == 0) {
-        func_8000B6BC_ovl10(1);
+        func_8000B6BC(1);
     }
     func_800B3520_ovl10();
-    func_8000B6BC_ovl10(0x3C);
+    func_8000B6BC(0x3C);
     D_801ACF84_ovl10(arg0);
 }
 

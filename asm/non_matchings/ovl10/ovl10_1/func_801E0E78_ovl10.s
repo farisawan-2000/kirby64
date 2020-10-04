@@ -32,7 +32,7 @@ glabel func_801E0E78_ovl10
 /* 1D1C5C 801E0EEC 10000039 */  b     .L801E0FD4_ovl10
 /* 1D1C60 801E0EF0 8CA59AA0 */ lw $a1, %lo(D_800E9AA0)($a1)
 .L801E0EF4_ovl10:
-/* 1D1C64 801E0EF4 0C006291 */  jal   func_80018A44_ovl10
+/* 1D1C64 801E0EF4 0C006291 */  jal   random_soft_s32_range
 /* 1D1C68 801E0EF8 24040008 */   li    $a0, 8
 /* 1D1C6C 801E0EFC 3C07800F */  lui   $a3, %hi(D_800E9AA0) # $a3, 0x800f
 /* 1D1C70 801E0F00 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
@@ -60,7 +60,7 @@ glabel func_801E0E78_ovl10
 /* 1D1CC0 801E0F50 10000020 */  b     .L801E0FD4_ovl10
 /* 1D1CC4 801E0F54 8CA59AA0 */ lw $a1, %lo(D_800E9AA0)($a1)
 .L801E0F58_ovl10:
-/* 1D1CC8 801E0F58 0C006291 */  jal   func_80018A44_ovl10
+/* 1D1CC8 801E0F58 0C006291 */  jal   random_soft_s32_range
 /* 1D1CCC 801E0F5C 24040008 */   li    $a0, 8
 /* 1D1CD0 801E0F60 3C07800F */  lui   $a3, %hi(D_800E9AA0) # $a3, 0x800f
 /* 1D1CD4 801E0F64 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005

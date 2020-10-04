@@ -4392,15 +4392,15 @@ u16 func_800189A8(void) {
     return D_8003E320;
 }
 
-u16 func_800189B4(void) {
+u16 random_soft_u16(void) {
     return D_8003DF20[D_8003E320 = (++D_8003E320 & 0x3FF)];
 }
 
-f32 func_800189E4(void) {
+f32 random_soft_f32(void) {
     return D_8003DF20[D_8003E320 = (++D_8003E320 & 0x3FF)] / 256.f;
 }
 
-s32 func_80018A44(s32 arg0) {
+s32 random_soft_s32_range(s32 arg0) {
     return D_8003DF20[D_8003E320 = (++D_8003E320 & 0x3FF)] * arg0 / 256;
 }
 
@@ -4412,20 +4412,20 @@ s32 func_80018AA0(void) {
     return D_8003E324;
 }
 
-u16 func_80018AAC(void) {
+u16 random_u16(void) {
     return (D_8003E324 = (D_8003E324 * 0x343FD) + 0x269EC3) >> 0x10;
 }
 
-f32 func_80018AFC(void) {
+f32 random_f32(void) {
     return ((D_8003E324 = (D_8003E324 * 0x343FD) + 0x269EC3) >> 0x10 & 0xffff) / 65536.f;
 }
 
-s32 func_80018B60(s32 arg0) {
+s32 random_s32_range(s32 arg0) {
     return (((D_8003E324 = (D_8003E324 * 0x343FD) + 0x269EC3)) >> 0x10 & 0xffff) * arg0 / 65536;
 }
 
-u8 func_80018BD4(void) {
-    return func_80018AAC();
+u8 random_u8(void) {
+    return random_u16();
 }
 
 f32 func_80018BF8(void) {
@@ -4433,5 +4433,5 @@ f32 func_80018BF8(void) {
 }
 
 s32 func_80018C5C(s32 arg0) {
-    return func_80018AAC() * arg0 / 65536;
+    return random_u16() * arg0 / 65536;
 }

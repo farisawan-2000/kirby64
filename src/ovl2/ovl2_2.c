@@ -50,7 +50,7 @@ void func_800F6C98(s32 arg0) {
 
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = 0;
     func_800B1F68_ovl2(((*D_8004A7C4 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
-    func_8000B6BC_ovl2((u32) (120.0f * D_800D6B14));
+    func_8000B6BC((u32) (120.0f * D_800D6B14));
     temp_v1 = (*D_8004A7C4 * 4) + 0x800F0000;
     phi_v1 = temp_v1->unk-6720;
     phi_v0 = *D_8004A7C4;

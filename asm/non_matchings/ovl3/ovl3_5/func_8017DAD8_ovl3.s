@@ -21,7 +21,7 @@ glabel func_8017DAD8_ovl3
 /* 0DE564 8017DB24 AFA20024 */  sw    $v0, 0x24($sp)
 /* 0DE568 8017DB28 2610E7C0 */  addiu $s0, %lo(gKirbyState) # addiu $s0, $s0, -0x1840
 .L8017DB2C_ovl3:
-/* 0DE56C 8017DB2C 0C006291 */  jal   func_80018A44_ovl3
+/* 0DE56C 8017DB2C 0C006291 */  jal   random_soft_s32_range
 /* 0DE570 8017DB30 24040005 */   li    $a0, 5
 /* 0DE574 8017DB34 8E0F003C */  lw    $t7, 0x3c($s0)
 /* 0DE578 8017DB38 104FFFFC */  beq   $v0, $t7, .L8017DB2C_ovl3

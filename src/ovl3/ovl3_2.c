@@ -354,7 +354,7 @@ block_48:
                 }
                 if (gKirbyState.unk40 < ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210) {
 loop_62:
-                    func_8000B6BC_ovl3(1);
+                    func_8000B6BC(1);
                     if (gKirbyState.unk40 < ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210) {
                         goto loop_62;
                     }
@@ -694,7 +694,7 @@ s32 func_801580C4_ovl3(void *arg0, f32 arg1) {
             phi_return = *arg0;
             if ((temp_t8 & 1) != 0) {
 loop_3:
-                phi_return = func_8000B6BC_ovl3(1);
+                phi_return = func_8000B6BC(1);
                 if ((gKirbyState.isTurning & 1) != 0) {
                     goto loop_3;
                 }
@@ -715,7 +715,7 @@ void func_8015814C_ovl3(s32 arg0, void *arg1, s32 arg2) {
     gKirbyState.unk44 = 0;
     if ((gKirbyState.isTurning & 1) != 0) {
 loop_1:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if ((gKirbyState.isTurning & 1) != 0) {
             goto loop_1;
         }
@@ -727,7 +727,7 @@ loop_1:
     func_80157D58_ovl3(arg0);
     if (gKirbyState.unk30 == 0) {
 loop_3:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if (gKirbyState.unk30 == 0) {
             goto loop_3;
         }
@@ -738,7 +738,7 @@ loop_3:
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk6850 = (f32) D_80196F58;
     if ((gKirbyState.isTurning & 1) != 0) {
 loop_5:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if ((gKirbyState.isTurning & 1) != 0) {
             goto loop_5;
         }
@@ -1028,7 +1028,7 @@ void func_80158924_ovl3(s32 arg0) {
     func_801230E8_ovl3(0x20141, 0x20142, 0);
     if (gKirbyState.unk44 == 0) {
 loop_1:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if (gKirbyState.unk44 == 0) {
             goto loop_1;
         }
@@ -1243,7 +1243,7 @@ void func_80159164_ovl3(s32 arg0) {
     } else {
         func_801230E8_ovl3(0x2009B, 0x2009C, 0);
     }
-    func_8000B6BC_ovl3(0x1E);
+    func_8000B6BC(0x1E);
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk6690 = 0.625f;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk6850 = 5.0f;
     if (D_8012E7C4 != 0) {
@@ -1267,7 +1267,7 @@ block_17:
 loop_19:
     temp_v0_3 = (*phi_v1 * 4) + &D_800E6BD0;
     if (!(phi_f0 <= *temp_v0_3)) {
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         phi_f0 = D_80196F90;
         phi_v1 = D_8004A7C4;
         goto loop_19;
@@ -1287,19 +1287,19 @@ loop_19:
 
             } else {
                 func_801230E8_ovl3(0x200C7, 0x200C8, 0);
-                func_8000B6BC_ovl3(4);
+                func_8000B6BC(4);
                 func_801230E8_ovl3(0x200C9, 0x200CA, 1);
                 func_801230E8_ovl3(0x200C1, 0x200C2, 0);
             }
         } else {
             func_801230E8_ovl3(0x2016D, 0x2016E, 0);
-            func_8000B6BC_ovl3(4);
+            func_8000B6BC(4);
             func_801230E8_ovl3(0x2016F, 0x20170, 1);
             func_801230E8_ovl3(0x20165, 0x20166, 0);
         }
     } else {
         func_801230E8_ovl3(0x2009F, 0x200A0, 0);
-        func_8000B6BC_ovl3(4);
+        func_8000B6BC(4);
         func_801230E8_ovl3(0x200A1, 0x200A2, 1);
         func_801230E8_ovl3(0x20089, 0x2008A, 0);
     }
@@ -1307,7 +1307,7 @@ loop_28:
     temp_v0_4 = *D_8004A7C4 * 4;
     if (!((temp_v0_4 + 0x800E0000)->unk3210 < 0.0f)) {
 block_30:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         goto loop_28;
     }
     if (!((temp_v0_4 + 0x800E0000)->unk2790 <= 100.0f)) {
@@ -1345,7 +1345,7 @@ block_38:
     phi_v1_3 = phi_v1_2;
     if (D_8012E7FC == 0) {
 loop_40:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if (D_8012E7FC == 0) {
             goto loop_40;
         }
@@ -1382,7 +1382,7 @@ loop_40:
     } else {
         func_801230E8_ovl3(0x2009F, 0x200A0, 0);
     }
-    func_8000B6BC_ovl3(0x14);
+    func_8000B6BC(0x14);
     D_8012E7F0 = (s32) (D_8012E7F0 + 1);
     func_800AFA14_ovl3();
 }
@@ -1461,7 +1461,7 @@ block_11:
     phi_v0 = temp_v0;
     if (*(&D_800E8060 + (*(&D_800E0D50 + temp_v0) * 4)) == 0) {
 loop_13:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         temp_v0_2 = *D_8004A7C4 * 4;
         phi_v0 = temp_v0_2;
         if (*(&D_800E8060 + (*(&D_800E0D50 + temp_v0_2) * 4)) == 0) {
@@ -1561,7 +1561,7 @@ void func_8015A144_ovl3(s32 arg0) {
     func_801230E8_ovl3(0x20141, 0x20142, 0);
     if (1 == gKirbyState.unk44) {
 loop_1:
-        func_8000B6BC_ovl3(1);
+        func_8000B6BC(1);
         if (1 == gKirbyState.unk44) {
             goto loop_1;
         }
@@ -1569,13 +1569,13 @@ loop_1:
     func_800FA414_ovl3(5);
     func_801230E8_ovl3(0x2009B, 0x2009C, 0);
     ((((*D_8004A7C4 * 4) + 0x800E0000)->unkD50 * 4) + 0x800F0000)->unk-7FA0 = 2;
-    func_8000B6BC_ovl3(0x1A);
+    func_8000B6BC(0x1A);
     func_801230E8_ovl3(0x2009F, 0x200A0, 0);
     func_800A7678(0x259);
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210 = 70.0f;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3750 = 0.0f;
     ((*D_8004A7C4 * 4) + 0x800E0000)->unk3C90 = 70.0f;
-    func_8000B6BC_ovl3(0x22);
+    func_8000B6BC(0x22);
     gKirbyState.unk30 = (s32) (gKirbyState.unk30 + 1);
     func_800AFA14_ovl3();
 }
@@ -1648,7 +1648,7 @@ void func_8015A44C_ovl3(void) {
         func_801230E8_ovl3(0x20089, 0x2008A, 0);
         if (1 == gKirbyState.unk14) {
 loop_4:
-            func_8000B6BC_ovl3(1);
+            func_8000B6BC(1);
             if (1 == gKirbyState.unk14) {
                 goto loop_4;
             }
@@ -1674,7 +1674,7 @@ loop_4:
             func_801230E8_ovl3(0x20089, 0x2008A, 0);
             if (*(&D_800E8920 + (*D_8004A7C4 * 4)) == 0) {
 loop_8:
-                func_8000B6BC_ovl3(1);
+                func_8000B6BC(1);
                 if (*(&D_800E8920 + (*D_8004A7C4 * 4)) == 0) {
                     goto loop_8;
                 }
@@ -1686,7 +1686,7 @@ loop_8:
             func_801230E8_ovl3(0x2009B, 0x2009C, 0);
             if (1 == gKirbyState.unk14) {
 loop_11:
-                func_8000B6BC_ovl3(1);
+                func_8000B6BC(1);
                 if (1 == gKirbyState.unk14) {
                     goto loop_11;
                 }

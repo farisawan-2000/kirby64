@@ -1,7 +1,7 @@
 glabel func_800BC298
 /* 0644E8 800BC298 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0644EC 800BC29C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0644F0 800BC2A0 0C0062AB */  jal   func_80018AAC_ovl1
+/* 0644F0 800BC2A0 0C0062AB */  jal   random_u16
 /* 0644F4 800BC2A4 AFA40018 */   sw    $a0, 0x18($sp)
 /* 0644F8 800BC2A8 304E0003 */  andi  $t6, $v0, 3
 /* 0644FC 800BC2AC 24010002 */  li    $at, 2

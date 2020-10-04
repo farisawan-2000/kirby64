@@ -1246,8 +1246,8 @@ loop_23:
         phi_s0_2 = 0;
     }
 loop_27:
-    temp_s1 = func_80018A44_ovl1(phi_s2_3, phi_a1_2);
-    temp_a0 = &sp3C + func_80018A44_ovl1(phi_s2_3);
+    temp_s1 = random_soft_s32_range(phi_s2_3, phi_a1_2);
+    temp_a0 = &sp3C + random_soft_s32_range(phi_s2_3);
     temp_v1_2 = &sp3C + temp_s1;
     temp_a1_2 = *temp_v1_2;
     temp_s0_2 = phi_s0_2 + 1;
@@ -1258,7 +1258,7 @@ loop_27:
     if (temp_s0_2 != 0x16) {
         goto loop_27;
     }
-    temp_t7 = &sp3C + func_80018A44_ovl1(phi_s2_3, temp_a1_2);
+    temp_t7 = &sp3C + random_soft_s32_range(phi_s2_3, temp_a1_2);
     temp_s0_3 = *temp_t7;
     if (temp_s0_3 == 0xFF) {
         return 0;

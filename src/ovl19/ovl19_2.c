@@ -35,12 +35,12 @@ void func_8021EF44_ovl19(s32 arg0) {
     phi_v1 = temp_v1_2;
 loop_1:
     if (2 != *(&D_800E8060 + (*phi_v1 * 4))) {
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         phi_v1 = D_8004A7C4->unk0;
         goto loop_1;
     }
     func_800AA018_ovl19(0x203A4);
-    func_8000B6BC_ovl19(0x16);
+    func_8000B6BC(0x16);
     D_8012E7FC = 1;
     func_800AFA14_ovl19();
 }
@@ -102,14 +102,14 @@ void func_8021F174_ovl19(s32 arg0) {
     func_801230E8_ovl19(0x203BC, 0x203BD, 0);
     if (*(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4)) == 0) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (*(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4)) == 0) {
             goto loop_1;
         }
     }
 loop_3:
     if (D_800E8920 == 0) {
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         goto loop_3;
     }
     func_801230E8_ovl19(0x203B0, 0x203B1, 1);
@@ -118,7 +118,7 @@ loop_3:
     phi_v0 = temp_v0_2 * 4;
     if (1 == *(&D_800E8060 + (D_800E0D50[temp_v0_2] * 4))) {
 loop_6:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         temp_v0_3 = D_8004A7C4->unk0;
         phi_v0 = temp_v0_3 * 4;
         if (1 == *(&D_800E8060 + (D_800E0D50[temp_v0_3] * 4))) {
@@ -166,7 +166,7 @@ void func_8021F3F8_ovl19(s32 arg0) {
         func_801230E8_ovl19(0x203CD, 0x203CE, 0);
         if (*(&D_800E98E0 + (D_8004A7C4->unk0 * 4)) == 0) {
 loop_2:
-            func_8000B6BC_ovl19(1);
+            func_8000B6BC(1);
             if (*(&D_800E98E0 + (D_8004A7C4->unk0 * 4)) == 0) {
                 goto loop_2;
             }
@@ -235,7 +235,7 @@ void func_8021F6D8_ovl19(s32 arg0) {
         func_801230E8_ovl19(0x203DC, 0x203DD, 0);
         if (*(&D_800E98E0 + (D_800E0D50[D_8004A7C4->unk0] * 4)) == 0) {
 loop_2:
-            func_8000B6BC_ovl19(1);
+            func_8000B6BC(1);
             if (*(&D_800E98E0 + (D_800E0D50[D_8004A7C4->unk0] * 4)) == 0) {
                 goto loop_2;
             }
@@ -271,7 +271,7 @@ loop_1:
     *(&D_800E25D0 + (*temp_v0_2 * 4)) = sp44;
     D_800E2790[*temp_v0_2] = sp48 + 0.5f;
     *(&D_800E2950 + (*temp_v0_2 * 4)) = sp4C;
-    func_8000B6BC_ovl19(1);
+    func_8000B6BC(1);
     goto loop_1;
 }
 #else
@@ -381,7 +381,7 @@ void func_8021FCC0_ovl19(s32 arg0) {
     phi_v0 = temp_v0;
     if (*(&D_800E98E0 + temp_v0) == 0) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         temp_v0_2 = D_8004A7C4->unk0 * 4;
         phi_v0 = temp_v0_2;
         if (*(&D_800E98E0 + temp_v0_2) == 0) {
@@ -471,7 +471,7 @@ void func_8021FF90_ovl19(s32 arg0) {
     phi_v0 = temp_v0_2;
     if (*(&D_800E98E0 + temp_v0_2) == 0) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         temp_v0_3 = D_8004A7C4->unk0 * 4;
         phi_v0 = temp_v0_3;
         if (*(&D_800E98E0 + temp_v0_3) == 0) {
@@ -555,15 +555,15 @@ void func_80220280_ovl19(s32 arg0) {
     (&D_800DF150[*temp_v1])[0x194] = &D_8022FAB8;
     D_800DF150[*temp_v1] = &func_8022045C_ovl19;
     if (D_800D6E64 == 0) {
-        D_800D6F18.unk0 = func_80018A44_ovl19(7);
+        D_800D6F18.unk0 = random_soft_s32_range(7);
 loop_2:
-        temp_v0 = func_80018A44_ovl19(7);
+        temp_v0 = random_soft_s32_range(7);
         D_800D6F18.unk4 = temp_v0;
         if (D_800D6F18.unk0 == temp_v0) {
             goto loop_2;
         }
 loop_3:
-        temp_v0_2 = func_80018A44_ovl19(7);
+        temp_v0_2 = random_soft_s32_range(7);
         D_800D6F18.unk8 = temp_v0_2;
         if (D_800D6F18.unk0 == temp_v0_2) {
             goto loop_3;
@@ -668,7 +668,7 @@ void func_8022054C_ovl19(s32 arg0) {
         while (D_800E98E0[D_8004A7C4->unk0] == 0) {
             func_800B1900_ovl19(D_8004A7C4->unk0);
 block_14:
-            func_8000B6BC_ovl19(1);
+            func_8000B6BC(1);
         }
         temp_v0_2 = D_800D6F18.unkC;
         if (-1 == temp_v0_2) {
@@ -699,7 +699,7 @@ block_14:
         if (*(&D_800D6E30 + D_800BE508) == 0) {
             func_800A7678(0x112);
             func_800A7F74_ovl19(3, 0, 0xCE, 0x43960000, D_800E2790[D_8004A7C4->unk0], 0.0f);
-            func_8000B6BC_ovl19(0x12);
+            func_8000B6BC(0x12);
             sp5C.x = 1.0f;
             sp5C.y = 1.0f;
             sp5C.z = 1.0f;
@@ -745,11 +745,11 @@ loop_5:
             if (D_800E98E0 >= 3) {
                 goto loop_1;
             }
-            func_8000B6BC_ovl19(1);
+            func_8000B6BC(1);
             goto loop_5;
         }
     }
-    func_8000B6BC_ovl19(1);
+    func_8000B6BC(1);
     goto loop_2;
 }
 #else
@@ -774,7 +774,7 @@ void func_802209E4_ovl19(s32 arg0) {
 
     func_8021E184_ovl19();
     if (D_800D6E64 == 0) {
-        D_800D6F18 = func_80018A44_ovl19(3);
+        D_800D6F18 = random_soft_s32_range(3);
         D_800D6E64 = 1;
     }
     temp_v0 = func_8021E2D0_ovl19(4, 2);
@@ -819,9 +819,9 @@ void func_80220B40_ovl19(s32 arg0) {
     temp_s0_2 = D_8004A7C4->unk0;
     D_800E2790[*temp_s0_2] = 200.0f;
     *(&D_800E6BD0 + (*temp_s0_2 * 4)) = 0.5f;
-    func_8000B6BC_ovl19(2);
+    func_8000B6BC(2);
     while (func_800AB490_ovl19(D_800D6F18) == 0) {
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
     }
     func_800F8E6C_ovl19(arg0);
     if (*(&D_800D6E30 + D_800BE508) == 0) {
@@ -829,7 +829,7 @@ void func_80220B40_ovl19(s32 arg0) {
         temp_v0 = D_8004A7C4->unk0;
         temp_v0 = temp_v0 * 4;
         func_800A7F74_ovl19(3, 0, 0xCE, *(&D_800E25D0 + temp_v0), D_800E2790[temp_v0], *(&D_800E2950 + temp_v0));
-        func_8000B6BC_ovl19(0x12);
+        func_8000B6BC(0x12);
         sp5C = 0.0f;
         sp64 = 0.0f;
         sp50 = 0.0f;
@@ -915,15 +915,15 @@ void func_80220F8C_ovl19(s32 arg0) {
     func_8021E184_ovl19();
     *(&D_800E98E0 + (D_8004A7C4->unk0 * 4)) = 0;
     if (D_800D6E64 == 0) {
-        D_800D6F18.unk0 = func_80018A44_ovl19(7);
+        D_800D6F18.unk0 = random_soft_s32_range(7);
 loop_2:
-        temp_v0 = func_80018A44_ovl19(7);
+        temp_v0 = random_soft_s32_range(7);
         D_800D6F18.unk4 = temp_v0;
         if (D_800D6F18.unk0 == temp_v0) {
             goto loop_2;
         }
 loop_3:
-        temp_v0_2 = func_80018A44_ovl19(7);
+        temp_v0_2 = random_soft_s32_range(7);
         D_800D6F18.unk8 = temp_v0_2;
         if (D_800D6F18.unk0 == temp_v0_2) {
             goto loop_3;
@@ -1007,7 +1007,7 @@ loop_1:
     if (*(&D_800E98E0 + (temp_v0 * 4)) == 0) {
         func_800B1900_ovl19(temp_v0 & 0xFFFF, temp_a2_2);
 block_13:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         goto loop_1;
     }
     temp_v0_2 = D_800D6F18.unkC;
@@ -1042,7 +1042,7 @@ block_13:
         temp_v1_2 = D_8004A7C4->unk0;
         temp_v1_2 = temp_v1_2 * 4;
         func_800A7F74_ovl19(3, 0, 0xCE, *(&D_800E25D0 + temp_v1_2), D_800E2790[temp_v1_2], *(&D_800E2950 + temp_v1_2));
-        func_8000B6BC_ovl19(0x12);
+        func_8000B6BC(0x12);
         sp74 = 0.0f;
         sp7C = 0.0f;
         sp68 = 0.0f;
@@ -1161,7 +1161,7 @@ loop_1:
     func_80221BC8_ovl19();
     if (1 == *(&D_800E9E20 + (D_8004A7C4->unk0 * 4))) {
 loop_2:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (1 == *(&D_800E9E20 + (D_8004A7C4->unk0 * 4))) {
             goto loop_2;
         }
@@ -1390,7 +1390,7 @@ void func_80221E20_ovl19(s32 arg0) {
     *(&D_800E8060 + (D_8004A7C4->unk0 * 4)) = 0;
     func_800AA018_ovl19(0x203C1);
     while (1 != *(&D_800E8060 + (D_8004A7C4->unk0 * 4))) {
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
     }
     func_8021E2D0_ovl19(7, 1);
     func_800AA018_ovl19(0x203C0);
@@ -1399,7 +1399,7 @@ void func_80221E20_ovl19(s32 arg0) {
     func_800F753C_ovl19();
     func_800AFBB4_ovl19(0, D_8004A7C4->unk0);
     while (gKirbyState.unk30 == 0) {
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
     }
     func_800B1900_ovl19(D_8004A7C4->unk0->unk2);
 }
@@ -1609,7 +1609,7 @@ void func_802225A4_ovl19(s32 arg0) {
     func_800AA018_ovl19(0x2035F);
     if (*(&D_800E9E20 + (D_8004A7C4->unk0 * 4)) == 0) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (*(&D_800E9E20 + (D_8004A7C4->unk0 * 4)) == 0) {
             goto loop_1;
         }
@@ -1764,7 +1764,7 @@ void func_80222A98_ovl19(s32 arg0) {
     phi_v0 = temp_v0_2;
     if (temp_v0_2 == 0) {
 loop_3:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         temp_v0_3 = *(&D_800E8060 + (D_8004A7C4->unk0 * 4));
         phi_v0 = temp_v0_3;
         if (temp_v0_3 == 0) {
@@ -1773,7 +1773,7 @@ loop_3:
     }
     if (1 == phi_v0) {
 loop_5:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (1 == *(&D_800E8060 + (D_8004A7C4->unk0 * 4))) {
             goto loop_5;
         }
@@ -1856,7 +1856,7 @@ void func_80222E3C_ovl19(s32 arg0) {
     func_800AA018_ovl19(0x203C2, D_800E2790, &D_800E2950);
     if (2 != *(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4))) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (2 != *(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4))) {
             goto loop_1;
         }
@@ -1896,7 +1896,7 @@ void func_80223020_ovl19(s32 arg0) {
     func_800AA018_ovl19(0x203C4, D_800E2790, &D_800E2950);
     if (2 != *(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4))) {
 loop_1:
-        func_8000B6BC_ovl19(1);
+        func_8000B6BC(1);
         if (2 != *(&D_800E8060 + (D_800E0D50[D_8004A7C4->unk0] * 4))) {
             goto loop_1;
         }

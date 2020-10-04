@@ -59,7 +59,13 @@ struct unk8004A678Addr {
 
 struct DObj {
     struct DObj *unk0;
-    u8 filler[0x4C - 0x04];
+    u32 unk4;
+    struct DObj *unk8;
+    u32 unkC;
+    struct DObj *unk10;
+    u32 unk14;
+    struct DObj *unk18;
+    u8 filler[0x4C - 0x18 - 0x04];
     u32 unk4C;
     u8 filler2[0x54 - 0x4C - 0x04];
     u8 unk54;

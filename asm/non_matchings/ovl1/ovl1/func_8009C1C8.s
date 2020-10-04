@@ -39,7 +39,7 @@ glabel func_8009C1C8
 /* 0444AC 8009C25C 4618C182 */  mul.s $f6, $f24, $f24
 /* 0444B0 8009C260 0C00CAC8 */  jal   sqrtf
 /* 0444B4 8009C264 46062300 */   add.s $f12, $f4, $f6
-/* 0444B8 8009C268 0C0062BF */  jal   func_80018AFC_ovl1
+/* 0444B8 8009C268 0C0062BF */  jal   random_f32
 /* 0444BC 8009C26C E7A0005C */   swc1  $f0, 0x5c($sp)
 /* 0444C0 8009C270 3C01800D */  lui   $at, %hi(D_800D5660) # $at, 0x800d
 /* 0444C4 8009C274 C4285660 */  lwc1  $f8, %lo(D_800D5660)($at)

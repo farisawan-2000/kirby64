@@ -718,7 +718,7 @@ void func_8009C1C8(void *arg0, f32 arg1) {
     sp48 = sinf(temp_f0_3);
     sp44 = cosf(sp54);
     sp5C = sqrtf(((temp_f22 * temp_f22) + (temp_f20 * temp_f20)) + (temp_f24 * temp_f24));
-    temp_f20_2 = func_80018AFC_ovl1() * D_800D5660;
+    temp_f20_2 = random_f32() * D_800D5660;
     temp_f24_2 = sinf(arg1) * sp5C;
     temp_f22_2 = cosf(temp_f20_2) * temp_f24_2;
     temp_f20_3 = sinf(temp_f20_2) * temp_f24_2;

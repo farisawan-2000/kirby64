@@ -116,11 +116,11 @@ glabel func_801E0460_ovl10
 /* 1D1398 801E0628 8CAA0000 */  lw    $t2, ($a1)
 /* 1D139C 801E062C 000AC880 */  sll   $t9, $t2, 2
 /* 1D13A0 801E0630 00D95821 */  addu  $t3, $a2, $t9
-/* 1D13A4 801E0634 0C006291 */  jal   func_80018A44_ovl10
+/* 1D13A4 801E0634 0C006291 */  jal   random_soft_s32_range
 /* 1D13A8 801E0638 E5760000 */   swc1  $f22, ($t3)
 /* 1D13AC 801E063C 1040001D */  beqz  $v0, .L801E06B4_ovl10
 /* 1D13B0 801E0640 00000000 */   nop   
-/* 1D13B4 801E0644 0C006291 */  jal   func_80018A44_ovl10
+/* 1D13B4 801E0644 0C006291 */  jal   random_soft_s32_range
 /* 1D13B8 801E0648 24040002 */   li    $a0, 2
 /* 1D13BC 801E064C 5040000E */  beql  $v0, $zero, .L801E0688_ovl10
 /* 1D13C0 801E0650 8E650000 */   lw    $a1, ($s3)
@@ -150,7 +150,7 @@ glabel func_801E0460_ovl10
 /* 1D141C 801E06AC 10000017 */  b     .L801E070C_ovl10
 /* 1D1420 801E06B0 8CC643D4 */ lw $a2, %lo(D_801F43D4_ovl10)($a2)
 .L801E06B4_ovl10:
-/* 1D1424 801E06B4 0C006291 */  jal   func_80018A44_ovl10
+/* 1D1424 801E06B4 0C006291 */  jal   random_soft_s32_range
 /* 1D1428 801E06B8 24040006 */   li    $a0, 6
 /* 1D142C 801E06BC 8E650000 */  lw    $a1, ($s3)
 /* 1D1430 801E06C0 3C12800F */  lui   $s2, %hi(D_800E9C60) # $s2, 0x800f
@@ -163,7 +163,7 @@ glabel func_801E0460_ovl10
 /* 1D144C 801E06DC 544D000C */  bnel  $v0, $t5, .L801E0710_ovl10
 /* 1D1450 801E06E0 AC660000 */   sw    $a2, ($v1)
 .L801E06E4_ovl10:
-/* 1D1454 801E06E4 0C006291 */  jal   func_80018A44_ovl10
+/* 1D1454 801E06E4 0C006291 */  jal   random_soft_s32_range
 /* 1D1458 801E06E8 24040006 */   li    $a0, 6
 /* 1D145C 801E06EC 8E650000 */  lw    $a1, ($s3)
 /* 1D1460 801E06F0 00403025 */  move  $a2, $v0
@@ -415,7 +415,7 @@ glabel func_801E0460_ovl10
 /* 1D17FC 801E0A8C C5240000 */  lwc1  $f4, ($t1)
 /* 1D1800 801E0A90 E4243750 */ swc1 $f4, %lo(D_800E3750)($at)
 .L801E0A94_ovl10:
-/* 1D1804 801E0A94 0C002DAF */  jal   func_8000B6BC_ovl10
+/* 1D1804 801E0A94 0C002DAF */  jal   func_8000B6BC
 /* 1D1808 801E0A98 24040001 */   li    $a0, 1
 /* 1D180C 801E0A9C 8E6A0000 */  lw    $t2, ($s3)
 /* 1D1810 801E0AA0 8D430000 */  lw    $v1, ($t2)
