@@ -100,7 +100,7 @@ void func_80220818_ovl18(s32);
 void func_8022ABC0_ovl18(void);
 void func_80220AA8_ovl18(s32);
 void func_800B1EC8_ovl18(s32, void (*c));
-s32 func_8019B738_ovl18(f32, s32);
+u32 func_8019B738_ovl18(f32);
 void func_80221440_ovl18(void);
 
 extern s32 D_800B72AC;

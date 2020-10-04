@@ -48,32 +48,15 @@ void func_80220490_ovl18(s32 arg0) {
     func_800AFA14_ovl18();
 }
 
-// regalloc moment
-#ifdef MIPS_TO_C
 void func_802204F8_ovl18(s32 arg0) {
-    s32 *temp_a0;
-    s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    s32 phi_v1;
-
-    temp_v0 = D_8004A7C4;
-    temp_a0 = &D_800E98E0[temp_v0->unk0];
-    temp_v1 = *temp_a0;
-    phi_v1 = temp_v1;
-    if (temp_v1 > 0) {
-        *temp_a0 = temp_v1 - 1;
-        phi_v1 = D_800E98E0[temp_v0->unk0];
+    if (D_800E98E0[D_8004A7C4->unk0] > 0) {
+        D_800E98E0[D_8004A7C4->unk0] -= 1;
     }
-    if ((phi_v1 <= 0) && (func_8019B738_ovl18(D_8022BBC0, temp_a0) != 0)) {
-        temp_v0_2 = D_8004A7C4;
-        D_800DDC50[temp_v0_2->unk0] = 1;
-        func_800B1EC8_ovl18(D_800DE510[temp_v0_2->unk0], &func_802202B8_ovl18);
+    if ((D_800E98E0[D_8004A7C4->unk0] <= 0) && (func_8019B738_ovl18(D_8022BBC0) != 0)) {
+        D_800DDC50[D_8004A7C4->unk0] = 1;
+        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_802202B8_ovl18);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_1/func_802204F8_ovl18.s")
-#endif
 
 // regalloc moment
 #ifdef MIPS_TO_C
@@ -395,21 +378,13 @@ u8 func_80220F68_ovl18(s32 arg0) {
             *temp_v0_3 = *temp_v0_3 - phi_f0;
         } else if (temp_a0 == temp_v1) {
             if (1.0f == *(D_800E6A10 + phi_a3)) {
-                temp_f0_3 = D_8022BBE4;
-                temp_v0_4 = &D_800E9020 + phi_a3;
-                *temp_v0_4 = *temp_v0_4 - (D_8022BBE8 / phi_a1);
-                temp_v1_2 = &D_800E17D0[phi_a2->unk0];
-                *temp_v1_2 = *temp_v1_2 + temp_f0_3;
-                temp_v0_5 = &D_800E9020 + (phi_a2->unk0 * 4);
-                *temp_v0_5 = *temp_v0_5 + temp_f0_3;
+                D_800E9020[phi_a3 /* u8 */] -= (D_8022BBE8 / phi_a1);
+                D_800E17D0[phi_a2->unk0] += D_8022BBE4;
+                D_800E9020[phi_a2->unk0] += D_8022BBE4;
             } else {
-                temp_f0_4 = D_8022BBEC;
-                temp_v0_6 = &D_800E9020 + phi_a3;
-                *temp_v0_6 = *temp_v0_6 + (D_8022BBF0 / phi_a1);
-                temp_v1_3 = &D_800E17D0[phi_a2->unk0];
-                *temp_v1_3 = *temp_v1_3 - temp_f0_4;
-                temp_v0_7 = &D_800E9020 + (phi_a2->unk0 * 4);
-                *temp_v0_7 = *temp_v0_7 - temp_f0_4;
+                D_800E9020[phi_a3] += (D_8022BBF0 / phi_a1);
+                D_800E17D0[phi_a2->unk0] -= D_8022BBEC;
+                D_800E9020[phi_a2->unk0] -= D_8022BBEC;
             }
             temp_v0_8 = &D_800E6A10[phi_a2->unk0];
             *temp_v0_8 = -*temp_v0_8;
@@ -420,7 +395,6 @@ u8 func_80220F68_ovl18(s32 arg0) {
                 (*temp_t0)->unk3C = 0;
                 return func_8019BC94_ovl18(&D_800E9020, phi_a1, phi_a2, phi_a3);
             }
-            temp_v0_9 = &D_800E9020 + phi_a3;
             if (1.0f == *(D_800E6A10 + phi_a3)) {
                 temp_f0_5 = D_8022BBF4 / phi_a1;
                 phi_f0_2 = temp_f0_5;
@@ -430,7 +404,7 @@ u8 func_80220F68_ovl18(s32 arg0) {
                 phi_f0_2 = temp_f0_6;
                 phi_return = (bitwise u8) temp_f0_6;
             }
-            *temp_v0_9 = *temp_v0_9 + phi_f0_2;
+            D_800E9020[phi_a3] += phi_f0_2;
         }
         (*temp_t0)->unk3C = (*temp_t0)->unk3C + 1;
     }
