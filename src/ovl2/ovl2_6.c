@@ -5,67 +5,112 @@
 u32 func_80101920(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
 u32 func_80101BA0_ovl2(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
 
-#ifdef MIPS_TO_C
-void *func_800FF5E0_ovl2(s32 arg0, f32 arg1, f32 arg2) {
-    void *temp_a1;
-    void *temp_v0;
-    void *temp_v1;
+struct UNK_D_8012BBF8 {
+    struct UNK_D_8012BBF8_unk0 *unk0;
+    float unk4;
+    u16 unk8;
+    u16 unkA;
+    u32 unkC;
+};
 
-    temp_v0 = (arg0 * 0x10) + &D_8012BBF8;
+struct UNK_D_8012B9B8 {
+    /*0x00*/ u32 unk0;
+    /*0x04*/ u32 unk4;
+    /*0x08*/ u16 unk8;
+    /*0x0A*/ u16 unkA;
+    /*0x0C*/ u32 unkC;
+    /*0x10*/ float unk10;
+    /*0x14*/ float unk14;
+    /*0x18*/ u32 unk18;
+    /*0x1C*/ u32 unk1C;
+    /*0x20*/ u32 unk20;
+    /*0x24*/ u32 unk24;
+    /*0x28*/ u32 unk28;
+    /*0x2C*/ u32 unk2C;
+};
+
+struct UNK_D_8012BBF8_unk0 {
+    /*0x00*/ float unk0;
+    /*0x04*/ u32 unk4;
+    /*0x08*/ float unk8;
+    /*0x0C*/ float unkC;
+    /*0x10*/ float unk10;
+    /*0x14*/ u8 unk14;
+    /*0x15*/ u8 unk15;
+    /*0x16*/ u8 unk16;
+    /*0x17*/ u8 unk17;
+    /*0x18*/ u8 unk18;
+    /*0x19*/ u8 unk19;
+    /*0x1A*/ u8 unk1A;
+    /*0x1B*/ u8 unk1B;
+    /*0x1C*/ float unk1C;
+    /*0x20*/ float unk20;
+    /*0x24*/ float unk24;
+    /*0x28*/ float unk28;
+    /*0x2C*/ float unk2C;
+};
+
+extern struct UNK_D_8012BBF8 D_8012BBF8[10];
+extern struct UNK_D_8012B9B8 D_8012B9B8[];
+
+void func_800FF5E0_ovl2(s32 arg0, f32 arg1, f32 arg2) {
+    struct UNK_D_8012B9B8 *temp_a1;
+    struct UNK_D_8012BBF8 *temp_v0;
+    struct UNK_D_8012BBF8_unk0 *temp_v1;
+
+    temp_v0 = &D_8012BBF8[arg0];
     temp_v1 = temp_v0->unk0;
     temp_v0->unk4 = temp_v0->unk4 + arg2;
-    temp_a1 = (arg0 * 0x30) + &D_8012B9B8;
+    temp_a1 = &D_8012B9B8[arg0];
     temp_v1->unk20 = temp_v1->unk20 + arg1;
     temp_v1->unk24 = temp_v1->unk24 + arg2;
     temp_v1->unk28 = temp_a1->unk10;
     temp_v1->unk2C = temp_a1->unk14;
-    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF5E0_ovl2.s")
-#endif
 
+extern u32 D_8012B9B0;
+
+
+struct UNK_D_800D478C {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 unk3;
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+    u8 unk7;
+    u32 unk8;
+};
+
+extern struct UNK_D_800D478C D_800D478C[];
+
+// Almost matching
 #ifdef MIPS_TO_C
-u32 func_800FF64C(s32 arg0) {
+void func_800FF64C(s32 arg0) {
     u16 temp_a1;
-    u32 temp_v0;
-    void *temp_a3;
-    void *temp_t1;
-    void *temp_v1;
-    void *phi_a0;
+    struct UNK_D_800D478C *temp_a3;
+    struct UNK_D_8012BBF8_unk0 *temp_v1;
     u32 phi_v0;
-    u32 phi_return;
 
-    phi_return = 0;
-    if (D_8012B9B0 != 0) {
-        phi_a0 = &D_8012B9B8;
-        phi_v0 = 0;
-loop_2:
-        temp_a1 = phi_a0->unk8;
-        if (((temp_a1 & 0xC0) != 0) && (arg0 == phi_a0->unkA)) {
-            temp_v1 = *(&D_8012BBF8 + (phi_v0 * 0x10));
+    for (phi_v0 = 0; phi_v0 < D_8012B9B0; phi_v0++)
+    {
+        temp_a1 = D_8012B9B8[phi_v0].unk8;
+        if (((temp_a1 & 0xC0) != 0) && (arg0 == D_8012B9B8[phi_v0].unkA)) {
+            temp_v1 = D_8012BBF8[phi_v0].unk0;
             if (temp_v1 != 0) {
-                temp_a3 = &D_800D478C + (arg0 * 0xC);
-                temp_t1 = temp_a3 + 2;
+                temp_a3 = &D_800D478C[arg0];
                 temp_v1->unk14 = temp_a3->unk0;
                 temp_v1->unk15 = temp_a3->unk1;
                 temp_v1->unk16 = temp_a3->unk2;
                 if ((temp_a1 & 0x40) != 0) {
-                    temp_v1->unk18 = temp_t1->unk1;
-                    temp_v1->unk19 = temp_t1->unk2;
-                    temp_v1->unk1A = *(temp_t1 + 3);
+                    temp_v1->unk18 = temp_a3->unk3;
+                    temp_v1->unk19 = temp_a3->unk4;
+                    temp_v1->unk1A = temp_a3->unk5;
                 }
             }
         }
-        temp_v0 = phi_v0 + 1;
-        phi_a0 = phi_a0 + 0x30;
-        phi_v0 = temp_v0;
-        phi_return = temp_v0;
-        if (temp_v0 < D_8012B9B0) {
-            goto loop_2;
-        }
     }
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF64C.s")
@@ -398,33 +443,21 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100AC8.s")
 #endif
 
-#ifdef MIPS_TO_C
-? func_80100DF8(s32 arg0) {
-    u32 temp_a1;
-    u32 temp_v1;
-    void *phi_a0;
-    u32 phi_v1;
+extern u32 D_80124740[];
 
-    temp_a1 = D_8012B9B0;
-    if (temp_a1 != 0) {
-        phi_a0 = &D_8012B9B8;
-        phi_v1 = 0;
-loop_2:
-        temp_v1 = phi_v1 + 1;
-        if (D_80124740[arg0] == phi_a0->unk4) {
+u32 func_80100DF8(s32 arg0) {
+    u32 phi_v0;
+    u32 i;
+
+    phi_v0 = D_80124740[arg0];
+    for (i = 0; i < D_8012B9B0; i++)
+    {
+        if (phi_v0 == D_8012B9B8[i].unk4) {
             return 1;
-        }
-        phi_a0 = phi_a0 + 0x30;
-        phi_v1 = temp_v1;
-        if (temp_v1 < temp_a1) {
-            goto loop_2;
         }
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100DF8.s")
-#endif
 
 void func_80100E50_ovl2(u32 arg0) {
     func_8000A180(arg0, &func_80100AC8, 0, 0);
@@ -632,29 +665,14 @@ loop_8:
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100EE4_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-void *func_8010133C_ovl2(void) {
-    void *temp_v1;
-    void *phi_v1;
+void func_8010133C_ovl2(void) {
+    u32 i;
 
-    D_8012BBF8 = 0;
-    D_8012BC08 = 0;
-    phi_v1 = &D_8012BC18;
-loop_1:
-    temp_v1 = phi_v1 + 0x40;
-    temp_v1->unk-30 = 0;
-    temp_v1->unk-20 = 0;
-    temp_v1->unk-10 = 0;
-    temp_v1->unk-40 = 0;
-    phi_v1 = temp_v1;
-    if (temp_v1 != &D_8012BC98) {
-        goto loop_1;
+    for (i = 0; i < 10; i++)
+    {
+        D_8012BBF8[i].unk0 = NULL;
     }
-    return &D_8012BC98;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010133C_ovl2.s")
-#endif
 
 void func_8010137C_ovl2(void) {
     s32 i;
