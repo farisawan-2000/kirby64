@@ -36252,6 +36252,8 @@ glabel D_801CE498
 glabel D_801CE49C
 .word 0x00000000
 
+
+# yakulib rodata
 glabel D_801CE4A0
 .word 0x4E6D6C42
 
@@ -36455,6 +36457,9 @@ glabel D_801CE5A8
 
 glabel D_801CE5AC
 .word 0x00000000
+
+
+
 
 glabel D_801CE5B0
 .word 0x801BEE2C
