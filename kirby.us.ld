@@ -418,6 +418,7 @@ SECTIONS
    END_SEG(ovl18)
    BEGIN_SEG(ovl18Data, _ovl18SegmentEnd) {
       BUILD_DIR/data/ovl18/data.o(.data);
+      BUILD_DIR/data/ovl18/rodata.o(.rodata);
       BUILD_DIR/src/ovl18/ovl18_1.o(.rodata);
       BUILD_DIR/src/ovl18/ovl18_3.o(.rodata);
       BUILD_DIR/src/ovl18/ovl18_5.o(.rodata);
@@ -427,7 +428,6 @@ SECTIONS
    END_SEG(ovl18Data)
    BEGIN_NOLOAD(ovl18) {
       BUILD_DIR/asm/ovl18/ovl18_bss.o(.bss);
-      BUILD_DIR/src/ovl18/ovl18_5.o(.rodata);
    }
    END_NOLOAD(ovl18)
 

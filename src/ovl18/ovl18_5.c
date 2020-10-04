@@ -356,6 +356,7 @@ extern s32 D_8022ACB0[];
  
 
 // const f32 D_8022BC54[] = {0.785398185253f};
+// If this function gets matched, then we can incorporate ovl18_5's rodata completely
 #ifdef MIPS_TO_C
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->unk0];
