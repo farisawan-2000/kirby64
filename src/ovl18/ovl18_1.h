@@ -1,7 +1,32 @@
-struct Sub800E1B50 {
-	u32 unk0[4];
+// TODO: are any of these sub-structs supposed to be more well-known types?
+struct SubSub800E1B50_Unk88_UnkC_Unk4 {
+	u32 unk0;
+	u32 unk4;
+	u32 unk8;
+	u32 unkC;
+};
+
+struct SubSub800E1B50_Unk88_UnkC {
+	u32 unk0;
+	struct SubSub800E1B50_Unk88_UnkC_Unk4 *unk4;
+};
+
+struct Sub800E1B50_Unk88 {
+	u32 unk0;
+	u32 unk4;
+	u32 unk8;
+	struct SubSub800E1B50_Unk88_UnkC *unkC;
 	f32 unk10;
 };
+
+struct Sub800E1B50 {
+	u32 unk0;
+	u32 unk4;
+	u32 unk8;
+	u32 unkC;
+	f32 unk10;
+};
+
 struct UnkStruct800E1B50 {
 	f32 unk0;
 	f32 unk4;
@@ -11,10 +36,13 @@ struct UnkStruct800E1B50 {
 	u8 unk3D;
 	u8 unk3E;
 	u8 unk3F;
-	u8 pad2 [0x8C - 0x3C - 4 - 0xC];
+	u32 unk40;
+	u32 unk44;
+	u32 unk48;
+	u8 pad2 [0x8C - 0x3C - 4 - 0xC - 0xC];
 	struct Sub800E1B50 *unk80;
 	s32 unk84;
-	s32 unk88;
+	struct Sub800E1B50_Unk88 *unk88;
 	s32 *unk8C;
 	u32 unk90;
 	u32 unk94;
