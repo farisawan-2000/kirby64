@@ -47,7 +47,7 @@ void func_80222430_ovl18(s32 arg0) {
     func_800A9EA4_ovl18(0x10106);
     func_800A9EA4_ovl18(0x10107);
     D_800E64D0[D_8004A7C4->unk0] = D_800E6690[D_8004A7C4->unk0] = 0.0f;
-    D_800E6850[D_8004A7C4->unk0] = D_8022BC10;
+    D_800E6850[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18(&D_800E6690);
 }
 
@@ -93,7 +93,7 @@ void func_80222748_ovl18(s32 arg0) {
     func_800A9EA4_ovl18(0x10054);
     D_800E6690[D_8004A7C4->unk0] = 0.0f;
     D_800E64D0[D_8004A7C4->unk0] = D_800E6690[D_8004A7C4->unk0];
-    D_800E6850[D_8004A7C4->unk0] = D_8022BC14;
+    D_800E6850[D_8004A7C4->unk0] = 65535.0f;
     D_800E64D0[D_8004A7C4->unk0] = D_800E6A10[D_8004A7C4->unk0] * 4.0f;
     D_800E6690[D_8004A7C4->unk0] = 0.0f;
     D_800E6850[D_8004A7C4->unk0] = 4.0f;
@@ -248,7 +248,7 @@ void func_80222F00_ovl18(s32 arg0) {
     tmp->unk98 = &D_8022A9F4;
     D_800DDFD0[D_8004A7C4->unk0] = 5;
     D_800E3210[D_8004A7C4->unk0] = D_800E3750[D_8004A7C4->unk0] = 0.0f;
-    D_800E3C90[D_8004A7C4->unk0] = D_8022BC18;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_800AECC0_ovl18(D_800D6B10);
     func_800AED20_ovl18(D_800D6B10);
     func_800A9EA4_ovl18(0x100D1);
@@ -328,8 +328,6 @@ void func_802233C8_ovl18(s32 arg0) {
     }
 }
 
-// regalloc moment
-#ifdef MIPS_TO_C
 void func_80223434_ovl18(s32 arg0) {
     f32 temp_f0;
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->unk0];
@@ -341,17 +339,14 @@ void func_80223434_ovl18(s32 arg0) {
     func_800AED20_ovl18(D_800D6B10 + D_800D6B10);
     func_800A9EA4_ovl18(0x100DD);
     func_800A9EA4_ovl18(0x100DC);
-    temp_f0 = D_8022BC1C;
+    temp_f0 = 65535.0f;
     D_800E64D0[D_8004A7C4->unk0] = D_800E6690[D_8004A7C4->unk0] = 0.0f;
-    D_800E6850[D_8004A7C4->unk0] = 0.0f;
-    D_800E3210[D_8004A7C4->unk0] = temp_f0;
+    D_800E6850[D_8004A7C4->unk0] = temp_f0;
+    D_800E3210[D_8004A7C4->unk0] = 0.0f;
     D_800E3750[D_8004A7C4->unk0] = -0.5f;
     D_800E3C90[D_8004A7C4->unk0] = temp_f0;
     func_800AFA14_ovl18(&D_800E6690);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_3/func_80223434_ovl18.s")
-#endif
 
 void func_80223580_ovl18(s32 arg0) {
 
@@ -412,7 +407,7 @@ void func_8022389C_ovl18(s32 arg0) {
     func_800A9EA4_ovl18(0x10159);
     D_800E6690[D_8004A7C4->unk0] = 0.0f;
     D_800E64D0[D_8004A7C4->unk0] = D_800E6690[D_8004A7C4->unk0];
-    D_800E6850[D_8004A7C4->unk0] = D_8022BC20;
+    D_800E6850[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18(&D_800E6690);
 }
 
@@ -444,7 +439,7 @@ void func_80223A14_ovl18(s32 arg0) {
 }
 
 void func_80223B4C_ovl18(s32 arg0) {
-    D_800E17D0[D_8004A7C4->unk0] = D_8022BC24;
+    D_800E17D0[D_8004A7C4->unk0] = M_PI * 2;
     func_800A447C_ovl18(D_800DDFD0[D_8004A7C4->unk0], 5, &D_8022AB80[50]);
     func_8021F5CC_ovl18();
 }
@@ -478,7 +473,7 @@ void func_80223C94_ovl18(s32 arg0) {
     func_80223BB8_ovl18();
     D_800E3750[D_8004A7C4->unk0] = 0.0f;
     D_800E3210[D_8004A7C4->unk0] = D_800E3750[D_8004A7C4->unk0];
-    D_800E3C90[D_8004A7C4->unk0] = D_8022BC28;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18(D_800E3750);
 }
 
@@ -494,7 +489,7 @@ void func_80223DC0_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->unk0] = 1;
     D_800E3210[D_8004A7C4->unk0] = 0.0f;
     D_800E3750[D_8004A7C4->unk0] = -0.75f;
-    D_800E3C90[D_8004A7C4->unk0] = D_8022BC2C;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18();
 }
 
@@ -532,7 +527,7 @@ void func_80224088_ovl18(s32 arg0) {
     D_800E9720[D_8004A7C4->unk0] = 0x16;
     D_800E3750[D_8004A7C4->unk0] = 0.0f;
     D_800E3210[D_8004A7C4->unk0] = D_800E3750[D_8004A7C4->unk0];
-    D_800E3C90[D_8004A7C4->unk0] = D_8022BC30;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18(D_800E3750);
 }
 
@@ -547,7 +542,7 @@ void func_802241B4_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->unk0] = 2;
     D_800E3210[D_8004A7C4->unk0] = 3.0f;
     D_800E3750[D_8004A7C4->unk0] = 0.0f;
-    D_800E3C90[D_8004A7C4->unk0] = D_8022BC34;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_800AFA14_ovl18();
 }
 

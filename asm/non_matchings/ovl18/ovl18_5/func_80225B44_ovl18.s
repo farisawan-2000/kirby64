@@ -1,3 +1,12 @@
+# .late_rodata
+# glabel jtbl_8022BC58
+# .word L80225BA8_ovl18
+# .word L80225BA8_ovl18
+# .word L80225BBC_ovl18
+# .word L80225BD0_ovl18
+# .word L80225BD0_ovl18
+
+.text
 glabel func_80225B44_ovl18
 /* 2384E4 80225B44 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 2384E8 80225B48 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

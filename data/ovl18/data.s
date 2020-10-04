@@ -13604,6 +13604,12 @@ glabel D_8022BB98
 glabel D_8022BB9C
 .word 0x00000000
 
+
+
+
+
+
+# start of ovl18_1 rodata
 glabel D_8022BBA0
 .asciiz "eneTurnCommon Error frame=%02d\n"
 
@@ -13655,56 +13661,17 @@ glabel D_8022BBF8
 glabel D_8022BBFC
 .word 0x3F59999A
 
-glabel D_8022BC00
-.float 65535.0
+# glabel D_8022BC00
+# .float 65535.0
 
-glabel D_8022BC04
-.float 65535.0
+# glabel D_8022BC04
+# .float 65535.0
 
-glabel D_8022BC08
-.word 0x00000000
+# glabel D_8022BC08
+# .word 0x00000000
 
-glabel D_8022BC0C
-.word 0x00000000
-
-glabel D_8022BC10
-.float 65535.0
-
-glabel D_8022BC14
-.float 65535.0
-
-glabel D_8022BC18
-.float 65535.0
-
-glabel D_8022BC1C
-.float 65535.0
-
-glabel D_8022BC20
-.float 65535.0
-
-glabel D_8022BC24
-.word 0x40C90FDB
-
-glabel D_8022BC28
-.float 65535.0
-
-glabel D_8022BC2C
-.float 65535.0
-
-glabel D_8022BC30
-.float 65535.0
-
-glabel D_8022BC34
-.float 65535.0
-
-glabel D_8022BC38
-.word 0x00000000
-
-glabel D_8022BC3C
-.word 0x00000000
-
-
-
+# glabel D_8022BC0C
+# .word 0x00000000
 
 
 

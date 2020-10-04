@@ -355,7 +355,7 @@ extern s32 D_8022ACAC[];
 extern s32 D_8022ACB0[];
  
 
-// const const f32 D_8022BC54 = 0.785398185253;
+// const f32 D_8022BC54[] = {0.785398185253f};
 #ifdef MIPS_TO_C
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->unk0];
@@ -394,24 +394,21 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_80225958_ovl18.s")
 #ifdef NEEDS_RODATA
 void func_80225B44_ovl18(void) {
     D_800E6A10[D_8004A7C4->unk0] = -1.0f;
-    // temp_t9 = D_800E9560[D_8004A7C4->unk0];
-    if (D_800E9560[D_8004A7C4->unk0] < 5) {
+    switch(D_800E9560[D_8004A7C4->unk0]) {
         // goto **(&jtbl_8022BC58 + (temp_t9 * 4));
-        switch(D_800E9560[D_8004A7C4->unk0]) {
-            case 2:
-                func_800AA018_ovl18(0x10241, D_800E6A10);
-                break;
-            case 3:
-            case 4:
-                D_800E6A10[D_8004A7C4->unk0] = 1.0f;
-                func_800AA018_ovl18(0x10240, D_800E6A10);
-                break;
-            default:
-                func_800AA018_ovl18(0x1023F, D_800E6A10);
-                break;
-        }
+        case 1:
+        case 0:
+            func_800AA018_ovl18(0x1023F, D_800E6A10);
+            break;
+        case 2:
+            func_800AA018_ovl18(0x10241, D_800E6A10);
+            break;
+        case 3:
+        case 4:
+            D_800E6A10[D_8004A7C4->unk0] = 1.0f;
+            func_800AA018_ovl18(0x10240, D_800E6A10);
     }
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_80225B44_ovl18.s")
+GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_80225B44_ovl18.s") 
 #endif
