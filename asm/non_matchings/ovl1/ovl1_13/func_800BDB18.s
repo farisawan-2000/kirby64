@@ -1,8 +1,8 @@
 glabel func_800BDB18
 /* 065D68 800BDB18 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 065D6C 800BDB1C AFB30020 */  sw    $s3, 0x20($sp)
-/* 065D70 800BDB20 3C13800D */  lui   $s3, %hi(D_800D6E60) # $s3, 0x800d
-/* 065D74 800BDB24 26736E60 */  addiu $s3, %lo(D_800D6E60) # addiu $s3, $s3, 0x6e60
+/* 065D70 800BDB20 3C13800D */  lui   $s3, %hi(gKirbyStars) # $s3, 0x800d
+/* 065D74 800BDB24 26736E60 */  addiu $s3, %lo(gKirbyStars) # addiu $s3, $s3, 0x6e60
 /* 065D78 800BDB28 AFB10018 */  sw    $s1, 0x18($sp)
 /* 065D7C 800BDB2C 8E710000 */  lw    $s1, ($s3)
 /* 065D80 800BDB30 AFBF0024 */  sw    $ra, 0x24($sp)
@@ -13,7 +13,7 @@ glabel func_800BDB18
 /* 065D94 800BDB44 262EFFE2 */  addiu $t6, $s1, -0x1e
 .L800BDB48_ovl1:
 /* 065D98 800BDB48 AE6E0000 */  sw    $t6, ($s3)
-/* 065D9C 800BDB4C 0C02F096 */  jal   func_800BC258_ovl1
+/* 065D9C 800BDB4C 0C02F096 */  jal   change_kirby_lives
 /* 065DA0 800BDB50 24040001 */   li    $a0, 1
 /* 065DA4 800BDB54 8E710000 */  lw    $s1, ($s3)
 /* 065DA8 800BDB58 2A21001E */  slti  $at, $s1, 0x1e

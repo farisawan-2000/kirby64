@@ -893,7 +893,7 @@ glabel D_800D6E58
 glabel D_800D6E5C
 .word 0x00000000
 
-glabel D_800D6E60
+glabel gKirbyStars
 .word 0x00000000
 
 glabel D_800D6E64

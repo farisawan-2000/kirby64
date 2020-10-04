@@ -77,7 +77,7 @@ glabel func_801708A0_ovl3
 /* 0D13F0 801709B0 92080008 */   lbu   $t0, 8($s0)
 /* 0D13F4 801709B4 0C029D9E */  jal   func_800A7678
 /* 0D13F8 801709B8 24040001 */   li    $a0, 1
-/* 0D13FC 801709BC 0C02F096 */  jal   func_800BC258_ovl3
+/* 0D13FC 801709BC 0C02F096 */  jal   change_kirby_lives
 /* 0D1400 801709C0 96040088 */   lhu   $a0, 0x88($s0)
 /* 0D1404 801709C4 10000006 */  b     .L801709E0_ovl3
 /* 0D1408 801709C8 A6000088 */   sh    $zero, 0x88($s0)

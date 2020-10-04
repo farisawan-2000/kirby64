@@ -328,7 +328,23 @@ SECTIONS
 
    /* 0x80198880 13E8F0-168840 [29F50] */
    BEGIN_SEG(ovl7, 0x80198880) {
-      BUILD_DIR/asm/ovl7/ovl7.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_1.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_2.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_3.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_4.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_5.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_6.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_7.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_8.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_9.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_10.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_11.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_12.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_13.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_14.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_15.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_16.o(.text);
+      BUILD_DIR/asm/ovl7/ovl7_17.o(.text);
       BUILD_DIR/data/ovl7/data.o(.data);
    }
    END_SEG(ovl7)

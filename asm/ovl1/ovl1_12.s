@@ -115,8 +115,8 @@ glabel func_800BBC6C
 /* 063F80 800BBD30 3C01800D */  lui   $at, %hi(D_800D6E54) # $at, 0x800d
 /* 063F84 800BBD34 AC386E54 */  sw    $t8, %lo(D_800D6E54)($at)
 /* 063F88 800BBD38 8CB9002C */  lw    $t9, 0x2c($a1)
-/* 063F8C 800BBD3C 3C01800D */  lui   $at, %hi(D_800D6E60) # $at, 0x800d
-/* 063F90 800BBD40 AC396E60 */  sw    $t9, %lo(D_800D6E60)($at)
+/* 063F8C 800BBD3C 3C01800D */  lui   $at, %hi(gKirbyStars) # $at, 0x800d
+/* 063F90 800BBD40 AC396E60 */  sw    $t9, %lo(gKirbyStars)($at)
 /* 063F94 800BBD44 8CA80030 */  lw    $t0, 0x30($a1)
 /* 063F98 800BBD48 3C01800D */  lui   $at, %hi(D_800D6E64) # $at, 0x800d
 /* 063F9C 800BBD4C AC286E64 */  sw    $t0, %lo(D_800D6E64)($at)

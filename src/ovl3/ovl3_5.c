@@ -2167,7 +2167,7 @@ void func_801708A0_ovl3(s32 arg0, s32 arg1, f32 arg2) {
             } else {
                 if (gKirbyState.unk88 != 0) {
                     func_800A7678(1);
-                    func_800BC258_ovl3(gKirbyState.unk88);
+                    change_kirby_lives(gKirbyState.unk88);
                     gKirbyState.unk88 = 0;
                 } else {
                     if (gKirbyState.unk8 != 0) {

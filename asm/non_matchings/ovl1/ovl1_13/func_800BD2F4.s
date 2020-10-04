@@ -19,12 +19,12 @@ glabel draw_kirby_stars
 /* 06557C 800BD32C 10200006 */  beqz  $at, .L800BD348_ovl1
 /* 065580 800BD330 02002025 */   move  $a0, $s0
 /* 065584 800BD334 02002025 */  move  $a0, $s0
-/* 065588 800BD338 0C02F4DD */  jal   func_800BD374_ovl1
+/* 065588 800BD338 0C02F4DD */  jal   draw_star_segments
 /* 06558C 800BD33C 24050001 */   li    $a1, 1
 /* 065590 800BD340 10000004 */  b     .L800BD354_ovl1
 /* 065594 800BD344 26100001 */   addiu $s0, $s0, 1
 .L800BD348_ovl1:
-/* 065598 800BD348 0C02F4DD */  jal   func_800BD374_ovl1
+/* 065598 800BD348 0C02F4DD */  jal   draw_star_segments
 /* 06559C 800BD34C 00002825 */   move  $a1, $zero
 /* 0655A0 800BD350 26100001 */  addiu $s0, $s0, 1
 .L800BD354_ovl1:

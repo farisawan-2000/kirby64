@@ -91,7 +91,7 @@ extern f32 gKirbyHp;
 extern s32 D_800D6E54;
 extern f32 D_800D6E58;
 extern f32 D_800D6E5C;
-extern s32 D_800D6E60;
+extern s32 gKirbyStars;
 extern s32 D_800D6B7C;
 extern s32 D_800D6B80;
 extern s32 D_800D6B44;
@@ -105,7 +105,7 @@ void func_800A2CE4(void) {
     D_800D6E54 = 0;
     D_800D6E58 = 0.0f;
     D_800D6E5C = 0.0f;
-    D_800D6E60 = 0;
+    gKirbyStars = 0;
     D_800D6B7C = 0;
     D_800D6B80 = 0;
     D_800D6B44 = -1;
@@ -198,7 +198,7 @@ void *func_800A2E98(void) {
     D_800D6E88 = gKirbyLives;
     D_800D6E8C = gKirbyHp;
     D_800D6E90 = D_800D6E54;
-    D_800D6E98 = D_800D6E60;
+    D_800D6E98 = gKirbyStars;
     D_800D6E5C = 0.0f;
     D_800D6E58 = D_800D6E5C;
     temp_f18 = D_800D6E58;
@@ -438,7 +438,7 @@ f32 func_800A34C8(void) {
     D_800D6E54 = 0;
     D_800D6E58 = 0.0f;
     D_800D6E5C = 0.0f;
-    D_800D6E60 = 0;
+    gKirbyStars = 0;
     D_800D6B7C = 0;
     D_800D6B80 = 0;
     D_800D6B44 = -1;

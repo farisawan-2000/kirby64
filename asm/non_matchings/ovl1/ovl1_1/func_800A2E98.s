@@ -9,8 +9,8 @@ glabel func_800A2E98
 /* 04B104 800A2EB4 8F396E54 */  lw    $t9, %lo(D_800D6E54)($t9)
 /* 04B108 800A2EB8 3C01800D */  lui   $at, %hi(D_800D6E8C) # $at, 0x800d
 /* 04B10C 800A2EBC 4600218D */  trunc.w.s $f6, $f4
-/* 04B110 800A2EC0 3C08800D */  lui   $t0, %hi(D_800D6E60) # $t0, 0x800d
-/* 04B114 800A2EC4 8D086E60 */  lw    $t0, %lo(D_800D6E60)($t0)
+/* 04B110 800A2EC0 3C08800D */  lui   $t0, %hi(gKirbyStars) # $t0, 0x800d
+/* 04B114 800A2EC4 8D086E60 */  lw    $t0, %lo(gKirbyStars)($t0)
 /* 04B118 800A2EC8 44804000 */  mtc1  $zero, $f8
 /* 04B11C 800A2ECC 44183000 */  mfc1  $t8, $f6
 /* 04B120 800A2ED0 3C02800D */  lui   $v0, %hi(D_800D6E5C) # $v0, 0x800d
