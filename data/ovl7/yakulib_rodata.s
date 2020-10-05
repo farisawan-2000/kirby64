@@ -1,27 +1,33 @@
 .include "macros.inc"
 .section .rodata
 # yakulib rodata
+.balign 4
 glabel D_801CE4A0
 .asciiz "NmlBlock Request Error![yakulib.cc]\n"
 
+.balign 4
 glabel D_801CE4C8
 .asciiz "reqDumpStarTrk Request Error!![yakulib.cc]\n"
 
+.balign 4
 glabel D_801CE4F4
 .asciiz "reqMixStarTrk Request Error!![yakulib.cc]\n"
 
+.balign 4
 glabel D_801CE520
 .asciiz "reqStarShotTrk Request Error!![yakulib.cc]\n"
 
+.balign 4
 glabel D_801CE54C
 .asciiz "reqCrystal2Trk Request Error!![yakulib.cc]\n"
 
+.balign 4
 glabel D_801CE578
 .float 1.57079637051
 
 
 
-glabel D_801CE57C
+glabel jtbl_801CE57C
 .word 0x801BC9E8
 .word 0x801BCDF8
 .word 0x801BCAEC
