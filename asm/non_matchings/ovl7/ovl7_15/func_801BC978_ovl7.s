@@ -1,19 +1,19 @@
-.late_rodata
-glabel jtbl_801CE57C
-.word L801BC9E8_ovl7
-.word L801BCDF8_ovl7
-.word L801BCAEC_ovl7
-.word L801BCFB8_ovl7
-.word L801BCBF0_ovl7
-.word L801BD178_ovl7
-.word L801BCBF0_ovl7
-.word L801BD178_ovl7
-.word L801BCCF4_ovl7
-.word L801BD338_ovl7
-.word L801BCCF4_ovl7
-.word L801BD338_ovl7
+# .late_rodata
+# glabel jtbl_801CE57C
+# .word L801BC9E8_ovl7
+# .word L801BCDF8_ovl7
+# .word L801BCAEC_ovl7
+# .word L801BCFB8_ovl7
+# .word L801BCBF0_ovl7
+# .word L801BD178_ovl7
+# .word L801BCBF0_ovl7
+# .word L801BD178_ovl7
+# .word L801BCCF4_ovl7
+# .word L801BD338_ovl7
+# .word L801BCCF4_ovl7
+# .word L801BD338_ovl7
 
-.text
+# .text
 glabel func_801BC978_ovl7
 /* 1629E8 801BC978 27BDFE80 */  addiu $sp, $sp, -0x180
 /* 1629EC 801BC97C AFBF0014 */  sw    $ra, 0x14($sp)
