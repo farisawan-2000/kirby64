@@ -31,7 +31,9 @@ struct UnkStruct800E1B50 {
 	f32 unk0;
 	f32 unk4;
 	f32 unk8;
-	u8 pad[0x30];
+	u8 pad[0x28];
+    u32 unk34;
+    u8 filler38[4];
 	u8 unk3C;
 	u8 unk3D;
 	u8 unk3E;

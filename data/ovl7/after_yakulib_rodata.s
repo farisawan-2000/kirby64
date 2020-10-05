@@ -1,31 +1,15 @@
 .include "macros.inc"
 .section .rodata
 
-glabel D_801CE5B0
+glabel jtbl_801CE5B0
 .word 0x801BEE2C
-
-glabel D_801CE5B4
 .word 0x801BEE2C
-
-glabel D_801CE5B8
 .word 0x801BEE2C
-
-glabel D_801CE5BC
 .word 0x801BEE2C
-
-glabel D_801CE5C0
 .word 0x801BEE2C
-
-glabel D_801CE5C4
 .word 0x801BEE2C
-
-glabel D_801CE5C8
 .word 0x801BED90
-
-glabel D_801CE5CC
 .word 0x801BEDC4
-
-glabel D_801CE5D0
 .word 0x801BEDF8
 
 glabel D_801CE5D4
