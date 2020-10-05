@@ -5877,23 +5877,23 @@ void func_801EE5B0_ovl10(s32 arg0) {
     func_8000B6BC(0x1E);
     temp_v1_4 = D_8004A7C4;
     temp_f12 = D_801F4BF4_ovl10;
-    *(&D_800E6690 + (temp_v1_4->unk0 * 4)) = 0.0f;
-    temp_v0_7 = temp_v1_4->unk0;
+    *(&D_800E6690 + (D_8004A7C4->unk0 * 4)) = 0.0f;
+    temp_v0_7 = D_8004A7C4->unk0;
     D_800E64D0[temp_v0_7] = *(&D_800E6690 + (temp_v0_7 * 4));
-    *(&D_800E6850 + (temp_v1_4->unk0 * 4)) = temp_f12;
-    D_800E3910[temp_v1_4->unk0] = 0.0f;
-    temp_v0_8 = temp_v1_4->unk0;
+    *(&D_800E6850 + (D_8004A7C4->unk0 * 4)) = temp_f12;
+    D_800E3910[D_8004A7C4->unk0] = 0.0f;
+    temp_v0_8 = D_8004A7C4->unk0;
     temp_f0 = D_800E3910[temp_v0_8];
     D_800E3750[temp_v0_8] = temp_f0;
-    D_800E3590[temp_v1_4->unk0] = temp_f0;
-    D_800E33D0[temp_v1_4->unk0] = temp_f0;
-    D_800E3210[temp_v1_4->unk0] = temp_f0;
-    D_800E3050[temp_v1_4->unk0] = temp_f0;
-    D_800E3E50[temp_v1_4->unk0] = temp_f12;
-    temp_v0_9 = temp_v1_4->unk0;
+    D_800E3590[D_8004A7C4->unk0] = temp_f0;
+    D_800E33D0[D_8004A7C4->unk0] = temp_f0;
+    D_800E3210[D_8004A7C4->unk0] = temp_f0;
+    D_800E3050[D_8004A7C4->unk0] = temp_f0;
+    D_800E3E50[D_8004A7C4->unk0] = temp_f12;
+    temp_v0_9 = D_8004A7C4->unk0;
     temp_f2 = D_800E3E50[temp_v0_9];
     D_800E3C90[temp_v0_9] = temp_f2;
-    D_800E3AD0[temp_v1_4->unk0] = temp_f2;
+    D_800E3AD0[D_8004A7C4->unk0] = temp_f2;
     func_800AFA14_ovl10(temp_f12, D_800E3910, D_800E3E50, &D_800E6690);
 }
 #else
