@@ -372,7 +372,7 @@ SECTIONS
       BUILD_DIR/src/ovl10/ovl10_3.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_4.o(.text);
       BUILD_DIR/data/ovl10/data.o(.data);
-      BUILD_DIR/data/ovl10/ovl10_3_rodata.o(.rodata);
+      BUILD_DIR/src/ovl10/ovl10_3.o(.rodata);
       BUILD_DIR/data/ovl10/data_after_ovl10_3.o(.rodata);
    }
    END_SEG(ovl10)
