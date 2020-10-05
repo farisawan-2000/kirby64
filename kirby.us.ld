@@ -343,7 +343,7 @@ SECTIONS
       BUILD_DIR/asm/ovl7/ovl7_13.o(.text);
       BUILD_DIR/src/ovl7/ovl7_14.o(.text);
       BUILD_DIR/src/ovl7/yakulib.o(.text);
-      BUILD_DIR/asm/ovl7/ovl7_16.o(.text);
+      BUILD_DIR/src/ovl7/ovl7_16.o(.text);
       BUILD_DIR/asm/ovl7/ovl7_17.o(.text);
       BUILD_DIR/data/ovl7/data.o(.data);
       BUILD_DIR/src/ovl7/ovl7_14.o(.rodata);

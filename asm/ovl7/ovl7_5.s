@@ -6502,7 +6502,7 @@ glabel func_801ACF84_ovl7
 /* 153010 801ACFA0 000FC080 */  sll   $t8, $t7, 2
 /* 153014 801ACFA4 00581021 */  addu  $v0, $v0, $t8
 /* 153018 801ACFA8 8C421B50 */  lw    $v0, 0x1b50($v0)
-/* 15301C 801ACFAC 0C068FA0 */  jal   D_801A3E80_ovl7
+/* 15301C 801ACFAC 0C068FA0 */  jal   func_801A3E80_ovl7
 /* 153020 801ACFB0 A0590043 */   sb    $t9, 0x43($v0)
 /* 153024 801ACFB4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 153028 801ACFB8 27BD0018 */  addiu $sp, $sp, 0x18
