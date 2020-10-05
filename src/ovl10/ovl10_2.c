@@ -5,7 +5,7 @@
 
 extern s32 D_800EBBE0[];
 
-extern s32 D_800EC2E0[];
+extern u32 D_800EC2E0[];
 
 extern f32 D_800E6A10[];
 extern s32 D_800EBDA0[];
