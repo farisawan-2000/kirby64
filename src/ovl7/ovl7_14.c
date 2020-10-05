@@ -44,7 +44,6 @@ void func_801BB9D0(s32 arg0, s32 arg1, f32 arg2) {
     }
 }
 
-
 void func_801BBA54_ovl7(s32 arg0) {
     struct UnkStruct800E1B50 *sp1C = D_800E1B50[D_8004A7C4->unk0];
 
