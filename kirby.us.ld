@@ -346,6 +346,7 @@ SECTIONS
       BUILD_DIR/asm/ovl7/ovl7_16.o(.text);
       BUILD_DIR/asm/ovl7/ovl7_17.o(.text);
       BUILD_DIR/data/ovl7/data.o(.data);
+      BUILD_DIR/src/ovl7/ovl7_14.o(.rodata);
       BUILD_DIR/data/ovl7/yakulib_rodata.o(.rodata);
       BUILD_DIR/data/ovl7/after_yakulib_rodata.o(.rodata);
    }
@@ -371,6 +372,8 @@ SECTIONS
       BUILD_DIR/src/ovl10/ovl10_3.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_4.o(.text);
       BUILD_DIR/data/ovl10/data.o(.data);
+      BUILD_DIR/data/ovl10/ovl10_3_rodata.o(.rodata);
+      BUILD_DIR/data/ovl10/data_after_ovl10_3.o(.rodata);
    }
    END_SEG(ovl10)
    BEGIN_NOLOAD(ovl10) {

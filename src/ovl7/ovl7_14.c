@@ -61,25 +61,19 @@ void func_801BBA54_ovl7(s32 arg0) {
     D_800E6850[D_8004A7C4->unk0] = 14.0f;
     D_800E3750[D_8004A7C4->unk0] = 0.0f;
     D_800E3210[D_8004A7C4->unk0] = D_800E3750[D_8004A7C4->unk0];
-    D_800E3C90[D_8004A7C4->unk0] = D_801CE490;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_8000B6BC(0x3C);
     func_801AC11C_ovl7(arg0);
 }
 
-// Small differences that could be remedied relatively easily
-#ifdef NON_MATCHING
 void func_801BBBF4_ovl7(s32 arg0) {
-    struct UnkStruct800E1B50 *sp24;
-    struct SubSub800E1B50_Unk88_UnkC_Unk4 *sp1C;
     struct UnkStruct800E1B50 *temp_a1 = D_800E1B50[D_8004A7C4->unk0];
     struct SubSub800E1B50_Unk88_UnkC *temp_a2 = temp_a1->unk88->unkC;
+    struct SubSub800E1B50_Unk88_UnkC_Unk4 *sp1C = temp_a2->unk4;
 
-    // temp_a2 = temp_a1->unk88->unkC;
     D_800EC660[D_8004A7C4->unk0] = 40.0f;
-    sp1C = temp_a2->unk4;
-    sp24 = temp_a1;
     D_800EC820[D_8004A7C4->unk0] = 0.0f;
-    func_801ABBA0_ovl7(temp_a1, temp_a2);
+    func_801ABBA0_ovl7();
     D_800DF150[D_8004A7C4->unk0] = &func_801BBE1C_ovl7;
     temp_a1->unk48 = &func_8010C274;
     temp_a1->unk98 = &D_801CB56C;
@@ -92,18 +86,16 @@ void func_801BBBF4_ovl7(s32 arg0) {
     if (sp1C->unk8 != -1) {
         func_800AA018_ovl7(sp1C->unk8);
     }
-    D_800E64D0[D_8004A7C4->unk0] = (ABSF(D_800E64D0[D_800E0D50[D_8004A7C4->unk0]]) + 14.0f) * D_800E6A10[D_8004A7C4->unk0];
-    D_800E6690[D_8004A7C4->unk0] = 0.0f;
+    D_800E64D0[D_8004A7C4->unk0] = D_800E6A10[D_8004A7C4->unk0] * (ABSF(D_800E64D0[D_800E0D50[D_8004A7C4->unk0]]) + 14.0f);
+    
+    D_800E6690[D_8004A7C4->unk0] = 0;
     D_800E6850[D_8004A7C4->unk0] = 14.0f;
-    D_800E3750[D_8004A7C4->unk0] = 0.0f;
+    D_800E3750[D_8004A7C4->unk0] = 0;
     D_800E3210[D_8004A7C4->unk0] = D_800E3750[D_8004A7C4->unk0];
-    D_800E3C90[D_8004A7C4->unk0] = D_801CE494;
+    D_800E3C90[D_8004A7C4->unk0] = 65535.0f;
     func_8000B6BC(0x3C);
     D_801AC364_ovl7(arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_14/func_801BBBF4_ovl7.s")
-#endif
 
 void func_801BBE1C_ovl7(s32 arg0) {
     func_801AB008_ovl7();

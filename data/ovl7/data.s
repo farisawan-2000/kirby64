@@ -36240,16 +36240,3 @@ glabel D_801CE488
 glabel D_801CE48C
 .word 0x00000000
 
-glabel D_801CE490
-.word 0x477FFF00
-
-glabel D_801CE494
-.word 0x477FFF00
-
-glabel D_801CE498
-.word 0x00000000
-
-glabel D_801CE49C
-.word 0x00000000
-
-
