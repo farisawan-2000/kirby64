@@ -8,11 +8,11 @@ glabel func_801E2F68_ovl10
 /* 1D3CF0 801E2F80 AFB00014 */  sw    $s0, 0x14($sp)
 /* 1D3CF4 801E2F84 AFA40020 */  sw    $a0, 0x20($sp)
 /* 1D3CF8 801E2F88 8C4F0000 */  lw    $t7, ($v0)
-/* 1D3CFC 801E2F8C 3C0E800B */  lui   $t6, %hi(D_800B6A2C) # $t6, 0x800b
+/* 1D3CFC 801E2F8C 3C0E800B */  lui   $t6, %hi(func_800B6A2C) # $t6, 0x800b
 /* 1D3D00 801E2F90 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 1D3D04 801E2F94 000FC080 */  sll   $t8, $t7, 2
 /* 1D3D08 801E2F98 00380821 */  addu  $at, $at, $t8
-/* 1D3D0C 801E2F9C 25CE6A2C */  addiu $t6, %lo(D_800B6A2C) # addiu $t6, $t6, 0x6a2c
+/* 1D3D0C 801E2F9C 25CE6A2C */  addiu $t6, %lo(func_800B6A2C) # addiu $t6, $t6, 0x6a2c
 /* 1D3D10 801E2FA0 AC2EEF90 */ sw $t6, %lo(D_800DEF90)($at)
 /* 1D3D14 801E2FA4 8C480000 */  lw    $t0, ($v0)
 /* 1D3D18 801E2FA8 3C01800E */ lui $at, %hi(D_800DF150)

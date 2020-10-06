@@ -4164,6 +4164,10 @@ glabel D_801F4998_ovl10
 glabel D_801F499C_ovl10
 .word 0x00000000
 
+
+
+# ovl10_2 rodata
+
 glabel D_801F49A0_ovl10
 .word 0x3EA0D97C
 
@@ -4295,6 +4299,9 @@ glabel D_801F4A48_ovl10
 
 glabel D_801F4A4C_ovl10
 .word 0x00000000
+
+
+
 
 glabel D_801F4A50_ovl10
 .word 0x400197C9
