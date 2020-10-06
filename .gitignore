@@ -12,6 +12,7 @@ tools/gfxdis.f3dex2
 tools/n64graphics
 tools/armips
 tools/iplfontutil
+tools/n64crc
 *.o
 __pycache__/*
 .vscode/*
