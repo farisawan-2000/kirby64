@@ -6060,8 +6060,9 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EF0F0_ovl10.s")
 #endif
 
-#ifdef NON_MATCHING
-u32 func_801EF15C_ovl10(u32 arg0) {
+s32 func_801AE7E0_ovl10(s32);
+
+void func_801EF15C_ovl10(s32 arg0) {
     s32 temp_v0;
 
     switch (arg0) {
@@ -6075,6 +6076,7 @@ u32 func_801EF15C_ovl10(u32 arg0) {
             temp_v0 = func_801AE7E0_ovl10(9);
             if (temp_v0 != -1) {
                 D_800E2790[temp_v0] -= 15.0f;
+                break;
             }
             break;
         case 3:
@@ -6085,9 +6087,6 @@ u32 func_801EF15C_ovl10(u32 arg0) {
             break;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EF15C_ovl10.s")
-#endif
 
 
 s32 func_801EF218_ovl10(s32 arg0) {
