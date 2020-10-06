@@ -8,6 +8,8 @@ then
     exit 1
 fi
 
+
+
 #echo "Replace $1 with $2?"
 #read
-grep -rl "$1" asm/**/*.s data/**/*.{s,c} src/**/*.{c,h} include/*.h undefined_syms.txt | xargs sed -i "s/\b$1\b/$2/g"
+git grep -rl "$1" | xargs sed -i "s/\b$1\b/$2/g"

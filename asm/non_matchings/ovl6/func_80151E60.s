@@ -50,7 +50,7 @@ glabel func_80151E60
 /* 1362B0 80151F20 AFAC0028 */  sw    $t4, 0x28($sp)
 /* 1362B4 80151F24 AFAB002C */  sw    $t3, 0x2c($sp)
 /* 1362B8 80151F28 AFA5008C */  sw    $a1, 0x8c($sp)
-/* 1362BC 80151F2C 0C02AC3D */  jal   func_800AB0F4_ovl6
+/* 1362BC 80151F2C 0C02AC3D */  jal   func_800AB0F4
 /* 1362C0 80151F30 AFA40088 */   sw    $a0, 0x88($sp)
 /* 1362C4 80151F34 244EFFED */  addiu $t6, $v0, -0x13
 /* 1362C8 80151F38 2DC1000C */  sltiu $at, $t6, 0xc

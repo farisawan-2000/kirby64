@@ -47,7 +47,7 @@ glabel func_8015170C
 /* 135B50 801517C0 AC590000 */  sw    $t9, ($v0)
 /* 135B54 801517C4 8D4E0000 */  lw    $t6, ($t2)
 /* 135B58 801517C8 AC4E0004 */  sw    $t6, 4($v0)
-/* 135B5C 801517CC 0C02AC3D */  jal   func_800AB0F4_ovl6
+/* 135B5C 801517CC 0C02AC3D */  jal   func_800AB0F4
 /* 135B60 801517D0 AFA40018 */   sw    $a0, 0x18($sp)
 /* 135B64 801517D4 244FFFED */  addiu $t7, $v0, -0x13
 /* 135B68 801517D8 2DE1000C */  sltiu $at, $t7, 0xc

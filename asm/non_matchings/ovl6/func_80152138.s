@@ -65,7 +65,7 @@ glabel func_80152138
 /* 1365C4 80152234 AFAD002C */  sw    $t5, 0x2c($sp)
 /* 1365C8 80152238 AFAC0030 */  sw    $t4, 0x30($sp)
 /* 1365CC 8015223C AFA5009C */  sw    $a1, 0x9c($sp)
-/* 1365D0 80152240 0C02AC3D */  jal   func_800AB0F4_ovl6
+/* 1365D0 80152240 0C02AC3D */  jal   func_800AB0F4
 /* 1365D4 80152244 AFA40098 */   sw    $a0, 0x98($sp)
 /* 1365D8 80152248 244FFFED */  addiu $t7, $v0, -0x13
 /* 1365DC 8015224C 2DE1000C */  sltiu $at, $t7, 0xc

@@ -135,7 +135,7 @@ glabel func_800BB6B0
 /* 0639A0 800BB750 AC580004 */  sw    $t8, 4($v0)
 /* 0639A4 800BB754 AC520000 */  sw    $s2, ($v0)
 /* 0639A8 800BB758 AFA9002C */  sw    $t1, 0x2c($sp)
-/* 0639AC 800BB75C 0C02AC3D */  jal   func_800AB0F4_ovl1
+/* 0639AC 800BB75C 0C02AC3D */  jal   func_800AB0F4
 /* 0639B0 800BB760 AFA40088 */   sw    $a0, 0x88($sp)
 /* 0639B4 800BB764 2459FFED */  addiu $t9, $v0, -0x13
 /* 0639B8 800BB768 2F21000C */  sltiu $at, $t9, 0xc

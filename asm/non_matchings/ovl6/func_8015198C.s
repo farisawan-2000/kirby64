@@ -63,7 +63,7 @@ glabel func_8015198C
 /* 135E10 80151A80 030EC825 */  or    $t9, $t8, $t6
 /* 135E14 80151A84 372F00FF */  ori   $t7, $t9, 0xff
 /* 135E18 80151A88 AC4F0004 */  sw    $t7, 4($v0)
-/* 135E1C 80151A8C 0C02AC3D */  jal   func_800AB0F4_ovl6
+/* 135E1C 80151A8C 0C02AC3D */  jal   func_800AB0F4
 /* 135E20 80151A90 AFA40018 */   sw    $a0, 0x18($sp)
 /* 135E24 80151A94 2458FFED */  addiu $t8, $v0, -0x13
 /* 135E28 80151A98 2F01000C */  sltiu $at, $t8, 0xc

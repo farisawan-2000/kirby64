@@ -258,60 +258,59 @@ void func_801BC978_ovl7(s32 *arg0) {
     temp_v0 = *arg0;
     if ((D_800DD8D0[temp_v0] & 0x40) == 0) {
         temp_a2 = D_800E0650[temp_v0];
-        switch (func_800AB0F4_ovl7(temp_a2) - 0x13) {
+        switch (func_800AB0F4(temp_a2) - 0x13) {
             case 0:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
-                func_800AB120_ovl7(arg0);
+                func_800AB120(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 2:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
-                func_800AB1F0_ovl7(arg0);
+                func_800AB1F0(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             default:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
-                func_800AB2C0_ovl7(arg0);
-
+                func_800AB2C0(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 8:
             case 10:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
-                func_800AB3A0_ovl7(arg0);
+                func_800AB3A0(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 1:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
-                func_800AB174_ovl7(arg0);
+                func_800AB174(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
             case 3:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
-                if (temp_a2 != 0) {
+                if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
-                func_800AB244_ovl7(arg0);
+                func_800AB244(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
@@ -323,7 +322,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
-                func_800AB314_ovl7(arg0);
+                func_800AB314(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
@@ -335,7 +334,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
-                func_800AB3F4_ovl7(arg0);
+                func_800AB3F4(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
         }
