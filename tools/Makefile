@@ -20,7 +20,7 @@ armips: armips.cpp
 	$(CXX) $(CXXFLAGS) -fno-exceptions -fno-rtti -pipe $^ -o $@ -lpthread $(ARMIPS_FLAGS)
 
 clean:
-	$(RM) $(PROGRAMS) $(CXXPROGRAMS)
+	$(RM) $(PROGRAMS) $(CXXPROGRAMS) n64crc
 
 define COMPILE
 $(1): $($1_SOURCES)
@@ -28,3 +28,6 @@ $(1): $($1_SOURCES)
 endef
 
 $(foreach p,$(PROGRAMS),$(eval $(call COMPILE,$(p))))
+
+n64crc: n64crc.c
+	$(CC) -o $< $@
