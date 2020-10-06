@@ -1,6 +1,0 @@
-glabel func_800A04A4
-/* 0486F4 800A04A4 3C01800C */  lui   $at, %hi(D_800BE3E0) # $at, 0x800c
-/* 0486F8 800A04A8 A024E3E0 */  sb    $a0, %lo(D_800BE3E0)($at)
-/* 0486FC 800A04AC 3C01800C */ lui $at, %hi(D_800BE3E4)
-/* 048700 800A04B0 03E00008 */  jr    $ra
-/* 048704 800A04B4 A025E3E4 */ sb $a1, %lo(D_800BE3E4)($at)

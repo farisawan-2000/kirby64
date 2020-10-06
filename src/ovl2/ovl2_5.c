@@ -2,32 +2,18 @@
 #include <macros.h>
 
 extern Gfx *gDisplayListHeads[4];
-#ifdef MIPS_TO_C
-void func_800FDA40_ovl2(Vtx *vtxList, f32 arg1, f32 arg2) {
-    Gfx *temp_a3;
-    Gfx *temp_a3_2;
-    s32 temp_f4;
-    s32 temp_f6;
 
-    temp_f6 = arg1;
-    temp_f4 = arg2;
-    vtxList[2]->v.ob[1] = temp_f6;
-    vtxList[3]->v.ob[1] = temp_f6;
-    vtxList[0]->v.ob[1] = temp_f4;
-    vtxList[1]->v.ob[1] = temp_f4;
-    temp_a3 = *gDisplayListHeads;
-    *gDisplayListHeads = temp_a3 + 8;
-    temp_a3->words.w1 = vtxList;
-    temp_a3->words.w0 = 0x1004008;
-    gSPVertex()
-    temp_a3_2 = *gDisplayListHeads;
-    *gDisplayListHeads = temp_a3_2 + 8;
-    temp_a3_2->words.w1 = 0x402;
-    temp_a3_2->words.w0 = 0x6040602;
+void func_800FDA40_ovl2(Vtx *curVtx, f32 arg1, f32 arg2) {
+    Vtx* vtxList = curVtx;
+
+    (curVtx++)->v.ob[1] = arg2;
+    (curVtx++)->v.ob[1] = arg2;
+    (curVtx++)->v.ob[1] = arg1;
+    (curVtx++)->v.ob[1] = arg1;
+    gSPVertex(gDisplayListHeads[0]++, vtxList, 4, 0);
+    gSP2Triangles(gDisplayListHeads[0]++, 2, 3, 1, 0x0, 0, 2, 1, 0x0);
+
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDA40_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_800FDAB8(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
