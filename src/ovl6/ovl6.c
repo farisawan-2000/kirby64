@@ -1003,7 +1003,14 @@ void *func_8015374C(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_8015374C.s")
 #endif
 
-#ifdef MIPS_TO_C
+#include "buffers.h"
+#include "D_8004A7C4.h"
+extern void func_8000E324(void);
+extern struct Hack {
+    u32 unk0;
+    u32 unk4;
+} *D_8015A560;
+extern u32 D_8015A690;
 void func_80153868(void) {
     struct UnkStruct8004A7C4 *sp1C;
 
@@ -1011,17 +1018,14 @@ void func_80153868(void) {
         sp1C = D_8004A7C4;
         func_800AEC08_ovl6(0x11, 0x3F, 0x40);
         D_8004A7C4 = D_800DE44C;
-        func_80008DA8_ovl6(D_800DE60C);
-        func_80008DA8_ovl6(D_800DE7CC);
-        func_80008DA8_ovl6(D_800DED0C);
+        func_80008DA8_ovl6(D_800DE510[0x3F]);
+        func_80008DA8_ovl6(D_800DE6D0[0x3F]);
+        func_80008DA8_ovl6(D_800DEC10[0x3F]);
         func_80008A18_ovl6(D_8004A7C4, &func_8000E324, 1, 3);
         func_800A9864_ovl6(D_8015A560->unk4, 0x1869F, 0xC);
         D_8004A7C4 = sp1C;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_80153868.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_8015392C(void *arg0) {

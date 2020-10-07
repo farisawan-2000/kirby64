@@ -263,6 +263,8 @@ SECTIONS
    END_SEG(ovl1Data)
    BEGIN_NOLOAD(ovl1) {
       BUILD_DIR/asm/ovl1/ovl1_bss.o(.bss);
+      BUILD_DIR/src/ovl1/object_process_buffers.o(.bss);
+      BUILD_DIR/asm/ovl1/ovl1_bss_after_objprocess_bufs.o(.bss);
    }
    END_NOLOAD(ovl1)
 

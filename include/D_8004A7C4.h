@@ -37,4 +37,5 @@ struct UnkStruct8004A7C4 {
 	struct UnkStruct8004A7C4_3C *unk3C;
 };
 extern struct UnkStruct8004A7C4 *D_8004A7C4;
+extern struct UnkStruct8004A7C4 *D_800DE44C;
 #endif

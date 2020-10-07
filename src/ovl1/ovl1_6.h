@@ -5,11 +5,6 @@
 
 
 extern s32 D_800DD710[];
-extern s32 D_800DEC10[];
-extern s32 D_800DEA50[];
-extern s32 D_800DE890[];
-extern s32 D_800DE6D0[];
-extern s32 D_800DE510[];
 extern s32 D_800DE190[];
 extern s32 D_800DDFD0[];
 extern s32 D_800DDE10[];

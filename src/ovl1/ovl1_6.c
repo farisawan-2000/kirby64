@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <macros.h>
+#include "buffers.h"
 
 #include "ovl1_6.h"
 #include "D_8004A7C4.h"
@@ -239,27 +240,25 @@ loop_6:
     phi_a0 = temp_a0;
     if ((temp_a0 & 1) != 0) { 
         sp28 = temp_v1_3;
-        *(&D_800DE890 + temp_v1_3) = func_80008A18_ovl1(sp34, &D_800B1878, 0, 2);
+        D_800DE890[temp_v1_3] = func_80008A18_ovl1(sp34, &D_800B1878, 0, 2);
         phi_a0 = sp24->unk1;
     }
     if ((phi_a0 & 2) != 0) {
         sp28 = phi_s0_2 * 4;
         *(&D_800DEA50 + (phi_s0_2 * 4)) = func_80008A18_ovl1(sp34, &D_800B1870, 1, 1);
     }
-    sp28 = phi_s0_2 * 4;
-    temp_v1_4 = phi_s0_2 * 4;
-    *(&D_800DEC10 + temp_v1_4) = func_80008A18_ovl1(sp34, arg4, 1, 0);
-    *(D_800DD8D0 + temp_v1_4) = 0;
-    *(&D_800DDA90 + temp_v1_4) = sp34->unkC;
-    *(D_800DF150 + temp_v1_4) = 0;
+    D_800DEC10[phi_s0_2] = func_80008A18_ovl1(sp34, arg4, 1, 0);
+    D_800DD8D0[phi_s0_2] = 0;
+    D_800DDA90[phi_s0_2] = sp34->unkC;
+    D_800DF150[phi_s0_2] = 0;
     if (arg3 != 0) {
-        *(D_800DEF90 + temp_v1_4) = arg3;
+        D_800DEF90[phi_s0_2] = arg3;
     } else {
-        *(D_800DEF90 + temp_v1_4) = 0;
+        D_800DEF90[phi_s0_2] = 0;
     }
     sp34->unk48 = &D_800B0F28;
-    *(&D_800DEDD0 + temp_v1_4) = 0;
-    *(&D_800DF310 + temp_v1_4) = 0;
+    D_800DEDD0[phi_s0_2] = 0;
+    D_800DF310[phi_s0_2] = 0;
     return phi_s0_2;
 }
 #else
