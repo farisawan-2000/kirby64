@@ -1,9 +1,0 @@
-glabel func_800FF0E0_ovl2
-/* 087B50 800FF0E0 10800004 */  beqz  $a0, .L800FF0F4_ovl2
-/* 087B54 800FF0E4 00000000 */   nop   
-/* 087B58 800FF0E8 908E0020 */  lbu   $t6, 0x20($a0)
-/* 087B5C 800FF0EC 35CF0008 */  ori   $t7, $t6, 8
-/* 087B60 800FF0F0 A08F0020 */  sb    $t7, 0x20($a0)
-.L800FF0F4_ovl2:
-/* 087B64 800FF0F4 03E00008 */  jr    $ra
-/* 087B68 800FF0F8 00000000 */   nop   
