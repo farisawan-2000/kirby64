@@ -137,6 +137,7 @@ endif
 
 # Making submodules
 DUMMY != make -C libreultra -j4
+DUMMY != make -C tools -j4
 DUMMY != make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 
 default: all

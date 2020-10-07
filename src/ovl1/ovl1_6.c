@@ -237,7 +237,7 @@ loop_6:
     *(&D_800DE6D0 + temp_v1_3) = func_80008A18_ovl1(sp34, &D_800B0D90, 1, 3);
     temp_a0 = sp24->unk1;
     phi_a0 = temp_a0;
-    if ((temp_a0 & 1) != 0) {
+    if ((temp_a0 & 1) != 0) { 
         sp28 = temp_v1_3;
         *(&D_800DE890 + temp_v1_3) = func_80008A18_ovl1(sp34, &D_800B1878, 0, 2);
         phi_a0 = sp24->unk1;
