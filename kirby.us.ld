@@ -481,6 +481,7 @@ SECTIONS
    }
    END_SEG(ovl20Data)
    BEGIN_NOLOAD(ovl20) {
+      . += 0x10;
       BUILD_DIR/src/ovl20.o(.bss);
    }
    END_NOLOAD(ovl20)
