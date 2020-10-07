@@ -5,7 +5,6 @@
 
 extern void print_error_stub(const char *fmt, ...);
 
-extern const char D_801CE4A0[];
 extern u16 D_800E77A0[];
 extern u8 D_800E76C0[];
 extern u8 D_800E7730[];
@@ -44,7 +43,7 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
 
     temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
     if (temp_v0 == -1) {
-        print_error_stub(&D_801CE4A0);
+        print_error_stub("NmlBlock Request Error![yakulib.cc]\n");
         return -1;
     }
     D_800E0D50[temp_v0] = arg2;
@@ -68,7 +67,6 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
     return temp_v0;
 }
 
-extern const char D_801CE4C8[];
 
 extern u32 D_800E5F90[];
 extern f32 D_800E6BD0[];
@@ -80,7 +78,7 @@ s32 func_801BBFE4_ovl7(s32 arg0) {
 
     temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
     if (temp_v0 == -1) {
-        print_error_stub(&D_801CE4C8);
+        print_error_stub("reqDumpStarTrk Request Error!![yakulib.cc]\n");
         return -1;
     }
     D_800E76C0[temp_v0] = 0xFF;
@@ -119,15 +117,13 @@ void func_801BC1AC_ovl7(s32 arg0) {
     D_801D0A58.unk1C = arg0;
 }
 
-extern const char D_801CE4F4[];
-
 s32 func_801BC27C_ovl7(s32 arg0, s32 arg1) {
     s32 temp_v0;
     s32 sp1C;
 
     temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
     if (temp_v0 == -1) {
-        print_error_stub(&D_801CE4F4);
+        print_error_stub("reqMixStarTrk Request Error!![yakulib.cc]\n");
         return -1;
     }
     D_800E76C0[temp_v0] = 0xFF;

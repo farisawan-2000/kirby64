@@ -1,17 +1,17 @@
 .include "macros.inc"
 .section .rodata
 # yakulib rodata
-.balign 4
-glabel D_801CE4A0
-.asciiz "NmlBlock Request Error![yakulib.cc]\n"
+# .balign 4
+# glabel D_801CE4A0
+# .asciiz "NmlBlock Request Error![yakulib.cc]\n"
 
-.balign 4
-glabel D_801CE4C8
-.asciiz "reqDumpStarTrk Request Error!![yakulib.cc]\n"
+# .balign 4
+# glabel D_801CE4C8
+# .asciiz "reqDumpStarTrk Request Error!![yakulib.cc]\n"
 
-.balign 4
-glabel D_801CE4F4
-.asciiz "reqMixStarTrk Request Error!![yakulib.cc]\n"
+# .balign 4
+# glabel D_801CE4F4
+# .asciiz "reqMixStarTrk Request Error!![yakulib.cc]\n"
 
 .balign 4
 glabel D_801CE520
