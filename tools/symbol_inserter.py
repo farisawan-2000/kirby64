@@ -82,7 +82,7 @@ def handleStagedLine(l, ls):
 
 for i in sys.argv[1:]: # xargs support lul
 	lineList = None
-	with open(sys.argv[1]) as f:
+	with open(i) as f:
 		lineList = f.readlines()[::-1]
 		lineNum = len(lineList)
 		for line in lineList:
@@ -96,7 +96,7 @@ for i in sys.argv[1:]: # xargs support lul
 				handleStagedLine(line, lineList)
 				# print(line[:-1], "bruh", lineList[lineNum])
 			lineNum-=1
-	e = open(sys.argv[1], 'w')
+	e = open(i, 'w')
 	e.write(''.join(lineList[::-1]))
 	e.close()
 	stagedRegs = {}

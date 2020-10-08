@@ -28,7 +28,7 @@ glabel func_800A74D8
 /* 04F788 800A7538 25CFFFFF */  addiu $t7, $t6, -1
 /* 04F78C 800A753C AC2F6B4C */  sw    $t7, %lo(D_800D6B4C)($at)
 /* 04F790 800A7540 94580002 */  lhu   $t8, 2($v0)
-/* 04F794 800A7544 3C01800D */  lui   $at, 0x800d
+/* 04F794 800A7544 3C01800D */ lui $at, %hi(D_800D6B50)
 /* 04F798 800A7548 27BD0018 */  addiu $sp, $sp, 0x18
 /* 04F79C 800A754C 03E00008 */  jr    $ra
-/* 04F7A0 800A7550 AC386B50 */   sw    $t8, 0x6b50($at)
+/* 04F7A0 800A7550 AC386B50 */ sw $t8, %lo(D_800D6B50)($at)

@@ -1,8 +1,8 @@
 glabel func_800A77E8
 /* 04FA38 800A77E8 00047040 */  sll   $t6, $a0, 1
-/* 04FA3C 800A77EC 3C02800C */  lui   $v0, 0x800c
+/* 04FA3C 800A77EC 3C02800C */ lui $v0, %hi(D_800C0040)
 /* 04FA40 800A77F0 004E1021 */  addu  $v0, $v0, $t6
-/* 04FA44 800A77F4 84420040 */  lh    $v0, 0x40($v0)
+/* 04FA44 800A77F4 84420040 */ lh $v0, %lo(D_800C0040)($v0)
 /* 04FA48 800A77F8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04FA4C 800A77FC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 04FA50 800A7800 AFA5001C */  sw    $a1, 0x1c($sp)
