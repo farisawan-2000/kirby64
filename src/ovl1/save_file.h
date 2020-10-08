@@ -41,3 +41,6 @@ struct EEPROM {
 	struct EEPHeader header;
 	File files[3]; // 0x10, 0x68, 0xC0
 };
+
+extern struct EEPROM gSaveBuffer1;
+extern struct EEPROM gSaveBuffer2;

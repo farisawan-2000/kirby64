@@ -165,7 +165,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 
 struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 #ifdef MIPS_TO_C
-u32 func_800AE7A8(s32 arg0, u32 arg1, u32 arg2, s32 arg3, s32 arg4) {
+u32 func_800AE7A8(s32 arg0, u32 arg1, u32 arg2, s32 arg3, void (*)(void) arg4) {
     void *sp34;
     s32 sp28;
     void *sp24;
@@ -238,33 +238,35 @@ loop_6:
     sp24 = temp_t0;
     sp28 = temp_v1_3;
     temp_v0_3 = func_8000A180(phi_s0_2, &D_800B0D24, (*temp_t0 + phi_v0_2) & 0xFF, 0);
-    D_800DE350[temp_v1_3] = temp_v0_3;
+    *(&D_800DE350 + temp_v1_3) = temp_v0_3;
     sp34 = temp_v0_3;
     D_800DE510[phi_s0_2] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
-    D_800DE6D0[temp_v1_3] = func_80008A18(sp34, &D_800B0D90, 1, 3);
+    D_800DE6D0[phi_s0_2] = func_80008A18(sp34, &D_800B0D90, 1, 3);
     temp_a0 = sp24->unk1;
     phi_a0 = temp_a0;
-    if ((temp_a0 & 1) != 0) { 
+    if ((temp_a0 & 1) != 0) {
         sp28 = temp_v1_3;
-        D_800DE890[temp_v1_3] = func_80008A18(sp34, &D_800B1878, 0, 2);
+        D_800DE890[phi_s0_2] = func_80008A18(sp34, &D_800B1878, 0, 2);
         phi_a0 = sp24->unk1;
     }
     if ((phi_a0 & 2) != 0) {
         sp28 = phi_s0_2 * 4;
-        D_800DEA50[phi_s0_2] = func_80008A18(sp34, &D_800B1870, 1, 1);
+        *(D_800DEA50 + (phi_s0_2 * 4)) = func_80008A18(sp34, &D_800B1870, 1, 1);
     }
-    D_800DEC10[phi_s0_2] = func_80008A18(sp34, arg4, 1, 0);
-    D_800DD8D0[phi_s0_2] = 0;
-    D_800DDA90[phi_s0_2] = sp34->unkC;
-    D_800DF150[phi_s0_2] = 0;
+    sp28 = phi_s0_2 * 4;
+    temp_v1_4 = phi_s0_2 * 4;
+    *(D_800DEC10 + temp_v1_4) = func_80008A18(sp34, arg4, 1, 0);
+    *(D_800DD8D0 + temp_v1_4) = 0;
+    *(&D_800DDA90 + temp_v1_4) = sp34->unkC;
+    *(D_800DF150 + temp_v1_4) = 0;
     if (arg3 != 0) {
-        D_800DEF90[phi_s0_2] = arg3;
+        *(D_800DEF90 + temp_v1_4) = arg3;
     } else {
-        D_800DEF90[phi_s0_2] = 0;
+        *(D_800DEF90 + temp_v1_4) = 0;
     }
     sp34->unk48 = &D_800B0F28;
-    D_800DEDD0[phi_s0_2] = 0;
-    D_800DF310[phi_s0_2] = 0;
+    *(&D_800DEDD0 + temp_v1_4) = 0;
+    *(&D_800DF310 + temp_v1_4) = 0;
     return phi_s0_2;
 }
 #else

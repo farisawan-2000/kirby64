@@ -5,8 +5,7 @@
 #define SAVE_CHECKSUM_MAGIC 0x97538642
 #define SAVE_INIT_MAGIC 0x99999999
 
-extern struct EEPROM gSaveBuffer1;
-extern struct EEPROM gSaveBuffer2;
+
 void calc_header_checksum(void);
 u32 calc_save_header_checksum(void);
 extern u16 D_800ECB00[];
@@ -303,6 +302,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B8C08.s")
 
 extern void calc_file_checksum(u32 fileNum);
 extern u8 D_800D5150[]; // TODO: get correct type for this
+// init_save_file_maybe
 #ifdef MIPS_TO_C
 void init_save_file_maybe(u32 fileNum) {
     s32 i;
@@ -579,7 +579,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B92B4.s")
 
 extern u8 D_800BE5A8[];
 
-
+// verify save
 // calculates percent complete and more
 #ifdef MIPS_TO_C
 void verify_save(s32 fileNum) {
