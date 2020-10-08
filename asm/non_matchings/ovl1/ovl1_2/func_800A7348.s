@@ -6,7 +6,7 @@ glabel func_800A7348
 /* 04F5A8 800A7358 24A572AC */  addiu $a1, %lo(D_800A72AC) # addiu $a1, $a1, 0x72ac
 /* 04F5AC 800A735C 8C8479B4 */  lw    $a0, %lo(D_800D79B4)($a0)
 /* 04F5B0 800A7360 24060001 */  li    $a2, 1
-/* 04F5B4 800A7364 0C002286 */  jal   func_80008A18_ovl1
+/* 04F5B4 800A7364 0C002286 */  jal   func_80008A18
 /* 04F5B8 800A7368 00003825 */   move  $a3, $zero
 /* 04F5BC 800A736C 3C02800D */  lui   $v0, %hi(D_800D79B4) # $v0, 0x800d
 /* 04F5C0 800A7370 8C4279B4 */  lw    $v0, %lo(D_800D79B4)($v0)

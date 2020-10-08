@@ -371,7 +371,7 @@ glabel func_800BB98C
 /* 063D40 800BBAF0 24A5B588 */  addiu $a1, %lo(D_800BB588) # addiu $a1, $a1, -0x4a78
 /* 063D44 800BBAF4 8E240000 */  lw    $a0, ($s1)
 /* 063D48 800BBAF8 00003025 */  move  $a2, $zero
-/* 063D4C 800BBAFC 0C002286 */  jal   func_80008A18_ovl1
+/* 063D4C 800BBAFC 0C002286 */  jal   func_80008A18
 /* 063D50 800BBB00 24070003 */   li    $a3, 3
 /* 063D54 800BBB04 8FB90038 */  lw    $t9, 0x38($sp)
 /* 063D58 800BBB08 3C09800D */  lui   $t1, %hi(D_800D5290) # $t1, 0x800d

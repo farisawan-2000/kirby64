@@ -148,7 +148,7 @@ void func_800AE138(s32 arg0) {
     D_800E6F50[arg0].y = 0.0f;
     D_800E6F50[arg0].z = 0.0f;
     D_800E6F50[arg0].originOffset = D_800D66FC;
-    
+
     D_800E6850[arg0] = D_800D66F8;
     D_800E8CA0[arg0] = 0;
     D_800E6310[arg0] = 0;
@@ -163,6 +163,7 @@ void func_800AE138(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 #endif
 
+struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 #ifdef MIPS_TO_C
 u32 func_800AE7A8(s32 arg0, u32 arg1, u32 arg2, s32 arg3, s32 arg4) {
     void *sp34;
@@ -237,22 +238,22 @@ loop_6:
     sp24 = temp_t0;
     sp28 = temp_v1_3;
     temp_v0_3 = func_8000A180(phi_s0_2, &D_800B0D24, (*temp_t0 + phi_v0_2) & 0xFF, 0);
-    *(&D_800DE350 + temp_v1_3) = temp_v0_3;
+    D_800DE350[temp_v1_3] = temp_v0_3;
     sp34 = temp_v0_3;
-    D_800DE510[phi_s0_2] = func_80008A18_ovl1(temp_v0_3, sp24->unk4, 0, 3);
-    *(&D_800DE6D0 + temp_v1_3) = func_80008A18_ovl1(sp34, &D_800B0D90, 1, 3);
+    D_800DE510[phi_s0_2] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
+    D_800DE6D0[temp_v1_3] = func_80008A18(sp34, &D_800B0D90, 1, 3);
     temp_a0 = sp24->unk1;
     phi_a0 = temp_a0;
     if ((temp_a0 & 1) != 0) { 
         sp28 = temp_v1_3;
-        D_800DE890[temp_v1_3] = func_80008A18_ovl1(sp34, &D_800B1878, 0, 2);
+        D_800DE890[temp_v1_3] = func_80008A18(sp34, &D_800B1878, 0, 2);
         phi_a0 = sp24->unk1;
     }
     if ((phi_a0 & 2) != 0) {
         sp28 = phi_s0_2 * 4;
-        *(&D_800DEA50 + (phi_s0_2 * 4)) = func_80008A18_ovl1(sp34, &D_800B1870, 1, 1);
+        D_800DEA50[phi_s0_2] = func_80008A18(sp34, &D_800B1870, 1, 1);
     }
-    D_800DEC10[phi_s0_2] = func_80008A18_ovl1(sp34, arg4, 1, 0);
+    D_800DEC10[phi_s0_2] = func_80008A18(sp34, arg4, 1, 0);
     D_800DD8D0[phi_s0_2] = 0;
     D_800DDA90[phi_s0_2] = sp34->unkC;
     D_800DF150[phi_s0_2] = 0;

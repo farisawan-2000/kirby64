@@ -683,5 +683,5 @@ void func_8010137C_ovl2(void) {
             func_80100E50_ovl2(i);
         }
     }
-    func_80008A18_ovl2(func_8000A180(0, 0, 0x1A, 0x80000000), &func_80100EE4_ovl2, 1, 0);
+    func_80008A18(func_8000A180(0, 0, 0x1A, 0x80000000), &func_80100EE4_ovl2, 1, 0);
 }

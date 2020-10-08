@@ -302,7 +302,7 @@ extern void* D_8004A5F8[];
 
 
 
-void func_800083CC(struct unk800083CCFunc *arg0, struct unk800083CCFunc *arg1) {
+void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     void *temp_v0;
 
     arg0->unk8 = arg1;
@@ -320,8 +320,8 @@ void func_800083CC(struct unk800083CCFunc *arg0, struct unk800083CCFunc *arg1) {
     }
 }
 
-void func_80008434(struct unk800083CCFunc *arg0) {
-    struct unk800083CCFunc *phi_a1;
+void func_80008434(struct UnkStruct8004A7C4 *arg0) {
+    struct UnkStruct8004A7C4 *phi_a1;
 
     phi_a1 = D_8004A5F8[arg0->unkC];
     while (phi_a1 != 0 && phi_a1->unk10 < arg0->unk10) {
@@ -330,9 +330,9 @@ void func_80008434(struct unk800083CCFunc *arg0) {
     func_800083CC(arg0, phi_a1);
 }
 
-void func_800084A0(struct unk800083CCFunc *arg0) {
-    struct unk800083CCFunc *phi_v0;
-    struct unk800083CCFunc *phi_a1;
+void func_800084A0(struct UnkStruct8004A7C4 *arg0) {
+    struct UnkStruct8004A7C4 *phi_v0;
+    struct UnkStruct8004A7C4 *phi_a1;
 
     phi_v0 = D_8004A578[arg0->unkC];
     while (phi_v0 != 0 && arg0->unk10 < phi_v0->unk10) {
@@ -346,7 +346,7 @@ void func_800084A0(struct unk800083CCFunc *arg0) {
     func_800083CC(arg0, phi_a1);
 }
 
-void func_80008528(struct unk800083CCFunc *arg0) {
+void func_80008528(struct UnkStruct8004A7C4 *arg0) {
     if (arg0->unk8 != 0) {
         arg0->unk8->unk4 = arg0->unk4;
     } else {
@@ -1362,8 +1362,8 @@ void *func_8000A0C0(s32 arg0, s32 arg1, u8 arg2, s32 arg3) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A0C0.s")
 #endif
 
-struct unk800083CCFunc *func_8000A180(s32 arg0, s32 arg1, u32 arg2, u32 arg3) {
-    struct unk800083CCFunc *temp_v0;
+struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u32 arg2, u32 arg3) {
+    struct UnkStruct8004A7C4 *temp_v0;
 
     temp_v0 = func_8000A0C0(arg0, arg1, arg2 & 0xFF, arg3);
     if (temp_v0 == NULL) {
