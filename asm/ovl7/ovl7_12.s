@@ -588,7 +588,7 @@ glabel func_801B8238_ovl7
 /* 15E2E4 801B8274 00822021 */  addu  $a0, $a0, $v0
 /* 15E2E8 801B8278 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 15E2EC 801B827C 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 15E2F0 801B8280 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 15E2F0 801B8280 0C02C7B2 */  jal   func_800B1EC8
 /* 15E2F4 801B8284 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 15E2F8 801B8288 1000001A */  b     .L801B82F4_ovl7
 /* 15E2FC 801B828C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -596,7 +596,7 @@ glabel func_801B8238_ovl7
 /* 15E300 801B8290 00822021 */  addu  $a0, $a0, $v0
 /* 15E304 801B8294 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 15E308 801B8298 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 15E30C 801B829C 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 15E30C 801B829C 0C02C7B2 */  jal   func_800B1EC8
 /* 15E310 801B82A0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 15E314 801B82A4 10000013 */  b     .L801B82F4_ovl7
 /* 15E318 801B82A8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -755,7 +755,7 @@ glabel func_801B84B4_ovl7
 /* 15E560 801B84F0 00822021 */  addu  $a0, $a0, $v0
 /* 15E564 801B84F4 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 15E568 801B84F8 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 15E56C 801B84FC 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 15E56C 801B84FC 0C02C7B2 */  jal   func_800B1EC8
 /* 15E570 801B8500 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 15E574 801B8504 1000001A */  b     .L801B8570_ovl7
 /* 15E578 801B8508 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -763,7 +763,7 @@ glabel func_801B84B4_ovl7
 /* 15E57C 801B850C 00822021 */  addu  $a0, $a0, $v0
 /* 15E580 801B8510 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 15E584 801B8514 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 15E588 801B8518 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 15E588 801B8518 0C02C7B2 */  jal   func_800B1EC8
 /* 15E58C 801B851C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 15E590 801B8520 10000013 */  b     .L801B8570_ovl7
 /* 15E594 801B8524 8FBF0014 */   lw    $ra, 0x14($sp)

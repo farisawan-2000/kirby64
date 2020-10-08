@@ -30,7 +30,7 @@ glabel func_801E1D3C_ovl10
 /* 1D2B1C 801E1DAC 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 /* 1D2B20 801E1DB0 00095080 */  sll   $t2, $t1, 2
 /* 1D2B24 801E1DB4 008A2021 */  addu  $a0, $a0, $t2
-/* 1D2B28 801E1DB8 0C02C7B2 */  jal   func_800B1EC8_ovl10
+/* 1D2B28 801E1DB8 0C02C7B2 */  jal   func_800B1EC8
 /* 1D2B2C 801E1DBC 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
 .L801E1DC0_ovl10:
 /* 1D2B30 801E1DC0 8FBF0014 */  lw    $ra, 0x14($sp)

@@ -1,7 +1,13 @@
 #include <ultra64.h>
 #include <macros.h>
-#include "ovl18/ovl18_1.h"
+#include "unk_structs/D_800E1B50.h"
 #include "D_8004A7C4.h"
+
+
+extern f32 D_800E6A10[];
+extern f32 D_800D6B10;
+extern s32 D_800E8920[];
+extern void (*D_800DF150[])(void);
 
 extern f32 D_800EC660[];
 extern f32 D_800E2950[];

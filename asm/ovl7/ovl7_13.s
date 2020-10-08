@@ -907,7 +907,7 @@ glabel func_801B9BA8_ovl7
 /* 15FCA8 801B9C38 24A59424 */  addiu $a1, %lo(D_801B9424) # addiu $a1, $a1, -0x6bdc
 /* 15FCAC 801B9C3C 000D7080 */  sll   $t6, $t5, 2
 /* 15FCB0 801B9C40 008E2021 */  addu  $a0, $a0, $t6
-/* 15FCB4 801B9C44 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 15FCB4 801B9C44 0C02C7B2 */  jal   func_800B1EC8
 /* 15FCB8 801B9C48 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L801B9C4C_ovl7:
 /* 15FCBC 801B9C4C 8FBF0014 */  lw    $ra, 0x14($sp)
@@ -2036,7 +2036,7 @@ glabel func_801BAC40_ovl7
 /* 160D18 801BACA8 8C4A0000 */  lw    $t2, ($v0)
 /* 160D1C 801BACAC 000A5880 */  sll   $t3, $t2, 2
 /* 160D20 801BACB0 008B2021 */  addu  $a0, $a0, $t3
-/* 160D24 801BACB4 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 160D24 801BACB4 0C02C7B2 */  jal   func_800B1EC8
 /* 160D28 801BACB8 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L801BACBC_ovl7:
 /* 160D2C 801BACBC 8FBF0014 */  lw    $ra, 0x14($sp)
@@ -2276,7 +2276,7 @@ glabel func_801BAFB0_ovl7
 /* 1610A0 801BB030 24A5AD50 */  addiu $a1, %lo(D_801BAD50) # addiu $a1, $a1, -0x52b0
 /* 1610A4 801BB034 000A5880 */  sll   $t3, $t2, 2
 /* 1610A8 801BB038 008B2021 */  addu  $a0, $a0, $t3
-/* 1610AC 801BB03C 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 1610AC 801BB03C 0C02C7B2 */  jal   func_800B1EC8
 /* 1610B0 801BB040 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1610B4 801BB044 10000019 */  b     .L801BB0AC_ovl7
 /* 1610B8 801BB048 00000000 */   nop   
@@ -2303,7 +2303,7 @@ glabel func_801BAFB0_ovl7
 /* 161108 801BB098 24A5AD50 */  addiu $a1, %lo(D_801BAD50) # addiu $a1, $a1, -0x52b0
 /* 16110C 801BB09C 000FC080 */  sll   $t8, $t7, 2
 /* 161110 801BB0A0 00982021 */  addu  $a0, $a0, $t8
-/* 161114 801BB0A4 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 161114 801BB0A4 0C02C7B2 */  jal   func_800B1EC8
 /* 161118 801BB0A8 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L801BB0AC_ovl7:
 /* 16111C 801BB0AC 0C067CEC */  jal   func_8019F3B0_ovl7
@@ -2862,7 +2862,7 @@ glabel func_801BB860_ovl7
 /* 161938 801BB8C8 8C4A0000 */  lw    $t2, ($v0)
 /* 16193C 801BB8CC 000A5880 */  sll   $t3, $t2, 2
 /* 161940 801BB8D0 008B2021 */  addu  $a0, $a0, $t3
-/* 161944 801BB8D4 0C02C7B2 */  jal   func_800B1EC8_ovl7
+/* 161944 801BB8D4 0C02C7B2 */  jal   func_800B1EC8
 /* 161948 801BB8D8 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L801BB8DC_ovl7:
 /* 16194C 801BB8DC 8FBF0014 */  lw    $ra, 0x14($sp)

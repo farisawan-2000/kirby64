@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "D_8004A7C4.h"
+#include "unk_structs/D_800E1B50.h"
 #include "ovl18/ovl18_1.h"
 #include "ovl18/ovl18_3.h"
 #include "ovl18/ovl18_5.h"

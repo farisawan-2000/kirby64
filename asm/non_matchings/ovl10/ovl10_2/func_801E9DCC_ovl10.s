@@ -59,7 +59,7 @@ glabel func_801E9DCC_ovl10
 /* 1DAC18 801E9EA8 000C6880 */  sll   $t5, $t4, 2
 /* 1DAC1C 801E9EAC 008D2021 */  addu  $a0, $a0, $t5
 /* 1DAC20 801E9EB0 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
-/* 1DAC24 801E9EB4 0C02C7B2 */  jal   func_800B1EC8_ovl10
+/* 1DAC24 801E9EB4 0C02C7B2 */  jal   func_800B1EC8
 /* 1DAC28 801E9EB8 24A591B0 */   addiu $a1, %lo(D_801E91B0) # addiu $a1, $a1, -0x6e50
 .L801E9EBC_ovl10:
 /* 1DAC2C 801E9EBC 8FBF0014 */  lw    $ra, 0x14($sp)

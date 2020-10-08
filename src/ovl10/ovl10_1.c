@@ -2,6 +2,7 @@
 #include <macros.h>
 
 #include "D_8004A7C4.h"
+#include "unk_structs/D_800E1B50.h"
 #include "ovl18/ovl18_1.h"
 #include "ovl18/ovl18_3.h"
 #include "ovl18/ovl18_5.h"
@@ -346,7 +347,7 @@ struct UnkStruct8004A7C4 *func_801DCF48_ovl10(void) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 9;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }
@@ -487,7 +488,7 @@ void func_801DD2CC_ovl10(s32 arg0) {
     temp_a2 = temp_a2 * 4;
     if (*(&D_800E83E0 + temp_a2) == 1) {
         D_800DDC50[temp_a2] = 9;
-        func_800B1EC8_ovl10(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2);
+        func_800B1EC8(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2);
     }
 }
 #else
@@ -582,7 +583,7 @@ void func_801DD674_ovl10(s32 arg0) {
     temp_a2 = temp_a2 * 4;
     if (*(&D_800E83E0 + temp_a2) == 1) {
         D_800DDC50[temp_a2] = 9;
-        func_800B1EC8_ovl10(D_800DE510[temp_v1->unk0], &D_801DBD38, temp_a2);
+        func_800B1EC8(D_800DE510[temp_v1->unk0], &D_801DBD38, temp_a2);
     }
 }
 #else
@@ -849,7 +850,7 @@ void *func_801DDEB8_ovl10(s32 arg0) {
                     func_80169430_ovl10(sp3C, sp30, sp31, 1);
                     temp_v1_3 = D_8004A7C4;
                     D_800DDC50[temp_v1_3->unk0] = 6;
-                    temp_ret = func_800B1EC8_ovl10(D_800DE510[temp_v1_3->unk0], &D_801DBD38);
+                    temp_ret = func_800B1EC8(D_800DE510[temp_v1_3->unk0], &D_801DBD38);
                     temp_v1_4 = D_8004A7C4;
                     D_800EC120[temp_v1_4->unk0] = 0;
                     *(&D_800E9FE0 + (temp_v1_4->unk0 * 4)) = 0;
@@ -861,7 +862,7 @@ void *func_801DDEB8_ovl10(s32 arg0) {
         phi_return = temp_v0;
         if (temp_a0 == 1) {
             D_800DDC50[temp_a2_2] = 9;
-            phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2_2);
+            phi_return = func_800B1EC8(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2_2);
         }
     }
     return phi_return;
@@ -1012,7 +1013,7 @@ struct UnkStruct8004A7C4 *func_801DE5CC_ovl10(s32 arg0) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 9;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }
@@ -1144,7 +1145,7 @@ void func_801DEA98_ovl10(s32 arg0) {
     phi_v0 = temp_v0;
     if (*(&D_800E83E0 + temp_v0) == 1) {
         D_800DDC50[temp_v0] = 9;
-        func_800B1EC8_ovl10(D_800DE510[temp_v1->unk0], &D_801DBD38);
+        func_800B1EC8(D_800DE510[temp_v1->unk0], &D_801DBD38);
         phi_v0 = D_8004A7C4->unk0 * 4;
     }
     (*(D_800E1B50 + phi_v0))->unk8C = &D_801F3B38_ovl10;
@@ -1390,7 +1391,7 @@ struct UnkStruct8004A7C4 *func_801DF310_ovl10(s32 arg0) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 9;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }
@@ -1990,7 +1991,7 @@ struct UnkStruct8004A7C4 *func_801E03CC_ovl10(void) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 0x12;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }
@@ -2350,7 +2351,7 @@ void func_801E0B94_ovl10(s32 arg0) {
     temp_v1_8 = temp_a2_3->unk0;
     if (*(&D_800E83E0 + (temp_v1_8 * 4)) == 1) {
         D_800DDC50[temp_v1_8] = 0x12;
-        func_800B1EC8_ovl10(D_800DE510[temp_a2_3->unk0], &D_801DBD38, temp_a2_3);
+        func_800B1EC8(D_800DE510[temp_a2_3->unk0], &D_801DBD38, temp_a2_3);
     }
 }
 #else
@@ -2681,7 +2682,7 @@ void *func_801E1550_ovl10(s32 arg0) {
                     func_80169430_ovl10(sp38, sp2C, sp2D, 2);
                     temp_v1_3 = D_8004A7C4;
                     D_800DDC50[temp_v1_3->unk0] = 0xF;
-                    temp_ret = func_800B1EC8_ovl10(D_800DE510[temp_v1_3->unk0], &D_801DBD38);
+                    temp_ret = func_800B1EC8(D_800DE510[temp_v1_3->unk0], &D_801DBD38);
                     temp_v1_4 = D_8004A7C4;
                     D_800EC120[temp_v1_4->unk0] = 0;
                     *(&D_800E9FE0 + (temp_v1_4->unk0 * 4)) = 0;
@@ -2693,7 +2694,7 @@ void *func_801E1550_ovl10(s32 arg0) {
         phi_return = temp_v0_2;
         if (temp_a0 == 1) {
             D_800DDC50[temp_a2_4] = 0x12;
-            phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2_4, &D_8004A7C4);
+            phi_return = func_800B1EC8(D_800DE510[temp_v1_2->unk0], &D_801DBD38, temp_a2_4, &D_8004A7C4);
         }
     }
     return phi_return;
@@ -2857,7 +2858,7 @@ struct UnkStruct8004A7C4 *func_801E1D3C_ovl10(void) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 0x12;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }
@@ -2926,7 +2927,7 @@ struct UnkStruct8004A7C4 *func_801E1FD8_ovl10(void) {
     phi_return = temp_v0;
     if (*(&D_800E83E0 + (temp_v1 * 4)) == 1) {
         D_800DDC50[temp_v1] = 0x12;
-        phi_return = func_800B1EC8_ovl10(D_800DE510[temp_v0->unk0], &D_801DBD38);
+        phi_return = func_800B1EC8(D_800DE510[temp_v0->unk0], &D_801DBD38);
     }
     return phi_return;
 }

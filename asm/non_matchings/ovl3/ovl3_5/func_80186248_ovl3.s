@@ -340,7 +340,7 @@ glabel func_80186248_ovl3
 /* 0E715C 8018671C 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0E7160 80186720 00095080 */  sll   $t2, $t1, 2
 /* 0E7164 80186724 008A2021 */  addu  $a0, $a0, $t2
-/* 0E7168 80186728 0C02C7B2 */  jal   func_800B1EC8_ovl3
+/* 0E7168 80186728 0C02C7B2 */  jal   func_800B1EC8
 /* 0E716C 8018672C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0E7170 80186730 3C068013 */  lui   $a2, %hi(gKirbyState) # $a2, 0x8013
 /* 0E7174 80186734 24C6E7C0 */  addiu $a2, %lo(gKirbyState) # addiu $a2, $a2, -0x1840

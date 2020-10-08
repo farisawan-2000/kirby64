@@ -20,7 +20,7 @@ glabel func_801DD160_ovl11
 /* 1E7A68 801DD1A8 24A5C258 */  addiu $a1, %lo(D_801DC258) # addiu $a1, $a1, -0x3da8
 /* 1E7A6C 801DD1AC 0018C880 */  sll   $t9, $t8, 2
 /* 1E7A70 801DD1B0 00992021 */  addu  $a0, $a0, $t9
-/* 1E7A74 801DD1B4 0C02C7B2 */  jal   func_800B1EC8_ovl11
+/* 1E7A74 801DD1B4 0C02C7B2 */  jal   func_800B1EC8
 /* 1E7A78 801DD1B8 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L801DD1BC_ovl11:
 /* 1E7A7C 801DD1BC 8FBF0014 */  lw    $ra, 0x14($sp)

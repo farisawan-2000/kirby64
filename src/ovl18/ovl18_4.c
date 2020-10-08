@@ -33,7 +33,7 @@ extern void func_801ACF84_ovl7(void);
 #ifdef MIPS_TO_C
 void func_802244FC_ovl18(void) {
     if (D_800E98E0[D_8004A7C4->unk0] == 0) {
-        func_800B1EC8_ovl18(D_800E98E0[D_8004A7C4->unk0], &func_801ACF84_ovl7);
+        func_800B1EC8(D_800E98E0[D_8004A7C4->unk0], &func_801ACF84_ovl7);
     } else {
         // D_800E98E0[D_8004A7C4->unk0]--;
         func_801ACF5C_ovl7(D_800E98E0[D_8004A7C4->unk0]--);

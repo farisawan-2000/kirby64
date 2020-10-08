@@ -23,6 +23,11 @@ result.x = a.x - b.x;\
 result.y = a.y - b.y;\
 result.z = a.z - b.z;
 
+#define VECPTR_SUB(result, a, b)\
+result.x = a->x - b->x;\
+result.y = a->y - b->y;\
+result.z = a->z - b->z;
+
 #define VEC_ADD(result, a, b)\
 result.x = a.x + b.x;\
 result.y = a.y + b.y;\

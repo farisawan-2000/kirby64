@@ -58,7 +58,7 @@ void func_80224790_ovl18(s32 arg0) {
 void func_80224864_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->unk0] != 0) {
         D_800DDC50[D_8004A7C4->unk0] = 1;
-        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_802245E0_ovl18);
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_802245E0_ovl18);
     }
 }
 
@@ -97,7 +97,7 @@ void func_802249D8_ovl18(s32 arg0) {
     temp_v1 = temp_v0_2->unk0;
     if (*(&D_800E9E20 + (temp_v1 * 4)) != 0) {
         D_800DDC50[temp_v1] = 0;
-        func_800B1EC8_ovl18(D_800DE510[temp_v0_2->unk0], &func_802245E0_ovl18);
+        func_800B1EC8(D_800DE510[temp_v0_2->unk0], &func_802245E0_ovl18);
     }
 }
 #else
@@ -154,7 +154,7 @@ void func_80224D04_ovl18(s32 arg0) {
 void func_80224DE4_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->unk0] != 0) {
         D_800DDC50[D_8004A7C4->unk0] = 1;
-        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_80224B54_ovl18);
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_80224B54_ovl18);
     }
 }
 
@@ -205,7 +205,7 @@ void func_80224FCC_ovl18(s32 arg0) {
     }
     if (D_800E9E20[D_8004A7C4->unk0] != 0) {
         D_800DDC50[D_8004A7C4->unk0] = 0;
-        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_80224B54_ovl18);
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_80224B54_ovl18);
     }
 }
 #else
@@ -320,7 +320,7 @@ void func_80225650_ovl18(s32 arg0) {
 void func_80225724_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->unk0]-- == 0) {
         D_800DDC50[D_8004A7C4->unk0] = 1;
-        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_80225478_ovl18);
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_80225478_ovl18);
     } else D_800E9720[D_8004A7C4->unk0]--;
 }
 #else
@@ -346,7 +346,7 @@ void func_802257A4_ovl18(s32 arg0) {
 void func_802258EC_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->unk0] != 0) {
         D_800DDC50[D_8004A7C4->unk0] = 0;
-        func_800B1EC8_ovl18(D_800DE510[D_8004A7C4->unk0], &func_80225478_ovl18);
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_80225478_ovl18);
     }
 }
 

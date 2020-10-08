@@ -39,7 +39,7 @@ glabel func_801ECE90_ovl10
 /* 1DDC94 801ECF24 24A5C3C8 */  addiu $a1, %lo(D_801EC3C8) # addiu $a1, $a1, -0x3c38
 /* 1DDC98 801ECF28 000D7080 */  sll   $t6, $t5, 2
 /* 1DDC9C 801ECF2C 008E2021 */  addu  $a0, $a0, $t6
-/* 1DDCA0 801ECF30 0C02C7B2 */  jal   func_800B1EC8_ovl10
+/* 1DDCA0 801ECF30 0C02C7B2 */  jal   func_800B1EC8
 /* 1DDCA4 801ECF34 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
 .L801ECF38_ovl10:
 /* 1DDCA8 801ECF38 8FBF0014 */  lw    $ra, 0x14($sp)
