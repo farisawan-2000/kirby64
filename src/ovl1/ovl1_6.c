@@ -19,20 +19,22 @@ void func_800AE0F0(void) {
 // good luck finding the line order for this one
 #ifdef NON_MATCHING
 void func_800AE138(s32 arg0) {
-    struct Normal temp_v1;
-
     D_800DE350[arg0] = NULL;
     D_800DD710[arg0] = -1;
-    D_800DEC10[arg0] = 0;
-    D_800DEA50[arg0] = 0;
-    D_800DE890[arg0] = 0;
-    D_800DE6D0[arg0] = 0;
-    D_800DE510[arg0] = 0;
+
+    // ObjProcess buffers
+    D_800DEC10[arg0] = NULL;
+    D_800DEA50[arg0] = NULL;
+    D_800DE890[arg0] = NULL;
+    D_800DE6D0[arg0] = NULL;
+    D_800DE510[arg0] = NULL;
+
     D_800DE190[arg0] = 0;
     D_800DDFD0[arg0] = 0;
     D_800DDE10[arg0] = 0;
     D_800DDC50[arg0] = 0;
     D_800DD8D0[arg0] = 0;
+
     D_800E0810[arg0] = 0x10;
     D_800E0B90[arg0] = D_800D6B10;
     D_800E09D0[arg0] = D_800D6B10;
@@ -52,49 +54,51 @@ void func_800AE138(s32 arg0) {
     D_800DFF50[arg0] = -1;
     D_800E02D0[arg0] = -1;
     D_800DFBD0[arg0] = -1;
-    D_800E2410[arg0] = 0.0f;
-    D_800E2250[arg0] = 0.0f;
-    D_800E2090[arg0] = 0.0f;
-    D_800E2E90[arg0] = 0.0f;
-    D_800E2CD0[arg0] = 0.0f;
-    D_800E2B10[arg0] = 0.0f;
-    D_800E2950[arg0] = 0.0f;
-    D_800E2790[arg0] = 0.0f;
-    D_800E25D0[arg0] = 0.0f;
-    D_800E3910[arg0] = 0.0f;
-    D_800E3750[arg0] = 0.0f;
-    D_800E3590[arg0] = 0.0f;
-    D_800E33D0[arg0] = 0.0f;
-    D_800E3210[arg0] = 0.0f;
-    D_800E3050[arg0] = 0.0f;
     D_800E3E50[arg0] = D_800D66F8;
     D_800E3C90[arg0] = D_800D66F8;
     D_800E3AD0[arg0] = D_800D66F8;
-    D_800E4390[arg0] = 0.0f;
-    D_800E41D0[arg0] = 0.0f;
-    D_800E4010[arg0] = 0.0f;
-    D_800E1450[arg0] = 0.0f;
-    D_800E1290[arg0] = 0.0f;
+
     D_800E10D0[arg0] = 0.0f;
+    D_800E1290[arg0] = 0.0f;
+    D_800E1450[arg0] = 0.0f;
+    D_800E2090[arg0] = 0.0f;
+    D_800E2250[arg0] = 0.0f;
+    D_800E2410[arg0] = 0.0f;
+    D_800E25D0[arg0] = 0.0f;
+    D_800E2790[arg0] = 0.0f;
+    D_800E2950[arg0] = 0.0f;
+    D_800E2B10[arg0] = 0.0f;
+    D_800E2CD0[arg0] = 0.0f;
+    D_800E2E90[arg0] = 0.0f;
+    D_800E3050[arg0] = 0.0f;
+    D_800E3210[arg0] = 0.0f;
+    D_800E33D0[arg0] = 0.0f;
+    D_800E3590[arg0] = 0.0f;
+    D_800E3750[arg0] = 0.0f;
+    D_800E3910[arg0] = 0.0f;
+    D_800E4010[arg0] = 0.0f;
+    D_800E41D0[arg0] = 0.0f;
+    D_800E4390[arg0] = 0.0f;
+    D_800E4A90[arg0] = 0.0f;
+    D_800E4C50[arg0] = 0.0f;
+    D_800E4E10[arg0] = 0.0f;
+    D_800E5A50[arg0] = 0.0f;
+    D_800E5C10[arg0] = 0.0f;
+    D_800E5DD0[arg0] = 0.0f;
+    D_800E7650[arg0] = 0.0f;
+    D_800E8220[arg0] = 0.0f;
+    D_800E83E0[arg0] = 0.0f;
+    D_800E8760[arg0] = 0.0f;
+    D_800E8AE0[arg0] = 0.0f;
+    D_800E8E60[arg0] = 0.0f;
+    D_800E9020[arg0] = 0.0f;
+
     D_800E48D0[arg0] = 1.0f;
     D_800E4710[arg0] = 1.0f;
     D_800E4550[arg0] = 1.0f;
-    D_800E5DD0[arg0] = 0.0f;
-    D_800E5C10[arg0] = 0.0f;
-    D_800E5A50[arg0] = 0.0f;
-    D_800E4E10[arg0] = 0.0f;
-    D_800E4C50[arg0] = 0.0f;
-    D_800E4A90[arg0] = 0.0f;
     D_800E5350[arg0] = 1.0f;
     D_800E5190[arg0] = D_800E5350[arg0];
     D_800E4FD0[arg0] = D_800E5350[arg0];
-    D_800E7650[arg0] = 0;
-    D_800E8AE0[arg0] = 0;
-    D_800E8220[arg0] = 0;
-    D_800E83E0[arg0] = 0;
-    D_800E8760[arg0] = 0;
-    D_800E8E60[arg0] = 0;
-    D_800E9020[arg0] = 0.0f;
     D_800E76C0[arg0] = 0xFF;
     D_800E7730[arg0] = 0xFF;
     D_800E77A0[arg0] = 0xFFFF;
@@ -139,11 +143,12 @@ void func_800AE138(s32 arg0) {
     D_800E6A10[arg0] = 0.0f;
     D_800E6690[arg0] = 0.0f;
     D_800E64D0[arg0] = 0.0f;
-    temp_v1 = D_800E6F50[arg0];
-    temp_v1.z = 0.0f;
-    temp_v1.y = 0.0f;
-    temp_v1.x = 0.0f;
-    temp_v1.originOffset = D_800D66FC;
+
+    D_800E6F50[arg0].x = 0.0f;
+    D_800E6F50[arg0].y = 0.0f;
+    D_800E6F50[arg0].z = 0.0f;
+    D_800E6F50[arg0].originOffset = D_800D66FC;
+    
     D_800E6850[arg0] = D_800D66F8;
     D_800E8CA0[arg0] = 0;
     D_800E6310[arg0] = 0;

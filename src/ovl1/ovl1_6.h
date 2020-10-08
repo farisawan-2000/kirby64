@@ -68,12 +68,12 @@ extern f32 D_800E5350[];
 extern f32 D_800E5190[];
 extern f32 D_800E4FD0[];
 
-extern s32 D_800E7650[];
-extern s32 D_800E8AE0[];
-extern s32 D_800E8220[];
-extern s32 D_800E83E0[];
-extern s32 D_800E8760[];
-extern s32 D_800E8E60[];
+extern f32 D_800E7650[];
+extern f32 D_800E8AE0[];
+extern f32 D_800E8220[];
+extern f32 D_800E83E0[];
+extern f32 D_800E8760[];
+extern f32 D_800E8E60[];
 extern f32 D_800E9020[];
 extern s32 D_800E76C0[];
 extern s32 D_800E7730[];
