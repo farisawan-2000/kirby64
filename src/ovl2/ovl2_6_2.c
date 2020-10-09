@@ -1986,6 +1986,9 @@ void func_80104B70_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80104B70_ovl2.s")
 #endif
 
+// functions that actually check stuff
+
+// possibly fake match as types are way off
 u8 func_80104C24_ovl2(Vector *cPos, Vector *nPos) {
     struct Normal *sp7C;
     struct CollisionTriangle *sp78;
@@ -2001,7 +2004,7 @@ u8 func_80104C24_ovl2(Vector *cPos, Vector *nPos) {
     colState.unk40 = &func_80101D50_ovl2;
     colState.unk34 = NULL;
     colState.unk38 = NULL;
-    if (func_80103D80_ovl2(0, 0, &sp7C, &sp78) != 0) {
+    if (func_80103D80_ovl2(NULL, NULL, &sp7C, &sp78) != 0) {
         VECPTR_SUB(sp1C, nPos, cPos);
         if (func_80101920(sp78, sp7C, (struct Normal *) &sp1C, 0) == 0) {
             return 1;
