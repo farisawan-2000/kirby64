@@ -16,6 +16,7 @@ tools/n64crc
 *.o
 __pycache__/*
 .vscode/*
+ctx.c
 # Use these for scratch work
 *.x
 strings/*
