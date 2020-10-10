@@ -245,17 +245,16 @@ extern Lights1 D_800BE548;
 
 // _mostly_ regalloc left at this point
 
-#ifdef NON_MATCHING
+#if 0
 void func_801BC978_ovl7(s32 *arg0) {
-    s32 pad[2];
-    Lights1 *temp_a2;
     s32 temp_v0;
+    Lights1 *temp_a2;
 
     temp_v0 = *arg0;
     if ((D_800DD8D0[temp_v0] & 0x40) == 0) {
         temp_a2 = D_800E0650[temp_v0];
-        switch (func_800AB0F4(temp_a2) - 0x13) {
-            case 0:
+        switch (func_800AB0F4(arg0)) {
+            case 13:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
@@ -263,7 +262,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                 func_800AB120(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
-            case 2:
+            case 15:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
@@ -279,8 +278,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 func_800AB2C0(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
-            case 8:
-            case 10:
+            case 21:
+            case 23:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
@@ -288,18 +287,21 @@ void func_801BC978_ovl7(s32 *arg0) {
                 func_800AB3A0(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
-            case 1:
+            case 14:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
-                func_800AB174(arg0);
-                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
-                gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
+                gSPNumLights(gDisplayListHeads[0]++,NUMLIGHTS_1);
+                gSPLight(gDisplayListHeads[0]++, &D_800BE548.l[0], LIGHT_1);
+                gSPLight(gDisplayListHeads[0]++, &D_800BE548.a, LIGHT_2);
+                gSPNumLights(gDisplayListHeads[1]++,NUMLIGHTS_1);
+                gSPLight(gDisplayListHeads[1]++, &D_800BE548.l[0], LIGHT_1);
+                gSPLight(gDisplayListHeads[1]++, &D_800BE548.a, LIGHT_2);
                 break;
-            case 3:
+            case 16:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
@@ -310,8 +312,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
-            case 5:
-            case 7:
+            case 18:
+            case 20:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != 0) {
@@ -322,8 +324,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
-            case 9:
-            case 11:
+            case 22:
+            case 24:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != 0) {
