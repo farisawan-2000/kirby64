@@ -112,33 +112,36 @@ void func_80002F88(s32 arg0, s32 arg1, s32 arg2) {
     dma_copy(&D_80048CF8, arg1, arg0, arg2, 1);
 }
 
+void func_80002FC0(u8 *arg0, s32 arg1, void (*arg2)(void), u32 arg3);
 #ifdef MIPS_TO_C
-void func_80002FC0(u8 *arg0, s32 arg1, void (*)(void) arg2, u32 arg3) {
-    ? sp14C;
-    ? *sp144;
-    ? *sp140;
+void func_80002FC0(u8 *arg0, s32 arg1, void (*arg2)(void), u32 arg3) {
+    u32 sp14C;
+    u32 *sp144;
+    u32 *sp140;
     u32 sp138;
     u32 sp134;
-    ? *spE4;
+    u32 *spE4;
     s32 spE0;
-    ? *spD4;
-    ? *sp84;
+    u32 *spD4;
+    u32 *sp84;
     s32 sp80;
-    ? *sp74;
+    u32 *sp74;
     s32 sp64;
-    ? *phi_s0;
-    ? *phi_s3;
+    u32 *phi_s3;
     s32 phi_a1;
-    s32 phi_s1;
-    s32 phi_s2;
+    u32 phi_s1;
+    u32 phi_s2;
     s32 phi_v0;
     s32 phi_v1;
-    u32 phi_a0;
-    u32 phi_fp;
-    u32 phi_v0;
     u8 *phi_a0;
+    u32 *phi_fp;
     u8 *phi_s5;
-    void *phi_s0;
+    u32 *phi_s0;
+    struct {
+        u32 unk0;
+        u32 unk4;
+        u32 unk8;
+    } *temp_v0;
 
     arg2();
     phi_a0 = arg0 + 2;
@@ -182,7 +185,7 @@ loop_11:
             arg2();
             phi_a0 = arg0;
         }
-        phi_s2 = (phi_s2 << 0x10) | phi_a0;
+        phi_s2 = (phi_s2 << 0x10) | *phi_a0;
         phi_s1 = phi_s1 + 0x10;
         phi_a0 = phi_a0 + 2;
     }
@@ -191,21 +194,17 @@ loop_11:
     if (phi_v0 == 0 || phi_v1 >= 2) {
         phi_s0 = &(&spE4)[phi_v1];
         if (phi_v0 != 0) {
-            phi_s3->unk0 = 0;
-            phi_s3->unk4 = 0;
-            phi_s3->unk8 = 0;
+            phi_s3[phi_v1] = 0;
             phi_v0 = phi_s3;
-            phi_v0->unk0 = phi_s0[-2];
-            phi_v0->unk4 = phi_s0[-1];
+            temp_v0->unk0 = phi_s0[-2];
+            temp_v0->unk4 = phi_s0[-1];
             phi_s0[-2] = phi_v0;
             phi_v1 = phi_v1 - 1;
             phi_s3 = phi_s3 + 0xC;
         } else {
             phi_v0 = phi_s3;
             phi_s3 = phi_s3 + 0xC;
-            phi_s3->unk-C = 0;
-            phi_s3->unk-8 = 0;
-            phi_s3->unk-4 = 0;
+            phi_s3[phi_v1] = 0;
             if (phi_s1 < 8) {
                 if (phi_a0 >= phi_s5) {
                     spD4 = phi_v0;
@@ -218,8 +217,8 @@ loop_11:
                 phi_a0 = phi_a0 + 2;
             }
             phi_s1 = phi_s1 - 8;
-            phi_v0->unk8 = (phi_s2 << (0x18 - phi_s1)) >> 0x18;
-            phi_s0->unk0 = phi_v0;
+            temp_v0->unk8 = (phi_s2 << (0x18 - phi_s1)) >> 0x18;
+            phi_s0[0] = phi_v0;
             phi_v1 = phi_v1 + 1;
         }
         goto loop_11;
@@ -243,21 +242,17 @@ loop_25:
     if (phi_v0 == 0 || phi_v1 >= 2) {
         phi_s0 = &(&sp84)[phi_v1];
         if (phi_v0 != 0) {
-            phi_s3->unk0 = 0;
-            phi_s3->unk4 = 0;
-            phi_s3->unk8 = 0;
+            phi_s3[phi_v1] = 0;
             phi_v0 = phi_s3;
-            phi_v0->unk0 = phi_s0[-2];
-            phi_v0->unk4 = phi_s0[-1];
+            temp_v0->unk0 = phi_s0[-2];
+            temp_v0->unk4 = phi_s0[-1];
             phi_s0[-2] = phi_v0;
             phi_v1 = phi_v1 - 1;
             phi_s3 = phi_s3 + 0xC;
         } else {
             phi_v0 = phi_s3;
             phi_s3 = phi_s3 + 0xC;
-            phi_s3->unk-C = 0;
-            phi_s3->unk-8 = 0;
-            phi_s3->unk-4 = 0;
+            phi_s3[phi_v1] = 0;
             if (phi_s1 < 8) {
                 if (phi_a0 >= phi_s5) {
                     sp74 = phi_v0;
@@ -270,8 +265,8 @@ loop_25:
                 phi_a0 = phi_a0 + 2;
             }
             phi_s1 = phi_s1 - 8;
-            phi_v0->unk8 = (phi_s2 << (0x18 - phi_s1)) >> 0x18;
-            phi_s0->unk0 = phi_v0;
+            temp_v0->unk8 = (phi_s2 << (0x18 - phi_s1)) >> 0x18;
+            phi_s0[0] = phi_v0;
             phi_v1 = phi_v1 + 1;
         }
         goto loop_25;
@@ -321,15 +316,15 @@ loop_51:
                     }
                     phi_s1 = phi_s1 - 1;
                     if (((phi_s2 << (0x1F - phi_s1)) >> 0x1F) == 0) {
-                        phi_s0 = phi_s0->unk0;
+                        phi_s0 = phi_s0[0];
                     } else {
-                        phi_s0 = phi_s0->unk4;
+                        phi_s0 = phi_s0[1];
                     }
                     if (*phi_s0 != 0) {
                         goto loop_51;
                     }
                 }
-                phi_v1 = phi_s0->unk8;
+                phi_v1 = phi_s0[2];
                 if (phi_s1 < phi_v1) {
                     if (phi_a0 >= phi_s5) {
                         arg2();
@@ -358,15 +353,15 @@ loop_65:
                         }
                         phi_s1 = phi_s1 - 1;
                         if (((phi_s2 << (0x1F - phi_s1)) >> 0x1F) == 0) {
-                            phi_s0 = phi_s0->unk0;
+                            phi_s0 = phi_s0[0];
                         } else {
-                            phi_s0 = phi_s0->unk4;
+                            phi_s0 = phi_s0[1];
                         }
                         if (*phi_s0 != 0) {
                             goto loop_65;
                         }
                     }
-                    phi_v1 = phi_s0->unk8;
+                    phi_v1 = phi_s0[2];
                     if (phi_s1 < phi_v1) {
                         if (phi_a0 >= phi_s5) {
                             arg2();
@@ -396,15 +391,15 @@ loop_80:
                     }
                     phi_s1 = phi_s1 - 1;
                     if (((phi_s2 << (0x1F - phi_s1)) >> 0x1F) == 0) {
-                        phi_s0 = phi_s0->unk0;
+                        phi_s0 = phi_s0[0];
                     } else {
-                        phi_s0 = phi_s0->unk4;
+                        phi_s0 = phi_s0[1];
                     }
                     if (*phi_s0 != 0) {
                         goto loop_80;
                     }
                 }
-                phi_v1 = phi_s0->unk8;
+                phi_v1 = phi_s0[2];
                 if (phi_s1 < phi_v1) {
                     phi_a0 = phi_a0;
                     if (phi_a0 >= phi_s5) {
@@ -433,15 +428,15 @@ loop_94:
                 }
                 phi_s1 = phi_s1 - 1;
                 if (((phi_s2 << (0x1F - phi_s1)) >> 0x1F) == 0) {
-                    phi_s3 = phi_s3->unk0;
+                    phi_s3 = phi_s3[0];
                 } else {
-                    phi_s3 = phi_s3->unk4;
+                    phi_s3 = phi_s3[1];
                 }
                 if (*phi_s3 != 0) {
                     goto loop_94;
                 }
             }
-            phi_a1 = phi_s3->unk8;
+            phi_a1 = phi_s3[2];
             if (phi_s1 < phi_a1) {
                 if (phi_a0 >= phi_s5) {
                     arg2();
@@ -462,7 +457,7 @@ loop_94:
                     phi_v0--;
             }
         }
-        if (phi_fp < sp138) {
+        if (*phi_fp < sp138) {
             goto loop_39;
         }
     }
@@ -487,7 +482,7 @@ void func_800037A4(void) {
     D_80048D9C += D_80048D98;
 }
 
-u32 func_80002FC0(void *arg0, s32 arg1, u8 *arg2, u32 arg3);
+
 
 void func_800037F0(u32 arg0, u32 arg1, u8* arg2, u32 arg3) {
     func_80003788(arg0, arg2, arg3);
