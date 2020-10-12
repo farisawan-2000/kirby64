@@ -2,8 +2,8 @@
 #include <macros.h>
 // #define GLOBAL_ASM(...)
 
-extern OSMesg *D_80048D70;
-extern u32 *D_80048D6C;
+extern OSMesgQueue *D_80048D70;
+extern OSMesg *D_80048D6C;
 
 void func_80002BA0(void) {
     osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
@@ -13,42 +13,59 @@ extern const char D_8003FF00[];
 extern const char D_8003FF18[];
 extern u32 D_80048D90;
 extern void *D_80048D8C, *D_80048D88;
-extern u32 D_80048CDC;
+extern u32 *D_80048CDC;
+#include "PR/os_pi.h"
+
 // an actual DMA Copy
 #ifdef NON_MATCHING
-void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 writeback) {
+// needs just a bit more tweaking to match
+// typedef struct {
+//              OSIoMesgHdr hdr;
+// 0                u16 type;
+// 2                u8 pri;
+// 3                u8 status;
+// 4                OSMesgQueue *retQueue;
+// 8            void *dramAddr;
+// C            uintptr_t devAddr;
+// 10            size_t size;
+// } OSIoMesg;
+s32 osRecvMesg(OSMesgQueue *mq, OSMesg *msg, s32 flag);
+void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 direction) {
     OSIoMesg sp48;
 
     D_80048D88 = physAddr;
     D_80048D8C = vAddr;
     D_80048D90 = size;
-    if (writeback == 1) {
+    if (direction == OS_WRITE) {
         osWritebackDCache(vAddr, size);
     } else {
         osInvalDCache(vAddr, size);
     }
-    if (size >= 0x10001) { // DMA in blocks
+    sp48.hdr.pri = 0;
+    sp48.hdr.retQueue = &D_80048D70;
+    // if (size >= 0x10001) { // DMA in blocks
         while (size >= 0x10001) {
-            if (D_80048CDC == 0) {
-                if (osEPiStartDma(handle, &sp48, writeback) == -1) {
-                    fatal_printf(&D_8003FF00, vAddr, physAddr, size);
+            if (D_80048CDC == NULL) {
+                if (osEPiStartDma(handle, &sp48, direction) == -1) {
+                    fatal_printf(&D_8003FF00, vAddr, physAddr, size); // "dma pi full %x %x %x\n"
                     while (1);
                 }
             } else {
-                osRecvMesg(&D_80048D70, 0, 1);
+                osRecvMesg(&D_80048D70, NULL, 1);
             }
             size -= 0x10000;
             vAddr =  (s32) vAddr + 0x10000;
             physAddr = (s32) physAddr + 0x10000;
         }
-    }
-    if (size != 0) { // Catch everything else
-        if (!D_80048CDC) {
-            if (osEPiStartDma(handle, &sp48, writeback) == -1) {
-                fatal_printf(&D_8003FF18, vAddr, physAddr, size);
+    // }
+    // sp48.size = size;
+    if (size != 0 && D_80048CDC == NULL) { // Catch everything else
+        // if (D_80048CDC == NULL) {
+            if (osEPiStartDma(handle, &sp48, direction) == -1) {
+                fatal_printf(&D_8003FF18, vAddr, physAddr, size); // "dma pi full %x %x %x\n"
                 while (1);
             }
-        }
+        // }
         osRecvMesg(&D_80048D70, 0, 1);
     }
 }
