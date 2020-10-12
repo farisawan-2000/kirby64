@@ -62,7 +62,7 @@ extern s32 D_801F41B4_ovl10;
 extern s32 func_800B6A2C; // this is actually a function
 
 void func_801E3244_ovl10(void);
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING_2
 void func_801E2F68_ovl10(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &func_800B6A2C;
     D_800DF150[D_8004A7C4->unk0] = &func_801E3244_ovl10;

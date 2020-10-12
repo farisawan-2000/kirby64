@@ -359,21 +359,28 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7554.s")
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A75B0.s")
 #endif
 
+extern const char D_800D5CE0[];
+extern const char D_800D5CF8[];
+extern const char D_800D5D14[];
+extern s16 D_800C0040[];
+void func_80023CB0_ovl1(u16);
 #ifdef MIPS_TO_C
+#define SL 0
 void func_800A7678(s32 arg0) {
-    s16 temp_v0;
+    u32 temp_v0;
 
     if (arg0 == 0x99999999) {
         print_error_stub(&D_800D5CE0, arg0);
         return;
     }
-    if ((arg0 << 0) < 0) {
+    // TODO: insert an instruction that shifts left by 0 here
+    temp_v0 = arg0;
+    if ((s32)temp_v0 < 0) {
         print_error_stub(&D_800D5CF8, arg0);
         return;
     }
-    temp_v0 = *(&D_800C0040 + (arg0 * 2));
-    if (temp_v0 >= 0) {
-        func_80023CB0_ovl1(temp_v0 & 0xFFFF, arg0);
+    if (D_800C0040[arg0] >= 0) {
+        func_80023CB0(D_800C0040[arg0]);
         return;
     }
     print_error_stub(&D_800D5D14, arg0);
