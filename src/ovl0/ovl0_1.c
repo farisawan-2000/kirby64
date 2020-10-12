@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <macros.h>
-// #define GLOBAL_ASM(...)
+#include "PR/os_pi.h"
+#include "main.h"
 
 extern OSMesgQueue *D_80048D70;
 extern OSMesg *D_80048D6C;
@@ -14,67 +15,51 @@ extern const char D_8003FF18[];
 extern u32 D_80048D90;
 extern void *D_80048D8C, *D_80048D88;
 extern u32 *D_80048CDC;
-#include "PR/os_pi.h"
+extern OSPiHandle *D_80048CF0;
 
-// an actual DMA Copy
-#ifdef NON_MATCHING
-// needs just a bit more tweaking to match
-// typedef struct {
-//              OSIoMesgHdr hdr;
-// 0                u16 type;
-// 2                u8 pri;
-// 3                u8 status;
-// 4                OSMesgQueue *retQueue;
-// 8            void *dramAddr;
-// C            uintptr_t devAddr;
-// 10            size_t size;
-// } OSIoMesg;
-s32 osRecvMesg(OSMesgQueue *mq, OSMesg *msg, s32 flag);
-void dma_copy(OSPiHandle *handle, void *physAddr, void *vAddr, u32 size, u8 direction) {
+// an actual DMA copy
+void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writeback) {
+    u32 pad;
     OSIoMesg sp48;
 
     D_80048D88 = physAddr;
     D_80048D8C = vAddr;
     D_80048D90 = size;
-    if (direction == OS_WRITE) {
+    if (writeback == 1) {
         osWritebackDCache(vAddr, size);
     } else {
         osInvalDCache(vAddr, size);
     }
     sp48.hdr.pri = 0;
     sp48.hdr.retQueue = &D_80048D70;
-    // if (size >= 0x10001) { // DMA in blocks
-        while (size >= 0x10001) {
-            if (D_80048CDC == NULL) {
-                if (osEPiStartDma(handle, &sp48, direction) == -1) {
-                    fatal_printf(&D_8003FF00, vAddr, physAddr, size); // "dma pi full %x %x %x\n"
-                    while (1);
-                }
-            } else {
-                osRecvMesg(&D_80048D70, NULL, 1);
-            }
-            size -= 0x10000;
-            vAddr =  (s32) vAddr + 0x10000;
-            physAddr = (s32) physAddr + 0x10000;
+    sp48.size = 0x10000;
+    size = size;
+    vAddr = vAddr;
+    physAddr = physAddr;
+    while (size >= 0x10001) {
+        sp48.dramAddr = vAddr;
+        sp48.devAddr = physAddr;
+        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
+            fatal_printf(D_8003FF00, physAddr, vAddr, size);
+            while (1);
         }
-    // }
-    // sp48.size = size;
-    if (size != 0 && D_80048CDC == NULL) { // Catch everything else
-        // if (D_80048CDC == NULL) {
-            if (osEPiStartDma(handle, &sp48, direction) == -1) {
-                fatal_printf(&D_8003FF18, vAddr, physAddr, size); // "dma pi full %x %x %x\n"
-                while (1);
-            }
-        // }
-        osRecvMesg(&D_80048D70, 0, 1);
+        osRecvMesg(&D_80048D70, NULL, 1);
+        size -= 0x10000;
+        physAddr += 0x10000;
+        vAddr += 0x10000;
+    }
+    if (size != 0) {
+        sp48.dramAddr = vAddr;
+        sp48.devAddr = physAddr;
+        sp48.size = size;
+        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
+            fatal_printf(D_8003FF18, physAddr, vAddr, size);
+            while (1);
+        }
+        osRecvMesg(&D_80048D70, NULL, 1);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002BD0.s")
-#endif
 
-extern OSPiHandle *D_80048CF0;
-#include "main.h"
 void dma_overlay_load(Overlay *ovl) {
     if ((s32) ovl->textEnd - (s32) ovl->textStart != 0) {
         osInvalICache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
@@ -83,8 +68,8 @@ void dma_overlay_load(Overlay *ovl) {
     if ((s32) ovl->dataEnd - (s32) ovl->dataStart != 0) {
         osInvalDCache((s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
     }
-    if ((s32) ovl->endAddr - (s32) ovl->startAddr != 0) {
-        dma_copy(D_80048CF0, (s32) ovl->startAddr, (s32) ovl->RAMStart, (s32) ovl->endAddr - (s32) ovl->startAddr, 0);
+    if ((u32) ovl->endAddr - (u32) ovl->startAddr != 0) {
+        dma_copy(D_80048CF0, (u32) ovl->startAddr, (u32) ovl->RAMStart, (u32) ovl->endAddr - (u32) ovl->startAddr, 0);
     }
     
     if ((s32) ovl->bssEnd - (s32) ovl->bssStart != 0) {
