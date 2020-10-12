@@ -107,7 +107,7 @@ void func_80000510(void) {
 extern void osCreateViManager(OSPri x);
 extern void func_80002EBC(void); // Initializes a PI Handle
 extern void func_80002BA0(void);
-extern void func_80002E48(u32 x, u32 *y, u32 z);
+extern void dma_copy_inval_dcache(u32 x, u32 *y, u32 z);
 extern void func_80002598(void *);
 extern void func_8001FD64(void *);
 extern void func_800051E0(void *);
@@ -120,7 +120,7 @@ void thread5_main(void *arg0) {
     func_80002EBC();
     osCreatePiManager(0x96, &D_80048AE8, &D_80048A20, 0x32);
     func_80002BA0();
-    func_80002E48(0xB0000B70, &D_80048900, 0x100); // copy function?
+    dma_copy_inval_dcache(0xB0000B70, &D_80048900, 0x100); // copy function?
     check_sp_imem();
     check_sp_dmem();
     osCreateMesgQueue(&D_80048A08, &D_80048A04, 1);

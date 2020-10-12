@@ -3,7 +3,7 @@ glabel func_800A6B64
 /* 04EDB8 800A6B68 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 04EDBC 800A6B6C 27A50018 */  addiu $a1, $sp, 0x18
 /* 04EDC0 800A6B70 24040F10 */  li    $a0, 3856
-/* 04EDC4 800A6B74 0C000B92 */  jal   func_80002E48_ovl1
+/* 04EDC4 800A6B74 0C000B92 */  jal   dma_copy_inval_dcache
 /* 04EDC8 800A6B78 24060010 */   li    $a2, 16
 /* 04EDCC 800A6B7C 8FAE0018 */  lw    $t6, 0x18($sp)
 /* 04EDD0 800A6B80 3C010408 */  lui   $at, (0x04080040 >> 16) # lui $at, 0x408

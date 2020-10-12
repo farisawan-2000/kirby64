@@ -28,7 +28,7 @@ glabel func_800A94F4
 /* 0517AC 800A955C AFA20024 */  sw    $v0, 0x24($sp)
 /* 0517B0 800A9560 00402825 */  move  $a1, $v0
 /* 0517B4 800A9564 00C13024 */  and   $a2, $a2, $at
-/* 0517B8 800A9568 0C000B92 */  jal   func_80002E48_ovl1
+/* 0517B8 800A9568 0C000B92 */  jal   dma_copy_inval_dcache
 /* 0517BC 800A956C 014B2021 */   addu  $a0, $t2, $t3
 /* 0517C0 800A9570 8FA70024 */  lw    $a3, 0x24($sp)
 /* 0517C4 800A9574 8CEC0000 */  lw    $t4, ($a3)

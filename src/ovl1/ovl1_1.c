@@ -2243,7 +2243,7 @@ void load_overlay(u32 arg0) {
     s32 sp18;
     ? phi_return;
 
-    func_80002E48_ovl1(0xF10, &sp18, 0x10);
+    dma_copy_inval_dcache(0xF10, &sp18, 0x10);
     if (sp18 != 0x04080040) {
         phi_return = 0;
     } else {

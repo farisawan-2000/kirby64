@@ -25,7 +25,7 @@ glabel func_800A8CE0
 /* 050F8C 800A8D3C 3421FFFC */  ori   $at, (0x00FFFFFC & 0xFFFF) # ori $at, $at, 0xfffc
 /* 050F90 800A8D40 00402825 */  move  $a1, $v0
 /* 050F94 800A8D44 8C640000 */  lw    $a0, ($v1)
-/* 050F98 800A8D48 0C000B92 */  jal   func_80002E48_ovl1
+/* 050F98 800A8D48 0C000B92 */  jal   dma_copy_inval_dcache
 /* 050F9C 800A8D4C 00E13024 */   and   $a2, $a3, $at
 /* 050FA0 800A8D50 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 050FA4 800A8D54 8FA20020 */  lw    $v0, 0x20($sp)

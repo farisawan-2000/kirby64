@@ -14,7 +14,7 @@ u32 D_803000E0[] = {
 };
 u32 D_80300170[ARRAY_COUNT(D_803000E0) + 0x10];
 
-extern u32 func_80002E48;
+extern u32 dma_copy_inval_dcache;
 
 extern u32 func_80300170(void);
 #define FUNC_ADDR_TO_JAL(x) ((((u32)&x & 0xFFFFFF) / 4) | 0xC000000)
@@ -30,7 +30,7 @@ void tamper_check_ovl20(void) {
 	}
 
 	// sets a jal address at runtime...?
-    D_80300170[0x4] = FUNC_ADDR_TO_JAL(func_80002E48);
+    D_80300170[0x4] = FUNC_ADDR_TO_JAL(dma_copy_inval_dcache);
 
     osWritebackDCache(&D_80300170, 0xC0);
     osInvalICache(&D_80300170, 0xC0);

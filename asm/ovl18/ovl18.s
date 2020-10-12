@@ -1361,7 +1361,7 @@ glabel func_8021F304_ovl18
 /* 231CA8 8021F308 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 231CAC 8021F30C 27A50018 */  addiu $a1, $sp, 0x18
 /* 231CB0 8021F310 24040F10 */  li    $a0, 3856
-/* 231CB4 8021F314 0C000B92 */  jal   func_80002E48_ovl18
+/* 231CB4 8021F314 0C000B92 */  jal   dma_copy_inval_dcache
 /* 231CB8 8021F318 24060010 */   li    $a2, 16
 /* 231CBC 8021F31C 8FAE0018 */  lw    $t6, 0x18($sp)
 /* 231CC0 8021F320 3C010408 */  lui   $at, (0x04080040 >> 16) # lui $at, 0x408
