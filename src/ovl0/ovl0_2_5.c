@@ -200,8 +200,8 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005530.s")
 #endif
 
-extern const char D_8003FF90[];
-extern const char D_8003FFC8[];
+// extern const char D_8003FF90[];
+// extern const char D_8003FFC8[];
 
 struct UNK_D_8004A390
 {
@@ -218,17 +218,17 @@ void func_8000561C(void) {
     for (i = 0; i < 4; i++)
     {
         if ((Gfx*)(D_8004A390[D_8004A450][i].unk4 + D_8004A390[D_8004A450][i].unk0) < gDisplayListHeads[i]) {
-            fatal_printf(D_8003FF90, i, (u8*)gDisplayListHeads[i] - D_8004A390[D_8004A450][i].unk0);
+            fatal_printf("gtl : DLBuffer over flow !  kind = %d  vol = %d byte\n", i, (u8*)gDisplayListHeads[i] - D_8004A390[D_8004A450][i].unk0);
             while (TRUE);
         }
     }
     if (D_8004A3F8.unk8 < D_8004A3F8.unkC) {
-        fatal_printf(D_8003FFC8, D_8004A3F8.unkC - D_8004A3F8.unk4);
+        fatal_printf("gtl : DynamicBuffer over flow !  %d byte\n", D_8004A3F8.unkC - D_8004A3F8.unk4);
         while (TRUE);
     }
 }
 
-extern const char D_8003FFF4[];
+// extern const char D_8003FFF4[];
 extern u32 D_80048C80;
 
 void func_800056DC(s32 arg0, u32 arg1) {
@@ -240,7 +240,7 @@ void func_800056DC(s32 arg0, u32 arg1) {
     arr[10] = arg1;
     func_80000980(arr);
     if (((u32)&D_80048C80 & 7) != 0) {
-        fatal_printf(D_8003FFF4, &D_80048C80);
+        fatal_printf("bad addr sc_rdp_output_len = %x\n", &D_80048C80);
         while (1);
     }
 }
@@ -251,20 +251,20 @@ extern u32 D_8003DCA0;
 // These are used in other functions too
 extern u32 D_8004A438, D_8004A43C;
 
-void func_80005734(s32 arg0, u32 arg1, s32 arg2) {
+void func_80005734(s32 arg0, u32 arg1, s32 bufSize) {
     D_8003DCA0 = arg0;
     D_8004A438 = arg1;
-    D_8004A43C = arg2;
+    D_8004A43C = bufSize;
     if ((arg0 == 2) || (arg0 == 1)) {
-        if (arg2 == 0) {
-            fatal_printf(D_80040018);
+        if (bufSize == 0) {
+            fatal_printf("gtl : Buffer size for RDP is zero !!\n");
             while (1);
         }
     } else {
 
     }
     if (arg0 == 1) {
-        func_800056DC(arg1, arg2);
+        func_800056DC(arg1, bufSize);
     }
 }
 

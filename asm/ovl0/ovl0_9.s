@@ -11853,6 +11853,8 @@ glabel osSpTaskStartGo
 /* 02E744 8002DB44 03E00008 */  jr    $ra
 /* 02E748 8002DB48 00000000 */   nop   
 
+# osSPTaskLoad?
+
 glabel func_8002DB4C
 /* 02E74C 8002DB4C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 02E750 8002DB50 AFBF0014 */  sw    $ra, 0x14($sp)
