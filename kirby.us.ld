@@ -192,6 +192,8 @@ SECTIONS
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/libultra.a:vimgr.o(.data);
       BUILD_DIR/data/kirby.039DF0.2.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_1.o(.rodata);
+      BUILD_DIR/data/kirby.039DF0.2.001.o(.data);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data);

@@ -40,7 +40,7 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writebac
         sp48.dramAddr = vAddr;
         sp48.devAddr = physAddr;
         if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
-            fatal_printf(D_8003FF00, physAddr, vAddr, size);
+            fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
         osRecvMesg(&D_80048D70, NULL, 1);
@@ -53,7 +53,7 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writebac
         sp48.devAddr = physAddr;
         sp48.size = size;
         if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
-            fatal_printf(D_8003FF18, physAddr, vAddr, size);
+            fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
         osRecvMesg(&D_80048D70, NULL, 1);
@@ -999,8 +999,7 @@ loop_61:
             phi_v0_5 = temp_v0_12;
             phi_return = temp_v0_12;
             phi_v1_15 = phi_v1_10;
-            if (0 < temp_a1) {
-loop_70:
+            while (0 < temp_a1) {
                 temp_t0 = phi_t0_2 + 1;
                 temp_t0->unk-1 = *phi_s2;
                 phi_s2 = phi_s2 + 1;
@@ -1010,9 +1009,6 @@ loop_70:
                 phi_v0_5 = temp_v0_12;
                 phi_return = temp_v0_12;
                 phi_v1_15 = phi_v1_10;
-                if (0 < phi_a1_3) {
-                    goto loop_70;
-                }
             }
         }
         phi_t0 = phi_t0_3;
