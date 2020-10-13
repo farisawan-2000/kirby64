@@ -54,9 +54,9 @@ SECTIONS
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
       BUILD_DIR/src/ovl0/main.o(.text);
-      BUILD_DIR/asm/ovl0/ovl0.o(.text);
+      BUILD_DIR/src/ovl0/ovl0.o(.text);
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
-      BUILD_DIR/asm/ovl0/ovl0_2.o(.text);
+      BUILD_DIR/src/ovl0/ovl0_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
