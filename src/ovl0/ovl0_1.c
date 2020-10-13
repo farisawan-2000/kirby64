@@ -142,7 +142,7 @@ void func_80002FC0(u8 *arg0, s32 arg1, void (*arg2)(void), u32 arg3) {
     } *temp_v0;
 
     arg2();
-    phi_a0 = arg0 + 2;
+    phi_a0 = arg0[2];
     phi_s5 = arg0[arg1];
     if (phi_a0 >= phi_s5) {
         arg2();
@@ -157,7 +157,7 @@ void func_80002FC0(u8 *arg0, s32 arg1, void (*arg2)(void), u32 arg3) {
     if (phi_a0 >= phi_s5) {
         arg2();
         phi_a0 = arg0;
-    }
+    } 
     phi_s2 = ((((((0 | *arg0) << 0x10) | *phi_a0) << 0x10) | *phi_a0) << 0x10) | *phi_a0;
     sp138 = (phi_s2 & 0x80000000) + arg3;
     phi_a0 = phi_a0 + 2;
