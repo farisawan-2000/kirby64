@@ -10,8 +10,6 @@ void func_80002BA0(void) {
     osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
 }
 
-extern const char D_8003FF00[];
-extern const char D_8003FF18[];
 extern u32 D_80048D90;
 extern void *D_80048D8C, *D_80048D88;
 extern u32 *D_80048CDC;

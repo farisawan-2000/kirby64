@@ -56,7 +56,3 @@ u32 D_8003FEF4 = 0x80001D9C;
 u32 D_8003FEF8 = 0x00000000;
 
 u32 D_8003FEFC = 0x00000000;
-
-// u8 D_8003FF00[] = "dma pi full %x %x %x\n";
-// u8 D_8003FF18[] = "dma pi full %x %x %x\n";
-
