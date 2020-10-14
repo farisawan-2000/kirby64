@@ -138,7 +138,7 @@ SECTIONS
       BUILD_DIR/libultra.a:epirawwrite.o(.text);
       BUILD_DIR/libultra.a:settimer.o(.text);
       BUILD_DIR/libultra.a:xldtob.o(.text);
-      . += 0x10;
+      . += 0x10; 
       BUILD_DIR/libultra.a:ldiv.o(.text);
       BUILD_DIR/libultra.a:xlitob.o(.text);
       BUILD_DIR/libultra.a:sirawwrite.o(.text);
@@ -156,6 +156,7 @@ SECTIONS
       BUILD_DIR/libultra.a:visetyscale.o(.text);
       BUILD_DIR/libultra.a:aisetnextbuf.o(.text);
       BUILD_DIR/libultra.a:ai.o(.text);
+      /*BUILD_DIR/libultra.a:conteepread.o(.text);*/
       BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
       BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
       BUILD_DIR/libultra.a:spsetpc.o(.text);
@@ -234,7 +235,7 @@ SECTIONS
       BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
       BUILD_DIR/libultra.a:vimgr.o(.bss);
       /*BUILD_DIR/asm/ovl0/vi_manager.o(.bss);*/
-      BUILD_DIR/asm/ovl0/ovl0_bss_end.o(.bss);
+      BUILD_DIR/libultra.a:conteepread.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
