@@ -982,7 +982,7 @@ loop_1:
     }
     temp_f0_2 = phi_s3->unk30;
     if (((0.0f != temp_f0_2) || (0.0f != phi_s3->unk34)) || (0.0f != phi_s3->unk38)) {
-        guRotateRPYF(&sp78, temp_f0_2, (bitwise s32) phi_s3->unk34, (bitwise s32) phi_s3->unk38);
+        _guRotateRPYF(&sp78, temp_f0_2, (bitwise s32) phi_s3->unk34, (bitwise s32) phi_s3->unk38);
         guMtxCatF(&spB8, &sp78, &spB8);
     } else {
 
@@ -1054,7 +1054,7 @@ block_23:
         if (phi_s0 != 0) {
             temp_f0_5 = phi_s0->unk8;
             if (((0.0f != temp_f0_5) || (0.0f != phi_s0->unkC)) || (0.0f != phi_s0->unk10)) {
-                guRotateRPYF(&sp78, temp_f0_5, (bitwise s32) phi_s0->unkC, (bitwise s32) phi_s0->unk10);
+                _guRotateRPYF(&sp78, temp_f0_5, (bitwise s32) phi_s0->unkC, (bitwise s32) phi_s0->unk10);
                 guMtxCatF(&spB8, &sp78, &spB8);
             } else {
 

@@ -70,7 +70,7 @@ glabel func_800A0558
 /* 0488AC 800A065C 44050000 */  mfc1  $a1, $f0
 .L800A0660_ovl1:
 /* 0488B0 800A0660 8E660034 */  lw    $a2, 0x34($s3)
-/* 0488B4 800A0664 0C006EEB */  jal   guRotateRPYF
+/* 0488B4 800A0664 0C006EEB */  jal   _guRotateRPYF
 /* 0488B8 800A0668 8E670038 */   lw    $a3, 0x38($s3)
 /* 0488BC 800A066C 02A02025 */  move  $a0, $s5
 /* 0488C0 800A0670 02802825 */  move  $a1, $s4
@@ -187,7 +187,7 @@ glabel func_800A0558
 /* 048A54 800A0804 44050000 */  mfc1  $a1, $f0
 .L800A0808_ovl1:
 /* 048A58 800A0808 8E06000C */  lw    $a2, 0xc($s0)
-/* 048A5C 800A080C 0C006EEB */  jal   guRotateRPYF
+/* 048A5C 800A080C 0C006EEB */  jal   _guRotateRPYF
 /* 048A60 800A0810 8E070010 */   lw    $a3, 0x10($s0)
 /* 048A64 800A0814 02A02025 */  move  $a0, $s5
 /* 048A68 800A0818 02802825 */  move  $a1, $s4

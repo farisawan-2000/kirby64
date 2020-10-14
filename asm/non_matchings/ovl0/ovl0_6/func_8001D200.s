@@ -18,7 +18,7 @@ glabel func_8001D200
 /* 01DE40 8001D240 46024283 */  div.s $f10, $f8, $f2
 /* 01DE44 8001D244 44072000 */  mfc1  $a3, $f4
 /* 01DE48 8001D248 44065000 */  mfc1  $a2, $f10
-/* 01DE4C 8001D24C 0C006EEB */  jal   guRotateRPYF
+/* 01DE4C 8001D24C 0C006EEB */  jal   _guRotateRPYF
 /* 01DE50 8001D250 00000000 */   nop   
 /* 01DE54 8001D254 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 01DE58 8001D258 27BD0018 */  addiu $sp, $sp, 0x18

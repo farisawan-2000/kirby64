@@ -3,12 +3,6 @@
 8000030C osResetType
 8000031C osAppNMIBuffer
 80000900 __dummy
-80002B70 osViExtendVStart
-80002B88 myfree
-800067B8 leoInitUnit_atten
-80007648 __osSiRelAccess
-80008280 __osGetActiveQueue
-8000B6B4 n_alSynFreeFX
 80019A30 guMtxF2L
 80019C60 guMtxF2L
 80019EB0 guLookAtF
@@ -71,7 +65,6 @@
 8002D440 osStopThread
 8002D500 osRecvMesg
 8002D640 osSetIntMask
-8002D6E0 __sinf
 8002D8A0 sptask_text_0000
 8002D9BC osSpTaskLoad
 8002DB4C osSpTaskStartGo
