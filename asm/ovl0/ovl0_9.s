@@ -11742,7 +11742,7 @@ glabel func_8002D8A0
 /* 02E5B4 8002D9B4 03E00008 */  jr    $ra
 /* 02E5B8 8002D9B8 00000000 */   nop   
 
-glabel osSpTaskStartGo
+glabel osSpTaskLoad
 /* 02E5BC 8002D9BC 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 02E5C0 8002D9C0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 02E5C4 8002D9C4 AFA40020 */  sw    $a0, 0x20($sp)

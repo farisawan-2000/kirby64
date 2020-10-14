@@ -57,7 +57,7 @@ glabel func_800022DC
 /* 002FA8 800023A8 1501000C */  bne   $t0, $at, .L800023DC_ovl0
 /* 002FAC 800023AC 00000000 */   nop   
 /* 002FB0 800023B0 8C848B90 */  lw    $a0, %lo(D_80048B90)($a0)
-/* 002FB4 800023B4 0C00B66F */  jal   osSpTaskStartGo
+/* 002FB4 800023B4 0C00B66F */  jal   osSpTaskLoad
 /* 002FB8 800023B8 24840028 */   addiu $a0, $a0, 0x28
 /* 002FBC 800023BC 3C048005 */  lui   $a0, %hi(D_80048B90) # $a0, 0x8005
 /* 002FC0 800023C0 8C848B90 */  lw    $a0, %lo(D_80048B90)($a0)

@@ -67,7 +67,7 @@ glabel func_80001E20
 /* 002B00 80001F00 8E640000 */  lw    $a0, ($s3)
 .L80001F04_ovl0:
 /* 002B04 80001F04 24120001 */  li    $s2, 1
-/* 002B08 80001F08 0C00B66F */  jal   osSpTaskStartGo
+/* 002B08 80001F08 0C00B66F */  jal   osSpTaskLoad
 /* 002B0C 80001F0C 24840028 */   addiu $a0, $a0, 0x28
 /* 002B10 80001F10 8E640000 */  lw    $a0, ($s3)
 /* 002B14 80001F14 0C00B6D3 */  jal   func_8002DB4C

@@ -40,6 +40,6 @@
 "osCreateThread","8002fbe0","Function","undefined","Global","User Defined","0","0"
 "__osPackRequestData","8002f4d0","Function","undefined","Global","User Defined","0","0"
 "osDestroyThread","8002db90","Function","undefined","Global","User Defined","0","0"
-"osSpTaskStartGo","8002d9bc","Function","undefined","Global","User Defined","0","0"
+"osSpTaskLoad","8002d9bc","Function","undefined","Global","User Defined","0","0"
 "osRecvMesg","8002d500","Function","undefined","Global","User Defined","0","0"
 "osStopThread","8002d440","Function","undefined","Global","User Defined","0","0"

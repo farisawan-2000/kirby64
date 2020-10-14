@@ -103,10 +103,10 @@ typedef u32 OSYieldResult;
 
 #define osSpTaskStart(p) \
     osSpTaskLoad(p);     \
-    osSpTaskStartGo(p);
+    osSpTaskLoad(p);
 
 void osSpTaskLoad(OSTask *task);
-void osSpTaskStartGo(OSTask *task);
+void osSpTaskLoad(OSTask *task);
 void osSpTaskYield(void);
 OSYieldResult osSpTaskYielded(OSTask *task);
 

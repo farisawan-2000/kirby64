@@ -782,7 +782,7 @@ void func_8000189C(void *arg0) {
     } else {
         temp_a0 = arg0 + 0x28;
         sp1C = temp_a0;
-        osSpTaskStartGo(temp_a0);
+        osSpTaskLoad(temp_a0);
         func_8002DB4C(temp_a0);
         arg0->unk8 = 2;
     }
@@ -808,7 +808,7 @@ void func_80001924(void *arg0) {
     } else {
         temp_a0 = arg0 + 0x28;
         sp1C = temp_a0;
-        osSpTaskStartGo(temp_a0);
+        osSpTaskLoad(temp_a0);
         func_8002DB4C(temp_a0);
         arg0->unk8 = 2;
     }
@@ -899,7 +899,7 @@ loop_8:
             }
         }
     } else {
-        osSpTaskStartGo(D_80048B94 + 0x28);
+        osSpTaskLoad(D_80048B94 + 0x28);
         func_8002DB4C(D_80048B94 + 0x28);
         D_80048B94->unk8 = 2;
         temp_a0_2 = D_80048B94;
@@ -1012,7 +1012,7 @@ void *func_8000206C(? arg1, ? arg2) {
             } else {
                 D_80048B8C->unk8 = 6;
             }
-            osSpTaskStartGo(D_80048B90 + 0x28);
+            osSpTaskLoad(D_80048B90 + 0x28);
             func_8002DB4C(D_80048B90 + 0x28);
             D_80048B90->unk8 = 2;
             temp_v0_3 = D_80048B8C;
@@ -1118,7 +1118,7 @@ void *func_800022DC(void) {
                 phi_v0_2 = D_80048B8C;
             }
             if (phi_v0_2->unk8 == 4) {
-                osSpTaskStartGo(D_80048B90 + 0x28);
+                osSpTaskLoad(D_80048B90 + 0x28);
                 func_8002DB4C(D_80048B90 + 0x28);
                 D_80048B90->unk8 = 2;
             }
