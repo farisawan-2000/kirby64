@@ -3,8 +3,6 @@
 8000030C osResetType
 8000031C osAppNMIBuffer
 80000900 __dummy
-80019A30 guMtxF2L
-80019C60 guMtxF2L
 80019EB0 guLookAtF
 8001A13C guLookAt
 8001A1B0 guLookAtStereoF
