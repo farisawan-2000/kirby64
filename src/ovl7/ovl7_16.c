@@ -75,7 +75,7 @@ block_10:
     func_800A2300_ovl7(arg0);
     sp1C->unk34 = 0;
     D_800DF150[D_8004A7C4->unk0] = NULL;
-    func_800B19F4_ovl7(0x7D, D_8004A7C4->unk0);
+    func_800B19F4(0x7D, D_8004A7C4->unk0);
     func_8000B6BC(0xF);
     func_8019D958_ovl7((u16)D_8004A7C4->unk0);
 }
@@ -545,7 +545,7 @@ block_14:
         sp28->unk34 = 0;
         temp_v0_6 = D_8004A7C4;
         *(&D_800DF150 + (*temp_v0_6 * 4)) = 0;
-        func_800B19F4_ovl7(0x7D, *temp_v0_6);
+        func_800B19F4(0x7D, *temp_v0_6);
         func_8000B6BC(0x1E);
         D_8012E7D4 = (u8)2;
         func_800AFA14_ovl7();
@@ -601,7 +601,7 @@ loop_25:
     func_800B3520_ovl7();
     temp_v0_11 = D_8004A7C4;
     *(&D_800DF150 + (*temp_v0_11 * 4)) = 0;
-    func_800B19F4_ovl7(0x7D, *temp_v0_11);
+    func_800B19F4(0x7D, *temp_v0_11);
     temp_v0_12 = D_8004A7C4;
     temp_a2_2 = *temp_v0_12;
     temp_v1_5 = *(&D_800E77A0 + (temp_a2_2 * 2));

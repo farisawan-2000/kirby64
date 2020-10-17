@@ -3266,7 +3266,7 @@ glabel func_801A3BA4_ovl7
 /* 149CF4 801A3C84 24C6A7C4 */  addiu $a2, %lo(D_8004A7C4) # addiu $a2, $a2, -0x583c
 /* 149CF8 801A3C88 8CC80000 */  lw    $t0, ($a2)
 /* 149CFC 801A3C8C 2404003E */  li    $a0, 62
-/* 149D00 801A3C90 0C02C67D */  jal   func_800B19F4_ovl7
+/* 149D00 801A3C90 0C02C67D */  jal   func_800B19F4
 /* 149D04 801A3C94 8D050000 */   lw    $a1, ($t0)
 /* 149D08 801A3C98 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 149D0C 801A3C9C 27BD0018 */  addiu $sp, $sp, 0x18

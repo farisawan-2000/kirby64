@@ -1153,9 +1153,9 @@ loop_1:
         phi_return = temp_v0;
         if (0x23 != temp_v0) {
             if ((*(&D_800DD8D0 + phi_s1) & 0x40) != 0) {
-                phi_return = func_800B19F4_ovl2(0x7F, phi_s0);
+                phi_return = func_800B19F4(0x7F, phi_s0);
             } else {
-                phi_return = func_800B19F4_ovl2(0x3F, phi_s0);
+                phi_return = func_800B19F4(0x3F, phi_s0);
             }
         }
     }

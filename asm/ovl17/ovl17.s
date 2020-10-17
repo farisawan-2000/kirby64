@@ -7692,7 +7692,7 @@ glabel func_801E2320_ovl17
 /* 22D594 801E23A4 000C6880 */  sll   $t5, $t4, 2
 /* 22D598 801E23A8 002D0821 */  addu  $at, $at, $t5
 /* 22D59C 801E23AC AC20F150 */  sw    $zero, -0xeb0($at)
-/* 22D5A0 801E23B0 0C02C67D */  jal   func_800B19F4_ovl17
+/* 22D5A0 801E23B0 0C02C67D */  jal   func_800B19F4
 /* 22D5A4 801E23B4 8C450000 */   lw    $a1, ($v0)
 /* 22D5A8 801E23B8 0C002DAF */  jal   func_8000B6BC
 /* 22D5AC 801E23BC 24040001 */   li    $a0, 1

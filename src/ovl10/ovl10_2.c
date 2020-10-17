@@ -4451,7 +4451,7 @@ loop_4:
     }
     func_800F98EC_ovl10(phi_v0, -*(D_800E6A10 + phi_v1) * 160.0f);
     func_800B33F4_ovl10();
-    func_800B19F4_ovl10(0x7D, D_8004A7C4->unk0);
+    func_800B19F4(0x7D, D_8004A7C4->unk0);
     func_800AFA14_ovl10();
 }
 #else
