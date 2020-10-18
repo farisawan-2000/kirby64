@@ -21,7 +21,7 @@ void *func_800A6E64(void) {
     void *phi_a2;
 
     D_800D79B0 = 0;
-    D_800D79D8 = 0;
+    D_800D79D8[0] = 0;
     D_800D7A00 = 0;
     *D_800BF8F0 = 0;
     D_800D79B4 = 0;
@@ -33,6 +33,10 @@ void *func_800A6E64(void) {
     phi_a1 = &D_800D7A08;
     phi_a2 = &D_800BF8F8;
 loop_1:
+    D_800D79B8[i] = 0;
+    D_800D79E0[i] = 0;
+    D_800D7A08[i] = 0;
+    D_800BF8F8[i] = 0;
     phi_v1->unk0 = 0;
     phi_a0->unk0 = 0;
     phi_a1->unk0 = 0;
@@ -131,7 +135,7 @@ f32 func_800A70C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     void *temp_v0;
     f32 phi_return;
 
-    temp_v0 = *(&D_800D79D8 + (((((arg0 & 0xFFFF) - 0xA) >> 1) & 0xFFFF) * 4));
+    temp_v0 = D_800D79D8[(((((arg0 & 0xFFFF) - 0xA) >> 1) & 0xFFFF))];
     phi_return = (bitwise f32) temp_v0;
     if (temp_v0 != 0) {
         temp_f2 = D_800D5CB0;

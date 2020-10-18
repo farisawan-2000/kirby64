@@ -1667,7 +1667,7 @@ s32 func_80114A14_ovl2(void *arg0, void *arg1, s8 arg2) {
     temp_s1->unk2 = (u8)0;
     temp_s1->unk98 = 0;
     temp_s1->unk0 = (s8) D_8012D940;
-    temp_v0 = func_800AEC08_ovl2(0x1D, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1D, 0x1E, 0x3C);
     sp24 = temp_v0;
     temp_s1->unk1 = (s8) temp_v0;
     temp_v1 = (temp_v0 * 4) + &D_800DE350;
@@ -1781,7 +1781,7 @@ s32 func_80114D54_ovl2(s32 arg0) {
     phi_return = 0;
     if (temp_v1->unk4E2E != 0) {
         sp1C = (s32) temp_v1->unk4E2E;
-        temp_ret = func_800AEC08_ovl2(0x1E, 0x1E, 0x3C);
+        temp_ret = func_800AEC08(0x1E, 0x1E, 0x3C);
         ((temp_ret * 4) + 0x800E0000)->unk-1CB0->unk4C = (?32) temp_v1->unk4E2E;
         phi_return = temp_ret;
     }
@@ -1805,7 +1805,7 @@ s32 func_80114DBC_ovl2(u32 arg0, s32 arg1) {
     if (arg0 < 0x115U) {
         temp_v1 = (arg0 * 0x1C) + &D_80124E14;
         if (*temp_v1 == 0) {
-            temp_ret = func_800AEC08_ovl2(0x1D, 0x1E, 0x3C);
+            temp_ret = func_800AEC08(0x1D, 0x1E, 0x3C);
             ((temp_ret * 4) + 0x800E0000)->unk-1CB0->unk48 = &D_80114E80;
             return temp_ret;
         }
@@ -2289,7 +2289,7 @@ void func_80115D38_ovl2(void *arg0) {
     void *temp_a0;
 
     sp24 = *arg0;
-    temp_v0 = func_800AEC08_ovl2(0x1E, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1E, 0x1E, 0x3C);
     temp_v1 = temp_v0 * 4;
     temp_t8 = (temp_v1 + 0x800E0000)->unk-1CB0;
     temp_a0 = temp_v1 + 0x800E0000;

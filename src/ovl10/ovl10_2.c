@@ -365,7 +365,7 @@ void func_801E3A64_ovl10(void) {
     // for (phi_s0 = 0; phi_s0 < 3; phi_s0++)
         phi_s0 = 0;
     loop_1:
-        temp_v0 = func_800AEC08_ovl10(0x18, 0x1E, 0x3C);
+        temp_v0 = func_800AEC08(0x18, 0x1E, 0x3C);
         if (temp_v0 >= 0x3C) {
     block_3:
             sp44 = temp_v0;
@@ -572,7 +572,7 @@ void func_801E409C_ovl10(void) {
     struct UnkStruct8004A7C4 *temp_v1;
     void *temp_a2;
 
-    temp_v0 = func_800AEC08_ovl10(0x18, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x18, 0x1E, 0x3C);
     if (temp_v0 >= 0x3C || temp_v0 == -1) {
         sp18 = temp_v0;
         print_error_stub(&D_801F4AC8_ovl10);

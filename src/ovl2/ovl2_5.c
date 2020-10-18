@@ -906,7 +906,7 @@ void *func_800FF2C8_ovl2(void) {
 
     sp5C = D_8004A7C4;
     D_8012B998.unk4 = func_800A8BAC_ovl2(0x20004);
-    temp_v0_2 = func_800AEC08_ovl2(0x23, 0x3C, 0x50);
+    temp_v0_2 = func_800AEC08(0x23, 0x3C, 0x50);
     temp_v1 = temp_v0_2 * 4;
     temp_a0 = temp_v1 + 0x800E0000;
     D_8012B998.unk0 = (temp_v1 + 0x800E0000)->unk-1CB0;

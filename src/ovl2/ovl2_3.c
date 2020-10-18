@@ -2739,7 +2739,7 @@ s32 func_800FCA84_ovl2(s32 arg0, u8 bankID, u8 entID,
         return -1;
     }
 
-    temp_v0 = func_800AEC08_ovl2(temp_a0, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(temp_a0, 0x1E, 0x3C);
     if (temp_v0 == -1) {
         return -1;
     }

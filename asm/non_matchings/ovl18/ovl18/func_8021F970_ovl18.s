@@ -99,7 +99,7 @@ glabel func_8021F970_ovl18
 /* 232494 8021FAF4 AC600014 */  sw    $zero, 0x14($v1)
 /* 232498 8021FAF8 AC600018 */  sw    $zero, 0x18($v1)
 /* 23249C 8021FAFC E4C80020 */  swc1  $f8, 0x20($a2)
-/* 2324A0 8021FB00 0C02C67D */  jal   func_800B19F4_ovl18
+/* 2324A0 8021FB00 0C02C67D */  jal   func_800B19F4
 /* 2324A4 8021FB04 8C450000 */   lw    $a1, ($v0)
 /* 2324A8 8021FB08 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 2324AC 8021FB0C 27BD0020 */  addiu $sp, $sp, 0x20

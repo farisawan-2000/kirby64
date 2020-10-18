@@ -3,7 +3,7 @@ glabel func_8011C838_ovl2
 /* 0A52AC 8011C83C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A52B0 8011C840 24040012 */  li    $a0, 18
 /* 0A52B4 8011C844 00002825 */  move  $a1, $zero
-/* 0A52B8 8011C848 0C02BB02 */  jal   func_800AEC08_ovl2
+/* 0A52B8 8011C848 0C02BB02 */  jal   func_800AEC08
 /* 0A52BC 8011C84C 24060001 */   li    $a2, 1
 /* 0A52C0 8011C850 00027080 */  sll   $t6, $v0, 2
 /* 0A52C4 8011C854 3C03800E */  lui   $v1, 0x800e

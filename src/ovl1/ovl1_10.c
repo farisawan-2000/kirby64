@@ -210,7 +210,7 @@ loop_2:
         }
         goto loop_1;
     }
-    func_800BAC0C_ovl1(sp54);
+    func_800BAC0C(sp54);
     goto loop_1;
 }
 #else

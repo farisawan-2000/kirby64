@@ -182,6 +182,8 @@ Lights1 D_800BE548 = gdSPDefLights1(
     0xFF, 0xFF, 0xFF,
     0x32, 0x3C, 0x28);
 
+
+// number of shards per icon (supposedly 7 long)
 u32 D_800BE560 = 0x00000004;
 
 u32 D_800BE564 = 0x00000005;

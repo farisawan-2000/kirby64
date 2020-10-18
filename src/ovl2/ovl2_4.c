@@ -221,7 +221,7 @@ s32 func_800FD9D4_ovl2(s32 arg0) {
     s32 temp_ret;
     s32 temp_v0;
 
-    temp_ret = func_800AEC08_ovl2(0x22, 0x3C, 0x4A);
+    temp_ret = func_800AEC08(0x22, 0x3C, 0x4A);
     temp_v0 = temp_ret;
     if (temp_v0 == -1) {
         sp1C = temp_v0;

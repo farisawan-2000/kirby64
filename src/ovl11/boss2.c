@@ -97,7 +97,7 @@ void func_801DB34C_ovl11(void *arg3) {
     phi_a3 = arg3;
     phi_s3 = 0;
 loop_1:
-    temp_v0 = func_800AEC08_ovl11(0x19, 0x1E, 0x3C, phi_a3);
+    temp_v0 = func_800AEC08(0x19, 0x1E, 0x3C, phi_a3);
     if (temp_v0 >= 0x3C) {
 block_3:
         sp50 = temp_v0;

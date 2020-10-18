@@ -26,7 +26,7 @@ extern f32 D_800E2950[];
 
 extern f32 D_801CE578;
 
-s32 func_800AEC08_ovl7(s32, s32, s32);
+s32 func_800AEC08(s32, s32, s32);
 
 void func_800A4794_ovl7(Vector*,s32,s32);
 void func_800A4DB8_ovl7(Vector*,s32);
@@ -37,34 +37,34 @@ void func_801BC44C_ovl7(s32 arg0);
 void func_801BC72C_ovl7(s32 arg0);
 
 s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
-    s32 temp_v0;
+    s32 idx;
     Vector sp28;
     Vector sp1C;
 
-    temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
-    if (temp_v0 == -1) {
+    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    if (idx == -1) {
         print_error_stub("NmlBlock Request Error![yakulib.cc]\n");
         return -1;
     }
-    D_800E0D50[temp_v0] = arg2;
-    D_800E76C0[temp_v0] = 0xFF;
-    D_800E7730[temp_v0] = 6;
-    D_800E77A0[temp_v0] = 0;
-    D_800E7880[temp_v0] = 0;
+    D_800E0D50[idx] = arg2;
+    D_800E76C0[idx] = 0xFF;
+    D_800E7730[idx] = 6;
+    D_800E77A0[idx] = 0;
+    D_800E7880[idx] = 0;
 
-    D_800E8E60[temp_v0] = 1;
-    D_800E1D10[temp_v0] = arg1;
-    func_800A4794_ovl7(&sp28, arg0, temp_v0);
-    D_800E25D0[temp_v0] = sp28.x;
-    D_800E2790[temp_v0] = sp28.y;
-    D_800E2950[temp_v0] = sp28.z;
+    D_800E8E60[idx] = 1;
+    D_800E1D10[idx] = arg1;
+    func_800A4794_ovl7(&sp28, arg0, idx);
+    D_800E25D0[idx] = sp28.x;
+    D_800E2790[idx] = sp28.y;
+    D_800E2950[idx] = sp28.z;
     func_800A4DB8_ovl7(&sp1C, arg0);
-    D_800E4010[temp_v0] = sp1C.x;
-    D_800E41D0[temp_v0] = sp1C.y + D_801CE578;
-    D_800E4390[temp_v0] = sp1C.z;
-    D_800E17D0[temp_v0] = D_800E17D0[arg2];
-    D_800E6A10[temp_v0] = D_800E6A10[arg2];
-    return temp_v0;
+    D_800E4010[idx] = sp1C.x;
+    D_800E41D0[idx] = sp1C.y + D_801CE578;
+    D_800E4390[idx] = sp1C.z;
+    D_800E17D0[idx] = D_800E17D0[arg2];
+    D_800E6A10[idx] = D_800E6A10[arg2];
+    return idx;
 }
 
 
@@ -73,36 +73,33 @@ extern f32 D_800E6BD0[];
 extern s32 D_800D7090;
 extern f32 func_8019B144_ovl7(void);
 s32 func_801BBFE4_ovl7(s32 arg0) {
-    s32 temp_v0;
+    s32 idx;
     s32 sp1C;
 
-    temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
-    if (temp_v0 == -1) {
+    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    if (idx == -1) {
         print_error_stub("reqDumpStarTrk Request Error!![yakulib.cc]\n");
         return -1;
     }
-    D_800E76C0[temp_v0] = 0xFF;
-    D_800E7730[temp_v0] = 6;
-    // temp_v1 = D_800E0D50[temp_v0];
-    // u16 array
-    D_800E77A0[temp_v0] = arg0;
-    D_800E7880[temp_v0] = 0;
-    D_800E5F90[temp_v0] = D_800E5F90[D_800E0D50[temp_v0]];
-    D_800E6BD0[temp_v0] = D_800E6BD0[D_800E0D50[temp_v0]];
-    D_800E6A10[temp_v0] = D_800E6A10[D_800E0D50[temp_v0]];
-    if (D_800E0D50[temp_v0] == 0) {
-        sp1C = temp_v0;
-        D_800E2790[temp_v0] = func_8019B144_ovl7();
+    D_800E76C0[idx] = 0xFF;
+    D_800E7730[idx] = 6;
+    D_800E77A0[idx] = arg0;
+    D_800E7880[idx] = 0;
+    D_800E5F90[idx] = D_800E5F90[D_800E0D50[idx]];
+    D_800E6BD0[idx] = D_800E6BD0[D_800E0D50[idx]];
+    D_800E6A10[idx] = D_800E6A10[D_800E0D50[idx]];
+    if (D_800E0D50[idx] == 0) {
+        sp1C = idx;
+        D_800E2790[idx] = func_8019B144_ovl7();
     } else {
-        D_800E2790[temp_v0] = D_800E2790[D_800E0D50[temp_v0]];
+        D_800E2790[idx] = D_800E2790[D_800E0D50[idx]];
     }
-    // D_800E0D50[temp_v0] = D_800E0D50[temp_v0];
-    D_800E4010[temp_v0] = D_800E4010[D_800E0D50[temp_v0]];
-    D_800E41D0[temp_v0] = D_800E41D0[D_800E0D50[temp_v0]];
-    D_800E4390[temp_v0] = D_800E4390[D_800E0D50[temp_v0]];
-    D_800E8E60[temp_v0] = 0;
+    D_800E4010[idx] = D_800E4010[D_800E0D50[idx]];
+    D_800E41D0[idx] = D_800E41D0[D_800E0D50[idx]];
+    D_800E4390[idx] = D_800E4390[D_800E0D50[idx]];
+    D_800E8E60[idx] = 0;
     D_800E8220[D_8004A7C4->unk0] = 1;
-    sp1C = temp_v0;
+    sp1C = idx;
     func_801BC1AC_ovl7(arg0);
     D_800D7090 = sp1C;
     return sp1C;
@@ -121,7 +118,7 @@ s32 func_801BC27C_ovl7(s32 arg0, s32 arg1) {
     s32 temp_v0;
     s32 sp1C;
 
-    temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1F, 0x1E, 0x3C);
     if (temp_v0 == -1) {
         print_error_stub("reqMixStarTrk Request Error!![yakulib.cc]\n");
         return -1;
@@ -167,7 +164,7 @@ s32 func_801BC580_ovl7(s32 arg0) {
     s32 temp_v0;
     s32 sp1C;
 
-    temp_v0 = func_800AEC08_ovl7(0x1F, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1F, 0x1E, 0x3C);
     if (temp_v0 == -1) {
         print_error_stub(&D_801CE520);
         return -1;
@@ -206,7 +203,7 @@ s32 func_801BC794_ovl7(s32 arg0) {
     s32 temp_v0;
     s32 sp1C;
 
-    temp_v0 = func_800AEC08_ovl7(0x1C, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1C, 0x1E, 0x3C);
     if (temp_v0 == -1) {
         print_error_stub(&D_801CE54C);
         return -1;

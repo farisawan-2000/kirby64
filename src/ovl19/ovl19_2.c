@@ -293,7 +293,7 @@ f32 func_8021FA2C_ovl19(void) {
     void *temp_v1;
 
     sp2C = D_800E9AA0[D_8004A7C4->unk0];
-    temp_v0 = func_800AEC08_ovl19(0x1C, 0x1E, 0x3C);
+    temp_v0 = func_800AEC08(0x1C, 0x1E, 0x3C);
     if (temp_v0 >= 0x3C) {
 block_2:
         if (temp_v0 != -1) {

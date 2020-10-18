@@ -289,22 +289,25 @@ extern void func_800B143C(void);
 extern void func_800B4AB8(void);
 extern void func_800B158C(void);
 
+// todo: should this really be a define?
+#define FAIL -1
+
 s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
     s32 idx;
 
     switch (arg0) {
         case 0:
             idx = func_800AE7A8_ovl1(arg1, arg2, arg3, &func_800B4924, &func_800B143C);
-            if (idx == -1) {
-                return -1;
+            if (idx == FAIL) {
+                return FAIL;
             }
             break;
         case 1:
-            return -1;
+            return FAIL;
         case 2:
             idx = func_800AE7A8_ovl1(arg1, arg2, arg3, &func_800B4AB8, &func_800B158C);
-            if (idx == -1) {
-                return -1;
+            if (idx == FAIL) {
+                return FAIL;
             }
             D_800DE350[idx]->unk4C = 0;
             D_800E41D0[idx] = 0.0f;
@@ -315,15 +318,15 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return idx;
 }
 
-void func_800AEC08(s32 arg0, s32 arg1, s32 arg2) {
-    func_800AEADC_ovl1(0, arg0, arg1, arg2);
+s32 func_800AEC08(s32 arg0, s32 arg1, s32 arg2) {
+    return func_800AEADC_ovl1(0, arg0, arg1, arg2);
 }
 
-void func_800AEC3C(s32 arg0, s32 arg1, s32 arg2) {
-    func_800AEADC_ovl1(1, arg0, arg1, arg2);
+s32 func_800AEC3C(s32 arg0, s32 arg1, s32 arg2) {
+    return func_800AEADC_ovl1(1, arg0, arg1, arg2);
 }
 
-void func_800AEC70(s32 arg0, s32 arg1, s32 arg2) {
-    func_800AEADC_ovl1(2, arg0, arg1, arg2);
+s32 func_800AEC70(s32 arg0, s32 arg1, s32 arg2) {
+    return func_800AEADC_ovl1(2, arg0, arg1, arg2);
 }
 

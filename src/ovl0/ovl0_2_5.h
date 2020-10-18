@@ -24,7 +24,14 @@ struct ObjThreadStack {
     struct ObjThreadStack *unk0;
     u32 unk4;
     // This might be a u8 array
-    u32 unk8[16];
+    u32 unk8;
+
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 *unk18;
+    struct ObjThread *unk1C;
+    u32 pad[10];
 };
 
 struct ObjProcess {

@@ -525,7 +525,7 @@ void func_80152DB8(void) {
 
     sp2C = D_8004A7C4;
     temp_a1 = D_8015A560->unk3;
-    temp_v0 = func_800AEC08_ovl6(0x11, temp_a1, temp_a1 + 1);
+    temp_v0 = func_800AEC08(0x11, temp_a1, temp_a1 + 1);
     temp_v1 = temp_v0 * 4;
     temp_a0 = temp_v1 + 0x800E0000;
     D_8004A7C4 = (temp_v1 + 0x800E0000)->unk-1CB0;
@@ -1016,7 +1016,7 @@ void func_80153868(void) {
 
     if ((D_8015A690 == 0) && (D_800DE44C == 0)) {
         sp1C = D_8004A7C4;
-        func_800AEC08_ovl6(0x11, 0x3F, 0x40);
+        func_800AEC08(0x11, 0x3F, 0x40);
         D_8004A7C4 = D_800DE44C;
         func_80008DA8_ovl6(D_800DE510[0x3F]);
         func_80008DA8_ovl6(D_800DE6D0[0x3F]);
