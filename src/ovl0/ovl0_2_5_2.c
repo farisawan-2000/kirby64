@@ -2589,30 +2589,28 @@ void func_8000B57C(void *arg0, s32 arg1, s32 arg2) {
     void *phi_a0;
 
     phi_s6 = D_8004A578;
-loop_1:
-    temp_a0 = *phi_s6;
-    phi_a0 = temp_a0;
-    if (temp_a0 != 0) {
-loop_2:
-        temp_s0 = phi_a0->unk4;
-        if ((arg0(phi_a0, arg1) != 0) && (arg2 == 1)) {
-            return;
+    do {
+        phi_a0 = *phi_s6;
+        if (phi_a0 != 0) {
+    loop_2:
+            temp_s0 = phi_a0->unk4;
+            if ((arg0(phi_a0, arg1) != 0) && (arg2 == 1)) {
+                return;
+            }
+            phi_a0 = temp_s0;
+            if (temp_s0 != 0) {
+                goto loop_2;
+            }
         }
-        phi_a0 = temp_s0;
-        if (temp_s0 != 0) {
-            goto loop_2;
-        }
+        phi_s6 += 4;
     }
-    temp_s6 = phi_s6 + 4;
-    phi_s6 = temp_s6;
-    if (temp_s6 != D_8004A5F8) {
-        goto loop_1;
-    }
+    while (phi_s6 != D_8004A5F8);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B57C.s")
 #endif
 
+void *func_8000B63C(void (*arg0)(void), s32 arg1);
 #ifdef MIPS_TO_C
 void *func_8000B63C(void *arg0, s32 arg1) {
     if (arg1 == *arg0) {
@@ -2624,18 +2622,16 @@ void *func_8000B63C(void *arg0, s32 arg1) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B63C.s")
 #endif
 
-extern u32 D_8000B63C;
-
 void func_8000B4D4(u32, void*, s32, s32);
 
 void func_8000B65C(u32 arg0, s32 arg1) {
-    func_8000B4D4(arg0, &D_8000B63C, arg1, 1);
+    func_8000B4D4(arg0, &func_8000B63C, arg1, 1);
 }
 
 void func_8000B57C(void*, s32, s32);
 
 void func_8000B688(s32 arg0) {
-    func_8000B57C(&D_8000B63C, arg0, 1);
+    func_8000B57C(&func_8000B63C, arg0, 1);
 }
 
 void func_8000B6B4(s32 arg0) {
@@ -2647,22 +2643,17 @@ extern struct ObjThreadStack *D_8004A7D0;
 extern OSMesgQueue *D_8004A7E0;
 extern const char D_80040670[];
 
-// unnecessary usage of s1
-#ifdef NON_MATCHING
 void func_8000B6BC(s32 arg) {
-    s32 i;
     if (D_8004A7D0->objThread->objStack->stack[7] != STACK_TOP_MAGIC) {
-        fatal_printf(&D_80040670, *D_8004A7D0->unk18);
+        fatal_printf(&D_80040670, *D_8004A7D0->objId); // "gobjthread stack over  gobjid = %d\n"
     }
 
-    for (i = arg; i != 0; i--) {
+    while (arg != 0) {
         osSendMesg(&D_8004A7E0, (OSMesg)1, OS_MESG_NOBLOCK);
         osStopThread(NULL);
+        arg--;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B6BC.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_8000B758(u32 *arg0) {

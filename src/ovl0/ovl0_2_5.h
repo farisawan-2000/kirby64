@@ -10,6 +10,7 @@ struct ObjStack {
     u64 stack[0x20];
 };
 
+// if a function that uses ObjThread doesnt match, try this definition
 // struct ObjThread {
 //     struct ObjThread *unk0;
 //     u32 unk4;
@@ -37,7 +38,7 @@ struct ObjThreadStack {
     u32 unkC;
     u32 unk10;
     u32 unk14;
-    u32 *unk18;
+    u32 *objId; // is this a pointer to the "object" itself?
     struct ObjThread *objThread;
     u32 pad[10];
 };

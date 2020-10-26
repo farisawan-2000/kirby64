@@ -65,7 +65,14 @@ struct Entity {
    /* 0x20  */ Vec3f scale;
 };
 
-
+typedef struct Controller_800D6FE8 {
+  u16 buttonHeld;
+  u16 buttonPressed;
+  u16 buttonHeldLong; // this one becomes active a bit after buttonDown
+  u16 buttonReleased;
+  s8 stickX;
+  s8 stickY;
+} Controller_800D6FE8;
 
 // 0x8012E7C0
 // TODO: populate with actual values
