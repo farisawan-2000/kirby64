@@ -524,7 +524,7 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005A98.s")
 #endif
 
-#ifdef NON_MATCHING
+#ifdef NEEDS_RODATA
 u32 func_80005C64(void) {
     u32 phi_v1;
     u32 toReturn;
