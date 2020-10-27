@@ -3,7 +3,7 @@
 
 #include "ovl0_2_5.h"
 #include "ovl0_3.h"
-#include "main.h"
+#include "main.h" 
 #include "D_8004A7C4.h"
 
 extern void func_80000A44(void);
@@ -13,8 +13,7 @@ extern struct ObjThread *gObjectThreadMaybe;
 extern u8 D_80040230[];
 extern u32 D_8004A544;
 
-// Unused?
-struct ObjThread *func_80007F58(void) {
+struct ObjThread *func_80007F60(void) {
     struct ObjThread *ret;
     if (gObjectThreadMaybe == NULL) {
         fatal_printf(D_80040230); // om : couldn't get GObjThread
@@ -75,7 +74,7 @@ struct ObjProcess *func_80008068(void) {
 #ifdef MIPS_TO_C
 void func_800080C0(struct ObjProcess *arg0) {
     struct ObjProcess *temp_v1_4;
-    struct unk80008210Func **temp_v1_3;
+    struct ObjThreadStack **temp_v1_3;
     u32 temp_a2;
     u32 temp_a3;
     u8 *temp_v1_5;
@@ -168,7 +167,7 @@ void func_800081C4(struct ObjThreadStack *arg0) {
         D_8004A560[arg0->unk10] = arg0->unk8;
     }
     if (arg0->unk8 != 0) {
-        arg0->unk8->unkC = arg0->unkC;
+        ((u32 *)arg0->unk8->stack)[3] = arg0->unkC;
     }
 }
 
@@ -196,54 +195,28 @@ struct ObjThreadStack *func_80008280(void) {
 }
 
 // Unused?
-#ifdef MIPS_TO_C
-s32 func_8000828C(void *arg0) {
-    u8 temp_v0;
-    void *phi_a0;
-
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7D0;
+struct ObjStack *func_8000828C(struct ObjThreadStack *arg0) {
+    if (arg0 == NULL) {
+        arg0 = D_8004A7D0;
     }
-    if (phi_a0 != 0) {
-        temp_v0 = phi_a0->unk14;
-        if (temp_v0 == 0) {
-            return phi_a0->unk1C->unk1B8;
-        }
-        if (temp_v0 == 2) {
-            return phi_a0->unk1C->unk1B8;
-        }
+    if (arg0 != NULL && (arg0->unk14 == 0 || arg0->unk14 == 2)) {
+        return arg0->objThread->objStack;
     }
-    return 0;
+    return NULL;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000828C.s")
-#endif
 
 // Unused?
-#ifdef MIPS_TO_C
-s32 func_800082D4(void *arg0) {
-    u8 temp_v0;
-    void *phi_a0;
-
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7D0;
+s32 func_800082D4(struct ObjThreadStack *arg0) {
+    if (arg0 == NULL) {
+        arg0 = D_8004A7D0;
     }
-    if (phi_a0 != 0) {
-        temp_v0 = phi_a0->unk14;
-        if (temp_v0 == 0) {
-            return phi_a0->unk1C->unk1BC;
-        }
-        if (temp_v0 == 2) {
-            return phi_a0->unk1C->unk1BC;
+    if (arg0 != NULL) {
+        if (arg0->unk14 == 0 || arg0->unk14 == 2) {
+            return arg0->objThread->unk1BC;
         }
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800082D4.s")
-#endif
 
 extern s32 D_8004A558;
 
@@ -567,66 +540,54 @@ void func_800089EC(struct Camera *arg0) {
 
 extern u8 D_80040314[];
 extern u8 D_80040340[];
-extern s32 D_8003DE50;
+extern s32 D_8003DE50; // thread ID
 extern u32 D_8004A54C;
 
 struct ObjThread *func_80007F60();
 void func_800080C0(struct ObjProcess *);
 
-#ifdef MIPS_TO_C
-struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3) {
-    u32 sp28;
+#ifdef NON_MATCHING
+struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u8 pri, u32 kind) {
     struct ObjProcess *sp24;
-    s32 temp_a1;
-    s32 temp_v1;
-    struct ObjProcess *temp_v0;
-    u32 temp_v0_2;
-    void *temp_t3;
-    s32 phi_a0;
+    struct ObjStack *oStack;
+    struct ObjProcess *oProcess;
+    struct ObjThread *oThread;
 
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+    if (arg0 == NULL) {
+        arg0 = D_8004A7C4;
     }
-    arg0 = phi_a0;
-    arg2 = arg2 & 0xFF;
-    temp_v0 = func_80008068();
-    sp24 = temp_v0;
-    if (arg3 >= 4) {
-        fatal_printf(D_80040314, arg2, arg3);
-loop_4:
-        goto loop_4;
+    oProcess = func_80008068();
+    if (kind >= 4) {
+        fatal_printf(D_80040314);
+        while (1);
     }
-    temp_v0->unk10 = arg3;
-    temp_v0->unk14 = arg2;
-    temp_v0->unk15 = 0;
-    temp_v0->unk20 = arg1;
-    temp_v0->unk18 = arg0;
-    if (arg2 != 0) {
-        if (arg2 != 1) {
-            fatal_printf(D_80040340, arg2, arg3);
-loop_12:
-            goto loop_12;
-        }
-        temp_v0->unk1C = arg1;
-    } else {
-        temp_v0_2 = func_80007F60(arg1, arg2, arg3);
-        sp24->unk1C = temp_v0_2;
-        sp28 = temp_v0_2;
-        temp_v1 = func_80007FE4() + 8;
-        sp28->unk1B8 = temp_v1;
-        sp28->unk1BC = D_8004A54C;
-        temp_a1 = D_8003DE50;
-        D_8003DE50 = temp_a1 + 1;
-        osCreateThread(sp28 + 8, temp_a1, arg1, arg0, temp_v1 + ((D_8004A54C >> 3) * 8), 0x33);
-        temp_t3 = sp28->unk1B8;
-        temp_t3->unk38 = 0;
-        temp_t3->unk3C = 0xFEDCBA98;
-        if (D_8003DE50 >= 0x1312D00) {
-            D_8003DE50 = 0x989680;
-        }
+    oProcess->kind = kind;
+    oProcess->pri = pri;
+    oProcess->unk15 = 0;
+    oProcess->unk18 = arg0;
+    oProcess->unk20 = arg1;
+    switch (pri) {
+        case 0:
+            oThread = func_80007F60();
+            oProcess->thread = oThread;
+            oStack = func_80007FE4()->unk8;
+            oThread->objStack = oStack;
+            oThread->unk1BC = D_8004A54C;
+            osCreateThread(&(oThread->unk8), D_8003DE50++, arg1, arg0, oStack + ((D_8004A54C >> 3) * 8), 0x33);
+            oThread->objStack->stack[7] = STACK_TOP_MAGIC;
+            if (D_8003DE50 >= 20000000) {
+                D_8003DE50 = 10000000;
+            }
+            break;
+        case 1:
+            oProcess->thread = arg1;
+            break;
+        default:
+            fatal_printf(D_80040340);
+            while (1);
+
     }
-    func_800080C0(sp24);
+    func_800080C0(oProcess);
     return sp24;
 }
 #else
@@ -723,32 +684,37 @@ void func_80008DA8(struct ObjThreadStack *arg0) {
     if ((arg0 == 0) || (arg0 == D_8004A7D0)) {
         D_8004A7D4 = 1;
         temp_v0_4 = D_8004A7D0->unk14;
-        if (temp_v0_4 == 0 || temp_v0_4 == 2) {
+        if (temp_v0_4 == 0) {
+block_4:
             func_8000B6BC(1);
+            return;
+        }
+        if (temp_v0_4 == 2) {
+            goto block_4;
         }
     } else {
         temp_v0 = D_8004A558;
         if (temp_v0 != 0) {
             temp_v0(arg0);
         }
-        temp_v0_2 = arg0->padding;
+        temp_v0_2 = arg0->unk14;
         if (temp_v0_2 != 0) {
             if (temp_v0_2 != 1) {
                 if (temp_v0_2 != 2) {
 
                 } else {
-                    osDestroyThread(arg0->unk1C + 8);
+                    osDestroyThread(arg0->objThread + 8);
                     temp_v0_3 = D_8004A550;
                     if (temp_v0_3 != 0) {
-                        temp_v0_3(arg0->unk1C->objStack);
+                        temp_v0_3(arg0->objThread->objStack);
                     }
-                    func_80007FB8(arg0->unk1C);
+                    func_80007FB8(arg0->objThread);
                 }
             }
         } else {
-            osDestroyThread(&arg0->unk1C->unk8);
-            func_8000803C(arg0->unk1C->objStack - 8);
-            func_80007FB8(arg0->unk1C);
+            osDestroyThread(&arg0->objThread->unk8);
+            func_8000803C(arg0->objThread->objStack - 8);
+            func_80007FB8(arg0->objThread);
         }
         func_80008210(arg0);
         func_80008198(arg0);
@@ -1509,11 +1475,11 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A29C.s")
 
 #ifdef MIPS_TO_C
 void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, struct UnkStruct8004A7C4 *arg4) {
-    struct unk80008210Func *sp20;
+    struct ObjThreadStack *sp20;
     struct ObjProcess *temp_s0;
-    struct unk80008210Func *temp_s1;
+    struct ObjThreadStack *temp_s1;
     struct UnkStruct8004A7C4 *phi_s0;
-    struct unk80008210Func *phi_s1;
+    struct ObjThreadStack *phi_s1;
     struct ObjProcess *phi_s1_2;
 
     if (arg2 >= 0x20) {
@@ -1961,22 +1927,23 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000ABAC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000AC3C(struct ObjThreadStack *arg0) {
+void *func_8000AC3C(struct ObjThreadStack *arg0) {
     void *sp1C;
     s32 temp_v0_2;
     s32 temp_v0_3;
+    struct Obj *temp_a0;
     struct ObjThreadStack *temp_a3;
-    u32 *temp_a0;
     u8 temp_v0;
     void *temp_v1;
     void *temp_v1_2;
     struct ObjThreadStack *phi_a3;
     void *phi_v1;
     void *phi_v1_2;
+    void *phi_v1_3;
 
     D_8003DE54 = 2;
     temp_a3 = arg0;
-    D_8004A7C4 = arg0->unk18;
+    D_8004A7C4 = arg0->objId;
     D_8004A7D0 = arg0;
     temp_v0 = arg0->unk14;
     if (temp_v0 != 0) {
@@ -1990,7 +1957,7 @@ block_3:
 block_5:
             }
         } else {
-            temp_a0 = temp_a3->unk18;
+            temp_a0 = temp_a3->objId;
             arg0 = temp_a3;
             temp_a3->objThread(temp_a0, 2, temp_a3);
             goto block_5;
@@ -2000,18 +1967,20 @@ block_5:
     }
     temp_v1 = phi_a3->unk8;
     D_8004A7C4 = NULL;
-    D_8004A7D0 = 0;
+    D_8004A7D0 = NULL;
     D_8003DE54 = 0;
     temp_v0_2 = D_8004A7D4;
+    phi_v1_3 = temp_v1;
     if (temp_v0_2 != 0) {
         if (temp_v0_2 != 1) {
             if (temp_v0_2 != 2) {
                 D_8004A7D4 = 0;
+                phi_v1_3 = temp_v1;
             } else {
                 D_8004A7D4 = 0;
                 phi_v1_2 = temp_v1;
                 if (temp_v1 != 0) {
-                    temp_v0_3 = phi_a3->unk18;
+                    temp_v0_3 = phi_a3->objId;
                     phi_v1 = temp_v1;
                     phi_v1_2 = temp_v1;
                     if (temp_v0_3 == temp_v1->unk18) {
@@ -2028,8 +1997,9 @@ loop_12:
                     }
                 }
                 sp1C = phi_v1_2;
-                func_8000A29C(phi_a3->unk18, &D_8004A7D4, 2, phi_a3);
+                func_8000A29C(phi_a3->objId, &D_8004A7D4, 2, phi_a3);
 block_16:
+                phi_v1_3 = sp1C;
             }
         } else {
             D_8004A7D4 = 0;
@@ -2038,6 +2008,7 @@ block_16:
             goto block_16;
         }
     }
+    return phi_v1_3;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AC3C.s")
@@ -2045,20 +2016,20 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AC3C.s")
 
 #ifdef MIPS_TO_C
 void func_8000AD88(void) {
-    struct ObjThreadStack *temp_s0_2;
     void **temp_s1;
     void *temp_s0;
+    void *temp_s0_2;
     void *temp_s1_2;
     void **phi_s1;
     void *phi_s0;
     void *phi_s0_2;
     void *phi_s1_2;
-    struct ObjThreadStack *phi_s0_3;
-    struct ObjThreadStack *phi_s0_4;
+    void *phi_s0_3;
+    void *phi_s0_4;
 
     D_8004A7D4 = 0;
     D_8004A7C4 = NULL;
-    D_8004A7D0 = 0;
+    D_8004A7D0 = NULL;
     phi_s1 = D_8004A578;
 loop_1:
     temp_s0 = *phi_s1;
@@ -2087,8 +2058,7 @@ loop_9:
     if (temp_s0_2 != 0) {
 loop_10:
         if (phi_s0_3->unk15 == 0) {
-            func_8000AC3C(phi_s0_3);
-            phi_s0_4 = ERROR(Read from unset register $v0);
+            phi_s0_4 = func_8000AC3C(phi_s0_3);
         } else {
             phi_s0_4 = phi_s0_3->unk8;
         }
@@ -2572,22 +2542,25 @@ void func_8000B57C(void *arg0, s32 arg1, s32 arg2) {
     void *phi_a0;
 
     phi_s6 = D_8004A578;
-    do {
-        phi_a0 = *phi_s6;
-        if (phi_a0 != 0) {
-    loop_2:
-            temp_s0 = phi_a0->unk4;
-            if ((arg0(phi_a0, arg1) != 0) && (arg2 == 1)) {
-                return;
-            }
-            phi_a0 = temp_s0;
-            if (temp_s0 != 0) {
-                goto loop_2;
-            }
+loop_1:
+    temp_a0 = *phi_s6;
+    phi_a0 = temp_a0;
+    if (temp_a0 != 0) {
+loop_2:
+        temp_s0 = phi_a0->unk4;
+        if ((arg0(phi_a0, arg1) != 0) && (arg2 == 1)) {
+            return;
         }
-        phi_s6 += 4;
+        phi_a0 = temp_s0;
+        if (temp_s0 != 0) {
+            goto loop_2;
+        }
     }
-    while (phi_s6 != D_8004A5F8);
+    temp_s6 = phi_s6 + 4;
+    phi_s6 = temp_s6;
+    if (temp_s6 != D_8004A5F8) {
+        goto loop_1;
+    }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B57C.s")
@@ -2595,7 +2568,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B57C.s")
 
 void *func_8000B63C(void (*arg0)(void), s32 arg1);
 #ifdef MIPS_TO_C
-void *func_8000B63C(void *arg0, s32 arg1) {
+void *func_8000B63C(void (*)(void) arg0, s32 arg1) {
     if (arg1 == *arg0) {
         return arg0;
     }
@@ -2701,8 +2674,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B78C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000B7C0(void *arg0) {
-    void *phi_a0;
+void func_8000B7C0(struct ObjThreadStack *arg0) {
+    struct ObjThreadStack *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -2715,8 +2688,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B7C0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000B7D8(void *arg0) {
-    void *phi_a0;
+void func_8000B7D8(struct ObjThreadStack *arg0) {
+    struct ObjThreadStack *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {

@@ -586,14 +586,14 @@ void verify_save(s32 fileNum) {
     u32 i;
     u32 percent;
 
-    if (gSaveBuffer1.files[fileNum].hundredYardHopRecord < 0x258) {
-        gSaveBuffer1.files[fileNum].hundredYardHopRecord = 0x258;
+    if (gSaveBuffer1.files[fileNum].hundredYardHopRecord < 600) {
+        gSaveBuffer1.files[fileNum].hundredYardHopRecord = 600;
     }
-    if (gSaveBuffer1.files[fileNum].bumperCropBumpRecord >= 0xC9) {
-        gSaveBuffer1.files[fileNum].bumperCropBumpRecord = 0xC8;
+    if (gSaveBuffer1.files[fileNum].bumperCropBumpRecord > 200) {
+        gSaveBuffer1.files[fileNum].bumperCropBumpRecord = 200;
     }
-    if (gSaveBuffer1.files[fileNum].checkerBoardChaseRecord < 0x258) {
-        gSaveBuffer1.files[fileNum].checkerBoardChaseRecord = 0x258;
+    if (gSaveBuffer1.files[fileNum].checkerBoardChaseRecord < 600) {
+        gSaveBuffer1.files[fileNum].checkerBoardChaseRecord = 600;
     }
     gSaveBuffer1.files[fileNum].shards[23] = (u8)0;
     gSaveBuffer1.files[fileNum].shards[3] = (u8)0;

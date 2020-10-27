@@ -33,7 +33,7 @@ struct ObjThread
     struct ObjThread *unk0;
     OSThread unk8;
     struct ObjStack *objStack;
-    s32 unk1BC;
+    s32 unk1BC; // accessed similarly to objStack...
 };
 
 
@@ -53,12 +53,14 @@ struct ObjThreadStack {
     // Could these be ObjThreads instead?
     struct ObjThreadStack *unk0;
     struct ObjThreadStack *unk4;
-    // Pointers to something
-    struct Unk_Ovl0_2_5 *unk8;
+    struct ObjStack *unk8;
+    // Pointer to something (potentially ObjStack)
     struct Unk_Ovl0_2_5 *unkC;
     // some sort of index?
     u32 unk10;
-    u32 unk14;
+    u8 unk14;
+    u8 unk15;
+    u16 unk16;
     struct Obj *objId; // is this a pointer to the "object" itself?
     struct ObjThread *objThread;
     u32 pad[10];
@@ -66,15 +68,17 @@ struct ObjThreadStack {
 
 struct ObjProcess {
     struct ObjProcess* unk0;
-    u8 filler[0x10 - 0x04];
-    u32 unk10; // priority
-    u8 unk14; // kind
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    /* 0x10 */ u32 kind;
+    /* 0x14 */ u8 pri;
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
+    struct UnkStruct8004A7C4 *unk18;
+    struct ObjThread *thread;
+    struct ObjThread *unk20; // another thread?
 };
 
 // TODO: is this an existing struct instead of a brand new one?
