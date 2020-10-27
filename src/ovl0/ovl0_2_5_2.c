@@ -546,13 +546,11 @@ extern u32 D_8004A54C;
 struct ObjThread *func_80007F60();
 void func_800080C0(struct ObjProcess *);
 
-#ifdef NON_MATCHING
 struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u8 pri, u32 kind) {
     struct ObjProcess *sp24;
-    struct ObjStack *oStack;
-    struct ObjProcess *oProcess;
     struct ObjThread *oThread;
-
+    struct ObjProcess *oProcess;
+    
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
     }
@@ -570,10 +568,9 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
         case 0:
             oThread = func_80007F60();
             oProcess->thread = oThread;
-            oStack = func_80007FE4()->unk8;
-            oThread->objStack = oStack;
+            oThread->objStack = &func_80007FE4()->unk8;
             oThread->unk1BC = D_8004A54C;
-            osCreateThread(&(oThread->unk8), D_8003DE50++, arg1, arg0, &(oStack->stack[D_8004A54C >> 3]), 0x33);
+            osCreateThread(&oThread->unk8, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C >> 3]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
             if (D_8003DE50 >= 20000000) {
                 D_8003DE50 = 10000000;
@@ -588,11 +585,8 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
 
     }
     func_800080C0(oProcess);
-    return sp24;
+    return oProcess;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008A18.s")
-#endif
 
 extern u8 D_80040368[];
 
