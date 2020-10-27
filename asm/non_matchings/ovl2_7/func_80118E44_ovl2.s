@@ -71,7 +71,7 @@ glabel func_80118E44_ovl2
 /* 0A19BC 80118F4C 3C018005 */  lui   $at, %hi(D_8004A7C4) # $at, 0x8005
 /* 0A19C0 80118F50 AC31A7C4 */  sw    $s1, %lo(D_8004A7C4)($at)
 .L80118F54_ovl2:
-/* 0A19C4 80118F54 0C00236A */  jal   func_80008DA8_ovl2
+/* 0A19C4 80118F54 0C00236A */  jal   func_80008DA8
 /* 0A19C8 80118F58 00002025 */   move  $a0, $zero
 /* 0A19CC 80118F5C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0A19D0 80118F60 8FB00014 */  lw    $s0, 0x14($sp)

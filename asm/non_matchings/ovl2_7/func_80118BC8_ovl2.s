@@ -44,7 +44,7 @@ glabel func_80118BC8_ovl2
 /* 0A16D4 80118C64 0C02BB48 */  jal   func_800AED20_ovl2
 /* 0A16D8 80118C68 C60C0000 */   lwc1  $f12, ($s0)
 .L80118C6C_ovl2:
-/* 0A16DC 80118C6C 0C00236A */  jal   func_80008DA8_ovl2
+/* 0A16DC 80118C6C 0C00236A */  jal   func_80008DA8
 /* 0A16E0 80118C70 00002025 */   move  $a0, $zero
 /* 0A16E4 80118C74 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0A16E8 80118C78 8FB00018 */  lw    $s0, 0x18($sp)

@@ -74,7 +74,7 @@ glabel func_801162F4
 /* 09EE80 80116410 020A4021 */  addu  $t0, $s0, $t2
 /* 09EE84 80116414 0C029D9E */  jal   func_800A7678
 /* 09EE88 80116418 AD000000 */   sw    $zero, ($t0)
-/* 09EE8C 8011641C 0C00236A */  jal   func_80008DA8_ovl2
+/* 09EE8C 8011641C 0C00236A */  jal   func_80008DA8
 /* 09EE90 80116420 00002025 */   move  $a0, $zero
 /* 09EE94 80116424 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 09EE98 80116428 8FB00018 */  lw    $s0, 0x18($sp)

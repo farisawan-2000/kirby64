@@ -20,11 +20,11 @@ glabel func_80111F10_ovl2
 /* 09A9C8 80111F58 AFA40020 */   sw    $a0, 0x20($sp)
 /* 09A9CC 80111F5C 8FA40020 */  lw    $a0, 0x20($sp)
 /* 09A9D0 80111F60 27A5004C */  addiu $a1, $sp, 0x4c
-/* 09A9D4 80111F64 0C0470B5 */  jal   func_8011C2D4_ovl2
+/* 09A9D4 80111F64 0C0470B5 */  jal   vec3_cross_product
 /* 09A9D8 80111F68 27A60040 */   addiu $a2, $sp, 0x40
 /* 09A9DC 80111F6C 27A4004C */  addiu $a0, $sp, 0x4c
 /* 09A9E0 80111F70 27A50040 */  addiu $a1, $sp, 0x40
-/* 09A9E4 80111F74 0C0470B5 */  jal   func_8011C2D4_ovl2
+/* 09A9E4 80111F74 0C0470B5 */  jal   vec3_cross_product
 /* 09A9E8 80111F78 27A60034 */   addiu $a2, $sp, 0x34
 /* 09A9EC 80111F7C C7A40040 */  lwc1  $f4, 0x40($sp)
 /* 09A9F0 80111F80 44800000 */  mtc1  $zero, $f0

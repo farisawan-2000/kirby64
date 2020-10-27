@@ -3207,7 +3207,7 @@ glabel func_800B19B8
 /* 059C18 800B19C8 8C460000 */  lw    $a2, ($v0)
 /* 059C1C 800B19CC 10C00005 */  beqz  $a2, .L800B19E4_ovl1
 /* 059C20 800B19D0 00C02025 */   move  $a0, $a2
-/* 059C24 800B19D4 0C00236A */  jal   func_80008DA8_ovl1
+/* 059C24 800B19D4 0C00236A */  jal   func_80008DA8
 /* 059C28 800B19D8 AFA20018 */   sw    $v0, 0x18($sp)
 /* 059C2C 800B19DC 8FA20018 */  lw    $v0, 0x18($sp)
 /* 059C30 800B19E0 AC400000 */  sw    $zero, ($v0)

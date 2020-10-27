@@ -9,7 +9,7 @@ glabel func_8011A638_ovl2
 /* 0A30C4 8011A654 44806000 */  mtc1  $zero, $f12
 /* 0A30C8 8011A658 0C02BB48 */  jal   func_800AED20_ovl2
 /* 0A30CC 8011A65C 00000000 */   nop   
-/* 0A30D0 8011A660 0C00236A */  jal   func_80008DA8_ovl2
+/* 0A30D0 8011A660 0C00236A */  jal   func_80008DA8
 /* 0A30D4 8011A664 00002025 */   move  $a0, $zero
 /* 0A30D8 8011A668 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0A30DC 8011A66C 27BD0018 */  addiu $sp, $sp, 0x18

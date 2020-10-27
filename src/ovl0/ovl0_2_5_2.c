@@ -159,21 +159,11 @@ void func_80008198(struct ObjProcess *arg0) {
     D_8004A570--;
 }
 
-// TODO: See if this struct should merged with another
-struct unk80008210Func {
-    struct unk80008210Func* unk0;
-    struct unk80008210Func* unk4;
-    struct unk80008210Func* unk8;
-    struct unk80008210Func* unkC;
-    u32 unk10;
-    u8 padding[0x18 - 0x04 - 0x10];
-    struct unk80008210Func* unk18;
-    struct unk80008210Func* unk1C;
-};
 
-extern struct unk80008210Func* D_8004A560[];
 
-void func_800081C4(struct unk80008210Func *arg0) {
+extern struct ObjThreadStack* D_8004A560[];
+
+void func_800081C4(struct ObjThreadStack *arg0) {
     if (arg0->unkC != 0) {
         arg0->unkC->unk8 = arg0->unk8;
     } else {
@@ -184,10 +174,10 @@ void func_800081C4(struct unk80008210Func *arg0) {
     }
 }
 
-void *func_80008210(struct unk80008210Func *arg0) {
-    struct unk80008210Func *sp1C;
+void *func_80008210(struct ObjThreadStack *arg0) {
+    struct Obj *sp1C;
 
-    sp1C = arg0->unk18;
+    sp1C = arg0->objId;
     func_800081C4(arg0);
     if (arg0->unk4 != 0) {
         arg0->unk4->unk0 = arg0->unk0;
@@ -726,7 +716,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80008DA8(struct unk80008210Func *arg0) {
+void func_80008DA8(struct ObjThreadStack *arg0) {
     s32 temp_v0;
     u8 temp_v0_2;
     u8 temp_v0_4;
@@ -735,13 +725,8 @@ void func_80008DA8(struct unk80008210Func *arg0) {
     if ((arg0 == 0) || (arg0 == D_8004A7D0)) {
         D_8004A7D4 = 1;
         temp_v0_4 = D_8004A7D0->unk14;
-        if (temp_v0_4 == 0) {
-block_4:
+        if (temp_v0_4 == 0 || temp_v0_4 == 2) {
             func_8000B6BC(1);
-            return;
-        }
-        if (temp_v0_4 == 2) {
-            goto block_4;
         }
     } else {
         temp_v0 = D_8004A558;
@@ -2645,7 +2630,7 @@ extern const char D_80040670[];
 
 void func_8000B6BC(s32 arg) {
     if (D_8004A7D0->objThread->objStack->stack[7] != STACK_TOP_MAGIC) {
-        fatal_printf(&D_80040670, *D_8004A7D0->objId); // "gobjthread stack over  gobjid = %d\n"
+        fatal_printf(&D_80040670, D_8004A7D0->objId->unk0); // "gobjthread stack over  gobjid = %d\n"
     }
 
     while (arg != 0) {

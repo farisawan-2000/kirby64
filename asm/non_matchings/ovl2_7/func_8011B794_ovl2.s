@@ -7,7 +7,7 @@ glabel func_8011B794_ovl2
 /* 0A4218 8011B7A8 8FA40018 */   lw    $a0, 0x18($sp)
 /* 0A421C 8011B7AC 0C0461E9 */  jal   func_801187A4_ovl2
 /* 0A4220 8011B7B0 00000000 */   nop   
-/* 0A4224 8011B7B4 0C00236A */  jal   func_80008DA8_ovl2
+/* 0A4224 8011B7B4 0C00236A */  jal   func_80008DA8
 /* 0A4228 8011B7B8 00002025 */   move  $a0, $zero
 /* 0A422C 8011B7BC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0A4230 8011B7C0 27BD0018 */  addiu $sp, $sp, 0x18

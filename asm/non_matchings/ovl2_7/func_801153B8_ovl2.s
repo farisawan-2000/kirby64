@@ -30,7 +30,7 @@ glabel func_801153B8_ovl2
 /* 09DE98 80115428 00002025 */  move  $a0, $zero
 /* 09DE9C 8011542C 000E7880 */  sll   $t7, $t6, 2
 /* 09DEA0 80115430 002F0821 */  addu  $at, $at, $t7
-/* 09DEA4 80115434 0C00236A */  jal   func_80008DA8_ovl2
+/* 09DEA4 80115434 0C00236A */  jal   func_80008DA8
 /* 09DEA8 80115438 AC2CEF90 */   sw    $t4, -0x1070($at)
 /* 09DEAC 8011543C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 09DEB0 80115440 27BD0020 */  addiu $sp, $sp, 0x20

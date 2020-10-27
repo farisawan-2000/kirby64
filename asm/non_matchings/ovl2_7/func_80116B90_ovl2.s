@@ -62,7 +62,7 @@ glabel func_80116B90_ovl2
 /* 09F6E8 80116C78 00002025 */  move  $a0, $zero
 /* 09F6EC 80116C7C 00194080 */  sll   $t0, $t9, 2
 /* 09F6F0 80116C80 00280821 */  addu  $at, $at, $t0
-/* 09F6F4 80116C84 0C00236A */  jal   func_80008DA8_ovl2
+/* 09F6F4 80116C84 0C00236A */  jal   func_80008DA8
 /* 09F6F8 80116C88 AC2FEF90 */   sw    $t7, -0x1070($at)
 /* 09F6FC 80116C8C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 09F700 80116C90 8FB00018 */  lw    $s0, 0x18($sp)

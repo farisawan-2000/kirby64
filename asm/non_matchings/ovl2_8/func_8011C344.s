@@ -53,11 +53,11 @@ glabel func_8011C344
 /* 0A4E74 8011C404 27A40044 */   addiu $a0, $sp, 0x44
 /* 0A4E78 8011C408 27A4002C */  addiu $a0, $sp, 0x2c
 /* 0A4E7C 8011C40C 27A50044 */  addiu $a1, $sp, 0x44
-/* 0A4E80 8011C410 0C0470B5 */  jal   func_8011C2D4_ovl2
+/* 0A4E80 8011C410 0C0470B5 */  jal   vec3_cross_product
 /* 0A4E84 8011C414 27A60038 */   addiu $a2, $sp, 0x38
 /* 0A4E88 8011C418 27A40044 */  addiu $a0, $sp, 0x44
 /* 0A4E8C 8011C41C 27A50038 */  addiu $a1, $sp, 0x38
-/* 0A4E90 8011C420 0C0470B5 */  jal   func_8011C2D4_ovl2
+/* 0A4E90 8011C420 0C0470B5 */  jal   vec3_cross_product
 /* 0A4E94 8011C424 27A6002C */   addiu $a2, $sp, 0x2c
 /* 0A4E98 8011C428 C7A40038 */  lwc1  $f4, 0x38($sp)
 /* 0A4E9C 8011C42C C7A6003C */  lwc1  $f6, 0x3c($sp)

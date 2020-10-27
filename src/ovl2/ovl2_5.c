@@ -911,11 +911,11 @@ void *func_800FF2C8_ovl2(void) {
     temp_a0 = temp_v1 + 0x800E0000;
     D_8012B998.unk0 = (temp_v1 + 0x800E0000)->unk-1CB0;
     sp54 = temp_v0_2;
-    func_80008DA8_ovl2(temp_a0->unk-1930);
+    func_80008DA8(temp_a0->unk-1930);
     temp_v0_3 = temp_v0_2 * 4;
     sp2C = temp_v0_3;
-    func_80008DA8_ovl2((temp_v0_3 + 0x800E0000)->unk-1AF0);
-    func_80008DA8_ovl2((temp_v0_3 + 0x800E0000)->unk-13F0);
+    func_80008DA8((temp_v0_3 + 0x800E0000)->unk-1AF0);
+    func_80008DA8((temp_v0_3 + 0x800E0000)->unk-13F0);
     D_8004A7C4 = D_8012B998.unk0;
     func_800AF9B8_ovl2(0x29, 0x10);
     D_8004A7C4 = sp5C;
