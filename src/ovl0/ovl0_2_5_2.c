@@ -573,7 +573,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
             oStack = func_80007FE4()->unk8;
             oThread->objStack = oStack;
             oThread->unk1BC = D_8004A54C;
-            osCreateThread(&(oThread->unk8), D_8003DE50++, arg1, arg0, oStack + ((D_8004A54C >> 3) * 8), 0x33);
+            osCreateThread(&(oThread->unk8), D_8003DE50++, arg1, arg0, &(oStack->stack[D_8004A54C >> 3]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
             if (D_8003DE50 >= 20000000) {
                 D_8003DE50 = 10000000;
