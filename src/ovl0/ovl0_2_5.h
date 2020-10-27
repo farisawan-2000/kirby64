@@ -93,7 +93,7 @@ struct MObj {
     struct MObj *unk0;
 };
 
-struct unk8004A678Addr {
+struct unk8004A678Addr { // might be 8004A7C4
     u8 filler[4];
     struct unk8004A678Addr *unk4;
 };
