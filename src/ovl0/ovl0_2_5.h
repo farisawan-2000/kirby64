@@ -53,25 +53,15 @@ struct ObjThreadStack {
     // Could these be ObjThreads instead?
     struct ObjThreadStack *unk0;
     struct ObjThreadStack *unk4;
-    // Pointers
+    // Pointers to something
     struct Unk_Ovl0_2_5 *unk8;
     struct Unk_Ovl0_2_5 *unkC;
+    // some sort of index?
     u32 unk10;
     u32 unk14;
     struct Obj *objId; // is this a pointer to the "object" itself?
     struct ObjThread *objThread;
     u32 pad[10];
-};
-// TODO: merge this with ObjThreadStack
-struct unk80008210Func {
-    struct unk80008210Func* unk0;
-    struct unk80008210Func* unk4;
-    struct unk80008210Func* unk8;
-    struct unk80008210Func* unkC;
-    u32 unk10;
-    u32 unk14;
-    struct unk80008210Func* unk18;
-    struct ObjThread* unk1C;
 };
 
 struct ObjProcess {

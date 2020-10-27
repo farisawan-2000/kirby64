@@ -159,8 +159,6 @@ void func_80008198(struct ObjProcess *arg0) {
     D_8004A570--;
 }
 
-
-
 extern struct ObjThreadStack* D_8004A560[];
 
 void func_800081C4(struct ObjThreadStack *arg0) {
