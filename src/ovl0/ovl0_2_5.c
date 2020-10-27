@@ -526,29 +526,23 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005A98.s")
 
 #ifdef NON_MATCHING
 u32 func_80005C64(void) {
-    u16 phi_v1;
+    u32 phi_v1;
     u32 toReturn;
-
-    phi_v1 = (D_8004A448 != 0) ? D_8004A446 : D_8004A444;
-    // if (D_8004A448 != 0) {
-    //     phi_v1 = D_8004A446;
-    // } else {
-    //     phi_v1 = D_8004A444;
-    // }
-    // temp_t7 = phi_v1 - 1;
-    // if (temp_t7 < 0xF) {
-    switch(phi_v1 - 1) {
-        // goto **(&jtbl_80040148 + (temp_t7 * 4));
-        case 0:
-        case 2:
-        case 4:
-        case 6:
-        case 8:
-        case 12:
-        case 14:
-            return 9;
+    toReturn = (D_8004A448 != 0) ? (D_8004A446) : (D_8004A444);
+    phi_v1 = toReturn;
+    switch (phi_v1) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 9:
+        case 13:
+        case 15:
+          toReturn = 9;
+          break;
         default:
-            toReturn = 8;
+          toReturn = 8;
+          break;
     }
     return toReturn;
 }
