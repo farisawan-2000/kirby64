@@ -36,19 +36,6 @@ struct ObjThread
     s32 unk1BC; // accessed similarly to objStack...
 };
 
-
-struct Obj {
-    u32 unk0; // Id
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-    u32 unk14;
-    u32 unk18;
-    struct ObjThreadStack *unk1C;
-};
-
-
 struct ObjThreadStack {
     // Could these be ObjThreads instead?
     struct ObjThreadStack *unk0;
@@ -61,7 +48,7 @@ struct ObjThreadStack {
     u8 unk14;
     u8 unk15;
     u16 unk16;
-    struct Obj *objId; // is this a pointer to the "object" itself?
+    struct UnkStruct8004A7C4 *unk18; // TODO: rename to something
     struct ObjThread *objThread;
     u32 pad[10];
 };

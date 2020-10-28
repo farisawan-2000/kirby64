@@ -367,13 +367,14 @@ f32 func_800197EC(Vector *arg0, Vector *arg1, Vector *arg2) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800197EC.s")
 #endif
 
-void func_80019870(Vector *arg0, Vector *arg1) {
-    Vector sp1C;
+// gets the magnitude of the difference of 2 vectors
+f32 vec3_diff_mag(Vector *v0, Vector *v1) {
+    Vector result;
 
-    sp1C.x = arg1->x - arg0->x;
-    sp1C.y = arg1->y - arg0->y;
-    sp1C.z = arg1->z - arg0->z;
-    vec3_mag(&sp1C);
+    result.x = v1->x - v0->x;
+    result.y = v1->y - v0->y;
+    result.z = v1->z - v0->z;
+    return vec3_mag(&result);
 }
 
 #ifdef MIPS_TO_C

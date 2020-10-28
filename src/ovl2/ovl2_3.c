@@ -1162,7 +1162,7 @@ loop_2:
         sp44.unk0 = temp_t7->unk0;
         sp44.unk4 = temp_t7->unk4;
         sp44.unk8 = temp_t7->unk8;
-        temp_f0 = func_80019870_ovl2(arg1, &sp44);
+        temp_f0 = vec3_diff_mag(arg1, &sp44);
         if (temp_f0 < phi_f20) {
             phi_f20 = temp_f0;
             phi_s3_2 = phi_s1;
