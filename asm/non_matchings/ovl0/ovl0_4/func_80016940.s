@@ -179,8 +179,8 @@ glabel func_80016940
 /* 0177DC 80016BDC 33380FFF */  andi  $t8, $t9, 0xfff
 /* 0177E0 80016BE0 03017025 */  or    $t6, $t8, $at
 /* 0177E4 80016BE4 ACCE0000 */  sw    $t6, ($a2)
-/* 0177E8 80016BE8 3C0F8005 */  lui   $t7, %hi(D_8004A500) # $t7, 0x8005
-/* 0177EC 80016BEC 8DEFA500 */  lw    $t7, %lo(D_8004A500)($t7)
+/* 0177E8 80016BE8 3C0F8005 */  lui   $t7, %hi(gPhysicalZBuffer) # $t7, 0x8005
+/* 0177EC 80016BEC 8DEFA500 */  lw    $t7, %lo(gPhysicalZBuffer)($t7)
 /* 0177F0 80016BF0 24630008 */  addiu $v1, $v1, 8
 /* 0177F4 80016BF4 3C18FFFC */  lui   $t8, (0xFFFCFFFC >> 16) # lui $t8, 0xfffc
 /* 0177F8 80016BF8 ACCF0004 */  sw    $t7, 4($a2)

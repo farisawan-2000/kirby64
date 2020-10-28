@@ -342,8 +342,8 @@ glabel func_8001FD64
 .L80020284_ovl0:
 /* 020E84 80020284 0C00E328 */  jal   osWritebackDCacheAll
 /* 020E88 80020288 00000000 */   nop   
-/* 020E8C 8002028C 3C048005 */  lui   $a0, %hi(D_80048CB8) # $a0, 0x8005
-/* 020E90 80020290 24848CB8 */  addiu $a0, %lo(D_80048CB8) # addiu $a0, $a0, -0x7348
+/* 020E8C 8002028C 3C048005 */  lui   $a0, %hi(gInterruptMesgQueue) # $a0, 0x8005
+/* 020E90 80020290 24848CB8 */  addiu $a0, %lo(gInterruptMesgQueue) # addiu $a0, $a0, -0x7348
 /* 020E94 80020294 8FC50000 */  lw    $a1, ($fp)
 /* 020E98 80020298 0C00B4BC */  jal   osSendMesg
 /* 020E9C 8002029C 00003025 */   move  $a2, $zero

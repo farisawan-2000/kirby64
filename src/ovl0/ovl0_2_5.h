@@ -125,6 +125,7 @@ struct DObj {
     f32 unk7C;
     u32 unk80;
     u32 unk84;
+    u32 unk88; // real field?
 };
 
 struct Camera {

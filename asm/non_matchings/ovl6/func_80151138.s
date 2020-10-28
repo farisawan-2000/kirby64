@@ -8,7 +8,7 @@ glabel func_80151138
 /* 1354E0 80151150 10000028 */  b     .L801511F4_ovl6
 /* 1354E4 80151154 24020001 */   li    $v0, 1
 .L80151158_ovl6:
-/* 1354E8 80151158 0C00C104 */  jal   osViGetCurrentFramebuffer_0
+/* 1354E8 80151158 0C00C104 */  jal   osViGetNextFramebuffer
 /* 1354EC 8015115C 00000000 */   nop   
 /* 1354F0 80151160 0C00E46C */  jal   osViGetCurrentFramebuffer
 /* 1354F4 80151164 AFA2001C */   sw    $v0, 0x1c($sp)

@@ -1403,7 +1403,7 @@ loop_14:
         }
     }
     osWritebackDCacheAll();
-    osSendMesg(&D_80048CB8, D_80096458, 0);
+    osSendMesg(&gInterruptMesgQueue, D_80096458, 0);
     temp_a0_2 = D_800964D3;
     D_8003F344 = D_8003F344 + 1;
     D_8003F334 = 0;

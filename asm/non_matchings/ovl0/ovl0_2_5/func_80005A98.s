@@ -134,8 +134,8 @@ glabel func_80005A98
 /* 006830 80005C30 AE0E0064 */  sw    $t6, 0x64($s0)
 /* 006834 80005C34 0C00E328 */  jal   osWritebackDCacheAll
 /* 006838 80005C38 AE090058 */   sw    $t1, 0x58($s0)
-/* 00683C 80005C3C 3C048005 */  lui   $a0, %hi(D_80048CB8) # $a0, 0x8005
-/* 006840 80005C40 24848CB8 */  addiu $a0, %lo(D_80048CB8) # addiu $a0, $a0, -0x7348
+/* 00683C 80005C3C 3C048005 */  lui   $a0, %hi(gInterruptMesgQueue) # $a0, 0x8005
+/* 006840 80005C40 24848CB8 */  addiu $a0, %lo(gInterruptMesgQueue) # addiu $a0, $a0, -0x7348
 /* 006844 80005C44 02002825 */  move  $a1, $s0
 /* 006848 80005C48 0C00B4BC */  jal   osSendMesg
 /* 00684C 80005C4C 00003025 */   move  $a2, $zero

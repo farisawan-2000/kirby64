@@ -10,8 +10,8 @@ glabel func_80000980
 /* 0015A0 800009A0 8FA50038 */  lw    $a1, 0x38($sp)
 /* 0015A4 800009A4 240E0001 */  li    $t6, 1
 /* 0015A8 800009A8 27AF001C */  addiu $t7, $sp, 0x1c
-/* 0015AC 800009AC 3C048005 */  lui   $a0, %hi(D_80048CB8) # $a0, 0x8005
-/* 0015B0 800009B0 24848CB8 */  addiu $a0, %lo(D_80048CB8) # addiu $a0, $a0, -0x7348
+/* 0015AC 800009AC 3C048005 */  lui   $a0, %hi(gInterruptMesgQueue) # $a0, 0x8005
+/* 0015B0 800009B0 24848CB8 */  addiu $a0, %lo(gInterruptMesgQueue) # addiu $a0, $a0, -0x7348
 /* 0015B4 800009B4 00003025 */  move  $a2, $zero
 /* 0015B8 800009B8 ACA00014 */  sw    $zero, 0x14($a1)
 /* 0015BC 800009BC ACAE001C */  sw    $t6, 0x1c($a1)

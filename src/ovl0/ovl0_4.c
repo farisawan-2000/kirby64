@@ -3569,7 +3569,7 @@ void *func_80016940(void *arg0, void *arg1, s32 arg2) {
         temp_a2_2 = temp_v1;
         temp_a2_2->unk0 = (s32) (((D_8004A508 - 1) & 0xFFF) | 0xFF100000);
         temp_v1 = temp_v1 + 8;
-        temp_a2_2->unk4 = (s32) D_8004A500;
+        temp_a2_2->unk4 = (s32) gPhysicalZBuffer;
         temp_a3_2 = temp_v1;
         temp_a3_2->unk4 = 0xFFFCFFFC;
         temp_a3_2->unk0 = 0xF7000000;

@@ -24,8 +24,8 @@ Overlay mainSegOverlay = {
 	_ovl1SegmentEnd,
 	_ovl1SegmentEnd,
 	_ovl1DataSegmentEnd,
-	_ovl1DataSegmentEnd,
-	(void*)0x800F61A0,
+	_ovl1SegNoloadStart,
+	_ovl1SegNoloadEnd,
 };
 
 u32 D_8003DC94 = 0x00000000;

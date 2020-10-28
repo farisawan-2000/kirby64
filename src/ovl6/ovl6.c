@@ -22,7 +22,7 @@ void func_80151100(void) {
     if (D_80048C5C != 0) {
         return 1;
     }
-    sp1C = osViGetCurrentFramebuffer_0();
+    sp1C = osViGetNextFramebuffer();
     temp_v1 = gCurrFrameBuffer;
     if (temp_v1 == gFrameBuffers.unk0) {
         phi_v1 = 1;

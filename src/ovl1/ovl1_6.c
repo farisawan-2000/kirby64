@@ -319,14 +319,14 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
 }
 
 s32 func_800AEC08(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC_ovl1(0, arg0, arg1, arg2);
+    return func_800AEADC(0, arg0, arg1, arg2);
 }
 
 s32 func_800AEC3C(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC_ovl1(1, arg0, arg1, arg2);
+    return func_800AEADC(1, arg0, arg1, arg2);
 }
 
 s32 func_800AEC70(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC_ovl1(2, arg0, arg1, arg2);
+    return func_800AEADC(2, arg0, arg1, arg2);
 }
 

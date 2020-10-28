@@ -4186,7 +4186,7 @@ glabel D_8004A4F8
 glabel D_8004A4FC
 .word 0x00000000
 
-glabel D_8004A500
+glabel gPhysicalZBuffer
 .word 0x00000000
 
 glabel D_8004A504
