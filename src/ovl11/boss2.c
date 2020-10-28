@@ -83,10 +83,10 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB31C_ovl11.s")
 #include "buffers.h"
 extern const char D_801E0BE0[];
 extern f32 D_801E0C0C;
-extern void func_800F98EC_ovl11(s32, f32, s32);
-// #ifdef MIPS_TO_C
+extern void func_800F98EC_ovl11(s32, f32);
+extern void func_800B1900_ovl11(u16, s32);
+#ifdef NON_MATCHING
 void func_801DB34C_ovl11(void) {
-    // s32 sp50;
     f32 temp_f22;
     s32 temp_v0;
     s32 i;
@@ -96,9 +96,9 @@ void func_801DB34C_ovl11(void) {
     for (i = 0; i < 3; i++) {
         temp_v0 = func_800AEC08(0x19, 0x1E, 0x3C);
         if (temp_v0 >= 0x3C || temp_v0 == -1) {
-            // sp50 = temp_v0;
-            print_error_stub(&D_801E0BE0, temp_v0);
-            func_800B1900_ovl11(temp_v0 & 0xFFFF, temp_v0);
+            print_error_stub(&D_801E0BE0);
+            // this function need an argument in the middle of the existing ones
+            func_800B1900_ovl11(temp_v0, temp_v0);
             return;
         }
         D_800DDC50[temp_v0] = D_800DDC50[D_8004A7C4->unk0];
@@ -108,9 +108,10 @@ void func_801DB34C_ovl11(void) {
         D_800E7880[temp_v0] = 2;
         D_800E5F90[temp_v0] = 0;
         D_800E6BD0[temp_v0] = 0.25f;
-        func_800F98EC_ovl11(temp_v0, i * temp_f22, temp_v0);
+        func_800F98EC_ovl11(temp_v0, i * temp_f22);
         D_800E6150[temp_v0] = D_800E5F90[temp_v0];
         D_800E6D90[temp_v0] = D_800E6BD0[temp_v0];
+        // regalloc starts here?
         D_800E25D0[temp_v0] = D_800E25D0[D_8004A7C4->unk0];
         D_800E2B10[temp_v0] = D_800E2B10[D_8004A7C4->unk0];
         D_800E2790[temp_v0] = D_800E2790[D_8004A7C4->unk0];
@@ -121,9 +122,9 @@ void func_801DB34C_ovl11(void) {
         D_800EA520[temp_v0] = D_8004A7C4->unk0;
     }
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB34C_ovl11.s")
-// #endif
+#else
+GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB34C_ovl11.s")
+#endif
 
 extern f32 D_800E25D0[];
 extern f32 D_800E2950[];
@@ -144,11 +145,10 @@ void func_801DB5C8_ovl11(void) {
 }
 
 #ifdef MIPS_TO_C
-s32 func_801DB684_ovl11(f32 arg0) {
+void func_801DB684_ovl11(f32 arg0) {
     f32 *temp_a1;
     f32 temp_f0;
     f32 temp_f0_2;
-    f32 temp_f0_3;
     s32 *temp_v1;
     s32 temp_a0;
     s32 temp_a0_2;
@@ -158,65 +158,41 @@ s32 func_801DB684_ovl11(f32 arg0) {
     f32 phi_f0;
     s32 phi_v0;
     f32 *phi_a1;
-    s32 phi_return;
 
-    temp_v1 = D_8004A7C4;
-    temp_a0 = *temp_v1;
-    temp_a0 = temp_a0 * 4;
-    temp_a1 = &D_800E4C50[temp_a0];
-    temp_f0 = *temp_a1;
-    if (temp_f0 < 0.0f) {
-        phi_f2 = -temp_f0;
-    } else {
-        phi_f2 = temp_f0;
-    }
-    temp_f0_2 = (temp_a0 + 0x800F0000)->unk-5760;
+    phi_f2 = ABSF(D_800E4C50[D_8004A7C4->unk0]);
+    temp_f0_2 = D_800EA8A0[D_8004A7C4->unk0];
     if (phi_f2 < temp_f0_2) {
-        if (arg0 < 0.0f) {
-            phi_f2_2 = -arg0;
-        } else {
-            phi_f2_2 = arg0;
-        }
-        if (*0x801E0C10 < phi_f2_2) {
+        phi_f2_2 = ABSF(arg0);
+        if (D_801E0C10.unk0 < phi_f2_2) {
             phi_v0 = 1;
             if (arg0 < 0.0f) {
                 phi_v0 = -1;
             }
-            (temp_a0 + 0x800F0000)->unk-5AE0 = 1;
+            D_800EA520[D_8004A7C4->unk0] = 1;
         } else {
-            (temp_a0 + 0x800F0000)->unk-5AE0 = 0;
+            D_800EA520[D_8004A7C4->unk0] = 0;
             phi_v0 = 0;
         }
-        temp_a0_2 = *temp_v1 * 4;
-        temp_f0_3 = (temp_a0_2 + 0x800F0000)->unk-5760;
-        phi_f0 = temp_f0_3;
-        phi_a1 = temp_a0_2 + 0x800E4C50;
-        phi_return = (bitwise s32) temp_f0_3;
+        D_8004A7C4->unk0_2 = *temp_v1;
+        phi_f0 = D_800EA8A0[D_8004A7C4->unk0_2];
+        phi_a1 = &D_800E4C50[D_8004A7C4->unk0_2];
     } else {
-        if (arg0 < 0.0f) {
-            phi_f2_3 = -arg0;
-        } else {
-            phi_f2_3 = arg0;
-        }
+        phi_f2_3 = ABSF(arg0);
         phi_f0 = temp_f0_2;
         phi_v0 = 0;
         phi_a1 = temp_a1;
-        phi_return = (bitwise s32) temp_f0_2;
-        if (*0x801E0C14 < phi_f2_3) {
+        if (D_801E0C10.unkC14 < phi_f2_3) {
             phi_f0 = temp_f0_2;
             phi_v0 = 1;
             phi_a1 = temp_a1;
-            phi_return = 1;
             if (arg0 < 0.0f) {
                 phi_f0 = temp_f0_2;
                 phi_v0 = -1;
                 phi_a1 = temp_a1;
-                phi_return = -1;
             }
         }
     }
     *phi_a1 = phi_f0 * phi_v0;
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB684_ovl11.s")
@@ -233,9 +209,9 @@ f32 func_801DB7D0_ovl11(void) {
     f32 phi_return;
     f32 phi_return_2;
 
-    func_801DB5C8_ovl11();
-    sp1C = ERROR(Read from unset register $f0);
-    func_801DB684_ovl11(ERROR(Read from unset register $f0));
+    // func_801DB5C8_ovl11();
+    sp1C = func_801DB5C8_ovl11();
+    func_801DB684_ovl11(sp1C);
     temp_v0 = D_8004A7C4->unk0;
     temp_v0 = temp_v0 * 4;
     temp_v1 = &D_800E9720[temp_v0];
@@ -333,40 +309,32 @@ block_10:
         }
     }
     if (temp_a2 != phi_a2) {
-        func_800B1EC8(*(D_800DE510 + phi_v0), &D_801DB8A0);
+        func_800B1EC8(*(D_800DE510 + phi_v0), &func_801DB8A0_ovl11);
     }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB8E8_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
+void func_801DBB4C_ovl11(s32 arg0);
+extern f32 D_801E0C1C;
+extern f32 D_800D70D8;
 void func_801DB9E0_ovl11(s32 arg0) {
-    s32 *temp_v0;
-    s32 *temp_v0_2;
-    s32 temp_v1;
-
-    temp_v0 = D_8004A7C4;
-    D_800DF150[*temp_v0] = &D_801DBB4C;
-    D_800E9FE0[*temp_v0] = 0;
-    D_800EA360[*temp_v0] = 3;
-    D_800EA520[*temp_v0] = 0;
-    D_800E9720[*temp_v0] = 0;
+    D_800DF150[D_8004A7C4->unk0] = &func_801DBB4C_ovl11;
+    D_800E9FE0[D_8004A7C4->unk0] = 0;
+    D_800EA360[D_8004A7C4->unk0] = 3;
+    D_800EA520[D_8004A7C4->unk0] = 0;
+    D_800E9720[D_8004A7C4->unk0] = 0;
     D_800D70D8 = 6.0f;
-    D_800EA8A0[*temp_v0] = D_801E0C1C;
-    D_800EC2E0[*temp_v0] = 0x1E;
-    D_800E7CE0[*temp_v0] = 1.51e-43f;
-    D_800DDC50[*temp_v0] = 0;
+    D_800EA8A0[D_8004A7C4->unk0] = D_801E0C1C;
+    D_800EC2E0[D_8004A7C4->unk0] = 0x1E;
+    D_800E7CE0[D_8004A7C4->unk0] = 0x6C;
+    D_800DDC50[D_8004A7C4->unk0] = 0;
     func_801DB34C_ovl11();
-    temp_v0_2 = D_8004A7C4;
-    D_800E9560[*temp_v0_2] = -1;
-    temp_v1 = *temp_v0_2;
-    D_800E93A0[temp_v1] = D_800E9560[temp_v1];
-    func_800A447C(D_800DDC50[*temp_v0_2], 5, &D_801E0B24);
+    D_800E9560[D_8004A7C4->unk0] = -1;
+    D_800E93A0[D_8004A7C4->unk0] = D_800E9560[D_8004A7C4->unk0];
+    func_800A447C(D_800DDC50[D_8004A7C4->unk0], 5, &D_801E0B24);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB9E0_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DBB4C_ovl11(s32 arg0) {
@@ -414,125 +382,78 @@ void func_801DBB4C_ovl11(s32 arg0) {
     if (D_800D70D8 <= 0.0f) {
         temp_v0_3 = D_8004A7C4;
         D_800DDC50[*temp_v0_3] = 4;
-        func_800B1EC8(D_800DE510[*temp_v0_3], &D_801DB8A0);
+        func_800B1EC8(D_800DE510[*temp_v0_3], &func_801DB8A0_ovl11);
     }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBB4C_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
-s32 *func_801DBCCC_ovl11(s32 arg0) {
-    s32 *temp_a0;
-    s32 *temp_v0;
-    s32 *temp_v1;
-
-    temp_v0 = D_8004A7C4;
-    temp_v1 = &D_800EA360[*temp_v0];
-    if (*temp_v1 == 0) {
-        *temp_v1 = 1;
-        temp_a0 = &D_800EA360[D_800EA520[*temp_v0]];
-        *temp_a0 = *temp_a0 - 1;
-        D_800D70D8 = D_800D70D8 - D_800EB320[*temp_v0];
+void func_801DBCCC_ovl11(s32 arg0) {
+    if (D_800EA360[D_8004A7C4->unk0] == 0) {
+        D_800EA360[D_8004A7C4->unk0] = 1;
+        D_800EA360[D_800EA520[D_8004A7C4->unk0]]--;
+        D_800D70D8 -= D_800EB320[D_8004A7C4->unk0];
     }
-    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBCCC_ovl11.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_801DBD58_ovl11(s32 arg0) {
-    s32 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800E9E20[*temp_v0] = 0;
-    D_800E9FE0[*temp_v0] = 0;
-    D_800DDFD0[*temp_v0] = 0;
+    D_800E9E20[D_8004A7C4->unk0] = 0;
+    D_800E9FE0[D_8004A7C4->unk0] = 0;
+    D_800DDFD0[D_8004A7C4->unk0] = 0;
     func_800AA018_ovl11(0x10400);
     func_800AA864_ovl11(0x103FF, 2);
     D_800E9E20[D_8004A7C4->unk0] = 1;
     func_800AFA14_ovl11();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBD58_ovl11.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_801DBDF8_ovl11(s32 arg0) {
-    s32 *temp_v0;
-    s32 temp_v1;
-
-    temp_v0 = D_8004A7C4;
-    temp_v1 = *temp_v0;
-    if (D_800E9E20[temp_v1] != 0) {
-        D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[*temp_v0], &D_801DB8A0);
+    if (D_800E9E20[D_8004A7C4->unk0] != 0) {
+        D_800DDC50[D_8004A7C4->unk0] = 1;
+        func_800B1EC8(D_800DE510[D_8004A7C4->unk0], &func_801DB8A0_ovl11);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBDF8_ovl11.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_801DBE64_ovl11(s32 arg0) {
-    s32 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800E9E20[*temp_v0] = 0;
-    D_800E9FE0[*temp_v0] = 1;
-    D_800DDFD0[*temp_v0] = 1;
+    D_800E9E20[D_8004A7C4->unk0] = 0;
+    D_800E9FE0[D_8004A7C4->unk0] = 1;
+    D_800DDFD0[D_8004A7C4->unk0] = 1;
     func_800AA018_ovl11(0x10400);
     func_800AA018_ovl11(0x103FF);
     func_800AFA14_ovl11();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBE64_ovl11.s")
-#endif
 
 // stub
 void func_801DBEE8_ovl11(s32 arg0) {
 
 }
 
-#ifdef MIPS_TO_C
 void func_801DBEF0_ovl11(s32 arg0) {
-    s32 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800E9E20[*temp_v0] = 0;
-    D_800E9FE0[*temp_v0] = 1;
-    D_800DDFD0[*temp_v0] = 2;
+    D_800E9E20[D_8004A7C4->unk0] = 0;
+    D_800E9FE0[D_8004A7C4->unk0] = 1;
+    D_800DDFD0[D_8004A7C4->unk0] = 2;
     func_800A7678(0x174);
     func_800A9EA4_ovl11(0x103FC);
     func_800A9EA4_ovl11(0x103FB);
     D_800E9E20[D_8004A7C4->unk0] = 1;
     func_800AFA14_ovl11();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBEF0_ovl11.s")
-#endif
 
 // stub
 void func_801DBF9C_ovl11(s32 arg0) {
 
 }
 
-#ifdef MIPS_TO_C
 void func_801DBFA4_ovl11(s32 arg0, s32 arg1, f32 arg2) {
-    f32 sp24;
-    f32 sp20;
-    f32 sp1C;
-    f32 *temp_a0;
+    Vector sp1C;
     s32 temp_v0;
 
     if (arg1 == 0) {
-        temp_a0 = &sp1C;
-        if (arg2 == 1) {
-            sp20 = 60.0f;
-            sp24 = 60.0f;
-            sp1C = 0.0f;
-            vec3_get_euler_rotation(temp_a0, 2, (bitwise f32) (bitwise s32) D_800E41D0[D_8004A7C4->unk0]);
+        if ((s32)arg2 == 1) {
+            sp1C.y = 60.0f;
+            sp1C.z = 60.0f;
+            sp1C.x = 0.0f;
+            vec3_get_euler_rotation(&sp1C, 2, D_800E41D0[D_8004A7C4->unk0]);
             temp_v0 = func_801ACD90_ovl11(0x20, 0, &sp1C);
             if (temp_v0 != 0) {
                 D_800E41D0[temp_v0] = D_800E41D0[D_8004A7C4->unk0];
@@ -541,9 +462,6 @@ void func_801DBFA4_ovl11(s32 arg0, s32 arg1, f32 arg2) {
         }
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DBFA4_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DC064_ovl11(s32 arg0) {
@@ -575,7 +493,7 @@ void func_801DC158_ovl11(s32 arg0) {
     temp_v1 = *temp_v0;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[*temp_v0], &D_801DB8A0);
+        func_800B1EC8(D_800DE510[*temp_v0], &func_801DB8A0_ovl11);
     }
 }
 #else
