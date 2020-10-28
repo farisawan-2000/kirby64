@@ -19,12 +19,12 @@ glabel func_801DBFA4_ovl11
 /* 1E68A8 801DBFE8 E7A00024 */  swc1  $f0, 0x24($sp)
 /* 1E68AC 801DBFEC E7A6001C */  swc1  $f6, 0x1c($sp)
 /* 1E68B0 801DBFF0 8F190000 */  lw    $t9, ($t8)
-/* 1E68B4 801DBFF4 3C06800E */  lui   $a2, 0x800e
+/* 1E68B4 801DBFF4 3C06800E */ lui $a2, %hi(D_800E41D0)
 /* 1E68B8 801DBFF8 24050002 */  li    $a1, 2
 /* 1E68BC 801DBFFC 00194080 */  sll   $t0, $t9, 2
 /* 1E68C0 801DC000 00C83021 */  addu  $a2, $a2, $t0
 /* 1E68C4 801DC004 0C006424 */  jal   vec3_get_euler_rotation
-/* 1E68C8 801DC008 8CC641D0 */   lw    $a2, 0x41d0($a2)
+/* 1E68C8 801DC008 8CC641D0 */ lw $a2, %lo(D_800E41D0)($a2)
 /* 1E68CC 801DC00C 24040020 */  li    $a0, 32
 /* 1E68D0 801DC010 00002825 */  move  $a1, $zero
 /* 1E68D4 801DC014 0C06B364 */  jal   func_801ACD90_ovl11

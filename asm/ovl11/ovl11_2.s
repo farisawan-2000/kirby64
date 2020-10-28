@@ -1408,4 +1408,4 @@ glabel func_801E09C4_ovl11
 /* 1EB3B8 801E0AF8 00000000 */  nop   
 /* 1EB3BC 801E0AFC 00000000 */  nop   
 # Unknown region 1EB3C0-1EB520 [160]
-.incbin "bin/kirby.u.1EB3C0.bin"
+# .incbin "bin/kirby.u.1EB3C0.bin"

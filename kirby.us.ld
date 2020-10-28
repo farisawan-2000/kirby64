@@ -395,6 +395,7 @@ SECTIONS
    BEGIN_SEG(ovl11, 0x801DB1E0) {
       BUILD_DIR/src/ovl11/boss2.o(.text);
       BUILD_DIR/asm/ovl11/ovl11_2.o(.text);
+      BUILD_DIR/data/ovl11/kirby.1EB3C0.o(.data);
    }
    END_SEG(ovl11)
 

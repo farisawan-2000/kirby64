@@ -5,11 +5,11 @@ glabel func_801DC1C4_ovl11
 /* 1E6A90 801DC1D0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1E6A94 801DC1D4 AFA40018 */  sw    $a0, 0x18($sp)
 /* 1E6A98 801DC1D8 8DF80000 */  lw    $t8, ($t7)
-/* 1E6A9C 801DC1DC 3C01800E */  lui   $at, 0x800e
+/* 1E6A9C 801DC1DC 3C01800E */ lui $at, %hi(D_800DDFD0)
 /* 1E6AA0 801DC1E0 240E0004 */  li    $t6, 4
 /* 1E6AA4 801DC1E4 0018C880 */  sll   $t9, $t8, 2
 /* 1E6AA8 801DC1E8 00390821 */  addu  $at, $at, $t9
-/* 1E6AAC 801DC1EC AC2EDFD0 */  sw    $t6, -0x2030($at)
+/* 1E6AAC 801DC1EC AC2EDFD0 */ sw $t6, %lo(D_800DDFD0)($at)
 /* 1E6AB0 801DC1F0 24040002 */  li    $a0, 2
 /* 1E6AB4 801DC1F4 0C02ED1A */  jal   func_800BB468_ovl11
 /* 1E6AB8 801DC1F8 00002825 */   move  $a1, $zero

@@ -12,14 +12,14 @@ glabel func_801DF198_ovl11
 /* 1E9A80 801DF1C0 55E1000D */  bnel  $t7, $at, .L801DF1F8_ovl11
 /* 1E9A84 801DF1C4 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 1E9A88 801DF1C8 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
-/* 1E9A8C 801DF1CC 3C01800F */  lui   $at, 0x800f
+/* 1E9A8C 801DF1CC 3C01800F */ lui $at, %hi(D_800E9C60)
 /* 1E9A90 801DF1D0 00002025 */  move  $a0, $zero
 /* 1E9A94 801DF1D4 8F190000 */  lw    $t9, ($t8)
 /* 1E9A98 801DF1D8 00002825 */  move  $a1, $zero
 /* 1E9A9C 801DF1DC 00194080 */  sll   $t0, $t9, 2
 /* 1E9AA0 801DF1E0 00280821 */  addu  $at, $at, $t0
 /* 1E9AA4 801DF1E4 0C02ED1A */  jal   func_800BB468_ovl11
-/* 1E9AA8 801DF1E8 AC209C60 */   sw    $zero, -0x63a0($at)
+/* 1E9AA8 801DF1E8 AC209C60 */ sw $zero, %lo(D_800E9C60)($at)
 /* 1E9AAC 801DF1EC 0C03EE45 */  jal   func_800FB914_ovl11
 /* 1E9AB0 801DF1F0 24040002 */   li    $a0, 2
 .L801DF1F4_ovl11:

@@ -52,7 +52,7 @@ glabel func_801DC2A0_ovl11
 /* 1E6C14 801DC354 ACE50000 */  sw    $a1, ($a3)
 .L801DC358_ovl11:
 /* 1E6C18 801DC358 8CD80000 */  lw    $t8, ($a2)
-/* 1E6C1C 801DC35C 3C01800F */  lui   $at, 0x800f
+/* 1E6C1C 801DC35C 3C01800F */ lui $at, %hi(D_800EA520)
 /* 1E6C20 801DC360 0018C880 */  sll   $t9, $t8, 2
 /* 1E6C24 801DC364 01194821 */  addu  $t1, $t0, $t9
 /* 1E6C28 801DC368 AD220000 */  sw    $v0, ($t1)
@@ -62,4 +62,4 @@ glabel func_801DC2A0_ovl11
 /* 1E6C38 801DC378 000A5880 */  sll   $t3, $t2, 2
 /* 1E6C3C 801DC37C 002B0821 */  addu  $at, $at, $t3
 /* 1E6C40 801DC380 03E00008 */  jr    $ra
-/* 1E6C44 801DC384 AC23A520 */   sw    $v1, -0x5ae0($at)
+/* 1E6C44 801DC384 AC23A520 */ sw $v1, %lo(D_800EA520)($at)

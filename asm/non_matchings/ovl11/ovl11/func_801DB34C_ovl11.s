@@ -53,29 +53,29 @@ glabel func_801DB34C_ovl11
 /* 1E5CCC 801DB40C 02904821 */  addu  $t1, $s4, $s0
 /* 1E5CD0 801DB410 8DCF0000 */  lw    $t7, ($t6)
 /* 1E5CD4 801DB414 468021A0 */  cvt.s.w $f6, $f4
-/* 1E5CD8 801DB418 3C01800E */  lui   $at, 0x800e
+/* 1E5CD8 801DB418 3C01800E */ lui $at, %hi(D_800E76C0)
 /* 1E5CDC 801DB41C 000FC080 */  sll   $t8, $t7, 2
 /* 1E5CE0 801DB420 0298C821 */  addu  $t9, $s4, $t8
 /* 1E5CE4 801DB424 8F280000 */  lw    $t0, ($t9)
 /* 1E5CE8 801DB428 00260821 */  addu  $at, $at, $a2
 /* 1E5CEC 801DB42C 240A00FF */  li    $t2, 255
 /* 1E5CF0 801DB430 AD280000 */  sw    $t0, ($t1)
-/* 1E5CF4 801DB434 A02A76C0 */  sb    $t2, 0x76c0($at)
-/* 1E5CF8 801DB438 3C01800E */  lui   $at, 0x800e
+/* 1E5CF4 801DB434 A02A76C0 */ sb $t2, %lo(D_800E76C0)($at)
+/* 1E5CF8 801DB438 3C01800E */ lui $at, %hi(D_800E7730)
 /* 1E5CFC 801DB43C 46163202 */  mul.s $f8, $f6, $f22
 /* 1E5D00 801DB440 00260821 */  addu  $at, $at, $a2
-/* 1E5D04 801DB444 A0367730 */  sb    $s6, 0x7730($at)
-/* 1E5D08 801DB448 3C01800E */  lui   $at, 0x800e
+/* 1E5D04 801DB444 A0367730 */ sb $s6, %lo(D_800E7730)($at)
+/* 1E5D08 801DB448 3C01800E */ lui $at, %hi(D_800E77A0)
 /* 1E5D0C 801DB44C 00065840 */  sll   $t3, $a2, 1
 /* 1E5D10 801DB450 002B0821 */  addu  $at, $at, $t3
-/* 1E5D14 801DB454 A42077A0 */  sh    $zero, 0x77a0($at)
-/* 1E5D18 801DB458 3C01800E */  lui   $at, 0x800e
+/* 1E5D14 801DB454 A42077A0 */ sh $zero, %lo(D_800E77A0)($at)
+/* 1E5D18 801DB458 3C01800E */ lui $at, %hi(D_800E7880)
 /* 1E5D1C 801DB45C 3C0C800E */  lui   $t4, %hi(D_800E5F90) # $t4, 0x800e
 /* 1E5D20 801DB460 3C0D800E */  lui   $t5, %hi(D_800E6BD0) # $t5, 0x800e
 /* 1E5D24 801DB464 00260821 */  addu  $at, $at, $a2
 /* 1E5D28 801DB468 258C5F90 */  addiu $t4, %lo(D_800E5F90) # addiu $t4, $t4, 0x5f90
 /* 1E5D2C 801DB46C 25AD6BD0 */  addiu $t5, %lo(D_800E6BD0) # addiu $t5, $t5, 0x6bd0
-/* 1E5D30 801DB470 A0367880 */  sb    $s6, 0x7880($at)
+/* 1E5D30 801DB470 A0367880 */ sb $s6, %lo(D_800E7880)($at)
 /* 1E5D34 801DB474 020C8821 */  addu  $s1, $s0, $t4
 /* 1E5D38 801DB478 020D9021 */  addu  $s2, $s0, $t5
 /* 1E5D3C 801DB47C 44054000 */  mfc1  $a1, $f8
@@ -84,13 +84,13 @@ glabel func_801DB34C_ovl11
 /* 1E5D48 801DB488 0C03E63B */  jal   func_800F98EC_ovl11
 /* 1E5D4C 801DB48C 00C02025 */   move  $a0, $a2
 /* 1E5D50 801DB490 8E2E0000 */  lw    $t6, ($s1)
-/* 1E5D54 801DB494 3C01800E */  lui   $at, 0x800e
+/* 1E5D54 801DB494 3C01800E */ lui $at, %hi(D_800E6150)
 /* 1E5D58 801DB498 00300821 */  addu  $at, $at, $s0
-/* 1E5D5C 801DB49C AC2E6150 */  sw    $t6, 0x6150($at)
+/* 1E5D5C 801DB49C AC2E6150 */ sw $t6, %lo(D_800E6150)($at)
 /* 1E5D60 801DB4A0 C64A0000 */  lwc1  $f10, ($s2)
-/* 1E5D64 801DB4A4 3C01800E */  lui   $at, 0x800e
+/* 1E5D64 801DB4A4 3C01800E */ lui $at, %hi(D_800E6D90)
 /* 1E5D68 801DB4A8 00300821 */  addu  $at, $at, $s0
-/* 1E5D6C 801DB4AC E42A6D90 */  swc1  $f10, 0x6d90($at)
+/* 1E5D6C 801DB4AC E42A6D90 */ swc1 $f10, %lo(D_800E6D90)($at)
 /* 1E5D70 801DB4B0 8EA30000 */  lw    $v1, ($s5)
 /* 1E5D74 801DB4B4 02F04021 */  addu  $t0, $s7, $s0
 /* 1E5D78 801DB4B8 03D06021 */  addu  $t4, $fp, $s0
@@ -119,7 +119,7 @@ glabel func_801DB34C_ovl11
 /* 1E5DD4 801DB514 008E7821 */  addu  $t7, $a0, $t6
 /* 1E5DD8 801DB518 C5E40000 */  lwc1  $f4, ($t7)
 /* 1E5DDC 801DB51C 00D07021 */  addu  $t6, $a2, $s0
-/* 1E5DE0 801DB520 3C01800F */  lui   $at, 0x800f
+/* 1E5DE0 801DB520 3C01800F */ lui $at, %hi(D_800E8E60)
 /* 1E5DE4 801DB524 E7040000 */  swc1  $f4, ($t8)
 /* 1E5DE8 801DB528 8C790000 */  lw    $t9, ($v1)
 /* 1E5DEC 801DB52C 00300821 */  addu  $at, $at, $s0
@@ -139,11 +139,11 @@ glabel func_801DB34C_ovl11
 /* 1E5E24 801DB564 00F8C821 */  addu  $t9, $a3, $t8
 /* 1E5E28 801DB568 C72A0000 */  lwc1  $f10, ($t9)
 /* 1E5E2C 801DB56C E50A0000 */  swc1  $f10, ($t0)
-/* 1E5E30 801DB570 AC208E60 */  sw    $zero, -0x71a0($at)
+/* 1E5E30 801DB570 AC208E60 */ sw $zero, %lo(D_800E8E60)($at)
 /* 1E5E34 801DB574 8C690000 */  lw    $t1, ($v1)
-/* 1E5E38 801DB578 3C01800F */  lui   $at, 0x800f
+/* 1E5E38 801DB578 3C01800F */ lui $at, %hi(D_800EA520)
 /* 1E5E3C 801DB57C 00300821 */  addu  $at, $at, $s0
-/* 1E5E40 801DB580 AC29A520 */  sw    $t1, -0x5ae0($at)
+/* 1E5E40 801DB580 AC29A520 */ sw $t1, %lo(D_800EA520)($at)
 /* 1E5E44 801DB584 24010003 */  li    $at, 3
 /* 1E5E48 801DB588 5661FF8C */  bnel  $s3, $at, .L801DB3BC_ovl11
 /* 1E5E4C 801DB58C 24040019 */   li    $a0, 25

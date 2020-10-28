@@ -5,19 +5,19 @@ glabel func_801DC674_ovl11
 /* 1E6F40 801DC680 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 1E6F44 801DC684 AFB00018 */  sw    $s0, 0x18($sp)
 /* 1E6F48 801DC688 8DC20000 */  lw    $v0, ($t6)
-/* 1E6F4C 801DC68C 3C03800E */  lui   $v1, 0x800e
-/* 1E6F50 801DC690 3C10800E */  lui   $s0, 0x800e
+/* 1E6F4C 801DC68C 3C03800E */ lui $v1, %hi(D_800DFBD0)
+/* 1E6F50 801DC690 3C10800E */ lui $s0, %hi(D_800E1B50)
 /* 1E6F54 801DC694 00021080 */  sll   $v0, $v0, 2
 /* 1E6F58 801DC698 00621821 */  addu  $v1, $v1, $v0
-/* 1E6F5C 801DC69C 8C63FBD0 */  lw    $v1, -0x430($v1)
+/* 1E6F5C 801DC69C 8C63FBD0 */ lw $v1, %lo(D_800DFBD0)($v1)
 /* 1E6F60 801DC6A0 02028021 */  addu  $s0, $s0, $v0
-/* 1E6F64 801DC6A4 8E101B50 */  lw    $s0, 0x1b50($s0)
+/* 1E6F64 801DC6A4 8E101B50 */ lw $s0, %lo(D_800E1B50)($s0)
 /* 1E6F68 801DC6A8 8C6F006C */  lw    $t7, 0x6c($v1)
-/* 1E6F6C 801DC6AC 3C04800E */  lui   $a0, 0x800e
+/* 1E6F6C 801DC6AC 3C04800E */ lui $a0, %hi(D_800DE350)
 /* 1E6F70 801DC6B0 00822021 */  addu  $a0, $a0, $v0
 /* 1E6F74 801DC6B4 AFAF0024 */  sw    $t7, 0x24($sp)
 /* 1E6F78 801DC6B8 8C780074 */  lw    $t8, 0x74($v1)
-/* 1E6F7C 801DC6BC 8C84E350 */  lw    $a0, -0x1cb0($a0)
+/* 1E6F7C 801DC6BC 8C84E350 */ lw $a0, %lo(D_800DE350)($a0)
 /* 1E6F80 801DC6C0 AFB80020 */  sw    $t8, 0x20($sp)
 /* 1E6F84 801DC6C4 8E190070 */  lw    $t9, 0x70($s0)
 /* 1E6F88 801DC6C8 2728FFFF */  addiu $t0, $t9, -1
@@ -61,14 +61,14 @@ glabel func_801DC674_ovl11
 /* 1E7018 801DC758 15E00012 */  bnez  $t7, .L801DC7A4_ovl11
 /* 1E701C 801DC75C AE0F0068 */   sw    $t7, 0x68($s0)
 /* 1E7020 801DC760 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)
-/* 1E7024 801DC764 3C01800F */  lui   $at, 0x800f
+/* 1E7024 801DC764 3C01800F */ lui $at, %hi(D_800EA1A0)
 /* 1E7028 801DC768 8FA40028 */  lw    $a0, 0x28($sp)
 /* 1E702C 801DC76C 8F280000 */  lw    $t0, ($t9)
 /* 1E7030 801DC770 3C054000 */  lui   $a1, 0x4000
 /* 1E7034 801DC774 00084880 */  sll   $t1, $t0, 2
 /* 1E7038 801DC778 00290821 */  addu  $at, $at, $t1
 /* 1E703C 801DC77C 0C076CAF */  jal   func_801DB2BC_ovl11
-/* 1E7040 801DC780 AC20A1A0 */   sw    $zero, -0x5e60($at)
+/* 1E7040 801DC780 AC20A1A0 */ sw $zero, %lo(D_800EA1A0)($at)
 /* 1E7044 801DC784 3C05801E */  lui   $a1, %hi(D_801E0B18) # $a1, 0x801e
 /* 1E7048 801DC788 24A50B18 */  addiu $a1, %lo(D_801E0B18) # addiu $a1, $a1, 0xb18
 /* 1E704C 801DC78C 0C076CC7 */  jal   func_801DB31C_ovl11

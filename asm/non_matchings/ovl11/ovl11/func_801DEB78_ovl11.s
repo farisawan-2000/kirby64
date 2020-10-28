@@ -5,11 +5,11 @@ glabel func_801DEB78_ovl11
 /* 1E9444 801DEB84 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 1E9448 801DEB88 AFA40028 */  sw    $a0, 0x28($sp)
 /* 1E944C 801DEB8C 8DCF0000 */  lw    $t7, ($t6)
-/* 1E9450 801DEB90 3C02800E */  lui   $v0, 0x800e
+/* 1E9450 801DEB90 3C02800E */ lui $v0, %hi(D_800E1B50)
 /* 1E9454 801DEB94 24190001 */  li    $t9, 1
 /* 1E9458 801DEB98 000FC080 */  sll   $t8, $t7, 2
 /* 1E945C 801DEB9C 00581021 */  addu  $v0, $v0, $t8
-/* 1E9460 801DEBA0 8C421B50 */  lw    $v0, 0x1b50($v0)
+/* 1E9460 801DEBA0 8C421B50 */ lw $v0, %lo(D_800E1B50)($v0)
 /* 1E9464 801DEBA4 3C018000 */  lui   $at, 0x8000
 /* 1E9468 801DEBA8 8C430094 */  lw    $v1, 0x94($v0)
 /* 1E946C 801DEBAC A0590040 */  sb    $t9, 0x40($v0)

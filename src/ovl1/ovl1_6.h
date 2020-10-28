@@ -75,7 +75,7 @@ extern f32 D_800E83E0[];
 extern f32 D_800E8760[];
 extern f32 D_800E8E60[];
 extern f32 D_800E9020[];
-extern s32 D_800E76C0[];
+extern u8 D_800E76C0[];
 extern s32 D_800E7730[];
 
 extern u16 D_800E77A0[];

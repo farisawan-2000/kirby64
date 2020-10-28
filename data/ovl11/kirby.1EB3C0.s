@@ -170,7 +170,7 @@ glabel D_801E0BDC
 
 
 glabel D_801E0BE0
-.asciiz "reqWhispyJrTrk  Request Error!![boss2.cc]"
+.asciiz "reqWhispyJrTrk  Request Error!![boss2.cc]\n"
 
 glabel D_801E0C0C
 .word 0x44278000
@@ -233,5 +233,13 @@ glabel D_801E0C58
 .word 0x00000000
 
 glabel D_801E0C5C
-.word 0x00000000
+.byte 0
 
+glabel D_801E0C5D
+.byte 0
+
+glabel D_801E0C5E
+.byte 0
+
+glabel D_801E0C5F
+.byte 0
