@@ -2,11 +2,6 @@
 #define D_H
 #include "types.h"
 
-typedef union {
-	u32 asU32;
-	u16 asU16[2];
-} hiLo; // TODO: confirm that this is actually what unk0 is
-
 struct UnkStruct8004A7C4_3C {
 	u32 unk0;
 	u32 unk4;
@@ -31,6 +26,7 @@ struct UnkStruct8004A7C4_3C {
 	u32 unk4C;
 };
 
+// GObj?
 struct UnkStruct8004A7C4 {
 	u32 objId;
 	struct UnkStruct8004A7C4* unk4;

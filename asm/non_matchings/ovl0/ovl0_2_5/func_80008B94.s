@@ -9,7 +9,7 @@ glabel func_80008B94
 .L80008BB0_ovl0:
 /* 0097B0 80008BB0 AFA40030 */  sw    $a0, 0x30($sp)
 /* 0097B4 80008BB4 AFA60038 */  sw    $a2, 0x38($sp)
-/* 0097B8 80008BB8 0C00201A */  jal   func_80008068
+/* 0097B8 80008BB8 0C00201A */  jal   get_gobj_process
 /* 0097BC 80008BBC AFA7003C */   sw    $a3, 0x3c($sp)
 /* 0097C0 80008BC0 8FA60038 */  lw    $a2, 0x38($sp)
 /* 0097C4 80008BC4 8FA7003C */  lw    $a3, 0x3c($sp)
@@ -29,7 +29,7 @@ glabel func_80008B94
 /* 0097F4 80008BF4 AE0E0018 */  sw    $t6, 0x18($s0)
 /* 0097F8 80008BF8 8FAF0034 */  lw    $t7, 0x34($sp)
 /* 0097FC 80008BFC AE0F0020 */  sw    $t7, 0x20($s0)
-/* 009800 80008C00 0C001FD8 */  jal   func_80007F60
+/* 009800 80008C00 0C001FD8 */  jal   get_gobj_thread
 /* 009804 80008C04 AFA7003C */   sw    $a3, 0x3c($sp)
 /* 009808 80008C08 8FA80044 */  lw    $t0, 0x44($sp)
 /* 00980C 80008C0C 8FA7003C */  lw    $a3, 0x3c($sp)
@@ -38,7 +38,7 @@ glabel func_80008B94
 /* 009818 80008C18 00401825 */   move  $v1, $v0
 /* 00981C 80008C1C A2000014 */  sb    $zero, 0x14($s0)
 /* 009820 80008C20 AFA7003C */  sw    $a3, 0x3c($sp)
-/* 009824 80008C24 0C001FF9 */  jal   func_80007FE4
+/* 009824 80008C24 0C001FF9 */  jal   get_gobj_thread_stack
 /* 009828 80008C28 AFA30028 */   sw    $v1, 0x28($sp)
 /* 00982C 80008C2C 8FA30028 */  lw    $v1, 0x28($sp)
 /* 009830 80008C30 8FA7003C */  lw    $a3, 0x3c($sp)

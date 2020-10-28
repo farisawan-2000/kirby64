@@ -63,7 +63,7 @@ struct ObjProcess {
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    struct UnkStruct8004A7C4 *unk18;
+    u32 *unk18;
     struct ObjThread *thread;
     struct ObjThread *unk20; // another thread?
 };
@@ -78,11 +78,6 @@ struct unk80008840 {
 
 struct MObj {
     struct MObj *unk0;
-};
-
-struct unk8004A678Addr { // might be 8004A7C4
-    u8 filler[4];
-    struct unk8004A678Addr *unk4;
 };
 
 struct DObj {

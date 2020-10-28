@@ -13,7 +13,7 @@ extern struct ObjThread *gObjectThreadMaybe;
 extern u8 D_80040230[];
 extern u32 D_8004A544;
 
-struct ObjThread *func_80007F60(void) {
+struct ObjThread *get_gobj_thread(void) {
     struct ObjThread *ret;
     if (gObjectThreadMaybe == NULL) {
         fatal_printf(D_80040230); // om : couldn't get GObjThread
@@ -35,7 +35,7 @@ extern struct ObjThreadStack* gObjectThreadStackMaybe;
 extern u32 D_8004A548;
 extern u8 D_80040250[];
 
-struct ObjThreadStack *func_80007FE4(void) {
+struct ObjThreadStack *get_gobj_thread_stack(void) {
     struct ObjThreadStack *temp_v0;
 
     if (gObjectThreadStackMaybe == NULL) {
@@ -58,7 +58,7 @@ extern struct ObjProcess* gObjectProcessMaybe;
 extern u32 D_8004A570;
 extern u8 D_80040274[];
 
-struct ObjProcess *func_80008068(void) {
+struct ObjProcess *get_gobj_process(void) {
     struct ObjProcess *temp_v0;
 
     if (gObjectProcessMaybe == NULL) {
@@ -225,12 +225,12 @@ void func_8000831C(s32 arg0) {
     D_8004A558 = arg0;
 }
 
-extern struct unk8004A678Addr *D_8004A678;
+extern struct UnkStruct8004A7C4 *D_8004A678;
 extern u32 D_8004A78C;
 
 // Unused?
 s32 func_80008328(void) {
-    struct unk8004A678Addr *phi_v0;
+    struct UnkStruct8004A7C4 *phi_v0;
     s32 phi_v1;
 
     phi_v0 = D_8004A678;
@@ -243,8 +243,8 @@ s32 func_80008328(void) {
 }
 
 // Another potential pop
-struct unk8004A678Addr *func_8000835C(void) {
-    struct unk8004A678Addr *temp_v0;
+struct UnkStruct8004A7C4 *func_8000835C(void) {
+    struct UnkStruct8004A7C4 *temp_v0;
 
     if (D_8004A678 == 0) {
         return NULL;
@@ -256,7 +256,7 @@ struct unk8004A678Addr *func_8000835C(void) {
 }
 
 // Another potential push
-void func_800083A0(struct unk8004A678Addr *arg0) {
+void func_800083A0(struct UnkStruct8004A7C4 *arg0) {
     arg0->unk4 = D_8004A678;
     D_8004A678 = arg0;
     D_8004A78C--;
@@ -264,8 +264,6 @@ void func_800083A0(struct unk8004A678Addr *arg0) {
 
 extern void* D_8004A578[];
 extern void* D_8004A5F8[];
-
-
 
 void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     void *temp_v0;
@@ -324,23 +322,10 @@ void func_80008528(struct UnkStruct8004A7C4 *arg0) {
     D_8004A5F8[arg0->unkC] = arg0->unk8;
 }
 
-// Following code paths shows that this struct is likely the same one as used in func_801DB1E0
-// Seems to be some sort of doubly-linked list element
-// struct UnkStruct8004A7C4 {
-//     u8 filler[0x0D];
-//     u8 unkD;
-//     u8 filler2[0x20 - 0x0D - 0x01];
-//     struct UnkStruct8004A7C4* unk20;
-//     struct UnkStruct8004A7C4* unk24;
-//     u32 unk28;
-// };
-
 extern struct UnkStruct8004A7C4* D_8004A680[];
 extern struct UnkStruct8004A7C4* D_8004A708[];
 
 void func_80008590(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
-    struct UnkStruct8004A7C4 *temp_v0;
-
     arg0->unk24 = arg1;
     if (arg1 != 0) {
         arg0->unk20 = arg1->unk20;
@@ -543,7 +528,7 @@ extern u8 D_80040340[];
 extern s32 D_8003DE50; // thread ID
 extern u32 D_8004A54C;
 
-struct ObjThread *func_80007F60();
+struct ObjThread *get_gobj_thread();
 void func_800080C0(struct ObjProcess *);
 
 struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u8 pri, u32 kind) {
@@ -554,7 +539,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
     }
-    oProcess = func_80008068();
+    oProcess = get_gobj_process();
     if (kind >= 4) {
         fatal_printf(D_80040314);
         while (1);
@@ -566,9 +551,9 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
     oProcess->unk20 = arg1;
     switch (pri) {
         case 0:
-            oThread = func_80007F60();
+            oThread = get_gobj_thread();
             oProcess->thread = oThread;
-            oThread->objStack = &func_80007FE4()->unk8;
+            oThread->objStack = &get_gobj_thread_stack()->unk8;
             oThread->unk1BC = D_8004A54C;
             osCreateThread(&oThread->unk8, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C >> 3]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
@@ -609,7 +594,7 @@ struct ObjProcess *func_80008B94(u32 arg0, u32 arg1, u32 arg2, s32 arg3, void *a
     }
     arg0 = phi_a0;
     temp_a3 = arg3;
-    temp_s0 = func_80008068();
+    temp_s0 = get_gobj_process();
     if (arg2 >= 4) {
         fatal_printf(D_80040368, arg2, temp_a3);
 loop_4:
@@ -620,13 +605,13 @@ loop_4:
     temp_s0->unk18 = arg0;
     temp_s0->unk20 = arg1;
     arg3 = temp_a3;
-    temp_v0 = func_80007F60(D_80040368, arg2, temp_a3);
+    temp_v0 = get_gobj_thread(D_80040368, arg2, temp_a3);
     temp_s0->unk1C = temp_v0;
     if (arg5 == 0) {
         temp_s0->unk14 = 0;
         arg3 = arg3;
         sp28 = temp_v0;
-        temp_v0->unk1B8 = func_80007FE4() + 8;
+        temp_v0->unk1B8 = get_gobj_thread_stack() + 8;
         temp_v0->unk1BC = D_8004A54C;
         if (arg3 != -1) {
             phi_a1 = arg3;
@@ -1333,10 +1318,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 
 // omGAddCommon
 #ifdef MIPS_TO_C
-struct unk8004A678Addr *func_8000A0C0(u8 *arg0, s32 arg1, u8 arg2, s32 arg3) {
+struct UnkStruct8004A7C4 *func_8000A0C0(u8 *arg0, s32 arg1, u8 arg2, s32 arg3) {
     s32 sp18;
     s32 temp_a2;
-    struct unk8004A678Addr *temp_v0;
+    struct UnkStruct8004A7C4 *temp_v0;
 
     temp_a2 = arg2 & 0xFF;
     sp18 = temp_a2;
@@ -2092,8 +2077,8 @@ void func_8000AE84(void *arg0) {
     struct ObjProcess *temp_v1_2;
     struct ObjThreadStack *temp_v0_2;
     struct ObjThreadStack *temp_v0_3;
-    struct unk8004A678Addr *temp_t9;
-    struct unk8004A678Addr *temp_v0_6;
+    struct UnkStruct8004A7C4 *temp_t9;
+    struct UnkStruct8004A7C4 *temp_v0_6;
     u32 *temp_v0;
     u32 *temp_v1;
     u32 temp_a0_2;
@@ -2116,9 +2101,9 @@ void func_8000AE84(void *arg0) {
     s32 phi_a0_3;
     struct ObjProcess *phi_v1_4;
     u32 phi_v0_3;
-    struct unk8004A678Addr *phi_v0_4;
+    struct UnkStruct8004A7C4 *phi_v0_4;
     s32 phi_a0_4;
-    struct unk8004A678Addr *phi_v0_5;
+    struct UnkStruct8004A7C4 *phi_v0_5;
     void **phi_v1_5;
     s32 phi_a0_5;
     void **phi_v1_6;
