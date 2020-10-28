@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <macros.h>
+#include "D_8004A7C4.h"
 
 extern s32 D_800D6E8C;
 extern f32 gKirbyHp;
@@ -482,7 +483,6 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_13/func_800BCA5C.s")
 
 extern f32 D_800E25D0[];
 extern f32 D_800E2790[];
-extern s32 *D_8004A7C4;
 extern s32 D_800E9AA0[];
 extern s32 D_800E98E0[];
 extern s32 D_800E9FE0[];
@@ -509,10 +509,10 @@ void func_800BCEEC(s32 arg0) {
     temp_v0->unk13 |= 4;
     func_8000A5FC_ovl1(arg0, &D_800AD1A0, 0xA, 0x80000000, 0xA);
     func_800AF96C_ovl1(1);
-    D_800E25D0[*D_8004A7C4] = 7.0f;
-    D_800E2790[*D_8004A7C4] = 182.0f;
-    D_800E9FE0[*D_8004A7C4] = 0;
-    func_800AFA14_ovl1(D_800E98E0[*D_8004A7C4] = D_800E9AA0[*D_8004A7C4] = D_800E9FE0[*D_8004A7C4], D_800E9FE0);
+    D_800E25D0[D_8004A7C4->objId] = 7.0f;
+    D_800E2790[D_8004A7C4->objId] = 182.0f;
+    D_800E9FE0[D_8004A7C4->objId] = 0;
+    func_800AFA14_ovl1(D_800E98E0[D_8004A7C4->objId] = D_800E9AA0[D_8004A7C4->objId] = D_800E9FE0[D_8004A7C4->objId], D_800E9FE0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_13/func_800BCEEC.s")

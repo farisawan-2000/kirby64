@@ -2,6 +2,7 @@
 #include <macros.h>
 #include "types.h"
 #include "ovl2_8.h"
+#include "D_8004A7C4.h"
 
 #ifdef MIPS_TO_C
 void *func_8011BA10_ovl2(void *arg0, s32 arg1) {
@@ -2979,7 +2980,6 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 
 
 
-extern u32 *D_8004A7C4;
 extern s16 D_8012844C[][2];
 extern u32 D_800E25D0[];
 extern f32 D_800E2790[], D_800E2950[];
@@ -2990,8 +2990,8 @@ extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, u32 d, f32 e, f32 f);
 void func_80122B40_ovl2(void) {
     u16 phi_a2;
 
-    if (D_800E8AE0[*D_8004A7C4] & 7) {
-        if (D_800E8AE0[*D_8004A7C4] & 6)
+    if (D_800E8AE0[D_8004A7C4->objId] & 7) {
+        if (D_800E8AE0[D_8004A7C4->objId] & 6)
             phi_a2 = 19;
         else
             phi_a2 = 14;
@@ -3002,7 +3002,7 @@ void func_80122B40_ovl2(void) {
         else
             phi_a2 = D_8012844C[gKirbyState.unk10A * 7][0];
     }
-    func_800A7F74_ovl2(5, 1, phi_a2, D_800E25D0[*D_8004A7C4], D_800E2790[*D_8004A7C4], D_800E2950[*D_8004A7C4]);
+    func_800A7F74_ovl2(5, 1, phi_a2, D_800E25D0[D_8004A7C4->objId], D_800E2790[D_8004A7C4->objId], D_800E2950[D_8004A7C4->objId]);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122B40_ovl2.s")
