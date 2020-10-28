@@ -18,7 +18,6 @@ extern s32 D_800E0F10[];
 extern s32 D_800E0D50[];
 extern s32 D_800E0490[];
 extern s32 *D_800E0650[];
-extern s32 *D_800E1B50[];
 extern s32 D_800E1ED0[];
 extern s32 D_800DEDD0[];
 extern s32 *D_800DEF90[];

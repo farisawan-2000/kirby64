@@ -5,6 +5,7 @@
 #include "ovl1_6.h"
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800DE350.h"
+#include "unk_structs/D_800E1B50.h"
 
 extern s32 D_800EC9E0; 
 void func_800AE0F0(void) {
