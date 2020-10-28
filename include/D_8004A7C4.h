@@ -43,7 +43,10 @@ struct UnkStruct8004A7C4 {
     void (*unk14)(void);
     u32 unk18;
     u32 unk1C;
-	u8 filler[0x1C];
+    struct UnkStruct8004A7C4* unk20;
+    struct UnkStruct8004A7C4* unk24;
+    u32 unk28;
+	u8 filler[0x10];
 	struct UnkStruct8004A7C4_3C *unk3C;
 };
 extern struct UnkStruct8004A7C4 *D_8004A7C4;

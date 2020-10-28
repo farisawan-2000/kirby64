@@ -326,20 +326,20 @@ void func_80008528(struct UnkStruct8004A7C4 *arg0) {
 
 // Following code paths shows that this struct is likely the same one as used in func_801DB1E0
 // Seems to be some sort of doubly-linked list element
-struct unk800086ECFunc {
-    u8 filler[0x0D];
-    u8 unkD;
-    u8 filler2[0x20 - 0x0D - 0x01];
-    struct unk800086ECFunc* unk20;
-    struct unk800086ECFunc* unk24;
-    u32 unk28;
-};
+// struct UnkStruct8004A7C4 {
+//     u8 filler[0x0D];
+//     u8 unkD;
+//     u8 filler2[0x20 - 0x0D - 0x01];
+//     struct UnkStruct8004A7C4* unk20;
+//     struct UnkStruct8004A7C4* unk24;
+//     u32 unk28;
+// };
 
-extern struct unk800086ECFunc* D_8004A680[];
-extern struct unk800086ECFunc* D_8004A708[];
+extern struct UnkStruct8004A7C4* D_8004A680[];
+extern struct UnkStruct8004A7C4* D_8004A708[];
 
-void func_80008590(struct unk800086ECFunc *arg0, struct unk800086ECFunc *arg1) {
-    struct unk800086ECFunc *temp_v0;
+void func_80008590(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
+    struct UnkStruct8004A7C4 *temp_v0;
 
     arg0->unk24 = arg1;
     if (arg1 != 0) {
@@ -356,8 +356,8 @@ void func_80008590(struct unk800086ECFunc *arg0, struct unk800086ECFunc *arg1) {
     D_8004A708[arg0->unkD] = arg0;
 }
 
-void func_800085F8(struct unk800086ECFunc *arg0) {
-    struct unk800086ECFunc *phi_a1;
+void func_800085F8(struct UnkStruct8004A7C4 *arg0) {
+    struct UnkStruct8004A7C4 *phi_a1;
     
     phi_a1 = D_8004A708[arg0->unkD];
     while (phi_a1 != 0 && phi_a1->unk28 < arg0->unk28) {
@@ -366,9 +366,9 @@ void func_800085F8(struct unk800086ECFunc *arg0) {
     func_80008590(arg0, phi_a1);
 }
 
-void func_80008664(struct unk800086ECFunc *arg0) {
-    struct unk800086ECFunc *phi_v0;
-    struct unk800086ECFunc *phi_a1;
+void func_80008664(struct UnkStruct8004A7C4 *arg0) {
+    struct UnkStruct8004A7C4 *phi_v0;
+    struct UnkStruct8004A7C4 *phi_a1;
 
     phi_v0 = D_8004A680[arg0->unkD];
     while (phi_v0 != 0 && arg0->unk28 < phi_v0->unk28) {
@@ -382,7 +382,7 @@ void func_80008664(struct unk800086ECFunc *arg0) {
     func_80008590(arg0, phi_a1);
 }
 
-void func_800086EC(struct unk800086ECFunc *arg0) {
+void func_800086EC(struct UnkStruct8004A7C4 *arg0) {
     if (arg0->unk24 != 0) {
         arg0->unk24->unk20 = arg0->unk20;
     } else {
@@ -1433,7 +1433,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A24C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A29C(struct unk800086ECFunc *arg0) {
+void func_8000A29C(struct UnkStruct8004A7C4 *arg0) {
     u8 temp_v0;
 
     if (arg0 == 0) {
@@ -1587,8 +1587,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A580.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A5FC(struct unk800086ECFunc *arg0, s32 arg2, s32 arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A5FC(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1603,8 +1603,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A5FC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A640(struct unk800086ECFunc *arg0, s32 arg2, s32 arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A640(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1619,8 +1619,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A640.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A684(struct unk800086ECFunc *arg0, s32 arg2, struct unk800086ECFunc *arg3) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A684(struct UnkStruct8004A7C4 *arg0, s32 arg2, struct UnkStruct8004A7C4 *arg3) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1635,8 +1635,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A684.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A6D8(struct unk800086ECFunc *arg0, s32 arg2, void *arg3) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A6D8(struct UnkStruct8004A7C4 *arg0, s32 arg2, void *arg3) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1665,8 +1665,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A730.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A764(struct unk800086ECFunc *arg0, s32 arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A764(struct UnkStruct8004A7C4 *arg0, s32 arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1681,8 +1681,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A764.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A7A0(struct unk800086ECFunc *arg0, s32 arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A7A0(struct UnkStruct8004A7C4 *arg0, s32 arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1697,8 +1697,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A7A0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A7DC(struct unk800086ECFunc *arg0, s32 arg2, s32 arg3, struct unk800086ECFunc *arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A7DC(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg3, struct UnkStruct8004A7C4 *arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1713,8 +1713,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A7DC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A830(struct unk800086ECFunc *arg0, s32 arg2, s32 arg3, void *arg4) {
-    struct unk800086ECFunc *phi_a0;
+void func_8000A830(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg3, void *arg4) {
+    struct UnkStruct8004A7C4 *phi_a0;
 
     phi_a0 = arg0;
     if (arg0 == 0) {
@@ -1729,10 +1729,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A830.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A888(struct unk800086ECFunc *arg0, u8 arg1, u32 arg2) {
+void func_8000A888(struct UnkStruct8004A7C4 *arg0, u8 arg1, u32 arg2) {
     s32 sp1C;
     s32 temp_a1;
-    struct unk800086ECFunc *temp_a0;
+    struct UnkStruct8004A7C4 *temp_a0;
 
     temp_a1 = arg1 & 0xFF;
     sp1C = temp_a1;
@@ -1754,10 +1754,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A888.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A904(struct unk800086ECFunc *arg0, u8 arg1, u32 arg2) {
+void func_8000A904(struct UnkStruct8004A7C4 *arg0, u8 arg1, u32 arg2) {
     s32 sp1C;
     s32 temp_a1;
-    struct unk800086ECFunc *temp_a0;
+    struct UnkStruct8004A7C4 *temp_a0;
 
     temp_a1 = arg1 & 0xFF;
     sp1C = temp_a1;
@@ -1779,7 +1779,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A904.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A980(struct unk800086ECFunc *arg0, struct unk800086ECFunc *arg1) {
+void func_8000A980(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     func_800086EC(arg0);
     arg0->unkD = arg1->unkD;
     arg0->unk28 = arg1->unk28;
@@ -1790,7 +1790,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A980.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000A9C0(struct unk800086ECFunc *arg0, void *arg1) {
+void func_8000A9C0(struct UnkStruct8004A7C4 *arg0, void *arg1) {
     func_800086EC(arg0);
     arg0->unkD = arg1->unkD;
     arg0->unk28 = arg1->unk28;
@@ -1801,7 +1801,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A9C0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000AA04(struct unk800086ECFunc *arg0, u32 arg1) {
+void func_8000AA04(struct UnkStruct8004A7C4 *arg0, u32 arg1) {
     func_800086EC(arg0);
     arg0->unk28 = arg1;
     func_800085F8(arg0);
@@ -1811,7 +1811,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AA04.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000AA38(struct unk800086ECFunc *arg0, u32 arg1) {
+void func_8000AA38(struct UnkStruct8004A7C4 *arg0, u32 arg1) {
     func_800086EC(arg0);
     arg0->unk28 = arg1;
     func_80008664(arg0);
@@ -1821,7 +1821,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AA38.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000AA6C(struct unk800086ECFunc *arg0, struct unk800086ECFunc *arg1) {
+void func_8000AA6C(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     func_800086EC(arg0);
     arg0->unk28 = arg1->unk28;
     func_80008590(arg0, arg1);
@@ -1831,7 +1831,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AA6C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000AAA4(struct unk800086ECFunc *arg0, void *arg1) {
+void func_8000AAA4(struct UnkStruct8004A7C4 *arg0, void *arg1) {
     func_800086EC(arg0);
     arg0->unk28 = arg1->unk28;
     func_80008590(arg0, arg1->unk8);
@@ -1892,11 +1892,12 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AAE0.s")
 #endif
 
-#ifdef MIPS_TO_C
+extern s32 D_8003DE54;
+extern s32 D_8004A7D4;
 u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
+    u32 temp_a1;
     u32 sp1C;
     s32 temp_v0;
-    u32 temp_a1;
 
     D_8003DE54 = 1;
     D_8004A7C4 = arg0;
@@ -1914,11 +1915,8 @@ u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
             func_8000A29C(arg0, temp_a1);
         }
     }
-    return arg0[1];
+    return temp_a1;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000ABAC.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_8000AC3C(struct ObjThreadStack *arg0) {
