@@ -14,8 +14,9 @@ extern u32 D_801CB4DC;
 extern s32 D_800E0D50[];
 void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0);
 
+void func_8019D958_ovl18(u16);
 // regalloc moment, one rogue instruction
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING
 void func_80221E90_ovl18(s32 arg0) {
     u32 temp_a3;
 
@@ -27,7 +28,7 @@ void func_80221E90_ovl18(s32 arg0) {
     temp_a3 = D_800E0D50[D_8004A7C4->unk0];
 
     if ((D_800DD710[D_800E0D50[D_8004A7C4->unk0]] == -1) || (D_8004A7C4->unk0 != D_800EBBE0[D_800E0D50[D_8004A7C4->unk0]])) {
-        func_8019D958_ovl18(D_8004A7C4->unk0 & 0xFFFF); //, temp_a1, D_8004A7C4->unk0, temp_a3, temp_a1);
+        func_8019D958_ovl18(D_8004A7C4->unk0); //, temp_a1, D_8004A7C4->unk0, temp_a3, temp_a1);
     }
 
     // This line is the issue

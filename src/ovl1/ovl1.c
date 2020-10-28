@@ -873,7 +873,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1/func_8009E8F4.s")
 extern Gfx* gDisplayListHeads[4];
 
 void func_800A043C(u32 arg0, u32 arg1) {
-    func_8009E8F4_ovl1(arg0, arg1, &gDisplayListHeads[0]);
+    func_8009E8F4(arg0, arg1, &gDisplayListHeads[0]);
 }
 
 void func_800A0460(u32 arg0) {

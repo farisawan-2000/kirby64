@@ -89,7 +89,7 @@ extern s32 D_801CD8B0;
 void func_801BD7C4_ovl7(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B67A8;
     D_800E8920[D_8004A7C4->unk0] = 0;
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8B0);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8B0);
 }
 
 extern void (*D_800DF150[])(void);
@@ -148,7 +148,7 @@ extern s32 D_801CD8B8;
 void func_801BDADC_ovl7(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B67A8;
     D_800E8920[D_8004A7C4->unk0] = 0;
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8B8);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8B8);
 }
 
 typedef struct {
@@ -295,7 +295,7 @@ void func_801BE068_ovl7(s32 arg0) {
     if (func_800B9DF8_ovl7(D_800E91E0[D_8004A7C4->unk0]) != 0) {
         D_800E7880[D_8004A7C4->unk0] += 3;
     }
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_16/func_801BE068_ovl7.s")
@@ -349,7 +349,7 @@ void func_801BE21C_ovl7(s32 arg0) {
     }
     func_800AFBB4_ovl7(1, D_8004A7C4);
     D_800E7880[D_8004A7C4->unk0]--;
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_16/func_801BE21C_ovl7.s")
@@ -361,7 +361,7 @@ extern s32 D_801CD8C0;
 void func_801BE3D8_ovl7(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B6474;
     D_800E7880[D_8004A7C4->unk0] -= 2;
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0, D_800E7880);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 7, &D_801CD8C0);
 }
 
 void func_801BE490_ovl7(UNUSED s32 arg0);
@@ -705,7 +705,7 @@ extern s32 D_801CD8DC;
 void func_801BF12C_ovl7(s32 arg0) {
     D_800DEF90[D_8004A7C4->unk0] = &D_800B67A8;
     D_800E8920[D_8004A7C4->unk0] = 0;
-    func_800A447C_ovl7(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8DC);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 2, &D_801CD8DC);
 }
 
 void func_801BF1F4_ovl7(UNUSED s32 arg0);

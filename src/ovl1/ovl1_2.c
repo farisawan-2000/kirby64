@@ -204,13 +204,14 @@ void *func_800A71E0(void) {
     D_800D7B2C.unk0 = temp_v1->unk4;
     D_800D7B2C.unk4 = temp_v1->unk8;
     D_800D7B2C.unk8 = temp_v1->unkC;
-    D_800D7B38.unk0 = D_800D7B20.unk0;
-    D_800D7B38.unk4 = D_800D7B20.unk4;
-    D_800D7B38.unk8 = D_800D7B20.unk8;
-    D_800D7B38.unkC = D_800D7B20.unkC;
-    D_800D7B38.unk10 = D_800D7B20.unk10;
-    D_800D7B38.unk14 = D_800D7B20.unk14;
-    temp_v0->unk30 = temp_v0->unk30 | 0x2000000;
+
+    D_800D7B38 = D_800D7B20; // struct copy
+    // D_800D7B38.unk4 = D_800D7B20.unk4;
+    // D_800D7B38.unk8 = D_800D7B20.unk8;
+    // D_800D7B38.unkC = D_800D7B20.unkC;
+    // D_800D7B38.unk10 = D_800D7B20.unk10;
+    // D_800D7B38.unk14 = D_800D7B20.unk14;
+    temp_v0->unk30 |= 0x2000000;
     return temp_v0;
 }
 #else
@@ -551,7 +552,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A70.s")
 
 extern s32 D_8012D920;
 extern Gfx *gDisplayListHeads[4];
-extern void func_8009E8F4_ovl1(s32 hidden, u32 a, Gfx *b);
+extern void func_8009E8F4(s32 hidden, u32 a, Gfx *b);
 
 void func_800A7ABC(s32 arg0) {
     if (D_8012D920 != 1) {
@@ -559,7 +560,7 @@ void func_800A7ABC(s32 arg0) {
         gDPSetCycleType(gDisplayListHeads[1]++, G_CYC_1CYCLE);
         gDPPipelineMode(gDisplayListHeads[1]++, G_PM_1PRIMITIVE);
         gDPSetRenderMode(gDisplayListHeads[1]++, G_RM_AA_ZB_XLU_SURF, G_RM_NOOP2);
-        func_8009E8F4_ovl1(arg0, 3, &gDisplayListHeads[1]);
+        func_8009E8F4(arg0, 3, &gDisplayListHeads[1]);
         gDPPipeSync(gDisplayListHeads[1]++);
         gDPSetColorDither(gDisplayListHeads[1]++, G_CD_MAGICSQ);
         gDPSetAlphaDither(gDisplayListHeads[1]++, G_AD_DISABLE);

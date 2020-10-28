@@ -104,7 +104,7 @@ glabel func_801BE21C_ovl7
 /* 164418 801BE3A8 A06C0000 */  sb    $t4, ($v1)
 /* 16441C 801BE3AC 8C4D0000 */  lw    $t5, ($v0)
 /* 164420 801BE3B0 00ED7021 */  addu  $t6, $a3, $t5
-/* 164424 801BE3B4 0C02911F */  jal   func_800A447C_ovl7
+/* 164424 801BE3B4 0C02911F */  jal   func_800A447C
 /* 164428 801BE3B8 91C40000 */   lbu   $a0, ($t6)
 /* 16442C 801BE3BC 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 164430 801BE3C0 8FB00014 */  lw    $s0, 0x14($sp)

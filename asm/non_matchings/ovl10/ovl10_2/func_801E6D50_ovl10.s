@@ -70,7 +70,7 @@ glabel func_801E6D50_ovl10
 /* 1D7BD0 801E6E60 24050003 */  li    $a1, 3
 /* 1D7BD4 801E6E64 00194080 */  sll   $t0, $t9, 2
 /* 1D7BD8 801E6E68 00882021 */  addu  $a0, $a0, $t0
-/* 1D7BDC 801E6E6C 0C02911F */  jal   func_800A447C_ovl10
+/* 1D7BDC 801E6E6C 0C02911F */  jal   func_800A447C
 /* 1D7BE0 801E6E70 8C84DC50 */ lw $a0, %lo(D_800DDC50)($a0)
 /* 1D7BE4 801E6E74 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1D7BE8 801E6E78 27BD0020 */  addiu $sp, $sp, 0x20

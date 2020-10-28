@@ -84,7 +84,7 @@ glabel func_801DB9E0_ovl11
 /* 1E63E8 801DBB28 24050005 */  li    $a1, 5
 /* 1E63EC 801DBB2C 000B6880 */  sll   $t5, $t3, 2
 /* 1E63F0 801DBB30 008D2021 */  addu  $a0, $a0, $t5
-/* 1E63F4 801DBB34 0C02911F */  jal   func_800A447C_ovl11
+/* 1E63F4 801DBB34 0C02911F */  jal   func_800A447C
 /* 1E63F8 801DBB38 8C84DC50 */   lw    $a0, -0x23b0($a0)
 /* 1E63FC 801DBB3C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E6400 801DBB40 27BD0018 */  addiu $sp, $sp, 0x18

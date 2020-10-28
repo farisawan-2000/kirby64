@@ -47,12 +47,12 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80151138.s")
 #endif
 
 extern Gfx *gDisplayListHeads[4];
-extern void func_8009E8F4_ovl6(s32 hidden, u32 a, Gfx **b);
+extern void func_8009E8F4(s32 hidden, u32 a, Gfx **b);
 
 void *func_80151204(s32 arg0) {
     gDPPipeSync(gDisplayListHeads[1]++);
     gDPSetRenderMode(gDisplayListHeads[1]++, G_RM_ZB_CLD_SURF, G_RM_ZB_CLD_SURF2);
-    func_8009E8F4_ovl6(arg0, 2, &gDisplayListHeads[1]);
+    func_8009E8F4(arg0, 2, &gDisplayListHeads[1]);
     gDPPipeSync(gDisplayListHeads[1]++);
     gDPSetColorDither(gDisplayListHeads[1]++, G_CD_MAGICSQ);
     gDPSetAlphaDither(gDisplayListHeads[1]++, G_AD_DISABLE);

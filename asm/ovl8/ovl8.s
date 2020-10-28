@@ -2240,7 +2240,7 @@
 /* 17689C 801D2DBC 008B2021 */  addu  $a0, $a0, $t3
 /* 1768A0 801D2DC0 90847880 */  lbu   $a0, 0x7880($a0)
 /* 1768A4 801D2DC4 24C6B020 */  addiu $a2, %lo(D_801DB020) # addiu $a2, $a2, -0x4fe0
-/* 1768A8 801D2DC8 0C02911F */  jal   func_800A447C_ovl8
+/* 1768A8 801D2DC8 0C02911F */  jal   func_800A447C
 /* 1768AC 801D2DCC 24050009 */   li    $a1, 9
 /* 1768B0 801D2DD0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1768B4 801D2DD4 27BD0020 */  addiu $sp, $sp, 0x20

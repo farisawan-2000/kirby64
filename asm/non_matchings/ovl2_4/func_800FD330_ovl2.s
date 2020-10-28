@@ -52,7 +52,7 @@ glabel func_800FD330_ovl2
 /* 085E64 800FD3F4 3C068012 */  lui   $a2, %hi(D_801245C0) # $a2, 0x8012
 /* 085E68 800FD3F8 24C645C0 */  addiu $a2, %lo(D_801245C0) # addiu $a2, $a2, 0x45c0
 /* 085E6C 800FD3FC 8C84DC50 */  lw    $a0, -0x23b0($a0)
-/* 085E70 800FD400 0C02911F */  jal   func_800A447C_ovl2
+/* 085E70 800FD400 0C02911F */  jal   func_800A447C
 /* 085E74 800FD404 24050001 */   li    $a1, 1
 /* 085E78 800FD408 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 085E7C 800FD40C 27BD0018 */  addiu $sp, $sp, 0x18

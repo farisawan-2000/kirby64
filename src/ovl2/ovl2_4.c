@@ -24,7 +24,7 @@ void func_800FD330_ovl2(s32 arg0, void *arg3) {
         phi_v0 = *D_8004A7C4 * 4;
         phi_a3 = &D_800E1290;
     }
-    func_800A447C_ovl2((phi_v0 + 0x800E0000)->unk-23B0, 1, &D_801245C0, phi_a3);
+    func_800A447C((phi_v0 + 0x800E0000)->unk-23B0, 1, &D_801245C0, phi_a3);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD330_ovl2.s")

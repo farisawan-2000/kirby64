@@ -24,17 +24,17 @@ void func_801DBC00_ovl10(s32 arg0) {
     }
     D_800DF150[D_8004A7C4->unk0] = &func_801DBDB8_ovl10;
     D_800E8920[D_8004A7C4->unk0] = 1;
-    func_800A447C_ovl10(D_800E7880[D_8004A7C4->unk0], 8, &D_801F4220_ovl10[0]);
+    func_800A447C(D_800E7880[D_8004A7C4->unk0], 8, &D_801F4220_ovl10[0]);
     while(1)
-        func_800A447C_ovl10(D_800DDC50[D_8004A7C4->unk0], 0x14, &D_801F4240_ovl10[0]);
+        func_800A447C(D_800DDC50[D_8004A7C4->unk0], 0x14, &D_801F4240_ovl10[0]);
 }
 
 void func_801DBD38_ovl10(s32 arg0) {
-    for(;;) func_800A447C_ovl10(D_800DDC50[D_8004A7C4->unk0], 0x14, &D_801F4220_ovl10[8]);
+    for(;;) func_800A447C(D_800DDC50[D_8004A7C4->unk0], 0x14, &D_801F4220_ovl10[8]);
 }
 
 void func_801DBDB8_ovl10(s32 arg0) {
-    func_800A447C_ovl10(D_800DDFD0[D_8004A7C4->unk0], 0x12, &D_801F4240_ovl10[20]);
+    func_800A447C(D_800DDFD0[D_8004A7C4->unk0], 0x12, &D_801F4240_ovl10[20]);
 }
 
 void func_801DBE00_ovl10(s32 arg0) {

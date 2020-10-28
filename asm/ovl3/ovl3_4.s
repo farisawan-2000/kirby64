@@ -181,7 +181,7 @@ glabel func_80169694_ovl3
 /* 0CA10C 801696CC 24050011 */  li    $a1, 17
 /* 0CA110 801696D0 000FC080 */  sll   $t8, $t7, 2
 /* 0CA114 801696D4 00982021 */  addu  $a0, $a0, $t8
-/* 0CA118 801696D8 0C02911F */  jal   func_800A447C_ovl3
+/* 0CA118 801696D8 0C02911F */  jal   func_800A447C
 /* 0CA11C 801696DC 8C84DC50 */   lw    $a0, -0x23b0($a0)
 /* 0CA120 801696E0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0CA124 801696E4 27BD0018 */  addiu $sp, $sp, 0x18

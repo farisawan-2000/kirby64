@@ -13,7 +13,7 @@ extern u8 D_800E7880[];
 
 extern s32 D_800DDC50[];
 
-extern void func_800A447C_ovl18(s32, s32, void (*c));
+extern void func_800A447C(s32, s32, void (*c));
 
 extern void (*D_8022AB80[58])(void);
 
