@@ -8599,7 +8599,7 @@ block_2:
         goto block_2;
     }
     if (((D_800D6FB0 >> 8) & 1) != 0) {
-        ((D_8004A7C4->unk0 * 4) + 0x800F0000)->unk-7C20 = 0;
+        ((D_8004A7C4->objId * 4) + 0x800F0000)->unk-7C20 = 0;
         return;
     }
     phi_a3 = temp_a3;
@@ -8675,7 +8675,7 @@ block_51:
                     } else {
                         phi_t7 = 1;
                         phi_at = 0x800F0000;
-                        if (0.0f < ((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk64D0) {
+                        if (0.0f < ((D_8004A7C4->objId * 4) + 0x800E0000)->unk64D0) {
                             D_800E85A0 = -1;
                             phi_v1_2 = &gKirbyState;
                         } else {

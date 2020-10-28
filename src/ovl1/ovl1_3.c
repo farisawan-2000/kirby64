@@ -1448,17 +1448,17 @@ extern f32 D_800E4390[];
 extern f32 D_800E4010[];
 
 void func_800AA174(void) {
-    D_8004A7C4->unk3C->unk1C.x = D_800E25D0[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk1C.y = D_800E2790[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk1C.z = D_800E2950[D_8004A7C4->unk0];
+    D_8004A7C4->unk3C->unk1C.x = D_800E25D0[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.y = D_800E2790[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.z = D_800E2950[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk30.x = D_800E4010[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk30.y = D_800E41D0[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk30.z = D_800E4390[D_8004A7C4->unk0];
+    D_8004A7C4->unk3C->unk30.x = D_800E4010[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk30.y = D_800E41D0[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk30.z = D_800E4390[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk40.x = D_800E4550[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk40.y = D_800E4710[D_8004A7C4->unk0];
-    D_8004A7C4->unk3C->unk40.z = D_800E48D0[D_8004A7C4->unk0];
+    D_8004A7C4->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
 }
 
 #ifdef MIPS_TO_C

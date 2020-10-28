@@ -843,7 +843,7 @@ void func_800FF200_ovl2(void *arg0) {
     s32 phi_a2;
 
     if (arg0 != 0) {
-        temp_v1 = D_8004A7C4->unk0 * 4;
+        temp_v1 = D_8004A7C4->objId * 4;
         arg0->unk4 = (temp_v1 + 0x800E0000)->unk25D0;
         arg0->unk8 = (temp_v1 + 0x800E0000)->unk2790;
         arg0->unkC = (temp_v1 + 0x800E0000)->unk2950;

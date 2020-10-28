@@ -2595,7 +2595,7 @@ extern const char D_80040670[];
 
 void func_8000B6BC(s32 arg) {
     if (D_8004A7D0->objThread->objStack->stack[7] != STACK_TOP_MAGIC) {
-        fatal_printf(&D_80040670, D_8004A7D0->unk18->unk0); // "gobjthread stack over  gobjid = %d\n"
+        fatal_printf(&D_80040670, D_8004A7D0->unk18->objId); // "gobjthread stack over  gobjid = %d\n"
     }
 
     while (arg != 0) {

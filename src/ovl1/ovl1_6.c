@@ -281,7 +281,7 @@ s32 func_800AEA64(s32 arg0, s32 arg1, s32 arg2) {
     if (idx == -1) {
         return -1;
     }
-    D_800E0D50[idx] = (D_8004A7C4 != NULL) ? D_8004A7C4->unk0 : -1;
+    D_800E0D50[idx] = (D_8004A7C4 != NULL) ? D_8004A7C4->objId : -1;
     return idx;
 }
 
@@ -315,7 +315,7 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
             D_800E4010[idx] = 0.0f;
             break;
     }
-    D_800E0D50[idx] = (D_8004A7C4 != NULL) ? D_8004A7C4->unk0 : -1;
+    D_800E0D50[idx] = (D_8004A7C4 != NULL) ? D_8004A7C4->objId : -1;
     return idx;
 }
 

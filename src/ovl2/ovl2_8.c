@@ -3011,7 +3011,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122B40_ovl2.s")
 #ifdef MIPS_TO_C
 void func_80122C30_ovl2(void) {
     func_800A7678(0x102);
-    D_8012E80C = func_800A8100_ovl2(5, 1, ((D_8012E8CA * 0x1C) + 0x80130000)->unk-7BB6, D_800DFBD0[D_8004A7C4->unk0]->unk4);
+    D_8012E80C = func_800A8100_ovl2(5, 1, ((D_8012E8CA * 0x1C) + 0x80130000)->unk-7BB6, D_800DFBD0[D_8004A7C4->objId]->unk4);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122C30_ovl2.s")

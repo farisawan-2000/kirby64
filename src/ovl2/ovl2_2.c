@@ -50,19 +50,19 @@ void func_800F6C98(s32 arg0) {
     ((temp_v0->unk0 * 4) + 0x800E0000)->unk-1070 = 0;
     func_800B1F68_ovl2(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
     func_8000B6BC(120.0f * D_800D6B14);
-    temp_v0_2 = D_8004A7C4->unk0;
+    temp_v0_2 = D_8004A7C4->objId;
     temp_v1 = ((temp_v0_2 * 4) + 0x800F0000)->unk-6720;
     phi_v1 = temp_v1;
     phi_v0 = temp_v0_2;
     if (temp_v1 == 3) {
         func_800F6C68_ovl2();
-        temp_v0_3 = D_8004A7C4->unk0;
+        temp_v0_3 = D_8004A7C4->objId;
         phi_v1 = ((temp_v0_3 * 4) + 0x800F0000)->unk-6720;
         phi_v0 = temp_v0_3;
     }
     if (phi_v1 == 4) {
         func_800F6C78_ovl2();
-        phi_v0 = D_8004A7C4->unk0;
+        phi_v0 = D_8004A7C4->objId;
     }
     func_800B1900_ovl2(phi_v0 & 0xFFFF);
 }
@@ -107,14 +107,14 @@ void func_800F6E30_ovl2(s32 arg0) {
     u32 phi_s3;
     s32 phi_v1;
 
-    func_800B1F68_ovl2(((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
-    ((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
+    func_800B1F68_ovl2(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
+    ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
     func_800AF980_ovl2(0x18);
-    ((D_8004A7C4->unk0 * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;
+    ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;
     func_800A9864_ovl2(*D_801290D8, 0x26, 0x10);
     func_800A2550_ovl2(((D_801290D0 * 4) + 0x800E0000)->unk-5F0);
     func_800B3070_ovl2(0x10, (bitwise s32) D_800D6B10);
-    temp_v1 = D_8004A7C4->unk0 * 4;
+    temp_v1 = D_8004A7C4->objId * 4;
     temp_v0 = (temp_v1 + 0x800E0000)->unk-B30;
     temp_a0 = temp_v0->unk14;
     phi_v1 = temp_v1;
@@ -170,7 +170,7 @@ loop_3:
                 phi_s2 = phi_s2 + 1;
             }
             temp_s3 = phi_s3 + 1;
-            temp_v1_3 = D_8004A7C4->unk0 * 4;
+            temp_v1_3 = D_8004A7C4->objId * 4;
             temp_v0_6 = (temp_v1_3 + 0x800E0000)->unk-B30;
             phi_v0 = temp_v0_6;
             phi_s4 = phi_s4 + 4;
@@ -370,7 +370,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7484_ovl2.s")
 u8 func_800F753C_ovl2(void) {
     u8 temp_v0;
 
-    temp_v0 = (D_8004A7C4->unk0 + 0x800E0000)->unk76C0;
+    temp_v0 = (D_8004A7C4->objId + 0x800E0000)->unk76C0;
     if ((temp_v0 >= 0) && (temp_v0 < 0x40)) {
         (temp_v0 + 0x800D0000)->unk6CD0 = 1;
     }

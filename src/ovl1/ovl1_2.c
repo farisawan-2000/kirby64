@@ -782,7 +782,7 @@ void *func_800A8100(s32 arg0, s32 arg1, ? arg2, void *arg3) {
         temp_v0 = func_800A19EC_ovl1((arg1 * 8) | arg0, arg2);
         if (temp_v0 != 0) {
             if (arg3 == 0) {
-                phi_a2 = D_8004A7C4->unk0;
+                phi_a2 = D_8004A7C4->objId;
             } else {
                 phi_a2 = *arg3->unk4;
             }

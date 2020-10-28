@@ -28,7 +28,7 @@ u32 func_80151160_ovl3(void) {
     if (D_800D6FAC == 0) {
         if ((D_800D6FE8.buttonHeld & D_JPAD) == 0) {
             if ((D_800D6FE8.buttonPressed & A_BUTTON) != 0) {
-                if (D_800E8AE0[D_8004A7C4->unk0] & 6 != 6 || (D_800D6FE8.buttonHeld & 0xB00) == 0) {
+                if (D_800E8AE0[D_8004A7C4->objId] & 6 != 6 || (D_800D6FE8.buttonHeld & 0xB00) == 0) {
                     func_80122F6C_ovl3(3, 5);
                     return 2;
                 }
@@ -37,7 +37,7 @@ u32 func_80151160_ovl3(void) {
                 return 2;
             }
         }
-        if (D_800E8AE0[D_8004A7C4->unk0] & 6 == 6) {
+        if (D_800E8AE0[D_8004A7C4->objId] & 6 == 6) {
             if ((D_800D6FE8.buttonHeld & U_JPAD) != 0) {
                 if (gKirbyState.action != 0xA) {
                     if (gKirbyState.action != 0xB) {
@@ -61,8 +61,8 @@ u32 func_80151288_ovl3(void) {
     s32 phi_v1;
     void *phi_a3;
 
-    temp_v0 = D_8004A7C4->unk0 * 4;
-    if (((D_800E8AE0[D_8004A7C4->unk0] & 6) != 0) {
+    temp_v0 = D_8004A7C4->objId * 4;
+    if (((D_800E8AE0[D_8004A7C4->objId] & 6) != 0) {
         if (D_800D6FAC == 0) {
             if (gKirbyState.unk4 == 2) {
                 if (((D_800D6FE8.unk2 & 0x8000) != 0) || (D_800D6FE8 & 0x300) != 0 || (D_800D6FE8 & 0xF00) != 0) {
@@ -170,7 +170,7 @@ u32 func_80151448_ovl3(void) {
                 if (gKirbyState.abilityInUse == 0) {
                     if (gKirbyState.unk8 == 0) {
                         if (((D_800D6FA8 | D_800D6FAC) | D_800D6FB0) == 0) {
-                            if (D_800E8920[D_8004A7C4->unk0] != 0) {
+                            if (D_800E8920[D_8004A7C4->objId] != 0) {
                                 if ((D_800D6FEA & 0x400) == 0) {
                                     if ((D_800D6FEA & 0x3F) != 0) {
                                         gKirbyState.unkA4 = 1;
@@ -247,7 +247,7 @@ u32 func_80151448_ovl3(void) {
                                 }
                             }
                         } else {
-                            if (D_800E8920[D_8004A7C4->unk0] != 0) {
+                            if (D_800E8920[D_8004A7C4->objId] != 0) {
                                 if ((D_800D6FEA & 0x400) != 0) {
                                     gKirbyState.unk30 = 0;
                                     gKirbyState.unk7 = (u8)0;
@@ -272,7 +272,7 @@ u32 func_801517FC_ovl3(void) {
     if (func_80179130_ovl3() != 0) {
         return 3;
     } else {
-        if (D_800E8920[D_8004A7C4->unk0] == 0) {
+        if (D_800E8920[D_8004A7C4->objId] == 0) {
             func_80122F6C_ovl2(6, 6);
             return 3;
         }
@@ -317,7 +317,7 @@ u32 func_8015190C_ovl3(void) {
 extern f32 D_800E3210[];
 u32 func_80151938_ovl3(void) {
     if (gKirbyState.unk151 != 0 && !(gKirbyState.isTurning & 1) &&
-        gKirbyState.unk4 == 0 && D_800E3210[D_8004A7C4->unk0] <= 0.0f &&
+        gKirbyState.unk4 == 0 && D_800E3210[D_8004A7C4->objId] <= 0.0f &&
         func_801210FC_ovl3() != 0)
     {
         func_80122F6C_ovl3(0xF, 0xC);
@@ -371,7 +371,7 @@ extern u32 D_8012E7F4;
 u32 func_80151AF4_ovl3(void) {
     if ((D_8012E7F4 & 1) == 0) {
         if ((D_800D6FE8.buttonHeld & (L_JPAD | R_JPAD)) == 0) {
-            if (0.0f == D_800E64D0[D_8004A7C4->unk0]) {
+            if (0.0f == D_800E64D0[D_8004A7C4->objId]) {
                 func_80122F6C_ovl3(0, 1);
                 return 0xC;
             }
@@ -422,7 +422,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3/func_80151B78_ovl3.s")
     s32 temp_v0;
     s32 temp_v0_2;
 
-    temp_v0 = D_8004A7C4->unk0 * 4;
+    temp_v0 = D_8004A7C4->objId * 4;
     if (((temp_v0 + 0x800F0000)->unk-7520 & 6) == 0) {
         if (*(temp_v0 + 0x800F0000) != 0) {
             func_80122F6C_ovl3(1, 3);
@@ -463,7 +463,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3/func_80151B78_ovl3.s")
         return 0xE;
     }
     if ((D_800D6FE8 & 0x700) == 0) {
-        temp_v0_2 = D_8004A7C4->unk0 * 4;
+        temp_v0_2 = D_8004A7C4->objId * 4;
         if ((temp_v0_2 + 0x800F0000)->unk-6AA0 == 0) {
             if (0.0f == (temp_v0_2 + 0x800E0000)->unk64D0) {
                 if ((temp_v0_2 + 0x800E0000)->unk3210 <= D_80196DD0) {
