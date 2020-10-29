@@ -58,14 +58,14 @@ struct ObjProcess {
     u32 unk4;
     u32 unk8;
     u32 unkC;
-    /* 0x10 */ u32 kind;
-    /* 0x14 */ u8 pri;
+    /* 0x10 */ u32 pri;
+    /* 0x14 */ u8 kind;
     u8 unk15;
     u8 unk16;
     u8 unk17;
     u32 *unk18;
     struct ObjThread *thread;
-    struct ObjThread *unk20; // another thread?
+    void (*unk20)(void);
 };
 
 // TODO: is this an existing struct instead of a brand new one?

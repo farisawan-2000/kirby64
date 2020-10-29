@@ -531,7 +531,7 @@ extern u32 D_8004A54C;
 struct ObjThread *get_gobj_thread();
 void func_800080C0(struct ObjProcess *);
 
-struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u8 pri, u32 kind) {
+struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(void), u8 kind, u32 pri) {
     struct ObjProcess *sp24;
     struct ObjThread *oThread;
     struct ObjProcess *oProcess;
@@ -540,16 +540,16 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
         arg0 = D_8004A7C4;
     }
     oProcess = get_gobj_process();
-    if (kind >= 4) {
-        fatal_printf(D_80040314);
+    if (pri >= 4) {
+        fatal_printf(D_80040314); // "om : GObjProcess's priority is bad value\n"
         while (1);
     }
-    oProcess->kind = kind;
     oProcess->pri = pri;
+    oProcess->kind = kind;
     oProcess->unk15 = 0;
     oProcess->unk18 = arg0;
     oProcess->unk20 = arg1;
-    switch (pri) {
+    switch (kind) {
         case 0:
             oThread = get_gobj_thread();
             oProcess->thread = oThread;
