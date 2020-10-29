@@ -162,12 +162,12 @@ extern struct ObjThreadStack* D_8004A560[];
 
 void func_800081C4(struct ObjThreadStack *arg0) {
     if (arg0->unkC != 0) {
-        arg0->unkC->poolEnd = arg0->unk8;
+        arg0->unkC->unk8 = arg0->unk8;
     } else {
         D_8004A560[arg0->unk10] = arg0->unk8;
     }
     if (arg0->unk8 != 0) {
-        ((u32 *)arg0->unk8->stack)[3] = arg0->unkC;
+        arg0->unk8->unkC = arg0->unkC;
     }
 }
 

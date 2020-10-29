@@ -731,55 +731,56 @@ loop_14:
                             if (anim->unk4->unk48 != 0) {
                                 anim->unk4->unk48(anim, -1, 0);
                                 return;
-                            case 15:
-                                anim->unk54 = (u8) ((u32) (*anim->command << 7) >> 0x16);
-                                temp_t1 = *anim->command & 0x7FFF;
-                                temp_f16 = (f32) temp_t1;
-                                phi_f16 = temp_f16;
-                                if (temp_t1 < 0) {
-                                    phi_f16 = temp_f16 + 4294967296.0f;
-                                }
-                                anim->command++;
-                                anim->scale += phi_f16;
-                                break;
-                            case 16:
-                                phi_s0_2 = *anim->command;
-                                if (anim->unk4->unk48 != 0) {
-                                    temp_v1_2 = (u32) (*anim->command << 7) >> 0x16;
-                                    anim->unk4->unk48(anim, temp_v1_2 >> 8, (f32) (u32) (temp_v1_2 & 0xFF));
-                                    phi_s0_2 = *anim->command;
-                                }
-                                anim->command++;
-                                anim->scale = (f32) (anim->scale + (f32) (u32) (phi_s0_2 & 0x7FFF));
-                                break;
-                            case 17:
-                                temp_s2_7 = (u32) (*anim->command << 7) >> 0x16;
-                                temp_f16_2 = anim->scale + (f32) (u32) (*anim->command & 0x7FFF);
-                                anim->command++;
-                                anim->scale = temp_f16_2;
-                                phi_s2_7 = temp_s2_7;
-                                phi_s1_7 = 4;
-        loop_108:
-                                if (phi_s2_7 != 0) {
-                                    if ((phi_s2_7 & 1) != 0) {
-                                        if (anim->unk4->unk48 != 0) {
-                                            anim->unk4->unk48(anim, phi_s1_7, anim->command);
-                                        }
-                                        anim->command++;
-                                    }
-                                    temp_s1_7 = phi_s1_7 + 1;
-                                    phi_s2_7 = phi_s2_7 >> 1;
-                                    phi_s1_7 = temp_s1_7;
-                                    if (temp_s1_7 != 0xE) {
-                                        goto loop_108;
-                                    }
-                                }
-        block_116:
-                                if (anim->scale <= 0.0f) {
-                                    goto loop_12;
-                                }
                             }
                         }
+                    case 15:
+                        anim->unk54 = (u8) ((u32) (*anim->command << 7) >> 0x16);
+                        temp_t1 = *anim->command & 0x7FFF;
+                        temp_f16 = (f32) temp_t1;
+                        phi_f16 = temp_f16;
+                        if (temp_t1 < 0) {
+                            phi_f16 = temp_f16 + 4294967296.0f;
+                        }
+                        anim->command++;
+                        anim->scale += phi_f16;
+                        break;
+                    case 16:
+                        phi_s0_2 = *anim->command;
+                        if (anim->unk4->unk48 != 0) {
+                            temp_v1_2 = (u32) (*anim->command << 7) >> 0x16;
+                            anim->unk4->unk48(anim, temp_v1_2 >> 8, (f32) (u32) (temp_v1_2 & 0xFF));
+                            phi_s0_2 = *anim->command;
+                        }
+                        anim->command++;
+                        anim->scale = (f32) (anim->scale + (f32) (u32) (phi_s0_2 & 0x7FFF));
+                        break;
+                    case 17:
+                        temp_s2_7 = (u32) (*anim->command << 7) >> 0x16;
+                        temp_f16_2 = anim->scale + (f32) (u32) (*anim->command & 0x7FFF);
+                        anim->command++;
+                        anim->scale = temp_f16_2;
+                        phi_s2_7 = temp_s2_7;
+                        phi_s1_7 = 4;
+loop_108:
+                        if (phi_s2_7 != 0) {
+                            if ((phi_s2_7 & 1) != 0) {
+                                if (anim->unk4->unk48 != 0) {
+                                    anim->unk4->unk48(anim, phi_s1_7, anim->command);
+                                }
+                                anim->command++;
+                            }
+                            temp_s1_7 = phi_s1_7 + 1;
+                            phi_s2_7 = phi_s2_7 >> 1;
+                            phi_s1_7 = temp_s1_7;
+                            if (temp_s1_7 != 0xE) {
+                                goto loop_108;
+                            }
+                        }
+block_116:
+                        if (anim->scale <= 0.0f) {
+                            goto loop_12;
+                        }
+
                 }
             } else {
                 goto block_116;

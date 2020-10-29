@@ -21,7 +21,7 @@ struct ObjStack {
 //     s32 unk1BC;
 // };
 
-struct MemStackTracker { // used a lot in this file
+struct DynamicBuffer {
     u32 id;
     void *poolStart;
     void *poolEnd;
@@ -36,13 +36,21 @@ struct ObjThread
     s32 unk1BC; // stack size?
 };
 
+// TODO: is this an ObjThreadStack?
+struct ObjThreadStack_C {
+    u32 unk0;
+    u32 unk4;
+    struct ObjThreadStack *unk8;
+    struct ObjThreadStack_C *unkC;
+};
+
 struct ObjThreadStack {
     // Could these be ObjThreads instead?
     struct ObjThreadStack *unk0;
     struct ObjThreadStack *unk4;
-    struct ObjStack *unk8;
-    // Pointer to something (potentially ObjStack)
-    struct MemStackTracker *unkC;
+    struct ObjThreadStack *unk8;
+    // Pointer to something (potentially ObjThreadStack)
+    struct ObjThreadStack_C *unkC;
     // some sort of index?
     u32 unk10;
     u8 unk14;
@@ -107,7 +115,6 @@ struct DObj {
     f32 unk7C;
     u32 unk80;
     u32 unk84;
-    u32 unk88; // real field?
 };
 
 struct Camera {
