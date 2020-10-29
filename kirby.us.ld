@@ -326,6 +326,7 @@ SECTIONS
    }
    END_SEG(ovl5)
 
+   /* only loaded in the opening cutscene? */
    /* 0x80151100 135490-139150 [3CC0] */
    BEGIN_SEG(ovl6, 0x80151100) {
       BUILD_DIR/src/ovl6/ovl6.o(.text);

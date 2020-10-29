@@ -162,7 +162,7 @@ extern struct ObjThreadStack* D_8004A560[];
 
 void func_800081C4(struct ObjThreadStack *arg0) {
     if (arg0->unkC != 0) {
-        arg0->unkC->unk8 = arg0->unk8;
+        arg0->unkC->poolEnd = arg0->unk8;
     } else {
         D_8004A560[arg0->unk10] = arg0->unk8;
     }
@@ -243,16 +243,17 @@ s32 func_80008328(void) {
 }
 
 // Another potential pop
+// TODO: D_8004A678 might be 8004A7C4 struct
 struct UnkStruct8004A7C4 *func_8000835C(void) {
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct UnkStruct8004A7C4 *head;
 
-    if (D_8004A678 == 0) {
+    if (D_8004A678 == NULL) {
         return NULL;
     }
-    temp_v0 = D_8004A678;
+    head = D_8004A678;
     D_8004A678 = D_8004A678->unk4;
     D_8004A78C++;
-    return temp_v0;
+    return head;
 }
 
 // Another potential push
@@ -1866,24 +1867,19 @@ void *func_8000AC3C(struct ObjThreadStack *arg0) {
     D_8004A7C4 = arg0->unk18;
     D_8004A7D0 = arg0;
     temp_v0 = arg0->unk14;
-    if (temp_v0 != 0) {
-        if (temp_v0 != 1) {
-            phi_a3 = temp_a3;
-            if (temp_v0 == 2) {
-block_3:
-                arg0 = temp_a3;
-                osStartThread(&temp_a3->objThread->unk8);
-                osRecvMesg(&D_8004A7E0, NULL, 1);
-block_5:
-            }
-        } else {
+    switch (temp_v0) {
+        case 0:
+            break;
+        case 1:
             temp_a0 = temp_a3->unk18;
             arg0 = temp_a3;
-            temp_a3->objThread(temp_a0, 2, temp_a3);
-            goto block_5;
-        }
-    } else {
-        goto block_3;
+            temp_a3->unk20(temp_a0, 2, temp_a3);
+            break;
+        case 2:
+            phi_a3 = temp_a3;
+            arg0 = temp_a3;
+            osStartThread(&temp_a3->objThread->unk8);
+            osRecvMesg(&D_8004A7E0, NULL, 1);
     }
     temp_v1 = phi_a3->unk8;
     D_8004A7C4 = NULL;
@@ -2543,15 +2539,9 @@ void *func_8000B758(u32 *arg0) {
     temp_v0 = phi_a0->unk18;
     phi_v0 = temp_v0;
     phi_return = temp_v0;
-    if (temp_v0 != 0) {
-loop_3:
+    while (temp_v0 != 0) {
         phi_v0->unk15 = 1;
-        temp_v0_2 = phi_v0->unk0;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
-        if (temp_v0_2 != 0) {
-            goto loop_3;
-        }
+        temp_v0 = temp_v0->unk0;
     }
     return phi_return;
 }

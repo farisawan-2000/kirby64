@@ -2,25 +2,40 @@
 #include <macros.h>
 #include "ovl0_2_5.h"
 
-void func_80007824(struct Unk_Ovl0_2_5 *arg0) {
-    arg0->unkC = arg0->unk4;
+void func_80007824(struct MemStackTracker *arg0) {
+    arg0->top = arg0->poolStart;
 }
 
+/* arg0 notes from first call:
+    0x0: 0x10000
+    0x4: 8015a7d0 // start of pool?
+    0x8: 80391100 // end of pool?
+    0xC: 8015a7d0 // top of "stack" (arg1 is added to this)
+
+    mem trace starting at a0
+    00010000 8015A7D0 80391100 8015A7D0
+    
+    00000000 8000AD88 80006E94 800A73B0
+    80006EE4 1B827196 00000003 00000007
+    8020C840 00004000 00000000 00000000
+    00000000 801EF838 00000000 00000000
+    00000001 00000000 00000002 00000000
+*/ 
 extern const char D_80040210[];
-u32 func_8000783C(struct Unk_Ovl0_2_5 *arg0, u32 arg1, u32 arg2) {
+u32 func_8000783C(struct MemStackTracker *arg0, u32 size, u32 flag) {
     u32 phi_v1;
     u32 temp_v0;
 
-    if (arg2 != 0) {
-        temp_v0 = arg2 - 1;
-        phi_v1 = (arg0->unkC + temp_v0) & ~temp_v0;
+    if (flag != 0) {
+        temp_v0 = flag - 1;
+        phi_v1 = ((u32)arg0->top + temp_v0) & ~temp_v0;
     } else {
-        phi_v1 = arg0->unkC;
+        phi_v1 = arg0->top;
     }
-    temp_v0 = phi_v1 + arg1;
-    arg0->unkC = temp_v0;
-    if (arg0->unk8 < temp_v0) {
-        fatal_printf("ml : alloc overflow #%d\n", arg0->unk0);
+    temp_v0 = phi_v1 + size;
+    arg0->top = temp_v0;
+    if ((u32)arg0->poolEnd < temp_v0) {
+        fatal_printf("ml : alloc overflow #%d\n", arg0->id);
         while (1);
     }
     return phi_v1;
@@ -45,7 +60,6 @@ u32 func_800078F0(u32 arg0) {
     u32 temp_v0 = ((((arg0 >> 0x10) & 0xF800) | ((arg0 >> 0xD) & 0x7C0)) | ((arg0 >> 0xA) & 0x3E)) | ((arg0 >> 7) & 1);
 
     return (D_8004A504 == 3) ? arg0 : (temp_v0 << 16) | temp_v0;
-
 }
 
 #ifdef MIPS_TO_C

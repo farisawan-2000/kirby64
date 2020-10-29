@@ -37,10 +37,10 @@ void func_800053B4(u16 arg0, u16 arg1) {
     D_8004A446 = arg1;
 }
 
-extern struct Unk_Ovl0_2_5 D_8004A408;
+extern struct MemStackTracker D_8004A408;
 
-void func_800078A4(struct Unk_Ovl0_2_5 *arg0, s32 arg1, s32 arg2, s32 arg3);
-u32 func_8000783C(struct Unk_Ovl0_2_5 *, u32, u32);
+void func_800078A4(struct MemStackTracker *arg0, s32 arg1, s32 arg2, s32 arg3);
+u32 func_8000783C(struct MemStackTracker *, u32, u32);
 
 void func_800053D0(s32 arg0, s32 arg1) {
     func_800078A4(&D_8004A408, 0x10000, arg0, arg1);

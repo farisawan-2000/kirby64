@@ -21,11 +21,11 @@ struct ObjStack {
 //     s32 unk1BC;
 // };
 
-struct Unk_Ovl0_2_5 { // used a lot in this file
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
+struct MemStackTracker { // used a lot in this file
+    u32 id;
+    void *poolStart;
+    void *poolEnd;
+    void *top;
 };
 
 struct ObjThread
@@ -33,7 +33,7 @@ struct ObjThread
     struct ObjThread *unk0;
     OSThread unk8;
     struct ObjStack *objStack;
-    s32 unk1BC; // accessed similarly to objStack...
+    s32 unk1BC; // stack size?
 };
 
 struct ObjThreadStack {
@@ -42,7 +42,7 @@ struct ObjThreadStack {
     struct ObjThreadStack *unk4;
     struct ObjStack *unk8;
     // Pointer to something (potentially ObjStack)
-    struct Unk_Ovl0_2_5 *unkC;
+    struct MemStackTracker *unkC;
     // some sort of index?
     u32 unk10;
     u8 unk14;
