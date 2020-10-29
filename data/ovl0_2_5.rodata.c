@@ -7,10 +7,10 @@
 // u8 D_8003FFC8[] = "gtl : DynamicBuffer over flow !  %d byte\n";
 // u8 D_8003FFF4[] = "bad addr sc_rdp_output_len = %x\n";
 // u8 D_80040018[] = "gtl : Buffer size for RDP is zero !!\n";
-u8 D_80040040[] = "gtl : not defined SCTaskGfx\n";
-u8 D_80040060[] = "gtl : couldn't get SCTaskGfx\n";
-u8 D_80040080[] = "gtl : not defined SCTaskGfxEnd\n";
-u8 D_800400A0[] = "gtl : not defined SCTaskGfxEnd\n";
+// u8 D_80040040[] = "gtl : not defined SCTaskGfx\n";
+// u8 D_80040060[] = "gtl : couldn't get SCTaskGfx\n";
+// u8 D_80040080[] = "gtl : not defined SCTaskGfxEnd\n";
+// u8 D_800400A0[] = "gtl : not defined SCTaskGfxEnd\n";
 u8 D_800400C0[] = "gtl : ucode isn't included  kind = %d\n";
 u8 D_800400E8[] = "gtl : not defined SCTaskGfxEnd\n";
 
