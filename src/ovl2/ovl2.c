@@ -86,7 +86,7 @@ void func_800F64B0_ovl2(void) {
     s32 phi_a1_2;
 
     D_800D6B30 = 0;
-    temp_v0 = func_8000BDF0_ovl2(0x19, 0x80000000, 0x63, 3, 0xFF);
+    temp_v0 = func_8000BDF0(0x19, 0x80000000, 0x63, 3, 0xFF);
     D_800D6B20 = temp_v0;
     func_80007C00_ovl2(temp_v0->unk3C + 8, 0x41200000, 0x41200000, 0x439B0000, 182.0f);
     func_8000A180(0, &D_800F62A4, 0x1A, 0x80000000);

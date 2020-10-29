@@ -716,14 +716,9 @@ to get correct control flow for non-jtbl switch jumps.)
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008EC4.s")
 #endif
 
-struct unk80009628Func {
-    u8 filler[0x56];
-    u8 unk56;
-};
-
 void func_80008EC4(u32, u8, u8, u32);
 
-void func_80009628(struct unk80009628Func *arg0, u8 arg1, u8 arg2) {
+void func_80009628(struct DObj *arg0, u8 arg1, u8 arg2) {
     func_80008EC4(arg0, arg1, arg2, arg0->unk56);
 }
 
@@ -776,7 +771,7 @@ void func_8000984C(struct unk8000BE90Func *arg0) {
     arg0->unk74 = D_8004064C;
 }
 
-void *func_800098AC(s32 arg0, u8 index) {
+struct AnimStack *func_800098AC(s32 arg0, u8 index) {
     struct AnimStack *toReturn;
 
     toReturn = func_800087D8();
@@ -1316,39 +1311,34 @@ loop_5:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 #endif
 
-// omGAddCommon
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8000A0C0(u8 *arg0, s32 arg1, u8 arg2, s32 arg3) {
-    s32 sp18;
-    s32 temp_a2;
-    struct UnkStruct8004A7C4 *temp_v0;
+extern const char D_800403DC[];
+// reordered instructions
+#ifdef NON_MATCHING
+struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
+    struct UnkStruct8004A7C4 *toReturn;
 
-    temp_a2 = arg2 & 0xFF;
-    sp18 = temp_a2;
-    if (temp_a2 >= 0x20) {
-        fatal_printf(&D_800403DC, temp_a2, arg0);
-loop_2:
-        goto loop_2;
+    if (link >= 0x20) {
+        fatal_printf(&D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
+        while (1);
     }
-    arg2 = temp_a2;
-    temp_v0 = func_8000835C();
-    if (temp_v0 == 0) {
+    toReturn = func_8000835C();
+    if (toReturn == NULL) {
         return NULL;
     }
-    temp_v0->unkC = arg2;
-    temp_v0->filler = arg0;
-    temp_v0->unk10 = arg3;
-    temp_v0->unk18 = 0;
-    temp_v0->unk1C = 0;
-    temp_v0->unk44 = 0;
-    temp_v0->unkF = 0;
-    temp_v0->unk3C = 0;
-    temp_v0->unkD = 0x21;
-    temp_v0->unk48 = 0;
-    temp_v0->unk4C = 0;
-    temp_v0->unk40 = 0.0f;
-    temp_v0->unk14 = arg1;
-    return temp_v0;
+    toReturn->objId = id;
+    toReturn->unk10 = arg3;
+    toReturn->unkC = link; // sb a2, 0xC(v1)
+    toReturn->unk14 = arg1;
+    toReturn->unk18 = 0;
+    toReturn->unk1C = 0;
+    toReturn->unk44 = 0;
+    toReturn->unkF = 0;
+    toReturn->unk3C = NULL;
+    toReturn->unkD = 0x21; // li t0, 0x21
+    toReturn->unk40 = 0.0f; // mtc zero, f4
+    toReturn->unk48 = 0;
+    toReturn->unk4C = 0;
+    return toReturn;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A0C0.s")
@@ -1357,7 +1347,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A0C0.s")
 struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u32 arg2, u32 arg3) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = func_8000A0C0(arg0, arg1, arg2 & 0xFF, arg3);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2 & 0xFF, arg3);
     if (temp_v0 == NULL) {
         return NULL;
     } else {
@@ -1371,7 +1361,7 @@ struct UnkStruct8004A7C4 *func_8000A1C0(s32 arg2) {
     struct UnkStruct8004A7C4 *sp1C;
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = func_8000A0C0(arg2 & 0xFF);
+    temp_v0 = object_manager_g_add_common(arg2 & 0xFF);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1388,7 +1378,7 @@ struct UnkStruct8004A7C4 *func_8000A200(struct UnkStruct8004A7C4 *arg2) {
     struct UnkStruct8004A7C4 *sp1C;
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = func_8000A0C0(arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg2->unkC, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1405,7 +1395,7 @@ struct UnkStruct8004A7C4 *func_8000A24C(void *arg2) {
     struct UnkStruct8004A7C4 *sp1C;
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = func_8000A0C0(arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg2->unkC, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -2772,7 +2762,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B870.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000B8C0(struct unk80009628Func *arg0) {
+void func_8000B8C0(struct DObj *arg0) {
     func_80009628(arg0, 0x12, 0);
     func_80009628(arg0, 0x15, 0);
     func_80009628(arg0, 0x20, 0);
@@ -2782,7 +2772,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B8C0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000B908(struct unk80009628Func *arg0) {
+void func_8000B908(struct DObj *arg0) {
     func_80009628(arg0, 0x12, 0);
     func_80009628(arg0, 0x1A, 0);
     func_80009628(arg0, 0x20, 0);
@@ -3075,13 +3065,14 @@ struct UnkStruct8004A7C4 *func_8000BD3C(s32 arg0, s32 arg1, s32 arg2, u32 arg3, 
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000BD3C.s")
 #endif
 
-#ifdef MIPS_TO_C
-void *func_8000BDF0(s32 arg0, ? arg1, s32 arg2, s32 arg3, s32 arg4) {
-    void *temp_v0;
-    void *temp_v1;
+void func_8001806C(struct unk80017FEC *arg0);
 
-    temp_v0 = func_8000BD3C(-1, &D_8000B6B4, arg0, arg1, &D_8001806C, arg2, 0, 0, 0, 0, 0, 0, 0);
-    if (temp_v0 == 0) {
+struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+    struct UnkStruct8004A7C4 *temp_v0;
+    struct UnkStruct8004A7C4_3C *temp_v1;
+
+    temp_v0 = func_8000BD3C(-1, &func_8000B6B4, arg0, arg1, &func_8001806C, arg2, 0, 0, 0, 0, 0, 0, 0);
+    if (temp_v0 == NULL) {
         return NULL;
     }
     temp_v1 = temp_v0->unk3C;
@@ -3089,6 +3080,3 @@ void *func_8000BDF0(s32 arg0, ? arg1, s32 arg2, s32 arg3, s32 arg4) {
     temp_v1->unk84 = arg4;
     return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000BDF0.s")
-#endif

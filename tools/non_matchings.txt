@@ -82,7 +82,7 @@ asm/non_matchings/ovl0/ovl0_2_5/func_80009D5C.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80009DF4.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80009F7C.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s
-asm/non_matchings/ovl0/ovl0_2_5/func_8000A0C0.s
+asm/non_matchings/ovl0/ovl0_2_5/object_manager_g_add_common.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000A180.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000A1C0.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000A200.s

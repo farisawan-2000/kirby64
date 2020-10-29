@@ -2,7 +2,7 @@ glabel func_8000A1C0
 /* 00ADC0 8000A1C0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00ADC4 8000A1C4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 00ADC8 8000A1C8 AFA60028 */  sw    $a2, 0x28($sp)
-/* 00ADCC 8000A1CC 0C002830 */  jal   func_8000A0C0
+/* 00ADCC 8000A1CC 0C002830 */  jal   object_manager_g_add_common
 /* 00ADD0 8000A1D0 30C600FF */   andi  $a2, $a2, 0xff
 /* 00ADD4 8000A1D4 14400003 */  bnez  $v0, .L8000A1E4_ovl0
 /* 00ADD8 8000A1D8 00402025 */   move  $a0, $v0

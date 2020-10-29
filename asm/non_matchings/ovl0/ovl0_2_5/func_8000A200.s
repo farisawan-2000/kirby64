@@ -4,7 +4,7 @@ glabel func_8000A200
 /* 00AE08 8000A208 AFA60028 */  sw    $a2, 0x28($sp)
 /* 00AE0C 8000A20C 00C07025 */  move  $t6, $a2
 /* 00AE10 8000A210 8DC70010 */  lw    $a3, 0x10($t6)
-/* 00AE14 8000A214 0C002830 */  jal   func_8000A0C0
+/* 00AE14 8000A214 0C002830 */  jal   object_manager_g_add_common
 /* 00AE18 8000A218 90C6000C */   lbu   $a2, 0xc($a2)
 /* 00AE1C 8000A21C 14400003 */  bnez  $v0, .L8000A22C_ovl0
 /* 00AE20 8000A220 00402025 */   move  $a0, $v0

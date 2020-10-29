@@ -24,6 +24,11 @@ struct UnkStruct8004A7C4_3C {
 	Vector unk40;
 
 	u32 unk4C;
+	u32 unk50[4];
+	u32 unk60[4];
+	u32 unk70[4];
+	u32 unk80;
+	u32 unk84;
 };
 
 // GObj?
@@ -44,6 +49,10 @@ struct UnkStruct8004A7C4 {
     u32 unk28;
 	u8 filler[0x10];
 	struct UnkStruct8004A7C4_3C *unk3C;
+	f32 unk40;
+	u32 unk44;
+	u32 unk48;
+	u32 unk4C;
 };
 extern struct UnkStruct8004A7C4 *D_8004A7C4;
 extern struct UnkStruct8004A7C4 *D_800DE44C;

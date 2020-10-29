@@ -1,4 +1,4 @@
-glabel func_8000A0C0
+glabel object_manager_g_add_common
 /* 00ACC0 8000A0C0 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00ACC4 8000A0C4 AFA60028 */  sw    $a2, 0x28($sp)
 /* 00ACC8 8000A0C8 30C600FF */  andi  $a2, $a2, 0xff

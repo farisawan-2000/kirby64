@@ -2,7 +2,7 @@ glabel func_8000A180
 /* 00AD80 8000A180 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00AD84 8000A184 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 00AD88 8000A188 AFA60028 */  sw    $a2, 0x28($sp)
-/* 00AD8C 8000A18C 0C002830 */  jal   func_8000A0C0
+/* 00AD8C 8000A18C 0C002830 */  jal   object_manager_g_add_common
 /* 00AD90 8000A190 30C600FF */   andi  $a2, $a2, 0xff
 /* 00AD94 8000A194 14400003 */  bnez  $v0, .L8000A1A4_ovl0
 /* 00AD98 8000A198 00402025 */   move  $a0, $v0

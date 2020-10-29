@@ -123,7 +123,7 @@ glabel func_800BBC6C
 /* 063FA0 800BBD50 8CA90034 */  lw    $t1, 0x34($a1)
 /* 063FA4 800BBD54 3C01800D */  lui   $at, %hi(D_800D6BB0) # $at, 0x800d
 /* 063FA8 800BBD58 AC296BB0 */  sw    $t1, %lo(D_800D6BB0)($at)
-/* 063FAC 800BBD5C 0C006266 */  jal   func_80018998_ovl1
+/* 063FAC 800BBD5C 0C006266 */  jal   set_soft_rng_seed
 /* 063FB0 800BBD60 8CA40038 */   lw    $a0, 0x38($a1)
 /* 063FB4 800BBD64 3C05800F */  lui   $a1, %hi(D_800ED4E0) # $a1, 0x800f
 /* 063FB8 800BBD68 8CA5D4E0 */  lw    $a1, %lo(D_800ED4E0)($a1)
