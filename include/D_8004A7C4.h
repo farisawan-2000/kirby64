@@ -42,12 +42,15 @@ struct UnkStruct8004A7C4 {
     u8 unkF;
     u32 unk10;
     void (*unk14)(void);
-    u32 unk18;
+    u32 *unk18;
     u32 unk1C;
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;
     u32 unk28;
-	u8 filler[0x10];
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
 	struct UnkStruct8004A7C4_3C *unk3C;
 	f32 unk40;
 	u32 unk44;

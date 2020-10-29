@@ -37,7 +37,7 @@ void func_80151100(void) {
     temp_a0 = *(&gFrameBuffers + (phi_v1 * 4));
     if ((osViGetCurrentFramebuffer() != temp_a0) && (sp1C != temp_a0)) {
         D_80048C5C = temp_a0;
-        D_80048C6C = osGetCount(temp_a0, &gFrameBuffers);
+        D_80048C6C = osGetCount();
         return 1;
     }
     return 0;
@@ -61,11 +61,11 @@ void *func_80151204(s32 arg0) {
 
 #ifdef MIPS_TO_C
 void *func_801512F0(void) {
-    void *sp2C;
+    struct UnkStruct8004A7C4 *sp2C;
     void *sp24;
+    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct UnkStruct8004A7C4 *temp_v0_3;
     void *temp_v0;
-    void *temp_v0_2;
-    void *temp_v0_3;
     void *phi_v0;
 
     func_8009B99C_ovl6(0x200);
@@ -181,7 +181,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801514A0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_8015150C(void) {
+u32 *func_8015150C(void) {
     f32 sp3C;
     f32 sp38;
     f32 sp34;
@@ -197,9 +197,9 @@ void *func_8015150C(void) {
     f32 temp_f2_2;
     f32 temp_f6;
     f32 temp_f8;
-    void *temp_t8;
+    u32 temp_t8;
 
-    temp_t8 = D_8015A56C->unk3C;
+    temp_t8 = D_8015A56C[0xF];
     sp34.unk0 = temp_t8->unk30;
     sp34.unk4 = temp_t8->unk34;
     sp34.unk8 = temp_t8->unk38;
@@ -218,10 +218,10 @@ void *func_8015150C(void) {
     sp38 = temp_f18;
     sp3C = temp_f8;
     temp_f2_2 = 100.0f / sqrtf((temp_f16 * temp_f16) + (temp_f18 * temp_f18) + (temp_f8 * temp_f8));
-    D_8015A670->unk10 = -(sp34 * temp_f2_2);
-    D_8015A670->unk11 = -(sp38 * temp_f2_2);
-    D_8015A670->unk12 = -(sp3C * temp_f2_2);
-    return &D_8015A670;
+    (*D_8015A670)->unk10 = -(sp34 * temp_f2_2);
+    (*D_8015A670)->unk11 = -(sp38 * temp_f2_2);
+    (*D_8015A670)->unk12 = -(sp3C * temp_f2_2);
+    return D_8015A670;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_8015150C.s")
@@ -230,25 +230,26 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015150C.s")
 extern u32 D_8015A670[]; // Lights?
 extern u32 *D_8015A56C; // lights?
 #ifdef MIPS_TO_C
-void func_8015166C(Gfx *dl) {
-    // Gfx *temp_v0;
-    // Gfx *temp_v0_2;
-    // Gfx *temp_v0_3;
+void *func_8015166C(void *arg0) {
+    void *temp_v0;
+    void *temp_v0_2;
+    void *temp_v0_3;
 
     func_8015150C_ovl6();
-    func_801514A0_ovl6(D_8015A56C, D_8015A670);
-    gSPNumLights(dl++, 1);
-    gSPLight(dl++, D_8015A670[2], 1);
-    gSPLight(dl++, D_8015A670[0], 2);
-    // temp_v0_3 = *dl;
-    // *dl = temp_v0_3 + 8;
-    // temp_v0_3->unk0 = 0xDC08060A;
-    // temp_v0_3->unk4 = D_8015A670 + 8;
-    // temp_v0 = *dl;
-    // *dl = temp_v0 + 8;
-    // temp_v0->unk0 = 0xDC08090A;
-    // temp_v0->unk4 = D_8015A670;
-    // return temp_v0;
+    func_801514A0_ovl6(D_8015A56C, *D_8015A670);
+    temp_v0_2 = *arg0;
+    *arg0 = temp_v0_2 + 8;
+    temp_v0_2->unk4 = 0x18;
+    temp_v0_2->unk0 = 0xDB020000;
+    temp_v0_3 = *arg0;
+    *arg0 = temp_v0_3 + 8;
+    temp_v0_3->unk0 = 0xDC08060A;
+    temp_v0_3->unk4 = *D_8015A670 + 8;
+    temp_v0 = *arg0;
+    *arg0 = temp_v0 + 8;
+    temp_v0->unk0 = 0xDC08090A;
+    temp_v0->unk4 = *D_8015A670;
+    return temp_v0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_8015166C.s")
@@ -277,14 +278,14 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015198C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80151CD0(s32 arg0, ? arg1) {
+u32 func_80151CD0(s32 arg0, Vector *arg1) {
     f32 sp24;
     f32 temp_f0;
     f32 temp_f2;
     f32 temp_ret;
-    void *temp_v0;
+    u32 temp_v0;
 
-    vec3_sub(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1, arg0);
+    vec3_sub(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1);
     temp_ret = sqrtf((sp24 * sp24) + (sp28 * sp28) + (sp2C * sp2C));
     temp_f0 = temp_ret;
     if (temp_f0 == 0.0f) {
@@ -298,7 +299,7 @@ void *func_80151CD0(s32 arg0, ? arg1) {
     D_8004A3F8.unkC->unk10 = sp24 * temp_f2;
     D_8004A3F8.unkC->unk11 = sp28 * temp_f2;
     D_8004A3F8.unkC->unk12 = sp2C * temp_f2;
-    return (bitwise void *) temp_ret;
+    return (bitwise u32) temp_ret;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80151CD0.s")
@@ -535,7 +536,7 @@ void func_80152DB8(void) {
     sp24 = temp_v0_2;
     func_80008DA8((temp_v0_2 + 0x800E0000)->unk-1930);
     func_80008DA8((temp_v0_2 + 0x800E0000)->unk-13F0);
-    D_8004A7C4[0x12] = &D_801513F8;
+    D_8004A7C4->unk48 = &D_801513F8;
     func_80008A18(D_8004A7C4, &func_8000E324, 1, 3);
     func_800A9864_ovl6(D_8015A560->unk4, 0x1869F, 0x10);
     func_80152D00_ovl6(D_8004A7C4);
@@ -621,19 +622,21 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153064.s")
 #ifdef MIPS_TO_C
 void func_8015314C(s32 arg0, s32 arg1) {
     s32 temp_v0;
+    s8 temp_a1;
     u32 temp_v1;
     void *temp_v0_2;
 
+    temp_a1 = arg1 & 0xFF;
     if (arg0 != -1) {
         temp_v0 = D_8015A7B0;
         if ((temp_v0 != D_8015A7AC) && (temp_v0 == D_8015A7A8)) {
-            fatal_printf(&D_8015A410);
+            fatal_printf(&D_8015A410, temp_a1, arg0);
 loop_4:
             goto loop_4;
         }
         temp_v0_2 = (D_8015A7A8 * 8) + &D_8015A6A8;
         temp_v0_2->unk0 = arg0;
-        temp_v0_2->unk4 = arg1 & 0xFF;
+        temp_v0_2->unk4 = temp_a1;
         temp_v1 = D_8015A7A8 + 1;
         if (temp_v1 >= 0x20) {
             D_8015A7A8 = 0;
@@ -791,7 +794,11 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801532F4.s")
 #ifdef MIPS_TO_C
 void func_801533C0(void) {
     struct UnkStruct8004A7C4 *sp1C;
-    void *temp_v0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
     temp_v0 = D_8015A560;
     sp1C = D_8004A7C4;
@@ -807,7 +814,11 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801533C0.s")
 #ifdef MIPS_TO_C
 void func_80153424(void) {
     struct UnkStruct8004A7C4 *sp1C;
-    void *temp_v0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
     temp_v0 = D_8015A560;
     sp1C = D_8004A7C4;
@@ -836,12 +847,20 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801534A8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_801534D4(void) {
-    void *temp_v0;
+struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *func_801534D4(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
-    (*(&D_800DE350 + (D_8015A560->unk3 * 4)))->unk2C = &D_80152B28;
+    D_800DE350[D_8015A560->unk3]->unk2C = &D_80152B28;
     temp_v0 = D_8015A560;
-    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = *(&D_800DE350 + (temp_v0->unk4 * 4));
+    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = D_800DE350[temp_v0->unk4];
     return temp_v0;
 }
 #else
@@ -849,12 +868,20 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801534D4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80153530(void) {
-    void *temp_v0;
+struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *func_80153530(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
-    (*(&D_800DE350 + (D_8015A560->unk3 * 4)))->unk2C = &D_80152B9C;
+    D_800DE350[D_8015A560->unk3]->unk2C = &D_80152B9C;
     temp_v0 = D_8015A560;
-    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = *(&D_800DE350 + (temp_v0->unk4 * 4));
+    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = D_800DE350[temp_v0->unk4];
     return temp_v0;
 }
 #else
@@ -862,12 +889,20 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153530.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_8015358C(void) {
-    void *temp_v0;
+struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *func_8015358C(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
-    (*(&D_800DE350 + (D_8015A560->unk3 * 4)))->unk2C = &D_80152C10;
+    D_800DE350[D_8015A560->unk3]->unk2C = &D_80152C10;
     temp_v0 = D_8015A560;
-    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = *(&D_800DE350 + (temp_v0->unk4 * 4));
+    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = D_800DE350[temp_v0->unk4];
     return temp_v0;
 }
 #else
@@ -875,12 +910,20 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015358C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_801535E8(void) {
-    void *temp_v0;
+struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *func_801535E8(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
 
-    (*(&D_800DE350 + (D_8015A560->unk3 * 4)))->unk2C = &D_80152C84;
+    D_800DE350[D_8015A560->unk3]->unk2C = &D_80152C84;
     temp_v0 = D_8015A560;
-    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = *(&D_800DE350 + (temp_v0->unk4 * 4));
+    ((temp_v0->unk3 * 4) + 0x80160000)->unk-5A90 = D_800DE350[temp_v0->unk4];
     return temp_v0;
 }
 #else
@@ -912,12 +955,12 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801536A0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_801536A8(void) {
-    void *temp_t9;
+u32 **func_801536A8(void) {
+    u32 *temp_t9;
 
     temp_t9 = ((D_8015A560->unk3 * 4) + 0x800E0000)->unk-1CB0;
     D_8015A56C = temp_t9;
-    temp_t9->unk2C = &D_801536A0;
+    temp_t9[0xB] = &D_801536A0;
     return &D_8015A56C;
 }
 #else
@@ -970,7 +1013,7 @@ void *func_8015374C(void *arg0) {
     if (temp_t7 != 0) {
         temp_a0 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0 + 8;
-        temp_a0->words.w1 = 0;
+        temp_a0->words.w1 = NULL;
         temp_a0->words.w0 = 0xE7000000;
         temp_a0_2 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_2 + 8;
@@ -990,7 +1033,7 @@ void *func_8015374C(void *arg0) {
         temp_a0_5->words.w0 = 0xF6440328;
         temp_a0_6 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_6 + 8;
-        temp_a0_6->words.w1 = 0;
+        temp_a0_6->words.w1 = NULL;
         temp_a0_6->words.w0 = 0xE7000000;
         temp_a0_7 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_7 + 8;
@@ -1045,7 +1088,7 @@ void *func_8015392C(void *arg0) {
     if (temp_t7 != 0) {
         temp_a0 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0 + 8;
-        temp_a0->words.w1 = 0;
+        temp_a0->words.w1 = NULL;
         temp_a0->words.w0 = 0xE7000000;
         temp_a0_2 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_2 + 8;
@@ -1065,7 +1108,7 @@ void *func_8015392C(void *arg0) {
         temp_a0_5->words.w0 = 0xF64D8398;
         temp_a0_6 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_6 + 8;
-        temp_a0_6->words.w1 = 0;
+        temp_a0_6->words.w1 = NULL;
         temp_a0_6->words.w0 = 0xE7000000;
         temp_a0_7 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_7 + 8;
@@ -1154,15 +1197,15 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153B80.s")
 
 #ifdef MIPS_TO_C
 void func_80153C28(void) {
-    void *sp1C;
-    void *temp_a0;
+    struct UnkStruct8004A7C4 *sp1C;
+    struct UnkStruct8004A7C4 *temp_a0;
 
     temp_a0 = D_800DE44C;
     if ((D_8015A690 == 0) && (temp_a0 != 0)) {
         sp1C = temp_a0;
         func_80008A18(temp_a0, &D_80153B34, 1, 3);
         func_8000A904_ovl6(temp_a0, 0xC, 0);
-        temp_a0->unk2C = &D_8015392C;
+        temp_a0->filler = &D_8015392C;
         if (D_8015A6A0 == 0) {
             D_8015A6A0 = func_8000A180(0, &D_80153B80, 0, 0x80000000);
         }
@@ -1207,14 +1250,14 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153D10.s")
 
 #ifdef MIPS_TO_C
 void func_80153D6C(void) {
-    void *sp1C;
-    void *temp_a0;
+    struct UnkStruct8004A7C4 *sp1C;
+    struct UnkStruct8004A7C4 *temp_a0;
 
     if (D_8015A690 == 0) {
         temp_a0 = D_800DE44C;
         sp1C = temp_a0;
         func_8000A904_ovl6(temp_a0, 0xC, 0);
-        temp_a0->unk2C = &D_80153CBC;
+        temp_a0->filler = &D_80153CBC;
         func_801548A4_ovl6(temp_a0);
         D_8015A698 = 1;
     }
@@ -1235,13 +1278,25 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153DC8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80153E1C(s32 arg0) {
-    void *sp1C;
-    void *sp18;
-    s32 temp_a3;
-    void *temp_a0;
-    void *temp_t2;
-    void *temp_t6;
+void func_80153E1C(u32 arg0) {
+    struct UnkStruct8004A7C4 *sp1C;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *sp18;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_t2;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_t6;
+    struct UnkStruct8004A7C4 *temp_a0;
+    struct UnkStruct8004A7C4 *temp_a3;
 
     temp_a3 = D_800DE44C;
     if (temp_a3 == 0) {
@@ -1256,7 +1311,7 @@ void func_80153E1C(s32 arg0) {
         temp_a0 = D_800DE44C;
         sp1C = temp_a0;
         func_8000A904_ovl6(temp_a0, 0xC, 0, &D_800DE44C);
-        sp1C->unk2C = &D_80153DC8;
+        sp1C->filler = &D_80153DC8;
         func_801548A4_ovl6(sp1C);
         D_8015A690 = arg0;
         D_8015A698 = 1;
@@ -1283,11 +1338,15 @@ void *func_80153F2C(void) {
     s32 temp_v0_2;
     s32 temp_v0_3;
     s32 temp_v1;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0_4;
     struct UnkStruct8004A7C4 *temp_t8;
     u8 temp_a1;
     void *temp_a0;
     void *temp_v0;
-    void *temp_v0_4;
 
     sp34 = D_8004A7C4;
     temp_a1 = D_8015A560->unk3;
@@ -1336,9 +1395,13 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015405C.s")
 
 #ifdef MIPS_TO_C
 void *func_80154088(void) {
-    s32 temp_a0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v1;
+    u32 temp_a0;
     void *temp_v0;
-    void *temp_v1;
 
     temp_v1 = D_8015A560;
     temp_a0 = temp_v1->unk4;
@@ -1353,9 +1416,13 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154088.s")
 
 #ifdef MIPS_TO_C
 void *func_80154100(void) {
-    s32 temp_t5;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v1;
+    u32 temp_t5;
     void *temp_v0;
-    void *temp_v1;
 
     temp_v1 = D_8015A560;
     temp_t5 = temp_v1->unk4;
@@ -1371,9 +1438,17 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154100.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80154158(void) {
-    void *temp_t6;
-    void *temp_v0;
+struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *func_80154158(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
+    u32 temp_t6;
 
     temp_v0 = D_8015A560;
     D_8015A7C0 = temp_v0;
@@ -1409,8 +1484,8 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801541EC.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 func_80154214(void) {
-    s32 temp_v0;
+u32 func_80154214(void) {
+    u32 temp_v0;
 
     temp_v0 = D_8015A560->unk4;
     D_8015A7B8.unk4 = (temp_v0 & 0xFF000000) >> 0x18;
@@ -1424,7 +1499,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154214.s")
 
 #ifdef MIPS_TO_C
 void func_80154258(void) {
-    s32 temp_t9;
+    u32 temp_t9;
 
     temp_t9 = D_8015A560->unk4;
     D_8015A7B8.unk0 = (temp_t9 & 0xFFFF0000) >> 0x10;
@@ -1446,7 +1521,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154258.s")
     }
     temp_v0 = *0x8015A698;
     if (temp_v0 == 0) {
-        if ((D_800DE350 != 0) && (-1 != D_800DFF50) && ((D_800DD8D0 >> 0x1E) == 0)) {
+        if ((*D_800DE350 != 0) && (-1 != *D_800DFF50) && ((*D_800DD8D0 >> 0x1E) == 0)) {
             return 0;
         }
         if ((*0x800DE354 != 0) && (-1 != D_800DFF54) && ((D_800DD8D4 & 0xC0000000) == 0)) {
@@ -1455,17 +1530,17 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154258.s")
         phi_a0 = &D_800DE358;
         phi_v1 = 8;
 loop_12:
-        if ((phi_a0->unk0 != 0) && (-1 != *(&D_800DFF50 + phi_v1)) && ((*(&D_800DD8D0 + phi_v1) & 0xC0000000) == 0)) {
+        if ((phi_a0->unk0 != 0) && (-1 != *(D_800DFF50 + phi_v1)) && ((*(D_800DD8D0 + phi_v1) & 0xC0000000) == 0)) {
             return 0;
         }
-        if ((phi_a0->unk4 != 0) && (-1 != (&D_800DFF50 + phi_v1)->unk4) && (((&D_800DD8D0 + phi_v1)->unk4 & 0xC0000000) == 0)) {
+        if ((phi_a0->unk4 != 0) && (-1 != (D_800DFF50 + phi_v1)->unk4) && (((D_800DD8D0 + phi_v1)->unk4 & 0xC0000000) == 0)) {
             return 0;
         }
-        if ((phi_a0->unk8 != 0) && (-1 != (&D_800DFF50 + phi_v1)->unk8) && (((&D_800DD8D0 + phi_v1)->unk8 & 0xC0000000) == 0)) {
+        if ((phi_a0->unk8 != 0) && (-1 != (D_800DFF50 + phi_v1)->unk8) && (((D_800DD8D0 + phi_v1)->unk8 & 0xC0000000) == 0)) {
             return 0;
         }
         temp_a0 = phi_a0 + 0x10;
-        if ((phi_a0->unkC != 0) && (-1 != (&D_800DFF50 + phi_v1)->unkC) && (((&D_800DD8D0 + phi_v1)->unkC & 0xC0000000) == 0)) {
+        if ((phi_a0->unkC != 0) && (-1 != (D_800DFF50 + phi_v1)->unkC) && (((D_800DD8D0 + phi_v1)->unkC & 0xC0000000) == 0)) {
             return 0;
         }
         phi_a0 = temp_a0;
@@ -1485,10 +1560,10 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154284.s")
 #ifdef MIPS_TO_C
 void func_80154464(void) {
     s32 temp_s0;
-    void *phi_s1;
+    s32 *phi_s1;
     s32 phi_s0;
 
-    phi_s1 = &D_800DE350;
+    phi_s1 = D_800DE350;
     phi_s0 = 0;
 loop_1:
     if (*phi_s1 != 0) {
@@ -1512,12 +1587,28 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154464.s")
 #ifdef MIPS_TO_C
 void func_801544E8(s32 arg0) {
     s32 temp_v0_2;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v1;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v1_2;
     u8 temp_v0;
     void *temp_t0;
-    void *temp_v1;
-    void *temp_v1_2;
-    void *phi_v1;
-    void *phi_v1_2;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_v1;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_v1_2;
 
     if (0x22 == D_8015A560->unk2) {
         if ((*D_8015A564 != 0) && (func_80154284_ovl6() != 0)) {
@@ -1549,7 +1640,7 @@ loop_8:
                         }
                     }
                     phi_v1 = phi_v1_2;
-                    if (D_8015A568 == *phi_v1_2) {
+                    if (D_8015A568 == phi_v1_2->unk0) {
                         goto loop_8;
                     }
 block_13:
@@ -1572,7 +1663,7 @@ void *func_80154628(void) {
     void *temp_v1;
     void *phi_v1;
 
-    D_8015A56C = 0;
+    D_8015A56C = NULL;
     D_8015A668 = 0;
     D_8015A66C = 0;
     D_8015A574 = 0;
@@ -1754,24 +1845,56 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154938.s")
 
 #ifdef MIPS_TO_C
 s32 func_80154A40(void) {
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_t1;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0_3;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *temp_v0_4;
     u32 temp_v0_2;
     u8 temp_t0;
-    void *temp_t1;
-    void *temp_v0;
-    void *temp_v0_3;
-    void *temp_v0_4;
     u8 phi_t0;
     u32 phi_a1;
     s32 phi_a3;
     s32 phi_a2;
     void *phi_v1;
     u8 phi_t0_2;
-    void *phi_v0;
-    void *phi_a0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_v0;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_a0;
     u32 phi_a1_2;
     s32 phi_a3_2;
-    void *phi_v0_2;
-    void *phi_a0_2;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_v0_2;
+    struct Hack
+{
+  u32 unk0;
+  u32 unk4;
+} *phi_a0_2;
 
     temp_v0 = D_8015A560;
     phi_t0 = temp_v0->unk2;
@@ -1870,7 +1993,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154B14.s")
 
 #ifdef MIPS_TO_C
 void func_80154BA0(void *arg0) {
-    s32 temp_v0;
+    u32 temp_v0;
     void *temp_v1;
 
     temp_v1 = *arg0;
@@ -1879,7 +2002,7 @@ void func_80154BA0(void *arg0) {
     temp_v1->unk4 = &D_80154E58;
     if (D_8015A56C != 0) {
         temp_v0 = D_8004A3F8.unkC;
-        D_8015A670 = temp_v0;
+        *D_8015A670 = temp_v0;
         D_8004A3F8.unkC = temp_v0 + 0x18;
         func_8015166C_ovl6();
     }
@@ -1913,26 +2036,26 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154C38.s")
 
 #ifdef MIPS_TO_C
 u32 func_80154C64(void) {
-    void *sp1C;
+    s16 *sp1C;
+    s16 *temp_a0;
+    s16 *temp_a0_2;
+    s16 *temp_t6;
     u32 temp_v0;
     u32 temp_v0_2;
-    void *temp_a0;
-    void *temp_a0_2;
-    void *temp_t6;
     u32 phi_v0;
     u32 phi_v0_2;
     u32 phi_return;
 
-    temp_t6 = &gFrameBuffer + 0xFFFDA800;
+    temp_t6 = gFrameBuffer + 0xFFFDA800;
     gFrameBuffers.unk0 = temp_t6;
-    gFrameBuffers.unk4 = &gFrameBuffer;
+    gFrameBuffers.unk4 = gFrameBuffer;
     gFrameBuffers.unk8 = &D_803DA800;
     D_80154E80.unk0 = temp_t6;
-    D_80154E80.unk4 = &gFrameBuffer;
+    D_80154E80.unk4 = gFrameBuffer;
     D_80154E80.unk8 = &D_803DA800;
     D_80154E80.unkC = &D_8012EB00 - 0x1900;
     sp1C = temp_t6;
-    func_80007BA4_ovl6(&D_80154E80, &gFrameBuffer);
+    func_80007BA4_ovl6(&D_80154E80, gFrameBuffer);
     D_80154EAC = sp1C - &D_8015A7D0;
     if ((D_8015A68C & 8) == 0) {
         temp_a0 = sp1C + 0x6EF00;
@@ -1970,7 +2093,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154C64.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 func_80154D60(s32 arg0, ?32 arg1) {
+u32 func_80154D60(s32 arg0, ?32 arg1) {
     D_8015A68C = arg1;
     func_80005350_ovl6(&D_80151138);
     func_80154C64_ovl6();

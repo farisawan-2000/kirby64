@@ -112,6 +112,9 @@ struct DObj {
 
 struct Camera {
     struct Camera *unk0;
+    u8 filler[0x80 - 0x4];
+    u32 unk80;
+    u32 unk84;
 };
  
 

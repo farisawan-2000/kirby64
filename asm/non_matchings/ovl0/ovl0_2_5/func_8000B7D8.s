@@ -1,8 +1,0 @@
-glabel func_8000B7D8
-/* 00C3D8 8000B7D8 14800003 */  bnez  $a0, .L8000B7E8_ovl0
-/* 00C3DC 8000B7DC 00000000 */   nop   
-/* 00C3E0 8000B7E0 3C048005 */  lui   $a0, %hi(D_8004A7D0) # $a0, 0x8005
-/* 00C3E4 8000B7E4 8C84A7D0 */  lw    $a0, %lo(D_8004A7D0)($a0)
-.L8000B7E8_ovl0:
-/* 00C3E8 8000B7E8 03E00008 */  jr    $ra
-/* 00C3EC 8000B7EC A0800015 */   sb    $zero, 0x15($a0)

@@ -30,6 +30,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
 
 // u32 func_8000BE90(struct unk8000BE90Func*);
 
+// TODO: is this ALSO 8004A7C4?
 struct unk8000BEF4Func {
     u8 filler[0x3C];
     struct unk8000BE90Func* unk3C;
