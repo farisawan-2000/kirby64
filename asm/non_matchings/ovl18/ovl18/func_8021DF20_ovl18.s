@@ -23,11 +23,11 @@ glabel func_8021DF20_ovl18
 /* 230914 8021DF74 8FBF0014 */   lw    $ra, 0x14($sp)
 .L8021DF78_ovl18:
 /* 230918 8021DF78 8D020008 */  lw    $v0, 8($t0)
-/* 23091C 8021DF7C 3C0B8005 */  lui   $t3, %hi(D_8004A3F8) # $t3, 0x8005
+/* 23091C 8021DF7C 3C0B8005 */  lui   $t3, %hi(gDynamicBuffer1) # $t3, 0x8005
 /* 230920 8021DF80 3C18E700 */  lui   $t8, 0xe700
 /* 230924 8021DF84 244F0008 */  addiu $t7, $v0, 8
 /* 230928 8021DF88 AD0F0008 */  sw    $t7, 8($t0)
-/* 23092C 8021DF8C 256BA3F8 */  addiu $t3, %lo(D_8004A3F8) # addiu $t3, $t3, -0x5c08
+/* 23092C 8021DF8C 256BA3F8 */  addiu $t3, %lo(gDynamicBuffer1) # addiu $t3, $t3, -0x5c08
 /* 230930 8021DF90 AC400004 */  sw    $zero, 4($v0)
 /* 230934 8021DF94 AC580000 */  sw    $t8, ($v0)
 /* 230938 8021DF98 8D64000C */  lw    $a0, 0xc($t3)

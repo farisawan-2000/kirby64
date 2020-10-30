@@ -7043,8 +7043,8 @@ void func_8010E324(s32 arg0, void *arg1) {
     u32 temp_t0_2;
     void *temp_t5;
 
-    temp_t0 = D_8004A3F8.unkC;
-    D_8004A3F8.unkC = temp_t0 + 0x40;
+    temp_t0 = gDynamicBuffer1.unkC;
+    gDynamicBuffer1.unkC = temp_t0 + 0x40;
     sp7C = temp_t0;
     temp_f14 = arg1->unk20;
     temp_f12 = arg1->unk1C;

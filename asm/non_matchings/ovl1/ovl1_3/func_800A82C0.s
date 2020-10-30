@@ -1,6 +1,6 @@
 glabel func_800A82C0
-/* 050510 800A82C0 3C038005 */  lui   $v1, %hi(D_8004A408) # $v1, 0x8005
-/* 050514 800A82C4 2463A408 */  addiu $v1, %lo(D_8004A408) # addiu $v1, $v1, -0x5bf8
+/* 050510 800A82C0 3C038005 */  lui   $v1, %hi(gDynamicBuffer2) # $v1, 0x8005
+/* 050514 800A82C4 2463A408 */  addiu $v1, %lo(gDynamicBuffer2) # addiu $v1, $v1, -0x5bf8
 /* 050518 800A82C8 8C6E000C */  lw    $t6, 0xc($v1)
 /* 05051C 800A82CC 2401FF00 */  li    $at, -256
 /* 050520 800A82D0 8C680008 */  lw    $t0, 8($v1)

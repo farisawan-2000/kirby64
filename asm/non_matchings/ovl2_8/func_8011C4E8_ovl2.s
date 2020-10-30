@@ -59,8 +59,8 @@ glabel func_8011C4E8_ovl2
 /* 0A5038 8011C5C8 AD8E0008 */  sw    $t6, 8($t4)
 .L8011C5CC_ovl2:
 /* 0A503C 8011C5CC 90EF0000 */  lbu   $t7, ($a3)
-/* 0A5040 8011C5D0 3C128005 */  lui   $s2, %hi(D_8004A3F8) # $s2, 0x8005
-/* 0A5044 8011C5D4 2652A3F8 */  addiu $s2, %lo(D_8004A3F8) # addiu $s2, $s2, -0x5c08
+/* 0A5040 8011C5D0 3C128005 */  lui   $s2, %hi(gDynamicBuffer1) # $s2, 0x8005
+/* 0A5044 8011C5D4 2652A3F8 */  addiu $s2, %lo(gDynamicBuffer1) # addiu $s2, $s2, -0x5c08
 /* 0A5048 8011C5D8 11E0003B */  beqz  $t7, .L8011C6C8_ovl2
 /* 0A504C 8011C5DC 0000A025 */   move  $s4, $zero
 /* 0A5050 8011C5E0 C6040004 */  lwc1  $f4, 4($s0)

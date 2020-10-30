@@ -50,8 +50,8 @@ asm/non_matchings/ovl0/ovl0_2_5/func_80007674.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007694.s
 asm/non_matchings/ovl0/ovl0_2_5/func_800076D0.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007824.s
-asm/non_matchings/ovl0/ovl0_2_5/func_8000783C.s
-asm/non_matchings/ovl0/ovl0_2_5/func_800078A4.s
+asm/non_matchings/ovl0/ovl0_2_5/alloc_from_dynamic_buffer.s
+asm/non_matchings/ovl0/ovl0_2_5/init_dynamic_buffer.s
 asm/non_matchings/ovl0/ovl0_2_5/func_800078F0.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007944.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007998.s

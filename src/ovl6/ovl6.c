@@ -289,16 +289,16 @@ u32 func_80151CD0(s32 arg0, Vector *arg1) {
     temp_ret = sqrtf((sp24 * sp24) + (sp28 * sp28) + (sp2C * sp2C));
     temp_f0 = temp_ret;
     if (temp_f0 == 0.0f) {
-        D_8004A3F8.unkC->unk12 = 0;
-        temp_v0 = D_8004A3F8.unkC;
+        gDynamicBuffer1.unkC->unk12 = 0;
+        temp_v0 = gDynamicBuffer1.unkC;
         temp_v0->unk10 = temp_v0->unk12;
-        D_8004A3F8.unkC->unk11 = 0x64;
+        gDynamicBuffer1.unkC->unk11 = 0x64;
         return temp_v0;
     }
     temp_f2 = 100.0f / temp_f0;
-    D_8004A3F8.unkC->unk10 = sp24 * temp_f2;
-    D_8004A3F8.unkC->unk11 = sp28 * temp_f2;
-    D_8004A3F8.unkC->unk12 = sp2C * temp_f2;
+    gDynamicBuffer1.unkC->unk10 = sp24 * temp_f2;
+    gDynamicBuffer1.unkC->unk11 = sp28 * temp_f2;
+    gDynamicBuffer1.unkC->unk12 = sp2C * temp_f2;
     return (bitwise u32) temp_ret;
 }
 #else
@@ -368,7 +368,7 @@ void func_80152B28(void *arg0) {
     sp18 = D_8004A404;
     func_80151DDC_ovl6(temp_a2, temp_a2);
     func_801514A0_ovl6(((temp_a2 * 4) + 0x80160000)->unk-5A90, sp18, temp_a2);
-    D_8004A3F8.unkC = D_8004A3F8.unkC + 0x18;
+    gDynamicBuffer1.unkC = gDynamicBuffer1.unkC + 0x18;
     func_80151E60_ovl6(arg0, sp18);
 }
 #else
@@ -386,7 +386,7 @@ void func_80152B9C(void *arg0) {
     sp18 = D_8004A404;
     func_80151DDC_ovl6(temp_a2, temp_a2);
     func_801514A0_ovl6(((temp_a2 * 4) + 0x80160000)->unk-5A90, sp18, temp_a2);
-    D_8004A3F8.unkC = D_8004A3F8.unkC + 0x18;
+    gDynamicBuffer1.unkC = gDynamicBuffer1.unkC + 0x18;
     func_80152138_ovl6(arg0, sp18);
 }
 #else
@@ -404,7 +404,7 @@ void func_80152C10(void *arg0) {
     sp18 = D_8004A404;
     func_80151E10_ovl6(temp_a2, temp_a2);
     func_801514A0_ovl6(((temp_a2 * 4) + 0x80160000)->unk-5A90, sp18, temp_a2);
-    D_8004A3F8.unkC = D_8004A3F8.unkC + 0x18;
+    gDynamicBuffer1.unkC = gDynamicBuffer1.unkC + 0x18;
     func_80151E60_ovl6(arg0, sp18);
 }
 #else
@@ -422,7 +422,7 @@ void func_80152C84(void *arg0) {
     sp18 = D_8004A404;
     func_80151E10_ovl6(temp_a2, temp_a2);
     func_801514A0_ovl6(((temp_a2 * 4) + 0x80160000)->unk-5A90, sp18, temp_a2);
-    D_8004A3F8.unkC = D_8004A3F8.unkC + 0x18;
+    gDynamicBuffer1.unkC = gDynamicBuffer1.unkC + 0x18;
     func_80152138_ovl6(arg0, sp18);
 }
 #else
@@ -2001,9 +2001,9 @@ void func_80154BA0(void *arg0) {
     temp_v1->unk0 = 0xDE000000;
     temp_v1->unk4 = &D_80154E58;
     if (D_8015A56C != 0) {
-        temp_v0 = D_8004A3F8.unkC;
+        temp_v0 = gDynamicBuffer1.unkC;
         *D_8015A670 = temp_v0;
-        D_8004A3F8.unkC = temp_v0 + 0x18;
+        gDynamicBuffer1.unkC = temp_v0 + 0x18;
         func_8015166C_ovl6();
     }
 }

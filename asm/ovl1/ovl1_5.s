@@ -2905,7 +2905,7 @@ glabel func_800AE048
 .L800AE064_ovl1:
 /* 0562B4 800AE064 00062200 */  sll   $a0, $a2, 8
 /* 0562B8 800AE068 24050008 */  li    $a1, 8
-/* 0562BC 800AE06C 0C001500 */  jal   func_80005400_ovl1
+/* 0562BC 800AE06C 0C001500 */  jal   alloc_with_alignment
 /* 0562C0 800AE070 AFA60018 */   sw    $a2, 0x18($sp)
 /* 0562C4 800AE074 8FA60018 */  lw    $a2, 0x18($sp)
 /* 0562C8 800AE078 3C01800E */  lui   $at, %hi(D_800DD6E0) # $at, 0x800e

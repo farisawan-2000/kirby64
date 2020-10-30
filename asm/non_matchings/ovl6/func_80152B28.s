@@ -16,8 +16,8 @@ glabel func_80152B28
 /* 136EF0 80152B60 00982021 */  addu  $a0, $a0, $t8
 /* 136EF4 80152B64 0C054528 */  jal   func_801514A0_ovl6
 /* 136EF8 80152B68 8C84A570 */   lw    $a0, -0x5a90($a0)
-/* 136EFC 80152B6C 3C028005 */  lui   $v0, %hi(D_8004A3F8) # $v0, 0x8005
-/* 136F00 80152B70 2442A3F8 */  addiu $v0, %lo(D_8004A3F8) # addiu $v0, $v0, -0x5c08
+/* 136EFC 80152B6C 3C028005 */  lui   $v0, %hi(gDynamicBuffer1) # $v0, 0x8005
+/* 136F00 80152B70 2442A3F8 */  addiu $v0, %lo(gDynamicBuffer1) # addiu $v0, $v0, -0x5c08
 /* 136F04 80152B74 8C59000C */  lw    $t9, 0xc($v0)
 /* 136F08 80152B78 8FA40020 */  lw    $a0, 0x20($sp)
 /* 136F0C 80152B7C 8FA50018 */  lw    $a1, 0x18($sp)

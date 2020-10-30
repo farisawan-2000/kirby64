@@ -19,7 +19,7 @@ glabel func_8009B99C
 /* 043C2C 8009B9DC 0600000D */  bltz  $s0, .L8009BA14_ovl1
 .L8009B9E0_ovl1:
 /* 043C30 8009B9E0 24040064 */   li    $a0, 100
-/* 043C34 8009B9E4 0C001500 */  jal   func_80005400_ovl1
+/* 043C34 8009B9E4 0C001500 */  jal   alloc_with_alignment
 /* 043C38 8009B9E8 24050004 */   li    $a1, 4
 /* 043C3C 8009B9EC 54400004 */  bnezl $v0, .L8009BA00_ovl1
 /* 043C40 8009B9F0 8E2E0000 */   lw    $t6, ($s1)

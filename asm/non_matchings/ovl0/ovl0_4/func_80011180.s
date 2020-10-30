@@ -88,8 +88,8 @@ glabel func_80011180
 /* 011EBC 800112BC 914B000E */  lbu   $t3, 0xe($t2)
 /* 011EC0 800112C0 512B000A */  beql  $t1, $t3, .L800112EC_ovl0
 /* 011EC4 800112C4 92420004 */   lbu   $v0, 4($s2)
-/* 011EC8 800112C8 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011ECC 800112CC 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011EC8 800112C8 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011ECC 800112CC 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011ED0 800112D0 8C6C000C */  lw    $t4, 0xc($v1)
 /* 011ED4 800112D4 AC4C0000 */  sw    $t4, ($v0)
 /* 011ED8 800112D8 8C70000C */  lw    $s0, 0xc($v1)
@@ -107,8 +107,8 @@ glabel func_80011180
 /* 011F04 80011304 8C2F09E0 */  lw    $t7, %lo(jtbl_800409E0)($at)
 /* 011F08 80011308 01E00008 */  jr    $t7
 /* 011F0C 8001130C 00000000 */   nop   
-/* 011F10 80011310 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011F14 80011314 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011F10 80011310 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011F14 80011314 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011F18 80011318 8C70000C */  lw    $s0, 0xc($v1)
 /* 011F1C 8001131C 26180040 */  addiu $t8, $s0, 0x40
 /* 011F20 80011320 1000003D */  b     .L80011418_ovl0
@@ -117,8 +117,8 @@ glabel func_80011180
 /* 011F28 80011328 28410043 */  slti  $at, $v0, 0x43
 /* 011F2C 8001132C 54200008 */  bnezl $at, .L80011350_ovl0
 /* 011F30 80011330 8FAA0078 */   lw    $t2, 0x78($sp)
-/* 011F34 80011334 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011F38 80011338 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011F34 80011334 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011F38 80011338 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011F3C 8001133C 8C70000C */  lw    $s0, 0xc($v1)
 /* 011F40 80011340 26190040 */  addiu $t9, $s0, 0x40
 /* 011F44 80011344 10000034 */  b     .L80011418_ovl0
@@ -131,8 +131,8 @@ glabel func_80011180
 /* 011F58 80011358 8D29A450 */  lw    $t1, %lo(D_8004A450)($t1)
 /* 011F5C 8001135C 59200008 */  blezl $t1, .L80011380_ovl0
 /* 011F60 80011360 8E2D0004 */   lw    $t5, 4($s1)
-/* 011F64 80011364 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011F68 80011368 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011F64 80011364 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011F68 80011368 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011F6C 8001136C 8C70000C */  lw    $s0, 0xc($v1)
 /* 011F70 80011370 260B0040 */  addiu $t3, $s0, 0x40
 /* 011F74 80011374 10000028 */  b     .L80011418_ovl0
@@ -154,8 +154,8 @@ glabel func_80011180
 /* 011FB0 800113B0 8C2F0A28 */  lw    $t7, %lo(jtbl_80040A28)($at)
 /* 011FB4 800113B4 01E00008 */  jr    $t7
 /* 011FB8 800113B8 00000000 */   nop   
-/* 011FBC 800113BC 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011FC0 800113C0 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011FBC 800113BC 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011FC0 800113C0 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011FC4 800113C4 8C70000C */  lw    $s0, 0xc($v1)
 /* 011FC8 800113C8 26180040 */  addiu $t8, $s0, 0x40
 /* 011FCC 800113CC 10000012 */  b     .L80011418_ovl0
@@ -164,8 +164,8 @@ glabel func_80011180
 /* 011FD4 800113D4 28410043 */  slti  $at, $v0, 0x43
 /* 011FD8 800113D8 54200008 */  bnezl $at, .L800113FC_ovl0
 /* 011FDC 800113DC 24010003 */   li    $at, 3
-/* 011FE0 800113E0 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 011FE4 800113E4 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 011FE0 800113E0 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 011FE4 800113E4 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 011FE8 800113E8 8C70000C */  lw    $s0, 0xc($v1)
 /* 011FEC 800113EC 26190040 */  addiu $t9, $s0, 0x40
 /* 011FF0 800113F0 10000009 */  b     .L80011418_ovl0

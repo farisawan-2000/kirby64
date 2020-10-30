@@ -3991,7 +3991,7 @@ glabel D_8004A3F0
 glabel D_8004A3F4
 .word 0x00000000
 
-glabel D_8004A3F8
+glabel gDynamicBuffer1
 .word 0x00000000
 
 glabel D_8004A3FC
@@ -4003,7 +4003,7 @@ glabel D_8004A400
 glabel D_8004A404
 .word 0x00000000
 
-glabel D_8004A408
+glabel gDynamicBuffer2
 .word 0x00000000
 glabel D_8004A40C
 .word 0x00000000
@@ -4012,7 +4012,7 @@ glabel D_8004A410
 glabel D_8004A414
 .word 0x00000000
 
-glabel D_8004A418
+glabel gDynamicBuffer3
 .word 0x00000000
 
 glabel D_8004A41C

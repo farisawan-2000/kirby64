@@ -17,7 +17,7 @@ s32 func_8009B550_ovl1(s32 arg0, ? arg1) {
     phi_s0_2 = 0;
     if (arg0 > 0) {
 loop_1:
-        temp_v0 = func_80005400_ovl1(arg1, 4);
+        temp_v0 = alloc_with_alignment(arg1, 4);
         if (temp_v0 == 0) {
             phi_s0_2 = phi_s0;
         } else {
@@ -300,7 +300,7 @@ loop_1:
     phi_s0 = temp_s0;
     if (temp_s0 >= 0) {
 loop_3:
-        temp_v0_2 = func_80005400_ovl1(0x64, 4);
+        temp_v0_2 = alloc_with_alignment(0x64, 4);
         if (temp_v0_2 == 0) {
             return 0;
         }
@@ -911,7 +911,7 @@ void func_800A04A4(u32 arg0, u32 arg1) {
     phi_s0 = temp_s0;
     if (temp_s0 >= 0) {
 loop_1:
-        temp_v0 = func_80005400_ovl1(0x78, 4);
+        temp_v0 = alloc_with_alignment(0x78, 4);
         if (temp_v0 == 0) {
             return 0;
         }

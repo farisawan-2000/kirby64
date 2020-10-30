@@ -1,7 +1,7 @@
 glabel func_8010E324
 /* 096D94 8010E324 27BDFF00 */  addiu $sp, $sp, -0x100
-/* 096D98 8010E328 3C028005 */  lui   $v0, %hi(D_8004A3F8) # $v0, 0x8005
-/* 096D9C 8010E32C 2442A3F8 */  addiu $v0, %lo(D_8004A3F8) # addiu $v0, $v0, -0x5c08
+/* 096D98 8010E328 3C028005 */  lui   $v0, %hi(gDynamicBuffer1) # $v0, 0x8005
+/* 096D9C 8010E32C 2442A3F8 */  addiu $v0, %lo(gDynamicBuffer1) # addiu $v0, $v0, -0x5c08
 /* 096DA0 8010E330 8C48000C */  lw    $t0, 0xc($v0)
 /* 096DA4 8010E334 AFBF003C */  sw    $ra, 0x3c($sp)
 /* 096DA8 8010E338 AFB20038 */  sw    $s2, 0x38($sp)

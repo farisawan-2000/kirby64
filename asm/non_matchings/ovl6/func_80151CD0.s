@@ -22,8 +22,8 @@ glabel func_80151CD0
 /* 1360B0 80151D20 0C00CAC8 */  jal   sqrtf
 /* 1360B4 80151D24 460A4300 */   add.s $f12, $f8, $f10
 /* 1360B8 80151D28 44808000 */  mtc1  $zero, $f16
-/* 1360BC 80151D2C 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
-/* 1360C0 80151D30 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 1360BC 80151D2C 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
+/* 1360C0 80151D30 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 1360C4 80151D34 46100032 */  c.eq.s $f0, $f16
 /* 1360C8 80151D38 3C0142C8 */  li    $at, 0x42C80000 # 100.000000
 /* 1360CC 80151D3C 4502000B */  bc1fl .L80151D6C_ovl6
@@ -40,9 +40,9 @@ glabel func_80151CD0
 /* 1360F8 80151D68 44819000 */  mtc1  $at, $f18
 .L80151D6C_ovl6:
 /* 1360FC 80151D6C C7A40024 */  lwc1  $f4, 0x24($sp)
-/* 136100 80151D70 3C038005 */  lui   $v1, %hi(D_8004A3F8) # $v1, 0x8005
+/* 136100 80151D70 3C038005 */  lui   $v1, %hi(gDynamicBuffer1) # $v1, 0x8005
 /* 136104 80151D74 46009083 */  div.s $f2, $f18, $f0
-/* 136108 80151D78 2463A3F8 */  addiu $v1, %lo(D_8004A3F8) # addiu $v1, $v1, -0x5c08
+/* 136108 80151D78 2463A3F8 */  addiu $v1, %lo(gDynamicBuffer1) # addiu $v1, $v1, -0x5c08
 /* 13610C 80151D7C 8C6C000C */  lw    $t4, 0xc($v1)
 /* 136110 80151D80 46022182 */  mul.s $f6, $f4, $f2
 /* 136114 80151D84 4600320D */  trunc.w.s $f8, $f6

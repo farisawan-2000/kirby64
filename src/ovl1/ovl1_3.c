@@ -19,10 +19,10 @@ extern struct UnkWhat D_800D00C4[][1];
 void *func_800A82C0(void) {
     s32 temp_t8;
 
-    temp_t8 = (D_8004A408.unkC + 0xFF) & -0x100;
+    temp_t8 = (gDynamicBuffer2.unkC + 0xFF) & -0x100;
     D_800D7BB4 = temp_t8;
     D_800D7BB0 = temp_t8;
-    D_800D7BB8 = (s32) (D_8004A408.unk8 - temp_t8);
+    D_800D7BB8 = (s32) (gDynamicBuffer2.unk8 - temp_t8);
     D_800D7C10 = 0x80400000;
     return &D_800D7BB4;
 }

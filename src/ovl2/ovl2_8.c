@@ -515,7 +515,7 @@ void func_8011C4E8_ovl2(s32 arg0, void *arg1) {
         phi_s4 = 0;
         if (temp_a3->unk0 != 0) {
 loop_5:
-            temp_s1 = D_8004A3F8.unkC;
+            temp_s1 = gDynamicBuffer1.unkC;
             temp_a1 = &sp6C;
             temp_a2 = &sp60;
             sp6C = (phi_s0->unk4 * temp_f20) + sp80;
@@ -535,7 +535,7 @@ loop_5:
                 gDisplayListHeads[2] = temp_v0_3 + 8;
                 temp_v0_3->words.w1 = &D_80126E90;
                 temp_v0_3->words.w0 = 0xDE000000;
-                D_8004A3F8.unkC = D_8004A3F8.unkC + 0x40;
+                gDynamicBuffer1.unkC = gDynamicBuffer1.unkC + 0x40;
             }
             temp_s4 = phi_s4 + 1;
             phi_s0 = phi_s0 + 0x10;
