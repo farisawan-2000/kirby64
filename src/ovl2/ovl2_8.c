@@ -2,48 +2,41 @@
 #include <macros.h>
 #include "types.h"
 #include "ovl2_8.h"
+#include "ovl2_6.h"
 #include "D_8004A7C4.h"
 
-#ifdef MIPS_TO_C
-void *func_8011BA10_ovl2(void *arg0, s32 arg1) {
-    u32 temp_a2;
-    void *temp_a0;
-    void *temp_v0;
-    void *temp_v0_2;
-    void *temp_v1;
-    void *phi_v0;
-    void *phi_a1;
-    u32 phi_a2;
-    void *phi_return;
 
-    if (arg1 != 0x14) {
-        temp_v0 = ((arg1 * 0xB8) + 0x80130000)->unk-26B4;
-        phi_v0 = temp_v0;
-        phi_return = temp_v0;
+struct struct8011BA10_temp {
+    struct vCollisionHeader *unk0;
+    u8 filler[0xB4];
+}; // dunno if this is how this actually works
+
+extern struct struct8011BA10_temp D_8012D94C[];
+extern struct struct8011BA10_temp D_80129410;
+
+
+void *func_8011BA10_ovl2(struct CollisionTriangle *tri, u32 arg1) {
+    u32 i;
+    struct DynGeo_List *destructGroups;
+    struct vCollisionHeader *vColHeader;
+    u16 *destrucIndex;
+    
+    if (arg1 != 20) {
+        vColHeader = D_8012D94C[arg1].unk0;
     } else {
-        temp_v0_2 = *0x80129410;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
+        vColHeader = D_80129410.unk0;
     }
-    temp_v1 = phi_v0->unk30 + (arg0->unkA * 6);
-    if (temp_v1->unk0 != 0) {
-        phi_a1 = phi_v0->unk34 + (temp_v1->unk2 * 2);
-        phi_a2 = 0;
-loop_5:
-        temp_a2 = phi_a2 + 1;
-        temp_a0 = phi_v0->unk4 + (*phi_a1 * 0x14);
-        temp_a0->unk8 = temp_a0->unk8 & -4;
-        phi_a1 = phi_a1 + 2;
-        phi_a2 = temp_a2;
-        if (temp_a2 < temp_v1->unk0) {
-            goto loop_5;
-        }
+    
+    destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
+    
+    destrucIndex = &vColHeader->header.Destructable_Indices[destructGroups->Index_To_Dynamic_Geo_Group];
+    
+    for (i = 0; i < destructGroups->Num_Dynamic_Geo_Group_Members; i++) {
+        vColHeader->header.Triangles[*destrucIndex].normalType &= ~3;
+        destrucIndex++;
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BA10_ovl2.s")
-#endif
+
 
 #ifdef MIPS_TO_C
 s32 func_8011BABC_ovl2(void *arg0, s32 arg1) {

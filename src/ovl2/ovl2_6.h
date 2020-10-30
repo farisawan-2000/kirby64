@@ -163,11 +163,11 @@ union {
 /*0x20*/   struct bgmaprecord *Triangle_Norm_Cells;
 /*0x24*/   u32       Len_Triangle_Norm_Cells;
 /*0x28*/   u32       Num_Floor_Norms; //Should be tri norm cells minus 1
-/*0x2C*/   struct DynGeo_List     Destructable_Groups;
-/*0x30*/   u16       Destructable_Indices;
-/*0x34*/   struct WaterData      WaterData;
+/*0x2C*/   struct DynGeo_List     *Destructable_Groups;
+/*0x30*/   u16       *Destructable_Indices;
+/*0x34*/   struct WaterData      *WaterData;
 /*0x38*/   u32       Len_WaterData;
-/*0x3C*/   struct Normal          Water_Normals;
+/*0x3C*/   struct Normal          *Water_Normals;
 /*0x40*/   u32       Len_Water_Normals;
 };
 // After the level loads the pointers are converted from offsets in the Level Settings Block to virtual addresses in a different RAM location accompanied by other collision data generated.
