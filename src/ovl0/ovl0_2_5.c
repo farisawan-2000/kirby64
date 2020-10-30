@@ -348,42 +348,7 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005834.s")
 #endif
 
-// Potentially a DObj
-struct Unk80005A98 {
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-    void (*unk14)(void);
-    u32 unk18;
-    u32 unk1C;
-    u32 *unk20;
-    u32 unk24;
-    u32 unk28;
-    u32 unk2C;
-    u32 unk30;
-    u32 unk34;
-    u32 unk38;
-    u32 unk3C;
-    u32 unk40;
-    u32 unk44;
-    u32 unk48;
-    u32 unk4C;
-    u32 unk50;
-    u32 unk54;
-    u32 unk58;
-    u32 unk5C;
-    u32 unk60;
-    u32 unk64;
-    u32 unk68;
-    u32 unk6C;
-    u32 unk70;
-    u32 unk74;
-    u32 unk78;
-    u32 unk7C;
-    u32 unk80;
-};
+
 
 void func_80005910(struct Unk80005A98 *arg0, s32 arg1, s32 arg2, u32* arg3) {
     arg0->unk0 = 6;
@@ -438,10 +403,10 @@ extern u32 D_80048900;
 // These are used in other functions too
 extern u16 D_8004A448;
 
-#ifdef NON_MATCHING
+// #ifdef NON_MATCHING
 void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    // s32 temp_v1;
     struct UcodeHandler *temp_v0;
+    s32 new;
 
     arg0->unk0 = 1;
     arg0->unk4 = 0x32;
@@ -453,25 +418,26 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
         arg0->unk14 = 0;
         arg0->unk68 = 0;
     }
+    new = 1;
     arg0->unk6C = arg1;
     arg0->unk70 = D_8004A3F4;
     if (arg1 != 0) {
         arg0->unk20 = &D_80049320;
         arg0->unk1C = arg3;
     } else {
-        arg0->unk20 = NULL;
+        arg0->unk20 = NULL; 
     }
     arg0->unk18 = 2;
     arg0->unk80 = D_8004A450;
-    arg0->unk7C = 0;
-    arg0->unk28 = 1;
+    arg0->unk7C = 0; 
+    arg0->unk28 = new;
     arg0->unk2C = 4;
     arg0->unk30 = &D_80048900;
     arg0->unk34 = 0x100;
     temp_v0 = &D_8003DCAC[arg2];
     // temp_v1 = temp_v0->words.w0;
     if (temp_v0->text == NULL) {
-        fatal_printf(&D_800400C0, arg2); // "gtl : ucode isn't included  kind = %d\n"
+        fatal_printf("gtl : ucode isn't included  kind = %d\n", arg2);
         while (1);
     }
     arg0->unk38 = temp_v0->text;
@@ -481,41 +447,41 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
     arg0->unk48 = OS_DCACHE_ROUNDUP_SIZE(&D_80049358);
     arg0->unk4C = 0x400;
 
-    switch (arg2 + 1) {
+    switch (arg2) {
         // if (arg2 < 0x10) {
         //     goto **(&jtbl_80040108 + (arg2 * 4));
-        default:
+        case 0:
+        case 2:
+        case 4:
+        case 6:
+        case 8:
+        case 12:
+        case 14:
             arg0->unk50 = arg5;
             arg0->unk54 = arg5 + arg6;
             arg0->unk74 = 2;
             break;
-        case 1:
-        case 3:
-        case 5:
-        case 7:
+        case 1: case 3: case 5: case 7: case 13:
         case 9:
-        case 13:
         case 15:
-        case 16:
             arg0->unk50 = 0;
             arg0->unk54 = 0;
             arg0->unk74 = 0;
             break;
-        case 10:
-        case 11: break;
+        case 10: case 11: break;
     }
+    arg0->unk58 = arg4;
     arg0->unk5C = 0;
     arg0->unk60 = (((u32)&D_80049760 + 0xF) / 16) * 16;
     arg0->unk64 = 0xC00;
-    arg0->unk58 = arg4;
     osWritebackDCacheAll();
     osSendMesg(&gInterruptMesgQueue, arg0, 0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005A98.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005A98.s")
+// #endif
 
-#ifdef NEEDS_RODATA
+// #ifdef NEEDS_RODATA
 u32 func_80005C64(void) {
     u32 phi_v1;
     u32 toReturn;
@@ -537,11 +503,11 @@ u32 func_80005C64(void) {
     }
     return toReturn;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005C64.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005C64.s")
+// #endif
 
-#ifdef NEEDS_RODATA
+// #ifdef NEEDS_RODATA
 void func_80005CC0(s32 arg0, s32 arg1) {
     u32 phi_a2;
     u32 phi_v0 = 1;
@@ -560,7 +526,7 @@ void func_80005CC0(s32 arg0, s32 arg1) {
     } else {
         phi_a2 = func_80005C64();
     }
-    switch(phi_a2 + 1) {
+    switch(phi_a2) {
         case 1:
         case 3:
         case 5:
@@ -570,16 +536,17 @@ void func_80005CC0(s32 arg0, s32 arg1) {
         case 15:
             func_80005A98(func_800057AC(), 0, phi_a2, D_8004A450, arg1, 0, 0);
             break;
-        case 16:
-        default:
+        case 0: case 2: case 4: case 6: 
+        case 8:
+        case 12:
+        case 14:
             func_80005A98(func_800057AC(), 0, phi_a2, D_8004A450, arg1, D_8004A438, D_8004A43C);
-        case 10:
-        case 11: break;
+        case 10: case 11: break;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005CC0.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005CC0.s")
+// #endif
 
 
 extern Gfx* D_8004A44C;
@@ -592,9 +559,10 @@ extern long long int gspL3DEX2_fifoTextStart[];
 
 extern long long int gspS2DEX2_fifoDataStart[];
 extern long long int gspS2DEX2_fifoTextStart[];
+extern u64 D_00042410[];
+extern u64 D_00042800[];
 
-
-#if 0
+// #if 0
 // Matches, but can't be used until the rodata for this file is sorted out
 void func_80005DE4(Gfx **arg0, u32 arg1) {
     s32 phi_v0 = 0;
@@ -605,11 +573,15 @@ void func_80005DE4(Gfx **arg0, u32 arg1) {
             break;
         case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8:
             // L3DEX2
-            gSPLoadUcodeL((*arg0)++, gspL3DEX2_fifo);
+            gSPLoadUcode((*arg0)++, OS_K0_TO_PHYSICAL(gspL3DEX2_fifoTextStart),
+                D_00042410);
+            // gSPLoadUcodeL((*arg0)++, gspL3DEX2_fifo);
             break;
         case 9: case 10:
             // S2DEX2
-            gSPLoadUcodeL((*arg0)++, gspS2DEX2_fifo);
+            gSPLoadUcode((*arg0)++, OS_K0_TO_PHYSICAL(gspS2DEX2_fifoTextStart),
+                D_00042800);
+            // gSPLoadUcodeL((*arg0)++, gspS2DEX2_fifo);
             phi_v0 = 1;
             break;
         case 11: case 12: case 13: case 14: case 15: default:
@@ -619,10 +591,9 @@ void func_80005DE4(Gfx **arg0, u32 arg1) {
         gSPDisplayList((*arg0)++, D_8004A44C);
     }
 }
-
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005DE4.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005DE4.s")
+// #endif_
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
@@ -1269,39 +1240,32 @@ void func_80006EE4(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80006EE4.s")
 #endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-void *func_80006F60(void *arg0) {
+extern s32 D_8003DCA8;
+extern s32 D_8004A458[];
+// extern const char D_800400E8[];
+void func_80006F60(struct Unk80005A98 *arg0) {
     s32 sp34;
-    s32 temp_v0;
-    void *temp_a0;
+    u32 temp_a0;
 
     func_80006628(0);
     func_80005430();
     func_80005530();
     arg0->unk2C(arg0);
     func_80005F10();
-    temp_a0 = (D_8004A450 * 4) + 0x80050000;
-    if (temp_a0->unk-5C80 == 0) {
-        fatal_printf(&D_800400E8, 0, D_8004A450);
-loop_2:
-        goto loop_2;
+    temp_a0 = D_8004A380[D_8004A450];
+    if (temp_a0 == 0) {
+        fatal_printf("gtl : not defined SCTaskGfxEnd\n");
+        while (1);
     }
-    func_80005910(temp_a0->unk-5C80, 0, D_8004A450, &D_80049320);
-    temp_v0 = D_8004A450 * 4;
-    (temp_v0 + 0x80050000)->unk-5C90 = (s32) (temp_v0 + 0x80050000)->unk-5C98;
-loop_4:
-    osRecvMesg(&D_80049320, &sp34, 1);
-    *(&D_8004A458 + (sp34 * 4)) = 0;
-    if (*(&D_8004A458 + (D_8004A450 * 4)) != 0) {
-        goto loop_4;
+    func_80005910(temp_a0, 0, D_8004A450, &D_80049320);
+    D_8004A370[D_8004A450] = D_8004A368[D_8004A450];
+    do {
+        osRecvMesg(&D_80049320, &sp34, 1);
+        D_8004A458[sp34] = 0;
     }
-    D_8003DCA8 = (s32) (D_8003DCA8 + 1);
-    return &D_8003DCA8;
+    while (D_8004A458[D_8004A450] != 0);
+    D_8003DCA8++;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80006F60.s")
-#endif
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6

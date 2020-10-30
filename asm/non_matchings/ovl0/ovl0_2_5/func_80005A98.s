@@ -1,23 +1,23 @@
- .late_rodata
- glabel jtbl_80040108 
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005C0C_ovl0
- .word L80005C0C_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
- .word L80005BE4_ovl0
- .word L80005C00_ovl0
+# .late_rodata
+# glabel jtbl_80040108 
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005C0C_ovl0
+# .word L80005C0C_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
+# .word L80005BE4_ovl0
+# .word L80005C00_ovl0
 
-.text
+# .text
 glabel func_80005A98
 /* 006698 80005A98 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00669C 80005A9C AFBF001C */  sw    $ra, 0x1c($sp)
