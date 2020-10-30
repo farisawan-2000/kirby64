@@ -7,12 +7,15 @@
 
 
 struct struct8011BA10_temp {
-    struct vCollisionHeader *unk0;
-    u8 filler[0xB4];
+    u8 unk0;
+    u8 unk1;
+    u8 filler0[2];
+    struct vCollisionHeader *unk4;
+    u8 filler1[0xB0];
 }; // dunno if this is how this actually works
 
-extern struct struct8011BA10_temp D_8012D94C[];
-extern struct struct8011BA10_temp D_80129410;
+extern struct struct8011BA10_temp D_8012D948[];
+extern struct struct8011BA10_temp D_8012940C;
 
 
 void *func_8011BA10_ovl2(struct CollisionTriangle *tri, u32 arg1) {
@@ -22,9 +25,9 @@ void *func_8011BA10_ovl2(struct CollisionTriangle *tri, u32 arg1) {
     u16 *destrucIndex;
     
     if (arg1 != 20) {
-        vColHeader = D_8012D94C[arg1].unk0;
+        vColHeader = D_8012D948[arg1].unk4;
     } else {
-        vColHeader = D_80129410.unk0;
+        vColHeader = D_8012940C.unk4;
     }
     
     destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
@@ -37,45 +40,36 @@ void *func_8011BA10_ovl2(struct CollisionTriangle *tri, u32 arg1) {
     }
 }
 
+extern u32 D_801290D0;
+extern s32 *D_800DFBD0[]; // i think this is an array of pairs (2-length arrays) of words but cba to figure out syntax
 
-#ifdef MIPS_TO_C
-s32 func_8011BABC_ovl2(void *arg0, s32 arg1) {
-    u32 temp_a3;
-    void *temp_a2;
-    void *temp_v1;
-    void *temp_v1_2;
-    struct vCollisionHeader *phi_v0;
-    void *phi_a1;
-    u32 phi_a3;
-    s32 phi_a0;
+s32 func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg1) {
+    u32 i;
+    struct DynGeo_List *destructGroups;
+    struct vCollisionHeader *vColHeader;
+    u16 *destrucIndex;
+    u32 phi_a0;
 
-    if (arg1 != 0x14) {
-        temp_v1_2 = (arg1 * 0xB8) + &D_8012D948;
-        phi_v0 = temp_v1_2->unk4;
-        phi_a0 = temp_v1_2->unk1;
+    if (arg1 != 20) {
+        vColHeader = D_8012D948[arg1].unk4;
+        phi_a0 = D_8012D948[arg1].unk1;
     } else {
-        phi_v0 = D_80129410;
+        vColHeader = D_8012940C.unk4;
         phi_a0 = D_801290D0;
     }
-    temp_v1 = phi_v0->header.Destructable_Groups.Num_Dynamic_Geo_Group_Members + (arg0->unkA * 6);
-    if (temp_v1->unk0 != 0) {
-        phi_a1 = phi_v0->header.Destructable_Groups.Unk_Index + (temp_v1->unk2 * 2);
-        phi_a3 = 0;
-loop_5:
-        temp_a3 = phi_a3 + 1;
-        temp_a2 = phi_v0->header.Triangles + (*phi_a1 * 0x14);
-        temp_a2->unk8 = temp_a2->unk8 & -4;
-        phi_a1 = phi_a1 + 2;
-        phi_a3 = temp_a3;
-        if (temp_a3 < temp_v1->unk0) {
-            goto loop_5;
-        }
+    
+    destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
+    
+    destrucIndex = &vColHeader->header.Destructable_Indices[destructGroups->Index_To_Dynamic_Geo_Group];
+    
+    for (i = 0; i < destructGroups->Num_Dynamic_Geo_Group_Members; i++) {
+        vColHeader->header.Triangles[*destrucIndex].normalType &= ~3;
+        destrucIndex++;
     }
-    return *(((phi_a0 * 4) + 0x800E0000)->unk-430 + (temp_v1->unk4 * 4));
+
+    return D_800DFBD0[phi_a0][destructGroups->Unk_Index];
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BABC_ovl2.s")
-#endif
+
 
 #ifdef MIPS_TO_C
 void *func_8011BB98(void *arg0, s32 arg1) {
