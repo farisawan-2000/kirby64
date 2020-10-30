@@ -196,7 +196,6 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_1.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.001.o(.data);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
-      BUILD_DIR/data/ovl0_2_5.rodata.o(.data);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data);
       BUILD_DIR/libultra.a:devmgr.o(.rodata);
