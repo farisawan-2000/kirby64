@@ -1,22 +1,21 @@
-# .late_rodata
-# glabel jtbl_80040108 
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005C0C_ovl0
-# .word L80005C0C_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-# .word L80005BE4_ovl0
-# .word L80005C00_ovl0
-
+ .late_rodata
+ glabel jtbl_80040108 
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005C0C_ovl0
+ .word L80005C0C_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
+ .word L80005BE4_ovl0
+ .word L80005C00_ovl0
 
 .text
 glabel func_80005A98

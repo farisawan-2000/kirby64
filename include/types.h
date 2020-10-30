@@ -32,6 +32,12 @@ struct VblankHandler
     #define BAD_RETURN(cmd) cmd
 #endif
 
+// filler struct
+struct Unk8Byte {
+    u32 unk0;
+    u32 unk4;
+};
+
 typedef f32 Vec3f[3];
 
 typedef struct  {

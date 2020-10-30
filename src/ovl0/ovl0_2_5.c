@@ -4,6 +4,7 @@
 #include <macros.h>
 #include <PR/os_message.h>
 #include "ovl0_2_5.h"
+#include "types.h"
 
 extern void (*D_8004A48C)(void);
 extern void func_80000A44(void);
@@ -280,12 +281,12 @@ extern OSMesgQueue D_80049340;
 
 struct DObj *func_800057AC(void) {
     struct DObj *tmp;
-    if (D_8004A368[D_8004A450] == 0) {
-        fatal_printf("gtl : not defined SCTaskGfx\n"); // "gtl : not defined SCTaskGfx\n"
+    if (D_8004A368[D_8004A450] == NULL) {
+        fatal_printf("gtl : not defined SCTaskGfx\n");
         for (;;);
     }
     if (D_8004A370[D_8004A450] == D_8004A378[D_8004A450]) {
-        fatal_printf("gtl : couldn't get SCTaskGfx\n"); // "gtl : couldn't get SCTaskGfx\n"
+        fatal_printf("gtl : couldn't get SCTaskGfx\n");
         for (;;);
     }
     tmp = D_8004A370[D_8004A450]++;
@@ -422,10 +423,13 @@ void func_800059F8(void) {
     func_80005530();
 }
 
-extern Gfx *D_8003DCAC[];
+extern struct UcodeHandler {
+    u32 *text; // ucode text
+    u32 *data; // ucode data
+} D_8003DCAC[];
 
 extern u32 D_80049760[]; // TODO; is this a different type?
-extern u32 D_80049358[];
+extern u32 D_80049358;
 extern const char D_800400C0[];
 extern u32 D_80049320;
 extern u32 D_8004A3F4;
@@ -437,7 +441,7 @@ extern u16 D_8004A448;
 #ifdef NON_MATCHING
 void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     // s32 temp_v1;
-    Gfx *temp_v0;
+    struct UcodeHandler *temp_v0;
 
     arg0->unk0 = 1;
     arg0->unk4 = 0x32;
@@ -458,32 +462,32 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
         arg0->unk20 = NULL;
     }
     arg0->unk18 = 2;
+    arg0->unk80 = D_8004A450;
     arg0->unk7C = 0;
     arg0->unk28 = 1;
     arg0->unk2C = 4;
     arg0->unk30 = &D_80048900;
     arg0->unk34 = 0x100;
-    temp_v0 = D_8003DCAC[arg2];
-    arg0->unk80 = D_8004A450;
+    temp_v0 = &D_8003DCAC[arg2];
     // temp_v1 = temp_v0->words.w0;
-    if (temp_v0->words.w0 == 0) {
-        fatal_printf(&D_800400C0); // "gtl : ucode isn't included  kind = %d\n"
+    if (temp_v0->text == NULL) {
+        fatal_printf(&D_800400C0, arg2); // "gtl : ucode isn't included  kind = %d\n"
         while (1);
     }
-    arg0->unk38 = temp_v0->words.w0;
+    arg0->unk38 = temp_v0->text;
+    arg0->unk40 = temp_v0->data;
     arg0->unk3C = 0x1000;
     arg0->unk44 = 0x800;
-    arg0->unk48 = (D_80049358[0xF] / 4) * 0x10;
+    arg0->unk48 = OS_DCACHE_ROUNDUP_SIZE(&D_80049358);
     arg0->unk4C = 0x400;
-    arg0->unk40 = temp_v0->words.w1;
 
-    switch (arg2) {
+    switch (arg2 + 1) {
         // if (arg2 < 0x10) {
         //     goto **(&jtbl_80040108 + (arg2 * 4));
         default:
             arg0->unk50 = arg5;
-            arg0->unk74 = 2;
             arg0->unk54 = arg5 + arg6;
+            arg0->unk74 = 2;
             break;
         case 1:
         case 3:
@@ -496,11 +500,12 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 arg2, s32 arg3, s32 a
             arg0->unk50 = 0;
             arg0->unk54 = 0;
             arg0->unk74 = 0;
+            break;
         case 10:
         case 11: break;
     }
     arg0->unk5C = 0;
-    arg0->unk60 = ((D_80049760[0xF]) / 4) * 0x10;
+    arg0->unk60 = (((u32)&D_80049760 + 0xF) / 16) * 16;
     arg0->unk64 = 0xC00;
     arg0->unk58 = arg4;
     osWritebackDCacheAll();
@@ -589,7 +594,6 @@ extern long long int gspS2DEX2_fifoDataStart[];
 extern long long int gspS2DEX2_fifoTextStart[];
 
 
-// comment out the last block in kirby.039DF0.2.c if you're testing matching
 #if 0
 // Matches, but can't be used until the rodata for this file is sorted out
 void func_80005DE4(Gfx **arg0, u32 arg1) {
