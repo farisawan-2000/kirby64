@@ -27,7 +27,7 @@ OUTPUT_ARCH (mips)
     .name##_data addr : AT(__romPos)
 
 #define END_UCODE_DATA(name) \
-    name##DataEnd = ADDR(.name) + SIZEOF(.name##_data); \
+    name##DataEnd = ADDR(.name##_data) + SIZEOF(.name##_data); \
     name##DataRomEnd = __romPos + SIZEOF(.name##_data); \
     __romPos += SIZEOF(.name##_data);
 
@@ -212,11 +212,11 @@ SECTIONS
       BUILD_DIR/ucode/F3DEX2_2.04H/F3DEX2_2.04H.data.o(*);
    }
    END_UCODE_DATA(gspF3DEX2_fifo)
-   BEGIN_UCODE_DATA(gspL3DEX2_fifo, gspL3DEX2_fifoDataEnd) {
+   BEGIN_UCODE_DATA(gspL3DEX2_fifo, gspF3DEX2_fifoDataEnd) {
       BUILD_DIR/ucode/L3DEX2_2.04H/L3DEX2_2.04H.data.o(*);
    }
    END_UCODE_DATA(gspL3DEX2_fifo)
-   BEGIN_UCODE_DATA(gspS2DEX2_fifo, gspS2DEX2_fifoDataEnd) {
+   BEGIN_UCODE_DATA(gspS2DEX2_fifo, gspL3DEX2_fifoDataEnd) {
       BUILD_DIR/ucode/S2DEX2_2.04/S2DEX2_2.04.data.o(*);
    }
    END_UCODE_DATA(gspS2DEX2_fifo)

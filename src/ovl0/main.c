@@ -8,7 +8,6 @@ extern struct Overlay *mainSegOverlay; //TODO: define and put into .data
 extern u32 D_8003DC94;
 
 // .bss
-static u8 even_more_pad[0x60C0];
 static u32 pad[4];
 static u32 morepad[0xA];
 static u64 D_80042BC8[0x71];

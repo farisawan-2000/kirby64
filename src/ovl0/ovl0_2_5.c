@@ -560,15 +560,11 @@ void func_80005DE4(Gfx **arg0, u32 arg1) {
             break;
         case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8:
             // L3DEX2
-            gSPLoadUcode((*arg0)++, OS_K0_TO_PHYSICAL(gspL3DEX2_fifoTextStart),
-                D_00042410);
-            // gSPLoadUcodeL((*arg0)++, gspL3DEX2_fifo);
+            gSPLoadUcodeL((*arg0)++, gspL3DEX2_fifo);
             break;
         case 9: case 10:
             // S2DEX2
-            gSPLoadUcode((*arg0)++, OS_K0_TO_PHYSICAL(gspS2DEX2_fifoTextStart),
-                D_00042800);
-            // gSPLoadUcodeL((*arg0)++, gspS2DEX2_fifo);
+            gSPLoadUcodeL((*arg0)++, gspS2DEX2_fifo);
             phi_v0 = 1;
             break;
         case 11: case 12: case 13: case 14: case 15: default:
