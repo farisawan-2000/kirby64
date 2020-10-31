@@ -59,6 +59,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.text);
+      BUILD_DIR/src/ovl0/rdp_reset.o(.text*); /* Why is the asterisk needed? */
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_3.o(.text);
       BUILD_DIR/src/ovl0/ovl0_4.o(.text);

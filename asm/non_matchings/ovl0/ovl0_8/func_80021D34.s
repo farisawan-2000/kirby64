@@ -7,8 +7,8 @@ glabel crash_screen_draw_rect
 /* 022948 80021D48 AFA50024 */  sw    $a1, 0x24($sp)
 /* 02294C 80021D4C 0C00E46C */  jal   osViGetCurrentFramebuffer
 /* 022950 80021D50 AFA60028 */   sw    $a2, 0x28($sp)
-/* 022954 80021D54 3C058005 */  lui   $a1, %hi(D_8004A508) # $a1, 0x8005
-/* 022958 80021D58 8CA5A508 */  lw    $a1, %lo(D_8004A508)($a1)
+/* 022954 80021D54 3C058005 */  lui   $a1, %hi(gCurrScreenWidth) # $a1, 0x8005
+/* 022958 80021D58 8CA5A508 */  lw    $a1, %lo(gCurrScreenWidth)($a1)
 /* 02295C 80021D5C 8FAE0024 */  lw    $t6, 0x24($sp)
 /* 022960 80021D60 8FA90020 */  lw    $t1, 0x20($sp)
 /* 022964 80021D64 8FA60028 */  lw    $a2, 0x28($sp)
@@ -43,8 +43,8 @@ glabel crash_screen_draw_rect
 /* 0229C8 80021DC8 1446FFFA */  bne   $v0, $a2, .L80021DB4_ovl0
 /* 0229CC 80021DCC A464FFF8 */   sh    $a0, -8($v1)
 .L80021DD0_ovl0:
-/* 0229D0 80021DD0 3C058005 */  lui   $a1, %hi(D_8004A508) # $a1, 0x8005
-/* 0229D4 80021DD4 8CA5A508 */  lw    $a1, %lo(D_8004A508)($a1)
+/* 0229D0 80021DD0 3C058005 */  lui   $a1, %hi(gCurrScreenWidth) # $a1, 0x8005
+/* 0229D4 80021DD4 8CA5A508 */  lw    $a1, %lo(gCurrScreenWidth)($a1)
 .L80021DD8_ovl0:
 /* 0229D8 80021DD8 00A65823 */  subu  $t3, $a1, $a2
 /* 0229DC 80021DDC 25080001 */  addiu $t0, $t0, 1

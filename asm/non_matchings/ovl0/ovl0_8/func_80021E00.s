@@ -16,8 +16,8 @@ glabel crash_screen_draw_glyph
 /* 022A38 80021E38 032D3821 */  addu  $a3, $t9, $t5
 /* 022A3C 80021E3C 0C00E46C */  jal   osViGetCurrentFramebuffer
 /* 022A40 80021E40 AFA7001C */   sw    $a3, 0x1c($sp)
-/* 022A44 80021E44 3C0C8005 */  lui   $t4, %hi(D_8004A508) # $t4, 0x8005
-/* 022A48 80021E48 258CA508 */  addiu $t4, %lo(D_8004A508) # addiu $t4, $t4, -0x5af8
+/* 022A44 80021E44 3C0C8005 */  lui   $t4, %hi(gCurrScreenWidth) # $t4, 0x8005
+/* 022A48 80021E48 258CA508 */  addiu $t4, %lo(gCurrScreenWidth) # addiu $t4, $t4, -0x5af8
 /* 022A4C 80021E4C 8D8E0000 */  lw    $t6, ($t4)
 /* 022A50 80021E50 8FAF0034 */  lw    $t7, 0x34($sp)
 /* 022A54 80021E54 24010005 */  li    $at, 5

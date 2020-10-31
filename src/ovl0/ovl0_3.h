@@ -59,13 +59,16 @@ struct Animation {
 void func_8000C3D8(struct Animation *anim);
 struct AnimStack *func_800097E0(struct Animation *anim, u8 something);
 
+
+// struct UnkStruct8004A7C4_3C
+
 // TODO: Is the the same as struct Animation?
 struct unk8000BE90Func {
     u32 unk0;
     u32 unk4;
-    u32 unk8;
+    struct unk8000BE90Func* unk8;
     u32 unkC;
-    u32 unk10;
+    struct unk8000BE90Func* unk10;
     struct unk8000BE90Func* unk14;
     u8 filler[0x55 - 0x14 - 0x04];
     s8 unk55;
