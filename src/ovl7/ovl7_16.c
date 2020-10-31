@@ -303,17 +303,14 @@ GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_16/func_801BE068_ovl7.s")
 
 void func_801BE1A8_ovl7(s32 arg0);
 
-struct Unk_800DFBD0 {
-    u8 filler0[4];
-    s32 unk4;
-} *D_800DFBD0[];
+extern s32 *D_800DFBD0[];
 
 void func_801BE10C_ovl7(s32 arg0) {
     struct UnkStruct800E1B50 *sp1C;
     s32 sp18;
     
     sp1C = D_800E1B50[D_8004A7C4->objId];
-    sp18 = D_800DFBD0[D_8004A7C4->objId]->unk4;
+    sp18 = D_800DFBD0[D_8004A7C4->objId][1];
     D_800DF150[D_8004A7C4->objId] = &func_801BE1A8_ovl7;
     func_800AA018_ovl7(0x105F9);
     func_800AA018_ovl7(0x105FA);
