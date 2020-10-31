@@ -871,18 +871,19 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D4A4_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct KirbyState *func_8011D614_ovl2(void) {
+extern s32 *D_800E0490[];
+extern s32 D_801926E8;
+extern s32 D_80190358;
+
+void func_8011D614_ovl2(void) {
     func_8011CF58_ovl2();
     func_800A9760_ovl2(0x20007);
-    ((*D_8004A7C4 * 4) + 0x800E0000)->unk490 = &D_801926E8;
+    
+    D_800E0490[D_8004A7C4->objId] = &D_801926E8;
+
     gKirbyState.unk15C = &D_80190358;
     gKirbyState.unk154 = 2;
-    return &gKirbyState;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D614_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8011D67C(void) {
