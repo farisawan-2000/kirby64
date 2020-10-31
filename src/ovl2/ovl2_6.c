@@ -3,7 +3,7 @@
 #include <ultra64.h>
 #include <PR/gs2dex.h>
 u32 func_80101920(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
-u32 func_80101BA0_ovl2(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
+u32 func_80101BA0(Vector *a0, struct Normal *a1, Vector *a2, struct Normal *a3);
 
 struct UNK_D_8012BBF8 {
     struct UNK_D_8012BBF8_unk0 *unk0;
@@ -69,7 +69,6 @@ void func_800FF5E0_ovl2(s32 arg0, f32 arg1, f32 arg2) {
 }
 
 extern u32 D_8012B9B0;
-
 
 struct UNK_D_800D478C {
     u8 unk0;

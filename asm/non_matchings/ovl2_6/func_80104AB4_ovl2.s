@@ -13,12 +13,12 @@ glabel func_80104AB4_ovl2
 /* 08D550 80104AE0 27A9002C */  addiu $t1, $sp, 0x2c
 /* 08D554 80104AE4 ADE80000 */  sw    $t0, ($t7)
 /* 08D558 80104AE8 8C990004 */  lw    $t9, 4($a0)
-/* 08D55C 80104AEC 3C0D8010 */  lui   $t5, %hi(D_801024E8) # $t5, 0x8010
-/* 08D560 80104AF0 3C0E8010 */  lui   $t6, %hi(D_8010221C) # $t6, 0x8010
+/* 08D55C 80104AEC 3C0D8010 */  lui   $t5, %hi(func_801024E8) # $t5, 0x8010
+/* 08D560 80104AF0 3C0E8010 */  lui   $t6, %hi(func_8010221C) # $t6, 0x8010
 /* 08D564 80104AF4 ADF90004 */  sw    $t9, 4($t7)
 /* 08D568 80104AF8 8C880008 */  lw    $t0, 8($a0)
-/* 08D56C 80104AFC 25AD24E8 */  addiu $t5, %lo(D_801024E8) # addiu $t5, $t5, 0x24e8
-/* 08D570 80104B00 25CE221C */  addiu $t6, %lo(D_8010221C) # addiu $t6, $t6, 0x221c
+/* 08D56C 80104AFC 25AD24E8 */  addiu $t5, %lo(func_801024E8) # addiu $t5, $t5, 0x24e8
+/* 08D570 80104B00 25CE221C */  addiu $t6, %lo(func_8010221C) # addiu $t6, $t6, 0x221c
 /* 08D574 80104B04 ADE80008 */  sw    $t0, 8($t7)
 /* 08D578 80104B08 8FAA006C */  lw    $t2, 0x6c($sp)
 /* 08D57C 80104B0C 00002025 */  move  $a0, $zero

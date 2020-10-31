@@ -1041,24 +1041,9 @@ void func_800068E4(void *arg0) {
     s32 phi_s0_2;
 
     D_800492DC = 0;
-    if (osRecvMesg(&D_80049320, 0, 0) != -1) {
-loop_1:
-        if (osRecvMesg(&D_80049320, 0, 0) != -1) {
-            goto loop_1;
-        }
-    }
-    if (osRecvMesg(&D_80049340, 0, 0) != -1) {
-loop_3:
-        if (osRecvMesg(&D_80049340, 0, 0) != -1) {
-            goto loop_3;
-        }
-    }
-    if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-loop_5:
-        if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-            goto loop_5;
-        }
-    }
+    while (osRecvMesg(&D_80049320, NULL, 0) != -1);
+    while (osRecvMesg(&D_80049340, NULL, 0) != -1);
+    while (osRecvMesg(&D_800492C0, NULL, 0) != -1);
     D_8004A3F0 = 0;
     D_8004A3F4 = -1;
     D_8004A450 = 1;
@@ -1084,12 +1069,8 @@ loop_11:
                 goto loop_11;
             }
         }
-        if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-loop_13:
-            if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-                goto loop_13;
-            }
-        }
+        while (osRecvMesg(&D_800492C0, 0, 0) != -1);
+
         D_8004A42C = osGetCount();
         arg0->unk8(arg0);
         D_8003DCA4 = (u32) (D_8003DCA4 + 1);
@@ -1097,8 +1078,6 @@ loop_13:
         if (func_800067E0() == 0) {
             if ((((u32) D_8003DCA4 % (u32) D_800492DA) != 0) || (func_80006628(0), D_8004A42C = osGetCount(), arg0->unk10(arg0), D_8003DCA8 = (s32) (D_8003DCA8 + 1), D_8004A434 = (u32) ((u32) (osGetCount() - D_8004A42C) / 0xB9BU), (func_800067E0() == 0))) {
                 goto loop_10;
-            } else {
-
             }
         }
     } else {
@@ -1127,30 +1106,13 @@ loop_22:
         if (func_800067E0() == 0) {
             if (((((u32) D_8003DCA4 % (u32) D_800492DA) != 0) || (func_80006628(1) == 0)) || (D_8004A42C = osGetCount(), arg0->unk10(arg0), D_8003DCA8 = (s32) (D_8003DCA8 + 1), D_8004A434 = (u32) ((u32) (osGetCount() - D_8004A42C) / 0xB9BU), (func_800067E0() == 0))) {
                 goto loop_19;
-            } else {
-
             }
         }
     }
     func_80006740();
-    if (osRecvMesg(&D_80049320, 0, 0) != -1) {
-loop_29:
-        if (osRecvMesg(&D_80049320, 0, 0) != -1) {
-            goto loop_29;
-        }
-    }
-    if (osRecvMesg(&D_80049340, 0, 0) != -1) {
-loop_31:
-        if (osRecvMesg(&D_80049340, 0, 0) != -1) {
-            goto loop_31;
-        }
-    }
-    if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-loop_33:
-        if (osRecvMesg(&D_800492C0, 0, 0) != -1) {
-            goto loop_33;
-        }
-    }
+    while (osRecvMesg(&D_80049320, 0, 0) != -1);
+    while (osRecvMesg(&D_80049340, 0, 0) != -1);
+    while (osRecvMesg(&D_800492C0, 0, 0) != -1);
     func_80007CE8(0);
     D_800492DC = 2;
 }

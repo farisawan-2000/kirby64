@@ -437,7 +437,7 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
             sp18C = temp_f6;
             sp180 = temp_f6;
             sp17C = temp_t7->tc + temp_t7->unk18;
-            if ((arg2(&sp184, temp_a1, &sp16C, &sp168, &sp164) != 0) && (func_80101920_ovl2(sp164, sp168, 0, &D_8012B9A0) != 0)) {
+            if ((arg2(&sp184, temp_a1, &sp16C, &sp168, &sp164) != 0) && (func_80101920(sp164, sp168, 0, &D_8012B9A0) != 0)) {
                 func_800FDE6C_ovl2(sp194);
                 func_800FDF88_ovl2(arg0, sp194, arg1);
                 phi_a3 = sp194 + 0x28;
@@ -467,11 +467,11 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
             temp_a0 = D_8012B9AC;
             temp_v0_2 = arg2(temp_a0, temp_a0 + 0xC, &sp14C, &sp13C, &sp134);
             sp12C = temp_v0_2;
-            if ((temp_v0_2 == 0) || (func_80101920_ovl2(sp134, sp13C, 0, &D_8012B9A0) != 0)) {
+            if ((temp_v0_2 == 0) || (func_80101920(sp134, sp13C, 0, &D_8012B9A0) != 0)) {
                 temp_v0_3 = D_8012B9AC;
                 temp_v0_4 = arg2(temp_v0_3 + 0x18, temp_v0_3 + 0x24, &sp140, &sp138, &sp130);
                 phi_v1 = temp_v0_4;
-                if ((temp_v0_4 == 0) || (sp128 = temp_v0_4, phi_v1 = sp128, (func_80101920_ovl2(sp130, sp138, 0, &D_8012B9A0) != 0))) {
+                if ((temp_v0_4 == 0) || (sp128 = temp_v0_4, phi_v1 = sp128, (func_80101920(sp130, sp138, 0, &D_8012B9A0) != 0))) {
                     if ((phi_v1 != 0) || (sp12C != 0)) {
                         sp128 = phi_v1;
                         func_800FDF88_ovl2(arg0, sp194, arg1);
@@ -621,7 +621,7 @@ block_50:
                             spC8 = sp194->cn;
                             spBC = spC8;
                             spB8 = sp194->tc + sp194->unk18;
-                            if ((arg2(sp150, temp_f14, &spC0, temp_a1_4, &spA8, &spA4, &spA0) != 0) && (func_80101920_ovl2(spA0, spA4, 0, &D_8012B9A0) != 0)) {
+                            if ((arg2(sp150, temp_f14, &spC0, temp_a1_4, &spA8, &spA4, &spA0) != 0) && (func_80101920(spA0, spA4, 0, &D_8012B9A0) != 0)) {
                                 temp_v0_9 = D_8012B9AC;
                                 temp_f0_5 = spA4->unk0;
                                 temp_f2_4 = spA4->unk8;

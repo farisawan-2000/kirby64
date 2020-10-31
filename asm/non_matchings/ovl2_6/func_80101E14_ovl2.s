@@ -11,7 +11,7 @@ glabel func_80101E14_ovl2
 /* 08A8A8 80101E38 C4B00008 */  lwc1  $f16, 8($a1)
 /* 08A8AC 80101E3C 27A50018 */  addiu $a1, $sp, 0x18
 /* 08A8B0 80101E40 46008487 */  neg.s $f18, $f16
-/* 08A8B4 80101E44 0C040648 */  jal   func_80101920_ovl2
+/* 08A8B4 80101E44 0C040648 */  jal   func_80101920
 /* 08A8B8 80101E48 E7B20020 */   swc1  $f18, 0x20($sp)
 /* 08A8BC 80101E4C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 08A8C0 80101E50 27BD0028 */  addiu $sp, $sp, 0x28

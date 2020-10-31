@@ -42,7 +42,7 @@ glabel func_800FE154_ovl2
 /* 086C64 800FE1F4 3C078013 */  lui   $a3, %hi(D_8012B9A0) # $a3, 0x8013
 /* 086C68 800FE1F8 24E7B9A0 */  addiu $a3, %lo(D_8012B9A0) # addiu $a3, $a3, -0x4660
 /* 086C6C 800FE1FC 8FA50168 */  lw    $a1, 0x168($sp)
-/* 086C70 800FE200 0C040648 */  jal   func_80101920_ovl2
+/* 086C70 800FE200 0C040648 */  jal   func_80101920
 /* 086C74 800FE204 00003025 */   move  $a2, $zero
 /* 086C78 800FE208 50400315 */  beql  $v0, $zero, .L800FEE60_ovl2
 /* 086C7C 800FE20C 8FBF002C */   lw    $ra, 0x2c($sp)
@@ -129,7 +129,7 @@ glabel func_800FE154_ovl2
 /* 086DB4 800FE344 24E7B9A0 */  addiu $a3, %lo(D_8012B9A0) # addiu $a3, $a3, -0x4660
 /* 086DB8 800FE348 8FA40134 */  lw    $a0, 0x134($sp)
 /* 086DBC 800FE34C 8FA5013C */  lw    $a1, 0x13c($sp)
-/* 086DC0 800FE350 0C040648 */  jal   func_80101920_ovl2
+/* 086DC0 800FE350 0C040648 */  jal   func_80101920
 /* 086DC4 800FE354 00003025 */   move  $a2, $zero
 /* 086DC8 800FE358 104002C0 */  beqz  $v0, .L800FEE5C_ovl2
 .L800FE35C_ovl2:
@@ -150,7 +150,7 @@ glabel func_800FE154_ovl2
 /* 086E04 800FE394 8FA40130 */  lw    $a0, 0x130($sp)
 /* 086E08 800FE398 8FA50138 */  lw    $a1, 0x138($sp)
 /* 086E0C 800FE39C 00003025 */  move  $a2, $zero
-/* 086E10 800FE3A0 0C040648 */  jal   func_80101920_ovl2
+/* 086E10 800FE3A0 0C040648 */  jal   func_80101920
 /* 086E14 800FE3A4 AFA20128 */   sw    $v0, 0x128($sp)
 /* 086E18 800FE3A8 104002AC */  beqz  $v0, .L800FEE5C_ovl2
 /* 086E1C 800FE3AC 8FA30128 */   lw    $v1, 0x128($sp)
@@ -493,7 +493,7 @@ glabel func_800FE154_ovl2
 /* 087324 800FE8B4 3C078013 */  lui   $a3, %hi(D_8012B9A0) # $a3, 0x8013
 /* 087328 800FE8B8 24E7B9A0 */  addiu $a3, %lo(D_8012B9A0) # addiu $a3, $a3, -0x4660
 /* 08732C 800FE8BC 8FA500A4 */  lw    $a1, 0xa4($sp)
-/* 087330 800FE8C0 0C040648 */  jal   func_80101920_ovl2
+/* 087330 800FE8C0 0C040648 */  jal   func_80101920
 /* 087334 800FE8C4 00003025 */   move  $a2, $zero
 /* 087338 800FE8C8 10400164 */  beqz  $v0, .L800FEE5C_ovl2
 /* 08733C 800FE8CC 8FB800A4 */   lw    $t8, 0xa4($sp)

@@ -970,12 +970,12 @@ asm/non_matchings/ovl2_6/func_8010133C_ovl2.s
 asm/non_matchings/ovl2_6/func_8010137C_ovl2.s
 asm/non_matchings/ovl2_6/func_80101400_ovl2.s
 asm/non_matchings/ovl2_6/func_80101920.s
-asm/non_matchings/ovl2_6/func_80101BA0_ovl2.s
+asm/non_matchings/ovl2_6/func_80101BA0.s
 asm/non_matchings/ovl2_6/func_80101E14_ovl2.s
 asm/non_matchings/ovl2_6/func_8010203C_ovl2.s
 asm/non_matchings/ovl2_6/func_801021FC_ovl2.s
 asm/non_matchings/ovl2_6/func_8010221C_ovl2.s
-asm/non_matchings/ovl2_6/func_80102364_ovl2.s
+asm/non_matchings/ovl2_6/func_80102364.s
 asm/non_matchings/ovl2_6/func_801023FC_ovl2.s
 asm/non_matchings/ovl2_6/func_801024E8_ovl2.s
 asm/non_matchings/ovl2_6/func_80102570_ovl2.s

@@ -13,8 +13,8 @@ glabel func_8010423C_ovl2
 /* 08CCD8 80104268 27A90034 */  addiu $t1, $sp, 0x34
 /* 08CCDC 8010426C ADE80000 */  sw    $t0, ($t7)
 /* 08CCE0 80104270 8C990004 */  lw    $t9, 4($a0)
-/* 08CCE4 80104274 3C0E8010 */  lui   $t6, %hi(D_801023FC) # $t6, 0x8010
-/* 08CCE8 80104278 25CE23FC */  addiu $t6, %lo(D_801023FC) # addiu $t6, $t6, 0x23fc
+/* 08CCE4 80104274 3C0E8010 */  lui   $t6, %hi(func_801023FC) # $t6, 0x8010
+/* 08CCE8 80104278 25CE23FC */  addiu $t6, %lo(func_801023FC) # addiu $t6, $t6, 0x23fc
 /* 08CCEC 8010427C ADF90004 */  sw    $t9, 4($t7)
 /* 08CCF0 80104280 8C880008 */  lw    $t0, 8($a0)
 /* 08CCF4 80104284 ADE80008 */  sw    $t0, 8($t7)

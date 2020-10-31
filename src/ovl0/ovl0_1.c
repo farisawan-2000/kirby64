@@ -480,8 +480,6 @@ void func_800037A4(void) {
     D_80048D9C += D_80048D98;
 }
 
-
-
 void func_800037F0(u32 arg0, u32 arg1, u8* arg2, u32 arg3) {
     func_80003788(arg0, arg2, arg3);
     func_80002FC0(arg2, arg3, (void*) func_800037A4, arg1);

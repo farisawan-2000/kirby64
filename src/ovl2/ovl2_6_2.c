@@ -323,7 +323,7 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
 #endif
 
-u32 func_80101BA0_ovl2(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
+u32 func_80101BA0(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
     u32 code = triangle->normalType;
     if (!(code & NON_SOLID)) {
         if ((code & NO_SHADOW) && D_8012BD00 >> 31 == 0) {
@@ -550,7 +550,7 @@ u8 func_80102324_ovl2(struct CollisionTriangle *arg0, struct Normal *arg1, struc
 
 // unk44 in CollisionState (or at least one of them)
 #ifdef MIPS_TO_C
-? func_80102364_ovl2(void *arg0, s32 arg1) {
+? func_80102364(void *arg0, s32 arg1) {
     f32 temp_f0;
     struct Normal *temp_v0;
     f32 phi_f2;
@@ -1287,7 +1287,7 @@ void func_80103930(Vector *arg0, Vector *arg1, struct Normal *arg2, s32 arg3, s3
     newColState.unk40 = &func_80101920;
     newColState.unk34 = NULL;
     newColState.unk38 = NULL;
-    func_80103528_ovl2(arg3, arg4, arg5, arg6, arg7);
+    func_80103528(arg3, arg4, arg5, arg6, arg7);
 }
 
 extern u32 func_80102364(struct Normal *a0, s32 arg1);
@@ -1318,7 +1318,7 @@ void func_80103AA0_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, s32 arg
     newColState.unk40 = &func_80101920;
     newColState.unk34 = NULL;
     newColState.unk38 = NULL;
-    func_80103528_ovl2(arg3, arg4, arg5, arg6, arg7);
+    func_80103528(arg3, arg4, arg5, arg6, arg7);
 }
 
 #ifdef MIPS_TO_C
@@ -1419,7 +1419,6 @@ void func_80103DE4(Vector *arg0, Vector *arg1, struct Normal *arg2, struct Norma
     func_80103B58_ovl2(arg4, arg5, arg6, arg7, arg8);
 }
 
-void func_80102364_ovl2(void);
 void func_80103EA0_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, struct Normal *arg3, s32 arg4,
     s32 arg5, s32 arg6, s32 arg7) {
     struct CollisionState newColState;
@@ -1427,7 +1426,7 @@ void func_80103EA0_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, struct 
     newColState.currPos = *arg0;
     newColState.nextPos = *arg1;
     newColState.someNormal = arg2;
-    newColState.unk44 = &func_80102364_ovl2;
+    newColState.unk44 = &func_80102364;
     newColState.unk40 = &func_80101920;
     newColState.unk34 = 0;
     newColState.unk38 = 0;
@@ -1443,8 +1442,8 @@ void func_80103F58_ovl2(Vector *arg0, Vector *arg1, struct Normal *arg2, struct 
     newColState.currPos = *arg0;
     newColState.nextPos = *arg1;
     newColState.someNormal = arg2;
-    newColState.unk44 = &func_80102364_ovl2;
-    newColState.unk40 = &func_80101BA0_ovl2;
+    newColState.unk44 = &func_80102364;
+    newColState.unk40 = &func_80101BA0;
     newColState.unk34 = 0;
     newColState.unk38 = 0;
     newColState.unk3C = NULL;
@@ -1464,13 +1463,9 @@ void func_80104010_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     ? sp20;
 
     gCollisionState = &sp20;
-    sp28.unk0 = arg0->unk0;
-    sp28.unk4 = arg0->unk4;
-    sp28.unk8 = arg0->unk8;
-    sp34.unk0 = arg1->unk0;
-    sp34.unk4 = arg1->unk4;
-    sp34.unk8 = arg1->unk8;
-    sp64 = &D_80102364;
+    sp28.currPos = *arg0;
+    sp28.nextPos = *arg1;
+    sp64 = &func_80102364;
     sp60 = &func_80101920;
     sp58 = 0;
     sp5C = 0;
@@ -1502,7 +1497,7 @@ void func_801040CC_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_80102364;
+    sp64 = &func_80102364;
     sp60 = &func_80101D50;
     sp54 = 0;
     sp58 = 0;
@@ -1533,8 +1528,8 @@ void func_80104184_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_80102364;
-    sp60 = &D_80101E14;
+    sp64 = &func_80102364;
+    sp60 = &func_80101E14;
     sp54 = 0;
     sp58 = 0;
     sp5C = arg2;
@@ -1563,7 +1558,7 @@ void func_8010423C_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk0 = arg1->unk0;
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
-    sp64 = &D_801023FC;
+    sp64 = &func_801023FC;
     sp60 = &func_80101920;
     sp54 = 0;
     sp58 = 0;
@@ -1594,7 +1589,7 @@ void func_801042F4_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk0 = arg1->unk0;
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
-    sp64 = &D_801023FC;
+    sp64 = &func_801023FC;
     sp60 = &func_80101920;
     sp54 = 0;
     sp5C = 0;
@@ -1626,8 +1621,8 @@ void func_801043B0_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801023FC;
-    sp60 = &D_80101E14;
+    sp64 = &func_801023FC;
+    sp60 = &func_80101E14;
     sp54 = 0;
     sp58 = 0;
     sp5C = arg2;
@@ -1657,8 +1652,8 @@ void func_80104468_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801023FC;
-    sp60 = &D_80101DA8;
+    sp64 = &func_801023FC;
+    sp60 = &func_80101DA8;
     sp58 = 0;
     sp5C = 0;
     sp54 = arg2;
@@ -1688,8 +1683,8 @@ void func_80104520_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801024E8;
-    sp60 = &D_80101DA8;
+    sp64 = &func_801024E8;
+    sp60 = &func_80101DA8;
     sp5C = 0;
     sp54 = arg2;
     sp58 = arg3;
@@ -1721,8 +1716,8 @@ void func_801045DC_ovl2(void *arg0, void *arg1, u16 arg2, u16 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801024E8;
-    sp60 = &D_8010203C;
+    sp64 = &func_801024E8;
+    sp60 = &func_8010203C;
     sp54 = 0;
     sp58 = 0;
     sp5C = 0;
@@ -1755,8 +1750,8 @@ void func_801046A0_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp2C.unk8 = arg1->unk8;
     sp44 = 0;
     sp54 = 0;
-    sp5C = &D_801023FC;
-    sp58 = &D_80101E5C;
+    sp5C = &func_801023FC;
+    sp58 = &func_80101E5C;
     sp4C = 0;
     sp50 = 0;
     func_80103D80_ovl2(arg2, arg3, arg4, arg5);
@@ -1786,8 +1781,8 @@ void func_8010474C_ovl2(void *arg0, void *arg1) {
     sp2C.unk8 = arg1->unk8;
     sp44 = 0;
     sp54 = 0;
-    sp5C = &D_80102364;
-    sp58 = &D_80101F4C;
+    sp5C = &func_80102364;
+    sp58 = &func_80101F4C;
     sp4C = 0;
     sp50 = 0;
     func_80103D80_ovl2(0, 0, 0, 0);
@@ -1816,8 +1811,8 @@ void func_801047F0_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801023FC;
-    sp60 = &D_8010217C;
+    sp64 = &func_801023FC;
+    sp60 = &func_8010217C;
     sp54 = 0;
     sp58 = 0;
     sp5C = 0;
@@ -1847,8 +1842,8 @@ void func_801048A4_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_801023FC;
-    sp60 = &D_801021BC;
+    sp64 = &func_801023FC;
+    sp60 = &func_801021BC;
     sp54 = 0;
     sp58 = 0;
     sp5C = 0;
@@ -1878,8 +1873,8 @@ void func_80104958_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4) {
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_80102364;
-    sp60 = &D_801021FC;
+    sp64 = &func_80102364;
+    sp60 = &func_801021FC;
     sp54 = 0;
     sp58 = 0;
     sp5C = 0;
@@ -1909,8 +1904,8 @@ void func_80104A08_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4) {
     sp2C.unk4 = arg1->unk4;
     sp2C.unk8 = arg1->unk8;
     sp44 = 0;
-    sp5C = &D_80102364;
-    sp58 = &D_801021FC;
+    sp5C = &func_80102364;
+    sp58 = &func_801021FC;
     sp4C = 0;
     sp50 = 0;
     sp54 = 0;
@@ -1943,8 +1938,8 @@ void func_80104AB4_ovl2(void *arg0, void *arg1, u16 arg2, u16 arg3, s32 arg4) {
     sp2C.unk8 = arg1->unk8;
     sp44 = 0;
     sp54 = 0;
-    sp5C = &D_801024E8;
-    sp58 = &D_8010221C;
+    sp5C = &func_801024E8;
+    sp58 = &func_8010221C;
     sp4C = 0;
     sp50 = 0;
     sp60 = arg2;
@@ -1975,8 +1970,8 @@ void func_80104B70_ovl2(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s3
     sp34.unk4 = arg1->unk4;
     sp34.unk8 = arg1->unk8;
     sp4C = 0;
-    sp64 = &D_80102364;
-    sp60 = &D_80102324;
+    sp64 = &func_80102364;
+    sp60 = &func_80102324;
     sp54 = 0;
     sp58 = 0;
     sp5C = 0;
@@ -2031,8 +2026,7 @@ u8 func_80104C24_ovl2(Vector *cPos, Vector *nPos) {
     f32 temp_f8;
     f32 phi_f2;
 
-    func_80103AA0_ovl2(arg0, arg1, arg2, arg3, &sp6C, &sp68, &sp64, arg7);
-    if (ERROR(Read from unset register $v0) != 0) {
+    if (func_80103AA0_ovl2(arg0, arg1, arg2, arg3, &sp6C, &sp68, &sp64, arg7) != 0) {
         temp_f8 = sp6C - arg0->x;
         sp58 = temp_f8;
         temp_f4 = sp70 - arg0->y;
