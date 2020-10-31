@@ -298,30 +298,30 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
-                    gSPDoubleLights1(gDisplayListHeads, (*temp_a2));
-                    // gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
-                    // gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB174(arg0);
-                gSPDoubleLights1(gDisplayListHeads, D_800BE548);
-                // gSPSetLights1(gDisplayListHeads[0]++, (D_800BE548));
-                // gSPSetLights1(gDisplayListHeads[1]++, (D_800BE548));
+                gSPSetLights1(gDisplayListHeads[0]++, (D_800BE548));
+                gSPSetLights1(gDisplayListHeads[1]++, (D_800BE548));
                 break;
             case 16:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != NULL) {
-                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2)); gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 } func_800AB244(arg0);
-                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548); gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
             case 18:
             case 20:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != 0) {
-                    // temp_a2 = temp_a2;
-                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2)); gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB314(arg0);
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548); gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
@@ -331,10 +331,12 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
                 gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
                 if (temp_a2 != 0) {
-                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2)); gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
+                    gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB3F4(arg0);
-                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548); gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
         }
     }
 }
