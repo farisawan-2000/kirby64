@@ -42,7 +42,7 @@ struct CollisionTriangle
 /*0xA*/     u16    collisionIndex; //based on col type this num references array pos
 /*0xC*/     u16    breakParticle;       //(seen in DEDEDE hammer break)
 /*0xE*/     u16    Halt_Movement;        //Stops kirby from moving/triggers automatic behavior.
-/*0x10*/    s16    collisionParameter;           //ex.Amount to move kirby while on certain col types or Break Condition
+/*0x10*/    u16    collisionParameter;           //ex.Amount to move kirby while on certain col types or Break Condition
 /*0x12*/    u16    collisionType;       //see col type list
 };
 // The following is a list of Collision_Type values known.
