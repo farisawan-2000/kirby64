@@ -2596,8 +2596,8 @@ typedef union {
 #define gSPSetLights1(pkt,name)						\
 {									\
 	gSPNumLights(pkt,NUMLIGHTS_1);					\
-	gSPLight(pkt,&name.l[0],1);					\
-	gSPLight(pkt,&name.a,2);					\
+	gSPLight(pkt,&(name).l[0],1);					\
+	gSPLight(pkt,&(name).a,2);					\
 }
 #define gsSPSetLights1(name)						\
 	gsSPNumLights(NUMLIGHTS_1),					\
