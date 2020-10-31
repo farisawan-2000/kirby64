@@ -4,6 +4,7 @@
 #include "ovl2_8.h"
 #include "ovl2_6.h"
 #include "D_8004A7C4.h"
+#include "unk_structs/D_800DE350.h"
 
 
 struct struct8011BA10_temp {
@@ -129,6 +130,7 @@ void func_8011BD08(void) {
     func_800A7678(10);
 }
 
+// start is the same as the above functions
 #ifdef MIPS_TO_C
 void *func_8011BD30_ovl2(void *arg0, s32 arg1) {
     void *sp2C;
@@ -365,14 +367,10 @@ block_19:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BF4C_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_8011C2A0(void *arg0) {
-    func_800A7678(0xB);
-    func_8011BA10_ovl2(arg0->unk84, 0x14);
+    func_800A7678(11);
+    func_8011BA10_ovl2(*(u32 *)((u32)arg0+0x84), 20); // todo: struct
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C2A0.s")
-#endif
 
 void vec3_cross_product(Vector *v1, Vector *v2, Vector *dst) {
     dst->x = (v1->y * v2->z) - (v1->z * v2->y);
@@ -548,38 +546,43 @@ the instruction, which has a name starting with "jtbl".
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C720.s")
 #endif
 
-#ifdef MIPS_TO_C
+extern s32 D_8011D0FC; // probably part of a struct
+
 void func_8011C838_ovl2(void) {
-    ((func_800AEC08(0x12, 0, 1) * 4) + 0x800E0000)->unk-1CB0->unk48 = &D_8011D0FC;
+    struct UnkStruct800DE350 *temp = D_800DE350[func_800AEC08(18, 0, 1)];
+    
+    temp->unk48 = &D_8011D0FC;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C838_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_8011C87C_ovl2(void) {
-    void *temp_a0;
-    void *phi_a0;
+struct UnkStruct800D6F18 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+};
 
+extern s32 D_800D6F10;
+extern struct UnkStruct800D6F18 D_800D6F18[2];
+//regalloc
+#ifdef NON_MATCHING
+void func_8011C87C_ovl2(void) {
+    u32 i;
+    
     gKirbyState.unk4 = 0;
     gKirbyState.isHoldingEntity = 0;
     gKirbyState.inhaledEntityData = 0;
     gKirbyState.secondInhale = 0;
     gKirbyState.firstInhale = 0;
     gKirbyState.currentInhale = 0;
-    phi_a0 = &D_800D6F18;
-loop_1:
-    temp_a0 = phi_a0 + 0x10;
-    temp_a0->unk-C = 0;
-    temp_a0->unk-8 = 0;
-    temp_a0->unk-4 = 0;
-    temp_a0->unk-10 = 0;
-    phi_a0 = temp_a0;
-    if (temp_a0 != &D_800D6F38) {
-        goto loop_1;
+    
+    for (i = 0; i < 2; i++) {
+        D_800D6F18[i].unk4 = 0;
+        D_800D6F18[i].unk8 = 0;
+        D_800D6F18[i].unkC = 0;
+        D_800D6F18[i].unk0 = 0;
     }
-    *0x800D6F10 = 0;
-    return &D_800D6F38;
+
+    D_800D6F10 = 0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C87C_ovl2.s")
@@ -587,7 +590,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C87C_ovl2.s")
 
 void func_8011C8D0(void) {
     func_80105180_ovl2(&gPositionState);
-    D_800D6F34 = 0;
+    D_800D6F18[1].unkC = 0;
 }
 
 #ifdef MIPS_TO_C
@@ -719,19 +722,20 @@ the instruction, which has a name starting with "jtbl".
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011CCB8.s")
 #endif
 
-#ifdef MIPS_TO_C
+void func_800AECC0_ovl2(f32);
+void func_800AED20_ovl2(f32);
+extern s32 D_800E8AE0[];
+
+
 void func_8011CF58_ovl2(void) {
-    if ((((*D_8004A7C4 * 4) + 0x800F0000)->unk-7520 & 6) != 0) {
-        func_800AECC0_ovl2(0x3F800000);
-        func_800AED20_ovl2(0x3F800000);
-        return;
+    if (D_800E8AE0[D_8004A7C4->objId] & 6) {
+        func_800AECC0_ovl2(1.f);
+        func_800AED20_ovl2(1.f);
+    } else {
+        func_800AECC0_ovl2(2.f);
+        func_800AED20_ovl2(2.f);
     }
-    func_800AECC0_ovl2(0x40000000);
-    func_800AED20_ovl2(0x40000000);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011CF58_ovl2.s")
-#endif
 
 void func_8011CFE0_ovl2(void) {
     gKirbyState.unk4 = 0;
@@ -789,7 +793,16 @@ to get correct control flow for non-jtbl switch jumps.)
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D0FC_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
+struct UnkStruct801290D8 {
+    u8 filler[0x14];
+    u16 unk14;
+};
+
+extern s8 D_8012E7D7;
+extern s32 D_800D6B54, D_800D6B58, D_800BE4F8, D_800D708C;
+extern struct UnkStruct801290D8 *D_801290D8;
+void change_kirby_hp(f32);
+
 void func_8011D40C_ovl2(void) {
     if (D_800D6B54 == 0) {
         D_8012E7D7 = 1;
@@ -803,9 +816,6 @@ void func_8011D40C_ovl2(void) {
         func_800A75B0_ovl2(0, 5);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D40C_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_8011D4A4_ovl2(f32 arg0) {
@@ -2966,7 +2976,6 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 extern s16 D_8012844C[][2];
 extern u32 D_800E25D0[];
 extern f32 D_800E2790[], D_800E2950[];
-extern u32 D_800E8AE0[];
 extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, u32 d, f32 e, f32 f);
 
 #ifdef NON_MATCHING
