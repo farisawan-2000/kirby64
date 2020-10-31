@@ -303,7 +303,6 @@ void func_800A3128(void) {
     load_overlay(3);
 }
 
-extern s32 D_800D6F38, D_800D6F3C;
 extern u32 D_800BE4F8;
 extern u32 D_800D6B8C;
 #ifdef MIPS_TO_C

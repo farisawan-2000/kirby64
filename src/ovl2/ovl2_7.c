@@ -5457,7 +5457,7 @@ void func_8011A2F4_ovl2(void *arg0) {
             sp20 = (s32) temp_v0->unk77A0;
             func_800AA018_ovl2(temp_v1->unk8);
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = (s32) temp_v1->unk14;
-            D_800D6F24 = (s32) (temp_v0->unk77A0 - 0xBF);
+            D_800D6F18[0].unkC = (s32) (temp_v0->unk77A0 - 0xBF);
             func_800A7678(0x1FD);
         }
     }
@@ -5688,7 +5688,7 @@ void func_8011A7A8_ovl2(void *arg0) {
             sp20 = (s32) temp_v0->unk77A0;
             func_800AA018_ovl2(temp_v1->unk8);
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk-1070 = (s32) temp_v1->unk14;
-            D_800D6F24 = (s32) (temp_v0->unk77A0 - 0xCD);
+            D_800D6F18[0].unkC = (s32) (temp_v0->unk77A0 - 0xCD);
             func_800A7678(0x1FD);
         }
     }

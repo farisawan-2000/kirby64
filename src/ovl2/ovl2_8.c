@@ -2,150 +2,135 @@
 #include <macros.h>
 #include "types.h"
 #include "ovl2_8.h"
+#include "ovl2_6.h"
 #include "D_8004A7C4.h"
+#include "unk_structs/D_800DE350.h"
 
-#ifdef MIPS_TO_C
-void *func_8011BA10_ovl2(void *arg0, s32 arg1) {
-    u32 temp_a2;
-    void *temp_a0;
-    void *temp_v0;
-    void *temp_v0_2;
-    void *temp_v1;
-    void *phi_v0;
-    void *phi_a1;
-    u32 phi_a2;
-    void *phi_return;
 
-    if (arg1 != 0x14) {
-        temp_v0 = ((arg1 * 0xB8) + 0x80130000)->unk-26B4;
-        phi_v0 = temp_v0;
-        phi_return = temp_v0;
+struct struct8011BA10_temp {
+    u8 unk0;
+    u8 unk1;
+    u8 filler0[2];
+    struct vCollisionHeader *unk4;
+    u8 filler1[0xB0];
+}; // dunno if this is how this actually works
+
+extern struct struct8011BA10_temp D_8012D948[];
+extern struct struct8011BA10_temp D_8012940C;
+
+
+void *func_8011BA10_ovl2(struct CollisionTriangle *tri, u32 arg1) {
+    u32 i;
+    struct DynGeo_List *destructGroups;
+    struct vCollisionHeader *vColHeader;
+    u16 *destrucIndex;
+    
+    if (arg1 != 20) {
+        vColHeader = D_8012D948[arg1].unk4;
     } else {
-        temp_v0_2 = *0x80129410;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
+        vColHeader = D_8012940C.unk4;
     }
-    temp_v1 = phi_v0->unk30 + (arg0->unkA * 6);
-    if (temp_v1->unk0 != 0) {
-        phi_a1 = phi_v0->unk34 + (temp_v1->unk2 * 2);
-        phi_a2 = 0;
-loop_5:
-        temp_a2 = phi_a2 + 1;
-        temp_a0 = phi_v0->unk4 + (*phi_a1 * 0x14);
-        temp_a0->unk8 = temp_a0->unk8 & -4;
-        phi_a1 = phi_a1 + 2;
-        phi_a2 = temp_a2;
-        if (temp_a2 < temp_v1->unk0) {
-            goto loop_5;
-        }
+    
+    destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
+    
+    destrucIndex = &vColHeader->header.Destructable_Indices[destructGroups->Index_To_Dynamic_Geo_Group];
+    
+    for (i = 0; i < destructGroups->Num_Dynamic_Geo_Group_Members; i++) {
+        vColHeader->header.Triangles[*destrucIndex].normalType &= ~3;
+        destrucIndex++;
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BA10_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_8011BABC_ovl2(void *arg0, s32 arg1) {
-    u32 temp_a3;
-    void *temp_a2;
-    void *temp_v1;
-    void *temp_v1_2;
-    struct vCollisionHeader *phi_v0;
-    void *phi_a1;
-    u32 phi_a3;
-    s32 phi_a0;
+struct Struct800DFBD0 {
+    
+    u8 filler[0x54];
+    s8 unk54;
+};
 
-    if (arg1 != 0x14) {
-        temp_v1_2 = (arg1 * 0xB8) + &D_8012D948;
-        phi_v0 = temp_v1_2->unk4;
-        phi_a0 = temp_v1_2->unk1;
+extern u32 D_801290D0;
+extern struct Struct800DFBD0 **D_800DFBD0[]; // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
+
+struct Struct800DFBD0 *func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg1) {
+    u32 i;
+    struct DynGeo_List *destructGroups;
+    struct vCollisionHeader *vColHeader;
+    u16 *destrucIndex;
+    u32 phi_a0;
+
+    if (arg1 != 20) {
+        vColHeader = D_8012D948[arg1].unk4;
+        phi_a0 = D_8012D948[arg1].unk1;
     } else {
-        phi_v0 = D_80129410;
+        vColHeader = D_8012940C.unk4;
         phi_a0 = D_801290D0;
     }
-    temp_v1 = phi_v0->header.Destructable_Groups.Num_Dynamic_Geo_Group_Members + (arg0->unkA * 6);
-    if (temp_v1->unk0 != 0) {
-        phi_a1 = phi_v0->header.Destructable_Groups.Unk_Index + (temp_v1->unk2 * 2);
-        phi_a3 = 0;
-loop_5:
-        temp_a3 = phi_a3 + 1;
-        temp_a2 = phi_v0->header.Triangles + (*phi_a1 * 0x14);
-        temp_a2->unk8 = temp_a2->unk8 & -4;
-        phi_a1 = phi_a1 + 2;
-        phi_a3 = temp_a3;
-        if (temp_a3 < temp_v1->unk0) {
-            goto loop_5;
-        }
+    
+    destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
+    
+    destrucIndex = &vColHeader->header.Destructable_Indices[destructGroups->Index_To_Dynamic_Geo_Group];
+    
+    for (i = 0; i < destructGroups->Num_Dynamic_Geo_Group_Members; i++) {
+        vColHeader->header.Triangles[*destrucIndex].normalType &= ~3;
+        destrucIndex++;
     }
-    return *(((phi_a0 * 4) + 0x800E0000)->unk-430 + (temp_v1->unk4 * 4));
+
+    return D_800DFBD0[phi_a0][destructGroups->Unk_Index];
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BABC_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_8011BB98(void *arg0, s32 arg1) {
-    s32 sp44;
-    ? sp38;
-    ? sp2C;
-    u32 temp_a0;
-    void *temp_a3;
-    void *temp_s0;
-    void *temp_v0;
-    void *temp_v0_2;
-    struct vCollisionHeader *phi_a2;
-    void *phi_v1;
-    u32 phi_a0;
-    s32 phi_t1;
+extern func_800A4794_ovl2(Vec3f, struct Struct800DFBD0 *, struct vCollisionHeader *, struct DynGeo_List *);
+extern func_800FD754_ovl2(s32 *, f32, f32, f32);
+extern func_800A4DB8_ovl2(Vec3f, struct Struct800DFBD0 *);
+extern func_800A802C_ovl2(s32 *, s32, s32, Vec3f, Vec3f);
 
-    if (arg1 != 0x14) {
-        temp_v0 = (arg1 * 0xB8) + &D_8012D948;
-        phi_a2 = temp_v0->unk4;
-        phi_t1 = temp_v0->unk1;
+
+struct Struct800DFBD0 *func_8011BB98(struct CollisionTriangle *tri, u32 arg1) {
+    u32 i;
+    struct DynGeo_List *destructGroups;
+    struct Struct800DFBD0 *temp_s0;
+    struct vCollisionHeader *vColHeader;
+    u16 *destrucIndex;
+    u32 phi_t1;
+    Vec3f sp44;
+    Vec3f sp38;
+    Vec3f sp2C;
+
+    if (arg1 != 20) {
+        vColHeader = D_8012D948[arg1].unk4;
+        phi_t1 = D_8012D948[arg1].unk1;
     } else {
-        phi_a2 = D_80129410;
+        vColHeader = D_8012940C.unk4;
         phi_t1 = D_801290D0;
     }
-    temp_a3 = phi_a2->header.Destructable_Groups.Num_Dynamic_Geo_Group_Members + (arg0->unkA * 6);
-    phi_v1 = phi_a2->header.Destructable_Groups.Unk_Index + (temp_a3->unk2 * 2);
-    phi_a0 = 0;
-    if (temp_a3->unk0 != 0) {
-loop_4:
-        temp_a0 = phi_a0 + 1;
-        temp_v0_2 = phi_a2->header.Triangles + (*phi_v1 * 0x14);
-        temp_v0_2->unk8 = temp_v0_2->unk8 & -4;
-        phi_v1 = phi_v1 + 2;
-        phi_a0 = temp_a0;
-        if (temp_a0 < temp_a3->unk0) {
-            goto loop_4;
-        }
+    
+    destructGroups = &vColHeader->header.Destructable_Groups[tri->collisionIndex];
+    
+    destrucIndex = &vColHeader->header.Destructable_Indices[destructGroups->Index_To_Dynamic_Geo_Group];
+
+    for (i = 0; i < destructGroups->Num_Dynamic_Geo_Group_Members; i++) {
+        vColHeader->header.Triangles[*destrucIndex].normalType &= ~3;
+        destrucIndex++;
     }
-    temp_s0 = *(((phi_t1 * 4) + 0x800E0000)->unk-430 + (temp_a3->unk4 * 4));
+
+    temp_s0 = D_800DFBD0[phi_t1][destructGroups->Unk_Index];
     temp_s0->unk54 = 2;
-    if (arg0->unk10 == 0) {
-        func_800A4794_ovl2(&sp44, temp_s0, phi_a2, temp_a3);
-        func_800FD754_ovl2(0, sp44, sp48, sp4C);
+    
+    if (tri->collisionParameter == 0) {
+        func_800A4794_ovl2(sp44, temp_s0, vColHeader, destructGroups);
+        func_800FD754_ovl2(NULL, sp44[0], sp44[1], sp44[2]);
     } else {
-        func_800A4794_ovl2(&sp38, temp_s0, phi_a2, temp_a3);
-        func_800A4DB8_ovl2(&sp2C, temp_s0);
-        func_800A802C_ovl2(0, 3, 0x36, &sp38, &sp2C);
+        func_800A4794_ovl2(sp38, temp_s0, vColHeader, destructGroups);
+        func_800A4DB8_ovl2(sp2C, temp_s0);
+        func_800A802C_ovl2(NULL, 3, 54, sp38, sp2C);
     }
     return temp_s0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BB98.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_8011BD08(void) {
     func_8011BB98_ovl2();
-    func_800A7678(0xA);
+    func_800A7678(10);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BD08.s")
-#endif
 
+// start is the same as the above functions
 #ifdef MIPS_TO_C
 void *func_8011BD30_ovl2(void *arg0, s32 arg1) {
     void *sp2C;
@@ -382,14 +367,10 @@ block_19:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BF4C_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_8011C2A0(void *arg0) {
-    func_800A7678(0xB);
-    func_8011BA10_ovl2(arg0->unk84, 0x14);
+    func_800A7678(11);
+    func_8011BA10_ovl2(*(u32 *)((u32)arg0+0x84), 20); // todo: struct
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C2A0.s")
-#endif
 
 void vec3_cross_product(Vector *v1, Vector *v2, Vector *dst) {
     dst->x = (v1->y * v2->z) - (v1->z * v2->y);
@@ -565,38 +546,43 @@ the instruction, which has a name starting with "jtbl".
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C720.s")
 #endif
 
-#ifdef MIPS_TO_C
+extern s32 D_8011D0FC; // probably part of a struct
+
 void func_8011C838_ovl2(void) {
-    ((func_800AEC08(0x12, 0, 1) * 4) + 0x800E0000)->unk-1CB0->unk48 = &D_8011D0FC;
+    struct UnkStruct800DE350 *temp = D_800DE350[func_800AEC08(18, 0, 1)];
+    
+    temp->unk48 = &D_8011D0FC;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C838_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_8011C87C_ovl2(void) {
-    void *temp_a0;
-    void *phi_a0;
+struct UnkStruct800D6F18 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+};
 
+extern s32 D_800D6F10;
+extern struct UnkStruct800D6F18 D_800D6F18[2];
+//regalloc
+#ifdef NON_MATCHING
+void func_8011C87C_ovl2(void) {
+    u32 i;
+    
     gKirbyState.unk4 = 0;
     gKirbyState.isHoldingEntity = 0;
     gKirbyState.inhaledEntityData = 0;
     gKirbyState.secondInhale = 0;
     gKirbyState.firstInhale = 0;
     gKirbyState.currentInhale = 0;
-    phi_a0 = &D_800D6F18;
-loop_1:
-    temp_a0 = phi_a0 + 0x10;
-    temp_a0->unk-C = 0;
-    temp_a0->unk-8 = 0;
-    temp_a0->unk-4 = 0;
-    temp_a0->unk-10 = 0;
-    phi_a0 = temp_a0;
-    if (temp_a0 != &D_800D6F38) {
-        goto loop_1;
+    
+    for (i = 0; i < 2; i++) {
+        D_800D6F18[i].unk4 = 0;
+        D_800D6F18[i].unk8 = 0;
+        D_800D6F18[i].unkC = 0;
+        D_800D6F18[i].unk0 = 0;
     }
-    *0x800D6F10 = 0;
-    return &D_800D6F38;
+
+    D_800D6F10 = 0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C87C_ovl2.s")
@@ -604,7 +590,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C87C_ovl2.s")
 
 void func_8011C8D0(void) {
     func_80105180_ovl2(&gPositionState);
-    D_800D6F34 = 0;
+    D_800D6F18[1].unkC = 0;
 }
 
 #ifdef MIPS_TO_C
@@ -736,19 +722,20 @@ the instruction, which has a name starting with "jtbl".
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011CCB8.s")
 #endif
 
-#ifdef MIPS_TO_C
+void func_800AECC0_ovl2(f32);
+void func_800AED20_ovl2(f32);
+extern s32 D_800E8AE0[];
+
+
 void func_8011CF58_ovl2(void) {
-    if ((((*D_8004A7C4 * 4) + 0x800F0000)->unk-7520 & 6) != 0) {
-        func_800AECC0_ovl2(0x3F800000);
-        func_800AED20_ovl2(0x3F800000);
-        return;
+    if (D_800E8AE0[D_8004A7C4->objId] & 6) {
+        func_800AECC0_ovl2(1.f);
+        func_800AED20_ovl2(1.f);
+    } else {
+        func_800AECC0_ovl2(2.f);
+        func_800AED20_ovl2(2.f);
     }
-    func_800AECC0_ovl2(0x40000000);
-    func_800AED20_ovl2(0x40000000);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011CF58_ovl2.s")
-#endif
 
 void func_8011CFE0_ovl2(void) {
     gKirbyState.unk4 = 0;
@@ -806,7 +793,16 @@ to get correct control flow for non-jtbl switch jumps.)
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D0FC_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
+struct UnkStruct801290D8 {
+    u8 filler[0x14];
+    u16 unk14;
+};
+
+extern s8 D_8012E7D7;
+extern s32 D_800D6B54, D_800D6B58, D_800BE4F8, D_800D708C;
+extern struct UnkStruct801290D8 *D_801290D8;
+void change_kirby_hp(f32);
+
 void func_8011D40C_ovl2(void) {
     if (D_800D6B54 == 0) {
         D_8012E7D7 = 1;
@@ -820,9 +816,6 @@ void func_8011D40C_ovl2(void) {
         func_800A75B0_ovl2(0, 5);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D40C_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_8011D4A4_ovl2(f32 arg0) {
@@ -878,18 +871,19 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D4A4_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct KirbyState *func_8011D614_ovl2(void) {
+extern s32 *D_800E0490[];
+extern s32 D_801926E8;
+extern s32 D_80190358;
+
+void func_8011D614_ovl2(void) {
     func_8011CF58_ovl2();
     func_800A9760_ovl2(0x20007);
-    ((*D_8004A7C4 * 4) + 0x800E0000)->unk490 = &D_801926E8;
+    
+    D_800E0490[D_8004A7C4->objId] = &D_801926E8;
+
     gKirbyState.unk15C = &D_80190358;
     gKirbyState.unk154 = 2;
-    return &gKirbyState;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D614_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8011D67C(void) {
@@ -2983,7 +2977,6 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 extern s16 D_8012844C[][2];
 extern u32 D_800E25D0[];
 extern f32 D_800E2790[], D_800E2950[];
-extern u32 D_800E8AE0[];
 extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, u32 d, f32 e, f32 f);
 
 #ifdef NON_MATCHING
