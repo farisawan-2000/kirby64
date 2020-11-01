@@ -1,5 +1,5 @@
-#ifndef D_H
-#define D_H
+#ifndef D_8004A7C4_H
+#define D_8004A7C4_H
 #include "types.h"
 
 struct UnkStruct8004A7C4_3C {

@@ -30,7 +30,7 @@ glabel func_80016940
 /* 0175A8 800169A8 00602025 */  move  $a0, $v1
 /* 0175AC 800169AC AC990000 */  sw    $t9, ($a0)
 /* 0175B0 800169B0 8FA2008C */  lw    $v0, 0x8c($sp)
-/* 0175B4 800169B4 3C0D8005 */  lui   $t5, %hi(D_8004A508) # $t5, 0x8005
+/* 0175B4 800169B4 3C0D8005 */  lui   $t5, %hi(gCurrScreenWidth) # $t5, 0x8005
 /* 0175B8 800169B8 3C0E8004 */  lui   $t6, %hi(D_8003DF18) # $t6, 0x8004
 /* 0175BC 800169BC 24420008 */  addiu $v0, $v0, 8
 /* 0175C0 800169C0 AC820004 */  sw    $v0, 4($a0)
@@ -38,7 +38,7 @@ glabel func_80016940
 /* 0175C8 800169C8 84460000 */  lh    $a2, ($v0)
 /* 0175CC 800169CC 8447000A */  lh    $a3, 0xa($v0)
 /* 0175D0 800169D0 84480002 */  lh    $t0, 2($v0)
-/* 0175D4 800169D4 8DADA508 */  lw    $t5, %lo(D_8004A508)($t5)
+/* 0175D4 800169D4 8DADA508 */  lw    $t5, %lo(gCurrScreenWidth)($t5)
 /* 0175D8 800169D8 8DCEDF18 */  lw    $t6, %lo(D_8003DF18)($t6)
 /* 0175DC 800169DC 24630008 */  addiu $v1, $v1, 8
 /* 0175E0 800169E0 04A10002 */  bgez  $a1, .L800169EC_ovl0
@@ -69,7 +69,7 @@ glabel func_80016940
 /* 017634 80016A34 00C54821 */  addu  $t1, $a2, $a1
 /* 017638 80016A38 03EE0019 */  multu $ra, $t6
 /* 01763C 80016A3C 01075021 */  addu  $t2, $t0, $a3
-/* 017640 80016A40 3C028005 */  lui   $v0, %hi(D_8004A50C) # $v0, 0x8005
+/* 017640 80016A40 3C028005 */  lui   $v0, %hi(gCurrScreenHeight) # $v0, 0x8005
 /* 017644 80016A44 3C198004 */  lui   $t9, %hi(D_8003DF10) # $t9, 0x8004
 /* 017648 80016A48 3C0E8004 */  lui   $t6, %hi(D_8003DF1C) # $t6, 0x8004
 /* 01764C 80016A4C 3C188004 */  lui   $t8, %hi(D_8003DF14) # $t8, 0x8004
@@ -79,7 +79,7 @@ glabel func_80016940
 /* 01765C 80016A5C AFAF001C */   sw    $t7, 0x1c($sp)
 /* 017660 80016A60 01E05825 */  move  $t3, $t7
 .L80016A64_ovl0:
-/* 017664 80016A64 8C42A50C */  lw    $v0, %lo(D_8004A50C)($v0)
+/* 017664 80016A64 8C42A50C */  lw    $v0, %lo(gCurrScreenHeight)($v0)
 /* 017668 80016A68 240100F0 */  li    $at, 240
 /* 01766C 80016A6C 8F39DF10 */  lw    $t9, %lo(D_8003DF10)($t9)
 /* 017670 80016A70 0041001A */  div   $zero, $v0, $at
@@ -107,8 +107,8 @@ glabel func_80016940
 /* 0176C4 80016AC4 00A04825 */  move  $t1, $a1
 .L80016AC8_ovl0:
 /* 0176C8 80016AC8 8F18DF14 */  lw    $t8, %lo(D_8003DF14)($t8)
-/* 0176CC 80016ACC 3C0D8005 */  lui   $t5, %hi(D_8004A508) # $t5, 0x8005
-/* 0176D0 80016AD0 25ADA508 */  addiu $t5, %lo(D_8004A508) # addiu $t5, $t5, -0x5af8
+/* 0176CC 80016ACC 3C0D8005 */  lui   $t5, %hi(gCurrScreenWidth) # $t5, 0x8005
+/* 0176D0 80016AD0 25ADA508 */  addiu $t5, %lo(gCurrScreenWidth) # addiu $t5, $t5, -0x5af8
 /* 0176D4 80016AD4 00980019 */  multu $a0, $t8
 /* 0176D8 80016AD8 0000C812 */  mflo  $t9
 /* 0176DC 80016ADC 00592823 */  subu  $a1, $v0, $t9
@@ -179,8 +179,8 @@ glabel func_80016940
 /* 0177DC 80016BDC 33380FFF */  andi  $t8, $t9, 0xfff
 /* 0177E0 80016BE0 03017025 */  or    $t6, $t8, $at
 /* 0177E4 80016BE4 ACCE0000 */  sw    $t6, ($a2)
-/* 0177E8 80016BE8 3C0F8005 */  lui   $t7, %hi(gPhysicalZBuffer) # $t7, 0x8005
-/* 0177EC 80016BEC 8DEFA500 */  lw    $t7, %lo(gPhysicalZBuffer)($t7)
+/* 0177E8 80016BE8 3C0F8005 */  lui   $t7, %hi(gZBuffer) # $t7, 0x8005
+/* 0177EC 80016BEC 8DEFA500 */  lw    $t7, %lo(gZBuffer)($t7)
 /* 0177F0 80016BF0 24630008 */  addiu $v1, $v1, 8
 /* 0177F4 80016BF4 3C18FFFC */  lui   $t8, (0xFFFCFFFC >> 16) # lui $t8, 0xfffc
 /* 0177F8 80016BF8 ACCF0004 */  sw    $t7, 4($a2)

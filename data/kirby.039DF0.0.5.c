@@ -5,6 +5,15 @@
 #include "banks.h"
 #include "src/ovl0/main.h"
 
+extern long long int gspF3DEX2_fifoDataStart[];
+extern long long int gspF3DEX2_fifoTextStart[];
+
+extern long long int gspL3DEX2_fifoDataStart[];
+extern long long int gspL3DEX2_fifoTextStart[];
+
+extern long long int gspS2DEX2_fifoDataStart[];
+extern long long int gspS2DEX2_fifoTextStart[];
+
 typedef struct {
         s32             active;		/* Status flag */
 	OSThread	*thread;	/* Calling thread */
@@ -40,9 +49,9 @@ u32 D_8003DCA4 = 0x00000000;
 
 u32 D_8003DCA8 = 0x00000000;
 
-u32 D_8003DCAC = 0x80039E90;
+void* D_8003DCAC = gspF3DEX2_fifoTextStart;
 
-u32 D_8003DCB0 = 0x80041FF0;
+void* D_8003DCB0 = gspF3DEX2_fifoDataStart;
 
 u32 D_8003DCB4 = 0x00000000;
 
@@ -72,17 +81,17 @@ u32 D_8003DCE4 = 0x00000000;
 
 u32 D_8003DCE8 = 0x00000000;
 
-u32 D_8003DCEC = 0x8003B220;
+void* D_8003DCEC = gspL3DEX2_fifoTextStart;
 
-u32 D_8003DCF0 = 0x80042410;
+void* D_8003DCF0 = gspL3DEX2_fifoDataStart;
 
 u32 D_8003DCF4 = 0x00000000;
 
 u32 D_8003DCF8 = 0x00000000;
 
-u32 D_8003DCFC = 0x8003C3B0;
+void* D_8003DCFC = gspS2DEX2_fifoTextStart;
 
-u32 D_8003DD00 = 0x80042800;
+void* D_8003DD00 = gspS2DEX2_fifoDataStart;
 
 u32 D_8003DD04 = 0x00000000;
 
@@ -106,26 +115,28 @@ u32 D_8003DD28 = 0x00000000;
 
 u32 D_8003DD2C = 0x00000000;
 
-u32 D_8003DD30 = 0x00000000;
+void (*gScissorCallback)(Gfx **) = NULL;
 
 u32 D_8003DD34 = 0x00000000;
 
-Mtx D_8003DD38 = {
+Mtx identityMatrix = {
 	65536, 0, 1, 0,
 	0, 65536, 0, 1,
 	0, 0, 0, 0,
 	0, 0, 0, 0,
 };
 
-Gfx D_8003DD78[] = {
+extern Vp gViewport;
+
+Gfx resetRDPDisplayList[] = {
 	gsDPPipeSync(),
-	gsSPViewport(0x8004A530),
+	gsSPViewport(&gViewport),
 	gsSPClearGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BOTH | G_FOG | G_LIGHTING | G_TEXTURE_GEN | G_TEXTURE_GEN_LINEAR | G_LOD | G_SHADING_SMOOTH),
 	gsSPClipRatio(FRUSTRATIO_1),
 	gsSPTexture(0, 0, 0, G_TX_RENDERTILE, G_OFF),
 	gsSPSetGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_SHADING_SMOOTH),
-    gsSPMatrix(&D_8003DD38, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION),
-    gsSPMatrix(&D_8003DD38, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW),
+    gsSPMatrix(&identityMatrix, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION),
+    gsSPMatrix(&identityMatrix, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW),
     gsDPSetCycleType(G_CYC_1CYCLE),
     gsDPPipelineMode(G_PM_NPRIMITIVE),
     gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),

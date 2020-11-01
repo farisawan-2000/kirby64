@@ -340,7 +340,7 @@ glabel func_800068E4
 /* 0079AC 80006DAC 5453FFFC */  bnel  $v0, $s3, .L80006DA0_ovl0
 /* 0079B0 80006DB0 02202025 */   move  $a0, $s1
 .L80006DB4_ovl0:
-/* 0079B4 80006DB4 0C001F3A */  jal   func_80007CE8
+/* 0079B4 80006DB4 0C001F3A */  jal   set_scissor_callback
 /* 0079B8 80006DB8 00002025 */   move  $a0, $zero
 /* 0079BC 80006DBC 8FBF003C */  lw    $ra, 0x3c($sp)
 /* 0079C0 80006DC0 240A0002 */  li    $t2, 2

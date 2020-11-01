@@ -21,12 +21,12 @@ void func_80005350(void *arg0) {
 
 extern u32* D_80049308;
 
-void func_80005378(Gfx **arg0) {
+void setup_segment_15(Gfx **arg0) {
     D_80049308 = &(*arg0)->words.w1;
     gSPSegment((*arg0)++, 0x0F, 0x00000000);
 }
 
-extern s32 D_8004A440;
+extern u32 D_8004A440;
 
 void func_800053A8(s32 arg0) {
     D_8004A440 = arg0;
@@ -41,7 +41,7 @@ void func_800053B4(u16 arg0, u16 arg1) {
 extern struct DynamicBuffer gDynamicBuffer2;
 
 void init_dynamic_buffer(struct DynamicBuffer *arg0, s32 arg1, s32 arg2, s32 arg3);
-u32 alloc_from_dynamic_buffer(struct DynamicBuffer *, u32, u32);
+void* alloc_from_dynamic_buffer(struct DynamicBuffer *, u32, u32);
 
 void alloc_region(s32 start, s32 size) {
     init_dynamic_buffer(&gDynamicBuffer2, 0x10000, start, size);
@@ -63,26 +63,17 @@ void func_80005430(void) {
     func_80007830(&gDynamicBuffer1);
 }
 
-struct UNK_D_8004A390
-{
-    u8* unk0;
-    u32 unk4;
-};
+extern struct DLBuffer gDLBuffers[2][4];
 
-extern struct UNK_D_8004A390 D_8004A390[][4];
-extern struct UNK_D_8004A390 D_8004A398[][4];
-extern struct UNK_D_8004A390 D_8004A3A0[][4];
-extern struct UNK_D_8004A390 D_8004A3A8[][4];
-
-void func_8000548C(struct UNK_D_8004A390 arg0[2][4]) {
+void func_8000548C(struct DLBuffer arg0[2][4]) {
     s32 i;
 
     for (i = 0; i < 2; i++)
     {
-        D_8004A390[i][0] = arg0[i][0];
-        D_8004A398[i][0] = arg0[i][1];
-        D_8004A3A0[i][0] = arg0[i][2];
-        D_8004A3A8[i][0] = arg0[i][3];
+        gDLBuffers[i][0] = arg0[i][0];
+        gDLBuffers[i][1] = arg0[i][1];
+        gDLBuffers[i][2] = arg0[i][2];
+        gDLBuffers[i][3] = arg0[i][3];
     }
 }
 
@@ -94,18 +85,18 @@ extern Gfx* D_8004A3E0[4];
 
 extern Gfx* D_8004A44C;
 
-void func_80007CF4(Gfx **dlist);
+void reset_rdp_settings(Gfx **dlist);
 
 void func_80005530(void) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        gDisplayListHeads[i] = D_8004A3E0[i] = D_8004A390[D_8004A450][i].unk0;
+        gDisplayListHeads[i] = D_8004A3E0[i] = gDLBuffers[D_8004A450][i].start;
     }
     for (i = 0; i < 4; i++) {
-        if (D_8004A390[D_8004A450][i].unk4 != 0) {
+        if (gDLBuffers[D_8004A450][i].length != 0) {
             D_8004A44C = gDisplayListHeads[i];
-            func_80007CF4(&gDisplayListHeads[i]);
+            reset_rdp_settings(&gDisplayListHeads[i]);
             gSPEndDisplayList(gDisplayListHeads[i]++);
             D_8004A3E0[i] = gDisplayListHeads[i];
             break;
@@ -118,8 +109,8 @@ void func_8000561C(void) {
     s32 i;
 
     for (i = 0; i < 4; i++) {
-        if ((Gfx*)(D_8004A390[D_8004A450][i].unk4 + D_8004A390[D_8004A450][i].unk0) < gDisplayListHeads[i]) {
-            fatal_printf("gtl : DLBuffer over flow !  kind = %d  vol = %d byte\n", i, (u8*)gDisplayListHeads[i] - D_8004A390[D_8004A450][i].unk0);
+        if ((gDLBuffers[D_8004A450][i].length + (u32)gDLBuffers[D_8004A450][i].start) < (u32)gDisplayListHeads[i]) {
+            fatal_printf("gtl : DLBuffer over flow !  kind = %d  vol = %d byte\n", i, (u32)gDisplayListHeads[i] - (u32)gDLBuffers[D_8004A450][i].start);
             while (TRUE);
         }
     }
@@ -170,11 +161,11 @@ extern struct DObj *D_8004A368[];
 extern struct DObj *D_8004A370[];
 // extern u32 D_8004A370[];
 extern struct DObj *D_8004A378[];
-extern u32 D_8004A380[];
+extern struct Unk80005A98 *D_8004A380[];
 extern const char D_80040040[];
 extern const char D_80040060[];
 extern const char D_80040080[];
-extern u32 D_80049320;
+extern OSMesgQueue D_80049320;
 
 extern OSMesgQueue gInterruptMesgQueue;
 
@@ -258,7 +249,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80005834.s")
 
 
 
-void func_80005910(struct Unk80005A98 *arg0, s32 arg1, s32 arg2, u32* arg3) {
+void func_80005910(struct Unk80005A98 *arg0, s32 arg1, s32 arg2, OSMesgQueue* arg3) {
     arg0->unk0 = 6;
     arg0->unk4 = 0x64;
     arg0->unk14 = 0;
@@ -271,7 +262,7 @@ void func_80005910(struct Unk80005A98 *arg0, s32 arg1, s32 arg2, u32* arg3) {
 
 
 void func_8000597C() {
-    u32 a0 = D_8004A380[D_8004A450];
+    struct Unk80005A98 *a0 = D_8004A380[D_8004A450];
 
     if (a0 == 0) {
         fatal_printf("gtl : not defined SCTaskGfxEnd\n");
@@ -283,7 +274,7 @@ void func_8000597C() {
 
 void func_800059F8(void) {
     OSMesg msg;
-    u32 a0 = D_8004A380[D_8004A450];
+    struct Unk80005A98 *a0 = D_8004A380[D_8004A450];
 
     if (a0 == 0) {
         fatal_printf("gtl : not defined SCTaskGfxEnd\n");
@@ -304,7 +295,6 @@ extern struct UcodeHandler {
 extern u32 D_80049760[]; // TODO; is this a different type?
 extern u32 D_80049358;
 extern const char D_800400C0[];
-extern u32 D_80049320;
 extern u32 D_8004A3F4;
 extern u32 D_80048900;
 
@@ -827,36 +817,29 @@ extern s32 D_8004A460;
 extern s32 D_8004A458[];
 
 
-// scary nested loop
-#ifdef NON_MATCHING
 u32 func_80006628(s32 arg0) {
     s32 sp3C;
-    s32 *temp_a0;
     s32 phi_v1;
 
-    while (osRecvMesg(&D_80049320, &sp3C, 0) != -1) {
+    while (osRecvMesg(&D_80049320, (OSMesg*)&sp3C, 0) != -1) {
         D_8004A458[sp3C] = 0;
     }
     do {
-        for (phi_v1 = 0, temp_a0 = &D_8004A458; phi_v1 < D_8004A460; phi_v1++) {
-            if (temp_a0[0] == 0) {
+        for (phi_v1 = 0; phi_v1 < D_8004A460; phi_v1++) {
+            if (D_8004A458[phi_v1] == 0) {
                 D_8004A450 = phi_v1;
-                temp_a0[0] = 1;
+                D_8004A458[phi_v1] = 1;
                 return 1;
             }
-            temp_a0++;
         }
         if (arg0 == 0) {
-            osRecvMesg(&D_80049320, &sp3C, 1);
+            osRecvMesg(&D_80049320, (OSMesg*)&sp3C, 1);
             D_8004A458[sp3C] = 0;
         }
     }
     while (arg0 == 0);
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80006628.s")
-#endif
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
@@ -1021,7 +1004,7 @@ loop_22:
     while (osRecvMesg(&D_80049320, 0, 0) != -1);
     while (osRecvMesg(&D_80049340, 0, 0) != -1);
     while (osRecvMesg(&D_800492C0, 0, 0) != -1);
-    func_80007CE8(0);
+    set_scissor_callback(0);
     D_800492DC = 2;
 }
 #else
@@ -1084,7 +1067,7 @@ extern s32 D_8003DCA8;
 
 void func_80006F60(struct Unk80005A98 *arg0) {
     s32 sp34;
-    u32 temp_a0;
+    struct Unk80005A98 *temp_a0;
 
     func_80006628(0);
     func_80005430();
@@ -1099,7 +1082,7 @@ void func_80006F60(struct Unk80005A98 *arg0) {
     func_80005910(temp_a0, 0, D_8004A450, &D_80049320);
     D_8004A370[D_8004A450] = D_8004A368[D_8004A450];
     do {
-        osRecvMesg(&D_80049320, &sp34, 1);
+        osRecvMesg(&D_80049320, (OSMesg*)&sp34, 1);
         D_8004A458[sp34] = 0;
     }
     while (D_8004A458[D_8004A450] != 0);
@@ -1174,7 +1157,7 @@ loop_5:
         phi_v0 = 0x1000;
     }
     func_80005734(arg0->unk30, alloc_with_alignment(phi_v0, 0x10), arg0->unk34);
-    func_80007CE8(arg0->unk38);
+    set_scissor_callback(arg0->unk38);
     D_8004A488 = (s32) arg0->unk3C;
     if (arg0->unk3C != &D_80004624) {
         phi_a0 = 1;
@@ -1337,7 +1320,7 @@ loop_1:
     D_8004A440 = 0;
     D_8004A446 = (u16)0;
     D_8004A444 = (u16)0;
-    phi_v0_2 = &D_8004A390;
+    phi_v0_2 = &gDLBuffers;
 loop_3:
     temp_v0_2 = phi_v0_2 + 0x20;
     temp_v0_2->unk-18 = 0;

@@ -1240,7 +1240,7 @@ struct Camera *func_80009F7C(u32 *arg0) {
     arg0->unk3C = temp_v0;
     temp_v0[1] = arg0;
     sp18 = temp_v0;
-    func_80007C9C(temp_a0, arg0);
+    setup_viewport(temp_a0, arg0);
     sp18[0x18] = 0;
     phi_v1 = sp18;
     phi_v0 = 0;
@@ -2709,15 +2709,12 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B950.s")
 
 // unused? don't mind if i do!
 void func_8000B988(struct UnkStruct8004A7C4 *arg0) {
-    s32 temp_s0;
-    s32 temp_v0;
-    s32 phi_s0;
+    struct UnkStruct8004A7C4_3C *phi_s0;
 
     phi_s0 = arg0->unk3C;
-    phi_s0 = phi_s0;
     while (phi_s0 != 0) {
         func_80009B5C(phi_s0);
-        phi_s0 = func_8000BE90(phi_s0);
+        phi_s0 = func_8000BE90(phi_s0); // This indicates that struct unk8000BE90Func and struct UnkStruct8004A7C4_3C are the same
     }
 }
 

@@ -170,53 +170,39 @@ loop_15:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000B64.s")
 #endif
 
-#ifdef MIPS_TO_C
-void *func_80000C54(void *arg0) {
-    s32 temp_v1;
-    void *temp_v0;
-    void *temp_v0_2;
-    void *temp_v0_3;
-    void *phi_v0;
-    void *phi_v0_2;
+struct unk_func_80000C54
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    struct unk_func_80000C54 *unkC;
+    struct unk_func_80000C54 *unk10;
+};
 
-    temp_v0_2 = D_80048B88;
-    phi_v0_2 = temp_v0_2;
-    if (temp_v0_2 != 0) {
-        temp_v1 = arg0->unk4;
-        phi_v0 = temp_v0_2;
-        phi_v0_2 = temp_v0_2;
-        if (temp_v0_2->unk4 < temp_v1) {
-loop_2:
-            temp_v0_3 = phi_v0->unk10;
-            phi_v0_2 = temp_v0_3;
-            if (temp_v0_3 != 0) {
-                phi_v0 = temp_v0_3;
-                phi_v0_2 = temp_v0_3;
-                if (temp_v0_3->unk4 < temp_v1) {
-                    goto loop_2;
-                }
-            }
-        }
+extern struct unk_func_80000C54 *D_80048B84, *D_80048B88;
+
+void func_80000C54(struct unk_func_80000C54 *arg0) {
+    struct unk_func_80000C54 *phi_v0;
+
+    phi_v0 = D_80048B88;
+    while (phi_v0 != 0 && phi_v0->unk4 < arg0->unk4) {
+        phi_v0 = phi_v0->unk10;
     }
-    arg0->unk10 = phi_v0_2;
-    if (phi_v0_2 != 0) {
-        arg0->unkC = phi_v0_2->unkC;
-        phi_v0_2->unkC = arg0;
+    arg0->unk10 = phi_v0;
+    if (phi_v0 != 0) {
+        arg0->unkC = phi_v0->unkC;
+        phi_v0->unkC = arg0;
     } else {
         arg0->unkC = D_80048B84;
         D_80048B84 = arg0;
     }
-    temp_v0 = arg0->unkC;
-    if (temp_v0 != 0) {
-        temp_v0->unk10 = arg0;
-        return temp_v0;
+    phi_v0 = arg0->unkC;
+    if (phi_v0 != 0) {
+        phi_v0->unk10 = arg0;
+        return;
     }
     D_80048B88 = arg0;
-    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000C54.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_80000CE4(void *arg0) {
@@ -1147,15 +1133,11 @@ void *func_800022DC(void) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_800022DC.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8000256C(void *arg0) {
-    arg0->unk8 = 1;
-    func_80000C54();
+void func_8000256C(u32 *arg0) {
+    arg0[2] = 1;
+    func_80000C54(arg0);
     func_80001E20();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_8000256C.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80002598(void *arg0) {

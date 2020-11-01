@@ -51,8 +51,8 @@ glabel func_80022A58
 .L80022B14_ovl0:
 /* 023714 80022B14 26080006 */  addiu $t0, $s0, 6
 /* 023718 80022B18 AE480000 */  sw    $t0, ($s2)
-/* 02371C 80022B1C 3C0A8005 */  lui   $t2, %hi(D_8004A508) # $t2, 0x8005
-/* 023720 80022B20 8D4AA508 */  lw    $t2, %lo(D_8004A508)($t2)
+/* 02371C 80022B1C 3C0A8005 */  lui   $t2, %hi(gCurrScreenWidth) # $t2, 0x8005
+/* 023720 80022B20 8D4AA508 */  lw    $t2, %lo(gCurrScreenWidth)($t2)
 /* 023724 80022B24 254BFFE2 */  addiu $t3, $t2, -0x1e
 /* 023728 80022B28 0168082A */  slt   $at, $t3, $t0
 /* 02372C 80022B2C 50200006 */  beql  $at, $zero, .L80022B48_ovl0
