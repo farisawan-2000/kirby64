@@ -10,15 +10,13 @@ extern s32 gCurrScreenHeight;
 void setup_segment_15(Gfx **);
 
 #if NON_MATCHING
-// Correct instructions, wrong order
+// G_MAXZ needs to be loaded in later somehow
 void func_80007BF4(Vp *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    f32 temp_f0 = (arg1 + arg3) * 0.5f;
-    f32 temp_f2 = (arg2 + arg4) * 0.5f;
-    arg0->vp.vscale[0] = ((arg3 - (temp_f0)) * 4.0f);
-    arg0->vp.vscale[1] = ((arg4 - (temp_f2)) * 4.0f);
-    arg0->vp.vtrans[0] = ((temp_f0) * 4.0f);
-    arg0->vp.vtrans[1] = ((temp_f2) * 4.0f);
-    arg0->vp.vscale[2] = G_MAXZ * 0.5f;
+    arg0->vp.vscale[0] = ((arg3 - ((arg1 + arg3) / 2.0f)) * 4.0f);
+    arg0->vp.vscale[1] = ((arg4 - ((arg2 + arg4) / 2.0f)) * 4.0f);
+    arg0->vp.vtrans[0] = (((arg1 + arg3) / 2.0f) * 4.0f);
+    arg0->vp.vtrans[1] = (((arg2 + arg4) / 2.0f) * 4.0f);
+    arg0->vp.vtrans[2] = G_MAXZ / 2;
     arg0->vp.vscale[2] = arg0->vp.vtrans[2];
 }
 #else

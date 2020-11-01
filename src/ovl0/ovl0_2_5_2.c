@@ -2824,14 +2824,9 @@ void func_8000BC34(void) {
 loop_1:
     temp_s0 = *phi_s2;
     phi_s0 = temp_s0;
-    if (temp_s0 != 0) {
-loop_2:
-        temp_s1 = phi_s0->unk4;
+    while (temp_s0 != 0) {
         func_8000A29C(phi_s0);
-        phi_s0 = temp_s1;
-        if (temp_s1 != 0) {
-            goto loop_2;
-        }
+        phi_s0 = phi_s0->unk4;
     }
     temp_s2 = phi_s2 + 4;
     phi_s2 = temp_s2;
