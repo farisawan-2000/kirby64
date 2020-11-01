@@ -556,7 +556,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
             oProcess->thread = oThread;
             oThread->objStack = &get_gobj_thread_stack()->unk8;
             oThread->unk1BC = D_8004A54C;
-            osCreateThread(&oThread->unk8, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C >> 3]), 0x33);
+            osCreateThread(&oThread->unk8, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C / 8]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
             if (D_8003DE50 >= 20000000) {
                 D_8003DE50 = 10000000;
@@ -577,15 +577,15 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
 extern u8 D_80040368[];
 
 #ifdef MIPS_TO_C
-struct ObjProcess *func_80008B94(u32 arg0, u32 arg1, u32 arg2, s32 arg3, void *arg4, u32 arg5) {
-    u32 sp28;
+struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u32 kind, s32 arg3, struct ObjStack *arg4, s32 arg5) {
+    struct ObjThread *sp28;
     s32 temp_a1;
     s32 temp_a1_2;
     s32 temp_a3;
-    struct ObjProcess *temp_s0;
-    u32 temp_v0;
-    void *temp_t9;
-    u32 phi_a0;
+    struct ObjProcess *oProcess;
+    struct ObjStack *oStack;
+    struct ObjThread *oThread;
+    struct UnkStruct8004A7C4 *phi_a0;
     s32 phi_a1;
     s32 phi_a1_2;
 
@@ -595,25 +595,26 @@ struct ObjProcess *func_80008B94(u32 arg0, u32 arg1, u32 arg2, s32 arg3, void *a
     }
     arg0 = phi_a0;
     temp_a3 = arg3;
-    temp_s0 = get_gobj_process();
-    if (arg2 >= 4) {
-        fatal_printf(D_80040368, arg2, temp_a3);
+    oProcess = get_gobj_process();
+    if (kind >= 4) {
+        fatal_printf(D_80040368, kind, temp_a3); //"om : GObjProcess's priority is bad value\n"
+
 loop_4:
         goto loop_4;
     }
-    temp_s0->unk10 = arg2;
-    temp_s0->unk15 = 0;
-    temp_s0->unk18 = arg0;
-    temp_s0->unk20 = arg1;
+    oProcess->kind = kind;
+    oProcess->unk15 = 0;
+    oProcess->unk18 = arg0;
+    oProcess->unk20 = arg1;
     arg3 = temp_a3;
-    temp_v0 = get_gobj_thread(D_80040368, arg2, temp_a3);
-    temp_s0->unk1C = temp_v0;
+    oThread = get_gobj_thread(D_80040368, kind, temp_a3);
+    oProcess->thread = oThread;
     if (arg5 == 0) {
-        temp_s0->unk14 = 0;
+        oProcess->pri = 0;
         arg3 = arg3;
-        sp28 = temp_v0;
-        temp_v0->unk1B8 = get_gobj_thread_stack() + 8;
-        temp_v0->unk1BC = D_8004A54C;
+        sp28 = oThread;
+        oThread->objStack = get_gobj_thread_stack() + 8;
+        oThread->unk1BC = D_8004A54C;
         if (arg3 != -1) {
             phi_a1 = arg3;
         } else {
@@ -621,18 +622,16 @@ loop_4:
             D_8003DE50 = temp_a1 + 1;
             phi_a1 = temp_a1;
         }
-        sp28 = temp_v0;
-        osCreateThread(temp_v0 + 8, phi_a1, arg1, arg0, temp_v0->unk1B8 + ((D_8004A54C >> 3) * 8), 0x33);
-        temp_t9 = temp_v0->unk1B8;
-        temp_t9->unk38 = 0;
-        temp_t9->unk3C = 0xFEDCBA98;
+        sp28 = oThread;
+        osCreateThread(&oThread->unk8, phi_a1, arg1, arg0, &oThread->objStack->stack[D_8004A54C / 8], 0x33);
+        oThread->objStack->stack[7] = STACK_TOP_MAGIC;
         if (D_8003DE50 >= 0x1312D00) {
             D_8003DE50 = 0x989680;
         }
     } else {
-        temp_s0->unk14 = 2;
-        temp_v0->unk1BC = arg5;
-        temp_v0->unk1B8 = arg4;
+        oProcess->pri = 2;
+        oThread->unk1BC = arg5;
+        oThread->objStack = arg4;
         if (arg3 != -1) {
             phi_a1_2 = arg3;
         } else {
@@ -640,16 +639,17 @@ loop_4:
             D_8003DE50 = temp_a1_2 + 1;
             phi_a1_2 = temp_a1_2;
         }
-        osCreateThread(temp_v0 + 8, phi_a1_2, arg1, arg0, ((arg5 >> 3) * 8) + arg4, 0x33);
-        arg4->unk38 = 0;
-        arg4->unk3C = 0xFEDCBA98;
+        osCreateThread(&oThread->unk8, phi_a1_2, arg1, arg0, &arg4->stack[arg5 / 8], 0x33);
+        arg4->stack[7] = STACK_TOP_MAGIC;
         if (D_8003DE50 >= 0x1312D00) {
             D_8003DE50 = 0x989680;
         }
     }
-    func_800080C0(temp_s0);
-    return temp_s0;
+    func_800080C0(oProcess);
+    return oProcess;
 }
+
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
 #endif

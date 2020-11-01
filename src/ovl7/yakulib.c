@@ -252,6 +252,7 @@ extern Lights1 D_800BE548;
     gSPLight(pkt[1]++,&(lt).a,2);                  \
 }
 
+// double lights1 macros seem to be reordering
 #if 0
 void func_801BC978_ovl7(s32 *arg0) {
     s32 temp_v0;
@@ -302,8 +303,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB174(arg0);
-                gSPSetLights1(gDisplayListHeads[0]++, (D_800BE548));
-                gSPSetLights1(gDisplayListHeads[1]++, (D_800BE548));
+                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
             case 16:
                 gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
@@ -324,7 +325,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB314(arg0);
-                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548); gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
+                gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
             case 22:
             case 24:
