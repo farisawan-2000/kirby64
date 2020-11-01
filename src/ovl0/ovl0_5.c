@@ -326,22 +326,21 @@ Vector *func_80019648(Vector *arg0, Vector *arg1) {
     return arg0;
 }
 
-#ifdef MIPS_TO_C
-f32 func_800196D4(Vector *arg0, Vector *arg1) {
-    f32 temp_f0;
+// Returns 1 if the two vectors are less than 180 degrees apart,
+// -1 if they are more than 180 degrees apart,
+// and 0 if they are perpendicular.
+s32 vec3_compare_directions(Vector *arg0, Vector *arg1) {
+    f32 dot;
 
-    temp_f0 = (arg1->x * arg0->x) + (arg1->y * arg0->y) + (arg1->z * arg0->z);
-    if (temp_f0 != 0.0f) {
-        if (temp_f0 < 0.0f) {
-            return nanf;
-        }
-        return 1e-45.0f;
+    dot = (arg1->x * arg0->x) + (arg1->y * arg0->y) + (arg1->z * arg0->z);
+    if (dot != 0.0f) {
+        return (dot < 0.0f ? -1 : 1);
     }
-    return temp_f0;
+    else
+    {
+        return 0;
+    }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800196D4.s")
-#endif
 
 Vector *vec3_normalized_cross_product(Vector *v0, Vector *v1, Vector *result) {
     result->x = (v0->y * v1->z) - (v0->z * v1->y);
@@ -350,22 +349,19 @@ Vector *vec3_normalized_cross_product(Vector *v0, Vector *v1, Vector *result) {
     return (vec3_normalize(result) != 0.0f) ? result : NULL;
 }
 
-#ifdef MIPS_TO_C
-f32 func_800197EC(Vector *arg0, Vector *arg1, Vector *arg2) {
-    f32 temp_f0;
+// Subtracts arg0 from arg2, and runs the same check as vec3_compare_directions on the result and arg1
+s32 vec3_subtract_compare_directions(Vector *arg0, Vector *arg1, Vector *arg2) {
+    f32 dot;
 
-    temp_f0 = (arg1->x * (arg2->x - arg0->x)) + (arg1->y * (arg2->y - arg0->y)) + (arg1->z * (arg2->z - arg0->z));
-    if (temp_f0 != 0.0f) {
-        if (temp_f0 < 0.0f) {
-            return nanf;
-        }
-        return 1e-45.0f;
+    dot = (arg1->x * (arg2->x - arg0->x)) + (arg1->y * (arg2->y - arg0->y)) + (arg1->z * (arg2->z - arg0->z));
+    if (dot != 0.0f) {
+        return (dot < 0.0f ? -1 : 1);
     }
-    return temp_f0;
+    else
+    {
+        return 0;
+    }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800197EC.s")
-#endif
 
 // gets the magnitude of the difference of 2 vectors
 f32 vec3_diff_mag(Vector *v0, Vector *v1) {
@@ -377,65 +373,37 @@ f32 vec3_diff_mag(Vector *v0, Vector *v1) {
     return vec3_mag(&result);
 }
 
-#ifdef MIPS_TO_C
-f32 func_800198C0(Vector *arg0, Vector *arg1, Vector *arg2, Vector *arg3) {
-    f32 sp68;
-    f32 sp64;
-    f32 sp5C;
-    f32 sp58;
-    f32 sp54;
-    f32 sp50;
-    f32 sp4C;
-    f32 sp44;
-    f32 sp30;
-    f32 sp28;
-    f32 sp24;
-    f32 sp1C;
-    f32 sp18;
-    f32 temp_f0;
-    f32 temp_f0_2;
-    f32 temp_f12;
-    f32 temp_f14;
-    f32 temp_f16;
-    f32 temp_f18;
-    f32 temp_f2;
-    f32 temp_f2_2;
-    f32 temp_f6;
-    f32 temp_f8;
-    f32 temp_f8_2;
-    f32 phi_f14;
+// Takes the cross product of (arg1 - arg0) and (arg2 - arg0), then
+// does the difference of cross dot arg3 and cross dot arg0, then
+// takes the absolute value of that difference and divides by the magnitude of the cross product
 
-    temp_f12 = arg0->x;
-    sp64 = arg1->x - temp_f12;
-    temp_f14 = arg0->y;
-    sp68 = arg1->y - temp_f14;
-    temp_f16 = arg0->z;
-    temp_f0_2 = arg1->z - temp_f16;
-    sp58 = arg2->x - temp_f12;
-    temp_f6 = arg2->y - temp_f14;
-    sp5C = temp_f6;
-    sp18 = sp68;
-    temp_f2 = arg2->z - temp_f16;
-    sp1C = temp_f6;
-    temp_f18 = (sp68 * temp_f2) - (temp_f0_2 * temp_f6);
-    sp54 = temp_f18;
-    temp_f8 = (temp_f0_2 * sp58) - (sp64 * temp_f2);
-    sp30 = temp_f8;
-    sp50 = temp_f8;
-    temp_f0 = (sp64 * temp_f6) - (sp18 * sp58);
-    sp4C = temp_f0;
-    temp_f2_2 = -((temp_f12 * sp54) + (temp_f8 * temp_f14) + (temp_f0 * temp_f16));
-    temp_f8_2 = (arg3->x * sp54) + (temp_f8 * arg3->y);
-    sp28 = temp_f8_2;
-    sp24 = arg3->z;
-    if ((temp_f8_2 + (temp_f0 * sp24) + temp_f2_2) < 0.0f) {
-        phi_f14 = -(temp_f8_2 + (sp4C * sp24) + temp_f2_2);
-    } else {
-        phi_f14 = sp28 + (sp4C * sp24) + temp_f2_2;
-    }
-    sp44 = phi_f14;
-    return phi_f14 / sqrtf((temp_f18 * temp_f18) + (sp30 * sp30) + (temp_f0 * temp_f0));
+// abs((((arg1 - arg0) cross (arg2 - arg0)) dot arg3) - (((arg1 - arg0) cross (arg2 - arg0)) dot arg0)) / magnitude((arg1 - arg0) cross (arg2 - arg0))
+f32 func_800198C0(Vector *arg0, Vector *arg1, Vector *arg2, Vector *arg3) {
+    f32 dz1;
+    f32 dy1;
+    f32 dx1;
+    f32 dz2;
+    f32 dy2;
+    f32 dx2;
+    f32 crossx;
+    f32 crossy;
+    f32 crossz;
+    f32 crossdotarg0_neg;
+    f32 numerator;
+
+    dx1 = (arg1->x - arg0->x);
+    dy1 = (arg1->y - arg0->y);
+    dz1 = (arg1->z - arg0->z);
+
+    dx2 = (arg2->x - arg0->x);
+    dy2 = (arg2->y - arg0->y);
+    dz2 = (arg2->z - arg0->z);
+
+    crossx = (dy1 * dz2) - (dz1 * dy2);
+    crossy = (dz1 * dx2) - (dx1 * dz2);
+    crossz = (dx1 * dy2) - (dy1 * dx2);
+
+    crossdotarg0_neg = -((arg0->x * crossx) + (crossy * arg0->y) + (crossz * arg0->z));
+    numerator = ABSF(((arg3->x * crossx) + (crossy * arg3->y) + (crossz * arg3->z)) + crossdotarg0_neg);
+    return numerator / sqrtf((crossx * crossx) + (crossy * crossy) + (crossz * crossz));
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800198C0.s")
-#endif
