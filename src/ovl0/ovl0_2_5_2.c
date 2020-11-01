@@ -576,7 +576,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
 
 extern u8 D_80040368[];
 
-// #ifdef MIPS_TO_C
+#ifdef MIPS_TO_C
 struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u32 pri, s32 arg3, struct ObjStack *arg4, u32 arg5) {
     struct ObjProcess *oProcess;
     struct ObjThread *oThread;
@@ -620,9 +620,9 @@ struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
     func_800080C0(oProcess);
     return oProcess;
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
-// #endif
+#else
+GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
+#endif
 
 #ifdef MIPS_TO_C
 void func_80008DA8(struct ObjThreadStack *arg0) {
