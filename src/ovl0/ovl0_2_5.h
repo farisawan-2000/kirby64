@@ -2,6 +2,7 @@
 #define __OVL0_2_5_H__
 
 #include <ultra64.h>
+#include <types.h>
 
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
@@ -161,7 +162,7 @@ struct Camera {
     u32 unk84;
 };
 
-// Potentially a DObj
+// Definitely a DObj
 struct Unk80005A98 {
     u32 unk0;
     u32 unk4;
@@ -239,6 +240,17 @@ struct InterruptMessageType5 {
     s32 unk24;
     s32 unk28;
     s32 unk2C;
+};
+
+// One of the message types sent on the interrupt message queue
+struct InterruptMessageTypeB {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
 };
 
 extern OSMesgQueue gInterruptMesgQueue;
