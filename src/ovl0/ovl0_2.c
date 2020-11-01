@@ -69,121 +69,100 @@ loop_8:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003DA8.s")
 #endif
 
-extern OSContStatus *D_80048E70;
+extern OSContStatus D_80048E70[4];
 extern OSMesgQueue *D_80048DA0;
-#ifdef MIPS_TO_C
-u8 func_80003ECC(void) {
-    s32 temp_s2;
-    void *temp_s1;
-    void *phi_s0;
-    void *phi_s1;
+
+struct Unk_D_80048EA0 {
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
+    u16 unk8;
+    u16 unkA;
+    u16 unkC;
+    u8 unkE;
+    u8 unkF;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    u8 unk1C;
+    u8 unk1D;
+    u8 unk1E;
+    u8 unk1F;
+};
+
+// Most likely a struct array
+extern u8 D_800490F0[][0x68];
+
+extern struct Unk_D_80048EA0 D_80048EA0[];
+
+void func_80003ECC(void) {
     s32 phi_s2;
 
     osContStartQuery(&D_80048DA0);
     osRecvMesg(&D_80048DA0, NULL, 1);
-    osContGetQuery(&D_80048E70);
-    phi_s0 = &D_80048E70;
-    phi_s1 = &D_80048EA0;
-    phi_s2 = 0;
-loop_1:
-    if ((phi_s0->unk3 == 0) && ((phi_s0->unk2 & 1) != 0)) {
-        if (((phi_s1->unk1D & 1) == 0) || (phi_s1->unk1C != 0)) {
-            func_8002F2B4(&D_80048DA0, &D_800490F0 + (phi_s2 * 0x68), phi_s2);
+    osContGetQuery(D_80048E70);
+    for (phi_s2 = 0; phi_s2 != 4; phi_s2++)
+    {
+        if ((D_80048E70[phi_s2].errno == 0) && ((D_80048E70[phi_s2].status & 1) != 0)) {
+            if (((D_80048EA0[phi_s2].unk1D & 1) == 0) || (D_80048EA0[phi_s2].unk1C != 0)) {
+                func_8002F2B4(&D_80048DA0, &D_800490F0[phi_s2][0], phi_s2);
+            }
         }
+        D_80048EA0[phi_s2].unk1C = D_80048E70[phi_s2].errno;
+        D_80048EA0[phi_s2].unk1D = D_80048E70[phi_s2].status;
     }
-    temp_s2 = phi_s2 + 1;
-    temp_s1 = phi_s1 + 0x20;
-    temp_s1->unk-4 = phi_s0->unk3;
-    temp_s1->unk-3 = phi_s0->unk2;
-    phi_s0 = phi_s0 + 4;
-    phi_s1 = temp_s1;
-    phi_s2 = temp_s2;
-    if (temp_s2 != 4) {
-        goto loop_1;
-    }
-    return phi_s0->unk3;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003ECC.s")
-#endif
 
-#ifdef MIPS_TO_C
-u16 func_80003FDC(void) {
-    s32 temp_s2;
-    s32 temp_t7;
-    s32 temp_v0;
-    u16 temp_a0;
-    u16 temp_a1;
-    u16 temp_t3;
-    u16 temp_v0_2;
-    u16 temp_v0_3;
-    u16 temp_v0_4;
-    void *phi_s1;
-    s32 phi_s2;
-    void *phi_s0;
-    u16 phi_v0;
-    u16 phi_return;
+struct Unk_D80048E80 {
+    u16 unk0;
+    s8 unk2;
+    s8 unk3;
+    u8 unk4;
+    u8 unk5;
+};
+
+extern struct Unk_D80048E80 D_80048E80[];
+
+extern s32 D_80048F48;
+
+void func_80003FDC(void) {
+    s32 i;
 
     func_8002FD30(&D_80048DA0);
     osRecvMesg(&D_80048DA0, NULL, 1);
-    func_8002FDB4(&D_80048E80);
-    phi_s1 = &D_80048E80;
-    phi_s2 = 0;
-    phi_s0 = &D_80048EA0;
-loop_1:
-    if ((phi_s1->unk4 == 0) && (((&D_80048E70 + (phi_s2 * 4))->unk2 & 1) != 0) && (phi_s0->unk1C != 0)) {
-        func_8002F2B4(&D_80048DA0, &D_800490F0 + (phi_s2 * 0x68), phi_s2);
-    }
-    phi_s0->unk1C = phi_s1->unk4;
-    if ((phi_s1->unk4 & 0xFF) == 0) {
-        temp_a1 = phi_s1->unk0;
-        temp_a0 = phi_s0->unk0;
-        temp_v0 = temp_a1 ^ temp_a0;
-        temp_t3 = temp_a1 & temp_v0;
-        phi_s0->unk2 = temp_t3;
-        phi_s0->unkA = temp_a0 & temp_v0;
-        if (temp_v0 != 0) {
-            temp_v0_2 = temp_t3 & 0xFFFF;
-            phi_s0->unk6 = temp_v0_2;
-            phi_s0->unk18 = phi_s0->unk10;
-            phi_v0 = temp_v0_2;
-            phi_return = temp_v0_2;
-        } else {
-            temp_t7 = phi_s0->unk18 - 1;
-            phi_s0->unk18 = temp_t7;
-            if (temp_t7 > 0) {
-                phi_s0->unk6 = 0;
-                temp_v0_3 = phi_s0->unk2;
-                phi_v0 = temp_v0_3;
-                phi_return = temp_v0_3;
-            } else {
-                phi_s0->unk6 = temp_a1;
-                temp_v0_4 = phi_s0->unk2;
-                phi_s0->unk18 = phi_s0->unk14;
-                phi_v0 = temp_v0_4;
-                phi_return = temp_v0_4;
-            }
+    func_8002FDB4(D_80048E80);
+    for (i = 0; i != 4; i++)
+    {
+        if (!D_80048E80[i].unk4 && (D_80048E70[i].status & 1) && D_80048EA0[i].unk1C) {
+            func_8002F2B4(&D_80048DA0, &D_800490F0[i], i);
         }
-        phi_s0->unk0 = temp_a1;
-        phi_s0->unk4 = phi_s0->unk4 | phi_v0;
-        phi_s0->unkC = phi_s0->unkC | phi_s0->unkA;
-        phi_s0->unk8 = phi_s0->unk8 | phi_s0->unk6;
-        phi_s0->unkE = phi_s1->unk2;
-        phi_s0->unkF = phi_s1->unk3;
-    }
-    temp_s2 = phi_s2 + 1;
-    phi_s1 = phi_s1 + 6;
-    phi_s2 = temp_s2;
-    phi_s0 = phi_s0 + 0x20;
-    if (temp_s2 != 4) {
-        goto loop_1;
+        D_80048EA0[i].unk1C = D_80048E80[i].unk4;
+        if (D_80048EA0[i].unk1C == 0) {
+            D_80048EA0[i].unk2 = (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) & D_80048E80[i].unk0;
+            D_80048EA0[i].unkA = (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) & D_80048EA0[i].unk0;
+            if (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) {
+                D_80048EA0[i].unk6 = D_80048EA0[i].unk2;
+                D_80048EA0[i].unk18 = D_80048EA0[i].unk10;
+            } else {
+                D_80048EA0[i].unk18--;
+                if (D_80048EA0[i].unk18 > 0) {
+                    D_80048EA0[i].unk6 = 0;
+                } else {
+                    D_80048EA0[i].unk6 = D_80048E80[i].unk0;
+                    D_80048EA0[i].unk18 = D_80048EA0[i].unk14;
+                }
+            }
+            D_80048EA0[i].unk0 = D_80048E80[i].unk0;
+            D_80048EA0[i].unkE = D_80048E80[i].unk2;
+            D_80048EA0[i].unkF = D_80048E80[i].unk3;
+            D_80048EA0[i].unk4 |= D_80048EA0[i].unk2;
+            D_80048EA0[i].unkC |= D_80048EA0[i].unkA;
+            D_80048EA0[i].unk8 |= D_80048EA0[i].unk6;
+        }
     }
     D_80048F48 = 1;
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003FDC.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800041A0(void) {
@@ -529,9 +508,6 @@ struct Unk_Func8004810 {
     s32 unk38;
     s32 unk3C;
 };
-
-// Most likely a struct array
-extern u8 D_800490F0[][0x68];
 
 #ifdef NEEDS_RODATA
 void func_80004810(struct Unk_Func8004810 *arg0) {
