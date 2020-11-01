@@ -3325,7 +3325,7 @@ void *func_8001663C(void *arg0, void *arg1, s32 arg2) {
     temp_a0->unk0 = 0xDC080008;
     temp_v0 = arg1 + 8;
     temp_a0->unk4 = temp_v0;
-    temp_t1 = D_8004A508;
+    temp_t1 = gCurrScreenWidth;
     temp_v1_2 = phi_v1 + 8;
     temp_a1 = temp_v0->unk8 / 4;
     temp_a2 = temp_v0->unk0 / 4;
@@ -3341,7 +3341,7 @@ void *func_8001663C(void *arg0, void *arg1, s32 arg2) {
     if (temp_t4 < temp_lo_2) {
         phi_t4 = temp_lo_2;
     }
-    temp_v0_2 = D_8004A50C;
+    temp_v0_2 = gCurrScreenHeight;
     temp_lo_3 = temp_v0_2 / 0xF0;
     temp_lo_4 = temp_lo_3 * D_8003DF10;
     phi_t5 = temp_t5;
@@ -3372,7 +3372,7 @@ void *func_8001663C(void *arg0, void *arg1, s32 arg2) {
     temp_a0_2->unk4 = 0;
     temp_v0_4 = temp_v1_2;
     temp_a1_4->unk4 = 0xF000000;
-    temp_a1_4->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((D_8004A508 - 1) & 0xFFF);
+    temp_a1_4->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((gCurrScreenWidth - 1) & 0xFFF);
     temp_a2_2->unk0 = 0xE3000A01;
     temp_a2_2->unk4 = 0;
     if ((arg2 == 0) || (arg2 == 2)) {
@@ -3395,7 +3395,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_8001663C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80016940(s32 arg0, void *arg1, s32 arg2) {
+void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
     void *sp84;
     void *sp3C;
     s32 sp24;
@@ -3458,7 +3458,7 @@ void func_80016940(s32 arg0, void *arg1, s32 arg2) {
     temp_a0->unk0 = 0xDC080008;
     temp_v0 = arg1 + 8;
     temp_a0->unk4 = temp_v0;
-    temp_t5 = D_8004A508;
+    temp_t5 = gCurrScreenWidth;
     temp_v1_2 = phi_v1 + 8;
     temp_a1 = temp_v0->unk8 / 4;
     temp_a2 = temp_v0->unk0 / 4;
@@ -3475,7 +3475,7 @@ void func_80016940(s32 arg0, void *arg1, s32 arg2) {
     if (temp_t3 < temp_lo_2) {
         phi_t3 = temp_lo_2;
     }
-    temp_v0_2 = D_8004A50C;
+    temp_v0_2 = gCurrScreenHeight;
     temp_lo_3 = temp_v0_2 / 0xF0;
     temp_lo_4 = temp_lo_3 * D_8003DF10;
     phi_t4 = temp_t4;
@@ -3503,19 +3503,19 @@ void func_80016940(s32 arg0, void *arg1, s32 arg2) {
     if ((arg1->unk80 & 1) != 0) {
         temp_v1_2 = temp_v1_2 + 8;
         temp_a0_2 = temp_v1_2;
-        temp_v0_4->unk0 = 0xE7000000;
+        temp_v0_4->unk0 = 0xE7000000; // gDPPipeSync(...)
         temp_v0_4->unk4 = 0;
         temp_v1_2 = temp_v1_2 + 8;
-        temp_a0_2->unk4 = 0x300000;
+        temp_a0_2->unk4 = 0x300000;   // gDPSetCycleType(..., G_CYC_FILL)
         temp_a0_2->unk0 = 0xE3000A01;
-        temp_v1_2->unk0 = 0xE200001C;
+        temp_v1_2->unk0 = 0xE200001C; // gDPSetRenderMode(..., G_RM_NOOP, G_RM_NOOP2),
         temp_v1_2->unk4 = 0;
         temp_v1_2 = temp_v1_2 + 8;
         temp_a2_2 = temp_v1_2;
-        temp_a2_2->unk0 = ((D_8004A508 - 1) & 0xFFF) | 0xFF100000;
+        temp_a2_2->unk0 = ((gCurrScreenWidth - 1) & 0xFFF) | 0xFF100000; // gsDPSetColorImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, gCurrScreenWidth, gZBuffer)
         temp_v1_2 = temp_v1_2 + 8;
-        temp_a2_2->unk4 = gPhysicalZBuffer;
-        temp_v1_2->unk4 = 0xFFFCFFFC;
+        temp_a2_2->unk4 = gZBuffer;
+        temp_v1_2->unk4 = 0xFFFCFFFC; // gDPSetFillColor(..., GPACK_RGBA5551(248, 248, 248, 0) << 16 | GPACK_RGBA5551(248, 248, 248, 0))
         temp_v1_2->unk0 = 0xF7000000;
         temp_v1_2 = temp_v1_2 + 8;
         temp_v1_2->unk0 = ((temp_t1_2 & 0x3FF) << 0xE) | 0xF6000000 | ((temp_t2_2 & 0x3FF) * 4);
@@ -3527,7 +3527,7 @@ void func_80016940(s32 arg0, void *arg1, s32 arg2) {
     temp_v0_5->unk4 = 0;
     temp_v1_3 = phi_v1_2 + 8;
     temp_v1_3->unk4 = 0xF000000;
-    temp_v1_3->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((D_8004A508 - 1) & 0xFFF);
+    temp_v1_3->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((gCurrScreenWidth - 1) & 0xFFF);
     temp_v1_3 = temp_v1_3 + 8;
     phi_v1_3 = temp_v1_3;
     if ((arg1->unk80 & 2) != 0) {
@@ -3903,6 +3903,7 @@ extern struct UnkStruct8004A7F8 D_8004A7F8[];
 
 void func_80017DB0(s32);
 void func_80017E84(struct unk80017FEC*, u32);
+void func_80017C7C(struct unk80017FEC*, s32, u32);
 
 void func_80017E84(struct unk80017FEC *arg0, u32 arg1) {
     s32 temp_a1;
@@ -3951,10 +3952,10 @@ void func_80017F78(struct unk80017B40 *arg0) {
     }
 }
 
-void func_80016940(s32, void *, s32);
-void func_800171E0(s32, void *);
+void func_80016940(Gfx**, void *, s32);
+void func_800171E0(Gfx**, void *);
 
-void func_80017FEC(struct unk80017FEC *arg0, s32 arg1, s32 arg2) {
+void func_80017FEC(struct unk80017FEC *arg0, Gfx** arg1, s32 arg2) {
     struct unk80017B40 *temp_s0;
 
     temp_s0 = arg0->unk3C;
@@ -4232,7 +4233,7 @@ extern f32 D_80040C44;
 f32 atan2f(f32 y, f32 x) {
     f32 yDivX;
     s32 phi_v0;
-    s32 phi_v0_2;
+    UNUSED s32 phi_v0_2;
 
     if (0.0f < x) {
         return atanf(y / x);

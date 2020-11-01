@@ -2712,8 +2712,8 @@ glabel func_800ADD14
 /* 055FDC 800ADD8C 85050008 */  lh    $a1, 8($t0)
 /* 055FE0 800ADD90 85060012 */  lh    $a2, 0x12($t0)
 /* 055FE4 800ADD94 8507000A */  lh    $a3, 0xa($t0)
-/* 055FE8 800ADD98 3C098005 */  lui   $t1, %hi(D_8004A508) # $t1, 0x8005
-/* 055FEC 800ADD9C 8D29A508 */  lw    $t1, %lo(D_8004A508)($t1)
+/* 055FE8 800ADD98 3C098005 */  lui   $t1, %hi(gCurrScreenWidth) # $t1, 0x8005
+/* 055FEC 800ADD9C 8D29A508 */  lw    $t1, %lo(gCurrScreenWidth)($t1)
 /* 055FF0 800ADDA0 00401825 */  move  $v1, $v0
 /* 055FF4 800ADDA4 04810002 */  bgez  $a0, .L800ADDB0_ovl1
 /* 055FF8 800ADDA8 00800821 */   addu  $at, $a0, $zero
@@ -2746,7 +2746,7 @@ glabel func_800ADD14
 /* 056054 800ADE04 44923000 */  mtc1  $s2, $f6
 /* 056058 800ADE08 00A49821 */  addu  $s3, $a1, $a0
 /* 05605C 800ADE0C 00E6A021 */  addu  $s4, $a3, $a2
-/* 056060 800ADE10 3C028005 */  lui   $v0, %hi(D_8004A50C) # $v0, 0x8005
+/* 056060 800ADE10 3C028005 */  lui   $v0, %hi(gCurrScreenHeight) # $v0, 0x8005
 /* 056064 800ADE14 46802420 */  cvt.s.w $f16, $f4
 /* 056068 800ADE18 46086002 */  mul.s $f0, $f12, $f8
 /* 05606C 800ADE1C 4600803C */  c.lt.s $f16, $f0
@@ -2760,7 +2760,7 @@ glabel func_800ADD14
 /* 05608C 800ADE3C 00000000 */  nop   
 /* 056090 800ADE40 46802420 */  cvt.s.w $f16, $f4
 .L800ADE44_ovl1:
-/* 056094 800ADE44 8C42A50C */  lw    $v0, %lo(D_8004A50C)($v0)
+/* 056094 800ADE44 8C42A50C */  lw    $v0, %lo(gCurrScreenHeight)($v0)
 /* 056098 800ADE48 240100F0 */  li    $at, 240
 /* 05609C 800ADE4C 468034A0 */  cvt.s.w $f18, $f6
 /* 0560A0 800ADE50 0041001A */  div   $zero, $v0, $at
@@ -2857,11 +2857,11 @@ glabel func_800ADD14
 /* 056200 800ADFB0 AC4D0000 */  sw    $t5, ($v0)
 /* 056204 800ADFB4 8E020000 */  lw    $v0, ($s0)
 /* 056208 800ADFB8 3C0E8005 */  lui   $t6, %hi(D_8004A504) # $t6, 0x8005
-/* 05620C 800ADFBC 3C0B8005 */  lui   $t3, %hi(D_8004A508) # $t3, 0x8005
+/* 05620C 800ADFBC 3C0B8005 */  lui   $t3, %hi(gCurrScreenWidth) # $t3, 0x8005
 /* 056210 800ADFC0 24580008 */  addiu $t8, $v0, 8
 /* 056214 800ADFC4 AE180000 */  sw    $t8, ($s0)
 /* 056218 800ADFC8 8DCEA504 */  lw    $t6, %lo(D_8004A504)($t6)
-/* 05621C 800ADFCC 8D6BA508 */  lw    $t3, %lo(D_8004A508)($t3)
+/* 05621C 800ADFCC 8D6BA508 */  lw    $t3, %lo(gCurrScreenWidth)($t3)
 /* 056220 800ADFD0 3C01FF00 */  lui   $at, 0xff00
 /* 056224 800ADFD4 31CF0003 */  andi  $t7, $t6, 3
 /* 056228 800ADFD8 000FCCC0 */  sll   $t9, $t7, 0x13

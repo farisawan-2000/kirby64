@@ -17,26 +17,26 @@ glabel func_80020F40
 /* 021B7C 80020F7C 2508A3D0 */  addiu $t0, %lo(gDisplayListHeads) # addiu $t0, $t0, -0x5c30
 /* 021B80 80020F80 17000009 */  bnez  $t8, .L80020FA8_ovl0
 /* 021B84 80020F84 8D020000 */   lw    $v0, ($t0)
-/* 021B88 80020F88 3C0C8005 */  lui   $t4, %hi(D_8004A50C) # $t4, 0x8005
-/* 021B8C 80020F8C 3C098005 */  lui   $t1, %hi(D_8004A508) # $t1, 0x8005
-/* 021B90 80020F90 2529A508 */  addiu $t1, %lo(D_8004A508) # addiu $t1, $t1, -0x5af8
-/* 021B94 80020F94 258CA50C */  addiu $t4, %lo(D_8004A50C) # addiu $t4, $t4, -0x5af4
+/* 021B88 80020F88 3C0C8005 */  lui   $t4, %hi(gCurrScreenHeight) # $t4, 0x8005
+/* 021B8C 80020F8C 3C098005 */  lui   $t1, %hi(gCurrScreenWidth) # $t1, 0x8005
+/* 021B90 80020F90 2529A508 */  addiu $t1, %lo(gCurrScreenWidth) # addiu $t1, $t1, -0x5af8
+/* 021B94 80020F94 258CA50C */  addiu $t4, %lo(gCurrScreenHeight) # addiu $t4, $t4, -0x5af4
 /* 021B98 80020F98 240D00F0 */  li    $t5, 240
 /* 021B9C 80020F9C 3C0BF600 */  lui   $t3, 0xf600
 /* 021BA0 80020FA0 10000063 */  b     .L80021130_ovl0
 /* 021BA4 80020FA4 240A0140 */   li    $t2, 320
 .L80020FA8_ovl0:
-/* 021BA8 80020FA8 3C098005 */  lui   $t1, %hi(D_8004A508) # $t1, 0x8005
+/* 021BA8 80020FA8 3C098005 */  lui   $t1, %hi(gCurrScreenWidth) # $t1, 0x8005
 /* 021BAC 80020FAC 3C198004 */  lui   $t9, %hi(D_8003F3C8) # $t9, 0x8004
 /* 021BB0 80020FB0 8F39F3C8 */  lw    $t9, %lo(D_8003F3C8)($t9)
-/* 021BB4 80020FB4 2529A508 */  addiu $t1, %lo(D_8004A508) # addiu $t1, $t1, -0x5af8
+/* 021BB4 80020FB4 2529A508 */  addiu $t1, %lo(gCurrScreenWidth) # addiu $t1, $t1, -0x5af8
 /* 021BB8 80020FB8 8D2F0000 */  lw    $t7, ($t1)
 /* 021BBC 80020FBC 03307021 */  addu  $t6, $t9, $s0
 /* 021BC0 80020FC0 240A0140 */  li    $t2, 320
 /* 021BC4 80020FC4 01CF0019 */  multu $t6, $t7
 /* 021BC8 80020FC8 3C0BF600 */  lui   $t3, 0xf600
-/* 021BCC 80020FCC 3C0C8005 */  lui   $t4, %hi(D_8004A50C) # $t4, 0x8005
-/* 021BD0 80020FD0 258CA50C */  addiu $t4, %lo(D_8004A50C) # addiu $t4, $t4, -0x5af4
+/* 021BCC 80020FCC 3C0C8005 */  lui   $t4, %hi(gCurrScreenHeight) # $t4, 0x8005
+/* 021BD0 80020FD0 258CA50C */  addiu $t4, %lo(gCurrScreenHeight) # addiu $t4, $t4, -0x5af4
 /* 021BD4 80020FD4 240D00F0 */  li    $t5, 240
 /* 021BD8 80020FD8 00403825 */  move  $a3, $v0
 /* 021BDC 80020FDC 24420008 */  addiu $v0, $v0, 8

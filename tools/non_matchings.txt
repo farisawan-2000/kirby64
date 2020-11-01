@@ -9,7 +9,7 @@ global_asm_process = subprocess.Popen("git grep GLOBAL_ASM src", shell=True,
 asm/non_matchings/ovl0_1/func_80002BD0.s
 asm/non_matchings/ovl0_1/func_80002FC0.s
 asm/non_matchings/ovl0_1/func_8000385C.s
-asm/non_matchings/ovl0/ovl0_2_5/func_80005378.s
+asm/non_matchings/ovl0/ovl0_2_5/setup_segment_15.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80005430.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000548C.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80005530.s
@@ -62,9 +62,9 @@ asm/non_matchings/ovl0/ovl0_2_5/func_80007ADC.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007B38.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007BA4.s
 asm/non_matchings/ovl0/ovl0_2_5/func_80007BF4.s
-asm/non_matchings/ovl0/ovl0_2_5/func_80007C9C.s
-asm/non_matchings/ovl0/ovl0_2_5/func_80007CE8.s
-asm/non_matchings/ovl0/ovl0_2_5/func_80007CF4.s
+asm/non_matchings/ovl0/ovl0_2_5/setup_viewport.s
+asm/non_matchings/ovl0/ovl0_2_5/set_scissor_callback.s
+asm/non_matchings/ovl0/ovl0_2_5/reset_rdp_settings.s
 asm/non_matchings/ovl0/ovl0_2_5/func_800080C0.s
 asm/non_matchings/ovl0/ovl0_2_5/func_8000828C.s
 asm/non_matchings/ovl0/ovl0_2_5/func_800082D4.s

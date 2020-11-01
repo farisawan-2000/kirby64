@@ -1,12 +1,12 @@
 glabel func_80021668
-/* 022268 80021668 3C088005 */  lui   $t0, %hi(D_8004A50C) # $t0, 0x8005
-/* 02226C 8002166C 2508A50C */  addiu $t0, %lo(D_8004A50C) # addiu $t0, $t0, -0x5af4
+/* 022268 80021668 3C088005 */  lui   $t0, %hi(gCurrScreenHeight) # $t0, 0x8005
+/* 02226C 8002166C 2508A50C */  addiu $t0, %lo(gCurrScreenHeight) # addiu $t0, $t0, -0x5af4
 /* 022270 80021670 8D0F0000 */  lw    $t7, ($t0)
 /* 022274 80021674 8FAE0010 */  lw    $t6, 0x10($sp)
 /* 022278 80021678 240900F0 */  li    $t1, 240
-/* 02227C 8002167C 3C028005 */  lui   $v0, %hi(D_8004A508) # $v0, 0x8005
+/* 02227C 8002167C 3C028005 */  lui   $v0, %hi(gCurrScreenWidth) # $v0, 0x8005
 /* 022280 80021680 01CF0019 */  multu $t6, $t7
-/* 022284 80021684 2442A508 */  addiu $v0, %lo(D_8004A508) # addiu $v0, $v0, -0x5af8
+/* 022284 80021684 2442A508 */  addiu $v0, %lo(gCurrScreenWidth) # addiu $v0, $v0, -0x5af8
 /* 022288 80021688 8C4C0000 */  lw    $t4, ($v0)
 /* 02228C 8002168C 24030140 */  li    $v1, 320
 /* 022290 80021690 3C01F600 */  lui   $at, 0xf600

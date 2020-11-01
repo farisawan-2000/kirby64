@@ -29,9 +29,9 @@ glabel func_800076D0
 /* 008338 80007738 A4600000 */  sh    $zero, ($v1)
 /* 00833C 8000773C 3C018005 */  lui   $at, %hi(D_8004A444) # $at, 0x8005
 /* 008340 80007740 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
-/* 008344 80007744 3C028005 */  lui   $v0, %hi(D_8004A390) # $v0, 0x8005
+/* 008344 80007744 3C028005 */  lui   $v0, %hi(gDLBuffers) # $v0, 0x8005
 /* 008348 80007748 A420A444 */  sh    $zero, %lo(D_8004A444)($at)
-/* 00834C 8000774C 2442A390 */  addiu $v0, %lo(D_8004A390) # addiu $v0, $v0, -0x5c70
+/* 00834C 8000774C 2442A390 */  addiu $v0, %lo(gDLBuffers) # addiu $v0, $v0, -0x5c70
 /* 008350 80007750 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30
 .L80007754_ovl0:
 /* 008354 80007754 24420020 */  addiu $v0, $v0, 0x20

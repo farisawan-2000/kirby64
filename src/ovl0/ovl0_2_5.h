@@ -1,7 +1,7 @@
 #ifndef __OVL0_2_5_H__
 #define __OVL0_2_5_H__
 
-#include <include/PR/os_thread.h>
+#include <ultra64.h>
 
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
@@ -134,15 +134,15 @@ struct Unk80005A98 {
     void (*unk14)(void);
     u32 unk18;
     u32 unk1C;
-    u32 *unk20;
+    OSMesgQueue *unk20;
     u32 unk24;
     u32 unk28;
-    void (*unk2C)(s32);
+    void (*unk2C)(struct Unk80005A98*);
     u32 unk30;
     u32 unk34;
-    u32 unk38;
+    void* unk38;
     u32 unk3C;
-    u32 unk40;
+    void* unk40;
     u32 unk44;
     u32 unk48;
     u32 unk4C;
@@ -160,6 +160,58 @@ struct Unk80005A98 {
     u32 unk7C;
     u32 unk80;
 };
+
+// One of the message types sent on the interrupt message queue
+struct InterruptMessageType4 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    s32 unk2C;
+    s16 unk30;
+    s16 unk32;
+    s16 unk34;
+    s16 unk36;
+};
+
+// Buffers allocated to hold the master displaylists
+struct DLBuffer
+{
+    Gfx* start;
+    u32 length; // In bytes
+};
+
+// One of the message types sent on the interrupt message queue
+struct InterruptMessageType5 {
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+    s32 unk14;
+    s32 unk18;
+    s32 unk1C;
+    s32 unk20;
+    s32 unk24;
+    s32 unk28;
+    s32 unk2C;
+};
+
+extern OSMesgQueue gInterruptMesgQueue;
+
+#include "D_8004A7C4.h"
+
+struct Camera *func_80009F7C(struct UnkStruct8004A7C4*);
+
+void func_80009B5C(struct UnkStruct8004A7C4_3C *);
+struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);
 
 
 #endif

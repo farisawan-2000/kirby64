@@ -3913,7 +3913,7 @@ glabel D_8004A388
 glabel D_8004A38C
 .word 0x00000000
 
-glabel D_8004A390
+glabel gDLBuffers
 .word 0x00000000
 
 glabel D_8004A394
@@ -4186,16 +4186,16 @@ glabel D_8004A4F8
 glabel D_8004A4FC
 .word 0x00000000
 
-glabel gPhysicalZBuffer
+glabel gZBuffer
 .word 0x00000000
 
 glabel D_8004A504
 .word 0x00000000
 
-glabel D_8004A508
+glabel gCurrScreenWidth
 .word 0x00000000
 
-glabel D_8004A50C
+glabel gCurrScreenHeight
 .word 0x00000000
 
 glabel D_8004A510
@@ -4222,7 +4222,7 @@ glabel D_8004A528
 glabel D_8004A52C
 .word 0x00000000
 
-glabel D_8004A530
+glabel gViewport
 .word 0x00000000
 
 glabel D_8004A534

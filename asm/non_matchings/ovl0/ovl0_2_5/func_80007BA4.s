@@ -8,9 +8,9 @@ glabel func_80007BA4
 /* 0087BC 80007BBC 0C001E51 */  jal   func_80007944
 /* 0087C0 80007BC0 AFA70018 */   sw    $a3, 0x18($sp)
 /* 0087C4 80007BC4 8FA70018 */  lw    $a3, 0x18($sp)
-/* 0087C8 80007BC8 3C018005 */  lui   $at, %hi(gPhysicalZBuffer) # $at, 0x8005
+/* 0087C8 80007BC8 3C018005 */  lui   $at, %hi(gZBuffer) # $at, 0x8005
 /* 0087CC 80007BCC 8CEE000C */  lw    $t6, 0xc($a3)
-/* 0087D0 80007BD0 AC2EA500 */  sw    $t6, %lo(gPhysicalZBuffer)($at)
+/* 0087D0 80007BD0 AC2EA500 */  sw    $t6, %lo(gZBuffer)($at)
 /* 0087D4 80007BD4 8CE60018 */  lw    $a2, 0x18($a3)
 /* 0087D8 80007BD8 8CE50014 */  lw    $a1, 0x14($a3)
 /* 0087DC 80007BDC 0C001ECE */  jal   func_80007B38

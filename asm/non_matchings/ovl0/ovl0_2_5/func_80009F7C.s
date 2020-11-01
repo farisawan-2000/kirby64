@@ -14,7 +14,7 @@ glabel func_80009F7C
 /* 00ABA8 80009FA8 24440008 */  addiu $a0, $v0, 8
 /* 00ABAC 80009FAC ACC2003C */  sw    $v0, 0x3c($a2)
 /* 00ABB0 80009FB0 AC460004 */  sw    $a2, 4($v0)
-/* 00ABB4 80009FB4 0C001F27 */  jal   func_80007C9C
+/* 00ABB4 80009FB4 0C001F27 */  jal   setup_viewport
 /* 00ABB8 80009FB8 AFA20018 */   sw    $v0, 0x18($sp)
 /* 00ABBC 80009FBC 8FA50018 */  lw    $a1, 0x18($sp)
 /* 00ABC0 80009FC0 00001025 */  move  $v0, $zero
