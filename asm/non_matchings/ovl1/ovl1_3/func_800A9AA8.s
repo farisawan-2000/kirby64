@@ -32,7 +32,7 @@ glabel func_800A9AA8
 /* 051D70 800A9B20 3421FFFC */  ori   $at, (0x00FFFFFC & 0xFFFF) # ori $at, $at, 0xfffc
 /* 051D74 800A9B24 00402825 */  move  $a1, $v0
 /* 051D78 800A9B28 00E13024 */  and   $a2, $a3, $at
-/* 051D7C 800A9B2C 0C000B92 */  jal   dma_copy_inval_dcache
+/* 051D7C 800A9B2C 0C000B92 */  jal   dma_read
 /* 051D80 800A9B30 014B2021 */   addu  $a0, $t2, $t3
 /* 051D84 800A9B34 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 051D88 800A9B38 8FA20020 */  lw    $v0, 0x20($sp)

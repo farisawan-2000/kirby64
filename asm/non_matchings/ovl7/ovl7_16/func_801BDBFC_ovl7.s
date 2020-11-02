@@ -124,9 +124,9 @@ glabel func_801BDBFC_ovl7
 /* 163E40 801BDDD0 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 163E44 801BDDD4 8CC6A7C4 */  lw    $a2, %lo(D_8004A7C4)($a2)
 /* 163E48 801BDDD8 3C01800F */ lui $at, %hi(D_800E8920)
-/* 163E4C 801BDDDC 3C09801C */  lui   $t1, %hi(D_801BDEB0) # $t1, 0x801c
+/* 163E4C 801BDDDC 3C09801C */  lui   $t1, %hi(func_801BDEB0_ovl7) # $t1, 0x801c
 /* 163E50 801BDDE0 8CD90000 */  lw    $t9, ($a2)
-/* 163E54 801BDDE4 2529DEB0 */  addiu $t1, %lo(D_801BDEB0) # addiu $t1, $t1, -0x2150
+/* 163E54 801BDDE4 2529DEB0 */  addiu $t1, %lo(func_801BDEB0_ovl7) # addiu $t1, $t1, -0x2150
 /* 163E58 801BDDE8 3C0C800E */ lui $t4, %hi(D_800E5F90)
 /* 163E5C 801BDDEC 00194080 */  sll   $t0, $t9, 2
 /* 163E60 801BDDF0 00280821 */  addu  $at, $at, $t0

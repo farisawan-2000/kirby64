@@ -49,8 +49,8 @@ typedef struct  {
 struct Overlay {
     void *startAddr;
     void *endAddr;
+    void *RAMStart;
     void *textStart;
-    void *textStart2;
     void *textEnd;
     void *dataStart;
     void *dataEnd;

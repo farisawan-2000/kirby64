@@ -2236,7 +2236,7 @@ void load_overlay(u32 arg0) {
 u8 func_800A6B64(void) {
     s32 sp18[4];
 
-    dma_copy_inval_dcache(0x00000F10, &sp18, 0x10);
+    dma_read(0x00000F10, &sp18, 0x10);
     if (sp18[0] != 0x04080040) {
         return 0;
     } else 
