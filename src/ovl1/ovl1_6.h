@@ -21,7 +21,7 @@ extern s32 *D_800E0650[];
 extern s32 D_800E1ED0[];
 extern s32 D_800DEDD0[];
 extern s32 *D_800DEF90[];
-extern s32 *D_800DF150[];
+extern void (*D_800DF150[])(s32);
 extern s32 D_800DF850[];
 extern s32 D_800DF690[];
 extern s32 D_800DF4D0[];

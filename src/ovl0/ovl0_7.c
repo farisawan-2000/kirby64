@@ -236,7 +236,7 @@ void func_8001E724(s32 arg0, s32 arg1, s32 arg2) {
     sp20 = arg1;
     sp24 = arg0;
     sp28 = arg2;
-    osEPiStartDma(D_80048CF0, &sp18, 0);
+    osEPiStartDma(gRomHandle, &sp18, 0);
     osRecvMesg(&D_80095E30, 0, 1);
 }
 #else
@@ -292,7 +292,7 @@ s32 func_8001E7A4(u32 arg0, s32 arg1, void *arg2) {
         temp_a1->unk10 = temp_v0_2->unk10;
         D_8003F334 = temp_t1_2 + 1;
         sp2C = temp_t3;
-        osEPiStartDma(D_80048CF0, temp_a1, 0, arg2);
+        osEPiStartDma(gRomHandle, temp_a1, 0, arg2);
     }
     return osVirtualToPhysical(sp2C) + sp24;
 }

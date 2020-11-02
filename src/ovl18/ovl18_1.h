@@ -5,7 +5,7 @@
 
 extern s32 *D_800DEF90[];
 
-extern void (*D_800DF150[])(void);
+extern void (*D_800DF150[])(s32);
 
 extern s32 D_800E8920[];
 

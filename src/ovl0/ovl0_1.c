@@ -3,27 +3,30 @@
 #include "PR/os_pi.h"
 #include "main.h"
 
-extern OSMesgQueue *D_80048D70;
-extern OSMesg *D_80048D6C;
+s32 osEPiLinkHandle(OSPiHandle *); // Should be in libultra headers, but not because they're an older version
+
+extern OSMesgQueue D_80048D70;
+extern OSMesg D_80048D6C;
 
 void func_80002BA0(void) {
     osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
 }
 
 extern u32 D_80048D90;
-extern void *D_80048D8C, *D_80048D88;
+extern void *D_80048D8C;
+extern u32 D_80048D88;
 extern u32 *D_80048CDC;
-extern OSPiHandle *D_80048CF0;
+extern OSPiHandle *gRomHandle;
 
 // an actual DMA copy
-void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writeback) {
+void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 direction) {
     u32 pad;
     OSIoMesg sp48;
 
     D_80048D88 = physAddr;
-    D_80048D8C = vAddr;
+    D_80048D8C = (void*)vAddr;
     D_80048D90 = size;
-    if (writeback == 1) {
+    if (direction == OS_WRITE) {
         osWritebackDCache(vAddr, size);
     } else {
         osInvalDCache(vAddr, size);
@@ -31,13 +34,10 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writebac
     sp48.hdr.pri = 0;
     sp48.hdr.retQueue = &D_80048D70;
     sp48.size = 0x10000;
-    size = size;
-    vAddr = vAddr;
-    physAddr = physAddr;
     while (size >= 0x10001) {
-        sp48.dramAddr = vAddr;
+        sp48.dramAddr = (void*)vAddr;
         sp48.devAddr = physAddr;
-        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
+        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, direction) == -1)) {
             fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
@@ -47,10 +47,10 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writebac
         vAddr += 0x10000;
     }
     if (size != 0) {
-        sp48.dramAddr = vAddr;
+        sp48.dramAddr = (void*)vAddr;
         sp48.devAddr = physAddr;
         sp48.size = size;
-        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, writeback) == -1)) {
+        if ((D_80048CDC == 0) && (osEPiStartDma(handle, &sp48, direction) == -1)) {
             fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
@@ -58,29 +58,29 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 writebac
     }
 }
 
-void dma_overlay_load(Overlay *ovl) {
+void dma_overlay_load(struct Overlay *ovl) {
     if ((s32) ovl->textEnd - (s32) ovl->textStart != 0) {
-        osInvalICache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
-        osInvalDCache((s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
+        osInvalICache((void*)(s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
+        osInvalDCache((void*)(s32) ovl->textStart, (s32) ovl->textEnd - (s32) ovl->textStart);
     }
     if ((s32) ovl->dataEnd - (s32) ovl->dataStart != 0) {
-        osInvalDCache((s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
+        osInvalDCache((void*)(s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
     }
     if ((u32) ovl->endAddr - (u32) ovl->startAddr != 0) {
-        dma_copy(D_80048CF0, (u32) ovl->startAddr, (u32) ovl->RAMStart, (u32) ovl->endAddr - (u32) ovl->startAddr, 0);
+        dma_copy(gRomHandle, ovl->startAddr, ovl->RAMStart, (u32) ovl->endAddr - (u32) ovl->startAddr, 0);
     }
     
     if ((s32) ovl->bssEnd - (s32) ovl->bssStart != 0) {
-        bzero((s32) ovl->bssStart, (s32) ovl->bssEnd - (s32) ovl->bssStart);
+        bzero((void*)(s32) ovl->bssStart, (s32) ovl->bssEnd - (s32) ovl->bssStart);
     }
 }
 
-void dma_copy_inval_dcache(void *physAddr, void *vAddr, u32 size) {
-    dma_copy(D_80048CF0, physAddr, vAddr, size, 0);
+void dma_read(u32 physAddr, void *vAddr, u32 size) {
+    dma_copy(gRomHandle, physAddr, (u32)vAddr, size, OS_READ);
 }
 
-void dma_copy_writeback_dcache(void *vAddr, void *physAddr, u32 size) {
-    dma_copy(D_80048CF0, physAddr, vAddr, size, 1);
+void dma_write(void *vAddr, u32 physAddr, u32 size) {
+    dma_copy(gRomHandle, physAddr, (u32)vAddr, size, OS_WRITE);
 }
 extern OSPiHandle D_80048CF8;
 extern u32 *D_80048D0C; // another PI Handle?
@@ -476,7 +476,7 @@ void func_80003788(u32 arg0, u8* arg1, u32 arg2) {
 
 // copies some sort of blocks of data
 void func_800037A4(void) {
-    dma_copy_inval_dcache(D_80048D9C, D_80048D94, D_80048D98);
+    dma_read(D_80048D9C, D_80048D94, D_80048D98);
     D_80048D9C += D_80048D98;
 }
 

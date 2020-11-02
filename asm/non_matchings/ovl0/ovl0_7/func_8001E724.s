@@ -12,10 +12,10 @@ glabel func_8001E724
 /* 01F34C 8001E74C 8FB90038 */  lw    $t9, 0x38($sp)
 /* 01F350 8001E750 3C0E8009 */  lui   $t6, %hi(D_80095E30) # $t6, 0x8009
 /* 01F354 8001E754 25CE5E30 */  addiu $t6, %lo(D_80095E30) # addiu $t6, $t6, 0x5e30
-/* 01F358 8001E758 3C048005 */  lui   $a0, %hi(D_80048CF0) # $a0, 0x8005
+/* 01F358 8001E758 3C048005 */  lui   $a0, %hi(gRomHandle) # $a0, 0x8005
 /* 01F35C 8001E75C A3A0001A */  sb    $zero, 0x1a($sp)
 /* 01F360 8001E760 AFAE001C */  sw    $t6, 0x1c($sp)
-/* 01F364 8001E764 8C848CF0 */  lw    $a0, %lo(D_80048CF0)($a0)
+/* 01F364 8001E764 8C848CF0 */  lw    $a0, %lo(gRomHandle)($a0)
 /* 01F368 8001E768 27A50018 */  addiu $a1, $sp, 0x18
 /* 01F36C 8001E76C 00003025 */  move  $a2, $zero
 /* 01F370 8001E770 AFAF0020 */  sw    $t7, 0x20($sp)

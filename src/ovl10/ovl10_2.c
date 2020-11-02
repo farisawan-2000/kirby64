@@ -115,7 +115,7 @@ void func_801E3748_ovl10(void);
 extern s32 D_801CB4DC;
 extern f32 D_800E64D0[];
 extern f32 D_800E3210[];
-extern void (*D_800DF150[])(void);
+extern void (*D_800DF150[])(s32);
 extern s32 D_800E8920[];
 extern f32 sinf(f32);
 extern f32 cosf(f32);

@@ -28,7 +28,7 @@ glabel func_800A9250
 /* 051508 800A92B8 0040A025 */  move  $s4, $v0
 /* 05150C 800A92BC 02213024 */  and   $a2, $s1, $at
 /* 051510 800A92C0 8E040000 */  lw    $a0, ($s0)
-/* 051514 800A92C4 0C000B92 */  jal   dma_copy_inval_dcache
+/* 051514 800A92C4 0C000B92 */  jal   dma_read
 /* 051518 800A92C8 00402825 */   move  $a1, $v0
 /* 05151C 800A92CC 8E8B000C */  lw    $t3, 0xc($s4)
 /* 051520 800A92D0 3C1300FF */  lui   $s3, (0x00FFFFFF >> 16) # lui $s3, 0xff

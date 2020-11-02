@@ -543,7 +543,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18/func_8021ED3C_ovl18.s")
 u8 func_8021F304_ovl18(void) {
     s32 sp18[4];
 
-    dma_copy_inval_dcache(0x00000F10, &sp18, 0x10);
+    dma_read(0x00000F10, &sp18, 0x10);
     if (sp18[0] != 0x04080040) {
         return 0;
     } else if (sp18[1] != 0x02081040) {
