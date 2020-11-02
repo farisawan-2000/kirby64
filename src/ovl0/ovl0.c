@@ -242,13 +242,10 @@ void *func_80000D34(void *arg0) {
         temp_v1 = arg0->unk4;
         phi_v0 = temp_v0_2;
         phi_v0_2 = temp_v0_2;
-        if (temp_v0_2->unk4 < temp_v1) {
-loop_2:
+        while (temp_v0_2->unk4 < temp_v1) {
             temp_v0_3 = phi_v0->unk10;
             phi_v0_2 = temp_v0_3;
             if (temp_v0_3 != 0) {
-                phi_v0 = temp_v0_3;
-                phi_v0_2 = temp_v0_3;
                 if (temp_v0_3->unk4 < temp_v1) {
                     goto loop_2;
                 }
