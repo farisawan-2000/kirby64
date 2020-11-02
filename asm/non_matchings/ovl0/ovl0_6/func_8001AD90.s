@@ -22,7 +22,7 @@ glabel func_8001AD90
 /* 01B9E0 8001ADE0 E7A80018 */  swc1  $f8, 0x18($sp)
 /* 01B9E4 8001ADE4 E7AA001C */  swc1  $f10, 0x1c($sp)
 /* 01B9E8 8001ADE8 E7B00020 */  swc1  $f16, 0x20($sp)
-/* 01B9EC 8001ADEC 0C006A59 */  jal   func_8001A964
+/* 01B9EC 8001ADEC 0C006A59 */  jal   guLookAtReflectF_2
 /* 01B9F0 8001ADF0 E7B20024 */   swc1  $f18, 0x24($sp)
 /* 01B9F4 8001ADF4 27A40038 */  addiu $a0, $sp, 0x38
 /* 01B9F8 8001ADF8 0C00668C */  jal   func_80019A30

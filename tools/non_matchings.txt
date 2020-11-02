@@ -232,16 +232,8 @@ asm/non_matchings/ovl0/ovl0_6/func_80019A30.s
 asm/non_matchings/ovl0/ovl0_6/func_80019C60.s
 asm/non_matchings/ovl0/ovl0_6/func_80019E14.s
 asm/non_matchings/ovl0/ovl0_6/func_80019E5C.s
-asm/non_matchings/ovl0/ovl0_6/func_80019EB0.s
-asm/non_matchings/ovl0/ovl0_6/func_8001A13C.s
-asm/non_matchings/ovl0/ovl0_6/func_8001A1B0.s
 asm/non_matchings/ovl0/ovl0_6/func_8001A488.s
-asm/non_matchings/ovl0/ovl0_6/func_8001A504.s
-asm/non_matchings/ovl0/ovl0_6/func_8001A8EC.s
-asm/non_matchings/ovl0/ovl0_6/func_8001A964.s
 asm/non_matchings/ovl0/ovl0_6/func_8001AD90.s
-asm/non_matchings/ovl0/ovl0_6/func_8001AE10.s
-asm/non_matchings/ovl0/ovl0_6/func_8001AFA4.s
 asm/non_matchings/ovl0/ovl0_6/func_8001B008.s
 asm/non_matchings/ovl0/ovl0_6/func_8001B234.s
 asm/non_matchings/ovl0/ovl0_6/func_0x80040000.s
