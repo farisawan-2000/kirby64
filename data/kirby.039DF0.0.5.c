@@ -6,28 +6,6 @@
 #include "src/ovl0/main.h"
 #include "src/ovl0/ovl0_8.h"
 
-// ovl0_afterException second file (libultra:controller.c)
-u32 __osContinitialized = 0;
-
-// ovl0_afterException second file alignment
-u32 D_8003FB84 = 0x00000000;
-u32 D_8003FB88 = 0x00000000;
-u32 D_8003FB8C = 0x00000000;
-
-// ovl0_afterException third file (libultra:initialize.c)
-#define	OS_CLOCK_RATE		62500000LL
-#define VI_NTSC_CLOCK		48681812        /* Hz = 48.681812 MHz */
-
-OSTime osClockRate = OS_CLOCK_RATE;
-s32 osViClock = VI_NTSC_CLOCK;
-u32 __osShutdown = 0;
-u32 __OSGlobalIntMask = OS_IM_ALL;
-
-// ovl0_afterException third file alignment
-u32 D_8003FBA4 = 0x00000000;
-u32 D_8003FBA8 = 0x00000000;
-u32 D_8003FBAC = 0x00000000;
-
 // ovl0_afterException fourth file
 u32 D_8003FBB0 = 0xFFFFFFFF;
 u32 D_8003FBB4 = 0xFA000000;

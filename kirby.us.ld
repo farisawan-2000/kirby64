@@ -83,6 +83,28 @@ SECTIONS
       BUILD_DIR/asm/ovl0/ovl0_beforeSiacs.o(.text);
       BUILD_DIR/libultra.a:siacs.o(.text);
       BUILD_DIR/libultra.a:controller.o(.text);
+      BUILD_DIR/asm/ovl0/ovl0_beforeCreateThread.o(.text);
+      BUILD_DIR/libultra.a:createthread.o(.text);
+      BUILD_DIR/libultra.a:contreaddata.o(.text);
+      BUILD_DIR/libultra.a:conteeplongread.o(.text);
+      BUILD_DIR/libultra.a:virtualtophysical.o(.text);
+      BUILD_DIR/libultra.a:writebackdcache.o(.text);
+      BUILD_DIR/libultra.a:initialize.o(.text);
+      BUILD_DIR/libultra.a:pirawread.o(.text);
+      . += 0x60;
+      BUILD_DIR/libultra.a:setsr.o(.text);
+      BUILD_DIR/libultra.a:getsr.o(.text);
+      BUILD_DIR/libultra.a:vigetnextframebuf.o(.text);
+      BUILD_DIR/libultra.a:sprawdma.o(.text);
+      BUILD_DIR/libultra.a:sirawdma.o(.text);
+      BUILD_DIR/libultra.a:epilinkhandle.o(.text);
+      BUILD_DIR/libultra.a:viblack.o(.text);
+      BUILD_DIR/libultra.a:sirawread.o(.text);
+      BUILD_DIR/libultra.a:sptaskyield.o(.text);
+      BUILD_DIR/libultra.a:pfsreadwritefile.o(.text);
+      BUILD_DIR/libultra.a:mtxutil.o(.text);
+      BUILD_DIR/libultra.a:visetmode.o(.text);
+
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
       BUILD_DIR/libultra.a:devmgr.o(.text);
@@ -199,7 +221,9 @@ SECTIONS
       BUILD_DIR/asm/ovl0/exception.o(.data);
       BUILD_DIR/libultra.a:thread.o(.data);
       BUILD_DIR/libultra.a:siacs.o(.data);
-      /* siacs.c */
+      BUILD_DIR/libultra.a:controller.o(.data);
+      BUILD_DIR/libultra.a:initialize.o(.data);
+
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);

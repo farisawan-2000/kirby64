@@ -98,7 +98,6 @@
 8002FD30 osContStartReadData
 8002FDB4 osContGetReadData
 8002FE40 contreaddata_text_0110
-8002FF10 osEepromLongRead
 8002FFA0 osVirtualToPhysical
 80030020 osWritebackDCache
 800300A0 osInitialize

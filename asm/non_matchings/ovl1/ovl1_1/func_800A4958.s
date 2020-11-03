@@ -16,7 +16,7 @@ glabel func_800A4958
 /* 04CBE0 800A4990 8DD0003C */  lw    $s0, 0x3c($t6)
 .L800A4994_ovl1:
 /* 04CBE4 800A4994 27B10090 */  addiu $s1, $sp, 0x90
-/* 04CBE8 800A4998 0C00C304 */  jal   func_80030C10_ovl1
+/* 04CBE8 800A4998 0C00C304 */  jal   guMtxIdentF_ovl1
 /* 04CBEC 800A499C 02202025 */   move  $a0, $s1
 /* 04CBF0 800A49A0 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 04CBF4 800A49A4 4481B000 */  mtc1  $at, $f22

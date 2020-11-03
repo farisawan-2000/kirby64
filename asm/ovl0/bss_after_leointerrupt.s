@@ -325,7 +325,7 @@ glabel D_80098B38
 glabel D_80098B3C
 .word 0x00000000
 
-glabel D_80098B40
+glabel __osFinalrom
 .word 0x00000000
 
 glabel D_80098B44

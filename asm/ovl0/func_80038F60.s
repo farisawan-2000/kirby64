@@ -18,7 +18,7 @@ glabel osEepromRead
 /* 039B84 80038F84 0C00BD18 */  jal   __osSiGetAccess
 /* 039B88 80038F88 2631B500 */   addiu $s1, %lo(__osEepPifRam) # addiu $s1, $s1, -0x4b00
 /* 039B8C 80038F8C 02402025 */  move  $a0, $s2
-/* 039B90 80038F90 0C00BE8D */  jal   __osEepStatus
+/* 039B90 80038F90 0C00BE8D */  jal   func_8000BE8D
 /* 039B94 80038F94 27A5003C */   addiu $a1, $sp, 0x3c
 /* 039B98 80038F98 14400015 */  bnez  $v0, .L80038FF0_ovl0
 /* 039B9C 80038F9C 00402025 */   move  $a0, $v0
@@ -56,7 +56,7 @@ glabel osEepromRead
 /* 039C0C 8003900C 11200007 */  beqz  $t1, .L8003902C_ovl0
 /* 039C10 80039010 02402025 */   move  $a0, $s2
 .L80039014_ovl0:
-/* 039C14 80039014 0C00BE8D */  jal   __osEepStatus
+/* 039C14 80039014 0C00BE8D */  jal   func_8000BE8D
 /* 039C18 80039018 27A5003C */   addiu $a1, $sp, 0x3c
 /* 039C1C 8003901C 93AA003E */  lbu   $t2, 0x3e($sp)
 /* 039C20 80039020 314B0080 */  andi  $t3, $t2, 0x80
@@ -140,13 +140,13 @@ glabel __osPackEepReadData
 /* 039D3C 8003913C 24190008 */  li    $t9, 8
 /* 039D40 80039140 24080004 */  li    $t0, 4
 /* 039D44 80039144 3C01800A */  lui   $at, %hi(__osEepPifRam) # $at, 0x800a
-/* 039D48 80039148 3C02800A */  lui   $v0, %hi(__osMaxControllers) # $v0, 0x800a
+/* 039D48 80039148 3C02800A */  lui   $v0, %hi(__osEepPifRam + 1) # $v0, 0x800a
 /* 039D4C 8003914C AFA40018 */  sw    $a0, 0x18($sp)
 /* 039D50 80039150 A3B80008 */  sb    $t8, 8($sp)
 /* 039D54 80039154 A3B90009 */  sb    $t9, 9($sp)
 /* 039D58 80039158 A3A8000A */  sb    $t0, 0xa($sp)
 /* 039D5C 8003915C A3A4000B */  sb    $a0, 0xb($sp)
-/* 039D60 80039160 2442B501 */  addiu $v0, %lo(__osMaxControllers) # addiu $v0, $v0, -0x4aff
+/* 039D60 80039160 2442B501 */  addiu $v0, %lo(__osEepPifRam + 1) # addiu $v0, $v0, -0x4aff
 /* 039D64 80039164 A020B500 */  sb    $zero, %lo(__osEepPifRam)($at)
 /* 039D68 80039168 A0400002 */  sb    $zero, 2($v0)
 /* 039D6C 8003916C A0400001 */  sb    $zero, 1($v0)

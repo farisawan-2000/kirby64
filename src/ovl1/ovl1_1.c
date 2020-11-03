@@ -825,7 +825,7 @@ void *func_800A4794(void *arg0, void *arg1) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4[0xF];
     }
-    func_80030C10_ovl1(&sp80);
+    guMtxIdentF_ovl1(&sp80);
 loop_3:
     temp_f0 = phi_s0->unk40;
     if (1.0f == temp_f0) {
@@ -898,7 +898,7 @@ void func_800A4958(s32 arg0, void *arg1, void *arg2) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4[0xF];
     }
-    func_80030C10_ovl1(&sp90);
+    guMtxIdentF_ovl1(&sp90);
 loop_3:
     temp_f0 = phi_s0->unk40;
     if (1.0f == temp_f0 || 1.0f == phi_s0->unk44 || 1.0f != phi_s0->unk48) {
@@ -962,7 +962,7 @@ f32 func_800A4B34(void *arg0, void *arg1) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4[0xF];
     }
-    func_80030C10_ovl1(&sp7C);
+    guMtxIdentF_ovl1(&sp7C);
 loop_3:
     temp_f0_2 = phi_s0->unk40;
     if (1.0f == temp_f0_2) {
@@ -1039,7 +1039,7 @@ void func_800A4DB8(void *arg0, void *arg1) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4[0xF];
     }
-    func_80030C10_ovl1(&sp80);
+    guMtxIdentF_ovl1(&sp80);
 loop_3:
     temp_f0 = phi_s0->unk30;
     if (0.0f == temp_f0) {
