@@ -91,12 +91,9 @@
 8002F410 __osSiCreateAccessQueue
 8002F460 __osSiGetAccess
 8002F4A4 __osSiRelAccess
-8002F4D0 osContInit
 8002F640 __osContGetInitData
 8002F710 __osPackRequestData
-8002F810 osEepromWrite
 8002F988 conteepwrite_text_0178
-8002FA34 __osEepStatus
 8002FBE0 osCreateThread
 8002FD30 osContStartReadData
 8002FDB4 osContGetReadData
@@ -315,10 +312,6 @@
 8009A2DC __osPfsPifRam
 8009B490 vimgr_bss_11B0
 8009B4D8 vimgr_bss_11F8
-8009B500 __osEepPifRam
-8009B501 __osEepPifRam
-8009B504 __osEepPifRam
-8009B540 __osEepPifRam
 800A4740 osProfileStop
 800A8F58 osBbUsbDevGetHandle
 800AB01C osVoiceCheckWord

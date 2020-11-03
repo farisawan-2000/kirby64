@@ -80,6 +80,9 @@ SECTIONS
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
       /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
 
+      BUILD_DIR/asm/ovl0/ovl0_beforeSiacs.o(.text);
+      BUILD_DIR/libultra.a:siacs.o(.text);
+      BUILD_DIR/libultra.a:controller.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
 
       BUILD_DIR/libultra.a:devmgr.o(.text);
@@ -184,16 +187,31 @@ SECTIONS
 
    BEGIN_SEG(ovl0Data2, gspS2DEX2_fifoTextEnd) {
       /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data); */
+      BUILD_DIR/src/ovl0/main.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_2_5.o(.data);
+      BUILD_DIR/src/ovl0/rdp_reset.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_4.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_6.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_7.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_8.o(.data);
+      BUILD_DIR/src/ovl0/ovl0_9.o(.data);
+      BUILD_DIR/asm/ovl0/exception.o(.data);
+      BUILD_DIR/libultra.a:thread.o(.data);
+      BUILD_DIR/libultra.a:siacs.o(.data);
+      /* siacs.c */
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
       BUILD_DIR/libultra.a:vi.o(.data);
       BUILD_DIR/libultra.a:vimodepallan1.o(.data);
-      BUILD_DIR/data/kirby.039DF0.1.5.o(.data);
+      BUILD_DIR/src/ovl0/ovl0.o(.data);
       BUILD_DIR/libultra.a:xlitob.o(.data);
       BUILD_DIR/libultra.a:vimgr.o(.data);
-      BUILD_DIR/data/kirby.039DF0.2.o(.data);
+      BUILD_DIR/libultra.a:aisetnextbuf.o(.data);
+      BUILD_DIR/src/ovl0/main.o(.rodata);
+      BUILD_DIR/data/ovl0/ovl0_rodata.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_1.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.001.o(.rodata);

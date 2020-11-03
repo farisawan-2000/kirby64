@@ -13,6 +13,42 @@ extern struct ObjThread *gObjectThreadMaybe;
 extern u8 D_80040230[];
 extern u32 D_8004A544;
 
+s32 D_8003DE50 = 10000000;
+
+u32 D_8003DE54 = 0x00000000;
+
+f32 D_8003DE58[7] = {
+    0.0f, 0.0f, 30.0f, 4.0f / 3.0f, 100.0f, 12800.0f, 1.0f
+};
+
+f32 D_8003DE74[8] = {
+    0.0f, -160.0f, 160.0f, -120.0f, 120.0f, 100.0f, 12800.0f, 1.0f
+};
+
+f32 D_8003DE94[3][3] = {
+    { 0.0f, 0.0f, 0.0f },
+    { 1500.0f, 0.0f, 0.0f },
+    { 0.0f, 0.0f, 1.0f }
+};
+
+u32 D_8003DEB8 = 0x00000000;
+
+f32 D_8003DEBC[4] = {
+    0.0f, 0.0f, 0.0f, 0.0f
+};
+
+f32 D_8003DECC[5] = {
+    0.0f, 0.0f, 0.0f, 0.0f, 1.0f
+};
+
+f32 D_8003DEE0[5] = {
+    0.0f, 0.0f, 0.0f, 0.0f, 0.0f
+};
+
+f32 D_8003DEF4[4] = {
+    0.0f, 1.0f, 1.0f, 1.0f
+};
+
 struct ObjThread *get_gobj_thread(void) {
     struct ObjThread *ret;
     if (gObjectThreadMaybe == NULL) {
@@ -526,7 +562,6 @@ void func_800089EC(struct Camera *arg0) {
 
 extern u8 D_80040314[];
 extern u8 D_80040340[];
-extern s32 D_8003DE50; // thread ID
 extern u32 D_8004A54C;
 
 struct ObjThread *get_gobj_thread();
@@ -1758,7 +1793,6 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AAE0.s")
 #endif
 
-extern s32 D_8003DE54;
 extern s32 D_8004A7D4;
 u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
     u32 temp_a1;

@@ -21,12 +21,12 @@ glabel func_80022A58
 /* 0236A4 80022AA4 00409825 */   move  $s3, $v0
 /* 0236A8 80022AA8 18400029 */  blez  $v0, .L80022B50_ovl0
 /* 0236AC 80022AAC 0200A025 */   move  $s4, $s0
-/* 0236B0 80022AB0 3C168004 */  lui   $s6, %hi(D_8003F68C) # $s6, 0x8004
+/* 0236B0 80022AB0 3C168004 */  lui   $s6, %hi(crashScreenGlyphTable) # $s6, 0x8004
 /* 0236B4 80022AB4 3C128004 */  lui   $s2, %hi(D_8003F86C) # $s2, 0x8004
 /* 0236B8 80022AB8 3C118004 */  lui   $s1, %hi(D_8003F870) # $s1, 0x8004
 /* 0236BC 80022ABC 2631F870 */  addiu $s1, %lo(D_8003F870) # addiu $s1, $s1, -0x790
 /* 0236C0 80022AC0 2652F86C */  addiu $s2, %lo(D_8003F86C) # addiu $s2, $s2, -0x794
-/* 0236C4 80022AC4 26D6F68C */  addiu $s6, %lo(D_8003F68C) # addiu $s6, $s6, -0x974
+/* 0236C4 80022AC4 26D6F68C */  addiu $s6, %lo(crashScreenGlyphTable) # addiu $s6, $s6, -0x974
 /* 0236C8 80022AC8 241E00FF */  li    $fp, 255
 /* 0236CC 80022ACC 2417000A */  li    $s7, 10
 /* 0236D0 80022AD0 2415001E */  li    $s5, 30
