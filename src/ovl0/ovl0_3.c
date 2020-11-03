@@ -5,23 +5,23 @@
 
 #ifdef MIPS_TO_C
 // Almost matched (need to load arg0 into v0)
-u32 func_8000BE90(struct unk8000BE90Func *arg0)
-{
+u32 func_8000BE90(struct unk8000BE90Func *arg0) {
     if (arg0->unk10) {
         return arg0->unk10;
-    } else if (arg0->unk8) {
+    }
+    if (arg0->unk8) {
         return arg0->unk8;
-    } else {
-        for (;;) {
-            if (arg0->unk14 == ((void *) 1)) {
-                return 0;
-            }
-            if (arg0->unk14->unk8) {
-                return arg0->unk14->unk8;
-            }
-            arg0 = arg0->unk14;
+    }
+    for (;;) {
+        if (arg0->unk14 == ((void *) 1)) {
+            return 0;
         }
-    }  return arg0->unk14;
+        if (arg0->unk14->unk8) {
+            return arg0->unk14->unk8;
+        }
+        arg0 = arg0->unk14;
+    }
+    return arg0->unk14;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")

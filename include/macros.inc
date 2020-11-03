@@ -19,9 +19,20 @@
     .byte \r, \g, \b, \a
 .endm
 
-# MK64 texture entry
-.macro mk_texture type, address, width=0, height=0, dX=0, dY=0, size=0
-    .hword \type, 0x0000
-    .word \address
-    .hword \width, \height, \dX, \dY, \size, 0x0000
+# Kirby 64 helper macros
+
+.macro NULL
+	0
+.endm
+
+.macro image_offset bank, index
+	.word (bank_\bank\()_index_\index\()_image_start - bank_\bank\()_index_0_image_start)
+.endm
+
+.macro anim_offset bank, index
+	.word 0
+.endm
+
+.macro misc_offset bank, index
+	.word 0
 .endm

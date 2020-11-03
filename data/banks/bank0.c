@@ -5,26 +5,26 @@
 u32 *D_800C46A0[] = {
 	NULL,
 	NULL,
-	bank_0_index_1_geo,
-	bank_0_index_2_geo,
-	bank_0_index_2_geo,
-	bank_0_index_3_geo,
-	bank_0_index_3_geo,
-	bank_0_index_4_geo,
-	bank_0_index_4_geo,
-	bank_0_index_5_geo,
-	bank_0_index_5_geo,
-	bank_0_index_6_geo,
-	bank_0_index_6_geo,
-	bank_0_index_7_geo,
-	bank_0_index_7_geo,
-	bank_0_index_8_geo,
-	bank_0_index_8_geo,
-	bank_0_index_9_geo,
-	bank_0_index_9_geo,
-	bank_0_index_10_geo,
-	bank_0_index_10_geo,
-	bank_0_index_1_image,
+	bank_0_index_1_geo_start,
+	bank_0_index_1_geo_end,
+	bank_0_index_2_geo_start,
+	bank_0_index_2_geo_end,
+	bank_0_index_3_geo_start,
+	bank_0_index_3_geo_end,
+	bank_0_index_4_geo_start,
+	bank_0_index_4_geo_end,
+	bank_0_index_5_geo_start,
+	bank_0_index_5_geo_end,
+	bank_0_index_6_geo_start,
+	bank_0_index_6_geo_end,
+	bank_0_index_7_geo_start,
+	bank_0_index_7_geo_end,
+	bank_0_index_8_geo_start,
+	bank_0_index_8_geo_end,
+	bank_0_index_9_geo_start,
+	bank_0_index_9_geo_end,
+	bank_0_index_10_geo_start,
+	bank_0_index_10_geo_end,
 };
 
 u32 D_800C46F8 = 0x00000000;
@@ -145,13 +145,13 @@ u32 D_800C47D8 = 0xFFFFFFFF;
 
 u32 *D_800C47DC = &D_800C46F8;
 
-u32 *D_800C47E0 = bank_0_index_1_image;
+u32 *D_800C47E0 = bank_0_index_1_image_start;
 
 u32 *D_800C47E4 = &D_800C476C;
 
-u32 *D_800C47E8 = bank_0_index_1_anim;
+u32 *D_800C47E8 = bank_0_index_1_anim_start;
 
 u32 *D_800C47EC = &D_800C47BC;
 
-u32 *D_800C47F0 = bank_0_index_1_misc;
+u32 *D_800C47F0 = bank_0_index_1_misc_start;
 

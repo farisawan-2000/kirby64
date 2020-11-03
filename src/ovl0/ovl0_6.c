@@ -130,8 +130,9 @@ s32 func_80019E5C(f32 arg0) {
     u16 temp_v1;
 
     temp_f16 = (arg0 + D_80040C74) * D_80040C78;
-    temp_v1 = *(&D_8003E330 + ((temp_f16 & 0x7FF) * 2));
-    if ((temp_f16 & 0x800) != 0) {
+    // u16 array
+    temp_v1 = D_8003E330[temp_f16 & 0x7FF];
+    if (temp_f16 & 0x800) {
         return -temp_v1;
     }
     return temp_v1;
@@ -1768,7 +1769,8 @@ void create_y_rotation_matrix(Mat4 arg0, f32 angle)
   // TODO: If the order of setting the matrix values makes sense,
   // and persists across functions,
   // and it matches with this macro
-  // edit and incorporate MAT4_SET into this function
+  // edit and incorporate MAT4_SET into this function.
+  // Otherwise, leave this in as a documentation comment
   // MAT4_SET(arg0,
   //   cosAngle, 0.0f, -sinAngle, 0.0f,
   //   0.0f,     1.0f, 0.0f,      0.0f,
