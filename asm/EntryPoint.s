@@ -8,7 +8,6 @@
 .set noreorder # don't insert nops after branches
 .set mips3     # Allows 64-bit instructions
 
-.include "globals.inc"
 .include "macros.inc"
 
 .section .text, "ax"
