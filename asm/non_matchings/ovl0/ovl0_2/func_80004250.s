@@ -20,7 +20,7 @@ glabel func_80004250
 /* 004E98 80004298 3C068005 */  lui   $a2, %hi(D_80048E70) # $a2, 0x8005
 /* 004E9C 8000429C 24C68E70 */  addiu $a2, %lo(D_80048E70) # addiu $a2, $a2, -0x7190
 /* 004EA0 800042A0 02802025 */  move  $a0, $s4
-/* 004EA4 800042A4 0C00BD34 */  jal   osContReset
+/* 004EA4 800042A4 0C00BD34 */  jal   osContInit
 /* 004EA8 800042A8 27A50043 */   addiu $a1, $sp, 0x43
 /* 004EAC 800042AC 3C118005 */  lui   $s1, %hi(D_80048E70) # $s1, 0x8005
 /* 004EB0 800042B0 3C128005 */  lui   $s2, %hi(D_800490F0) # $s2, 0x8005

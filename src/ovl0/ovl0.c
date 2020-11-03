@@ -1,6 +1,23 @@
 #include <ultra64.h>
 #include <macros.h>
 
+
+// ovl0
+u32 D_8003FDC0[6][3] = {
+    { 0x2C000000, 0x0000311E, 0x00000140 },
+    { 0x04541E3A, 0x00000271, 0x00170C69 },
+    { 0x0C6F0C6D, 0x00800300, 0x00000200 },
+    { 0x00000000, 0x00000280, 0x00000400 },
+    { 0x002F0269, 0x0009026B, 0x00000002 },
+    { 0x00000280, 0x00000400, 0x002F0269 },
+};
+
+u32 D_8003FE08 = 0x0009026B;
+
+u32 D_8003FE0C = 0x00000002;
+
+u32 D_8003FE10 = 0xFFFFFFFF;
+
 extern u32 D_80048CD8, D_80048CDC, D_80048CE0, D_80048CE4;
 extern u32 D_80048B8C, D_80048B9C, D_80048BA4;
 
@@ -38,15 +55,16 @@ struct UnkStruct800009E8 {
     OSMesgQueue *unk4;
 };
 #ifdef MIPS_TO_C
-void func_800009E8(struct UnkStruct800009E8 *arg0, OSMesgQueue *mq, OSMesg *arg2, s32 arg3) {
-    // struct UnkStruct800009E8 *sp3C;
-    s32 sp18[2];
+void func_800009E8(void *arg0, OSMesgQueue *arg1, OSMesg *arg2, s32 arg3) {
+    void *sp3C;
+    ?32 sp1C;
+    ?32 sp18;
 
-    osCreateMesgQueue(mq, arg2, arg3);
-    arg0->unk4 = mq;
-    sp18[0] = 3;
-    sp18[1] = 0x64;
-    // sp3C = arg0;
+    osCreateMesgQueue(arg1, arg2, arg3);
+    arg0->unk4 = arg1;
+    sp18 = 3;
+    sp1C = 0x64;
+    sp3C = arg0;
     func_80000980(&sp18);
 }
 #else
@@ -54,23 +72,22 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_800009E8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80000A44(void *arg0) {
+? func_80000A44(void *arg0) {
     s32 sp1C;
     s32 temp_a0;
     s32 temp_a0_2;
+    s32 temp_v0;
     s32 temp_v1;
-    u16 *temp_v0;
     void *temp_v1_2;
     void *phi_v1;
 
-    
     if (D_80048C5C != 0) {
-        return;
+        return 1;
     }
     if (D_80048C60 != 0) {
 
     } else {
-        sp1C = osViGetNextFramebuffer();
+        sp1C = osViGetNextFramebuffer(&D_80048C5C);
         temp_v0 = osViGetCurrentFramebuffer();
         temp_v1 = arg0->unk70;
         if (temp_v1 != -1) {
@@ -80,7 +97,7 @@ void func_80000A44(void *arg0) {
                 D_80048C60 = temp_a0;
                 D_80048C88 = 0;
                 D_80048C6C = osGetCount();
-                return;
+                return 1;
             }
         }
         phi_v1 = &D_80048C50;
@@ -91,13 +108,14 @@ loop_10:
             D_80048C5C = temp_a0_2;
             D_80048C88 = 0;
             D_80048C6C = osGetCount();
-            return;
+            return 1;
         }
         phi_v1 = temp_v1_2;
         if (temp_v1_2 != &D_80048C5C) {
             goto loop_10;
         }
     }
+    return 0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000A44.s")
@@ -372,7 +390,7 @@ block_6:
     } else {
         phi_v0 = temp_v0;
         if (D_80000300 == 0) {
-            osViSetYScale(D_8003FEC8);
+            osViSetYScale(0.833f);
             phi_v0_2 = D_80048C7C * 0x10;
             goto block_6;
         }
@@ -390,8 +408,8 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
     s32 sp1C;
     s32 sp14;
     u32 sp0;
-    s16 temp_a1;
-    s16 temp_a2;
+    s32 temp_a1;
+    s32 temp_a2;
     s32 temp_a3;
     s32 temp_lo;
     s32 temp_t7;
@@ -472,11 +490,11 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFFE;
         D_80048BF8.unk4 = D_80048BF8.unk4 & 0xFFFEFFFF;
     }
-    if (arg2 & 0x10000) {
+    if ((arg2 << 0xF) < 0) {
         D_80048C7C.unk1 = D_80048C7C.unk1 | 0x80;
         D_80048BF8.unk4 = D_80048BF8.unk4 | 0x10;
     }
-    if (arg2 & 0x20000) {
+    if ((arg2 << 0xE) < 0) {
         D_80048C7C.unk1 = D_80048C7C.unk1 & 0xFF7F;
         D_80048BF8.unk4 = D_80048BF8.unk4 & -0x11;
     }
@@ -536,8 +554,8 @@ block_47:
         }
     }
     temp_a3 = phi_t2 == 0;
-    temp_a1 = arg5 & 0xFFFE;
-    temp_a2 = arg6 & 0xFFFE;
+    temp_a1 = ((arg5 & 0xFFFE) << 0x10) >> 0x10;
+    temp_a2 = ((arg6 & 0xFFFE) << 0x10) >> 0x10;
     if ((temp_a3 != 0) && (phi_a0 == 0)) {
         sp14 = 2;
     } else {
@@ -691,14 +709,15 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000F78.s")
 
 #ifdef MIPS_TO_C
 void func_80001774(void *arg0) {
-    // s32 temp_v0;
+    s32 temp_v0;
 
     if ((D_80048C48 != 0) && (D_80048CDC == 0)) {
         func_80000E9C(arg0);
     }
     if (D_80048CD0 != 0) {
+        arg0 = arg0;
         osSendMesg(D_80048CD4, 1, 0);
-        if ((s32)arg0 == -1) {
+        if (arg0 == -1) {
             gCurrFrameBuffer = D_80048C5C;
             D_80048C5C = 0;
         } else {
@@ -707,12 +726,14 @@ block_12:
         }
     } else if (arg0 == -1) {
         osViSwapBuffer(D_80048C5C);
-        if (D_80048C5C == D_80048C60) {
+        temp_v0 = D_80048C5C;
+        if (temp_v0 == D_80048C60) {
             D_80048C64 = 1;
         }
-        gCurrFrameBuffer = D_80048C5C;
+        gCurrFrameBuffer = temp_v0;
         D_80048C5C = 0;
     } else {
+        arg0 = arg0;
         osViSwapBuffer(arg0);
         goto block_12;
     }
@@ -739,7 +760,7 @@ void func_8000189C(OSTask *arg0) {
         func_8002DB4C(temp_a0);
         arg0->t.ucode_boot = 2;
     }
-    D_80048B8C = arg0;
+    *0x80048B8C = arg0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_8000189C.s")
@@ -771,12 +792,243 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80001924.s")
 #endif
 
 #ifdef MIPS_TO_C
-Failed to decompile function func_800019BC:
+s32 func_800019BC(void *arg0) {
+    s32 sp4C;
+    void *sp34;
+    OSMesgQueue *temp_a0;
+    OSMesgQueue *temp_a0_10;
+    OSMesgQueue *temp_a0_12;
+    OSMesgQueue *temp_a0_2;
+    OSMesgQueue *temp_a0_3;
+    OSMesgQueue *temp_a0_6;
+    OSMesgQueue *temp_a0_7;
+    OSMesgQueue *temp_a0_8;
+    OSMesgQueue *temp_a0_9;
+    s32 temp_v0_11;
+    u32 temp_t7;
+    void *temp_a0_11;
+    void *temp_a0_4;
+    void *temp_a0_5;
+    void *temp_v0;
+    void *temp_v0_10;
+    void *temp_v0_2;
+    void *temp_v0_3;
+    void *temp_v0_4;
+    void *temp_v0_5;
+    void *temp_v0_6;
+    void *temp_v0_7;
+    void *temp_v0_8;
+    void *temp_v0_9;
+    void *phi_v1;
+    void *phi_v0;
+    void *phi_v0_2;
+    void *phi_v0_3;
+    void *phi_v0_4;
+    void *phi_v1_2;
+    s32 phi_a1;
+    void *phi_a0;
+    void *phi_a0_2;
+    void *phi_v1_3;
+    void *phi_v1_4;
+    void *phi_v1_5;
+    void *phi_v1_6;
+    void *phi_v1_7;
+    void *phi_v1_8;
 
-Unable to determine jump table for jr instruction.
-
-There must be a read of a variable in the same block as
-the instruction, which has a name starting with "jtbl".
+    sp4C = 0;
+    temp_t7 = arg0->unk0 - 1;
+    if (temp_t7 < 0xB) {
+        goto **(&jtbl_8003FECC + (temp_t7 * 4));
+    case 0:
+        temp_v0 = arg0->unk68;
+        if (temp_v0 != 0) {
+            *temp_v0 = *temp_v0 | D_80048C5C;
+            osWritebackDCache(arg0->unk68, 4);
+        }
+        if (arg0->unk50 == -1) {
+            arg0->unk50 = D_80048C8C + D_80048C88;
+            osWritebackDCache(arg0 + 0x50, 4);
+        }
+        if (1 == arg0->unk74) {
+            osInvalDCache(&D_80048C80, 8);
+        }
+        func_8000189C(arg0);
+        sp4C = 1;
+        goto block_63;
+    case 1:
+        osWritebackDCacheAll();
+        func_80001924(arg0);
+        sp4C = 1;
+        goto block_63;
+    case 2:
+        temp_v0_2 = arg0->unk24;
+        *temp_v0_2 = D_80048B80;
+        D_80048B80 = temp_v0_2;
+        temp_a0 = arg0->unk20;
+        if (temp_a0 != 0) {
+            osSendMesg(temp_a0, arg0->unk1C, 0);
+            goto block_63;
+        case 3:
+            func_80000F78(arg0->unk24, arg0->unk28, arg0->unk2C, arg0->unk30, arg0->unk32, arg0->unk34, arg0->unk36);
+            temp_a0_2 = arg0->unk20;
+            if (temp_a0_2 != 0) {
+                osSendMesg(temp_a0_2, arg0->unk1C, 0);
+                goto block_63;
+            case 4:
+                phi_v1 = arg0;
+                phi_v0 = &D_80048C50;
+loop_15:
+                temp_v0_3 = phi_v0 + 4;
+                temp_v0_3->unk-4 = phi_v1->unk24;
+                phi_v1 = phi_v1 + 4;
+                phi_v0 = temp_v0_3;
+                if (temp_v0_3 != &D_80048C5C) {
+                    goto loop_15;
+                }
+                temp_a0_3 = arg0->unk20;
+                if (temp_a0_3 != 0) {
+                    osSendMesg(temp_a0_3, arg0->unk1C, 0);
+                    goto block_63;
+                case 5:
+                    temp_a0_4 = D_80048B8C;
+                    phi_v1_8 = NULL;
+                    if (temp_a0_4 != 0) {
+                        phi_v1_8 = NULL;
+                        if (1 == temp_a0_4->unk0) {
+                            phi_v1_8 = NULL;
+                            if (arg0->unk28 == temp_a0_4->unk80) {
+                                phi_v1_8 = temp_a0_4;
+                            }
+                        }
+                    }
+                    temp_v0_4 = D_80048B94;
+                    phi_v0_2 = temp_v0_4;
+                    phi_v1_6 = phi_v1_8;
+                    phi_v1_7 = phi_v1_8;
+                    if (temp_v0_4 != 0) {
+loop_23:
+                        if ((1 == phi_v0_2->unk0) && (arg0->unk28 == phi_v0_2->unk80)) {
+                            phi_v1_7 = phi_v0_2;
+                        }
+                        temp_v0_5 = phi_v0_2->unkC;
+                        phi_v0_2 = temp_v0_5;
+                        phi_v1_6 = phi_v1_7;
+                        if (temp_v0_5 != 0) {
+                            goto loop_23;
+                        }
+                    }
+                    temp_v0_6 = D_80048B84;
+                    phi_v0_3 = temp_v0_6;
+                    phi_v1_4 = phi_v1_6;
+                    phi_v1_5 = phi_v1_6;
+                    if (temp_v0_6 != 0) {
+loop_28:
+                        if ((1 == phi_v0_3->unk0) && (arg0->unk28 == phi_v0_3->unk80)) {
+                            phi_v1_5 = phi_v0_3;
+                        }
+                        temp_v0_7 = phi_v0_3->unkC;
+                        phi_v0_3 = temp_v0_7;
+                        phi_v1_4 = phi_v1_5;
+                        if (temp_v0_7 != 0) {
+                            goto loop_28;
+                        }
+                    }
+                    temp_v0_8 = D_80048BA4;
+                    if ((temp_v0_8 != 0) && (1 == *temp_v0_8) && (arg0->unk28 == temp_a0_4->unk80)) {
+                        phi_v1_4 = temp_v0_8;
+                    }
+                    temp_v0_9 = D_80048B9C;
+                    phi_v0_4 = temp_v0_9;
+                    phi_v1_2 = phi_v1_4;
+                    phi_v1_3 = phi_v1_4;
+                    if (temp_v0_9 != 0) {
+loop_37:
+                        if ((1 == phi_v0_4->unk0) && (arg0->unk28 == phi_v0_4->unk80)) {
+                            phi_v1_3 = phi_v0_4;
+                        }
+                        temp_v0_10 = phi_v0_4->unkC;
+                        phi_v0_4 = temp_v0_10;
+                        phi_v1_2 = phi_v1_3;
+                        if (temp_v0_10 != 0) {
+                            goto loop_37;
+                        }
+                    }
+                    if (phi_v1_2 != 0) {
+                        phi_v1_2->unk1C = arg0->unk1C;
+                        phi_v1_2->unk20 = arg0->unk20;
+                        phi_v1_2->unk6C = arg0->unk24;
+                    } else {
+                        temp_a0_5 = arg0->unk24;
+                        if (temp_a0_5 != 0) {
+                            func_80001774(temp_a0_5, 1);
+                        }
+                        temp_a0_6 = arg0->unk20;
+                        if (temp_a0_6 != 0) {
+                            osSendMesg(temp_a0_6, arg0->unk1C, 0);
+                            goto block_63;
+                        case 6:
+                            temp_a0_7 = arg0->unk20;
+                            if (temp_a0_7 != 0) {
+                                osSendMesg(temp_a0_7, arg0->unk1C, 0);
+                                goto block_63;
+                            case 7:
+                                D_80048C8C = arg0->unk24;
+                                D_80048C90 = arg0->unk28;
+                                temp_a0_8 = arg0->unk20;
+                                if (temp_a0_8 != 0) {
+                                    osSendMesg(temp_a0_8, arg0->unk1C, 0);
+                                    goto block_63;
+                                case 8:
+                                    D_80048CD0 = 1;
+                                    D_80048CD4 = arg0->unk24;
+                                    temp_a0_9 = arg0->unk20;
+                                    if (temp_a0_9 != 0) {
+                                        osSendMesg(temp_a0_9, arg0->unk1C, 0);
+                                        goto block_63;
+                                    case 9:
+                                        D_80048CD0 = 0;
+                                        temp_a0_10 = arg0->unk20;
+                                        if (temp_a0_10 != 0) {
+                                            osSendMesg(temp_a0_10, arg0->unk1C, 0);
+                                            goto block_63;
+                                        case 10:
+                                            temp_a0_11 = D_80048B84;
+                                            phi_a1 = 1;
+                                            phi_a0 = temp_a0_11;
+                                            if (temp_a0_11 != 0) {
+loop_56:
+                                                temp_v0_11 = phi_a0->unk0;
+                                                if ((phi_a1 == temp_v0_11) || (temp_v0_11 == 4)) {
+                                                    sp34 = phi_a0->unkC;
+                                                    func_80000CE4(phi_a0, phi_a1);
+                                                    phi_a0_2 = sp34;
+                                                    phi_a1 = 1;
+                                                } else {
+                                                    phi_a0_2 = phi_a0->unkC;
+                                                }
+                                                phi_a0 = phi_a0_2;
+                                                if (phi_a0_2 != 0) {
+                                                    goto loop_56;
+                                                }
+                                            }
+                                            D_80048C60 = 0;
+                                            temp_a0_12 = arg0->unk20;
+                                            if (temp_a0_12 != 0) {
+                                                osSendMesg(temp_a0_12, arg0->unk1C, 0);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+block_63:
+    return sp4C;
+}
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_800019BC.s")
 #endif
@@ -962,8 +1214,8 @@ u32 func_8000206C(void) {
     if ((phi_v0 != 0) && (1 == phi_v0->unk18) && (phi_v0->unk8 != 5)) {
         if ((1 == phi_v0->unk0) && (1 == phi_v0->unk74)) {
             osInvalDCache(&D_80048C80, 8);
-            D_80048B8C->unk78 = (&D_80048C80)[1];
-            temp_t7 = (&D_80048C80)[1];
+            D_80048B8C->unk78 = D_80048C80.unk4;
+            temp_t7 = D_80048C80.unk4;
             temp_t2 = D_80048C88 + temp_t7;
             sp18 = D_80048C80.unk0;
             temp_t6 = ((temp_t2 + 0xF) >> 4) * 0x10;
@@ -974,7 +1226,7 @@ u32 func_8000206C(void) {
             if (sp18 >= temp_t8) {
                 if (temp_t8 < sp18) {
 block_17:
-                    fatal_printf(&D_8003FEA0, temp_t6, 1, &D_80048B8C);
+                    fatal_printf("rdp_output_buff over !! size = %d\n byte", temp_t6, 1, &D_80048B8C);
 loop_18:
                     goto loop_18;
                 }
@@ -1137,7 +1389,7 @@ void func_8000256C(u32 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_80002598(void *arg0) {
+void func_80002598(s32 arg0) {
     s32 sp84;
     ? sp30;
     ? *temp_t5_2;
@@ -1202,7 +1454,7 @@ void func_80002598(void *arg0) {
     gCurrFrameBuffer = 0;
     D_80048CD0 = 0;
     D_80048CD8 = &D_80002AF8;
-    D_80048CDC = NULL;
+    D_80048CDC = 0;
     D_80048CE0 = -1;
     temp_v0 = D_80000300;
     if (temp_v0 != 0) {
@@ -1372,9 +1624,9 @@ loop_16:
     D_80048C7C.unk1 = D_80048C7C.unk1 | 0x80;
     osCreateMesgQueue(&gInterruptMesgQueue, &D_80048C98, 8);
     osViSetEvent(&gInterruptMesgQueue, 1, 1);
-    osSetEventMesg(OS_EVENT_SP, &gInterruptMesgQueue, 2);
-    osSetEventMesg(OS_EVENT_DP, &gInterruptMesgQueue, 3);
-    osSetEventMesg(OS_EVENT_PRENMI, &gInterruptMesgQueue, 0x63);
+    osSetEventMesg(4, &gInterruptMesgQueue, 2);
+    osSetEventMesg(9, &gInterruptMesgQueue, 3);
+    osSetEventMesg(0xE, &gInterruptMesgQueue, 0x63);
     osSendMesg(&D_80048A08, 1, 0);
 loop_26:
     osRecvMesg(&gInterruptMesgQueue, &sp84, 1);

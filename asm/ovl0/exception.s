@@ -2,6 +2,12 @@
 .set noreorder
 .set gp=64
 .include "macros.inc"
+
+.section .data
+
+glabel __osHwIntTable
+.word 0x0, 0x0, 0x0, 0x0, 0x0
+
 .section .text,"ax"
 glabel __osExceptionPreamble
 /* 02EB60 8002DF60 3C1A8003 */  lui   $k0, %hi(__osException) # $k0, 0x8003

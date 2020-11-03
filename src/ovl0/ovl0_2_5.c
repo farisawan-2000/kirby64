@@ -6,6 +6,43 @@
 #include "ovl0_2_5.h"
 #include "types.h"
 
+struct UcodeHandler {
+    u32 *text; // ucode text
+    u32 *data; // ucode data
+};
+
+extern long long int gspF3DEX2_fifoDataStart[];
+extern long long int gspF3DEX2_fifoTextStart[];
+
+extern long long int gspL3DEX2_fifoDataStart[];
+extern long long int gspL3DEX2_fifoTextStart[];
+
+extern long long int gspS2DEX2_fifoDataStart[];
+extern long long int gspS2DEX2_fifoTextStart[];
+
+u32 D_8003DCA0 = 0x00000000;
+u32 D_8003DCA4 = 0x00000000;
+u32 D_8003DCA8 = 0x00000000;
+
+struct UcodeHandler D_8003DCAC[16] = {
+    {gspF3DEX2_fifoTextStart, gspF3DEX2_fifoDataStart},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {gspL3DEX2_fifoTextStart, gspL3DEX2_fifoDataStart},
+    {NULL, NULL},
+    {gspS2DEX2_fifoTextStart, gspS2DEX2_fifoDataStart},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL},
+    {NULL, NULL}
+};
+
 extern void (*D_8004A48C)(void);
 extern void func_80000A44(void);
 extern u32 *gObjectThreadMaybe;
@@ -138,7 +175,6 @@ void func_800056DC(s32 arg0, u32 arg1) {
 
 extern const char D_80040018[];
 
-extern u32 D_8003DCA0;
 // These are used in other functions too
 extern u32 D_8004A438, D_8004A43C;
 
@@ -286,11 +322,6 @@ void func_800059F8(void) {
     func_80005430();
     func_80005530();
 }
-
-extern struct UcodeHandler {
-    u32 *text; // ucode text
-    u32 *data; // ucode data
-} D_8003DCAC[];
 
 extern u32 D_80049760[]; // TODO; is this a different type?
 extern u32 D_80049358;
@@ -1055,8 +1086,6 @@ void func_80006EE4(struct unk_func8006E30 *arg0) {
         func_8000BC34();
     }
 }
-
-extern s32 D_8003DCA8;
 
 void func_80006F60(struct Unk80005A98 *arg0) {
     s32 sp34;

@@ -968,7 +968,7 @@ void *func_800A0558(void *arg0, void *arg1, void *arg2) {
     void *phi_v1;
     void *phi_s1_2;
 
-    func_80030C10_ovl1(&spB8);
+    guMtxIdentF_ovl1(&spB8);
     phi_s3 = arg2;
 loop_1:
     temp_f0 = phi_s3->unk40;

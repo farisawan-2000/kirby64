@@ -15,7 +15,7 @@ glabel func_800A0558
 /* 0487DC 800A058C F7B60018 */  sdc1  $f22, 0x18($sp)
 /* 0487E0 800A0590 F7B40010 */  sdc1  $f20, 0x10($sp)
 /* 0487E4 800A0594 AFA500FC */  sw    $a1, 0xfc($sp)
-/* 0487E8 800A0598 0C00C304 */  jal   func_80030C10_ovl1
+/* 0487E8 800A0598 0C00C304 */  jal   guMtxIdentF_ovl1
 /* 0487EC 800A059C 02A02025 */   move  $a0, $s5
 /* 0487F0 800A05A0 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 0487F4 800A05A4 4481B000 */  mtc1  $at, $f22

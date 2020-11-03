@@ -3,9 +3,21 @@
 
 #include "types.h"
 #include "main.h"
+#include "segments.h"
 
-extern struct Overlay mainSegOverlay; //TODO: define and put into .data
-extern u32 D_8003DC94;
+struct Overlay mainSegOverlay = {
+	_ovl1SegmentRomStart,
+	_ovl1DataSegmentRomEnd,
+	_ovl1SegmentStart,
+	_ovl1SegmentStart,
+	_ovl1SegmentEnd,
+	_ovl1SegmentEnd,
+	_ovl1DataSegmentEnd,
+	_ovl1SegNoloadStart,
+	_ovl1SegNoloadEnd,
+};
+
+u32 D_8003DC94 = 0;
 
 // .bss
 u64 gEntryStack[ENTRY_STACK_LEN_U64]; // Stack pointer set to this by EntryPoint
@@ -67,10 +79,9 @@ void check_sp_dmem(void) {
 }
 
 extern void fatal_printf(const char *fmt, ...);
-extern const char D_8003FE80[];
 
 void thread_crash_stack_overflow(s32 threadNum) {
-    fatal_printf(D_8003FE80, threadNum);
+    fatal_printf("thread stack overflow  id = %d\n", threadNum);
     while (1);
 }
 
