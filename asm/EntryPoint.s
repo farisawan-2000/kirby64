@@ -13,9 +13,9 @@
 
 .section .text, "ax"
 glabel EntryPoint
-/* 001000 80000400 3C088004 */  lui   $t0, %hi(D_80042B90) # $t0, 0x8004
+/* 001000 80000400 3C088004 */  lui   $t0, %hi(gEntryStack) # $t0, 0x8004
 /* 001004 80000404 3C090005 */  lui   $t1, (0x000589B0 >> 16) # lui $t1, 5
-/* 001008 80000408 25082B90 */  addiu $t0, %lo(D_80042B90) # addiu $t0, $t0, 0x2b90
+/* 001008 80000408 25082B90 */  addiu $t0, %lo(gEntryStack) # addiu $t0, $t0, 0x2b90
 /* 00100C 8000040C 352989B0 */  ori   $t1, (0x000589B0 & 0xFFFF) # ori $t1, $t1, 0x89b0
 .L80000410_ovl0:
 /* 001010 80000410 2129FFF8 */  addi  $t1, $t1, -8
@@ -24,10 +24,10 @@ glabel EntryPoint
 /* 00101C 8000041C 1520FFFC */  bnez  $t1, .L80000410_ovl0
 /* 001020 80000420 21080008 */   addi  $t0, $t0, 8
 /* 001024 80000424 3C0A8000 */  lui   $t2, %hi(main) # $t2, 0x8000
-/* 001028 80000428 3C1D8004 */  lui   $sp, %hi(D_80042D90) # $sp, 0x8004
+/* 001028 80000428 3C1D8004 */  lui   $sp, %hi(gEntryStack + 0x200) # $sp, 0x8004
 /* 00102C 8000042C 254A0870 */  addiu $t2, %lo(main) # addiu $t2, $t2, 0x870
 /* 001030 80000430 01400008 */  jr    $t2
-/* 001034 80000434 27BD2D90 */   addiu $sp, %lo(D_80042D90) # addiu $sp, $sp, 0x2d90
+/* 001034 80000434 27BD2D90 */   addiu $sp, %lo(gEntryStack + 0x200) # addiu $sp, $sp, 0x2d90
 /* 001038 80000438 00000000 */  nop
 /* 00103C 8000043C 00000000 */  nop
 /* 001040 80000440 00000000 */  nop

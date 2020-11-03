@@ -472,7 +472,7 @@ s32 func_800A8934(u32 arg0, s32 arg1, s32 arg2, ? arg3) {
         phi_a2 = (arg2 + 3) & 0xFFFFFC;
     }
     arg2 = phi_a2;
-    dma_copy_inval_dcache((temp_v0->unk0 + temp_v1->unk184->unkC) + arg1, arg3, phi_a2);
+    dma_read((temp_v0->unk0 + temp_v1->unk184->unkC) + arg1, arg3, phi_a2);
     return arg2;
 }
 #else
@@ -503,7 +503,7 @@ s32 func_800A89E0(u32 arg0) {
     sp1C = temp_v1;
     temp_v0_2 = func_800A84F0_ovl1(temp_a0, temp_a1, temp_a3);
     sp20 = temp_v0_2;
-    dma_copy_inval_dcache(temp_v1->unk0 + sp18, temp_v0_2, sp24 & 0xFFFFFC, sp24);
+    dma_read(temp_v1->unk0 + sp18, temp_v0_2, sp24 & 0xFFFFFC, sp24);
     return temp_v0_2;
 }
 #else
@@ -562,7 +562,7 @@ s32 func_800A8B0C(u32 arg0, s32 arg1) {
     sp1C = temp_v1;
     temp_v0_2 = func_800A8358_ovl1(temp_a3 | arg1, temp_a2, temp_a3);
     sp20 = temp_v0_2;
-    dma_copy_inval_dcache(temp_v1->unk0 + sp18, temp_v0_2, temp_a3 & 0xFFFFFC, temp_a3);
+    dma_read(temp_v1->unk0 + sp18, temp_v0_2, temp_a3 & 0xFFFFFC, temp_a3);
     return temp_v0_2;
 }
 #else
@@ -647,7 +647,7 @@ s32 func_800A8CE0(u32 arg0, s32 arg1) {
     sp2C = temp_a0;
     temp_v0 = func_800A8358_ovl1(temp_a0, temp_a2 * 2);
     sp20 = temp_v0;
-    dma_copy_inval_dcache(temp_v1->unk0, temp_v0, sp2C & 0xFFFFFC, sp2C);
+    dma_read(temp_v1->unk0, temp_v0, sp2C & 0xFFFFFC, sp2C);
     return temp_v0;
 }
 #else
@@ -976,7 +976,7 @@ void *func_800A94F4(s32 arg0) {
     sp2C = temp_a0;
     temp_v0_2 = func_800A8358_ovl1(temp_a0, temp_a1);
     sp24 = temp_v0_2;
-    dma_copy_inval_dcache(temp_v1->unk0 + sp18, temp_v0_2, sp2C & 0xFFFFFC);
+    dma_read(temp_v1->unk0 + sp18, temp_v0_2, sp2C & 0xFFFFFC);
     temp_v0_3 = sp24 + 0xC;
     sp24->unk0 = (void *) (sp24->unk0 + sp24);
     if (sp24->unk8 != 0) {
@@ -1176,7 +1176,7 @@ s32 func_800A9AA8(u32 bankIndex, u32 arg1) {
     sp18 = D_800D0184[bankIndex >> 0x10]->miscROMOffset;
     temp_a3 = ((miscTable[1] - miscTable[0]) + 3) & 0xFFFFFC;
     temp_v0 = func_800A8358(temp_a3 | arg1);
-    dma_copy_inval_dcache(miscTable[0] + sp18, temp_v0, temp_a3 & 0xFFFFFC);
+    dma_read(miscTable[0] + sp18, temp_v0, temp_a3 & 0xFFFFFC);
     return temp_v0;
 }
 #else

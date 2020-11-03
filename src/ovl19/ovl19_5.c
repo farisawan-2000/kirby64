@@ -23,7 +23,7 @@ extern u32 func_8022E798_ovl19;
 extern struct EntityThing800E9AA0 *D_800E9AA0[];
 extern u32 D_800E0D50[];
 
-extern u32 D_800DF150[];
+extern void (*D_800DF150[])(s32);
 
 extern f32 D_800E41D0[];
 
