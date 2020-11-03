@@ -8,9 +8,7 @@ checking_symbols = [
 	"lh",
 	"sw",
 	"sb",
-	"sh",
-	"ld",
-	"sd"
+	"sh"
 ]
 
 stagedRegs = {}
@@ -18,6 +16,7 @@ stagedRegs = {}
 lineNum = 0
 
 def isProblemLine(l, sp):
+	print(l)
 	x = l.split(sp)
 	x2 = x[1].split()[-1]
 	xtok = x2.replace("("," ").replace(")"," ").split()

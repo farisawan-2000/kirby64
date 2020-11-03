@@ -4,6 +4,43 @@
 
 #include "ovl0_2_5.h"
 
+void (*gScissorCallback)(Gfx **) = NULL;
+
+Mtx identityMatrix = {{
+	65536, 0, 1, 0,
+	0, 65536, 0, 1,
+	0, 0, 0, 0,
+	0, 0, 0, 0,
+}};
+
+extern Vp gViewport;
+
+Gfx resetRDPDisplayList[] = {
+	gsDPPipeSync(),
+	gsSPViewport(&gViewport),
+	gsSPClearGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BOTH | G_FOG | G_LIGHTING | G_TEXTURE_GEN | G_TEXTURE_GEN_LINEAR | G_LOD | G_SHADING_SMOOTH),
+	gsSPClipRatio(FRUSTRATIO_1),
+	gsSPTexture(0, 0, 0, G_TX_RENDERTILE, G_OFF),
+	gsSPSetGeometryMode(G_ZBUFFER | G_SHADE | G_CULL_BACK | G_SHADING_SMOOTH),
+    gsSPMatrix(&identityMatrix, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION),
+    gsSPMatrix(&identityMatrix, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_MODELVIEW),
+    gsDPSetCycleType(G_CYC_1CYCLE),
+    gsDPPipelineMode(G_PM_NPRIMITIVE),
+    gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
+    gsDPSetTextureLOD(G_TL_TILE),
+    gsDPSetTextureLUT(G_TT_NONE),
+    gsDPSetTextureDetail(G_TD_CLAMP),
+    gsDPSetTexturePersp(G_TP_PERSP),
+    gsDPSetTextureFilter(G_TF_BILERP),
+    gsDPSetTextureConvert(G_TC_FILT),
+    gsDPSetCombineKey(G_CK_NONE),
+    gsDPSetAlphaCompare(G_AC_NONE),
+    gsDPSetRenderMode(G_RM_OPA_SURF, G_RM_OPA_SURF2),
+    gsDPSetColorDither(G_CD_MAGICSQ),
+    gsDPPipeSync(),
+    gsSPEndDisplayList(),
+};
+
 extern s32 gCurrScreenWidth;
 extern s32 gCurrScreenHeight;
 

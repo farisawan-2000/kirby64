@@ -4,10 +4,15 @@
 #include "types.h"
 #include "ovl0_6.h"
 
+s16 D_8003E330[0x800] = {
+#include "s16_sintable.h"
+};
+
 #define COMBINE_INTEGRAL(a, b) ((a & 0xffff0000 ) | ((b >> 16)))
 #define COMBINE_FRACTIONAL(a, b) ((a << 16)) | (b & 0xffff)
 
 typedef f32 Mat4[4][4];
+
 
 // Seems to be a version of MtxF2L that uses unsigned values only
 void func_80019A30(float mf[4][4], Mtx *m) {

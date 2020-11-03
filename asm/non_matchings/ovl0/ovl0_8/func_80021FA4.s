@@ -24,8 +24,8 @@ glabel crash_screen_print
 /* 022BFC 80021FFC 00408025 */   move  $s0, $v0
 /* 022C00 80022000 18400011 */  blez  $v0, .L80022048_ovl0
 /* 022C04 80022004 02608825 */   move  $s1, $s3
-/* 022C08 80022008 3C138004 */  lui   $s3, %hi(D_8003F68C) # $s3, 0x8004
-/* 022C0C 8002200C 2673F68C */  addiu $s3, %lo(D_8003F68C) # addiu $s3, $s3, -0x974
+/* 022C08 80022008 3C138004 */  lui   $s3, %hi(crashScreenGlyphTable) # $s3, 0x8004
+/* 022C0C 8002200C 2673F68C */  addiu $s3, %lo(crashScreenGlyphTable) # addiu $s3, $s3, -0x974
 /* 022C10 80022010 241400FF */  li    $s4, 255
 .L80022014_ovl0:
 /* 022C14 80022014 922E0000 */  lbu   $t6, ($s1)

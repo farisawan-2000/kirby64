@@ -234,7 +234,7 @@ void *func_80004250(void) {
 
     osCreateMesgQueue(&D_80048DA0, &D_80048DB8, 1);
     osSetEventMesg(5, &D_80048DA0, 1);
-    osContReset(&D_80048DA0, &sp43);
+    osContInit(&D_80048DA0, &sp43);
     phi_s1 = &D_80048E70;
     phi_s0 = 0;
 loop_1:

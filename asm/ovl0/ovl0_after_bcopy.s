@@ -1191,8 +1191,8 @@ glabel func_80036AF0
 /* 037764 80036B64 27A40037 */  addiu $a0, $sp, 0x37
 /* 037768 80036B68 0C00DB58 */  jal   func_80036D60
 /* 03776C 80036B6C 27A50024 */   addiu $a1, $sp, 0x24
-/* 037770 80036B70 3C0F800A */  lui   $t7, %hi(D_80098AF1) # $t7, 0x800a
-/* 037774 80036B74 91EF8AF1 */  lbu   $t7, %lo(D_80098AF1)($t7)
+/* 037770 80036B70 3C0F800A */  lui   $t7, %hi(__osMaxControllers) # $t7, 0x800a
+/* 037774 80036B74 91EF8AF1 */  lbu   $t7, %lo(__osMaxControllers)($t7)
 /* 037778 80036B78 AFA00020 */  sw    $zero, 0x20($sp)
 /* 03777C 80036B7C 19E00014 */  blez  $t7, .L80036BD0_ovl0
 /* 037780 80036B80 00000000 */   nop   
@@ -1210,16 +1210,16 @@ glabel func_80036AF0
 /* 0377AC 80036BAC AFAB0018 */   sw    $t3, 0x18($sp)
 .L80036BB0_ovl0:
 /* 0377B0 80036BB0 8FAC0020 */  lw    $t4, 0x20($sp)
-/* 0377B4 80036BB4 3C0E800A */  lui   $t6, %hi(D_80098AF1) # $t6, 0x800a
-/* 0377B8 80036BB8 91CE8AF1 */  lbu   $t6, %lo(D_80098AF1)($t6)
+/* 0377B4 80036BB4 3C0E800A */  lui   $t6, %hi(__osMaxControllers) # $t6, 0x800a
+/* 0377B8 80036BB8 91CE8AF1 */  lbu   $t6, %lo(__osMaxControllers)($t6)
 /* 0377BC 80036BBC 258D0001 */  addiu $t5, $t4, 1
 /* 0377C0 80036BC0 AFAD0020 */  sw    $t5, 0x20($sp)
 /* 0377C4 80036BC4 01AE082A */  slt   $at, $t5, $t6
 /* 0377C8 80036BC8 1420FFEE */  bnez  $at, .L80036B84_ovl0
 /* 0377CC 80036BCC 00000000 */   nop   
 .L80036BD0_ovl0:
-/* 0377D0 80036BD0 3C0F800A */  lui   $t7, %hi(D_80098AF1) # $t7, 0x800a
-/* 0377D4 80036BD4 91EF8AF1 */  lbu   $t7, %lo(D_80098AF1)($t7)
+/* 0377D0 80036BD0 3C0F800A */  lui   $t7, %hi(__osMaxControllers) # $t7, 0x800a
+/* 0377D4 80036BD4 91EF8AF1 */  lbu   $t7, %lo(__osMaxControllers)($t7)
 /* 0377D8 80036BD8 8FB80020 */  lw    $t8, 0x20($sp)
 /* 0377DC 80036BDC 15F80002 */  bne   $t7, $t8, .L80036BE8_ovl0
 /* 0377E0 80036BE0 00000000 */   nop   
@@ -1228,8 +1228,8 @@ glabel func_80036AF0
 /* 0377E8 80036BE8 8FB90018 */  lw    $t9, 0x18($sp)
 /* 0377EC 80036BEC 1F20FFC9 */  bgtz  $t9, .L80036B14_ovl0
 /* 0377F0 80036BF0 00000000 */   nop   
-/* 0377F4 80036BF4 3C08800A */  lui   $t0, %hi(D_80098AF1) # $t0, 0x800a
-/* 0377F8 80036BF8 91088AF1 */  lbu   $t0, %lo(D_80098AF1)($t0)
+/* 0377F4 80036BF4 3C08800A */  lui   $t0, %hi(__osMaxControllers) # $t0, 0x800a
+/* 0377F8 80036BF8 91088AF1 */  lbu   $t0, %lo(__osMaxControllers)($t0)
 /* 0377FC 80036BFC AFA00020 */  sw    $zero, 0x20($sp)
 /* 037800 80036C00 19000019 */  blez  $t0, .L80036C68_ovl0
 /* 037804 80036C04 00000000 */   nop   
@@ -1252,8 +1252,8 @@ glabel func_80036AF0
 /* 037844 80036C44 A3AA001F */  sb    $t2, 0x1f($sp)
 .L80036C48_ovl0:
 /* 037848 80036C48 8FAB0020 */  lw    $t3, 0x20($sp)
-/* 03784C 80036C4C 3C0C800A */  lui   $t4, %hi(D_80098AF1) # $t4, 0x800a
-/* 037850 80036C50 918C8AF1 */  lbu   $t4, %lo(D_80098AF1)($t4)
+/* 03784C 80036C4C 3C0C800A */  lui   $t4, %hi(__osMaxControllers) # $t4, 0x800a
+/* 037850 80036C50 918C8AF1 */  lbu   $t4, %lo(__osMaxControllers)($t4)
 /* 037854 80036C54 256D0001 */  addiu $t5, $t3, 1
 /* 037858 80036C58 AFAD0020 */  sw    $t5, 0x20($sp)
 /* 03785C 80036C5C 01AC082A */  slt   $at, $t5, $t4
@@ -1273,8 +1273,8 @@ glabel func_80036AF0
 
 glabel func_80036C90
 /* 037890 80036C90 27BDFFF0 */  addiu $sp, $sp, -0x10
-/* 037894 80036C94 3C0D800A */  lui   $t5, %hi(D_80098AF1) # $t5, 0x800a
-/* 037898 80036C98 91AD8AF1 */  lbu   $t5, %lo(D_80098AF1)($t5)
+/* 037894 80036C94 3C0D800A */  lui   $t5, %hi(__osMaxControllers) # $t5, 0x800a
+/* 037898 80036C98 91AD8AF1 */  lbu   $t5, %lo(__osMaxControllers)($t5)
 /* 03789C 80036C9C 308400FF */  andi  $a0, $a0, 0xff
 /* 0378A0 80036CA0 3C01800A */  lui   $at, %hi(__osContLastCmd) # $at, 0x800a
 /* 0378A4 80036CA4 3C0E800A */  lui   $t6, %hi(D_8009A2A0) # $t6, 0x800a
@@ -1305,14 +1305,14 @@ glabel func_80036C90
 /* 037904 80036D04 27AF0004 */  addiu $t7, $sp, 4
 /* 037908 80036D08 8DE10000 */  lw    $at, ($t7)
 /* 03790C 80036D0C 8FAE000C */  lw    $t6, 0xc($sp)
-/* 037910 80036D10 3C0C800A */  lui   $t4, %hi(D_80098AF1) # $t4, 0x800a
+/* 037910 80036D10 3C0C800A */  lui   $t4, %hi(__osMaxControllers) # $t4, 0x800a
 /* 037914 80036D14 A9C10000 */  swl   $at, ($t6)
 /* 037918 80036D18 B9C10003 */  swr   $at, 3($t6)
 /* 03791C 80036D1C 8DF90004 */  lw    $t9, 4($t7)
 /* 037920 80036D20 A9D90004 */  swl   $t9, 4($t6)
 /* 037924 80036D24 B9D90007 */  swr   $t9, 7($t6)
 /* 037928 80036D28 8FAA0000 */  lw    $t2, ($sp)
-/* 03792C 80036D2C 918C8AF1 */  lbu   $t4, %lo(D_80098AF1)($t4)
+/* 03792C 80036D2C 918C8AF1 */  lbu   $t4, %lo(__osMaxControllers)($t4)
 /* 037930 80036D30 8FA8000C */  lw    $t0, 0xc($sp)
 /* 037934 80036D34 254B0001 */  addiu $t3, $t2, 1
 /* 037938 80036D38 016C082A */  slt   $at, $t3, $t4
@@ -1328,8 +1328,8 @@ glabel func_80036C90
 /* 03795C 80036D5C A30D0000 */   sb    $t5, ($t8)
 
 glabel func_80036D60
-/* 037960 80036D60 3C0F800A */  lui   $t7, %hi(D_80098AF1) # $t7, 0x800a
-/* 037964 80036D64 91EF8AF1 */  lbu   $t7, %lo(D_80098AF1)($t7)
+/* 037960 80036D60 3C0F800A */  lui   $t7, %hi(__osMaxControllers) # $t7, 0x800a
+/* 037964 80036D64 91EF8AF1 */  lbu   $t7, %lo(__osMaxControllers)($t7)
 /* 037968 80036D68 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 03796C 80036D6C 3C0E800A */  lui   $t6, %hi(D_8009A2A0) # $t6, 0x800a
 /* 037970 80036D70 25CEA2A0 */  addiu $t6, %lo(D_8009A2A0) # addiu $t6, $t6, -0x5d60
@@ -1368,8 +1368,8 @@ glabel func_80036D60
 /* 0379F0 80036DF0 A3AD0007 */  sb    $t5, 7($sp)
 .L80036DF4_ovl0:
 /* 0379F4 80036DF4 8FAE0008 */  lw    $t6, 8($sp)
-/* 0379F8 80036DF8 3C19800A */  lui   $t9, %hi(D_80098AF1) # $t9, 0x800a
-/* 0379FC 80036DFC 93398AF1 */  lbu   $t9, %lo(D_80098AF1)($t9)
+/* 0379F8 80036DF8 3C19800A */  lui   $t9, %hi(__osMaxControllers) # $t9, 0x800a
+/* 0379FC 80036DFC 93398AF1 */  lbu   $t9, %lo(__osMaxControllers)($t9)
 /* 037A00 80036E00 8FA80014 */  lw    $t0, 0x14($sp)
 /* 037A04 80036E04 25CF0001 */  addiu $t7, $t6, 1
 /* 037A08 80036E08 01F9082A */  slt   $at, $t7, $t9

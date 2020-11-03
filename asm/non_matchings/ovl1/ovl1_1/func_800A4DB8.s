@@ -15,7 +15,7 @@ glabel func_800A4DB8
 /* 04D03C 800A4DEC 8DD0003C */  lw    $s0, 0x3c($t6)
 .L800A4DF0_ovl1:
 /* 04D040 800A4DF0 27B20080 */  addiu $s2, $sp, 0x80
-/* 04D044 800A4DF4 0C00C304 */  jal   func_80030C10_ovl1
+/* 04D044 800A4DF4 0C00C304 */  jal   guMtxIdentF_ovl1
 /* 04D048 800A4DF8 02402025 */   move  $a0, $s2
 /* 04D04C 800A4DFC 4480A000 */  mtc1  $zero, $f20
 /* 04D050 800A4E00 24130001 */  li    $s3, 1

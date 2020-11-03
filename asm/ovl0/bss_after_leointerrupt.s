@@ -193,13 +193,13 @@ glabel D_80098A88
 glabel D_80098A8C
 .word 0x00000000
 
-glabel D_80098A90
+glabel siAccessBuf
 .word 0x00000000
 
 glabel D_80098A94
 .word 0x00000000
 
-glabel D_80098A98
+glabel __osSiAccessQueue
 .word 0x00000000
 
 glabel D_80098A9C
@@ -325,7 +325,7 @@ glabel D_80098B38
 glabel D_80098B3C
 .word 0x00000000
 
-glabel D_80098B40
+glabel __osFinalrom
 .word 0x00000000
 
 glabel D_80098B44
