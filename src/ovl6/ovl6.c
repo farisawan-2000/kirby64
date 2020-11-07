@@ -1465,7 +1465,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80154158.s")
 void func_80154180(void) {
     void *temp_v0;
 
-    func_80007C00_ovl6(D_800D799C->unk3C + 8, 0x41200000, 0x41200000, 0x439B0000, 230.0f);
+    func_80007C00(D_800D799C->unk3C + 8, 0x41200000, 0x41200000, 0x439B0000, 230.0f);
     temp_v0 = D_800D7998;
     temp_v0->unk44 = temp_v0->unk44 & -2;
     func_80153228_ovl6(0x3E);

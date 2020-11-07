@@ -22,7 +22,7 @@ glabel func_800F64B0_ovl2
 /* 07EF70 800F6500 44060000 */  mfc1  $a2, $f0
 /* 07EF74 800F6504 3C07439B */  lui   $a3, 0x439b
 /* 07EF78 800F6508 24840008 */  addiu $a0, $a0, 8
-/* 07EF7C 800F650C 0C001F00 */  jal   func_80007C00_ovl2
+/* 07EF7C 800F650C 0C001F00 */  jal   func_80007C00
 /* 07EF80 800F6510 E7A40010 */   swc1  $f4, 0x10($sp)
 /* 07EF84 800F6514 3C05800F */  lui   $a1, %hi(D_800F62A4) # $a1, 0x800f
 /* 07EF88 800F6518 24A562A4 */  addiu $a1, %lo(D_800F62A4) # addiu $a1, $a1, 0x62a4

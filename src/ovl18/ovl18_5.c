@@ -354,16 +354,14 @@ void func_80225958_ovl18(void) {
     s32 temp_a3;
     s32 temp_v0 = random_soft_s32_range(4);
     // s32 temp_v0_2;
-    s32 phi_a3;
+    // s32 phi_a3;
 
-    phi_a3 = temp_v0;
-    if (temp_v0 == D_800E93A0[D_8004A7C4->objId]) {
-        phi_a3 = temp_v0 + 1;
-        if (temp_v0 + 1 >= 4) {
-            phi_a3 = 0;
+    if (++temp_v0 == D_800E93A0[D_8004A7C4->objId]) {
+        if (temp_v0 >= 4) {
+            temp_v0 = 0;
         }
     }
-    D_800E93A0[D_8004A7C4->objId] = phi_a3;
+    D_800E93A0[D_8004A7C4->objId] = temp_v0;
     // temp_v0_2 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)]);
     temp_a3 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)])
      + D_8022ACB0[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
