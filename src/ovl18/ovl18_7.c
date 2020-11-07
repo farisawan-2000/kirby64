@@ -179,18 +179,18 @@ void func_80226E78_ovl18(s32 arg0) {
 }
 
 extern u32 D_800D6B74;
-extern void (*D_8022AE14[])(void);
+extern void (*D_8022AE14[])(u32);
 extern u16 D_800D6B30;
 extern u32 D_800EC2E0[];
 extern u16 D_80048F20[];
 extern u32 D_800D6B24;
 
-#ifdef NON_MATCHING
-void func_80226FD8_ovl18(void) {
-    u16 temp_v0;
+void func_80226FD8_ovl18(u32 arg0) {
+    s32 temp_a1 = D_800EC2E0[D_8004A7C4->objId];
+    u32 temp_v0;
 
-    if (D_800EC2E0[D_8004A7C4->objId] != 0) {
-        D_8022AE14[D_800EC2E0[D_8004A7C4->objId]]();
+    if (temp_a1 != 0) {
+        D_8022AE14[temp_a1](arg0);
     }
     D_800E98E0[D_8004A7C4->objId] = 1;
     D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
@@ -214,9 +214,6 @@ void func_80226FD8_ovl18(void) {
     }
     func_800AFA14_ovl18();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_7/func_80226FD8_ovl18.s")
-#endif
 
 struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_80007C00(u32, f32, f32, f32, f32);

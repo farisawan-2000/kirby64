@@ -767,7 +767,6 @@ asm/non_matchings/ovl18/ovl18_7/func_8022677C_ovl18.s
 asm/non_matchings/ovl18/ovl18_7/func_80226A18_ovl18.s
 asm/non_matchings/ovl18/ovl18_7/func_80226AF4_ovl18.s
 asm/non_matchings/ovl18/ovl18_7/func_80226E78_ovl18.s
-asm/non_matchings/ovl18/ovl18_7/func_80226FD8_ovl18.s
 asm/non_matchings/ovl18/ovl18_7/func_802271A8_ovl18.s
 asm/non_matchings/ovl18/ovl18_7/func_80227308_ovl18.s
 asm/non_matchings/ovl19/ovl19_2/func_8021EF00_ovl19.s
