@@ -76,12 +76,10 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_7/func_8022677C_ovl18.s")
 #endif
 
 extern u32 D_800D6B64;
-#ifdef NON_MATCHING
+
 void func_80226A18_ovl18(s32 arg0) {
-    // struct UnkStruct8004A7C4 *temp_v0;
     u32 phi_a3;
 
-    // temp_v0 = D_8004A7C4;
     D_800E25D0[D_8004A7C4->objId] = 56.0f;
     D_800E2790[D_8004A7C4->objId] = 80.0f;
     phi_a3 = 0x5012A;
@@ -90,13 +88,10 @@ void func_80226A18_ovl18(s32 arg0) {
         D_800E2790[D_8004A7C4->objId] = 89.0f;
         phi_a3 = 0x5012C;
     }
-    func_800AF8C0_ovl18(phi_a3, 0xE, 2, phi_a3);
+    func_800AF8C0_ovl18(phi_a3, 0xE, 2);
     func_800A5B14_ovl18(arg0, 0xF1, 0xFC, 0xF3, 0xFF);
     func_800AFA14_ovl18();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_7/func_80226A18_ovl18.s")
-#endif
 
 extern u32 D_800D6B64;
 
@@ -216,7 +211,7 @@ loop_3:
     temp_v0 = D_80048F20.unk2;
     if ((temp_v0 & 0x9000) == 0 || D_800D6B24 != 0) {
 block_6:
-        if ((temp_v0 & 0x200) != 0) {
+        if (temp_v0 & 0x200) {
             if (D_800D6B24 == 0) {
                 func_800A7678(0x113);
                 temp_v0_2 = D_8004A7C4;
@@ -224,7 +219,7 @@ block_6:
                 D_800D6B74 = D_800E98E0[temp_v0_2->unk0];
             } else {
 block_9:
-                if ((temp_v0 & 0x100) != 0) {
+                if (temp_v0 & 0x100) {
                     if (D_800D6B24 == 0) {
                         func_800A7678(0x113);
                         temp_v0_3 = D_8004A7C4;

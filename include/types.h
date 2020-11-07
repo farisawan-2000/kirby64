@@ -71,6 +71,18 @@ struct Entity {
    /* 0x20  */ Vec3f scale;
 };
 
+// technically everything in this struct is a void *, but it's so much easier this way
+struct BankHeader {
+    /* 0x0  */ u32 *geoBlockTable;
+    /* 0x4  */ u32 *geoROMOffset;
+    /* 0x8  */ u32 *imageBlockTable;
+    /* 0xC  */ u32 *imageROMOffset;
+    /* 0x10 */ u32 *animBlockTable;
+    /* 0x14 */ u32 *animROMOffset;
+    /* 0x18 */ u32 *miscBlockTable;
+    /* 0x1C */ u32 *miscROMOffset;
+};
+
 typedef struct Controller_800D6FE8 {
   u16 buttonHeld;
   u16 buttonPressed;

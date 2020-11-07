@@ -1,16 +1,7 @@
-#include <ultra64.h>
+#ifndef BANK0_H
+#define BANK0_H
 
-// technically everything in this struct is a void *, but it's so much easier this way
-struct BankHeader {
-	/* 0x0  */ u32 *geoBlockTable;
-	/* 0x4  */ u32 *geoROMOffset;
-	/* 0x8  */ u32 *imageBlockTable;
-	/* 0xC  */ u32 *imageROMOffset;
-	/* 0x10 */ u32 *animBlockTable;
-	/* 0x14 */ u32 *animROMOffset;
-	/* 0x18 */ u32 *miscBlockTable;
-	/* 0x1C */ u32 *miscROMOffset;
-};
+#include <ultra64.h>
 
 extern u32 bank_0_index_1_geo_start[];
 extern u32 bank_0_index_2_geo_start[];
@@ -83,3 +74,5 @@ extern u32 bank_0_index_1_misc_start[];
 extern u32 bank_0_index_2_misc_start[];
 extern u32 bank_0_index_3_misc_start[];
 extern u32 bank_0_index_4_misc_start[];
+
+#endif
