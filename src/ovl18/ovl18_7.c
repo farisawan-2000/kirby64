@@ -22,29 +22,23 @@ void func_802266E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
 }
 
 
-struct Vec3i {
-    u32 x;
-    u32 y;
-    u32 z;
-};
-extern struct Vec3i D_8022AD30[];
+extern u32 D_8022AD30[];
 extern u32 D_800BE4F8;
 void func_800B1900_ovl18(u16);
 
-#ifdef NON_MATCHING
 void func_8022677C_ovl18(s32 arg0) {
-    struct Vec3i *temp_v0;
+    u32 idx;
 
     if (D_800E98E0[D_8004A7C4->objId] != 0) {
-        temp_v0 = &D_8022AD30[D_800E98E0[D_8004A7C4->objId]];
+        idx = D_800E98E0[D_8004A7C4->objId] * 3;
 
-        D_800E25D0[D_8004A7C4->objId] = temp_v0->y;
-        D_800E2790[D_8004A7C4->objId] = temp_v0->z;
+        D_800E25D0[D_8004A7C4->objId] = D_8022AD30[idx + 1];
+        D_800E2790[D_8004A7C4->objId] = D_8022AD30[idx + 2];
         if (D_800E98E0[D_8004A7C4->objId] < 0xC) {
-            func_800AF8C0_ovl18(temp_v0->x, 0xA, 6);
+            func_800AF8C0_ovl18(D_8022AD30[idx + 0], 0xA, 6);
             func_800A5B14_ovl18(arg0, 0x10, 0x1E, 0x63, 0xFF);
         } else {
-            func_800AF8C0_ovl18(temp_v0->x, 0xA, 4);
+            func_800AF8C0_ovl18(D_8022AD30[idx + 0], 0xA, 4);
         }
         func_8000B6BC(D_800E9AA0[D_8004A7C4->objId]);
         func_800B1900_ovl18((u16) D_8004A7C4->objId);
@@ -71,9 +65,6 @@ void func_8022677C_ovl18(s32 arg0) {
     D_800BE4F8 = 2;
     func_800AFA14_ovl18();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_7/func_8022677C_ovl18.s")
-#endif
 
 extern u32 D_800D6B64;
 
