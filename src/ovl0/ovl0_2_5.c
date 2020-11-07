@@ -20,9 +20,9 @@ extern long long int gspL3DEX2_fifoTextStart[];
 extern long long int gspS2DEX2_fifoDataStart[];
 extern long long int gspS2DEX2_fifoTextStart[];
 
-u32 D_8003DCA0 = 0x00000000;
-u32 D_8003DCA4 = 0x00000000;
-u32 D_8003DCA8 = 0x00000000;
+u32 D_8003DCA0 = 0;
+u32 D_8003DCA4 = 0;
+u32 D_8003DCA8 = 0;
 
 struct UcodeHandler D_8003DCAC[16] = {
     {gspF3DEX2_fifoTextStart, gspF3DEX2_fifoDataStart},

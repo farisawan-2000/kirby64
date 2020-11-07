@@ -58,24 +58,19 @@ void func_802204F8_ovl18(s32 arg0) {
     }
 }
 
-// regalloc moment
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_802205AC_ovl18(s32 arg0) {
+void func_802205AC_ovl18(s32 arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
 
     D_800DDFD0[D_8004A7C4->objId] = 1;
     func_800B3520_ovl18();
     func_800AECC0_ovl18(D_800D6B10);
     func_800AED20_ovl18(D_800D6B10);
     temp_f0 = func_801D650C_ovl18(arg0);
-    temp_v0_2 = D_8004A7C4;
-    D_800EADE0[temp_v0_2->unk0] = temp_f0;
+    D_800EADE0[D_8004A7C4->objId] = temp_f0;
     if (0.0f < temp_f0) {
-        D_800E6A10[temp_v0_2->unk0] = 1.0f;
+        D_800E6A10[D_8004A7C4->objId] = 1.0f;
     } else {
-        D_800E6A10[temp_v0_2->unk0] = -1.0f;
+        D_800E6A10[D_8004A7C4->objId] = -1.0f;
     }
     func_800AA154_ovl18(0x10028);
     func_800AECC0_ovl18(0.0f);
@@ -84,16 +79,13 @@ struct UnkStruct8004A7C4 *func_802205AC_ovl18(s32 arg0) {
     func_800A7678(0xA6);
     func_8000B6BC(4);
     func_800AECC0_ovl18(D_800D6B10);
-    func_800AED20_ovl18(D_800D6B10);
-    func_800AA154_ovl18(0x10023);
-    temp_v0 = D_8004A7C4;
-    D_800E98E0[temp_v0->unk0] = 0x1E;
-    D_800DDC50[temp_v0->unk0] = 0;
-    return temp_v0;
+    do {
+        func_800AED20_ovl18(D_800D6B10);
+        func_800AA154_ovl18(0x10023);
+    } while (0);
+    D_800E98E0[D_8004A7C4->objId] = 0x1E;
+    D_800DDC50[D_8004A7C4->objId] = 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_1/func_802205AC_ovl18.s")
-#endif
 
 void func_80220720_ovl18(s32 arg0) {
 
@@ -314,7 +306,7 @@ u8 func_80220F68_ovl18(s32 arg0) {
     u8 phi_return;
 
     temp_a2 = D_8004A7C4;
-    temp_a3 = temp_a2->unk0;
+    temp_a3 = D_8004A7C4->unk0;
     temp_a1 = arg0;
     temp_a3 = temp_a3 * 4;
     temp_t0 = &D_800E1B50[temp_a3];
@@ -447,7 +439,7 @@ void func_80221498_ovl18(s32 arg0) {
         D_800E8920[D_8004A7C4->objId] = 0;
         func_800AECC0_ovl18(D_800D6B10 * temp_f20);
         func_800AED20_ovl18(D_800D6B10 * temp_f20);
-        func_800A9EA4_ovl18((D_800E6A10[D_8004A7C4->objId] == 1.0f) ? 0x000101B4 : 0x000101B6);
+        func_800A9EA4_ovl18((D_800E6A10[D_8004A7C4->objId] == 1.0f) ? 0x000101B6 : 0x000101B4);
         D_800E3210[D_8004A7C4->objId] = 4.5f;
         D_800E3750[D_8004A7C4->objId] = -0.25f;
         D_800E3C90[D_8004A7C4->objId] = 4.5f;

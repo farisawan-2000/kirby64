@@ -77,32 +77,26 @@ void func_802248D0_ovl18(s32 arg0) {
 }
 
 extern s32 D_8022A4E4;
-// regalloc moment
-#ifdef MIPS_TO_C
-void func_802249D8_ovl18(s32 arg0) {
-    ? sp28;
-    s32 temp_v0;
-    s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+void func_80111550_ovl18(s32);
+s32 func_80110FD4_ovl18(s32 *);
+s32 func_80111C88_ovl18(s32 *, u32);
+s32 func_80110B00_ovl18(s32 *);
 
-    temp_v0 = D_8004A7C4->objId;
-    if (*(&D_800E9C60 + (temp_v0 * 4)) == 1) {
-        func_80111550_ovl18(temp_v0);
+void func_802249D8_ovl18(UNUSED s32 arg0) {
+    s32 sp28[8];
+
+    if (D_800E9C60[D_8004A7C4->objId] == 1) {
+        func_80111550_ovl18(D_8004A7C4->objId);
         func_80111ECC_ovl18(func_80111C88_ovl18(&D_8022A4E4, D_8004A7C4->objId));
         if ((func_80110B00_ovl18(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
             func_80110150_ovl18(&sp28);
         }
     }
-    temp_v0_2 = D_8004A7C4;
-    temp_v1 = temp_v0_2->unk0;
-    if (*(&D_800E9E20 + (temp_v1 * 4)) != 0) {
-        D_800DDC50[temp_v1] = 0;
-        func_800B1EC8(D_800DE510[temp_v0_2->unk0], &func_802245E0_ovl18);
+    if (D_800E9E20[D_8004A7C4->objId] != 0) {
+        D_800DDC50[D_8004A7C4->objId] = 0;
+        func_800B1EC8(D_800DE510[D_8004A7C4->objId], &func_802245E0_ovl18);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_802249D8_ovl18.s")
-#endif
 
 void func_80224ABC_ovl18(s32 arg0, s32 arg1, f32 arg2) {
     if (arg1 == 0) {
@@ -186,7 +180,7 @@ void func_80224E50_ovl18(s32 arg0) {
 }
 
 // weird
-#ifdef NON_MATCHING
+#ifdef NON_MATCHING_
 void func_80224FCC_ovl18(s32 arg0) {
     s32 sp28;
 
@@ -244,6 +238,7 @@ void func_802252A4_ovl18(void) {
 
 // regalloc moment
 #ifdef MIPS_TO_C
+s32 random_soft_s32_range(s32);
 void func_80225304_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 0;
     D_800E8920[D_8004A7C4->objId] = 0;
@@ -349,14 +344,16 @@ extern s32 D_8022ACB0[];
  
 
 // const f32 D_8022BC54[] = {0.785398185253f};
+extern f32 D_8022BC54;
 // TODO: If this function gets matched, then we can incorporate ovl18_5's rodata completely
 #ifdef MIPS_TO_C
+void vec3_get_euler_rotation(Vector *, u32, f32);
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->objId];
     Vector sp2C;
     s32 temp_a3;
     s32 temp_v0 = random_soft_s32_range(4);
-    s32 temp_v0_2;
+    // s32 temp_v0_2;
     s32 phi_a3;
 
     phi_a3 = temp_v0;
@@ -367,8 +364,9 @@ void func_80225958_ovl18(void) {
         }
     }
     D_800E93A0[D_8004A7C4->objId] = phi_a3;
-    temp_v0_2 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)]);
-    temp_a3 = temp_v0_2 + D_8022ACB0[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
+    // temp_v0_2 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)]);
+    temp_a3 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)])
+     + D_8022ACB0[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
     D_800E9560[D_8004A7C4->objId] = temp_a3;
     sp2C.z = 0.0f;
     sp2C.y = 0.0f;

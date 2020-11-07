@@ -1,6 +1,6 @@
 #include "types.h"
 #include "segments.h"
-#include "banks.h"
+#include "banks/bank0.h"
 
 u32 *D_800C46A0[] = {
 	NULL,

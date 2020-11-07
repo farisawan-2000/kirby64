@@ -26,6 +26,7 @@ void func_80221E90_ovl18(s32 arg0) {
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;
     temp_a3 = D_800E0D50[D_8004A7C4->objId];
+    if (0) {}
 
     if ((D_800DD710[D_800E0D50[D_8004A7C4->objId]] == -1) || (D_8004A7C4->objId != D_800EBBE0[D_800E0D50[D_8004A7C4->objId]])) {
         func_8019D958_ovl18(D_8004A7C4->objId); //, temp_a1, D_8004A7C4->objId, temp_a3, temp_a1);
