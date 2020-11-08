@@ -314,7 +314,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E3770_ovl10.s")
 
     } else {
         func_80111550_ovl10(temp_v0);
-        func_80111ECC_ovl10(func_80111C88_ovl10(temp_s0->unk8C, D_8004A7C4->objId));
+        func_80111ECC_ovl10(func_80111C88(temp_s0->unk8C, D_8004A7C4->objId));
         if (func_80110B00_ovl10(&sp38) != 0) {
             *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = sp3A;
             temp_s0->unk43 = sp3B;
@@ -1608,7 +1608,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E5F60_ovl10.s")
     D_800EB160[temp_v1] = *(&D_800E7B20 + (temp_v1 * 4));
     sp28 = temp_a1;
     func_80111550_ovl10(temp_v0->unk0, temp_a1);
-    func_80111ECC_ovl10(func_80111C88_ovl10(sp28->unk8C, D_8004A7C4->objId));
+    func_80111ECC_ovl10(func_80111C88(sp28->unk8C, D_8004A7C4->objId));
     if (func_80110B00_ovl10(&sp30) != 0) {
         *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = sp32;
         sp28->unk43 = sp33;
@@ -5931,7 +5931,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EEB30_ovl10.s")
     u8 sp18;
 
     func_80111550_ovl10(D_8004A7C4->objId);
-    func_80111ECC_ovl10(func_80111C88_ovl10(&D_801F3EE0_ovl10, D_8004A7C4->objId));
+    func_80111ECC_ovl10(func_80111C88(&D_801F3EE0_ovl10, D_8004A7C4->objId));
     if ((func_80110150_ovl10(&sp18) != 0) && (D_800E8920[sp24] == 1)) {
         func_80169430_ovl10(sp24, sp18, sp19, 3);
         return 1;
@@ -5948,7 +5948,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EEE44_ovl10.s")
     u8 sp1C;
 
     func_80111550_ovl10(D_8004A7C4->objId);
-    func_80111ECC_ovl10(func_80111C88_ovl10(&D_801F3F28_ovl10, D_8004A7C4->objId));
+    func_80111ECC_ovl10(func_80111C88(&D_801F3F28_ovl10, D_8004A7C4->objId));
     if (func_80110150_ovl10(&sp1C) != 0) {
         func_80169430_ovl10(sp28, sp1C, sp1D, 4);
         return 1;
@@ -5965,7 +5965,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EEED4_ovl10.s")
     u8 sp18;
 
     func_80111550_ovl10(D_8004A7C4->objId);
-    func_80111ECC_ovl10(func_80111C88_ovl10(&D_801F3F70_ovl10, D_8004A7C4->objId));
+    func_80111ECC_ovl10(func_80111C88(&D_801F3F70_ovl10, D_8004A7C4->objId));
     if (func_80110150_ovl10(&sp18) != 0) {
         func_80169430_ovl10(sp24, sp18, sp19, 5);
         func_800A7678(0x1EE);

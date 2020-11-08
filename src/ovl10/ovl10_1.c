@@ -3225,7 +3225,7 @@ s32 func_801E28C8_ovl10(s32 arg0) {
     }
     sp30 = temp_a2_2;
     func_80111550_ovl10(temp_v0, temp_a2_2);
-    temp_v0_2 = func_80111C88_ovl10(temp_a2_2->unk8C, D_8004A7C4->objId, temp_a2_2);
+    temp_v0_2 = func_80111C88(temp_a2_2->unk8C, D_8004A7C4->objId, temp_a2_2);
     if (temp_v0_2 != 0) {
         if (arg0 != 0) {
             temp_v0_2->unk24->unk8 = arg0;
@@ -3319,7 +3319,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_1/func_801E28C8_ovl10.s")
     }
     sp18 = temp_v1;
     func_80111550_ovl10(temp_a2, temp_a2);
-    temp_v0 = func_80111C88_ovl10(temp_v1->unk8C, D_8004A7C4->objId);
+    temp_v0 = func_80111C88(temp_v1->unk8C, D_8004A7C4->objId);
     if (temp_v0 != 0) {
         if (arg0 != 0) {
             temp_v0->unk24->unk8 = arg0;
@@ -3350,7 +3350,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_1/func_801E2BD8_ovl10.s")
     sp18 = temp_v1;
     arg0 = temp_a3;
     func_80111550_ovl10(temp_a2, temp_a2, temp_a3);
-    temp_v0 = func_80111C88_ovl10(temp_v1->unk8C, D_8004A7C4->objId);
+    temp_v0 = func_80111C88(temp_v1->unk8C, D_8004A7C4->objId);
     if (temp_v0 != 0) {
         if (arg0 != 0) {
             temp_v0->unk24->unk8 = arg0;

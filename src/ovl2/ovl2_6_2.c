@@ -9445,7 +9445,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80111C4C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80111C88_ovl2(void *arg0, ?32 arg1) {
+void *func_80111C88(void *arg0, ?32 arg1) {
     s32 temp_a0;
     s32 temp_a1;
     s32 temp_a1_2;

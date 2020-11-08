@@ -683,7 +683,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18/func_8021F4E8_ovl18.s")
     }
     sp1C = temp_v0;
     func_80111550_ovl18(temp_v1);
-    func_80111ECC_ovl18(func_80111C88_ovl18(temp_v0->unk8C, D_8004A7C4->objId));
+    func_80111ECC_ovl18(func_80111C88(temp_v0->unk8C, D_8004A7C4->objId));
     return func_8021F658_ovl18();
 }
 #else

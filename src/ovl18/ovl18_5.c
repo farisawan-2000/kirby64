@@ -79,7 +79,7 @@ void func_802248D0_ovl18(s32 arg0) {
 extern s32 D_8022A4E4;
 void func_80111550_ovl18(s32);
 s32 func_80110FD4_ovl18(s32 *);
-s32 func_80111C88_ovl18(s32 *, u32);
+s32 func_80111C88(s32 *, u32);
 s32 func_80110B00_ovl18(s32 *);
 
 void func_802249D8_ovl18(UNUSED s32 arg0) {
@@ -87,7 +87,7 @@ void func_802249D8_ovl18(UNUSED s32 arg0) {
 
     if (D_800E9C60[D_8004A7C4->objId] == 1) {
         func_80111550_ovl18(D_8004A7C4->objId);
-        func_80111ECC_ovl18(func_80111C88_ovl18(&D_8022A4E4, D_8004A7C4->objId));
+        func_80111ECC_ovl18(func_80111C88(&D_8022A4E4, D_8004A7C4->objId));
         if ((func_80110B00_ovl18(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
             func_80110150_ovl18(&sp28);
         }
@@ -181,20 +181,18 @@ void func_80224E50_ovl18(s32 arg0) {
 
 // weird
 #ifdef NON_MATCHING_
-void func_80224FCC_ovl18(s32 arg0) {
-    s32 sp28;
+void func_80224FCC_ovl18(UNUSED s32 arg0) {
+    s32 sp28[8];
 
     if (D_800E98E0[D_8004A7C4->objId] != 0) {
-        func_80111550_ovl18();
+        func_80111550_ovl18(D_8004A7C4->objId);
         if (D_800E98E0[D_8004A7C4->objId] == 1) {
-            func_80111ECC_ovl18(func_80111C88_ovl18(&D_8022A628));
+            func_80111ECC_ovl18(func_80111C88(&D_8022A628, D_8004A7C4->objId));
         } else {
-            func_80111ECC_ovl18(func_80111C88_ovl18(&D_8022A5BC));
+            func_80111ECC_ovl18(func_80111C88(&D_8022A5BC, D_8004A7C4->objId));
         }
-        if (func_80110B00_ovl18(&sp28) == 0) {
-            if (func_80110FD4_ovl18(&sp28) == 0) {
-                func_80110150_ovl18(&sp28);
-            }
+        if ((func_80110B00_ovl18(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
+            func_80110150_ovl18(&sp28);
         }
     }
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
@@ -346,7 +344,7 @@ extern s32 D_8022ACB0[];
 // const f32 D_8022BC54[] = {0.785398185253f};
 extern f32 D_8022BC54;
 // TODO: If this function gets matched, then we can incorporate ovl18_5's rodata completely
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING
 void vec3_get_euler_rotation(Vector *, u32, f32);
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->objId];
@@ -355,8 +353,9 @@ void func_80225958_ovl18(void) {
     s32 temp_v0 = random_soft_s32_range(4);
     // s32 temp_v0_2;
     // s32 phi_a3;
-
+    // phi_a3 = temp_v0 + 1;
     if (++temp_v0 == D_800E93A0[D_8004A7C4->objId]) {
+        // temp_v0 = phi_a3;
         if (temp_v0 >= 4) {
             temp_v0 = 0;
         }

@@ -1464,7 +1464,7 @@ void func_801DDB9C_ovl11(s32 arg0) {
         return 0;
     }
     func_80111550_ovl11(*temp_v1);
-    func_80111ECC_ovl11(func_80111C88_ovl11(temp_s0[0x23], D_8004A7C4->objId));
+    func_80111ECC_ovl11(func_80111C88(temp_s0[0x23], D_8004A7C4->objId));
     if (func_80110B00_ovl11(&sp38) != 0) {
         D_800E83E0[D_8004A7C4->objId] = sp3A;
         temp_s0->unk43 = sp3B;
@@ -1978,7 +1978,7 @@ s32 func_801DEC08_ovl11(s32 arg0) {
 
     } else {
         func_80111550_ovl11(*temp_v1);
-        temp_v0_2 = func_80111C88_ovl11(temp_s0[0x23], D_8004A7C4->objId);
+        temp_v0_2 = func_80111C88(temp_s0[0x23], D_8004A7C4->objId);
         if ((temp_s0[0x23]->unk8->unk4 == 0) && (arg0 != 0)) {
             temp_v0_2->unk24->unk8 = arg0;
         }
