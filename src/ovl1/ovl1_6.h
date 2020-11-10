@@ -81,8 +81,8 @@ extern u16 D_800E77A0[];
 
 extern u8 D_800E7880[];
 extern s32 D_800E78F0[];
-extern s32 D_800E7B20[];
-extern u32 D_800E7CE0[];
+extern f32 D_800E7B20[];
+extern s32 D_800E7CE0[];
 extern s32 D_800EA520[];
 extern s32 D_800EA360[];
 extern s32 D_800EA1A0[];

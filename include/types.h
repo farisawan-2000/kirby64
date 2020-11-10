@@ -40,6 +40,9 @@ struct Unk8Byte {
 
 typedef f32 Vec3f[3];
 
+// TODO: where do i put this???
+typedef f32 Mat4[4][4];
+
 typedef struct  {
     f32 x;
     f32 y;
