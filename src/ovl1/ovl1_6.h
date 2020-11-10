@@ -2,6 +2,7 @@
 #define OVL1_5_H
 
 #include "ovl2/ovl2_6.h"
+#include "ovl19/ovl19_5.h"
 
 
 extern s32 D_800DD710[];
@@ -22,6 +23,7 @@ extern s32 D_800E1ED0[];
 extern s32 D_800DEDD0[];
 extern s32 *D_800DEF90[];
 extern void (*D_800DF150[])(s32);
+extern void (*D_800DF310[])(s32, s32, f32);
 extern s32 D_800DF850[];
 extern s32 D_800DF690[];
 extern s32 D_800DF4D0[];
@@ -82,14 +84,14 @@ extern u16 D_800E77A0[];
 extern u8 D_800E7880[];
 extern s32 D_800E78F0[];
 extern f32 D_800E7B20[];
-extern s32 D_800E7CE0[];
+extern u32 D_800E7CE0[];
 extern s32 D_800EA520[];
 extern s32 D_800EA360[];
 extern s32 D_800EA1A0[];
 extern s32 D_800E9FE0[];
 extern s32 D_800E9E20[];
 extern s32 D_800E9C60[];
-extern s32 *D_800E9AA0[];
+extern struct EntityThing800E9AA0 *D_800E9AA0[];
 extern s32 D_800E98E0[];
 extern f32 D_800EB320[];
 extern f32 D_800EB160[];

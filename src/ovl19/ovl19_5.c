@@ -4,6 +4,7 @@
 #include "src/ovl2/ovl2_6.h"
 #include "ovl19_5.h"
 #include "D_8004A7C4.h"
+#include "unk_structs/D_800E1B50.h"
 
 extern void func_800AECC0_ovl19(f32 arg0);
 extern void func_800AED20_ovl19(f32 arg0);
@@ -117,10 +118,10 @@ GLOBAL_ASM("asm/non_matchings/ovl19_5/func_8022E798_ovl19.s")
 
 extern f32 D_8022FA98;
 extern void *func_8022EB54_ovl19;
-extern struct CollisionState *D_800E1B50[];
+
 void func_8022E954_ovl19(struct CollisionState *arg0) {
     Vector sp24;
-    struct CollisionState *sp20;
+    struct UnkStruct800E1B50 *sp20;
 
     sp20 = D_800E1B50[D_8004A7C4->objId];
     func_800AECC0_ovl19(D_800D6B10);
@@ -245,8 +246,9 @@ void func_8022EE78_ovl19(s32 arg0) {
                 D_800E3750[D_8004A7C4->objId] = D_800E3910[D_8004A7C4->objId];
                 
                 D_800E3E50[D_8004A7C4->objId] = D_8022FAA4;
-                D_800E3C90[D_8004A7C4->objId] = D_800E3E50[D_8004A7C4->objId];
-                D_800E3AD0[D_8004A7C4->objId] = D_800E3E50[D_8004A7C4->objId];
+                D_800E3C90[D_8004A7C4->objId] = 
+                D_800E3AD0[D_8004A7C4->objId] =
+                D_800E3E50[D_8004A7C4->objId];
                 func_800A7678(0x260);
                 return;
             }

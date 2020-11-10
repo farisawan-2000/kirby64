@@ -2,7 +2,7 @@
 #include "src/ovl0/main.h"
 #include "src/ovl0/ovl0_1.c"
 #include "src/ovl0/ovl0_2_5_1.c"
-#include "src/ovl0/ovl0_2_5_1_5.c"
+#include "src/ovl0/rdp_reset.c"
 #include "src/ovl0/ovl0_2_5_2.c"
 #include "src/ovl0/ovl0_2_5.c"
 #include "src/ovl0/ovl0_2_5.h"

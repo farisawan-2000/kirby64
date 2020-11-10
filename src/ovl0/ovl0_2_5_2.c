@@ -1342,56 +1342,38 @@ struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3) {
     }
 }
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8000A1C0(s32 arg2) {
-    struct UnkStruct8004A7C4 *sp1C;
+struct UnkStruct8004A7C4 *func_8000A1C0(s32 arg0, s32 arg1, u8 arg2, s32 arg3) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg2 & 0xFF);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2, arg3);
     if (temp_v0 == 0) {
         return NULL;
     }
-    sp1C = temp_v0;
     func_800084A0(temp_v0);
-    return sp1C;
+    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A1C0.s")
-#endif
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8000A200(struct UnkStruct8004A7C4 *arg2) {
-    struct UnkStruct8004A7C4 *sp1C;
+struct UnkStruct8004A7C4 *func_8000A200(s32 arg0, s32 arg1, struct UnkStruct8004A7C4 *arg2) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->unkC, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
-    sp1C = temp_v0;
     func_800083CC(temp_v0, arg2);
-    return sp1C;
+    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A200.s")
-#endif
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8000A24C(void *arg2) {
-    struct UnkStruct8004A7C4 *sp1C;
+struct UnkStruct8004A7C4 *func_8000A24C(s32 arg0, s32 arg1, struct UnkStruct8004A7C4 *arg2) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->unkC, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
-    sp1C = temp_v0;
     func_800083CC(temp_v0, arg2->unk8);
-    return sp1C;
+    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A24C.s")
-#endif
 
 void func_8000BBE0(struct UnkStruct8004A7C4 *);
 
@@ -1426,9 +1408,8 @@ void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, 
     struct ObjProcess *phi_s1_2;
 
     if (arg2 >= 0x20) {
-        fatal_printf(&D_80040414, arg2, arg1->unk0);
-loop_2:
-        goto loop_2;
+        fatal_printf(&D_80040414, arg2, arg1->objId); // "omGMoveCommon() : link num over : link = %d : id = %d\n"
+        while (1);
     }
     phi_s0 = arg1;
     if (arg1 == 0) {
@@ -1450,23 +1431,13 @@ loop_6:
     func_80008528(phi_s0);
     phi_s0->unkC = arg2;
     phi_s0->unk10 = arg3;
-    if (arg0 != 0) {
-        if (arg0 != 1) {
-            if (arg0 != 2) {
-                if (arg0 != 3) {
-
-                } else {
-                    func_800083CC(phi_s0, arg4->unk8);
-                }
-            } else {
-                func_800083CC(phi_s0, arg4);
-            }
-        } else {
-            func_800084A0(phi_s0);
-        }
-    } else {
-        func_80008434(phi_s0);
+    switch (arg0) {
+        case 0: func_80008434(phi_s0);             break;
+        case 1: func_800084A0(phi_s0);             break;
+        case 2: func_800083CC(phi_s0, arg4);       break;
+        case 3: func_800083CC(phi_s0, arg4->unk8); break;
     }
+    
     if (sp20 != 0) {
 loop_18:
         temp_s0 = phi_s1_2->unk0;

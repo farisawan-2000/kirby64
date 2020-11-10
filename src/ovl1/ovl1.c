@@ -1404,7 +1404,7 @@ loop_3:
                     goto loop_3;
                 }
             }
-            temp_v0 = func_8000BE90_ovl1(phi_s1);
+            temp_v0 = func_8000BE90(phi_s1);
             phi_s1 = temp_v0;
             if (temp_v0 != 0) {
                 goto loop_2;

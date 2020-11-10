@@ -1835,7 +1835,7 @@ void *func_800AACC8(void *arg0, ? arg1, s32 arg2, f32 arg3) {
     if (D_8004A7C4->unk3C != 0) {
 loop_1:
         phi_s2->unk55 = (u8)0;
-        temp_v0 = func_8000BE90_ovl1(phi_s2);
+        temp_v0 = func_8000BE90(phi_s2);
         phi_s2 = temp_v0;
         if (temp_v0 != 0) {
             goto loop_1;

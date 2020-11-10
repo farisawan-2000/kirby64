@@ -3216,6 +3216,8 @@ glabel D_801F44A8_ovl10
 glabel D_801F44AC_ovl10
 .word 0x01051000
 
+# start of a vtable?
+
 glabel D_801F44B0_ovl10
 .word 0x801F444C
 
