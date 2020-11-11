@@ -140,7 +140,7 @@ glabel func_8021F174_ovl19
 /* 23FA94 8021F384 00003025 */  move  $a2, $zero
 /* 23FA98 8021F388 0C048C3A */  jal   func_801230E8_ovl19
 /* 23FA9C 8021F38C A1100054 */   sb    $s0, 0x54($t0)
-/* 23FAA0 8021F390 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 23FAA0 8021F390 0C02BE85 */  jal   func_800AFA14
 /* 23FAA4 8021F394 00000000 */   nop   
 /* 23FAA8 8021F398 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 23FAAC 8021F39C 8FB00014 */  lw    $s0, 0x14($sp)

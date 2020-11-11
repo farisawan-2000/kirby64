@@ -18,23 +18,23 @@ glabel func_80221480_ovl19
 /* 241BD0 802214C0 000FC080 */  sll   $t8, $t7, 2
 /* 241BD4 802214C4 00380821 */  addu  $at, $at, $t8
 /* 241BD8 802214C8 C424F0F8 */ lwc1 $f4, %lo(D_8022F0F8)($at)
-/* 241BDC 802214CC 3C01800E */ lui $at, %hi(D_800E25D0)
+/* 241BDC 802214CC 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 241BE0 802214D0 00230821 */  addu  $at, $at, $v1
-/* 241BE4 802214D4 E42425D0 */ swc1 $f4, %lo(D_800E25D0)($at)
+/* 241BE4 802214D4 E42425D0 */ swc1 $f4, %lo(gEntitiesPosXArray)($at)
 /* 241BE8 802214D8 8C590000 */  lw    $t9, ($v0)
 /* 241BEC 802214DC 3C0142DC */  li    $at, 0x42DC0000 # 110.000000
 /* 241BF0 802214E0 44813000 */  mtc1  $at, $f6
-/* 241BF4 802214E4 3C01800E */ lui $at, %hi(D_800E2790)
+/* 241BF4 802214E4 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 241BF8 802214E8 00194080 */  sll   $t0, $t9, 2
 /* 241BFC 802214EC 00280821 */  addu  $at, $at, $t0
-/* 241C00 802214F0 E4262790 */ swc1 $f6, %lo(D_800E2790)($at)
+/* 241C00 802214F0 E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
 /* 241C04 802214F4 8C490000 */  lw    $t1, ($v0)
 /* 241C08 802214F8 3C01C2C8 */  li    $at, 0xC2C80000 # -100.000000
 /* 241C0C 802214FC 44814000 */  mtc1  $at, $f8
-/* 241C10 80221500 3C01800E */ lui $at, %hi(D_800E2950)
+/* 241C10 80221500 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
 /* 241C14 80221504 00095080 */  sll   $t2, $t1, 2
 /* 241C18 80221508 002A0821 */  addu  $at, $at, $t2
-/* 241C1C 8022150C E4282950 */ swc1 $f8, %lo(D_800E2950)($at)
+/* 241C1C 8022150C E4282950 */ swc1 $f8, %lo(gEntitiesPosZArray)($at)
 /* 241C20 80221510 8C4B0000 */  lw    $t3, ($v0)
 /* 241C24 80221514 3C18800D */ lui $t8, %hi(D_800D6F18)
 /* 241C28 80221518 24060010 */  li    $a2, 16
@@ -64,7 +64,7 @@ glabel func_80221480_ovl19
 /* 241C88 80221578 008E2021 */  addu  $a0, $a0, $t6
 /* 241C8C 8022157C 0C02A806 */  jal   func_800AA018_ovl19
 /* 241C90 80221580 8C84F108 */ lw $a0, %lo(D_8022F108)($a0)
-/* 241C94 80221584 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 241C94 80221584 0C02BE85 */  jal   func_800AFA14
 /* 241C98 80221588 00000000 */   nop   
 /* 241C9C 8022158C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 241CA0 80221590 27BD0018 */  addiu $sp, $sp, 0x18

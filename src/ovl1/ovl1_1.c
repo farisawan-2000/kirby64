@@ -1916,15 +1916,15 @@ f32 func_800A5F94(s32 arg0, void *arg1) {
     s32 temp_s1;
 
     temp_s1 = arg0 * 4;
-    temp_v0 = temp_s1 + &D_800E4010;
+    temp_v0 = temp_s1 + &gEntitiesAngleXArray;
     sp30 = temp_v0;
     temp_f20 = func_800A5B64_ovl1(*temp_v0);
-    temp_v0_2 = &D_800E41D0[arg0];
+    temp_v0_2 = &gEntitiesAngleYArray[arg0];
     temp_f22 = func_800A5BDC_ovl1(*temp_v0);
     sp30 = temp_v0_2;
     sp48 = func_800A5B64_ovl1(*temp_v0_2);
     temp_f0_2 = func_800A5BDC_ovl1(*temp_v0_2);
-    temp_v0_3 = temp_s1 + &D_800E4390;
+    temp_v0_3 = temp_s1 + &gEntitiesAngleZArray;
     sp30 = temp_v0_3;
     sp3C = temp_f0_2;
     sp44 = func_800A5B64_ovl1(*temp_v0_3);
@@ -1961,9 +1961,9 @@ f32 func_800A5F94(s32 arg0, void *arg1) {
         arg1->unk1C = arg1->unk1C * *temp_v0_6;
         arg1->unk20 = arg1->unk20 * *temp_v0_6;
     }
-    arg1->unk24 = D_800E25D0[arg0];
-    arg1->unk28 = D_800E2790[arg0];
-    arg1->unk2C = D_800E2950[arg0];
+    arg1->unk24 = gEntitiesPosXArray[arg0];
+    arg1->unk28 = gEntitiesPosYArray[arg0];
+    arg1->unk2C = gEntitiesPosZArray[arg0];
     return temp_f0;
 }
 #else

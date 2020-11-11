@@ -80,7 +80,7 @@ glabel func_8015814C_ovl3
 /* 0B8CAC 8015826C 0C055F8E */  jal   func_80157E38_ovl3
 /* 0B8CB0 80158270 8FA40020 */   lw    $a0, 0x20($sp)
 /* 0B8CB4 80158274 240A0001 */  li    $t2, 1
-/* 0B8CB8 80158278 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0B8CB8 80158278 0C02BE85 */  jal   func_800AFA14
 /* 0B8CBC 8015827C AE0A0044 */   sw    $t2, 0x44($s0)
 /* 0B8CC0 80158280 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0B8CC4 80158284 8FB00018 */  lw    $s0, 0x18($sp)

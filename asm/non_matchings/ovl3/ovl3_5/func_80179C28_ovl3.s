@@ -425,7 +425,7 @@ glabel func_80179C28_ovl3
 /* 0DACBC 8017A27C 27080001 */  addiu $t0, $t8, 1
 /* 0DACC0 8017A280 AEC80030 */  sw    $t0, 0x30($s6)
 .L8017A284_ovl3:
-/* 0DACC4 8017A284 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0DACC4 8017A284 0C02BE85 */  jal   func_800AFA14
 /* 0DACC8 8017A288 00000000 */   nop   
 /* 0DACCC 8017A28C 8FBF004C */  lw    $ra, 0x4c($sp)
 /* 0DACD0 8017A290 D7B40018 */  ldc1  $f20, 0x18($sp)

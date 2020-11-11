@@ -71,9 +71,9 @@ void func_800AE138(s32 arg0) {
     D_800E2E90[arg0] = 0.0f;
     D_800E2CD0[arg0] = 0.0f;
     D_800E2B10[arg0] = 0.0f;
-    D_800E2950[arg0] = 0.0f;
-    D_800E2790[arg0] = 0.0f;
-    D_800E25D0[arg0] = 0.0f;
+    gEntitiesPosZArray[arg0] = 0.0f;
+    gEntitiesPosYArray[arg0] = 0.0f;
+    gEntitiesPosXArray[arg0] = 0.0f;
     D_800E3910[arg0] = 0.0f;
     D_800E3750[arg0] = 0.0f;
     D_800E3590[arg0] = 0.0f;
@@ -83,11 +83,11 @@ void func_800AE138(s32 arg0) {
     D_800E3E50[arg0] = temp_f12;
     D_800E3C90[arg0] = temp_f12;
     D_800E3AD0[arg0] = temp_f12;
-    D_800E4390[arg0] = 0.0f;
+    gEntitiesAngleZArray[arg0] = 0.0f;
 
 
-    D_800E41D0[arg0] = //0.0f;
-    D_800E4010[arg0] = //0.0f;
+    gEntitiesAngleYArray[arg0] = //0.0f;
+    gEntitiesAngleXArray[arg0] = //0.0f;
     D_800E1450[arg0] = //0.0f;
     D_800E1290[arg0] = //0.0f;
     D_800E10D0[arg0] = 0.0f;
@@ -329,8 +329,8 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
                 return FAIL;
             }
             D_800DE350[idx]->unk4C = 0;
-            D_800E41D0[idx] = 0.0f;
-            D_800E4010[idx] = 0.0f;
+            gEntitiesAngleYArray[idx] = 0.0f;
+            gEntitiesAngleXArray[idx] = 0.0f;
             break;
     }
     D_800E0D50[idx] = (D_8004A7C4 != NULL) ? D_8004A7C4->objId : -1;

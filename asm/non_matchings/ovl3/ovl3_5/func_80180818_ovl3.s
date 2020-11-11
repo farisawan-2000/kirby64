@@ -210,7 +210,7 @@ glabel func_80180818_ovl3
 /* 0E1574 80180B34 8E0E0030 */  lw    $t6, 0x30($s0)
 .L80180B38_ovl3:
 /* 0E1578 80180B38 25CF0001 */  addiu $t7, $t6, 1
-/* 0E157C 80180B3C 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0E157C 80180B3C 0C02BE85 */  jal   func_800AFA14
 /* 0E1580 80180B40 AE0F0030 */   sw    $t7, 0x30($s0)
 /* 0E1584 80180B44 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0E1588 80180B48 8FB00014 */  lw    $s0, 0x14($sp)

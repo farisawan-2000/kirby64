@@ -222,7 +222,7 @@ glabel func_80176490_ovl3
 /* 0D722C 801767EC AC2B6B54 */  sw    $t3, %lo(D_800D6B54)($at)
 /* 0D7230 801767F0 3C01800C */  lui   $at, %hi(D_800BE4F8) # $at, 0x800c
 /* 0D7234 801767F4 240D0006 */  li    $t5, 6
-/* 0D7238 801767F8 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D7238 801767F8 0C02BE85 */  jal   func_800AFA14
 /* 0D723C 801767FC AC2DE4F8 */   sw    $t5, %lo(D_800BE4F8)($at)
 /* 0D7240 80176800 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0D7244 80176804 8FB00018 */  lw    $s0, 0x18($sp)

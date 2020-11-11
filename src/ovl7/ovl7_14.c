@@ -10,8 +10,8 @@ extern s32 D_800E8920[];
 extern void (*D_800DF150[])(s32);
 
 extern f32 D_800EC660[];
-extern f32 D_800E2950[];
-extern f32 D_800E25D0[];
+extern f32 gEntitiesPosZArray[];
+extern f32 gEntitiesPosXArray[];
 extern s32 func_801ACCA0_ovl7(s32, s32, f32, f32);
 
 extern f32 D_800EC820[];
@@ -43,8 +43,8 @@ void func_801BB9D0(s32 arg0, s32 arg1, f32 arg2) {
         temp_v0 = func_801ACCA0_ovl7(2, 0, 0, 20.0f);
         if (temp_v0 != 0) {
             D_800EC660[temp_v0] = 0.0f;
-            D_800E2950[temp_v0] = 0.0f;
-            D_800E25D0[temp_v0] = 0.0f;
+            gEntitiesPosZArray[temp_v0] = 0.0f;
+            gEntitiesPosXArray[temp_v0] = 0.0f;
         }
         func_800A7678(0xA7);
     }

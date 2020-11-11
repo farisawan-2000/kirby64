@@ -42,12 +42,12 @@ glabel func_8021FEBC_ovl18
 /* 2328F0 8021FF50 46062202 */  mul.s $f8, $f4, $f6
 /* 2328F4 8021FF54 C4C40004 */  lwc1  $f4, 4($a2)
 /* 2328F8 8021FF58 8C6B0000 */  lw    $t3, ($v1)
-/* 2328FC 8021FF5C 3C01800E */ lui $at, %hi(D_800E2790)
+/* 2328FC 8021FF5C 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 232900 8021FF60 000B6080 */  sll   $t4, $t3, 2
 /* 232904 8021FF64 46805420 */  cvt.s.w $f16, $f10
 /* 232908 8021FF68 002C0821 */  addu  $at, $at, $t4
 /* 23290C 8021FF6C 46104482 */  mul.s $f18, $f8, $f16
 /* 232910 8021FF70 46049180 */  add.s $f6, $f18, $f4
-/* 232914 8021FF74 E4262790 */ swc1 $f6, %lo(D_800E2790)($at)
+/* 232914 8021FF74 E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
 /* 232918 8021FF78 03E00008 */  jr    $ra
 /* 23291C 8021FF7C ACA40004 */   sw    $a0, 4($a1)

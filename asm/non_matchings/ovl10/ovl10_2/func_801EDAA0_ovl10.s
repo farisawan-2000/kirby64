@@ -103,8 +103,8 @@ glabel func_801EDAA0_ovl10
 /* 1DE9A4 801EDC34 3C01800F */ lui $at, %hi(D_800E9AA0)
 /* 1DE9A8 801EDC38 24090002 */  li    $t1, 2
 /* 1DE9AC 801EDC3C 8C4A0000 */  lw    $t2, ($v0)
-/* 1DE9B0 801EDC40 3C10800E */  lui   $s0, %hi(D_800E25D0) # $s0, 0x800e
-/* 1DE9B4 801EDC44 261025D0 */  addiu $s0, %lo(D_800E25D0) # addiu $s0, $s0, 0x25d0
+/* 1DE9B0 801EDC40 3C10800E */  lui   $s0, %hi(gEntitiesPosXArray) # $s0, 0x800e
+/* 1DE9B4 801EDC44 261025D0 */  addiu $s0, %lo(gEntitiesPosXArray) # addiu $s0, $s0, 0x25d0
 /* 1DE9B8 801EDC48 000A5880 */  sll   $t3, $t2, 2
 /* 1DE9BC 801EDC4C 002B0821 */  addu  $at, $at, $t3
 /* 1DE9C0 801EDC50 AC299AA0 */ sw $t1, %lo(D_800E9AA0)($at)

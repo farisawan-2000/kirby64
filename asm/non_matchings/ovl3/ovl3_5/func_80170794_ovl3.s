@@ -62,7 +62,7 @@ glabel func_80170794_ovl3
 /* 0D12BC 8017087C 2442E7C0 */  addiu $v0, %lo(gKirbyState) # addiu $v0, $v0, -0x1840
 /* 0D12C0 80170880 8C4A0030 */  lw    $t2, 0x30($v0)
 /* 0D12C4 80170884 25480001 */  addiu $t0, $t2, 1
-/* 0D12C8 80170888 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D12C8 80170888 0C02BE85 */  jal   func_800AFA14
 /* 0D12CC 8017088C AC480030 */   sw    $t0, 0x30($v0)
 /* 0D12D0 80170890 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D12D4 80170894 27BD0018 */  addiu $sp, $sp, 0x18

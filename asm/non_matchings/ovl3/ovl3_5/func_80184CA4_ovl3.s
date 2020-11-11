@@ -314,7 +314,7 @@ glabel func_80184CA4_ovl3
 /* 0E5B98 80185158 25F90001 */  addiu $t9, $t7, 1
 /* 0E5B9C 8018515C AE390030 */  sw    $t9, 0x30($s1)
 .L80185160_ovl3:
-/* 0E5BA0 80185160 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0E5BA0 80185160 0C02BE85 */  jal   func_800AFA14
 /* 0E5BA4 80185164 00000000 */   nop   
 /* 0E5BA8 80185168 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 0E5BAC 8018516C 8FB00018 */  lw    $s0, 0x18($sp)

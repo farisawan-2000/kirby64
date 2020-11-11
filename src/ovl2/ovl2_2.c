@@ -182,7 +182,7 @@ loop_3:
         }
     }
     (phi_v1 + 0x800E0000)->unk-CF0 = &D_800F6E0C;
-    func_800AFA14_ovl2();
+    func_800AFA14();
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E30_ovl2.s")

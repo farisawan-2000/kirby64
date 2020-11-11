@@ -25,7 +25,7 @@ glabel spawn_entity
 /* 08548C 800FCA1C AFAB002C */  sw    $t3, 0x2c($sp)
 /* 085490 800FCA20 AFAA0028 */  sw    $t2, 0x28($sp)
 /* 085494 800FCA24 AFA90024 */  sw    $t1, 0x24($sp)
-/* 085498 800FCA28 0C03F345 */  jal   func_800FCD14_ovl2
+/* 085498 800FCA28 0C03F345 */  jal   func_800FCD14
 /* 08549C 800FCA2C AFA80020 */   sw    $t0, 0x20($sp)
 /* 0854A0 800FCA30 10000010 */  b     .L800FCA74_ovl2
 /* 0854A4 800FCA34 8FBF003C */   lw    $ra, 0x3c($sp)
@@ -42,7 +42,7 @@ glabel spawn_entity
 /* 0854CC 800FCA5C AFB80024 */  sw    $t8, 0x24($sp)
 /* 0854D0 800FCA60 AFAF0020 */  sw    $t7, 0x20($sp)
 /* 0854D4 800FCA64 AFAE001C */  sw    $t6, 0x1c($sp)
-/* 0854D8 800FCA68 0C03F370 */  jal   func_800FCDC0_ovl2
+/* 0854D8 800FCA68 0C03F370 */  jal   func_800FCDC0
 /* 0854DC 800FCA6C AFAD0018 */   sw    $t5, 0x18($sp)
 /* 0854E0 800FCA70 8FBF003C */  lw    $ra, 0x3c($sp)
 .L800FCA74_ovl2:

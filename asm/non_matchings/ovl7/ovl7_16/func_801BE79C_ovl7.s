@@ -188,7 +188,7 @@ glabel func_801BE79C_ovl7
 /* 164AD0 801BEA60 2404001E */   li    $a0, 30
 /* 164AD4 801BEA64 240D0002 */  li    $t5, 2
 /* 164AD8 801BEA68 3C018013 */  lui   $at, %hi(D_8012E7D4) # $at, 0x8013
-/* 164ADC 801BEA6C 0C02BE85 */  jal   func_800AFA14_ovl7
+/* 164ADC 801BEA6C 0C02BE85 */  jal   func_800AFA14
 /* 164AE0 801BEA70 A02DE7D4 */   sb    $t5, %lo(D_8012E7D4)($at)
 /* 164AE4 801BEA74 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 164AE8 801BEA78 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -213,8 +213,8 @@ glabel func_801BE79C_ovl7
 /* 164B30 801BEAC0 00C95021 */  addu  $t2, $a2, $t1
 /* 164B34 801BEAC4 E5440000 */  swc1  $f4, ($t2)
 /* 164B38 801BEAC8 8C4B0000 */  lw    $t3, ($v0)
-/* 164B3C 801BEACC 3C07800E */  lui   $a3, %hi(D_800E2790) # $a3, 0x800e
-/* 164B40 801BEAD0 24E72790 */  addiu $a3, %lo(D_800E2790) # addiu $a3, $a3, 0x2790
+/* 164B3C 801BEACC 3C07800E */  lui   $a3, %hi(gEntitiesPosYArray) # $a3, 0x800e
+/* 164B40 801BEAD0 24E72790 */  addiu $a3, %lo(gEntitiesPosYArray) # addiu $a3, $a3, 0x2790
 /* 164B44 801BEAD4 C4E60000 */  lwc1  $f6, ($a3)
 /* 164B48 801BEAD8 000B6080 */  sll   $t4, $t3, 2
 /* 164B4C 801BEADC 00EC6821 */  addu  $t5, $a3, $t4
@@ -289,14 +289,14 @@ glabel func_801BE79C_ovl7
 /* 164C54 801BEBE4 3C098005 */  lui   $t1, %hi(D_8004A7C4) # $t1, 0x8005
 /* 164C58 801BEBE8 8D29A7C4 */  lw    $t1, %lo(D_8004A7C4)($t1)
 /* 164C5C 801BEBEC C7A80038 */  lwc1  $f8, 0x38($sp)
-/* 164C60 801BEBF0 3C01800E */ lui $at, %hi(D_800E2790)
+/* 164C60 801BEBF0 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 164C64 801BEBF4 8D2A0000 */  lw    $t2, ($t1)
 /* 164C68 801BEBF8 3C040001 */  lui   $a0, (0x000100C4 >> 16) # lui $a0, 1
 /* 164C6C 801BEBFC 348400C4 */  ori   $a0, (0x000100C4 & 0xFFFF) # ori $a0, $a0, 0xc4
 /* 164C70 801BEC00 000A4080 */  sll   $t0, $t2, 2
 /* 164C74 801BEC04 00280821 */  addu  $at, $at, $t0
 /* 164C78 801BEC08 0C02A5D8 */  jal   func_800A9760_ovl7
-/* 164C7C 801BEC0C E4282790 */ swc1 $f8, %lo(D_800E2790)($at)
+/* 164C7C 801BEC0C E4282790 */ swc1 $f8, %lo(gEntitiesPosYArray)($at)
 /* 164C80 801BEC10 3C040001 */  lui   $a0, (0x000105EE >> 16) # lui $a0, 1
 /* 164C84 801BEC14 0C02A806 */  jal   func_800AA018_ovl7
 /* 164C88 801BEC18 348405EE */   ori   $a0, (0x000105EE & 0xFFFF) # ori $a0, $a0, 0x5ee

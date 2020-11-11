@@ -2,8 +2,8 @@ glabel func_801184B8_ovl2
 /* 0A0F28 801184B8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0A0F2C 801184BC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A0F30 801184C0 8C830000 */  lw    $v1, ($a0)
-/* 0A0F34 801184C4 3C02800E */  lui   $v0, %hi(D_800E2790) # $v0, 0x800e
-/* 0A0F38 801184C8 24422790 */  addiu $v0, %lo(D_800E2790) # addiu $v0, $v0, 0x2790
+/* 0A0F34 801184C4 3C02800E */  lui   $v0, %hi(gEntitiesPosYArray) # $v0, 0x800e
+/* 0A0F38 801184C8 24422790 */  addiu $v0, %lo(gEntitiesPosYArray) # addiu $v0, $v0, 0x2790
 /* 0A0F3C 801184CC 00037080 */  sll   $t6, $v1, 2
 /* 0A0F40 801184D0 004E7821 */  addu  $t7, $v0, $t6
 /* 0A0F44 801184D4 C5E60000 */  lwc1  $f6, ($t7)

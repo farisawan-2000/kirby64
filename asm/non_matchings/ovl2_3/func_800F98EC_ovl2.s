@@ -1,4 +1,4 @@
-glabel func_800F98EC_ovl2
+glabel func_800F98EC
 /* 08235C 800F98EC 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 082360 800F98F0 00041080 */  sll   $v0, $a0, 2
 /* 082364 800F98F4 3C0E800E */  lui   $t6, %hi(D_800E5F90) # $t6, 0x800e

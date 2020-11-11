@@ -52,7 +52,7 @@ void func_80224790_ovl18(s32 arg0) {
     D_800E6850[D_8004A7C4->objId] = 65535.0f;
     func_800AA864_ovl18(0x1003C, 2, &D_800E6690);
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 void func_80224864_ovl18(s32 arg0) {
@@ -73,7 +73,7 @@ void func_802248D0_ovl18(s32 arg0) {
     func_800A7678(0xA1);
     func_800AF27C_ovl18();
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 extern s32 D_8022A4E4;
@@ -142,7 +142,7 @@ void func_80224D04_ovl18(s32 arg0) {
     func_800AA018_ovl18(0x101DB, &D_800E6690);
     func_800AA864_ovl18(0x101DA, 3);
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 void func_80224DE4_ovl18(s32 arg0) {
@@ -176,7 +176,7 @@ void func_80224E50_ovl18(s32 arg0) {
     D_800E98E0[D_8004A7C4->objId] = 0;
     func_800AF27C_ovl18();
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 // weird
@@ -275,7 +275,7 @@ void func_802254C0_ovl18(s32 arg0) {
     D_800E48D0[D_8004A7C4->objId] = 2.0f;
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
     D_800E93A0[D_8004A7C4->objId] = 0;
-    D_800E41D0[D_8004A7C4->objId] = 0.0f;
+    gEntitiesAngleYArray[D_8004A7C4->objId] = 0.0f;
     D_800DDC50[D_8004A7C4->objId] = 0;
     func_800A447C(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[90]);
 }
@@ -295,11 +295,11 @@ void func_80225650_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 0;
     D_800E8920[D_8004A7C4->objId] = 0;
     func_800AFBB4_ovl18(1, D_8004A7C4);
-    D_800E41D0[D_8004A7C4->objId] = 0.0f;
+    gEntitiesAngleYArray[D_8004A7C4->objId] = 0.0f;
     func_80225958_ovl18();
     func_80225B44_ovl18();
     func_800A7678(0x168);
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 #ifdef NON_MATCHING
@@ -326,7 +326,7 @@ void func_802257A4_ovl18(s32 arg0) {
     func_800AFBB4_ovl18(0, D_8004A7C4, D_800E3C90);
     func_8000B6BC(0xF);
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 void func_802258EC_ovl18(s32 arg0) {
@@ -372,9 +372,9 @@ void func_80225958_ovl18(void) {
     D_800E3050[D_8004A7C4->objId] = sp2C.x;
     D_800E3210[D_8004A7C4->objId] = sp2C.y;
     D_800E8920[D_8004A7C4->objId] = 0;
-    D_800E25D0[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
-    D_800E2790[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
-    D_800E2950[D_8004A7C4->objId] = sp3C->unk8;
+    gEntitiesPosXArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
+    gEntitiesPosYArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
+    gEntitiesPosZArray[D_8004A7C4->objId] = sp3C->unk8;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_80225958_ovl18.s")

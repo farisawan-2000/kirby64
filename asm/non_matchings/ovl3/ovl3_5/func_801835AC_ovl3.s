@@ -289,7 +289,7 @@ glabel func_801835AC_ovl3
 /* 0E4434 801839F4 E6060078 */   swc1  $f6, 0x78($s0)
 /* 0E4438 801839F8 8E0B0030 */  lw    $t3, 0x30($s0)
 /* 0E443C 801839FC 256D0001 */  addiu $t5, $t3, 1
-/* 0E4440 80183A00 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0E4440 80183A00 0C02BE85 */  jal   func_800AFA14
 /* 0E4444 80183A04 AE0D0030 */   sw    $t5, 0x30($s0)
 /* 0E4448 80183A08 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0E444C 80183A0C 8FB00018 */  lw    $s0, 0x18($sp)

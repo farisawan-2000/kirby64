@@ -77,7 +77,7 @@ glabel func_801776E8_ovl3
 .L8017780C_ovl3:
 /* 0D824C 8017780C 0C048C3A */  jal   func_801230E8_ovl3
 /* 0D8250 80177810 34840087 */   ori   $a0, (0x00020087 & 0xFFFF) # ori $a0, $a0, 0x87
-/* 0D8254 80177814 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D8254 80177814 0C02BE85 */  jal   func_800AFA14
 /* 0D8258 80177818 00000000 */   nop   
 /* 0D825C 8017781C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D8260 80177820 27BD0018 */  addiu $sp, $sp, 0x18

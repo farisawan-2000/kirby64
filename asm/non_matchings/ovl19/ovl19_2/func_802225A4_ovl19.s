@@ -80,7 +80,7 @@ glabel func_802225A4_ovl19
 /* 242DE4 802226D4 3C040002 */  lui   $a0, (0x00020360 >> 16) # lui $a0, 2
 /* 242DE8 802226D8 0C02A806 */  jal   func_800AA018_ovl19
 /* 242DEC 802226DC 34840360 */   ori   $a0, (0x00020360 & 0xFFFF) # ori $a0, $a0, 0x360
-/* 242DF0 802226E0 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 242DF0 802226E0 0C02BE85 */  jal   func_800AFA14
 /* 242DF4 802226E4 00000000 */   nop   
 /* 242DF8 802226E8 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 242DFC 802226EC 8FB00014 */  lw    $s0, 0x14($sp)

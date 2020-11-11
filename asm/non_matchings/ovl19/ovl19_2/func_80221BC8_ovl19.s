@@ -1,8 +1,8 @@
 glabel func_80221BC8_ovl19
 /* 2422D8 80221BC8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 2422DC 80221BCC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
-/* 2422E0 80221BD0 3C04800E */  lui   $a0, %hi(D_800E41D0) # $a0, 0x800e
-/* 2422E4 80221BD4 248441D0 */  addiu $a0, %lo(D_800E41D0) # addiu $a0, $a0, 0x41d0
+/* 2422E0 80221BD0 3C04800E */  lui   $a0, %hi(gEntitiesAngleYArray) # $a0, 0x800e
+/* 2422E4 80221BD4 248441D0 */  addiu $a0, %lo(gEntitiesAngleYArray) # addiu $a0, $a0, 0x41d0
 /* 2422E8 80221BD8 8C430000 */  lw    $v1, ($v0)
 /* 2422EC 80221BDC 3C018023 */  lui   $at, %hi(D_8022F790) # $at, 0x8023
 /* 2422F0 80221BE0 C422F790 */  lwc1  $f2, %lo(D_8022F790)($at)

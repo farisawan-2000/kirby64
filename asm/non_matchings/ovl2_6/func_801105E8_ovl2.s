@@ -222,11 +222,11 @@ glabel func_801105E8_ovl2
 /* 099380 80110910 0C00D604 */  jal   cosf
 /* 099384 80110914 C42C17D0 */   lwc1  $f12, %lo(D_800E17D0)($at)
 /* 099388 80110918 8FAC0028 */  lw    $t4, 0x28($sp)
-/* 09938C 8011091C 3C01800E */  lui   $at, %hi(D_800E2950) # $at, 0x800e
-/* 099390 80110920 C4322950 */  lwc1  $f18, %lo(D_800E2950)($at)
+/* 09938C 8011091C 3C01800E */  lui   $at, %hi(gEntitiesPosZArray) # $at, 0x800e
+/* 099390 80110920 C4322950 */  lwc1  $f18, %lo(gEntitiesPosZArray)($at)
 /* 099394 80110924 C5900020 */  lwc1  $f16, 0x20($t4)
-/* 099398 80110928 3C01800E */  lui   $at, %hi(D_800E25D0) # $at, 0x800e
-/* 09939C 8011092C C42A25D0 */  lwc1  $f10, %lo(D_800E25D0)($at)
+/* 099398 80110928 3C01800E */  lui   $at, %hi(gEntitiesPosXArray) # $at, 0x800e
+/* 09939C 8011092C C42A25D0 */  lwc1  $f10, %lo(gEntitiesPosXArray)($at)
 /* 0993A0 80110930 46128101 */  sub.s $f4, $f16, $f18
 /* 0993A4 80110934 C5880018 */  lwc1  $f8, 0x18($t4)
 /* 0993A8 80110938 C7B20018 */  lwc1  $f18, 0x18($sp)

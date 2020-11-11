@@ -449,7 +449,7 @@ glabel func_8017F1C0_ovl3
 /* 0E02B4 8017F874 27190001 */  addiu $t9, $t8, 1
 /* 0E02B8 8017F878 AEF90030 */  sw    $t9, 0x30($s7)
 .L8017F87C_ovl3:
-/* 0E02BC 8017F87C 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0E02BC 8017F87C 0C02BE85 */  jal   func_800AFA14
 /* 0E02C0 8017F880 00000000 */   nop   
 /* 0E02C4 8017F884 8FBF0044 */  lw    $ra, 0x44($sp)
 /* 0E02C8 8017F888 D7B40010 */  ldc1  $f20, 0x10($sp)

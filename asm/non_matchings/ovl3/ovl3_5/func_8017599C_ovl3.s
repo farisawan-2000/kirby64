@@ -502,7 +502,7 @@ glabel func_8017599C_ovl3
 /* 0D6B14 801760D4 8E0B0030 */  lw    $t3, 0x30($s0)
 /* 0D6B18 801760D8 A6000068 */  sh    $zero, 0x68($s0)
 /* 0D6B1C 801760DC 25690001 */  addiu $t1, $t3, 1
-/* 0D6B20 801760E0 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D6B20 801760E0 0C02BE85 */  jal   func_800AFA14
 /* 0D6B24 801760E4 AE090030 */   sw    $t1, 0x30($s0)
 /* 0D6B28 801760E8 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0D6B2C 801760EC 8FB00018 */  lw    $s0, 0x18($sp)

@@ -95,7 +95,7 @@ glabel func_80225958_ovl18
 /* 238464 80225AC4 AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 238468 80225AC8 8CA30000 */  lw    $v1, ($a1)
 /* 23846C 80225ACC 2484ACA4 */  addiu $a0, %lo(D_8022ACA4) # addiu $a0, $a0, -0x535c
-/* 238470 80225AD0 3C01800E */ lui $at, %hi(D_800E25D0)
+/* 238470 80225AD0 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 238474 80225AD4 00031880 */  sll   $v1, $v1, 2
 /* 238478 80225AD8 00C3C021 */  addu  $t8, $a2, $v1
 /* 23847C 80225ADC 8F190000 */  lw    $t9, ($t8)
@@ -105,9 +105,9 @@ glabel func_80225958_ovl18
 /* 23848C 80225AEC 00884821 */  addu  $t1, $a0, $t0
 /* 238490 80225AF0 C5260000 */  lwc1  $f6, ($t1)
 /* 238494 80225AF4 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 238498 80225AF8 E42625D0 */ swc1 $f6, %lo(D_800E25D0)($at)
+/* 238498 80225AF8 E42625D0 */ swc1 $f6, %lo(gEntitiesPosXArray)($at)
 /* 23849C 80225AFC 8CA30000 */  lw    $v1, ($a1)
-/* 2384A0 80225B00 3C01800E */ lui $at, %hi(D_800E2790)
+/* 2384A0 80225B00 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 2384A4 80225B04 00031880 */  sll   $v1, $v1, 2
 /* 2384A8 80225B08 00C35021 */  addu  $t2, $a2, $v1
 /* 2384AC 80225B0C 8D4B0000 */  lw    $t3, ($t2)
@@ -115,12 +115,12 @@ glabel func_80225958_ovl18
 /* 2384B4 80225B14 000B6100 */  sll   $t4, $t3, 4
 /* 2384B8 80225B18 008C6821 */  addu  $t5, $a0, $t4
 /* 2384BC 80225B1C C5A80004 */  lwc1  $f8, 4($t5)
-/* 2384C0 80225B20 E4282790 */ swc1 $f8, %lo(D_800E2790)($at)
+/* 2384C0 80225B20 E4282790 */ swc1 $f8, %lo(gEntitiesPosYArray)($at)
 /* 2384C4 80225B24 8CAF0000 */  lw    $t7, ($a1)
 /* 2384C8 80225B28 C5CA0008 */  lwc1  $f10, 8($t6)
-/* 2384CC 80225B2C 3C01800E */ lui $at, %hi(D_800E2950)
+/* 2384CC 80225B2C 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
 /* 2384D0 80225B30 000FC080 */  sll   $t8, $t7, 2
 /* 2384D4 80225B34 00380821 */  addu  $at, $at, $t8
 /* 2384D8 80225B38 27BD0040 */  addiu $sp, $sp, 0x40
 /* 2384DC 80225B3C 03E00008 */  jr    $ra
-/* 2384E0 80225B40 E42A2950 */ swc1 $f10, %lo(D_800E2950)($at)
+/* 2384E0 80225B40 E42A2950 */ swc1 $f10, %lo(gEntitiesPosZArray)($at)

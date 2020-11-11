@@ -30,7 +30,7 @@ struct Sub800E1B50_Unk88 {
 	u32 unk4;
 	u32 unk8;
 	struct SubSub800E1B50_Unk88_UnkC *unkC;
-	f32 unk10;
+	u32 unk10;
 };
 
 struct Sub800E1B50 {

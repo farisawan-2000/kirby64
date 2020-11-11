@@ -955,8 +955,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D67C.s")
         return 0;
     }
     temp_a2 = *D_8004A7C4;
-    temp_f2 = (D_800E25D0[temp_a2] + arg0->unk0) - D_800E25D0[arg1];
-    sp1C = D_800E2950[temp_a2] + arg0->unk8;
+    temp_f2 = (gEntitiesPosXArray[temp_a2] + arg0->unk0) - gEntitiesPosXArray[arg1];
+    sp1C = gEntitiesPosZArray[temp_a2] + arg0->unk8;
     temp_f14 = arg0->unkC;
     temp_f16 = temp_f14 * arg2;
     if (temp_f16 < temp_f2) {
@@ -968,7 +968,7 @@ block_4:
         goto block_4;
     }
     temp_f14_2 = arg0->unk10;
-    temp_f2_2 = (D_800E2790[temp_a2] + arg0->unk4) - D_800E2790[arg1];
+    temp_f2_2 = (gEntitiesPosYArray[temp_a2] + arg0->unk4) - gEntitiesPosYArray[arg1];
     if ((temp_f14_2 * arg2) < temp_f2_2) {
 block_7:
         return 0;
@@ -976,7 +976,7 @@ block_7:
     if (temp_f2_2 < (-temp_f14_2 * arg2)) {
         goto block_7;
     }
-    temp_f2_3 = sp1C - D_800E2950[arg1];
+    temp_f2_3 = sp1C - gEntitiesPosZArray[arg1];
     if (temp_f16 < temp_f2_3) {
 block_10:
         return 0;
@@ -1587,7 +1587,7 @@ f32 func_8011E548_ovl2(void) {
                     phi_f18 = D_80128F40;
                 }
             }
-            gKirbyState.unk80 = D_800E41D0[*phi_t0];
+            gKirbyState.unk80 = gEntitiesAngleYArray[*phi_t0];
             if (-1.0f == gKirbyState.turnDirection) {
                 temp_f0 = gKirbyState.unk80;
                 if (temp_f0 < phi_f2) {
@@ -1603,7 +1603,7 @@ f32 func_8011E548_ovl2(void) {
 block_34:
                     }
 block_35:
-                    D_800E41D0[*phi_t0] = gKirbyState.unk80;
+                    gEntitiesAngleYArray[*phi_t0] = gKirbyState.unk80;
                     return gKirbyState.unk80;
                 }
                 gKirbyState.unk80 = phi_f2;
@@ -1628,7 +1628,7 @@ block_35:
             gKirbyState.turnDirection = 0;
             *(D_800E17D0 + (*phi_t0 * 4)) = phi_f2;
             temp_v1_2 = *phi_t0;
-            D_800E41D0[temp_v1_2] = *(D_800E17D0 + (temp_v1_2 * 4));
+            gEntitiesAngleYArray[temp_v1_2] = *(D_800E17D0 + (temp_v1_2 * 4));
             gKirbyState.isTurning = gKirbyState.isTurning & -2;
         }
     }
@@ -1686,7 +1686,7 @@ block_9:
             phi_f16 = D_80128F4C;
             goto block_9;
         }
-        gKirbyState.unk80 = D_800E41D0[*phi_v1];
+        gKirbyState.unk80 = gEntitiesAngleYArray[*phi_v1];
         temp_f2 = gKirbyState.unk80;
         if (temp_f2 < gKirbyState.unk7C) {
             phi_f12 = (temp_f2 + phi_f16) - gKirbyState.unk7C;
@@ -1709,14 +1709,14 @@ block_20:
                     goto block_20;
                 }
             }
-            D_800E41D0[*phi_v1] = gKirbyState.unk80;
+            gEntitiesAngleYArray[*phi_v1] = gKirbyState.unk80;
             return gKirbyState.unk7C;
         }
         gKirbyState.unk80 = gKirbyState.unk7C;
         gKirbyState.turnDirection = 0;
         *(phi_a3 + (*phi_v1 * 4)) = gKirbyState.unk7C;
         temp_a0_2 = *phi_v1;
-        D_800E41D0[temp_a0_2] = *(phi_a3 + (temp_a0_2 * 4));
+        gEntitiesAngleYArray[temp_a0_2] = *(phi_a3 + (temp_a0_2 * 4));
         gKirbyState.isTurning = temp_v0 & -2;
         phi_return = gKirbyState.unk7C;
     }
@@ -2975,8 +2975,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 
 
 extern s16 D_8012844C[][2];
-extern u32 D_800E25D0[];
-extern f32 D_800E2790[], D_800E2950[];
+extern u32 gEntitiesPosXArray[];
+extern f32 gEntitiesPosYArray[], gEntitiesPosZArray[];
 extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, u32 d, f32 e, f32 f);
 
 #ifdef NON_MATCHING
@@ -2995,7 +2995,7 @@ void func_80122B40_ovl2(void) {
         else
             phi_a2 = D_8012844C[gKirbyState.unk10A * 7][0];
     }
-    func_800A7F74_ovl2(5, 1, phi_a2, D_800E25D0[D_8004A7C4->objId], D_800E2790[D_8004A7C4->objId], D_800E2950[D_8004A7C4->objId]);
+    func_800A7F74_ovl2(5, 1, phi_a2, gEntitiesPosXArray[D_8004A7C4->objId], gEntitiesPosYArray[D_8004A7C4->objId], gEntitiesPosZArray[D_8004A7C4->objId]);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122B40_ovl2.s")

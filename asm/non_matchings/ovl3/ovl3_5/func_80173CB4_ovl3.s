@@ -95,7 +95,7 @@ glabel func_80173CB4_ovl3
 /* 0D4858 80173E18 240F0002 */  li    $t7, 2
 /* 0D485C 80173E1C AE0F0154 */  sw    $t7, 0x154($s0)
 /* 0D4860 80173E20 270E0001 */  addiu $t6, $t8, 1
-/* 0D4864 80173E24 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D4864 80173E24 0C02BE85 */  jal   func_800AFA14
 /* 0D4868 80173E28 AE0E0030 */   sw    $t6, 0x30($s0)
 /* 0D486C 80173E2C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0D4870 80173E30 8FB00018 */  lw    $s0, 0x18($sp)

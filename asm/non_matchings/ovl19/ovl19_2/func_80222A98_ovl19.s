@@ -49,10 +49,10 @@ glabel func_80222A98_ovl19
 /* 243260 80222B50 8C6E0000 */  lw    $t6, ($v1)
 /* 243264 80222B54 3C018023 */  lui   $at, %hi(D_8022F7C8) # $at, 0x8023
 /* 243268 80222B58 C42AF7C8 */  lwc1  $f10, %lo(D_8022F7C8)($at)
-/* 24326C 80222B5C 3C01800E */ lui $at, %hi(D_800E41D0)
+/* 24326C 80222B5C 3C01800E */ lui $at, %hi(gEntitiesAngleYArray)
 /* 243270 80222B60 000E7880 */  sll   $t7, $t6, 2
 /* 243274 80222B64 002F0821 */  addu  $at, $at, $t7
-/* 243278 80222B68 E42A41D0 */ swc1 $f10, %lo(D_800E41D0)($at)
+/* 243278 80222B68 E42A41D0 */ swc1 $f10, %lo(gEntitiesAngleYArray)($at)
 /* 24327C 80222B6C 8C780000 */  lw    $t8, ($v1)
 /* 243280 80222B70 3C01800E */ lui $at, %hi(D_800E4550)
 /* 243284 80222B74 3C040002 */  lui   $a0, (0x0002006B >> 16) # lui $a0, 2
@@ -142,7 +142,7 @@ glabel func_80222A98_ovl19
 /* 2433C4 80222CB4 348403B6 */  ori   $a0, (0x000203B6 & 0xFFFF) # ori $a0, $a0, 0x3b6
 /* 2433C8 80222CB8 0C048C3A */  jal   func_801230E8_ovl19
 /* 2433CC 80222CBC 00003025 */   move  $a2, $zero
-/* 2433D0 80222CC0 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 2433D0 80222CC0 0C02BE85 */  jal   func_800AFA14
 /* 2433D4 80222CC4 00000000 */   nop   
 /* 2433D8 80222CC8 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 2433DC 80222CCC 8FB00018 */  lw    $s0, 0x18($sp)

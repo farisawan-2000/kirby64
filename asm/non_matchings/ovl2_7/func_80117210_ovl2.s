@@ -7,8 +7,8 @@ glabel func_80117210_ovl2
 /* 09FC94 80117224 0C02D249 */  jal   D_800B4924_ovl2
 /* 09FC98 80117228 AFAF0020 */   sw    $t7, 0x20($sp)
 /* 09FC9C 8011722C 8FA30020 */  lw    $v1, 0x20($sp)
-/* 09FCA0 80117230 3C18800E */  lui   $t8, %hi(D_800E2790) # $t8, 0x800e
-/* 09FCA4 80117234 27182790 */  addiu $t8, %lo(D_800E2790) # addiu $t8, $t8, 0x2790
+/* 09FCA0 80117230 3C18800E */  lui   $t8, %hi(gEntitiesPosYArray) # $t8, 0x800e
+/* 09FCA4 80117234 27182790 */  addiu $t8, %lo(gEntitiesPosYArray) # addiu $t8, $t8, 0x2790
 /* 09FCA8 80117238 00031880 */  sll   $v1, $v1, 2
 /* 09FCAC 8011723C 3C01800F */  lui   $at, 0x800f
 /* 09FCB0 80117240 00230821 */  addu  $at, $at, $v1

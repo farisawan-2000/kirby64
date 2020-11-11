@@ -871,7 +871,7 @@ asm/non_matchings/ovl2_3/func_800F90C0_ovl2.s
 asm/non_matchings/ovl2_3/func_800F93EC_ovl2.s
 asm/non_matchings/ovl2_3/func_800F951C_ovl2.s
 asm/non_matchings/ovl2_3/func_800F9888_ovl2.s
-asm/non_matchings/ovl2_3/func_800F98EC_ovl2.s
+asm/non_matchings/ovl2_3/func_800F98EC.s
 asm/non_matchings/ovl2_3/func_800F9974_ovl2.s
 asm/non_matchings/ovl2_3/func_800F9C54_ovl2.s
 asm/non_matchings/ovl2_3/func_800F9C94_ovl2.s
@@ -905,8 +905,8 @@ asm/non_matchings/ovl2_3/func_800FC62C_ovl2.s
 asm/non_matchings/ovl2_3/func_800FC804_ovl2.s
 asm/non_matchings/ovl2_3/func_800FC9C0.s
 asm/non_matchings/ovl2_3/func_800FCA84_ovl2.s
-asm/non_matchings/ovl2_3/func_800FCD14_ovl2.s
-asm/non_matchings/ovl2_3/func_800FCDC0_ovl2.s
+asm/non_matchings/ovl2_3/func_800FCD14.s
+asm/non_matchings/ovl2_3/func_800FCDC0.s
 asm/non_matchings/ovl2_3/func_800FCE50_ovl2.s
 asm/non_matchings/ovl2_3/func_800FCED8_ovl2.s
 asm/non_matchings/ovl2_3/func_800FCF04_ovl2.s

@@ -73,10 +73,10 @@ glabel func_801EA364_ovl10
 /* 1DB1E8 801EA478 46049182 */  mul.s $f6, $f18, $f4
 /* 1DB1EC 801EA47C E426ADE0 */ swc1 $f6, %lo(D_800EADE0)($at)
 /* 1DB1F0 801EA480 8C620000 */  lw    $v0, ($v1)
-/* 1DB1F4 801EA484 3C01800E */ lui $at, %hi(D_800E2790)
+/* 1DB1F4 801EA484 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 1DB1F8 801EA488 00021080 */  sll   $v0, $v0, 2
 /* 1DB1FC 801EA48C 00220821 */  addu  $at, $at, $v0
-/* 1DB200 801EA490 C4282790 */ lwc1 $f8, %lo(D_800E2790)($at)
+/* 1DB200 801EA490 C4282790 */ lwc1 $f8, %lo(gEntitiesPosYArray)($at)
 /* 1DB204 801EA494 3C014234 */  li    $at, 0x42340000 # 45.000000
 /* 1DB208 801EA498 44815000 */  mtc1  $at, $f10
 /* 1DB20C 801EA49C 3C01800F */ lui $at, %hi(D_800EAFA0)

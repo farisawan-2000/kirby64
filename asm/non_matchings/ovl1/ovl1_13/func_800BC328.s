@@ -29,9 +29,9 @@ glabel func_800BC328
 /* 0645E4 800BC394 00000000 */  nop   
 /* 0645E8 800BC398 46083180 */  add.s $f6, $f6, $f8
 .L800BC39C_ovl1:
-/* 0645EC 800BC39C 3C01800E */ lui $at, %hi(D_800E25D0)
+/* 0645EC 800BC39C 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 0645F0 800BC3A0 00280821 */  addu  $at, $at, $t0
-/* 0645F4 800BC3A4 E42625D0 */ swc1 $f6, %lo(D_800E25D0)($at)
+/* 0645F4 800BC3A4 E42625D0 */ swc1 $f6, %lo(gEntitiesPosXArray)($at)
 /* 0645F8 800BC3A8 8C590004 */  lw    $t9, 4($v0)
 /* 0645FC 800BC3AC 3C014F80 */  li    $at, 0x4F800000 # 4294967296.000000
 /* 064600 800BC3B0 44995000 */  mtc1  $t9, $f10
@@ -42,11 +42,11 @@ glabel func_800BC328
 /* 064614 800BC3C4 46128400 */  add.s $f16, $f16, $f18
 .L800BC3C8_ovl1:
 /* 064618 800BC3C8 8C690000 */  lw    $t1, ($v1)
-/* 06461C 800BC3CC 3C01800E */ lui $at, %hi(D_800E2790)
+/* 06461C 800BC3CC 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 064620 800BC3D0 24060006 */  li    $a2, 6
 /* 064624 800BC3D4 00095080 */  sll   $t2, $t1, 2
 /* 064628 800BC3D8 002A0821 */  addu  $at, $at, $t2
-/* 06462C 800BC3DC E4302790 */ swc1 $f16, %lo(D_800E2790)($at)
+/* 06462C 800BC3DC E4302790 */ swc1 $f16, %lo(gEntitiesPosYArray)($at)
 /* 064630 800BC3E0 0C02BE30 */  jal   func_800AF8C0_ovl1
 /* 064634 800BC3E4 8C440008 */   lw    $a0, 8($v0)
 /* 064638 800BC3E8 240B00FF */  li    $t3, 255

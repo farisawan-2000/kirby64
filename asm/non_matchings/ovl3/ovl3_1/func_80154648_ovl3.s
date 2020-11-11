@@ -12,8 +12,8 @@ glabel func_80154648_ovl3
 /* 0B50B0 80154670 8FA70038 */  lw    $a3, 0x38($sp)
 /* 0B50B4 80154674 3C04800E */  lui   $a0, 0x800e
 /* 0B50B8 80154678 8DCF0000 */  lw    $t7, ($t6)
-/* 0B50BC 8015467C 3C19800E */  lui   $t9, %hi(D_800E25D0) # $t9, 0x800e
-/* 0B50C0 80154680 273925D0 */  addiu $t9, %lo(D_800E25D0) # addiu $t9, $t9, 0x25d0
+/* 0B50BC 8015467C 3C19800E */  lui   $t9, %hi(gEntitiesPosXArray) # $t9, 0x800e
+/* 0B50C0 80154680 273925D0 */  addiu $t9, %lo(gEntitiesPosXArray) # addiu $t9, $t9, 0x25d0
 /* 0B50C4 80154684 000FC080 */  sll   $t8, $t7, 2
 /* 0B50C8 80154688 00982021 */  addu  $a0, $a0, $t8
 /* 0B50CC 8015468C 00073880 */  sll   $a3, $a3, 2
@@ -21,17 +21,17 @@ glabel func_80154648_ovl3
 /* 0B50D4 80154694 00F94021 */  addu  $t0, $a3, $t9
 /* 0B50D8 80154698 8FA5003C */  lw    $a1, 0x3c($sp)
 /* 0B50DC 8015469C C5040000 */  lwc1  $f4, ($t0)
-/* 0B50E0 801546A0 3C0B800E */  lui   $t3, %hi(D_800E2790) # $t3, 0x800e
+/* 0B50E0 801546A0 3C0B800E */  lui   $t3, %hi(gEntitiesPosYArray) # $t3, 0x800e
 /* 0B50E4 801546A4 8C820004 */  lw    $v0, 4($a0)
 /* 0B50E8 801546A8 8FA60040 */  lw    $a2, 0x40($sp)
-/* 0B50EC 801546AC 256B2790 */  addiu $t3, %lo(D_800E2790) # addiu $t3, $t3, 0x2790
+/* 0B50EC 801546AC 256B2790 */  addiu $t3, %lo(gEntitiesPosYArray) # addiu $t3, $t3, 0x2790
 /* 0B50F0 801546B0 00EB4821 */  addu  $t1, $a3, $t3
 /* 0B50F4 801546B4 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 0B50F8 801546B8 E4A40004 */  swc1  $f4, 4($a1)
 /* 0B50FC 801546BC C5260000 */  lwc1  $f6, ($t1)
 /* 0B5100 801546C0 44814000 */  mtc1  $at, $f8
-/* 0B5104 801546C4 3C0C800E */  lui   $t4, %hi(D_800E2950) # $t4, 0x800e
-/* 0B5108 801546C8 258C2950 */  addiu $t4, %lo(D_800E2950) # addiu $t4, $t4, 0x2950
+/* 0B5104 801546C4 3C0C800E */  lui   $t4, %hi(gEntitiesPosZArray) # $t4, 0x800e
+/* 0B5108 801546C8 258C2950 */  addiu $t4, %lo(gEntitiesPosZArray) # addiu $t4, $t4, 0x2950
 /* 0B510C 801546CC 46083280 */  add.s $f10, $f6, $f8
 /* 0B5110 801546D0 00EC5021 */  addu  $t2, $a3, $t4
 /* 0B5114 801546D4 3C013F80 */  li    $at, 0x3F800000 # 1.000000

@@ -15,7 +15,7 @@ glabel func_801DF384_ovl11
 /* 1E9C78 801DF3B8 2419002D */  li    $t9, 45
 /* 1E9C7C 801DF3BC 00084880 */  sll   $t1, $t0, 2
 /* 1E9C80 801DF3C0 00290821 */  addu  $at, $at, $t1
-/* 1E9C84 801DF3C4 0C02BE85 */  jal   func_800AFA14_ovl11
+/* 1E9C84 801DF3C4 0C02BE85 */  jal   func_800AFA14
 /* 1E9C88 801DF3C8 AC399720 */ sw $t9, %lo(D_800E9720)($at)
 /* 1E9C8C 801DF3CC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E9C90 801DF3D0 27BD0018 */  addiu $sp, $sp, 0x18

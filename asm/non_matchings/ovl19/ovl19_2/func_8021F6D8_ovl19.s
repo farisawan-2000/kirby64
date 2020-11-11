@@ -20,10 +20,10 @@ glabel func_8021F6D8_ovl19
 /* 23FE30 8021F720 8C580000 */  lw    $t8, ($v0)
 /* 23FE34 8021F724 3C018023 */  lui   $at, %hi(D_8022F760) # $at, 0x8023
 /* 23FE38 8021F728 C424F760 */  lwc1  $f4, %lo(D_8022F760)($at)
-/* 23FE3C 8021F72C 3C01800E */ lui $at, %hi(D_800E41D0)
+/* 23FE3C 8021F72C 3C01800E */ lui $at, %hi(gEntitiesAngleYArray)
 /* 23FE40 8021F730 0018C880 */  sll   $t9, $t8, 2
 /* 23FE44 8021F734 00390821 */  addu  $at, $at, $t9
-/* 23FE48 8021F738 E42441D0 */ swc1 $f4, %lo(D_800E41D0)($at)
+/* 23FE48 8021F738 E42441D0 */ swc1 $f4, %lo(gEntitiesAngleYArray)($at)
 /* 23FE4C 8021F73C 8C480000 */  lw    $t0, ($v0)
 /* 23FE50 8021F740 3C01800E */ lui $at, %hi(D_800E4550)
 /* 23FE54 8021F744 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
@@ -110,7 +110,7 @@ glabel func_8021F6D8_ovl19
 /* 23FF8C 8021F87C 8D6C000C */  lw    $t4, 0xc($t3)
 /* 23FF90 8021F880 A1880054 */  sb    $t0, 0x54($t4)
 .L8021F884_ovl19:
-/* 23FF94 8021F884 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 23FF94 8021F884 0C02BE85 */  jal   func_800AFA14
 /* 23FF98 8021F888 00000000 */   nop   
 /* 23FF9C 8021F88C 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 23FFA0 8021F890 8FB00018 */  lw    $s0, 0x18($sp)

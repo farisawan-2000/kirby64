@@ -1613,7 +1613,7 @@ glabel func_80189914_ovl3
 /* 0EBBA0 8018B160 0C048BC2 */  jal   func_80122F08_ovl3
 /* 0EBBA4 8018B164 34840029 */   ori   $a0, (0x00020029 & 0xFFFF) # ori $a0, $a0, 0x29
 .L8018B168_ovl3:
-/* 0EBBA8 8018B168 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0EBBA8 8018B168 0C02BE85 */  jal   func_800AFA14
 /* 0EBBAC 8018B16C 00000000 */   nop   
 /* 0EBBB0 8018B170 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 0EBBB4 8018B174 8FB00018 */  lw    $s0, 0x18($sp)

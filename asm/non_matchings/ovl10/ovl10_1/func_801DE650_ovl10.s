@@ -56,11 +56,11 @@ glabel func_801DE650_ovl10
 /* 1CF498 801DE728 0C02A806 */  jal   func_800AA018_ovl10
 /* 1CF49C 801DE72C 348402C8 */   ori   $a0, (0x000102C8 & 0xFFFF) # ori $a0, $a0, 0x2c8
 /* 1CF4A0 801DE730 8E020000 */  lw    $v0, ($s0)
-/* 1CF4A4 801DE734 3C04800E */  lui   $a0, %hi(D_800E2790) # $a0, 0x800e
+/* 1CF4A4 801DE734 3C04800E */  lui   $a0, %hi(gEntitiesPosYArray) # $a0, 0x800e
 /* 1CF4A8 801DE738 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 1CF4AC 801DE73C 8C430000 */  lw    $v1, ($v0)
 /* 1CF4B0 801DE740 44813000 */  mtc1  $at, $f6
-/* 1CF4B4 801DE744 24842790 */  addiu $a0, %lo(D_800E2790) # addiu $a0, $a0, 0x2790
+/* 1CF4B4 801DE744 24842790 */  addiu $a0, %lo(gEntitiesPosYArray) # addiu $a0, $a0, 0x2790
 /* 1CF4B8 801DE748 00031880 */  sll   $v1, $v1, 2
 /* 1CF4BC 801DE74C 00837821 */  addu  $t7, $a0, $v1
 /* 1CF4C0 801DE750 3C014220 */  li    $at, 0x42200000 # 40.000000

@@ -10,11 +10,11 @@ glabel func_801DFE64_ovl10
 /* 1D0BF4 801DFE84 008FC021 */  addu  $t8, $a0, $t7
 /* 1D0BF8 801DFE88 8F190000 */  lw    $t9, ($t8)
 /* 1D0BFC 801DFE8C 24A54D48 */  addiu $a1, %lo(D_801F4D48_ovl10) # addiu $a1, $a1, 0x4d48
-/* 1D0C00 801DFE90 3C06800E */  lui   $a2, %hi(D_800E2790) # $a2, 0x800e
+/* 1D0C00 801DFE90 3C06800E */  lui   $a2, %hi(gEntitiesPosYArray) # $a2, 0x800e
 /* 1D0C04 801DFE94 00194080 */  sll   $t0, $t9, 2
 /* 1D0C08 801DFE98 00481021 */  addu  $v0, $v0, $t0
 /* 1D0C0C 801DFE9C 8C42BDA0 */ lw $v0, %lo(D_800EBDA0)($v0)
-/* 1D0C10 801DFEA0 24C62790 */  addiu $a2, %lo(D_800E2790) # addiu $a2, $a2, 0x2790
+/* 1D0C10 801DFEA0 24C62790 */  addiu $a2, %lo(gEntitiesPosYArray) # addiu $a2, $a2, 0x2790
 /* 1D0C14 801DFEA4 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 1D0C18 801DFEA8 ACA2000C */  sw    $v0, 0xc($a1)
 /* 1D0C1C 801DFEAC ACA20000 */  sw    $v0, ($a1)

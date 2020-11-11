@@ -79,8 +79,8 @@ glabel func_8011E978_ovl2
 .L8011EAA4_ovl2:
 /* 0A7514 8011EAA4 8C6E0000 */  lw    $t6, ($v1)
 .L8011EAA8_ovl2:
-/* 0A7518 8011EAA8 3C06800E */  lui   $a2, %hi(D_800E41D0) # $a2, 0x800e
-/* 0A751C 8011EAAC 24C641D0 */  addiu $a2, %lo(D_800E41D0) # addiu $a2, $a2, 0x41d0
+/* 0A7518 8011EAA8 3C06800E */  lui   $a2, %hi(gEntitiesAngleYArray) # $a2, 0x800e
+/* 0A751C 8011EAAC 24C641D0 */  addiu $a2, %lo(gEntitiesAngleYArray) # addiu $a2, $a2, 0x41d0
 /* 0A7520 8011EAB0 000E7880 */  sll   $t7, $t6, 2
 /* 0A7524 8011EAB4 00CFC021 */  addu  $t8, $a2, $t7
 /* 0A7528 8011EAB8 C7120000 */  lwc1  $f18, ($t8)

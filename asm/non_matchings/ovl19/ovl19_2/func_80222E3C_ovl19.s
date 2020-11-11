@@ -44,8 +44,8 @@ glabel func_80222E3C_ovl19
 /* 2435F4 80222EE4 3C10800E */  lui   $s0, %hi(D_800E0D50) # $s0, 0x800e
 /* 2435F8 80222EE8 26100D50 */  addiu $s0, %lo(D_800E0D50) # addiu $s0, $s0, 0xd50
 /* 2435FC 80222EEC 8E220000 */  lw    $v0, ($s1)
-/* 243600 80222EF0 3C03800E */  lui   $v1, %hi(D_800E25D0) # $v1, 0x800e
-/* 243604 80222EF4 246325D0 */  addiu $v1, %lo(D_800E25D0) # addiu $v1, $v1, 0x25d0
+/* 243600 80222EF0 3C03800E */  lui   $v1, %hi(gEntitiesPosXArray) # $v1, 0x800e
+/* 243604 80222EF4 246325D0 */  addiu $v1, %lo(gEntitiesPosXArray) # addiu $v1, $v1, 0x25d0
 /* 243608 80222EF8 00021080 */  sll   $v0, $v0, 2
 /* 24360C 80222EFC 02026821 */  addu  $t5, $s0, $v0
 /* 243610 80222F00 8DAF0000 */  lw    $t7, ($t5)
@@ -55,11 +55,11 @@ glabel func_80222E3C_ovl19
 /* 243620 80222F10 006EC021 */  addu  $t8, $v1, $t6
 /* 243624 80222F14 C7040000 */  lwc1  $f4, ($t8)
 /* 243628 80222F18 0062C821 */  addu  $t9, $v1, $v0
-/* 24362C 80222F1C 3C05800E */  lui   $a1, %hi(D_800E2790) # $a1, 0x800e
+/* 24362C 80222F1C 3C05800E */  lui   $a1, %hi(gEntitiesPosYArray) # $a1, 0x800e
 /* 243630 80222F20 46002180 */  add.s $f6, $f4, $f0
-/* 243634 80222F24 24A52790 */  addiu $a1, %lo(D_800E2790) # addiu $a1, $a1, 0x2790
-/* 243638 80222F28 3C06800E */  lui   $a2, %hi(D_800E2950) # $a2, 0x800e
-/* 24363C 80222F2C 24C62950 */  addiu $a2, %lo(D_800E2950) # addiu $a2, $a2, 0x2950
+/* 243634 80222F24 24A52790 */  addiu $a1, %lo(gEntitiesPosYArray) # addiu $a1, $a1, 0x2790
+/* 243638 80222F28 3C06800E */  lui   $a2, %hi(gEntitiesPosZArray) # $a2, 0x800e
+/* 24363C 80222F2C 24C62950 */  addiu $a2, %lo(gEntitiesPosZArray) # addiu $a2, $a2, 0x2950
 /* 243640 80222F30 E7260000 */  swc1  $f6, ($t9)
 /* 243644 80222F34 8E220000 */  lw    $v0, ($s1)
 /* 243648 80222F38 3C040002 */  lui   $a0, (0x000203C2 >> 16) # lui $a0, 2
@@ -113,7 +113,7 @@ glabel func_80222E3C_ovl19
 .L80222FF4_ovl19:
 /* 243704 80222FF4 0C02A806 */  jal   func_800AA018_ovl19
 /* 243708 80222FF8 348403C3 */   ori   $a0, (0x000203C3 & 0xFFFF) # ori $a0, $a0, 0x3c3
-/* 24370C 80222FFC 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 24370C 80222FFC 0C02BE85 */  jal   func_800AFA14
 /* 243710 80223000 00000000 */   nop   
 /* 243714 80223004 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 243718 80223008 8FB00014 */  lw    $s0, 0x14($sp)

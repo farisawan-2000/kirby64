@@ -90,7 +90,7 @@ glabel func_80220F8C_ovl19
 /* 2417F0 802210E0 348403D3 */  ori   $a0, (0x000203D3 & 0xFFFF) # ori $a0, $a0, 0x3d3
 /* 2417F4 802210E4 0C048C3A */  jal   func_801230E8_ovl19
 /* 2417F8 802210E8 00003025 */   move  $a2, $zero
-/* 2417FC 802210EC 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 2417FC 802210EC 0C02BE85 */  jal   func_800AFA14
 /* 241800 802210F0 00000000 */   nop   
 /* 241804 802210F4 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 241808 802210F8 8FB00018 */  lw    $s0, 0x18($sp)

@@ -188,9 +188,9 @@ glabel func_8011E548_ovl2
 /* 0A727C 8011E80C 8D180000 */  lw    $t8, ($t0)
 /* 0A7280 8011E810 448B3000 */  mtc1  $t3, $f6
 /* 0A7284 8011E814 44812000 */  mtc1  $at, $f4
-/* 0A7288 8011E818 3C04800E */  lui   $a0, %hi(D_800E41D0) # $a0, 0x800e
+/* 0A7288 8011E818 3C04800E */  lui   $a0, %hi(gEntitiesAngleYArray) # $a0, 0x800e
 /* 0A728C 8011E81C 46803220 */  cvt.s.w $f8, $f6
-/* 0A7290 8011E820 248441D0 */  addiu $a0, %lo(D_800E41D0) # addiu $a0, $a0, 0x41d0
+/* 0A7290 8011E820 248441D0 */  addiu $a0, %lo(gEntitiesAngleYArray) # addiu $a0, $a0, 0x41d0
 /* 0A7294 8011E824 0018C880 */  sll   $t9, $t8, 2
 /* 0A7298 8011E828 00995021 */  addu  $t2, $a0, $t9
 /* 0A729C 8011E82C C54A0000 */  lwc1  $f10, ($t2)

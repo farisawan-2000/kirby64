@@ -284,8 +284,8 @@ glabel func_801530BC_ovl3
 /* 0B3F14 801534D4 11A90034 */  beq   $t5, $t1, .L801535A8_ovl3
 /* 0B3F18 801534D8 3C028005 */   lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 0B3F1C 801534DC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
-/* 0B3F20 801534E0 3C0F800E */  lui   $t7, %hi(D_800E2790) # $t7, 0x800e
-/* 0B3F24 801534E4 25EF2790 */  addiu $t7, %lo(D_800E2790) # addiu $t7, $t7, 0x2790
+/* 0B3F20 801534E0 3C0F800E */  lui   $t7, %hi(gEntitiesPosYArray) # $t7, 0x800e
+/* 0B3F24 801534E4 25EF2790 */  addiu $t7, %lo(gEntitiesPosYArray) # addiu $t7, $t7, 0x2790
 /* 0B3F28 801534E8 8C590000 */  lw    $t9, ($v0)
 /* 0B3F2C 801534EC 3C01800E */  lui   $at, 0x800e
 /* 0B3F30 801534F0 27A600F0 */  addiu $a2, $sp, 0xf0

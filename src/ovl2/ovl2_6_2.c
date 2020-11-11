@@ -7158,9 +7158,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010E5B0_ovl2.s")
 #endif
 
 s32 func_8010E6F0(Vector *arg0, s32 arg1) {
-    arg0->x += D_800E25D0[arg1];
-    arg0->y += D_800E2790[arg1];
-    arg0->z += D_800E2950[arg1];
+    arg0->x += gEntitiesPosXArray[arg1];
+    arg0->y += gEntitiesPosYArray[arg1];
+    arg0->z += gEntitiesPosZArray[arg1];
 }
 
 #ifdef MIPS_TO_C
@@ -8629,7 +8629,7 @@ block_32:
             phi_a2 = 0x800E0000;
             if ((sp1C == -1) || (temp_a2 = (temp_v0 + 0x800E0000)->unk5F90, phi_a2 = temp_a2, (-1 == temp_a2))) {
                 sp18 = sinf(*D_800E17D0, phi_a2);
-                if (0.0f <= (((arg2->unk20 - *D_800E2950) * cosf(*D_800E17D0)) + (sp18 * (arg2->unk18 - *D_800E25D0)))) {
+                if (0.0f <= (((arg2->unk20 - *gEntitiesPosZArray) * cosf(*D_800E17D0)) + (sp18 * (arg2->unk18 - *gEntitiesPosXArray)))) {
                     if (1.0f == *D_800E6A10) {
                         *0x800F0000 = -1;
                         phi_v1_2 = &gKirbyState;

@@ -59,7 +59,7 @@ glabel func_801ECA34_ovl10
 /* 1DD884 801ECB14 3C013F80 */   li    $at, 0x3F800000 # 1.000000
 /* 1DD888 801ECB18 44812000 */  mtc1  $at, $f4
 /* 1DD88C 801ECB1C C5400000 */  lwc1  $f0, ($t2)
-/* 1DD890 801ECB20 3C01800E */ lui $at, %hi(D_800E25D0)
+/* 1DD890 801ECB20 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 1DD894 801ECB24 00310821 */  addu  $at, $at, $s1
 /* 1DD898 801ECB28 46002032 */  c.eq.s $f4, $f0
 /* 1DD89C 801ECB2C 00000000 */  nop   
@@ -73,13 +73,13 @@ glabel func_801ECA34_ovl10
 /* 1DD8BC 801ECB4C 3C01BF80 */   li    $at, 0xBF800000 # -1.000000
 .L801ECB50_ovl10:
 /* 1DD8C0 801ECB50 44815000 */  mtc1  $at, $f10
-/* 1DD8C4 801ECB54 3C01800E */ lui $at, %hi(D_800E25D0)
+/* 1DD8C4 801ECB54 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 1DD8C8 801ECB58 00310821 */  addu  $at, $at, $s1
 /* 1DD8CC 801ECB5C 46005032 */  c.eq.s $f10, $f0
 /* 1DD8D0 801ECB60 00000000 */  nop   
 /* 1DD8D4 801ECB64 4502000B */  bc1fl .L801ECB94_ovl10
 /* 1DD8D8 801ECB68 920B003C */   lbu   $t3, 0x3c($s0)
-/* 1DD8DC 801ECB6C C43025D0 */ lwc1 $f16, %lo(D_800E25D0)($at)
+/* 1DD8DC 801ECB6C C43025D0 */ lwc1 $f16, %lo(gEntitiesPosXArray)($at)
 /* 1DD8E0 801ECB70 44809000 */  mtc1  $zero, $f18
 /* 1DD8E4 801ECB74 00000000 */  nop   
 /* 1DD8E8 801ECB78 4612803C */  c.lt.s $f16, $f18

@@ -16,8 +16,8 @@ glabel func_80183FF4_ovl3
 /* 0E4A6C 8018402C AC2F98E0 */   sw    $t7, -0x6720($at)
 /* 0E4A70 80184030 3C078005 */  lui   $a3, %hi(D_8004A7C4) # $a3, 0x8005
 /* 0E4A74 80184034 8CE7A7C4 */  lw    $a3, %lo(D_8004A7C4)($a3)
-/* 0E4A78 80184038 3C0A800E */  lui   $t2, %hi(D_800E2790) # $t2, 0x800e
-/* 0E4A7C 8018403C 254A2790 */  addiu $t2, %lo(D_800E2790) # addiu $t2, $t2, 0x2790
+/* 0E4A78 80184038 3C0A800E */  lui   $t2, %hi(gEntitiesPosYArray) # $t2, 0x800e
+/* 0E4A7C 8018403C 254A2790 */  addiu $t2, %lo(gEntitiesPosYArray) # addiu $t2, $t2, 0x2790
 /* 0E4A80 80184040 8CF80000 */  lw    $t8, ($a3)
 /* 0E4A84 80184044 3C01800F */  lui   $at, %hi(D_800EC9E4) # $at, 0x800f
 /* 0E4A88 80184048 C426C9E4 */  lwc1  $f6, %lo(D_800EC9E4)($at)

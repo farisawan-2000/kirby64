@@ -8,7 +8,7 @@ glabel func_80177130_ovl3
 /* 0D7B88 80177148 3C01800E */  lui   $at, 0x800e
 /* 0D7B8C 8017714C 000FC080 */  sll   $t8, $t7, 2
 /* 0D7B90 80177150 00380821 */  addu  $at, $at, $t8
-/* 0D7B94 80177154 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D7B94 80177154 0C02BE85 */  jal   func_800AFA14
 /* 0D7B98 80177158 AC20E190 */   sw    $zero, -0x1e70($at)
 /* 0D7B9C 8017715C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D7BA0 80177160 27BD0018 */  addiu $sp, $sp, 0x18

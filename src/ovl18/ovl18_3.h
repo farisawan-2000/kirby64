@@ -28,7 +28,7 @@ extern f32 D_800E6690[];
 extern f32 D_800E64D0[];
 extern f32 D_800E6850[];
 extern f32 D_800E17D0[];
-extern f32 D_800E41D0[];
+extern f32 gEntitiesAngleYArray[];
 
 extern s32 D_800E9AA0[];
 extern s32 D_801CC160;

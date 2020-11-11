@@ -56,7 +56,7 @@ glabel func_80177174_ovl3
 /* 0D7C8C 8017724C 014B1021 */  addu  $v0, $t2, $t3
 /* 0D7C90 80177250 8C4C0000 */  lw    $t4, ($v0)
 /* 0D7C94 80177254 258D0001 */  addiu $t5, $t4, 1
-/* 0D7C98 80177258 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D7C98 80177258 0C02BE85 */  jal   func_800AFA14
 /* 0D7C9C 8017725C AC4D0000 */   sw    $t5, ($v0)
 /* 0D7CA0 80177260 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D7CA4 80177264 27BD0018 */  addiu $sp, $sp, 0x18

@@ -818,8 +818,8 @@ glabel func_8018F368_ovl3
 /* 0F0984 8018FF44 8D850038 */   lw    $a1, 0x38($t4)
 /* 0F0988 8018FF48 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 0F098C 8018FF4C 8CC6A7C4 */  lw    $a2, %lo(D_8004A7C4)($a2)
-/* 0F0990 8018FF50 3C03800E */  lui   $v1, %hi(D_800E2790) # $v1, 0x800e
-/* 0F0994 8018FF54 24632790 */  addiu $v1, %lo(D_800E2790) # addiu $v1, $v1, 0x2790
+/* 0F0990 8018FF50 3C03800E */  lui   $v1, %hi(gEntitiesPosYArray) # $v1, 0x800e
+/* 0F0994 8018FF54 24632790 */  addiu $v1, %lo(gEntitiesPosYArray) # addiu $v1, $v1, 0x2790
 /* 0F0998 8018FF58 8CCD0000 */  lw    $t5, ($a2)
 /* 0F099C 8018FF5C C7A60044 */  lwc1  $f6, 0x44($sp)
 /* 0F09A0 8018FF60 3C028013 */  lui   $v0, %hi(D_8012E9C8) # $v0, 0x8013

@@ -8422,7 +8422,7 @@ glabel D_800E25C8
 glabel D_800E25CC
 .word 0x00000000
 
-glabel D_800E25D0
+glabel gEntitiesPosXArray
 .word 0x00000000
 
 glabel D_800E25D4
@@ -8758,7 +8758,7 @@ glabel D_800E2788
 glabel D_800E278C
 .word 0x00000000
 
-glabel D_800E2790
+glabel gEntitiesPosYArray
 .word 0x00000000
 
 glabel D_800E2794
@@ -9094,7 +9094,7 @@ glabel D_800E2948
 glabel D_800E294C
 .word 0x00000000
 
-glabel D_800E2950
+glabel gEntitiesPosZArray
 .word 0x00000000
 
 glabel D_800E2954
@@ -13462,7 +13462,7 @@ glabel D_800E4008
 glabel D_800E400C
 .word 0x00000000
 
-glabel D_800E4010
+glabel gEntitiesAngleXArray
 .word 0x00000000
 
 glabel D_800E4014
@@ -13798,7 +13798,7 @@ glabel D_800E41C8
 glabel D_800E41CC
 .word 0x00000000
 
-glabel D_800E41D0
+glabel gEntitiesAngleYArray
 .word 0x00000000
 
 glabel D_800E41D4
@@ -14134,7 +14134,7 @@ glabel D_800E4388
 glabel D_800E438C
 .word 0x00000000
 
-glabel D_800E4390
+glabel gEntitiesAngleZArray
 .word 0x00000000
 
 glabel D_800E4394

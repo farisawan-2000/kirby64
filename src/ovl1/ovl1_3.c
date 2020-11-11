@@ -1442,17 +1442,17 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AA154.s")
 #include "ovl18/ovl18_1.h"
 #include "ovl18/ovl18_3.h"
 #include "ovl18/ovl18_5.h"
-extern f32 D_800E4390[];
-extern f32 D_800E4010[];
+extern f32 gEntitiesAngleZArray[];
+extern f32 gEntitiesAngleXArray[];
 
 void func_800AA174(void) {
-    D_8004A7C4->unk3C->unk1C.x = D_800E25D0[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.y = D_800E2790[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.z = D_800E2950[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk30.x = D_800E4010[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk30.y = D_800E41D0[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk30.z = D_800E4390[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
 
     D_8004A7C4->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
     D_8004A7C4->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];

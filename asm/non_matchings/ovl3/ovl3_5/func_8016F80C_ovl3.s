@@ -210,7 +210,7 @@ glabel func_8016F80C_ovl3
 /* 0D0570 8016FB30 000D7080 */  sll   $t6, $t5, 2
 /* 0D0574 8016FB34 002E0821 */  addu  $at, $at, $t6
 /* 0D0578 8016FB38 AC208920 */  sw    $zero, -0x76e0($at)
-/* 0D057C 8016FB3C 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D057C 8016FB3C 0C02BE85 */  jal   func_800AFA14
 /* 0D0580 8016FB40 AE2F0044 */   sw    $t7, 0x44($s1)
 /* 0D0584 8016FB44 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0D0588 8016FB48 8FB00014 */  lw    $s0, 0x14($sp)

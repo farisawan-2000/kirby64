@@ -54,7 +54,7 @@ glabel func_801E5184_ovl10
 /* 1D5FC4 801E5254 8DAC0000 */  lw    $t4, ($t5)
 /* 1D5FC8 801E5258 000C7080 */  sll   $t6, $t4, 2
 /* 1D5FCC 801E525C 002E0821 */  addu  $at, $at, $t6
-/* 1D5FD0 801E5260 0C02BE85 */  jal   func_800AFA14_ovl10
+/* 1D5FD0 801E5260 0C02BE85 */  jal   func_800AFA14
 /* 1D5FD4 801E5264 AC2B9E20 */ sw $t3, %lo(D_800E9E20)($at)
 /* 1D5FD8 801E5268 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1D5FDC 801E526C 27BD0018 */  addiu $sp, $sp, 0x18

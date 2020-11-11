@@ -226,7 +226,7 @@ glabel func_801EAB98_ovl10
 /* 1DBC80 801EAF10 8D2B0000 */  lw    $t3, ($t1)
 /* 1DBC84 801EAF14 000B6880 */  sll   $t5, $t3, 2
 /* 1DBC88 801EAF18 024D7821 */  addu  $t7, $s2, $t5
-/* 1DBC8C 801EAF1C 0C02BE85 */  jal   func_800AFA14_ovl10
+/* 1DBC8C 801EAF1C 0C02BE85 */  jal   func_800AFA14
 /* 1DBC90 801EAF20 ADEA0000 */   sw    $t2, ($t7)
 /* 1DBC94 801EAF24 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 1DBC98 801EAF28 8FB00018 */  lw    $s0, 0x18($sp)

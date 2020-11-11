@@ -194,7 +194,7 @@ glabel func_8016EF5C_ovl3
 /* 0CFC60 8016F220 0C048C3A */  jal   func_801230E8_ovl3
 /* 0CFC64 8016F224 00003025 */   move  $a2, $zero
 .L8016F228_ovl3:
-/* 0CFC68 8016F228 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0CFC68 8016F228 0C02BE85 */  jal   func_800AFA14
 /* 0CFC6C 8016F22C 00000000 */   nop   
 /* 0CFC70 8016F230 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0CFC74 8016F234 27BD0018 */  addiu $sp, $sp, 0x18

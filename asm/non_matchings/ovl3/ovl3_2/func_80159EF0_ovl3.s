@@ -110,8 +110,8 @@ glabel func_80159EF0_ovl3
 /* 0BAAD8 8015A098 10000009 */  b     .L8015A0C0_ovl3
 /* 0BAADC 8015A09C AC208760 */   sw    $zero, -0x78a0($at)
 .L8015A0A0_ovl3:
-/* 0BAAE0 8015A0A0 3C18800E */  lui   $t8, %hi(D_800E2790) # $t8, 0x800e
-/* 0BAAE4 8015A0A4 27182790 */  addiu $t8, %lo(D_800E2790) # addiu $t8, $t8, 0x2790
+/* 0BAAE0 8015A0A0 3C18800E */  lui   $t8, %hi(gEntitiesPosYArray) # $t8, 0x800e
+/* 0BAAE4 8015A0A4 27182790 */  addiu $t8, %lo(gEntitiesPosYArray) # addiu $t8, $t8, 0x2790
 /* 0BAAE8 8015A0A8 00782021 */  addu  $a0, $v1, $t8
 /* 0BAAEC 8015A0AC 3C018019 */  lui   $at, %hi(D_80196FAC) # $at, 0x8019
 /* 0BAAF0 8015A0B0 C4266FAC */  lwc1  $f6, %lo(D_80196FAC)($at)

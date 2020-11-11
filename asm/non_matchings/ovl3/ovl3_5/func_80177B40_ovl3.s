@@ -90,7 +90,7 @@ glabel func_80177B40_ovl3
 /* 0D86D8 80177C98 258C2CA0 */  addiu $t4, %lo(D_80122CA0) # addiu $t4, $t4, 0x2ca0
 /* 0D86DC 80177C9C 000F7080 */  sll   $t6, $t7, 2
 /* 0D86E0 80177CA0 002E0821 */  addu  $at, $at, $t6
-/* 0D86E4 80177CA4 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D86E4 80177CA4 0C02BE85 */  jal   func_800AFA14
 /* 0D86E8 80177CA8 AC2CF310 */   sw    $t4, -0xcf0($at)
 /* 0D86EC 80177CAC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D86F0 80177CB0 27BD0018 */  addiu $sp, $sp, 0x18

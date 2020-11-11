@@ -28,25 +28,25 @@ glabel func_80115D38_ovl2
 /* 09E810 80115DA0 0C02A619 */  jal   func_800A9864
 /* 09E814 80115DA4 24060010 */   li    $a2, 16
 /* 09E818 80115DA8 8FA50024 */  lw    $a1, 0x24($sp)
-/* 09E81C 80115DAC 3C06800E */  lui   $a2, %hi(D_800E25D0) # $a2, 0x800e
+/* 09E81C 80115DAC 3C06800E */  lui   $a2, %hi(gEntitiesPosXArray) # $a2, 0x800e
 /* 09E820 80115DB0 8FA30020 */  lw    $v1, 0x20($sp)
-/* 09E824 80115DB4 24C625D0 */  addiu $a2, %lo(D_800E25D0) # addiu $a2, $a2, 0x25d0
+/* 09E824 80115DB4 24C625D0 */  addiu $a2, %lo(gEntitiesPosXArray) # addiu $a2, $a2, 0x25d0
 /* 09E828 80115DB8 00052880 */  sll   $a1, $a1, 2
 /* 09E82C 80115DBC 00C5C821 */  addu  $t9, $a2, $a1
 /* 09E830 80115DC0 C7240000 */  lwc1  $f4, ($t9)
 /* 09E834 80115DC4 3C018013 */  lui   $at, %hi(D_80128CF0) # $at, 0x8013
 /* 09E838 80115DC8 C4208CF0 */  lwc1  $f0, %lo(D_80128CF0)($at)
-/* 09E83C 80115DCC 3C07800E */  lui   $a3, %hi(D_800E2790) # $a3, 0x800e
+/* 09E83C 80115DCC 3C07800E */  lui   $a3, %hi(gEntitiesPosYArray) # $a3, 0x800e
 /* 09E840 80115DD0 00031880 */  sll   $v1, $v1, 2
-/* 09E844 80115DD4 24E72790 */  addiu $a3, %lo(D_800E2790) # addiu $a3, $a3, 0x2790
+/* 09E844 80115DD4 24E72790 */  addiu $a3, %lo(gEntitiesPosYArray) # addiu $a3, $a3, 0x2790
 /* 09E848 80115DD8 00C34821 */  addu  $t1, $a2, $v1
 /* 09E84C 80115DDC 00E55021 */  addu  $t2, $a3, $a1
 /* 09E850 80115DE0 3C01435C */  li    $at, 0x435C0000 # 220.000000
 /* 09E854 80115DE4 E5240000 */  swc1  $f4, ($t1)
 /* 09E858 80115DE8 C5460000 */  lwc1  $f6, ($t2)
 /* 09E85C 80115DEC 44814000 */  mtc1  $at, $f8
-/* 09E860 80115DF0 3C08800E */  lui   $t0, %hi(D_800E2950) # $t0, 0x800e
-/* 09E864 80115DF4 25082950 */  addiu $t0, %lo(D_800E2950) # addiu $t0, $t0, 0x2950
+/* 09E860 80115DF0 3C08800E */  lui   $t0, %hi(gEntitiesPosZArray) # $t0, 0x800e
+/* 09E864 80115DF4 25082950 */  addiu $t0, %lo(gEntitiesPosZArray) # addiu $t0, $t0, 0x2950
 /* 09E868 80115DF8 46083280 */  add.s $f10, $f6, $f8
 /* 09E86C 80115DFC 00E35821 */  addu  $t3, $a3, $v1
 /* 09E870 80115E00 01056021 */  addu  $t4, $t0, $a1

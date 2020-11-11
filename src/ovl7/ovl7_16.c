@@ -8,7 +8,7 @@ extern f32 D_800E6A10[];
 extern f32 D_800D6B10;
 extern s32 D_800E8920[];
 extern void (*D_800DF150[])(s32);
-extern f32 D_800E2790[];
+extern f32 gEntitiesPosYArray[];
 
 extern u16 D_800E77A0[];
 extern u8 D_800E7730[];
@@ -29,7 +29,7 @@ void func_800B19F4(s32, s32);
 void func_8000B6BC(s32);
 void func_8019D958_ovl7(u16);
 void func_800AA018_ovl7(s32);
-void func_800AFA14_ovl7(void);
+void func_800AFA14(void);
 void func_801A0880_ovl7(void);
 void* func_800A8100_ovl7(s32, s32, s32, s32);
 void func_801A3280_ovl7(void);
@@ -115,7 +115,7 @@ void func_801BD88C_ovl7(UNUSED s32 arg0);
 void func_801BD838_ovl7(UNUSED s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_801BD88C_ovl7;
     func_800AA018_ovl7(0x105EF);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BD88C_ovl7(UNUSED s32 arg0) {
@@ -129,7 +129,7 @@ void func_801BD8AC_ovl7(UNUSED s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800DF150[D_8004A7C4->objId] = &func_801BDABC_ovl7;
     func_800AA018_ovl7(0x105F2);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BD930_ovl7(UNUSED s32 arg0) {
@@ -137,7 +137,7 @@ void func_801BD930_ovl7(UNUSED s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800DF150[D_8004A7C4->objId] = &func_801BDABC_ovl7;
     func_800AA018_ovl7(0x105F3);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BD9B4_ovl7(UNUSED s32 arg0) {
@@ -145,7 +145,7 @@ void func_801BD9B4_ovl7(UNUSED s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800DF150[D_8004A7C4->objId] = &func_801BDABC_ovl7;
     func_800AA018_ovl7(0x105F4);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BDA38_ovl7(UNUSED s32 arg0) {
@@ -153,7 +153,7 @@ void func_801BDA38_ovl7(UNUSED s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800DF150[D_8004A7C4->objId] = &func_801BDABC_ovl7;
     func_800AA018_ovl7(0x105F5);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BDABC_ovl7(UNUSED s32 arg0) {
@@ -182,7 +182,7 @@ void func_801BDB50_ovl7(UnkStruct_801BDB50 *arg0) {
     func_800AA018_ovl7(0x105F0);
     func_800AA018_ovl7(0x105F1);
     sp1C->unk34 = func_800A8100_ovl7(0, 2, 0x34, arg0->unk3C);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BDBDC_ovl7(UNUSED s32 arg0) {
@@ -204,9 +204,9 @@ void func_801BDBFC_ovl7(void) {
         func_801A3E80_ovl7();
     }
     func_800AFBB4_ovl7(0, D_8004A7C4);
-    v1.x = v2.x = v3.x = v4.x = D_800E25D0[D_8004A7C4->objId];
-    v1.y = v2.y = v3.y = v4.y = D_800E2790[D_8004A7C4->objId];
-    v1.z = v2.z = v3.z = v4.z = D_800E2950[D_8004A7C4->objId];
+    v1.x = v2.x = v3.x = v4.x = gEntitiesPosXArray[D_8004A7C4->objId];
+    v1.y = v2.y = v3.y = v4.y = gEntitiesPosYArray[D_8004A7C4->objId];
+    v1.z = v2.z = v3.z = v4.z = gEntitiesPosZArray[D_8004A7C4->objId];
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
@@ -223,7 +223,7 @@ void func_801BDBFC_ovl7(void) {
     D_800EAA60[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId];
     func_800AA018_ovl7(0x105F6);
     func_800AA018_ovl7(0x105F7);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_16/func_801BDBFC_ovl7.s")
@@ -333,7 +333,7 @@ void func_801BE10C_ovl7(UNUSED s32 arg0) {
     func_800AA018_ovl7(0x105F9);
     func_800AA018_ovl7(0x105FA);
     sp1C->unk34 = func_800A8100_ovl7(0, 2, 0x33, sp18);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 extern s32 D_800E83E0[];
@@ -353,9 +353,9 @@ void func_801BE21C_ovl7(UNUSED s32 arg0) {
     Vector v1, v2, v3, v4;
 
     func_800AFBB4_ovl7(0, D_8004A7C4);
-    v1.x = v2.x = v3.x = v4.x = D_800E25D0[D_8004A7C4->objId];
-    v1.y = v2.y = v3.y = v4.y = D_800E2790[D_8004A7C4->objId];
-    v1.z = v2.z = v3.z = v4.z = D_800E2950[D_8004A7C4->objId];
+    v1.x = v2.x = v3.x = v4.x = gEntitiesPosXArray[D_8004A7C4->objId];
+    v1.y = v2.y = v3.y = v4.y = gEntitiesPosYArray[D_8004A7C4->objId];
+    v1.z = v2.z = v3.z = v4.z = gEntitiesPosZArray[D_8004A7C4->objId];
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
@@ -399,7 +399,7 @@ void func_801BE490_ovl7(UNUSED s32 arg0) {
     D_800EAA60[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId];
     func_800AA018_ovl7(0x10602);
     func_800AA018_ovl7(0x10603);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 extern s32 D_800E83E0[];
@@ -556,7 +556,7 @@ block_14:
         func_800B19F4(0x7D, *temp_v0_6);
         func_8000B6BC(0x1E);
         D_8012E7D4 = (u8)2;
-        func_800AFA14_ovl7();
+        func_800AFA14();
         temp_v0_7 = D_8004A7C4;
         phi_v1 = *temp_v0_7 * 4;
         phi_v0 = temp_v0_7;
@@ -564,8 +564,8 @@ block_14:
     *(&D_800E98E0 + phi_v1) = 0;
     *(&D_800E5F90 + (*phi_v0 * 4)) = (s32) D_800E5F90;
     *(&D_800E6BD0 + (*phi_v0 * 4)) = (f32) D_800E6BD0;
-    *(&D_800E2790 + (*phi_v0 * 4)) = (f32) D_800E2790;
-    func_800A9760_ovl7(0x100C3, &D_800E5F90, &D_800E6BD0, &D_800E2790);
+    *(&gEntitiesPosYArray + (*phi_v0 * 4)) = (f32) gEntitiesPosYArray;
+    func_800A9760_ovl7(0x100C3, &D_800E5F90, &D_800E6BD0, &gEntitiesPosYArray);
     func_800A8100_ovl7(0, 2, 0x32, (*(&D_800DFBD0 + (*D_8004A7C4 * 4)))->unk4);
     if (func_800B9E4C_ovl7() != 0) {
         func_800AA018_ovl7(0x105EC);
@@ -585,7 +585,7 @@ block_14:
     func_800A2300_ovl7(arg0);
     sp28->unk34 = 0;
     func_800A4794_ovl7(&sp34, (*(&D_800DFBD0 + (*D_8004A7C4 * 4)))->unk4);
-    *(&D_800E2790 + (*D_8004A7C4 * 4)) = sp38;
+    *(&gEntitiesPosYArray + (*D_8004A7C4 * 4)) = sp38;
     func_800A9760_ovl7(0x100C4);
     func_800AA018_ovl7(0x105EE);
     func_8019B164_ovl7();
@@ -693,7 +693,7 @@ void func_801BEF18_ovl7(void) {
 
     func_8019B424_ovl7(D_800DE350[D_8004A7C4->objId]);
     D_800E6690[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 2.5f;
-    temp_f12 = (D_800E2790[0] + 20.0f) - D_800E2790[D_8004A7C4->objId];
+    temp_f12 = (gEntitiesPosYArray[0] + 20.0f) - gEntitiesPosYArray[D_8004A7C4->objId];
     if (temp_f12 > 0) {
         D_800E3750[D_8004A7C4->objId] = 2.5f;
     } else {
@@ -730,7 +730,7 @@ void func_801BF1F4_ovl7(UNUSED s32 arg0);
 void func_801BF1A0_ovl7(UNUSED s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_801BF1F4_ovl7;
     func_800AA018_ovl7(0x10601);
-    func_800AFA14_ovl7();
+    func_800AFA14();
 }
 
 void func_801BF1F4_ovl7(UNUSED s32 arg0) {

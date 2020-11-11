@@ -3,8 +3,8 @@ glabel func_8011B22C_ovl2
 /* 0A3CA0 8011B230 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 0A3CA4 8011B234 AFB00018 */  sw    $s0, 0x18($sp)
 /* 0A3CA8 8011B238 8C820000 */  lw    $v0, ($a0)
-/* 0A3CAC 8011B23C 3C03800E */  lui   $v1, %hi(D_800E25D0) # $v1, 0x800e
-/* 0A3CB0 8011B240 246325D0 */  addiu $v1, %lo(D_800E25D0) # addiu $v1, $v1, 0x25d0
+/* 0A3CAC 8011B23C 3C03800E */  lui   $v1, %hi(gEntitiesPosXArray) # $v1, 0x800e
+/* 0A3CB0 8011B240 246325D0 */  addiu $v1, %lo(gEntitiesPosXArray) # addiu $v1, $v1, 0x25d0
 /* 0A3CB4 8011B244 00028080 */  sll   $s0, $v0, 2
 /* 0A3CB8 8011B248 00703021 */  addu  $a2, $v1, $s0
 /* 0A3CBC 8011B24C C4C60000 */  lwc1  $f6, ($a2)

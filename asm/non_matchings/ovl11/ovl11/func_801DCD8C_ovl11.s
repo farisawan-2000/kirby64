@@ -6,8 +6,8 @@ glabel func_801DCD8C_ovl11
 /* 1E765C 801DCD9C 10400015 */  beqz  $v0, .L801DCDF4_ovl11
 /* 1E7660 801DCDA0 3C038005 */   lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 1E7664 801DCDA4 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
-/* 1E7668 801DCDA8 3C07800E */  lui   $a3, %hi(D_800E41D0) # $a3, 0x800e
-/* 1E766C 801DCDAC 24E741D0 */  addiu $a3, %lo(D_800E41D0) # addiu $a3, $a3, 0x41d0
+/* 1E7668 801DCDA8 3C07800E */  lui   $a3, %hi(gEntitiesAngleYArray) # $a3, 0x800e
+/* 1E766C 801DCDAC 24E741D0 */  addiu $a3, %lo(gEntitiesAngleYArray) # addiu $a3, $a3, 0x41d0
 /* 1E7670 801DCDB0 8C650000 */  lw    $a1, ($v1)
 /* 1E7674 801DCDB4 3C01800F */ lui $at, %hi(D_800EAA60)
 /* 1E7678 801DCDB8 00021080 */  sll   $v0, $v0, 2

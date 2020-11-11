@@ -29,7 +29,7 @@ glabel func_80220B00_ovl18
 /* 23350C 80220B6C 0C02A7A9 */  jal   func_800A9EA4_ovl18
 /* 233510 80220B70 34840091 */   ori   $a0, (0x00010091 & 0xFFFF) # ori $a0, $a0, 0x91
 /* 233514 80220B74 3C018023 */  lui   $at, %hi(D_8022BBC8) # $at, 0x8023
-/* 233518 80220B78 3C17800E */  lui   $s7, %hi(D_800E2790) # $s7, 0x800e
+/* 233518 80220B78 3C17800E */  lui   $s7, %hi(gEntitiesPosYArray) # $s7, 0x800e
 /* 23351C 80220B7C 3C16800E */  lui   $s6, %hi(D_800E6BD0) # $s6, 0x800e
 /* 233520 80220B80 3C15800E */  lui   $s5, %hi(D_800E5F90) # $s5, 0x800e
 /* 233524 80220B84 3C14800F */  lui   $s4, %hi(D_800EB160) # $s4, 0x800f
@@ -39,7 +39,7 @@ glabel func_80220B00_ovl18
 /* 233534 80220B94 2694B160 */  addiu $s4, %lo(D_800EB160) # addiu $s4, $s4, -0x4ea0
 /* 233538 80220B98 26B55F90 */  addiu $s5, %lo(D_800E5F90) # addiu $s5, $s5, 0x5f90
 /* 23353C 80220B9C 26D66BD0 */  addiu $s6, %lo(D_800E6BD0) # addiu $s6, $s6, 0x6bd0
-/* 233540 80220BA0 26F72790 */  addiu $s7, %lo(D_800E2790) # addiu $s7, $s7, 0x2790
+/* 233540 80220BA0 26F72790 */  addiu $s7, %lo(gEntitiesPosYArray) # addiu $s7, $s7, 0x2790
 /* 233544 80220BA4 C434BBC8 */  lwc1  $f20, %lo(D_8022BBC8)($at)
 .L80220BA8_ovl18:
 /* 233548 80220BA8 3C19800D */  lui   $t9, %hi(D_800D7098) # $t9, 0x800d

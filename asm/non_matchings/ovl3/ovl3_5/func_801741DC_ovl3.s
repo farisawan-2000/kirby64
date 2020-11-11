@@ -35,7 +35,7 @@ glabel func_801741DC_ovl3
 /* 0D4C9C 8017425C 24060001 */   li    $a2, 1
 /* 0D4CA0 80174260 8E090030 */  lw    $t1, 0x30($s0)
 /* 0D4CA4 80174264 252A0001 */  addiu $t2, $t1, 1
-/* 0D4CA8 80174268 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D4CA8 80174268 0C02BE85 */  jal   func_800AFA14
 /* 0D4CAC 8017426C AE0A0030 */   sw    $t2, 0x30($s0)
 /* 0D4CB0 80174270 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0D4CB4 80174274 8FB00018 */  lw    $s0, 0x18($sp)

@@ -34,13 +34,13 @@ extern f32 D_800E6A10[];
 
 extern s32 D_800EBBE0[];
 
-extern f32 D_800E2950[];
+extern f32 gEntitiesPosZArray[];
 extern f32 D_800EAC20[];
 
 extern f32 D_800EAA60[];
 
 
-extern f32 D_800E2790[];
+extern f32 gEntitiesPosYArray[];
 extern f32 D_800EA6E0[];
 
 extern f32 D_800EA8A0[];
@@ -51,7 +51,7 @@ extern f32 D_800EB320[];
 
 extern s32 D_800E5F90[];
 extern f32 D_800E6BD0[];
-extern f32 D_800E25D0[];
+extern f32 gEntitiesPosXArray[];
 
 extern f32 D_800E3750[];
 extern f32 D_800E3210[];

@@ -4,25 +4,25 @@ glabel func_801DF234_ovl10
 /* 1CFFAC 801DF23C 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 1CFFB0 801DF240 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1CFFB4 801DF244 8DC20000 */  lw    $v0, ($t6)
-/* 1CFFB8 801DF248 3C03800E */  lui   $v1, %hi(D_800E25D0) # $v1, 0x800e
-/* 1CFFBC 801DF24C 246325D0 */  addiu $v1, %lo(D_800E25D0) # addiu $v1, $v1, 0x25d0
+/* 1CFFB8 801DF248 3C03800E */  lui   $v1, %hi(gEntitiesPosXArray) # $v1, 0x800e
+/* 1CFFBC 801DF24C 246325D0 */  addiu $v1, %lo(gEntitiesPosXArray) # addiu $v1, $v1, 0x25d0
 /* 1CFFC0 801DF250 00021080 */  sll   $v0, $v0, 2
 /* 1CFFC4 801DF254 00627821 */  addu  $t7, $v1, $v0
 /* 1CFFC8 801DF258 C5E60000 */  lwc1  $f6, ($t7)
 /* 1CFFCC 801DF25C C4640000 */  lwc1  $f4, ($v1)
-/* 1CFFD0 801DF260 3C04800E */  lui   $a0, %hi(D_800E2790) # $a0, 0x800e
+/* 1CFFD0 801DF260 3C04800E */  lui   $a0, %hi(gEntitiesPosYArray) # $a0, 0x800e
 /* 1CFFD4 801DF264 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 1CFFD8 801DF268 44815000 */  mtc1  $at, $f10
-/* 1CFFDC 801DF26C 24842790 */  addiu $a0, %lo(D_800E2790) # addiu $a0, $a0, 0x2790
+/* 1CFFDC 801DF26C 24842790 */  addiu $a0, %lo(gEntitiesPosYArray) # addiu $a0, $a0, 0x2790
 /* 1CFFE0 801DF270 46062001 */  sub.s $f0, $f4, $f6
 /* 1CFFE4 801DF274 0082C021 */  addu  $t8, $a0, $v0
 /* 1CFFE8 801DF278 3C014220 */  li    $at, 0x42200000 # 40.000000
 /* 1CFFEC 801DF27C 44812000 */  mtc1  $at, $f4
 /* 1CFFF0 801DF280 C7120000 */  lwc1  $f18, ($t8)
 /* 1CFFF4 801DF284 C4880000 */  lwc1  $f8, ($a0)
-/* 1CFFF8 801DF288 3C05800E */  lui   $a1, %hi(D_800E2950) # $a1, 0x800e
+/* 1CFFF8 801DF288 3C05800E */  lui   $a1, %hi(gEntitiesPosZArray) # $a1, 0x800e
 /* 1CFFFC 801DF28C 46049180 */  add.s $f6, $f18, $f4
-/* 1D0000 801DF290 24A52950 */  addiu $a1, %lo(D_800E2950) # addiu $a1, $a1, 0x2950
+/* 1D0000 801DF290 24A52950 */  addiu $a1, %lo(gEntitiesPosZArray) # addiu $a1, $a1, 0x2950
 /* 1D0004 801DF294 00A2C821 */  addu  $t9, $a1, $v0
 /* 1D0008 801DF298 460A4400 */  add.s $f16, $f8, $f10
 /* 1D000C 801DF29C 46000482 */  mul.s $f18, $f0, $f0

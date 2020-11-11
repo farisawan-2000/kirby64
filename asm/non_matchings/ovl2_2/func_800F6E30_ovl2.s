@@ -201,7 +201,7 @@ glabel func_800F6E30_ovl2
 /* 07FB94 800F7124 3C01800E */  lui   $at, 0x800e
 /* 07FB98 800F7128 00230821 */  addu  $at, $at, $v1
 /* 07FB9C 800F712C 256B6E0C */  addiu $t3, %lo(D_800F6E0C) # addiu $t3, $t3, 0x6e0c
-/* 07FBA0 800F7130 0C02BE85 */  jal   func_800AFA14_ovl2
+/* 07FBA0 800F7130 0C02BE85 */  jal   func_800AFA14
 /* 07FBA4 800F7134 AC2BF310 */   sw    $t3, -0xcf0($at)
 /* 07FBA8 800F7138 8FBF0044 */  lw    $ra, 0x44($sp)
 /* 07FBAC 800F713C D7B40018 */  ldc1  $f20, 0x18($sp)

@@ -17,16 +17,16 @@ glabel func_80220E14_ovl19
 /* 241560 80220E50 00021080 */  sll   $v0, $v0, 2
 /* 241564 80220E54 00E2C021 */  addu  $t8, $a3, $v0
 /* 241568 80220E58 8F190000 */  lw    $t9, ($t8)
-/* 24156C 80220E5C 3C08800E */  lui   $t0, %hi(D_800E25D0) # $t0, 0x800e
-/* 241570 80220E60 250825D0 */  addiu $t0, %lo(D_800E25D0) # addiu $t0, $t0, 0x25d0
+/* 24156C 80220E5C 3C08800E */  lui   $t0, %hi(gEntitiesPosXArray) # $t0, 0x800e
+/* 241570 80220E60 250825D0 */  addiu $t0, %lo(gEntitiesPosXArray) # addiu $t0, $t0, 0x25d0
 /* 241574 80220E64 00195880 */  sll   $t3, $t9, 2
 /* 241578 80220E68 010B6021 */  addu  $t4, $t0, $t3
 /* 24157C 80220E6C C5840000 */  lwc1  $f4, ($t4)
 /* 241580 80220E70 01026821 */  addu  $t5, $t0, $v0
-/* 241584 80220E74 3C09800E */  lui   $t1, %hi(D_800E2790) # $t1, 0x800e
+/* 241584 80220E74 3C09800E */  lui   $t1, %hi(gEntitiesPosYArray) # $t1, 0x800e
 /* 241588 80220E78 E5A40000 */  swc1  $f4, ($t5)
 /* 24158C 80220E7C 8C620000 */  lw    $v0, ($v1)
-/* 241590 80220E80 25292790 */  addiu $t1, %lo(D_800E2790) # addiu $t1, $t1, 0x2790
+/* 241590 80220E80 25292790 */  addiu $t1, %lo(gEntitiesPosYArray) # addiu $t1, $t1, 0x2790
 /* 241594 80220E84 3C013F00 */  li    $at, 0x3F000000 # 0.500000
 /* 241598 80220E88 00021080 */  sll   $v0, $v0, 2
 /* 24159C 80220E8C 00E27021 */  addu  $t6, $a3, $v0
@@ -36,8 +36,8 @@ glabel func_80220E14_ovl19
 /* 2415AC 80220E9C 000FC080 */  sll   $t8, $t7, 2
 /* 2415B0 80220EA0 0138C821 */  addu  $t9, $t1, $t8
 /* 2415B4 80220EA4 C7260000 */  lwc1  $f6, ($t9)
-/* 2415B8 80220EA8 3C0A800E */  lui   $t2, %hi(D_800E2950) # $t2, 0x800e
-/* 2415BC 80220EAC 254A2950 */  addiu $t2, %lo(D_800E2950) # addiu $t2, $t2, 0x2950
+/* 2415B8 80220EA8 3C0A800E */  lui   $t2, %hi(gEntitiesPosZArray) # $t2, 0x800e
+/* 2415BC 80220EAC 254A2950 */  addiu $t2, %lo(gEntitiesPosZArray) # addiu $t2, $t2, 0x2950
 /* 2415C0 80220EB0 46083280 */  add.s $f10, $f6, $f8
 /* 2415C4 80220EB4 3C01800E */ lui $at, %hi(D_800E4550)
 /* 2415C8 80220EB8 3C040002 */  lui   $a0, (0x00020071 >> 16) # lui $a0, 2
@@ -70,7 +70,7 @@ glabel func_80220E14_ovl19
 /* 241634 80220F24 002F0821 */  addu  $at, $at, $t7
 /* 241638 80220F28 0C02A619 */  jal   func_800A9864
 /* 24163C 80220F2C E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
-/* 241640 80220F30 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 241640 80220F30 0C02BE85 */  jal   func_800AFA14
 /* 241644 80220F34 00000000 */   nop   
 /* 241648 80220F38 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 24164C 80220F3C 27BD0018 */  addiu $sp, $sp, 0x18

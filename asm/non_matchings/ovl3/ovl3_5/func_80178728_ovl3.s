@@ -64,7 +64,7 @@ glabel func_80178728_ovl3
 .L8017881C_ovl3:
 /* 0D925C 8017881C 0C048C3A */  jal   func_801230E8_ovl3
 /* 0D9260 80178820 00003025 */   move  $a2, $zero
-/* 0D9264 80178824 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D9264 80178824 0C02BE85 */  jal   func_800AFA14
 /* 0D9268 80178828 00000000 */   nop   
 /* 0D926C 8017882C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D9270 80178830 27BD0018 */  addiu $sp, $sp, 0x18

@@ -28,7 +28,7 @@ glabel func_80158410_ovl3
 /* 0B8EB8 80158478 00290821 */  addu  $at, $at, $t1
 /* 0B8EBC 8015847C 0C055F8E */  jal   func_80157E38_ovl3
 /* 0B8EC0 80158480 E4286850 */   swc1  $f8, 0x6850($at)
-/* 0B8EC4 80158484 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0B8EC4 80158484 0C02BE85 */  jal   func_800AFA14
 /* 0B8EC8 80158488 00000000 */   nop   
 /* 0B8ECC 8015848C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0B8ED0 80158490 27BD0018 */  addiu $sp, $sp, 0x18

@@ -5,8 +5,8 @@ glabel func_80180B58_ovl3
 /* 0E15A4 80180B64 AFA40048 */   sw    $a0, 0x48($sp)
 /* 0E15A8 80180B68 3C078005 */  lui   $a3, %hi(D_8004A7C4) # $a3, 0x8005
 /* 0E15AC 80180B6C 8CE7A7C4 */  lw    $a3, %lo(D_8004A7C4)($a3)
-/* 0E15B0 80180B70 3C18800E */  lui   $t8, %hi(D_800E2790) # $t8, 0x800e
-/* 0E15B4 80180B74 27182790 */  addiu $t8, %lo(D_800E2790) # addiu $t8, $t8, 0x2790
+/* 0E15B0 80180B70 3C18800E */  lui   $t8, %hi(gEntitiesPosYArray) # $t8, 0x800e
+/* 0E15B4 80180B74 27182790 */  addiu $t8, %lo(gEntitiesPosYArray) # addiu $t8, $t8, 0x2790
 /* 0E15B8 80180B78 8CEE0000 */  lw    $t6, ($a3)
 /* 0E15BC 80180B7C 3C01800F */  lui   $at, %hi(D_800EC9E4) # $at, 0x800f
 /* 0E15C0 80180B80 C426C9E4 */  lwc1  $f6, %lo(D_800EC9E4)($at)

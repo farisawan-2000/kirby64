@@ -59,7 +59,7 @@ glabel func_802227F0_ovl19
 /* 242FE4 802228D4 3C040002 */  lui   $a0, (0x000202DF >> 16) # lui $a0, 2
 /* 242FE8 802228D8 0C02A806 */  jal   func_800AA018_ovl19
 /* 242FEC 802228DC 348402DF */   ori   $a0, (0x000202DF & 0xFFFF) # ori $a0, $a0, 0x2df
-/* 242FF0 802228E0 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 242FF0 802228E0 0C02BE85 */  jal   func_800AFA14
 /* 242FF4 802228E4 00000000 */   nop   
 /* 242FF8 802228E8 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 242FFC 802228EC 27BD0018 */  addiu $sp, $sp, 0x18

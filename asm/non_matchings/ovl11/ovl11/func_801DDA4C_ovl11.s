@@ -36,11 +36,11 @@ glabel func_801DDA4C_ovl11
 /* 1E8394 801DDAD4 8CA80094 */  lw    $t0, 0x94($a1)
 /* 1E8398 801DDAD8 8C4A0000 */  lw    $t2, ($v0)
 .L801DDADC_ovl11:
-/* 1E839C 801DDADC 3C01800E */ lui $at, %hi(D_800E2790)
+/* 1E839C 801DDADC 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 1E83A0 801DDAE0 44800000 */  mtc1  $zero, $f0
 /* 1E83A4 801DDAE4 000A5880 */  sll   $t3, $t2, 2
 /* 1E83A8 801DDAE8 002B0821 */  addu  $at, $at, $t3
-/* 1E83AC 801DDAEC C4242790 */ lwc1 $f4, %lo(D_800E2790)($at)
+/* 1E83AC 801DDAEC C4242790 */ lwc1 $f4, %lo(gEntitiesPosYArray)($at)
 /* 1E83B0 801DDAF0 3C0142C8 */  li    $at, 0x42C80000 # 100.000000
 /* 1E83B4 801DDAF4 44813000 */  mtc1  $at, $f6
 /* 1E83B8 801DDAF8 8D050018 */  lw    $a1, 0x18($t0)
@@ -78,7 +78,7 @@ glabel func_801DDA4C_ovl11
 /* 1E8438 801DDB78 348403F9 */   ori   $a0, (0x000103F9 & 0xFFFF) # ori $a0, $a0, 0x3f9
 /* 1E843C 801DDB7C 0C06F1E5 */  jal   func_801BC794_ovl11
 /* 1E8440 801DDB80 00002025 */   move  $a0, $zero
-/* 1E8444 801DDB84 0C02BE85 */  jal   func_800AFA14_ovl11
+/* 1E8444 801DDB84 0C02BE85 */  jal   func_800AFA14
 /* 1E8448 801DDB88 00000000 */   nop   
 /* 1E844C 801DDB8C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 1E8450 801DDB90 27BD0028 */  addiu $sp, $sp, 0x28

@@ -19,12 +19,12 @@ glabel func_801DD840_ovl11
 /* 1E8144 801DD884 E7A00024 */  swc1  $f0, 0x24($sp)
 /* 1E8148 801DD888 E7A6001C */  swc1  $f6, 0x1c($sp)
 /* 1E814C 801DD88C 8F190000 */  lw    $t9, ($t8)
-/* 1E8150 801DD890 3C06800E */ lui $a2, %hi(D_800E41D0)
+/* 1E8150 801DD890 3C06800E */ lui $a2, %hi(gEntitiesAngleYArray)
 /* 1E8154 801DD894 24050002 */  li    $a1, 2
 /* 1E8158 801DD898 00194080 */  sll   $t0, $t9, 2
 /* 1E815C 801DD89C 00C83021 */  addu  $a2, $a2, $t0
 /* 1E8160 801DD8A0 0C006424 */  jal   vec3_get_euler_rotation
-/* 1E8164 801DD8A4 8CC641D0 */ lw $a2, %lo(D_800E41D0)($a2)
+/* 1E8164 801DD8A4 8CC641D0 */ lw $a2, %lo(gEntitiesAngleYArray)($a2)
 /* 1E8168 801DD8A8 2404001F */  li    $a0, 31
 /* 1E816C 801DD8AC 00002825 */  move  $a1, $zero
 /* 1E8170 801DD8B0 0C06B364 */  jal   func_801ACD90_ovl11
@@ -32,8 +32,8 @@ glabel func_801DD840_ovl11
 /* 1E8178 801DD8B8 1040000B */  beqz  $v0, .L801DD8E8_ovl11
 /* 1E817C 801DD8BC 3C098005 */   lui   $t1, %hi(D_8004A7C4) # $t1, 0x8005
 /* 1E8180 801DD8C0 8D29A7C4 */  lw    $t1, %lo(D_8004A7C4)($t1)
-/* 1E8184 801DD8C4 3C03800E */  lui   $v1, %hi(D_800E41D0) # $v1, 0x800e
-/* 1E8188 801DD8C8 246341D0 */  addiu $v1, %lo(D_800E41D0) # addiu $v1, $v1, 0x41d0
+/* 1E8184 801DD8C4 3C03800E */  lui   $v1, %hi(gEntitiesAngleYArray) # $v1, 0x800e
+/* 1E8188 801DD8C8 246341D0 */  addiu $v1, %lo(gEntitiesAngleYArray) # addiu $v1, $v1, 0x41d0
 /* 1E818C 801DD8CC 8D2A0000 */  lw    $t2, ($t1)
 /* 1E8190 801DD8D0 00026880 */  sll   $t5, $v0, 2
 /* 1E8194 801DD8D4 006D7021 */  addu  $t6, $v1, $t5

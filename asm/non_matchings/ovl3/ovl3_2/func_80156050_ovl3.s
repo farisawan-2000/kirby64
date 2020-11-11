@@ -350,7 +350,7 @@ glabel func_80156050_ovl3
 /* 0B6FB4 80156574 0C048C3A */  jal   func_801230E8_ovl3
 /* 0B6FB8 80156578 00003025 */   move  $a2, $zero
 .L8015657C_ovl3:
-/* 0B6FBC 8015657C 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0B6FBC 8015657C 0C02BE85 */  jal   func_800AFA14
 /* 0B6FC0 80156580 00000000 */   nop   
 /* 0B6FC4 80156584 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0B6FC8 80156588 27BD0018 */  addiu $sp, $sp, 0x18

@@ -95,7 +95,7 @@ glabel func_80173EC0_ovl3
 /* 0D4A68 80174028 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 0D4A6C 8017402C 8CF90030 */  lw    $t9, 0x30($a3)
 /* 0D4A70 80174030 27380001 */  addiu $t8, $t9, 1
-/* 0D4A74 80174034 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0D4A74 80174034 0C02BE85 */  jal   func_800AFA14
 /* 0D4A78 80174038 ACF80030 */   sw    $t8, 0x30($a3)
 /* 0D4A7C 8017403C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D4A80 80174040 27BD0018 */  addiu $sp, $sp, 0x18

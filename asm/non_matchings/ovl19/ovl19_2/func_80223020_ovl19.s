@@ -44,21 +44,21 @@ glabel func_80223020_ovl19
 /* 2437D8 802230C8 3C10800E */  lui   $s0, %hi(D_800E0D50) # $s0, 0x800e
 /* 2437DC 802230CC 26100D50 */  addiu $s0, %lo(D_800E0D50) # addiu $s0, $s0, 0xd50
 /* 2437E0 802230D0 8E220000 */  lw    $v0, ($s1)
-/* 2437E4 802230D4 3C03800E */  lui   $v1, %hi(D_800E25D0) # $v1, 0x800e
-/* 2437E8 802230D8 246325D0 */  addiu $v1, %lo(D_800E25D0) # addiu $v1, $v1, 0x25d0
+/* 2437E4 802230D4 3C03800E */  lui   $v1, %hi(gEntitiesPosXArray) # $v1, 0x800e
+/* 2437E8 802230D8 246325D0 */  addiu $v1, %lo(gEntitiesPosXArray) # addiu $v1, $v1, 0x25d0
 /* 2437EC 802230DC 00021080 */  sll   $v0, $v0, 2
 /* 2437F0 802230E0 02026821 */  addu  $t5, $s0, $v0
 /* 2437F4 802230E4 8DAF0000 */  lw    $t7, ($t5)
 /* 2437F8 802230E8 0062C821 */  addu  $t9, $v1, $v0
-/* 2437FC 802230EC 3C05800E */  lui   $a1, %hi(D_800E2790) # $a1, 0x800e
+/* 2437FC 802230EC 3C05800E */  lui   $a1, %hi(gEntitiesPosYArray) # $a1, 0x800e
 /* 243800 802230F0 000F7080 */  sll   $t6, $t7, 2
 /* 243804 802230F4 006EC021 */  addu  $t8, $v1, $t6
 /* 243808 802230F8 C7040000 */  lwc1  $f4, ($t8)
-/* 24380C 802230FC 24A52790 */  addiu $a1, %lo(D_800E2790) # addiu $a1, $a1, 0x2790
-/* 243810 80223100 3C06800E */  lui   $a2, %hi(D_800E2950) # $a2, 0x800e
+/* 24380C 802230FC 24A52790 */  addiu $a1, %lo(gEntitiesPosYArray) # addiu $a1, $a1, 0x2790
+/* 243810 80223100 3C06800E */  lui   $a2, %hi(gEntitiesPosZArray) # $a2, 0x800e
 /* 243814 80223104 E7240000 */  swc1  $f4, ($t9)
 /* 243818 80223108 8E220000 */  lw    $v0, ($s1)
-/* 24381C 8022310C 24C62950 */  addiu $a2, %lo(D_800E2950) # addiu $a2, $a2, 0x2950
+/* 24381C 8022310C 24C62950 */  addiu $a2, %lo(gEntitiesPosZArray) # addiu $a2, $a2, 0x2950
 /* 243820 80223110 3C040002 */  lui   $a0, (0x000203C4 >> 16) # lui $a0, 2
 /* 243824 80223114 00021080 */  sll   $v0, $v0, 2
 /* 243828 80223118 02024021 */  addu  $t0, $s0, $v0
@@ -109,7 +109,7 @@ glabel func_80223020_ovl19
 .L802231C8_ovl19:
 /* 2438D8 802231C8 0C02A806 */  jal   func_800AA018_ovl19
 /* 2438DC 802231CC 348403C5 */   ori   $a0, (0x000203C5 & 0xFFFF) # ori $a0, $a0, 0x3c5
-/* 2438E0 802231D0 0C02BE85 */  jal   func_800AFA14_ovl19
+/* 2438E0 802231D0 0C02BE85 */  jal   func_800AFA14
 /* 2438E4 802231D4 00000000 */   nop   
 /* 2438E8 802231D8 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 2438EC 802231DC 8FB00014 */  lw    $s0, 0x14($sp)

@@ -72,7 +72,7 @@ glabel func_80158DB4_ovl3
 /* 0B9904 80158EC4 02002025 */  move  $a0, $s0
 /* 0B9908 80158EC8 0C048C3A */  jal   func_801230E8_ovl3
 /* 0B990C 80158ECC 00003025 */   move  $a2, $zero
-/* 0B9910 80158ED0 0C02BE85 */  jal   func_800AFA14_ovl3
+/* 0B9910 80158ED0 0C02BE85 */  jal   func_800AFA14
 /* 0B9914 80158ED4 00000000 */   nop   
 /* 0B9918 80158ED8 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0B991C 80158EDC 8FB00018 */  lw    $s0, 0x18($sp)

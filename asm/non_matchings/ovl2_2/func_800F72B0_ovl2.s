@@ -81,7 +81,7 @@ glabel func_800F72B0_ovl2
 /* 07FE54 800F73E4 0C02A806 */  jal   func_800AA018_ovl2
 /* 07FE58 800F73E8 8D840000 */   lw    $a0, ($t4)
 .L800F73EC_ovl2:
-/* 07FE5C 800F73EC 0C02BE85 */  jal   func_800AFA14_ovl2
+/* 07FE5C 800F73EC 0C02BE85 */  jal   func_800AFA14
 /* 07FE60 800F73F0 00000000 */   nop   
 /* 07FE64 800F73F4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 07FE68 800F73F8 27BD0018 */  addiu $sp, $sp, 0x18

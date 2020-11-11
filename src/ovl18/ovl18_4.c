@@ -25,7 +25,7 @@ void func_80224320_ovl18(s32 arg0) {
     D_800E64D0[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 9.0f;
     D_800E6690[D_8004A7C4->objId] = 0.0f;
     D_800E6850[D_8004A7C4->objId] = 9.0f;
-    func_800AFA14_ovl18();
+    func_800AFA14();
 }
 
 extern void func_801ACF84_ovl7(void);

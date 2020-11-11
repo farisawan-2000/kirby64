@@ -34,7 +34,7 @@ glabel func_801DD730_ovl11
 /* 1E8070 801DD7B0 8D8D0000 */  lw    $t5, ($t4)
 /* 1E8074 801DD7B4 000D7080 */  sll   $t6, $t5, 2
 /* 1E8078 801DD7B8 002E0821 */  addu  $at, $at, $t6
-/* 1E807C 801DD7BC 0C02BE85 */  jal   func_800AFA14_ovl11
+/* 1E807C 801DD7BC 0C02BE85 */  jal   func_800AFA14
 /* 1E8080 801DD7C0 AC2B9E20 */ sw $t3, %lo(D_800E9E20)($at)
 /* 1E8084 801DD7C4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E8088 801DD7C8 27BD0018 */  addiu $sp, $sp, 0x18
