@@ -52,13 +52,13 @@ glabel func_801E100C_ovl10
 /* 1D1E44 801E10D4 348402EB */  ori   $a0, (0x000102EB & 0xFFFF) # ori $a0, $a0, 0x2eb
 /* 1D1E48 801E10D8 000AC880 */  sll   $t9, $t2, 2
 /* 1D1E4C 801E10DC 02595821 */  addu  $t3, $s2, $t9
-/* 1D1E50 801E10E0 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D1E50 801E10E0 0C02A806 */  jal   func_800AA018
 /* 1D1E54 801E10E4 AD600000 */   sw    $zero, ($t3)
 /* 1D1E58 801E10E8 3C040001 */  lui   $a0, (0x000102EA >> 16) # lui $a0, 1
 /* 1D1E5C 801E10EC 0C02A855 */  jal   func_800AA154_ovl10
 /* 1D1E60 801E10F0 348402EA */   ori   $a0, (0x000102EA & 0xFFFF) # ori $a0, $a0, 0x2ea
 /* 1D1E64 801E10F4 3C040001 */  lui   $a0, (0x000102ED >> 16) # lui $a0, 1
-/* 1D1E68 801E10F8 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D1E68 801E10F8 0C02A806 */  jal   func_800AA018
 /* 1D1E6C 801E10FC 348402ED */   ori   $a0, (0x000102ED & 0xFFFF) # ori $a0, $a0, 0x2ed
 /* 1D1E70 801E1100 3C040001 */  lui   $a0, (0x000102EC >> 16) # lui $a0, 1
 /* 1D1E74 801E1104 0C02A855 */  jal   func_800AA154_ovl10
@@ -138,10 +138,10 @@ glabel func_801E100C_ovl10
 /* 1D1F88 801E1218 000AC880 */  sll   $t9, $t2, 2
 /* 1D1F8C 801E121C 02795821 */  addu  $t3, $s3, $t9
 /* 1D1F90 801E1220 E5720000 */  swc1  $f18, ($t3)
-/* 1D1F94 801E1224 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D1F94 801E1224 0C02A806 */  jal   func_800AA018
 /* 1D1F98 801E1228 348402EF */   ori   $a0, (0x000102EF & 0xFFFF) # ori $a0, $a0, 0x2ef
 /* 1D1F9C 801E122C 3C040001 */  lui   $a0, (0x000102EE >> 16) # lui $a0, 1
-/* 1D1FA0 801E1230 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D1FA0 801E1230 0C02A806 */  jal   func_800AA018
 /* 1D1FA4 801E1234 348402EE */   ori   $a0, (0x000102EE & 0xFFFF) # ori $a0, $a0, 0x2ee
 /* 1D1FA8 801E1238 8EC20000 */  lw    $v0, ($s6)
 /* 1D1FAC 801E123C 240D0064 */  li    $t5, 100
@@ -212,7 +212,7 @@ glabel func_801E100C_ovl10
 /* 1D20A4 801E1334 0C02CCFD */  jal   func_800B33F4_ovl10
 /* 1D20A8 801E1338 AC6D0000 */   sw    $t5, ($v1)
 /* 1D20AC 801E133C 3C040001 */  lui   $a0, (0x000102F7 >> 16) # lui $a0, 1
-/* 1D20B0 801E1340 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D20B0 801E1340 0C02A806 */  jal   func_800AA018
 /* 1D20B4 801E1344 348402F7 */   ori   $a0, (0x000102F7 & 0xFFFF) # ori $a0, $a0, 0x2f7
 /* 1D20B8 801E1348 3C040001 */  lui   $a0, (0x000102F6 >> 16) # lui $a0, 1
 /* 1D20BC 801E134C 0C02A855 */  jal   func_800AA154_ovl10

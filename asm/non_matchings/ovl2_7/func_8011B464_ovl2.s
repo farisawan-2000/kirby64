@@ -34,7 +34,7 @@ glabel func_8011B464_ovl2
 /* 0A3F50 8011B4E0 00084080 */  sll   $t0, $t0, 2
 /* 0A3F54 8011B4E4 01091821 */  addu  $v1, $t0, $t1
 /* 0A3F58 8011B4E8 8C640008 */  lw    $a0, 8($v1)
-/* 0A3F5C 8011B4EC 0C02A806 */  jal   func_800AA018_ovl2
+/* 0A3F5C 8011B4EC 0C02A806 */  jal   func_800AA018
 /* 0A3F60 8011B4F0 AFA30018 */   sw    $v1, 0x18($sp)
 /* 0A3F64 8011B4F4 3C0B8005 */  lui   $t3, %hi(D_8004A7C4) # $t3, 0x8005
 /* 0A3F68 8011B4F8 8D6BA7C4 */  lw    $t3, %lo(D_8004A7C4)($t3)

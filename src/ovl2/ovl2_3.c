@@ -2644,15 +2644,15 @@ s32 func_800FCDC0(u32 arg0, u8 bankID, u8 entID,
     u8 action, u8 respawnFlag, u8 unk5, s16 saveToEeprom,
     Vec3f *pos, Vec3f *angle, Vec3f *scale);
 
-void spawn_entity(u32 arg0, struct Entity *arg1) {
+u32 spawn_entity(u32 arg0, struct Entity *arg1) {
     if (!(arg1->respawnFlag & 1)) {
-        func_800FCD14(arg0, arg1->nodeNum, arg1->scale[1], arg1->bankID,
+        return func_800FCD14(arg0, arg1->nodeNum, arg1->scale[1], arg1->bankID,
             arg1->entityID, arg1->action, arg1->respawnFlag,
             arg1->unk5, arg1->saveToEeprom,
             &arg1->pos, &arg1->angle, &arg1->scale);
     }
     else {
-        func_800FCDC0(arg0, arg1->bankID, arg1->entityID, arg1->action,
+        return func_800FCDC0(arg0, arg1->bankID, arg1->entityID, arg1->action,
             arg1->respawnFlag, arg1->unk5, arg1->saveToEeprom,
             &arg1->pos, &arg1->angle, &arg1->scale);
     }

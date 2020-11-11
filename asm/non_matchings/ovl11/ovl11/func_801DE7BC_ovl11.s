@@ -43,7 +43,7 @@ glabel func_801DE7BC_ovl11
 /* 1E9120 801DE860 0C02BB48 */  jal   func_800AED20_ovl11
 /* 1E9124 801DE864 46000300 */   add.s $f12, $f0, $f0
 /* 1E9128 801DE868 3C040001 */  lui   $a0, (0x0001040D >> 16) # lui $a0, 1
-/* 1E912C 801DE86C 0C02A806 */  jal   func_800AA018_ovl11
+/* 1E912C 801DE86C 0C02A806 */  jal   func_800AA018
 /* 1E9130 801DE870 3484040D */   ori   $a0, (0x0001040D & 0xFFFF) # ori $a0, $a0, 0x40d
 /* 1E9134 801DE874 3C040001 */  lui   $a0, (0x0001040C >> 16) # lui $a0, 1
 /* 1E9138 801DE878 3484040C */  ori   $a0, (0x0001040C & 0xFFFF) # ori $a0, $a0, 0x40c

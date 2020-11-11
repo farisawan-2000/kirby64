@@ -45,10 +45,10 @@ glabel func_80115B64_ovl2
 /* 09E680 80115C10 8DADE350 */  lw    $t5, -0x1cb0($t5)
 /* 09E684 80115C14 3C040002 */  lui   $a0, (0x000202E7 >> 16) # lui $a0, 2
 /* 09E688 80115C18 348402E7 */  ori   $a0, (0x000202E7 & 0xFFFF) # ori $a0, $a0, 0x2e7
-/* 09E68C 80115C1C 0C02A806 */  jal   func_800AA018_ovl2
+/* 09E68C 80115C1C 0C02A806 */  jal   func_800AA018
 /* 09E690 80115C20 AC2DA7C4 */   sw    $t5, %lo(D_8004A7C4)($at)
 /* 09E694 80115C24 3C040002 */  lui   $a0, (0x000202E8 >> 16) # lui $a0, 2
-/* 09E698 80115C28 0C02A806 */  jal   func_800AA018_ovl2
+/* 09E698 80115C28 0C02A806 */  jal   func_800AA018
 /* 09E69C 80115C2C 348402E8 */   ori   $a0, (0x000202E8 & 0xFFFF) # ori $a0, $a0, 0x2e8
 /* 09E6A0 80115C30 8FAE0030 */  lw    $t6, 0x30($sp)
 /* 09E6A4 80115C34 3C018005 */  lui   $at, %hi(D_8004A7C4) # $at, 0x8005

@@ -18,10 +18,10 @@ glabel func_8011A060_ovl2
 /* 0A2B10 8011A0A0 AC640000 */  sw    $a0, ($v1)
 /* 0A2B14 8011A0A4 AFA90018 */  sw    $t1, 0x18($sp)
 /* 0A2B18 8011A0A8 8C440008 */  lw    $a0, 8($v0)
-/* 0A2B1C 8011A0AC 0C02A806 */  jal   func_800AA018_ovl2
+/* 0A2B1C 8011A0AC 0C02A806 */  jal   func_800AA018
 /* 0A2B20 8011A0B0 AFA2001C */   sw    $v0, 0x1c($sp)
 /* 0A2B24 8011A0B4 8FAA001C */  lw    $t2, 0x1c($sp)
-/* 0A2B28 8011A0B8 0C02A806 */  jal   func_800AA018_ovl2
+/* 0A2B28 8011A0B8 0C02A806 */  jal   func_800AA018
 /* 0A2B2C 8011A0BC 8D44000C */   lw    $a0, 0xc($t2)
 /* 0A2B30 8011A0C0 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 0A2B34 8011A0C4 2442A7C4 */  addiu $v0, %lo(D_8004A7C4) # addiu $v0, $v0, -0x583c

@@ -1366,7 +1366,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_8015439C_ovl3.s")
         phi_return = 0;
         if (*temp_v1->unk490 != 0) {
             func_8015439C_ovl3(&D_8012E948);
-            phi_return = func_8011BF4C_ovl3(0x8012E948, 0, 0x80130000);
+            phi_return = func_8011BF4C(0x8012E948, 0, 0x80130000);
         }
     }
     return phi_return;
@@ -1386,7 +1386,7 @@ void func_8015449C_ovl3(s32 arg0) {
     D_8012E948.unk14 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk2E90;
     D_8012E948.unk1C = arg0;
     D_8012E948.unk18 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk17D0;
-    func_8011BF4C_ovl3(&D_8012E948, arg0);
+    func_8011BF4C(&D_8012E948, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_8015449C_ovl3.s")
@@ -1403,7 +1403,7 @@ void func_80154578_ovl3(s32 arg0, f32 arg2) {
     D_8012E948.unk18 = arg2;
     D_8012E948.unk1C = arg0;
     D_8012E948.unk14 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk2E90;
-    func_8011BF4C_ovl3(arg2, &D_8012E948, arg0);
+    func_8011BF4C(arg2, &D_8012E948, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80154578_ovl3.s")
@@ -2205,7 +2205,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80155838_ovl3.s")
             arg0->unk10 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk2CD0;
             arg0->unk14 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk2E90;
             arg0->unk18 = (f32) ((*D_8004A7C4 * 4) + 0x800E0000)->unk41D0;
-            phi_return = func_8011BF4C_ovl3(0, temp_a2->unk490);
+            phi_return = func_8011BF4C(0, temp_a2->unk490);
         }
     }
     return phi_return;
@@ -2228,7 +2228,7 @@ void func_80155D50_ovl3(void *arg0, s32 arg1, ? arg2, s32 arg3) {
     arg0->unk14 = (f32) (temp_v0 + 0x800E0000)->unk2E90;
     arg0->unk18 = (f32) (temp_v0 + 0x800E0000)->unk41D0;
     arg0->unk1C = arg1;
-    func_8011BF4C_ovl3(arg2);
+    func_8011BF4C(arg2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80155D50_ovl3.s")
@@ -2245,7 +2245,7 @@ void func_80155DF0_ovl3(void *arg0, s32 arg1, void *arg2, ? arg3, s32 arg4) {
     arg0->unk8 = (f32) arg2->unk8;
     arg0->unk18 = (f32) ((arg4 * 4) + 0x800E0000)->unk41D0;
     arg0->unk1C = arg1;
-    func_8011BF4C_ovl3(arg3);
+    func_8011BF4C(arg3);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80155DF0_ovl3.s")

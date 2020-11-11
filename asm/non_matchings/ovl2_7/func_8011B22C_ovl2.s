@@ -29,7 +29,7 @@ glabel func_8011B22C_ovl2
 /* 0A3D08 8011B298 0C029DFA */  jal   func_800A77E8_ovl2
 /* 0A3D0C 8011B29C 2446009C */   addiu $a2, $v0, 0x9c
 /* 0A3D10 8011B2A0 3C040006 */  lui   $a0, (0x000600D9 >> 16) # lui $a0, 6
-/* 0A3D14 8011B2A4 0C02A806 */  jal   func_800AA018_ovl2
+/* 0A3D14 8011B2A4 0C02A806 */  jal   func_800AA018
 /* 0A3D18 8011B2A8 348400D9 */   ori   $a0, (0x000600D9 & 0xFFFF) # ori $a0, $a0, 0xd9
 /* 0A3D1C 8011B2AC 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 0A3D20 8011B2B0 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)

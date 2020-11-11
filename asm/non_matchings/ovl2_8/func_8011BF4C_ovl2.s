@@ -1,4 +1,4 @@
-glabel func_8011BF4C_ovl2
+glabel func_8011BF4C
 /* 0A49BC 8011BF4C 27BDFF00 */  addiu $sp, $sp, -0x100
 /* 0A49C0 8011BF50 AFBF0084 */  sw    $ra, 0x84($sp)
 /* 0A49C4 8011BF54 AFBE0080 */  sw    $fp, 0x80($sp)

@@ -1509,7 +1509,7 @@ asm/non_matchings/ovl2_8/func_8011BABC_ovl2.s
 asm/non_matchings/ovl2_8/func_8011BB98.s
 asm/non_matchings/ovl2_8/func_8011BD30_ovl2.s
 asm/non_matchings/ovl2_8/func_8011BED0.s
-asm/non_matchings/ovl2_8/func_8011BF4C_ovl2.s
+asm/non_matchings/ovl2_8/func_8011BF4C.s
 asm/non_matchings/ovl2_8/func_8011C2A0.s
 asm/non_matchings/ovl2_8/vec3_cross_product.s
 asm/non_matchings/ovl2_8/func_8011C344.s

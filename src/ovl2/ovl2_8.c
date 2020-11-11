@@ -227,7 +227,7 @@ u32 func_8011BED0(u16 arg0, u16 arg1, u16 arg2) {
 }
 
 #ifdef MIPS_TO_C
-s32 func_8011BF4C_ovl2(void *arg0, void *arg1) {
+s32 func_8011BF4C(void *arg0, void *arg1) {
     s32 spF8;
     void *spE8;
     f32 spDC;

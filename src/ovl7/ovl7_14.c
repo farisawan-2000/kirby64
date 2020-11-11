@@ -60,7 +60,7 @@ void func_801BBA54_ovl7(s32 arg0) {
     sp1C->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800E9020[D_8004A7C4->objId] = 0.0f;
-    func_800AA018_ovl7(0x100A2);
+    func_800AA018(0x100A2);
     D_800E64D0[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 14.0f;
     D_800E6690[D_8004A7C4->objId] = 0.0f;
     D_800E6850[D_8004A7C4->objId] = 14.0f;
@@ -86,10 +86,10 @@ void func_801BBBF4_ovl7(s32 arg0) {
     func_800AECC0(D_800D6B10, temp_a1);
     func_800AED20_ovl7(D_800D6B10);
     if (sp1C->unk4 != -1) {
-        func_800AA018_ovl7(sp1C->unk4);
+        func_800AA018(sp1C->unk4);
     }
     if (sp1C->unk8 != -1) {
-        func_800AA018_ovl7(sp1C->unk8);
+        func_800AA018(sp1C->unk8);
     }
     D_800E64D0[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * (ABSF(D_800E64D0[D_800E0D50[D_8004A7C4->objId]]) + 14.0f);
     

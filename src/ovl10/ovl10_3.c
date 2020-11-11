@@ -19,7 +19,7 @@ void func_801EF3F0_ovl10(s32 arg0) {
     func_800A9864(0x1008D, 0x23, 0x10);
     func_8019B9B0_ovl10();
     temp_s0->unk98 = &D_801CB470;
-    func_800AA018_ovl10(0x10521);
+    func_800AA018(0x10521);
     D_800E64D0[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 4.0f;
     D_800E3210[D_8004A7C4->objId] = 8.0f;
     D_800E3750[D_8004A7C4->objId] = -0.8f;

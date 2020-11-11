@@ -62,7 +62,7 @@ glabel func_801DF394_ovl10
 /* 1D01F4 801DF484 AC20A360 */ sw $zero, %lo(D_800EA360)($at)
 /* 1D01F8 801DF488 3C040001 */  lui   $a0, (0x000102DF >> 16) # lui $a0, 1
 .L801DF48C_ovl10:
-/* 1D01FC 801DF48C 0C02A806 */  jal   func_800AA018_ovl10
+/* 1D01FC 801DF48C 0C02A806 */  jal   func_800AA018
 /* 1D0200 801DF490 348402DF */   ori   $a0, (0x000102DF & 0xFFFF) # ori $a0, $a0, 0x2df
 /* 1D0204 801DF494 3C040001 */  lui   $a0, (0x000102DE >> 16) # lui $a0, 1
 /* 1D0208 801DF498 0C02A855 */  jal   func_800AA154_ovl10

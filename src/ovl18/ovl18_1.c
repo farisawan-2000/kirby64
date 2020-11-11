@@ -490,7 +490,7 @@ void func_802218E4_ovl18(s32 arg0) {
 
 void func_80221934_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 0;
-    func_800AA018_ovl18(0x1017C);
+    func_800AA018(0x1017C);
     gEntitiesPosXArray[D_8004A7C4->objId] = (D_800E9560[D_8004A7C4->objId] == -1.0f) ? -64.0f : 64.0f;
     D_800E9560[D_8004A7C4->objId] = -D_800E9560[D_8004A7C4->objId];
     func_800AFA14(&D_800E9560);

@@ -32,10 +32,10 @@ glabel func_801EC6D8_ovl10
 /* 1DD4C0 801EC750 27394148 */  addiu $t9, %lo(D_801F4148_ovl10) # addiu $t9, $t9, 0x4148
 /* 1DD4C4 801EC754 3C040001 */  lui   $a0, (0x000102B4 >> 16) # lui $a0, 1
 /* 1DD4C8 801EC758 348402B4 */  ori   $a0, (0x000102B4 & 0xFFFF) # ori $a0, $a0, 0x2b4
-/* 1DD4CC 801EC75C 0C02A806 */  jal   func_800AA018_ovl10
+/* 1DD4CC 801EC75C 0C02A806 */  jal   func_800AA018
 /* 1DD4D0 801EC760 AC590098 */   sw    $t9, 0x98($v0)
 /* 1DD4D4 801EC764 3C040001 */  lui   $a0, (0x000102B5 >> 16) # lui $a0, 1
-/* 1DD4D8 801EC768 0C02A806 */  jal   func_800AA018_ovl10
+/* 1DD4D8 801EC768 0C02A806 */  jal   func_800AA018
 /* 1DD4DC 801EC76C 348402B5 */   ori   $a0, (0x000102B5 & 0xFFFF) # ori $a0, $a0, 0x2b5
 /* 1DD4E0 801EC770 0C02CD48 */  jal   func_800B3520_ovl10
 /* 1DD4E4 801EC774 00000000 */   nop   

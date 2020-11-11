@@ -803,7 +803,7 @@ void func_801533C0(void) {
     temp_v0 = D_8015A560;
     sp1C = D_8004A7C4;
     D_8004A7C4 = ((temp_v0->unk3 * 4) + 0x800E0000)->unk-1CB0;
-    func_800AA018_ovl6(temp_v0->unk4);
+    func_800AA018(temp_v0->unk4);
     func_801532F4_ovl6(D_8004A7C4);
     *0x8004A7C4 = sp1C;
 }
@@ -823,7 +823,7 @@ void func_80153424(void) {
     temp_v0 = D_8015A560;
     sp1C = D_8004A7C4;
     D_8004A7C4 = ((temp_v0->unk3 * 4) + 0x800E0000)->unk-1CB0;
-    func_800AA018_ovl6(temp_v0->unk4);
+    func_800AA018(temp_v0->unk4);
     *0x8004A7C4 = sp1C;
 }
 #else
@@ -1238,7 +1238,7 @@ struct UnkStruct8004A7C4 **func_80153D10(void) {
         temp_t7 = D_8004A7C4;
         D_8004A7C4 = D_800DE44C;
         sp1C = temp_t7;
-        temp_ret = func_800AA018_ovl6(D_8015A560->unk4);
+        temp_ret = func_800AA018(D_8015A560->unk4);
         D_8004A7C4 = sp1C;
         phi_return = temp_ret;
     }

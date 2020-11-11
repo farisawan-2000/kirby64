@@ -6063,7 +6063,7 @@ block_18:
                 temp_f22 = D_80197594;
                 sp54 = &D_8017A2C0;
 loop_19:
-                func_800AA018_ovl3(0x20191);
+                func_800AA018(0x20191);
                 ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-CF0 = sp54;
 loop_20:
                 temp_v0_8 = D_8004A7C4->objId * 4;
@@ -6097,7 +6097,7 @@ loop_27:
                                     goto loop_27;
                                 }
 block_30:
-                                func_800AA018_ovl3(0x2018E);
+                                func_800AA018(0x2018E);
 loop_31:
                                 temp_v0_10 = D_8004A7C4->objId * 4;
                                 if (0.0f != *(&D_800E6850 + temp_v0_10)) {
@@ -6237,7 +6237,7 @@ void func_8017B068_ovl3(s32 arg0) {
     gKirbyState.unk4C = func_800A8234_ovl3(2, 1U, 0x31);
     gKirbyState.unk50 = func_800A8234_ovl3(2, 1U, 0x32);
     func_8011DC04_ovl3(0xBC);
-    func_800AA018_ovl3(0x20192);
+    func_800AA018(0x20192);
     temp_f20 = D_801975D4;
 loop_4:
     if (gKirbyState.unk17 == 0) {
@@ -6897,7 +6897,7 @@ void func_8017CF60_ovl3(s32 arg0) {
         }
         (temp_v0_3 + 0x800E0000)->unk6850 = phi_f0_3;
     }
-    func_800AA018_ovl3(5.0f, 0x201B8, temp_a1_2);
+    func_800AA018(5.0f, 0x201B8, temp_a1_2);
     if (func_800AF230_ovl3() == 0) {
 loop_13:
         if (gKirbyState.unk17 != 0) {
@@ -6914,7 +6914,7 @@ loop_13:
             }
 block_16:
             gKirbyState.unk44 = 1U;
-            func_800AA018_ovl3(0x201B9);
+            func_800AA018(0x201B9);
             if (func_800AF230_ovl3() == 0) {
 loop_17:
                 if (gKirbyState.unk17 != 0) {
@@ -7497,7 +7497,7 @@ void func_8017E284_ovl3(s32 arg0) {
     gKirbyState.unk154 = 5;
     gKirbyState.unk4C = func_800A8100_ovl3(1, 1, 0x2A, ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-430->unk10);
     *(&D_800E9720 + (D_8004A7C4->objId * 4)) = 0;
-    func_800AA018_ovl3(0x201B2);
+    func_800AA018(0x201B2);
     temp_f20 = D_801976A4;
 loop_1:
     if (gKirbyState.unk17 == 0) {
@@ -8151,7 +8151,7 @@ block_18:
                 temp_f22 = D_801976CC;
                 sp4C = &D_8017F8B8;
 loop_19:
-                func_800AA018_ovl3(0x20191);
+                func_800AA018(0x20191);
                 ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-CF0 = sp4C;
 loop_20:
                 temp_v0_8 = D_8004A7C4->objId * 4;
@@ -8185,7 +8185,7 @@ loop_27:
                                     goto loop_27;
                                 }
 block_30:
-                                func_800AA018_ovl3(0x2018E);
+                                func_800AA018(0x2018E);
 loop_31:
                                 temp_v0_10 = D_8004A7C4->objId * 4;
                                 if (0.0f != *(&D_800E6850 + temp_v0_10)) {
@@ -9106,10 +9106,10 @@ void func_80182D9C_ovl3(s32 arg0) {
 loop_8:
             *phi_a0 = phi_a1 - 1;
             if (1.0f == *(&D_800E6A10 + (D_8004A7C4->objId * 4))) {
-                func_800AA018_ovl3(0x201E3, phi_a1);
+                func_800AA018(0x201E3, phi_a1);
                 phi_s0 = &D_801831EC;
             } else {
-                func_800AA018_ovl3(0x201E4, phi_a1);
+                func_800AA018(0x201E4, phi_a1);
                 phi_s0 = 0x801831EC;
             }
             ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-CF0 = phi_s0;
@@ -9126,9 +9126,9 @@ loop_8:
         }
 loop_13:
         if (1.0f == *(&D_800E6A10 + phi_v1)) {
-            func_800AA018_ovl3(0x201E8);
+            func_800AA018(0x201E8);
         } else {
-            func_800AA018_ovl3(0x201E7);
+            func_800AA018(0x201E7);
         }
 loop_16:
         temp_v0_3 = *(&D_800E8920 + (D_8004A7C4->objId * 4));
@@ -9370,7 +9370,7 @@ void func_801835AC_ovl3(s32 arg0) {
         }
         (temp_a0_3 + 0x800E0000)->unk6850 = phi_f0_4;
     }
-    func_800AA018_ovl3(2.5f, 0x201F7, &D_800E8AE0);
+    func_800AA018(2.5f, 0x201F7, &D_800E8AE0);
     temp_v1_4 = D_8004A7C4;
     *(&D_800E6310 + (*temp_v1_4 * 4)) = 0;
     phi_v1 = temp_v1_4;

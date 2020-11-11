@@ -44,7 +44,7 @@ void func_8022E630_ovl19(s32 arg0) {
     D_800E17D0[D_8004A7C4->objId] = 0.0f;
     gEntitiesAngleYArray[D_8004A7C4->objId] = D_800E17D0[D_8004A7C4->objId];
     D_800DF150[D_8004A7C4->objId] = &func_8022E798_ovl19;
-    func_800AA018_ovl19(0x105EF);
+    func_800AA018(0x105EF);
     func_800AFA14();
 }
 
@@ -128,8 +128,8 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
-    func_800AA018_ovl19(0x105F0);
-    func_800AA018_ovl19(0x105F1);
+    func_800AA018(0x105F0);
+    func_800AA018(0x105F1);
     func_8000B6BC(1);
     func_800AECC0(0);
     func_800AED20_ovl19(0);
@@ -145,8 +145,8 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     D_800E17D0[D_8004A7C4->objId] = 0.0f;
     gEntitiesAngleYArray[D_8004A7C4->objId] = (f32) D_800E17D0[D_8004A7C4->objId];
     D_800DF150[D_8004A7C4->objId] = &func_8022EB54_ovl19;
-    func_800AA018_ovl19(0x105F0);
-    func_800AA018_ovl19(0x105F1);
+    func_800AA018(0x105F0);
+    func_800AA018(0x105F1);
     sp20->unk34 = func_800A8100_ovl19(0, 2, 0x34, arg0->unk3C);
     func_800AFA14();
 }
@@ -222,7 +222,7 @@ void func_8022ED10_ovl19(s32 arg0) {
     D_800E17D0[D_8004A7C4->objId] = 0.0f;
     gEntitiesAngleYArray[D_8004A7C4->objId] = D_800E17D0[D_8004A7C4->objId];
     D_800DF150[D_8004A7C4->objId] = &func_8022EE78_ovl19;
-    func_800AA018_ovl19(0x10601);
+    func_800AA018(0x10601);
     func_800AFA14();
 }
 
