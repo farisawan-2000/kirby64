@@ -24,12 +24,14 @@ extern s32 D_800DEDD0[];
 extern s32 *D_800DEF90[];
 extern void (*D_800DF150[])(s32);
 extern void (*D_800DF310[])(s32, s32, f32);
-extern s32 D_800DF850[];
-extern s32 D_800DF690[];
-extern s32 D_800DF4D0[];
+extern u32 D_800DF850[];
+extern u32 D_800DF690[];
+extern u32 D_800DF4D0[];
+
 extern s32 D_800E0110[];
 extern s32 D_800DFF50[];
 extern s32 D_800E02D0[];
+
 extern s32 D_800DFBD0[];
 extern f32 D_800E2410[];
 extern f32 D_800E2250[];
@@ -69,11 +71,13 @@ extern f32 D_800E5350[];
 extern f32 D_800E5190[];
 extern f32 D_800E4FD0[];
 
-extern f32 D_800E7650[];
-extern f32 D_800E8AE0[];
-extern f32 D_800E8220[];
-extern f32 D_800E83E0[];
-extern f32 D_800E8760[];
+extern u8 D_800E7650[];
+
+extern s32 D_800E8AE0[];
+extern s32 D_800E8220[];
+extern s32 D_800E83E0[];
+extern s32 D_800E8760[];
+
 extern u32 D_800E8E60[];
 extern f32 D_800E9020[];
 extern u8 D_800E76C0[];
@@ -82,7 +86,7 @@ extern u8 D_800E7730[];
 extern u16 D_800E77A0[];
 
 extern u8 D_800E7880[];
-extern s32 D_800E78F0[];
+extern u8 D_800E78F0[];
 extern f32 D_800E7B20[];
 extern u32 D_800E7CE0[];
 extern s32 D_800EA520[];

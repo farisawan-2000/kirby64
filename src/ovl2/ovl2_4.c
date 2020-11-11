@@ -57,7 +57,7 @@ block_2:
     if (phi_s0 == &D_80124624) {
         ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800B4D40;
     }
-    func_800A9864_ovl2(phi_v1, 0x1869F, 0x10);
+    func_800A9864(phi_v1, 0x1869F, 0x10);
     func_800AA018_ovl2(phi_s0->unk4);
     func_800AA018_ovl2(phi_s0->unk8);
     arg0->unk3C->unk1C = (f32) ((D_8004A7C4->objId * 4) + 0x800E0000)->unk25D0;

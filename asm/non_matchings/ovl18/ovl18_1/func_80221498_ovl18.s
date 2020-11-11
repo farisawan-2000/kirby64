@@ -25,7 +25,7 @@ glabel func_80221498_ovl18
 /* 233E94 802214F4 00380821 */  addu  $at, $at, $t8
 /* 233E98 802214F8 26946B10 */  addiu $s4, %lo(D_800D6B10) # addiu $s4, $s4, 0x6b10
 /* 233E9C 802214FC AC20DFD0 */ sw $zero, %lo(D_800DDFD0)($at)
-/* 233EA0 80221500 0C02BB30 */  jal   func_800AECC0_ovl18
+/* 233EA0 80221500 0C02BB30 */  jal   func_800AECC0
 /* 233EA4 80221504 C68C0000 */   lwc1  $f12, ($s4)
 /* 233EA8 80221508 0C02BB48 */  jal   func_800AED20_ovl18
 /* 233EAC 8022150C C68C0000 */   lwc1  $f12, ($s4)
@@ -59,7 +59,7 @@ glabel func_80221498_ovl18
 /* 233F18 80221578 AD200000 */  sw    $zero, ($t1)
 /* 233F1C 8022157C C6840000 */  lwc1  $f4, ($s4)
 /* 233F20 80221580 46142302 */  mul.s $f12, $f4, $f20
-/* 233F24 80221584 0C02BB30 */  jal   func_800AECC0_ovl18
+/* 233F24 80221584 0C02BB30 */  jal   func_800AECC0
 /* 233F28 80221588 00000000 */   nop   
 /* 233F2C 8022158C C6860000 */  lwc1  $f6, ($s4)
 /* 233F30 80221590 46143302 */  mul.s $f12, $f6, $f20

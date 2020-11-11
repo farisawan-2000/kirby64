@@ -38,7 +38,7 @@ void func_80221E90_ovl18(s32 arg0) {
     D_800E5F90[D_8004A7C4->objId] = D_800E5F90[temp_a3];
     D_800E6BD0[D_8004A7C4->objId] = D_800E6BD0[temp_a3];
     func_800B33F4_ovl18(D_800E6A10, temp_a3 * 4, D_800E5F90, D_800E6BD0);
-    func_800A9864_ovl18(0x10089, 0x23, 0x10);
+    func_800A9864(0x10089, 0x23, 0x10);
     func_800AA018_ovl18(0x1051C);
     D_800E64D0[D_8004A7C4->objId] = sinf(D_800EA6E0[D_8004A7C4->objId]) * 30.0f;
     D_800E3210[D_8004A7C4->objId] = cosf(D_800EA6E0[D_8004A7C4->objId]) * 30.0f;

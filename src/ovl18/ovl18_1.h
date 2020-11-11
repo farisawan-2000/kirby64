@@ -74,7 +74,7 @@ extern s32 D_800B68AC;
 f32 func_801D650C_ovl18(s32);
 void func_80220424_ovl18(void);
 void func_802202B8_ovl18(s32 arg0);
-void func_800AECC0_ovl18(f32);
+void func_800AECC0(f32);
 void func_800AED20_ovl18(f32);
 void func_80220818_ovl18(s32);
 void func_8022ABC0_ovl18(void);

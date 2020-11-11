@@ -14,7 +14,7 @@ glabel func_80116FF8_ovl2
 /* 09FA98 80117028 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 09FA9C 8011702C 44806000 */  mtc1  $zero, $f12
 .L80117030_ovl2:
-/* 09FAA0 80117030 0C02BB30 */  jal   func_800AECC0_ovl2
+/* 09FAA0 80117030 0C02BB30 */  jal   func_800AECC0
 /* 09FAA4 80117034 00000000 */   nop   
 /* 09FAA8 80117038 44806000 */  mtc1  $zero, $f12
 /* 09FAAC 8011703C 0C02BB48 */  jal   func_800AED20_ovl2

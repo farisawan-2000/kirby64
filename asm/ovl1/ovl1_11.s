@@ -381,7 +381,7 @@ glabel func_800BB98C
 /* 063D68 800BBB18 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 063D6C 800BBB1C 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
 /* 063D70 800BBB20 8E040000 */  lw    $a0, ($s0)
-/* 063D74 800BBB24 0C02A619 */  jal   func_800A9864_ovl1
+/* 063D74 800BBB24 0C02A619 */  jal   func_800A9864
 /* 063D78 800BBB28 24060008 */   li    $a2, 8
 /* 063D7C 800BBB2C 0C02A806 */  jal   func_800AA018_ovl1
 /* 063D80 800BBB30 8E040004 */   lw    $a0, 4($s0)

@@ -226,7 +226,7 @@ void func_80222F00_ovl18(UNUSED s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 5;
     D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId] = 0.0f;
     D_800E3C90[D_8004A7C4->objId] = 65535.0f;
-    func_800AECC0_ovl18(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl18(D_800D6B10);
     func_800A9EA4_ovl18(0x100D1);
     func_800AA864_ovl18(0x100D0, 1);
@@ -262,12 +262,12 @@ void func_80223178_ovl18(UNUSED s32 arg0) {
     D_800E9C60[D_8004A7C4->objId] = 0;
     D_800DDFD0[D_8004A7C4->objId] = 3;
     if (D_800E8920[D_8004A7C4->objId] == 0) {
-        func_800AECC0_ovl18(D_800D6B10 + D_800D6B10);
+        func_800AECC0(D_800D6B10 + D_800D6B10);
         func_800AED20_ovl18(D_800D6B10 + D_800D6B10);
     }
     func_800A9EA4_ovl18(0x100C8);
     func_800AA864_ovl18(0x100C7, 1);
-    func_800AECC0_ovl18(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl18(D_800D6B10);
     func_800A9EA4_ovl18(0x100CA);
     func_800A9EA4_ovl18(0x100C9);
@@ -312,7 +312,7 @@ void func_80223434_ovl18(UNUSED s32 arg0) {
     D_800E9C60[D_8004A7C4->objId] = 0;
     tmp->unk98 = &D_8022AA18;
     D_800DDFD0[D_8004A7C4->objId] = 6;
-    func_800AECC0_ovl18(D_800D6B10 + D_800D6B10);
+    func_800AECC0(D_800D6B10 + D_800D6B10);
     func_800AED20_ovl18(D_800D6B10 + D_800D6B10);
     func_800A9EA4_ovl18(0x100DD);
     func_800A9EA4_ovl18(0x100DC);

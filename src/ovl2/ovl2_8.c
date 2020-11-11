@@ -722,17 +722,17 @@ the instruction, which has a name starting with "jtbl".
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011CCB8.s")
 #endif
 
-void func_800AECC0_ovl2(f32);
+void func_800AECC0(f32);
 void func_800AED20_ovl2(f32);
 extern s32 D_800E8AE0[];
 
 
 void func_8011CF58_ovl2(void) {
     if (D_800E8AE0[D_8004A7C4->objId] & 6) {
-        func_800AECC0_ovl2(1.f);
+        func_800AECC0(1.f);
         func_800AED20_ovl2(1.f);
     } else {
-        func_800AECC0_ovl2(2.f);
+        func_800AECC0(2.f);
         func_800AED20_ovl2(2.f);
     }
 }

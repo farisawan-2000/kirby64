@@ -43,7 +43,7 @@ glabel func_8021EF44_ovl19
 /* 23F6F8 8021EFE8 002E0821 */  addu  $at, $at, $t6
 /* 23F6FC 8021EFEC 3484006A */  ori   $a0, (0x0002006A & 0xFFFF) # ori $a0, $a0, 0x6a
 /* 23F700 8021EFF0 24060010 */  li    $a2, 16
-/* 23F704 8021EFF4 0C02A619 */  jal   func_800A9864_ovl19
+/* 23F704 8021EFF4 0C02A619 */  jal   func_800A9864
 /* 23F708 8021EFF8 E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
 /* 23F70C 8021EFFC 8E380000 */  lw    $t8, ($s1)
 /* 23F710 8021F000 3C10800F */  lui   $s0, %hi(D_800E8060) # $s0, 0x800f

@@ -38,7 +38,7 @@ extern s32 D_801F4094_ovl10;
 extern f32 D_800E7B20[];
 extern s32 D_800EA360[];
 
-extern void func_800AECC0_ovl10(f32);
+extern void func_800AECC0(f32);
 extern void func_800AED20_ovl10(f32);
 extern void func_800BC1FC_ovl10(s32);
 extern void func_8019BB58_ovl10(void);

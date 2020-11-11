@@ -24,7 +24,7 @@ glabel func_801E206C_ovl10
 /* 1D2E34 801E20C4 26526B10 */  addiu $s2, %lo(D_800D6B10) # addiu $s2, $s2, 0x6b10
 /* 1D2E38 801E20C8 0218C821 */  addu  $t9, $s0, $t8
 /* 1D2E3C 801E20CC 8F310000 */  lw    $s1, ($t9)
-/* 1D2E40 801E20D0 0C02BB30 */  jal   func_800AECC0_ovl10
+/* 1D2E40 801E20D0 0C02BB30 */  jal   func_800AECC0
 /* 1D2E44 801E20D4 C64C0000 */   lwc1  $f12, ($s2)
 /* 1D2E48 801E20D8 0C02BB48 */  jal   func_800AED20_ovl10
 /* 1D2E4C 801E20DC C64C0000 */   lwc1  $f12, ($s2)

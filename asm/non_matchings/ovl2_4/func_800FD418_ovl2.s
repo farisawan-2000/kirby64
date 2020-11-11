@@ -48,7 +48,7 @@ glabel func_800FD418_ovl2
 .L800FD4C8_ovl2:
 /* 085F38 800FD4C8 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 085F3C 800FD4CC 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
-/* 085F40 800FD4D0 0C02A619 */  jal   func_800A9864_ovl2
+/* 085F40 800FD4D0 0C02A619 */  jal   func_800A9864
 /* 085F44 800FD4D4 24060010 */   li    $a2, 16
 /* 085F48 800FD4D8 0C02A806 */  jal   func_800AA018_ovl2
 /* 085F4C 800FD4DC 8E040004 */   lw    $a0, 4($s0)

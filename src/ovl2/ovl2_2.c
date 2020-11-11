@@ -111,7 +111,7 @@ void func_800F6E30_ovl2(s32 arg0) {
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
     func_800AF980_ovl2(0x18);
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;
-    func_800A9864_ovl2(*D_801290D8, 0x26, 0x10);
+    func_800A9864(*D_801290D8, 0x26, 0x10);
     func_800A2550_ovl2(((D_801290D0 * 4) + 0x800E0000)->unk-5F0);
     func_800B3070_ovl2(0x10, (bitwise s32) D_800D6B10);
     temp_v1 = D_8004A7C4->objId * 4;

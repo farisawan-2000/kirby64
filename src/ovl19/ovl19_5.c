@@ -6,7 +6,7 @@
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800E1B50.h"
 
-extern void func_800AECC0_ovl19(f32 arg0);
+extern void func_800AECC0(f32 arg0);
 extern void func_800AED20_ovl19(f32 arg0);
 extern void func_8000B6BC(u32 arg0);
 extern void func_800A7678(u32 arg0);
@@ -30,7 +30,7 @@ extern f32 D_800E41D0[];
 
 void func_8022E630_ovl19(s32 arg0) {
     Vector sp1C;
-    func_800AECC0_ovl19(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
@@ -124,17 +124,17 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     struct UnkStruct800E1B50 *sp20;
 
     sp20 = D_800E1B50[D_8004A7C4->objId];
-    func_800AECC0_ovl19(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
     func_800AA018_ovl19(0x105F0);
     func_800AA018_ovl19(0x105F1);
     func_8000B6BC(1);
-    func_800AECC0_ovl19(0);
+    func_800AECC0(0);
     func_800AED20_ovl19(0);
     func_8000B6BC(0x5F);
-    func_800AECC0_ovl19(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     sp24.z = 0.0f;
     sp24.y = 30.0f;
@@ -208,7 +208,7 @@ void func_8022EE78_ovl19(s32 arg0);
 
 void func_8022ED10_ovl19(s32 arg0) {
     Vector sp1C;
-    func_800AECC0_ovl19(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl19(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;

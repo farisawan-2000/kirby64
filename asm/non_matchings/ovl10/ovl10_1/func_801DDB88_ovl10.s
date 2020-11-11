@@ -8,7 +8,7 @@ glabel func_801DDB88_ovl10
 /* 1CE910 801DDBA0 AFB2001C */  sw    $s2, 0x1c($sp)
 /* 1CE914 801DDBA4 AFB10018 */  sw    $s1, 0x18($sp)
 /* 1CE918 801DDBA8 AFA40028 */  sw    $a0, 0x28($sp)
-/* 1CE91C 801DDBAC 0C02BB30 */  jal   func_800AECC0_ovl10
+/* 1CE91C 801DDBAC 0C02BB30 */  jal   func_800AECC0
 /* 1CE920 801DDBB0 C60C0000 */   lwc1  $f12, ($s0)
 /* 1CE924 801DDBB4 0C02BB48 */  jal   func_800AED20_ovl10
 /* 1CE928 801DDBB8 C60C0000 */   lwc1  $f12, ($s0)

@@ -7,6 +7,8 @@
 #include "ovl18/ovl18_3.h"
 #include "ovl18/ovl18_5.h"
 #include "ovl10_1.h"
+// TODO: do this
+// #include "ovl1/ovl1_6.h"
 
 extern u32 D_800D6E40;
 extern u32 D_800D6E18;
@@ -162,7 +164,7 @@ void func_801DC598_ovl10(s32 arg0) {
 
     sp3C = D_800D0D50[D_8004A7C4->objId];
     func_801A3280_ovl10();
-    func_800A9864_ovl10(*(&D_801F42D8_ovl10 + ((D_800E98E0[D_8004A7C4->objId] & 1) * 4)), 0x23, 0x10);
+    func_800A9864(*(&D_801F42D8_ovl10 + ((D_800E98E0[D_8004A7C4->objId] & 1) * 4)), 0x23, 0x10);
     func_800B19F4(0x30, D_8004A7C4->objId);
     temp_s0 = sp3C * 4;
     temp_t4 = temp_s0 + &D_800EA360;
@@ -215,7 +217,7 @@ void func_801DC598_ovl10(s32 arg0) {
     *(&D_800E9020 + (temp_v0_5->unk0 * 4)) = *(&D_800E9020 + temp_s0);
     D_800E17D0[temp_v0_5->unk0] = D_800E17D0[sp3C];
     func_800B33F4_ovl10(&D_800E9020, D_800E17D0);
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     func_800AA018_ovl10(*(&D_801F42E8_ovl10 + ((D_800E98E0[D_8004A7C4->objId] & 1) * 4)));
     func_800AA154_ovl10(*(&D_801F42E0_ovl10 + ((D_800E98E0[D_8004A7C4->objId] & 1) * 4)));
@@ -260,7 +262,7 @@ void func_801DCA44_ovl10(s32 arg0) {
 
     sp18 = (&D_800DFBD0 + (D_8004A7C4->objId * 4))->unkD50;
     func_801A3280_ovl10();
-    func_800A9864_ovl10(0x100D8, 0x23, 0x10);
+    func_800A9864(0x100D8, 0x23, 0x10);
     func_8019BB58_ovl10();
     temp_v0 = D_8004A7C4;
     D_800DEF90[temp_v0->unk0] = &D_800B4954;
@@ -299,7 +301,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_1/func_801DCA44_ovl10.s")
 #ifdef NON_MATCHING
 void func_801DCCB8_ovl10(s32 arg0) {
     D_800E1B50[D_8004A7C4->objId]->unk80->unk10 = 40.0f;
-    func_800A9864_ovl10(0x1005C, 0x23, 0x10);
+    func_800A9864(0x1005C, 0x23, 0x10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B68AC;
     func_800B19F4(0x30, D_8004A7C4->objId);
     D_800E8920[D_8004A7C4->objId] = 1;
@@ -314,7 +316,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_1/func_801DCCB8_ovl10.s")
 #endif
 
 void func_801DCDD4_ovl10(s32 arg0) {
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     D_800DDFD0[D_8004A7C4->objId] = 2;
     D_800E1B50[D_8004A7C4->objId]->unk8C = &D_801F39F4_ovl10;
@@ -384,7 +386,7 @@ void func_801DCFC4_ovl10(s32 arg0) {
     s32 phi_v0;
     s32 *phi_v1;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a0 = D_8004A7C4;
     D_800DDFD0[temp_a0->unk0] = 3;
@@ -504,7 +506,7 @@ void func_801DD390_ovl10(s32 arg0) {
     s32 phi_s1;
     s32 phi_s1_2;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_s0 = D_8004A7C4;
     D_800DDFD0[temp_s0->unk0] = 4;
@@ -703,7 +705,7 @@ void func_801DDB88_ovl10(s32 arg0) {
     s32 phi_a1_2;
     s32 phi_a1_3;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a0 = D_8004A7C4;
     D_800DDFD0[temp_a0->unk0] = 5;
@@ -876,7 +878,7 @@ void func_801DE124_ovl10(s32 arg0) {
     s32 phi_s0_2;
     ? phi_a2;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_v1 = D_8004A7C4;
     D_800DDFD0[temp_v1->unk0] = 6;
@@ -911,7 +913,7 @@ loop_3:
         }
     }
     if (phi_f2 != D_800E6A10[D_8004A7C4->objId]) {
-        func_800AECC0_ovl10(0);
+        func_800AECC0(0);
         func_800AED20_ovl10(0);
         *(&D_800E9020 + (D_8004A7C4->objId * 4)) = 0.0f;
         temp_f22 = D_801F49CC_ovl10;
@@ -954,7 +956,7 @@ loop_16:
             goto loop_16;
         }
         *(&D_800E9020 + (D_8004A7C4->objId * 4)) = 0.0f;
-        func_800AECC0_ovl10(D_800D6B10);
+        func_800AECC0(D_800D6B10);
         func_800AED20_ovl10(D_800D6B10);
     }
     func_800AA018_ovl10(0x102C5);
@@ -1022,7 +1024,7 @@ void func_801DE650_ovl10(s32 arg0) {
     ? phi_a1;
 
     temp_f0 = D_800D6B10;
-    func_800AECC0_ovl10(temp_f0 + temp_f0);
+    func_800AECC0(temp_f0 + temp_f0);
     temp_f0_2 = D_800D6B10;
     func_800AED20_ovl10(temp_f0_2 + temp_f0_2);
     temp_v0 = D_8004A7C4;
@@ -1065,7 +1067,7 @@ loop_8:
     func_800A7678(0x1D9);
     func_800AA018_ovl10(0x102CB);
     func_800AA154_ovl10(0x102CA);
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     func_800AA018_ovl10(0x102CD);
     func_800AA018_ovl10(0x102CC);
@@ -1180,7 +1182,7 @@ s32 func_801DEB94_ovl10(s32 arg0) {
     s32 phi_return;
     f32 phi_f0;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_v1 = D_8004A7C4;
     ((temp_v1->unk0 * 4) + 0x800E0000)->unk-2030 = 8;
@@ -1384,7 +1386,7 @@ void func_801DF394_ovl10(s32 arg0) {
     s32 temp_v0_2;
     struct UnkStruct8004A7C4 *temp_v0;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_v0 = D_8004A7C4;
     D_800DDFD0[temp_v0->unk0] = 9;
@@ -1471,7 +1473,7 @@ void func_801DF50C_ovl10(s32 arg0) {
 
     sp54 = D_800E1B50[D_8004A7C4->objId];
     func_801DFE64_ovl10();
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a1 = D_8004A7C4;
     D_800DDFD0[temp_a1->unk0] = 0xA;
@@ -1815,7 +1817,7 @@ void *func_801DFF88_ovl10(s32 arg0) {
     s32 *phi_a1_2;
     void *phi_return_2;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a0 = D_8004A7C4;
     D_800DDFD0[temp_a0->unk0] = 0xB;
@@ -2035,7 +2037,7 @@ s32 func_801E0460_ovl10(s32 arg0) {
     struct UnkStruct8004A7C4 *phi_a1_2;
     s32 phi_return;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a1 = D_8004A7C4;
     D_800DDFD0[temp_a1->unk0] = 0xC;
@@ -2437,7 +2439,7 @@ void func_801E100C_ovl10(s32 arg0) {
     void *phi_v1;
     void *phi_v1_2;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_v0 = D_8004A7C4;
     D_800DDFD0[temp_v0->unk0] = 0xD;
@@ -2720,7 +2722,7 @@ void func_801E18A8_ovl10(s32 arg0) {
     s32 phi_s0_2;
     ? phi_a2;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     D_800DDFD0[D_8004A7C4->objId] = 0xE;
     D_800E1B50[D_8004A7C4->objId]->unk8C = &D_801F3A84_ovl10;
@@ -2756,7 +2758,7 @@ loop_3:
         }
     }
     if (phi_f2 != D_800E6A10[D_8004A7C4->objId]) {
-        func_800AECC0_ovl10(0);
+        func_800AECC0(0);
         func_800AED20_ovl10(0);
         *(&D_800E9020 + (D_8004A7C4->objId * 4)) = 0.0f;
         temp_f22 = D_801F4A2C_ovl10;
@@ -2799,7 +2801,7 @@ loop_16:
             goto loop_16;
         }
         *(&D_800E9020 + (D_8004A7C4->objId * 4)) = 0.0f;
-        func_800AECC0_ovl10(D_800D6B10);
+        func_800AECC0(D_800D6B10);
         func_800AED20_ovl10(D_800D6B10);
     }
     func_800AA018_ovl10(0x102F3);
@@ -2853,7 +2855,7 @@ void func_801E1DD0_ovl10(s32 arg0) {
     struct UnkStruct8004A7C4 *temp_v1_3;
     void *temp_v0;
 
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_v1 = D_8004A7C4;
     D_800DDFD0[temp_v1->unk0] = 0xF;
@@ -2966,7 +2968,7 @@ s32 func_801E206C_ovl10(s32 arg0) {
     s32 phi_a1_3;
 
     temp_s1 = D_800E1B50[D_8004A7C4->objId];
-    func_800AECC0_ovl10(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl10(D_800D6B10);
     temp_a0 = D_8004A7C4;
     D_800DDFD0[temp_a0->unk0] = 0x10;

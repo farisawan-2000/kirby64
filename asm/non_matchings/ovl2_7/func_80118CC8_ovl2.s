@@ -19,7 +19,7 @@ glabel func_80118CC8_ovl2
 /* 0A1778 80118D08 0C0461D8 */  jal   func_80118760_ovl2
 /* 0A177C 80118D0C 02002025 */   move  $a0, $s0
 /* 0A1780 80118D10 44806000 */  mtc1  $zero, $f12
-/* 0A1784 80118D14 0C02BB30 */  jal   func_800AECC0_ovl2
+/* 0A1784 80118D14 0C02BB30 */  jal   func_800AECC0
 /* 0A1788 80118D18 00000000 */   nop   
 /* 0A178C 80118D1C 44806000 */  mtc1  $zero, $f12
 /* 0A1790 80118D20 0C02BB48 */  jal   func_800AED20_ovl2
@@ -38,7 +38,7 @@ glabel func_80118CC8_ovl2
 .L80118D50_ovl2:
 /* 0A17C0 80118D50 3C10800D */  lui   $s0, %hi(D_800D6B10) # $s0, 0x800d
 /* 0A17C4 80118D54 26106B10 */  addiu $s0, %lo(D_800D6B10) # addiu $s0, $s0, 0x6b10
-/* 0A17C8 80118D58 0C02BB30 */  jal   func_800AECC0_ovl2
+/* 0A17C8 80118D58 0C02BB30 */  jal   func_800AECC0
 /* 0A17CC 80118D5C C60C0000 */   lwc1  $f12, ($s0)
 /* 0A17D0 80118D60 0C02BB48 */  jal   func_800AED20_ovl2
 /* 0A17D4 80118D64 C60C0000 */   lwc1  $f12, ($s0)

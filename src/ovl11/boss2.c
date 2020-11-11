@@ -1816,13 +1816,13 @@ void func_801DE7BC_ovl11(s32 arg0) {
     D_800E64D0[temp_v0->objId] = 0.0f;
     if (D_800E9FE0[temp_v0->objId] == 1) {
         temp_f0 = D_800D6B10;
-        func_800AECC0_ovl11(temp_f0 + temp_f0);
+        func_800AECC0(temp_f0 + temp_f0);
         temp_f0_2 = D_800D6B10;
         func_800AED20_ovl11(temp_f0_2 + temp_f0_2);
         func_800AA018_ovl11(0x1040D);
         func_800AA864_ovl11(0x1040C, 1);
     }
-    func_800AECC0_ovl11(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl11(D_800D6B10);
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14_ovl11();
@@ -2147,10 +2147,10 @@ void func_801DF204_ovl11(s32 arg0) {
     func_800AA018_ovl11(0x10553);
     D_800DF310[D_8004A7C4->objId] = &D_801DF198;
     func_800AF27C_ovl11();
-    func_800AECC0_ovl11(0);
+    func_800AECC0(0);
     func_800AED20_ovl11(0);
     func_8000B6BC(0x14);
-    func_800AECC0_ovl11(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl11(D_800D6B10);
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14_ovl11();

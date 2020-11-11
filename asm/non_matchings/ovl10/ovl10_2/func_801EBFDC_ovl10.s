@@ -44,7 +44,7 @@ glabel func_801EBFDC_ovl10
 /* 1DCDF4 801EC084 00187880 */  sll   $t7, $t8, 2
 /* 1DCDF8 801EC088 002F0821 */  addu  $at, $at, $t7
 /* 1DCDFC 801EC08C AC208920 */ sw $zero, %lo(D_800E8920)($at)
-/* 1DCE00 801EC090 0C02A619 */  jal   func_800A9864_ovl10
+/* 1DCE00 801EC090 0C02A619 */  jal   func_800A9864
 /* 1DCE04 801EC094 24060010 */   li    $a2, 16
 /* 1DCE08 801EC098 3C040001 */  lui   $a0, (0x00010548 >> 16) # lui $a0, 1
 /* 1DCE0C 801EC09C 0C02A7A9 */  jal   func_800A9EA4_ovl10

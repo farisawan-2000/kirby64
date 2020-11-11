@@ -3,7 +3,7 @@ glabel func_801DF394_ovl10
 /* 1D0108 801DF398 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1D010C 801DF39C 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 1D0110 801DF3A0 AFA40018 */  sw    $a0, 0x18($sp)
-/* 1D0114 801DF3A4 0C02BB30 */  jal   func_800AECC0_ovl10
+/* 1D0114 801DF3A4 0C02BB30 */  jal   func_800AECC0
 /* 1D0118 801DF3A8 C42C6B10 */   lwc1  $f12, %lo(D_800D6B10)($at)
 /* 1D011C 801DF3AC 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 1D0120 801DF3B0 0C02BB48 */  jal   func_800AED20_ovl10

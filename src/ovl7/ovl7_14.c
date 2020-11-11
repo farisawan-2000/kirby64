@@ -30,7 +30,7 @@ extern s32 D_800E0D50[];
 extern f32 D_801CE494;
 extern void *D_801CB56C[];
 extern void func_8010C274(void);
-extern void func_800AECC0_ovl7(f32, struct UnkStruct800E1B50 *);
+extern void func_800AECC0(f32, struct UnkStruct800E1B50 *);
 extern void func_800AED20_ovl7(f32);
 void func_801BBE1C_ovl7(s32 arg0);
 
@@ -83,7 +83,7 @@ void func_801BBBF4_ovl7(s32 arg0) {
     temp_a1->unk48 = &func_8010C274;
     temp_a1->unk98 = &D_801CB56C;
     D_800E8920[D_8004A7C4->objId] = 0;
-    func_800AECC0_ovl7(D_800D6B10, temp_a1);
+    func_800AECC0(D_800D6B10, temp_a1);
     func_800AED20_ovl7(D_800D6B10);
     if (sp1C->unk4 != -1) {
         func_800AA018_ovl7(sp1C->unk4);

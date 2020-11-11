@@ -22,7 +22,7 @@ glabel func_801A3E80
 /* 149F20 801A3EB0 0C066DF6 */  jal   func_8019B7D8_ovl7
 /* 149F24 801A3EB4 AFB90028 */   sw    $t9, 0x28($sp)
 /* 149F28 801A3EB8 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
-/* 149F2C 801A3EBC 0C02BB30 */  jal   func_800AECC0_ovl7
+/* 149F2C 801A3EBC 0C02BB30 */  jal   func_800AECC0
 /* 149F30 801A3EC0 C42C6B10 */   lwc1  $f12, %lo(D_800D6B10)($at)
 /* 149F34 801A3EC4 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 149F38 801A3EC8 0C02BB48 */  jal   func_800AED20_ovl7
@@ -2674,7 +2674,7 @@ glabel func_801A6610_ovl7
 /* 14C6B4 801A6644 8C59000C */  lw    $t9, 0xc($v0)
 /* 14C6B8 801A6648 13210013 */  beq   $t9, $at, .L801A6698_ovl7
 /* 14C6BC 801A664C 00000000 */   nop   
-/* 14C6C0 801A6650 0C02BB30 */  jal   func_800AECC0_ovl7
+/* 14C6C0 801A6650 0C02BB30 */  jal   func_800AECC0
 /* 14C6C4 801A6654 C44C0014 */   lwc1  $f12, 0x14($v0)
 /* 14C6C8 801A6658 8E080094 */  lw    $t0, 0x94($s0)
 /* 14C6CC 801A665C 0C02BB48 */  jal   func_800AED20_ovl7
@@ -2943,7 +2943,7 @@ glabel func_801A69B0_ovl7
 /* 14CA80 801A6A10 00380821 */  addu  $at, $at, $t8
 /* 14CA84 801A6A14 AC2EEF90 */  sw    $t6, -0x1070($at)
 /* 14CA88 801A6A18 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
-/* 14CA8C 801A6A1C 0C02BB30 */  jal   func_800AECC0_ovl7
+/* 14CA8C 801A6A1C 0C02BB30 */  jal   func_800AECC0
 /* 14CA90 801A6A20 C42C6B10 */   lwc1  $f12, %lo(D_800D6B10)($at)
 /* 14CA94 801A6A24 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 14CA98 801A6A28 0C02BB48 */  jal   func_800AED20_ovl7
@@ -3213,7 +3213,7 @@ glabel func_801A6DF0_ovl7
 /* 14CE88 801A6E18 0C066DF6 */  jal   func_8019B7D8_ovl7
 /* 14CE8C 801A6E1C AFB90024 */   sw    $t9, 0x24($sp)
 /* 14CE90 801A6E20 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
-/* 14CE94 801A6E24 0C02BB30 */  jal   func_800AECC0_ovl7
+/* 14CE94 801A6E24 0C02BB30 */  jal   func_800AECC0
 /* 14CE98 801A6E28 C42C6B10 */   lwc1  $f12, %lo(D_800D6B10)($at)
 /* 14CE9C 801A6E2C 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 14CEA0 801A6E30 0C02BB48 */  jal   func_800AED20_ovl7

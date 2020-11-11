@@ -18,9 +18,9 @@ void func_80224320_ovl18(s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_802244FC_ovl18;
     temp_a3->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;
-    func_800A9864_ovl18(0x1008E, 0x23, 0x10, temp_a3);
+    func_800A9864(0x1008E, 0x23, 0x10, temp_a3);
     func_800AA018_ovl18(0x10523);
-    func_800AECC0_ovl18(D_800D6B10 * 0.75f);
+    func_800AECC0(D_800D6B10 * 0.75f);
     func_800AED20_ovl18(D_800D6B10 * 0.75f);
     D_800E64D0[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 9.0f;
     D_800E6690[D_8004A7C4->objId] = 0.0f;

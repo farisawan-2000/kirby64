@@ -32,7 +32,7 @@ glabel func_8018271C_ovl3
 .L80182790_ovl3:
 /* 0E31D0 80182790 00000000 */  nop   
 .L80182794_ovl3:
-/* 0E31D4 80182794 0C02BB30 */  jal   func_800AECC0_ovl3
+/* 0E31D4 80182794 0C02BB30 */  jal   func_800AECC0
 /* 0E31D8 80182798 00000000 */   nop   
 /* 0E31DC 8018279C 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 0E31E0 801827A0 2508A7C4 */  addiu $t0, %lo(D_8004A7C4) # addiu $t0, $t0, -0x583c

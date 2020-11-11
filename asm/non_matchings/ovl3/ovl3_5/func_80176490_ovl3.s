@@ -8,7 +8,7 @@ glabel func_80176490_ovl3
 /* 0D6EE8 801764A8 AE0E0030 */  sw    $t6, 0x30($s0)
 /* 0D6EEC 801764AC 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 0D6EF0 801764B0 AFA40020 */  sw    $a0, 0x20($sp)
-/* 0D6EF4 801764B4 0C02BB30 */  jal   func_800AECC0_ovl3
+/* 0D6EF4 801764B4 0C02BB30 */  jal   func_800AECC0
 /* 0D6EF8 801764B8 C42C6B10 */   lwc1  $f12, %lo(D_800D6B10)($at)
 /* 0D6EFC 801764BC 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 0D6F00 801764C0 0C02BB48 */  jal   func_800AED20_ovl3

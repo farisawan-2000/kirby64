@@ -187,7 +187,7 @@ loop_99:
                         ((*D_8004A7C4 * 4) + 0x800E0000)->unk3C90 = phi_f0_3;
                     }
                     sp20 = phi_f14;
-                    func_800AECC0_ovl3(phi_f14, phi_f14, D_8004A7C4);
+                    func_800AECC0(phi_f14, phi_f14, D_8004A7C4);
                     func_800AED20_ovl3(sp20);
                 }
             } else {
@@ -237,7 +237,7 @@ loop_72:
                 }
                 sp24 = sp24;
                 sp20 = phi_f14_2;
-                func_800AECC0_ovl3(phi_f14_2, phi_f14_2);
+                func_800AECC0(phi_f14_2, phi_f14_2);
                 func_800AED20_ovl3(sp20);
                 ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210 = sp24;
                 if (sp24 < 0.0f) {
@@ -265,7 +265,7 @@ loop_72:
             ((*D_8004A7C4 * 4) + 0x800F0000)->unk-76E0 = 0;
             temp_v0_9 = *D_8004A7C4 * 4;
             if (((temp_v0_9 + 0x800F0000)->unk-7520 & 6) != 0) {
-                func_800AECC0_ovl3(0x40800000, gKirbyState.unk4, D_8004A7C4, 1);
+                func_800AECC0(0x40800000, gKirbyState.unk4, D_8004A7C4, 1);
                 func_800AED20_ovl3(0x40800000);
                 gKirbyState.unk2C = 0xF;
                 temp_v0_10 = *D_8004A7C4 * 4;
@@ -378,7 +378,7 @@ loop_62:
     } else {
         ((*D_8004A7C4 * 4) + 0x800F0000)->unk-76E0 = 0;
         if ((((*D_8004A7C4 * 4) + 0x800F0000)->unk-7520 & 6) != 0) {
-            func_800AECC0_ovl3(0x40800000, gKirbyState.unk4, D_8004A7C4, &D_800E3750, 1);
+            func_800AECC0(0x40800000, gKirbyState.unk4, D_8004A7C4, &D_800E3750, 1);
             func_800AED20_ovl3(0x40800000);
             gKirbyState.unk2C = 0xF;
             ((*D_8004A7C4 * 4) + 0x800E0000)->unk3210 = -12.0f;
@@ -1631,7 +1631,7 @@ void func_8015A44C_ovl3(void) {
     gKirbyState.unk7C = 0.0f;
     gKirbyState.unk78 = (f32) -((*D_8004A7C4 * 4) + 0x800E0000)->unk6A10;
     gKirbyState.unk80 = (f32) gKirbyState.unk7C;
-    func_800AECC0_ovl3(D_800D6B10);
+    func_800AECC0(D_800D6B10);
     func_800AED20_ovl3(D_800D6B10);
     temp_v0 = *D_8004A7C4 * 4;
     if (((temp_v0 + 0x800F0000)->unk-7520 & 6) != 0) {

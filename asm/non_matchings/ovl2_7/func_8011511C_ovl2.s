@@ -19,7 +19,7 @@ glabel func_8011511C_ovl2
 /* 09DBD0 80115160 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 09DBD4 80115164 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
 /* 09DBD8 80115168 24060010 */  li    $a2, 16
-/* 09DBDC 8011516C 0C02A619 */  jal   func_800A9864_ovl2
+/* 09DBDC 8011516C 0C02A619 */  jal   func_800A9864
 /* 09DBE0 80115170 8D440004 */   lw    $a0, 4($t2)
 /* 09DBE4 80115174 8FAB001C */  lw    $t3, 0x1c($sp)
 /* 09DBE8 80115178 0C02A806 */  jal   func_800AA018_ovl2
