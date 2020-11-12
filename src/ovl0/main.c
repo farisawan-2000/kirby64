@@ -19,6 +19,11 @@ struct Overlay mainSegOverlay = {
 
 u32 D_8003DC94 = 0;
 
+#define SETUP_STACK_AND_START_THREAD(thread, stack) {\
+    stack[7] = STACK_TOP_MAGIC;\
+    osStartThread(&thread);\
+}
+
 // .bss
 u64 gEntryStack[ENTRY_STACK_LEN_U64]; // Stack pointer set to this by EntryPoint
 
@@ -126,15 +131,15 @@ void thread5_main(UNUSED void *arg0) {
     osCreateMesgQueue(&D_80048A08, &D_80048A04, 1);
 
     osCreateThread(&D_80043040, 3, func_80002598, 0, &D_800431F0[0x80], 0x78);
-    D_800431F0[7] = STACK_TOP_MAGIC; osStartThread(&D_80043040);
+    SETUP_STACK_AND_START_THREAD(D_80043040, D_800431F0);
     osRecvMesg(&D_80048A08, 0, 1);
 
     osCreateThread(&D_800435F0, 4, func_8001FD64, 0, &D_800437A0[0xC0], 0x6E);
-    D_800437A0[7] = STACK_TOP_MAGIC; osStartThread(&D_800435F0);
+    SETUP_STACK_AND_START_THREAD(D_800435F0, D_800437A0);
     osRecvMesg(&D_80048A08, 0, 1);
 
     osCreateThread(&D_80047F50, 6, func_800051E0, 0, &D_80048100[0x100], 0x73);
-    D_80048100[7] = STACK_TOP_MAGIC; osStartThread(&D_80047F50);
+    SETUP_STACK_AND_START_THREAD(D_80047F50, D_80048100);
     osRecvMesg(&D_80048A08, 0, 1);
     
     func_800076D0();
@@ -157,5 +162,5 @@ void main(void) {
     gEntryStack[7] = STACK_TOP_MAGIC;
     osInitialize();
     osCreateThread(&gIdleThread, 1, thread1_idle, &D_80048B00, &idleThreadStack[IDLE_THREAD_STACK_LEN_U64], 0x7F);
-    idleThreadStack[7] = STACK_TOP_MAGIC; osStartThread(&gIdleThread);
+    SETUP_STACK_AND_START_THREAD(gIdleThread, idleThreadStack);
 }

@@ -345,25 +345,21 @@ extern s32 D_8022ACB0[];
 extern f32 D_8022BC54;
 // TODO: If this function gets matched, then we can incorporate ovl18_5's rodata completely
 #ifdef NON_MATCHING
+s32 random_soft_s32_range(s32);
 void vec3_get_euler_rotation(Vector *, u32, f32);
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->objId];
+    s32 temp_v0;
     Vector sp2C;
     s32 temp_a3;
-    s32 temp_v0 = random_soft_s32_range(4);
-    // s32 temp_v0_2;
-    // s32 phi_a3;
-    // phi_a3 = temp_v0 + 1;
-    if (++temp_v0 == D_800E93A0[D_8004A7C4->objId]) {
-        // temp_v0 = phi_a3;
-        if (temp_v0 >= 4) {
-            temp_v0 = 0;
-        }
+
+    temp_v0 = random_soft_s32_range(4);
+    if (temp_v0 == D_800E93A0[D_8004A7C4->objId]) {
+        temp_v0 = (temp_v0 + 1 >= 4) ? 0 : temp_v0 + 1;
     }
     D_800E93A0[D_8004A7C4->objId] = temp_v0;
-    // temp_v0_2 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)]);
-    temp_a3 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)])
-     + D_8022ACB0[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
+    temp_a3 = random_soft_s32_range(D_8022ACAC[D_800E93A0[D_8004A7C4->objId] * 4])
+        + D_8022ACB0[D_800E93A0[D_8004A7C4->objId] * 4];
     D_800E9560[D_8004A7C4->objId] = temp_a3;
     sp2C.z = 0.0f;
     sp2C.y = 0.0f;
@@ -372,8 +368,8 @@ void func_80225958_ovl18(void) {
     D_800E3050[D_8004A7C4->objId] = sp2C.x;
     D_800E3210[D_8004A7C4->objId] = sp2C.y;
     D_800E8920[D_8004A7C4->objId] = 0;
-    gEntitiesPosXArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
-    gEntitiesPosYArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * sizeof(struct Normal)];
+    gEntitiesPosXArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
+    gEntitiesPosYArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
     gEntitiesPosZArray[D_8004A7C4->objId] = sp3C->unk8;
 }
 #else
