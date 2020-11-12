@@ -235,7 +235,7 @@ void func_802252A4_ovl18(void) {
 }
 
 // regalloc moment
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING_
 s32 random_soft_s32_range(s32);
 void func_80225304_ovl18(s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 0;

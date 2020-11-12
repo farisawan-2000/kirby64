@@ -3,7 +3,7 @@
 #include "D_8004A7C4.h"
 #include "ovl18_1.h"
 #include "ovl18_3.h"
-
+ 
 void func_802223D8_ovl18(void);
 void func_802226E0_ovl18(void);
 void func_80223B4C_ovl18(s32 arg0);
@@ -329,20 +329,11 @@ void func_80223580_ovl18(UNUSED s32 arg0) {
 
 }
 
-// regalloc
-#ifdef MIPS_TO_C
 void func_80223588_ovl18(UNUSED s32 arg0) {
     D_800E3210[D_8004A7C4->objId] *= 0.25f;
     D_800E3750[D_8004A7C4->objId] *= 0.25f;
-    if (D_800E3C90[D_8004A7C4->objId] * 0.25f < 0.0f) {
-        D_800E3C90[D_8004A7C4->objId] = -(D_800E3C90[D_8004A7C4->objId]);
-    } else {
-        D_800E3C90[D_8004A7C4->objId] = D_800E3C90[D_8004A7C4->objId] * 0.25f;
-    }
+    D_800E3C90[D_8004A7C4->objId] = ABSF(D_800E3C90[D_8004A7C4->objId] * 0.25f);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_3/func_80223588_ovl18.s")
-#endif
 
 void func_80223624_ovl18(UNUSED s32 arg0) {
     D_800E3210[D_8004A7C4->objId] = 0.0f;
