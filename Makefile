@@ -152,6 +152,7 @@ LD_SCRIPT = $(TARGET).ld
 
 
 all: $(BUILD_DIR)/$(TARGET).z64
+	@sha1sum -c $(TARGET).sha1
 
 hexdump: $(BUILD_DIR)/$(TARGET).hex
 
@@ -211,7 +212,6 @@ $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 	$(OBJCOPY) $< $@ -O binary $(OBJCOPY_FLAGS)
 	$(N64CRC) $@
 	@python3 tools/progress2.py -m
-	@sha1sum -c $(TARGET).sha1
 
 $(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
 	xxd $< > $@
