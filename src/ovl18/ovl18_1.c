@@ -134,7 +134,8 @@ void func_80220AA8_ovl18(s32 arg0) {
     func_801A239C_ovl18();
 }
 
-// #ifdef MIPS_TO_C
+// lots of small things to look out for
+#ifdef NON_MATCHING
 extern f32 D_8022BBC8;
 extern u32 D_800D7098;
 extern f32 D_8022BBCC, D_8022BBD0;
@@ -192,9 +193,9 @@ void func_80220B00_ovl18(s32 arg0) {
     }
     }
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_1/func_80220B00_ovl18.s")
-// #endif
+#else
+GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_1/func_80220B00_ovl18.s")
+#endif
 
 void func_80220F48_ovl18(s32 arg0) {
     func_8021F5CC_ovl18();
