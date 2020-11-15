@@ -1,8 +1,9 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "D_8004A7C4.h"
+#include "ovl1/ovl1_6.h"
 #include "ovl18_1.h"
-#include "ovl18_3.h"
+// #include "ovl18_3.h"
 #include "ovl18_5.h"
 
 void func_802218E4_ovl18(s32 arg0);
@@ -134,45 +135,19 @@ void func_80220AA8_ovl18(s32 arg0) {
 }
 
 #ifdef MIPS_TO_C
+extern f32 D_8022BBC8;
+extern u32 D_800D7098;
+extern f32 D_8022BBCC, D_8022BBD0;
+extern f32 D_8022BBD4, D_8022BBD8;
+
 void func_80220B00_ovl18(s32 arg0) {
-    f32 *temp_v0;
-    f32 *temp_v0_2;
-    f32 *temp_v0_3;
-    f32 *temp_v0_4;
-    f32 *temp_v0_5;
     f32 temp_f0;
-    f32 temp_f12;
-    f32 temp_f12_2;
-    f32 temp_f12_3;
-    f32 temp_f12_4;
+    f32 phi_f12;
     f32 temp_f20;
     f32 temp_f24;
     f32 temp_f26;
     f32 temp_f28;
     f32 temp_f30;
-    s32 temp_s1;
-    s32 temp_s1_10;
-    s32 temp_s1_11;
-    s32 temp_s1_12;
-    s32 temp_s1_2;
-    s32 temp_s1_3;
-    s32 temp_s1_4;
-    s32 temp_s1_5;
-    s32 temp_s1_6;
-    s32 temp_s1_7;
-    s32 temp_s1_8;
-    s32 temp_s1_9;
-    struct UnkStruct8004A7C4 *temp_s0;
-    struct UnkStruct8004A7C4 *temp_s0_2;
-    struct UnkStruct8004A7C4 *temp_s0_3;
-    f32 phi_f12;
-    f32 *phi_v0;
-    f32 phi_f12_2;
-    f32 phi_f12_3;
-    f32 *phi_v0_2;
-    f32 phi_f12_4;
-    f32 phi_f12_5;
-    s32 phi_s1;
 
     D_800DDFD0[D_8004A7C4->objId] = 0;
     func_800A9EA4_ovl18(0x10091);
@@ -180,79 +155,39 @@ void func_80220B00_ovl18(s32 arg0) {
     while (TRUE) {
         if (D_800D7098 == 0) {
             temp_f28 = D_800EB160[D_8004A7C4->objId] * cosf(D_800EB320[D_8004A7C4->objId]);
-            temp_f30 = D_800EB160[D_8004A7C4->objId] * sinf(D_800EB320[temp_s1]);
+            temp_f30 = D_800EB160[D_8004A7C4->objId] * sinf(D_800EB320[D_8004A7C4->objId]);
             D_800EB320[D_8004A7C4->objId] += (D_800EADE0[D_8004A7C4->objId] * -D_800EAFA0[D_8004A7C4->objId]);
-            temp_v0_2 = &D_800EB320[D_8004A7C4->objId];
-            temp_f12 = *temp_v0_2;
-            phi_f12 = temp_f12;
-            phi_v0 = temp_v0_2;
-            phi_f12_2 = temp_f12;
-            phi_v0_2 = temp_v0_2;
-            while (temp_f20 <= temp_f12) {
-                *phi_v0 = phi_f12 - temp_f20;
-                temp_v0_3 = &D_800EB320[D_8004A7C4->objId];
-                temp_f12_2 = *temp_v0_3;
-                phi_f12 = temp_f12_2;
-                phi_v0 = temp_v0_3;
-                phi_f12_2 = temp_f12_2;
-                phi_v0_2 = temp_v0_3;
+            while (temp_f20 <= D_800EB320[D_8004A7C4->objId]) {
+                D_800EB320[D_8004A7C4->objId] -= temp_f20;
             }
-            phi_f12_3 = phi_f12_2;
-            phi_f12_4 = phi_f12_2;
-            while (phi_f12_2 < 0.0f) {
-                *phi_v0_2 = phi_f12_3 + temp_f20;
-                temp_v0_4 = &D_800EB320[D_8004A7C4->objId];
-                temp_f12_3 = *temp_v0_4;
-                phi_f12_3 = temp_f12_3;
-                phi_v0_2 = temp_v0_4;
-                phi_f12_4 = temp_f12_3;
+            while (D_800EB320[D_8004A7C4->objId] < 0.0f) {
+                D_800EB320[D_8004A7C4->objId] += temp_f20;
             }
-            temp_s1_3 = D_8004A7C4->objId;
-            temp_f24 = D_800EB160[temp_s1_3] * cosf(phi_f12_4);
-            temp_f0 = sinf(D_800EB320[temp_s1_3]);
-            temp_s0_2 = D_8004A7C4;
-            temp_s1_4 = temp_s0_2->unk0;
-            D_800E5F90[temp_s1_4] = D_800E98E0[temp_s1_4];
-            temp_s1_5 = temp_s0_2->unk0;
-            temp_f26 = D_800EB160[temp_s1_4] * temp_f0;
-            D_800E6BD0[temp_s1_5] = D_800EA6E0[temp_s1_5];
-            temp_s1_6 = temp_s0_2->unk0;
-            gEntitiesPosYArray[temp_s1_6] = D_800EAA60[temp_s1_6];
-            temp_s1_7 = temp_s0_2->unk0;
-            func_800F9974_ovl18(&D_800E5F90[temp_s1_7], &D_800E6BD0[temp_s1_7], temp_f28);
-            temp_s0_3 = D_8004A7C4;
-            temp_v0_5 = &gEntitiesPosYArray[temp_s0_3->unk0];
-            *temp_v0_5 = *temp_v0_5 + temp_f30;
-            temp_s1_8 = temp_s0_3->unk0;
-            *(&D_800E6150 + (temp_s1_8 * 4)) = D_800E5F90[temp_s1_8];
-            temp_s1_9 = temp_s0_3->unk0;
-            D_800E6D90[temp_s1_9] = D_800E6BD0[temp_s1_9];
-            temp_s1_10 = temp_s0_3->unk0;
-            *(&D_800E2CD0 + (temp_s1_10 * 4)) = gEntitiesPosYArray[temp_s1_10];
-            D_800E64D0[temp_s0_3->unk0] = temp_f24 - temp_f28;
-            D_800E3210[temp_s0_3->unk0] = temp_f26 - temp_f30;
-            temp_s1_11 = temp_s0_3->unk0;
-            temp_s1_11 = temp_s1_11 * 4;
-            temp_f12_4 = D_800EB320[temp_s1_11];
-            phi_f12_5 = temp_f12_4;
-            phi_s1 = temp_s1_11;
-            if (D_8022BBCC <= temp_f12_4) {
-                phi_f12_5 = temp_f12_4;
-                phi_s1 = temp_s1_11;
-                if (temp_f12_4 <= D_8022BBD0) {
-                    phi_f12_5 = temp_f12_4;
-                    phi_s1 = temp_s1_11;
-                    if (-1.0f == D_800E6A10[temp_s1_11]) {
-                        func_80199F1C_ovl18(temp_f12_4, arg0);
-                        temp_s1_12 = D_8004A7C4->objId;
-                        phi_f12_5 = D_800EB320[temp_s1_12];
-                        phi_s1 = temp_s1_12 * 4;
+            temp_f24 = D_800EB160[D_8004A7C4->objId] * cosf(D_800EB320[D_8004A7C4->objId]);
+            temp_f0 = sinf(D_800EB320[D_8004A7C4->objId]);
+            D_800E5F90[D_8004A7C4->objId] = D_800E98E0[D_8004A7C4->objId];
+            temp_f26 = D_800EB160[D_8004A7C4->objId] * temp_f0;
+            D_800E6BD0[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId];
+            gEntitiesPosYArray[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId];
+            func_800F9974_ovl18(&D_800E5F90[D_8004A7C4->objId], &D_800E6BD0[D_8004A7C4->objId], temp_f28);
+            gEntitiesPosYArray[D_8004A7C4->objId] += temp_f30;
+            D_800E6150[D_8004A7C4->objId] = D_800E5F90[D_8004A7C4->objId];
+            D_800E6D90[D_8004A7C4->objId] = D_800E6BD0[D_8004A7C4->objId];
+            D_800E2CD0[D_8004A7C4->objId] = gEntitiesPosYArray[D_8004A7C4->objId];
+            D_800E64D0[D_8004A7C4->objId] = temp_f24 - temp_f28;
+            D_800E3210[D_8004A7C4->objId] = temp_f26 - temp_f30;
+            phi_f12 = D_800EB320[D_8004A7C4->objId];
+            if (D_8022BBCC <= phi_f12) {
+                if (phi_f12 <= D_8022BBD0) {
+                    if (-1.0f == D_800E6A10[D_8004A7C4->objId]) {
+                        func_80199F1C_ovl18(phi_f12, arg0);
+                        phi_f12 = D_800EB320[D_8004A7C4->objId];
                     }
                 }
             }
-            if ((D_8022BBD4 <= phi_f12_5) || (phi_f12_5 <= D_8022BBD8)) {
-                if (1.0f == *(D_800E6A10 + phi_s1)) {
-                    func_80199F1C_ovl18(phi_f12_5, arg0);
+            if ((D_8022BBD4 <= phi_f12) || (phi_f12 <= D_8022BBD8)) {
+                if (1.0f == D_800E6A10[D_8004A7C4->objId]) {
+                    func_80199F1C_ovl18(phi_f12, arg0);
                 }
             }
         func_8000B6BC(1);
