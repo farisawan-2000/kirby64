@@ -4,7 +4,7 @@
 #include "ovl0/ovl0_5.h"
 
 #ifdef MIPS_TO_C
-? func_800F88A0_ovl2(void) {
+? func_800F88A0(void) {
     if (D_A0000200 == 0xAC290000) {
         return 1;
     }
@@ -193,7 +193,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F8B1C_ovl2.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 *func_800F8C70_ovl2(void *arg0) {
+void func_800F8C70_ovl2(struct UnkStruct800DE350 *arg0) {
     f32 sp68;
     f32 sp64;
     f32 sp60;
@@ -208,7 +208,6 @@ f32 *func_800F8C70_ovl2(void *arg0) {
     u32 *sp28;
     f32 *temp_a0;
     f32 *temp_a1;
-    f32 *temp_ret;
     f32 *temp_v0_3;
     f32 temp_f0;
     f32 temp_f0_2;
@@ -224,26 +223,22 @@ f32 *func_800F8C70_ovl2(void *arg0) {
     void *temp_v0_2;
     u16 phi_t0;
     f32 phi_f2;
-    f32 *phi_return;
 
     temp_v0 = *arg0;
     temp_v1 = temp_v0 * 4;
-    temp_f6 = ((temp_v1 + 0x800E0000)->unk2CD0 + (temp_v1 + 0x800E0000)->unk2790 + 20.0f) / 2.0f;
+    temp_f6 = (D_800E2CD0[temp_v0] + *(&D_800E2790 + temp_v1) + 20.0f) / 2.0f;
     sp2C = temp_v1;
     temp_a0 = &sp60;
     temp_a1 = &sp54;
-    sp60 = (temp_v1 + 0x800E0000)->unk2B10;
-    sp68 = (temp_v1 + 0x800E0000)->unk2E90;
-    sp54 = (temp_v1 + 0x800E0000)->unk25D0;
-    sp5C = (temp_v1 + 0x800E0000)->unk2950;
+    sp60 = D_800E2B10[temp_v0];
+    sp68 = D_800E2E90[temp_v0];
+    sp54 = *(&D_800E25D0 + temp_v1);
+    sp5C = *(&D_800E2950 + temp_v1);
     sp58 = temp_f6;
     sp64 = temp_f6;
-    temp_ret = func_801046A0_ovl2(temp_a0, temp_a1, 0, 0, 0, &sp50);
-    phi_return = temp_ret;
-    if (temp_ret != 0) {
+    if (func_801046A0_ovl2(temp_a0, temp_a1, 0, 0, 0, &sp50) != 0) {
         temp_a3 = &D_800E5F90[temp_v0];
         temp_a1_2 = sp50->unkE;
-        phi_return = temp_ret;
         if (temp_a1_2 != *temp_a3) {
             temp_a2 = sp50->unk12;
             temp_a0_2 = ((bitwise s32) (*D_80129114)->y + (temp_a1_2 * 0x10))->unk4;
@@ -264,17 +259,16 @@ f32 *func_800F8C70_ovl2(void *arg0) {
             temp_v0_3 = &D_800E6BD0[temp_v0];
             *temp_v0_3 = *(temp_a0_2->unk10 + (temp_a2 * 4));
             temp_f2_2 = temp_f0_2 / temp_a0_2->unkC;
-            if (0.0f <= (temp_v1 + 0x800E0000)->unk6A10) {
-                phi_f2 = temp_f2_2 * D_801287AC;
+            if (0.0f <= D_800E6A10[temp_v0]) {
+                phi_f2 = temp_f2_2 * D_801287A8;
             } else {
-                phi_f2 = temp_f2_2 * *0x80130000;
+                phi_f2 = temp_f2_2 * D_801287AC;
             }
             *temp_v0_3 = *temp_v0_3 + phi_f2;
-            phi_return = temp_v0_3;
         }
     }
-    return phi_return;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F8C70_ovl2.s")
 #endif
@@ -365,33 +359,22 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F8E6C_ovl2.s")
 
 #include "ovl2_6.h"
 extern s32 D_80129118;
-extern struct Normal *D_80129114[];
-extern void func_8001E300(s32 a, f32 b);
 
-#ifdef MIPS_TO_C
-? func_800F9020_ovl2(void *arg0, s32 arg1, f32 arg2) {
-    if (arg1 >= D_80129118) {
-block_4:
-        arg0->unk8 = 0.0f;
-        arg0->unk4 = 0.0f;
-        arg0->unk0 = 0.0f;
+#include "unk_structs/D_80129114.h"
+
+extern void func_8001E300(f32 a, s32 b, f32 c, s32 d);
+
+u32 func_800F9020_ovl2(struct Normal *arg0, s32 arg1, f32 arg2) {
+    if (arg1 >= D_80129118 || arg1 < 0 || arg2 < 0.0f || arg2 > 1.0f) {
+        arg0->z = 0.0f;
+        arg0->y = 0.0f;
+        arg0->x = 0.0f;
         return 1;
+    } else {
+        func_8001E300(arg2, D_80129114->unk4[arg1].unk4, arg2, arg1);
+        return 0;
     }
-    if (arg1 < 0) {
-        goto block_4;
-    }
-    if (arg2 < 0.0f) {
-        goto block_4;
-    }
-    if (1.0f < arg2) {
-        goto block_4;
-    }
-    func_8001E300_ovl2(arg2, ((bitwise s32) (*D_80129114)->y + (arg1 * 0x10))->unk4, arg2, arg1);
-    return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F9020_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800F90C0_ovl2(s32 arg0, s32 arg1) {
@@ -552,6 +535,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F93EC_ovl2.s")
 #endif
 
 extern f32 D_801287B8, D_801287BC;
+
+extern f32 D_8012912C, *D_80129130, D_801287C0;
 #ifdef MIPS_TO_C
 f32 func_800F951C_ovl2(s32 arg1, f32 arg2, s32 arg3, f32 arg4) {
     f32 temp_f0;
@@ -563,15 +548,10 @@ f32 func_800F951C_ovl2(s32 arg1, f32 arg2, s32 arg3, f32 arg4) {
     s32 temp_a1;
     s32 temp_a3;
     s32 temp_t1;
-    s32 temp_v0;
+    struct Unk80129114_4 *temp_v0;
     u8 temp_v1_2;
-    void *temp_t0;
-    void *temp_v1;
+    f32 *temp_t0;
     f32 phi_f2;
-    f32 phi_f0;
-    f32 phi_f12;
-    f32 phi_f0_2;
-    f32 phi_f12_2;
     f32 phi_f2_2;
 
     if (arg1 < 0) {
@@ -580,28 +560,17 @@ f32 func_800F951C_ovl2(s32 arg1, f32 arg2, s32 arg3, f32 arg4) {
     if (arg3 < 0) {
         return D_801287BC;
     }
-    temp_v0 = (bitwise s32) (*D_80129114)->y;
-    temp_v1 = temp_v0 + (arg1 * 0x10);
-    temp_f16 = temp_v1->unk4->unkC;
+    temp_v0 = D_80129114->unk4;
+    temp_f16 = temp_v0[arg1].unk4->unkC;
     if (arg1 == arg3) {
-        if (temp_v1->unkE != 0) {
+        if (temp_v0[arg1].unkE != 0) {
             temp_f18 = arg4 - arg2;
             if (arg4 <= arg2) {
                 phi_f2 = (1.0f - arg2) + arg4;
             } else {
                 phi_f2 = ((1.0f - arg4) + arg2) * -1.0f;
             }
-            if (temp_f18 < 0.0f) {
-                phi_f0 = -temp_f18;
-            } else {
-                phi_f0 = temp_f18;
-            }
-            if (phi_f2 < 0.0f) {
-                phi_f12 = -phi_f2;
-            } else {
-                phi_f12 = phi_f2;
-            }
-            if (phi_f0 < phi_f12) {
+            if (ABSF(temp_f18) < ABSF(phi_f2)) {
                 return temp_f18 * 10.0f * temp_f16;
             }
             return phi_f2 * 10.0f * temp_f16;
@@ -611,35 +580,26 @@ f32 func_800F951C_ovl2(s32 arg1, f32 arg2, s32 arg3, f32 arg4) {
     temp_a1 = D_80129118;
     temp_a3 = D_8012912C;
     temp_t1 = (arg1 * temp_a1) + arg3;
-    temp_v1_2 = *(temp_t1 + temp_a3);
+    // temp_v1_2 = *(temp_t1 + temp_a3);
+    temp_v1_2 = temp_t1 + temp_a3;
     if (temp_v1_2 == 0) {
         return D_801287C0;
     }
     temp_t0 = D_80129130;
-    temp_f0 = (temp_v0 + (arg3 * 0x10))->unk4->unkC;
-    if (0.0f == *temp_t0) {
-        temp_f18_2 = (*(temp_t0 + ((temp_v1_2 & 0x7F) * 4)) + ((arg2 * temp_f16) + ((1.0f - arg4) * temp_f0))) * -10.0f;
-        temp_f2 = (*(temp_t0 + ((*(temp_t1 + (temp_a1 * temp_a1) + temp_a3) & 0x7F) * 4)) + (((1.0f - arg2) * temp_f16) + (arg4 * temp_f0))) * 10.0f;
-        if (temp_f18_2 < 0.0f) {
-            phi_f0_2 = -temp_f18_2;
-        } else {
-            phi_f0_2 = temp_f18_2;
-        }
-        if (temp_f2 < 0.0f) {
-            phi_f12_2 = -temp_f2;
-        } else {
-            phi_f12_2 = temp_f2;
-        }
-        if (phi_f0_2 < phi_f12_2) {
+    temp_f0 = temp_v0[arg3].unk4->unkC;
+    if (0.0f == temp_t0[0]) {
+        temp_f18_2 = (temp_t0[temp_v1_2 & 0x7F] + ((arg2 * temp_f16) + ((1.0f - arg4) * temp_f0))) * -10.0f;
+        // temp_f2 = (*(temp_t0 + ((*(temp_t1 + (temp_a1 * temp_a1) + temp_a3) & 0x7F) * 4)) + (((1.0f - arg2) * temp_f16) + (arg4 * temp_f0))) * 10.0f;
+        temp_f2 = (temp_t0[(temp_t1 + (temp_a1 * temp_a1) + temp_a3) & 0x7F] + (((1.0f - arg2) * temp_f16) + (arg4 * temp_f0))) * 10.0f;
+        if (ABSF(temp_f18_2) < ABSF(temp_f2)) {
             return temp_f18_2;
         }
         return temp_f2;
     }
-    temp_f2_2 = *(temp_t0 + ((temp_v1_2 & 0x7F) * 4));
-    if ((temp_v1_2 & 0x80) != 0) {
-        phi_f2_2 = (temp_f2_2 + ((arg2 * temp_f16) + ((1.0f - arg4) * temp_f0))) * -10.0f;
+    if (temp_v1_2 & 0x80) {
+        phi_f2_2 = (temp_t0[temp_v1_2 & 0x7F] + ((arg2 * temp_f16) + ((1.0f - arg4) * temp_f0))) * -10.0f;
     } else {
-        phi_f2_2 = (temp_f2_2 + (((1.0f - arg2) * temp_f16) + (arg4 * temp_f0))) * 10.0f;
+        phi_f2_2 = (temp_t0[temp_v1_2 & 0x7F] + (((1.0f - arg2) * temp_f16) + (arg4 * temp_f0))) * 10.0f;
     }
     return phi_f2_2;
 }
@@ -649,9 +609,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F951C_ovl2.s")
 
 extern u32 D_800E5F90[];
 extern f32 D_800E6BD0[];
-extern u32 func_800F951C_ovl2(u32, f32, u32, f32);
+extern f32 func_800F951C_ovl2(s32, f32, s32, f32);
 
-u32 func_800F9828_ovl2(s32 arg0, s32 arg1) {
+f32 func_800F9828_ovl2(s32 arg0, s32 arg1) {
     return func_800F951C_ovl2(D_800E5F90[arg0], D_800E6BD0[arg0], D_800E5F90[arg1], D_800E6BD0[arg1]);
 }
 

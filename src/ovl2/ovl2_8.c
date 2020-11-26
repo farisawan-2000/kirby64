@@ -48,9 +48,9 @@ struct Struct800DFBD0 {
 };
 
 extern u32 D_801290D0;
-extern struct Struct800DFBD0 **D_800DFBD0[]; // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
+extern struct LayoutNode **D_800DFBD0[]; // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
 
-struct Struct800DFBD0 *func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg1) {
+struct LayoutNode *func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg1) {
     u32 i;
     struct DynGeo_List *destructGroups;
     struct vCollisionHeader *vColHeader;
@@ -77,16 +77,16 @@ struct Struct800DFBD0 *func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg
     return D_800DFBD0[phi_a0][destructGroups->Unk_Index];
 }
 
-extern func_800A4794_ovl2(Vec3f, struct Struct800DFBD0 *, struct vCollisionHeader *, struct DynGeo_List *);
+extern func_800A4794_ovl2(Vec3f, struct LayoutNode *, struct vCollisionHeader *, struct DynGeo_List *);
 extern func_800FD754_ovl2(s32 *, f32, f32, f32);
-extern func_800A4DB8_ovl2(Vec3f, struct Struct800DFBD0 *);
+extern func_800A4DB8_ovl2(Vec3f, struct LayoutNode *);
 extern func_800A802C_ovl2(s32 *, s32, s32, Vec3f, Vec3f);
 
 
-struct Struct800DFBD0 *func_8011BB98(struct CollisionTriangle *tri, u32 arg1) {
+struct LayoutNode *func_8011BB98(struct CollisionTriangle *tri, u32 arg1) {
     u32 i;
     struct DynGeo_List *destructGroups;
-    struct Struct800DFBD0 *temp_s0;
+    struct LayoutNode *temp_s0;
     struct vCollisionHeader *vColHeader;
     u16 *destrucIndex;
     u32 phi_t1;

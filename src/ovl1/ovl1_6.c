@@ -184,7 +184,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 
 struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 #ifdef MIPS_TO_C
-u32 func_800AE7A8(s32 arg0, u32 arg1, u32 arg2, s32 arg3, void (*)(void) arg4) {
+u32 request_job(s32 arg0, u32 arg1, u32 arg2, s32 arg3, void (*)(void) arg4) {
     void *sp34;
     s32 sp28;
     void *sp24;
@@ -294,7 +294,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE7A8.s")
 
 extern void func_800B1434(void);
 s32 func_800AEA64(s32 arg0, s32 arg1, s32 arg2) {
-    s32 idx = func_800AE7A8_ovl1(arg0, arg1, arg2, 0, &func_800B1434);
+    s32 idx = request_job(arg0, arg1, arg2, 0, &func_800B1434);
 
     if (idx == -1) {
         return -1;
@@ -316,7 +316,7 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
 
     switch (arg0) {
         case 0:
-            idx = func_800AE7A8_ovl1(arg1, arg2, arg3, &func_800B4924, &func_800B143C);
+            idx = request_job(arg1, arg2, arg3, &func_800B4924, &func_800B143C);
             if (idx == FAIL) {
                 return FAIL;
             }
@@ -324,7 +324,7 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
         case 1:
             return FAIL;
         case 2:
-            idx = func_800AE7A8_ovl1(arg1, arg2, arg3, &func_800B4AB8, &func_800B158C);
+            idx = request_job(arg1, arg2, arg3, &func_800B4AB8, &func_800B158C);
             if (idx == FAIL) {
                 return FAIL;
             }

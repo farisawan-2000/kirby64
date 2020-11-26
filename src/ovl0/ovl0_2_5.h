@@ -85,45 +85,100 @@ struct unk80008840 {
     f32 unk98;
 };
 
+typedef f32 quartic[5];
+
+typedef struct {
+    /* 0x00 */ s8 type; /* 0=linear;1=bezier;2=hermite/6 */
+    /* 0x01 */ char unk_01[0x1];
+    /* 0x02 */ s16 length;
+    /* 0x04 */ f32 invSegTime;
+    /* 0x08 */ Vector *pts;
+    /* 0x0C */ f32 duration;
+    /* 0x10 */ f32 *times;
+    /* 0x14 */ quartic *quartics;
+} pathSpline;
+
+typedef struct {
+    /* 0x00 */ struct uvOP *next;
+    /* 0x04 */ s8 value;
+    /* 0x05 */ s8 op;
+    /* 0x06 */ char unk_06[0x2];
+    /* 0x08 */ f32 ref;
+    /* 0x0C */ f32 t;
+    /* 0x10 */ f32 p0;
+    /* 0x14 */ f32 p1;
+    /* 0x18 */ f32 v0;
+    /* 0x1C */ f32 v1;
+    /* 0x20 */ struct pathSpline *path;
+} uvOP;
+
+typedef struct {
+    /* 0x00 */ u32 type;
+    /* 0x04 */ u32 flags;
+    /* 0x08 */ s32 inc;
+} uvState;
+
 struct MObj {
-    struct MObj *unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-    u32 unk14;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
-    u32 unk24;
-    u32 unk28;
-    u32 unk2C;
-    u32 unk30;
-    u32 unk34;
-    u32 unk38;
-    u32 unk3C;
-    u32 unk40;
-    u32 unk44;
-    u32 unk48;
-    u32 unk4C;
-    u32 unk50;
-    u32 unk54;
-    u32 unk58;
-    u32 unk5C;
-    u32 unk60;
-    u32 unk64;
-    u32 unk68;
-    u32 unk6C;
-    u32 unk70;
-    u32 unk74;
-    u32 unk78;
-    u32 unk7C;
-    u32 unk80;
-    u32 unk84;
-    u32 unk88;
-    u32 unk8C;
-    u32 unk90;
-};
+    /* 0x00 */ struct MObj *next;
+    /* 0x04 */ s32 unk_04;
+    /* 0x08 */ u16 h_8;
+    /* 0x0A */ s8 fmt1;
+    /* 0x0B */ s8 siz1;
+    /* 0x0C */ u32 *textures;
+    /* 0x10 */ u16 stretch;
+    /* 0x12 */ u16 sharedOffset;
+    /* 0x14 */ u16 t0w;
+    /* 0x16 */ u16 t0h;
+    /* 0x18 */ s32 halve;
+    /* 0x1C */ f32 xFrac0;
+    /* 0x20 */ f32 yFrac0;
+    /* 0x24 */ f32 xScale;
+    /* 0x28 */ f32 yScale;
+    /* 0x2C */ f32 field_0x2c;
+    /* 0x30 */ f32 field_0x30;
+    /* 0x34 */ u32 *palettes;
+    /* 0x38 */ u16 flags;
+    /* 0x3A */ s8 fmt2;
+    /* 0x3B */ s8 siz2;
+    /* 0x3C */ u16 w2;
+    /* 0x3E */ u16 h2;
+    /* 0x40 */ u16 t1w;
+    /* 0x42 */ u16 t1h;
+    /* 0x44 */ f32 xFrac1;
+    /* 0x48 */ f32 yFrac1;
+    /* 0x4C */ f32 unk_4C;
+    /* 0x50 */ s32 unk_50;
+    /* 0x54 */ s32 unk_54;
+    /* 0x58 */ s8 primR;
+    /* 0x59 */ s8 primG;
+    /* 0x5A */ s8 primB;
+    /* 0x5B */ s8 primA;
+    /* 0x5C */ char unk_5C[0x1];
+    /* 0x5D */ s8 minLOD;
+    /* 0x5E */ char unk_5E[0x2];
+    /* 0x60 */ s8 envR;
+    /* 0x61 */ s8 envG;
+    /* 0x62 */ s8 envB;
+    /* 0x63 */ s8 envA;
+    /* 0x64 */ s8 blendR;
+    /* 0x65 */ s8 blendG;
+    /* 0x66 */ s8 blendB;
+    /* 0x67 */ s8 blendA;
+    /* 0x68 */ u32 lightColor1;
+    /* 0x6C */ u32 lightColor2;
+    /* 0x70 */ char unk_70[0x10];
+    /* 0x80 */ u16 texIndex1;
+    /* 0x82 */ u16 texIndex2;
+    /* 0x84 */ f32 primLOD;
+    /* 0x88 */ f32 palIndex;
+    /* 0x8C */ char unk_8C[0x4];
+    /* 0x90 */ uvOP* ops;
+    /* 0x94 */ uvState* states;
+    /* 0x98 */ f32 offset;
+    /* 0x9C */ f32 increment;
+    /* 0xA0 */ f32 unk_A0;
+    /* 0xA4 */ char unk_A4[0x4];
+}; // size = 0xA8;
 
 
 struct DObj {

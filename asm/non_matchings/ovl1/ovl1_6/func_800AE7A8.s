@@ -1,4 +1,4 @@
-glabel func_800AE7A8
+glabel request_job
 /* 0569F8 800AE7A8 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 0569FC 800AE7AC 2402FFFF */  li    $v0, -1
 /* 056A00 800AE7B0 AFBF001C */  sw    $ra, 0x1c($sp)

@@ -497,14 +497,14 @@ struct MObj* func_8000888C(void) {
         while (TRUE);
     }
     temp_v0 = D_8004A7A4;
-    D_8004A7A4 = D_8004A7A4->unk0; // TODO: This is probably the first member of a struct
+    D_8004A7A4 = D_8004A7A4->next;
     D_8004A7A8++;
     return temp_v0;
 }
 
 // Another potential push
 void func_800088E4(struct MObj *arg0) {
-    arg0->unk0 = D_8004A7A4;
+    arg0->next = D_8004A7A4;
     D_8004A7A4 = arg0;
     D_8004A7A8--;
 }
@@ -612,7 +612,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
 extern u8 D_80040368[];
 
 // a somewhat more granular version of func_80008A18
-#ifdef MIPS_TO_C
+#ifdef MIPS_TO__
 struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u32 pri, s32 arg3, struct ObjStack *arg4, u32 arg5) {
     struct ObjProcess *oProcess;
     struct ObjThread *oThread;

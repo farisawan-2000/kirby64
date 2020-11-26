@@ -1,7 +1,8 @@
 
 
 struct UnkStruct800DE350 {
-	u8 filler[0x48];
+	u32 unk0;
+	u8 filler[0x44];
     s32 unk48;
 	s32 unk4C;
 };

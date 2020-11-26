@@ -209,11 +209,6 @@ extern const char D_800400A0[];
 
 extern OSMesgQueue D_80049340;
 
-#define FAIL(str) {\
-    fatal_printf(str);\
-    while (1);\
-}
-
 struct DObj *func_800057AC(void) {
     struct DObj *tmp;
     if (D_8004A368[D_8004A450] == NULL) {
@@ -480,27 +475,27 @@ extern u64 D_00042410[];
 extern u64 D_00042800[];
 
 // TODO: fix L3D and S2D cases
-void func_80005DE4(Gfx **arg0, u32 arg1) {
+void func_80005DE4(Gfx **dlist, u32 arg1) {
     s32 phi_v0 = 0;
     switch (arg1) { 
         case 0:
             // F3DEX2
-            gSPLoadUcodeL((*arg0)++, gspF3DEX2_fifo);
+            gSPLoadUcodeL((*dlist)++, gspF3DEX2_fifo);
             break;
         case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8:
             // L3DEX2
-            gSPLoadUcodeL((*arg0)++, gspL3DEX2_fifo);
+            gSPLoadUcodeL((*dlist)++, gspL3DEX2_fifo);
             break;
         case 9: case 10:
             // S2DEX2
-            gSPLoadUcodeL((*arg0)++, gspS2DEX2_fifo);
+            gSPLoadUcodeL((*dlist)++, gspS2DEX2_fifo);
             phi_v0 = 1;
             break;
         case 11: case 12: case 13: case 14: case 15: default:
             break;
     }
     if (phi_v0 == 0) {
-        gSPDisplayList((*arg0)++, D_8004A44C);
+        gSPDisplayList((*dlist)++, D_8004A44C);
     }
 }
 

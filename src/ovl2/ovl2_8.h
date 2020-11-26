@@ -15,6 +15,38 @@ struct PositionState {
 /*0x57*/ u8     unkPad2[3]; //0x000000 constant
 /*0x58*/ u32    VI_Timer; //the VI
 };
+
+struct ModelNode{
+	struct ModelNode *next;
+	u8 renderMode;
+	u8 pad[3];
+};
+
+
+struct LayoutNode {
+	struct LayoutNode *next;
+	u32 *unk4;
+	struct LayoutNode *sibling;
+	struct LayoutNode *unkC;
+	struct LayoutNode *parent; //usually same as Unk0_Node
+	struct LayoutNode *child; //is 1 when at end of models layout
+	struct ModelNode *unk18;
+	Vec3f /*0x1c*/ pos;
+	struct ModelNode *unk28;
+	u32 *unk2C;
+	Vec3f angle;
+	struct ModelNode *unk3C;
+	Vec3f scale;
+	u32 *unk4C;
+	u32 *Bank4_ptr; //probably only used upon load_
+	u8 unk54;
+	u8 unk55;
+	u8 unk56;
+	u8 unk57;
+};
+
+
+
 extern struct PositionState gPositionState;
 extern struct KirbyState gKirbyState;
 extern f32 D_80128EFC, D_80128EF8, D_800E4550, D_800E48D0, D_80128F24, D_80128F20, D_800E6850, D_800E4710, D_800E3C90, D_800E3750, D_800E3210, D_800E64D0, D_800E6690;
