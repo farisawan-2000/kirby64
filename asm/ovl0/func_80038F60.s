@@ -18,7 +18,7 @@ glabel osEepromRead
 /* 039B84 80038F84 0C00BD18 */  jal   __osSiGetAccess
 /* 039B88 80038F88 2631B500 */   addiu $s1, %lo(__osEepPifRam) # addiu $s1, $s1, -0x4b00
 /* 039B8C 80038F8C 02402025 */  move  $a0, $s2
-/* 039B90 80038F90 0C00BE8D */  jal   func_8000BE8D
+/* 039B90 80038F90 0C00BE8D */  jal   __osEepStatus
 /* 039B94 80038F94 27A5003C */   addiu $a1, $sp, 0x3c
 /* 039B98 80038F98 14400015 */  bnez  $v0, .L80038FF0_ovl0
 /* 039B9C 80038F9C 00402025 */   move  $a0, $v0
@@ -56,7 +56,7 @@ glabel osEepromRead
 /* 039C0C 8003900C 11200007 */  beqz  $t1, .L8003902C_ovl0
 /* 039C10 80039010 02402025 */   move  $a0, $s2
 .L80039014_ovl0:
-/* 039C14 80039014 0C00BE8D */  jal   func_8000BE8D
+/* 039C14 80039014 0C00BE8D */  jal   __osEepStatus
 /* 039C18 80039018 27A5003C */   addiu $a1, $sp, 0x3c
 /* 039C1C 8003901C 93AA003E */  lbu   $t2, 0x3e($sp)
 /* 039C20 80039020 314B0080 */  andi  $t3, $t2, 0x80
