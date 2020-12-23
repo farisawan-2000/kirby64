@@ -49,7 +49,7 @@ SECTIONS
       BUILD_DIR/asm/boot2.o(.text);
    }
    END_SEG(boot)
-
+ 
    /* 0x80000400 001000-039DF0 [38DF0] */
    BEGIN_SEG(ovl0, 0x80000400) {
       BUILD_DIR/asm/EntryPoint.o(.text);
@@ -71,6 +71,8 @@ SECTIONS
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       BUILD_DIR/libn_audio.a:n_synaddplayer.o(.text);
       BUILD_DIR/libn_audio.a:n_synstopvoice.o(.text);
+      BUILD_DIR/asm/ovl0/n_synallocvoice.o(.text);
+      /*BUILD_DIR/libn_audio.a:n_synallocvoice.o(.text);*/
       BUILD_DIR/asm/ovl0/ovl0_9_2.o(.text);
 
       BUILD_DIR/libultra.a:setintmask.o(.text);

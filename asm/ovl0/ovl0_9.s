@@ -2515,7 +2515,7 @@ glabel func_80024750
 /* 026200 80025600 02602025 */  move  $a0, $s3
 /* 026204 80025604 31AB007F */  andi  $t3, $t5, 0x7f
 /* 026208 80025608 A7AB0094 */  sh    $t3, 0x94($sp)
-/* 02620C 8002560C 0C00AAF4 */  jal   func_8002ABD0
+/* 02620C 8002560C 0C00AAF4 */  jal   n_alSynAllocVoice
 /* 026210 80025610 27A50094 */   addiu $a1, $sp, 0x94
 /* 026214 80025614 50400038 */  beql  $v0, $zero, .L800256F8_ovl0
 /* 026218 80025618 A240002A */   sb    $zero, 0x2a($s2)
@@ -3171,7 +3171,7 @@ glabel func_80025DE8
 /* 026B48 80025F48 03E00008 */  jr    $ra
 /* 026B4C 80025F4C 00000000 */   nop   
 
-glabel func_80025F50
+glabel alLink
 /* 026B50 80025F50 8CAE0000 */  lw    $t6, ($a1)
 /* 026B54 80025F54 AC850004 */  sw    $a1, 4($a0)
 /* 026B58 80025F58 AC8E0000 */  sw    $t6, ($a0)
@@ -3183,7 +3183,7 @@ glabel func_80025F50
 /* 026B6C 80025F6C 03E00008 */  jr    $ra
 /* 026B70 80025F70 ACA40000 */   sw    $a0, ($a1)
 
-glabel func_80025F74
+glabel alUnlink
 /* 026B74 80025F74 8C820000 */  lw    $v0, ($a0)
 /* 026B78 80025F78 50400004 */  beql  $v0, $zero, .L80025F8C_ovl0
 /* 026B7C 80025F7C 8C820004 */   lw    $v0, 4($a0)
@@ -3228,7 +3228,7 @@ glabel func_80025FA4
 /* 026C04 80026004 01F8C821 */  addu  $t9, $t7, $t8
 /* 026C08 80026008 AE390008 */  sw    $t9, 8($s1)
 .L8002600C_ovl0:
-/* 026C0C 8002600C 0C0097DD */  jal   func_80025F74
+/* 026C0C 8002600C 0C0097DD */  jal   alUnlink
 /* 026C10 80026010 02002025 */   move  $a0, $s0
 /* 026C14 80026014 8E480000 */  lw    $t0, ($s2)
 /* 026C18 80026018 AE120004 */  sw    $s2, 4($s0)
@@ -3274,7 +3274,7 @@ glabel func_80026060
 .L800260A8_ovl0:
 /* 026CA8 800260A8 AFA70038 */  sw    $a3, 0x38($sp)
 /* 026CAC 800260AC AFA8002C */  sw    $t0, 0x2c($sp)
-/* 026CB0 800260B0 0C0097DD */  jal   func_80025F74
+/* 026CB0 800260B0 0C0097DD */  jal   alUnlink
 /* 026CB4 800260B4 AFA9001C */   sw    $t1, 0x1c($sp)
 /* 026CB8 800260B8 8FA8002C */  lw    $t0, 0x2c($sp)
 /* 026CBC 800260BC 8FA40034 */  lw    $a0, 0x34($sp)
@@ -3364,7 +3364,7 @@ glabel func_800261B0
 /* 026DE0 800261E0 10E00015 */  beqz  $a3, .L80026238_ovl0
 /* 026DE4 800261E4 00E02025 */   move  $a0, $a3
 /* 026DE8 800261E8 AFA70024 */  sw    $a3, 0x24($sp)
-/* 026DEC 800261EC 0C0097DD */  jal   func_80025F74
+/* 026DEC 800261EC 0C0097DD */  jal   alUnlink
 /* 026DF0 800261F0 AFA80028 */   sw    $t0, 0x28($sp)
 /* 026DF4 800261F4 8FA70024 */  lw    $a3, 0x24($sp)
 /* 026DF8 800261F8 8FA5002C */  lw    $a1, 0x2c($sp)
@@ -3603,7 +3603,7 @@ glabel func_8002649C
 /* 027114 80026514 8E320000 */  lw    $s2, ($s1)
 /* 027118 80026518 168F0019 */  bne   $s4, $t7, .L80026580_ovl0
 /* 02711C 8002651C 02799821 */   addu  $s3, $s3, $t9
-/* 027120 80026520 0C0097DD */  jal   func_80025F74
+/* 027120 80026520 0C0097DD */  jal   alUnlink
 /* 027124 80026524 02202025 */   move  $a0, $s1
 /* 027128 80026528 5200000B */  beql  $s0, $zero, .L80026558_ovl0
 /* 02712C 8002652C AE200000 */   sw    $zero, ($s1)
@@ -4788,7 +4788,7 @@ glabel n_alEnvmixerParam
 glabel func_800275C0
 /* 0281C0 800275C0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0281C4 800275C4 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0281C8 800275C8 0C0097DD */  jal   func_80025F74
+/* 0281C8 800275C8 0C0097DD */  jal   alUnlink
 /* 0281CC 800275CC AFA40018 */   sw    $a0, 0x18($sp)
 /* 0281D0 800275D0 3C028004 */  lui   $v0, %hi(n_syn) # $v0, 0x8004
 /* 0281D4 800275D4 8C42FB14 */  lw    $v0, %lo(n_syn)($v0)
@@ -5142,7 +5142,7 @@ glabel func_80027670
 /* 0286E0 80027AE0 8C79000C */  lw    $t9, 0xc($v1)
 /* 0286E4 80027AE4 AF200088 */  sw    $zero, 0x88($t9)
 /* 0286E8 80027AE8 8C70000C */  lw    $s0, 0xc($v1)
-/* 0286EC 80027AEC 0C0097DD */  jal   func_80025F74
+/* 0286EC 80027AEC 0C0097DD */  jal   alUnlink
 /* 0286F0 80027AF0 02002025 */   move  $a0, $s0
 /* 0286F4 80027AF4 3C028004 */  lui   $v0, %hi(n_syn) # $v0, 0x8004
 /* 0286F8 80027AF8 8C42FB14 */  lw    $v0, %lo(n_syn)($v0)
@@ -5950,7 +5950,7 @@ glabel func_800285F8
 /* 0292C8 800286C8 00408025 */   move  $s0, $v0
 /* 0292CC 800286CC 24440004 */  addiu $a0, $v0, 4
 /* 0292D0 800286D0 AFA4003C */  sw    $a0, 0x3c($sp)
-/* 0292D4 800286D4 0C00AAF4 */  jal   func_8002ABD0
+/* 0292D4 800286D4 0C00AAF4 */  jal   n_alSynAllocVoice
 /* 0292D8 800286D8 27A5007C */   addiu $a1, $sp, 0x7c
 /* 0292DC 800286DC 8FA30078 */  lw    $v1, 0x78($sp)
 /* 0292E0 800286E0 A2000034 */  sb    $zero, 0x34($s0)
@@ -7160,7 +7160,7 @@ glabel func_80029888
 /* 02A4A8 800298A8 52000013 */  beql  $s0, $zero, .L800298F8_ovl0
 /* 02A4AC 800298AC 8FBF001C */   lw    $ra, 0x1c($sp)
 .L800298B0_ovl0:
-/* 02A4B0 800298B0 0C0097DD */  jal   func_80025F74
+/* 02A4B0 800298B0 0C0097DD */  jal   alUnlink
 /* 02A4B4 800298B4 02002025 */   move  $a0, $s0
 /* 02A4B8 800298B8 8E220000 */  lw    $v0, ($s1)
 /* 02A4BC 800298BC 02002025 */  move  $a0, $s0
