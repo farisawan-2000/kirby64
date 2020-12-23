@@ -133,7 +133,7 @@ SECTIONS
       BUILD_DIR/libultra.a:sqrtf.o(.text);
       BUILD_DIR/asm/ovl0/set_pc_abstraction.o(.text);
       BUILD_DIR/libultra.a:contquery.o(.text);
-      BUILD_DIR/asm/ovl0/xprintf.o(.text);
+      BUILD_DIR/libultra.a:xprintf.o(.text);
       BUILD_DIR/libultra.a:epidma.o(.text);
       BUILD_DIR/asm/ovl0/potential_leo_function.o(.text);
       BUILD_DIR/libultra.a:string.o(.text); 
@@ -245,7 +245,7 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
       BUILD_DIR/libultra.a:pimgr.o(.data);
       BUILD_DIR/libultra.a:piacs.o(.data);
-      BUILD_DIR/asm/ovl0/xprintf.o(.data);
+      BUILD_DIR/libultra.a:xprintf.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
@@ -267,7 +267,7 @@ SECTIONS
       BUILD_DIR/libultra.a:sinf.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.05.o(.data);
       BUILD_DIR/libultra.a:devmgr.o(.rodata);
-      BUILD_DIR/data/kirby.039DF0.2.1.o(.data);
+      BUILD_DIR/libultra.a:xprintf.o(.rodata);
       BUILD_DIR/libultra.a:cosf.o(.rodata);
       BUILD_DIR/libultra.a:libm_vals.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
