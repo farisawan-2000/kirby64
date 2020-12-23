@@ -5,6 +5,7 @@
 
 .section .text, "ax"
 
+/* motor:? */
 glabel func_8002F040
 /* 02FC40 8002F040 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 02FC44 8002F044 AFBF001C */  sw    $ra, 0x1c($sp)
@@ -102,6 +103,7 @@ glabel func_8002F040
 /* 02FDA0 8002F1A0 03E00008 */  jr    $ra
 /* 02FDA4 8002F1A4 00000000 */   nop   
 
+/* motor:? */
 glabel func_8002F1A8
 /* 02FDA8 8002F1A8 27BDFFB0 */  addiu $sp, $sp, -0x50
 /* 02FDAC 8002F1AC AFBF0014 */  sw    $ra, 0x14($sp)
@@ -175,6 +177,7 @@ glabel func_8002F1A8
 /* 02FEAC 8002F2AC 03E00008 */  jr    $ra
 /* 02FEB0 8002F2B0 00000000 */   nop   
 
+/* motor:? */
 glabel func_8002F2B4
 /* 02FEB4 8002F2B4 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 02FEB8 8002F2B8 AFBF001C */  sw    $ra, 0x1c($sp)

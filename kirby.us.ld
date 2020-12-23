@@ -118,6 +118,11 @@ SECTIONS
       BUILD_DIR/libultra.a:visetmode.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
+      BUILD_DIR/libultra.a:conteepprobe.o(.text);
+      BUILD_DIR/libultra.a:pfssearchfile.o(.text);
+      BUILD_DIR/libultra.a:pimgr.o(.text);
+      BUILD_DIR/libultra.a:piacs.o(.text);
+
 
       BUILD_DIR/libultra.a:devmgr.o(.text);
 
@@ -237,6 +242,9 @@ SECTIONS
       BUILD_DIR/libultra.a:initialize.o(.data);
 
       BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
+      BUILD_DIR/libultra.a:pimgr.o(.data);
+      BUILD_DIR/libultra.a:piacs.o(.data);
+      BUILD_DIR/asm/ovl0/xprintf.o(.data);
       BUILD_DIR/libultra.a:timerintr.o(.data);
       BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
       BUILD_DIR/libultra.a:vimodempallan1.o(.data);
@@ -287,6 +295,8 @@ SECTIONS
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);
       /*BUILD_DIR/libultra.a:leointerrupt.o(.bss);*/
       BUILD_DIR/asm/ovl0/bss_after_leointerrupt.o(.bss);
+      BUILD_DIR/libultra.a:pimgr.o(.bss);
+      BUILD_DIR/libultra.a:piacs.o(.bss);
       BUILD_DIR/libultra.a:seteventmesg.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
       BUILD_DIR/libultra.a:timerintr.o(.bss);
