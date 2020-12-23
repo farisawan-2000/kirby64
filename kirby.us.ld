@@ -72,6 +72,7 @@ SECTIONS
       BUILD_DIR/libn_audio.a:n_synaddplayer.o(.text);
       BUILD_DIR/libn_audio.a:n_synstopvoice.o(.text);
       BUILD_DIR/asm/ovl0/n_synallocvoice.o(.text);
+      BUILD_DIR/libn_audio.a:n_synsetpan.o(.text);
       /*BUILD_DIR/libn_audio.a:n_synallocvoice.o(.text);*/
       BUILD_DIR/asm/ovl0/ovl0_9_2.o(.text);
 

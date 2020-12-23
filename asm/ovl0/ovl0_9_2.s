@@ -6,43 +6,43 @@
 
 .section .text, "ax"
 
-glabel n_alSynSetPan
-/* 02B910 8002AD10 27BDFFE8 */  addiu $sp, $sp, -0x18
-/* 02B914 8002AD14 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 02B918 8002AD18 AFA5001C */  sw    $a1, 0x1c($sp)
-/* 02B91C 8002AD1C 8C8E0008 */  lw    $t6, 8($a0)
-/* 02B920 8002AD20 51C00016 */  beql  $t6, $zero, .L8002AD7C_ovl0
-/* 02B924 8002AD24 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 02B928 8002AD28 0C00A642 */  jal   __n_allocParam
-/* 02B92C 8002AD2C AFA40018 */   sw    $a0, 0x18($sp)
-/* 02B930 8002AD30 8FA70018 */  lw    $a3, 0x18($sp)
-/* 02B934 8002AD34 10400010 */  beqz  $v0, .L8002AD78_ovl0
-/* 02B938 8002AD38 00403025 */   move  $a2, $v0
-/* 02B93C 8002AD3C 3C0F8004 */  lui   $t7, %hi(n_syn) # $t7, 0x8004
-/* 02B940 8002AD40 8DEFFB14 */  lw    $t7, %lo(n_syn)($t7)
-/* 02B944 8002AD44 8CF90008 */  lw    $t9, 8($a3)
-/* 02B948 8002AD48 240A000C */  li    $t2, 12
-/* 02B94C 8002AD4C 8DF80028 */  lw    $t8, 0x28($t7)
-/* 02B950 8002AD50 8F280088 */  lw    $t0, 0x88($t9)
-/* 02B954 8002AD54 A44A0008 */  sh    $t2, 8($v0)
-/* 02B958 8002AD58 24050003 */  li    $a1, 3
-/* 02B95C 8002AD5C 03084821 */  addu  $t1, $t8, $t0
-/* 02B960 8002AD60 AC490004 */  sw    $t1, 4($v0)
-/* 02B964 8002AD64 93AB001F */  lbu   $t3, 0x1f($sp)
-/* 02B968 8002AD68 AC400000 */  sw    $zero, ($v0)
-/* 02B96C 8002AD6C AC4B000C */  sw    $t3, 0xc($v0)
-/* 02B970 8002AD70 0C009D48 */  jal   n_alEnvmixerParam
-/* 02B974 8002AD74 8CE40008 */   lw    $a0, 8($a3)
-.L8002AD78_ovl0:
-/* 02B978 8002AD78 8FBF0014 */  lw    $ra, 0x14($sp)
-.L8002AD7C_ovl0:
-/* 02B97C 8002AD7C 27BD0018 */  addiu $sp, $sp, 0x18
-/* 02B980 8002AD80 03E00008 */  jr    $ra
-/* 02B984 8002AD84 00000000 */   nop   
+# glabel n_alSynSetPan
+# /* 02B910 8002AD10 27BDFFE8 */  addiu $sp, $sp, -0x18
+# /* 02B914 8002AD14 AFBF0014 */  sw    $ra, 0x14($sp)
+# /* 02B918 8002AD18 AFA5001C */  sw    $a1, 0x1c($sp)
+# /* 02B91C 8002AD1C 8C8E0008 */  lw    $t6, 8($a0)
+# /* 02B920 8002AD20 51C00016 */  beql  $t6, $zero, .L8002AD7C_ovl0
+# /* 02B924 8002AD24 8FBF0014 */   lw    $ra, 0x14($sp)
+# /* 02B928 8002AD28 0C00A642 */  jal   __n_allocParam
+# /* 02B92C 8002AD2C AFA40018 */   sw    $a0, 0x18($sp)
+# /* 02B930 8002AD30 8FA70018 */  lw    $a3, 0x18($sp)
+# /* 02B934 8002AD34 10400010 */  beqz  $v0, .L8002AD78_ovl0
+# /* 02B938 8002AD38 00403025 */   move  $a2, $v0
+# /* 02B93C 8002AD3C 3C0F8004 */  lui   $t7, %hi(n_syn) # $t7, 0x8004
+# /* 02B940 8002AD40 8DEFFB14 */  lw    $t7, %lo(n_syn)($t7)
+# /* 02B944 8002AD44 8CF90008 */  lw    $t9, 8($a3)
+# /* 02B948 8002AD48 240A000C */  li    $t2, 12
+# /* 02B94C 8002AD4C 8DF80028 */  lw    $t8, 0x28($t7)
+# /* 02B950 8002AD50 8F280088 */  lw    $t0, 0x88($t9)
+# /* 02B954 8002AD54 A44A0008 */  sh    $t2, 8($v0)
+# /* 02B958 8002AD58 24050003 */  li    $a1, 3
+# /* 02B95C 8002AD5C 03084821 */  addu  $t1, $t8, $t0
+# /* 02B960 8002AD60 AC490004 */  sw    $t1, 4($v0)
+# /* 02B964 8002AD64 93AB001F */  lbu   $t3, 0x1f($sp)
+# /* 02B968 8002AD68 AC400000 */  sw    $zero, ($v0)
+# /* 02B96C 8002AD6C AC4B000C */  sw    $t3, 0xc($v0)
+# /* 02B970 8002AD70 0C009D48 */  jal   n_alEnvmixerParam
+# /* 02B974 8002AD74 8CE40008 */   lw    $a0, 8($a3)
+# .L8002AD78_ovl0:
+# /* 02B978 8002AD78 8FBF0014 */  lw    $ra, 0x14($sp)
+# .L8002AD7C_ovl0:
+# /* 02B97C 8002AD7C 27BD0018 */  addiu $sp, $sp, 0x18
+# /* 02B980 8002AD80 03E00008 */  jr    $ra
+# /* 02B984 8002AD84 00000000 */   nop   
 
-glabel func_8002AD88
-/* 02B988 8002AD88 00000000 */  nop   
-/* 02B98C 8002AD8C 00000000 */  nop   
+# glabel func_8002AD88
+# /* 02B988 8002AD88 00000000 */  nop   
+# /* 02B98C 8002AD8C 00000000 */  nop   
 /* 02B990 8002AD90 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 02B994 8002AD94 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 02B998 8002AD98 AFA50024 */  sw    $a1, 0x24($sp)
@@ -1145,7 +1145,7 @@ glabel func_8002B810
 /* 02C920 8002BD20 0C00AD7A */  jal   func_8002B5E8
 /* 02C924 8002BD24 02402825 */   move  $a1, $s2
 /* 02C928 8002BD28 26040004 */  addiu $a0, $s0, 4
-/* 02C92C 8002BD2C 0C00AB44 */  jal   func_8002AD10
+/* 02C92C 8002BD2C 0C00AB44 */  jal   n_alSynSetPan
 /* 02C930 8002BD30 304500FF */   andi  $a1, $v0, 0xff
 /* 02C934 8002BD34 8E100000 */  lw    $s0, ($s0)
 .L8002BD38_ovl0:
