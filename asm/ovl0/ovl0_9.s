@@ -3735,7 +3735,7 @@ glabel func_80026698
 /* 0272D4 800266D4 26300004 */  addiu $s0, $s1, 4
 /* 0272D8 800266D8 55C0002B */  bnezl $t6, .L80026788_ovl0
 /* 0272DC 800266DC 0220A025 */   move  $s4, $s1
-/* 0272E0 800266E0 0C00AA9C */  jal   func_8002AA70
+/* 0272E0 800266E0 0C00AA9C */  jal   n_alSynStopVoice
 /* 0272E4 800266E4 02002025 */   move  $a0, $s0
 /* 0272E8 800266E8 0C00B46C */  jal   func_8002D1B0
 /* 0272EC 800266EC 02002025 */   move  $a0, $s0
@@ -4736,7 +4736,7 @@ glabel func_80027360
 /* 028118 80027518 03E00008 */  jr    $ra
 /* 02811C 8002751C 00000000 */   nop   
 
-glabel func_80027520
+glabel n_alEnvmixerParam
 /* 028120 80027520 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 028124 80027524 24010003 */  li    $at, 3
 /* 028128 80027528 10A10009 */  beq   $a1, $at, .L80027550_ovl0
@@ -5135,7 +5135,7 @@ glabel func_80027670
 /* 0286C4 80027AC4 0040A825 */  move  $s5, $v0
 /* 0286C8 80027AC8 02802025 */  move  $a0, $s4
 /* 0286CC 80027ACC 24050004 */  li    $a1, 4
-/* 0286D0 80027AD0 0C009D48 */  jal   func_80027520
+/* 0286D0 80027AD0 0C009D48 */  jal   n_alEnvmixerParam
 /* 0286D4 80027AD4 00003025 */   move  $a2, $zero
 /* 0286D8 80027AD8 10000045 */  b     .L80027BF0_ovl0
 /* 0286DC 80027ADC 87B9008E */   lh    $t9, 0x8e($sp)
@@ -5206,7 +5206,7 @@ glabel func_80027670
 /* 0287D8 80027BD8 0040A825 */  move  $s5, $v0
 /* 0287DC 80027BDC 02802025 */  move  $a0, $s4
 /* 0287E0 80027BE0 84650008 */  lh    $a1, 8($v1)
-/* 0287E4 80027BE4 0C009D48 */  jal   func_80027520
+/* 0287E4 80027BE4 0C009D48 */  jal   n_alEnvmixerParam
 /* 0287E8 80027BE8 8C66000C */   lw    $a2, 0xc($v1)
 .L80027BEC_ovl0:
 /* 0287EC 80027BEC 87B9008E */  lh    $t9, 0x8e($sp)
@@ -6671,7 +6671,7 @@ glabel func_8002901C
 /* 029D68 80029168 10000136 */  b     .L80029644_ovl0
 /* 029D6C 8002916C 02802025 */   move  $a0, $s4
 /* 029D70 80029170 8FD00044 */  lw    $s0, 0x44($fp)
-/* 029D74 80029174 0C00AA9C */  jal   func_8002AA70
+/* 029D74 80029174 0C00AA9C */  jal   n_alSynStopVoice
 /* 029D78 80029178 02002025 */   move  $a0, $s0
 /* 029D7C 8002917C 0C00B46C */  jal   func_8002D1B0
 /* 029D80 80029180 02002025 */   move  $a0, $s0
@@ -6889,7 +6889,7 @@ glabel func_8002901C
 /* 02A0B4 800294B4 12200011 */  beqz  $s1, .L800294FC_ovl0
 /* 02A0B8 800294B8 26300004 */   addiu $s0, $s1, 4
 .L800294BC_ovl0:
-/* 02A0BC 800294BC 0C00AA9C */  jal   func_8002AA70
+/* 02A0BC 800294BC 0C00AA9C */  jal   n_alSynStopVoice
 /* 02A0C0 800294C0 02002025 */   move  $a0, $s0
 /* 02A0C4 800294C4 0C00B46C */  jal   func_8002D1B0
 /* 02A0C8 800294C8 02002025 */   move  $a0, $s0
@@ -7185,7 +7185,7 @@ glabel func_80029888
 /* 02A500 80029900 03E00008 */  jr    $ra
 /* 02A504 80029904 27BD0020 */   addiu $sp, $sp, 0x20
 
-glabel func_80029908
+glabel __n_allocParam
 /* 02A508 80029908 3C028004 */  lui   $v0, %hi(n_syn) # $v0, 0x8004
 /* 02A50C 8002990C 8C42FB14 */  lw    $v0, %lo(n_syn)($v0)
 /* 02A510 80029910 00001825 */  move  $v1, $zero

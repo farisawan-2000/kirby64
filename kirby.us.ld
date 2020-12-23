@@ -70,6 +70,7 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
       BUILD_DIR/libn_audio.a:n_synaddplayer.o(.text);
+      BUILD_DIR/libn_audio.a:n_synstopvoice.o(.text);
       BUILD_DIR/asm/ovl0/ovl0_9_2.o(.text);
 
       BUILD_DIR/libultra.a:setintmask.o(.text);
