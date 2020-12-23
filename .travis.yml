@@ -1,0 +1,25 @@
+dist: bionic
+language: minimal
+before_install:
+  - openssl aes-256-cbc -K $encrypted_5160b2f5d4c6_key -iv $encrypted_5160b2f5d4c6_iv
+    -in tools/travis-key.enc -out tools/travis-key -d
+  - chmod 400 tools/travis-key
+  - pip3 install gitpython
+  - GIT_SSH_COMMAND='ssh -i tools/travis-key -o IdentitiesOnly=yes' git clone git@github.com:Mr-Wiseguy/kirby64-secret.git
+  - cp kirby64-secret/baserom.us.z64 .
+  - wget https://github.com/n64decomp/qemu-irix/releases/download/v2.11-deb/qemu-irix-2.11.0-2169-g32ab296eef_amd64.deb
+  - sudo dpkg -i qemu-irix-2.11.0-2169-g32ab296eef_amd64.deb
+script:
+  - make -C libreultra -j4
+  - make -C libreultra naudio -j4
+  - make -C tools -j4
+  - make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+  - make
+addons:
+  apt:
+    update: true
+    packages:
+      - binutils-mips-linux-gnu
+      - build-essential
+      - libcapstone-dev pkgconf
+      - python3-pip

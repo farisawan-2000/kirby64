@@ -11,12 +11,12 @@ GRUCODE := F3DEX2_2.04H
 
 
 # check that either QEMU_IRIX is set or qemu-irix package installed
-ifndef QEMU_IRIX
-  QEMU_IRIX := $(shell which qemu-irix)
-  ifeq (, $(QEMU_IRIX))
-    $(error Please install qemu-irix package or set QEMU_IRIX env var to the full qemu-irix binary path)
-  endif
-endif
+# ifndef QEMU_IRIX
+#   QEMU_IRIX := $(shell which qemu-irix)
+#   ifeq (, $(QEMU_IRIX))
+#     $(error Please install qemu-irix package or set QEMU_IRIX env var to the full qemu-irix binary path)
+#   endif
+# endif
 
 
 ##################### Compiler Options #######################

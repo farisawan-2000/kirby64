@@ -18,12 +18,14 @@ patch_libultra_math_SOURCES := patch_libultra_math.c
 CXX_PROGRAMS := armips
 # endif
 
+ARMIPS_FLAGS := -lpthread -std=c++11 -fno-exceptions -fno-rtti -pipe
+
 default: all
 
 all: $(PROGRAMS) $(CXX_PROGRAMS)
 
 armips: armips.cpp
-	$(CXX) $(CXXFLAGS) -fno-exceptions -fno-rtti -pipe $^ -o $@ -lpthread $(ARMIPS_FLAGS)
+	$(CXX) $(CXXFLAGS) $^ -o $@  $(ARMIPS_FLAGS)
 
 clean:
 	$(RM) $(PROGRAMS) $(CXXPROGRAMS)
