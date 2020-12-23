@@ -12,3 +12,6 @@ EXTERN(guMtxIdent);
 EXTERN(guMtxL2F);
 EXTERN(osPfsAllocateFile);
 EXTERN(__osPfsDeclearPage);
+EXTERN(n_alSynAddPlayer);
+EXTERN(n_alSynAddSndPlayer);
+EXTERN(n_alSynAddSeqPlayer);
