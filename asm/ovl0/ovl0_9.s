@@ -7127,7 +7127,7 @@ glabel func_80029834
 /* 02A434 80029834 03E00008 */  jr    $ra
 /* 02A438 80029838 00000000 */   nop   
 
-glabel func_8002983C
+glabel _n_timeToSamples
 /* 02A43C 8002983C 3C0E8004 */  lui   $t6, %hi(n_syn) # $t6, 0x8004
 /* 02A440 80029840 8DCEFB14 */  lw    $t6, %lo(n_syn)($t6)
 /* 02A444 80029844 44842000 */  mtc1  $a0, $f4
