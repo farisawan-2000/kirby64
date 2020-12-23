@@ -178,6 +178,7 @@ $(BUILD_DIR):
 
 $(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
 	cp $< $@
+	$(TOOLS_DIR)/patch_libultra_math $@
 
 $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
 	$(OBJCOPY) -I binary -O elf32-big $< $@

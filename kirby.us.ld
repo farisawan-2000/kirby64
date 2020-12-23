@@ -69,6 +69,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
+      BUILD_DIR/libultra.a:ll.o(.text);
       /*BUILD_DIR/libultra.a:exceptasm.o(.text);*/
       BUILD_DIR/asm/ovl0/exception.o(.text);
       BUILD_DIR/libultra.a:thread.o(.text);
