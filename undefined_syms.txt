@@ -664,7 +664,6 @@ func_80021668 = 0x80021668;
 func_8000B688 = 0x8000B688;
 D_80021764 = 0x80021764;
 D_80021F80 = 0x80021F80;
-_Printf = 0x80033270;
 crash_screen_draw_glyph = 0x80021E00;
 crash_screen_print = 0x80021FA4;
 crash_screen_sleep = 0x8002206C;

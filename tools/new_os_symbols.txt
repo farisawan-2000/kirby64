@@ -137,8 +137,6 @@
 80032B30 osAfterPreNMI
 80032B50 osContStartQuery
 80032BD4 osContGetQuery
-80032C00 xprintf_text_0000
-80033270 _Printf
 800338C0 osEPiStartDma
 800339A0 osLeoDiskInit
 80033A40 memcpy
