@@ -7,11 +7,11 @@
 
 glabel D_8003FC00
 .asciiz "                                "
-.byte 0x00, 0x00, 0x00 /* alignment */
+.balign 4
 
 glabel D_8003FC24
 .asciiz "00000000000000000000000000000000"
-.byte 0x00, 0x00, 0x00 /* alignment */
+.balign 4
 
 .section .text, "ax"
 glabel _Putfld
