@@ -23,7 +23,7 @@ glabel func_8000189C
 /* 0024EC 800018EC 24840028 */  addiu $a0, $a0, 0x28
 /* 0024F0 800018F0 0C00B66F */  jal   osSpTaskLoad
 /* 0024F4 800018F4 AFA4001C */   sw    $a0, 0x1c($sp)
-/* 0024F8 800018F8 0C00B6D3 */  jal   func_8002DB4C
+/* 0024F8 800018F8 0C00B6D3 */  jal   osSpTaskStartGo
 /* 0024FC 800018FC 8FA4001C */   lw    $a0, 0x1c($sp)
 /* 002500 80001900 8FAA0020 */  lw    $t2, 0x20($sp)
 /* 002504 80001904 24090002 */  li    $t1, 2
