@@ -65,12 +65,16 @@ s16 D_8003FA10[0x80] = {
     0x0B11, 0x097D, 0x07E9, 0x0654, 0x04C0, 0x032A, 0x0195, 0x0000,
 };
 
+// D_8003FB10
 u32 n_alGlobals = 0x00000000;
 u32 n_syn = 0x00000000;
 
+// alignment? how
 f32 D_8003FB18 = 1.0f;
 u32 D_8003FB1C = 0xFFFF0000;
 u32 D_8003FB20 = 0x00000001;
 u32 D_8003FB24 = 0x00000001;
+
+
 
 // Insert functions here
