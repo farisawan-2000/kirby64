@@ -3,6 +3,16 @@
 .set gp=64
 .include "macros.inc"
 
+.section .data
+
+glabel D_8003FC00
+.asciiz "                                "
+.balign 4
+
+glabel D_8003FC24
+.asciiz "00000000000000000000000000000000"
+.balign 4
+
 .section .text, "ax"
 glabel _Putfld
 /* 033800 80032C00 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -531,9 +541,9 @@ glabel _Printf
 .L80033368_ovl0:
 /* 033F68 80033368 0216C823 */  subu  $t9, $s0, $s6
 /* 033F6C 8003336C 00197080 */  sll   $t6, $t9, 2
-/* 033F70 80033370 3C0F8004 */  lui   $t7, 0x8004
+/* 033F70 80033370 3C0F8004 */ lui $t7, %hi(D_80041B7C)
 /* 033F74 80033374 01EE7821 */  addu  $t7, $t7, $t6
-/* 033F78 80033378 8DEF1B7C */  lw    $t7, 0x1b7c($t7)
+/* 033F78 80033378 8DEF1B7C */ lw $t7, %lo(D_80041B7C)($t7)
 /* 033F7C 8003337C 8FB800D0 */  lw    $t8, 0xd0($sp)
 /* 033F80 80033380 26520001 */  addiu $s2, $s2, 1
 /* 033F84 80033384 02C02025 */  move  $a0, $s6

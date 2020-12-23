@@ -16,7 +16,7 @@ glabel func_8002F804
 /* 03042C 8002F82C AFA60050 */   sw    $a2, 0x50($sp)
 /* 030430 8002F830 27B0002C */  addiu $s0, $sp, 0x2c
 /* 030434 8002F834 02002825 */  move  $a1, $s0
-/* 030438 8002F838 0C00BE8D */  jal   func_8000BE8D
+/* 030438 8002F838 0C00BE8D */  jal   __osEepStatus
 /* 03043C 8002F83C 02202025 */   move  $a0, $s1
 /* 030440 8002F840 14400015 */  bnez  $v0, .L8002F898_ovl0
 /* 030444 8002F844 00401825 */   move  $v1, $v0
@@ -54,7 +54,7 @@ glabel func_8002F804
 /* 0304B4 8002F8B4 11200007 */  beqz  $t1, .L8002F8D4_ovl0
 /* 0304B8 8002F8B8 02202025 */   move  $a0, $s1
 .L8002F8BC_ovl0:
-/* 0304BC 8002F8BC 0C00BE8D */  jal   func_8000BE8D
+/* 0304BC 8002F8BC 0C00BE8D */  jal   __osEepStatus
 /* 0304C0 8002F8C0 02002825 */   move  $a1, $s0
 /* 0304C4 8002F8C4 93AA002E */  lbu   $t2, 0x2e($sp)
 /* 0304C8 8002F8C8 314B0080 */  andi  $t3, $t2, 0x80
@@ -154,7 +154,7 @@ glabel func_8002F988
 /* 03062C 8002FA2C 03E00008 */  jr    $ra
 /* 030630 8002FA30 B841FFFF */   swr   $at, -1($v0)
 
-glabel func_8000BE8D
+glabel __osEepStatus
 /* 030634 8002FA34 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 030638 8002FA38 3C02800A */  lui   $v0, %hi(__osEepPifRam) # $v0, 0x800a
 /* 03063C 8002FA3C 3C03800A */  lui   $v1, %hi(D_8009B540) # $v1, 0x800a

@@ -16,3 +16,12 @@ EXTERN(n_alSynAddPlayer);
 EXTERN(n_alSynAddSndPlayer);
 EXTERN(n_alSynAddSeqPlayer);
 EXTERN(n_alSynStopVoice);
+
+EXTERN(__osSumcalc);
+EXTERN(__osRepairPackId);
+EXTERN(__osGetId);
+EXTERN(osEepromProbe);
+EXTERN(osPfsFindFile);
+EXTERN(__osPiCreateAccessQueue);
+EXTERN(__osPiGetAccess);
+EXTERN(__osPiRelAccess);
