@@ -75,6 +75,7 @@ SECTIONS
       BUILD_DIR/libn_audio.a:n_synsetpan.o(.text);
       /*BUILD_DIR/libn_audio.a:n_synallocvoice.o(.text);*/
       BUILD_DIR/asm/ovl0/ovl0_9_2.o(.text);
+      BUILD_DIR/libultra.a:recvmesg.o(.text);
 
       BUILD_DIR/libultra.a:setintmask.o(.text);
       BUILD_DIR/libultra.a:sinf.o(.text);
