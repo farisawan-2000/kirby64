@@ -69,6 +69,10 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_8.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_9.o(.text);
+
+
+
+      BUILD_DIR/libultra.a:sinf.o(.text);
       BUILD_DIR/libultra.a:sptask.o(.text);
       BUILD_DIR/libultra.a:destroythread.o(.text);
       BUILD_DIR/libultra.a:ll.o(.text);
@@ -245,6 +249,8 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data);
+      BUILD_DIR/libultra.a:sinf.o(.rodata);
+      BUILD_DIR/data/kirby.039DF0.2.05.o(.data);
       BUILD_DIR/libultra.a:devmgr.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.1.o(.data);
       BUILD_DIR/libultra.a:cosf.o(.rodata);
