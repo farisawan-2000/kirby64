@@ -50,7 +50,7 @@ loop_1:
     if (temp_v0 != &D_800D6B10) {
         goto loop_1;
     }
-    func_80018A94_ovl1(0x3039, &D_800D6B18, &D_800D6B10);
+    seed_rng(0x3039, &D_800D6B18, &D_800D6B10);
     func_80002B88_ovl1();
     D_800BE4F0 = 1;
     D_800BE4F8 = 0;

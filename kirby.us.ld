@@ -102,7 +102,7 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_beforeCreateThread.o(.text);
       /*BUILD_DIR/libultra.a:conteepwrite.o(.text);*/
-      
+
       BUILD_DIR/libultra.a:createthread.o(.text);
       BUILD_DIR/libultra.a:contreaddata.o(.text);
       BUILD_DIR/libultra.a:conteeplongread.o(.text);
@@ -333,7 +333,7 @@ SECTIONS
       BUILD_DIR/src/ovl1/save_file.o(.text);
       BUILD_DIR/src/ovl1/ovl1_10.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
-      BUILD_DIR/asm/ovl1/ovl1_12.o(.text);
+      BUILD_DIR/src/ovl1/ovl1_12.o(.text);
       BUILD_DIR/src/ovl1/ovl1_13.o(.text);
    }
    END_SEG(ovl1)

@@ -4390,11 +4390,11 @@ s32 random_soft_s32_range(s32 arg0) {
     return D_8003DF20[D_8003E320 = (++D_8003E320 & 0x3FF)] * arg0 / 256;
 }
 
-void func_80018A94(s32 arg0) {
+void seed_rng(s32 arg0) {
     D_8003E324 = arg0;
 }
 
-s32 func_80018AA0(void) {
+s32 get_rng_seed(void) {
     return D_8003E324;
 }
 
