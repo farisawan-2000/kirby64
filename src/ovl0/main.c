@@ -120,7 +120,7 @@ void func_80022D98();
 extern OSPiHandle *osCartRomInit(void);
 
 void thread5_main(UNUSED void *arg0) {
-    osCreateViManager(0xFE);
+    osCreateViManager(0xFF);
     gRomHandle = osCartRomInit();
     func_80002EBC();
     osCreatePiManager(0x96, &D_80048AE8, &D_80048A20[0], 0x32);
