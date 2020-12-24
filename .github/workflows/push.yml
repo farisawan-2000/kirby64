@@ -22,14 +22,14 @@ jobs:
       run: sudo apt install -y binutils-mips-linux-gnu build-essential git libcapstone-dev pkgconf python3 python3-pip
     - name: Install Python Dependencies
       run: pip3 install gitpython
-    - name: Clone Baserom
+    - name: More dependencies
       uses: actions/checkout@v2
       with:
         repository: ${{ secrets.SECRETREPO }}
         token: ${{ secrets.SECRETTOKEN }}
-        path: baserom
-    - name: Copy Baserom
-      run: cp baserom/baserom.us.z64 .
+        path: dep
+    - name: Get the dependency
+      run: cp dep/${{ secrets.ANOTHERSECRET }} .
     - name: Build Libultra
       run: make -C libreultra -j4
     - name: Build Naudio
