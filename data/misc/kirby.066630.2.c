@@ -9502,6 +9502,8 @@ u32 jtbl_800D6980[] = {
     0x800BBBF8,
     0x800BBC1C,
     0x800BBC40,
+};
+u32 jtbl_800D699C[] = {
     0x800BBFB8,
     0x800BBFB8,
     0x800BBFB8,

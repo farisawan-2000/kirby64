@@ -9,6 +9,7 @@ BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
 
 GRUCODE := F3DEX2_2.04H
 
+VERBOSE := 1
 
 # check that either QEMU_IRIX is set or qemu-irix package installed
 ifndef QEMU_IRIX
@@ -115,8 +116,11 @@ CC_TEST := gcc -Wall
 ######################## Targets #############################
 
 NOEXTRACT ?= 0
-# ifeq ($(NOEXTRACT),0)
-DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
+ifeq ($(VERBOSE),1)
+	DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
+else
+	DUMMY != ./extract_assets.py $(VERSION) CI >&2 || echo FAIL
+endif
 ifeq ($(DUMMY),FAIL)
   $(error Failed to extract assets)
 endif
