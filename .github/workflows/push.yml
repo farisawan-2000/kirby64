@@ -39,4 +39,4 @@ jobs:
     - name: Assemble F3DEX2
       run: make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
     - name: Build Kirby 64
-      run: make -j4 CI=1
+      run: make -j4 VERBOSE=0
