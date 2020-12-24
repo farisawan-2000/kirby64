@@ -99,7 +99,10 @@ SECTIONS
       BUILD_DIR/asm/ovl0/ovl0_beforeSiacs.o(.text);
       BUILD_DIR/libultra.a:siacs.o(.text);
       BUILD_DIR/libultra.a:controller.o(.text);
+
       BUILD_DIR/asm/ovl0/ovl0_beforeCreateThread.o(.text);
+      /*BUILD_DIR/libultra.a:conteepwrite.o(.text);*/
+      
       BUILD_DIR/libultra.a:createthread.o(.text);
       BUILD_DIR/libultra.a:contreaddata.o(.text);
       BUILD_DIR/libultra.a:conteeplongread.o(.text);
