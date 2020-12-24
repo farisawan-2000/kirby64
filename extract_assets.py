@@ -62,7 +62,7 @@ def main():
         clean_assets(local_asset_file)
         sys.exit(0)
 
-    all_langs = ["us"]
+    all_langs = ["us", "CI"]
     if not langs or not all(a in all_langs for a in langs):
         langs_str = " ".join("[" + lang + "]" for lang in all_langs)
         print("Usage: " + sys.argv[0] + " " + langs_str)
@@ -123,19 +123,20 @@ def main():
     # Load ROMs
     roms = {}
     for lang in langs:
-        fname = "baserom." + lang + ".z64"
-        try:
-            with open(fname, "rb") as f:
-                roms[lang] = f.read()
-        except:
-            print("Failed to open " + fname + ". Please ensure it exists!")
-            sys.exit(1)
-        sha1 = hashlib.sha1(roms[lang]).hexdigest()
-        with open("kirby." + lang + ".sha1", "r") as f:
-            expected_sha1 = f.read().split()[0]
-        if sha1 != expected_sha1:
-            print(fname + " has the wrong hash! Found " + sha1 + ", expected " + expected_sha1)
-            sys.exit(1)
+        if lang != "CI":
+            fname = "baserom." + lang + ".z64"
+            try:
+                with open(fname, "rb") as f:
+                    roms[lang] = f.read()
+            except:
+                print("Failed to open " + fname + ". Please ensure it exists!")
+                sys.exit(1)
+            sha1 = hashlib.sha1(roms[lang]).hexdigest()
+            with open("kirby." + lang + ".sha1", "r") as f:
+                expected_sha1 = f.read().split()[0]
+            if sha1 != expected_sha1:
+                print(fname + " has the wrong hash! Found " + sha1 + ", expected " + expected_sha1)
+                sys.exit(1)
 
     # Make sure tools exist
     subprocess.check_call(
@@ -187,7 +188,8 @@ def main():
             image = roms[lang]
 
         for (asset, pos, meta) in assets:
-            print("extracting", asset)
+            if "CI" not in langs:
+                print("extracting", asset)
             if "size" in meta:
                 # TODO: hack for extracting raw binary from MIO0 block
                 if magic == b"MIO0":

@@ -22,9 +22,9 @@ glabel func_800BBBA0
 .L800BBBD0_ovl1:
 /* 063E20 800BBBD0 10200022 */  beqz  $at, .L800BBC5C_ovl1
 /* 063E24 800BBBD4 00027080 */   sll   $t6, $v0, 2
-/* 063E28 800BBBD8 3C01800D */ lui $at, %hi(D_800D6980)
+/* 063E28 800BBBD8 3C01800D */ lui $at, %hi(jtbl_800D6980)
 /* 063E2C 800BBBDC 002E0821 */  addu  $at, $at, $t6
-/* 063E30 800BBBE0 8C2E6980 */ lw $t6, %lo(D_800D6980)($at)
+/* 063E30 800BBBE0 8C2E6980 */ lw $t6, %lo(jtbl_800D6980)($at)
 /* 063E34 800BBBE4 01C00008 */  jr    $t6
 /* 063E38 800BBBE8 00000000 */   nop   
 /* 063E3C 800BBBEC 3C01800F */  lui   $at, %hi(D_800ED4EC) # $at, 0x800f
