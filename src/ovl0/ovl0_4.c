@@ -4390,7 +4390,7 @@ s32 random_soft_s32_range(s32 arg0) {
     return D_8003DF20[D_8003E320 = (++D_8003E320 & 0x3FF)] * arg0 / 256;
 }
 
-void seed_rng(s32 arg0) {
+void set_hard_rng_seed(s32 arg0) {
     D_8003E324 = arg0;
 }
 

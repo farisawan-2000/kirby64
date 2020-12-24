@@ -22,7 +22,7 @@ glabel func_800A2B9C
 .L800A2BE8_ovl1:
 /* 04AE38 800A2BE8 1446FFF8 */  bne   $v0, $a2, .L800A2BCC_ovl1
 /* 04AE3C 800A2BEC A044FFFF */   sb    $a0, -1($v0)
-/* 04AE40 800A2BF0 0C0062A5 */  jal   seed_rng
+/* 04AE40 800A2BF0 0C0062A5 */  jal   set_hard_rng_seed
 /* 04AE44 800A2BF4 24043039 */   li    $a0, 12345
 /* 04AE48 800A2BF8 0C000AE2 */  jal   func_80002B88_ovl1
 /* 04AE4C 800A2BFC 00000000 */   nop   

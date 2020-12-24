@@ -46,7 +46,7 @@ void func_800BBC6C(void) {
 
     D_800ED4EC = 0;
     D_800ED4F4 = 0;
-    seed_rng(D_800ED4E0->unk0);
+    set_hard_rng_seed(D_800ED4E0->unk0);
     D_800BE4EC = D_800ED4E0->unk4;
     D_800BE500 = D_800BE52C = D_800ED4E0->unk8;
     D_800BE504 = D_800BE530 = D_800ED4E0->unkC;
