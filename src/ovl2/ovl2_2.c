@@ -3,39 +3,27 @@
 
 extern Gfx *gDisplayListHeads;
 
-#ifdef MIPS_TO_C
-void func_800F6C40_ovl2(s32 arg0, ? arg1) {
+extern u32 D_800BE4F8;
+extern u32 D_800BE4FC;
+extern u32 D_800BE534;
+
+void func_800F6C40_ovl2(s32 arg0, UNUSED s32 arg1) {
     D_800BE4F8 = 2;
     D_800BE4FC = 1;
-    *0x800BE534 = arg0;
+    D_800BE534 = arg0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C40_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_800F6C68(void) {
-    *0x800BE4F8 = 3;
+    D_800BE4F8 = 3;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C68.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_800F6C78(void) {
-    *0x800BE4F8 = 4;
+    D_800BE4F8 = 4;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C78.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_800F6C88(void) {
-    *0x800BE4F8 = 7;
+    D_800BE4F8 = 7;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C88.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800F6C98(s32 arg0) {
@@ -70,21 +58,15 @@ void func_800F6C98(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C98.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_800F6E04_ovl2(s32 arg0) {
+void func_800F6E04_ovl2(UNUSED s32 arg0) {
 
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E04_ovl2.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_800F6E0C(? arg1, ? arg2) {
-    func_8011C2A0_ovl2();
+void func_8011C2A0(void *arg0);
+
+void func_800F6E0C(void *arg0, UNUSED void *arg1, UNUSED void *arg2) {
+    func_8011C2A0(arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E0C.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800F6E30_ovl2(s32 arg0) {
@@ -223,15 +205,16 @@ void func_800F716C(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F716C.s")
 #endif
 
-#ifdef MIPS_TO_C
+extern u32 D_800D7010;
+extern u32 D_800D7028;
+extern u32 D_800D7040;
+extern u32 D_80124000;
+
 void func_800F7258_ovl2(s32 arg0) {
     func_800A5404_ovl2(&D_800D7010, &D_80124000);
     func_800A5404_ovl2(&D_800D7028, &D_80124000);
     func_800A5404_ovl2(&D_800D7040, &D_80124000);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7258_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 Failed to decompile function func_800F72B0_ovl2:
