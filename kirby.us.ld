@@ -334,11 +334,13 @@ SECTIONS
       BUILD_DIR/src/ovl1/ovl1_10.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
       BUILD_DIR/src/ovl1/ovl1_12.o(.text);
+      . += 0x10;
       BUILD_DIR/src/ovl1/ovl1_13.o(.text);
    }
    END_SEG(ovl1)
    BEGIN_SEG(ovl1Data, _ovl1SegmentEnd) {
       BUILD_DIR/data/kirby.066630.o(.data);
+      BUILD_DIR/src/ovl1/ovl1_12.o(.rodata);
    }
    END_SEG(ovl1Data)
    BEGIN_NOLOAD(ovl1) {

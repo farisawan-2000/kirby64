@@ -1,3 +1,14 @@
+# .late_rodata
+# glabel jtbl_800D699C
+#     .word L800BBFB8_ovl1
+#     .word L800BBFB8_ovl1
+#     .word L800BBFB8_ovl1
+#     .word L800BBF90
+#     .word L800BBF90
+#     .word L800BBFA0
+#     .word L800BBFB0
+
+# .text
 glabel func_800BBF60
 /* 0641B0 800BBF60 3C0E800D */  lui   $t6, %hi(D_800D6F3C) # $t6, 0x800d
 /* 0641B4 800BBF64 8DCE6F3C */  lw    $t6, %lo(D_800D6F3C)($t6)
@@ -11,14 +22,17 @@ glabel func_800BBF60
 /* 0641D4 800BBF84 8C2E699C */ lw $t6, %lo(jtbl_800D699C)($at)
 /* 0641D8 800BBF88 01C00008 */  jr    $t6
 /* 0641DC 800BBF8C 00000000 */   nop   
+.L800BBF90:
 /* 0641E0 800BBF90 0C02EF71 */  jal   func_800BBDC4_ovl1
 /* 0641E4 800BBF94 00000000 */   nop   
 /* 0641E8 800BBF98 10000008 */  b     .L800BBFBC_ovl1
 /* 0641EC 800BBF9C 8FBF0014 */   lw    $ra, 0x14($sp)
+.L800BBFA0:
 /* 0641F0 800BBFA0 0C02EF71 */  jal   func_800BBDC4_ovl1
 /* 0641F4 800BBFA4 00000000 */   nop   
 /* 0641F8 800BBFA8 10000004 */  b     .L800BBFBC_ovl1
 /* 0641FC 800BBFAC 8FBF0014 */   lw    $ra, 0x14($sp)
+.L800BBFB0:
 /* 064200 800BBFB0 0C02EF71 */  jal   func_800BBDC4_ovl1
 /* 064204 800BBFB4 00000000 */   nop   
 .L800BBFB8_ovl1:
