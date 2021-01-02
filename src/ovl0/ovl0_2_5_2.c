@@ -423,7 +423,7 @@ extern u32 D_8004A794;
 extern u8 D_80040294[];
 
 // Another potential pop
-void *func_80008754(void) {
+void *object_manager_get_om_mtx(void) {
     void *temp_v0;
 
     if (D_8004A790 == 0) {
@@ -448,7 +448,7 @@ extern const char *D_800402B0;
 extern u32 D_8004A7A0;
 
 // pops the top of D_8004A79C?
-struct AnimStack *func_800087D8(void) {
+struct AnimStack *object_manager_get_animstack(void) {
     struct AnimStack *toReturn;
 
     if (D_8004A79C == 0) {
@@ -489,7 +489,7 @@ extern u32 D_8004A7A8;
 extern u8 D_800402C8[];
 
 // Another potential pop
-struct MObj* func_8000888C(void) {
+struct MObj* object_manager_get_m_obj(void) {
     struct MObj *temp_v0;
 
     if (D_8004A7A4 == 0) {
@@ -514,7 +514,7 @@ extern u32 D_8004A7B0;
 extern u8 D_800402E0[];
 
 // Another potential pop
-struct DObj *func_80008910(void) {
+struct DObj *object_manager_get_d_obj(void) {
     struct DObj *temp_v0;
 
     if (D_8004A7AC == 0) {
@@ -742,7 +742,7 @@ extern void func_80008830(struct Animation *anim, struct AnimStack *stack);
 struct AnimStack *func_800097E0(struct Animation *anim, u8 index) {
     struct AnimStack *toReturn;
 
-    toReturn = func_800087D8();
+    toReturn = object_manager_get_animstack();
     toReturn->unk4 = index;
     toReturn->unk5 = 0;
     toReturn->unk20 = 0;
@@ -775,7 +775,7 @@ void func_8000984C(struct unk8000BE90Func *arg0) {
 struct AnimStack *func_800098AC(s32 arg0, u8 index) {
     struct AnimStack *toReturn;
 
-    toReturn = func_800087D8();
+    toReturn = object_manager_get_animstack();
     toReturn->unk4 = index;
     toReturn->unk5 = 0;
     toReturn->unk20 = 0;
@@ -808,7 +808,7 @@ void func_80009918(struct unk80008840 *arg0) {
 void *func_80009978(struct Animation* arg0, u8 arg1) {
     struct AnimStack *temp_v0;
 
-    temp_v0 = func_800087D8();
+    temp_v0 = object_manager_get_animstack();
     temp_v0->unk4 = arg1;
     temp_v0->unk5 = (u8)0;
     temp_v0->unk20 = 0;
@@ -855,7 +855,7 @@ struct MObj *func_80009A44(void *arg0, void *arg1) {
     void *phi_t9;
     struct MObj *phi_t0;
 
-    temp_v0 = func_8000888C();
+    temp_v0 = object_manager_get_m_obj();
     temp_a2 = arg0->unk80;
     if (temp_a2 != 0) {
         temp_v1 = temp_a2->unk0;
@@ -963,7 +963,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009BD4.s")
 #endif
 
 #ifdef MIPS_TO_C
-struct DObj *func_80009C38(u32 *arg0, u8 *arg1) {
+struct DObj *func_80009C38(struct UnkStruct8004A7C4 * *arg0, u8 *arg1) {
     struct DObj *sp1C;
     struct DObj *temp_a3;
     struct DObj *temp_v0;
@@ -978,7 +978,7 @@ struct DObj *func_80009C38(u32 *arg0, u8 *arg1) {
         phi_a2 = D_8004A7C4;
     }
     arg0 = phi_a2;
-    temp_v0 = func_80008910();
+    temp_v0 = object_manager_get_d_obj();
     temp_a3 = arg0->unk3C;
     if (temp_a3 != 0) {
         temp_v1 = temp_a3->unk8;
@@ -1019,7 +1019,7 @@ struct DObj *func_80009CE8(void *arg0, u8 *arg1) {
     struct DObj *temp_v0;
     struct DObj *temp_v1;
 
-    temp_v0 = func_80008910();
+    temp_v0 = object_manager_get_d_obj();
     temp_v1 = arg0->unk8;
     if (temp_v1 != 0) {
         temp_v1->unkC = temp_v0;
@@ -1049,7 +1049,7 @@ struct DObj *func_80009D5C(void *arg0, u8 *arg1) {
     struct DObj *phi_v1;
     struct DObj *phi_a0;
 
-    temp_v0 = func_80008910();
+    temp_v0 = object_manager_get_d_obj();
     temp_a2 = arg0->unk10;
     if (temp_a2 != 0) {
         temp_v1 = temp_a2->unk8;
@@ -1297,8 +1297,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 #endif
 
 extern const char D_800403DC[];
-// reordered instructions
-#ifdef NON_MATCHING
 struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
     struct UnkStruct8004A7C4 *toReturn;
 
@@ -1311,24 +1309,20 @@ struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void)
         return NULL;
     }
     toReturn->objId = id;
+    toReturn->unkC = link;
     toReturn->unk10 = arg3;
-    toReturn->unkC = link; // sb a2, 0xC(v1)
     toReturn->unk14 = arg1;
     toReturn->unk18 = 0;
     toReturn->unk1C = 0;
     toReturn->unk44 = 0;
     toReturn->unkF = 0;
     toReturn->unk3C = NULL;
-    toReturn->unkD = 0x21; // li t0, 0x21
-    toReturn->unk40 = 0.0f; // mtc zero, f4
+    toReturn->unkD = 0x21;
+    toReturn->unk40 = 0.0f;
     toReturn->unk48 = 0;
     toReturn->unk4C = 0;
     return toReturn;
 }
-#else
-struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3);
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A0C0.s")
-#endif
 
 struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3) {
     struct UnkStruct8004A7C4 *temp_v0;

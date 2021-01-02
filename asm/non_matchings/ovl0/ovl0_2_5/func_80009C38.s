@@ -7,7 +7,7 @@ glabel func_80009C38
 /* 00A84C 80009C4C 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 00A850 80009C50 8CC6A7C4 */  lw    $a2, %lo(D_8004A7C4)($a2)
 .L80009C54_ovl0:
-/* 00A854 80009C54 0C002244 */  jal   func_80008910
+/* 00A854 80009C54 0C002244 */  jal   object_manager_get_d_obj
 /* 00A858 80009C58 AFA60020 */   sw    $a2, 0x20($sp)
 /* 00A85C 80009C5C 8FA60020 */  lw    $a2, 0x20($sp)
 /* 00A860 80009C60 00402825 */  move  $a1, $v0

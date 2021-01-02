@@ -28,16 +28,16 @@ u32 D_8003DC94 = 0;
 u64 gEntryStack[ENTRY_STACK_LEN_U64]; // Stack pointer set to this by EntryPoint
 
 OSThread gIdleThread;
-static u64 idleThreadStack[IDLE_THREAD_STACK_LEN_U64];
+ u64 idleThreadStack[IDLE_THREAD_STACK_LEN_U64];
 
 OSThread D_80043040;
-static u64 D_800431F0[0x80]; // Stack for D_80043040
+ u64 D_800431F0[0x80]; // Stack for D_80043040
 
 OSThread D_800435F0;
-static u64 D_800437A0[0xC0]; // Stack for D_800435F0
+ u64 D_800437A0[0xC0]; // Stack for D_800435F0
 
 OSThread gMainThread;
-static u64 mainThreadStack[MAIN_THREAD_STACK_LEN_U64];
+ u64 mainThreadStack[MAIN_THREAD_STACK_LEN_U64];
 
 OSThread D_80047F50;
 u64 D_80048100[0x100]; // Stack for D_80047F50
@@ -59,16 +59,16 @@ u8 pad_before_8F28[0x80048F28 - 0x80048CF0 - 0x08];
 u8 D_80048F28, D_80048F29, D_80048F2A, D_80048F2B;
 
 
-OSThread *func_80000460(void) {
+OSThread *unused_get_main_thread(void) {
     return &gMainThread;
 }
 
-u64 *func_8000046C(void) {
+u64 *unused_get_main_thread_stack(void) {
     return mainThreadStack;
 }
 
-u16 func_80000478(void) {
-    return 0x4000; // returns 0x3400 in Smash 64...
+u16 unused_get_main_thread_stack_length(void) {
+    return MAIN_THREAD_STACK_LEN;
 }
 
 #define SP_IMEM 0xA4001000

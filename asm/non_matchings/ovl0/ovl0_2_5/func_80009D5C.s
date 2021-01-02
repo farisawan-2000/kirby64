@@ -2,7 +2,7 @@ glabel func_80009D5C
 /* 00A95C 80009D5C 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00A960 80009D60 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 00A964 80009D64 AFA50024 */  sw    $a1, 0x24($sp)
-/* 00A968 80009D68 0C002244 */  jal   func_80008910
+/* 00A968 80009D68 0C002244 */  jal   object_manager_get_d_obj
 /* 00A96C 80009D6C AFA40020 */   sw    $a0, 0x20($sp)
 /* 00A970 80009D70 8FA70020 */  lw    $a3, 0x20($sp)
 /* 00A974 80009D74 00402825 */  move  $a1, $v0

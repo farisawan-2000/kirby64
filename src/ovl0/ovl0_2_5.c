@@ -124,6 +124,7 @@ extern Gfx* D_8004A44C;
 
 void reset_rdp_settings(Gfx **dlist);
 
+// ends the master display lists?
 void func_80005530(void) {
     s32 i;
 
@@ -476,7 +477,7 @@ extern u64 D_00042800[];
 
 // TODO: fix L3D and S2D cases
 void func_80005DE4(Gfx **dlist, u32 arg1) {
-    s32 phi_v0 = 0;
+    s32 loadedSpriteUcode = 0;
     switch (arg1) { 
         case 0:
             // F3DEX2
@@ -489,12 +490,12 @@ void func_80005DE4(Gfx **dlist, u32 arg1) {
         case 9: case 10:
             // S2DEX2
             gSPLoadUcodeL((*dlist)++, gspS2DEX2_fifo);
-            phi_v0 = 1;
+            loadedSpriteUcode = 1;
             break;
         case 11: case 12: case 13: case 14: case 15: default:
             break;
     }
-    if (phi_v0 == 0) {
+    if (loadedSpriteUcode == 0) {
         gSPDisplayList((*dlist)++, D_8004A44C);
     }
 }
@@ -1361,9 +1362,9 @@ void func_800076D0(void) {
         D_8004A368[i] = 0;
         D_8004A380[i] = 0;
     }
-    D_8004A446 = 0;
     D_8004A444 = 0;
     D_8004A440 = 0;
+    D_8004A446 = 0;
     for (i = 0; i < 2; i++)
     {
         for (j = 0; j < 4; j++)

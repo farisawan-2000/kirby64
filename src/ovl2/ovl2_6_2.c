@@ -9464,21 +9464,15 @@ void *func_80111C88(void *arg0, ?32 arg1) {
     s32 phi_a0;
     s32 phi_a1;
 
-    if (arg0->unk0 != 0) {
-        phi_v0 = 1;
-    } else {
-        phi_v0 = 0;
-    }
+    phi_v0 = arg0->unk0 ? 1 : 0;
     if ((phi_v0 + D_8012CF28 + arg0->unk4) >= 0xB) {
         print_error_stub(&D_80128C54, arg0);
-loop_5:
-        goto loop_5;
+        while (1);
     }
     temp_v0 = D_8012D0C4;
     if (temp_v0 == 5) {
         print_error_stub(&D_80128C84, arg0);
-loop_8:
-        goto loop_8;
+        while (1);
     }
     temp_a2 = (temp_v0 * 0x28) + &D_8012D0C8;
     temp_a2->unk0 = arg1;
@@ -9552,7 +9546,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80111C88_ovl2.s")
 // Calls a stub function. Awesome!
 #ifdef MIPS_TO_C
 void func_80111ECC(void *arg0) {
-    if (arg0 != 0) {
+    if (arg0 != NULL) {
         func_80110138_ovl2(arg0->unk0, arg0->unk1C, arg0->unk20, arg0->unk24);
     }
 }

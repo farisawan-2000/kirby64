@@ -276,7 +276,7 @@ s32 func_80227308_ovl18(s32 arg0) {
     // if (temp_v0 != &D_803FC100) {
     //     goto loop_1;
     // }
-    func_80007380_ovl18(&D_8022AE4C, &D_803FC100, &D_8022AE4C);
+    func_80007380(&D_8022AE4C, &D_803FC100, &D_8022AE4C);
     func_800BB3F0_ovl18();
     return D_800D6B74;
 }

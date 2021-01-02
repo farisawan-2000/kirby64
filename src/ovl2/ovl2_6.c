@@ -125,27 +125,29 @@ struct SomeColorThing { // TODO: is this a generic S2DEX structure?
     u8 unk10;
     u8 unk11;
     u8 unk12;
-    u8 unk13;
+    u8 surfaceFlags;
 
-    u8 unk14;
-    u8 unk15;
-    u8 unk16;
-    u8 unk17;
+    u8 primColorRed;
+    u8 primColorGreen;
+    u8 primColorBlue;
+    u8 primColorAlpha;
 
-    u8 unk18;
-    u8 unk19;
-    u8 unk1A;
-    u8 unk1B;
+    u8 envColorRed;
+    u8 envColorGreen;
+    u8 envColorBlue;
+    u8 envColorAlpha;
 };
 
 #define G_CC_UNK1 PRIMITIVE, 0, TEXEL0, 0, 0, 0, 0, TEXEL0
 #define G_CC_UNK2 0, 0, 0, PRIMITIVE, 0, 0, 0, TEXEL0
 
+#define TRANSPARENT_SURFACE (1 << 1)
+
 // S2D code :o
 void func_800FF71C_ovl2(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
     gDPPipeSync(gDisplayListHeads[0]++);
     gDPSetCycleType(gDisplayListHeads[0]++, G_CYC_1CYCLE)
-    if ((arg0->unk13 & 2) != 0) {
+    if (arg0->surfaceFlags & TRANSPARENT_SURFACE) {
         gDPSetRenderMode(gDisplayListHeads[0]++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
         gSPObjRenderMode(gDisplayListHeads[0]++, (G_OBJRM_BILERP | G_OBJRM_XLU));
     } else {
@@ -154,18 +156,19 @@ void func_800FF71C_ovl2(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
     }
     if (arg2 & (1 | 2)) {
         if (arg2 & 1) {
-            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16,
-                            arg0->unk17);
-            gDPSetEnvColor(gDisplayListHeads[0]++, arg0->unk18, arg0->unk19, arg0->unk1A, arg0->unk1B);
+            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue,
+                            arg0->primColorAlpha);
+            gDPSetEnvColor(gDisplayListHeads[0]++, arg0->envColorRed, arg0->envColorGreen, arg0->envColorBlue, arg0->envColorAlpha);
             gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_BLENDPEDECALA, G_CC_BLENDPEDECALA);
             return;
+        } else {
+            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue, arg0->primColorAlpha);
+            gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_UNK1, G_CC_UNK1);
+            return;
         }
-        gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
-        gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_UNK1, G_CC_UNK1);
-        return;
     }
     if (arg1 == 4) {
-        gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->unk14, arg0->unk15, arg0->unk16, arg0->unk17);
+        gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue, arg0->primColorAlpha);
         gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_UNK2, G_CC_UNK2);
         return;
     }

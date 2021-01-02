@@ -2098,7 +2098,7 @@ u32 func_80154D60(s32 arg0, ?32 arg1) {
     func_80005350_ovl6(&D_80151138);
     func_80154C64_ovl6();
     func_80154C38_ovl6(arg0);
-    func_80007380_ovl6(&D_80154E9C);
+    func_80007380(&D_80154E9C);
     func_800A74D8_ovl6();
     func_80005350_ovl6(0);
     return D_8015A690;
