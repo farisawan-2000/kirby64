@@ -31,7 +31,7 @@ struct DynamicBuffer {
 
 struct ObjThread
 {
-    struct ObjThread *unk0;
+    struct ObjThread *unk0; // function?
     OSThread unk8;
     struct ObjStack *objStack;
     s32 unk1BC; // stack size?

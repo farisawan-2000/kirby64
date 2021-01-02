@@ -95,19 +95,7 @@ void func_80010B50(void) {
 
 }
 
-struct unkAddr8004A7C8_2 {
-    u8 filler[0x3C];
-    f32 x;
-    f32 y;
-    f32 z;
-};
 
-struct unkAddr8004A7C8 {
-    u8 filler[0x3C];
-    struct unkAddr8004A7C8_2* unk3C;
-};
-
-extern struct unkAddr8004A7C8* D_8004A7C8;
 
 struct unkFunc80010B58 {
     u8 filler[0x1C];

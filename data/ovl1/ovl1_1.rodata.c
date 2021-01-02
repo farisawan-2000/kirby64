@@ -5,6 +5,52 @@
 
 // ovl1_1 rodata
 
+u8 D_800D5A70[] = "gobj id:%d\n";
+
+u8 D_800D5A7C[] = "df:%x\n";
+
+u8 D_800D5A84[] = "SYS\n";
+
+u8 D_800D5A8C[] = "BF\n";
+
+u8 D_800D5A90[] = "addr:%x\n";
+
+u8 D_800D5A9C[] = "GP\n";
+
+u8 D_800D5AA0[] = "gobj:%x\n";
+
+u8 D_800D5AAC[] = "gp:%x\n";
+
+u8 D_800D5AB4[] = "gobjthread:%x\n";
+
+u8 D_800D5AC4[] = "stack:%x\n";
+
+u8 D_800D5AD0[] = "thread pc:%x\n";
+
+u8 D_800D5AE0[] = "id:%d\n";
+
+u8 D_800D5AE8[] = "ptr:%x\n";
+
+u8 D_800D5AF0[] = "func:%x\n";
+
+u8 D_800D5AFC[] = "DFC\n";
+
+u8 D_800D5B04[] = "addr:%x\n";
+
+u8 D_800D5B10[] = "DFO\n";
+
+u8 D_800D5B18[] = "cam addr:%x\n";
+
+u8 D_800D5B28[] = "disp addr:%x\n";
+
+u8 D_800D5B38[] = "s: %x\n";
+
+u8 D_800D5B40[] = "t: %x\n";
+
+u8 D_800D5B48[] = "l: %x\n";
+
+
+
 u32 jtbl_800D5B50 = 0x800A2938;
 u32 D_800D5B54 = 0x800A294C;
 u32 D_800D5B58 = 0x800A298C;
