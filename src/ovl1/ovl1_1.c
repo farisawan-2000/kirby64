@@ -119,8 +119,8 @@ OSThread *func_800A2904(void) {
     }
     func_80022B88("s: %x\n", D_80048D88);
     // add these in when this and the giant switch case function are matching
-    func_80022B88(&D_800D5B40, D_80048D8C);
-    func_80022B88(&D_800D5B48, D_80048D90);
+    func_80022B88("t: %x\n", D_80048D8C);
+    func_80022B88("l: %x\n", D_80048D90);
     return sp1C;
 } 
 #else
