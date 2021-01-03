@@ -63,7 +63,7 @@ glabel fatal_printf
 /* 023D8C 8002318C 0C008A91 */  jal   func_80022A44
 /* 023D90 80023190 24050019 */   li    $a1, 25
 /* 023D94 80023194 8FA40028 */  lw    $a0, 0x28($sp)
-/* 023D98 80023198 0C008A96 */  jal   func_80022A58
+/* 023D98 80023198 0C008A96 */  jal   crash_screen_vprint
 /* 023D9C 8002319C 02202825 */   move  $a1, $s1
 /* 023DA0 800231A0 00002025 */  move  $a0, $zero
 /* 023DA4 800231A4 0C008892 */  jal   func_80022248

@@ -357,7 +357,7 @@ asm/non_matchings/ovl0/ovl0_8/func_80022248.s
 asm/non_matchings/ovl0/ovl0_8/func_800222C4.s
 asm/non_matchings/ovl0/ovl0_8/func_80022A38.s
 asm/non_matchings/ovl0/ovl0_8/func_80022A44.s
-asm/non_matchings/ovl0/ovl0_8/func_80022A58.s
+asm/non_matchings/ovl0/ovl0_8/crash_screen_vprint.s
 asm/non_matchings/ovl0/ovl0_8/func_80022B88.s
 asm/non_matchings/ovl0/ovl0_8/func_80022BC4.s
 asm/non_matchings/ovl0/ovl0_8/func_80022D98.s

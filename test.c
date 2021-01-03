@@ -1,11 +1,16 @@
+#include "libc/stdarg.h"
 
-  840 |                                     D_800BE510 = D_800BE53C;
-      |                                     ^~~~~~~~~~
-  859 |                         temp_v0_2 = D_800D6B94;
-      |                                     ^~~~~~~~~~
-  861 |                         if ((temp_v0_2 == temp_v1) && (D_800D6B90 == (D_800D6B98 + 1))) {
-      |                                                        ^~~~~~~~~~
-  912 |                                     if (D_800D6BA8 == 0x64) {
-      |                                         ^~~~~~~~~~
-  964 |                 func_80154D60_ovl1(D_800D71E8, 0x15);
-      |                                    ^~~~~~~~~~
+void crash_screen_vprint(va_list args) {
+
+}
+
+
+void func_80022B88(const char *fmt, ...) {
+    va_list args;
+    va_start(args, fmt);
+    crash_screen_vprint(args);
+}
+
+int main(void) {
+	func_80022B88("tr%d\n", 4);
+}

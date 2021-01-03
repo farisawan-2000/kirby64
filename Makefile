@@ -174,6 +174,9 @@ softclean:
 	rm -rf build/us/src/
 	rm -rf build/us/asm/
 
+# $(BUILD_DIR)/src/ovl0/ovl0_8.o: OPT_FLAGS += -framepointer
+
+
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 

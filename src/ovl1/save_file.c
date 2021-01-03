@@ -303,7 +303,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B8C08.s")
 extern void calc_file_checksum(u32 fileNum);
 extern u8 D_800D5150[]; // TODO: get correct type for this
 // init_save_file_maybe
-#ifdef MIPS_TO_C
+#ifdef MIPS_TO_C 
 void init_save_file_maybe(u32 fileNum) {
     s32 i;
     s32 unused1;
@@ -321,14 +321,14 @@ void init_save_file_maybe(u32 fileNum) {
     gSaveBuffer1.files[fileNum].data16 = 0;
     gSaveBuffer1.files[fileNum].data17 = 0;
     gSaveBuffer1.files[fileNum].hundredYardHopRecord = 0x5DC; // 31 seconds
-    gSaveBuffer1.files[fileNum].bumperCropBumpRecord = 0xA;
+    gSaveBuffer1.files[fileNum].bumperCropBumpRecord = 10;
     gSaveBuffer1.files[fileNum].checkerBoardChaseRecord = 0x960;
 
     for (i = 0; i < 6; i++) {
         gSaveBuffer1.files[fileNum].data38[i] = 0;
     }
 
-    for (i = 0; i != 6; i++) {
+    for (i = 0; i < 6; i++) {
         gSaveBuffer1.files[fileNum].shards[i] = 0;
     }
 
@@ -342,8 +342,8 @@ void init_save_file_maybe(u32 fileNum) {
     verify_save(fileNum);
     calc_file_checksum(fileNum);
 
-    func_80004D34_ovl1(D_800D5150[fileNum], &gSaveBuffer1.files[fileNum], 0x58);
-    func_80004D34_ovl1(D_800D5150[fileNum], &gSaveBuffer1.files[fileNum], 0x58);
+    func_80004D34(D_800D5150[fileNum], &gSaveBuffer1.files[fileNum], 0x58);
+    func_80004D34(D_800D5150[fileNum], &gSaveBuffer1.files[fileNum], 0x58);
 
     gSaveBuffer2 = gSaveBuffer1;
 }
