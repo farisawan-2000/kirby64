@@ -47,7 +47,7 @@ struct UnkStruct8004A7C4 {
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;
     u32 unk28;
-    u32 unk2C;
+    void (*unk2C)(struct UnkStruct8004A7C4 *);
     u32 unk30;
     u32 unk34;
     u32 unk38;

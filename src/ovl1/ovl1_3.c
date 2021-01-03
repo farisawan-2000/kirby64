@@ -2047,10 +2047,11 @@ void func_800AB2C0(u32 *arg0) {
     func_800143A4();
 }
 
-void func_800AB314(u32 *arg0) {
-    gSPSegment(gDisplayListHeads[0]++, 0x04, D_800DF4D0[*arg0]);
-    gSPSegment(gDisplayListHeads[1]++, 0x04, D_800DF4D0[*arg0]);
-    func_80014AD4();
+
+void func_800AB314(struct UnkStruct8004A7C4 *arg0) {
+    gSPSegment(gDisplayListHeads[0]++, 0x04, D_800DF4D0[arg0->objId]);
+    gSPSegment(gDisplayListHeads[1]++, 0x04, D_800DF4D0[arg0->objId]);
+    func_80014AD4(arg0);
 }
 
 void func_800AB390(s32 arg0) {
