@@ -360,7 +360,7 @@ asm/non_matchings/ovl0/ovl0_8/func_80022A44.s
 asm/non_matchings/ovl0/ovl0_8/crash_screen_vprint.s
 asm/non_matchings/ovl0/ovl0_8/func_80022B88.s
 asm/non_matchings/ovl0/ovl0_8/func_80022BC4.s
-asm/non_matchings/ovl0/ovl0_8/func_80022D98.s
+asm/non_matchings/ovl0/ovl0_8/crash_screen_start_thread.s
 asm/non_matchings/ovl0/ovl0_8/func_80022E04.s
 asm/non_matchings/ovl0/ovl0_8/func_80023048.s
 asm/non_matchings/ovl0/ovl0_8/fatal_printf.s

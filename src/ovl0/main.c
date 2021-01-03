@@ -115,7 +115,7 @@ extern void func_800051E0(void *);
 void dma_overlay_load(struct Overlay *);
 void func_800076D0();
 void func_800A377C(s32);
-void func_80022D98();
+void crash_screen_start_thread();
 
 extern OSPiHandle *osCartRomInit(void);
 
@@ -148,7 +148,7 @@ void thread5_main(UNUSED void *arg0) {
 }
 
 void thread1_idle(void *arg0) {
-    func_80022D98();
+    crash_screen_start_thread();
     osCreateThread(&gMainThread, (OSId) 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], (OSPri) 0x32);
     mainThreadStack[7] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
