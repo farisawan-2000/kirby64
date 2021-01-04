@@ -5189,29 +5189,37 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017C7C.s")
 extern Gfx *gDisplayListHeads[4];
 
 
-// TODO: regalloc into v1 instead of v0
+// TODO: regalloc D_8004A7F8 into v1 instead of v0
 #ifdef NON_MATCHING
 void func_80017DB0(s32 arg0) {
     struct UnkStruct8004A7F8 *temp_v1;
-    int tmp = 0;
-    // tmp = 0;
+    int tmp;
 
     temp_v1 = &D_8004A7F8[arg0];
 
-    if (temp_v1->unk4)
+    tmp = 0;
+    if (temp_v1->unk4){
         gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk4);
+    }
+    // tmp = 1;if (temp_v1->unk8){gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk8);}
+    // tmp = 2;if (temp_v1->unkC){gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unkC);}
+    // tmp = 3;if (temp_v1->unk10){gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk10);}
 
     tmp = 1;
-    if (temp_v1->unk8)
+    if (temp_v1->unk8){
         gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk8);
+    }
 
     tmp = 2;
-    if (temp_v1->unkC)
+    if (temp_v1->unkC){
         gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unkC);
+    }
 
     tmp = 3;
-    if (temp_v1->unk10)
+    if (temp_v1->unk10){
         gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk10);
+    }
+    // return temp_v1;
 }
 #else
 void func_80017DB0(u32 arg0);
