@@ -317,13 +317,13 @@ glabel func_8011FEF8_ovl2
 /* 0A8E08 80120398 AD2B0034 */  sw    $t3, 0x34($t1)
 /* 0A8E0C 8012039C 24040002 */  li    $a0, 2
 /* 0A8E10 801203A0 24050004 */  li    $a1, 4
-/* 0A8E14 801203A4 0C048BDB */  jal   func_80122F6C_ovl2
+/* 0A8E14 801203A4 0C048BDB */  jal   set_kirby_action_1
 /* 0A8E18 801203A8 E5240038 */   swc1  $f4, 0x38($t1)
 /* 0A8E1C 801203AC 1000019A */  b     .L80120A18_ovl2
 /* 0A8E20 801203B0 00001025 */   move  $v0, $zero
 /* 0A8E24 801203B4 00002025 */  move  $a0, $zero
 .L801203B8_ovl2:
-/* 0A8E28 801203B8 0C048BDB */  jal   func_80122F6C_ovl2
+/* 0A8E28 801203B8 0C048BDB */  jal   set_kirby_action_1
 /* 0A8E2C 801203BC 24050001 */   li    $a1, 1
 /* 0A8E30 801203C0 10000195 */  b     .L80120A18_ovl2
 /* 0A8E34 801203C4 00001025 */   move  $v0, $zero

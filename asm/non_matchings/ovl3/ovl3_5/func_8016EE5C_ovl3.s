@@ -58,7 +58,7 @@ glabel func_8016EE5C_ovl3
 /* 0CF978 8016EF38 C430AC20 */  lwc1  $f16, -0x53e0($at)
 /* 0CF97C 8016EF3C 3C01800E */  lui   $at, 0x800e
 /* 0CF980 8016EF40 00220821 */  addu  $at, $at, $v0
-/* 0CF984 8016EF44 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CF984 8016EF44 0C048BDB */  jal   set_kirby_action_1
 /* 0CF988 8016EF48 E4306850 */   swc1  $f16, 0x6850($at)
 /* 0CF98C 8016EF4C 8FBF0014 */  lw    $ra, 0x14($sp)
 .L8016EF50_ovl3:

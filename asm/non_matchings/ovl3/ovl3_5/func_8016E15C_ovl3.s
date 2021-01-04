@@ -97,7 +97,7 @@ glabel func_8016E15C_ovl3
 .L8016E2D0_ovl3:
 /* 0CED10 8016E2D0 ACE8015C */  sw    $t0, 0x15c($a3)
 .L8016E2D4_ovl3:
-/* 0CED14 8016E2D4 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CED14 8016E2D4 0C048BDB */  jal   set_kirby_action_1
 /* 0CED18 8016E2D8 2405000D */   li    $a1, 13
 /* 0CED1C 8016E2DC 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CED20 8016E2E0 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
@@ -155,7 +155,7 @@ glabel func_8016E15C_ovl3
 /* 0CEDE8 8016E3A8 14400066 */  bnez  $v0, .L8016E544_ovl3
 /* 0CEDEC 8016E3AC 24E7E7C0 */   addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 0CEDF0 8016E3B0 24040006 */  li    $a0, 6
-/* 0CEDF4 8016E3B4 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CEDF4 8016E3B4 0C048BDB */  jal   set_kirby_action_1
 /* 0CEDF8 8016E3B8 24050006 */   li    $a1, 6
 /* 0CEDFC 8016E3BC 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CEE00 8016E3C0 10000060 */  b     .L8016E544_ovl3
@@ -170,7 +170,7 @@ glabel func_8016E15C_ovl3
 /* 0CEE20 8016E3E0 14400058 */  bnez  $v0, .L8016E544_ovl3
 /* 0CEE24 8016E3E4 24E7E7C0 */   addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 0CEE28 8016E3E8 24040006 */  li    $a0, 6
-/* 0CEE2C 8016E3EC 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CEE2C 8016E3EC 0C048BDB */  jal   set_kirby_action_1
 /* 0CEE30 8016E3F0 24050006 */   li    $a1, 6
 /* 0CEE34 8016E3F4 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CEE38 8016E3F8 10000052 */  b     .L8016E544_ovl3
@@ -225,7 +225,7 @@ glabel func_8016E15C_ovl3
 /* 0CEEF4 8016E4B4 14400023 */  bnez  $v0, .L8016E544_ovl3
 /* 0CEEF8 8016E4B8 24E7E7C0 */   addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 /* 0CEEFC 8016E4BC 24040006 */  li    $a0, 6
-/* 0CEF00 8016E4C0 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CEF00 8016E4C0 0C048BDB */  jal   set_kirby_action_1
 /* 0CEF04 8016E4C4 24050006 */   li    $a1, 6
 /* 0CEF08 8016E4C8 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CEF0C 8016E4CC 1000001D */  b     .L8016E544_ovl3

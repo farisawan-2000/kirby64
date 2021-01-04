@@ -8619,7 +8619,7 @@ block_14:
                 goto block_14;
             }
             gKirbyState.unk24 = 1;
-            func_80122F94_ovl2(0x15, 0x16, arg0);
+            set_kirby_action_2(0x15, 0x16, arg0);
             gKirbyState.isTurning = gKirbyState.isTurning & -8;
             func_8011DC5C_ovl2();
 block_31:
@@ -8687,7 +8687,7 @@ block_52:
 block_17:
             if (0.0f == phi_a3->unk8) {
                 gKirbyState.unk24 = 1;
-                func_80122F94_ovl2(0x15, 0x16, phi_a3);
+                set_kirby_action_2(0x15, 0x16, phi_a3);
                 gKirbyState.isTurning = gKirbyState.isTurning & -8;
                 func_8011DC5C_ovl2();
                 func_800A7678(0x1E9);
@@ -8704,7 +8704,7 @@ block_17:
                     if (gKirbyState.unk5 != 0x15) {
                         D_800E83E0 = 1;
                         if (gKirbyState.unk28 == 0) {
-                            func_80122F94_ovl2(0x16, 0x17, temp_a3_2);
+                            set_kirby_action_2(0x16, 0x17, temp_a3_2);
                             phi_v1_2 = &gKirbyState;
                             goto block_52;
                         }
@@ -8722,7 +8722,7 @@ block_17:
                     D_800E83E0 = (temp_a3_2->unkC << 0x10) + 2;
                     if (gKirbyState.unk28 == 0) {
                         arg0 = temp_a3_2;
-                        func_80122F94_ovl2(0x14, 0x16, temp_a3_2);
+                        set_kirby_action_2(0x14, 0x16, temp_a3_2);
                         gKirbyState.isTurning = gKirbyState.isTurning & -8;
                         phi_v1 = &gKirbyState;
                         if (0.0f != arg0->unk8) {

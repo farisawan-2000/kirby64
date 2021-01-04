@@ -8,7 +8,7 @@ glabel func_8011E438
 /* 0A6EC0 8011E450 A04E0017 */  sb    $t6, 0x17($v0)
 /* 0A6EC4 8011E454 AC4000A0 */  sw    $zero, 0xa0($v0)
 /* 0A6EC8 8011E458 24040048 */  li    $a0, 72
-/* 0A6ECC 8011E45C 0C048BE5 */  jal   func_80122F94_ovl2
+/* 0A6ECC 8011E45C 0C048BE5 */  jal   set_kirby_action_2
 /* 0A6ED0 8011E460 2405001C */   li    $a1, 28
 /* 0A6ED4 8011E464 44801000 */  mtc1  $zero, $f2
 /* 0A6ED8 8011E468 3C02800E */  lui   $v0, %hi(D_800E6850) # $v0, 0x800e

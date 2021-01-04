@@ -83,7 +83,7 @@ glabel func_80159EF0_ovl3
 /* 0BAA6C 8015A02C 0C0473D6 */  jal   func_8011CF58_ovl3
 /* 0BAA70 8015A030 AC29DA90 */   sw    $t1, -0x2570($at)
 /* 0BAA74 8015A034 00002025 */  move  $a0, $zero
-/* 0BAA78 8015A038 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0BAA78 8015A038 0C048BDB */  jal   set_kirby_action_1
 /* 0BAA7C 8015A03C 24050001 */   li    $a1, 1
 /* 0BAA80 8015A040 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 0BAA84 8015A044 44816000 */  mtc1  $at, $f12

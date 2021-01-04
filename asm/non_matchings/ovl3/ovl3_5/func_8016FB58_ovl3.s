@@ -54,7 +54,7 @@ glabel func_8016FB58_ovl3
 /* 0D0660 8016FC20 00000000 */  nop   
 /* 0D0664 8016FC24 45020037 */  bc1fl .L8016FD04_ovl3
 /* 0D0668 8016FC28 8CEF00FC */   lw    $t7, 0xfc($a3)
-/* 0D066C 8016FC2C 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D066C 8016FC2C 0C048BDB */  jal   set_kirby_action_1
 /* 0D0670 8016FC30 24050006 */   li    $a1, 6
 /* 0D0674 8016FC34 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0D0678 8016FC38 10000031 */  b     .L8016FD00_ovl3

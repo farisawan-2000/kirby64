@@ -30,12 +30,12 @@ glabel func_80170A24_ovl3
 /* 0D14D0 80170A90 8D088920 */  lw    $t0, -0x76e0($t0)
 /* 0D14D4 80170A94 15000005 */  bnez  $t0, .L80170AAC_ovl3
 /* 0D14D8 80170A98 00000000 */   nop   
-/* 0D14DC 80170A9C 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D14DC 80170A9C 0C048BDB */  jal   set_kirby_action_1
 /* 0D14E0 80170AA0 24040006 */   li    $a0, 6
 /* 0D14E4 80170AA4 10000004 */  b     .L80170AB8_ovl3
 /* 0D14E8 80170AA8 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80170AAC_ovl3:
-/* 0D14EC 80170AAC 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D14EC 80170AAC 0C048BDB */  jal   set_kirby_action_1
 /* 0D14F0 80170AB0 24050001 */   li    $a1, 1
 /* 0D14F4 80170AB4 8FBF0014 */  lw    $ra, 0x14($sp)
 .L80170AB8_ovl3:

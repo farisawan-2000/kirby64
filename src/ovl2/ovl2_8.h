@@ -57,6 +57,6 @@ extern s16 D_8012E922;
 extern u8 D_8012E9B8;
 
 void func_8012310C_ovl2(s32 currentInhale);
-void func_80122F94_ovl2(s32 actionChange, u32 action);
+void set_kirby_action_2(s32 actionChange, u32 action);
 
 #endif

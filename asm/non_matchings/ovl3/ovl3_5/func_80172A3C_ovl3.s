@@ -36,7 +36,7 @@ glabel func_80172A3C_ovl3
 /* 0D3500 80172AC0 24040006 */  li    $a0, 6
 /* 0D3504 80172AC4 51000004 */  beql  $t0, $zero, .L80172AD8_ovl3
 /* 0D3508 80172AC8 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 0D350C 80172ACC 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D350C 80172ACC 0C048BDB */  jal   set_kirby_action_1
 /* 0D3510 80172AD0 24050006 */   li    $a1, 6
 /* 0D3514 80172AD4 8FBF0014 */  lw    $ra, 0x14($sp)
 .L80172AD8_ovl3:

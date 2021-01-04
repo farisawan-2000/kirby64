@@ -110,7 +110,7 @@ glabel func_8016D81C_ovl3
 /* 0CE400 8016D9C0 46020281 */  sub.s $f10, $f0, $f2
 /* 0CE404 8016D9C4 E48A0038 */  swc1  $f10, 0x38($a0)
 .L8016D9C8_ovl3:
-/* 0CE408 8016D9C8 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CE408 8016D9C8 0C048BDB */  jal   set_kirby_action_1
 /* 0CE40C 8016D9CC 24040002 */   li    $a0, 2
 /* 0CE410 8016D9D0 1000000A */  b     .L8016D9FC_ovl3
 /* 0CE414 8016D9D4 00000000 */   nop   

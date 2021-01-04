@@ -35,7 +35,7 @@ glabel func_8016DD0C_ovl3
 /* 0CE7D0 8016DD90 15800006 */  bnez  $t4, .L8016DDAC_ovl3
 /* 0CE7D4 8016DD94 00002025 */   move  $a0, $zero
 /* 0CE7D8 8016DD98 A0400007 */  sb    $zero, 7($v0)
-/* 0CE7DC 8016DD9C 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CE7DC 8016DD9C 0C048BDB */  jal   set_kirby_action_1
 /* 0CE7E0 8016DDA0 24050001 */   li    $a1, 1
 /* 0CE7E4 8016DDA4 1000000A */  b     .L8016DDD0_ovl3
 /* 0CE7E8 8016DDA8 00000000 */   nop   

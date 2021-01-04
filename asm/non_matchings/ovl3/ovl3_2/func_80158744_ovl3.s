@@ -15,12 +15,12 @@ glabel func_80158744_ovl3
 /* 0B91B8 80158778 8F398920 */  lw    $t9, -0x76e0($t9)
 /* 0B91BC 8015877C 17210005 */  bne   $t9, $at, .L80158794_ovl3
 /* 0B91C0 80158780 00000000 */   nop   
-/* 0B91C4 80158784 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0B91C4 80158784 0C048BDB */  jal   set_kirby_action_1
 /* 0B91C8 80158788 00002025 */   move  $a0, $zero
 /* 0B91CC 8015878C 10000004 */  b     .L801587A0_ovl3
 /* 0B91D0 80158790 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80158794_ovl3:
-/* 0B91D4 80158794 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0B91D4 80158794 0C048BDB */  jal   set_kirby_action_1
 /* 0B91D8 80158798 2405001C */   li    $a1, 28
 /* 0B91DC 8015879C 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801587A0_ovl3:

@@ -54,7 +54,7 @@ glabel func_8017883C_ovl3
 /* 0D9344 80178904 14610005 */  bne   $v1, $at, .L8017891C_ovl3
 /* 0D9348 80178908 3C0E800D */   lui   $t6, %hi(D_800D6FE8) # $t6, 0x800d
 .L8017890C_ovl3:
-/* 0D934C 8017890C 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D934C 8017890C 0C048BDB */  jal   set_kirby_action_1
 /* 0D9350 80178910 24050006 */   li    $a1, 6
 /* 0D9354 80178914 1000002D */  b     .L801789CC_ovl3
 /* 0D9358 80178918 8FBF0014 */   lw    $ra, 0x14($sp)

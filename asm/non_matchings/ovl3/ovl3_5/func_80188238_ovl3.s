@@ -87,7 +87,7 @@ glabel func_80188238_ovl3
 /* 0E8DB8 80188378 0C047717 */  jal   func_8011DC5C_ovl3
 /* 0E8DBC 8018837C 00000000 */   nop   
 /* 0E8DC0 80188380 2404000A */  li    $a0, 10
-/* 0E8DC4 80188384 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0E8DC4 80188384 0C048BDB */  jal   set_kirby_action_1
 /* 0E8DC8 80188388 2405000D */   li    $a1, 13
 /* 0E8DCC 8018838C 1000055E */  b     .L80189908_ovl3
 /* 0E8DD0 80188390 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -240,7 +240,7 @@ glabel func_80188238_ovl3
 /* 0E8FF8 801885B8 0C047585 */  jal   func_8011D614_ovl3
 /* 0E8FFC 801885BC 00000000 */   nop   
 /* 0E9000 801885C0 24040011 */  li    $a0, 17
-/* 0E9004 801885C4 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0E9004 801885C4 0C048BDB */  jal   set_kirby_action_1
 /* 0E9008 801885C8 24050011 */   li    $a1, 17
 /* 0E900C 801885CC 100004CE */  b     .L80189908_ovl3
 /* 0E9010 801885D0 8FBF0014 */   lw    $ra, 0x14($sp)

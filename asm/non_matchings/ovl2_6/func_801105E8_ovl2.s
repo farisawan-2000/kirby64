@@ -85,7 +85,7 @@ glabel func_801105E8_ovl2
 /* 099188 80110718 100000F5 */  b     .L80110AF0_ovl2
 /* 09918C 8011071C AC2083E0 */   sw    $zero, %lo(D_800E83E0)($at)
 .L80110720_ovl2:
-/* 099190 80110720 0C048BE5 */  jal   func_80122F94_ovl2
+/* 099190 80110720 0C048BE5 */  jal   set_kirby_action_2
 /* 099194 80110724 AC690024 */   sw    $t1, 0x24($v1)
 /* 099198 80110728 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 09919C 8011072C 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840
@@ -111,7 +111,7 @@ glabel func_801105E8_ovl2
 /* 0991E4 80110774 45020011 */  bc1fl .L801107BC_ovl2
 /* 0991E8 80110778 8CAF0010 */   lw    $t7, 0x10($a1)
 /* 0991EC 8011077C AC6C0024 */  sw    $t4, 0x24($v1)
-/* 0991F0 80110780 0C048BE5 */  jal   func_80122F94_ovl2
+/* 0991F0 80110780 0C048BE5 */  jal   set_kirby_action_2
 /* 0991F4 80110784 24050016 */   li    $a1, 22
 /* 0991F8 80110788 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0991FC 8011078C 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840
@@ -155,7 +155,7 @@ glabel func_801105E8_ovl2
 /* 09928C 8011081C 24040016 */  li    $a0, 22
 /* 099290 80110820 556000B4 */  bnezl $t3, .L80110AF4_ovl2
 /* 099294 80110824 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 099298 80110828 0C048BE5 */  jal   func_80122F94_ovl2
+/* 099298 80110828 0C048BE5 */  jal   set_kirby_action_2
 /* 09929C 8011082C 24050017 */   li    $a1, 23
 /* 0992A0 80110830 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0992A4 80110834 100000A8 */  b     .L80110AD8_ovl2
@@ -184,7 +184,7 @@ glabel func_801105E8_ovl2
 /* 0992F4 80110884 24050016 */  li    $a1, 22
 /* 0992F8 80110888 5720009A */  bnezl $t9, .L80110AF4_ovl2
 /* 0992FC 8011088C 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 099300 80110890 0C048BE5 */  jal   func_80122F94_ovl2
+/* 099300 80110890 0C048BE5 */  jal   set_kirby_action_2
 /* 099304 80110894 AFA70020 */   sw    $a3, 0x20($sp)
 /* 099308 80110898 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 09930C 8011089C 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840

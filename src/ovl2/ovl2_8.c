@@ -917,22 +917,22 @@ void func_8011D67C(void) {
         temp_v0_2 = D_800D6FE8.buttonHeld;
         if ((temp_v0_2 & 0x400) == 0) {
             if ((temp_v0_2 & 0x300) == 0) {
-                func_80122F6C_ovl2(0, 1);
+                set_kirby_action_1(0, 1);
                 return;
             }
             if (gKirbyState.unk7 == 0) {
-                func_80122F6C_ovl2(1, 3);
+                set_kirby_action_1(1, 3);
                 return;
             }
             gKirbyState.unk44 = 0;
             gKirbyState.unk38 = 0.0f;
-            func_80122F6C_ovl2(2, 4);
+            set_kirby_action_1(2, 4);
             return;
         }
-        func_80122F6C_ovl2(9, 0xE);
+        set_kirby_action_1(9, 0xE);
         return;
     }
-    func_80122F6C_ovl2(6, 6);
+    set_kirby_action_1(6, 6);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D67C.s")
@@ -1460,7 +1460,7 @@ f32 func_8011E438(void) {
     gKirbyState.unk4 = 0;
     gKirbyState.unk17 = 1;
     gKirbyState.abilityInUse = 0;
-    func_80122F94_ovl2(0x48, 0x1C);
+    set_kirby_action_2(0x48, 0x1C);
     *D_800E6850 = 0.0f;
     temp_f0_2 = *D_800E6850;
     *D_800E6690 = temp_f0_2;
@@ -2189,13 +2189,13 @@ void func_801212A4_ovl2(void) {
                 temp_v0_3 = gKirbyState.ceilingType;
                 if ((temp_v0_3 != 4) && (temp_v0_3 != 5)) {
                     change_kirby_hp(-6.0f);
-                    func_80122F6C_ovl2(0x16, 0x17);
+                    set_kirby_action_1(0x16, 0x17);
                     return;
                 }
             }
             if ((gKirbyState.rightCollisionNext != 0) && (gKirbyState.leftCollisionNext != 0) && (2 != gKirbyState.unk104) && (2 != gKirbyState.unk106)) {
                 change_kirby_hp(-6.0f);
-                func_80122F6C_ovl2(0x16, 0x17);
+                set_kirby_action_1(0x16, 0x17);
                 return;
             }
             if (gKirbyState.unk140 != 0) {
@@ -2204,7 +2204,7 @@ void func_801212A4_ovl2(void) {
                     temp_v0_4 = gKirbyState.action;
                     if ((temp_v0_4 != 0x1D) && (gKirbyState.unk68 == 0) && (temp_v0_4 != 0x16)) {
                         if (change_kirby_hp(-1.0f) == 0) {
-                            func_80122F6C_ovl2(0x16, 0x17);
+                            set_kirby_action_1(0x16, 0x17);
                             return;
                         }
                         func_80120BCC_ovl2(0x16);
@@ -2215,7 +2215,7 @@ void func_801212A4_ovl2(void) {
                             ((*D_8004A7C4 * 4) + 0x800F0000)->unk-7A60 = -1;
                         }
                         gKirbyState.unk24 = 1;
-                        func_80122F6C_ovl2(0x14, 0x16);
+                        set_kirby_action_1(0x14, 0x16);
                     }
                 }
             }
@@ -2804,7 +2804,7 @@ loop_14:
             gKirbyState.unk30 = 0;
             gKirbyState.unk168 = 0.0f;
             gKirbyState.unk164 = gKirbyState.unk168;
-            func_80122F6C_ovl2(0xD, 0xA);
+            set_kirby_action_1(0xD, 0xA);
             return 1;
         }
     }
@@ -2909,7 +2909,7 @@ loop_14:
             gKirbyState.unk168 = 0.0f;
             gKirbyState.unk30 = 0;
             gKirbyState.unk164 = (bitwise f32) gKirbyState.unk168;
-            func_80122F6C_ovl2(0xE, 0xB);
+            set_kirby_action_1(0xE, 0xB);
             func_801229D0_ovl2();
             return 1;
         }
@@ -3119,7 +3119,7 @@ void func_80122F08(u32 arg0) {
 }
 
 // set_kirby_action? Two of them?
-void func_80122F6C_ovl2(s32 actionChange, s32 action) {
+void set_kirby_action_1(s32 actionChange, s32 action) {
     if (actionChange != 0xFFFF) {
         gKirbyState.actionChange = actionChange;
         gKirbyState.previousAction = gKirbyState.action;
@@ -3127,7 +3127,7 @@ void func_80122F6C_ovl2(s32 actionChange, s32 action) {
     }
 }
 
-void func_80122F94_ovl2(s32 actionChange, u32 action) {
+void set_kirby_action_2(s32 actionChange, u32 action) {
     gKirbyState.actionChange = actionChange;
     gKirbyState.previousAction = gKirbyState.action;
     gKirbyState.action = action;

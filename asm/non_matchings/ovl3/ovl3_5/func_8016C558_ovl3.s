@@ -291,7 +291,7 @@ glabel func_8016C558_ovl3
 /* 0CD3D4 8016C994 24040010 */  li    $a0, 16
 /* 0CD3D8 8016C998 57010006 */  bnel  $t8, $at, .L8016C9B4_ovl3
 /* 0CD3DC 8016C99C 8CE400A0 */   lw    $a0, 0xa0($a3)
-/* 0CD3E0 8016C9A0 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0CD3E0 8016C9A0 0C048BDB */  jal   set_kirby_action_1
 /* 0CD3E4 8016C9A4 24050001 */   li    $a1, 1
 /* 0CD3E8 8016C9A8 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CD3EC 8016C9AC 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

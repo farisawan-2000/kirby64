@@ -178,7 +178,7 @@ glabel func_801226FC_ovl2
 /* 0AB408 80122998 AD000030 */  sw    $zero, 0x30($t0)
 /* 0AB40C 8012299C 2404000E */  li    $a0, 14
 /* 0AB410 801229A0 2405000B */  li    $a1, 11
-/* 0AB414 801229A4 0C048BDB */  jal   func_80122F6C_ovl2
+/* 0AB414 801229A4 0C048BDB */  jal   set_kirby_action_1
 /* 0AB418 801229A8 E5080164 */   swc1  $f8, 0x164($t0)
 /* 0AB41C 801229AC 0C048A74 */  jal   func_801229D0_ovl2
 /* 0AB420 801229B0 00000000 */   nop   

@@ -67,7 +67,7 @@ glabel func_80158294_ovl3
 /* 0B8DCC 8015838C 00002025 */  move  $a0, $zero
 /* 0B8DD0 80158390 51200007 */  beql  $t1, $zero, .L801583B0_ovl3
 /* 0B8DD4 80158394 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 0B8DD8 80158398 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0B8DD8 80158398 0C048BDB */  jal   set_kirby_action_1
 /* 0B8DDC 8015839C 24050001 */   li    $a1, 1
 /* 0B8DE0 801583A0 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0B8DE4 801583A4 2508E7C0 */  addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840

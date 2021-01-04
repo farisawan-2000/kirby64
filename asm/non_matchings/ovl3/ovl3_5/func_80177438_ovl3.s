@@ -18,7 +18,7 @@ glabel func_80177438_ovl3
 /* 0D7EB8 80177478 24040006 */  li    $a0, 6
 /* 0D7EBC 8017747C 11E00005 */  beqz  $t7, .L80177494_ovl3
 /* 0D7EC0 80177480 00000000 */   nop   
-/* 0D7EC4 80177484 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D7EC4 80177484 0C048BDB */  jal   set_kirby_action_1
 /* 0D7EC8 80177488 24050006 */   li    $a1, 6
 /* 0D7ECC 8017748C 10000093 */  b     .L801776DC_ovl3
 /* 0D7ED0 80177490 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -86,12 +86,12 @@ glabel func_80177438_ovl3
 /* 0D7FB8 80177578 0C029D9E */  jal   func_800A7678
 /* 0D7FBC 8017757C E4283C90 */   swc1  $f8, 0x3c90($at)
 /* 0D7FC0 80177580 24040007 */  li    $a0, 7
-/* 0D7FC4 80177584 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D7FC4 80177584 0C048BDB */  jal   set_kirby_action_1
 /* 0D7FC8 80177588 24050007 */   li    $a1, 7
 /* 0D7FCC 8017758C 10000053 */  b     .L801776DC_ovl3
 /* 0D7FD0 80177590 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80177594_ovl3:
-/* 0D7FD4 80177594 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D7FD4 80177594 0C048BDB */  jal   set_kirby_action_1
 /* 0D7FD8 80177598 24050006 */   li    $a1, 6
 /* 0D7FDC 8017759C 1000004F */  b     .L801776DC_ovl3
 /* 0D7FE0 801775A0 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -126,7 +126,7 @@ glabel func_80177438_ovl3
 /* 0D8050 80177610 3C01800E */  li    $at, 0x800E0000 # -0.000000
 /* 0D8054 80177614 000A5880 */  sll   $t3, $t2, 2
 /* 0D8058 80177618 002B0821 */  addu  $at, $at, $t3
-/* 0D805C 8017761C 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D805C 8017761C 0C048BDB */  jal   set_kirby_action_1
 /* 0D8060 80177620 E4323C90 */   swc1  $f18, 0x3c90($at)
 /* 0D8064 80177624 0C048BEC */  jal   func_80122FB0_ovl3
 /* 0D8068 80177628 24040001 */   li    $a0, 1
@@ -140,7 +140,7 @@ glabel func_80177438_ovl3
 /* 0D8084 80177644 10400006 */  beqz  $v0, .L80177660_ovl3
 /* 0D8088 80177648 24C6E7C0 */   addiu $a2, %lo(gKirbyState) # addiu $a2, $a2, -0x1840
 /* 0D808C 8017764C 24040017 */  li    $a0, 23
-/* 0D8090 80177650 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D8090 80177650 0C048BDB */  jal   set_kirby_action_1
 /* 0D8094 80177654 2405001B */   li    $a1, 27
 /* 0D8098 80177658 3C068013 */  lui   $a2, %hi(gKirbyState) # $a2, 0x8013
 /* 0D809C 8017765C 24C6E7C0 */  addiu $a2, %lo(gKirbyState) # addiu $a2, $a2, -0x1840

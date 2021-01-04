@@ -27,12 +27,12 @@ glabel func_80174B7C_ovl3
 /* 0D561C 80174BDC 8D088920 */  lw    $t0, -0x76e0($t0)
 /* 0D5620 80174BE0 15000005 */  bnez  $t0, .L80174BF8_ovl3
 /* 0D5624 80174BE4 00000000 */   nop   
-/* 0D5628 80174BE8 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D5628 80174BE8 0C048BDB */  jal   set_kirby_action_1
 /* 0D562C 80174BEC 24040006 */   li    $a0, 6
 /* 0D5630 80174BF0 10000004 */  b     .L80174C04_ovl3
 /* 0D5634 80174BF4 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80174BF8_ovl3:
-/* 0D5638 80174BF8 0C048BDB */  jal   func_80122F6C_ovl3
+/* 0D5638 80174BF8 0C048BDB */  jal   set_kirby_action_1
 /* 0D563C 80174BFC 24050001 */   li    $a1, 1
 /* 0D5640 80174C00 8FBF0014 */  lw    $ra, 0x14($sp)
 .L80174C04_ovl3:
