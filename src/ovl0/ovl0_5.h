@@ -33,6 +33,13 @@ result.x = a.x + b.x;\
 result.y = a.y + b.y;\
 result.z = a.z + b.z;
 
+
+#define VEC_MAG_SQUARE(x, y, z)\
+(x*x)+(y*y)+(z*z)
+
+#define VEC_MAG_SQUARE(v)\
+(v.x*v.x)+(v.y*v.y)+(v.z*v.z)
+
 #define IS_ZERO_VECTOR(v) (v.x == 0.0f && v.y == 0.0f && v.z == 0.0f)
 
 #endif

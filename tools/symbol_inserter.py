@@ -42,7 +42,7 @@ def exposedLui(l):
 		return True
 	return False
 
-def handleStagedLine(l, ls):
+def handleStagedLine(l, ls, d):
 	stage = ls[lineNum]
 	x = l.split("lui")
 	x2 = x[-2:][-1][:-1]
@@ -58,6 +58,9 @@ def handleStagedLine(l, ls):
 	hint = int(hi, 16)
 	lont = int(lo, 16)
 	addr = hint + lont
+	# if str(hex(addr))[2:].upper() in d:
+	# 	sym = d[str(hex(addr))[2:].upper()]
+	# else:
 	sym = "D_"+str(hex(addr))[2:].upper()
 
 	paradigm = len(ls)
@@ -78,6 +81,15 @@ def handleStagedLine(l, ls):
 	# print(ls[paradigm - lineNum][:-1])
 	# print(line1, line2)
 
+symdic = {}
+
+
+# with open(sys.argv[1]) as mp:
+# 	for line in mp:
+# 		t = line.split()
+
+
+
 
 for i in sys.argv[1:]: # xargs support lul
 	lineList = None
@@ -92,7 +104,7 @@ for i in sys.argv[1:]: # xargs support lul
 						# print(line[:-1])
 			if exposedLui(line):
 				# lineList[lineNum] = ""
-				handleStagedLine(line, lineList)
+				handleStagedLine(line, lineList, None)
 				# print(line[:-1], "bruh", lineList[lineNum])
 			lineNum-=1
 	e = open(i, 'w')

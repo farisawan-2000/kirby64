@@ -125,6 +125,8 @@ SECTIONS
       BUILD_DIR/libultra.a:visetmode.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
+      /*BUILD_DIR/libultra.a:contpfs.o(.text);*/
+      BUILD_DIR/asm/ovl0/contpfs.o(.text);
       BUILD_DIR/libultra.a:conteepprobe.o(.text);
       BUILD_DIR/libultra.a:pfssearchfile.o(.text);
       BUILD_DIR/libultra.a:pimgr.o(.text);
@@ -385,6 +387,8 @@ SECTIONS
       BUILD_DIR/asm/ovl3/ovl3_4.o(.text);
       BUILD_DIR/src/ovl3/ovl3_5.o(.text);
       BUILD_DIR/data/kirby.0F0D50.o(.data);
+      BUILD_DIR/src/ovl3/ovl3.o(.rodata);
+      BUILD_DIR/data/ovl3/kirby.0F0D50.2.o(.data);
    }
    END_SEG(ovl3)
    BEGIN_NOLOAD(ovl3) {
@@ -488,6 +492,10 @@ SECTIONS
       BUILD_DIR/asm/ovl12/ovl12.o(.text);
    }
    END_SEG(ovl12)
+   BEGIN_SEG(ovl12Data, _ovl12SegmentEnd) {
+      BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.data);
+   }
+   END_SEG(ovl12Data)
 
    /* 0x801DB1E0 1F3160-1FDA00 [A8A0] */
    BEGIN_SEG(ovl13, 0x801DB1E0) {

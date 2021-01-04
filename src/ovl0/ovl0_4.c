@@ -121,7 +121,7 @@ struct unkFunc80010B58 {
 };
 
 #ifdef MIPS_TO_C
-void func_80010B58(s32 arg0, void *arg1, s32 arg2) {
+void func_80010B58(s32 arg0, struct UnkStruct8004A7C4_3C *arg1, s32 arg2) {
     f32 sp84;
     f32 sp80;
     f32 sp7C;
@@ -138,9 +138,7 @@ void func_80010B58(s32 arg0, void *arg1, s32 arg2) {
     f32 sp50;
     f32 sp4C;
     f32 sp48;
-    f32 sp44;
-    f32 sp40;
-    f32 sp3C;
+    Vector sp3C;
     f32 sp18;
     f32 temp_f0;
     f32 temp_f12;
@@ -153,43 +151,41 @@ void func_80010B58(s32 arg0, void *arg1, s32 arg2) {
     f32 temp_f2;
     f32 temp_f2_2;
     s32 temp_cond;
-    struct unkAddr8004A7C8_2 *temp_v0;
-    f32 phi_f12;
+    struct UnkStruct8004A7C4_3C *temp_v0;
 
     temp_v0 = D_8004A7C8->unk3C;
-    temp_f16 = arg1->unk1C - temp_v0->x;
-    temp_f2 = arg1->unk20 - temp_v0->y;
-    sp44 = temp_f16;
-    temp_f18 = arg1->unk24 - temp_v0->z;
-    sp40 = temp_f2;
-    sp3C = temp_f18;
+    temp_f16 = arg1->unk1C.x - temp_v0->unk3C;
+    temp_f2 = arg1->unk1C.y - temp_v0->unk40.x;
+    sp3C.z = temp_f16;
+    temp_f18 = arg1->unk1C.z - temp_v0->unk40.y;
+    sp3C.y = temp_f2;
+    sp3C.x = temp_f18;
     temp_f14 = 1.0f / sqrtf((temp_f16 * temp_f16) + (temp_f2 * temp_f2) + (temp_f18 * temp_f18));
-    temp_f16_2 = temp_f16 * temp_f14;
-    temp_f2_2 = temp_f2 * temp_f14;
-    temp_f18_2 = temp_f18 * temp_f14;
-    sp44 = temp_f16_2;
-    sp40 = temp_f2_2;
-    sp3C = temp_f18_2;
+    
+    sp3C.z = temp_f16 * temp_f14;
+    sp3C.y = temp_f2 * temp_f14;
+    sp3C.x = temp_f18 * temp_f14;
     temp_f0 = sqrtf((temp_f16_2 * temp_f16_2) + (temp_f2_2 * temp_f2_2));
-    temp_cond = temp_f0 == 0.0f;
     sp74 = 0.0f;
     sp64 = 0.0f;
     sp54 = 0.0f;
     sp60 = 0.0f;
     sp84 = 1.0f;
-    if (!temp_cond) {
+    if (temp_f0 != 0.0f) {
         temp_f12 = -temp_f16_2;
-        sp70 = temp_f0;
-        temp_f14_2 = 1.0f / temp_f0;
-        sp48 = temp_f12;
+        // temp_f14_2 = 1.0f / temp_f0;
         sp18 = -temp_f2_2;
-        sp58 = temp_f2_2 * temp_f14_2;
+
+        sp48 = temp_f12;
         sp4C = sp18;
-        sp68 = temp_f12 * temp_f18_2 * temp_f14_2;
-        sp5C = temp_f12 * temp_f14_2;
         sp50 = -temp_f18_2;
-        sp6C = sp18 * temp_f18_2 * temp_f14_2;
-        phi_f12 = temp_f12;
+
+        sp58 = temp_f2_2 * 1.0f / temp_f0;
+        sp5C = temp_f12 * 1.0f / temp_f0;
+
+        sp68 = temp_f12 * temp_f18_2 * 1.0f / temp_f0;
+        sp6C = sp18 * temp_f18_2 * 1.0f / temp_f0;
+        sp70 = temp_f0;
     } else {
         sp6C = 0.0f;
         sp4C = 0.0f;
@@ -199,18 +195,17 @@ void func_80010B58(s32 arg0, void *arg1, s32 arg2) {
         sp5C = 1.0f;
         sp48 = 1.0f;
         sp70 = 1.0f;
-        phi_f12 = 0.0f;
     }
     if (arg2 != 0) {
-        sp78 = arg1->unk1C;
-        sp7C = arg1->unk20;
-        sp80 = arg1->unk24;
+        sp78 = arg1->unk1C.x;
+        sp7C = arg1->unk1C.y;
+        sp80 = arg1->unk1C.z;
     } else {
         sp7C = 0.0f;
         sp78 = 0.0f;
         sp80 = 0.0f;
     }
-    func_80019C60(phi_f12, &sp48, arg0);
+    func_80019C60(&sp48, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80010B58.s")
@@ -685,23 +680,32 @@ s32 func_80011180(void *arg0, void *arg1) {
 loop_2:
         temp_v0_2 = *phi_a1;
         temp_a0 = phi_a0 + 1;
+
+        switch (temp_v0_2) {
+            case 0:
+                break;
+            case 1:
+                sp2C0 = phi_v1;
+                break;
+            case 2:
+                phi_fp = phi_v1;
+                phi_v1 = phi_v1 + 0x14;
+                break;
+            case 3:
+                sp2B8 = phi_v1;
+                phi_v1 = phi_v1 + 0x10;
+                break;
+        }
         if (temp_v0_2 != 0) {
             if (temp_v0_2 != 1) {
                 if (temp_v0_2 != 2) {
                     if (temp_v0_2 != 3) {
 
                     } else {
-                        sp2B8 = phi_v1;
-block_10:
-                        phi_v1 = phi_v1 + 0x10;
                     }
                 } else {
-                    phi_fp = phi_v1;
-                    phi_v1 = phi_v1 + 0x14;
                 }
             } else {
-                sp2C0 = phi_v1;
-                goto block_10;
             }
         }
         phi_a1 = phi_a1 + 1;
@@ -2871,22 +2875,15 @@ void func_80014AD4(struct UnkStruct8004A7C4 *arg0) {
     func_800147C8(arg0->unk3C);
 }
 
-#ifdef MIPS_TO_C
-f32 func_80014B04(void *arg0) {
-    f32 temp_f12;
-    f32 temp_f14;
-    f32 temp_f2;
-    struct unkAddr8004A7C8_2 *temp_v0;
+#include "ovl0_5.h"
 
-    temp_v0 = D_8004A7C8->unk3C;
-    temp_f2 = arg0->unk1C - temp_v0->x;
-    temp_f12 = arg0->unk20 - temp_v0->y;
-    temp_f14 = arg0->unk24 - temp_v0->z;
-    return (temp_f2 * temp_f2) + (temp_f12 * temp_f12) + (temp_f14 * temp_f14);
-}
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80014B04.s")
-#endif
+f32 func_80014B04(struct UnkStruct8004A7C4_3C *arg0) {
+    Vector tmp;
+
+    // extremely hacky cast because unk3C meme
+    VEC_SUB(tmp, arg0->unk1C, ((struct UnkStruct8004A7C4_3C_duplicate *)(D_8004A7C8->unk3C))->unk3C);
+    return VEC_MAG_SQUARE(tmp);
+} 
 
 #ifdef MIPS_TO_C
 void func_80014B4C(void *arg0) {

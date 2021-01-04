@@ -29,6 +29,8 @@ struct DynamicBuffer {
     void *top;
 };
 
+extern struct DynamicBuffer gDynamicBuffer1, gDynamicBuffer2;
+
 struct ObjThread
 {
     struct ObjThread *unk0; // function?

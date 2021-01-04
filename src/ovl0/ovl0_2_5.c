@@ -75,7 +75,7 @@ void func_800053B4(u16 arg0, u16 arg1) {
     D_8004A446 = arg1;
 }
 
-extern struct DynamicBuffer gDynamicBuffer2;
+
 
 void init_dynamic_buffer(struct DynamicBuffer *arg0, s32 arg1, s32 arg2, s32 arg3);
 void* alloc_from_dynamic_buffer(struct DynamicBuffer *, u32, u32);

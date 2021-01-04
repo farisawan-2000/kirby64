@@ -226,7 +226,7 @@ void func_802271A8_ovl18(void) {
     s32 temp_v1;
     s32 phi_s0;
 
-    func_80007C00(&func_8000BDF0(0x19, 0x80000000, 0x63, 3, 0xFF)->unk3C->unk8, 10.0f, 10.0f, 310.0f, 230.0f);
+    func_80007C00(&func_8000BDF0(0x19, 0x80000000, 0x63, 3, 0xFF)->unk3C->unk0.z, 10.0f, 10.0f, 310.0f, 230.0f);
     func_800AE048_ovl18(0x40);
     func_800AE0F0_ovl18();
     func_800A6E64_ovl18();

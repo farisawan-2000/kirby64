@@ -198,7 +198,7 @@ glabel func_80035D30
 /* 0369BC 80035DBC 8FBF001C */   lw    $ra, 0x1c($sp)
 .L80035DC0_ovl0:
 /* 0369C0 80035DC0 27A5006A */  addiu $a1, $sp, 0x6a
-/* 0369C4 80035DC4 0C00C555 */  jal   func_80031554
+/* 0369C4 80035DC4 0C00C555 */  jal   __osIdCheckSum
 /* 0369C8 80035DC8 27A60068 */   addiu $a2, $sp, 0x68
 /* 0369CC 80035DCC 97B8006A */  lhu   $t8, 0x6a($sp)
 /* 0369D0 80035DD0 97B90064 */  lhu   $t9, 0x64($sp)

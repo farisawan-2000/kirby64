@@ -2,10 +2,14 @@
 #define D_8004A7C4_H
 #include "types.h"
 
+
+// is this a matrix?
 struct UnkStruct8004A7C4_3C {
-	u32 unk0;
-	u32 unk4;
-	u32 unk8;
+	// u32 unk0;
+	// u32 unk4;
+	// u32 unk8;
+	Vector unk0;
+
 	u32 unkC;
 
 	u32 unk10;
@@ -19,8 +23,10 @@ struct UnkStruct8004A7C4_3C {
 
 	Vector unk30;
 
-	u32 unk3C;
-
+	// TODO: how is this actually structured?
+	// some code thinks unk3C is the vector while others
+	// think unk40 is
+	f32 unk3C;
 	Vector unk40;
 
 	u32 unk4C;
@@ -30,6 +36,38 @@ struct UnkStruct8004A7C4_3C {
 	u32 unk80;
 	u32 unk84;
 };
+
+// only difference is that unk3C is a vector now
+struct UnkStruct8004A7C4_3C_duplicate {
+	// u32 unk0;
+	// u32 unk4;
+	// u32 unk8;
+	Vector unk0;
+	
+	u32 unkC;
+
+	u32 unk10;
+	u32 unk14;
+	u32 unk18;
+
+	Vector unk1C;
+
+	u32 unk28;
+	u32 unk2C;
+
+	Vector unk30;
+
+	Vector unk3C;
+	f32 unk40;
+
+	u32 unk4C;
+	u32 unk50[4];
+	u32 unk60[4];
+	u32 unk70[4];
+	u32 unk80;
+	u32 unk84;
+};
+
 
 // GObj?
 struct UnkStruct8004A7C4 {

@@ -8194,5 +8194,3 @@
 /* 1F2DD4 801E2A94 00000000 */  nop   
 /* 1F2DD8 801E2A98 00000000 */  nop   
 /* 1F2DDC 801E2A9C 00000000 */  nop   
-# Unknown region 1F2DE0-1F3160 [380]
-.incbin "bin/kirby.u.1F2DE0.bin"
