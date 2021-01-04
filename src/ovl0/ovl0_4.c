@@ -6,6 +6,21 @@
 extern s32 D_8004AB9C;
 extern Gfx *gDisplayListHeads[4];
 
+struct unk80017FEC {
+    u8 filler2[0x30];
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    struct unk80017B40* unk3C;
+};
+
+// extern struct {
+//     u32 unk0;
+// } D_8003DCA8;
+extern u32 D_8003DCA8;
+
+extern struct UnkStruct8004A7F8 D_8004A7F8[];
+
 s32 D_8003DF10 = 0x0000000A;
 s32 D_8003DF14 = 0x0000000A;
 s32 D_8003DF18 = 0x0000000A;
@@ -4688,7 +4703,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_8001663C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
+void func_80016940(Gfx** arg0, Vp *arg1, s32 arg2) {
     void *sp84;
     void *sp3C;
     s32 sp24;
@@ -4712,9 +4727,6 @@ void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
     s32 temp_t4;
     u32 temp_t5;
     u32 temp_v0_2;
-    void *temp_a0;
-    void *temp_a0_2;
-    void *temp_a0_3;
     void *temp_a1_4;
     void *temp_a2_2;
     void *temp_a2_3;
@@ -4727,7 +4739,6 @@ void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
     void *temp_v1;
     void *temp_v1_2;
     void *temp_v1_3;
-    void *temp_v1_4;
     void *temp_v1_5;
     void *phi_v1;
     s32 phi_t3;
@@ -4747,10 +4758,12 @@ void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
             phi_v1 = *arg0;
         }
     }
-    temp_a0 = phi_v1;
-    temp_a0->unk0 = 0xDC080008;
-    temp_v0 = arg1 + 8;
-    temp_a0->unk4 = temp_v0;
+    gSPViewport(*arg0++, arg1[2]);
+    // temp_a0 = phi_v1;
+    // temp_a0->unk0 = 0xDC080008;
+    // temp_v0 = arg1 + 8;
+    // temp_a0->unk4 = temp_v0;
+
     temp_t5 = gCurrScreenWidth;
     temp_v1_2 = phi_v1 + 8;
     temp_a1 = temp_v0->unk8 / 4;
@@ -4794,72 +4807,100 @@ void func_80016940(Gfx** arg0, void *arg1, s32 arg2) {
     temp_v0_4 = temp_v1_2;
     phi_v1_2 = temp_v1_2;
     if ((arg1->unk80 & 1) != 0) {
-        temp_v1_2 = temp_v1_2 + 8;
-        temp_a0_2 = temp_v1_2;
-        temp_v0_4->unk0 = 0xE7000000; // gDPPipeSync(...)
-        temp_v0_4->unk4 = 0;
-        temp_v1_2 = temp_v1_2 + 8;
-        temp_a0_2->unk4 = 0x300000;   // gDPSetCycleType(..., G_CYC_FILL)
-        temp_a0_2->unk0 = 0xE3000A01;
-        temp_v1_2->unk0 = 0xE200001C; // gDPSetRenderMode(..., G_RM_NOOP, G_RM_NOOP2),
-        temp_v1_2->unk4 = 0;
-        temp_v1_2 = temp_v1_2 + 8;
-        temp_a2_2 = temp_v1_2;
-        temp_a2_2->unk0 = ((gCurrScreenWidth - 1) & 0xFFF) | 0xFF100000; // gsDPSetColorImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, gCurrScreenWidth, gZBuffer)
-        temp_v1_2 = temp_v1_2 + 8;
-        temp_a2_2->unk4 = gZBuffer;
-        temp_v1_2->unk4 = 0xFFFCFFFC; // gDPSetFillColor(..., GPACK_RGBA5551(248, 248, 248, 0) << 16 | GPACK_RGBA5551(248, 248, 248, 0))
-        temp_v1_2->unk0 = 0xF7000000;
-        temp_v1_2 = temp_v1_2 + 8;
-        temp_v1_2->unk0 = ((temp_t1_2 & 0x3FF) << 0xE) | 0xF6000000 | ((temp_t2_2 & 0x3FF) * 4);
-        temp_v1_2->unk4 = ((phi_t3 & 0x3FF) << 0xE) | ((phi_t4 & 0x3FF) * 4);
-        phi_v1_2 = temp_v1_2 + 8;
+        gDPPipeSync(*arg0++);
+        // temp_v1_2 = temp_v1_2 + 8;
+        // temp_a0_2 = temp_v1_2;
+        // temp_v0_4->unk0 = 0xE7000000;
+        // temp_v0_4->unk4 = 0;
+        gDPSetCycleType(*arg0++, G_CYC_FILL);
+        // temp_v1_2 = temp_v1_2 + 8;
+        // temp_a0_2->unk4 = 0x300000;
+        // temp_a0_2->unk0 = 0xE3000A01;
+
+        gDPSetRenderMode(*arg0++, G_RM_NOOP, G_RM_NOOP2);
+        // temp_v1_2->unk0 = 0xE200001C; // gDPSetRenderMode(*arg0++, G_RM_NOOP, G_RM_NOOP2);
+        // temp_v1_2->unk4 = 0;
+
+        gDPSetColorImage(*arg0++, G_IM_FMT_RGBA, G_IM_SIZ_16b, gCurrScreenWidth, gZBuffer);
+        // temp_v1_2 = temp_v1_2 + 8;
+        // temp_a2_2 = temp_v1_2;
+        // temp_a2_2->unk0 = ((gCurrScreenWidth - 1) & 0xFFF) | 0xFF100000;
+
+        gDPSetFillColor(*arg0++, GPACK_RGBA5551(248, 248, 248, 0) << 16 | GPACK_RGBA5551(248, 248, 248, 0));
+        // temp_v1_2 = temp_v1_2 + 8;
+        // temp_a2_2->unk4 = gZBuffer;
+        // temp_v1_2->unk4 = 0xFFFCFFFC; // 
+        // temp_v1_2->unk0 = 0xF7000000;
+
+        gDPFillRectangle(*arg0++, temp_t1_2, temp_t2_2, phi_t3, phi_t4);
+        // temp_v1_2 = temp_v1_2 + 8;
+        // temp_v1_2->unk0 = ((temp_t1_2 & 0x3FF) << 0xE) | 0xF6000000 | ((temp_t2_2 & 0x3FF) * 4);
+        // temp_v1_2->unk4 = ((phi_t3 & 0x3FF) << 0xE) | ((phi_t4 & 0x3FF) * 4);
+        // phi_v1_2 = temp_v1_2 + 8;
     }
-    temp_v0_5 = phi_v1_2;
-    temp_v0_5->unk0 = 0xE7000000;
-    temp_v0_5->unk4 = 0;
-    temp_v1_3 = phi_v1_2 + 8;
-    temp_v1_3->unk4 = 0xF000000;
-    temp_v1_3->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((gCurrScreenWidth - 1) & 0xFFF);
-    temp_v1_3 = temp_v1_3 + 8;
-    phi_v1_3 = temp_v1_3;
+
+    gDPPipeSync(*arg0++);
+    // temp_v0_5 = phi_v1_2;
+    // temp_v0_5->unk0 = 0xE7000000;
+    // temp_v0_5->unk4 = 0;
+
+    gDPSetColorImage(*arg0++, G_IM_FMT_RGBA, D_8004A504, gCurrScreenWidth, 0x0F000000);
+    // temp_v1_3 = phi_v1_2 + 8;
+    // temp_v1_3->unk4 = 0x0F000000;
+    // temp_v1_3->unk0 = ((D_8004A504 & 3) << 0x13) | 0xFF000000 | ((gCurrScreenWidth - 1) & 0xFFF);
+    // temp_v1_3 = temp_v1_3 + 8;
+    // phi_v1_3 = temp_v1_3;
     if ((arg1->unk80 & 2) != 0) {
-        temp_v1_3->unk0 = 0xE3000A01;
-        temp_a1_4 = temp_v1_3 + 8;
-        temp_v1_3->unk4 = 0x300000;
-        temp_a1_4->unk4 = 0;
-        temp_a1_4->unk0 = 0xE200001C;
-        temp_a2_3 = temp_a1_4 + 8;
-        temp_a2_3->unk0 = 0xF7000000;
-        sp24 = ((temp_t1_2 & 0x3FF) << 0xE) | 0xF6000000 | ((temp_t2_2 & 0x3FF) * 4);
-        temp_v1_4 = temp_a2_3 + 8;
-        sp84 = temp_v1_4;
-        sp20 = ((phi_t3 & 0x3FF) << 0xE) | ((phi_t4 & 0x3FF) * 4);
-        sp3C = temp_a2_3;
-        temp_a2_3->unk4 = func_800078F0(arg1->unk84);
-        temp_a0_3 = temp_v1_4;
-        temp_a0_3->unk0 = sp24;
-        temp_a0_3->unk4 = sp20;
-        phi_v1_3 = temp_v1_4 + 8;
+        gDPSetCycleType(*arg0++, G_CYC_FILL);
+        // temp_v1_3->unk0 = 0xE3000A01;
+        // temp_v1_3->unk4 = 0x300000;
+
+        gDPSetRenderMode(*arg0++, G_RM_NOOP, G_RM_NOOP2);
+        // temp_a1_4 = temp_v1_3 + 8;
+        // temp_a1_4->unk4 = 0;
+        // temp_a1_4->unk0 = 0xE200001C;
+
+        gDPSetFillColor(*arg0++, func_800078F0(arg1->unk84));
+        // temp_a2_3 = temp_a1_4 + 8;
+        // temp_a2_3->unk0 = 0xF7000000;
+        // temp_a2_3->unk4 = func_800078F0(arg1->unk84);
+
+        // temp_v1_4 = temp_a2_3 + 8;
+        // sp84 = temp_v1_4;
+
+        // sp3C = temp_a2_3;
+        // temp_a0_3 = temp_v1_4;
+
+        gDPFillRectangle(*arg0++, temp_t1_2, temp_t2_2, phi_t3, phi_t4);
+        // sp24 = ((temp_t1_2 & 0x3FF) << 0xE) | 0xF6000000 | ((temp_t2_2 & 0x3FF) * 4);
+        // temp_a0_3->unk0 = sp24;
+        // sp20 = ((phi_t3 & 0x3FF) << 0xE) | ((phi_t4 & 0x3FF) * 4);
+        // temp_a0_3->unk4 = sp20;
+        // phi_v1_3 = temp_v1_4 + 8;
     }
-    temp_v0_6 = phi_v1_3;
-    temp_v1_5 = phi_v1_3 + 8;
-    temp_v0_6->unk0 = 0xE7000000;
-    temp_v0_6->unk4 = 0;
-    temp_v1_5->unk0 = 0xE3000A01;
-    temp_v1_5->unk4 = 0;
-    temp_v1_5 = temp_v1_5 + 8;
-    temp_v0_7 = temp_v1_5;
+    gDPPipeSync(*arg0++);
+    // temp_v0_6 = phi_v1_3;
+    // temp_v1_5 = phi_v1_3 + 8;
+    // temp_v0_6->unk0 = 0xE7000000;
+    // temp_v0_6->unk4 = 0;
+
+    gDPSetCycleType(*arg0++, G_CYC_1CYCLE);
+    // temp_v1_5->unk0 = 0xE3000A01;
+    // temp_v1_5->unk4 = 0;
+    // temp_v1_5 = temp_v1_5 + 8;
+
     if ((arg2 == 0) || (arg2 == 2)) {
-        temp_v0_7->unk4 = 0x552078;
-        temp_v0_7->unk0 = 0xE200001C;
-        phi_v1_4 = temp_v1_5 + 8;
+        // temp_v0_7->unk4 = 0x552078;
+        // temp_v0_7->unk0 = 0xE200001C;
+        // phi_v1_4 = temp_v1_5 + 8;
+        gDPSetRenderMode(*arg0++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
     } else {
-        temp_v1_5->unk4 = 0x5049D8;
-        temp_v1_5->unk0 = 0xE200001C;
-        phi_v1_4 = temp_v1_5 + 8;
+        // temp_v1_5->unk4 = 0x5049D8;
+        // temp_v1_5->unk0 = 0xE200001C;
+        // phi_v1_4 = temp_v1_5 + 8;
+        gDPSetRenderMode(*arg0++, G_RM_AA_ZB_XLU_SURF, G_RM_AA_ZB_XLU_SURF2);
     }
-    *arg0 = phi_v1_4;
+    // *arg0 = phi_v1_4;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80016940.s")
@@ -5043,41 +5084,33 @@ struct unk80017B40 {
 };
 
 void func_80017B40(struct unk80017B40 *arg0, s32 arg1) {
-    if (arg0->unk88 != NULL)
-    {
+    if (arg0->unk88 != NULL) {
         arg0->unk88(arg0, arg1);
     }
 }
 
-#ifdef MIPS_TO_C
-void func_80017B6C(void *arg0, s32 arg1, s32 arg2) {
-    void *temp_s0;
-    void *temp_s0_2;
-    void *phi_s0;
+// extern u8 *D_8003DCA8;
+extern struct UnkStruct8004A7C4 *D_8004A680[];
+extern u32 D_8003DE54;
 
-    temp_s0 = ((arg1 * 4) + 0x80050000)->unk-5980;
-    if (temp_s0 != 0) {
-        phi_s0 = temp_s0;
-loop_2:
-        if ((phi_s0->unk44 & 1) == 0) {
-            if ((arg2 != 0) || ((arg0->unk34 & phi_s0->unk34) == 0)) {
-                if ((arg2 == 1) && (phi_s0->unk34 == arg0->unk34)) {
-block_7:
+#ifdef MIPS_TO_C
+void func_80017B6C(struct UnkStruct8004A7C4 *arg0, s32 arg1, s32 arg2) {
+    struct UnkStruct8004A7C4 *temp_s0;
+
+    temp_s0 = D_8004A680[arg1];
+    while (temp_s0 != 0) {
+        temp_s0 = temp_s0;
+        if ((temp_s0->unk44 & 1) == 0) {
+            if ((arg2 != 0) || ((arg0->unk34 & temp_s0->unk34) == 0) ||
+                ((arg2 == 1) && (temp_s0->unk34 == arg0->unk34))) {
                     D_8003DE54 = 4;
-                    D_8004A7CC = phi_s0;
-                    phi_s0->unk2C(phi_s0);
+                    D_8004A7CC = temp_s0;
+                    temp_s0->unk2C(temp_s0);
                     D_8003DE54 = 3;
-                    phi_s0->unkE = *D_8003DCA8;
-                }
-            } else {
-                goto block_7;
+                    temp_s0->unkE = *(u32 *)D_8003DCA8;
             }
         }
-        temp_s0_2 = phi_s0->unk20;
-        phi_s0 = temp_s0_2;
-        if (temp_s0_2 != 0) {
-            goto loop_2;
-        }
+        temp_s0 = temp_s0->unk20;
     }
 }
 #else
@@ -5182,23 +5215,12 @@ void func_80017DB0(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017DB0.s")
 #endif
 
-struct unk80017FEC {
-    u8 filler2[0x30];
-    u32 unk30;
-    u32 unk34;
-    u32 unk38;
-    struct unk80017B40* unk3C;
-};
-
-extern u8 D_8003DCA8[];
-
-extern struct UnkStruct8004A7F8 D_8004A7F8[];
 
 void func_80017DB0(s32);
-void func_80017E84(struct unk80017FEC*, u32);
-void func_80017C7C(struct unk80017FEC*, s32, u32);
+void func_80017E84(struct UnkStruct8004A7C4*, u32);
+void func_80017C7C(struct UnkStruct8004A7C4*, s32, u32);
 
-void func_80017E84(struct unk80017FEC *arg0, u32 arg1) {
+void func_80017E84(struct UnkStruct8004A7C4 *arg0, u32 arg1) {
     s32 temp_a1;
     u32 temp_s1;
     u32 phi_s1;
@@ -5213,7 +5235,8 @@ void func_80017E84(struct unk80017FEC *arg0, u32 arg1) {
             if ((phi_s2 & 1) != 0) {
                 temp_a1 = phi_s0;
                 // D_8003DCA8 could be a struct? Seems strange to have an exact array index
-                if (D_8003DCA8[3] == D_8004A7F8[phi_s0].unk0) {
+                // update: probably the case
+                if ((u8)D_8003DCA8 == D_8004A7F8[phi_s0].unk0) {
                     func_80017DB0(phi_s0);
                 } else {
                     func_80017C7C(arg0, temp_a1, arg1);
@@ -5248,7 +5271,7 @@ void func_80017F78(struct unk80017B40 *arg0) {
 void func_80016940(Gfx**, void *, s32);
 void func_800171E0(Gfx**, void *);
 
-void func_80017FEC(struct unk80017FEC *arg0, Gfx** arg1, s32 arg2) {
+void func_80017FEC(struct UnkStruct8004A7C4 *arg0, Gfx** arg1, s32 arg2) {
     struct unk80017B40 *temp_s0;
 
     temp_s0 = arg0->unk3C;
@@ -5261,19 +5284,19 @@ void func_80017FEC(struct unk80017FEC *arg0, Gfx** arg1, s32 arg2) {
 }
 
 // arg0 is the value at 8004A7C8
-void func_8001806C(struct unk80017FEC *arg0) {
+void func_8001806C(struct UnkStruct8004A7C4 *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[0], 0);
 }
 
-void func_80018094(struct unk80017FEC *arg0) {
+void func_80018094(struct UnkStruct8004A7C4 *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[1], 1);
 }
 
-void func_800180BC(struct unk80017FEC *arg0) {
+void func_800180BC(struct UnkStruct8004A7C4 *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[2], 2);
 }
 
-void func_800180E4(struct unk80017FEC *arg0) {
+void func_800180E4(struct UnkStruct8004A7C4 *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[3], 3);
 }
 
@@ -5293,7 +5316,7 @@ void func_8001810C(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80018170(struct unk80017FEC *arg0) {
+void func_80018170(struct UnkStruct8004A7C4 *arg0) {
     Gfx **temp_s1_3;
     Gfx *temp_s1;
     Gfx *temp_s1_2;

@@ -57,6 +57,6 @@ struct UnkStruct8004A7C4 {
 	u32 unk48;
 	u32 unk4C;
 };
-extern struct UnkStruct8004A7C4 *D_8004A7C4;
+extern struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
 extern struct UnkStruct8004A7C4 *D_800DE44C;
 #endif

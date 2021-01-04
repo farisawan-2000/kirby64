@@ -23,4 +23,4 @@ struct unkAddr8004A7C8 {
     struct unkAddr8004A7C8_2* unk3C;
 };
 
-extern struct unkAddr8004A7C8* D_8004A7C8;
+// extern struct unkAddr8004A7C8* D_8004A7C8;

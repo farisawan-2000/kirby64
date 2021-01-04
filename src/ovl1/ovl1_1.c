@@ -41,11 +41,6 @@ extern const char D_800D5B48[];
 
 extern u32 D_8003DE54;
 extern struct ObjThreadStack *D_8004A7D0;
-extern struct unkAddr8004A7C8 *D_8004A7C8;
-extern struct {
-    u8 fill[0x2C];
-    u32 unk2C;
-} *D_8004A7CC;
 extern u32 D_80048D88, D_80048D8C, D_80048D90;
 
 #ifdef NON_MATCHING
