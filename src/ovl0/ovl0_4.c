@@ -5089,7 +5089,6 @@ void func_80017B40(struct unk80017B40 *arg0, s32 arg1) {
     }
 }
 
-// extern u8 *D_8003DCA8;
 extern struct UnkStruct8004A7C4 *D_8004A680[];
 extern u32 D_8003DE54;
 
@@ -5101,14 +5100,16 @@ void func_80017B6C(struct UnkStruct8004A7C4 *arg0, s32 arg1, s32 arg2) {
     while (temp_s0 != 0) {
         temp_s0 = temp_s0;
         if ((temp_s0->unk44 & 1) == 0) {
-            if ((arg2 != 0) || ((arg0->unk34 & temp_s0->unk34) == 0) ||
-                ((arg2 == 1) && (temp_s0->unk34 == arg0->unk34))) {
+            if ((arg2 != 0) || ((arg0->unk34 & temp_s0->unk34)) 
+                // TODO: figure out how to make this comparison use different registers
+                // than the last one
+                || ((arg2 == 1) && (arg0->unk34 == temp_s0->unk34))) {
                     D_8003DE54 = 4;
                     D_8004A7CC = temp_s0;
                     temp_s0->unk2C(temp_s0);
                     D_8003DE54 = 3;
-                    temp_s0->unkE = *(u32 *)D_8003DCA8;
-            }
+                    temp_s0->unkE = D_8003DCA8;
+                }
         }
         temp_s0 = temp_s0->unk20;
     }
@@ -5187,36 +5188,37 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017C7C.s")
 
 extern Gfx *gDisplayListHeads[4];
 
-extern struct UnkStruct8004A7F8 D_8004A7F8[];
-// TODO: figure out datatype to pass into gSPDisplayList
-#ifdef MIPS_TO_C
+
+// TODO: regalloc into v1 instead of v0
+#ifdef NON_MATCHING
 void func_80017DB0(s32 arg0) {
-    Gfx *temp_t3;
-    Gfx *temp_t9;
     struct UnkStruct8004A7F8 *temp_v1;
-    void *temp_t1;
-    void *temp_t7;
+    int tmp = 0;
+    // tmp = 0;
 
     temp_v1 = &D_8004A7F8[arg0];
-    if (temp_v1->unk4 != 0) {
-        gSPDisplayList(gDisplayListHeads[0]++, temp_v1->unk4);
-    }
-    if (temp_v1->unk8 != 0) {
-        gSPDisplayList(gDisplayListHeads[1]++, temp_v1->unk8);
-    }
-    if (temp_v1->unkC != 0) {
-        gSPDisplayList(gDisplayListHeads[2]++, temp_v1->unkC);
-    }
-    if (temp_v1->unk10 != 0) {
-        gSPDisplayList(gDisplayListHeads[3]++, temp_v1->unk10);
-    }
+
+    if (temp_v1->unk4)
+        gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk4);
+
+    tmp = 1;
+    if (temp_v1->unk8)
+        gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk8);
+
+    tmp = 2;
+    if (temp_v1->unkC)
+        gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unkC);
+
+    tmp = 3;
+    if (temp_v1->unk10)
+        gSPDisplayList(gDisplayListHeads[tmp]++, temp_v1->unk10);
 }
 #else
+void func_80017DB0(u32 arg0);
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017DB0.s")
 #endif
 
 
-void func_80017DB0(s32);
 void func_80017E84(struct UnkStruct8004A7C4*, u32);
 void func_80017C7C(struct UnkStruct8004A7C4*, s32, u32);
 
