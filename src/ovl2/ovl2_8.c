@@ -799,7 +799,7 @@ struct UnkStruct801290D8 {
     u16 unk14;
 };
 
-extern s8 D_8012E7D7;
+extern u8 D_8012E7D7;
 extern s32 D_800D6B54, D_800D6B58, D_800BE4F8, D_800D708C;
 extern struct UnkStruct801290D8 *D_801290D8;
 void change_kirby_hp(f32);
@@ -2084,33 +2084,15 @@ f32 func_801210FC_ovl2(void) {
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801210FC_ovl2.s")
 #endif
 
-#ifdef MIPS_TO_C
 u32 func_80121194(void) {
-    f32 temp_f0;
-    u32 phi_return;
-
-    phi_return = 0;
-    if (D_8012E7D7 == 0) {
-        temp_f0 = D_800E6A10[D_8004A7C4->objId];
-        if (temp_f0 == 1.0f) {
-            if (D_800D6FE8.buttonHeld & 0x200) {
-                return 1;
-            }
-        }
-        phi_return = (u32) temp_f0;
-        if (temp_f0 == -1.0f) {
-            phi_return = (u32) temp_f0;
-            if (D_800D6FE8.buttonHeld & 0x100) {
-                return 1;
-            }
-        }
+    if (D_8012E7D7 == 0
+        && ((D_800E6A10[D_8004A7C4->objId] == 1.0f && D_800D6FE8.buttonHeld & L_JPAD)
+        ||  (D_800E6A10[D_8004A7C4->objId] == -1.0f && D_800D6FE8.buttonHeld & R_JPAD))
+        ) {
+        return 1;
     }
-    return phi_return;
+    return 0;
 }
-
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121194_ovl2.s")
-#endif
 
 #ifdef MIPS_TO_C
 ? func_8012122C_ovl2(void) {
