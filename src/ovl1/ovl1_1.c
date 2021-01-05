@@ -502,13 +502,13 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A336C.s")
 void func_800A3408(void) {
     if (1 == D_800D6B90) {
         if (1 == D_800D6B94) {
-            load_overlay(0x12);
+            load_overlay(18);
             if (func_80227308_ovl1(0) != 0) {
                 D_800BE4F4 = D_800BE4F0;
 loop_4:
                 D_800BE4F0 = 0xE;
                 func_800A3150_ovl1(4);
-                load_overlay(0x12);
+                load_overlay(18);
                 if (func_80227308_ovl1(1) == 1) {
                     goto loop_4;
                 }
@@ -2740,10 +2740,9 @@ u8 func_800A6B64(void) {
     dma_read(0x00000F10, &sp18, 0x10);
     if (sp18[0] != 0x04080040) {
         return 0;
-    } else 
-        if (sp18[1] != 0x02081040) {
-            return 0;
-        }
-     else return 1;
+    } else if (sp18[1] != 0x02081040) {
+        return 0;
+    }
+    else return 1;
 }
 
