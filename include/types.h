@@ -126,6 +126,9 @@ struct KirbyState {
     u32 unk28;
     u32 unk2C;
     u32 unk30;
+    // u8 unk31;
+    // u8 unk32;
+    // u8 unk33;
     u32 isTurning;				// 0x34
     f32 unk38;
     u32 unk3C;
@@ -150,7 +153,8 @@ struct KirbyState {
     f32 unk7C;
     f32 unk80;
     u32 unk84;
-    u32 unk88;
+    u16 unk88;
+    u16 unk8A;
     u32 unk8C;
     u32 ability;					// 0x90
     u32 currentInhale;			// 0x94
@@ -182,7 +186,8 @@ struct KirbyState {
     u8 isTakingDamage;			// 0xDC
     u8 droppedAbility;			// 0xDD
     u16 abilityDropTimer;		// 0xDE
-    u32 hpAfterDamage;			// 0xE0
+    u16 hpAfterDamage;			// 0xE0
+    u16 unkE2;
     u32 ceilingCollisionNext;	// 0xE4
     u32 floorCollisionNext;	// 0xE8
     u32 rightCollisionNext;	// 0xEC
@@ -231,7 +236,7 @@ struct KirbyState {
 
     Vec3f vel;					// 0x74
 
-    u32 unk180;
+    f32 unk180;
     u32 unk184;
     u32 unk188;
     u32 unk18C;

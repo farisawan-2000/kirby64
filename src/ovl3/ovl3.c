@@ -11,7 +11,6 @@ extern void set_kirby_action_1(s16 a, s16 b);
  
 
 extern Controller_800D6FE8 D_800D6FE8;
-// extern u16 D_800D6FEA;
 
 u32 func_80151100_ovl3(void) {
     if (!(gKirbyState.isTurning & 1)) {

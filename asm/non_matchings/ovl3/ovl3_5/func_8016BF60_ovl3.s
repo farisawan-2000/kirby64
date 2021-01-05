@@ -31,7 +31,7 @@ glabel func_8016BF60_ovl3
 /* 0CCA10 8016BFD0 008C2021 */  addu  $a0, $a0, $t4
 /* 0CCA14 8016BFD4 0C02C7B2 */  jal   func_800B1EC8
 /* 0CCA18 8016BFD8 8C84E890 */   lw    $a0, -0x1770($a0)
-/* 0CCA1C 8016BFDC 0C04723E */  jal   func_8011C8F8_ovl3
+/* 0CCA1C 8016BFDC 0C04723E */  jal   func_8011C8F8
 /* 0CCA20 8016BFE0 00000000 */   nop   
 /* 0CCA24 8016BFE4 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0CCA28 8016BFE8 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

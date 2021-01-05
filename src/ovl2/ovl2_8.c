@@ -596,7 +596,7 @@ void func_8011C8D0(void) {
 
 
 extern f32 D_80128E28;
-extern f32 D_800BE50C;
+extern s32 D_800BE50C;
 extern f32 D_800BE510;
 extern f32 D_80128E24;
 extern s32 D_800B531C;
@@ -612,10 +612,13 @@ extern struct {
     u32 unkC;
     u32 unk10;
 } D_80198830;
-#ifdef MIPS_TO_C
+
+void func_800F88C8_ovl2(s32, s32, f32);
+// some sort of init_kirby function?
+#ifdef MIPS_TO_C 
 void func_8011C8F8(void) {
     f32 temp_f0;
-    s32 temp_t7;
+    u32 temp_t7;
     s32 temp_v0_3;
     u32 temp_a3;
 
@@ -635,11 +638,13 @@ void func_8011C8F8(void) {
     D_800E8AE0[D_8004A7C4->objId] = 0;
     D_800E7CE0[D_8004A7C4->objId] = 0;
     D_800E7EA0[D_8004A7C4->objId] = 0;
+
     D_800E8060[D_8004A7C4->objId] = 0;
     D_800E8760[D_8004A7C4->objId] = 0;
     gKirbyState.actionChange = -1;
     gKirbyState.action = 0;
     gKirbyState.previousAction = 0;
+    // this is explicitly `andi t7, r0, 0xFF`
     temp_t7 = 0 & 0xFF;
     if (D_800BE4F0 == 0x21) {
         gKirbyState.abilityInUse = 0;
@@ -651,11 +656,11 @@ void func_8011C8F8(void) {
     gKirbyState.unk7 = 0;
     gKirbyState.unk24 = 0;
     gKirbyState.unk9 = 0;
-    gKirbyState.isTurning = 0 & 0xFF;
+    gKirbyState.isTurning = temp_t7 & 0xFF;
     gKirbyState.unk30 = temp_t7 & 0xFF;
     gKirbyState.unkA = 0;
-    gKirbyState.turnDirection = temp_t7;
-    gKirbyState.unk8 = temp_t7;
+    gKirbyState.turnDirection = 0;
+    gKirbyState.unk8 = 0;
     gKirbyState.unk14 = 0;
     gKirbyState.unk150 = 0;
     gKirbyState.unk153 = 0;
@@ -685,8 +690,8 @@ void func_8011C8F8(void) {
     gKirbyState.unk70 = 0;
     gKirbyState.unk74 = 0;
     gKirbyState.abilityState = 0;
-    gKirbyState.unk18 = temp_t7;
-    gKirbyState.unk17 = temp_t7;
+    gKirbyState.unk18 = temp_t7 & 0xFF;
+    gKirbyState.unk17 = temp_t7 & 0xFF;
     gKirbyState.unkB = 0;
     gKirbyState.unk15C = 0;
     gKirbyState.unk154 = 0;
@@ -737,11 +742,11 @@ extern s32 D_800E8AE0[];
 
 void func_8011CF58_ovl2(void) {
     if (D_800E8AE0[D_8004A7C4->objId] & 6) {
-        func_800AECC0(1.f);
-        func_800AED20_ovl2(1.f);
+        func_800AECC0(1.0f);
+        func_800AED20_ovl2(1.0f);
     } else {
-        func_800AECC0(2.f);
-        func_800AED20_ovl2(2.f);
+        func_800AECC0(2.0f);
+        func_800AED20_ovl2(2.0f);
     }
 }
 
