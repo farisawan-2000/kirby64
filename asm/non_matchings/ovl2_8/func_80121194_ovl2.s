@@ -1,4 +1,4 @@
-glabel func_80121194_ovl2
+glabel func_80121194
 /* 0A9C04 80121194 3C0E8013 */  lui   $t6, %hi(D_8012E7D7) # $t6, 0x8013
 /* 0A9C08 80121198 91CEE7D7 */  lbu   $t6, %lo(D_8012E7D7)($t6)
 /* 0A9C0C 8012119C 3C0F8005 */  lui   $t7, %hi(D_8004A7C4) # $t7, 0x8005

@@ -1548,7 +1548,7 @@ asm/non_matchings/ovl2_8/func_80120CCC.s
 asm/non_matchings/ovl2_8/func_80120E74_ovl2.s
 asm/non_matchings/ovl2_8/func_801210B4_ovl2.s
 asm/non_matchings/ovl2_8/func_801210FC_ovl2.s
-asm/non_matchings/ovl2_8/func_80121194_ovl2.s
+asm/non_matchings/ovl2_8/func_80121194.s
 asm/non_matchings/ovl2_8/func_8012122C_ovl2.s
 asm/non_matchings/ovl2_8/func_80121284_ovl2.s
 asm/non_matchings/ovl2_8/func_801212A4_ovl2.s

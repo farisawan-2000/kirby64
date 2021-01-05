@@ -49,7 +49,7 @@ glabel func_80185224_ovl3
 /* 0E5D14 801852D4 314B0001 */  andi  $t3, $t2, 1
 /* 0E5D18 801852D8 5560000A */  bnezl $t3, .L80185304_ovl3
 /* 0E5D1C 801852DC 8CEE00E4 */   lw    $t6, 0xe4($a3)
-/* 0E5D20 801852E0 0C048465 */  jal   func_80121194_ovl3
+/* 0E5D20 801852E0 0C048465 */  jal   func_80121194
 /* 0E5D24 801852E4 00000000 */   nop   
 /* 0E5D28 801852E8 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0E5D2C 801852EC 10400004 */  beqz  $v0, .L80185300_ovl3

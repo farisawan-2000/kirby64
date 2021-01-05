@@ -376,7 +376,7 @@ glabel func_8018F368_ovl3
 /* 0F0310 8018F8D0 318D0001 */  andi  $t5, $t4, 1
 /* 0F0314 8018F8D4 55A0000A */  bnezl $t5, .L8018F900_ovl3
 /* 0F0318 8018F8D8 8D0F00E4 */   lw    $t7, 0xe4($t0)
-/* 0F031C 8018F8DC 0C048465 */  jal   func_80121194_ovl3
+/* 0F031C 8018F8DC 0C048465 */  jal   func_80121194
 /* 0F0320 8018F8E0 00000000 */   nop   
 /* 0F0324 8018F8E4 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0F0328 8018F8E8 10400004 */  beqz  $v0, .L8018F8FC_ovl3

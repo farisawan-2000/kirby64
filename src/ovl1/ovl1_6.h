@@ -13,6 +13,7 @@ extern s32 D_800DDC50[];
 extern s32 D_800DD8D0[];
 extern s32 D_800E0810[];
 
+
 extern f32 D_800E0B90[];
 extern f32 D_800E09D0[];
 extern s32 D_800E0F10[];
@@ -28,11 +29,12 @@ extern u32 D_800DF850[];
 extern u32 D_800DF690[];
 extern u32 D_800DF4D0[];
 
+// i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
+extern struct LayoutNode **D_800DFBD0[];
 extern s32 D_800E0110[];
 extern s32 D_800DFF50[];
 extern s32 D_800E02D0[];
 
-extern s32 D_800DFBD0[];
 extern f32 D_800E2410[];
 extern f32 D_800E2250[];
 extern f32 D_800E2090[];

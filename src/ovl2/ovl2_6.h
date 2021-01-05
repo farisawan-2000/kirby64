@@ -1,3 +1,6 @@
+#ifndef _OVL2_6_H_
+#define _OVL2_6_H_
+
 #include "types.h"
 
 struct Level
@@ -341,3 +344,4 @@ struct CollisionState {
 #define DOUBLE_SIDED_NORMAL (FORWARD_NORMAL | BACKWARD_NORMAL)
 
 
+#endif

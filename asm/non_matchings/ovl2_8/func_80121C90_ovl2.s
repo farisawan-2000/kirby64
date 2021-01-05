@@ -7,7 +7,7 @@ glabel func_80121C90_ovl2
 /* 0AA714 80121CA4 31CF0001 */  andi  $t7, $t6, 1
 /* 0AA718 80121CA8 55E00014 */  bnezl $t7, .L80121CFC_ovl2
 /* 0AA71C 80121CAC 8C62002C */   lw    $v0, 0x2c($v1)
-/* 0AA720 80121CB0 0C048465 */  jal   func_80121194_ovl2
+/* 0AA720 80121CB0 0C048465 */  jal   func_80121194
 /* 0AA724 80121CB4 00000000 */   nop   
 /* 0AA728 80121CB8 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0AA72C 80121CBC 10400007 */  beqz  $v0, .L80121CDC_ovl2

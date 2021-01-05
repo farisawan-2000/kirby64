@@ -972,14 +972,14 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80153668_ovl3.s")
 s32 func_80153808_ovl3(void) {
     if ((gKirbyState.floorCollisionNext & 0xC00) != 0) {
         if ((gKirbyState.floorCollisionNext & 0x400) != 0) {
-            if (1.0f == ((*D_8004A7C4 * 4) + 0x800E0000)->unk6A10) {
+            if (D_800E6A10[D_8004A7C4->objId] == 1.0f) {
                 gKirbyState.unk150 = (u8)2;
                 return gKirbyState.floorCollisionNext;
             }
             gKirbyState.unk150 = (u8)1;
             return gKirbyState.floorCollisionNext;
         }
-        if (-1.0f == ((**(void *)0x8004A7C4 * 4) + 0x800E0000)->unk6A10) {
+        if (D_800E6A10[D_8004A7C4->objId] == -1.0f) {
             gKirbyState.unk150 = (u8)2;
             return gKirbyState.floorCollisionNext;
         }

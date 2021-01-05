@@ -160,7 +160,7 @@ glabel func_8017CAF8_ovl3
 /* 0DD784 8017CD44 316C0001 */  andi  $t4, $t3, 1
 /* 0DD788 8017CD48 5580000A */  bnezl $t4, .L8017CD74_ovl3
 /* 0DD78C 8017CD4C 8CF800E4 */   lw    $t8, 0xe4($a3)
-/* 0DD790 8017CD50 0C048465 */  jal   func_80121194_ovl3
+/* 0DD790 8017CD50 0C048465 */  jal   func_80121194
 /* 0DD794 8017CD54 00000000 */   nop   
 /* 0DD798 8017CD58 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0DD79C 8017CD5C 10400004 */  beqz  $v0, .L8017CD70_ovl3

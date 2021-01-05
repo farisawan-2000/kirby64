@@ -2546,7 +2546,7 @@ struct KirbyState *func_801717F0_ovl3(s32 arg0) {
                 (temp_v0 + 0x800E0000)->unk3210 = *(&D_800E3750 + temp_v0);
                 ((*temp_v1 * 4) + 0x800E0000)->unk3C90 = D_801973E4;
             }
-            if (func_80121194_ovl3() != 0) {
+            if (func_80121194() != 0) {
                 temp_v1_2 = D_8004A7C4;
                 temp_v0_2 = *temp_v1_2 * 4;
                 if (((temp_v0_2 + 0x800F0000)->unk-7520 & 6) != 0) {
@@ -2763,7 +2763,7 @@ u32 func_80172234_ovl3(s32 arg0) {
                     phi_return = temp_v0_2;
                 }
                 if (gKirbyState.action == 5) {
-                    if (func_80121194_ovl3(&gKirbyState) != 0) {
+                    if (func_80121194(&gKirbyState) != 0) {
                         gKirbyState.isTurning = gKirbyState.isTurning & -5;
                         temp_v1_3 = D_8004A7C4;
                         temp_v0_3 = *temp_v1_3 * 4;
@@ -2910,7 +2910,7 @@ s32 func_80172A3C_ovl3(s32 arg0) {
     if (temp_ret == 0) {
         phi_return = temp_ret;
         if ((D_8012E7F4 & 1) == 0) {
-            temp_ret_2 = func_80121194_ovl3();
+            temp_ret_2 = func_80121194();
             phi_return = temp_ret_2;
             if (temp_ret_2 != 0) {
                 temp_v0 = D_8004A7C4->objId * 4;
@@ -4771,7 +4771,7 @@ f32 func_80177438_ovl3(s32 arg0) {
             if (temp_ret_2 == 0) {
                 if (gKirbyState.unkB9 == 0) {
                     if ((gKirbyState.isTurning & 1) == 0) {
-                        if (func_80121194_ovl3(&gKirbyState) != 0) {
+                        if (func_80121194(&gKirbyState) != 0) {
                             gKirbyState.isTurning = gKirbyState.isTurning | 1;
                         }
                     }
@@ -4895,7 +4895,7 @@ f32 func_8017782C_ovl3(s32 arg0) {
             if (temp_ret_2 == 0) {
                 if (gKirbyState.unkB9 == 0) {
                     if ((gKirbyState.isTurning & 1) == 0) {
-                        if (func_80121194_ovl3(&gKirbyState) != 0) {
+                        if (func_80121194(&gKirbyState) != 0) {
                             gKirbyState.isTurning = gKirbyState.isTurning | 1;
                         }
                     }
@@ -5015,7 +5015,7 @@ f32 func_80177CBC_ovl3(s32 arg0) {
     if (temp_ret == 0) {
         if (gKirbyState.unkB9 == 0) {
             if ((gKirbyState.isTurning & 1) == 0) {
-                if (func_80121194_ovl3(&gKirbyState) != 0) {
+                if (func_80121194(&gKirbyState) != 0) {
                     gKirbyState.isTurning = gKirbyState.isTurning | 1;
                 }
             }
@@ -5250,7 +5250,7 @@ s32 func_80178420_ovl3(s32 arg0) {
             if (temp_ret_2 == 0) {
                 if (gKirbyState.unkB9 == 0) {
                     if ((gKirbyState.isTurning & 1) == 0) {
-                        if (func_80121194_ovl3(&gKirbyState) != 0) {
+                        if (func_80121194(&gKirbyState) != 0) {
                             gKirbyState.isTurning = gKirbyState.isTurning | 1;
                         }
                     }
@@ -5371,7 +5371,7 @@ f32 func_8017883C_ovl3(s32 arg0) {
                 if (gKirbyState.unkB9 == 0) {
                     phi_return = (bitwise f32) temp_ret_2;
                     if ((gKirbyState.isTurning & 1) == 0) {
-                        temp_ret_3 = func_80121194_ovl3(&gKirbyState);
+                        temp_ret_3 = func_80121194(&gKirbyState);
                         phi_return = (bitwise f32) temp_ret_3;
                         if (temp_ret_3 != 0) {
                             gKirbyState.isTurning = gKirbyState.isTurning | 1;
@@ -5570,7 +5570,7 @@ block_22:
             phi_a2_3 = phi_a2_2;
             phi_return = phi_return_2;
             if ((phi_a2_2->isTurning & 1) == 0) {
-                temp_ret_2 = func_80121194_ovl3(phi_a2_2);
+                temp_ret_2 = func_80121194(phi_a2_2);
                 phi_a2_3 = &gKirbyState;
                 phi_return = temp_ret_2;
                 if (temp_ret_2 != 0) {
@@ -9996,7 +9996,7 @@ block_46:
                 gKirbyState.unk44 = 1U;
             } else {
                 if ((gKirbyState.isTurning & 1) == 0) {
-                    if (func_80121194_ovl3(&gKirbyState) != 0) {
+                    if (func_80121194(&gKirbyState) != 0) {
                         gKirbyState.isTurning = (u32) (gKirbyState.isTurning | 1);
                     }
                 }

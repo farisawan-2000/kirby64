@@ -49,12 +49,13 @@ struct LayoutNode {
 
 extern struct PositionState gPositionState;
 extern struct KirbyState gKirbyState;
-extern f32 D_80128EFC, D_80128EF8, D_800E4550, D_800E48D0, D_80128F24, D_80128F20, D_800E6850, D_800E4710, D_800E3C90, D_800E3750, D_800E3210, D_800E64D0, D_800E6690;
-extern u32 D_800BE4F0, D_8012E818, D_8012E81C, D_8012E820, D_8012E824, D_800E8920;
+extern f32 D_80128EFC, D_80128EF8, D_80128F24, D_80128F20;
+extern u32 D_800BE4F0, D_8012E818, D_8012E81C, D_8012E820, D_8012E824;
 extern s32 D_800D6F10;
 extern u16 D_8012E8C2;
 extern s16 D_8012E922;
 extern u8 D_8012E9B8;
+extern u32 D_800E8920;
 
 void func_8012310C_ovl2(s32 currentInhale);
 void set_kirby_action_2(s32 actionChange, u32 action);

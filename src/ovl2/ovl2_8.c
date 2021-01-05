@@ -5,7 +5,8 @@
 #include "ovl2_6.h"
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800DE350.h"
-
+#include "ovl1/ovl1_6.h"
+extern Controller_800D6FE8 D_800D6FE8;
 
 struct struct8011BA10_temp {
     u8 unk0;
@@ -48,7 +49,7 @@ struct Struct800DFBD0 {
 };
 
 extern u32 D_801290D0;
-extern struct LayoutNode **D_800DFBD0[]; // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
+
 
 struct LayoutNode *func_8011BABC_ovl2(struct CollisionTriangle *tri, u32 arg1) {
     u32 i;
@@ -871,7 +872,6 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D4A4_ovl2.s")
 #endif
 
-extern s32 *D_800E0490[];
 extern s32 D_801926E8;
 extern s32 D_80190358;
 
@@ -1560,7 +1560,7 @@ f32 func_8011E548_ovl2(void) {
             } else {
                 sp44 = phi_f14;
                 temp_f14 = phi_f14;
-                if ((func_80121194_ovl2(phi_f14, &gKirbyState) != 0) && (D_800D6FAC == 0)) {
+                if ((func_80121194(phi_f14, &gKirbyState) != 0) && (D_800D6FAC == 0)) {
                     temp_t0_2 = D_8004A7C4;
                     temp_v0_3 = &D_800E6A10[*temp_t0_2];
                     *temp_v0_3 = -*temp_v0_3;
@@ -2085,28 +2085,29 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801210FC_ovl2.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_80121194_ovl2(void) {
+u32 func_80121194(void) {
     f32 temp_f0;
-    f32 phi_return;
+    u32 phi_return;
 
-    phi_return = 0.0f;
+    phi_return = 0;
     if (D_8012E7D7 == 0) {
-        temp_f0 = ((*D_8004A7C4 * 4) + 0x800E0000)->unk6A10;
-        if ((1.0f != temp_f0) || ((D_800D6FE8.buttonHeld & 0x200) == 0)) {
-
-        } else {
-            return 1e-45.0f;
+        temp_f0 = D_800E6A10[D_8004A7C4->objId];
+        if (temp_f0 == 1.0f) {
+            if (D_800D6FE8.buttonHeld & 0x200) {
+                return 1;
+            }
         }
-        phi_return = temp_f0;
-        if (-1.0f == temp_f0) {
-            phi_return = temp_f0;
-            if ((D_800D6FE8.buttonHeld & 0x100) != 0) {
-                return 1e-45.0f;
+        phi_return = (u32) temp_f0;
+        if (temp_f0 == -1.0f) {
+            phi_return = (u32) temp_f0;
+            if (D_800D6FE8.buttonHeld & 0x100) {
+                return 1;
             }
         }
     }
     return phi_return;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121194_ovl2.s")
 #endif
@@ -2237,7 +2238,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801212A4_ovl2.s")
     if (gKirbyState.unk17 == 0) {
         phi_return = 0;
         if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
-            if (func_80121194_ovl2() != 0) {
+            if (func_80121194() != 0) {
                 return 2;
             }
             phi_return = 1;
@@ -2473,7 +2474,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121BCC_ovl2.s")
     u32 temp_v0;
 
     if ((gKirbyState.isTurning & 1) == 0) {
-        if (func_80121194_ovl2() != 0) {
+        if (func_80121194() != 0) {
             gKirbyState.unk2C = 0xE;
             gKirbyState.isTurning = gKirbyState.isTurning | 1;
         } else if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
@@ -2975,9 +2976,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122A80_ovl2.s")
 
 
 extern s16 D_8012844C[][2];
-extern u32 gEntitiesPosXArray[];
-extern f32 gEntitiesPosYArray[], gEntitiesPosZArray[];
-extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, u32 d, f32 e, f32 f);
+
+extern void func_800A7F74_ovl2(u32 a, u32 b, u16 c, f32 d, f32 e, f32 f);
 
 #ifdef NON_MATCHING
 void func_80122B40_ovl2(void) {
