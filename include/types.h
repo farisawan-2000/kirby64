@@ -124,15 +124,15 @@ struct KirbyState {
     s32 turnDirection;			// 0x20
     u32 unk24;
     u32 unk28;
-    u32 unk2C;
+    s32 unk2C;
     u32 unk30;
     // u8 unk31;
     // u8 unk32;
     // u8 unk33;
     u32 isTurning;				// 0x34
     f32 unk38;
-    u32 unk3C;
-    u32 unk40;
+    s32 unk3C;
+    f32 unk40;
     u32 unk44;
     u32 unk48;
     u32 unk4C;

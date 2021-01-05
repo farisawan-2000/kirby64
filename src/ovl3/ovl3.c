@@ -354,19 +354,19 @@ u32 func_80151B78_ovl3(void) {
             switch (gKirbyState.unk4) {
                 case 0:
                     return 0;
-                    break;
+                    // break;
                 case 1:
                     if ((D_800D6FAC == 0) && (D_800D6FE8.buttonHeld & D_JPAD)) {
                         set_kirby_action_1(0xB, 0x10);
                         return 0xD;
                     }
-                    break;
+                    return 0;
                 case 2:
                     set_kirby_action_1(1, 3);
                     return 0xD;
             }
         }
-        else return 0;
+        return 0;
     }
 }
 #else
@@ -437,69 +437,70 @@ u32 func_80151E94_ovl3(u8 arg0[]) {
     u32 phi_v1_2;
     u32 phi_v1_3;
 
-    if (D_800D6B54 != 0) {
+    if (D_800D6B54 == 0) {
         return 0;
     }
     phi_v1_3 = 0;
     while (arg0[phi_v1_3] != 0xF) {
-        switch (arg0[phi_v1_3] - 1) {
-            case 0:
+        switch (arg0[phi_v1_3]) {
+            case 1:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151100_ovl3();
                 }
                 break;
-            case 1:
+            case 2:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151160_ovl3();
                 }
                 break;
-            case 2:
+            case 3:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_801517FC_ovl3();
                 }
                 break;
-            case 3:
+            case 4:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151864_ovl3();
                 }
                 break;
-            case 4:
+            case 5:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151288_ovl3();
                 }
                 break;
-            case 5:
+            case 6:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151938_ovl3();
                 }
                 break;
-            case 7:
+            case 8:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_801518E0_ovl3();
                 }
                 break;
-            case 6:
+            case 7:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_8015190C_ovl3();
                 }
                 break;
-            case 8:
+            case 9:
                 if (gKirbyState.unk17 == 0) {
                     phi_v1_2 = func_80151448_ovl3();
                 }
                 break;
-            case 10:
+            case 11:
                 phi_v1_2 = func_801519D4_ovl3();
                 break;
-            case 11:
+            case 12:
                 phi_v1_2 = func_80151AF4_ovl3();
                 break;
-            case 12:
+            case 13:
                 phi_v1_2 = func_80151B78_ovl3();
                 break;
-            case 13:
+            case 14:
                 phi_v1_2 = func_80151C78_ovl3();
-            case 9:
+                break;
+            case 10:
                 break;
         }
         if (phi_v1_2 == 0) {

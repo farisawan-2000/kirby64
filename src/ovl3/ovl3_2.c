@@ -1,5 +1,9 @@
 #include <ultra64.h>
 #include <macros.h>
+#include "types.h"
+#include "ovl1/ovl1_6.h"
+#include "D_8004A7C4.h"
+extern struct KirbyState gKirbyState;
 
 #ifdef MIPS_TO_C
 void func_80156050_ovl3(s32 arg0) {
@@ -845,132 +849,86 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80157F18_ovl3.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801580C4_ovl3(void *arg0, f32 arg1) {
-    u32 temp_t8;
-
-    if ((arg1 != 0.0f) && (arg1 != ((*arg0 * 4) + 0x800E0000)->unk6A10)) {
-        temp_t8 = gKirbyState.isTurning | 1;
-        gKirbyState.isTurning = temp_t8;
-        if ((temp_t8 & 1) != 0) {
-loop_3:
+void func_801580C4_ovl3(struct UnkStruct8004A7C4 *arg0, f32 arg1) {
+    if ((arg1 != 0.0f) && (arg1 != D_800E6A10[arg0->objId])) {
+        gKirbyState.isTurning |= 1;
+        while (gKirbyState.isTurning & 1) {
             func_8000B6BC(1);
-            if ((gKirbyState.isTurning & 1) != 0) {
-                goto loop_3;
-            }
         }
     }
 }
 #else
+void func_801580C4_ovl3(struct UnkStruct8004A7C4 *arg0, f32 arg1);
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_801580C4_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8015814C_ovl3(s32 arg0, void *arg1, s32 arg2) {
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 temp_v1;
-
+extern f32 D_80196F58;
+void func_8015814C_ovl3(struct UnkStruct8004A7C4 *arg0, void (*arg1)(s32), f32 arg2) {
     gKirbyState.unk44 = 0;
-    if ((gKirbyState.isTurning & 1) != 0) {
-loop_1:
+    while ((gKirbyState.isTurning & 1) != 0) {
         func_8000B6BC(1);
-        if ((gKirbyState.isTurning & 1) != 0) {
-            goto loop_1;
-        }
     }
     gKirbyState.unk18 = 0;
     func_80157C5C_ovl3(arg0);
     gKirbyState.unk30 = 0;
     arg1(arg0);
     func_80157D58_ovl3(arg0);
-    if (gKirbyState.unk30 == 0) {
-loop_3:
+    while (gKirbyState.unk30 == 0) {
         func_8000B6BC(1);
-        if (gKirbyState.unk30 == 0) {
-            goto loop_3;
-        }
     }
-    temp_v0 = D_8004A7C4;
-    D_800E6690[temp_v0->objId] = 0.0f;
-    temp_v1 = temp_v0->objId;
-    ((temp_v1 * 4) + 0x800E0000)->unk64D0 = D_800E6690[temp_v1];
-    ((temp_v0->objId * 4) + 0x800E0000)->unk6850 = D_80196F58;
-    if ((gKirbyState.isTurning & 1) != 0) {
-loop_5:
+    D_800E6690[D_8004A7C4->objId] = 0.0f;
+    D_800E64D0[D_8004A7C4->objId] = D_800E6690[D_8004A7C4->objId];
+    D_800E6850[D_8004A7C4->objId] = D_80196F58;
+    while ((gKirbyState.isTurning & 1) != 0) {
         func_8000B6BC(1);
-        if ((gKirbyState.isTurning & 1) != 0) {
-            goto loop_5;
-        }
     }
     func_801580C4_ovl3(arg0, arg2);
     func_80157E38_ovl3(arg0);
     gKirbyState.unk44 = 1;
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_8015814C_ovl3.s")
-#endif
 
+
+extern f32 func_800F951C_ovl3(s32, f32, s32, f32);
 #ifdef MIPS_TO_C
-s32 func_80158294_ovl3(void *arg0) {
+void func_80158294_ovl3(struct UnkStruct8004A7C4 *arg0) {
     s32 sp1C;
     f32 temp_f0;
-    s32 temp_ret;
-    s32 temp_v0;
-    void *phi_at;
-    s32 phi_return;
+    u32 temp_v1;
+    f32 *phi_at;
 
-    phi_return = func_80153984_ovl3();
+    func_80153984_ovl3(arg0);
     if (gKirbyState.unk30 == 0) {
-        temp_v0 = *arg0 * 4;
-        sp1C = temp_v0;
-        temp_f0 = func_800F951C_ovl3((temp_v0 + 0x800E0000)->unk5F90, (temp_v0 + 0x800E0000)->unk6BD0, gKirbyState.unk3C, gKirbyState.unk40);
+        temp_f0 = func_800F951C_ovl3(D_800E5F90[arg0->objId], D_800E6BD0[arg0->objId], gKirbyState.unk3C, gKirbyState.unk40);
         if (temp_f0 < 0.0f) {
-            phi_return = temp_v0;
-            if (1.0f == (temp_v0 + 0x800E0000)->unk6A10) {
+            if (D_800E6A10[arg0->objId] == 1.0f) {
                 gKirbyState.unk30 = 1;
-                (temp_v0 + 0x800E0000)->unk64D0 = temp_f0;
-                phi_at = temp_v0 + 0x800E0000;
-block_6:
-                phi_at->unk6690 = 0.0f;
-                phi_return = temp_v0;
+                D_800E64D0[arg0->objId] = temp_f0;
             }
-        } else {
-            phi_return = temp_v0;
-            if (-1.0f == (temp_v0 + 0x800E0000)->unk6A10) {
+            else if (D_800E6A10[arg0->objId] == -1.0f) {
                 gKirbyState.unk30 = 1;
-                (temp_v0 + 0x800E0000)->unk64D0 = temp_f0;
-                phi_at = temp_v0 + 0x800E0000;
-                goto block_6;
+                D_800E64D0[arg0->objId] = temp_f0;
             }
         }
+        D_800E6690[arg0->objId] = 0.0f;
     }
     if (gKirbyState.unk44 != 0) {
-        temp_ret = set_kirby_action_1(0, 1);
+        set_kirby_action_1(0, 1);
         gKirbyState.abilityState = 0;
-        phi_return = temp_ret;
     }
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158294_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
-u32 func_801583BC_ovl3(void) {
-    u32 temp_v0;
-
-    func_80158294_ovl3();
-    temp_v0 = gKirbyState.unk2C;
-    gKirbyState.unk2C = temp_v0 - 1;
-    if (temp_v0 == 0) {
-        gKirbyState.unk2C = 0x7FFFFFFF;
+extern s32 D_800BE4F8;
+void func_801583BC_ovl3(struct UnkStruct8004A7C4 *arg0) {
+    func_80158294_ovl3(arg0);
+    if (gKirbyState.unk2C-- == 0) {
+        gKirbyState.unk2C = 0x7FFFFFFF; // TODO: change to INT_MAX
         D_800BE4F8 = 2;
     }
-    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_801583BC_ovl3.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80158410_ovl3(s32 arg0) {

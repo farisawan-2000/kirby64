@@ -1976,6 +1976,7 @@ block_12:
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120CCC.s")
 #endif
 
+// take damage?
 #ifdef MIPS_TO_C
 struct KirbyState *func_80120E74_ovl2(s32 arg0) {
     s16 temp_v1_2;
