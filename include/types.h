@@ -166,7 +166,8 @@ struct KirbyState {
     u8 numberInhaling;			// 0xB3
     u16 numberInhaled;			// 0xB4
     u16 unkB6;
-    u32 unkB8;
+    u16 unkB8;
+    u16 unkBA;
     u32 unkBC;
     u32 unkC0;
     u32 unkC4;
@@ -220,9 +221,11 @@ struct KirbyState {
     u32 unk154;
     f32 unk158;
     u32 unk15C;
-    u32 unk160;
-    u32 unk164;
-    u32 unk168;
+
+    u16 unk160;
+    u16 unk162;
+    f32 unk164;
+    f32 unk168;
     u32 unk16C;
     u32 unk170;
 

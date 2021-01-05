@@ -594,37 +594,49 @@ void func_8011C8D0(void) {
     D_800D6F18[1].unkC = 0;
 }
 
+
+extern f32 D_80128E28;
+extern f32 D_800BE50C;
+extern f32 D_800BE510;
+extern f32 D_80128E24;
+extern s32 D_800B531C;
+extern s32 D_8011CFF4;
+extern s32 D_8012EADC;
+extern s32 D_8012EAE0;
+extern f32 gKirbyHp;
+extern s32 D_800D6E54;
+extern struct {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+} D_80198830;
 #ifdef MIPS_TO_C
-u32 *func_8011C8F8(void) {
+void func_8011C8F8(void) {
     f32 temp_f0;
     s32 temp_t7;
-    s32 temp_v0_4;
-    u32 *temp_v0;
-    u32 *temp_v0_2;
-    u32 *temp_v0_3;
-    u32 *temp_v0_5;
+    s32 temp_v0_3;
     u32 temp_a3;
 
-    temp_v0_2 = D_8004A7C4;
     temp_f0 = D_80128E24;
-    ((*temp_v0_2 * 4) + 0x800E0000)->unk-1070 = &D_800B531C;
-    ((*temp_v0_2 * 4) + 0x800E0000)->unk-1230 = &D_8011CFF4;
-    ((*temp_v0_2 * 4) + 0x800E0000)->unk4550 = temp_f0;
-    ((*temp_v0_2 * 4) + 0x800E0000)->unk4710 = temp_f0;
-    ((*temp_v0_2 * 4) + 0x800E0000)->unk48D0 = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = &D_800B531C;
+    D_800DEDD0[D_8004A7C4->objId] = &D_8011CFF4;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_80112A0C_ovl2();
-    func_80111534_ovl2(*D_8004A7C4);
+    func_80111534_ovl2(D_8004A7C4->objId);
     D_800D6F10 = 0;
     D_8012EADC = 0;
-    temp_v0_3 = D_8004A7C4;
     D_8012EAE0 = 0;
-    ((*temp_v0_3 * 4) + 0x800E0000)->unk7B20 = gKirbyHp;
-    ((*temp_v0_3 * 4) + 0x800F0000)->unk-76E0 = 1;
-    ((*temp_v0_3 * 4) + 0x800F0000)->unk-7520 = 0;
-    ((*temp_v0_3 * 4) + 0x800E0000)->unk7CE0 = 0;
-    ((*temp_v0_3 * 4) + 0x800E0000)->unk7EA0 = 0;
-    ((*temp_v0_3 * 4) + 0x800F0000)->unk-7FA0 = 0;
-    ((*temp_v0_3 * 4) + 0x800F0000)->unk-78A0 = 0;
+    D_800E7B20[D_8004A7C4->objId] = gKirbyHp;
+    D_800E8920[D_8004A7C4->objId] = 1;
+    D_800E8AE0[D_8004A7C4->objId] = 0;
+    D_800E7CE0[D_8004A7C4->objId] = 0;
+    D_800E7EA0[D_8004A7C4->objId] = 0;
+    D_800E8060[D_8004A7C4->objId] = 0;
+    D_800E8760[D_8004A7C4->objId] = 0;
     gKirbyState.actionChange = -1;
     gKirbyState.action = 0;
     gKirbyState.previousAction = 0;
@@ -682,31 +694,26 @@ u32 *func_8011C8F8(void) {
     gKirbyState.unkB8 = 0;
     gKirbyState.unkBA = 0;
     gKirbyState.unk158 = 1.0f;
-    temp_v0_4 = func_800F8560_ovl2();
-    if ((temp_v0_4 != 0) && (temp_v0_4 != 0xA)) {
+    temp_v0_3 = func_800F8560_ovl2();
+    if ((temp_v0_3 != 0) && (temp_v0_3 != 0xA)) {
         gKirbyState.unk4 = 0;
         gKirbyState.numberInhaled = 0;
     }
-    temp_v0_5 = D_8004A7C4;
-    gKirbyState.unk178 = ((*temp_v0_5 * 4) + 0x800E0000)->unk3050;
-    gKirbyState.unk17C = ((*temp_v0_5 * 4) + 0x800E0000)->unk3210;
+    gKirbyState.vel[1] = D_800E3050[D_8004A7C4->objId];
+    gKirbyState.vel[2] = D_800E3210[D_8004A7C4->objId];
     gKirbyState.unk168 = 0.0f;
     gKirbyState.unk160 = 0;
     gKirbyState.unk162 = 0x14;
     gKirbyState.unk16C = 0;
     D_80198830.unk8 = 3;
     D_80198830.unk10 = -1;
-    gKirbyState.unk180 = ((*temp_v0_5 * 4) + 0x800E0000)->unk33D0;
-    gKirbyState.unk164 = (bitwise f32) gKirbyState.unk168;
-    D_800EC820[*temp_v0_5] = 0.0f;
-    temp_a3 = *temp_v0_5;
-    temp_a3 = temp_a3 * 4;
-    (temp_a3 + 0x800F0000)->unk-39A0 = D_800EC820[temp_a3];
-    func_800F88C8_ovl2(((*temp_v0_5 * 4) + 0x800E0000)->unk-1CB0, D_800BE50C, D_800BE510, temp_a3);
-    temp_v0 = D_8004A7C4;
-    ((*temp_v0 * 4) + 0x800E0000)->unk6A10 = 1.0f;
-    ((*temp_v0 * 4) + 0x800E0000)->unk17D0 = D_80128E28;
-    return temp_v0;
+    gKirbyState.unk180 = D_800E33D0[D_8004A7C4->objId];
+    gKirbyState.unk164 = gKirbyState.unk168;
+    D_800EC820[D_8004A7C4->objId] = 0.0f;
+    D_800EC660[D_8004A7C4->objId] = D_800EC820[D_8004A7C4->objId];
+    func_800F88C8_ovl2(D_800DE350[D_8004A7C4->objId], D_800BE50C, D_800BE510);
+    D_800E6A10[D_8004A7C4->objId] = 1.0f;
+    D_800E17D0[D_8004A7C4->objId] = D_80128E28;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C8F8.s")
@@ -1359,7 +1366,7 @@ void func_8011E234_ovl2(void) {
 }
 
 u8 func_8011E244(void) {
-    if (D_800E8920 == 1) {
+    if (D_800E8920[0] == 1) {
         return D_8012E9B8;
     } else {
 		return 0x14;
