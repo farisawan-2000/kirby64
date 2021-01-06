@@ -13,9 +13,9 @@ glabel func_8000AE84
 /* 00BAB0 8000AEB0 13000014 */  beqz  $t8, .L8000AF04_ovl0
 /* 00BAB4 8000AEB4 00000000 */   nop   
 /* 00BAB8 8000AEB8 8C830000 */  lw    $v1, ($a0)
-/* 00BABC 8000AEBC 3C018005 */  lui   $at, %hi(gObjectThreadMaybe) # $at, 0x8005
+/* 00BABC 8000AEBC 3C018005 */  lui   $at, %hi(gGObjThreadHead) # $at, 0x8005
 /* 00BAC0 8000AEC0 00002025 */  move  $a0, $zero
-/* 00BAC4 8000AEC4 AC23A540 */  sw    $v1, %lo(gObjectThreadMaybe)($at)
+/* 00BAC4 8000AEC4 AC23A540 */  sw    $v1, %lo(gGObjThreadHead)($at)
 /* 00BAC8 8000AEC8 8CB90004 */  lw    $t9, 4($a1)
 /* 00BACC 8000AECC 272BFFFF */  addiu $t3, $t9, -1
 /* 00BAD0 8000AED0 1960000A */  blez  $t3, .L8000AEFC_ovl0
@@ -34,8 +34,8 @@ glabel func_8000AE84
 /* 00BAFC 8000AEFC 10000004 */  b     .L8000AF10_ovl0
 /* 00BB00 8000AF00 AC600000 */   sw    $zero, ($v1)
 .L8000AF04_ovl0:
-/* 00BB04 8000AF04 3C018005 */  lui   $at, %hi(gObjectThreadMaybe) # $at, 0x8005
-/* 00BB08 8000AF08 AC20A540 */  sw    $zero, %lo(gObjectThreadMaybe)($at)
+/* 00BB04 8000AF04 3C018005 */  lui   $at, %hi(gGObjThreadHead) # $at, 0x8005
+/* 00BB08 8000AF08 AC20A540 */  sw    $zero, %lo(gGObjThreadHead)($at)
 /* 00BB0C 8000AF0C 00002025 */  move  $a0, $zero
 .L8000AF10_ovl0:
 /* 00BB10 8000AF10 8CAE0010 */  lw    $t6, 0x10($a1)
@@ -45,8 +45,8 @@ glabel func_8000AE84
 /* 00BB20 8000AF20 11E00017 */  beqz  $t7, .L8000AF80_ovl0
 /* 00BB24 8000AF24 00000000 */   nop   
 /* 00BB28 8000AF28 8CA2000C */  lw    $v0, 0xc($a1)
-/* 00BB2C 8000AF2C 3C018005 */  lui   $at, %hi(gObjectThreadStackMaybe) # $at, 0x8005
-/* 00BB30 8000AF30 AC22A554 */  sw    $v0, %lo(gObjectThreadStackMaybe)($at)
+/* 00BB2C 8000AF2C 3C018005 */  lui   $at, %hi(gGObjThreadStackHead) # $at, 0x8005
+/* 00BB30 8000AF30 AC22A554 */  sw    $v0, %lo(gGObjThreadStackHead)($at)
 /* 00BB34 8000AF34 8CB80010 */  lw    $t8, 0x10($a1)
 /* 00BB38 8000AF38 2719FFFF */  addiu $t9, $t8, -1
 /* 00BB3C 8000AF3C 1320000E */  beqz  $t9, .L8000AF78_ovl0
@@ -69,8 +69,8 @@ glabel func_8000AE84
 /* 00BB78 8000AF78 10000003 */  b     .L8000AF88_ovl0
 /* 00BB7C 8000AF7C AC400000 */   sw    $zero, ($v0)
 .L8000AF80_ovl0:
-/* 00BB80 8000AF80 3C018005 */  lui   $at, %hi(gObjectThreadStackMaybe) # $at, 0x8005
-/* 00BB84 8000AF84 AC20A554 */  sw    $zero, %lo(gObjectThreadStackMaybe)($at)
+/* 00BB80 8000AF80 3C018005 */  lui   $at, %hi(gGObjThreadStackHead) # $at, 0x8005
+/* 00BB84 8000AF84 AC20A554 */  sw    $zero, %lo(gGObjThreadStackHead)($at)
 .L8000AF88_ovl0:
 /* 00BB88 8000AF88 8CAF001C */  lw    $t7, 0x1c($a1)
 /* 00BB8C 8000AF8C 11E00012 */  beqz  $t7, .L8000AFD8_ovl0

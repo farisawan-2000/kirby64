@@ -26,7 +26,7 @@ struct DynamicBuffer {
     u32 id;
     void *poolStart;
     void *poolEnd;
-    void *top;
+    u32 top;
 };
 
 extern struct DynamicBuffer gDynamicBuffer1, gDynamicBuffer2;
@@ -48,8 +48,9 @@ struct ObjThreadStack_C {
 };
 
 struct ObjThreadStack {
-    // Could these be ObjThreads instead?
     struct ObjThreadStack *unk0;
+    
+    // Could these be ObjThreads instead?
     struct ObjThreadStack *unk4;
     struct ObjThreadStack *unk8;
     // Pointer to something (potentially ObjThreadStack)
@@ -318,6 +319,54 @@ struct Camera *func_80009F7C(struct UnkStruct8004A7C4*);
 
 void func_80009B5C(struct UnkStruct8004A7C4_3C *);
 struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);
+
+struct UnkStruct8004A578 {
+    u32 unk0;
+    struct UnkStruct8004A578 *unk4;
+};
+
+struct UnkStructFunc80007380 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+
+    // some sort of range that is allocated for gDynamicBuffer2
+    void *unkC;
+    void *unk10;
+
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    u32 unk3C;
+
+
+    u32 unk40;
+    u32 unk44;
+    u32 unk48;
+    u32 unk4C;
+    u32 unk50;
+    u32 unk54;
+    u32 unk58;
+    u32 unk5C;
+    u32 unk60;
+    u32 unk64;
+    u32 unk68;
+    u32 unk6C;
+    u32 unk70;
+    u32 unk74;
+    u32 unk78;
+    u32 unk7C;
+    u32 unk80;
+    u32 unk84;
+    u32 unk88;
+};
 
 
 #endif

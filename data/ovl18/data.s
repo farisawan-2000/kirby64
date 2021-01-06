@@ -11077,107 +11077,48 @@ glabel D_8022AE48
 
 glabel D_8022AE4C
 .word 0x00000000
-
-glabel D_8022AE50
 .word 0x8000AD88
-
-glabel D_8022AE54
 .word func_800A73B0
+.word _ovl19SegNoloadEnd
 
-glabel D_8022AE58
-.word D_8022FB50
-
-glabel D_8022AE5C
 .word 0x00000000
-
-glabel D_8022AE60
 .word 0x00000001
-
-glabel D_8022AE64
 .word 0x00000002
-
-glabel D_8022AE68
 .word 0x00004000
 
-glabel D_8022AE6C
 .word 0x00005800
-
-glabel D_8022AE70
 .word 0x00000800
-
-glabel D_8022AE74
 .word 0x00000000
-
-glabel D_8022AE78
 .word 0x00004800
 
-glabel D_8022AE7C
 .word 0x00000000
-
-glabel D_8022AE80
 .word 0x00004000
-
-glabel D_8022AE84
 .word 0x00000000
-
-glabel D_8022AE88
 .word 0x8000464C
 
-glabel D_8022AE8C
 .word 0x00000080
-
-glabel D_8022AE90
 .word 0x00000600
-
-glabel D_8022AE94
 .word 0x00000080
-
-glabel D_8022AE98
 .word 0x00000000
 
-glabel D_8022AE9C
+# some allocation thing
 .word 0x00000180
-
-glabel D_8022AEA0
 .word 0x00000080
-
-glabel D_8022AEA4
 .word 0x00000050
-
-glabel D_8022AEA8
 .word 0x0000012C
 
-glabel D_8022AEAC
 .word 0x00000000
-
-glabel D_8022AEB0
 .word 0x00000000
-
-glabel D_8022AEB4
 .word 0x000003E7
-
-glabel D_8022AEB8
 .word 0x00000080
 
-glabel D_8022AEBC
 .word 0x00000100
-
-glabel D_8022AEC0
 .word 0x00000088
-
-glabel D_8022AEC4
 .word 0x00000000
-
-glabel D_8022AEC8
 .word 0x00000058
 
-glabel D_8022AECC
 .word 0x00000008
-
-glabel D_8022AED0
 .word 0x00000090
-
-glabel D_8022AED4
 .word func_802271A8_ovl19
 
 glabel D_8022AED8

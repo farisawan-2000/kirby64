@@ -13,27 +13,26 @@ extern Gfx D_80227440[];
 
 extern Gfx *gDisplayListHeads[4];
 
-void func_8001B784_ovl18(float *, f32, f32, f32);
+void func_8001B784_ovl18(Mat4 *, f32, f32, f32);
+// awfully annoying regalloc meme
 #ifdef NON_MATCHING
-void func_8021DF20_ovl18(s32 *arg0) {
-    s32 temp_v0;
-    s32 temp_v1;
-    Mat4 temp_a0;
+#define DYNAMIC_ALLOC_1(size) (gDynamicBuffer1.top += size)
+void func_8021DF20_ovl18(struct UnkStruct8004A7C4 *arg0) {
+    Mat4 *temp_a0;
+    u32 n;
 
-    temp_v0 = *arg0;
-    if ((D_800DD8D0[temp_v0] & 0x40) == 0) {
-        if ((D_800E7880[temp_v0] == 0) || ((D_800BE4EC & 1) == 0)) {
+    if ((D_800DD8D0[arg0->objId] & 0x40) == 0) {
+        if ((D_800E7880[arg0->objId] == 0) || !(D_800BE4EC & 1)) {
+
             gDPPipeSync(gDisplayListHeads[2]++);
-            
-            gDynamicBuffer1.top = (void *)((u32)gDynamicBuffer1.top + sizeof(Mat4));
-            temp_v1 = *arg0;
-            func_8001B784_ovl18(temp_a0,
-                gEntitiesPosXArray[temp_v1], gEntitiesPosYArray[temp_v1], gEntitiesPosZArray[temp_v1]);
+
+            n = gDynamicBuffer1.top; gDynamicBuffer1.top = n + sizeof(Mat4);
+            temp_a0 = (Mat4 *)gDynamicBuffer1.top;
+
+            func_8001B784_ovl18(temp_a0, gEntitiesPosXArray[arg0->objId], gEntitiesPosYArray[arg0->objId], gEntitiesPosZArray[arg0->objId]);
 
             gSPMatrix(gDisplayListHeads[2]++, temp_a0, G_MTX_PUSH | G_MTX_MUL | G_MTX_MODELVIEW);
-
             gSPDisplayList(gDisplayListHeads[2]++, &D_80227440);
-            
             gSPPopMatrix(gDisplayListHeads[2]++, G_MTX_MODELVIEW);
         }
     }
@@ -633,11 +632,11 @@ void func_8021F4E8_ovl18(void) {
     temp_v0 = D_8004A7C4->objId;
     temp_v1 = *(&D_800E83E0 + (temp_v0 * 4));
     temp_a0 = D_800E1B50[temp_v0];
-    if ((2 == temp_v1) || (temp_v1 == 1)) {
+    if ((temp_v1 == 2) || (temp_v1 == 1)) {
         temp_a0->unk43 = 0;
         temp_v0_2 = D_8004A7C4;
         D_800D6E58 = *(&D_800E7B20 + (temp_v0_2->unk0 * 4));
-        if (2 == *(&D_800E83E0 + (temp_v0_2->unk0 * 4))) {
+        if (D_800E83E0[D_8004A7C4->objId] == 2) {
             func_8021F970_ovl18(temp_a0, 2, &D_800E83E0);
         }
         if (func_800BC11C_ovl18(D_800D6E58) == 0) {

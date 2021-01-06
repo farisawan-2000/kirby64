@@ -1,6 +1,7 @@
 #ifndef D_8004A7C4_H
 #define D_8004A7C4_H
 #include "types.h"
+#include "ovl0/ovl0_2_5.h"
 
 
 // is this a matrix?
@@ -69,6 +70,18 @@ struct UnkStruct8004A7C4_3C_duplicate {
 };
 
 
+struct UnkStruct8004A7C4_18 {
+	struct UnkStruct8004A7C4_18 *next;
+	u32 unk4;
+	u32 unk8;
+	u32 unkC;
+	u32 unk10;
+	u8 unk14;
+	u8 unk15;
+	u8 unk16;
+	u8 unk17;
+};
+
 // GObj?
 struct UnkStruct8004A7C4 {
 	u32 objId;
@@ -80,7 +93,7 @@ struct UnkStruct8004A7C4 {
     u8 unkF;
     u32 unk10;
     void (*unk14)(void);
-    u32 *unk18;
+    struct ObjThreadStack *unk18;
     u32 unk1C;
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;

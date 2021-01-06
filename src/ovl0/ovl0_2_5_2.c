@@ -9,7 +9,7 @@
 extern void func_80000A44(void);
 extern void fatal_printf(const char *fmt, ...);
 
-extern struct ObjThread *gObjectThreadMaybe;
+extern struct ObjThread *gGObjThreadHead;
 extern u8 D_80040230[];
 extern u32 D_8004A544;
 
@@ -51,42 +51,42 @@ f32 D_8003DEF4[4] = {
 
 struct ObjThread *get_gobj_thread(void) {
     struct ObjThread *ret;
-    if (gObjectThreadMaybe == NULL) {
+    if (gGObjThreadHead == NULL) {
         fatal_printf(D_80040230); // om : couldn't get GObjThread
         while (TRUE);
     }
-    ret = gObjectThreadMaybe;
-    gObjectThreadMaybe = gObjectThreadMaybe->unk0;
+    ret = gGObjThreadHead;
+    gGObjThreadHead = gGObjThreadHead->unk0;
     D_8004A544++;
     return ret;
 }
 
 void func_80007FB8(struct ObjThread *arg0) {
-    arg0->unk0 = gObjectThreadMaybe;
-    gObjectThreadMaybe = arg0;
+    arg0->unk0 = gGObjThreadHead;
+    gGObjThreadHead = arg0;
     D_8004A544--;
 }
 
-extern struct ObjThreadStack* gObjectThreadStackMaybe;
+extern struct ObjThreadStack* gGObjThreadStackHead;
 extern u32 D_8004A548;
 extern u8 D_80040250[];
 
 struct ObjThreadStack *get_gobj_thread_stack(void) {
     struct ObjThreadStack *temp_v0;
 
-    if (gObjectThreadStackMaybe == NULL) {
+    if (gGObjThreadStackHead == NULL) {
         fatal_printf(&D_80040250); // om : couldn't get GObjThreadStack
         while (TRUE);
     }
-    temp_v0 = gObjectThreadStackMaybe;
-    gObjectThreadStackMaybe = gObjectThreadStackMaybe->unk0;
+    temp_v0 = gGObjThreadStackHead;
+    gGObjThreadStackHead = gGObjThreadStackHead->unk0;
     D_8004A548++;
     return temp_v0;
 }
 
 void func_8000803C(struct ObjThreadStack *arg0) {
-    arg0->unk0 = gObjectThreadStackMaybe;
-    gObjectThreadStackMaybe = arg0;
+    arg0->unk0 = gGObjThreadStackHead;
+    gGObjThreadStackHead = arg0;
     D_8004A548--;
 }
 
@@ -299,7 +299,7 @@ void func_800083A0(struct UnkStruct8004A7C4 *arg0) {
     D_8004A78C--;
 }
 
-extern void* D_8004A578[];
+struct UnkStruct8004A578 *D_8004A578[];
 extern void* D_8004A5F8[];
 
 void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
@@ -1370,6 +1370,7 @@ struct UnkStruct8004A7C4 *func_8000A24C(s32 arg0, s32 arg1, struct UnkStruct8004
 }
 
 void func_8000BBE0(struct UnkStruct8004A7C4 *);
+void func_8000B870(struct UnkStruct8004A7C4 *);
 
 void func_8000A29C(struct UnkStruct8004A7C4 *arg0) {
     if (arg0 == 0 || arg0 == D_8004A7C4) {
@@ -2008,7 +2009,7 @@ void func_8000AE84(void *arg0) {
     D_8004A550 = arg0->unk14;
     if (arg0->unk4 != 0) {
         temp_v1 = arg0->unk0;
-        gObjectThreadMaybe = temp_v1;
+        gGObjThreadHead = temp_v1;
         phi_v1 = temp_v1;
         phi_a0 = 0;
         phi_v1_2 = temp_v1;
@@ -2026,12 +2027,12 @@ loop_2:
         }
         *phi_v1_2 = 0;
     } else {
-        gObjectThreadMaybe = NULL;
+        gGObjThreadHead = NULL;
         phi_a0_11 = 0;
     }
     if ((arg0->unk10 != 0) && (arg0->unk8 != 0)) {
         temp_v0_2 = arg0->unkC;
-        gObjectThreadStackMaybe = temp_v0_2;
+        gGObjThreadStackHead = temp_v0_2;
         phi_v0_2 = temp_v0_2;
         phi_a0_3 = phi_a0_11;
         if ((arg0->unk10 - 1) != 0) {
@@ -2051,7 +2052,7 @@ loop_10:
         }
         phi_v0_2->unk0 = 0;
     } else {
-        gObjectThreadStackMaybe = NULL;
+        gGObjThreadStackHead = NULL;
         phi_a0_3 = phi_a0_11;
     }
     if (arg0->unk1C != 0) {
@@ -2363,8 +2364,8 @@ void func_8000B4D4(u32 arg0, void (*arg1)(struct UnkStruct8004A7C4*, s32), s32 a
     void *temp_s1;
     void *phi_s0;
 
-    temp_s0 = ((arg0 * 4) + 0x80050000)->unk-5A88;
-    while (temp_s0 != 0) {
+    temp_s0 = D_8004A578[arg0->objId];
+    while (temp_s0 != NULL) {
         phi_s0 = phi_s0->unk4;
         // temp_s1 = phi_s0->unk4;
         if ((arg1(phi_s0, arg2) != 0) && (arg3 == 1)) {
@@ -2481,36 +2482,19 @@ void *func_8000B758(u32 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B758.s")
 #endif
 
-#ifdef MIPS_TO_C
-void *func_8000B78C(u32 *arg0) {
-    void *temp_v0;
-    void *temp_v0_2;
-    u32 *phi_a0;
-    void *phi_v0;
-    void *phi_return;
+void func_8000B78C(struct UnkStruct8004A7C4 *arg0) {
+    struct ObjThreadStack *phi_v0;
 
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+    if (arg0 == NULL) {
+        arg0 = D_8004A7C4;
     }
-    temp_v0 = phi_a0->unk18;
-    phi_v0 = temp_v0;
-    phi_return = temp_v0;
-    if (temp_v0 != 0) {
-loop_3:
+    phi_v0 = arg0->unk18;
+    while (phi_v0 != 0) {
         phi_v0->unk15 = 0;
-        temp_v0_2 = phi_v0->unk0;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
-        if (temp_v0_2 != 0) {
-            goto loop_3;
-        }
+        phi_v0 = phi_v0->unk0;
+
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B78C.s")
-#endif
 
 void func_8000B7C0(struct ObjThreadStack *arg0) {
     if (arg0 == NULL) {
@@ -2592,23 +2576,20 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B830.s")
 #endif
 
-#ifdef NON_MATCHING
 void func_8000B870(struct UnkStruct8004A7C4 *arg0) {
-    u32 *phi_s0;
+    struct ObjThreadStack *temp_s1;
+    struct ObjThreadStack *phi_s0;
 
-    if (arg0 == NULL) {
+    if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
     phi_s0 = arg0->unk18;
-    // phi_s0 = phi_s0;
     while (phi_s0 != NULL) {
-        phi_s0 = *phi_s0;
+        temp_s1 = phi_s0->unk0;
         func_80008DA8(phi_s0);
+        phi_s0 = temp_s1;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B870.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8000B8C0(struct DObj *arg0) {
@@ -2837,9 +2818,8 @@ loop_1:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000BC34.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8000BCA4(s32 arg0, s32 arg1, s32 arg2, u32 arg3, s32 arg4, u8 arg5,
-    s32 arg6, s32 arg7, s32 arg8, s32 arg9, u8 argA, s32 argB, u32 argC) {
+struct UnkStruct8004A7C4 *func_8000BCA4(s32 arg0, s32 arg1, s32 arg2, u32 arg3,
+    s32 arg4, u8 arg5, s32 arg6, s32 arg7, u8 *arg8, s32 arg9, u8 argA, s32 argB, u32 argC) {
     struct UnkStruct8004A7C4 *temp_v0;
     struct DObj *x;
 
@@ -2849,19 +2829,15 @@ struct UnkStruct8004A7C4 *func_8000BCA4(s32 arg0, s32 arg1, s32 arg2, u32 arg3, 
     }
     func_8000A5FC(temp_v0, arg4, arg5, arg6, arg7);
 
-    // this func has an arg1
-    x = func_80009C38(temp_v0);
+    x = func_80009C38(temp_v0, arg8);
     if (arg9 != 0) {
-        func_8000B8C0(&x);
+        func_8000B8C0(x);
     }
     if (argB != 0) {
         func_80008A18(temp_v0, argB, argA, argC);
     }
     return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000BCA4.s")
-#endif
 
 struct UnkStruct8004A7C4 *func_8000BD3C(s32 arg0, s32 arg1, s32 arg2, u32 arg3, s32 arg4, s32 arg5,
     s32 arg6, s32 arg7, s32 arg8, u8 arg9, s32 argA, u32 argB, s32 argC) {
