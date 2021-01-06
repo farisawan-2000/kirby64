@@ -337,7 +337,6 @@ u32 func_80151AF4_ovl3(void) {
     return 0;
 }
 
-#ifdef NON_MATCHING
 u32 func_80151B78_ovl3(void) {
     if (gKirbyState.unk17 != 0) {
         if (gKirbyState.unk30 != 0) {
@@ -353,25 +352,23 @@ u32 func_80151B78_ovl3(void) {
         else if (func_801210B4_ovl3() == 0) {
             switch (gKirbyState.unk4) {
                 case 0:
-                    return 0;
-                    // break;
+                    break;
                 case 1:
                     if ((D_800D6FAC == 0) && (D_800D6FE8.buttonHeld & D_JPAD)) {
                         set_kirby_action_1(0xB, 0x10);
                         return 0xD;
                     }
-                    return 0;
+                    break;
                 case 2:
-                    set_kirby_action_1(1, 3);
-                    return 0xD;
+                    break;
             }
+        } else {
+            set_kirby_action_1(1, 3);
+            return 0xD;
         }
-        return 0;
     }
+    return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3/func_80151B78_ovl3.s")
-#endif
 
 extern u8 D_8012E7C4;
 extern f32 D_8012E7F8;

@@ -84,7 +84,7 @@ struct ObjThreadStack *get_gobj_thread_stack(void) {
     return temp_v0;
 }
 
-void func_8000803C(struct ObjThreadStack *arg0) {
+void push_gobj_thread_stack(struct ObjThreadStack *arg0) {
     arg0->unk0 = gGObjThreadStackHead;
     gGObjThreadStackHead = arg0;
     D_8004A548--;
@@ -188,7 +188,7 @@ block_7:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800080C0.s")
 #endif
 
-void func_80008198(struct ObjProcess *arg0) {
+void push_gobj_process(struct ObjProcess *arg0) {
     arg0->unk0 = gObjectProcessMaybe;
     gObjectProcessMaybe = arg0;
     D_8004A570--;
@@ -280,7 +280,7 @@ s32 func_80008328(void) {
 
 // Another potential pop
 // TODO: D_8004A678 might be 8004A7C4 struct
-struct UnkStruct8004A7C4 *func_8000835C(void) {
+struct UnkStruct8004A7C4 *get_gobj(void) {
     struct UnkStruct8004A7C4 *head;
 
     if (D_8004A678 == NULL) {
@@ -293,7 +293,7 @@ struct UnkStruct8004A7C4 *func_8000835C(void) {
 }
 
 // Another potential push
-void func_800083A0(struct UnkStruct8004A7C4 *arg0) {
+void push_gobj(struct UnkStruct8004A7C4 *arg0) {
     arg0->unk4 = D_8004A678;
     D_8004A678 = arg0;
     D_8004A78C--;
@@ -685,7 +685,7 @@ void func_80008DA8(struct ObjThreadStack *arg0) {
         switch (arg0->unk14) {
             case 0:
                 osDestroyThread(&arg0->objThread->unk8);
-                func_8000803C(&arg0->objThread->objStack->stack[0] - 1); // why???
+                push_gobj_thread_stack(&arg0->objThread->objStack->stack[0] - 1); // why???
                 func_80007FB8(arg0->objThread);
                 break;
             case 1:
@@ -699,7 +699,7 @@ void func_80008DA8(struct ObjThreadStack *arg0) {
                 func_80007FB8(arg0->objThread);
         }
         func_80008210(arg0);
-        func_80008198(arg0);
+        push_gobj_process(arg0);
     }
 }
 
@@ -858,55 +858,52 @@ struct MObj *func_80009A44(void *arg0, void *arg1) {
     temp_v0 = object_manager_get_m_obj();
     temp_a2 = arg0->unk80;
     if (temp_a2 != 0) {
-        temp_v1 = temp_a2->unk0;
+        temp_v1 = temp_a2->next;
         phi_v1 = temp_v1;
         phi_a0 = temp_a2;
-        if (temp_v1 != 0) {
-loop_2:
-            temp_v1_2 = phi_v1->unk0;
+        while (phi_v1 != 0) {
+            phi_v1 = phi_v1->next;
             phi_v1 = temp_v1_2;
             phi_a0 = phi_v1;
-            if (temp_v1_2 != 0) {
-                goto loop_2;
-            }
         }
-        phi_a0->unk0 = temp_v0;
+        phi_a0->next = temp_v0;
     } else {
         arg0->unk80 = temp_v0;
     }
-    temp_v0->unk0 = NULL;
+    temp_v0->next = NULL;
     temp_t6 = arg1->unk54;
-    temp_f6 = temp_t6;
+    temp_f6 = (f32) temp_t6;
     phi_f6 = temp_f6;
-    if (temp_t6 < 0) {
+    if ((s32) temp_t6 < 0) {
         phi_f6 = temp_f6 + 4294967296.0f;
     }
-    temp_v0[0x21] = phi_f6 / 255.0f;
+    temp_v0->primLOD = phi_f6 / 255.0f;
     phi_t9 = arg1;
     phi_t0 = temp_v0;
 loop_8:
     temp_t9 = phi_t9 + 0xC;
     temp_t0 = phi_t0 + 0xC;
-    temp_t0->unk-4 = *phi_t9;
-    temp_t0->unk0 = temp_t9->unk-8;
-    temp_t0->unk4 = temp_t9->unk-4;
+    temp_t0->unk-4 = (s32) *phi_t9;
+    temp_t0->next = temp_t9->unk-8;
+    temp_t0->unk_04 = temp_t9->unk-4;
     phi_t9 = temp_t9;
     phi_t0 = temp_t0;
     if (temp_t9 != (arg1 + 0x78)) {
         goto loop_8;
     }
-    temp_v0[0xB] = arg1->unk14;
-    temp_v0->unk80 = 0;
-    temp_v0->unk82 = 0;
-    temp_v0[0x22] = 0.0f;
-    temp_v0[0x24] = 0;
-    temp_v0[0x25] = 0;
-    temp_v0[0xC] = arg1->unk1C;
-    temp_v0[0x28] = 0.0f;
-    temp_v0[0x26] = D_80040658;
-    temp_v0[0x27] = 1.0f;
+    temp_v0->field_0x2c = arg1->unk14;
+    temp_v0->texIndex1 = 0;
+    temp_v0->texIndex2 = 0;
+    temp_v0->palIndex = 0.0f;
+    temp_v0->ops = NULL;
+    temp_v0->states = NULL;
+    temp_v0->field_0x30 = arg1->unk1C;
+    temp_v0->unk_A0 = 0.0f;
+    temp_v0->offset = D_80040658;
+    temp_v0->increment = 1.0f;
     return temp_v0;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009A44.s")
 #endif
@@ -1304,7 +1301,7 @@ struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void)
         fatal_printf(&D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
         while (1);
     }
-    toReturn = func_8000835C();
+    toReturn = get_gobj();
     if (toReturn == NULL) {
         return NULL;
     }
@@ -1390,7 +1387,7 @@ void func_8000A29C(struct UnkStruct8004A7C4 *arg0) {
         func_800086EC(arg0);
     }
     func_80008528(arg0);
-    func_800083A0(arg0);
+    push_gobj(arg0);
 }
 
 #ifdef MIPS_TO_C
@@ -2411,18 +2408,11 @@ loop_2:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B57C.s")
 #endif
 
-// regalloc; is arg0 really a function pointer?
-void *func_8000B63C(void (*arg0)(void), s32 arg1);
-#ifdef NON_MATCHING_
+// is arg0 really a function pointer?
+// void *func_8000B63C(void (*arg0)(void), s32 arg1);
 u32 *func_8000B63C(u32 *arg0, s32 arg1) {
-    if (arg1 == *arg0) {
-        return arg0;
-    }
-    else return NULL;
+    return (arg1 == *arg0) ? arg0 : NULL;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B63C.s")
-#endif
 
 void func_8000B4D4(u32, void*, s32, s32);
 
@@ -2792,26 +2782,18 @@ void func_8000BBE0(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-#ifdef MIPS_TO_C
+// loop meme
+#ifdef NON_MATCHING
 void func_8000BC34(void) {
-    void **temp_s2;
-    void *temp_s0;
-    void *temp_s1;
-    void **phi_s2;
-    void *phi_s0;
+    struct UnkStruct8004A578 *phi_s0;
+    int temp_s2;
 
-    phi_s2 = D_8004A578;
-loop_1:
-    temp_s0 = *phi_s2;
-    phi_s0 = temp_s0;
-    while (temp_s0 != 0) {
-        func_8000A29C(phi_s0);
-        phi_s0 = phi_s0->unk4;
-    }
-    temp_s2 = phi_s2 + 4;
-    phi_s2 = temp_s2;
-    if (temp_s2 != D_8004A5F8) {
-        goto loop_1;
+    for (temp_s2 = 0; temp_s2 < 32; temp_s2++) {
+        phi_s0 = D_8004A578[temp_s2];
+        while (phi_s0 != NULL) {
+            func_8000A29C(phi_s0);
+            phi_s0 = phi_s0->unk4;
+        }
     }
 }
 #else

@@ -276,7 +276,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x8015C680,
 		(void*) 0x8015C730,
 	},
-	{ // Kirby
+	{
 		(void*) 0x00103BB0,
 		(void*) 0x00135490,
 		(void*) 0x8015C740,
@@ -298,16 +298,16 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x8015A560,
 		(void*) 0x8015A7D0,
 	},
-	{
-		(void*) 0x000B1B40,
-		(void*) 0x000F8630,
-		(void*) 0x80151100,
-		(void*) 0x80151100,
-		(void*) 0x80190310,
-		(void*) 0x80190310,
-		(void*) 0x80197BF0,
-		(void*) 0x80197BF0,
-		(void*) 0x80198870,
+	{ // kirby
+		_ovl3SegmentRomStart,
+		_ovl3DataSegmentRomEnd,
+		_ovl3SegmentStart,
+		_ovl3SegmentStart,
+		_ovl3SegmentEnd,
+		_ovl3DataSegmentStart,
+		_ovl3DataSegmentEnd,
+		_ovl3SegNoloadStart,
+		_ovl3SegNoloadEnd,
 	},
 	{
 		(void*) 0x0013E8F0,

@@ -7,10 +7,10 @@
 void (*gScissorCallback)(Gfx **) = NULL;
 
 Mtx identityMatrix = {{
-	65536, 0, 1, 0,
-	0, 65536, 0, 1,
-	0, 0, 0, 0,
-	0, 0, 0, 0,
+	1 << 16,       0,     1,     0,
+	0      , 1 << 16,     0,     1,
+	0      ,       0,     0,     0,
+	0      ,       0,     0,     0,
 }};
 
 extern Vp gViewport;
