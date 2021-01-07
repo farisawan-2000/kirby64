@@ -527,7 +527,7 @@ SECTIONS
    /* 0x801DB1E0 2263D0-230050 [9C80] */
    BEGIN_SEG(ovl17, 0x801DB1E0) {
       BUILD_DIR/asm/ovl17/ovl17.o(.text);
-      BUILD_DIR/asm/ovl17/ovl17_last-0.o(.text);
+      BUILD_DIR/src/ovl17/ovl17_last-0.o(.text);
       BUILD_DIR/data/ovl17/data.o(.data);
    }
    END_SEG(ovl17)
