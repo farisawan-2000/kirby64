@@ -2,7 +2,7 @@ import sys, os,binascii, struct
 addr = sys.argv[2]
 file = open(sys.argv[1],'rb')
 
-specificOvl = ""
+specificOvl = "_ovl17"
 
 if len(sys.argv) == 4:
 	specificOvl = sys.argv[3]

@@ -140,7 +140,7 @@ u32 func_80151448_ovl3(void) {
                 set_kirby_action_1(0x13, 0x13);
                 return 9;
             }
-        }
+        } 
         temp_a2 = gKirbyState.abilityInUse;
         gKirbyState.unkA4 = 0;
         temp_a0_2 = D_800D6FEA;

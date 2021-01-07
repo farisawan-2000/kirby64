@@ -1,3 +1,5 @@
+// om: object manager
+
 #include <ultra64.h>
 #include <macros.h>
 

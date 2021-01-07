@@ -1,3 +1,5 @@
+// ml: memory layer?
+
 #include <ultra64.h>
 #include <macros.h>
 #include <config.h>

@@ -1,3 +1,5 @@
+// vector utility
+
 #include <ultra64.h>
 #include <macros.h>
 #include "types.h"
@@ -146,7 +148,6 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 sp38;
     f32 sp34;
     f32 sp2C;
-    f32 temp_f0;
     f32 temp_f0_2;
     f32 temp_f10;
     f32 temp_f12;
@@ -158,15 +159,12 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 temp_f20;
     f32 temp_f22;
     f32 temp_f22_2;
-    f32 temp_f2;
     f32 temp_f2_2;
     f32 temp_f8;
     f32 phi_f18;
     f32 phi_f20;
 
-    temp_f0 = arg1->y;
-    temp_f2 = arg1->z;
-    sp3C = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2));
+    sp3C = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
     sp2C = sinf(arg2);
     temp_f0_2 = cosf(arg2);
     if (sp3C != 0.0f) {
@@ -220,81 +218,53 @@ Vector *func_80019380(Vector *arg0, s32 flag) {
     return arg0;
 }
 
-#ifdef MIPS_TO_C
-Vector *func_800193C8(Vector *arg0, s32 arg1) {
-    f32 temp_f0;
-    f32 temp_f0_10;
-    f32 temp_f0_11;
-    f32 temp_f0_12;
-    f32 temp_f0_2;
-    f32 temp_f0_3;
-    f32 temp_f0_4;
-    f32 temp_f0_5;
-    f32 temp_f0_6;
-    f32 temp_f0_7;
-    f32 temp_f0_8;
-    f32 temp_f0_9;
-
-    if ((arg1 & 0x40) != 0) {
-        if (((arg1 & 1) != 0) && (temp_f0 = arg0->x, (temp_f0 < 0.0f))) {
-            arg0->x = -temp_f0;
-        } else if ((arg1 & 8) != 0) {
-            temp_f0_2 = arg0->x;
-            if (0.0f < temp_f0_2) {
-                arg0->x = -temp_f0_2;
-            }
+// some bc1fl instead of bc1f
+#ifdef NON_MATCHING
+Vector *func_800193C8(Vector *arg0, u32 flags) {
+    if (flags & 0x40) {
+        if ((flags & 1) && (arg0->x < 0.0f)) {
+            arg0->x = -arg0->x;
+        } else if ((flags & 8) && (arg0->x > 0.0f)) {
+            arg0->x = -arg0->x;
         }
-        if (((arg1 & 2) != 0) && (temp_f0_3 = arg0->y, (temp_f0_3 < 0.0f))) {
-            arg0->y = -temp_f0_3;
-        } else if ((arg1 & 0x10) != 0) {
-            temp_f0_4 = arg0->y;
-            if (0.0f < temp_f0_4) {
-                arg0->y = -temp_f0_4;
-            }
+        if ((flags & 2) && (arg0->y < 0.0f)) {
+            arg0->y = -arg0->y;
+        } else if ((flags & 0x10) && (0.0f < arg0->y)) {
+            arg0->y = -arg0->y;
         }
-        if ((arg1 & 4) != 0) {
-            temp_f0_5 = arg0->z;
-            if (temp_f0_5 < 0.0f) {
-                arg0->z = -temp_f0_5;
-                return arg0;
-            }
+        if ((flags & 4) && (arg0->z < 0.0f)) {
+            arg0->z = -arg0->z;
+            return arg0;
         }
-        if ((arg1 & 0x20) != 0) {
-            temp_f0_6 = arg0->z;
-            if (0.0f < temp_f0_6) {
-                arg0->z = -temp_f0_6;
+        if (flags & 0x20) {
+            if (0.0f < arg0->z) {
+                arg0->z = -arg0->z;
                 return arg0;
             }
         }
     } else {
-        if (((arg1 & 1) != 0) && (temp_f0_7 = arg0->x, (0.0f < temp_f0_7))) {
-            arg0->x = -temp_f0_7;
-        } else if ((arg1 & 8) != 0) {
-            temp_f0_8 = arg0->x;
-            if (temp_f0_8 < 0.0f) {
-                arg0->x = -temp_f0_8;
+        if ((flags & 1) && (0.0f < arg0->x)) {
+            arg0->x = -arg0->x;
+        } else if (flags & 8) {
+            if (arg0->x < 0.0f) {
+                arg0->x = -arg0->x;
             }
         }
-        if (((arg1 & 2) != 0) && (temp_f0_9 = arg0->y, (0.0f < temp_f0_9))) {
-            arg0->y = -temp_f0_9;
-        } else if ((arg1 & 0x10) != 0) {
-            temp_f0_10 = arg0->y;
-            if (temp_f0_10 < 0.0f) {
-                arg0->y = -temp_f0_10;
+        if ((flags & 2) && (0.0f < arg0->y)) {
+            arg0->y = -arg0->y;
+        } else if (flags & 0x10) {
+            if (arg0->y < 0.0f) {
+                arg0->y = -arg0->y;
             }
         }
-        if ((arg1 & 4) != 0) {
-            temp_f0_11 = arg0->z;
-            if (0.0f < temp_f0_11) {
-                arg0->z = -temp_f0_11;
+        if (flags & 4) {
+            if (0.0f < arg0->z) {
+                arg0->z = -arg0->z;
                 return arg0;
             }
         }
-        if ((arg1 & 0x20) != 0) {
-            temp_f0_12 = arg0->z;
-            if (temp_f0_12 < 0.0f) {
-                arg0->z = -temp_f0_12;
-            }
+        if ((flags & 0x20) && (arg0->z < 0.0f)) {
+            arg0->z = -arg0->z;
         }
     }
     return arg0;
