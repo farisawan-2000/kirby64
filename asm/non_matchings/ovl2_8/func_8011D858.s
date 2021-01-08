@@ -1,8 +1,8 @@
 glabel func_8011D858
 /* 0A62C8 8011D858 00051880 */  sll   $v1, $a1, 2
-/* 0A62CC 8011D85C 3C0E800E */  lui   $t6, 0x800e
+/* 0A62CC 8011D85C 3C0E800E */ lui $t6, %hi(D_800DD710)
 /* 0A62D0 8011D860 01C37021 */  addu  $t6, $t6, $v1
-/* 0A62D4 8011D864 8DCED710 */  lw    $t6, -0x28f0($t6)
+/* 0A62D4 8011D864 8DCED710 */ lw $t6, %lo(D_800DD710)($t6)
 /* 0A62D8 8011D868 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 0A62DC 8011D86C 44866000 */  mtc1  $a2, $f12
 /* 0A62E0 8011D870 2401FFFF */  li    $at, -1

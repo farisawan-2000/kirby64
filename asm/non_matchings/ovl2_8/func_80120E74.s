@@ -30,14 +30,14 @@ glabel func_80120E74
 /* 0A9954 80120EE4 844300D6 */   lh    $v1, 0xd6($v0)
 .L80120EE8_ovl2:
 /* 0A9958 80120EE8 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)
-/* 0A995C 80120EEC 3C09800E */  lui   $t1, 0x800e
+/* 0A995C 80120EEC 3C09800E */ lui $t1, %hi(D_800E7CE0)
 /* 0A9960 80120EF0 3C04800D */  lui   $a0, %hi(D_800D7010) # $a0, 0x800d
 /* 0A9964 80120EF4 8F230000 */  lw    $v1, ($t9)
 /* 0A9968 80120EF8 3C0D8013 */  lui   $t5, %hi(D_80128370) # $t5, 0x8013
 /* 0A996C 80120EFC 3C0A800C */  lui   $t2, %hi(D_800BE4EC) # $t2, 0x800c
 /* 0A9970 80120F00 00034080 */  sll   $t0, $v1, 2
 /* 0A9974 80120F04 01284821 */  addu  $t1, $t1, $t0
-/* 0A9978 80120F08 8D297CE0 */  lw    $t1, 0x7ce0($t1)
+/* 0A9978 80120F08 8D297CE0 */ lw $t1, %lo(D_800E7CE0)($t1)
 /* 0A997C 80120F0C 25AD8370 */  addiu $t5, %lo(D_80128370) # addiu $t5, $t5, -0x7c90
 /* 0A9980 80120F10 24847010 */  addiu $a0, %lo(D_800D7010) # addiu $a0, $a0, 0x7010
 /* 0A9984 80120F14 1520000F */  bnez  $t1, .L80120F54_ovl2
@@ -80,20 +80,20 @@ glabel func_80120E74
 /* 0A9A08 80120F98 A44E00DA */  sh    $t6, 0xda($v0)
 /* 0A9A0C 80120F9C 3C0F8005 */  lui   $t7, %hi(D_8004A7C4) # $t7, 0x8005
 /* 0A9A10 80120FA0 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)
-/* 0A9A14 80120FA4 3C01800E */  lui   $at, 0x800e
+/* 0A9A14 80120FA4 3C01800E */ lui $at, %hi(D_800E7CE0)
 /* 0A9A18 80120FA8 24080001 */  li    $t0, 1
 /* 0A9A1C 80120FAC 8DF80000 */  lw    $t8, ($t7)
-/* 0A9A20 80120FB0 3C0B8013 */  lui   $t3, 0x8013
+/* 0A9A20 80120FB0 3C0B8013 */ lui $t3, %hi(D_801283F0)
 /* 0A9A24 80120FB4 0018C880 */  sll   $t9, $t8, 2
 /* 0A9A28 80120FB8 00390821 */  addu  $at, $at, $t9
-/* 0A9A2C 80120FBC AC207CE0 */  sw    $zero, 0x7ce0($at)
+/* 0A9A2C 80120FBC AC207CE0 */ sw $zero, %lo(D_800E7CE0)($at)
 /* 0A9A30 80120FC0 844900D4 */  lh    $t1, 0xd4($v0)
 /* 0A9A34 80120FC4 A44800D8 */  sh    $t0, 0xd8($v0)
 /* 0A9A38 80120FC8 00095080 */  sll   $t2, $t1, 2
 /* 0A9A3C 80120FCC 01495023 */  subu  $t2, $t2, $t1
 /* 0A9A40 80120FD0 000A5080 */  sll   $t2, $t2, 2
 /* 0A9A44 80120FD4 016A5821 */  addu  $t3, $t3, $t2
-/* 0A9A48 80120FD8 8D6B83F0 */  lw    $t3, -0x7c10($t3)
+/* 0A9A48 80120FD8 8D6B83F0 */ lw $t3, %lo(D_801283F0)($t3)
 /* 0A9A4C 80120FDC 10000007 */  b     .L80120FFC_ovl2
 /* 0A9A50 80120FE0 A44B00D6 */   sh    $t3, 0xd6($v0)
 .L80120FE4_ovl2:

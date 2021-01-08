@@ -226,14 +226,14 @@ void func_800F8C70(struct UnkStruct800DE350 *arg0) {
 
     temp_v0 = *arg0;
     temp_v1 = temp_v0 * 4;
-    temp_f6 = (D_800E2CD0[temp_v0] + *(&D_800E2790 + temp_v1) + 20.0f) / 2.0f;
+    temp_f6 = (D_800E2CD0[temp_v0] + *(&gEntitiesPosYArray + temp_v1) + 20.0f) / 2.0f;
     sp2C = temp_v1;
     temp_a0 = &sp60;
     temp_a1 = &sp54;
     sp60 = D_800E2B10[temp_v0];
     sp68 = D_800E2E90[temp_v0];
-    sp54 = *(&D_800E25D0 + temp_v1);
-    sp5C = *(&D_800E2950 + temp_v1);
+    sp54 = *(&gEntitiesPosXArray + temp_v1);
+    sp5C = *(&gEntitiesPosZArray + temp_v1);
     sp58 = temp_f6;
     sp64 = temp_f6;
     if (func_801046A0(temp_a0, temp_a1, 0, 0, 0, &sp50) != 0) {

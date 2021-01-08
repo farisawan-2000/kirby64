@@ -52,10 +52,10 @@ glabel func_8011BD30
 /* 0A485C 8011BDEC 944E0000 */   lhu   $t6, ($v0)
 .L8011BDF0_ovl2:
 /* 0A4860 8011BDF0 00074080 */  sll   $t0, $a3, 2
-/* 0A4864 8011BDF4 3C0A800E */  lui   $t2, 0x800e
+/* 0A4864 8011BDF4 3C0A800E */ lui $t2, %hi(D_800DFBD0)
 /* 0A4868 8011BDF8 94A20004 */  lhu   $v0, 4($a1)
 /* 0A486C 8011BDFC 01485021 */  addu  $t2, $t2, $t0
-/* 0A4870 8011BE00 8D4AFBD0 */  lw    $t2, -0x430($t2)
+/* 0A4870 8011BE00 8D4AFBD0 */ lw $t2, %lo(D_800DFBD0)($t2)
 /* 0A4874 8011BE04 3C118013 */  lui   $s1, %hi(D_8012E7B0) # $s1, 0x8013
 /* 0A4878 8011BE08 2631E7B0 */  addiu $s1, %lo(D_8012E7B0) # addiu $s1, $s1, -0x1850
 /* 0A487C 8011BE0C 00028080 */  sll   $s0, $v0, 2

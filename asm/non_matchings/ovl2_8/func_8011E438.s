@@ -39,6 +39,6 @@ glabel func_8011E438
 /* 0A6F3C 8011E4CC C4600000 */  lwc1  $f0, ($v1)
 /* 0A6F40 8011E4D0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0A6F44 8011E4D4 E4204710 */  swc1  $f0, %lo(D_800E4710)($at)
-/* 0A6F48 8011E4D8 3C01800E */  lui   $at, 0x800e
+/* 0A6F48 8011E4D8 3C01800E */ lui $at, %hi(D_800E4550)
 /* 0A6F4C 8011E4DC 03E00008 */  jr    $ra
-/* 0A6F50 8011E4E0 E4204550 */   swc1  $f0, 0x4550($at)
+/* 0A6F50 8011E4E0 E4204550 */ swc1 $f0, %lo(D_800E4550)($at)

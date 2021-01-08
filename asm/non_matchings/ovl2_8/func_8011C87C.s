@@ -18,6 +18,6 @@ glabel func_8011C87C
 /* 0A5328 8011C8B8 AC80FFFC */  sw    $zero, -4($a0)
 /* 0A532C 8011C8BC 1482FFFB */  bne   $a0, $v0, .L8011C8AC_ovl2
 /* 0A5330 8011C8C0 AC80FFF0 */   sw    $zero, -0x10($a0)
-/* 0A5334 8011C8C4 3C01800D */  lui   $at, 0x800d
+/* 0A5334 8011C8C4 3C01800D */ lui $at, %hi(D_800D6F10)
 /* 0A5338 8011C8C8 03E00008 */  jr    $ra
-/* 0A533C 8011C8CC AC206F10 */   sw    $zero, 0x6f10($at)
+/* 0A533C 8011C8CC AC206F10 */ sw $zero, %lo(D_800D6F10)($at)

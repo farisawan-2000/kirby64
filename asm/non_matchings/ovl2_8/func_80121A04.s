@@ -4,10 +4,10 @@ glabel func_80121A04
 /* 0AA47C 80121A0C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0AA480 80121A10 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0AA484 80121A14 8C820000 */  lw    $v0, ($a0)
-/* 0AA488 80121A18 3C03800F */  lui   $v1, 0x800f
+/* 0AA488 80121A18 3C03800F */ lui $v1, %hi(D_800E8AE0)
 /* 0AA48C 80121A1C 00021080 */  sll   $v0, $v0, 2
 /* 0AA490 80121A20 00621821 */  addu  $v1, $v1, $v0
-/* 0AA494 80121A24 8C638AE0 */  lw    $v1, -0x7520($v1)
+/* 0AA494 80121A24 8C638AE0 */ lw $v1, %lo(D_800E8AE0)($v1)
 /* 0AA498 80121A28 306E0004 */  andi  $t6, $v1, 4
 /* 0AA49C 80121A2C 15C00057 */  bnez  $t6, .L80121B8C_ovl2
 /* 0AA4A0 80121A30 00000000 */   nop   
@@ -15,11 +15,11 @@ glabel func_80121A04
 /* 0AA4A8 80121A38 3C058013 */   lui   $a1, %hi(D_8012EADC) # $a1, 0x8013
 /* 0AA4AC 80121A3C 24A5EADC */  addiu $a1, %lo(D_8012EADC) # addiu $a1, $a1, -0x1524
 /* 0AA4B0 80121A40 8CA30000 */  lw    $v1, ($a1)
-/* 0AA4B4 80121A44 3C0F800E */  lui   $t7, 0x800e
+/* 0AA4B4 80121A44 3C0F800E */ lui $t7, %hi(D_800DE350)
 /* 0AA4B8 80121A48 01E27821 */  addu  $t7, $t7, $v0
 /* 0AA4BC 80121A4C 1460000F */  bnez  $v1, .L80121A8C_ovl2
 /* 0AA4C0 80121A50 2469FFFF */   addiu $t1, $v1, -1
-/* 0AA4C4 80121A54 8DEFE350 */  lw    $t7, -0x1cb0($t7)
+/* 0AA4C4 80121A54 8DEFE350 */ lw $t7, %lo(D_800DE350)($t7)
 /* 0AA4C8 80121A58 8DF80044 */  lw    $t8, 0x44($t7)
 /* 0AA4CC 80121A5C 33190001 */  andi  $t9, $t8, 1
 /* 0AA4D0 80121A60 57200008 */  bnezl $t9, .L80121A84_ovl2
@@ -38,11 +38,11 @@ glabel func_80121A04
 /* 0AA4FC 80121A8C ACA90000 */  sw    $t1, ($a1)
 .L80121A90_ovl2:
 /* 0AA500 80121A90 8C8A0000 */  lw    $t2, ($a0)
-/* 0AA504 80121A94 3C01800E */  lui   $at, 0x800e
+/* 0AA504 80121A94 3C01800E */ lui $at, %hi(D_800E64D0)
 /* 0AA508 80121A98 44802000 */  mtc1  $zero, $f4
 /* 0AA50C 80121A9C 000A5880 */  sll   $t3, $t2, 2
 /* 0AA510 80121AA0 002B0821 */  addu  $at, $at, $t3
-/* 0AA514 80121AA4 C42664D0 */  lwc1  $f6, 0x64d0($at)
+/* 0AA514 80121AA4 C42664D0 */ lwc1 $f6, %lo(D_800E64D0)($at)
 /* 0AA518 80121AA8 3C038013 */  lui   $v1, %hi(D_8012EAE0) # $v1, 0x8013
 /* 0AA51C 80121AAC 2463EAE0 */  addiu $v1, %lo(D_8012EAE0) # addiu $v1, $v1, -0x1520
 /* 0AA520 80121AB0 46062032 */  c.eq.s $f4, $f6

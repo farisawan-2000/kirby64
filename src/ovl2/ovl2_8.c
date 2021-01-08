@@ -2611,25 +2611,25 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
 ? func_8012209C(void) {
     f32 sp64;
     f32 sp60;
-    f32 sp54;
+    f32 sp54; 
     f32 sp50;
     f32 sp4C;
     f32 sp48;
     f32 sp44;
     f32 sp40;
     f32 sp3C;
-    s32 sp38;
+    s32 sp38;    
     f32 *temp_a1;
     f32 temp_f0;
     f32 temp_f0_2;
-    s32 temp_v1_3;
+    s32 temp_v1_3; 
     u32 *temp_v0;
     u32 temp_v0_2;
     u32 temp_v0_3;
     u32 temp_v0_4;
     u32 temp_v0_5;
     u32 temp_v1;
-    u32 temp_v1_2;
+    u32 temp_v1_2;   
     void *temp_a0;
 
     if (gKirbyState.unkB == 0) {
@@ -2639,7 +2639,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
         temp_v0 = D_8004A7C4;
         temp_v1 = *temp_v0 * 4;
         temp_a0 = (temp_v1 + 0x800E0000)->unk490->unk4;
-        sp48 = (temp_v1 + 0x800E0000)->unk2B10;
+        sp48 = (temp_v1 + 0x800E0000  )->unk2B10;
         temp_a1 = &sp3C;
         sp4C = ((*temp_v0 * 4) + 0x800E0000)->unk2CD0 + *temp_a0;
         sp50 = ((*temp_v0 * 4) + 0x800E0000)->unk2E90;
@@ -2662,7 +2662,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
                     } else {
                         gKirbyState.isTurning = gKirbyState.isTurning & -2;
                     }
-                }
+                } 
                 gKirbyState.unkB = 4;
             } else {
                 temp_v0_4 = gKirbyState.abilityInUse;

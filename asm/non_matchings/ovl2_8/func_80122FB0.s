@@ -4,18 +4,18 @@ glabel func_80122FB0
 /* 0ABA28 80122FB8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0ABA2C 80122FBC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0ABA30 80122FC0 8C4E0000 */  lw    $t6, ($v0)
-/* 0ABA34 80122FC4 3C01800E */  lui   $at, 0x800e
+/* 0ABA34 80122FC4 3C01800E */ lui $at, %hi(D_800DDE10)
 /* 0ABA38 80122FC8 3C058017 */  lui   $a1, %hi(D_80177098) # $a1, 0x8017
 /* 0ABA3C 80122FCC 000E7880 */  sll   $t7, $t6, 2
 /* 0ABA40 80122FD0 002F0821 */  addu  $at, $at, $t7
-/* 0ABA44 80122FD4 AC24DE10 */  sw    $a0, -0x21f0($at)
+/* 0ABA44 80122FD4 AC24DE10 */ sw $a0, %lo(D_800DDE10)($at)
 /* 0ABA48 80122FD8 8C580000 */  lw    $t8, ($v0)
-/* 0ABA4C 80122FDC 3C04800E */  lui   $a0, 0x800e
+/* 0ABA4C 80122FDC 3C04800E */ lui $a0, %hi(D_800DE890)
 /* 0ABA50 80122FE0 24A57098 */  addiu $a1, %lo(D_80177098) # addiu $a1, $a1, 0x7098
 /* 0ABA54 80122FE4 0018C880 */  sll   $t9, $t8, 2
 /* 0ABA58 80122FE8 00992021 */  addu  $a0, $a0, $t9
 /* 0ABA5C 80122FEC 0C02C7B2 */  jal   func_800B1EC8
-/* 0ABA60 80122FF0 8C84E890 */   lw    $a0, -0x1770($a0)
+/* 0ABA60 80122FF0 8C84E890 */ lw $a0, %lo(D_800DE890)($a0)
 /* 0ABA64 80122FF4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0ABA68 80122FF8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0ABA6C 80122FFC 03E00008 */  jr    $ra

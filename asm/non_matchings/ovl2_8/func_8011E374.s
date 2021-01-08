@@ -6,10 +6,10 @@ glabel func_8011E374
 /* 0A6DF4 8011E384 8C580000 */  lw    $t8, ($v0)
 /* 0A6DF8 8011E388 3C0E8013 */  lui   $t6, %hi(D_80129114) # $t6, 0x8013
 /* 0A6DFC 8011E38C 8DCE9114 */  lw    $t6, %lo(D_80129114)($t6)
-/* 0A6E00 8011E390 3C08800E */  lui   $t0, 0x800e
+/* 0A6E00 8011E390 3C08800E */ lui $t0, %hi(D_800E5F90)
 /* 0A6E04 8011E394 0018C880 */  sll   $t9, $t8, 2
 /* 0A6E08 8011E398 01194021 */  addu  $t0, $t0, $t9
-/* 0A6E0C 8011E39C 8D085F90 */  lw    $t0, 0x5f90($t0)
+/* 0A6E0C 8011E39C 8D085F90 */ lw $t0, %lo(D_800E5F90)($t0)
 /* 0A6E10 8011E3A0 8DCF0004 */  lw    $t7, 4($t6)
 /* 0A6E14 8011E3A4 44800000 */  mtc1  $zero, $f0
 /* 0A6E18 8011E3A8 00084900 */  sll   $t1, $t0, 4
@@ -19,20 +19,20 @@ glabel func_8011E374
 /* 0A6E28 8011E3B8 E7A00020 */  swc1  $f0, 0x20($sp)
 /* 0A6E2C 8011E3BC E7A00024 */  swc1  $f0, 0x24($sp)
 /* 0A6E30 8011E3C0 8C4B0000 */  lw    $t3, ($v0)
-/* 0A6E34 8011E3C4 3C01800E */  lui   $at, 0x800e
+/* 0A6E34 8011E3C4 3C01800E */ lui $at, %hi(D_800E6A10)
 /* 0A6E38 8011E3C8 44803000 */  mtc1  $zero, $f6
 /* 0A6E3C 8011E3CC 000B6080 */  sll   $t4, $t3, 2
 /* 0A6E40 8011E3D0 002C0821 */  addu  $at, $at, $t4
-/* 0A6E44 8011E3D4 C4246A10 */  lwc1  $f4, 0x6a10($at)
+/* 0A6E44 8011E3D4 C4246A10 */ lwc1 $f4, %lo(D_800E6A10)($at)
 /* 0A6E48 8011E3D8 E7A60030 */  swc1  $f6, 0x30($sp)
-/* 0A6E4C 8011E3DC 3C06800E */  lui   $a2, 0x800e
+/* 0A6E4C 8011E3DC 3C06800E */ lui $a2, %hi(D_800E6BD0)
 /* 0A6E50 8011E3E0 E7A40028 */  swc1  $f4, 0x28($sp)
 /* 0A6E54 8011E3E4 8C4D0000 */  lw    $t5, ($v0)
 /* 0A6E58 8011E3E8 27A4002C */  addiu $a0, $sp, 0x2c
 /* 0A6E5C 8011E3EC 000D7080 */  sll   $t6, $t5, 2
 /* 0A6E60 8011E3F0 00CE3021 */  addu  $a2, $a2, $t6
 /* 0A6E64 8011E3F4 0C0078D1 */  jal   func_8001E344_ovl2
-/* 0A6E68 8011E3F8 8CC66BD0 */   lw    $a2, 0x6bd0($a2)
+/* 0A6E68 8011E3F8 8CC66BD0 */ lw $a2, %lo(D_800E6BD0)($a2)
 /* 0A6E6C 8011E3FC 27A40020 */  addiu $a0, $sp, 0x20
 /* 0A6E70 8011E400 0C03E270 */  jal   func_800F89C0
 /* 0A6E74 8011E404 27A5002C */   addiu $a1, $sp, 0x2c
