@@ -5,7 +5,7 @@
 .include "macros.inc"
 
 .section .text, "ax"
-glabel func_800AB488
+glabel func_800AB490
 /* 0536E0 800AB490 3C03800D */  lui   $v1, %hi(D_800D4D8C) # $v1, 0x800d
 /* 0536E4 800AB494 90634D8C */  lbu   $v1, %lo(D_800D4D8C)($v1)
 /* 0536E8 800AB498 240800FF */  li    $t0, 255

@@ -2097,6 +2097,7 @@ f32 func_801210FC(void) {
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801210FC.s")
 #endif
 
+
 u32 func_80121194(void) {
     if (D_8012E7D7 == 0
         && ((D_800E6A10[D_8004A7C4->objId] == 1.0f && D_800D6FE8.buttonHeld & L_JPAD)
