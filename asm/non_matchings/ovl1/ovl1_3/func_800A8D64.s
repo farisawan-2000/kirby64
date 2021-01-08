@@ -15,7 +15,7 @@ glabel func_800A8D64
 /* 050FE8 800A8D98 8D110000 */  lw    $s1, ($t0)
 /* 050FEC 800A8D9C 12200028 */  beqz  $s1, .L800A8E40_ovl1
 /* 050FF0 800A8DA0 02252025 */   or    $a0, $s1, $a1
-/* 050FF4 800A8DA4 0C02A15E */  jal   func_800A8578_ovl1
+/* 050FF4 800A8DA4 0C02A15E */  jal   func_800A8578
 /* 050FF8 800A8DA8 AFA30020 */   sw    $v1, 0x20($sp)
 /* 050FFC 800A8DAC 14400024 */  bnez  $v0, .L800A8E40_ovl1
 /* 051000 800A8DB0 8FA30020 */   lw    $v1, 0x20($sp)
@@ -38,7 +38,7 @@ glabel func_800A8D64
 /* 051040 800A8DF0 8F250000 */  lw    $a1, ($t9)
 /* 051044 800A8DF4 50A0000F */  beql  $a1, $zero, .L800A8E34_ovl1
 /* 051048 800A8DF8 8E030004 */   lw    $v1, 4($s0)
-/* 05104C 800A8DFC 0C02A15E */  jal   func_800A8578_ovl1
+/* 05104C 800A8DFC 0C02A15E */  jal   func_800A8578
 /* 051050 800A8E00 34A40003 */   ori   $a0, $a1, 3
 /* 051054 800A8E04 5440000B */  bnezl $v0, .L800A8E34_ovl1
 /* 051058 800A8E08 8E030004 */   lw    $v1, 4($s0)

@@ -20,7 +20,7 @@ glabel func_800A89E0
 /* 050C78 800A8A28 24E70003 */  addiu $a3, $a3, 3
 /* 050C7C 800A8A2C 00E12024 */  and   $a0, $a3, $at
 /* 050C80 800A8A30 AFA40024 */  sw    $a0, 0x24($sp)
-/* 050C84 800A8A34 0C02A13C */  jal   func_800A84F0_ovl1
+/* 050C84 800A8A34 0C02A13C */  jal   func_800A84F0
 /* 050C88 800A8A38 AFA3001C */   sw    $v1, 0x1c($sp)
 /* 050C8C 800A8A3C 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 050C90 800A8A40 AFA20020 */  sw    $v0, 0x20($sp)

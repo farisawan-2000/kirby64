@@ -9,7 +9,7 @@ glabel func_800A2024
 /* 04A290 800A2040 8FBF001C */   lw    $ra, 0x1c($sp)
 .L800A2044_ovl1:
 /* 04A294 800A2044 8E110000 */  lw    $s1, ($s0)
-/* 04A298 800A2048 0C0287CC */  jal   func_800A1F30_ovl1
+/* 04A298 800A2048 0C0287CC */  jal   func_800A1F30
 /* 04A29C 800A204C 02002025 */   move  $a0, $s0
 /* 04A2A0 800A2050 1620FFFC */  bnez  $s1, .L800A2044_ovl1
 /* 04A2A4 800A2054 02208025 */   move  $s0, $s1

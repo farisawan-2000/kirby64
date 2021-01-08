@@ -5,6 +5,7 @@
 extern struct UnkStruct800ED4E0 *D_8022B7C0, *D_8022AED8, *D_8022B428;
 extern s32 D_800D6F3C;
 extern s32 D_800ED4EC;
+void func_800BBC6C(void);
 
 void func_800BBBA0(void) {
     if ((D_800D6F3C < 0) || (D_800D6F3C >= 7)) {
@@ -17,18 +18,18 @@ void func_800BBBA0(void) {
         case 3:
         case 4:
             D_800ED4E0 = &D_8022B7C0;
-            func_800BBC6C_ovl1();
-            func_800BB440_ovl1();
+            func_800BBC6C();
+            func_800BB440();
             break;
         case 5:
             D_800ED4E0 = &D_8022AED8;
-            func_800BBC6C_ovl1();
-            func_800BB440_ovl1();
+            func_800BBC6C();
+            func_800BB440();
             break;
         case 6:
             D_800ED4E0 = &D_8022B428;
-            func_800BBC6C_ovl1();
-            func_800BB440_ovl1();
+            func_800BBC6C();
+            func_800BB440();
         default:
             break;
     }
@@ -192,13 +193,13 @@ void func_800BBF60(void) {
     switch (D_800D6F3C) {
         case 3:
         case 4:
-            func_800BBDC4_ovl1();
+            func_800BBDC4();
             return;
         case 5:
-            func_800BBDC4_ovl1();
+            func_800BBDC4();
             return;
         case 6:
-            func_800BBDC4_ovl1();
+            func_800BBDC4();
             break;
         case 0:
         default:

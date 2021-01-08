@@ -4,7 +4,7 @@ glabel func_800A22D4
 /* 04A52C 800A22DC 00803025 */  move  $a2, $a0
 /* 04A530 800A22E0 90C5000A */  lbu   $a1, 0xa($a2)
 /* 04A534 800A22E4 94840004 */  lhu   $a0, 4($a0)
-/* 04A538 800A22E8 0C028820 */  jal   func_800A2080_ovl1
+/* 04A538 800A22E8 0C028820 */  jal   func_800A2080
 /* 04A53C 800A22EC 000528C3 */   sra   $a1, $a1, 3
 /* 04A540 800A22F0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 04A544 800A22F4 27BD0018 */  addiu $sp, $sp, 0x18

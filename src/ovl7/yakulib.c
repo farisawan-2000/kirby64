@@ -28,8 +28,8 @@ extern f32 D_801CE578;
 
 s32 func_800AEC08(s32, s32, s32);
 
-void func_800A4794_ovl7(Vector*,s32,s32);
-void func_800A4DB8_ovl7(Vector*,s32);
+void func_800A4794(Vector*,s32,s32);
+void func_800A4DB8(Vector*,s32);
 
 // this file
 void func_801BC1AC_ovl7(s32 arg0);
@@ -54,11 +54,11 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
 
     D_800E8E60[idx] = 1;
     D_800E1D10[idx] = arg1;
-    func_800A4794_ovl7(&sp28, arg0, idx);
+    func_800A4794(&sp28, arg0, idx);
     gEntitiesPosXArray[idx] = sp28.x;
     gEntitiesPosYArray[idx] = sp28.y;
     gEntitiesPosZArray[idx] = sp28.z;
-    func_800A4DB8_ovl7(&sp1C, arg0);
+    func_800A4DB8(&sp1C, arg0);
     gEntitiesAngleXArray[idx] = sp1C.x;
     gEntitiesAngleYArray[idx] = sp1C.y + D_801CE578;
     gEntitiesAngleZArray[idx] = sp1C.z;

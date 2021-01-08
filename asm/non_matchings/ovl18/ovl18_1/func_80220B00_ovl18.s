@@ -26,7 +26,7 @@ glabel func_80220B00_ovl18
 /* 233500 80220B60 00380821 */  addu  $at, $at, $t8
 /* 233504 80220B64 3C040001 */  lui   $a0, (0x00010091 >> 16) # lui $a0, 1
 /* 233508 80220B68 AC20DFD0 */ sw $zero, %lo(D_800DDFD0)($at)
-/* 23350C 80220B6C 0C02A7A9 */  jal   func_800A9EA4_ovl18
+/* 23350C 80220B6C 0C02A7A9 */  jal   func_800A9EA4
 /* 233510 80220B70 34840091 */   ori   $a0, (0x00010091 & 0xFFFF) # ori $a0, $a0, 0x91
 /* 233514 80220B74 3C018023 */  lui   $at, %hi(D_8022BBC8) # $at, 0x8023
 /* 233518 80220B78 3C17800E */  lui   $s7, %hi(gEntitiesPosYArray) # $s7, 0x800e

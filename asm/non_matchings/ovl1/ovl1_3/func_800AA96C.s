@@ -59,7 +59,7 @@ glabel func_800AA96C
 /* 052C9C 800AAA4C 0238C821 */  addu  $t9, $s1, $t8
 /* 052CA0 800AAA50 AF220000 */  sw    $v0, ($t9)
 .L800AAA54_ovl1:
-/* 052CA4 800AAA54 0C02A6D2 */  jal   func_800A9B48_ovl1
+/* 052CA4 800AAA54 0C02A6D2 */  jal   func_800A9B48
 /* 052CA8 800AAA58 02402025 */   move  $a0, $s2
 /* 052CAC 800AAA5C 8EE90000 */  lw    $t1, ($s7)
 /* 052CB0 800AAA60 3C08800E */  lui   $t0, 0x800e

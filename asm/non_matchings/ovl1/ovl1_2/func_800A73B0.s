@@ -14,7 +14,7 @@ glabel func_800A73B0
 /* 04F630 800A73E0 3C01800D */  lui   $at, %hi(D_800D7B74) # $at, 0x800d
 /* 04F634 800A73E4 0C002AB8 */  jal   func_8000AAE0_ovl1
 /* 04F638 800A73E8 AC387B74 */   sw    $t8, %lo(D_800D7B74)($at)
-/* 04F63C 800A73EC 0C02B184 */  jal   func_800AC610_ovl1
+/* 04F63C 800A73EC 0C02B184 */  jal   func_800AC610
 /* 04F640 800A73F0 00000000 */   nop   
 /* 04F644 800A73F4 3C03800D */  lui   $v1, %hi(D_800D7B6C) # $v1, 0x800d
 /* 04F648 800A73F8 3C078005 */  lui   $a3, %hi(gDisplayListHeads) # $a3, 0x8005

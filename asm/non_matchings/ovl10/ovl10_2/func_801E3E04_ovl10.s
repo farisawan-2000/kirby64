@@ -27,7 +27,7 @@ glabel func_801E3E04_ovl10
 /* 1D4BD4 801E3E64 AFA7001C */  sw    $a3, 0x1c($sp)
 /* 1D4BD8 801E3E68 4600218D */  trunc.w.s $f6, $f4
 /* 1D4BDC 801E3E6C 44043000 */  mfc1  $a0, $f6
-/* 1D4BE0 801E3E70 0C02F07F */  jal   func_800BC1FC_ovl10
+/* 1D4BE0 801E3E70 0C02F07F */  jal   func_800BC1FC
 /* 1D4BE4 801E3E74 00000000 */   nop   
 /* 1D4BE8 801E3E78 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D4BEC 801E3E7C 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -92,7 +92,7 @@ glabel func_801E3E04_ovl10
 /* 1D4CC8 801E3F58 00230821 */  addu  $at, $at, $v1
 /* 1D4CCC 801E3F5C 07030004 */  bgezl $t8, .L801E3F70_ovl10
 /* 1D4CD0 801E3F60 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 1D4CD4 801E3F64 0C02F047 */  jal   func_800BC11C_ovl10
+/* 1D4CD4 801E3F64 0C02F047 */  jal   func_800BC11C
 /* 1D4CD8 801E3F68 C42CA6E0 */ lwc1 $f12, %lo(D_800EA6E0)($at)
 /* 1D4CDC 801E3F6C 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801E3F70_ovl10:

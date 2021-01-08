@@ -13,7 +13,7 @@ glabel func_800AAF34
 /* 0531B0 800AAF60 AFA60030 */   sw    $a2, 0x30($sp)
 /* 0531B4 800AAF64 34440002 */  ori   $a0, $v0, 2
 /* 0531B8 800AAF68 AFA3001C */  sw    $v1, 0x1c($sp)
-/* 0531BC 800AAF6C 0C02A15E */  jal   func_800A8578_ovl1
+/* 0531BC 800AAF6C 0C02A15E */  jal   func_800A8578
 /* 0531C0 800AAF70 AFA70020 */   sw    $a3, 0x20($sp)
 /* 0531C4 800AAF74 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 0531C8 800AAF78 8FA70020 */  lw    $a3, 0x20($sp)

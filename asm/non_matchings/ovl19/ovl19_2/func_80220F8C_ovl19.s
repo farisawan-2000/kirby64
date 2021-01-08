@@ -82,7 +82,7 @@ glabel func_80220F8C_ovl19
 /* 2417D0 802210C0 25291108 */  addiu $t1, %lo(func_80221108_ovl19) # addiu $t1, $t1, 0x1108
 /* 2417D4 802210C4 000B6080 */  sll   $t4, $t3, 2
 /* 2417D8 802210C8 002C0821 */  addu  $at, $at, $t4
-/* 2417DC 802210CC 0C02BC9F */  jal   func_800AF27C_ovl19
+/* 2417DC 802210CC 0C02BC9F */  jal   func_800AF27C
 /* 2417E0 802210D0 AC29F310 */ sw $t1, %lo(D_800DF310)($at)
 /* 2417E4 802210D4 3C040002 */  lui   $a0, (0x000203D3 >> 16) # lui $a0, 2
 /* 2417E8 802210D8 3C050002 */  lui   $a1, (0x000203D4 >> 16) # lui $a1, 2

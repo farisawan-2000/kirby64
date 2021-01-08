@@ -21,7 +21,7 @@ glabel func_800A9250
 /* 0514EC 800A929C 8E090000 */  lw    $t1, ($s0)
 /* 0514F0 800A92A0 01095023 */  subu  $t2, $t0, $t1
 /* 0514F4 800A92A4 01458825 */  or    $s1, $t2, $a1
-/* 0514F8 800A92A8 0C02A0D6 */  jal   func_800A8358_ovl1
+/* 0514F8 800A92A8 0C02A0D6 */  jal   func_800A8358
 /* 0514FC 800A92AC 02202025 */   move  $a0, $s1
 /* 051500 800A92B0 3C0100FF */  lui   $at, (0x00FFFFFC >> 16) # lui $at, 0xff
 /* 051504 800A92B4 3421FFFC */  ori   $at, (0x00FFFFFC & 0xFFFF) # ori $at, $at, 0xfffc

@@ -260,7 +260,7 @@ loop_2:
                         phi_s0->unk12 = temp_t4;
                         temp_s1 = phi_s0 + temp_lo + 0x40;
                         func_800FF71C_ovl2(phi_s0, temp_s1->unk16, temp_v1->unkF);
-                        temp_s6 = func_800ACE1C_ovl2(temp_s1->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
+                        temp_s6 = func_800ACE1C(temp_s1->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
                         temp_f8_2 = sp78 + 1.0f;
                         sp80 = temp_f8_2;
                         phi_s6 = temp_s6;
@@ -295,7 +295,7 @@ block_20:
                             phi_s0->unk12 = temp_t0_2;
                             temp_s1_2 = phi_s0 + temp_lo_2 + 0x40;
                             func_800FF71C_ovl2(phi_s0, temp_s1_2->unk16, temp_v1->unkF);
-                            temp_s6_2 = func_800ACE1C_ovl2(temp_s1_2->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
+                            temp_s6_2 = func_800ACE1C(temp_s1_2->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
                             func_800FF9B4_ovl2(gDisplayListHeads, temp_s1_2, temp_s5, temp_s3 + 8, phi_s0->unk28, phi_s0->unk2C);
                             phi_s6 = temp_s6_2;
                             goto block_20;
@@ -375,7 +375,7 @@ void *func_80100AC8(void *arg0) {
 loop_2:
         if (temp_s6 == phi_s0->unk4) {
             temp_s2 = (phi_s3 * 0x10) + &D_8012BBF8;
-            temp_ret = func_800AC954_ovl2(arg0, 1, func_800A8C40_ovl2(phi_s0->unk0));
+            temp_ret = func_800AC954(arg0, 1, func_800A8C40(phi_s0->unk0));
             temp_v0_2 = temp_ret;
             temp_a0 = phi_s0->unk8;
             temp_v0_2->unk20 = phi_s0->unkC + temp_s4->unk8;

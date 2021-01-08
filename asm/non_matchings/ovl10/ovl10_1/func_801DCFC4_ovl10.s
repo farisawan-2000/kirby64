@@ -14,7 +14,7 @@ glabel func_801DCFC4_ovl10
 /* 1CDD64 801DCFF4 AFA40070 */  sw    $a0, 0x70($sp)
 /* 1CDD68 801DCFF8 0C02BB30 */  jal   func_800AECC0
 /* 1CDD6C 801DCFFC C60C0000 */   lwc1  $f12, ($s0)
-/* 1CDD70 801DD000 0C02BB48 */  jal   func_800AED20_ovl10
+/* 1CDD70 801DD000 0C02BB48 */  jal   func_800AED20
 /* 1CDD74 801DD004 C60C0000 */   lwc1  $f12, ($s0)
 /* 1CDD78 801DD008 3C148005 */  lui   $s4, %hi(D_8004A7C4) # $s4, 0x8005
 /* 1CDD7C 801DD00C 2694A7C4 */  addiu $s4, %lo(D_8004A7C4) # addiu $s4, $s4, -0x583c
@@ -41,15 +41,15 @@ glabel func_801DCFC4_ovl10
 /* 1CDDD0 801DD060 000F7080 */  sll   $t6, $t7, 2
 /* 1CDDD4 801DD064 004EC021 */  addu  $t8, $v0, $t6
 /* 1CDDD8 801DD068 8F080000 */  lw    $t0, ($t8)
-/* 1CDDDC 801DD06C 0C02CCFD */  jal   func_800B33F4_ovl10
+/* 1CDDDC 801DD06C 0C02CCFD */  jal   func_800B33F4
 /* 1CDDE0 801DD070 AD0C0098 */   sw    $t4, 0x98($t0)
 /* 1CDDE4 801DD074 3C040001 */  lui   $a0, (0x000102E1 >> 16) # lui $a0, 1
-/* 1CDDE8 801DD078 0C02A7A9 */  jal   func_800A9EA4_ovl10
+/* 1CDDE8 801DD078 0C02A7A9 */  jal   func_800A9EA4
 /* 1CDDEC 801DD07C 348402E1 */   ori   $a0, (0x000102E1 & 0xFFFF) # ori $a0, $a0, 0x2e1
 /* 1CDDF0 801DD080 3C040001 */  lui   $a0, (0x000102E0 >> 16) # lui $a0, 1
-/* 1CDDF4 801DD084 0C02A7A9 */  jal   func_800A9EA4_ovl10
+/* 1CDDF4 801DD084 0C02A7A9 */  jal   func_800A9EA4
 /* 1CDDF8 801DD088 348402E0 */   ori   $a0, (0x000102E0 & 0xFFFF) # ori $a0, $a0, 0x2e0
-/* 1CDDFC 801DD08C 0C02BC9F */  jal   func_800AF27C_ovl10
+/* 1CDDFC 801DD08C 0C02BC9F */  jal   func_800AF27C
 /* 1CDE00 801DD090 00000000 */   nop   
 /* 1CDE04 801DD094 0C066A40 */  jal   func_8019A900_ovl10
 /* 1CDE08 801DD098 27A40068 */   addiu $a0, $sp, 0x68
@@ -151,7 +151,7 @@ glabel func_801DCFC4_ovl10
 /* 1CDF70 801DD200 8F2B0000 */  lw    $t3, ($t9)
 /* 1CDF74 801DD204 000B6880 */  sll   $t5, $t3, 2
 /* 1CDF78 801DD208 024D7821 */  addu  $t7, $s2, $t5
-/* 1CDF7C 801DD20C 0C02BC9F */  jal   func_800AF27C_ovl10
+/* 1CDF7C 801DD20C 0C02BC9F */  jal   func_800AF27C
 /* 1CDF80 801DD210 E5E60000 */   swc1  $f6, ($t7)
 .L801DD214_ovl10:
 /* 1CDF84 801DD214 0C006291 */  jal   random_soft_s32_range

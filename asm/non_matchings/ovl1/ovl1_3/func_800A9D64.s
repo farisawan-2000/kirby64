@@ -10,7 +10,7 @@ glabel func_800A9D64
 /* 051FD4 800A9D84 AFBF0014 */   sw    $ra, 0x14($sp)
 /* 051FD8 800A9D88 34A40002 */  ori   $a0, $a1, 2
 /* 051FDC 800A9D8C AFA2001C */  sw    $v0, 0x1c($sp)
-/* 051FE0 800A9D90 0C02A15E */  jal   func_800A8578_ovl1
+/* 051FE0 800A9D90 0C02A15E */  jal   func_800A8578
 /* 051FE4 800A9D94 AFA30018 */   sw    $v1, 0x18($sp)
 /* 051FE8 800A9D98 8FA30018 */  lw    $v1, 0x18($sp)
 /* 051FEC 800A9D9C 2406FFFF */  li    $a2, -1
@@ -23,7 +23,7 @@ glabel func_800A9D64
 /* 052004 800A9DB4 8C650000 */  lw    $a1, ($v1)
 /* 052008 800A9DB8 10C50006 */  beq   $a2, $a1, .L800A9DD4_ovl1
 /* 05200C 800A9DBC 34A40002 */   ori   $a0, $a1, 2
-/* 052010 800A9DC0 0C02A15E */  jal   func_800A8578_ovl1
+/* 052010 800A9DC0 0C02A15E */  jal   func_800A8578
 /* 052014 800A9DC4 AFA30018 */   sw    $v1, 0x18($sp)
 /* 052018 800A9DC8 8FA30018 */  lw    $v1, 0x18($sp)
 /* 05201C 800A9DCC 2406FFFF */  li    $a2, -1

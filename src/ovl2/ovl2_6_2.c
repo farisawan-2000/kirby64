@@ -7136,9 +7136,9 @@ loop_3:
         }
         temp_s2 = arg3->unkC + (phi_s0_3 * 0x30);
         if (1 != phi_s1->unk14) {
-            func_800A5D88_ovl2(phi_s1, temp_s2);
+            func_800A5D88(phi_s1, temp_s2);
         } else {
-            func_800A5F94_ovl2(arg2, temp_s2);
+            func_800A5F94(arg2, temp_s2);
         }
         *(arg3->unk8 + phi_s3) = phi_s1;
         arg3->unk0 = phi_s0_3 + 1;
@@ -7146,7 +7146,7 @@ loop_3:
     } else {
         phi_s2 = arg3->unkC + (phi_s0_2 * 0x30);
     }
-    func_800A6208_ovl2(phi_s2, arg0);
+    func_800A6208(phi_s2, arg0);
     temp_s1 = phi_s1->unk14;
     phi_s1 = temp_s1;
     if (temp_s1 != 1) {

@@ -1,9 +1,9 @@
 glabel func_800AA2A0
 /* 0524F0 800AA2A0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0524F4 800AA2A4 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0524F8 800AA2A8 0C02A5D8 */  jal   func_800A9760_ovl1
+/* 0524F8 800AA2A8 0C02A5D8 */  jal   func_800A9760
 /* 0524FC 800AA2AC 00000000 */   nop   
-/* 052500 800AA2B0 0C02A85D */  jal   func_800AA174_ovl1
+/* 052500 800AA2B0 0C02A85D */  jal   func_800AA174
 /* 052504 800AA2B4 00000000 */   nop   
 /* 052508 800AA2B8 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 05250C 800AA2BC 27BD0018 */  addiu $sp, $sp, 0x18

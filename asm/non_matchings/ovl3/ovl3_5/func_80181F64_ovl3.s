@@ -68,7 +68,7 @@ glabel func_80181F64_ovl3
 /* 0E2AAC 8018206C 258C2658 */  addiu $t4, %lo(D_80182658) # addiu $t4, $t4, 0x2658
 /* 0E2AB0 80182070 000EC080 */  sll   $t8, $t6, 2
 /* 0E2AB4 80182074 00380821 */  addu  $at, $at, $t8
-/* 0E2AB8 80182078 0C02BC9F */  jal   func_800AF27C_ovl3
+/* 0E2AB8 80182078 0C02BC9F */  jal   func_800AF27C
 /* 0E2ABC 8018207C AC2CF310 */   sw    $t4, -0xcf0($at)
 /* 0E2AC0 80182080 0C04783A */  jal   func_8011E0E8_ovl3
 /* 0E2AC4 80182084 00000000 */   nop   
@@ -126,7 +126,7 @@ glabel func_80181F64_ovl3
 .L8018214C_ovl3:
 /* 0E2B8C 8018214C 00000000 */  nop   
 .L80182150_ovl3:
-/* 0E2B90 80182150 0C02BB48 */  jal   func_800AED20_ovl3
+/* 0E2B90 80182150 0C02BB48 */  jal   func_800AED20
 /* 0E2B94 80182154 00000000 */   nop   
 /* 0E2B98 80182158 8E2D0000 */  lw    $t5, ($s1)
 /* 0E2B9C 8018215C 3C18800E */  lui   $t8, 0x800e
@@ -137,7 +137,7 @@ glabel func_80181F64_ovl3
 /* 0E2BB0 80182170 000E6080 */  sll   $t4, $t6, 2
 /* 0E2BB4 80182174 030CC021 */  addu  $t8, $t8, $t4
 /* 0E2BB8 80182178 8F18FBD0 */  lw    $t8, -0x430($t8)
-/* 0E2BBC 8018217C 0C02A040 */  jal   func_800A8100_ovl3
+/* 0E2BBC 8018217C 0C02A040 */  jal   func_800A8100
 /* 0E2BC0 80182180 8F070020 */   lw    $a3, 0x20($t8)
 /* 0E2BC4 80182184 AE02004C */  sw    $v0, 0x4c($s0)
 /* 0E2BC8 80182188 0C047701 */  jal   func_8011DC04_ovl3
@@ -324,7 +324,7 @@ glabel func_80181F64_ovl3
 /* 0E2E80 80182440 3C040002 */  lui   $a0, (0x000201FB >> 16) # lui $a0, 2
 /* 0E2E84 80182444 348401FB */  ori   $a0, (0x000201FB & 0xFFFF) # ori $a0, $a0, 0x1fb
 /* 0E2E88 80182448 25AE0001 */  addiu $t6, $t5, 1
-/* 0E2E8C 8018244C 0C02A855 */  jal   func_800AA154_ovl3
+/* 0E2E8C 8018244C 0C02A855 */  jal   func_800AA154
 /* 0E2E90 80182450 A60E00D2 */   sh    $t6, 0xd2($s0)
 /* 0E2E94 80182454 24180004 */  li    $t8, 4
 /* 0E2E98 80182458 A60000D2 */  sh    $zero, 0xd2($s0)
@@ -432,7 +432,7 @@ glabel func_80181F64_ovl3
 /* 0E3024 801825E4 0C047717 */  jal   func_8011DC5C_ovl3
 /* 0E3028 801825E8 00000000 */   nop   
 /* 0E302C 801825EC 24040006 */  li    $a0, 6
-/* 0E3030 801825F0 0C02ED1A */  jal   func_800BB468_ovl3
+/* 0E3030 801825F0 0C02ED1A */  jal   func_800BB468
 /* 0E3034 801825F4 24050010 */   li    $a1, 16
 /* 0E3038 801825F8 0C05A4F1 */  jal   func_801693C4_ovl3
 /* 0E303C 801825FC 2404000A */   li    $a0, 10

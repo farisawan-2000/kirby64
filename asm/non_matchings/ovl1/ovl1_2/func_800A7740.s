@@ -16,7 +16,7 @@ glabel func_800A7740
 .L800A7774_ovl1:
 /* 04F9C4 800A7774 3C18800C */  lui   $t8, %hi(D_800C0534) # $t8, 0x800c
 /* 04F9C8 800A7778 27180534 */  addiu $t8, %lo(D_800C0534) # addiu $t8, $t8, 0x534
-/* 04F9CC 800A777C 0C029DC1 */  jal   func_800A7704_ovl1
+/* 04F9CC 800A777C 0C029DC1 */  jal   func_800A7704
 /* 04F9D0 800A7780 01F82021 */   addu  $a0, $t7, $t8
 .L800A7784_ovl1:
 /* 04F9D4 800A7784 8FBF0014 */  lw    $ra, 0x14($sp)

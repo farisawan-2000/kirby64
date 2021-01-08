@@ -277,7 +277,7 @@ u32 func_800A73B0(void) {
     D_800D7B70 = gDisplayListHeads->unk0;
     D_800D7B74 = gDisplayListHeads[1];
     func_8000AAE0_ovl1();
-    func_800AC610_ovl1();
+    func_800AC610();
     temp_t1 = D_8004A404 - D_800D7B6C;
     temp_at = D_800D7B78 < temp_t1;
     D_800D7B6C = temp_t1;
@@ -324,7 +324,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A74D8.s")
 #ifdef MIPS_TO_C
 void *func_800A7554(void) {
     func_80020C88_ovl1();
-    func_800A75B0_ovl1(0, 0x99999999);
+    func_800A75B0(0, 0x99999999);
     func_80020998_ovl1(0, 0x7800);
     D_800D6B4C = D_800C0530.unk0 - 1;
     D_800D6B50 = D_800C0530.unk2;
@@ -403,7 +403,7 @@ block_2:
     if (arg0 >= D_800D6B4C) {
         goto block_2;
     }
-    return func_800A7704_ovl1((arg0 * 0x18) + &D_800C0534, arg0);
+    return func_800A7704((arg0 * 0x18) + &D_800C0534, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7740.s")
@@ -418,7 +418,7 @@ block_2:
     if (arg0 >= D_800D6B50) {
         goto block_2;
     }
-    return func_800A7704_ovl1((arg0 * 0x18) + &D_800C0B1C, arg0);
+    return func_800A7704((arg0 * 0x18) + &D_800C0B1C, arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7794.s")
@@ -488,8 +488,8 @@ void *func_800A78D0(s32 arg0) {
     u32 phi_v1;
     void *phi_v0;
 
-    D_800D6FB4 = func_8009B99C_ovl1(0x100);
-    D_800D6FB8 = func_800A04B8_ovl1(0x40);
+    D_800D6FB4 = func_8009B99C(0x100);
+    D_800D6FB8 = func_800A04B8(0x40);
     func_8000A29C_ovl1(D_800D6FB4);
     func_8000A29C_ovl1(D_800D6FB8);
     temp_v0_2 = func_8000A180(-7, 0, 0x18, 0);
@@ -505,7 +505,7 @@ void *func_800A78D0(s32 arg0) {
     temp_s0 = temp_v0_3;
     func_8000A5FC_ovl1(temp_v0_3, &D_800A7ABC, 0x10, 0xC, -1);
     temp_s0[0xC] = 0xF;
-    func_8009B550_ovl1(0x10, 0xBC);
+    func_8009B550(0x10, 0xBC);
     phi_v1 = &D_800D6AB8;
 loop_1:
     temp_v1 = phi_v1 + 4;
@@ -533,7 +533,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A78D0.s")
 
 #ifdef MIPS_TO_C
 void func_800A7A40(void) {
-    func_800A7A70_ovl1(1, 0x30007, 0x30008);
+    func_800A7A70(1, 0x30007, 0x30008);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A40.s")
@@ -543,8 +543,8 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A40.s")
 void func_800A7A70(s32 arg0, ? arg1, s32 arg2) {
     s32 sp1C;
 
-    sp1C = func_800A9AA8_ovl1(arg1, 3);
-    func_8009B768_ovl1(arg0, sp1C, func_800A9AA8_ovl1(arg2, 3));
+    sp1C = func_800A9AA8(arg1, 3);
+    func_8009B768(arg0, sp1C, func_800A9AA8(arg2, 3));
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A70.s")
@@ -695,7 +695,7 @@ s32 func_800A7F10(s32 arg0, s32 arg1, ? arg2) {
 
     phi_return = 0;
     if ((D_800D6FB8->unk44 & (0x10000 << arg1)) == 0) {
-        temp_v0 = func_800A19EC_ovl1((arg1 * 8) | arg0, arg2);
+        temp_v0 = func_800A19EC((arg1 * 8) | arg0, arg2);
         if (temp_v0 == 0) {
             return 0;
         }
@@ -716,7 +716,7 @@ void *func_800A7F74(s32 arg0, s32 arg1, ? arg2, f32 arg3, f32 arg4, f32 arg5) {
     temp_f12 = arg3;
     if ((D_800D6FB8->unk44 & (0x10000 << arg1)) == 0) {
         arg3 = temp_f12;
-        temp_v0 = func_800A19EC_ovl1(temp_f12, (arg1 * 8) | arg0, arg2);
+        temp_v0 = func_800A19EC(temp_f12, (arg1 * 8) | arg0, arg2);
         if (temp_v0 != 0) {
             temp_v1 = temp_v0->unk4C;
             if (temp_v1 == 0) {
@@ -744,7 +744,7 @@ void *func_800A802C(s32 arg0, s32 arg1, ? arg2, void *arg3, void *arg4) {
     void *temp_v1;
 
     if ((D_800D6FB8->unk44 & (0x10000 << arg1)) == 0) {
-        temp_v0 = func_800A19EC_ovl1((arg1 * 8) | arg0, arg2);
+        temp_v0 = func_800A19EC((arg1 * 8) | arg0, arg2);
         if (temp_v0 != 0) {
             temp_v1 = temp_v0->unk4C;
             if (temp_v1 == 0) {
@@ -779,7 +779,7 @@ void *func_800A8100(s32 arg0, s32 arg1, ? arg2, void *arg3) {
     void *phi_a3;
 
     if ((D_800D6FB8->unk44 & (0x10000 << arg1)) == 0) {
-        temp_v0 = func_800A19EC_ovl1((arg1 * 8) | arg0, arg2);
+        temp_v0 = func_800A19EC((arg1 * 8) | arg0, arg2);
         if (temp_v0 != 0) {
             if (arg3 == 0) {
                 phi_a2 = D_8004A7C4->objId;
@@ -824,14 +824,14 @@ void *func_800A8234(s32 arg0, s32 arg1, ? arg2) {
 
     phi_return = NULL;
     if ((D_800D6FB8->unk44 & (0x10000 << arg1)) == 0) {
-        temp_ret = func_800A19EC_ovl1((arg1 * 8) | arg0, arg2);
+        temp_ret = func_800A19EC((arg1 * 8) | arg0, arg2);
         temp_v0 = temp_ret;
         if (temp_v0 == 0) {
             return NULL;
         }
         if (temp_v0->unk4C == 0) {
             sp1C = temp_v0;
-            func_8009B72C_ovl1(temp_v0, 0);
+            func_8009B72C(temp_v0, 0);
         }
         phi_return = temp_ret;
     }

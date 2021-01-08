@@ -3,7 +3,7 @@ glabel func_800F8464
 /* 080ED8 800F8468 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 080EDC 800F846C 00A03025 */  move  $a2, $a1
 /* 080EE0 800F8470 AFA6001C */  sw    $a2, 0x1c($sp)
-/* 080EE4 800F8474 0C02A6AA */  jal   func_800A9AA8_ovl2
+/* 080EE4 800F8474 0C02A6AA */  jal   func_800A9AA8
 /* 080EE8 800F8478 24050003 */   li    $a1, 3
 /* 080EEC 800F847C 8FA6001C */  lw    $a2, 0x1c($sp)
 /* 080EF0 800F8480 8C4E0000 */  lw    $t6, ($v0)

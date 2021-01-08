@@ -1,7 +1,7 @@
 glabel func_80154748
 /* 138AD8 80154748 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 138ADC 8015474C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 138AE0 80154750 0C029AF0 */  jal   func_800A6BC0_ovl6
+/* 138AE0 80154750 0C029AF0 */  jal   func_800A6BC0
 /* 138AE4 80154754 24040002 */   li    $a0, 2
 /* 138AE8 80154758 3C03800D */  lui   $v1, %hi(D_800D799C) # $v1, 0x800d
 /* 138AEC 8015475C 2463799C */  addiu $v1, %lo(D_800D799C) # addiu $v1, $v1, 0x799c

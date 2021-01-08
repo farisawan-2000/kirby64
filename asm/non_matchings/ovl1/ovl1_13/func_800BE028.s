@@ -15,7 +15,7 @@ glabel func_800BE028
 /* 0662A8 800BE058 8E240000 */  lw    $a0, ($s1)
 /* 0662AC 800BE05C 52640008 */  beql  $s3, $a0, .L800BE080_ovl1
 /* 0662B0 800BE060 8FBF0024 */   lw    $ra, 0x24($sp)
-/* 0662B4 800BE064 0C02A29F */  jal   func_800A8A7C_ovl1
+/* 0662B4 800BE064 0C02A29F */  jal   func_800A8A7C
 /* 0662B8 800BE068 00000000 */   nop   
 /* 0662BC 800BE06C 26100001 */  addiu $s0, $s0, 1
 /* 0662C0 800BE070 0212082B */  sltu  $at, $s0, $s2

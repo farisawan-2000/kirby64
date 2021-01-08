@@ -5,7 +5,7 @@ glabel func_800BB3C0
 /* 06361C 800BB3CC AFA40028 */  sw    $a0, 0x28($sp)
 /* 063620 800BB3D0 AFAE001C */  sw    $t6, 0x1c($sp)
 /* 063624 800BB3D4 AFA5002C */  sw    $a1, 0x2c($sp)
-/* 063628 800BB3D8 0C02EC0A */  jal   func_800BB028_ovl1
+/* 063628 800BB3D8 0C02EC0A */  jal   func_800BB028
 /* 06362C 800BB3DC 27A4001C */   addiu $a0, $sp, 0x1c
 /* 063630 800BB3E0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 063634 800BB3E4 27BD0030 */  addiu $sp, $sp, 0x30

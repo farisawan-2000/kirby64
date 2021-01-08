@@ -45,7 +45,7 @@ glabel func_8017A2C0_ovl3
 /* 0DADAC 8017A36C 00E23821 */  addu  $a3, $a3, $v0
 /* 0DADB0 8017A370 8CE725D0 */  lw    $a3, 0x25d0($a3)
 /* 0DADB4 8017A374 E7A60010 */  swc1  $f6, 0x10($sp)
-/* 0DADB8 8017A378 0C029FDD */  jal   func_800A7F74_ovl3
+/* 0DADB8 8017A378 0C029FDD */  jal   func_800A7F74
 /* 0DADBC 8017A37C E7A80014 */   swc1  $f8, 0x14($sp)
 .L8017A380_ovl3:
 /* 0DADC0 8017A380 8FBF001C */  lw    $ra, 0x1c($sp)

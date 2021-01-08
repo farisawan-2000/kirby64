@@ -16,7 +16,7 @@ glabel func_800A8CE0
 /* 050F68 800A8D18 AFA3001C */  sw    $v1, 0x1c($sp)
 /* 050F6C 800A8D1C 01095023 */  subu  $t2, $t0, $t1
 /* 050F70 800A8D20 01452025 */  or    $a0, $t2, $a1
-/* 050F74 800A8D24 0C02A0D6 */  jal   func_800A8358_ovl1
+/* 050F74 800A8D24 0C02A0D6 */  jal   func_800A8358
 /* 050F78 800A8D28 AFA4002C */   sw    $a0, 0x2c($sp)
 /* 050F7C 800A8D2C 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 050F80 800A8D30 8FA7002C */  lw    $a3, 0x2c($sp)

@@ -12,7 +12,7 @@ glabel func_800B86FC
 /* 060978 800B8728 8DCECA04 */  lw    $t6, %lo(D_800ECA04)($t6)
 /* 06097C 800B872C 104E0003 */  beq   $v0, $t6, .L800B873C_ovl1
 /* 060980 800B8730 00000000 */   nop   
-/* 060984 800B8734 0C02E402 */  jal   func_800B9008_ovl1
+/* 060984 800B8734 0C02E402 */  jal   func_800B9008
 /* 060988 800B8738 00000000 */   nop   
 .L800B873C_ovl1:
 /* 06098C 800B873C 3C02800F */  lui   $v0, %hi(gSaveBuffer1) # $v0, 0x800f
@@ -34,7 +34,7 @@ glabel func_800B86FC
 /* 0609C4 800B8774 3C01800F */  lui   $at, %hi(D_800ECA00) # $at, 0x800f
 /* 0609C8 800B8778 0C02E438 */  jal   calc_header_checksum
 /* 0609CC 800B877C AC23CA00 */   sw    $v1, %lo(D_800ECA00)($at)
-/* 0609D0 800B8780 0C02E2F7 */  jal   func_800B8BDC_ovl1
+/* 0609D0 800B8780 0C02E2F7 */  jal   func_800B8BDC
 /* 0609D4 800B8784 00000000 */   nop   
 /* 0609D8 800B8788 3C19800F */  lui   $t9, %hi(gSaveBuffer1) # $t9, 0x800f
 /* 0609DC 800B878C 2739C9F8 */  addiu $t9, %lo(gSaveBuffer1) # addiu $t9, $t9, -0x3608

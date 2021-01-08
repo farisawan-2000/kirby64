@@ -128,7 +128,7 @@ glabel func_8016DDE8_ovl3
 /* 0CEA08 8016DFC8 3C04800E */  lui   $a0, 0x800e
 /* 0CEA0C 8016DFCC 000C6880 */  sll   $t5, $t4, 2
 /* 0CEA10 8016DFD0 008D2021 */  addu  $a0, $a0, $t5
-/* 0CEA14 8016DFD4 0C02BE95 */  jal   func_800AFA54_ovl3
+/* 0CEA14 8016DFD4 0C02BE95 */  jal   func_800AFA54
 /* 0CEA18 8016DFD8 8C84FA10 */   lw    $a0, -0x5f0($a0)
 /* 0CEA1C 8016DFDC 92020004 */  lbu   $v0, 4($s0)
 .L8016DFE0_ovl3:

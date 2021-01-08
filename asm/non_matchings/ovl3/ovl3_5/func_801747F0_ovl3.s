@@ -41,7 +41,7 @@ glabel func_801747F0_ovl3
 /* 0D52C8 80174888 256B492C */  addiu $t3, %lo(D_8017492C) # addiu $t3, $t3, 0x492c
 /* 0D52CC 8017488C 000D7880 */  sll   $t7, $t5, 2
 /* 0D52D0 80174890 002F0821 */  addu  $at, $at, $t7
-/* 0D52D4 80174894 0C02BC9F */  jal   func_800AF27C_ovl3
+/* 0D52D4 80174894 0C02BC9F */  jal   func_800AF27C
 /* 0D52D8 80174898 AC2BF310 */   sw    $t3, -0xcf0($at)
 /* 0D52DC 8017489C 8218000D */  lb    $t8, 0xd($s0)
 /* 0D52E0 801748A0 2401FFFE */  li    $at, -2

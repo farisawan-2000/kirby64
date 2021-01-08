@@ -43,7 +43,7 @@ glabel func_801DB34C_ovl11
 /* 1E5CA8 801DB3E8 0C02909C */  jal   print_error_stub
 /* 1E5CAC 801DB3EC AFA60050 */   sw    $a2, 0x50($sp)
 /* 1E5CB0 801DB3F0 8FA60050 */  lw    $a2, 0x50($sp)
-/* 1E5CB4 801DB3F4 0C02C640 */  jal   func_800B1900_ovl11
+/* 1E5CB4 801DB3F4 0C02C640 */  jal   func_800B1900
 /* 1E5CB8 801DB3F8 30C4FFFF */   andi  $a0, $a2, 0xffff
 /* 1E5CBC 801DB3FC 10000065 */  b     .L801DB594_ovl11
 /* 1E5CC0 801DB400 8FBF004C */   lw    $ra, 0x4c($sp)

@@ -11,33 +11,33 @@ glabel func_800A5F94
 /* 04E208 800A5FB8 F7B60018 */  sdc1  $f22, 0x18($sp)
 /* 04E20C 800A5FBC F7B40010 */  sdc1  $f20, 0x10($sp)
 /* 04E210 800A5FC0 C44C0000 */  lwc1  $f12, ($v0)
-/* 04E214 800A5FC4 0C0296D9 */  jal   func_800A5B64_ovl1
+/* 04E214 800A5FC4 0C0296D9 */  jal   func_800A5B64
 /* 04E218 800A5FC8 AFA20030 */   sw    $v0, 0x30($sp)
 /* 04E21C 800A5FCC 8FA20030 */  lw    $v0, 0x30($sp)
 /* 04E220 800A5FD0 46000506 */  mov.s $f20, $f0
-/* 04E224 800A5FD4 0C0296F7 */  jal   func_800A5BDC_ovl1
+/* 04E224 800A5FD4 0C0296F7 */  jal   func_800A5BDC
 /* 04E228 800A5FD8 C44C0000 */   lwc1  $f12, ($v0)
 /* 04E22C 800A5FDC 3C0F800E */  lui   $t7, %hi(gEntitiesAngleYArray) # $t7, 0x800e
 /* 04E230 800A5FE0 25EF41D0 */  addiu $t7, %lo(gEntitiesAngleYArray) # addiu $t7, $t7, 0x41d0
 /* 04E234 800A5FE4 022F1021 */  addu  $v0, $s1, $t7
 /* 04E238 800A5FE8 46000586 */  mov.s $f22, $f0
 /* 04E23C 800A5FEC C44C0000 */  lwc1  $f12, ($v0)
-/* 04E240 800A5FF0 0C0296D9 */  jal   func_800A5B64_ovl1
+/* 04E240 800A5FF0 0C0296D9 */  jal   func_800A5B64
 /* 04E244 800A5FF4 AFA20030 */   sw    $v0, 0x30($sp)
 /* 04E248 800A5FF8 8FA20030 */  lw    $v0, 0x30($sp)
 /* 04E24C 800A5FFC E7A00048 */  swc1  $f0, 0x48($sp)
-/* 04E250 800A6000 0C0296F7 */  jal   func_800A5BDC_ovl1
+/* 04E250 800A6000 0C0296F7 */  jal   func_800A5BDC
 /* 04E254 800A6004 C44C0000 */   lwc1  $f12, ($v0)
 /* 04E258 800A6008 3C18800E */  lui   $t8, %hi(gEntitiesAngleZArray) # $t8, 0x800e
 /* 04E25C 800A600C 27184390 */  addiu $t8, %lo(gEntitiesAngleZArray) # addiu $t8, $t8, 0x4390
 /* 04E260 800A6010 02381021 */  addu  $v0, $s1, $t8
 /* 04E264 800A6014 C44C0000 */  lwc1  $f12, ($v0)
 /* 04E268 800A6018 AFA20030 */  sw    $v0, 0x30($sp)
-/* 04E26C 800A601C 0C0296D9 */  jal   func_800A5B64_ovl1
+/* 04E26C 800A601C 0C0296D9 */  jal   func_800A5B64
 /* 04E270 800A6020 E7A0003C */   swc1  $f0, 0x3c($sp)
 /* 04E274 800A6024 8FA20030 */  lw    $v0, 0x30($sp)
 /* 04E278 800A6028 E7A00044 */  swc1  $f0, 0x44($sp)
-/* 04E27C 800A602C 0C0296F7 */  jal   func_800A5BDC_ovl1
+/* 04E27C 800A602C 0C0296F7 */  jal   func_800A5BDC
 /* 04E280 800A6030 C44C0000 */   lwc1  $f12, ($v0)
 /* 04E284 800A6034 C7AE003C */  lwc1  $f14, 0x3c($sp)
 /* 04E288 800A6038 C7A20044 */  lwc1  $f2, 0x44($sp)

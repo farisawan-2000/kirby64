@@ -50,7 +50,7 @@ void func_801EF3F0_ovl10(s32 arg0) {
     while (D_800E8920[D_8004A7C4->objId] == 0) {
         func_8000B6BC(1);
     }
-    func_800B3520_ovl10();
+    func_800B3520();
     func_8000B6BC(0x3C);
     D_801ACF84_ovl10(arg0);
 }

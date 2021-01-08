@@ -36,7 +36,7 @@ void func_800F6C98(s32 arg0) {
 
     temp_v0 = D_8004A7C4;
     ((temp_v0->unk0 * 4) + 0x800E0000)->unk-1070 = 0;
-    func_800B1F68_ovl2(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
+    func_800B1F68(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
     func_8000B6BC(120.0f * D_800D6B14);
     temp_v0_2 = D_8004A7C4->objId;
     temp_v1 = ((temp_v0_2 * 4) + 0x800F0000)->unk-6720;
@@ -52,7 +52,7 @@ void func_800F6C98(s32 arg0) {
         func_800F6C78_ovl2();
         phi_v0 = D_8004A7C4->objId;
     }
-    func_800B1900_ovl2(phi_v0 & 0xFFFF);
+    func_800B1900(phi_v0 & 0xFFFF);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C98.s")
@@ -89,13 +89,13 @@ void func_800F6E30_ovl2(s32 arg0) {
     u32 phi_s3;
     s32 phi_v1;
 
-    func_800B1F68_ovl2(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
+    func_800B1F68(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
-    func_800AF980_ovl2(0x18);
+    func_800AF980(0x18);
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;
     func_800A9864(*D_801290D8, 0x26, 0x10);
-    func_800A2550_ovl2(((D_801290D0 * 4) + 0x800E0000)->unk-5F0);
-    func_800B3070_ovl2(0x10, (bitwise s32) D_800D6B10);
+    func_800A2550(((D_801290D0 * 4) + 0x800E0000)->unk-5F0);
+    func_800B3070(0x10, (bitwise s32) D_800D6B10);
     temp_v1 = D_8004A7C4->objId * 4;
     temp_v0 = (temp_v1 + 0x800E0000)->unk-B30;
     temp_a0 = temp_v0->unk14;
@@ -118,7 +118,7 @@ loop_3:
 
                     } else {
                         func_800FA414_ovl2(0x8000000D, temp_v0_2);
-                        func_800AAF34_ovl2(0x10, temp_s0, 0);
+                        func_800AAF34(0x10, temp_s0, 0);
                         func_801129AC_ovl2();
                         func_801129DC_ovl2();
                         temp_v0_3 = D_800BE500;
@@ -133,7 +133,7 @@ loop_3:
                     temp_v0_4 = D_8004A7C4;
                     *(&D_800DF850 + (temp_v0_4->unk0 * 4)) = temp_v0_2;
                     ((temp_v0_4->unk0 * 4) + 0x800E0000)->unk110 = temp_s0;
-                    func_800AEEB4_ovl2(**(&D_800DF850 + (temp_v0_4->unk0 * 4)), 0, temp_v0_2);
+                    func_800AEEB4(**(&D_800DF850 + (temp_v0_4->unk0 * 4)), 0, temp_v0_2);
                     D_8012E7B4 = 0;
                     phi_s1 = phi_s1 + 1;
                 } else {
@@ -144,7 +144,7 @@ loop_3:
                 temp_v0_5 = D_8004A7C4;
                 *(&D_800DF690 + (temp_v0_5->unk0 * 4)) = temp_v0_2;
                 ((temp_v0_5->unk0 * 4) + 0x800E0000)->unk-B0 = temp_s0;
-                func_800AEE20_ovl2(**(&D_800DF690 + (temp_v0_5->unk0 * 4)), 0, temp_v0_2);
+                func_800AEE20(**(&D_800DF690 + (temp_v0_5->unk0 * 4)), 0, temp_v0_2);
                 D_8012E7B0 = 0;
                 phi_s2 = phi_s2 + 1;
             } else {
@@ -211,9 +211,9 @@ extern u32 D_800D7040;
 extern u32 D_80124000;
 
 void func_800F7258_ovl2(s32 arg0) {
-    func_800A5404_ovl2(&D_800D7010, &D_80124000);
-    func_800A5404_ovl2(&D_800D7028, &D_80124000);
-    func_800A5404_ovl2(&D_800D7040, &D_80124000);
+    func_800A5404(&D_800D7010, &D_80124000);
+    func_800A5404(&D_800D7028, &D_80124000);
+    func_800A5404(&D_800D7040, &D_80124000);
 }
 
 #ifdef MIPS_TO_C
@@ -648,7 +648,7 @@ void func_800F8464(void *arg1) {
 
     temp_a2 = arg1;
     arg1 = temp_a2;
-    temp_v0 = func_800A9AA8_ovl2(3, temp_a2);
+    temp_v0 = func_800A9AA8(3, temp_a2);
     temp_t6 = *temp_v0;
     arg1->unk0 = 0;
     temp_v1 = temp_t6 + temp_v0;

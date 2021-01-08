@@ -13,7 +13,7 @@ glabel func_8011511C_ovl2
 /* 09DBB8 80115148 0338C823 */  subu  $t9, $t9, $t8
 /* 09DBBC 8011514C 0019C880 */  sll   $t9, $t9, 2
 /* 09DBC0 80115150 03284821 */  addu  $t1, $t9, $t0
-/* 09DBC4 80115154 0C02BE60 */  jal   func_800AF980_ovl2
+/* 09DBC4 80115154 0C02BE60 */  jal   func_800AF980
 /* 09DBC8 80115158 AFA9001C */   sw    $t1, 0x1c($sp)
 /* 09DBCC 8011515C 8FAA001C */  lw    $t2, 0x1c($sp)
 /* 09DBD0 80115160 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1

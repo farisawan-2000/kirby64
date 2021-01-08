@@ -55,7 +55,7 @@ glabel func_800BB588
 /* 063874 800BB624 AE200000 */  sw    $zero, ($s1)
 /* 063878 800BB628 0C0028A7 */  jal   func_8000A29C_ovl1
 /* 06387C 800BB62C 3270FFFF */   andi  $s0, $s3, 0xffff
-/* 063880 800BB630 0C02C640 */  jal   func_800B1900_ovl1
+/* 063880 800BB630 0C02C640 */  jal   func_800B1900
 /* 063884 800BB634 3204FFFF */   andi  $a0, $s0, 0xffff
 /* 063888 800BB638 10000007 */  b     .L800BB658_ovl1
 /* 06388C 800BB63C 00000000 */   nop   

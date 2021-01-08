@@ -46,7 +46,7 @@ glabel func_800A2550
 .L800A25F8_ovl1:
 /* 04A848 800A25F8 00022403 */  sra   $a0, $v0, 0x10
 /* 04A84C 800A25FC 3084000F */  andi  $a0, $a0, 0xf
-/* 04A850 800A2600 0C02867B */  jal   func_800A19EC_ovl1
+/* 04A850 800A2600 0C02867B */  jal   func_800A19EC
 /* 04A854 800A2604 3045FFFF */   andi  $a1, $v0, 0xffff
 /* 04A858 800A2608 10400099 */  beqz  $v0, .L800A2870_ovl1
 /* 04A85C 800A260C 00408025 */   move  $s0, $v0

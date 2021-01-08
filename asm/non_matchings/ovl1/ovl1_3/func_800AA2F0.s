@@ -1,7 +1,7 @@
 glabel func_800AA2F0
 /* 052540 800AA2F0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 052544 800AA2F4 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 052548 800AA2F8 0C02A6D2 */  jal   func_800A9B48_ovl1
+/* 052548 800AA2F8 0C02A6D2 */  jal   func_800A9B48
 /* 05254C 800AA2FC AFA5001C */   sw    $a1, 0x1c($sp)
 /* 052550 800AA300 1040000C */  beqz  $v0, .L800AA334_ovl1
 /* 052554 800AA304 C7A0001C */   lwc1  $f0, 0x1c($sp)
@@ -12,7 +12,7 @@ glabel func_800AA2F0
 /* 052568 800AA318 8DCF0000 */  lw    $t7, ($t6)
 /* 05256C 800AA31C 000FC080 */  sll   $t8, $t7, 2
 /* 052570 800AA320 00982021 */  addu  $a0, $a0, $t8
-/* 052574 800AA324 0C02C8A2 */  jal   func_800B2288_ovl1
+/* 052574 800AA324 0C02C8A2 */  jal   func_800B2288
 /* 052578 800AA328 8C84F850 */   lw    $a0, -0x7b0($a0)
 /* 05257C 800AA32C 1000000B */  b     .L800AA35C_ovl1
 /* 052580 800AA330 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -24,7 +24,7 @@ glabel func_800AA2F0
 /* 052594 800AA344 8F280000 */  lw    $t0, ($t9)
 /* 052598 800AA348 00084880 */  sll   $t1, $t0, 2
 /* 05259C 800AA34C 00892021 */  addu  $a0, $a0, $t1
-/* 0525A0 800AA350 0C02C87F */  jal   func_800B21FC_ovl1
+/* 0525A0 800AA350 0C02C87F */  jal   func_800B21FC
 /* 0525A4 800AA354 8C84F690 */   lw    $a0, -0x970($a0)
 /* 0525A8 800AA358 8FBF0014 */  lw    $ra, 0x14($sp)
 .L800AA35C_ovl1:

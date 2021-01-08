@@ -73,7 +73,7 @@ glabel func_801EC120_ovl10
 /* 1DCFA4 801EC234 24050002 */  li    $a1, 2
 /* 1DCFA8 801EC238 E7A60010 */  swc1  $f6, 0x10($sp)
 /* 1DCFAC 801EC23C 8CE725D0 */ lw $a3, %lo(gEntitiesPosXArray)($a3)
-/* 1DCFB0 801EC240 0C029FDD */  jal   func_800A7F74_ovl10
+/* 1DCFB0 801EC240 0C029FDD */  jal   func_800A7F74
 /* 1DCFB4 801EC244 E7A80014 */   swc1  $f8, 0x14($sp)
 /* 1DCFB8 801EC248 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 1DCFBC 801EC24C 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)

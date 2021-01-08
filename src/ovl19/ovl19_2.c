@@ -284,7 +284,7 @@ void func_8021FA2C_ovl19(void) {
     if (temp_v0 >= 0x3C) {
 block_2:
         if (temp_v0 != -1) {
-            func_800B1900_ovl19(temp_v0 & 0xFFFF);
+            func_800B1900(temp_v0 & 0xFFFF);
         }
         print_error_stub(&D_8022F720);
         return;
@@ -371,7 +371,7 @@ loop_1:
         }
     }
     D_800E98E0[*(D_800EBBE0 + phi_v0)] = 1;
-    func_800AA154_ovl19(0x2035E);
+    func_800AA154(0x2035E);
     func_800AFA14();
 }
 #else
@@ -641,7 +641,7 @@ void func_8022054C_ovl19(s32 arg0) {
         temp_v1 = D_8004A7C4;
         D_800D6F18->unk1C = 1;
         D_800DEF90[temp_v1->objId] = NULL;
-        func_800B1F68_ovl19(D_800DEC10[temp_v1->objId], &D_800B1434);
+        func_800B1F68(D_800DEC10[temp_v1->objId], &D_800B1434);
         D_800E98E0[D_8004A7C4->objId] = 3;
         D_800D6F18->unk10 = 0;
         D_800D6F18->unkC = -1;
@@ -650,7 +650,7 @@ loop_2:
         temp_v1_2 = D_8004A7C4;
         temp_v0 = temp_v1_2->objId;
         if (D_800E98E0[temp_v0] == 0) {
-            func_800B1900_ovl19(temp_v0 & 0xFFFF);
+            func_800B1900(temp_v0 & 0xFFFF);
 block_14:
             func_8000B6BC(1);
             goto loop_2;
@@ -679,7 +679,7 @@ block_14:
         gEntitiesPosYArray[temp_a0] = 60.0f;
         if (D_800D6E30[D_800BE508] == 0) {
             func_800A7678(0x112);
-            func_800A7F74_ovl19(3, 0, 0xCE, 0x43960000, gEntitiesPosYArray[D_8004A7C4->objId], 0.0f);
+            func_800A7F74(3, 0, 0xCE, 0x43960000, gEntitiesPosYArray[D_8004A7C4->objId], 0.0f);
             func_8000B6BC(0x12);
             sp74 = 0.0f;
             sp7C = 0.0f;
@@ -694,7 +694,7 @@ block_14:
             func_800FCD14(0xFF, 3, 0.5f, 3, 7, 2, 0, 0, 0x13, &sp74, &sp68, &sp5C);
         }
     }
-    func_800B1900_ovl19(D_8004A7C4->unk2);
+    func_800B1900(D_8004A7C4->unk2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022054C_ovl19.s")
@@ -791,13 +791,13 @@ void func_80220B40_ovl19(s32 arg0) {
 
     temp_s0 = D_8004A7C4;
     D_800DEF90[temp_s0->objId] = NULL;
-    func_800B1F68_ovl19(D_800DEC10[temp_s0->objId], &D_800B1434);
+    func_800B1F68(D_800DEC10[temp_s0->objId], &D_800B1434);
     temp_s0_2 = D_8004A7C4;
     gEntitiesPosYArray[temp_s0_2->objId] = 200.0f;
     D_800E6BD0[temp_s0_2->objId] = 0.5f;
     func_8000B6BC(2);
 loop_1:
-    if (func_800AB490_ovl19(D_800D6F18->unk0) == 0) {
+    if (func_800AB490(D_800D6F18->unk0) == 0) {
         func_8000B6BC(1);
         goto loop_1;
     }
@@ -805,7 +805,7 @@ loop_1:
     if (D_800D6E30[D_800BE508] == 0) {
         func_800A7678(0x112);
         temp_v0 = D_8004A7C4->objId;
-        func_800A7F74_ovl19(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]);
+        func_800A7F74(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]);
         func_8000B6BC(0x12);
         sp5C = 0.0f;
         sp64 = 0.0f;
@@ -820,7 +820,7 @@ loop_1:
         temp_v0_2 = D_8004A7C4->objId;
         func_800FCD14(0xFF, *(&D_800E5F93 + (temp_v0_2 * 4)), (bitwise f32) (bitwise s32) D_800E6BD0[temp_v0_2], 3, 7, 2, 0, 0, 0x28, &sp5C, &sp50, &sp44);
     }
-    func_800B1900_ovl19(D_8004A7C4->unk2);
+    func_800B1900(D_8004A7C4->unk2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220B40_ovl19.s")
@@ -915,7 +915,7 @@ loop_3:
     func_800A9864(0x2006F, 0x1869F, 0x10);
     func_801230E8_ovl19(0x203D1, 0x203D2, 0);
     D_800DF310[D_8004A7C4->objId] = &func_80221108_ovl19;
-    func_800AF27C_ovl19();
+    func_800AF27C();
     func_801230E8_ovl19(0x203D3, 0x203D4, 0);
     func_800AFA14();
 }
@@ -965,7 +965,7 @@ void func_802211A0_ovl19(s32 arg0) {
 
     temp_a2 = D_8004A7C4;
     D_800DEF90[temp_a2->objId] = NULL;
-    func_800B1F68_ovl19(D_800DEC10[temp_a2->objId], &D_800B1434, temp_a2);
+    func_800B1F68(D_800DEC10[temp_a2->objId], &D_800B1434, temp_a2);
     D_800E98E0[D_8004A7C4->objId] = 3;
     D_800D6F18->unk10 = 0;
     D_800D6F18->unkC = -1;
@@ -974,7 +974,7 @@ loop_1:
     temp_a2_2 = D_8004A7C4;
     temp_v0 = temp_a2_2->objId;
     if (D_800E98E0[temp_v0] == 0) {
-        func_800B1900_ovl19(temp_v0 & 0xFFFF);
+        func_800B1900(temp_v0 & 0xFFFF);
 block_13:
         func_8000B6BC(1);
         goto loop_1;
@@ -1005,7 +1005,7 @@ block_13:
     if (D_800D6E30[D_800BE508] == 0) {
         func_800A7678(0x112);
         temp_v1_2 = D_8004A7C4->objId;
-        func_800A7F74_ovl19(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v1_2], gEntitiesPosYArray[temp_v1_2], gEntitiesPosZArray[temp_v1_2]);
+        func_800A7F74(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v1_2], gEntitiesPosYArray[temp_v1_2], gEntitiesPosZArray[temp_v1_2]);
         func_8000B6BC(0x12);
         sp74 = 0.0f;
         sp7C = 0.0f;
@@ -1021,7 +1021,7 @@ block_13:
         func_800FCD14(0xFF, *(&D_800E5F93 + (temp_v1_3 * 4)), (bitwise f32) (bitwise s32) D_800E6BD0[temp_v1_3], 3, 7, 2, 0, 0, 0x35, &sp74, &sp68, &sp5C);
         phi_a2 = D_8004A7C4;
     }
-    func_800B1900_ovl19(phi_a2->unk2);
+    func_800B1900(phi_a2->unk2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802211A0_ovl19.s")
@@ -1111,7 +1111,7 @@ void func_80221750_ovl19(s32 arg0) {
 loop_1:
     D_800E9E20[D_8004A7C4->objId] = 0;
     func_800AA018(0x202E2);
-    func_800AA864_ovl19(0x202E1, 1);
+    func_800AA864(0x202E1, 1);
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_80221BC8_ovl19();
     if (1 == D_800E9E20[D_8004A7C4->objId]) {
@@ -1122,7 +1122,7 @@ loop_2:
         }
     }
     func_800AA018(0x202E4);
-    func_800AA864_ovl19(0x202E3, 1);
+    func_800AA864(0x202E3, 1);
     goto loop_1;
 }
 #else
@@ -1340,9 +1340,9 @@ loop_1:
     func_8021E2D0_ovl19(7, 1);
     func_800AA018(0x203C0);
     D_800DF310[D_8004A7C4->objId] = &func_80221FC8_ovl19;
-    func_800AF27C_ovl19();
+    func_800AF27C();
     func_800F753C_ovl19();
-    func_800AFBB4_ovl19(0, D_8004A7C4);
+    func_800AFBB4(0, D_8004A7C4);
     if (gKirbyState.unk30 == 0) {
 loop_3:
         func_8000B6BC(1);
@@ -1350,7 +1350,7 @@ loop_3:
             goto loop_3;
         }
     }
-    func_800B1900_ovl19(D_8004A7C4->unk2);
+    func_800B1900(D_8004A7C4->unk2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221E20_ovl19.s")
@@ -1546,7 +1546,7 @@ void func_802225A4_ovl19(s32 arg0) {
     (&D_800E4550)[temp_v0->objId] = temp_f0;
     (&D_800E4710)[temp_v0->objId] = temp_f0;
     (&D_800E48D0)[temp_v0->objId] = temp_f0;
-    func_800AF980_ovl19(0x18);
+    func_800AF980(0x18);
     func_800A9864(0x20068, 0x1869F, 0x10);
     temp_v0_2 = D_8004A7C4;
     D_800E9E20[temp_v0_2->objId] = 0;
@@ -1608,11 +1608,11 @@ void func_802227F0_ovl19(s32 arg0) {
     (&D_800E4550)[temp_v0->objId] = temp_f0;
     (&D_800E4710)[temp_v0->objId] = temp_f0;
     (&D_800E48D0)[temp_v0->objId] = temp_f0;
-    func_800AF980_ovl19(0x18);
+    func_800AF980(0x18);
     func_800A9864(0x20060, 0x1869F, 0x10);
     D_800DF150[D_8004A7C4->objId] = &func_802228F8_ovl18;
     func_800AA018(0x202DE);
-    func_800AA864_ovl19(0x202DD, 1);
+    func_800AA864(0x202DD, 1);
     func_800AA018(0x202E0);
     func_800AA018(0x202DF);
     func_800AFA14();
@@ -1649,7 +1649,7 @@ void func_80222918_ovl19(s32 arg0) {
     (&D_800E4550)[temp_v1->objId] = temp_f0;
     (&D_800E4710)[temp_v1->objId] = temp_f0;
     (&D_800E48D0)[temp_v1->objId] = temp_f0;
-    func_800AF980_ovl19(0x18, D_800E0D50, gEntitiesPosXArray, gEntitiesPosYArray);
+    func_800AF980(0x18, D_800E0D50, gEntitiesPosXArray, gEntitiesPosYArray);
     func_800A9864(0x20071, 0x1869F, 0x10);
     func_800AFA14();
 }

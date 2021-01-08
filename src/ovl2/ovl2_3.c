@@ -433,12 +433,12 @@ void func_800F90C0_ovl2(s32 arg0, s32 arg1) {
         temp_a3 = temp_v0->unkA;
         temp_a0 = (temp_v1 + 0x800E0000)->unk2790;
         if (temp_a0 >= temp_a1) {
-            func_800A5404_ovl2(arg1, &D_800D478C[temp_a2], temp_a2, temp_a3);
+            func_800A5404(arg1, &D_800D478C[temp_a2], temp_a2, temp_a3);
             return;
         }
         temp_v1_2 = temp_v0->unk12;
         if (temp_v1_2 >= temp_a0) {
-            func_800A5404_ovl2(arg1, &D_800D478C[temp_a3], temp_a2, temp_a3);
+            func_800A5404(arg1, &D_800D478C[temp_a3], temp_a2, temp_a3);
             return;
         }
         phi_f2 = (temp_a1 - temp_a0) / (temp_a1 - temp_v1_2);
@@ -517,7 +517,7 @@ loop_14:
     sp3E = 0;
     sp3D = 0;
     sp3F = 0;
-    func_800A5404_ovl2(temp_f14, arg1, &sp34, phi_a2, temp_a3_2);
+    func_800A5404(temp_f14, arg1, &sp34, phi_a2, temp_a3_2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F90C0_ovl2.s")
@@ -2777,7 +2777,7 @@ void *func_800FCE50_ovl2(void) {
 }
 
 void func_800FCED8_ovl2(UNUSED s32 arg0) {
-    func_800B1900_ovl2((u16)D_8004A7C4->objId);
+    func_800B1900((u16)D_8004A7C4->objId);
 }
 
 void func_800FCF04_ovl2(UNUSED s32 arg0) {

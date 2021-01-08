@@ -146,7 +146,7 @@ glabel func_800A6BC0
 /* 04F038 800A6DE8 24010010 */  li    $at, 16
 /* 04F03C 800A6DEC 16810003 */  bne   $s4, $at, .L800A6DFC_ovl1
 /* 04F040 800A6DF0 AF150000 */   sw    $s5, ($t8)
-/* 04F044 800A6DF4 0C026E9A */  jal   func_8009BA68_ovl1
+/* 04F044 800A6DF4 0C026E9A */  jal   func_8009BA68
 /* 04F048 800A6DF8 8FC4000C */   lw    $a0, 0xc($fp)
 .L800A6DFC_ovl1:
 /* 04F04C 800A6DFC 8E420008 */  lw    $v0, 8($s2)

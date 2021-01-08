@@ -23,7 +23,7 @@ void func_800B86FC(void) {
 
     func_80004D00_ovl1(0, &gSaveBuffer1, 0x118);
     if (calc_save_header_checksum() != D_800ECA04) {
-        func_800B9008_ovl1();
+        func_800B9008();
     }
     phi_v0 = &gSaveBuffer1;
     phi_v1_2 = 0;
@@ -40,7 +40,7 @@ loop_3:
     }
     D_800ECA00 = phi_v1;
     calc_header_checksum();
-    func_800B8BDC_ovl1();
+    func_800B8BDC();
     phi_t9 = &gSaveBuffer1;
     phi_t8 = &gSaveBuffer2;
 loop_7:
@@ -86,14 +86,14 @@ loop_1:
     if (calc_save_file_checksum(phi_s0) == phi_s3->unk64) {
         verify_save(phi_s0, temp_a1);
         calc_file_checksum(phi_s0);
-        func_800B891C_ovl1(phi_s0);
+        func_800B891C(phi_s0);
     } else {
         func_80004D00_ovl1(temp_s1->unk7, temp_a1, 0x58);
         temp_a1_2 = phi_s2;
         if (calc_save_file_checksum(phi_s0) == phi_s3->unk64) {
             func_80004D34_ovl1(temp_s1->unk1, temp_a1_2, 0x58);
         } else {
-            func_800B8E00_ovl1(phi_s0, temp_a1_2, 0x58);
+            func_800B8E00(phi_s0, temp_a1_2, 0x58);
         }
     }
     phi_t1 = phi_s2;
@@ -486,10 +486,10 @@ void func_800B9104(void) {
     }
     if (gSaveBuffer1.unk118 != 0x97538642) {
         func_80004D00_ovl1(0x23, &D_800ECB10, 0xA0);
-        if (func_800B922C_ovl1() != gSaveBuffer1.unk1B4) {
-            func_800B91B8_ovl1();
-            func_800B92B4_ovl1();
-            func_800B8C08_ovl1();
+        if (func_800B922C() != gSaveBuffer1.unk1B4) {
+            func_800B91B8();
+            func_800B92B4();
+            func_800B8C08();
         }
     }
 }
@@ -562,7 +562,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B922C.s")
 
 #ifdef MIPS_TO_C
 void func_800B92B4(void) {
-    D_800ECBAC = func_800B922C_ovl1();
+    D_800ECBAC = func_800B922C();
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B92B4.s")
@@ -929,12 +929,12 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B96A0.s")
 #ifdef MIPS_TO_C
 void func_800B9C50(u32 arg0) {
     if (D_800D6B88 >= 0) {
-        func_800B96A0_ovl1(1);
+        func_800B96A0(1);
         verify_save(arg0);
-        func_800B94FC_ovl1(arg0);
+        func_800B94FC(arg0);
         calc_file_checksum(arg0);
-        func_800B891C_ovl1(arg0);
-        func_800B96A0_ovl1(arg0, 0);
+        func_800B891C(arg0);
+        func_800B96A0(arg0, 0);
     }
 }
 #else
@@ -958,7 +958,7 @@ void func_800B9CB4(u32 arg0, s32 arg1) {
     temp_t0->unk4C = temp_t0->unk4C | temp_a3;
     verify_save(temp_a2, temp_a3);
     calc_file_checksum(arg0);
-    func_800B891C_ovl1(arg0);
+    func_800B891C(arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9CB4.s")
@@ -970,7 +970,7 @@ void func_800B9D60(u32 arg0, s32 arg1) {
     (arg1 + 0x800D0000)->unk6BC0 = 1;
     verify_save();
     calc_file_checksum(arg0);
-    func_800B891C_ovl1(arg0);
+    func_800B891C(arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9D60.s")
@@ -1238,7 +1238,7 @@ loop_27:
     }
     temp_v0->unk2E = temp_v0->unk2E | (1 << (phi_t6 * 2));
     calc_file_checksum(arg0);
-    func_800B891C_ovl1(arg0);
+    func_800B891C(arg0);
     return temp_s0 + 1;
 }
 #else

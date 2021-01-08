@@ -5,7 +5,7 @@ glabel func_800A7554
 /* 04F7B0 800A7560 00000000 */   nop   
 /* 04F7B4 800A7564 3C059999 */  lui   $a1, (0x99999999 >> 16) # lui $a1, 0x9999
 /* 04F7B8 800A7568 34A59999 */  ori   $a1, (0x99999999 & 0xFFFF) # ori $a1, $a1, 0x9999
-/* 04F7BC 800A756C 0C029D6C */  jal   func_800A75B0_ovl1
+/* 04F7BC 800A756C 0C029D6C */  jal   func_800A75B0
 /* 04F7C0 800A7570 00002025 */   move  $a0, $zero
 /* 04F7C4 800A7574 00002025 */  move  $a0, $zero
 /* 04F7C8 800A7578 0C008266 */  jal   func_80020998_ovl1

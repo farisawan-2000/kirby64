@@ -98,7 +98,7 @@ glabel func_801708A0_ovl3
 /* 0D143C 801709FC A60000B4 */  sh    $zero, 0xb4($s0)
 /* 0D1440 80170A00 A209000D */  sb    $t1, 0xd($s0)
 /* 0D1444 80170A04 2404000B */  li    $a0, 11
-/* 0D1448 80170A08 0C02ED1A */  jal   func_800BB468_ovl3
+/* 0D1448 80170A08 0C02ED1A */  jal   func_800BB468
 /* 0D144C 80170A0C 2405000A */   li    $a1, 10
 .L80170A10_ovl3:
 /* 0D1450 80170A10 8FBF001C */  lw    $ra, 0x1c($sp)

@@ -81,12 +81,12 @@ glabel func_80221E20_ovl19
 /* 242664 80221F54 27391FC8 */  addiu $t9, %lo(func_80221FC8_ovl19) # addiu $t9, $t9, 0x1fc8
 /* 242668 80221F58 00095080 */  sll   $t2, $t1, 2
 /* 24266C 80221F5C 002A0821 */  addu  $at, $at, $t2
-/* 242670 80221F60 0C02BC9F */  jal   func_800AF27C_ovl19
+/* 242670 80221F60 0C02BC9F */  jal   func_800AF27C
 /* 242674 80221F64 AC39F310 */ sw $t9, %lo(D_800DF310)($at)
 /* 242678 80221F68 0C03DD4F */  jal   func_800F753C_ovl19
 /* 24267C 80221F6C 00000000 */   nop   
 /* 242680 80221F70 00002025 */  move  $a0, $zero
-/* 242684 80221F74 0C02BEED */  jal   func_800AFBB4_ovl19
+/* 242684 80221F74 0C02BEED */  jal   func_800AFBB4
 /* 242688 80221F78 8E450000 */   lw    $a1, ($s2)
 /* 24268C 80221F7C 3C108013 */  lui   $s0, %hi(gKirbyState) # $s0, 0x8013
 /* 242690 80221F80 2610E7C0 */  addiu $s0, %lo(gKirbyState) # addiu $s0, $s0, -0x1840
@@ -101,7 +101,7 @@ glabel func_80221E20_ovl19
 /* 2426B0 80221FA0 00000000 */   nop   
 /* 2426B4 80221FA4 8E4D0000 */  lw    $t5, ($s2)
 .L80221FA8_ovl19:
-/* 2426B8 80221FA8 0C02C640 */  jal   func_800B1900_ovl19
+/* 2426B8 80221FA8 0C02C640 */  jal   func_800B1900
 /* 2426BC 80221FAC 95A40002 */   lhu   $a0, 2($t5)
 /* 2426C0 80221FB0 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 2426C4 80221FB4 8FB00018 */  lw    $s0, 0x18($sp)

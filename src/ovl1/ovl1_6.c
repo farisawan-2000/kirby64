@@ -12,7 +12,7 @@ void func_800AE0F0(void) {
     s32 i;
 
     for (i = 0; i < 0x70; i++) {
-        func_800AE138_ovl1(i);
+        func_800AE138(i);
     }
     D_800EC9E0 = 0;
 }

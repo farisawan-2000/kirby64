@@ -25,7 +25,7 @@ glabel func_800A3408
 /* 04B6B4 800A3464 AC38E4F4 */  sw    $t8, %lo(D_800BE4F4)($at)
 /* 04B6B8 800A3468 AE300000 */  sw    $s0, ($s1)
 .L800A346C_ovl1:
-/* 04B6BC 800A346C 0C028C54 */  jal   func_800A3150_ovl1
+/* 04B6BC 800A346C 0C028C54 */  jal   func_800A3150
 /* 04B6C0 800A3470 24040004 */   li    $a0, 4
 /* 04B6C4 800A3474 0C029AC8 */  jal   load_overlay
 /* 04B6C8 800A3478 24040012 */   li    $a0, 18
@@ -37,7 +37,7 @@ glabel func_800A3408
 /* 04B6E0 800A3490 00000000 */   nop   
 /* 04B6E4 800A3494 3C04800D */  lui   $a0, %hi(D_800D6B88) # $a0, 0x800d
 /* 04B6E8 800A3498 8C846B88 */  lw    $a0, %lo(D_800D6B88)($a0)
-/* 04B6EC 800A349C 0C02E5A8 */  jal   func_800B96A0_ovl1
+/* 04B6EC 800A349C 0C02E5A8 */  jal   func_800B96A0
 /* 04B6F0 800A34A0 00002825 */   move  $a1, $zero
 /* 04B6F4 800A34A4 3C19800C */  lui   $t9, %hi(D_800BE4F4) # $t9, 0x800c
 /* 04B6F8 800A34A8 8F39E4F4 */  lw    $t9, %lo(D_800BE4F4)($t9)

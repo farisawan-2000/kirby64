@@ -10,11 +10,11 @@ glabel func_800BB08C
 /* 0632FC 800BB0AC 2718D4A0 */  addiu $t8, %lo(D_800ED4A0) # addiu $t8, $t8, -0x2b60
 /* 063300 800BB0B0 000478C0 */  sll   $t7, $a0, 3
 /* 063304 800BB0B4 01F82021 */  addu  $a0, $t7, $t8
-/* 063308 800BB0B8 0C02EBAC */  jal   func_800BAEB0_ovl1
+/* 063308 800BB0B8 0C02EBAC */  jal   func_800BAEB0
 /* 06330C 800BB0BC AFA4001C */   sw    $a0, 0x1c($sp)
 /* 063310 800BB0C0 14400016 */  bnez  $v0, .L800BB11C_ovl1
 /* 063314 800BB0C4 8FA4001C */   lw    $a0, 0x1c($sp)
-/* 063318 800BB0C8 0C02EBD4 */  jal   func_800BAF50_ovl1
+/* 063318 800BB0C8 0C02EBD4 */  jal   func_800BAF50
 /* 06331C 800BB0CC 8FA5002C */   lw    $a1, 0x2c($sp)
 /* 063320 800BB0D0 10400012 */  beqz  $v0, .L800BB11C_ovl1
 /* 063324 800BB0D4 8FA30030 */   lw    $v1, 0x30($sp)

@@ -18,7 +18,7 @@ glabel func_80114DBC_ovl2
 /* 09D86C 80114DFC 00000000 */   nop   
 /* 09D870 80114E00 2404004B */  li    $a0, 75
 /* 09D874 80114E04 AFA3001C */  sw    $v1, 0x1c($sp)
-/* 09D878 80114E08 0C02A0D6 */  jal   func_800A8358_ovl2
+/* 09D878 80114E08 0C02A0D6 */  jal   func_800A8358
 /* 09D87C 80114E0C AFA60030 */   sw    $a2, 0x30($sp)
 /* 09D880 80114E10 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 09D884 80114E14 AFA20028 */  sw    $v0, 0x28($sp)

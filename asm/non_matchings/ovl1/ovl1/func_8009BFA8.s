@@ -4,7 +4,7 @@ glabel func_8009BFA8
 /* 044200 8009BFB0 AFBF0014 */   sw    $ra, 0x14($sp)
 /* 044204 8009BFB4 90860008 */  lbu   $a2, 8($a0)
 /* 044208 8009BFB8 00002825 */  move  $a1, $zero
-/* 04420C 8009BFBC 0C027138 */  jal   func_8009C4E0_ovl1
+/* 04420C 8009BFBC 0C027138 */  jal   func_8009C4E0
 /* 044210 8009BFC0 000630C3 */   sra   $a2, $a2, 3
 .L8009BFC4_ovl1:
 /* 044214 8009BFC4 8FBF0014 */  lw    $ra, 0x14($sp)

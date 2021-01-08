@@ -2296,18 +2296,18 @@ block_2:
         sp44 = temp_v0;
         temp_v0->unk54 = (u8)2;
         func_800A7678(0xA);
-        func_800A4794_ovl3(&sp38, sp44);
-        func_800A4DB8_ovl3(&sp2C, sp44);
-        func_800A802C_ovl3(6, 3, arg0->unkC * 2, &sp38, &sp2C);
-        func_800BB468_ovl3(0, 0);
+        func_800A4794(&sp38, sp44);
+        func_800A4DB8(&sp2C, sp44);
+        func_800A802C(6, 3, arg0->unkC * 2, &sp38, &sp2C);
+        func_800BB468(0, 0);
         return 0;
     }
     if (arg0->unk10 == 0) {
         goto block_2;
     }
-    func_800A4794_ovl3(&sp38, func_8011BD30_ovl3(arg0));
+    func_800A4794(&sp38, func_8011BD30_ovl3(arg0));
     temp_v0_2 = *D_8004A7C4 * 4;
-    func_800A7F74_ovl3(6, 3, (arg0->unkC * 2) + 1, (temp_v0_2 + 0x800F0000)->unk-5920, (temp_v0_2 + 0x800F0000)->unk-5760, (temp_v0_2 + 0x800F0000)->unk-55A0);
+    func_800A7F74(6, 3, (arg0->unkC * 2) + 1, (temp_v0_2 + 0x800F0000)->unk-5920, (temp_v0_2 + 0x800F0000)->unk-5760, (temp_v0_2 + 0x800F0000)->unk-55A0);
     ((*D_8004A7C4 * 4) + 0x800F0000)->unk-7DE0 = 1;
     return 1;
 }

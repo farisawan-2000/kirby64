@@ -52,7 +52,7 @@ glabel func_800A6A18
 /* 04ED20 800A6AD0 02B04821 */  addu  $t1, $s5, $s0
 /* 04ED24 800A6AD4 8D240000 */  lw    $a0, ($t1)
 /* 04ED28 800A6AD8 03344024 */  and   $t0, $t9, $s4
-/* 04ED2C 800A6ADC 0C02C71F */  jal   func_800B1C7C_ovl1
+/* 04ED2C 800A6ADC 0C02C71F */  jal   func_800B1C7C
 /* 04ED30 800A6AE0 AC480000 */   sw    $t0, ($v0)
 /* 04ED34 800A6AE4 26310004 */  addiu $s1, $s1, 4
 .L800A6AE8_ovl1:

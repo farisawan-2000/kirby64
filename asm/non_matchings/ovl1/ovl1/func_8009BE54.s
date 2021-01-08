@@ -60,14 +60,14 @@ glabel func_8009BE54
 /* 044184 8009BF34 8FA50058 */  lw    $a1, 0x58($sp)
 /* 044188 8009BF38 95F90016 */  lhu   $t9, 0x16($t7)
 /* 04418C 8009BF3C AFA00040 */  sw    $zero, 0x40($sp)
-/* 044190 8009BF40 0C026E9D */  jal   func_8009BA74_ovl1
+/* 044190 8009BF40 0C026E9D */  jal   func_8009BA74
 /* 044194 8009BF44 AFB9003C */   sw    $t9, 0x3c($sp)
 /* 044198 8009BF48 10400007 */  beqz  $v0, .L8009BF68_ovl1
 /* 04419C 8009BF4C 00402025 */   move  $a0, $v0
 /* 0441A0 8009BF50 8FA60058 */  lw    $a2, 0x58($sp)
 /* 0441A4 8009BF54 00002825 */  move  $a1, $zero
 /* 0441A8 8009BF58 AFA20054 */  sw    $v0, 0x54($sp)
-/* 0441AC 8009BF5C 0C027138 */  jal   func_8009C4E0_ovl1
+/* 0441AC 8009BF5C 0C027138 */  jal   func_8009C4E0
 /* 0441B0 8009BF60 000630C3 */   sra   $a2, $a2, 3
 /* 0441B4 8009BF64 8FA40054 */  lw    $a0, 0x54($sp)
 .L8009BF68_ovl1:

@@ -14,7 +14,7 @@ glabel func_800A8E54
 /* 0510D4 800A8E84 1040000A */  beqz  $v0, .L800A8EB0_ovl1
 /* 0510D8 800A8E88 00452025 */   or    $a0, $v0, $a1
 /* 0510DC 800A8E8C AFA3001C */  sw    $v1, 0x1c($sp)
-/* 0510E0 800A8E90 0C02A15E */  jal   func_800A8578_ovl1
+/* 0510E0 800A8E90 0C02A15E */  jal   func_800A8578
 /* 0510E4 800A8E94 AFA60018 */   sw    $a2, 0x18($sp)
 /* 0510E8 800A8E98 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 0510EC 800A8E9C 14400004 */  bnez  $v0, .L800A8EB0_ovl1

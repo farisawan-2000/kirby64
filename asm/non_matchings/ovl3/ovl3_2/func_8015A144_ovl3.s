@@ -24,7 +24,7 @@ glabel func_8015A144_ovl3
 /* 0BABDC 8015A19C 3C040002 */  lui   $a0, (0x00020007 >> 16) # lui $a0, 2
 /* 0BABE0 8015A1A0 A2200004 */  sb    $zero, 4($s1)
 /* 0BABE4 8015A1A4 A228000D */  sb    $t0, 0xd($s1)
-/* 0BABE8 8015A1A8 0C02A5D8 */  jal   func_800A9760_ovl3
+/* 0BABE8 8015A1A8 0C02A5D8 */  jal   func_800A9760
 /* 0BABEC 8015A1AC 34840007 */   ori   $a0, (0x00020007 & 0xFFFF) # ori $a0, $a0, 7
 /* 0BABF0 8015A1B0 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 0BABF4 8015A1B4 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

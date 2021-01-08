@@ -1,4 +1,4 @@
-glabel func_8009B550_ovl1
+glabel func_8009B550
 /* 0437A0 8009B550 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 0437A4 8009B554 AFB30020 */  sw    $s3, 0x20($sp)
 /* 0437A8 8009B558 3C13800D */  lui   $s3, %hi(D_800D6AEC) # $s3, 0x800d

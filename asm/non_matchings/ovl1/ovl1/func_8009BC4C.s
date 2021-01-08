@@ -55,7 +55,7 @@ glabel func_8009BC4C
 /* 043F68 8009BD18 8DCF0000 */  lw    $t7, ($t6)
 /* 043F6C 8009BD1C 95F90016 */  lhu   $t9, 0x16($t7)
 /* 043F70 8009BD20 AFA00040 */  sw    $zero, 0x40($sp)
-/* 043F74 8009BD24 0C026E9D */  jal   func_8009BA74_ovl1
+/* 043F74 8009BD24 0C026E9D */  jal   func_8009BA74
 /* 043F78 8009BD28 AFB9003C */   sw    $t9, 0x3c($sp)
 .L8009BD2C_ovl1:
 /* 043F7C 8009BD2C 8FBF004C */  lw    $ra, 0x4c($sp)

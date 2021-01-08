@@ -10,7 +10,7 @@ glabel func_800AA78C
 /* 0529FC 800AA7AC 00802825 */  move  $a1, $a0
 /* 052A00 800AA7B0 8DE40010 */  lw    $a0, 0x10($t7)
 /* 052A04 800AA7B4 24060000 */  li    $a2, 0
-/* 052A08 800AA7B8 0C02A982 */  jal   func_800AA608_ovl1
+/* 052A08 800AA7B8 0C02A982 */  jal   func_800AA608
 /* 052A0C 800AA7BC E7AC0010 */   swc1  $f12, 0x10($sp)
 /* 052A10 800AA7C0 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 052A14 800AA7C4 27BD0020 */  addiu $sp, $sp, 0x20

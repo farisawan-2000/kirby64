@@ -50,7 +50,7 @@ glabel func_800BD92C
 /* 065C30 800BD9E0 2411001E */  li    $s1, 30
 /* 065C34 800BD9E4 02002025 */  move  $a0, $s0
 .L800BD9E8_ovl1:
-/* 065C38 800BD9E8 0C02F482 */  jal   func_800BD208_ovl1
+/* 065C38 800BD9E8 0C02F482 */  jal   func_800BD208
 /* 065C3C 800BD9EC 00002825 */   move  $a1, $zero
 /* 065C40 800BD9F0 26100001 */  addiu $s0, $s0, 1
 /* 065C44 800BD9F4 5611FFFC */  bnel  $s0, $s1, .L800BD9E8_ovl1
@@ -94,7 +94,7 @@ glabel func_800BD92C
 /* 065CD0 800BDA80 AE4E0000 */  sw    $t6, ($s2)
 /* 065CD4 800BDA84 25D0FFFF */  addiu $s0, $t6, -1
 .L800BDA88_ovl1:
-/* 065CD8 800BDA88 0C02F482 */  jal   func_800BD208_ovl1
+/* 065CD8 800BDA88 0C02F482 */  jal   func_800BD208
 /* 065CDC 800BDA8C 02002025 */   move  $a0, $s0
 .L800BDA90_ovl1:
 /* 065CE0 800BDA90 8FBF0024 */  lw    $ra, 0x24($sp)

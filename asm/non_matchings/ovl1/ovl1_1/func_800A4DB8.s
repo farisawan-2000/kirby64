@@ -97,7 +97,7 @@ glabel func_800A4DB8
 /* 04D164 800A4F14 C7AC0084 */   lwc1  $f12, 0x84($sp)
 /* 04D168 800A4F18 E6800008 */  swc1  $f0, 8($s4)
 .L800A4F1C_ovl1:
-/* 04D16C 800A4F1C 0C029166 */  jal   func_800A4598_ovl1
+/* 04D16C 800A4F1C 0C029166 */  jal   func_800A4598
 /* 04D170 800A4F20 02802025 */   move  $a0, $s4
 /* 04D174 800A4F24 8FBF0034 */  lw    $ra, 0x34($sp)
 /* 04D178 800A4F28 D7B40018 */  ldc1  $f20, 0x18($sp)

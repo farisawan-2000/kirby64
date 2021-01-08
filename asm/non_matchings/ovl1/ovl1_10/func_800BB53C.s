@@ -4,7 +4,7 @@ glabel func_800BB53C
 /* 063794 800BB544 3C048005 */  lui   $a0, 0x8005
 /* 063798 800BB548 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 06379C 800BB54C 00862021 */  addu  $a0, $a0, $a2
-/* 0637A0 800BB550 0C02ECF0 */  jal   func_800BB3C0_ovl1
+/* 0637A0 800BB550 0C02ECF0 */  jal   func_800BB3C0
 /* 0637A4 800BB554 80848E9C */   lb    $a0, -0x7164($a0)
 /* 0637A8 800BB558 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0637AC 800BB55C 27BD0018 */  addiu $sp, $sp, 0x18

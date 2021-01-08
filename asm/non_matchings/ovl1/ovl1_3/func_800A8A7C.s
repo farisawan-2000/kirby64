@@ -23,7 +23,7 @@ glabel func_800A8A7C
 /* 050D20 800A8AD0 8FA70018 */   lw    $a3, 0x18($sp)
 /* 050D24 800A8AD4 AFA3001C */  sw    $v1, 0x1c($sp)
 .L800A8AD8_ovl1:
-/* 050D28 800A8AD8 0C02A278 */  jal   func_800A89E0_ovl1
+/* 050D28 800A8AD8 0C02A278 */  jal   func_800A89E0
 /* 050D2C 800A8ADC AFA70018 */   sw    $a3, 0x18($sp)
 /* 050D30 800A8AE0 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 050D34 800A8AE4 8FA70018 */  lw    $a3, 0x18($sp)

@@ -68,7 +68,7 @@ glabel func_8021ED3C_ovl18
 /* 2317E0 8021EE40 8E2A0000 */  lw    $t2, ($s1)
 /* 2317E4 8021EE44 000A5880 */  sll   $t3, $t2, 2
 /* 2317E8 8021EE48 008B2021 */  addu  $a0, $a0, $t3
-/* 2317EC 8021EE4C 0C02C7DA */  jal   func_800B1F68_ovl18
+/* 2317EC 8021EE4C 0C02C7DA */  jal   func_800B1F68
 /* 2317F0 8021EE50 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
 /* 2317F4 8021EE54 3C0D8005 */  lui   $t5, %hi(D_8004A7C4) # $t5, 0x8005
 /* 2317F8 8021EE58 8DADA7C4 */  lw    $t5, %lo(D_8004A7C4)($t5)
@@ -166,7 +166,7 @@ glabel func_8021ED3C_ovl18
 /* 231960 8021EFC0 24040021 */  li    $a0, 33
 .L8021EFC4_ovl18:
 /* 231964 8021EFC4 2405003C */  li    $a1, 60
-/* 231968 8021EFC8 0C02BA99 */  jal   func_800AEA64_ovl18
+/* 231968 8021EFC8 0C02BA99 */  jal   func_800AEA64
 /* 23196C 8021EFCC 24060049 */   li    $a2, 73
 /* 231970 8021EFD0 3C01800E */ lui $at, %hi(D_800E7880)
 /* 231974 8021EFD4 00220821 */  addu  $at, $at, $v0
@@ -242,7 +242,7 @@ glabel func_8021ED3C_ovl18
 /* 231A88 8021F0E8 3C1E800E */  lui   $fp, %hi(D_800E6BD0) # $fp, 0x800e
 /* 231A8C 8021F0EC 27DE6BD0 */  addiu $fp, %lo(D_800E6BD0) # addiu $fp, $fp, 0x6bd0
 /* 231A90 8021F0F0 26F75F90 */  addiu $s7, %lo(D_800E5F90) # addiu $s7, $s7, 0x5f90
-/* 231A94 8021F0F4 0C02F07F */  jal   func_800BC1FC_ovl18
+/* 231A94 8021F0F4 0C02F07F */  jal   func_800BC1FC
 /* 231A98 8021F0F8 90440001 */   lbu   $a0, 1($v0)
 /* 231A9C 8021F0FC 00008825 */  move  $s1, $zero
 /* 231AA0 8021F100 8EC20000 */  lw    $v0, ($s6)

@@ -17,7 +17,7 @@ glabel func_800A9DE4
 /* 052070 800A9E20 8F180110 */  lw    $t8, 0x110($t8)
 /* 052074 800A9E24 5098001C */  beql  $a0, $t8, .L800A9E98_ovl1
 /* 052078 800A9E28 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 05207C 800A9E2C 0C02A6D2 */  jal   func_800A9B48_ovl1
+/* 05207C 800A9E2C 0C02A6D2 */  jal   func_800A9B48
 /* 052080 800A9E30 E7AC001C */   swc1  $f12, 0x1c($sp)
 /* 052084 800A9E34 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 052088 800A9E38 2463A7C4 */  addiu $v1, %lo(D_8004A7C4) # addiu $v1, $v1, -0x583c
@@ -30,7 +30,7 @@ glabel func_800A9DE4
 /* 0520A4 800A9E54 00084880 */  sll   $t1, $t0, 2
 /* 0520A8 800A9E58 01495021 */  addu  $t2, $t2, $t1
 /* 0520AC 800A9E5C 8D4AF850 */  lw    $t2, -0x7b0($t2)
-/* 0520B0 800A9E60 0C02BBAD */  jal   func_800AEEB4_ovl1
+/* 0520B0 800A9E60 0C02BBAD */  jal   func_800AEEB4
 /* 0520B4 800A9E64 8D440000 */   lw    $a0, ($t2)
 /* 0520B8 800A9E68 1000000B */  b     .L800A9E98_ovl1
 /* 0520BC 800A9E6C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -42,7 +42,7 @@ glabel func_800A9DE4
 /* 0520D0 800A9E80 000C6880 */  sll   $t5, $t4, 2
 /* 0520D4 800A9E84 01CD7021 */  addu  $t6, $t6, $t5
 /* 0520D8 800A9E88 8DCEF690 */  lw    $t6, -0x970($t6)
-/* 0520DC 800A9E8C 0C02BB88 */  jal   func_800AEE20_ovl1
+/* 0520DC 800A9E8C 0C02BB88 */  jal   func_800AEE20
 /* 0520E0 800A9E90 8DC40000 */   lw    $a0, ($t6)
 /* 0520E4 800A9E94 8FBF0014 */  lw    $ra, 0x14($sp)
 .L800A9E98_ovl1:

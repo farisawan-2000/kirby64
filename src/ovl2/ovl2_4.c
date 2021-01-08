@@ -47,7 +47,7 @@ void func_800FD418_ovl2(void *arg0) {
         if (*temp_s0 == 0) {
 block_2:
             temp_s0_2 = (temp_v0->unk-3D20 * 0xC) + &D_801245C4;
-            func_800B1900_ovl2(D_8004A7C4->objId & 0xFFFF, D_8004A7C4->objId);
+            func_800B1900(D_8004A7C4->objId & 0xFFFF, D_8004A7C4->objId);
             phi_s0 = temp_s0_2;
             phi_v1 = *temp_s0_2;
         }
@@ -63,8 +63,8 @@ block_2:
     arg0->unk3C->unk1C = (f32) ((D_8004A7C4->objId * 4) + 0x800E0000)->unk25D0;
     arg0->unk3C->unk20 = (f32) ((D_8004A7C4->objId * 4) + 0x800E0000)->unk2790;
     arg0->unk3C->unk24 = (f32) ((D_8004A7C4->objId * 4) + 0x800E0000)->unk2950;
-    func_800AF27C_ovl2();
-    func_800B1900_ovl2(D_8004A7C4->unk2);
+    func_800AF27C();
+    func_800B1900(D_8004A7C4->unk2);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD418_ovl2.s")
@@ -89,7 +89,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD418_ovl2.s")
     if (arg0 != 0) {
         arg2 = temp_f12;
         arg3 = temp_f14;
-        func_800A4794_ovl2(temp_f12, temp_f14, &sp28, arg0, arg0);
+        func_800A4794(temp_f12, temp_f14, &sp28, arg0, arg0);
         phi_f12 = arg2;
         phi_f14 = arg3;
     } else {
@@ -115,9 +115,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD418_ovl2.s")
         (temp_v1 + 0x800E0000)->unk2950 = (f32) (sp30 + arg4);
     } else {
         if (temp_v0 != &D_80124630) {
-            func_800A7F74_ovl2(phi_f12, phi_f14, 3, 2, temp_v0->unk4, sp28 + phi_f12, sp2C + phi_f14, sp30 + arg4);
+            func_800A7F74(phi_f12, phi_f14, 3, 2, temp_v0->unk4, sp28 + phi_f12, sp2C + phi_f14, sp30 + arg4);
         } else {
-            func_800A7F74_ovl2(phi_f12, phi_f14, 0, 2, temp_v0->unk4, sp28 + phi_f12, sp2C + phi_f14, sp30 + arg4);
+            func_800A7F74(phi_f12, phi_f14, 0, 2, temp_v0->unk4, sp28 + phi_f12, sp2C + phi_f14, sp30 + arg4);
         }
     }
     return 1;
@@ -157,9 +157,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD570.s")
         return 0;
     }
     if (temp_v0 != &D_80124630) {
-        return func_800A7F74_ovl2(temp_f12, temp_f14, 3, 2, temp_v0->unk4, temp_f12, temp_f14, arg3);
+        return func_800A7F74(temp_f12, temp_f14, 3, 2, temp_v0->unk4, temp_f12, temp_f14, arg3);
     }
-    return func_800A7F74_ovl2(temp_f12, temp_f14, 0, 2, temp_v0->unk4, temp_f12, temp_f14, arg3);
+    return func_800A7F74(temp_f12, temp_f14, 0, 2, temp_v0->unk4, temp_f12, temp_f14, arg3);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD754_ovl2.s")

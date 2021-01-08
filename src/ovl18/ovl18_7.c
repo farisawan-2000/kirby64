@@ -7,13 +7,13 @@
 #include "ovl18_5.h"
 
 extern f32 D_800D6B14;
-s32 func_800AEC70_ovl18(s32, s32, s32);
+s32 func_800AEC70(s32, s32, s32);
 void func_8000B6BC(s32);
 void func_802266E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     f32 temp_f0;
     s32 temp_v0;
 
-    temp_v0 = func_800AEC70_ovl18(0x2D, 0x1E, 0x4F);
+    temp_v0 = func_800AEC70(0x2D, 0x1E, 0x4F);
     D_800E98E0[temp_v0] = arg0;
     D_800E9AA0[temp_v0] = arg1 * D_800D6B14;
     if (arg2 != 0) {
@@ -24,7 +24,7 @@ void func_802266E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
 
 extern u32 D_8022AD30[];
 extern u32 D_800BE4F8;
-void func_800B1900_ovl18(u16);
+void func_800B1900(u16);
 
 void func_8022677C_ovl18(s32 arg0) {
     u32 idx;
@@ -35,13 +35,13 @@ void func_8022677C_ovl18(s32 arg0) {
         gEntitiesPosXArray[D_8004A7C4->objId] = D_8022AD30[idx + 1];
         gEntitiesPosYArray[D_8004A7C4->objId] = D_8022AD30[idx + 2];
         if (D_800E98E0[D_8004A7C4->objId] < 0xC) {
-            func_800AF8C0_ovl18(D_8022AD30[idx + 0], 0xA, 6);
-            func_800A5B14_ovl18(arg0, 0x10, 0x1E, 0x63, 0xFF);
+            func_800AF8C0(D_8022AD30[idx + 0], 0xA, 6);
+            func_800A5B14(arg0, 0x10, 0x1E, 0x63, 0xFF);
         } else {
-            func_800AF8C0_ovl18(D_8022AD30[idx + 0], 0xA, 4);
+            func_800AF8C0(D_8022AD30[idx + 0], 0xA, 4);
         }
         func_8000B6BC(D_800E9AA0[D_8004A7C4->objId]);
-        func_800B1900_ovl18((u16) D_8004A7C4->objId);
+        func_800B1900((u16) D_8004A7C4->objId);
     }
     func_8000B6BC(30.0f * D_800D6B10);
     func_802266E0_ovl18(0xD, 0xB4, 0);
@@ -79,8 +79,8 @@ void func_80226A18_ovl18(s32 arg0) {
         gEntitiesPosYArray[D_8004A7C4->objId] = 89.0f;
         phi_a3 = 0x5012C;
     }
-    func_800AF8C0_ovl18(phi_a3, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0xF1, 0xFC, 0xF3, 0xFF);
+    func_800AF8C0(phi_a3, 0xE, 2);
+    func_800A5B14(arg0, 0xF1, 0xFC, 0xF3, 0xFF);
     func_800AFA14();
 }
 
@@ -91,10 +91,10 @@ void func_80226AF4_ovl18(s32 arg0) {
     gEntitiesPosXArray[D_8004A7C4->objId] = 139.0f;
     gEntitiesPosYArray[D_8004A7C4->objId] = 97.0f;
     if (D_800D6B64 != 0) {
-        func_800B1900_ovl18(D_8004A7C4->objId);
+        func_800B1900(D_8004A7C4->objId);
     }
-    func_800AF8C0_ovl18(0x5012B, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0xFF, 0x7B, 0x7B, 0xFF);
+    func_800AF8C0(0x5012B, 0xE, 2);
+    func_800A5B14(arg0, 0xFF, 0x7B, 0x7B, 0xFF);
     func_800AFA14();
 }
 
@@ -110,8 +110,8 @@ void func_80226B9C_ovl18(s32 arg0) {
         gEntitiesPosXArray[D_8004A7C4->objId] = 169.0f;
         phi_a0 = 0x5012F;
     }
-    func_800AF8C0_ovl18(phi_a0, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0x46, 0x46, 0, 0xFF);
+    func_800AF8C0(phi_a0, 0xE, 2);
+    func_800A5B14(arg0, 0x46, 0x46, 0, 0xFF);
     func_800AFA14();
 }
 
@@ -126,8 +126,8 @@ void func_80226C64_ovl18(s32 arg0) {
         gEntitiesPosXArray[D_8004A7C4->objId] = 55.0f;
         phi_a0 = 0x50134;
     }
-    func_800AF8C0_ovl18(phi_a0, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0x46, 0x46, 0, 0xFF);
+    func_800AF8C0(phi_a0, 0xE, 2);
+    func_800A5B14(arg0, 0x46, 0x46, 0, 0xFF);
     func_800AFA14();
 }
 
@@ -143,13 +143,13 @@ void func_80226D2C_ovl18(s32 arg0) {
         gEntitiesPosXArray[D_8004A7C4->objId] = 55.0f;
         phi_a0 = 0x50136;
     }
-    func_800AF8C0_ovl18(phi_a0, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0xFF, 0xF0, 0, 0xFF);
-    func_800A5B3C_ovl18(arg0, 0xDC, 0x1E, 0x1E, 0xFF);
+    func_800AF8C0(phi_a0, 0xE, 2);
+    func_800A5B14(arg0, 0xFF, 0xF0, 0, 0xFF);
+    func_800A5B3C(arg0, 0xDC, 0x1E, 0x1E, 0xFF);
     while (1) {
-        func_800AF920_ovl18(0);
+        func_800AF920(0);
         if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] == 0) {
-            func_800AF920_ovl18(1);
+            func_800AF920(1);
         }
         func_8000B6BC(1);
     }
@@ -166,13 +166,13 @@ void func_80226E78_ovl18(s32 arg0) {
         gEntitiesPosXArray[D_8004A7C4->objId] = 169.0f;
         phi_a0 = 0x00050131;
     }
-    func_800AF8C0_ovl18(phi_a0, 0xE, 2);
-    func_800A5B14_ovl18(arg0, 0xFF, 0xF0, 0, 0xFF);
-    func_800A5B3C_ovl18(arg0, 0xDC, 0x1E, 0x1E, 0xFF);
+    func_800AF8C0(phi_a0, 0xE, 2);
+    func_800A5B14(arg0, 0xFF, 0xF0, 0, 0xFF);
+    func_800A5B3C(arg0, 0xDC, 0x1E, 0x1E, 0xFF);
     while (1) {
-        func_800AF920_ovl18(0);
+        func_800AF920(0);
         if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] != 0) {
-            func_800AF920_ovl18(1);
+            func_800AF920(1);
         }
         func_8000B6BC(1);
     }
@@ -199,7 +199,7 @@ void func_80226FD8_ovl18(u32 arg0) {
         temp_v0 = D_80048F20[1];
         if (temp_v0 & 0x9000 && D_800D6B24 == 0) {
             func_800A7678(0xED);
-            func_800A5A14_ovl18(0, 0xC, 2);
+            func_800A5A14(0, 0xC, 2);
             break;
         } else if (((temp_v0 & 0x200) != 0) && (D_800D6B24 == 0)) {
             func_800A7678(0x113);
@@ -217,8 +217,8 @@ void func_80226FD8_ovl18(u32 arg0) {
 
 struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_80007C00(u32, f32, f32, f32, f32);
-s32 func_800AEA64_ovl18(u32, u32, u32);
-s32 func_800AEC70_ovl18(s32, s32, s32);
+s32 func_800AEA64(u32, u32, u32);
+s32 func_800AEC70(s32, s32, s32);
 
 void func_802271A8_ovl18(void) {
     s32 temp_s0;
@@ -227,25 +227,25 @@ void func_802271A8_ovl18(void) {
     s32 phi_s0;
 
     func_80007C00(&func_8000BDF0(0x19, 0x80000000, 0x63, 3, 0xFF)->unk3C->unk0.z, 10.0f, 10.0f, 310.0f, 230.0f);
-    func_800AE048_ovl18(0x40);
-    func_800AE0F0_ovl18();
-    func_800A6E64_ovl18();
-    func_800A8724_ovl18(0);
-    func_800A6BC0_ovl18(0);
+    func_800AE048(0x40);
+    func_800AE0F0();
+    func_800A6E64();
+    func_800A8724(0);
+    func_800A6BC0(0);
     // required to be on the same line
-    temp_v0 = func_800AEA64_ovl18(0x2C, 0, 0x70); D_800EC2E0[temp_v0] = 0;
+    temp_v0 = func_800AEA64(0x2C, 0, 0x70); D_800EC2E0[temp_v0] = 0;
 
     D_800E9AA0[temp_v0] = 0;
     for (phi_s0 = 1; phi_s0 < 7; phi_s0++) {
-        temp_v1 = func_800AEC70_ovl18(0x2C, 0, 0x70);
+        temp_v1 = func_800AEC70(0x2C, 0, 0x70);
         D_800EC2E0[temp_v1] = phi_s0;
         D_800E0D50[temp_v1] = temp_v0;
         D_800E9AA0[temp_v1] = 0;
     }
     D_800D6B30 = 0;
-    func_800A5744_ovl18(0, 0, 0);
-    func_800A5A14_ovl18(0xFF, -0xC, 0);
-    func_800A74D8_ovl18();
+    func_800A5744(0, 0, 0);
+    func_800A5A14(0xFF, -0xC, 0);
+    func_800A74D8();
 }
 
 
@@ -271,7 +271,7 @@ extern struct {
 extern u32 D_8012E700;
 extern u16 gFrameBuffer[320][240];
 extern u16 D_803FC100;
-void func_800A41B0_ovl18(f32);
+void func_800A41B0(f32);
 #ifdef NON_MATCHING
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
 s32 func_80227308_ovl18(s32 arg0) {
@@ -280,7 +280,7 @@ s32 func_80227308_ovl18(s32 arg0) {
     D_800D6B64 = arg0;
     func_80002B88_ovl18();
     func_80020998_ovl18(0, 0x7800);
-    func_800A41B0_ovl18(2.0f);
+    func_800A41B0(2.0f);
     D_8022AE30.unkC = &D_8012E700;
     func_80007BA4_ovl18(&D_8022AE30);
     D_8022AE4C.unk10 = (u32)&gFrameBuffer - (u32)&_ovl19SegNoloadEnd;
@@ -305,7 +305,7 @@ s32 func_80227308_ovl18(s32 arg0) {
     //     goto loop_1;
     // }
     func_80007380(&D_8022AE4C);
-    func_800BB3F0_ovl18();
+    func_800BB3F0();
     return D_800D6B74;
 }
 #else

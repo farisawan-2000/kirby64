@@ -31,7 +31,7 @@ extern f32 D_801CE494;
 extern void *D_801CB56C[];
 extern void func_8010C274(void);
 extern void func_800AECC0(f32, struct UnkStruct800E1B50 *);
-extern void func_800AED20_ovl7(f32);
+extern void func_800AED20(f32);
 void func_801BBE1C_ovl7(s32 arg0);
 
 extern void *(D_801AC908_ovl7)(s32);
@@ -84,7 +84,7 @@ void func_801BBBF4_ovl7(s32 arg0) {
     temp_a1->unk98 = &D_801CB56C;
     D_800E8920[D_8004A7C4->objId] = 0;
     func_800AECC0(D_800D6B10, temp_a1);
-    func_800AED20_ovl7(D_800D6B10);
+    func_800AED20(D_800D6B10);
     if (sp1C->unk4 != -1) {
         func_800AA018(sp1C->unk4);
     }

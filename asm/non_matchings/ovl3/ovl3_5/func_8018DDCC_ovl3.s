@@ -96,7 +96,7 @@ glabel func_8018DDCC_ovl3
 /* 0EE97C 8018DF3C 000EC080 */  sll   $t8, $t6, 2
 /* 0EE980 8018DF40 00380821 */  addu  $at, $at, $t8
 /* 0EE984 8018DF44 C4306A10 */  lwc1  $f16, 0x6a10($at)
-/* 0EE988 8018DF48 0C02BC9F */  jal   func_800AF27C_ovl3
+/* 0EE988 8018DF48 0C02BC9F */  jal   func_800AF27C
 /* 0EE98C 8018DF4C E6300078 */   swc1  $f16, 0x78($s1)
 /* 0EE990 8018DF50 8E390030 */  lw    $t9, 0x30($s1)
 /* 0EE994 8018DF54 AE2000A0 */  sw    $zero, 0xa0($s1)
