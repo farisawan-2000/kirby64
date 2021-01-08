@@ -1,9 +1,9 @@
 glabel func_80000E9C
 /* 001A9C 80000E9C 3C048005 */  lui   $a0, %hi(D_80048BA8) # $a0, 0x8005
-/* 001AA0 80000EA0 3C0E8005 */  lui   $t6, %hi(D_80048BF8) # $t6, 0x8005
+/* 001AA0 80000EA0 3C0E8005 */  lui   $t6, %hi(gCurrentViMode) # $t6, 0x8005
 /* 001AA4 80000EA4 24848BA8 */  addiu $a0, %lo(D_80048BA8) # addiu $a0, $a0, -0x7458
 /* 001AA8 80000EA8 27BDFFE8 */  addiu $sp, $sp, -0x18
-/* 001AAC 80000EAC 25CE8BF8 */  addiu $t6, %lo(D_80048BF8) # addiu $t6, $t6, -0x7408
+/* 001AAC 80000EAC 25CE8BF8 */  addiu $t6, %lo(gCurrentViMode) # addiu $t6, $t6, -0x7408
 /* 001AB0 80000EB0 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 001AB4 80000EB4 25C80048 */  addiu $t0, $t6, 0x48
 /* 001AB8 80000EB8 0080C825 */  move  $t9, $a0

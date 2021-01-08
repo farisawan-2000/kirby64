@@ -365,7 +365,7 @@ void func_80000E9C(void) {
     u32 phi_v0;
     u32 phi_v0_2;
 
-    phi_t6 = &D_80048BF8;
+    phi_t6 = &gCurrentViMode;
     phi_t9 = &D_80048BA8;
 loop_1:
     temp_t6 = phi_t6 + 0xC;
@@ -375,7 +375,7 @@ loop_1:
     temp_t9->unk-4 = temp_t6->unk-4;
     phi_t6 = temp_t6;
     phi_t9 = temp_t9;
-    if (temp_t6 != (&D_80048BF8 + 0x48)) {
+    if (temp_t6 != (&gCurrentViMode + 0x48)) {
         goto loop_1;
     }
     temp_t9->type = temp_t6->unk0;
@@ -448,55 +448,55 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
     }
     if ((arg2 & 4) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x40;
-        D_80048BF8.unk4 = D_80048BF8.unk4 | 0x40;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x40;
     }
     if ((arg2 & 8) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFBF;
-        D_80048BF8.unk4 = D_80048BF8.unk4 & -0x41;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x41;
     }
     if ((arg2 & 0x10) != 0) {
-        temp_t7 = D_80048BF8.unk4 & -4;
+        temp_t7 = gCurrentViMode.unk4 & -4;
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFDF;
-        D_80048BF8.unk4 = temp_t7;
-        D_80048BF8.unk4 = temp_t7 | 2;
+        gCurrentViMode.unk4 = temp_t7;
+        gCurrentViMode.unk4 = temp_t7 | 2;
     }
     if ((arg2 & 0x20) != 0) {
-        temp_t7_2 = D_80048BF8.unk4 & -4;
+        temp_t7_2 = gCurrentViMode.unk4 & -4;
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x20;
-        D_80048BF8.unk4 = temp_t7_2;
-        D_80048BF8.unk4 = temp_t7_2 | 3;
+        gCurrentViMode.unk4 = temp_t7_2;
+        gCurrentViMode.unk4 = temp_t7_2 | 3;
     }
     if ((arg2 & 0x40) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x10;
-        D_80048BF8.unk4 = D_80048BF8.unk4 | 8;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 8;
     }
     if ((arg2 & 0x80) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFEF;
-        D_80048BF8.unk4 = D_80048BF8.unk4 & -9;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -9;
     }
     if ((arg2 & 0x1000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 2;
-        D_80048BF8.unk4 = D_80048BF8.unk4 | 4;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 4;
     }
     if ((arg2 & 0x2000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFFD;
-        D_80048BF8.unk4 = D_80048BF8.unk4 & -5;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -5;
     }
     if ((arg2 & 0x4000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 1;
-        D_80048BF8.unk4 = D_80048BF8.unk4 | 0x10000;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x10000;
     }
     if ((arg2 & 0x8000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFFE;
-        D_80048BF8.unk4 = D_80048BF8.unk4 & 0xFFFEFFFF;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 & 0xFFFEFFFF;
     }
     if ((arg2 << 0xF) < 0) {
         D_80048C7C.unk1 = D_80048C7C.unk1 | 0x80;
-        D_80048BF8.unk4 = D_80048BF8.unk4 | 0x10;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x10;
     }
     if ((arg2 << 0xE) < 0) {
         D_80048C7C.unk1 = D_80048C7C.unk1 & 0xFF7F;
-        D_80048BF8.unk4 = D_80048BF8.unk4 & -0x11;
+        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x11;
     }
     if ((arg2 & 0x100) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 8;
@@ -517,25 +517,25 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFF7F;
     }
     temp_a0 = D_80048C7C.unk0;
-    D_80048BF8.unk4 = D_80048BF8.unk4 & -0x301;
+    gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x301;
     if ((temp_a0 >> 0x1F) != 0) {
         phi_v1_5 = 0x100;
         if ((D_80048C7C.unk0 & 1) != 0) {
             phi_v1_5 = 0;
         }
-        phi_t9 = D_80048BF8.unk4 | phi_v1_5;
+        phi_t9 = gCurrentViMode.unk4 | phi_v1_5;
         phi_t1 = (temp_a0 << 5) >> 0x1F;
         phi_t0 = (temp_a0 * 4) >> 0x1F;
 block_47:
-        D_80048BF8.unk4 = phi_t9;
+        gCurrentViMode.unk4 = phi_t9;
     } else {
         temp_t1 = (temp_a0 << 5) >> 0x1F;
         if ((temp_t1 == 0) && (temp_t0 = (temp_a0 * 4) >> 0x1F, (temp_t0 == 1))) {
-            D_80048BF8.unk4 = D_80048BF8.unk4 | 0x300;
+            gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x300;
             phi_t1 = temp_t1;
             phi_t0 = temp_t0;
         } else {
-            phi_t9 = D_80048BF8.unk4 | 0x200;
+            phi_t9 = gCurrentViMode.unk4 | 0x200;
             phi_t1 = temp_t1;
             phi_t0 = (temp_a0 * 4) >> 0x1F;
             goto block_47;
@@ -573,38 +573,38 @@ block_47:
     } else {
         phi_v1 = 1;
     }
-    D_80048BF8.unk8 = phi_v1 * arg0;
+    gCurrentViMode.unk8 = phi_v1 * arg0;
     temp_v1 = D_80000300;
     if (temp_v1 == 1) {
-        D_80048BF8.unkC = 0x3E52239;
-        D_80048BF8.unk10 = 0x20C;
-        D_80048BF8.unk14 = 0xC15;
-        D_80048BF8.unk18 = 0xC150C15;
-        D_80048BF8.unk1C = 0x6C02EC;
-        D_80048BF8.unk30 = 0x2501FF;
-        D_80048BF8.unk34 = 0xE0204;
+        gCurrentViMode.unkC = 0x3E52239;
+        gCurrentViMode.unk10 = 0x20C;
+        gCurrentViMode.unk14 = 0xC15;
+        gCurrentViMode.unk18 = 0xC150C15;
+        gCurrentViMode.unk1C = 0x6C02EC;
+        gCurrentViMode.unk30 = 0x2501FF;
+        gCurrentViMode.unk34 = 0xE0204;
     }
     if (temp_v1 == 0) {
-        D_80048BF8.unkC = 0x404233A;
-        D_80048BF8.unk10 = 0x270;
-        D_80048BF8.unk14 = 0x150C69;
-        D_80048BF8.unk18 = 0xC6F0C6E;
-        D_80048BF8.unk1C = 0x800300;
-        D_80048BF8.unk30 = 0x2F0269;
-        D_80048BF8.unk34 = 0x9026B;
+        gCurrentViMode.unkC = 0x404233A;
+        gCurrentViMode.unk10 = 0x270;
+        gCurrentViMode.unk14 = 0x150C69;
+        gCurrentViMode.unk18 = 0xC6F0C6E;
+        gCurrentViMode.unk1C = 0x800300;
+        gCurrentViMode.unk30 = 0x2F0269;
+        gCurrentViMode.unk34 = 0x9026B;
     }
     if (2 == temp_v1) {
-        D_80048BF8.unkC = 0x4651E39;
-        D_80048BF8.unk10 = 0x20C;
-        D_80048BF8.unk14 = 0xC10;
-        D_80048BF8.unk18 = 0xC1C0C1C;
-        D_80048BF8.unk1C = 0x6C02EC;
-        D_80048BF8.unk30 = 0x2501FF;
-        D_80048BF8.unk34 = 0xE0204;
+        gCurrentViMode.unkC = 0x4651E39;
+        gCurrentViMode.unk10 = 0x20C;
+        gCurrentViMode.unk14 = 0xC10;
+        gCurrentViMode.unk18 = 0xC1C0C1C;
+        gCurrentViMode.unk1C = 0x6C02EC;
+        gCurrentViMode.unk30 = 0x2501FF;
+        gCurrentViMode.unk34 = 0xE0204;
     }
-    temp_t7_3 = D_80048BF8.unk1C;
+    temp_t7_3 = gCurrentViMode.unk1C;
     sp0 = temp_t7_3;
-    D_80048BF8.unk44 = D_80048BF8.unk30;
+    gCurrentViMode.unk44 = gCurrentViMode.unk30;
     temp_t9 = temp_t7_3 >> 0x10;
     sp20 = temp_t9;
     sp1C = temp_t7_3 & 0xFFFF;
@@ -618,8 +618,8 @@ block_47:
     if (temp_t7_4 < 0) {
         sp1C = 0;
     }
-    temp_t8_2 = D_80048BF8.unk30;
-    D_80048BF8.unk1C = (sp20 << 0x10) | sp1C;
+    temp_t8_2 = gCurrentViMode.unk30;
+    gCurrentViMode.unk1C = (sp20 << 0x10) | sp1C;
     temp_t9_2 = temp_t8_2 >> 0x10;
     sp0 = temp_t8_2;
     sp20 = temp_t9_2;
@@ -634,8 +634,8 @@ block_47:
     if (temp_t7_5 < 0) {
         sp1C = 0;
     }
-    temp_t9_3 = D_80048BF8.unk44;
-    D_80048BF8.unk30 = (sp20 << 0x10) | sp1C;
+    temp_t9_3 = gCurrentViMode.unk44;
+    gCurrentViMode.unk30 = (sp20 << 0x10) | sp1C;
     temp_t6 = temp_t9_3 >> 0x10;
     sp0 = temp_t9_3;
     sp20 = temp_t6;
@@ -650,32 +650,32 @@ block_47:
     if (temp_t7_6 < 0) {
         sp1C = 0;
     }
-    D_80048BF8.unk44 = (sp20 << 0x10) | sp1C;
-    D_80048BF8.unk48 = D_80048BF8.unk34;
+    gCurrentViMode.unk44 = (sp20 << 0x10) | sp1C;
+    gCurrentViMode.unk48 = gCurrentViMode.unk34;
     if ((phi_t2 != 0) && (phi_a0 != 0)) {
-        D_80048BF8.unk10 = D_80048BF8.unk10 + 1;
+        gCurrentViMode.unk10 = gCurrentViMode.unk10 + 1;
         if (2 == temp_v1) {
-            D_80048BF8.unk14 = D_80048BF8.unk14 + 0x40001;
+            gCurrentViMode.unk14 = gCurrentViMode.unk14 + 0x40001;
         }
         if (2 == temp_v1) {
-            D_80048BF8.unk18 = D_80048BF8.unk18 + 0xFFFCFFFE;
+            gCurrentViMode.unk18 = gCurrentViMode.unk18 + 0xFFFCFFFE;
         }
     } else {
-        D_80048BF8.unk30 = D_80048BF8.unk30 + 0xFFFDFFFE;
+        gCurrentViMode.unk30 = gCurrentViMode.unk30 + 0xFFFDFFFE;
         if (2 == temp_v1) {
-            D_80048BF8.unk34 = D_80048BF8.unk34 + 0xFFFCFFFE;
+            gCurrentViMode.unk34 = gCurrentViMode.unk34 + 0xFFFCFFFE;
         }
         if (temp_v1 == 0) {
-            D_80048BF8.unk48 = D_80048BF8.unk48 + 0x2FFFE;
+            gCurrentViMode.unk48 = gCurrentViMode.unk48 + 0x2FFFE;
         }
     }
-    D_80048BF8.unk24 = 0;
-    D_80048BF8.unk20 = (arg0 << 0xA) / ((arg4 - arg3) + 0x280);
+    gCurrentViMode.unk24 = 0;
+    gCurrentViMode.unk20 = (arg0 << 0xA) / ((arg4 - arg3) + 0x280);
     phi_v1_2 = 2;
     if (phi_t0 == 0) {
         phi_v1_2 = 1;
     }
-    D_80048BF8.unk28 = phi_v1_2 * arg0 * 2;
+    gCurrentViMode.unk28 = phi_v1_2 * arg0 * 2;
     if (phi_t0 == 0) {
         sp14 = 1;
     } else {
@@ -685,23 +685,23 @@ block_47:
     if (phi_t2 != 0) {
         phi_v1_4 = 1;
     }
-    D_80048BF8.unk2C = temp_lo;
-    D_80048BF8.unk40 = temp_lo;
-    D_80048BF8.unk3C = phi_v1_4 * arg0 * 2 * sp14;
+    gCurrentViMode.unk2C = temp_lo;
+    gCurrentViMode.unk40 = temp_lo;
+    gCurrentViMode.unk3C = phi_v1_4 * arg0 * 2 * sp14;
     if (phi_t1 != 0) {
         if (temp_t4 < 0xB4000) {
-            D_80048BF8.unk2C = temp_lo + 0x3000000;
+            gCurrentViMode.unk2C = temp_lo + 0x3000000;
             phi_t8 = temp_lo + 0x1000000;
         } else {
-            D_80048BF8.unk2C = D_80048BF8.unk2C + 0x2000000;
-            phi_t8 = D_80048BF8.unk40 + 0x2000000;
+            gCurrentViMode.unk2C = gCurrentViMode.unk2C + 0x2000000;
+            phi_t8 = gCurrentViMode.unk40 + 0x2000000;
         }
-        D_80048BF8.unk40 = phi_t8;
+        gCurrentViMode.unk40 = phi_t8;
     }
-    D_80048BF8.unk38 = 2;
-    D_80048BF8.unk4C = 2;
+    gCurrentViMode.unk38 = 2;
+    gCurrentViMode.unk4C = 2;
     D_80048C48 = 1;
-    return &D_80048BF8;
+    return &gCurrentViMode;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000F78.s")
@@ -1493,7 +1493,7 @@ loop_21:
                 temp_t8_2->type = temp_t6_2->unk0;
                 temp_t8_2->comRegs.ctrl = temp_t6_2->unk4;
                 phi_t8_3 = &sp30;
-                phi_t7 = &D_80048BF8;
+                phi_t7 = &gCurrentViMode;
 loop_23:
                 temp_t8_3 = phi_t8_3 + 0xC;
                 temp_t7 = phi_t7 + 0xC;
@@ -1540,7 +1540,7 @@ loop_7:
             temp_t8_5->type = temp_t5_2->unk0;
             temp_t8_5->comRegs.ctrl = temp_t5_2->unk4;
             phi_t8_6 = &sp30;
-            phi_t7_2 = &D_80048BF8;
+            phi_t7_2 = &gCurrentViMode;
 loop_9:
             temp_t8_6 = phi_t8_6 + 0xC;
             temp_t7_2 = phi_t7_2 + 0xC;
@@ -1587,7 +1587,7 @@ loop_14:
         temp_t7_4->type = temp_t9_2->unk0;
         temp_t7_4->comRegs.ctrl = temp_t9_2->unk4;
         phi_t7_5 = &sp30;
-        phi_t8_7 = &D_80048BF8;
+        phi_t8_7 = &gCurrentViMode;
 loop_16:
         temp_t7_5 = phi_t7_5 + 0xC;
         temp_t8_7 = phi_t8_7 + 0xC;

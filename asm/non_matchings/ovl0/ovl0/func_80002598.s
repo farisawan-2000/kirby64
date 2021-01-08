@@ -101,8 +101,8 @@ glabel func_80002598
 /* 003318 80002718 15AEFFF8 */  bne   $t5, $t6, .L800026FC_ovl0
 /* 00331C 8000271C AF19FFFC */   sw    $t9, -4($t8)
 /* 003320 80002720 8DB90000 */  lw    $t9, ($t5)
-/* 003324 80002724 3C0F8005 */  lui   $t7, %hi(D_80048BF8) # $t7, 0x8005
-/* 003328 80002728 25EF8BF8 */  addiu $t7, %lo(D_80048BF8) # addiu $t7, $t7, -0x7408
+/* 003324 80002724 3C0F8005 */  lui   $t7, %hi(gCurrentViMode) # $t7, 0x8005
+/* 003328 80002728 25EF8BF8 */  addiu $t7, %lo(gCurrentViMode) # addiu $t7, $t7, -0x7408
 /* 00332C 8000272C AF190000 */  sw    $t9, ($t8)
 /* 003330 80002730 8DAC0004 */  lw    $t4, 4($t5)
 /* 003334 80002734 AF0C0004 */  sw    $t4, 4($t8)
@@ -159,8 +159,8 @@ glabel func_80002598
 /* 0033F0 800027F0 172CFFF8 */  bne   $t9, $t4, .L800027D4_ovl0
 /* 0033F4 800027F4 ADEEFFFC */   sw    $t6, -4($t7)
 /* 0033F8 800027F8 8F2E0000 */  lw    $t6, ($t9)
-/* 0033FC 800027FC 3C188005 */  lui   $t8, %hi(D_80048BF8) # $t8, 0x8005
-/* 003400 80002800 27188BF8 */  addiu $t8, %lo(D_80048BF8) # addiu $t8, $t8, -0x7408
+/* 0033FC 800027FC 3C188005 */  lui   $t8, %hi(gCurrentViMode) # $t8, 0x8005
+/* 003400 80002800 27188BF8 */  addiu $t8, %lo(gCurrentViMode) # addiu $t8, $t8, -0x7408
 /* 003404 80002804 ADEE0000 */  sw    $t6, ($t7)
 /* 003408 80002808 8F2D0004 */  lw    $t5, 4($t9)
 /* 00340C 8000280C ADED0004 */  sw    $t5, 4($t7)
@@ -217,8 +217,8 @@ glabel func_80002598
 /* 0034C8 800028C8 15CDFFF8 */  bne   $t6, $t5, .L800028AC_ovl0
 /* 0034CC 800028CC AF0CFFFC */   sw    $t4, -4($t8)
 /* 0034D0 800028D0 8DCC0000 */  lw    $t4, ($t6)
-/* 0034D4 800028D4 3C0F8005 */  lui   $t7, %hi(D_80048BF8) # $t7, 0x8005
-/* 0034D8 800028D8 25EF8BF8 */  addiu $t7, %lo(D_80048BF8) # addiu $t7, $t7, -0x7408
+/* 0034D4 800028D4 3C0F8005 */  lui   $t7, %hi(gCurrentViMode) # $t7, 0x8005
+/* 0034D8 800028D8 25EF8BF8 */  addiu $t7, %lo(gCurrentViMode) # addiu $t7, $t7, -0x7408
 /* 0034DC 800028DC AF0C0000 */  sw    $t4, ($t8)
 /* 0034E0 800028E0 8DD90004 */  lw    $t9, 4($t6)
 /* 0034E4 800028E4 AF190004 */  sw    $t9, 4($t8)
