@@ -95,6 +95,15 @@ typedef struct Controller_800D6FE8 {
   s8 stickY;
 } Controller_800D6FE8;
 
+struct KirbyState_114 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u16 unk10;
+    u16 unk12;
+};
+
 // 0x8012E7C0
 // TODO: populate with actual values
 struct KirbyState {
@@ -202,7 +211,8 @@ struct KirbyState {
     u16 unk10A;
     u32 unk10C;
     u32 unk110;
-    u32 unk114;
+    // todo: verify this
+    struct KirbyState_114 *unk114;
     u32 unk118;
     u32 unk11C;
     u32 unk120;

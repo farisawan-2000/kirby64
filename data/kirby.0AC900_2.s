@@ -937,47 +937,13 @@ glabel D_80128DB8
 glabel D_80128DBC
 .word 0x780A0000
 
+
+# new file?
+
+
+.balign 4
 glabel D_80128DC0
-.word 0x706C7964
-
-glabel D_80128DC4
-.word 0x6D672070
-
-glabel D_80128DC8
-.word 0x74636C20
-
-glabel D_80128DCC
-.word 0x6B696E64
-
-glabel D_80128DD0
-.word 0x206F7665
-
-glabel D_80128DD4
-.word 0x72215B70
-
-glabel D_80128DD8
-.word 0x6C796C69
-
-glabel D_80128DDC
-.word 0x622E6363
-
-glabel D_80128DE0
-.word 0x5D206D61
-
-glabel D_80128DE4
-.word 0x783A2025
-
-glabel D_80128DE8
-.word 0x782C206B
-
-glabel D_80128DEC
-.word 0x696E643A
-
-glabel D_80128DF0
-.word 0x2025780A
-
-glabel D_80128DF4
-.word 0x00000000
+.asciiz "plydmg ptcl kind over![plylib.cc] max: %x, kind: %x\n"
 
 glabel D_80128DF8
 .word 0x8011C778

@@ -100,17 +100,13 @@ void func_801E4668_ovl17(void *arg0) {
     sp31 = ((0 * sp29) * 1.0f) + ((sp2D * (1 - 0)) * 1.0f);
     sp32 = ((0 * sp2A) * 1.0f) + ((sp2E * (1 - 0)) * 1.0f);
     while (phi_s1 != NULL) {
-        temp_v0 = phi_s1->unk80;
-        phi_v0 = temp_v0;
-        if (temp_v0 != 0) {
-loop_2:
+        phi_v0 = phi_s1->unk80;
+        while (phi_v0 != 0) {
+            // struct copy
             phi_v0->unk58 = (unaligned s32) *temp_s0;
             phi_v0->unk60 = (unaligned s32) *temp_s0;
-            temp_v0_2 = phi_v0->unk0;
-            phi_v0 = temp_v0_2;
-            if (temp_v0_2 != 0) {
-                goto loop_2;
-            }
+            
+            phi_v0 = phi_v0->unk0;
         }
         phi_s1 = func_8000BE90(phi_s1);
     }

@@ -159,12 +159,8 @@ block_5:
     } else {
         goto block_5;
     }
-    temp_f0_2 = atan2f(phi_f12, (*gEntitiesPosYArray + 20.0f) - gEntitiesPosYArray[temp_v0]);
-    if (temp_f0_2 < 0.0f) {
-        phi_f2 = -temp_f0_2;
-    } else {
-        phi_f2 = temp_f0_2;
-    }
+    temp_f0_2 = atan2f(phi_f12, (gEntitiesPosYArray[0] + 20.0f) - gEntitiesPosYArray[temp_v0]);
+        phi_f2 = ABSF(temp_f0_2);
     temp_f14 = D_801F4A50_ovl10;
     if (temp_f14 < phi_f2) {
         if (1.0f == D_800E6A10[D_8004A7C4->objId]) {
@@ -173,11 +169,7 @@ block_5:
             phi_f12_2 = D_801F4A58_ovl10.unk0;
         }
     } else {
-        if (temp_f0_2 < 0.0f) {
-            phi_f2_2 = -temp_f0_2;
-        } else {
-            phi_f2_2 = temp_f0_2;
-        }
+        phi_f2_2 = ABSF(temp_f0_2);
         temp_f0_3 = D_801F4A58_ovl10.unk4A60;
         phi_f12_2 = temp_f0_2;
         if (phi_f2_2 < temp_f0_3) {
@@ -262,19 +254,16 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E3748_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E3770_ovl10(void *arg0) {
-    struct UnkStruct800E1B50 *sp1C;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct UnkStruct800E1B50 *sp1C = D_800E1B50[D_8004A7C4->objId];
 
-    sp1C = D_800E1B50[D_8004A7C4->objId];
     if ((func_800B9DF8(2) != 0) && (D_800D6B70 == 0)) {
         func_8019BB58_ovl10();
-        D_800D6E40 = D_800D6E40 + 1;
-        func_8019D958_ovl10(D_8004A7C4->unk2);
+        D_800D6E40++;
+        func_8019D958_ovl10((u16) D_8004A7C4->unk0);
     }
     arg0->unk48 = &D_800B113C;
-    temp_v0 = D_8004A7C4;
-    D_800DEF90[temp_v0->objId] = &D_801DB678;
-    D_800E8920[temp_v0->objId] = 1;
+    D_800DEF90[D_8004A7C4->objId] = &D_801DB678;
+    D_800E8920[D_8004A7C4->objId] = 1;
     func_800FF0A8(sp1C->unk80);
     func_800A447C(D_800E7880[D_8004A7C4->objId], 9, &D_801F4400_ovl10);
 }

@@ -40,10 +40,10 @@ void init_dynamic_buffer(struct DynamicBuffer *tracker, u32 id, void *start, u32
 }
 
 extern u32 D_8004A504;
+#include <PR/gbi.h>
 
 // takes a u32 color and either returns it
 // or packs it into an rgba16 value that gDPSetFillColor can use
-#include <PR/gbi.h>
 u32 func_800078F0(u32 color) {
     // Is this a GPACK_RGBA5551?
     u32 temp_v0 = ((((color >> 0x10) & 0xF800) | ((color >> 0xD) & 0x7C0)) | ((color >> 0xA) & 0x3E)) | ((color >> 7) & 1);

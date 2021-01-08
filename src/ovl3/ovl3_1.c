@@ -11,7 +11,7 @@
     void *temp_v1;
     s32 phi_a1;
 
-    temp_a2 = arg2 & 0xFF;
+    temp_a2 = arg2 & 0xFF;func_8011BF4C
     if (temp_a2 >= 0x11) {
         print_error_stub(arg3, &D_80196E10, 0x10, temp_a2, temp_a2);
         return 0;
