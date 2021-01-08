@@ -13,7 +13,7 @@ glabel func_8021F3F8_ovl19
 /* 23FB34 8021F424 8DCF0000 */  lw    $t7, ($t6)
 /* 23FB38 8021F428 000FC080 */  sll   $t8, $t7, 2
 /* 23FB3C 8021F42C 0238C821 */  addu  $t9, $s1, $t8
-/* 23FB40 8021F430 0C03F394 */  jal   func_800FCE50_ovl19
+/* 23FB40 8021F430 0C03F394 */  jal   func_800FCE50
 /* 23FB44 8021F434 AF200000 */   sw    $zero, ($t9)
 /* 23FB48 8021F438 8E030000 */  lw    $v1, ($s0)
 /* 23FB4C 8021F43C 3C018023 */  lui   $at, %hi(D_8022F754) # $at, 0x8023
@@ -90,7 +90,7 @@ glabel func_8021F3F8_ovl19
 /* 23FC68 8021F558 1560001C */  bnez  $t3, .L8021F5CC_ovl19
 /* 23FC6C 8021F55C 3C050002 */   lui   $a1, (0x000203CE >> 16) # lui $a1, 2
 /* 23FC70 8021F560 34A503CE */  ori   $a1, (0x000203CE & 0xFFFF) # ori $a1, $a1, 0x3ce
-/* 23FC74 8021F564 0C048C3A */  jal   func_801230E8_ovl19
+/* 23FC74 8021F564 0C048C3A */  jal   func_801230E8
 /* 23FC78 8021F568 00003025 */   move  $a2, $zero
 /* 23FC7C 8021F56C 8E0A0000 */  lw    $t2, ($s0)
 /* 23FC80 8021F570 8D4C0000 */  lw    $t4, ($t2)
@@ -116,14 +116,14 @@ glabel func_8021F3F8_ovl19
 /* 23FCC8 8021F5B8 3C050002 */  lui   $a1, (0x000203CC >> 16) # lui $a1, 2
 /* 23FCCC 8021F5BC 34A503CC */  ori   $a1, (0x000203CC & 0xFFFF) # ori $a1, $a1, 0x3cc
 /* 23FCD0 8021F5C0 348403CB */  ori   $a0, (0x000203CB & 0xFFFF) # ori $a0, $a0, 0x3cb
-/* 23FCD4 8021F5C4 0C048C3A */  jal   func_801230E8_ovl19
+/* 23FCD4 8021F5C4 0C048C3A */  jal   func_801230E8
 /* 23FCD8 8021F5C8 24060001 */   li    $a2, 1
 .L8021F5CC_ovl19:
 /* 23FCDC 8021F5CC 3C040002 */  lui   $a0, (0x000203CF >> 16) # lui $a0, 2
 /* 23FCE0 8021F5D0 3C050002 */  lui   $a1, (0x000203D0 >> 16) # lui $a1, 2
 /* 23FCE4 8021F5D4 34A503D0 */  ori   $a1, (0x000203D0 & 0xFFFF) # ori $a1, $a1, 0x3d0
 /* 23FCE8 8021F5D8 348403CF */  ori   $a0, (0x000203CF & 0xFFFF) # ori $a0, $a0, 0x3cf
-/* 23FCEC 8021F5DC 0C048C3A */  jal   func_801230E8_ovl19
+/* 23FCEC 8021F5DC 0C048C3A */  jal   func_801230E8
 /* 23FCF0 8021F5E0 00003025 */   move  $a2, $zero
 /* 23FCF4 8021F5E4 0C02BE85 */  jal   func_800AFA14
 /* 23FCF8 8021F5E8 00000000 */   nop   

@@ -1,0 +1,15 @@
+glabel func_80117DA0
+/* 0A0810 80117DA0 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 0A0814 80117DA4 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 0A0818 80117DA8 0C045E0D */  jal   func_80117834
+/* 0A081C 80117DAC AFA40018 */   sw    $a0, 0x18($sp)
+/* 0A0820 80117DB0 0C002DAF */  jal   func_8000B6BC
+/* 0A0824 80117DB4 2404001E */   li    $a0, 30
+/* 0A0828 80117DB8 0C045E41 */  jal   func_80117904
+/* 0A082C 80117DBC 8FA40018 */   lw    $a0, 0x18($sp)
+/* 0A0830 80117DC0 0C045EAD */  jal   func_80117AB4
+/* 0A0834 80117DC4 8FA40018 */   lw    $a0, 0x18($sp)
+/* 0A0838 80117DC8 8FBF0014 */  lw    $ra, 0x14($sp)
+/* 0A083C 80117DCC 27BD0018 */  addiu $sp, $sp, 0x18
+/* 0A0840 80117DD0 03E00008 */  jr    $ra
+/* 0A0844 80117DD4 00000000 */   nop   

@@ -7466,7 +7466,7 @@ glabel D_80229ABC
 .word 0x01000000
 
 glabel D_80229AC0
-.word func_8010C274_ovl2
+.word func_8010C274
 
 glabel D_80229AC4
 .word 0x00010150
@@ -7772,7 +7772,7 @@ glabel D_80229C54
 .word 0x01000000
 
 glabel D_80229C58
-.word func_8010C274_ovl2
+.word func_8010C274
 
 glabel D_80229C5C
 .word 0x0001023A

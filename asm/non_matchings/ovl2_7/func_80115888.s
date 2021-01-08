@@ -1,7 +1,7 @@
 glabel func_80115888
 /* 09E2F8 80115888 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 09E2FC 8011588C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 09E300 80115890 0C044AD3 */  jal   func_80112B4C_ovl2
+/* 09E300 80115890 0C044AD3 */  jal   func_80112B4C
 /* 09E304 80115894 AFA40018 */   sw    $a0, 0x18($sp)
 /* 09E308 80115898 8FAE0018 */  lw    $t6, 0x18($sp)
 /* 09E30C 8011589C 3C0F800E */  lui   $t7, 0x800e

@@ -50,7 +50,7 @@ glabel func_800FD570
 /* 086098 800FD628 11A00025 */  beqz  $t5, .L800FD6C0_ovl2
 /* 08609C 800FD62C 25EF4630 */   addiu $t7, %lo(D_80124630) # addiu $t7, $t7, 0x4630
 /* 0860A0 800FD630 E7AC0040 */  swc1  $f12, 0x40($sp)
-/* 0860A4 800FD634 0C03F675 */  jal   func_800FD9D4_ovl2
+/* 0860A4 800FD634 0C03F675 */  jal   func_800FD9D4
 /* 0860A8 800FD638 E7AE0044 */   swc1  $f14, 0x44($sp)
 /* 0860AC 800FD63C 2401FFFF */  li    $at, -1
 /* 0860B0 800FD640 C7AC0040 */  lwc1  $f12, 0x40($sp)

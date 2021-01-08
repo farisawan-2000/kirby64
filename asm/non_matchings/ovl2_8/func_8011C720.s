@@ -8,7 +8,7 @@ glabel func_8011C720
 /* 0A51A8 8011C738 A4600000 */  sh    $zero, ($v1)
 /* 0A51AC 8011C73C 3C018013 */  lui   $at, %hi(D_8012E7E8) # $at, 0x8013
 /* 0A51B0 8011C740 AC20E7E8 */  sw    $zero, %lo(D_8012E7E8)($at)
-/* 0A51B4 8011C744 0C03E158 */  jal   func_800F8560_ovl2
+/* 0A51B4 8011C744 0C03E158 */  jal   func_800F8560
 /* 0A51B8 8011C748 AFA40018 */   sw    $a0, 0x18($sp)
 /* 0A51BC 8011C74C 3C03800D */  lui   $v1, %hi(D_800D6FB0) # $v1, 0x800d
 /* 0A51C0 8011C750 2C41000B */  sltiu $at, $v0, 0xb

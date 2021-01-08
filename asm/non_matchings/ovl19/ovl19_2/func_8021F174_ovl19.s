@@ -51,7 +51,7 @@ glabel func_8021F174_ovl19
 /* 23F948 8021F238 348403BC */  ori   $a0, (0x000203BC & 0xFFFF) # ori $a0, $a0, 0x3bc
 /* 23F94C 8021F23C 8F190030 */  lw    $t9, 0x30($t8)
 /* 23F950 8021F240 00003025 */  move  $a2, $zero
-/* 23F954 8021F244 0C048C3A */  jal   func_801230E8_ovl19
+/* 23F954 8021F244 0C048C3A */  jal   func_801230E8
 /* 23F958 8021F248 A32C0054 */   sb    $t4, 0x54($t9)
 /* 23F95C 8021F24C 8E680000 */  lw    $t0, ($s3)
 /* 23F960 8021F250 3C12800E */  lui   $s2, %hi(D_800E0D50) # $s2, 0x800e
@@ -96,13 +96,13 @@ glabel func_8021F174_ovl19
 /* 23F9EC 8021F2DC 3C050002 */  lui   $a1, (0x000203B1 >> 16) # lui $a1, 2
 /* 23F9F0 8021F2E0 34A503B1 */  ori   $a1, (0x000203B1 & 0xFFFF) # ori $a1, $a1, 0x3b1
 /* 23F9F4 8021F2E4 348403B0 */  ori   $a0, (0x000203B0 & 0xFFFF) # ori $a0, $a0, 0x3b0
-/* 23F9F8 8021F2E8 0C048C3A */  jal   func_801230E8_ovl19
+/* 23F9F8 8021F2E8 0C048C3A */  jal   func_801230E8
 /* 23F9FC 8021F2EC 24060001 */   li    $a2, 1
 /* 23FA00 8021F2F0 3C040002 */  lui   $a0, (0x000203BE >> 16) # lui $a0, 2
 /* 23FA04 8021F2F4 3C050002 */  lui   $a1, (0x000203BF >> 16) # lui $a1, 2
 /* 23FA08 8021F2F8 34A503BF */  ori   $a1, (0x000203BF & 0xFFFF) # ori $a1, $a1, 0x3bf
 /* 23FA0C 8021F2FC 348403BE */  ori   $a0, (0x000203BE & 0xFFFF) # ori $a0, $a0, 0x3be
-/* 23FA10 8021F300 0C048C3A */  jal   func_801230E8_ovl19
+/* 23FA10 8021F300 0C048C3A */  jal   func_801230E8
 /* 23FA14 8021F304 00003025 */   move  $a2, $zero
 /* 23FA18 8021F308 8E780000 */  lw    $t8, ($s3)
 /* 23FA1C 8021F30C 24100001 */  li    $s0, 1
@@ -138,7 +138,7 @@ glabel func_8021F174_ovl19
 /* 23FA8C 8021F37C 34A503A7 */  ori   $a1, (0x000203A7 & 0xFFFF) # ori $a1, $a1, 0x3a7
 /* 23FA90 8021F380 348403A6 */  ori   $a0, (0x000203A6 & 0xFFFF) # ori $a0, $a0, 0x3a6
 /* 23FA94 8021F384 00003025 */  move  $a2, $zero
-/* 23FA98 8021F388 0C048C3A */  jal   func_801230E8_ovl19
+/* 23FA98 8021F388 0C048C3A */  jal   func_801230E8
 /* 23FA9C 8021F38C A1100054 */   sb    $s0, 0x54($t0)
 /* 23FAA0 8021F390 0C02BE85 */  jal   func_800AFA14
 /* 23FAA4 8021F394 00000000 */   nop   

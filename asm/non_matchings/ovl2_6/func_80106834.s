@@ -42,7 +42,7 @@ glabel func_80106834
 /* 08F344 801068D4 27A4004C */  addiu $a0, $sp, 0x4c
 /* 08F348 801068D8 E7A40034 */  swc1  $f4, 0x34($sp)
 /* 08F34C 801068DC E7A60038 */  swc1  $f6, 0x38($sp)
-/* 08F350 801068E0 0C04134B */  jal   func_80104D2C_ovl2
+/* 08F350 801068E0 0C04134B */  jal   func_80104D2C
 /* 08F354 801068E4 E7A8003C */   swc1  $f8, 0x3c($sp)
 /* 08F358 801068E8 5040000C */  beql  $v0, $zero, .L8010691C_ovl2
 /* 08F35C 801068EC 00001025 */   move  $v0, $zero

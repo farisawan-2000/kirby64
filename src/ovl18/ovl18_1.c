@@ -170,7 +170,7 @@ void func_80220B00_ovl18(s32 arg0) {
             temp_f26 = D_800EB160[D_8004A7C4->objId] * temp_f0;
             D_800E6BD0[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId];
             gEntitiesPosYArray[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId];
-            func_800F9974_ovl18(&D_800E5F90[D_8004A7C4->objId], &D_800E6BD0[D_8004A7C4->objId], temp_f28);
+            func_800F9974(&D_800E5F90[D_8004A7C4->objId], &D_800E6BD0[D_8004A7C4->objId], temp_f28);
             gEntitiesPosYArray[D_8004A7C4->objId] += temp_f30;
             D_800E6150[D_8004A7C4->objId] = D_800E5F90[D_8004A7C4->objId];
             D_800E6D90[D_8004A7C4->objId] = D_800E6BD0[D_8004A7C4->objId];

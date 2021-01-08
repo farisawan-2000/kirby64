@@ -1136,7 +1136,7 @@ glabel func_800AFC20
 glabel func_800AFC54
 /* 057EA4 800AFC54 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 057EA8 800AFC58 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 057EAC 800AFC5C 0C03EE45 */  jal   func_800FB914_ovl1
+/* 057EAC 800AFC5C 0C03EE45 */  jal   func_800FB914
 /* 057EB0 800AFC60 AFA5001C */   sw    $a1, 0x1c($sp)
 /* 057EB4 800AFC64 8FA4001C */  lw    $a0, 0x1c($sp)
 /* 057EB8 800AFC68 50800004 */  beql  $a0, $zero, .L800AFC7C_ovl1

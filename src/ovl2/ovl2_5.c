@@ -3,7 +3,7 @@
 
 extern Gfx *gDisplayListHeads[4];
 
-void func_800FDA40_ovl2(Vtx *curVtx, f32 arg1, f32 arg2) {
+void func_800FDA40(Vtx *curVtx, f32 arg1, f32 arg2) {
     Vtx* vtxList = curVtx;
 
     (curVtx++)->v.ob[1] = arg2;
@@ -245,7 +245,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDE6C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800FDF88_ovl2(void *arg0, void *arg1, void *arg2) {
+void func_800FDF88(void *arg0, void *arg1, void *arg2) {
     f32 temp_f0;
 
     temp_f0 = arg1->unk10 / 20.0f;
@@ -257,7 +257,7 @@ void func_800FDF88_ovl2(void *arg0, void *arg1, void *arg2) {
     *arg2 = func_80011180_ovl2(gDisplayListHeads, arg0, arg1);
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDF88_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDF88.s")
 #endif
 
 struct UNK_D_8012B9AC {
@@ -267,7 +267,7 @@ struct UNK_D_8012B9AC {
 
 extern struct UNK_D_8012B9AC *D_8012B9AC;
 
-void func_800FDFF4_ovl2(s32 arg0) {
+void func_800FDFF4(s32 arg0) {
     Gfx *temp_v1;
     Gfx *temp_v1_2;
     void *temp_v1_3;
@@ -285,7 +285,7 @@ void func_800FDFF4_ovl2(s32 arg0) {
     }
 }
 
-void func_800FE0AC_ovl2(f32 arg0, f32 arg1) {
+void func_800FE0AC(f32 arg0, f32 arg1) {
     f32 max_val = 80.0f;
     f32 phi_f0 = arg1 - arg0;
 
@@ -300,7 +300,7 @@ void func_800FE0AC_ovl2(f32 arg0, f32 arg1) {
 }
 
 #ifdef MIPS_TO_C
-void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
+void func_800FE154(void *arg0, s32 arg1, void *arg2) {
     Vtx_t *sp194;
     s32 sp190;
     f32 sp18C;
@@ -438,8 +438,8 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
             sp180 = temp_f6;
             sp17C = temp_t7->tc + temp_t7->unk18;
             if ((arg2(&sp184, temp_a1, &sp16C, &sp168, &sp164) != 0) && (func_80101920(sp164, sp168, 0, &D_8012B9A0) != 0)) {
-                func_800FDE6C_ovl2(sp194);
-                func_800FDF88_ovl2(arg0, sp194, arg1);
+                func_800FDE6C(sp194);
+                func_800FDF88(arg0, sp194, arg1);
                 phi_a3 = sp194 + 0x28;
                 if (D_8004A450 != 0) {
                     phi_a3 = sp194 + 0xA8;
@@ -448,7 +448,7 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
                     sp190 = 1;
                 }
                 sp160 = phi_a3;
-                func_800FDFF4_ovl2(sp190, phi_a3);
+                func_800FDFF4(sp190, phi_a3);
                 temp_v0 = D_8012B9AC;
                 temp_f0 = sp168->unk0;
                 temp_f2 = sp168->unk8;
@@ -458,12 +458,12 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
                 sp15C = temp_f6_2;
                 temp_f10 = -((temp_f0 * temp_v0->unk18) + (temp_f2 * temp_v0->unk20) + temp_f16) / temp_f18;
                 sp158 = temp_f10;
-                func_800FE0AC_ovl2(sp17C, (temp_f6_2 + temp_f10) * 0.5f);
-                func_800FDA40_ovl2(sp160, (bitwise f32) (bitwise s32) sp15C, (bitwise f32) (bitwise s32) sp158);
+                func_800FE0AC(sp17C, (temp_f6_2 + temp_f10) * 0.5f);
+                func_800FDA40(sp160, (bitwise f32) (bitwise s32) sp15C, (bitwise f32) (bitwise s32) sp158);
                 return;
             }
         } else {
-            func_800FDE6C_ovl2(sp194);
+            func_800FDE6C(sp194);
             temp_a0 = D_8012B9AC;
             temp_v0_2 = arg2(temp_a0, temp_a0 + 0xC, &sp14C, &sp13C, &sp134);
             sp12C = temp_v0_2;
@@ -474,7 +474,7 @@ void func_800FE154_ovl2(void *arg0, s32 arg1, void *arg2) {
                 if ((temp_v0_4 == 0) || (sp128 = temp_v0_4, phi_v1 = sp128, (func_80101920(sp130, sp138, 0, &D_8012B9A0) != 0))) {
                     if ((phi_v1 != 0) || (sp12C != 0)) {
                         sp128 = phi_v1;
-                        func_800FDF88_ovl2(arg0, sp194, arg1);
+                        func_800FDF88(arg0, sp194, arg1);
                         temp_v1 = phi_v1;
                         if (D_8004A450 != 0) {
                             sp124 = sp194 + 0xA8;
@@ -490,12 +490,12 @@ block_22:
                             goto block_22;
                         }
                         sp128 = temp_v1;
-                        func_800FDFF4_ovl2(sp190);
+                        func_800FDFF4(sp190);
                         if ((sp12C != 0) && (temp_v1 != 0)) {
                             if (sp13C == sp138) {
 block_32:
-                                func_800FE0AC_ovl2(D_8012B9AC->unk10, (sp150 + sp144) * 0.5f);
-                                func_800FDA40_ovl2(sp124, sp150, (bitwise f32) (bitwise s32) sp144);
+                                func_800FE0AC(D_8012B9AC->unk10, (sp150 + sp144) * 0.5f);
+                                func_800FDA40(sp124, sp150, (bitwise f32) (bitwise s32) sp144);
                                 return;
                             }
                             temp_f0_2 = sp138->unk0;
@@ -513,7 +513,7 @@ block_32:
                             sp10C = temp_v0_5->unk18;
                             sp114 = temp_v0_5->unk20;
                             sp110 = -((sp13C->unk0 * sp10C) + (sp13C->unk8 * sp114) + sp13C->unkC) / sp13C->unk4;
-                            temp_v0_6 = func_80104468_ovl2(temp_f12, &sp14C, temp_a1_2, sp13C, &spF0, &sp100, 0, 0, 0);
+                            temp_v0_6 = func_80104468(temp_f12, &sp14C, temp_a1_2, sp13C, &spF0, &sp100, 0, 0, 0);
                             temp_v1_2 = temp_v0_6;
                             if (temp_v0_6 == 0) {
                                 spF0 = 1.0f;
@@ -524,7 +524,7 @@ block_32:
                             sp120 = temp_v0_7->unk8;
                             spE8 = temp_v1_2;
                             sp11C = -((sp138->unk0 * sp118) + (sp138->unk8 * sp120) + sp138->unkC) / sp138->unk4;
-                            temp_v0_8 = func_80104468_ovl2(&sp140, temp_a1_3, sp138, &spEC, &spF4, 0, 0, 0);
+                            temp_v0_8 = func_80104468(&sp140, temp_a1_3, sp138, &spEC, &spF4, 0, 0, 0);
                             if (temp_v0_8 == 0) {
                                 spEC = 0.0f;
                             } else {
@@ -583,7 +583,7 @@ block_50:
                                         phi_f0 = phi_f0_2 * ((temp_f2_6 - temp_f12_5) * *0x80130000);
                                     }
                                 }
-                                func_800FDCB0_ovl2(sp150, 80.0f, sp124, sp150, (bitwise s32) sp144, (bitwise s32) sp104, spF8, spF0, spEC, phi_f16, phi_f0);
+                                func_800FDCB0(sp150, 80.0f, sp124, sp150, (bitwise s32) sp144, (bitwise s32) sp104, spF8, spF0, spEC, phi_f16, phi_f0);
                                 return;
                             }
                             if (temp_v0_8 != 0) {
@@ -609,8 +609,8 @@ block_50:
                                 if ((0.0f < temp_f2_3) && (temp_f2_3 < 1.0f)) {
                                     spCC = temp_f2_3;
                                     spD4 = temp_f16_2;
-                                    func_800FE0AC_ovl2(D_8012B9AC->unk10, (sp150 + sp144) * 0.5f);
-                                    func_800FDBB0_ovl2(sp150, sp124, sp150, (bitwise s32) sp144, ((temp_f16_2 - sp150) * temp_f2_3) + sp150, temp_f2_3);
+                                    func_800FE0AC(D_8012B9AC->unk10, (sp150 + sp144) * 0.5f);
+                                    func_800FDBB0(sp150, sp124, sp150, (bitwise s32) sp144, ((temp_f16_2 - sp150) * temp_f2_3) + sp150, temp_f2_3);
                                     return;
                                 }
                             }
@@ -631,8 +631,8 @@ block_50:
                                 sp9C = temp_f6_3;
                                 temp_f10_3 = -((temp_f0_5 * temp_v0_9->unk18) + (temp_f2_4 * temp_v0_9->unk20) + temp_f16_3) / temp_f18_3;
                                 sp98 = temp_f10_3;
-                                func_800FE0AC_ovl2(temp_v0_9->unk10, (temp_f6_3 + temp_f10_3) * 0.5f);
-                                func_800FDA40_ovl2(sp124, (bitwise f32) (bitwise s32) sp9C, (bitwise f32) (bitwise s32) sp98);
+                                func_800FE0AC(temp_v0_9->unk10, (temp_f6_3 + temp_f10_3) * 0.5f);
+                                func_800FDA40(sp124, (bitwise f32) (bitwise s32) sp9C, (bitwise f32) (bitwise s32) sp98);
                                 return;
                             }
                         } else {
@@ -642,13 +642,13 @@ block_50:
                                 sp78 = temp_v0_10->unk18;
                                 sp80 = temp_v0_10->unk20;
                                 sp7C = -((sp13C->unk0 * sp78) + (sp13C->unk8 * sp80) + sp13C->unkC) / sp13C->unk4;
-                                if (func_80104468_ovl2(&sp14C, temp_a1_5, sp13C, &sp68, &sp6C, 0, 0, 0) == 0) {
-                                    func_800FE0AC_ovl2(D_8012B9AC->unk10, (sp150 + sp7C) * 0.5f);
-                                    func_800FDA40_ovl2(sp124, sp150, (bitwise f32) (bitwise s32) sp7C);
+                                if (func_80104468(&sp14C, temp_a1_5, sp13C, &sp68, &sp6C, 0, 0, 0) == 0) {
+                                    func_800FE0AC(D_8012B9AC->unk10, (sp150 + sp7C) * 0.5f);
+                                    func_800FDA40(sp124, sp150, (bitwise f32) (bitwise s32) sp7C);
                                     return;
                                 }
-                                func_800FE0AC_ovl2(D_8012B9AC->unk10, (sp150 + sp70) * 0.5f);
-                                func_800FDAB8_ovl2(sp150, sp124, sp150, (bitwise s32) sp70, 0, sp68);
+                                func_800FE0AC(D_8012B9AC->unk10, (sp150 + sp70) * 0.5f);
+                                func_800FDAB8(sp150, sp124, sp150, (bitwise s32) sp70, 0, sp68);
                                 return;
                             }
                             temp_v0_11 = *0x8012B9AC;
@@ -657,13 +657,13 @@ block_50:
                             sp64 = temp_v0_11->unk8;
                             temp_f4_2 = -((sp138->unk0 * sp5C) + (sp138->unk8 * sp64) + sp138->unkC) / sp138->unk4;
                             sp60 = temp_f4_2;
-                            if (func_80104468_ovl2(&sp140, temp_a1_6, sp138, &sp4C, &sp50, 0, 0, 0) != 0) {
-                                func_800FE0AC_ovl2(D_8012B9AC->unk10, (sp54 + sp144) * 0.5f);
-                                func_800FDAB8_ovl2(sp124, (bitwise s32) sp54, (bitwise s32) sp144, 1.0f - sp4C, 1.0f);
+                            if (func_80104468(&sp140, temp_a1_6, sp138, &sp4C, &sp50, 0, 0, 0) != 0) {
+                                func_800FE0AC(D_8012B9AC->unk10, (sp54 + sp144) * 0.5f);
+                                func_800FDAB8(sp124, (bitwise s32) sp54, (bitwise s32) sp144, 1.0f - sp4C, 1.0f);
                                 return;
                             }
-                            func_800FE0AC_ovl2(D_8012B9AC->unk10, (temp_f4_2 + sp144) * 0.5f);
-                            func_800FDA40_ovl2(sp124, (bitwise f32) (bitwise s32) sp60, (bitwise f32) (bitwise s32) sp144);
+                            func_800FE0AC(D_8012B9AC->unk10, (temp_f4_2 + sp144) * 0.5f);
+                            func_800FDA40(sp124, (bitwise f32) (bitwise s32) sp60, (bitwise f32) (bitwise s32) sp144);
                         }
                     }
                 }
@@ -672,7 +672,7 @@ block_50:
     }
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FE154_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FE154.s")
 #endif
 
 extern u32 D_80104A08;
@@ -694,7 +694,7 @@ struct UNK_FUNC_800FEE6C_2 {
 };
 
 
-void func_800FEE6C_ovl2(struct UNK_FUNC_800FEE6C *arg0) {
+void func_800FEE6C(struct UNK_FUNC_800FEE6C *arg0) {
     s32 sp34;
     void *phi_a2;
     struct UNK_FUNC_800FEE6C *phi_s0;
@@ -708,7 +708,7 @@ void func_800FEE6C_ovl2(struct UNK_FUNC_800FEE6C *arg0) {
         } else {
             phi_a2 = &D_80104958;
         }
-        func_800FE154_ovl2(arg0, &sp34, phi_a2);
+        func_800FE154(arg0, &sp34, phi_a2);
     }
     if (sp34 != 0) {
         if ((arg0->unk14 == 1) || (arg0->unk8 != 0)) {
@@ -718,7 +718,7 @@ void func_800FEE6C_ovl2(struct UNK_FUNC_800FEE6C *arg0) {
     if (arg0->unkC == 0) {
         phi_s0 = arg0->unk8;
         while (phi_s0 != 0) {
-            func_800FEE6C_ovl2(phi_s0);
+            func_800FEE6C(phi_s0);
             phi_s0 = phi_s0->unk8;
         }
     }
@@ -733,7 +733,7 @@ struct UNK_FUNC_800FEF44 {
     struct UNK_FUNC_800FEE6C *unk3C;
 };
 
-void func_800FEF44_ovl2(struct UNK_FUNC_800FEF44 *arg0) {
+void func_800FEF44(struct UNK_FUNC_800FEF44 *arg0) {
     struct UNK_D_8012B9AC sp3C;
 
     if (arg0->unk3C != 0) {
@@ -747,7 +747,7 @@ void func_800FEF44_ovl2(struct UNK_FUNC_800FEF44 *arg0) {
         gDPPipeSync(gDisplayListHeads[0]++);
         gDPSetTile(gDisplayListHeads[0]++, G_IM_FMT_I, G_IM_SIZ_8b, 4, 0, 0, 0, G_TX_MIRROR|G_TX_WRAP, 5, 0, G_TX_MIRROR|G_TX_WRAP, 5, 0);
         gDPSetTileSize(gDisplayListHeads[0]++, 0, 0 << 2, 0 << 2, (32 - 1) << 2, (32 - 1) << 2);
-        func_800FEE6C_ovl2(arg0->unk3C);
+        func_800FEE6C(arg0->unk3C);
         gSPDisplayList(gDisplayListHeads[0]++, D_80124708);
     }
 }
@@ -757,19 +757,19 @@ struct UNK_OVL2_5 {
     u8 unk20;
 };
 
-void func_800FF0A8_ovl2(struct UNK_OVL2_5 *arg0) {
+void func_800FF0A8(struct UNK_OVL2_5 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 | 2;
     }
 }
 
-void func_800FF0C4_ovl2(struct UNK_OVL2_5 *arg0) {
+void func_800FF0C4(struct UNK_OVL2_5 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 & ~2;
     }
 }
 
-void func_800FF0E0_ovl2(struct UNK_OVL2_5 *arg0) {
+void func_800FF0E0(struct UNK_OVL2_5 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 | 8;
     }
@@ -778,7 +778,7 @@ void func_800FF0E0_ovl2(struct UNK_OVL2_5 *arg0) {
 // Obviously not the correct type
 extern void **D_8012B990;
 
-void **func_800FF0FC_ovl2(void) {
+void **func_800FF0FC(void) {
     void **temp_v1;
 
     temp_v1 = D_8012B990;
@@ -789,7 +789,7 @@ void **func_800FF0FC_ovl2(void) {
     return temp_v1;
 }
 
-void func_800FF12C_ovl2(void **arg0) {
+void func_800FF12C(void **arg0) {
     *arg0 = D_8012B990;
     D_8012B990 = arg0;
 }
@@ -801,14 +801,14 @@ void *func_800FF144(void) {
     void *temp_v0;
     void *temp_v0_2;
 
-    temp_v0 = func_800FF0FC_ovl2();
+    temp_v0 = func_800FF0FC();
     if (temp_v0 == 0) {
         return NULL;
     }
     sp1C = temp_v0;
     temp_v0_2 = func_80009C38_ovl2(D_8012B998, 0, temp_v0);
     if (temp_v0_2 == 0) {
-        func_800FF12C_ovl2(temp_v0, temp_v0);
+        func_800FF12C(temp_v0, temp_v0);
         return NULL;
     }
     sp18 = temp_v0_2;
@@ -828,15 +828,15 @@ struct UNK_FUNC_80FF1CC {
     void *unk24;
 };
 
-void func_800FF1CC_ovl2(struct UNK_FUNC_80FF1CC *arg0) {
+void func_800FF1CC(struct UNK_FUNC_80FF1CC *arg0) {
     if (arg0 != 0) {
         func_80009DF4_ovl2(arg0->unk24, arg0);
-        func_800FF12C_ovl2(arg0);
+        func_800FF12C(arg0);
     }
 }
 
 #ifdef MIPS_TO_C
-void func_800FF200_ovl2(void *arg0) {
+void func_800FF200(void *arg0) {
     s32 temp_v1;
     void *temp_a1;
     void *temp_v0;
@@ -871,11 +871,11 @@ void func_800FF200_ovl2(void *arg0) {
     }
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FF200_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FF200.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_800FF2C8_ovl2(void) {
+void *func_800FF2C8(void) {
     struct UnkStruct8004A7C4 *sp5C;
     s32 sp54;
     ? sp30;
@@ -1018,5 +1018,5 @@ loop_4:
     return temp_v0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FF2C8_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FF2C8.s")
 #endif

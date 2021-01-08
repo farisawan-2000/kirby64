@@ -36,7 +36,7 @@ glabel func_801072E0
 /* 08FDD8 80107368 E7A00034 */  swc1  $f0, 0x34($sp)
 /* 08FDDC 8010736C E7A0003C */  swc1  $f0, 0x3c($sp)
 /* 08FDE0 80107370 E7A80038 */  swc1  $f8, 0x38($sp)
-/* 08FDE4 80107374 0C040E7A */  jal   func_801039E8_ovl2
+/* 08FDE4 80107374 0C040E7A */  jal   func_801039E8
 /* 08FDE8 80107378 E7A60048 */   swc1  $f6, 0x48($sp)
 /* 08FDEC 8010737C 5040000C */  beql  $v0, $zero, .L801073B0_ovl2
 /* 08FDF0 80107380 00001025 */   move  $v0, $zero

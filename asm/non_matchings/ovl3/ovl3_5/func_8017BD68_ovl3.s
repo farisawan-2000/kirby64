@@ -10,7 +10,7 @@ glabel func_8017BD68_ovl3
 /* 0DC7C8 8017BD88 AFA40028 */  sw    $a0, 0x28($sp)
 /* 0DC7CC 8017BD8C AE600030 */  sw    $zero, 0x30($s3)
 /* 0DC7D0 8017BD90 AE60003C */  sw    $zero, 0x3c($s3)
-/* 0DC7D4 8017BD94 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0DC7D4 8017BD94 0C0473D6 */  jal   func_8011CF58
 /* 0DC7D8 8017BD98 A2600007 */   sb    $zero, 7($s3)
 /* 0DC7DC 8017BD9C 3C108005 */  lui   $s0, %hi(D_8004A7C4) # $s0, 0x8005
 /* 0DC7E0 8017BDA0 8E6E0090 */  lw    $t6, 0x90($s3)
@@ -28,7 +28,7 @@ glabel func_8017BD68_ovl3
 /* 0DC810 8017BDD0 26319720 */  addiu $s1, %lo(D_800E9720) # addiu $s1, $s1, -0x68e0
 /* 0DC814 8017BDD4 00084880 */  sll   $t1, $t0, 2
 /* 0DC818 8017BDD8 02295021 */  addu  $t2, $s1, $t1
-/* 0DC81C 8017BDDC 0C04828A */  jal   func_80120A28_ovl3
+/* 0DC81C 8017BDDC 0C04828A */  jal   func_80120A28
 /* 0DC820 8017BDE0 AD400000 */   sw    $zero, ($t2)
 /* 0DC824 8017BDE4 0C058CAE */  jal   func_801632B8_ovl3
 /* 0DC828 8017BDE8 24040001 */   li    $a0, 1
@@ -43,7 +43,7 @@ glabel func_8017BD68_ovl3
 /* 0DC84C 8017BE0C 3C050002 */  lui   $a1, (0x0002001A >> 16) # lui $a1, 2
 /* 0DC850 8017BE10 34A5001A */  ori   $a1, (0x0002001A & 0xFFFF) # ori $a1, $a1, 0x1a
 /* 0DC854 8017BE14 34840019 */  ori   $a0, (0x00020019 & 0xFFFF) # ori $a0, $a0, 0x19
-/* 0DC858 8017BE18 0C048C3A */  jal   func_801230E8_ovl3
+/* 0DC858 8017BE18 0C048C3A */  jal   func_801230E8
 /* 0DC85C 8017BE1C 00003025 */   move  $a2, $zero
 /* 0DC860 8017BE20 3C12800D */  lui   $s2, %hi(D_800D6FE8) # $s2, 0x800d
 /* 0DC864 8017BE24 26526FE8 */  addiu $s2, %lo(D_800D6FE8) # addiu $s2, $s2, 0x6fe8
@@ -87,7 +87,7 @@ glabel func_8017BD68_ovl3
 /* 0DC8F0 8017BEB0 AE68003C */  sw    $t0, 0x3c($s3)
 /* 0DC8F4 8017BEB4 34A5001C */  ori   $a1, (0x0002001C & 0xFFFF) # ori $a1, $a1, 0x1c
 /* 0DC8F8 8017BEB8 3484001B */  ori   $a0, (0x0002001B & 0xFFFF) # ori $a0, $a0, 0x1b
-/* 0DC8FC 8017BEBC 0C048C3A */  jal   func_801230E8_ovl3
+/* 0DC8FC 8017BEBC 0C048C3A */  jal   func_801230E8
 /* 0DC900 8017BEC0 24060001 */   li    $a2, 1
 /* 0DC904 8017BEC4 8E690030 */  lw    $t1, 0x30($s3)
 /* 0DC908 8017BEC8 AE6000A0 */  sw    $zero, 0xa0($s3)

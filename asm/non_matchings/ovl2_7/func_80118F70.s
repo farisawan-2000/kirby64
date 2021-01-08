@@ -4,7 +4,7 @@ glabel func_80118F70
 /* 0A19E8 80118F78 8C82004C */  lw    $v0, 0x4c($a0)
 /* 0A19EC 80118F7C 904E0002 */  lbu   $t6, 2($v0)
 /* 0A19F0 80118F80 35CF0002 */  ori   $t7, $t6, 2
-/* 0A19F4 80118F84 0C046322 */  jal   func_80118C88_ovl2
+/* 0A19F4 80118F84 0C046322 */  jal   func_80118C88
 /* 0A19F8 80118F88 A04F0002 */   sb    $t7, 2($v0)
 /* 0A19FC 80118F8C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0A1A00 80118F90 27BD0018 */  addiu $sp, $sp, 0x18

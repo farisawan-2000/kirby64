@@ -22,7 +22,7 @@ glabel func_8011CFF4
 /* 0A5AB0 8011D040 8C430000 */  lw    $v1, ($v0)
 /* 0A5AB4 8011D044 14600003 */  bnez  $v1, .L8011D054_ovl2
 /* 0A5AB8 8011D048 00000000 */   nop   
-/* 0A5ABC 8011D04C 0C04454D */  jal   func_80111534_ovl2
+/* 0A5ABC 8011D04C 0C04454D */  jal   func_80111534
 /* 0A5AC0 8011D050 00602025 */   move  $a0, $v1
 .L8011D054_ovl2:
 /* 0A5AC4 8011D054 3C048013 */  lui   $a0, %hi(gKirbyState) # $a0, 0x8013

@@ -66,7 +66,7 @@ glabel func_801073C4
 /* 08FF30 801074C0 AFAE001C */  sw    $t6, 0x1c($sp)
 /* 08FF34 801074C4 AFAF0018 */  sw    $t7, 0x18($sp)
 /* 08FF38 801074C8 AFAD0014 */  sw    $t5, 0x14($sp)
-/* 08FF3C 801074CC 0C04201E */  jal   func_80108078_ovl2
+/* 08FF3C 801074CC 0C04201E */  jal   func_80108078
 /* 08FF40 801074D0 AFAB0010 */   sw    $t3, 0x10($sp)
 /* 08FF44 801074D4 10400008 */  beqz  $v0, .L801074F8_ovl2
 /* 08FF48 801074D8 27A30098 */   addiu $v1, $sp, 0x98

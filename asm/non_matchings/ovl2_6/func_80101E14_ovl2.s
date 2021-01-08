@@ -1,4 +1,4 @@
-glabel func_80101E14_ovl2
+glabel func_80101E14
 /* 08A884 80101E14 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 08A888 80101E18 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 08A88C 80101E1C AFA5002C */  sw    $a1, 0x2c($sp)

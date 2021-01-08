@@ -1,7 +1,7 @@
 glabel func_800A5268
 /* 04D4B8 800A5268 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04D4BC 800A526C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 04D4C0 800A5270 0C04848B */  jal   func_8012122C_ovl1
+/* 04D4C0 800A5270 0C04848B */  jal   func_8012122C
 /* 04D4C4 800A5274 00000000 */   nop   
 /* 04D4C8 800A5278 14400011 */  bnez  $v0, .L800A52C0_ovl1
 /* 04D4CC 800A527C 3C038005 */   lui   $v1, %hi(D_80048F20) # $v1, 0x8005

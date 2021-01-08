@@ -34,7 +34,7 @@ glabel func_8011E374
 /* 0A6E64 8011E3F4 0C0078D1 */  jal   func_8001E344_ovl2
 /* 0A6E68 8011E3F8 8CC66BD0 */   lw    $a2, 0x6bd0($a2)
 /* 0A6E6C 8011E3FC 27A40020 */  addiu $a0, $sp, 0x20
-/* 0A6E70 8011E400 0C03E270 */  jal   func_800F89C0_ovl2
+/* 0A6E70 8011E400 0C03E270 */  jal   func_800F89C0
 /* 0A6E74 8011E404 27A5002C */   addiu $a1, $sp, 0x2c
 /* 0A6E78 8011E408 44804000 */  mtc1  $zero, $f8
 /* 0A6E7C 8011E40C 46000086 */  mov.s $f2, $f0

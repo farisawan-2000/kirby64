@@ -35,7 +35,7 @@ glabel func_801538C8_ovl3
 /* 0B4388 80153948 11600009 */  beqz  $t3, .L80153970_ovl3
 .L8015394C_ovl3:
 /* 0B438C 8015394C 3C048013 */   lui   $a0, %hi(gPositionState) # $a0, 0x8013
-/* 0B4390 80153950 0C04368A */  jal   func_8010DA28_ovl3
+/* 0B4390 80153950 0C04368A */  jal   func_8010DA28
 /* 0B4394 80153954 2484E968 */   addiu $a0, %lo(gPositionState) # addiu $a0, $a0, -0x1698
 /* 0B4398 80153958 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0B439C 8015395C 14400004 */  bnez  $v0, .L80153970_ovl3

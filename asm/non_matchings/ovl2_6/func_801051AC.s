@@ -1,7 +1,7 @@
 glabel func_801051AC
 /* 08DC1C 801051AC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 08DC20 801051B0 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 08DC24 801051B4 0C041438 */  jal   func_801050E0_ovl2
+/* 08DC24 801051B4 0C041438 */  jal   func_801050E0
 /* 08DC28 801051B8 AFA40018 */   sw    $a0, 0x18($sp)
 /* 08DC2C 801051BC 3C0E8013 */  lui   $t6, %hi(D_8012BD40) # $t6, 0x8013
 /* 08DC30 801051C0 8DCEBD40 */  lw    $t6, %lo(D_8012BD40)($t6)

@@ -140,7 +140,7 @@ glabel func_8017782C_ovl3
 /* 0D8478 80177A38 24040001 */  li    $a0, 1
 /* 0D847C 80177A3C 0C048BDB */  jal   set_kirby_action_1
 /* 0D8480 80177A40 24050003 */   li    $a1, 3
-/* 0D8484 80177A44 0C048BEC */  jal   func_80122FB0_ovl3
+/* 0D8484 80177A44 0C048BEC */  jal   func_80122FB0
 /* 0D8488 80177A48 24040001 */   li    $a0, 1
 /* 0D848C 80177A4C 10000039 */  b     .L80177B34_ovl3
 /* 0D8490 80177A50 8FBF0014 */   lw    $ra, 0x14($sp)

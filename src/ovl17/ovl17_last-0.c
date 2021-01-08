@@ -33,7 +33,7 @@ s32 func_801E4488_ovl17(void) {
     struct UnkStruct800E1B50 *sp48 = D_800E1B50[D_8004A7C4->objId];
     struct UnkStruct80110B00 sp28;
 
-    func_80111ECC_ovl17(func_801A0464_ovl17());
+    func_80111ECC(func_801A0464_ovl17());
     if (sp48->unk8C == 0) {
         return 0;
     }

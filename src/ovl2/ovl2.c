@@ -14,11 +14,11 @@ s32 func_800F61A0(void) {
     s32 phi_return;
     s32 phi_return_2;
 
-    phi_return = func_801114E0_ovl2();
+    phi_return = func_801114E0();
     if (D_800BE544 <= 0) {
         phi_return_2 = func_800A5268();
         if (D_800D7B68 != 0) {
-            phi_return_2 = func_800F7578_ovl2();
+            phi_return_2 = func_800F7578();
         }
         phi_s3 = &D_800DD710;
         phi_s2 = 0;
@@ -58,18 +58,18 @@ GLOBAL_ASM("asm/non_matchings/ovl2/func_800F629C.s")
 #endif
 
 #ifdef MIPS_TO_C
-Failed to decompile function func_800F62A4_ovl2:
+Failed to decompile function func_800F62A4:
 
 Unable to determine jump table for jr instruction.
 
 There must be a read of a variable in the same block as
 the instruction, which has a name starting with "jtbl".
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2/func_800F62A4_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2/func_800F62A4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800F64B0_ovl2(void) {
+void func_800F64B0(void) {
     s32 sp20;
     s32 temp_a0;
     s32 temp_a1;
@@ -107,13 +107,13 @@ block_5:
     } else {
         goto block_5;
     }
-    func_800F8274_ovl2();
-    if (func_800F8560_ovl2() != 9) {
-        func_80114CCC_ovl2();
-        func_8010DCDC_ovl2();
-        func_800FF2C8_ovl2();
+    func_800F8274();
+    if (func_800F8560() != 9) {
+        func_80114CCC();
+        func_8010DCDC();
+        func_800FF2C8();
     }
-    func_8011C838_ovl2();
+    func_8011C838();
     func_800BE098();
     func_800A6BC0(5);
     phi_a0 = 0;
@@ -179,7 +179,7 @@ loop_15:
         phi_a1_2 = 0;
     }
     func_800A75B0(0, phi_a1_2);
-    if (func_800F8560_ovl2() == 2) {
+    if (func_800F8560() == 2) {
         func_800BB98C(2, 0);
         return;
     }
@@ -191,11 +191,11 @@ loop_15:
     func_800A5A14(0xFF, -0x10, 0);
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2/func_800F64B0_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2/func_800F64B0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800F6830_ovl2(void) {
+void func_800F6830(void) {
     ? sp40;
     void *sp3C;
     ? sp3A;
@@ -222,7 +222,7 @@ void func_800F6830_ovl2(void) {
     func_800BBF60(&D_800BE4EC);
     temp_v0_2 = D_800BE544;
     if ((temp_v0_2 >= 0) && (D_800BE4F8 == 1) && (0.0f != gKirbyHp)) {
-        if (func_800F8560_ovl2() != 3) {
+        if (func_800F8560() != 3) {
             temp_v0_3 = D_800BE544;
             if (temp_v0_3 == 0) {
                 if ((D_80048F22 & 0x1000) != 0) {
@@ -243,17 +243,17 @@ void func_800F6830_ovl2(void) {
     } else if (temp_v0_2 < 0) {
         D_800BE544 = temp_v0_2 + 1;
     }
-    func_800F61A0_ovl2();
+    func_800F61A0();
     func_8000AD88_ovl2();
-    func_800F629C_ovl2();
+    func_800F629C();
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2/func_800F6830_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2/func_800F6830.s")
 #endif
 
 
 extern u32 D_80123E90;
-void func_800F6AB0_ovl2(Gfx **pkt) {
+void func_800F6AB0(Gfx **pkt) {
     gSPDisplayList((*pkt)++, &D_80123E90);
 }
 
@@ -326,7 +326,7 @@ loop_1:
     } else {
         func_80007380(0x80123EDC);
     }
-    func_800F7484_ovl2(D_800BE508);
+    func_800F7484(D_800BE508);
     func_800BB3F0();
 }
 #else

@@ -70,7 +70,7 @@ glabel func_80159EF0_ovl3
 .L8015A000_ovl3:
 /* 0BAA40 8015A000 3C028013 */  lui   $v0, %hi(D_8012E944) # $v0, 0x8013
 /* 0BAA44 8015A004 2442E944 */  addiu $v0, %lo(D_8012E944) # addiu $v0, $v0, -0x16bc
-/* 0BAA48 8015A008 0C03FC80 */  jal   func_800FF200_ovl3
+/* 0BAA48 8015A008 0C03FC80 */  jal   func_800FF200
 /* 0BAA4C 8015A00C 8C440000 */   lw    $a0, ($v0)
 /* 0BAA50 8015A010 10000049 */  b     .L8015A138_ovl3
 /* 0BAA54 8015A014 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -80,7 +80,7 @@ glabel func_80159EF0_ovl3
 /* 0BAA60 8015A020 00230821 */  addu  $at, $at, $v1
 /* 0BAA64 8015A024 1100001E */  beqz  $t0, .L8015A0A0_ovl3
 /* 0BAA68 8015A028 24090023 */   li    $t1, 35
-/* 0BAA6C 8015A02C 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0BAA6C 8015A02C 0C0473D6 */  jal   func_8011CF58
 /* 0BAA70 8015A030 AC29DA90 */   sw    $t1, -0x2570($at)
 /* 0BAA74 8015A034 00002025 */  move  $a0, $zero
 /* 0BAA78 8015A038 0C048BDB */  jal   set_kirby_action_1

@@ -28,7 +28,7 @@ u32 D_80123ED8 = 0x00016A99;
 
 u32 D_80123EDC = 0x00000000;
 
-void* D_80123EE0 = func_800F6830_ovl2;
+void* D_80123EE0 = func_800F6830;
 
 void* D_80123EE4 = func_800A73B0;
 
@@ -55,7 +55,7 @@ u32 D_80123F0C = 0x00000000;
 
 u32 D_80123F10 = 0x00004000;
 
-void* D_80123F14 = func_800F6AB0_ovl2;
+void* D_80123F14 = func_800F6AB0;
 
 void* D_80123F18 = func_8000464C;
 
@@ -95,11 +95,11 @@ u32 D_80123F5C = 0x0000000B;
 
 u32 D_80123F60 = 0x00000090;
 
-void* D_80123F64 = func_800F64B0_ovl2;
+void* D_80123F64 = func_800F64B0;
 
 u32 D_80123F68 = 0x00000000;
 
-void* D_80123F6C = func_800F6830_ovl2;
+void* D_80123F6C = func_800F6830;
 
 void* D_80123F70 = func_800A73B0;
 
@@ -126,7 +126,7 @@ u32 D_80123F98 = 0x00000000;
 
 u32 D_80123F9C = 0x00004000;
 
-void* D_80123FA0 = func_800F6AB0_ovl2;
+void* D_80123FA0 = func_800F6AB0;
 
 void* D_80123FA4 = func_8000464C;
 
@@ -166,7 +166,7 @@ u32 D_80123FE8 = 0x0000000B;
 
 u32 D_80123FEC = 0x00000090;
 
-void* D_80123FF0 = func_800F64B0_ovl2;
+void* D_80123FF0 = func_800F64B0;
 
 u32 D_80123FF4 = 0x00000000;
 
@@ -658,7 +658,7 @@ void* D_801243C0 = func_801B4D50;
 
 u32 D_801243C4 = 0x801EBBC8;
 
-void* D_801243C8 = func_800FCED8_ovl2;
+void* D_801243C8 = func_800FCED8;
 
 u32 D_801243CC = 0x801E9AA0;
 
@@ -740,7 +740,7 @@ u32 D_80124464 = 0x801EC9E0;
 
 u32 D_80124468 = 0x801EC9E0;
 
-void* D_8012446C = func_800FCED8_ovl2;
+void* D_8012446C = func_800FCED8;
 
 u32 D_80124470 = 0x801EC9E0;
 
@@ -900,7 +900,7 @@ void* D_801245A4 = func_8022170C_ovl19;
 
 void* D_801245A8 = func_80221DDC_ovl19;
 
-void* D_801245AC = func_800FCF04_ovl2;
+void* D_801245AC = func_800FCF04;
 
 void* D_801245B0 = func_802224BC_ovl19;
 
@@ -910,7 +910,7 @@ u32 D_801245B8 = 0x00000000;
 
 u32 D_801245BC = 0x00000000;
 
-void* D_801245C0 = func_800FD418_ovl2;
+void* D_801245C0 = func_800FD418;
 
 u32 D_801245C4 = 0x00000000;
 
@@ -1422,559 +1422,559 @@ void* D_801249B8 = &D_8012CC18;
 
 void* D_801249BC = &D_8012CC58;
 
-void* D_801249C0 = func_80115AAC_ovl2;
+void* D_801249C0 = func_80115AAC;
 
-void* D_801249C4 = func_80115D38_ovl2;
+void* D_801249C4 = func_80115D38;
 
-void* D_801249C8 = func_80115EAC_ovl2;
+void* D_801249C8 = func_80115EAC;
 
-void* D_801249CC = func_80115EDC_ovl2;
+void* D_801249CC = func_80115EDC;
 
-void* D_801249D0 = func_80115EFC_ovl2;
+void* D_801249D0 = func_80115EFC;
 
-void* D_801249D4 = func_801161D4_ovl2;
+void* D_801249D4 = func_801161D4;
 
-void* D_801249D8 = func_80116218_ovl2;
+void* D_801249D8 = func_80116218;
 
-void* D_801249DC = func_8011623C_ovl2;
+void* D_801249DC = func_8011623C;
 
 void* D_801249E0 = func_801162F4;
 
-void* D_801249E4 = func_80116438_ovl2;
+void* D_801249E4 = func_80116438;
 
-void* D_801249E8 = func_8011646C_ovl2;
+void* D_801249E8 = func_8011646C;
 
-void* D_801249EC = func_801164A0_ovl2;
+void* D_801249EC = func_801164A0;
 
-void* D_801249F0 = func_801164D4_ovl2;
+void* D_801249F0 = func_801164D4;
 
 void* D_801249F4 = func_80116B68;
 
-void* D_801249F8 = func_80116CA0_ovl2;
+void* D_801249F8 = func_80116CA0;
 
-void* D_801249FC = func_80116CC0_ovl2;
+void* D_801249FC = func_80116CC0;
 
-void* D_80124A00 = func_80116CE0_ovl2;
+void* D_80124A00 = func_80116CE0;
 
-void* D_80124A04 = func_80116D00_ovl2;
+void* D_80124A04 = func_80116D00;
 
-void* D_80124A08 = func_80116D20_ovl2;
+void* D_80124A08 = func_80116D20;
 
-void* D_80124A0C = func_80116D40_ovl2;
+void* D_80124A0C = func_80116D40;
 
-void* D_80124A10 = func_80116D60_ovl2;
+void* D_80124A10 = func_80116D60;
 
-void* D_80124A14 = func_80116D80_ovl2;
+void* D_80124A14 = func_80116D80;
 
-void* D_80124A18 = func_80116DA0_ovl2;
+void* D_80124A18 = func_80116DA0;
 
-void* D_80124A1C = func_80116DC0_ovl2;
+void* D_80124A1C = func_80116DC0;
 
-void* D_80124A20 = func_80116DE0_ovl2;
+void* D_80124A20 = func_80116DE0;
 
-void* D_80124A24 = func_80116E00_ovl2;
+void* D_80124A24 = func_80116E00;
 
-void* D_80124A28 = func_80116E20_ovl2;
+void* D_80124A28 = func_80116E20;
 
-void* D_80124A2C = func_80116E40_ovl2;
+void* D_80124A2C = func_80116E40;
 
-void* D_80124A30 = func_80116E60_ovl2;
+void* D_80124A30 = func_80116E60;
 
-void* D_80124A34 = func_80116E80_ovl2;
+void* D_80124A34 = func_80116E80;
 
-void* D_80124A38 = func_80116EA0_ovl2;
+void* D_80124A38 = func_80116EA0;
 
 void* D_80124A3C = func_80118F70;
 
-void* D_80124A40 = func_80118F9C_ovl2;
+void* D_80124A40 = func_80118F9C;
 
-void* D_80124A44 = func_80116EC0_ovl2;
+void* D_80124A44 = func_80116EC0;
 
-void* D_80124A48 = func_80116EE0_ovl2;
+void* D_80124A48 = func_80116EE0;
 
-void* D_80124A4C = func_80116F00_ovl2;
+void* D_80124A4C = func_80116F00;
 
-void* D_80124A50 = func_80116F20_ovl2;
+void* D_80124A50 = func_80116F20;
 
-void* D_80124A54 = func_80116F40_ovl2;
+void* D_80124A54 = func_80116F40;
 
-void* D_80124A58 = func_80116F60_ovl2;
+void* D_80124A58 = func_80116F60;
 
-void* D_80124A5C = func_80117078_ovl2;
+void* D_80124A5C = func_80117078;
 
-void* D_80124A60 = func_80117098_ovl2;
+void* D_80124A60 = func_80117098;
 
-void* D_80124A64 = func_801170B8_ovl2;
+void* D_80124A64 = func_801170B8;
 
-void* D_80124A68 = func_801170D8_ovl2;
+void* D_80124A68 = func_801170D8;
 
-void* D_80124A6C = func_801170F8_ovl2;
+void* D_80124A6C = func_801170F8;
 
-void* D_80124A70 = func_80117118_ovl2;
+void* D_80124A70 = func_80117118;
 
-void* D_80124A74 = func_80117138_ovl2;
+void* D_80124A74 = func_80117138;
 
-void* D_80124A78 = func_80117158_ovl2;
+void* D_80124A78 = func_80117158;
 
-void* D_80124A7C = func_801171F0_ovl2;
+void* D_80124A7C = func_801171F0;
 
-void* D_80124A80 = func_80117698_ovl2;
+void* D_80124A80 = func_80117698;
 
-void* D_80124A84 = func_801176B8_ovl2;
+void* D_80124A84 = func_801176B8;
 
-void* D_80124A88 = func_801176D8_ovl2;
+void* D_80124A88 = func_801176D8;
 
-void* D_80124A8C = func_801176F8_ovl2;
+void* D_80124A8C = func_801176F8;
 
-void* D_80124A90 = func_80117718_ovl2;
+void* D_80124A90 = func_80117718;
 
-void* D_80124A94 = func_80117738_ovl2;
+void* D_80124A94 = func_80117738;
 
-void* D_80124A98 = func_80117758_ovl2;
+void* D_80124A98 = func_80117758;
 
-void* D_80124A9C = func_80117784_ovl2;
+void* D_80124A9C = func_80117784;
 
-void* D_80124AA0 = func_801177B0_ovl2;
+void* D_80124AA0 = func_801177B0;
 
-void* D_80124AA4 = func_801177DC_ovl2;
+void* D_80124AA4 = func_801177DC;
 
-void* D_80124AA8 = func_80117808_ovl2;
+void* D_80124AA8 = func_80117808;
 
 void* D_80124AAC = func_80117D70;
 
-void* D_80124AB0 = func_80117DA0_ovl2;
+void* D_80124AB0 = func_80117DA0;
 
-void* D_80124AB4 = func_80117DD8_ovl2;
+void* D_80124AB4 = func_80117DD8;
 
-void* D_80124AB8 = func_80117E10_ovl2;
+void* D_80124AB8 = func_80117E10;
 
-void* D_80124ABC = func_80117E38_ovl2;
+void* D_80124ABC = func_80117E38;
 
-void* D_80124AC0 = func_80117E60_ovl2;
+void* D_80124AC0 = func_80117E60;
 
-void* D_80124AC4 = func_80117E88_ovl2;
+void* D_80124AC4 = func_80117E88;
 
-void* D_80124AC8 = func_80117EB0_ovl2;
+void* D_80124AC8 = func_80117EB0;
 
-void* D_80124ACC = func_80117ED8_ovl2;
+void* D_80124ACC = func_80117ED8;
 
-void* D_80124AD0 = func_80117F00_ovl2;
+void* D_80124AD0 = func_80117F00;
 
-void* D_80124AD4 = func_80118270_ovl2;
+void* D_80124AD4 = func_80118270;
 
-void* D_80124AD8 = func_8011829C_ovl2;
+void* D_80124AD8 = func_8011829C;
 
-void* D_80124ADC = func_801182C8_ovl2;
+void* D_80124ADC = func_801182C8;
 
-void* D_80124AE0 = func_801182F4_ovl2;
+void* D_80124AE0 = func_801182F4;
 
-void* D_80124AE4 = func_80118498_ovl2;
+void* D_80124AE4 = func_80118498;
 
-void* D_80124AE8 = func_80118578_ovl2;
+void* D_80124AE8 = func_80118578;
 
-void* D_80124AEC = func_80118598_ovl2;
+void* D_80124AEC = func_80118598;
 
-void* D_80124AF0 = func_801185B8_ovl2;
+void* D_80124AF0 = func_801185B8;
 
-void* D_80124AF4 = func_801185D8_ovl2;
+void* D_80124AF4 = func_801185D8;
 
-void* D_80124AF8 = func_80118638_ovl2;
+void* D_80124AF8 = func_80118638;
 
-void* D_80124AFC = func_801185F8_ovl2;
+void* D_80124AFC = func_801185F8;
 
-void* D_80124B00 = func_80118618_ovl2;
+void* D_80124B00 = func_80118618;
 
-void* D_80124B04 = func_80118FC8_ovl2;
+void* D_80124B04 = func_80118FC8;
 
-void* D_80124B08 = func_80118FE8_ovl2;
+void* D_80124B08 = func_80118FE8;
 
-void* D_80124B0C = func_80119008_ovl2;
+void* D_80124B0C = func_80119008;
 
-void* D_80124B10 = func_80119028_ovl2;
+void* D_80124B10 = func_80119028;
 
-void* D_80124B14 = func_80119048_ovl2;
+void* D_80124B14 = func_80119048;
 
-void* D_80124B18 = func_80119068_ovl2;
+void* D_80124B18 = func_80119068;
 
-void* D_80124B1C = func_80119088_ovl2;
+void* D_80124B1C = func_80119088;
 
 void* D_80124B20 = func_80119090;
 
-void* D_80124B24 = func_801190B0_ovl2;
+void* D_80124B24 = func_801190B0;
 
-void* D_80124B28 = func_801190DC_ovl2;
+void* D_80124B28 = func_801190DC;
 
-void* D_80124B2C = func_80119108_ovl2;
+void* D_80124B2C = func_80119108;
 
-void* D_80124B30 = func_80119128_ovl2;
+void* D_80124B30 = func_80119128;
 
-void* D_80124B34 = func_80119148_ovl2;
+void* D_80124B34 = func_80119148;
 
-void* D_80124B38 = func_80119168_ovl2;
+void* D_80124B38 = func_80119168;
 
-void* D_80124B3C = func_80119188_ovl2;
+void* D_80124B3C = func_80119188;
 
-void* D_80124B40 = func_80119270_ovl2;
+void* D_80124B40 = func_80119270;
 
-void* D_80124B44 = func_80119290_ovl2;
+void* D_80124B44 = func_80119290;
 
-void* D_80124B48 = func_801192B0_ovl2;
+void* D_80124B48 = func_801192B0;
 
 void* D_80124B4C = func_801192B8;
 
 void* D_80124B50 = func_801192C0;
 
-void* D_80124B54 = func_801192E0_ovl2;
+void* D_80124B54 = func_801192E0;
 
-void* D_80124B58 = func_80119300_ovl2;
+void* D_80124B58 = func_80119300;
 
-void* D_80124B5C = func_801193CC_ovl2;
+void* D_80124B5C = func_801193CC;
 
-void* D_80124B60 = func_801193EC_ovl2;
+void* D_80124B60 = func_801193EC;
 
-void* D_80124B64 = func_8011940C_ovl2;
+void* D_80124B64 = func_8011940C;
 
-void* D_80124B68 = func_8011942C_ovl2;
+void* D_80124B68 = func_8011942C;
 
-void* D_80124B6C = func_8011944C_ovl2;
+void* D_80124B6C = func_8011944C;
 
-void* D_80124B70 = func_8011946C_ovl2;
+void* D_80124B70 = func_8011946C;
 
-void* D_80124B74 = func_8011948C_ovl2;
+void* D_80124B74 = func_8011948C;
 
-void* D_80124B78 = func_801194AC_ovl2;
+void* D_80124B78 = func_801194AC;
 
-void* D_80124B7C = func_801194CC_ovl2;
+void* D_80124B7C = func_801194CC;
 
-void* D_80124B80 = func_801194EC_ovl2;
+void* D_80124B80 = func_801194EC;
 
-void* D_80124B84 = func_8011950C_ovl2;
+void* D_80124B84 = func_8011950C;
 
-void* D_80124B88 = func_8011952C_ovl2;
+void* D_80124B88 = func_8011952C;
 
-void* D_80124B8C = func_8011954C_ovl2;
+void* D_80124B8C = func_8011954C;
 
-void* D_80124B90 = func_8011956C_ovl2;
+void* D_80124B90 = func_8011956C;
 
-void* D_80124B94 = func_8011958C_ovl2;
+void* D_80124B94 = func_8011958C;
 
-void* D_80124B98 = func_801195AC_ovl2;
+void* D_80124B98 = func_801195AC;
 
-void* D_80124B9C = func_801195CC_ovl2;
+void* D_80124B9C = func_801195CC;
 
-void* D_80124BA0 = func_801195EC_ovl2;
+void* D_80124BA0 = func_801195EC;
 
-void* D_80124BA4 = func_8011960C_ovl2;
+void* D_80124BA4 = func_8011960C;
 
-void* D_80124BA8 = func_8011962C_ovl2;
+void* D_80124BA8 = func_8011962C;
 
-void* D_80124BAC = func_8011964C_ovl2;
+void* D_80124BAC = func_8011964C;
 
-void* D_80124BB0 = func_8011966C_ovl2;
+void* D_80124BB0 = func_8011966C;
 
-void* D_80124BB4 = func_8011968C_ovl2;
+void* D_80124BB4 = func_8011968C;
 
-void* D_80124BB8 = func_801196AC_ovl2;
+void* D_80124BB8 = func_801196AC;
 
-void* D_80124BBC = func_801196CC_ovl2;
+void* D_80124BBC = func_801196CC;
 
-void* D_80124BC0 = func_801196EC_ovl2;
+void* D_80124BC0 = func_801196EC;
 
-void* D_80124BC4 = func_8011970C_ovl2;
+void* D_80124BC4 = func_8011970C;
 
-void* D_80124BC8 = func_8011972C_ovl2;
+void* D_80124BC8 = func_8011972C;
 
-void* D_80124BCC = func_8011974C_ovl2;
+void* D_80124BCC = func_8011974C;
 
-void* D_80124BD0 = func_8011976C_ovl2;
+void* D_80124BD0 = func_8011976C;
 
-void* D_80124BD4 = func_8011982C_ovl2;
+void* D_80124BD4 = func_8011982C;
 
-void* D_80124BD8 = func_8011988C_ovl2;
+void* D_80124BD8 = func_8011988C;
 
-void* D_80124BDC = func_801198AC_ovl2;
+void* D_80124BDC = func_801198AC;
 
-void* D_80124BE0 = func_801198CC_ovl2;
+void* D_80124BE0 = func_801198CC;
 
-void* D_80124BE4 = func_801199E0_ovl2;
+void* D_80124BE4 = func_801199E0;
 
-void* D_80124BE8 = func_80119A00_ovl2;
+void* D_80124BE8 = func_80119A00;
 
-void* D_80124BEC = func_80119A20_ovl2;
+void* D_80124BEC = func_80119A20;
 
-void* D_80124BF0 = func_80119A40_ovl2;
+void* D_80124BF0 = func_80119A40;
 
-void* D_80124BF4 = func_80119A60_ovl2;
+void* D_80124BF4 = func_80119A60;
 
-void* D_80124BF8 = func_80119A80_ovl2;
+void* D_80124BF8 = func_80119A80;
 
-void* D_80124BFC = func_80119AA0_ovl2;
+void* D_80124BFC = func_80119AA0;
 
-void* D_80124C00 = func_80119AC0_ovl2;
+void* D_80124C00 = func_80119AC0;
 
-void* D_80124C04 = func_80119AE0_ovl2;
+void* D_80124C04 = func_80119AE0;
 
-void* D_80124C08 = func_80119B00_ovl2;
+void* D_80124C08 = func_80119B00;
 
-void* D_80124C0C = func_80119B20_ovl2;
+void* D_80124C0C = func_80119B20;
 
-void* D_80124C10 = func_80119B40_ovl2;
+void* D_80124C10 = func_80119B40;
 
-void* D_80124C14 = func_80119B80_ovl2;
+void* D_80124C14 = func_80119B80;
 
-void* D_80124C18 = func_80119BA0_ovl2;
+void* D_80124C18 = func_80119BA0;
 
-void* D_80124C1C = func_80119BC0_ovl2;
+void* D_80124C1C = func_80119BC0;
 
-void* D_80124C20 = func_80119BE0_ovl2;
+void* D_80124C20 = func_80119BE0;
 
-void* D_80124C24 = func_80119C40_ovl2;
+void* D_80124C24 = func_80119C40;
 
-void* D_80124C28 = func_80119C6C_ovl2;
+void* D_80124C28 = func_80119C6C;
 
-void* D_80124C2C = func_80119C98_ovl2;
+void* D_80124C2C = func_80119C98;
 
-void* D_80124C30 = func_80119CC4_ovl2;
+void* D_80124C30 = func_80119CC4;
 
-void* D_80124C34 = func_801198EC_ovl2;
+void* D_80124C34 = func_801198EC;
 
-void* D_80124C38 = func_8011990C_ovl2;
+void* D_80124C38 = func_8011990C;
 
-void* D_80124C3C = func_80119DA0_ovl2;
+void* D_80124C3C = func_80119DA0;
 
-void* D_80124C40 = func_80119DC0_ovl2;
+void* D_80124C40 = func_80119DC0;
 
-void* D_80124C44 = func_80119DE0_ovl2;
+void* D_80124C44 = func_80119DE0;
 
-void* D_80124C48 = func_80119E00_ovl2;
+void* D_80124C48 = func_80119E00;
 
-void* D_80124C4C = func_80119E20_ovl2;
+void* D_80124C4C = func_80119E20;
 
-void* D_80124C50 = func_80119E40_ovl2;
+void* D_80124C50 = func_80119E40;
 
-void* D_80124C54 = func_80119E60_ovl2;
+void* D_80124C54 = func_80119E60;
 
-void* D_80124C58 = func_80119E80_ovl2;
+void* D_80124C58 = func_80119E80;
 
-void* D_80124C5C = func_80119EA0_ovl2;
+void* D_80124C5C = func_80119EA0;
 
-void* D_80124C60 = func_80119EC0_ovl2;
+void* D_80124C60 = func_80119EC0;
 
-void* D_80124C64 = func_80119EE0_ovl2;
+void* D_80124C64 = func_80119EE0;
 
-void* D_80124C68 = func_80119F00_ovl2;
+void* D_80124C68 = func_80119F00;
 
-void* D_80124C6C = func_80119F20_ovl2;
+void* D_80124C6C = func_80119F20;
 
-void* D_80124C70 = func_80119F40_ovl2;
+void* D_80124C70 = func_80119F40;
 
-void* D_80124C74 = func_80119F60_ovl2;
+void* D_80124C74 = func_80119F60;
 
-void* D_80124C78 = func_80119F80_ovl2;
+void* D_80124C78 = func_80119F80;
 
-void* D_80124C7C = func_80119FA0_ovl2;
+void* D_80124C7C = func_80119FA0;
 
-void* D_80124C80 = func_80119FC0_ovl2;
+void* D_80124C80 = func_80119FC0;
 
-void* D_80124C84 = func_80119FE0_ovl2;
+void* D_80124C84 = func_80119FE0;
 
-void* D_80124C88 = func_8011A000_ovl2;
+void* D_80124C88 = func_8011A000;
 
-void* D_80124C8C = func_8011A020_ovl2;
+void* D_80124C8C = func_8011A020;
 
-void* D_80124C90 = func_8011A040_ovl2;
+void* D_80124C90 = func_8011A040;
 
-void* D_80124C94 = func_8011A178_ovl2;
+void* D_80124C94 = func_8011A178;
 
-void* D_80124C98 = func_8011A214_ovl2;
+void* D_80124C98 = func_8011A214;
 
-void* D_80124C9C = func_80119B60_ovl2;
+void* D_80124C9C = func_80119B60;
 
-void* D_80124CA0 = func_8011A234_ovl2;
+void* D_80124CA0 = func_8011A234;
 
-void* D_80124CA4 = func_8011A254_ovl2;
+void* D_80124CA4 = func_8011A254;
 
-void* D_80124CA8 = func_80119C00_ovl2;
+void* D_80124CA8 = func_80119C00;
 
-void* D_80124CAC = func_80119C20_ovl2;
+void* D_80124CAC = func_80119C20;
 
-void* D_80124CB0 = func_80119CF0_ovl2;
+void* D_80124CB0 = func_80119CF0;
 
-void* D_80124CB4 = func_8011A274_ovl2;
+void* D_80124CB4 = func_8011A274;
 
-void* D_80124CB8 = func_8011A294_ovl2;
+void* D_80124CB8 = func_8011A294;
 
-void* D_80124CBC = func_8011A3B8_ovl2;
+void* D_80124CBC = func_8011A3B8;
 
-void* D_80124CC0 = func_8011A3D8_ovl2;
+void* D_80124CC0 = func_8011A3D8;
 
-void* D_80124CC4 = func_8011A3F8_ovl2;
+void* D_80124CC4 = func_8011A3F8;
 
-void* D_80124CC8 = func_8011A418_ovl2;
+void* D_80124CC8 = func_8011A418;
 
-void* D_80124CCC = func_8011A438_ovl2;
+void* D_80124CCC = func_8011A438;
 
-void* D_80124CD0 = func_8011A458_ovl2;
+void* D_80124CD0 = func_8011A458;
 
-void* D_80124CD4 = func_8011A478_ovl2;
+void* D_80124CD4 = func_8011A478;
 
-void* D_80124CD8 = func_8011A498_ovl2;
+void* D_80124CD8 = func_8011A498;
 
-void* D_80124CDC = func_8011A4C0_ovl2;
+void* D_80124CDC = func_8011A4C0;
 
-void* D_80124CE0 = func_8011A4E8_ovl2;
+void* D_80124CE0 = func_8011A4E8;
 
-void* D_80124CE4 = func_8011A510_ovl2;
+void* D_80124CE4 = func_8011A510;
 
-void* D_80124CE8 = func_8011A538_ovl2;
+void* D_80124CE8 = func_8011A538;
 
-void* D_80124CEC = func_8011A770_ovl2;
+void* D_80124CEC = func_8011A770;
 
-void* D_80124CF0 = func_8011A560_ovl2;
+void* D_80124CF0 = func_8011A560;
 
-void* D_80124CF4 = func_8011A86C_ovl2;
+void* D_80124CF4 = func_8011A86C;
 
-void* D_80124CF8 = func_8011A88C_ovl2;
+void* D_80124CF8 = func_8011A88C;
 
-void* D_80124CFC = func_8011A8AC_ovl2;
+void* D_80124CFC = func_8011A8AC;
 
-void* D_80124D00 = func_8011A8CC_ovl2;
+void* D_80124D00 = func_8011A8CC;
 
-void* D_80124D04 = func_8011A8EC_ovl2;
+void* D_80124D04 = func_8011A8EC;
 
-void* D_80124D08 = func_8011A90C_ovl2;
+void* D_80124D08 = func_8011A90C;
 
-void* D_80124D0C = func_8011A92C_ovl2;
+void* D_80124D0C = func_8011A92C;
 
-void* D_80124D10 = func_8011A638_ovl2;
+void* D_80124D10 = func_8011A638;
 
-void* D_80124D14 = func_8011A94C_ovl2;
+void* D_80124D14 = func_8011A94C;
 
-void* D_80124D18 = func_8011AB7C_ovl2;
+void* D_80124D18 = func_8011AB7C;
 
-void* D_80124D1C = func_8011AB9C_ovl2;
+void* D_80124D1C = func_8011AB9C;
 
-void* D_80124D20 = func_8011ABBC_ovl2;
+void* D_80124D20 = func_8011ABBC;
 
-void* D_80124D24 = func_8011ABDC_ovl2;
+void* D_80124D24 = func_8011ABDC;
 
-void* D_80124D28 = func_8011AC3C_ovl2;
+void* D_80124D28 = func_8011AC3C;
 
-void* D_80124D2C = func_8011AC5C_ovl2;
+void* D_80124D2C = func_8011AC5C;
 
-void* D_80124D30 = func_8011A96C_ovl2;
+void* D_80124D30 = func_8011A96C;
 
-void* D_80124D34 = func_8011A98C_ovl2;
+void* D_80124D34 = func_8011A98C;
 
-void* D_80124D38 = func_8011A9AC_ovl2;
+void* D_80124D38 = func_8011A9AC;
 
-void* D_80124D3C = func_8011A9CC_ovl2;
+void* D_80124D3C = func_8011A9CC;
 
-void* D_80124D40 = func_8011AC7C_ovl2;
+void* D_80124D40 = func_8011AC7C;
 
-void* D_80124D44 = func_8011AC9C_ovl2;
+void* D_80124D44 = func_8011AC9C;
 
-void* D_80124D48 = func_8011ACBC_ovl2;
+void* D_80124D48 = func_8011ACBC;
 
-void* D_80124D4C = func_8011ACDC_ovl2;
+void* D_80124D4C = func_8011ACDC;
 
-void* D_80124D50 = func_8011ACFC_ovl2;
+void* D_80124D50 = func_8011ACFC;
 
-void* D_80124D54 = func_8011AD1C_ovl2;
+void* D_80124D54 = func_8011AD1C;
 
-void* D_80124D58 = func_8011AD3C_ovl2;
+void* D_80124D58 = func_8011AD3C;
 
-void* D_80124D5C = func_8011AD5C_ovl2;
+void* D_80124D5C = func_8011AD5C;
 
-void* D_80124D60 = func_8011AD7C_ovl2;
+void* D_80124D60 = func_8011AD7C;
 
-void* D_80124D64 = func_8011AD9C_ovl2;
+void* D_80124D64 = func_8011AD9C;
 
-void* D_80124D68 = func_8011ADBC_ovl2;
+void* D_80124D68 = func_8011ADBC;
 
-void* D_80124D6C = func_8011ADDC_ovl2;
+void* D_80124D6C = func_8011ADDC;
 
-void* D_80124D70 = func_8011AFB0_ovl2;
+void* D_80124D70 = func_8011AFB0;
 
-void* D_80124D74 = func_8011AFD0_ovl2;
+void* D_80124D74 = func_8011AFD0;
 
-void* D_80124D78 = func_8011AFF0_ovl2;
+void* D_80124D78 = func_8011AFF0;
 
-void* D_80124D7C = func_8011B010_ovl2;
+void* D_80124D7C = func_8011B010;
 
-void* D_80124D80 = func_8011B030_ovl2;
+void* D_80124D80 = func_8011B030;
 
-void* D_80124D84 = func_8011B328_ovl2;
+void* D_80124D84 = func_8011B328;
 
-void* D_80124D88 = func_80119D1C_ovl2;
+void* D_80124D88 = func_80119D1C;
 
-void* D_80124D8C = func_80119D48_ovl2;
+void* D_80124D8C = func_80119D48;
 
-void* D_80124D90 = func_80119D74_ovl2;
+void* D_80124D90 = func_80119D74;
 
-void* D_80124D94 = func_8011ABFC_ovl2;
+void* D_80124D94 = func_8011ABFC;
 
-void* D_80124D98 = func_8011AC1C_ovl2;
+void* D_80124D98 = func_8011AC1C;
 
-void* D_80124D9C = func_8011B3B8_ovl2;
+void* D_80124D9C = func_8011B3B8;
 
-void* D_80124DA0 = func_8011B528_ovl2;
+void* D_80124DA0 = func_8011B528;
 
-void* D_80124DA4 = func_8011B554_ovl2;
+void* D_80124DA4 = func_8011B554;
 
-void* D_80124DA8 = func_8011B580_ovl2;
+void* D_80124DA8 = func_8011B580;
 
-void* D_80124DAC = func_8011B5AC_ovl2;
+void* D_80124DAC = func_8011B5AC;
 
-void* D_80124DB0 = func_8011B794_ovl2;
+void* D_80124DB0 = func_8011B794;
 
-void* D_80124DB4 = func_8011B838_ovl2;
+void* D_80124DB4 = func_8011B838;
 
-void* D_80124DB8 = func_80117F28_ovl2;
+void* D_80124DB8 = func_80117F28;
 
 void* D_80124DBC = func_801180B8;
 
-void* D_80124DC0 = func_8011B858_ovl2;
+void* D_80124DC0 = func_8011B858;
 
-void* D_80124DC4 = func_8011B944_ovl2;
+void* D_80124DC4 = func_8011B944;
 
-void* D_80124DC8 = func_8011B964_ovl2;
+void* D_80124DC8 = func_8011B964;
 
-void* D_80124DCC = func_8011B984_ovl2;
+void* D_80124DCC = func_8011B984;
 
-void* D_80124DD0 = func_8011B9A4_ovl2;
+void* D_80124DD0 = func_8011B9A4;
 
-void* D_80124DD4 = func_8011B9C4_ovl2;
+void* D_80124DD4 = func_8011B9C4;
 
-void* D_80124DD8 = func_8011B9E4_ovl2;
+void* D_80124DD8 = func_8011B9E4;
 
-void* D_80124DDC = func_8011B5D8_ovl2;
+void* D_80124DDC = func_8011B5D8;
 
-void* D_80124DE0 = func_8011B5F8_ovl2;
+void* D_80124DE0 = func_8011B5F8;
 
-void* D_80124DE4 = func_8011B618_ovl2;
+void* D_80124DE4 = func_8011B618;
 
-void* D_80124DE8 = func_8011B638_ovl2;
+void* D_80124DE8 = func_8011B638;
 
-void* D_80124DEC = func_8011984C_ovl2;
+void* D_80124DEC = func_8011984C;
 
-void* D_80124DF0 = func_8011986C_ovl2;
+void* D_80124DF0 = func_8011986C;
 
-void* D_80124DF4 = func_80118320_ovl2;
+void* D_80124DF4 = func_80118320;
 
-void* D_80124DF8 = func_80118340_ovl2;
+void* D_80124DF8 = func_80118340;
 
-void* D_80124DFC = func_80118360_ovl2;
+void* D_80124DFC = func_80118360;
 
-void* D_80124E00 = func_80118380_ovl2;
+void* D_80124E00 = func_80118380;
 
-void* D_80124E04 = func_8011B658_ovl2;
+void* D_80124E04 = func_8011B658;
 
-void* D_80124E08 = func_8011B678_ovl2;
+void* D_80124E08 = func_8011B678;
 
-void* D_80124E0C = func_8011B698_ovl2;
+void* D_80124E0C = func_8011B698;
 
-void* D_80124E10 = func_8011B6B8_ovl2;
+void* D_80124E10 = func_8011B6B8;
 
 u32 D_80124E14 = 0x00060110;
 
@@ -1998,7 +1998,7 @@ u32 D_80124E38 = 0x00060003;
 
 u32 D_80124E3C = 0x00000000;
 
-void* D_80124E40 = func_80115C4C_ovl2;
+void* D_80124E40 = func_80115C4C;
 
 void* D_80124E44 = &func_80112B4C;
 
@@ -2012,7 +2012,7 @@ u32 D_80124E54 = 0x00060008;
 
 u32 D_80124E58 = 0x00060009;
 
-void* D_80124E5C = func_8011591C_ovl2;
+void* D_80124E5C = func_8011591C;
 
 void* D_80124E60 = func_80115888;
 
@@ -2348,7 +2348,7 @@ u32 D_801250F4 = 0x0006001E;
 
 u32 D_801250F8 = 0x00000000;
 
-void* D_801250FC = func_8011591C_ovl2;
+void* D_801250FC = func_8011591C;
 
 void* D_80125100 = func_80115888;
 
@@ -2362,7 +2362,7 @@ u32 D_80125110 = 0x0006001F;
 
 u32 D_80125114 = 0x00000000;
 
-void* D_80125118 = func_8011591C_ovl2;
+void* D_80125118 = func_8011591C;
 
 void* D_8012511C = func_80115888;
 
@@ -2376,7 +2376,7 @@ u32 D_8012512C = 0x00060020;
 
 u32 D_80125130 = 0x00000000;
 
-void* D_80125134 = func_8011591C_ovl2;
+void* D_80125134 = func_8011591C;
 
 void* D_80125138 = func_80115888;
 
@@ -2390,7 +2390,7 @@ u32 D_80125148 = 0x00060021;
 
 u32 D_8012514C = 0x00000000;
 
-void* D_80125150 = func_8011591C_ovl2;
+void* D_80125150 = func_8011591C;
 
 void* D_80125154 = func_80115888;
 
@@ -2404,7 +2404,7 @@ u32 D_80125164 = 0x00060022;
 
 u32 D_80125168 = 0x00000000;
 
-void* D_8012516C = func_8011591C_ovl2;
+void* D_8012516C = func_8011591C;
 
 void* D_80125170 = func_80115888;
 
@@ -2516,7 +2516,7 @@ u32 D_80125244 = 0x0006004C;
 
 u32 D_80125248 = 0x0006004D;
 
-void* D_8012524C = func_8011591C_ovl2;
+void* D_8012524C = func_8011591C;
 
 void* D_80125250 = func_80115888;
 
@@ -2530,7 +2530,7 @@ u32 D_80125260 = 0x0006002F;
 
 u32 D_80125264 = 0x00060030;
 
-void* D_80125268 = func_80116FF8_ovl2;
+void* D_80125268 = func_80116FF8;
 
 u32 D_8012526C = 0x00000000;
 
@@ -2544,7 +2544,7 @@ u32 D_8012527C = 0x0006007B;
 
 u32 D_80125280 = 0x00000000;
 
-void* D_80125284 = func_8011591C_ovl2;
+void* D_80125284 = func_8011591C;
 
 void* D_80125288 = func_80115888;
 
@@ -2558,7 +2558,7 @@ u32 D_80125298 = 0x0006007E;
 
 u32 D_8012529C = 0x00000000;
 
-void* D_801252A0 = func_8011591C_ovl2;
+void* D_801252A0 = func_8011591C;
 
 void* D_801252A4 = func_80115888;
 
@@ -2572,7 +2572,7 @@ u32 D_801252B4 = 0x00060081;
 
 u32 D_801252B8 = 0x00000000;
 
-void* D_801252BC = func_8011591C_ovl2;
+void* D_801252BC = func_8011591C;
 
 void* D_801252C0 = func_80115888;
 
@@ -2586,7 +2586,7 @@ u32 D_801252D0 = 0x00060084;
 
 u32 D_801252D4 = 0x00000000;
 
-void* D_801252D8 = func_8011591C_ovl2;
+void* D_801252D8 = func_8011591C;
 
 void* D_801252DC = func_80115888;
 
@@ -2600,7 +2600,7 @@ u32 D_801252EC = 0x00060087;
 
 u32 D_801252F0 = 0x00000000;
 
-void* D_801252F4 = func_8011591C_ovl2;
+void* D_801252F4 = func_8011591C;
 
 void* D_801252F8 = func_80115888;
 
@@ -2614,7 +2614,7 @@ u32 D_80125308 = 0x0006008A;
 
 u32 D_8012530C = 0x00000000;
 
-void* D_80125310 = func_8011591C_ovl2;
+void* D_80125310 = func_8011591C;
 
 void* D_80125314 = func_80115888;
 
@@ -2628,7 +2628,7 @@ u32 D_80125324 = 0x0006008D;
 
 u32 D_80125328 = 0x00000000;
 
-void* D_8012532C = func_8011591C_ovl2;
+void* D_8012532C = func_8011591C;
 
 void* D_80125330 = func_80115888;
 
@@ -2642,7 +2642,7 @@ u32 D_80125340 = 0x00000000;
 
 u32 D_80125344 = 0x00000000;
 
-void* D_80125348 = func_80117178_ovl2;
+void* D_80125348 = func_80117178;
 
 u32 D_8012534C = 0x00000000;
 
@@ -2740,7 +2740,7 @@ u32 D_80125404 = 0x00060096;
 
 u32 D_80125408 = 0x00000000;
 
-void* D_8012540C = func_801151BC_ovl2;
+void* D_8012540C = func_801151BC;
 
 void* D_80125410 = &func_80112B4C;
 
@@ -2754,7 +2754,7 @@ u32 D_80125420 = 0x00060097;
 
 u32 D_80125424 = 0x00000000;
 
-void* D_80125428 = func_801151BC_ovl2;
+void* D_80125428 = func_801151BC;
 
 void* D_8012542C = &func_80112B4C;
 
@@ -2768,7 +2768,7 @@ u32 D_8012543C = 0x00060098;
 
 u32 D_80125440 = 0x00000000;
 
-void* D_80125444 = func_801151BC_ovl2;
+void* D_80125444 = func_801151BC;
 
 void* D_80125448 = &func_80112B4C;
 
@@ -2782,7 +2782,7 @@ u32 D_80125458 = 0x00060099;
 
 u32 D_8012545C = 0x00000000;
 
-void* D_80125460 = func_801151BC_ovl2;
+void* D_80125460 = func_801151BC;
 
 void* D_80125464 = &func_80112B4C;
 
@@ -2796,7 +2796,7 @@ u32 D_80125474 = 0x0006009A;
 
 u32 D_80125478 = 0x00000000;
 
-void* D_8012547C = func_801151BC_ovl2;
+void* D_8012547C = func_801151BC;
 
 void* D_80125480 = &func_80112B4C;
 
@@ -2950,9 +2950,9 @@ u32 D_801255A8 = 0x00060012;
 
 u32 D_801255AC = 0x00000000;
 
-void* D_801255B0 = func_801181AC_ovl2;
+void* D_801255B0 = func_801181AC;
 
-void* D_801255B4 = func_80118130_ovl2;
+void* D_801255B4 = func_80118130;
 
 u32 D_801255B8 = 0xFFFF0000;
 
@@ -2964,9 +2964,9 @@ u32 D_801255C4 = 0x00060013;
 
 u32 D_801255C8 = 0x00000000;
 
-void* D_801255CC = func_801181AC_ovl2;
+void* D_801255CC = func_801181AC;
 
-void* D_801255D0 = func_80118130_ovl2;
+void* D_801255D0 = func_80118130;
 
 u32 D_801255D4 = 0xFFFF0000;
 
@@ -2978,9 +2978,9 @@ u32 D_801255E0 = 0x00060014;
 
 u32 D_801255E4 = 0x00000000;
 
-void* D_801255E8 = func_801181AC_ovl2;
+void* D_801255E8 = func_801181AC;
 
-void* D_801255EC = func_80118130_ovl2;
+void* D_801255EC = func_80118130;
 
 u32 D_801255F0 = 0xFFFF0000;
 
@@ -2992,9 +2992,9 @@ u32 D_801255FC = 0x00060015;
 
 u32 D_80125600 = 0x00000000;
 
-void* D_80125604 = func_801181AC_ovl2;
+void* D_80125604 = func_801181AC;
 
-void* D_80125608 = func_80118130_ovl2;
+void* D_80125608 = func_80118130;
 
 u32 D_8012560C = 0xFFFF0000;
 
@@ -3006,7 +3006,7 @@ u32 D_80125618 = 0x0006000C;
 
 u32 D_8012561C = 0x0006000D;
 
-void* D_80125620 = func_80118420_ovl2;
+void* D_80125620 = func_80118420;
 
 u32 D_80125624 = 0x00000000;
 
@@ -3020,7 +3020,7 @@ u32 D_80125634 = 0x00060029;
 
 u32 D_80125638 = 0x00000000;
 
-void* D_8012563C = func_801184B8_ovl2;
+void* D_8012563C = func_801184B8;
 
 u32 D_80125640 = 0x00000000;
 
@@ -3034,7 +3034,7 @@ u32 D_80125650 = 0x0006002A;
 
 u32 D_80125654 = 0x00000000;
 
-void* D_80125658 = func_801184B8_ovl2;
+void* D_80125658 = func_801184B8;
 
 u32 D_8012565C = 0x00000000;
 
@@ -3048,7 +3048,7 @@ u32 D_8012566C = 0x0006002B;
 
 u32 D_80125670 = 0x00000000;
 
-void* D_80125674 = func_801184B8_ovl2;
+void* D_80125674 = func_801184B8;
 
 u32 D_80125678 = 0x00000000;
 
@@ -3062,7 +3062,7 @@ u32 D_80125688 = 0x0006002C;
 
 u32 D_8012568C = 0x00000000;
 
-void* D_80125690 = func_801184B8_ovl2;
+void* D_80125690 = func_801184B8;
 
 u32 D_80125694 = 0x00000000;
 
@@ -3426,7 +3426,7 @@ u32 D_80125960 = 0x000600A4;
 
 u32 D_80125964 = 0x00000000;
 
-void* D_80125968 = func_80119320_ovl2;
+void* D_80125968 = func_80119320;
 
 u32 D_8012596C = 0x00000000;
 
@@ -3440,7 +3440,7 @@ u32 D_8012597C = 0x000600A5;
 
 u32 D_80125980 = 0x00000000;
 
-void* D_80125984 = func_80119320_ovl2;
+void* D_80125984 = func_80119320;
 
 u32 D_80125988 = 0x00000000;
 
@@ -3454,7 +3454,7 @@ u32 D_80125998 = 0x000600A6;
 
 u32 D_8012599C = 0x00000000;
 
-void* D_801259A0 = func_80119320_ovl2;
+void* D_801259A0 = func_80119320;
 
 u32 D_801259A4 = 0x00000000;
 
@@ -3468,7 +3468,7 @@ u32 D_801259B4 = 0x000600A7;
 
 u32 D_801259B8 = 0x00000000;
 
-void* D_801259BC = func_80119320_ovl2;
+void* D_801259BC = func_80119320;
 
 u32 D_801259C0 = 0x00000000;
 
@@ -3482,7 +3482,7 @@ u32 D_801259D0 = 0x000600A8;
 
 u32 D_801259D4 = 0x00000000;
 
-void* D_801259D8 = func_80119320_ovl2;
+void* D_801259D8 = func_80119320;
 
 u32 D_801259DC = 0x00000000;
 
@@ -3846,7 +3846,7 @@ u32 D_80125CA8 = 0x000600BB;
 
 u32 D_80125CAC = 0x00000000;
 
-void* D_80125CB0 = func_8011978C_ovl2;
+void* D_80125CB0 = func_8011978C;
 
 u32 D_80125CB4 = 0x00000000;
 
@@ -3860,7 +3860,7 @@ u32 D_80125CC4 = 0x00060023;
 
 u32 D_80125CC8 = 0x00000000;
 
-void* D_80125CCC = func_801151BC_ovl2;
+void* D_80125CCC = func_801151BC;
 
 void* D_80125CD0 = &D_800B4924;
 
@@ -3874,7 +3874,7 @@ u32 D_80125CE0 = 0x00060024;
 
 u32 D_80125CE4 = 0x00000000;
 
-void* D_80125CE8 = func_801151BC_ovl2;
+void* D_80125CE8 = func_801151BC;
 
 void* D_80125CEC = &D_800B4924;
 
@@ -3888,7 +3888,7 @@ u32 D_80125CFC = 0x00060025;
 
 u32 D_80125D00 = 0x00000000;
 
-void* D_80125D04 = func_801151BC_ovl2;
+void* D_80125D04 = func_801151BC;
 
 void* D_80125D08 = &D_800B4924;
 
@@ -3902,7 +3902,7 @@ u32 D_80125D18 = 0x00060053;
 
 u32 D_80125D1C = 0x00000000;
 
-void* D_80125D20 = func_801151BC_ovl2;
+void* D_80125D20 = func_801151BC;
 
 void* D_80125D24 = &D_800B4924;
 
@@ -3916,7 +3916,7 @@ u32 D_80125D34 = 0x00060054;
 
 u32 D_80125D38 = 0x00000000;
 
-void* D_80125D3C = func_801151BC_ovl2;
+void* D_80125D3C = func_801151BC;
 
 void* D_80125D40 = &D_800B4924;
 
@@ -3930,7 +3930,7 @@ u32 D_80125D50 = 0x00060055;
 
 u32 D_80125D54 = 0x00000000;
 
-void* D_80125D58 = func_801151BC_ovl2;
+void* D_80125D58 = func_801151BC;
 
 void* D_80125D5C = &D_800B4924;
 
@@ -3944,7 +3944,7 @@ u32 D_80125D6C = 0x00060056;
 
 u32 D_80125D70 = 0x00000000;
 
-void* D_80125D74 = func_801151BC_ovl2;
+void* D_80125D74 = func_801151BC;
 
 void* D_80125D78 = &D_800B4924;
 
@@ -3958,7 +3958,7 @@ u32 D_80125D88 = 0x00060057;
 
 u32 D_80125D8C = 0x00000000;
 
-void* D_80125D90 = func_801151BC_ovl2;
+void* D_80125D90 = func_801151BC;
 
 void* D_80125D94 = &D_800B4924;
 
@@ -3972,7 +3972,7 @@ u32 D_80125DA4 = 0x00060058;
 
 u32 D_80125DA8 = 0x00000000;
 
-void* D_80125DAC = func_801151BC_ovl2;
+void* D_80125DAC = func_801151BC;
 
 void* D_80125DB0 = &D_800B4924;
 
@@ -4042,7 +4042,7 @@ u32 D_80125E30 = 0x000600AD;
 
 u32 D_80125E34 = 0x00000000;
 
-void* D_80125E38 = func_801151BC_ovl2;
+void* D_80125E38 = func_801151BC;
 
 void* D_80125E3C = &func_80112B4C;
 
@@ -4056,7 +4056,7 @@ u32 D_80125E4C = 0x000600AE;
 
 u32 D_80125E50 = 0x00000000;
 
-void* D_80125E54 = func_801151BC_ovl2;
+void* D_80125E54 = func_801151BC;
 
 void* D_80125E58 = &func_80112B4C;
 
@@ -4182,7 +4182,7 @@ u32 D_80125F48 = 0x00060026;
 
 u32 D_80125F4C = 0x00000000;
 
-void* D_80125F50 = func_801151BC_ovl2;
+void* D_80125F50 = func_801151BC;
 
 void* D_80125F54 = &D_800B4924;
 
@@ -4196,7 +4196,7 @@ u32 D_80125F64 = 0x00060027;
 
 u32 D_80125F68 = 0x00000000;
 
-void* D_80125F6C = func_801151BC_ovl2;
+void* D_80125F6C = func_801151BC;
 
 void* D_80125F70 = &D_800B4924;
 
@@ -4210,7 +4210,7 @@ u32 D_80125F80 = 0x00060059;
 
 u32 D_80125F84 = 0x00000000;
 
-void* D_80125F88 = func_80115270_ovl2;
+void* D_80125F88 = func_80115270;
 
 void* D_80125F8C = &D_800B4924;
 
@@ -4224,7 +4224,7 @@ u32 D_80125F9C = 0x0006005A;
 
 u32 D_80125FA0 = 0x00000000;
 
-void* D_80125FA4 = func_80115270_ovl2;
+void* D_80125FA4 = func_80115270;
 
 void* D_80125FA8 = &D_800B4924;
 
@@ -4238,7 +4238,7 @@ u32 D_80125FB8 = 0x0006005B;
 
 u32 D_80125FBC = 0x00000000;
 
-void* D_80125FC0 = func_80115270_ovl2;
+void* D_80125FC0 = func_80115270;
 
 void* D_80125FC4 = &D_800B4924;
 
@@ -4252,7 +4252,7 @@ u32 D_80125FD4 = 0x0006005C;
 
 u32 D_80125FD8 = 0x00000000;
 
-void* D_80125FDC = func_80115270_ovl2;
+void* D_80125FDC = func_80115270;
 
 void* D_80125FE0 = &D_800B4924;
 
@@ -4266,7 +4266,7 @@ u32 D_80125FF0 = 0x0006005D;
 
 u32 D_80125FF4 = 0x00000000;
 
-void* D_80125FF8 = func_80115270_ovl2;
+void* D_80125FF8 = func_80115270;
 
 void* D_80125FFC = &D_800B4924;
 
@@ -4280,7 +4280,7 @@ u32 D_8012600C = 0x0006005E;
 
 u32 D_80126010 = 0x00000000;
 
-void* D_80126014 = func_80115270_ovl2;
+void* D_80126014 = func_80115270;
 
 void* D_80126018 = &D_800B4924;
 
@@ -4294,7 +4294,7 @@ u32 D_80126028 = 0x0006005F;
 
 u32 D_8012602C = 0x00000000;
 
-void* D_80126030 = func_80115270_ovl2;
+void* D_80126030 = func_80115270;
 
 void* D_80126034 = &D_800B4924;
 
@@ -4308,7 +4308,7 @@ u32 D_80126044 = 0x00060060;
 
 u32 D_80126048 = 0x00000000;
 
-void* D_8012604C = func_80115270_ovl2;
+void* D_8012604C = func_80115270;
 
 void* D_80126050 = &D_800B4924;
 
@@ -4322,7 +4322,7 @@ u32 D_80126060 = 0x00060061;
 
 u32 D_80126064 = 0x00000000;
 
-void* D_80126068 = func_80115270_ovl2;
+void* D_80126068 = func_80115270;
 
 void* D_8012606C = &D_800B4924;
 
@@ -4336,7 +4336,7 @@ u32 D_8012607C = 0x00060062;
 
 u32 D_80126080 = 0x00000000;
 
-void* D_80126084 = func_80115270_ovl2;
+void* D_80126084 = func_80115270;
 
 void* D_80126088 = &D_800B4924;
 
@@ -4350,7 +4350,7 @@ u32 D_80126098 = 0x00060063;
 
 u32 D_8012609C = 0x00000000;
 
-void* D_801260A0 = func_80115270_ovl2;
+void* D_801260A0 = func_80115270;
 
 void* D_801260A4 = &D_800B4924;
 
@@ -4364,7 +4364,7 @@ u32 D_801260B4 = 0x00060064;
 
 u32 D_801260B8 = 0x00000000;
 
-void* D_801260BC = func_80115270_ovl2;
+void* D_801260BC = func_80115270;
 
 void* D_801260C0 = &D_800B4924;
 
@@ -4378,7 +4378,7 @@ u32 D_801260D0 = 0x00060065;
 
 u32 D_801260D4 = 0x00000000;
 
-void* D_801260D8 = func_80115270_ovl2;
+void* D_801260D8 = func_80115270;
 
 void* D_801260DC = &D_800B4924;
 
@@ -4392,7 +4392,7 @@ u32 D_801260EC = 0x00060066;
 
 u32 D_801260F0 = 0x00000000;
 
-void* D_801260F4 = func_80115270_ovl2;
+void* D_801260F4 = func_80115270;
 
 void* D_801260F8 = &D_800B4924;
 
@@ -4406,7 +4406,7 @@ u32 D_80126108 = 0x00060067;
 
 u32 D_8012610C = 0x00000000;
 
-void* D_80126110 = func_80115270_ovl2;
+void* D_80126110 = func_80115270;
 
 void* D_80126114 = &D_800B4924;
 
@@ -4420,7 +4420,7 @@ u32 D_80126124 = 0x00060068;
 
 u32 D_80126128 = 0x00000000;
 
-void* D_8012612C = func_80115270_ovl2;
+void* D_8012612C = func_80115270;
 
 void* D_80126130 = &D_800B4924;
 
@@ -4434,7 +4434,7 @@ u32 D_80126140 = 0x00060069;
 
 u32 D_80126144 = 0x00000000;
 
-void* D_80126148 = func_80115270_ovl2;
+void* D_80126148 = func_80115270;
 
 void* D_8012614C = &D_800B4924;
 
@@ -4448,7 +4448,7 @@ u32 D_8012615C = 0x0006006A;
 
 u32 D_80126160 = 0x00000000;
 
-void* D_80126164 = func_80115270_ovl2;
+void* D_80126164 = func_80115270;
 
 void* D_80126168 = &D_800B4924;
 
@@ -4462,7 +4462,7 @@ u32 D_80126178 = 0x0006006B;
 
 u32 D_8012617C = 0x00000000;
 
-void* D_80126180 = func_80115270_ovl2;
+void* D_80126180 = func_80115270;
 
 void* D_80126184 = &D_800B4924;
 
@@ -4476,7 +4476,7 @@ u32 D_80126194 = 0x0006006C;
 
 u32 D_80126198 = 0x00000000;
 
-void* D_8012619C = func_80115270_ovl2;
+void* D_8012619C = func_80115270;
 
 void* D_801261A0 = &D_800B4924;
 
@@ -4490,7 +4490,7 @@ u32 D_801261B0 = 0x000600CE;
 
 u32 D_801261B4 = 0x000600CF;
 
-void* D_801261B8 = func_801151BC_ovl2;
+void* D_801261B8 = func_801151BC;
 
 void* D_801261BC = &func_80112B4C;
 
@@ -4504,7 +4504,7 @@ u32 D_801261CC = 0x000600D0;
 
 u32 D_801261D0 = 0x000600D1;
 
-void* D_801261D4 = func_801151BC_ovl2;
+void* D_801261D4 = func_801151BC;
 
 void* D_801261D8 = &func_80112B4C;
 
@@ -4532,7 +4532,7 @@ u32 D_80126204 = 0x000600D4;
 
 u32 D_80126208 = 0x000600D5;
 
-void* D_8012620C = func_8011A198_ovl2;
+void* D_8012620C = func_8011A198;
 
 void* D_80126210 = &func_80112B4C;
 
@@ -4546,7 +4546,7 @@ u32 D_80126220 = 0x000600AF;
 
 u32 D_80126224 = 0x00000000;
 
-void* D_80126228 = func_801151BC_ovl2;
+void* D_80126228 = func_801151BC;
 
 void* D_8012622C = &func_80112B4C;
 
@@ -4658,7 +4658,7 @@ u32 D_80126300 = 0x00060033;
 
 u32 D_80126304 = 0x00000000;
 
-void* D_80126308 = func_8011A2F4_ovl2;
+void* D_80126308 = func_8011A2F4;
 
 void* D_8012630C = &func_80112B4C;
 
@@ -4672,7 +4672,7 @@ u32 D_8012631C = 0x00060034;
 
 u32 D_80126320 = 0x00000000;
 
-void* D_80126324 = func_8011A2F4_ovl2;
+void* D_80126324 = func_8011A2F4;
 
 void* D_80126328 = &func_80112B4C;
 
@@ -4686,7 +4686,7 @@ u32 D_80126338 = 0x00060035;
 
 u32 D_8012633C = 0x00000000;
 
-void* D_80126340 = func_8011A2F4_ovl2;
+void* D_80126340 = func_8011A2F4;
 
 void* D_80126344 = &func_80112B4C;
 
@@ -4700,7 +4700,7 @@ u32 D_80126354 = 0x00060036;
 
 u32 D_80126358 = 0x00000000;
 
-void* D_8012635C = func_8011A2F4_ovl2;
+void* D_8012635C = func_8011A2F4;
 
 void* D_80126360 = &func_80112B4C;
 
@@ -4714,7 +4714,7 @@ u32 D_80126370 = 0x00060037;
 
 u32 D_80126374 = 0x00000000;
 
-void* D_80126378 = func_8011A2F4_ovl2;
+void* D_80126378 = func_8011A2F4;
 
 void* D_8012637C = &func_80112B4C;
 
@@ -4728,7 +4728,7 @@ u32 D_8012638C = 0x00060038;
 
 u32 D_80126390 = 0x00000000;
 
-void* D_80126394 = func_8011A2F4_ovl2;
+void* D_80126394 = func_8011A2F4;
 
 void* D_80126398 = &func_80112B4C;
 
@@ -4742,7 +4742,7 @@ u32 D_801263A8 = 0x00060039;
 
 u32 D_801263AC = 0x00000000;
 
-void* D_801263B0 = func_8011A2F4_ovl2;
+void* D_801263B0 = func_8011A2F4;
 
 void* D_801263B4 = &func_80112B4C;
 
@@ -4826,7 +4826,7 @@ u32 D_80126450 = 0x000600EC;
 
 u32 D_80126454 = 0x00000000;
 
-void* D_80126458 = func_8011A678_ovl2;
+void* D_80126458 = func_8011A678;
 
 u32 D_8012645C = 0x00000000;
 
@@ -4854,7 +4854,7 @@ u32 D_80126488 = 0x000600ED;
 
 u32 D_8012648C = 0x00000000;
 
-void* D_80126490 = func_8011A7A8_ovl2;
+void* D_80126490 = func_8011A7A8;
 
 void* D_80126494 = &func_80112B4C;
 
@@ -4868,7 +4868,7 @@ u32 D_801264A4 = 0x000600EE;
 
 u32 D_801264A8 = 0x00000000;
 
-void* D_801264AC = func_8011A7A8_ovl2;
+void* D_801264AC = func_8011A7A8;
 
 void* D_801264B0 = &func_80112B4C;
 
@@ -4882,7 +4882,7 @@ u32 D_801264C0 = 0x000600EF;
 
 u32 D_801264C4 = 0x00000000;
 
-void* D_801264C8 = func_8011A7A8_ovl2;
+void* D_801264C8 = func_8011A7A8;
 
 void* D_801264CC = &func_80112B4C;
 
@@ -4896,7 +4896,7 @@ u32 D_801264DC = 0x000600F0;
 
 u32 D_801264E0 = 0x00000000;
 
-void* D_801264E4 = func_8011A7A8_ovl2;
+void* D_801264E4 = func_8011A7A8;
 
 void* D_801264E8 = &func_80112B4C;
 
@@ -4910,7 +4910,7 @@ u32 D_801264F8 = 0x000600F1;
 
 u32 D_801264FC = 0x00000000;
 
-void* D_80126500 = func_8011A7A8_ovl2;
+void* D_80126500 = func_8011A7A8;
 
 void* D_80126504 = &func_80112B4C;
 
@@ -4924,7 +4924,7 @@ u32 D_80126514 = 0x000600F2;
 
 u32 D_80126518 = 0x00000000;
 
-void* D_8012651C = func_8011A7A8_ovl2;
+void* D_8012651C = func_8011A7A8;
 
 void* D_80126520 = &func_80112B4C;
 
@@ -4938,7 +4938,7 @@ u32 D_80126530 = 0x000600F3;
 
 u32 D_80126534 = 0x00000000;
 
-void* D_80126538 = func_8011A7A8_ovl2;
+void* D_80126538 = func_8011A7A8;
 
 void* D_8012653C = &func_80112B4C;
 
@@ -4952,7 +4952,7 @@ u32 D_8012654C = 0x00060112;
 
 u32 D_80126550 = 0x00060113;
 
-void* D_80126554 = func_8011A588_ovl2;
+void* D_80126554 = func_8011A588;
 
 u32 D_80126558 = 0x00000000;
 
@@ -4980,7 +4980,7 @@ u32 D_80126584 = 0x0006011A;
 
 u32 D_80126588 = 0x0006011B;
 
-void* D_8012658C = func_8011AA7C_ovl2;
+void* D_8012658C = func_8011AA7C;
 
 u32 D_80126590 = 0x00000000;
 
@@ -4994,7 +4994,7 @@ u32 D_801265A0 = 0x0006011E;
 
 u32 D_801265A4 = 0x0006011F;
 
-void* D_801265A8 = func_8011AA7C_ovl2;
+void* D_801265A8 = func_8011AA7C;
 
 u32 D_801265AC = 0x00000000;
 
@@ -5008,7 +5008,7 @@ u32 D_801265BC = 0x00060122;
 
 u32 D_801265C0 = 0x00060123;
 
-void* D_801265C4 = func_8011AA7C_ovl2;
+void* D_801265C4 = func_8011AA7C;
 
 u32 D_801265C8 = 0x00000000;
 
@@ -5022,7 +5022,7 @@ u32 D_801265D8 = 0x00060126;
 
 u32 D_801265DC = 0x00060127;
 
-void* D_801265E0 = func_8011AA7C_ovl2;
+void* D_801265E0 = func_8011AA7C;
 
 u32 D_801265E4 = 0x00000000;
 
@@ -5120,7 +5120,7 @@ u32 D_8012669C = 0x000600C2;
 
 u32 D_801266A0 = 0x00000000;
 
-void* D_801266A4 = func_801151BC_ovl2;
+void* D_801266A4 = func_801151BC;
 
 void* D_801266A8 = &func_80112B4C;
 
@@ -5134,7 +5134,7 @@ u32 D_801266B8 = 0x000600C3;
 
 u32 D_801266BC = 0x00000000;
 
-void* D_801266C0 = func_801151BC_ovl2;
+void* D_801266C0 = func_801151BC;
 
 void* D_801266C4 = &func_80112B4C;
 
@@ -5148,7 +5148,7 @@ u32 D_801266D4 = 0x000600C4;
 
 u32 D_801266D8 = 0x00000000;
 
-void* D_801266DC = func_801151BC_ovl2;
+void* D_801266DC = func_801151BC;
 
 void* D_801266E0 = &func_80112B4C;
 
@@ -5162,7 +5162,7 @@ u32 D_801266F0 = 0x000600C5;
 
 u32 D_801266F4 = 0x00000000;
 
-void* D_801266F8 = func_801151BC_ovl2;
+void* D_801266F8 = func_801151BC;
 
 void* D_801266FC = &func_80112B4C;
 
@@ -5176,7 +5176,7 @@ u32 D_8012670C = 0x000600C6;
 
 u32 D_80126710 = 0x00000000;
 
-void* D_80126714 = func_801151BC_ovl2;
+void* D_80126714 = func_801151BC;
 
 void* D_80126718 = &func_80112B4C;
 
@@ -5190,7 +5190,7 @@ u32 D_80126728 = 0x000600C7;
 
 u32 D_8012672C = 0x00000000;
 
-void* D_80126730 = func_801151BC_ovl2;
+void* D_80126730 = func_801151BC;
 
 void* D_80126734 = &func_80112B4C;
 
@@ -5204,7 +5204,7 @@ u32 D_80126744 = 0x000600C8;
 
 u32 D_80126748 = 0x00000000;
 
-void* D_8012674C = func_801151BC_ovl2;
+void* D_8012674C = func_801151BC;
 
 void* D_80126750 = &func_80112B4C;
 
@@ -5218,7 +5218,7 @@ u32 D_80126760 = 0x000600C9;
 
 u32 D_80126764 = 0x00000000;
 
-void* D_80126768 = func_801151BC_ovl2;
+void* D_80126768 = func_801151BC;
 
 void* D_8012676C = &func_80112B4C;
 
@@ -5232,7 +5232,7 @@ u32 D_8012677C = 0x000600CA;
 
 u32 D_80126780 = 0x00000000;
 
-void* D_80126784 = func_801151BC_ovl2;
+void* D_80126784 = func_801151BC;
 
 void* D_80126788 = &func_80112B4C;
 
@@ -5246,7 +5246,7 @@ u32 D_80126798 = 0x000600CB;
 
 u32 D_8012679C = 0x00000000;
 
-void* D_801267A0 = func_801151BC_ovl2;
+void* D_801267A0 = func_801151BC;
 
 void* D_801267A4 = &func_80112B4C;
 
@@ -5260,7 +5260,7 @@ u32 D_801267B4 = 0x000600CC;
 
 u32 D_801267B8 = 0x00000000;
 
-void* D_801267BC = func_801151BC_ovl2;
+void* D_801267BC = func_801151BC;
 
 void* D_801267C0 = &func_80112B4C;
 
@@ -5274,7 +5274,7 @@ u32 D_801267D0 = 0x000600CD;
 
 u32 D_801267D4 = 0x00000000;
 
-void* D_801267D8 = func_801151BC_ovl2;
+void* D_801267D8 = func_801151BC;
 
 void* D_801267DC = &func_80112B4C;
 
@@ -5288,7 +5288,7 @@ u32 D_801267EC = 0x00060101;
 
 u32 D_801267F0 = 0x00000000;
 
-void* D_801267F4 = func_8011AEF0_ovl2;
+void* D_801267F4 = func_8011AEF0;
 
 u32 D_801267F8 = 0x00000000;
 
@@ -5302,7 +5302,7 @@ u32 D_80126808 = 0x00060102;
 
 u32 D_8012680C = 0x00000000;
 
-void* D_80126810 = func_8011AF50_ovl2;
+void* D_80126810 = func_8011AF50;
 
 u32 D_80126814 = 0x00000000;
 
@@ -5316,7 +5316,7 @@ u32 D_80126824 = 0x00060103;
 
 u32 D_80126828 = 0x00000000;
 
-void* D_8012682C = func_8011AEF0_ovl2;
+void* D_8012682C = func_8011AEF0;
 
 u32 D_80126830 = 0x00000000;
 
@@ -5330,7 +5330,7 @@ u32 D_80126840 = 0x00060104;
 
 u32 D_80126844 = 0x00000000;
 
-void* D_80126848 = func_8011AF50_ovl2;
+void* D_80126848 = func_8011AF50;
 
 u32 D_8012684C = 0x00000000;
 
@@ -5344,7 +5344,7 @@ u32 D_8012685C = 0x00060105;
 
 u32 D_80126860 = 0x00000000;
 
-void* D_80126864 = func_8011AEF0_ovl2;
+void* D_80126864 = func_8011AEF0;
 
 u32 D_80126868 = 0x00000000;
 
@@ -5358,7 +5358,7 @@ u32 D_80126878 = 0x00000000;
 
 u32 D_8012687C = 0x00000000;
 
-void* D_80126880 = func_8011B22C_ovl2;
+void* D_80126880 = func_8011B22C;
 
 u32 D_80126884 = 0x00000000;
 
@@ -5414,7 +5414,7 @@ u32 D_801268E8 = 0x0006012A;
 
 u32 D_801268EC = 0x0006012B;
 
-void* D_801268F0 = func_8011AA7C_ovl2;
+void* D_801268F0 = func_8011AA7C;
 
 u32 D_801268F4 = 0x00000000;
 
@@ -5428,7 +5428,7 @@ u32 D_80126904 = 0x0006012E;
 
 u32 D_80126908 = 0x0006012F;
 
-void* D_8012690C = func_8011AA7C_ovl2;
+void* D_8012690C = func_8011AA7C;
 
 u32 D_80126910 = 0x00000000;
 
@@ -5442,7 +5442,7 @@ u32 D_80126920 = 0x000600D6;
 
 u32 D_80126924 = 0x000600D7;
 
-void* D_80126928 = func_8011B348_ovl2;
+void* D_80126928 = func_8011B348;
 
 u32 D_8012692C = 0x00000000;
 
@@ -5456,9 +5456,9 @@ u32 D_8012693C = 0x000600F4;
 
 u32 D_80126940 = 0x00000000;
 
-void* D_80126944 = func_8011B464_ovl2;
+void* D_80126944 = func_8011B464;
 
-void* D_80126948 = func_8011B3F4_ovl2;
+void* D_80126948 = func_8011B3F4;
 
 u32 D_8012694C = 0xFFFF0000;
 
@@ -5470,9 +5470,9 @@ u32 D_80126958 = 0x000600F6;
 
 u32 D_8012695C = 0x00000000;
 
-void* D_80126960 = func_8011B464_ovl2;
+void* D_80126960 = func_8011B464;
 
-void* D_80126964 = func_8011B3F4_ovl2;
+void* D_80126964 = func_8011B3F4;
 
 u32 D_80126968 = 0xFFFF0000;
 
@@ -5484,9 +5484,9 @@ u32 D_80126974 = 0x000600F8;
 
 u32 D_80126978 = 0x00000000;
 
-void* D_8012697C = func_8011B464_ovl2;
+void* D_8012697C = func_8011B464;
 
-void* D_80126980 = func_8011B3F4_ovl2;
+void* D_80126980 = func_8011B3F4;
 
 u32 D_80126984 = 0xFFFF0000;
 
@@ -5498,9 +5498,9 @@ u32 D_80126990 = 0x000600FA;
 
 u32 D_80126994 = 0x00000000;
 
-void* D_80126998 = func_8011B464_ovl2;
+void* D_80126998 = func_8011B464;
 
-void* D_8012699C = func_8011B3F4_ovl2;
+void* D_8012699C = func_8011B3F4;
 
 u32 D_801269A0 = 0xFFFF0000;
 
@@ -5512,7 +5512,7 @@ u32 D_801269AC = 0x00060100;
 
 u32 D_801269B0 = 0x00000000;
 
-void* D_801269B4 = func_8011B6D8_ovl2;
+void* D_801269B4 = func_8011B6D8;
 
 u32 D_801269B8 = 0x00000000;
 
@@ -5526,7 +5526,7 @@ u32 D_801269C8 = 0x0006013B;
 
 u32 D_801269CC = 0x00000000;
 
-void* D_801269D0 = func_8011B7CC_ovl2;
+void* D_801269D0 = func_8011B7CC;
 
 u32 D_801269D4 = 0x00000000;
 
@@ -5666,7 +5666,7 @@ u32 D_80126AE0 = 0x000600F5;
 
 u32 D_80126AE4 = 0x00000000;
 
-void* D_80126AE8 = func_8011B464_ovl2;
+void* D_80126AE8 = func_8011B464;
 
 void* D_80126AEC = &func_80112B4C;
 
@@ -5680,7 +5680,7 @@ u32 D_80126AFC = 0x000600F7;
 
 u32 D_80126B00 = 0x00000000;
 
-void* D_80126B04 = func_8011B464_ovl2;
+void* D_80126B04 = func_8011B464;
 
 void* D_80126B08 = &func_80112B4C;
 
@@ -5694,7 +5694,7 @@ u32 D_80126B18 = 0x000600F9;
 
 u32 D_80126B1C = 0x00000000;
 
-void* D_80126B20 = func_8011B464_ovl2;
+void* D_80126B20 = func_8011B464;
 
 void* D_80126B24 = &func_80112B4C;
 
@@ -5708,7 +5708,7 @@ u32 D_80126B34 = 0x000600FB;
 
 u32 D_80126B38 = 0x00000000;
 
-void* D_80126B3C = func_8011B464_ovl2;
+void* D_80126B3C = func_8011B464;
 
 void* D_80126B40 = &func_80112B4C;
 
@@ -5750,7 +5750,7 @@ u32 D_80126B88 = 0x00060016;
 
 u32 D_80126B8C = 0x00000000;
 
-void* D_80126B90 = func_801181AC_ovl2;
+void* D_80126B90 = func_801181AC;
 
 void* D_80126B94 = &func_80112B4C;
 
@@ -5764,7 +5764,7 @@ u32 D_80126BA4 = 0x00060017;
 
 u32 D_80126BA8 = 0x00000000;
 
-void* D_80126BAC = func_801181AC_ovl2;
+void* D_80126BAC = func_801181AC;
 
 void* D_80126BB0 = &func_80112B4C;
 
@@ -5778,7 +5778,7 @@ u32 D_80126BC0 = 0x00060018;
 
 u32 D_80126BC4 = 0x00000000;
 
-void* D_80126BC8 = func_801181AC_ovl2;
+void* D_80126BC8 = func_801181AC;
 
 void* D_80126BCC = &func_80112B4C;
 
@@ -5792,7 +5792,7 @@ u32 D_80126BDC = 0x00060019;
 
 u32 D_80126BE0 = 0x00000000;
 
-void* D_80126BE4 = func_801181AC_ovl2;
+void* D_80126BE4 = func_801181AC;
 
 void* D_80126BE8 = &func_80112B4C;
 
@@ -5806,7 +5806,7 @@ u32 D_80126BF8 = 0x000600FC;
 
 u32 D_80126BFC = 0x00000000;
 
-void* D_80126C00 = func_8011B464_ovl2;
+void* D_80126C00 = func_8011B464;
 
 void* D_80126C04 = &func_80112B4C;
 
@@ -5820,7 +5820,7 @@ u32 D_80126C14 = 0x000600FD;
 
 u32 D_80126C18 = 0x00000000;
 
-void* D_80126C1C = func_8011B464_ovl2;
+void* D_80126C1C = func_8011B464;
 
 void* D_80126C20 = &func_80112B4C;
 
@@ -5834,7 +5834,7 @@ u32 D_80126C30 = 0x000600FE;
 
 u32 D_80126C34 = 0x00000000;
 
-void* D_80126C38 = func_8011B464_ovl2;
+void* D_80126C38 = func_8011B464;
 
 void* D_80126C3C = &func_80112B4C;
 
@@ -5848,7 +5848,7 @@ u32 D_80126C4C = 0x000600FF;
 
 u32 D_80126C50 = 0x00000000;
 
-void* D_80126C54 = func_8011B464_ovl2;
+void* D_80126C54 = func_8011B464;
 
 void* D_80126C58 = &func_80112B4C;
 
@@ -5862,7 +5862,7 @@ u32 D_80126C68 = 0x0006001A;
 
 u32 D_80126C6C = 0x00000000;
 
-void* D_80126C70 = func_801181AC_ovl2;
+void* D_80126C70 = func_801181AC;
 
 void* D_80126C74 = &func_80112B4C;
 
@@ -5876,7 +5876,7 @@ u32 D_80126C84 = 0x0006001B;
 
 u32 D_80126C88 = 0x00000000;
 
-void* D_80126C8C = func_801181AC_ovl2;
+void* D_80126C8C = func_801181AC;
 
 void* D_80126C90 = &func_80112B4C;
 
@@ -5890,7 +5890,7 @@ u32 D_80126CA0 = 0x0006001C;
 
 u32 D_80126CA4 = 0x00000000;
 
-void* D_80126CA8 = func_801181AC_ovl2;
+void* D_80126CA8 = func_801181AC;
 
 void* D_80126CAC = &func_80112B4C;
 
@@ -5904,7 +5904,7 @@ u32 D_80126CBC = 0x0006001D;
 
 u32 D_80126CC0 = 0x00000000;
 
-void* D_80126CC4 = func_801181AC_ovl2;
+void* D_80126CC4 = func_801181AC;
 
 void* D_80126CC8 = &func_80112B4C;
 

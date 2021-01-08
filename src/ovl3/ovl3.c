@@ -253,19 +253,19 @@ u32 func_80151864_ovl3(void) {
     return 0;
 }
 
-extern u32 func_80122558_ovl3(void);
+extern u32 func_80122558(void);
 
 u32 func_801518E0_ovl3(void) {
-    if (func_80122558_ovl3() != 0) {
+    if (func_80122558() != 0) {
         return 8;
     }
     return 0;
 }
 
-extern u32 func_801226FC_ovl3(void);
+extern u32 func_801226FC(void);
 
 u32 func_8015190C_ovl3(void) {
-    if (func_801226FC_ovl3() != 0) {
+    if (func_801226FC() != 0) {
         return 7;
     }
     return 0;
@@ -275,7 +275,7 @@ extern f32 D_800E3210[];
 u32 func_80151938_ovl3(void) {
     if (gKirbyState.unk151 != 0 && !(gKirbyState.isTurning & 1) &&
         gKirbyState.unk4 == 0 && D_800E3210[D_8004A7C4->objId] <= 0.0f &&
-        func_801210FC_ovl3() != 0)
+        func_801210FC() != 0)
     {
         set_kirby_action_1(0xF, 0xC);
         return 6;
@@ -349,7 +349,7 @@ u32 func_80151B78_ovl3(void) {
             set_kirby_action_1(0, 1);
             return 0xD;
         }
-        else if (func_801210B4_ovl3() == 0) {
+        else if (func_801210B4() == 0) {
             switch (gKirbyState.unk4) {
                 case 0:
                     break;

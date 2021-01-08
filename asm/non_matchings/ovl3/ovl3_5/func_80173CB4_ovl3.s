@@ -5,7 +5,7 @@ glabel func_80173CB4_ovl3
 /* 0D4700 80173CC0 2610E7C0 */  addiu $s0, %lo(gKirbyState) # addiu $s0, $s0, -0x1840
 /* 0D4704 80173CC4 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 0D4708 80173CC8 AFA40020 */  sw    $a0, 0x20($sp)
-/* 0D470C 80173CCC 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0D470C 80173CCC 0C0473D6 */  jal   func_8011CF58
 /* 0D4710 80173CD0 AE000030 */   sw    $zero, 0x30($s0)
 /* 0D4714 80173CD4 3C0F8005 */  lui   $t7, %hi(D_8004A7C4) # $t7, 0x8005
 /* 0D4718 80173CD8 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)
@@ -14,12 +14,12 @@ glabel func_80173CB4_ovl3
 /* 0D4724 80173CE4 8DF80000 */  lw    $t8, ($t7)
 /* 0D4728 80173CE8 0018C880 */  sll   $t9, $t8, 2
 /* 0D472C 80173CEC 00390821 */  addu  $at, $at, $t9
-/* 0D4730 80173CF0 0C04828A */  jal   func_80120A28_ovl3
+/* 0D4730 80173CF0 0C04828A */  jal   func_80120A28
 /* 0D4734 80173CF4 AC2EDFD0 */   sw    $t6, -0x2030($at)
 /* 0D4738 80173CF8 24080006 */  li    $t0, 6
 /* 0D473C 80173CFC 3C040002 */  lui   $a0, (0x00020008 >> 16) # lui $a0, 2
 /* 0D4740 80173D00 A208000D */  sb    $t0, 0xd($s0)
-/* 0D4744 80173D04 0C048BC2 */  jal   func_80122F08_ovl3
+/* 0D4744 80173D04 0C048BC2 */  jal   func_80122F08
 /* 0D4748 80173D08 34840008 */   ori   $a0, (0x00020008 & 0xFFFF) # ori $a0, $a0, 8
 /* 0D474C 80173D0C 920A0004 */  lbu   $t2, 4($s0)
 /* 0D4750 80173D10 24090002 */  li    $t1, 2
@@ -86,10 +86,10 @@ glabel func_80173CB4_ovl3
 /* 0D4834 80173DF4 AC2B0490 */  sw    $t3, 0x490($at)
 /* 0D4838 80173DF8 34A50153 */  ori   $a1, (0x00020153 & 0xFFFF) # ori $a1, $a1, 0x153
 /* 0D483C 80173DFC 34840152 */  ori   $a0, (0x00020152 & 0xFFFF) # ori $a0, $a0, 0x152
-/* 0D4840 80173E00 0C048C3A */  jal   func_801230E8_ovl3
+/* 0D4840 80173E00 0C048C3A */  jal   func_801230E8
 /* 0D4844 80173E04 24060001 */   li    $a2, 1
 /* 0D4848 80173E08 3C040002 */  lui   $a0, (0x00020007 >> 16) # lui $a0, 2
-/* 0D484C 80173E0C 0C048BC2 */  jal   func_80122F08_ovl3
+/* 0D484C 80173E0C 0C048BC2 */  jal   func_80122F08
 /* 0D4850 80173E10 34840007 */   ori   $a0, (0x00020007 & 0xFFFF) # ori $a0, $a0, 7
 /* 0D4854 80173E14 8E180030 */  lw    $t8, 0x30($s0)
 /* 0D4858 80173E18 240F0002 */  li    $t7, 2

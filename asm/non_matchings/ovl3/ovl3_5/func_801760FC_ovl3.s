@@ -3,7 +3,7 @@ glabel func_801760FC_ovl3
 /* 0D6B40 80176100 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0D6B44 80176104 0C054E61 */  jal   func_80153984_ovl3
 /* 0D6B48 80176108 AFA40018 */   sw    $a0, 0x18($sp)
-/* 0D6B4C 8017610C 0C0485EE */  jal   func_801217B8_ovl3
+/* 0D6B4C 8017610C 0C0485EE */  jal   func_801217B8
 /* 0D6B50 80176110 00000000 */   nop   
 /* 0D6B54 80176114 3C068013 */  lui   $a2, %hi(gKirbyState) # $a2, 0x8013
 /* 0D6B58 80176118 24C6E7C0 */  addiu $a2, %lo(gKirbyState) # addiu $a2, $a2, -0x1840

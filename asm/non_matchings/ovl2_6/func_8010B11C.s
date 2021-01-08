@@ -8,7 +8,7 @@ glabel func_8010B11C
 /* 093BA4 8010B134 35F80080 */  ori   $t8, $t7, 0x80
 /* 093BA8 8010B138 24A5BCA0 */  addiu $a1, %lo(D_8012BCA0) # addiu $a1, $a1, -0x4360
 /* 093BAC 8010B13C A0F80000 */  sb    $t8, ($a3)
-/* 093BB0 8010B140 0C042BBC */  jal   func_8010AEF0_ovl2
+/* 093BB0 8010B140 0C042BBC */  jal   func_8010AEF0
 /* 093BB4 8010B144 24060008 */   li    $a2, 8
 /* 093BB8 8010B148 3C058013 */  lui   $a1, %hi(D_8012BCA0) # $a1, 0x8013
 /* 093BBC 8010B14C 24A5BCA0 */  addiu $a1, %lo(D_8012BCA0) # addiu $a1, $a1, -0x4360

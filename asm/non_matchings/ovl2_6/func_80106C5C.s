@@ -38,7 +38,7 @@ glabel func_80106C5C
 /* 08F75C 80106CEC AFAF0014 */  sw    $t7, 0x14($sp)
 /* 08F760 80106CF0 AFAE0010 */  sw    $t6, 0x10($sp)
 /* 08F764 80106CF4 27A40080 */  addiu $a0, $sp, 0x80
-/* 08F768 80106CF8 0C040E7A */  jal   func_801039E8_ovl2
+/* 08F768 80106CF8 0C040E7A */  jal   func_801039E8
 /* 08F76C 80106CFC E7A8007C */   swc1  $f8, 0x7c($sp)
 /* 08F770 80106D00 10400007 */  beqz  $v0, .L80106D20_ovl2
 /* 08F774 80106D04 8FA9004C */   lw    $t1, 0x4c($sp)
@@ -76,7 +76,7 @@ glabel func_80106C5C
 /* 08F7EC 80106D7C AFAB0014 */  sw    $t3, 0x14($sp)
 /* 08F7F0 80106D80 AFAA0010 */  sw    $t2, 0x10($sp)
 /* 08F7F4 80106D84 E7B2007C */  swc1  $f18, 0x7c($sp)
-/* 08F7F8 80106D88 0C040E7A */  jal   func_801039E8_ovl2
+/* 08F7F8 80106D88 0C040E7A */  jal   func_801039E8
 /* 08F7FC 80106D8C 00003825 */   move  $a3, $zero
 /* 08F800 80106D90 3C038013 */  lui   $v1, %hi(D_8012BD00) # $v1, 0x8013
 /* 08F804 80106D94 2463BD00 */  addiu $v1, %lo(D_8012BD00) # addiu $v1, $v1, -0x4300
@@ -135,7 +135,7 @@ glabel func_80106C5C
 /* 08F8D4 80106E64 4500000A */  bc1f  .L80106E90_ovl2
 /* 08F8D8 80106E68 00000000 */   nop   
 /* 08F8DC 80106E6C AFA80040 */  sw    $t0, 0x40($sp)
-/* 08F8E0 80106E70 0C042216 */  jal   func_80108858_ovl2
+/* 08F8E0 80106E70 0C042216 */  jal   func_80108858
 /* 08F8E4 80106E74 AFA9004C */   sw    $t1, 0x4c($sp)
 /* 08F8E8 80106E78 3C038013 */  lui   $v1, %hi(D_8012BD00) # $v1, 0x8013
 /* 08F8EC 80106E7C 2463BD00 */  addiu $v1, %lo(D_8012BD00) # addiu $v1, $v1, -0x4300
@@ -188,7 +188,7 @@ glabel func_80106C5C
 /* 08F9A0 80106F30 AFB80014 */  sw    $t8, 0x14($sp)
 /* 08F9A4 80106F34 AFAF0010 */  sw    $t7, 0x10($sp)
 /* 08F9A8 80106F38 E7A4007C */  swc1  $f4, 0x7c($sp)
-/* 08F9AC 80106F3C 0C040E7A */  jal   func_801039E8_ovl2
+/* 08F9AC 80106F3C 0C040E7A */  jal   func_801039E8
 /* 08F9B0 80106F40 00003825 */   move  $a3, $zero
 /* 08F9B4 80106F44 3C038013 */  lui   $v1, %hi(D_8012BD00) # $v1, 0x8013
 /* 08F9B8 80106F48 2463BD00 */  addiu $v1, %lo(D_8012BD00) # addiu $v1, $v1, -0x4300
@@ -228,7 +228,7 @@ glabel func_80106C5C
 /* 08FA3C 80106FCC 00000000 */  nop   
 /* 08FA40 80106FD0 45000006 */  bc1f  .L80106FEC_ovl2
 /* 08FA44 80106FD4 00000000 */   nop   
-/* 08FA48 80106FD8 0C042216 */  jal   func_80108858_ovl2
+/* 08FA48 80106FD8 0C042216 */  jal   func_80108858
 /* 08FA4C 80106FDC AFA9004C */   sw    $t1, 0x4c($sp)
 /* 08FA50 80106FE0 10400002 */  beqz  $v0, .L80106FEC_ovl2
 /* 08FA54 80106FE4 8FA9004C */   lw    $t1, 0x4c($sp)

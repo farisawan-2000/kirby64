@@ -145,7 +145,7 @@ glabel func_80183FF4_ovl3
 .L80184218_ovl3:
 /* 0E4C58 80184218 55600025 */  bnezl $t3, .L801842B0_ovl3
 /* 0E4C5C 8018421C 8D2D0030 */   lw    $t5, 0x30($t1)
-/* 0E4C60 80184220 0C048596 */  jal   func_80121658_ovl3
+/* 0E4C60 80184220 0C048596 */  jal   func_80121658
 /* 0E4C64 80184224 00000000 */   nop   
 /* 0E4C68 80184228 3C098013 */  lui   $t1, %hi(gKirbyState) # $t1, 0x8013
 /* 0E4C6C 8018422C 1040001F */  beqz  $v0, .L801842AC_ovl3
@@ -185,9 +185,9 @@ glabel func_80183FF4_ovl3
 .L801842B0_ovl3:
 /* 0E4CF0 801842B0 11A0000C */  beqz  $t5, .L801842E4_ovl3
 /* 0E4CF4 801842B4 00000000 */   nop   
-/* 0E4CF8 801842B8 0C047717 */  jal   func_8011DC5C_ovl3
+/* 0E4CF8 801842B8 0C047717 */  jal   func_8011DC5C
 /* 0E4CFC 801842BC 00000000 */   nop   
-/* 0E4D00 801842C0 0C04759F */  jal   func_8011D67C_ovl3
+/* 0E4D00 801842C0 0C04759F */  jal   func_8011D67C
 /* 0E4D04 801842C4 00000000 */   nop   
 /* 0E4D08 801842C8 3C098013 */  lui   $t1, %hi(gKirbyState) # $t1, 0x8013
 /* 0E4D0C 801842CC 2529E7C0 */  addiu $t1, %lo(gKirbyState) # addiu $t1, $t1, -0x1840
@@ -200,7 +200,7 @@ glabel func_80183FF4_ovl3
 /* 0E4D24 801842E4 3C018019 */  lui   $at, %hi(D_801977BC) # $at, 0x8019
 /* 0E4D28 801842E8 C42C77BC */  lwc1  $f12, %lo(D_801977BC)($at)
 /* 0E4D2C 801842EC 3C018019 */  lui   $at, %hi(D_801977C0) # $at, 0x8019
-/* 0E4D30 801842F0 0C048333 */  jal   func_80120CCC_ovl3
+/* 0E4D30 801842F0 0C048333 */  jal   func_80120CCC
 /* 0E4D34 801842F4 C42E77C0 */   lwc1  $f14, %lo(D_801977C0)($at)
 /* 0E4D38 801842F8 3C078005 */  lui   $a3, %hi(D_8004A7C4) # $a3, 0x8005
 /* 0E4D3C 801842FC 8CE7A7C4 */  lw    $a3, %lo(D_8004A7C4)($a3)
@@ -347,7 +347,7 @@ glabel func_80183FF4_ovl3
 /* 0E4F54 80184514 24844A10 */  addiu $a0, %lo(D_80194A10) # addiu $a0, $a0, 0x4a10
 /* 0E4F58 80184518 0C055127 */  jal   func_8015449C_ovl3
 /* 0E4F5C 8018451C 00002825 */   move  $a1, $zero
-/* 0E4F60 80184520 0C044713 */  jal   func_80111C4C_ovl3
+/* 0E4F60 80184520 0C044713 */  jal   func_80111C4C
 /* 0E4F64 80184524 8FA40044 */   lw    $a0, 0x44($sp)
 .L80184528_ovl3:
 /* 0E4F68 80184528 8FBF001C */  lw    $ra, 0x1c($sp)

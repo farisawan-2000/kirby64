@@ -43,7 +43,7 @@ glabel func_80177FB4_ovl3
 /* 0D8A94 80178054 3C01800E */  lui   $at, 0x800e
 /* 0D8A98 80178058 00220821 */  addu  $at, $at, $v0
 /* 0D8A9C 8017805C 46062202 */  mul.s $f8, $f4, $f6
-/* 0D8AA0 80178060 0C04843F */  jal   func_801210FC_ovl3
+/* 0D8AA0 80178060 0C04843F */  jal   func_801210FC
 /* 0D8AA4 80178064 E4286690 */   swc1  $f8, 0x6690($at)
 /* 0D8AA8 80178068 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 0D8AAC 8017806C 1040000B */  beqz  $v0, .L8017809C_ovl3
@@ -190,7 +190,7 @@ glabel func_80177FB4_ovl3
 /* 0D8CC0 80178280 24040001 */  li    $a0, 1
 /* 0D8CC4 80178284 0C048BDB */  jal   set_kirby_action_1
 /* 0D8CC8 80178288 24050003 */   li    $a1, 3
-/* 0D8CCC 8017828C 0C048BEC */  jal   func_80122FB0_ovl3
+/* 0D8CCC 8017828C 0C048BEC */  jal   func_80122FB0
 /* 0D8CD0 80178290 24040001 */   li    $a0, 1
 /* 0D8CD4 80178294 10000009 */  b     .L801782BC_ovl3
 /* 0D8CD8 80178298 8FBF0014 */   lw    $ra, 0x14($sp)

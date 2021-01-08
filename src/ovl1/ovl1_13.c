@@ -118,7 +118,7 @@ extern s32 D_8012E850;
 
 void func_800BC298(s32 arg0) {
     if ((random_u16() & 3) == 2) {
-        if (func_800F88A0_ovl1(arg0) == 0) {
+        if (func_800F88A0(arg0) == 0) {
             D_8012E850 = D_800D6E90 = D_800D6E54 = 0;
             return;
         }
@@ -375,7 +375,7 @@ void func_800BCA5C(void) {
     if (D_800BE4F0 == 0x21) {
         *(&D_800E9E20 + (D_8004A7C4->objId * 4)) = 2;
     } else {
-        if (func_800F8560_ovl1() == 9) {
+        if (func_800F8560() == 9) {
             *(&D_800E9E20 + (D_8004A7C4->objId * 4)) = 1;
         } else {
             *(&D_800E9E20 + (D_8004A7C4->objId * 4)) = 0;
@@ -843,7 +843,7 @@ void func_800BD6E0(void) {
 
     if (1 == D_800D6E8C) {
         if (D_800D6EC0 == 0) {
-            if (func_800F8560_ovl1(1) != 3) {
+            if (func_800F8560(1) != 3) {
                 if (D_800D6B24 == 0) {
                     func_800A7678(0xEC);
                     D_800D6EC0 = (s32) (D_800D6EC0 + 1);
@@ -1279,7 +1279,7 @@ loop_2:
         goto loop_1;
     }
     sp18 = func_800AEC70(0x26, 0x4A, 0x50, temp_a3);
-    if (func_800F8560_ovl1() != 9) {
+    if (func_800F8560() != 9) {
         func_800BDFB8(&D_800D5310, ((gHudDisplayMode * 4) + gHudDisplayMode) * 2, 8);
     } else {
         D_800D6E54 = 0;

@@ -3,9 +3,9 @@ glabel func_8017C1FC_ovl3
 /* 0DCC40 8017C200 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0DCC44 8017C204 0C054E61 */  jal   func_80153984_ovl3
 /* 0DCC48 8017C208 AFA40018 */   sw    $a0, 0x18($sp)
-/* 0DCC4C 8017C20C 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0DCC4C 8017C20C 0C0473D6 */  jal   func_8011CF58
 /* 0DCC50 8017C210 00000000 */   nop   
-/* 0DCC54 8017C214 0C0485EE */  jal   func_801217B8_ovl3
+/* 0DCC54 8017C214 0C0485EE */  jal   func_801217B8
 /* 0DCC58 8017C218 00000000 */   nop   
 /* 0DCC5C 8017C21C 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0DCC60 8017C220 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840
@@ -16,7 +16,7 @@ glabel func_8017C1FC_ovl3
 /* 0DCC74 8017C234 8C6E0030 */  lw    $t6, 0x30($v1)
 /* 0DCC78 8017C238 11C0005A */  beqz  $t6, .L8017C3A4_ovl3
 /* 0DCC7C 8017C23C 00000000 */   nop   
-/* 0DCC80 8017C240 0C04759F */  jal   func_8011D67C_ovl3
+/* 0DCC80 8017C240 0C04759F */  jal   func_8011D67C
 /* 0DCC84 8017C244 00000000 */   nop   
 /* 0DCC88 8017C248 10000056 */  b     .L8017C3A4_ovl3
 /* 0DCC8C 8017C24C 00000000 */   nop   
@@ -106,7 +106,7 @@ glabel func_8017C1FC_ovl3
 /* 0DCDB4 8017C374 00000000 */   nop   
 /* 0DCDB8 8017C378 A06C000A */  sb    $t4, 0xa($v1)
 .L8017C37C_ovl3:
-/* 0DCDBC 8017C37C 0C047B5A */  jal   func_8011ED68_ovl3
+/* 0DCDBC 8017C37C 0C047B5A */  jal   func_8011ED68
 /* 0DCDC0 8017C380 00000000 */   nop   
 /* 0DCDC4 8017C384 10000007 */  b     .L8017C3A4_ovl3
 /* 0DCDC8 8017C388 00000000 */   nop   
@@ -121,7 +121,7 @@ glabel func_8017C1FC_ovl3
 /* 0DCDE4 8017C3A4 3C018019 */  lui   $at, %hi(D_80197608) # $at, 0x8019
 /* 0DCDE8 8017C3A8 C42C7608 */  lwc1  $f12, %lo(D_80197608)($at)
 /* 0DCDEC 8017C3AC 3C018019 */  lui   $at, %hi(D_8019760C) # $at, 0x8019
-/* 0DCDF0 8017C3B0 0C048333 */  jal   func_80120CCC_ovl3
+/* 0DCDF0 8017C3B0 0C048333 */  jal   func_80120CCC
 /* 0DCDF4 8017C3B4 C42E760C */   lwc1  $f14, %lo(D_8019760C)($at)
 /* 0DCDF8 8017C3B8 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0DCDFC 8017C3BC 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840

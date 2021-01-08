@@ -7,7 +7,7 @@ glabel func_800BC298
 /* 0644FC 800BC2AC 24010002 */  li    $at, 2
 /* 064500 800BC2B0 15C1000E */  bne   $t6, $at, .L800BC2EC_ovl1
 /* 064504 800BC2B4 8FA40018 */   lw    $a0, 0x18($sp)
-/* 064508 800BC2B8 0C03E228 */  jal   func_800F88A0_ovl1
+/* 064508 800BC2B8 0C03E228 */  jal   func_800F88A0
 /* 06450C 800BC2BC AFA40018 */   sw    $a0, 0x18($sp)
 /* 064510 800BC2C0 1440000A */  bnez  $v0, .L800BC2EC_ovl1
 /* 064514 800BC2C4 8FA40018 */   lw    $a0, 0x18($sp)

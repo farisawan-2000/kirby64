@@ -1,7 +1,7 @@
 glabel func_80177B40_ovl3
 /* 0D8580 80177B40 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0D8584 80177B44 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0D8588 80177B48 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0D8588 80177B48 0C0473D6 */  jal   func_8011CF58
 /* 0D858C 80177B4C AFA40018 */   sw    $a0, 0x18($sp)
 /* 0D8590 80177B50 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 0D8594 80177B54 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
@@ -80,7 +80,7 @@ glabel func_80177B40_ovl3
 /* 0D86B4 80177C74 002B0821 */  addu  $at, $at, $t3
 /* 0D86B8 80177C78 E4206850 */  swc1  $f0, 0x6850($at)
 .L80177C7C_ovl3:
-/* 0D86BC 80177C7C 0C048C3A */  jal   func_801230E8_ovl3
+/* 0D86BC 80177C7C 0C048C3A */  jal   func_801230E8
 /* 0D86C0 80177C80 00003025 */   move  $a2, $zero
 /* 0D86C4 80177C84 3C0D8005 */  lui   $t5, %hi(D_8004A7C4) # $t5, 0x8005
 /* 0D86C8 80177C88 8DADA7C4 */  lw    $t5, %lo(D_8004A7C4)($t5)

@@ -7,7 +7,7 @@ extern u32 D_800BE4F8;
 extern u32 D_800BE4FC;
 extern u32 D_800BE534;
 
-void func_800F6C40_ovl2(s32 arg0, UNUSED s32 arg1) {
+void func_800F6C40(s32 arg0, UNUSED s32 arg1) {
     D_800BE4F8 = 2;
     D_800BE4FC = 1;
     D_800BE534 = arg0;
@@ -43,13 +43,13 @@ void func_800F6C98(s32 arg0) {
     phi_v1 = temp_v1;
     phi_v0 = temp_v0_2;
     if (temp_v1 == 3) {
-        func_800F6C68_ovl2();
+        func_800F6C68();
         temp_v0_3 = D_8004A7C4->objId;
         phi_v1 = ((temp_v0_3 * 4) + 0x800F0000)->unk-6720;
         phi_v0 = temp_v0_3;
     }
     if (phi_v1 == 4) {
-        func_800F6C78_ovl2();
+        func_800F6C78();
         phi_v0 = D_8004A7C4->objId;
     }
     func_800B1900(phi_v0 & 0xFFFF);
@@ -58,7 +58,7 @@ void func_800F6C98(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C98.s")
 #endif
 
-void func_800F6E04_ovl2(UNUSED s32 arg0) {
+void func_800F6E04(UNUSED s32 arg0) {
 
 }
 
@@ -69,7 +69,7 @@ void func_800F6E0C(void *arg0, UNUSED void *arg1, UNUSED void *arg2) {
 }
 
 #ifdef MIPS_TO_C
-void func_800F6E30_ovl2(s32 arg0) {
+void func_800F6E30(s32 arg0) {
     s32 temp_a0;
     s32 temp_s0;
     s32 temp_v0_3;
@@ -117,10 +117,10 @@ loop_3:
                     if (temp_v1_2 != 2) {
 
                     } else {
-                        func_800FA414_ovl2(0x8000000D, temp_v0_2);
+                        func_800FA414(0x8000000D, temp_v0_2);
                         func_800AAF34(0x10, temp_s0, 0);
-                        func_801129AC_ovl2();
-                        func_801129DC_ovl2();
+                        func_801129AC();
+                        func_801129DC();
                         temp_v0_3 = D_800BE500;
                         if ((1 == temp_v0_3) && (D_800BE504 == 0)) {
                             D_800D6E44 = 1;
@@ -167,7 +167,7 @@ loop_3:
     func_800AFA14();
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E30_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E30.s")
 #endif
 
 
@@ -210,25 +210,25 @@ extern u32 D_800D7028;
 extern u32 D_800D7040;
 extern u32 D_80124000;
 
-void func_800F7258_ovl2(s32 arg0) {
+void func_800F7258(s32 arg0) {
     func_800A5404(&D_800D7010, &D_80124000);
     func_800A5404(&D_800D7028, &D_80124000);
     func_800A5404(&D_800D7040, &D_80124000);
 }
 
 #ifdef MIPS_TO_C
-Failed to decompile function func_800F72B0_ovl2:
+Failed to decompile function func_800F72B0:
 
 Unable to determine jump table for jr instruction.
 
 There must be a read of a variable in the same block as
 the instruction, which has a name starting with "jtbl".
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F72B0_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F72B0.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_800F7404_ovl2(s32 arg0) {
+u32 func_800F7404(s32 arg0) {
     s32 temp_a0;
     s8 temp_t1;
     s8 temp_t2;
@@ -275,11 +275,11 @@ loop_2:
     return temp_v0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7404_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7404.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_800F7484_ovl2(s32 arg0) {
+u32 func_800F7484(s32 arg0) {
     s32 temp_v1;
     u32 temp_v0;
     u32 temp_v0_2;
@@ -346,11 +346,11 @@ loop_2:
     return phi_return;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7484_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7484.s")
 #endif
 
 #ifdef MIPS_TO_C
-u8 func_800F753C_ovl2(void) {
+u8 func_800F753C(void) {
     u8 temp_v0;
 
     temp_v0 = (D_8004A7C4->objId + 0x800E0000)->unk76C0;
@@ -360,11 +360,11 @@ u8 func_800F753C_ovl2(void) {
     return temp_v0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F753C_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F753C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800F7578_ovl2(void) {
+void func_800F7578(void) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f14;
@@ -446,7 +446,7 @@ block_14:
     }
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7578_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7578.s")
 #endif
 
 #ifdef MIPS_TO_C
@@ -478,18 +478,18 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F7844.s")
 #endif
 
 #ifdef MIPS_TO_C
-Failed to decompile function func_800F78E4_ovl2:
+Failed to decompile function func_800F78E4:
 
 Unable to determine jump table for jr instruction.
 
 There must be a read of a variable in the same block as
 the instruction, which has a name starting with "jtbl".
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F78E4_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F78E4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_800F8078_ovl2(void) {
+void *func_800F8078(void) {
     s32 temp_a0;
     s32 temp_v1;
     u8 temp_a0_2;
@@ -539,35 +539,35 @@ void *func_800F8078_ovl2(void) {
     return temp_v0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8078_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8078.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800F81A4_ovl2(void) {
+void func_800F81A4(void) {
     D_801290D0 = func_800AEC08(0x24, 0x4A, 0x50);
     if (D_801290D8->unk4 != 0) {
         D_801290D4 = func_800AEC08(0x25, 0x4A, 0x50);
     }
     if (D_8012B9B0 != 0) {
-        func_8010137C_ovl2();
+        func_8010137C();
     }
-    func_800FA414_ovl2(2);
+    func_800FA414(2);
     D_8012913C = 0;
     D_80129138 = 0;
     D_80129140 = 0;
     D_80129144 = -1;
     D_801292E0 = 0x270F;
-    if (func_800F8560_ovl2() == 9) {
-        func_800FA414_ovl2(0xC);
-        func_800FBF18_ovl2(0);
+    if (func_800F8560() == 9) {
+        func_800FA414(0xC);
+        func_800FBF18(0);
     }
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F81A4_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F81A4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_800F8274_ovl2(void) {
+void func_800F8274(void) {
     D_801293AC = 0.0f;
     D_801293B0 = 0.0f;
     D_801293B4 = 5.0f;
@@ -580,21 +580,21 @@ void func_800F8274_ovl2(void) {
     D_801293D0 = 80.0f;
     D_801293D4 = 8.0f;
     D_801293D8 = 0;
-    func_800FB914_ovl2(0);
+    func_800FB914(0);
     D_80129408 = 0xC8;
     D_8012940C = 0x64;
-    func_800F7844_ovl2();
-    func_800F78E4_ovl2();
-    func_800F8378_ovl2();
-    func_800F8078_ovl2();
-    func_800F81A4_ovl2();
+    func_800F7844();
+    func_800F78E4();
+    func_800F8378();
+    func_800F8078();
+    func_800F81A4();
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8274_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8274.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_800F8378_ovl2(void) {
+void *func_800F8378(void) {
     s32 temp_a0;
     s32 temp_a0_2;
     s32 temp_v1;
@@ -634,7 +634,7 @@ void *func_800F8378_ovl2(void) {
     return temp_v0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8378_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8378.s")
 #endif
 
 #ifdef MIPS_TO_C
@@ -685,11 +685,11 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8464.s")
 #endif
 
 #ifdef MIPS_TO_C
-u16 func_800F8560_ovl2(void) {
+u16 func_800F8560(void) {
     return D_801290D8->unk16;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8560_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8560.s")
 #endif
 
 #ifdef MIPS_TO_C
@@ -821,7 +821,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8570.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_800F8728_ovl2(s32 arg0, f32 arg1, f32 arg2) {
+f32 func_800F8728(s32 arg0, f32 arg1, f32 arg2) {
     void *sp34;
     f32 sp30;
     f32 sp28;
@@ -849,15 +849,15 @@ f32 func_800F8728_ovl2(s32 arg0, f32 arg1, f32 arg2) {
     temp_f12 = temp_f8 + (temp_f4 * arg2);
     sp20 = temp_f12;
     *temp_v1 = *temp_v1 + ((temp_f12 / sp34->unkC) * D_80128790);
-    func_800F8570_ovl2(temp_f12, arg0);
+    func_800F8570(temp_f12, arg0);
     return sp20;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_800F8824_ovl2(void *arg0, f32 arg1) {
+? func_800F8824(void *arg0, f32 arg1) {
     f32 sp18;
 
     if (arg0 != 0) {
@@ -867,5 +867,5 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728_ovl2.s")
     return 0;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8824_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8824.s")
 #endif

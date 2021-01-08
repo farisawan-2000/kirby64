@@ -1,4 +1,4 @@
-glabel func_80100E7C_ovl2
+glabel func_80100E7C
 /* 0898EC 80100E7C 44802000 */  mtc1  $zero, $f4
 /* 0898F0 80100E80 3C018013 */  lui   $at, 0x8013
 /* 0898F4 80100E84 460C203E */  c.le.s $f4, $f12

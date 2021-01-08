@@ -55,7 +55,7 @@ glabel func_800F9FDC
 /* 082B10 800FA0A0 8FA6009C */   lw    $a2, 0x9c($sp)
 /* 082B14 800FA0A4 8FA400B4 */  lw    $a0, 0xb4($sp)
 /* 082B18 800FA0A8 27A50070 */  addiu $a1, $sp, 0x70
-/* 082B1C 800FA0AC 0C03E7E0 */  jal   func_800F9F80_ovl2
+/* 082B1C 800FA0AC 0C03E7E0 */  jal   func_800F9F80
 /* 082B20 800FA0B0 27A6007C */   addiu $a2, $sp, 0x7c
 /* 082B24 800FA0B4 C7A200A0 */  lwc1  $f2, 0xa0($sp)
 /* 082B28 800FA0B8 8FA400B4 */  lw    $a0, 0xb4($sp)
@@ -64,7 +64,7 @@ glabel func_800F9FDC
 /* 082B34 800FA0C4 27A60064 */  addiu $a2, $sp, 0x64
 /* 082B38 800FA0C8 460A0402 */  mul.s $f16, $f0, $f10
 /* 082B3C 800FA0CC 46028480 */  add.s $f18, $f16, $f2
-/* 082B40 800FA0D0 0C03E7E0 */  jal   func_800F9F80_ovl2
+/* 082B40 800FA0D0 0C03E7E0 */  jal   func_800F9F80
 /* 082B44 800FA0D4 E7B200AC */   swc1  $f18, 0xac($sp)
 /* 082B48 800FA0D8 C7A4009C */  lwc1  $f4, 0x9c($sp)
 /* 082B4C 800FA0DC C7AC00AC */  lwc1  $f12, 0xac($sp)
@@ -72,11 +72,11 @@ glabel func_800F9FDC
 /* 082B54 800FA0E4 46142181 */  sub.s $f6, $f4, $f20
 /* 082B58 800FA0E8 46060202 */  mul.s $f8, $f0, $f6
 /* 082B5C 800FA0EC 46144280 */  add.s $f10, $f8, $f20
-/* 082B60 800FA0F0 0C03E7C4 */  jal   func_800F9F10_ovl2
+/* 082B60 800FA0F0 0C03E7C4 */  jal   func_800F9F10
 /* 082B64 800FA0F4 E7AA00A8 */   swc1  $f10, 0xa8($sp)
 /* 082B68 800FA0F8 E7A000AC */  swc1  $f0, 0xac($sp)
 /* 082B6C 800FA0FC C7AC00A8 */  lwc1  $f12, 0xa8($sp)
-/* 082B70 800FA100 0C03E7C4 */  jal   func_800F9F10_ovl2
+/* 082B70 800FA100 0C03E7C4 */  jal   func_800F9F10
 /* 082B74 800FA104 8FA500BC */   lw    $a1, 0xbc($sp)
 /* 082B78 800FA108 E7A000A8 */  swc1  $f0, 0xa8($sp)
 /* 082B7C 800FA10C 27A4004C */  addiu $a0, $sp, 0x4c
@@ -125,7 +125,7 @@ glabel func_800F9FDC
 /* 082C20 800FA1B0 4600A086 */  mov.s $f2, $f20
 /* 082C24 800FA1B4 44061000 */  mfc1  $a2, $f2
 .L800FA1B8_ovl2:
-/* 082C28 800FA1B8 0C03E725 */  jal   func_800F9C94_ovl2
+/* 082C28 800FA1B8 0C03E725 */  jal   func_800F9C94
 /* 082C2C 800FA1BC AFA80010 */   sw    $t0, 0x10($sp)
 /* 082C30 800FA1C0 8FBF002C */  lw    $ra, 0x2c($sp)
 /* 082C34 800FA1C4 D7B40020 */  ldc1  $f20, 0x20($sp)

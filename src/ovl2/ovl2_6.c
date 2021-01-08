@@ -53,7 +53,7 @@ struct UNK_D_8012BBF8_unk0 {
 extern struct UNK_D_8012BBF8 D_8012BBF8[10];
 extern struct UNK_D_8012B9B8 D_8012B9B8[];
 
-void func_800FF5E0_ovl2(s32 arg0, f32 arg1, f32 arg2) {
+void func_800FF5E0(s32 arg0, f32 arg1, f32 arg2) {
     struct UNK_D_8012B9B8 *temp_a1;
     struct UNK_D_8012BBF8 *temp_v0;
     struct UNK_D_8012BBF8_unk0 *temp_v1;
@@ -144,7 +144,7 @@ struct SomeColorThing { // TODO: is this a generic S2DEX structure?
 #define TRANSPARENT_SURFACE (1 << 1)
 
 // S2D code :o
-void func_800FF71C_ovl2(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
+void func_800FF71C(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
     gDPPipeSync(gDisplayListHeads[0]++);
     gDPSetCycleType(gDisplayListHeads[0]++, G_CYC_1CYCLE)
     if (arg0->surfaceFlags & TRANSPARENT_SURFACE) {
@@ -176,14 +176,14 @@ void func_800FF71C_ovl2(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
 }
 
 #ifdef MIPS_TO_C
-Failed to decompile function func_800FF9B4_ovl2:
+Failed to decompile function func_800FF9B4:
 
 Unable to determine jump table for jr instruction.
 
 There must be a read of a variable in the same block as
 the instruction, which has a name starting with "jtbl".
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF9B4_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF9B4.s")
 #endif
 
 #ifdef MIPS_TO_C
@@ -259,7 +259,7 @@ loop_2:
                         temp_lo = (temp_t4 & 0xFF) * 0x60;
                         phi_s0->unk12 = temp_t4;
                         temp_s1 = phi_s0 + temp_lo + 0x40;
-                        func_800FF71C_ovl2(phi_s0, temp_s1->unk16, temp_v1->unkF);
+                        func_800FF71C(phi_s0, temp_s1->unk16, temp_v1->unkF);
                         temp_s6 = func_800ACE1C(temp_s1->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
                         temp_f8_2 = sp78 + 1.0f;
                         sp80 = temp_f8_2;
@@ -274,7 +274,7 @@ loop_14:
                             if (temp_f0_2 < temp_f6) {
                                 sp80 = temp_f0_2;
                             }
-                            func_800FF9B4_ovl2(gDisplayListHeads, temp_s1, temp_s5, temp_s3 + 8, phi_s0->unk28, phi_s0->unk2C);
+                            func_800FF9B4(gDisplayListHeads, temp_s1, temp_s5, temp_s3 + 8, phi_s0->unk28, phi_s0->unk2C);
                             if (sp80 != temp_s3->unk14) {
                                 goto loop_14;
                             }
@@ -294,9 +294,9 @@ block_20:
                             temp_lo_2 = (temp_t0_2 & 0xFF) * 0x60;
                             phi_s0->unk12 = temp_t0_2;
                             temp_s1_2 = phi_s0 + temp_lo_2 + 0x40;
-                            func_800FF71C_ovl2(phi_s0, temp_s1_2->unk16, temp_v1->unkF);
+                            func_800FF71C(phi_s0, temp_s1_2->unk16, temp_v1->unkF);
                             temp_s6_2 = func_800ACE1C(temp_s1_2->unk16, phi_s0 + (phi_s0->unk12 * 0x60) + 0x68);
-                            func_800FF9B4_ovl2(gDisplayListHeads, temp_s1_2, temp_s5, temp_s3 + 8, phi_s0->unk28, phi_s0->unk2C);
+                            func_800FF9B4(gDisplayListHeads, temp_s1_2, temp_s5, temp_s3 + 8, phi_s0->unk28, phi_s0->unk2C);
                             phi_s6 = temp_s6_2;
                             goto block_20;
                         }
@@ -461,12 +461,12 @@ u32 func_80100DF8(s32 arg0) {
     return 0;
 }
 
-void func_80100E50_ovl2(u32 arg0) {
+void func_80100E50(u32 arg0) {
     func_8000A180(arg0, &func_80100AC8, 0, 0);
 }
 
 extern f32 D_80128A2C, D_80128A30;
-u32 func_80100E7C_ovl2(f32 arg0) {
+u32 func_80100E7C(f32 arg0) {
     if (0.0f <= arg0) {
         if (arg0 <= D_80128A2C) {
             return 0;
@@ -479,9 +479,9 @@ u32 func_80100E7C_ovl2(f32 arg0) {
     return 2;
 }
 
-f32 func_80100EE4_ovl2(s32 arg0);
+f32 func_80100EE4(s32 arg0);
 #ifdef MIPS_TO_C
-f32 func_80100EE4_ovl2(s32 arg0) {
+f32 func_80100EE4(s32 arg0) {
     f32 sp40;
     f32 sp3C;
     f32 sp38;
@@ -543,8 +543,8 @@ f32 func_80100EE4_ovl2(s32 arg0) {
     sp24 = D_800D7B20.unk8 - D_800D7B20.unk14;
     sp30 = atan2f(D_800D7B38.unk8 - D_800D7B38.unk14, D_800D7B38.unk0 - temp_f0);
     sp2C = atan2f(sp24, sp28);
-    sp1C = func_80100E7C_ovl2(sp30);
-    temp_v0 = func_80100E7C_ovl2(sp2C);
+    sp1C = func_80100E7C(sp30);
+    temp_v0 = func_80100E7C(sp2C);
     if ((sp1C == 1) && (temp_v0 == 2)) {
         phi_f14 = sp2C + D_80128A34;
     } else {
@@ -664,10 +664,10 @@ loop_8:
     return phi_return;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100EE4_ovl2.s")
+GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100EE4.s")
 #endif
 
-void func_8010133C_ovl2(void) {
+void func_8010133C(void) {
     u32 i;
 
     for (i = 0; i < 10; i++)
@@ -676,14 +676,14 @@ void func_8010133C_ovl2(void) {
     }
 }
 
-void func_8010137C_ovl2(void) {
+void func_8010137C(void) {
     s32 i;
 
-    func_8010133C_ovl2();
+    func_8010133C();
     for (i = 0; i < 4; i++) {
-        if (func_80100DF8_ovl2(i) != 0) {
-            func_80100E50_ovl2(i);
+        if (func_80100DF8(i) != 0) {
+            func_80100E50(i);
         }
     }
-    func_80008A18(func_8000A180(0, 0, 0x1A, 0x80000000), &func_80100EE4_ovl2, 1, 0);
+    func_80008A18(func_8000A180(0, 0, 0x1A, 0x80000000), &func_80100EE4, 1, 0);
 }

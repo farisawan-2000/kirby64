@@ -30,7 +30,7 @@ glabel func_801E5754_ovl10
 /* 1D6530 801E57C0 44060000 */  mfc1  $a2, $f0
 /* 1D6534 801E57C4 00002025 */  move  $a0, $zero
 /* 1D6538 801E57C8 8F27000C */  lw    $a3, 0xc($t9)
-/* 1D653C 801E57CC 0C03F55C */  jal   func_800FD570_ovl10
+/* 1D653C 801E57CC 0C03F55C */  jal   func_800FD570
 /* 1D6540 801E57D0 E7A00010 */   swc1  $f0, 0x10($sp)
 /* 1D6544 801E57D4 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D6548 801E57D8 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

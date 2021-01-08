@@ -1,9 +1,9 @@
 glabel func_80114CCC
 /* 09D73C 80114CCC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 09D740 80114CD0 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 09D744 80114CD4 0C04525D */  jal   func_80114974_ovl2
+/* 09D744 80114CD4 0C04525D */  jal   func_80114974
 /* 09D748 80114CD8 00000000 */   nop   
-/* 09D74C 80114CDC 0C03F422 */  jal   func_800FD088_ovl2
+/* 09D74C 80114CDC 0C03F422 */  jal   func_800FD088
 /* 09D750 80114CE0 00000000 */   nop   
 /* 09D754 80114CE4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 09D758 80114CE8 27BD0018 */  addiu $sp, $sp, 0x18

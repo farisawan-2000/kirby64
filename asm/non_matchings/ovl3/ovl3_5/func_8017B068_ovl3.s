@@ -20,7 +20,7 @@ glabel func_8017B068_ovl3
 /* 0DBAF0 8017B0B0 AE000044 */  sw    $zero, 0x44($s0)
 /* 0DBAF4 8017B0B4 AE000030 */  sw    $zero, 0x30($s0)
 /* 0DBAF8 8017B0B8 AE170048 */  sw    $s7, 0x48($s0)
-/* 0DBAFC 8017B0BC 0C0473D6 */  jal   func_8011CF58_ovl3
+/* 0DBAFC 8017B0BC 0C0473D6 */  jal   func_8011CF58
 /* 0DBB00 8017B0C0 A2000007 */   sb    $zero, 7($s0)
 /* 0DBB04 8017B0C4 3C168005 */  lui   $s6, %hi(D_8004A7C4) # $s6, 0x8005
 /* 0DBB08 8017B0C8 8E0F0090 */  lw    $t7, 0x90($s0)
@@ -32,7 +32,7 @@ glabel func_8017B068_ovl3
 /* 0DBB20 8017B0E0 24180023 */  li    $t8, 35
 /* 0DBB24 8017B0E4 00084880 */  sll   $t1, $t0, 2
 /* 0DBB28 8017B0E8 00290821 */  addu  $at, $at, $t1
-/* 0DBB2C 8017B0EC 0C04828A */  jal   func_80120A28_ovl3
+/* 0DBB2C 8017B0EC 0C04828A */  jal   func_80120A28
 /* 0DBB30 8017B0F0 AC38DFD0 */   sw    $t8, -0x2030($at)
 /* 0DBB34 8017B0F4 8EC40000 */  lw    $a0, ($s6)
 /* 0DBB38 8017B0F8 3C01800E */  lui   $at, 0x800e
@@ -83,7 +83,7 @@ glabel func_8017B068_ovl3
 /* 0DBBE8 8017B1A8 02624821 */  addu  $t1, $s3, $v0
 /* 0DBBEC 8017B1AC E52A0000 */  swc1  $f10, ($t1)
 .L8017B1B0_ovl3:
-/* 0DBBF0 8017B1B0 0C048BC2 */  jal   func_80122F08_ovl3
+/* 0DBBF0 8017B1B0 0C048BC2 */  jal   func_80122F08
 /* 0DBBF4 8017B1B4 3484000D */   ori   $a0, (0x0002000D & 0xFFFF) # ori $a0, $a0, 0xd
 /* 0DBBF8 8017B1B8 240A0002 */  li    $t2, 2
 /* 0DBBFC 8017B1BC AE0A0154 */  sw    $t2, 0x154($s0)
@@ -97,7 +97,7 @@ glabel func_8017B068_ovl3
 /* 0DBC1C 8017B1DC 0C02A08D */  jal   func_800A8234
 /* 0DBC20 8017B1E0 24060032 */   li    $a2, 50
 /* 0DBC24 8017B1E4 AE020050 */  sw    $v0, 0x50($s0)
-/* 0DBC28 8017B1E8 0C047701 */  jal   func_8011DC04_ovl3
+/* 0DBC28 8017B1E8 0C047701 */  jal   func_8011DC04
 /* 0DBC2C 8017B1EC 240400BC */   li    $a0, 188
 /* 0DBC30 8017B1F0 3C040002 */  lui   $a0, (0x00020192 >> 16) # lui $a0, 2
 /* 0DBC34 8017B1F4 0C02A806 */  jal   func_800AA018
@@ -200,9 +200,9 @@ glabel func_8017B068_ovl3
 /* 0DBD9C 8017B35C 1000FFB0 */  b     .L8017B220_ovl3
 /* 0DBDA0 8017B360 920B0017 */   lbu   $t3, 0x17($s0)
 .L8017B364_ovl3:
-/* 0DBDA4 8017B364 0C04783A */  jal   func_8011E0E8_ovl3
+/* 0DBDA4 8017B364 0C04783A */  jal   func_8011E0E8
 /* 0DBDA8 8017B368 00000000 */   nop   
-/* 0DBDAC 8017B36C 0C047717 */  jal   func_8011DC5C_ovl3
+/* 0DBDAC 8017B36C 0C047717 */  jal   func_8011DC5C
 /* 0DBDB0 8017B370 00000000 */   nop   
 /* 0DBDB4 8017B374 8E180030 */  lw    $t8, 0x30($s0)
 /* 0DBDB8 8017B378 AE0000A0 */  sw    $zero, 0xa0($s0)

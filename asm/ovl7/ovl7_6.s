@@ -524,7 +524,7 @@ glabel func_801AD63C_ovl7
 /* 153818 801AD7A8 00002825 */  move  $a1, $zero
 /* 15381C 801AD7AC 44060000 */  mfc1  $a2, $f0
 /* 153820 801AD7B0 44070000 */  mfc1  $a3, $f0
-/* 153824 801AD7B4 0C03F55C */  jal   func_800FD570_ovl7
+/* 153824 801AD7B4 0C03F55C */  jal   func_800FD570
 /* 153828 801AD7B8 E7A00010 */   swc1  $f0, 0x10($sp)
 /* 15382C 801AD7BC 0C029D9E */  jal   func_800A7678
 /* 153830 801AD7C0 24040159 */   li    $a0, 345
@@ -1742,7 +1742,7 @@ glabel func_801AE940_ovl7
 /* 154A5C 801AE9EC 3C04800E */  lui   $a0, 0x800e
 /* 154A60 801AE9F0 00832021 */  addu  $a0, $a0, $v1
 /* 154A64 801AE9F4 8C84E350 */  lw    $a0, -0x1cb0($a0)
-/* 154A68 801AE9F8 0C03E39B */  jal   func_800F8E6C_ovl7
+/* 154A68 801AE9F8 0C03E39B */  jal   func_800F8E6C
 /* 154A6C 801AE9FC AFA6001C */   sw    $a2, 0x1c($sp)
 /* 154A70 801AEA00 8FA2001C */  lw    $v0, 0x1c($sp)
 .L801AEA04_ovl7:

@@ -48,7 +48,7 @@ glabel func_800FA1D4
 /* 082CF0 800FA280 02A02025 */   move  $a0, $s5
 /* 082CF4 800FA284 02C02825 */  move  $a1, $s6
 /* 082CF8 800FA288 02603025 */  move  $a2, $s3
-/* 082CFC 800FA28C 0C03E7F7 */  jal   func_800F9FDC_ovl2
+/* 082CFC 800FA28C 0C03E7F7 */  jal   func_800F9FDC
 /* 082D00 800FA290 8FA70070 */   lw    $a3, 0x70($sp)
 /* 082D04 800FA294 10000005 */  b     .L800FA2AC_ovl2
 /* 082D08 800FA298 8FBF003C */   lw    $ra, 0x3c($sp)

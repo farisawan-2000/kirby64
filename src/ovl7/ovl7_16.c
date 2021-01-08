@@ -21,7 +21,7 @@ void change_kirby_lives(s32);
 void func_800A22D4(s32);
 
 void func_800A7678(s32);
-void func_80121F14_ovl7(s32);
+void func_80121F14(s32);
 void func_8019B7D8_ovl7(void*);
 void func_8019BB58_ovl7();
 void func_800A2300(void*);
@@ -35,7 +35,7 @@ void* func_800A8100(s32, s32, s32, s32);
 void func_801A3280_ovl7(void);
 void func_801A3E80_ovl7(void);
 void func_800AFBB4(s32, struct UnkStruct8004A7C4*);
-s32 func_80104C24_ovl7(Vector*, Vector*);
+s32 func_80104C24(Vector*, Vector*);
 
 void func_801BD510(void *arg0) {
     struct UnkStruct800E1B50 *temp_t8;
@@ -69,7 +69,7 @@ block_10:
         goto block_10;
     }
     if ((D_800E7730[D_8004A7C4->objId] == 3) && (D_800E77A0[D_8004A7C4->objId] == 5)) {
-        func_80121F14_ovl7(D_800E7730[D_8004A7C4->objId]);
+        func_80121F14(D_800E7730[D_8004A7C4->objId]);
         func_800A7678(0xCA);
     }
     if ((D_800E7730[D_8004A7C4->objId] == 3) && (D_800E77A0[D_8004A7C4->objId] == 6)) {
@@ -210,7 +210,7 @@ void func_801BDBFC_ovl7(void) {
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
-    while ((func_80104C24_ovl7(&v1, &v3) != 0) || (func_80104C24_ovl7(&v1, &v2) != 0) || (func_80104C24_ovl7(&v1, &v4) != 0)) {
+    while ((func_80104C24(&v1, &v3) != 0) || (func_80104C24(&v1, &v2) != 0) || (func_80104C24(&v1, &v4) != 0)) {
         func_8000B6BC(1);
     }
     func_800AFBB4(1, D_8004A7C4);
@@ -359,7 +359,7 @@ void func_801BE21C_ovl7(UNUSED s32 arg0) {
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
-    while ((func_80104C24_ovl7(&v1, &v3) != 0) || (func_80104C24_ovl7(&v1, &v2) != 0) || (func_80104C24_ovl7(&v1, &v4) != 0)) {
+    while ((func_80104C24(&v1, &v3) != 0) || (func_80104C24(&v1, &v2) != 0) || (func_80104C24(&v1, &v4) != 0)) {
         func_8000B6BC(1);
     }
     func_800AFBB4(1, D_8004A7C4);
@@ -623,17 +623,17 @@ loop_25:
             if ((u32) temp_t0 < 9U) {
                 goto **(&jtbl_801CE5B0 + (temp_t0 * 4));
             case 6:
-                func_800F6C40_ovl7(D_800BE508 + 1, 0, temp_a2_2);
+                func_800F6C40(D_800BE508 + 1, 0, temp_a2_2);
                 func_800B9CB4(D_800D6B88, 2);
                 phi_a2_2 = *D_8004A7C4;
                 break;
             case 7:
-                func_800F6C40_ovl7(D_800BE508 + 1, 0, temp_a2_2);
+                func_800F6C40(D_800BE508 + 1, 0, temp_a2_2);
                 func_800B9CB4(D_800D6B88, 5);
                 phi_a2_2 = *D_8004A7C4;
                 break;
             case 8:
-                func_800F6C40_ovl7(D_800BE508 + 1, 0, temp_a2_2);
+                func_800F6C40(D_800BE508 + 1, 0, temp_a2_2);
                 func_800B9CB4(D_800D6B88, 8);
                 phi_a2_2 = *D_8004A7C4;
             

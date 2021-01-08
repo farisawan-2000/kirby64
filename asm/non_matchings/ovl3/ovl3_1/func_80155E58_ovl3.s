@@ -1,7 +1,7 @@
 glabel func_80155E58_ovl3
 /* 0B6898 80155E58 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0B689C 80155E5C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0B68A0 80155E60 0C046EAF */  jal   func_8011BABC_ovl3
+/* 0B68A0 80155E60 0C046EAF */  jal   func_8011BABC
 /* 0B68A4 80155E64 00000000 */   nop   
 /* 0B68A8 80155E68 240E0002 */  li    $t6, 2
 /* 0B68AC 80155E6C A04E0054 */  sb    $t6, 0x54($v0)
