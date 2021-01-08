@@ -358,7 +358,7 @@ void *func_800A3058(void) {
     void *phi_v0;
     void *phi_return;
 
-    temp_v0 = D_80000300;
+    temp_v0 = osTvType;
     if (temp_v0 != 1) {
         if (temp_v0 != 2) {
             load_overlay(2);

@@ -1,7 +1,7 @@
 #include <ultra64.h>
 #include <macros.h>
 
-
+extern OSViMode gCurrentViMode;
 // ovl0
 u32 D_8003FDC0[6][3] = {
     { 0x2C000000, 0x0000311E, 0x00000140 },
@@ -389,7 +389,7 @@ block_6:
         phi_v0 = phi_v0_2 >> 0x1F;
     } else {
         phi_v0 = temp_v0;
-        if (D_80000300 == 0) {
+        if (osTvType == 0) {
             osViSetYScale(0.833f);
             phi_v0_2 = D_80048C7C * 0x10;
             goto block_6;
@@ -402,18 +402,17 @@ block_6:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000E9C.s")
 #endif
 
-#ifdef MIPS_TO_C
-void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, s16 arg6) {
+#ifdef RESEARCHING
+// some J U I C Y VI mode stuff in here
+OSViMode func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, s16 arg6) {
     u32 sp20;
     s32 sp1C;
     s32 sp14;
     u32 sp0;
-    s32 temp_a1;
-    s32 temp_a2;
+    s16 temp_a1;
+    s16 temp_a2;
     s32 temp_a3;
     s32 temp_lo;
-    s32 temp_t7;
-    s32 temp_t7_2;
     s32 temp_t7_4;
     s32 temp_t7_5;
     s32 temp_t7_6;
@@ -426,12 +425,14 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
     u32 temp_t1;
     u32 temp_t4;
     u32 temp_t6;
+    u32 temp_t7;
+    u32 temp_t7_2;
     u32 temp_t7_3;
     u32 temp_t8_2;
     u32 temp_t9;
     u32 temp_t9_2;
     u32 temp_t9_3;
-    s32 phi_t9;
+    u32 phi_t9;
     s32 phi_t2;
     u32 phi_t1;
     s32 phi_a0;
@@ -448,55 +449,55 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
     }
     if ((arg2 & 4) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x40;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x40;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 0x40;
     }
     if ((arg2 & 8) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFBF;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x41;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & ~0x40;
     }
     if ((arg2 & 0x10) != 0) {
-        temp_t7 = gCurrentViMode.unk4 & -4;
+        temp_t7 = gCurrentViMode.comRegs.ctrl & ~3;
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFDF;
-        gCurrentViMode.unk4 = temp_t7;
-        gCurrentViMode.unk4 = temp_t7 | 2;
+        gCurrentViMode.comRegs.ctrl = temp_t7;
+        gCurrentViMode.comRegs.ctrl = temp_t7 | 2;
     }
     if ((arg2 & 0x20) != 0) {
-        temp_t7_2 = gCurrentViMode.unk4 & -4;
+        temp_t7_2 = gCurrentViMode.comRegs.ctrl & ~3;
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x20;
-        gCurrentViMode.unk4 = temp_t7_2;
-        gCurrentViMode.unk4 = temp_t7_2 | 3;
+        gCurrentViMode.comRegs.ctrl = temp_t7_2;
+        gCurrentViMode.comRegs.ctrl = temp_t7_2 | 3;
     }
     if ((arg2 & 0x40) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 0x10;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 8;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 8;
     }
     if ((arg2 & 0x80) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFEF;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -9;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & ~8;
     }
     if ((arg2 & 0x1000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 2;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 4;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 4;
     }
     if ((arg2 & 0x2000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFFD;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -5;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & ~4;
     }
     if ((arg2 & 0x4000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 1;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x10000;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 0x10000;
     }
     if ((arg2 & 0x8000) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFFFE;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 & 0xFFFEFFFF;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & 0xFFFEFFFF;
     }
-    if ((arg2 << 0xF) < 0) {
+    if (arg2 & 0x10000) {
         D_80048C7C.unk1 = D_80048C7C.unk1 | 0x80;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x10;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 0x10;
     }
-    if ((arg2 << 0xE) < 0) {
+    if (arg2 & 0x20000) {
         D_80048C7C.unk1 = D_80048C7C.unk1 & 0xFF7F;
-        gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x11;
+        gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & ~0x10;
     }
     if ((arg2 & 0x100) != 0) {
         D_80048C7C.unk0 = D_80048C7C.unk0 | 8;
@@ -517,30 +518,28 @@ void *func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg5, 
         D_80048C7C.unk0 = D_80048C7C.unk0 & 0xFF7F;
     }
     temp_a0 = D_80048C7C.unk0;
-    gCurrentViMode.unk4 = gCurrentViMode.unk4 & -0x301;
+    gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl & ~0x300;
     if ((temp_a0 >> 0x1F) != 0) {
         phi_v1_5 = 0x100;
         if ((D_80048C7C.unk0 & 1) != 0) {
             phi_v1_5 = 0;
         }
-        phi_t9 = gCurrentViMode.unk4 | phi_v1_5;
+        phi_t9 = gCurrentViMode.comRegs.ctrl | phi_v1_5;
         phi_t1 = (temp_a0 << 5) >> 0x1F;
         phi_t0 = (temp_a0 * 4) >> 0x1F;
-block_47:
-        gCurrentViMode.unk4 = phi_t9;
     } else {
         temp_t1 = (temp_a0 << 5) >> 0x1F;
         if ((temp_t1 == 0) && (temp_t0 = (temp_a0 * 4) >> 0x1F, (temp_t0 == 1))) {
-            gCurrentViMode.unk4 = gCurrentViMode.unk4 | 0x300;
+            gCurrentViMode.comRegs.ctrl = gCurrentViMode.comRegs.ctrl | 0x300;
             phi_t1 = temp_t1;
             phi_t0 = temp_t0;
         } else {
-            phi_t9 = gCurrentViMode.unk4 | 0x200;
+            phi_t9 = gCurrentViMode.comRegs.ctrl | 0x200;
             phi_t1 = temp_t1;
             phi_t0 = (temp_a0 * 4) >> 0x1F;
-            goto block_47;
         }
     }
+    gCurrentViMode.comRegs.ctrl = phi_t9;
     if (phi_t2 != 0) {
         if ((temp_a0 * 2) < 0) {
             phi_a0 = 0;
@@ -554,8 +553,8 @@ block_47:
         }
     }
     temp_a3 = phi_t2 == 0;
-    temp_a1 = ((arg5 & 0xFFFE) << 0x10) >> 0x10;
-    temp_a2 = ((arg6 & 0xFFFE) << 0x10) >> 0x10;
+    temp_a1 = arg5 & 0xFFFE;
+    temp_a2 = arg6 & 0xFFFE;
     if ((temp_a3 != 0) && (phi_a0 == 0)) {
         sp14 = 2;
     } else {
@@ -573,38 +572,38 @@ block_47:
     } else {
         phi_v1 = 1;
     }
-    gCurrentViMode.unk8 = phi_v1 * arg0;
-    temp_v1 = D_80000300;
+    gCurrentViMode.comRegs.width = phi_v1 * arg0;
+    temp_v1 = osTvType;
     if (temp_v1 == 1) {
-        gCurrentViMode.unkC = 0x3E52239;
-        gCurrentViMode.unk10 = 0x20C;
-        gCurrentViMode.unk14 = 0xC15;
-        gCurrentViMode.unk18 = 0xC150C15;
-        gCurrentViMode.unk1C = 0x6C02EC;
-        gCurrentViMode.unk30 = 0x2501FF;
-        gCurrentViMode.unk34 = 0xE0204;
+        gCurrentViMode.comRegs.burst = 0x3E52239;
+        gCurrentViMode.comRegs.vSync = 0x20C;
+        gCurrentViMode.comRegs.hSync = 0xC15;
+        gCurrentViMode.comRegs.leap = 0xC150C15;
+        gCurrentViMode.comRegs.hStart = 0x6C02EC;
+        gCurrentViMode.fldRegs[0].vStart = 0x2501FF;
+        gCurrentViMode.fldRegs[0].vBurst = 0xE0204;
     }
     if (temp_v1 == 0) {
-        gCurrentViMode.unkC = 0x404233A;
-        gCurrentViMode.unk10 = 0x270;
-        gCurrentViMode.unk14 = 0x150C69;
-        gCurrentViMode.unk18 = 0xC6F0C6E;
-        gCurrentViMode.unk1C = 0x800300;
-        gCurrentViMode.unk30 = 0x2F0269;
-        gCurrentViMode.unk34 = 0x9026B;
+        gCurrentViMode.comRegs.burst = 0x404233A;
+        gCurrentViMode.comRegs.vSync = 0x270;
+        gCurrentViMode.comRegs.hSync = 0x150C69;
+        gCurrentViMode.comRegs.leap = 0xC6F0C6E;
+        gCurrentViMode.comRegs.hStart = 0x800300;
+        gCurrentViMode.fldRegs[0].vStart = 0x2F0269;
+        gCurrentViMode.fldRegs[0].vBurst = 0x9026B;
     }
-    if (2 == temp_v1) {
-        gCurrentViMode.unkC = 0x4651E39;
-        gCurrentViMode.unk10 = 0x20C;
-        gCurrentViMode.unk14 = 0xC10;
-        gCurrentViMode.unk18 = 0xC1C0C1C;
-        gCurrentViMode.unk1C = 0x6C02EC;
-        gCurrentViMode.unk30 = 0x2501FF;
-        gCurrentViMode.unk34 = 0xE0204;
+    if (temp_v1 == 2) {
+        gCurrentViMode.comRegs.burst = 0x4651E39;
+        gCurrentViMode.comRegs.vSync = 0x20C;
+        gCurrentViMode.comRegs.hSync = 0xC10;
+        gCurrentViMode.comRegs.leap = 0xC1C0C1C;
+        gCurrentViMode.comRegs.hStart = 0x6C02EC;
+        gCurrentViMode.fldRegs[0].vStart = 0x2501FF;
+        gCurrentViMode.fldRegs[0].vBurst = 0xE0204;
     }
-    temp_t7_3 = gCurrentViMode.unk1C;
+    temp_t7_3 = gCurrentViMode.comRegs.hStart;
     sp0 = temp_t7_3;
-    gCurrentViMode.unk44 = gCurrentViMode.unk30;
+    gCurrentViMode.fldRegs[1].vStart = gCurrentViMode.fldRegs[0].vStart;
     temp_t9 = temp_t7_3 >> 0x10;
     sp20 = temp_t9;
     sp1C = temp_t7_3 & 0xFFFF;
@@ -618,8 +617,8 @@ block_47:
     if (temp_t7_4 < 0) {
         sp1C = 0;
     }
-    temp_t8_2 = gCurrentViMode.unk30;
-    gCurrentViMode.unk1C = (sp20 << 0x10) | sp1C;
+    temp_t8_2 = gCurrentViMode.fldRegs[0].vStart;
+    gCurrentViMode.comRegs.hStart = (sp20 << 0x10) | sp1C;
     temp_t9_2 = temp_t8_2 >> 0x10;
     sp0 = temp_t8_2;
     sp20 = temp_t9_2;
@@ -634,8 +633,8 @@ block_47:
     if (temp_t7_5 < 0) {
         sp1C = 0;
     }
-    temp_t9_3 = gCurrentViMode.unk44;
-    gCurrentViMode.unk30 = (sp20 << 0x10) | sp1C;
+    temp_t9_3 = gCurrentViMode.fldRegs[1].vStart;
+    gCurrentViMode.fldRegs[0].vStart = (sp20 << 0x10) | sp1C;
     temp_t6 = temp_t9_3 >> 0x10;
     sp0 = temp_t9_3;
     sp20 = temp_t6;
@@ -650,32 +649,32 @@ block_47:
     if (temp_t7_6 < 0) {
         sp1C = 0;
     }
-    gCurrentViMode.unk44 = (sp20 << 0x10) | sp1C;
-    gCurrentViMode.unk48 = gCurrentViMode.unk34;
+    gCurrentViMode.fldRegs[1].vStart = (sp20 << 0x10) | sp1C;
+    gCurrentViMode.fldRegs[1].vBurst = gCurrentViMode.fldRegs[0].vBurst;
     if ((phi_t2 != 0) && (phi_a0 != 0)) {
-        gCurrentViMode.unk10 = gCurrentViMode.unk10 + 1;
-        if (2 == temp_v1) {
-            gCurrentViMode.unk14 = gCurrentViMode.unk14 + 0x40001;
+        gCurrentViMode.comRegs.vSync = gCurrentViMode.comRegs.vSync + 1;
+        if (temp_v1 == 2) {
+            gCurrentViMode.comRegs.hSync = gCurrentViMode.comRegs.hSync + 0x40001;
         }
-        if (2 == temp_v1) {
-            gCurrentViMode.unk18 = gCurrentViMode.unk18 + 0xFFFCFFFE;
+        if (temp_v1 == 2) {
+            gCurrentViMode.comRegs.leap = gCurrentViMode.comRegs.leap + 0xFFFCFFFE;
         }
     } else {
-        gCurrentViMode.unk30 = gCurrentViMode.unk30 + 0xFFFDFFFE;
-        if (2 == temp_v1) {
-            gCurrentViMode.unk34 = gCurrentViMode.unk34 + 0xFFFCFFFE;
+        gCurrentViMode.fldRegs[0].vStart = gCurrentViMode.fldRegs[0].vStart + 0xFFFDFFFE;
+        if (temp_v1 == 2) {
+            gCurrentViMode.fldRegs[0].vBurst = gCurrentViMode.fldRegs[0].vBurst + 0xFFFCFFFE;
         }
         if (temp_v1 == 0) {
-            gCurrentViMode.unk48 = gCurrentViMode.unk48 + 0x2FFFE;
+            gCurrentViMode.fldRegs[1].vBurst = gCurrentViMode.fldRegs[1].vBurst + 0x2FFFE;
         }
     }
-    gCurrentViMode.unk24 = 0;
-    gCurrentViMode.unk20 = (arg0 << 0xA) / ((arg4 - arg3) + 0x280);
+    gCurrentViMode.comRegs.vCurrent = 0;
+    gCurrentViMode.comRegs.xScale = (arg0 << 0xA) / ((arg4 - arg3) + 0x280);
     phi_v1_2 = 2;
     if (phi_t0 == 0) {
         phi_v1_2 = 1;
     }
-    gCurrentViMode.unk28 = phi_v1_2 * arg0 * 2;
+    gCurrentViMode.fldRegs[0].origin = phi_v1_2 * arg0 * 2;
     if (phi_t0 == 0) {
         sp14 = 1;
     } else {
@@ -685,23 +684,22 @@ block_47:
     if (phi_t2 != 0) {
         phi_v1_4 = 1;
     }
-    gCurrentViMode.unk2C = temp_lo;
-    gCurrentViMode.unk40 = temp_lo;
-    gCurrentViMode.unk3C = phi_v1_4 * arg0 * 2 * sp14;
+    gCurrentViMode.fldRegs[0].yScale = temp_lo;
+    gCurrentViMode.fldRegs[1].yScale = temp_lo;
+    gCurrentViMode.fldRegs[1].origin = phi_v1_4 * arg0 * 2 * sp14;
     if (phi_t1 != 0) {
         if (temp_t4 < 0xB4000) {
-            gCurrentViMode.unk2C = temp_lo + 0x3000000;
+            gCurrentViMode.fldRegs[0].yScale = temp_lo + 0x3000000;
             phi_t8 = temp_lo + 0x1000000;
         } else {
-            gCurrentViMode.unk2C = gCurrentViMode.unk2C + 0x2000000;
-            phi_t8 = gCurrentViMode.unk40 + 0x2000000;
+            gCurrentViMode.fldRegs[0].yScale = gCurrentViMode.fldRegs[0].yScale + 0x2000000;
+            phi_t8 = gCurrentViMode.fldRegs[1].yScale + 0x2000000;
         }
-        gCurrentViMode.unk40 = phi_t8;
+        gCurrentViMode.fldRegs[1].yScale = phi_t8;
     }
-    gCurrentViMode.unk38 = 2;
-    gCurrentViMode.unk4C = 2;
+    gCurrentViMode.fldRegs[0].vIntr = 2;
+    gCurrentViMode.fldRegs[1].vIntr = 2;
     D_80048C48 = 1;
-    return &gCurrentViMode;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000F78.s")
@@ -1456,7 +1454,7 @@ void func_80002598(s32 arg0) {
     D_80048CD8 = &D_80002AF8;
     D_80048CDC = 0;
     D_80048CE0 = -1;
-    temp_v0 = D_80000300;
+    temp_v0 = osTvType;
     if (temp_v0 != 0) {
         if (temp_v0 != 1) {
             if (temp_v0 != 2) {

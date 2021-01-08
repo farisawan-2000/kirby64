@@ -1094,7 +1094,7 @@ void func_8001F81C(void) {
     D_8003F33C = temp_t4;
     sp100 = temp_t4;
     func_8002A178(&D_800963D0, &spE4);
-    if (D_80000300 == 0) {
+    if (osTvType == 0) {
         phi_f2 = 50.0f;
     } else {
         phi_f2 = 60.0f;

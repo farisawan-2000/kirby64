@@ -1,6 +1,6 @@
 glabel func_800A3058
-/* 04B2A8 800A3058 3C028000 */  lui   $v0, %hi(D_80000300) # $v0, 0x8000
-/* 04B2AC 800A305C 8C420300 */  lw    $v0, %lo(D_80000300)($v0)
+/* 04B2A8 800A3058 3C028000 */  lui   $v0, %hi(osTvType) # $v0, 0x8000
+/* 04B2AC 800A305C 8C420300 */  lw    $v0, %lo(osTvType)($v0)
 /* 04B2B0 800A3060 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04B2B4 800A3064 24010001 */  li    $at, 1
 /* 04B2B8 800A3068 10410008 */  beq   $v0, $at, .L800A308C_ovl1
