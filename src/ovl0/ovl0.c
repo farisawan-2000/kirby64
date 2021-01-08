@@ -574,7 +574,7 @@ OSViMode func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg
     }
     gCurrentViMode.comRegs.width = phi_v1 * arg0;
     temp_v1 = osTvType;
-    if (temp_v1 == 1) {
+    if (temp_v1 == OS_TV_TYPE_NTSC) {
         gCurrentViMode.comRegs.burst = 0x3E52239;
         gCurrentViMode.comRegs.vSync = 0x20C;
         gCurrentViMode.comRegs.hSync = 0xC15;
@@ -583,7 +583,7 @@ OSViMode func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg
         gCurrentViMode.fldRegs[0].vStart = 0x2501FF;
         gCurrentViMode.fldRegs[0].vBurst = 0xE0204;
     }
-    if (temp_v1 == 0) {
+    if (temp_v1 == OS_TV_TYPE_PAL) {
         gCurrentViMode.comRegs.burst = 0x404233A;
         gCurrentViMode.comRegs.vSync = 0x270;
         gCurrentViMode.comRegs.hSync = 0x150C69;
@@ -592,7 +592,7 @@ OSViMode func_80000F78(u32 arg0, u32 arg1, s32 arg2, s16 arg3, s16 arg4, s16 arg
         gCurrentViMode.fldRegs[0].vStart = 0x2F0269;
         gCurrentViMode.fldRegs[0].vBurst = 0x9026B;
     }
-    if (temp_v1 == 2) {
+    if (temp_v1 == OS_TV_TYPE_MPAL) {
         gCurrentViMode.comRegs.burst = 0x4651E39;
         gCurrentViMode.comRegs.vSync = 0x20C;
         gCurrentViMode.comRegs.hSync = 0xC10;
