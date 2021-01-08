@@ -523,7 +523,7 @@ extern s32 D_800D5460[];
 extern s32 D_800ED510[];
 
 #ifdef NON_MATCHING
-void draw_lives_digit_(s32 arg0, s32 arg1) {
+void draw_lives_digit(s32 arg0, s32 arg1) {
     s32 *phi_a0;
     s32 *phi_v1;
     s32 i;
