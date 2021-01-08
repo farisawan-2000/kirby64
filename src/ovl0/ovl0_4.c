@@ -4699,7 +4699,7 @@ void *func_8001663C(void *arg0, void *arg1, s32 arg2) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_8001663C.s")
 #endif
 
-#ifdef MIPS_TO_C
+#ifdef WORK_ON_IT
 void func_80016940(Gfx** arg0, Vp *arg1, s32 arg2) {
     void *sp84;
     void *sp3C;

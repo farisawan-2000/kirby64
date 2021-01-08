@@ -148,6 +148,7 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 sp38;
     f32 sp34;
     f32 sp2C;
+    f32 temp_f0;
     f32 temp_f0_2;
     f32 temp_f10;
     f32 temp_f12;
@@ -159,12 +160,15 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 temp_f20;
     f32 temp_f22;
     f32 temp_f22_2;
+    f32 temp_f2;
     f32 temp_f2_2;
     f32 temp_f8;
     f32 phi_f18;
     f32 phi_f20;
 
-    sp3C = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
+    temp_f0 = arg1->y;
+    temp_f2 = arg1->z;
+    sp3C = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2));
     sp2C = sinf(arg2);
     temp_f0_2 = cosf(arg2);
     if (sp3C != 0.0f) {
@@ -218,60 +222,59 @@ Vector *func_80019380(Vector *arg0, s32 flag) {
     return arg0;
 }
 
-// some bc1fl instead of bc1f
-#ifdef NON_MATCHING
+// _super_ granularly negates components of a vector
 Vector *func_800193C8(Vector *arg0, u32 flags) {
-    if (flags & 0x40) {
-        if ((flags & 1) && (arg0->x < 0.0f)) {
-            arg0->x = -arg0->x;
-        } else if ((flags & 8) && (arg0->x > 0.0f)) {
-            arg0->x = -arg0->x;
-        }
-        if ((flags & 2) && (arg0->y < 0.0f)) {
-            arg0->y = -arg0->y;
-        } else if ((flags & 0x10) && (0.0f < arg0->y)) {
-            arg0->y = -arg0->y;
-        }
-        if ((flags & 4) && (arg0->z < 0.0f)) {
-            arg0->z = -arg0->z;
-            return arg0;
-        }
-        if (flags & 0x20) {
-            if (0.0f < arg0->z) {
-                arg0->z = -arg0->z;
-                return arg0;
-            }
-        }
-    } else {
-        if ((flags & 1) && (0.0f < arg0->x)) {
-            arg0->x = -arg0->x;
-        } else if (flags & 8) {
-            if (arg0->x < 0.0f) {
+    do {
+        if (flags & 0x40) {
+            if ((flags & 1) && (arg0->x < 0.0f)) {
+                arg0->x = -arg0->x;
+            } else if ((flags & 8) && (arg0->x > 0.0f)) {
                 arg0->x = -arg0->x;
             }
-        }
-        if ((flags & 2) && (0.0f < arg0->y)) {
-            arg0->y = -arg0->y;
-        } else if (flags & 0x10) {
-            if (arg0->y < 0.0f) {
+            if ((flags & 2) && (arg0->y < 0.0f)) {
+                arg0->y = -arg0->y;
+            } else if ((flags & 0x10) && (0.0f < arg0->y)) {
                 arg0->y = -arg0->y;
             }
-        }
-        if (flags & 4) {
-            if (0.0f < arg0->z) {
+            if ((flags & 4) && (arg0->z < 0.0f)) {
                 arg0->z = -arg0->z;
-                return arg0;
+                break;
+            }
+            if (flags & 0x20) {
+                if (0.0f < arg0->z) {
+                    arg0->z = -arg0->z;
+                    break;
+                }
+            }
+        } else {
+            if ((flags & 1) && (0.0f < arg0->x)) {
+                arg0->x = -arg0->x;
+            } else if (flags & 8) {
+                if (arg0->x < 0.0f) {
+                    arg0->x = -arg0->x;
+                }
+            }
+            if ((flags & 2) && (0.0f < arg0->y)) {
+                arg0->y = -arg0->y;
+            } else if (flags & 0x10) {
+                if (arg0->y < 0.0f) {
+                    arg0->y = -arg0->y;
+                }
+            }
+            if (flags & 4) {
+                if (0.0f < arg0->z) {
+                    arg0->z = -arg0->z;
+                    break;
+                }
+            }
+            if ((flags & 0x20) && (arg0->z < 0.0f)) {
+                arg0->z = -arg0->z;
             }
         }
-        if ((flags & 0x20) && (arg0->z < 0.0f)) {
-            arg0->z = -arg0->z;
-        }
-    }
+    } while (0);
+    
     return arg0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800193C8.s")
-#endif
 
 Vector *func_800195D8(Vector *arg0, Vector *arg1) {
     f32 temp_f0;
@@ -306,8 +309,7 @@ s32 vec3_compare_directions(Vector *arg0, Vector *arg1) {
     if (dot != 0.0f) {
         return (dot < 0.0f ? -1 : 1);
     }
-    else
-    {
+    else {
         return 0;
     }
 }
@@ -327,8 +329,7 @@ s32 vec3_subtract_compare_directions(Vector *arg0, Vector *arg1, Vector *arg2) {
     if (dot != 0.0f) {
         return (dot < 0.0f ? -1 : 1);
     }
-    else
-    {
+    else {
         return 0;
     }
 }

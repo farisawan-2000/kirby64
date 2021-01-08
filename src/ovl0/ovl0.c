@@ -741,6 +741,8 @@ block_12:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80001774.s")
 #endif
 
+
+// extern OSTask *D_80048B8C;
 #ifdef MIPS_TO_C
 void func_8000189C(OSTask *arg0) {
     OSTask *sp1C;
@@ -758,7 +760,7 @@ void func_8000189C(OSTask *arg0) {
         osSpTaskStartGo(temp_a0);
         arg0->t.ucode_boot = 2;
     }
-    *0x80048B8C = arg0;
+    D_80048B8C = arg0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_8000189C.s")
