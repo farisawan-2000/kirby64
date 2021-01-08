@@ -83,9 +83,9 @@ glabel func_800AE138
 /* 0564CC 800AE27C 3C01800E */ lui $at, %hi(D_800DF690)
 /* 0564D0 800AE280 00220821 */  addu  $at, $at, $v0
 /* 0564D4 800AE284 AC25F690 */ sw $a1, %lo(D_800DF690)($at)
-/* 0564D8 800AE288 3C01800E */ lui $at, %hi(D_800DF4D0)
+/* 0564D8 800AE288 3C01800E */ lui $at, %hi(gSegment4StartArray)
 /* 0564DC 800AE28C 00220821 */  addu  $at, $at, $v0
-/* 0564E0 800AE290 AC25F4D0 */ sw $a1, %lo(D_800DF4D0)($at)
+/* 0564E0 800AE290 AC25F4D0 */ sw $a1, %lo(gSegment4StartArray)($at)
 /* 0564E4 800AE294 3C01800E */ lui $at, %hi(D_800E0110)
 /* 0564E8 800AE298 2406FFFF */  li    $a2, -1
 /* 0564EC 800AE29C 00220821 */  addu  $at, $at, $v0

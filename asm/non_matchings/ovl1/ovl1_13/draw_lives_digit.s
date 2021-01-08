@@ -1,6 +1,6 @@
 glabel draw_lives_digit
-/* 065228 800BCFD8 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
-/* 06522C 800BCFDC 8DCE6BB0 */  lw    $t6, %lo(D_800D6BB0)($t6)
+/* 065228 800BCFD8 3C0E800D */  lui   $t6, %hi(gHudDisplayMode) # $t6, 0x800d
+/* 06522C 800BCFDC 8DCE6BB0 */  lw    $t6, %lo(gHudDisplayMode)($t6)
 /* 065230 800BCFE0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 065234 800BCFE4 AFA40018 */  sw    $a0, 0x18($sp)
 /* 065238 800BCFE8 000E7880 */  sll   $t7, $t6, 2
@@ -12,7 +12,7 @@ glabel draw_lives_digit
 /* 065250 800BD000 3C04800D */ lui $a0, %hi(D_800D5460)
 /* 065254 800BD004 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 065258 800BD008 00882021 */  addu  $a0, $a0, $t0
-/* 06525C 800BD00C 0C02A2EB */  jal   func_800A8BAC_ovl1
+/* 06525C 800BD00C 0C02A2EB */  jal   func_800A8BAC
 /* 065260 800BD010 8C845460 */ lw $a0, %lo(D_800D5460)($a0)
 /* 065264 800BD014 8FA90018 */  lw    $t1, 0x18($sp)
 /* 065268 800BD018 3C0C800F */  lui   $t4, %hi(D_800ED510) # $t4, 0x800f

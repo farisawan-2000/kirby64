@@ -108,6 +108,7 @@ u32 *D_800D0184[8] = {
 
 extern char D_800D5E00[];
 struct StageArea D_800D01A4[0xD5] = {
+    /*  geo block A               geo block B           skybox    bg color      music        area setup block    deathcam     level type    dust particle settings        dust texture              ascii name    */
     {   LIST_INDEX(7,   1),       LIST_INDEX(0,   0),        2,       127,         13,       BANK_INDEX(7,  59),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  13),       BANK_INDEX(7, 0xE),       0x800D5E00,   },
     {   LIST_INDEX(7,   2),       LIST_INDEX(0,   0),        3,       127,       0x22,       BANK_INDEX(7,  60),       60,     MINI_BOSS,       BANK_INDEX(7,  31),       BANK_INDEX(7,  32),       0x800D5E0C,   },
     {   LIST_INDEX(7,   3),       LIST_INDEX(0,   0),        4,       127,         13,       BANK_INDEX(7,  61),       60,  NORMAL_LEVEL,       BANK_INDEX(7,  13),       BANK_INDEX(7,  14),       0x800D5E18,   },

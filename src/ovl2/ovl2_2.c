@@ -110,7 +110,7 @@ void func_800F6E30_ovl2(s32 arg0) {
             phi_s3 = 0;
 loop_3:
             temp_s0 = *(phi_v0->unk18 + phi_s4);
-            temp_v0_2 = func_800A94F4_ovl2(temp_s0);
+            temp_v0_2 = func_800A94F4(temp_s0);
             temp_v1_2 = temp_v0_2->unk4;
             if (temp_v1_2 != 0) {
                 if (temp_v1_2 != 1) {

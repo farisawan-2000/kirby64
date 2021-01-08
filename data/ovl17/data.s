@@ -1404,47 +1404,13 @@ glabel D_801E55A8_ovl17
 glabel D_801E55AC_ovl17
 .word 0x00000000
 
+.balign 4
 glabel D_801E55B0_ovl17
-.word 0x416B756D
-
-glabel D_801E55B4_ovl17
-.word 0x61204A6F
-
-glabel D_801E55B8_ovl17
-.word 0x696E7420
-
-glabel D_801E55BC_ovl17
-.word 0x52657175
-
-glabel D_801E55C0_ovl17
-.word 0x65737420
-
-glabel D_801E55C4_ovl17
-.word 0x4572726F
-
-glabel D_801E55C8_ovl17
-.word 0x72210A00
+.asciiz "Akuma Joint Request Error!\n"
 
 glabel D_801E55CC_ovl17
-.word 0x416B756D
+.asciiz "Akuma Joint Track Over!\n"
 
-glabel D_801E55D0_ovl17
-.word 0x61204A6F
-
-glabel D_801E55D4_ovl17
-.word 0x696E7420
-
-glabel D_801E55D8_ovl17
-.word 0x54726163
-
-glabel D_801E55DC_ovl17
-.word 0x6B204F76
-
-glabel D_801E55E0_ovl17
-.word 0x6572210A
-
-glabel D_801E55E4_ovl17
-.word 0x00000000
 
 glabel D_801E55E8_ovl17
 .word 0x3FE66666

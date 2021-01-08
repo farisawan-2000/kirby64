@@ -14,12 +14,12 @@ glabel func_80151E60
 /* 136220 80151E90 AC510000 */  sw    $s1, ($v0)
 /* 136224 80151E94 AC400004 */  sw    $zero, 4($v0)
 /* 136228 80151E98 8E020000 */  lw    $v0, ($s0)
-/* 13622C 80151E9C 3C0E800E */  lui   $t6, %hi(D_800DF4D0) # $t6, 0x800e
+/* 13622C 80151E9C 3C0E800E */  lui   $t6, %hi(gSegment4StartArray) # $t6, 0x800e
 /* 136230 80151EA0 3C18DB06 */  lui   $t8, (0xDB060010 >> 16) # lui $t8, 0xdb06
 /* 136234 80151EA4 244F0008 */  addiu $t7, $v0, 8
 /* 136238 80151EA8 AE0F0000 */  sw    $t7, ($s0)
 /* 13623C 80151EAC 37180010 */  ori   $t8, (0xDB060010 & 0xFFFF) # ori $t8, $t8, 0x10
-/* 136240 80151EB0 25CEF4D0 */  addiu $t6, %lo(D_800DF4D0) # addiu $t6, $t6, -0xb30
+/* 136240 80151EB0 25CEF4D0 */  addiu $t6, %lo(gSegment4StartArray) # addiu $t6, $t6, -0xb30
 /* 136244 80151EB4 000AC880 */  sll   $t9, $t2, 2
 /* 136248 80151EB8 032E5821 */  addu  $t3, $t9, $t6
 /* 13624C 80151EBC AC580000 */  sw    $t8, ($v0)

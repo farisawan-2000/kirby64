@@ -6,10 +6,10 @@ glabel func_800B9FE0
 /* 062240 800B9FF0 AFB00014 */  sw    $s0, 0x14($sp)
 /* 062244 800B9FF4 AFA400A8 */  sw    $a0, 0xa8($sp)
 /* 062248 800B9FF8 3C05800D */  lui   $a1, %hi(D_800D6C10) # $a1, 0x800d
-/* 06224C 800B9FFC 3C02800D */  lui   $v0, %hi(D_800D6B90) # $v0, 0x800d
+/* 06224C 800B9FFC 3C02800D */  lui   $v0, %hi(gCurrentWorld) # $v0, 0x800d
 /* 062250 800BA000 AFB10018 */  sw    $s1, 0x18($sp)
 /* 062254 800BA004 00009025 */  move  $s2, $zero
-/* 062258 800BA008 24426B90 */  addiu $v0, %lo(D_800D6B90) # addiu $v0, $v0, 0x6b90
+/* 062258 800BA008 24426B90 */  addiu $v0, %lo(gCurrentWorld) # addiu $v0, $v0, 0x6b90
 /* 06225C 800BA00C 24A56C10 */  addiu $a1, %lo(D_800D6C10) # addiu $a1, $a1, 0x6c10
 /* 062260 800BA010 240400FF */  li    $a0, 255
 /* 062264 800BA014 00008025 */  move  $s0, $zero

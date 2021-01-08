@@ -353,10 +353,10 @@ glabel D_800D6B88
 glabel D_800D6B8C
 .word 0x00000000
 
-glabel D_800D6B90
+glabel gCurrentWorld
 .word 0x00000000
 
-glabel D_800D6B94
+glabel gCurrentLevel
 .word 0x00000000
 
 glabel D_800D6B98
@@ -377,7 +377,7 @@ glabel D_800D6BA8
 glabel D_800D6BAC
 .word 0x00000000
 
-glabel D_800D6BB0
+glabel gHudDisplayMode
 .word 0x00000000
 
 glabel D_800D6BB4

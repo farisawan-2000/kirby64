@@ -54,8 +54,8 @@ glabel func_8015170C
 /* 135B6C 801517DC 3C038005 */  lui   $v1, %hi(gDisplayListHeads) # $v1, 0x8005
 /* 135B70 801517E0 3C0A8016 */  lui   $t2, %hi(D_8015A670) # $t2, 0x8016
 /* 135B74 801517E4 3C0CDB06 */  lui   $t4, (0xDB060010 >> 16) # lui $t4, 0xdb06
-/* 135B78 801517E8 3C0D800E */  lui   $t5, %hi(D_800DF4D0) # $t5, 0x800e
-/* 135B7C 801517EC 25ADF4D0 */  addiu $t5, %lo(D_800DF4D0) # addiu $t5, $t5, -0xb30
+/* 135B78 801517E8 3C0D800E */  lui   $t5, %hi(gSegment4StartArray) # $t5, 0x800e
+/* 135B7C 801517EC 25ADF4D0 */  addiu $t5, %lo(gSegment4StartArray) # addiu $t5, $t5, -0xb30
 /* 135B80 801517F0 358C0010 */  ori   $t4, (0xDB060010 & 0xFFFF) # ori $t4, $t4, 0x10
 /* 135B84 801517F4 254AA670 */  addiu $t2, %lo(D_8015A670) # addiu $t2, $t2, -0x5990
 /* 135B88 801517F8 2463A3D0 */  addiu $v1, %lo(gDisplayListHeads) # addiu $v1, $v1, -0x5c30

@@ -80,7 +80,7 @@ glabel func_8021ED3C_ovl18
 /* 231810 8021EE70 000F4880 */  sll   $t1, $t7, 2
 /* 231814 8021EE74 00290821 */  addu  $at, $at, $t1
 /* 231818 8021EE78 AC2EEF90 */ sw $t6, %lo(D_800DEF90)($at)
-/* 23181C 8021EE7C 0C02BE6E */  jal   func_800AF9B8_ovl18
+/* 23181C 8021EE7C 0C02BE6E */  jal   func_800AF9B8
 /* 231820 8021EE80 24050010 */   li    $a1, 16
 /* 231824 8021EE84 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 231828 8021EE88 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)

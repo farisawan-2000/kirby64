@@ -1,6 +1,6 @@
 glabel draw_hp_segment
-/* 065338 800BD0E8 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
-/* 06533C 800BD0EC 8DCF6BB0 */  lw    $t7, %lo(D_800D6BB0)($t6)
+/* 065338 800BD0E8 3C0E800D */  lui   $t6, %hi(gHudDisplayMode) # $t6, 0x800d
+/* 06533C 800BD0EC 8DCF6BB0 */  lw    $t7, %lo(gHudDisplayMode)($t6)
 /* 065340 800BD0F0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 065344 800BD0F4 AFA40018 */  sw    $a0, 0x18($sp)
 /* 065348 800BD0F8 0005C880 */  sll   $t9, $a1, 2
@@ -9,7 +9,7 @@ glabel draw_hp_segment
 /* 065354 800BD104 3C04800D */ lui $a0, %hi(D_800D53DC)
 /* 065358 800BD108 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 06535C 800BD10C 00882021 */  addu  $a0, $a0, $t0
-/* 065360 800BD110 0C02A2EB */  jal   func_800A8BAC_ovl1
+/* 065360 800BD110 0C02A2EB */  jal   func_800A8BAC
 /* 065364 800BD114 8C8453DC */ lw $a0, %lo(D_800D53DC)($a0)
 /* 065368 800BD118 8FA90018 */  lw    $t1, 0x18($sp)
 /* 06536C 800BD11C 3C0D800F */  lui   $t5, %hi(D_800ED510) # $t5, 0x800f

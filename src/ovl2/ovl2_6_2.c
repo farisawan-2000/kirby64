@@ -8743,7 +8743,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801105E8_ovl2.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_80110B00_ovl2(void *arg0) {
+? func_80110B00(void *arg0) {
     f32 sp4C;
     s32 temp_s0;
     s32 temp_s0_2;

@@ -1100,7 +1100,7 @@ asm/non_matchings/ovl2_6/func_80110150_ovl2.s
 asm/non_matchings/ovl2_6/func_801103C4.s
 asm/non_matchings/ovl2_6/func_80110438_ovl2.s
 asm/non_matchings/ovl2_6/func_801105E8_ovl2.s
-asm/non_matchings/ovl2_6/func_80110B00_ovl2.s
+asm/non_matchings/ovl2_6/func_80110B00.s
 asm/non_matchings/ovl2_6/func_80110CCC.s
 asm/non_matchings/ovl2_6/func_80110E94_ovl2.s
 asm/non_matchings/ovl2_6/func_80110FD4_ovl2.s

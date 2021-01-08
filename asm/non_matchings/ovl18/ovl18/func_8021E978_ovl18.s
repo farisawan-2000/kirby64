@@ -31,7 +31,7 @@ glabel func_8021E978_ovl18
 /* 23138C 8021E9EC 00095080 */  sll   $t2, $t1, 2
 /* 231390 8021E9F0 002A0821 */  addu  $at, $at, $t2
 /* 231394 8021E9F4 AC39EF90 */ sw $t9, %lo(D_800DEF90)($at)
-/* 231398 8021E9F8 0C02BE6E */  jal   func_800AF9B8_ovl18
+/* 231398 8021E9F8 0C02BE6E */  jal   func_800AF9B8
 /* 23139C 8021E9FC 24050010 */   li    $a1, 16
 /* 2313A0 8021EA00 8E820000 */  lw    $v0, ($s4)
 /* 2313A4 8021EA04 3C0D800E */  lui   $t5, %hi(D_800DD8D0) # $t5, 0x800e

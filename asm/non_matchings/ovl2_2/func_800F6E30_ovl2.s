@@ -81,7 +81,7 @@ glabel func_800F6E30_ovl2
 .L800F6F6C_ovl2:
 /* 07F9DC 800F6F6C 03345021 */  addu  $t2, $t9, $s4
 /* 07F9E0 800F6F70 8D500000 */  lw    $s0, ($t2)
-/* 07F9E4 800F6F74 0C02A53D */  jal   func_800A94F4_ovl2
+/* 07F9E4 800F6F74 0C02A53D */  jal   func_800A94F4
 /* 07F9E8 800F6F78 02002025 */   move  $a0, $s0
 /* 07F9EC 800F6F7C 8C430004 */  lw    $v1, 4($v0)
 /* 07F9F0 800F6F80 00403025 */  move  $a2, $v0

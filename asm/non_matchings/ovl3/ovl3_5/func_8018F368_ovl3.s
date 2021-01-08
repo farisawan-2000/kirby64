@@ -814,7 +814,7 @@ glabel func_8018F368_ovl3
 /* 0F0974 8018FF34 000BC880 */  sll   $t9, $t3, 2
 /* 0F0978 8018FF38 01996021 */  addu  $t4, $t4, $t9
 /* 0F097C 8018FF3C 8D8CFBD0 */  lw    $t4, -0x430($t4)
-/* 0F0980 8018FF40 0C02C8D0 */  jal   func_800B2340_ovl3
+/* 0F0980 8018FF40 0C02C8D0 */  jal   func_800B2340
 /* 0F0984 8018FF44 8D850038 */   lw    $a1, 0x38($t4)
 /* 0F0988 8018FF48 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 0F098C 8018FF4C 8CC6A7C4 */  lw    $a2, %lo(D_8004A7C4)($a2)

@@ -9169,7 +9169,7 @@
 /* 1FBB78 801E3BF8 A12E0043 */   sb    $t6, 0x43($t1)
 .L801E3BFC_ovl13:
 /* 1FBB7C 801E3BFC 27A40038 */  addiu $a0, $sp, 0x38
-/* 1FBB80 801E3C00 0C0442C0 */  jal   func_80110B00_ovl13
+/* 1FBB80 801E3C00 0C0442C0 */  jal   func_80110B00
 /* 1FBB84 801E3C04 AFA90030 */   sw    $t1, 0x30($sp)
 /* 1FBB88 801E3C08 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 1FBB8C 801E3C0C 24C6A7C4 */  addiu $a2, %lo(D_8004A7C4) # addiu $a2, $a2, -0x583c

@@ -115,10 +115,10 @@ glabel func_800BB6B0
 /* 063950 800BB700 AC580000 */  sw    $t8, ($v0)
 /* 063954 800BB704 8E020000 */  lw    $v0, ($s0)
 /* 063958 800BB708 3C0BDB06 */  lui   $t3, (0xDB060010 >> 16) # lui $t3, 0xdb06
-/* 06395C 800BB70C 3C0D800E */  lui   $t5, %hi(D_800DF4D0) # $t5, 0x800e
+/* 06395C 800BB70C 3C0D800E */  lui   $t5, %hi(gSegment4StartArray) # $t5, 0x800e
 /* 063960 800BB710 24590008 */  addiu $t9, $v0, 8
 /* 063964 800BB714 AE190000 */  sw    $t9, ($s0)
-/* 063968 800BB718 25ADF4D0 */  addiu $t5, %lo(D_800DF4D0) # addiu $t5, $t5, -0xb30
+/* 063968 800BB718 25ADF4D0 */  addiu $t5, %lo(gSegment4StartArray) # addiu $t5, $t5, -0xb30
 /* 06396C 800BB71C 356B0010 */  ori   $t3, (0xDB060010 & 0xFFFF) # ori $t3, $t3, 0x10
 /* 063970 800BB720 00086080 */  sll   $t4, $t0, 2
 /* 063974 800BB724 018D4821 */  addu  $t1, $t4, $t5

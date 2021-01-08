@@ -1,7 +1,7 @@
 glabel func_800A9B48
 /* 051D98 800A9B48 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 051D9C 800A9B4C AFBF0014 */  sw    $ra, 0x14($sp)
-/* 051DA0 800A9B50 0C02A53D */  jal   func_800A94F4_ovl1
+/* 051DA0 800A9B50 0C02A53D */  jal   func_800A94F4
 /* 051DA4 800A9B54 AFA40028 */   sw    $a0, 0x28($sp)
 /* 051DA8 800A9B58 8C460004 */  lw    $a2, 4($v0)
 /* 051DAC 800A9B5C 00402825 */  move  $a1, $v0

@@ -12,7 +12,7 @@ glabel func_800BDE0C
 /* 066084 800BDE34 3C0F800F */  lui   $t7, %hi(D_800F6198) # $t7, 0x800f
 /* 066088 800BDE38 8DEF6198 */  lw    $t7, %lo(D_800F6198)($t7)
 /* 06608C 800BDE3C 3C01800D */  lui   $at, %hi(D_800D6F50) # $at, 0x800d
-/* 066090 800BDE40 3C18800D */  lui   $t8, %hi(D_800D6BB0) # $t8, 0x800d
+/* 066090 800BDE40 3C18800D */  lui   $t8, %hi(gHudDisplayMode) # $t8, 0x800d
 /* 066094 800BDE44 11E0001F */  beqz  $t7, .L800BDEC4_ovl1
 /* 066098 800BDE48 3C04800D */ lui $a0, %hi(D_800D52FC)
 /* 06609C 800BDE4C 3C040005 */  lui   $a0, (0x00050002 >> 16) # lui $a0, 5
@@ -48,7 +48,7 @@ glabel func_800BDE0C
 /* 06610C 800BDEBC 1000000B */  b     .L800BDEEC_ovl1
 /* 066110 800BDEC0 00000000 */   nop   
 .L800BDEC4_ovl1:
-/* 066114 800BDEC4 8F186BB0 */  lw    $t8, %lo(D_800D6BB0)($t8)
+/* 066114 800BDEC4 8F186BB0 */  lw    $t8, %lo(gHudDisplayMode)($t8)
 /* 066118 800BDEC8 AC206F50 */  sw    $zero, %lo(D_800D6F50)($at)
 /* 06611C 800BDECC 24050010 */  li    $a1, 16
 /* 066120 800BDED0 0018C880 */  sll   $t9, $t8, 2

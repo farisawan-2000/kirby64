@@ -1503,7 +1503,7 @@ loop_40:
     D_800E5F90[temp_v0_8] = D_800E5F90[*(D_800E0D50 + (temp_v0_8 * 4))];
     temp_v0_9 = phi_v1_3->objId;
     D_800E6BD0[temp_v0_9] = D_800E6BD0[*(D_800E0D50 + (temp_v0_9 * 4))];
-    func_800B2340_ovl3(&sp24, ((*(D_800E0D50 + (phi_v1_3->objId * 4)) * 4) + 0x800E0000)->unk-430->unkC, 0xFFFF, D_800E0D50);
+    func_800B2340(&sp24, ((*(D_800E0D50 + (phi_v1_3->objId * 4)) * 4) + 0x800E0000)->unk-430->unkC, 0xFFFF, D_800E0D50);
     temp_v1_5 = D_8004A7C4;
     ((temp_v1_5->objId * 4) + 0x800E0000)->unk2790 = sp28;
     ((temp_v1_5->objId * 4) + 0x800E0000)->unk-1070 = &D_800B4954;
@@ -1691,7 +1691,7 @@ void *func_80159EF0_ovl3(s32 arg0) {
         *temp_a0 = *temp_a0 - D_80196FAC;
         phi_v0 = temp_v0;
     }
-    func_800B2340_ovl3(&sp24, ((phi_v0->objId * 4) + 0x800E0000)->unk-430->unk4, 0xFFFF);
+    func_800B2340(&sp24, ((phi_v0->objId * 4) + 0x800E0000)->unk-430->unk4, 0xFFFF);
     D_8012E944->unk4 = sp24;
     D_8012E944->unk8 = ((D_8004A7C4->objId * 4) + 0x800E0000)->unk2790 + D_80196FB0;
     D_8012E944->unkC = sp2C;

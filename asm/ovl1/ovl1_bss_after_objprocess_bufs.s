@@ -13,7 +13,7 @@ glabel D_800DF150
 glabel D_800DF310
 .skip 0x70 * 4
 
-glabel D_800DF4D0
+glabel gSegment4StartArray
 .skip 0x70 * 4
 
 glabel D_800DF690

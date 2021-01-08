@@ -99,7 +99,7 @@ glabel func_8021FA2C_ovl19
 /* 2402A8 8021FB98 8D08FBD0 */ lw $t0, %lo(D_800DFBD0)($t0)
 /* 2402AC 8021FB9C 8D050008 */  lw    $a1, 8($t0)
 /* 2402B0 8021FBA0 AFA70030 */  sw    $a3, 0x30($sp)
-/* 2402B4 8021FBA4 0C02C8D0 */  jal   func_800B2340_ovl19
+/* 2402B4 8021FBA4 0C02C8D0 */  jal   func_800B2340
 /* 2402B8 8021FBA8 AFA2001C */   sw    $v0, 0x1c($sp)
 /* 2402BC 8021FBAC 8FA2001C */  lw    $v0, 0x1c($sp)
 /* 2402C0 8021FBB0 C7A80034 */  lwc1  $f8, 0x34($sp)

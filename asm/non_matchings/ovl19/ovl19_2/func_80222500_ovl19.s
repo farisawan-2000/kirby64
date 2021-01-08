@@ -17,7 +17,7 @@ glabel func_80222500_ovl19
 /* 242C4C 8022253C E7A40040 */  swc1  $f4, 0x40($sp)
 /* 242C50 80222540 8C460000 */  lw    $a2, ($v0)
 /* 242C54 80222544 27A40020 */  addiu $a0, $sp, 0x20
-/* 242C58 80222548 0C02C8D0 */  jal   func_800B2340_ovl19
+/* 242C58 80222548 0C02C8D0 */  jal   func_800B2340
 /* 242C5C 8022254C AFA50044 */   sw    $a1, 0x44($sp)
 /* 242C60 80222550 3C01800E */  lui   $at, %hi(gEntitiesPosXArray) # $at, 0x800e
 /* 242C64 80222554 C42625D0 */  lwc1  $f6, %lo(gEntitiesPosXArray)($at)

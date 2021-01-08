@@ -126,7 +126,7 @@ glabel func_80159EF0_ovl3
 /* 0BAB10 8015A0D0 01194021 */  addu  $t0, $t0, $t9
 /* 0BAB14 8015A0D4 8D08FBD0 */  lw    $t0, -0x430($t0)
 /* 0BAB18 8015A0D8 3406FFFF */  li    $a2, 65535
-/* 0BAB1C 8015A0DC 0C02C8D0 */  jal   func_800B2340_ovl3
+/* 0BAB1C 8015A0DC 0C02C8D0 */  jal   func_800B2340
 /* 0BAB20 8015A0E0 8D050004 */   lw    $a1, 4($t0)
 /* 0BAB24 8015A0E4 3C028013 */  lui   $v0, %hi(D_8012E944) # $v0, 0x8013
 /* 0BAB28 8015A0E8 2442E944 */  addiu $v0, %lo(D_8012E944) # addiu $v0, $v0, -0x16bc

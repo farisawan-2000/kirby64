@@ -526,11 +526,21 @@ SECTIONS
 
    /* 0x801DB1E0 2263D0-230050 [9C80] */
    BEGIN_SEG(ovl17, 0x801DB1E0) {
+      BUILD_DIR/asm/ovl17/ovl17_0.o(.text);
       BUILD_DIR/asm/ovl17/ovl17.o(.text);
+      BUILD_DIR/asm/ovl17/ovl17_2.o(.text);
+      BUILD_DIR/asm/ovl17/ovl17_3.o(.text);
       BUILD_DIR/src/ovl17/ovl17_last-0.o(.text);
-      BUILD_DIR/data/ovl17/data.o(.data);
    }
    END_SEG(ovl17)
+   BEGIN_SEG(ovl17Data, _ovl17SegmentEnd) {
+      BUILD_DIR/data/ovl17/data.o(.data);
+   }
+   END_SEG(ovl17Data)
+   BEGIN_NOLOAD(ovl17) {
+      BUILD_DIR/data/ovl17/ovl17_bss.o(.bss);
+   }
+   END_NOLOAD(ovl17)
 
    /* 0x8021DF20 2308C0-239D80 [94C0] */
    BEGIN_SEG(ovl18, 0x8021DF20) {

@@ -80,7 +80,7 @@ extern s32 D_8022A4E4;
 void func_80111550_ovl18(s32);
 s32 func_80110FD4_ovl18(s32 *);
 s32 func_80111C88(s32 *, u32);
-s32 func_80110B00_ovl18(s32 *);
+s32 func_80110B00(s32 *);
 
 void func_802249D8_ovl18(UNUSED s32 arg0) {
     s32 sp28[8];
@@ -88,7 +88,7 @@ void func_802249D8_ovl18(UNUSED s32 arg0) {
     if (D_800E9C60[D_8004A7C4->objId] == 1) {
         func_80111550_ovl18(D_8004A7C4->objId);
         func_80111ECC_ovl18(func_80111C88(&D_8022A4E4, D_8004A7C4->objId));
-        if ((func_80110B00_ovl18(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
+        if ((func_80110B00(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
             func_80110150_ovl18(&sp28);
         }
     }
@@ -191,7 +191,7 @@ void func_80224FCC_ovl18(UNUSED s32 arg0) {
         } else {
             func_80111ECC_ovl18(func_80111C88(&D_8022A5BC, D_8004A7C4->objId));
         }
-        if ((func_80110B00_ovl18(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
+        if ((func_80110B00(&sp28) == 0) && (func_80110FD4_ovl18(&sp28) == 0)) {
             func_80110150_ovl18(&sp28);
         }
     }

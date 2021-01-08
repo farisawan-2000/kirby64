@@ -905,7 +905,7 @@ void *func_800FF2C8_ovl2(void) {
     s32 phi_t3;
 
     sp5C = D_8004A7C4;
-    D_8012B998.unk4 = func_800A8BAC_ovl2(0x20004);
+    D_8012B998.unk4 = func_800A8BAC(0x20004);
     temp_v0_2 = func_800AEC08(0x23, 0x3C, 0x50);
     temp_v1 = temp_v0_2 * 4;
     temp_a0 = temp_v1 + 0x800E0000;
@@ -917,7 +917,7 @@ void *func_800FF2C8_ovl2(void) {
     func_80008DA8((temp_v0_3 + 0x800E0000)->unk-1AF0);
     func_80008DA8((temp_v0_3 + 0x800E0000)->unk-13F0);
     D_8004A7C4 = D_8012B998.unk0;
-    func_800AF9B8_ovl2(0x29, 0x10);
+    func_800AF9B8(0x29, 0x10);
     D_8004A7C4 = sp5C;
     D_8012B998.unk8 = 0.0f;
     D_8012B998.unk10 = 0.0f;

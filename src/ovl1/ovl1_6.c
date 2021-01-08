@@ -56,7 +56,7 @@ void func_800AE138(s32 arg0) {
 
     D_800DF850[arg0] = -1;
     D_800DF690[arg0] = -1;
-    D_800DF4D0[arg0] = -1;
+    gSegment4StartArray[arg0] = -1;
 
     D_800E0110[arg0] = 0xFFFFFFFF;
     D_800DFF50[arg0] = 0xFFFFFFFF;

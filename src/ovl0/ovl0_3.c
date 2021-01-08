@@ -5,7 +5,7 @@
 
 #ifdef MIPS_TO_C
 // Almost matched (need to load arg0 into v0)
-u32 func_8000BE90(struct unk8000BE90Func *arg0) {
+struct unk8000BE90Func *func_8000BE90(struct unk8000BE90Func *arg0) {
     if (arg0->unk10) {
         return arg0->unk10;
     }

@@ -21,7 +21,7 @@ glabel func_800AAF34
 .L800AAF80_ovl1:
 /* 0531D0 800AAF80 8FA4002C */  lw    $a0, 0x2c($sp)
 /* 0531D4 800AAF84 AFA3001C */  sw    $v1, 0x1c($sp)
-/* 0531D8 800AAF88 0C02A53D */  jal   func_800A94F4_ovl1
+/* 0531D8 800AAF88 0C02A53D */  jal   func_800A94F4
 /* 0531DC 800AAF8C AFA70020 */   sw    $a3, 0x20($sp)
 /* 0531E0 800AAF90 8FA3001C */  lw    $v1, 0x1c($sp)
 /* 0531E4 800AAF94 8FA70020 */  lw    $a3, 0x20($sp)

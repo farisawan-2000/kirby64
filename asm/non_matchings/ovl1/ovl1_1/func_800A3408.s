@@ -1,6 +1,6 @@
 glabel func_800A3408
-/* 04B658 800A3408 3C0E800D */  lui   $t6, %hi(D_800D6B90) # $t6, 0x800d
-/* 04B65C 800A340C 8DCE6B90 */  lw    $t6, %lo(D_800D6B90)($t6)
+/* 04B658 800A3408 3C0E800D */  lui   $t6, %hi(gCurrentWorld) # $t6, 0x800d
+/* 04B65C 800A340C 8DCE6B90 */  lw    $t6, %lo(gCurrentWorld)($t6)
 /* 04B660 800A3410 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 04B664 800A3414 AFB20020 */  sw    $s2, 0x20($sp)
 /* 04B668 800A3418 24120001 */  li    $s2, 1
@@ -8,8 +8,8 @@ glabel func_800A3408
 /* 04B670 800A3420 AFB1001C */  sw    $s1, 0x1c($sp)
 /* 04B674 800A3424 164E0022 */  bne   $s2, $t6, .L800A34B0_ovl1
 /* 04B678 800A3428 AFB00018 */   sw    $s0, 0x18($sp)
-/* 04B67C 800A342C 3C0F800D */  lui   $t7, %hi(D_800D6B94) # $t7, 0x800d
-/* 04B680 800A3430 8DEF6B94 */  lw    $t7, %lo(D_800D6B94)($t7)
+/* 04B67C 800A342C 3C0F800D */  lui   $t7, %hi(gCurrentLevel) # $t7, 0x800d
+/* 04B680 800A3430 8DEF6B94 */  lw    $t7, %lo(gCurrentLevel)($t7)
 /* 04B684 800A3434 564F001F */  bnel  $s2, $t7, .L800A34B4_ovl1
 /* 04B688 800A3438 8FBF0024 */   lw    $ra, 0x24($sp)
 /* 04B68C 800A343C 0C029AC8 */  jal   load_overlay

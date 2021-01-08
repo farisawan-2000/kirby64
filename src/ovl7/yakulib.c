@@ -231,7 +231,7 @@ s32 func_801BC794_ovl7(s32 arg0) {
     return idx;
 }
 
-extern u32 D_800DF4D0[];
+extern u32 gSegment4StartArray[];
 
 extern Gfx* gDisplayListHeads[4];
 
@@ -263,7 +263,7 @@ void func_801BC978_ovl7(s32 *arg0) {
         temp_a2 = D_800E0650[temp_v0];
         switch (func_800AB0F4(arg0)) {
             case 13:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
@@ -271,7 +271,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 15:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
@@ -279,7 +279,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             default:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
@@ -288,7 +288,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                 break;
             case 21:
             case 23:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
@@ -296,8 +296,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 14:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
+                gSPSegment(gDisplayListHeads[1]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
@@ -307,8 +307,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
             case 16:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
+                gSPSegment(gDisplayListHeads[1]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
@@ -318,8 +318,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 break;
             case 18:
             case 20:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
+                gSPSegment(gDisplayListHeads[1]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != 0) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
@@ -330,8 +330,8 @@ void func_801BC978_ovl7(s32 *arg0) {
                 break;
             case 22:
             case 24:
-                gSPSegment(gDisplayListHeads[0]++, 4, D_800DF4D0[temp_v0]);
-                gSPSegment(gDisplayListHeads[1]++, 4, D_800DF4D0[temp_v0]);
+                gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
+                gSPSegment(gDisplayListHeads[1]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != 0) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));

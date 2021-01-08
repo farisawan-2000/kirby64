@@ -27,7 +27,7 @@ extern void (*D_800DF150[])(s32);
 extern void (*D_800DF310[])(s32, s32, f32);
 extern u32 D_800DF850[];
 extern u32 D_800DF690[];
-extern u32 D_800DF4D0[];
+extern u32 gSegment4StartArray[];
 
 // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
 extern struct LayoutNode **D_800DFBD0[];

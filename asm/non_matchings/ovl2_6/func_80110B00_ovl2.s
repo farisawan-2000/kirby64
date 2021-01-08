@@ -1,4 +1,4 @@
-glabel func_80110B00_ovl2
+glabel func_80110B00
 /* 099570 80110B00 27BDFF80 */  addiu $sp, $sp, -0x80
 /* 099574 80110B04 AFBF0034 */  sw    $ra, 0x34($sp)
 /* 099578 80110B08 AFB70030 */  sw    $s7, 0x30($sp)

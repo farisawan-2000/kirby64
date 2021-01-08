@@ -3242,7 +3242,7 @@ s32 func_801E28C8_ovl10(s32 arg0) {
         temp_a2_3->unk43 = sp3B;
     } else {
         sp30 = temp_a2_3;
-        if (func_80110B00_ovl10(&sp38, temp_a2_3) != 0) {
+        if (func_80110B00(&sp38, temp_a2_3) != 0) {
             *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = sp3A;
             temp_a2_3->unk43 = sp3B;
         } else {

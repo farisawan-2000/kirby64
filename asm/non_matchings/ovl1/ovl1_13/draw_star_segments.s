@@ -1,6 +1,6 @@
 glabel draw_star_segments
-/* 0655C4 800BD374 3C0E800D */  lui   $t6, %hi(D_800D6BB0) # $t6, 0x800d
-/* 0655C8 800BD378 8DCF6BB0 */  lw    $t7, %lo(D_800D6BB0)($t6)
+/* 0655C4 800BD374 3C0E800D */  lui   $t6, %hi(gHudDisplayMode) # $t6, 0x800d
+/* 0655C8 800BD378 8DCF6BB0 */  lw    $t7, %lo(gHudDisplayMode)($t6)
 /* 0655CC 800BD37C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0655D0 800BD380 AFA40018 */  sw    $a0, 0x18($sp)
 /* 0655D4 800BD384 0005C880 */  sll   $t9, $a1, 2
@@ -9,7 +9,7 @@ glabel draw_star_segments
 /* 0655E0 800BD390 3C04800D */ lui $a0, %hi(D_800D5434)
 /* 0655E4 800BD394 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0655E8 800BD398 00882021 */  addu  $a0, $a0, $t0
-/* 0655EC 800BD39C 0C02A2EB */  jal   func_800A8BAC_ovl1
+/* 0655EC 800BD39C 0C02A2EB */  jal   func_800A8BAC
 /* 0655F0 800BD3A0 8C845434 */ lw $a0, %lo(D_800D5434)($a0)
 /* 0655F4 800BD3A4 8FAA0018 */  lw    $t2, 0x18($sp)
 /* 0655F8 800BD3A8 00401825 */  move  $v1, $v0

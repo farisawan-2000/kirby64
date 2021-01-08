@@ -418,7 +418,7 @@ loop_1:
     temp_t4->unk4 = temp_t8_3->unk4;
     func_800B1F68_ovl18(D_800DEC10[temp_s1->unk0], &D_800B1434);
     D_800DEF90[D_8004A7C4->objId] = &D_800B491C;
-    func_800AF9B8_ovl18(0x24, 0x10);
+    func_800AF9B8(0x24, 0x10);
     temp_a1 = &D_800DD8D0[D_8004A7C4->objId];
     *temp_a1 = *temp_a1 | 0x40;
 
@@ -721,7 +721,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18/func_8021F658_ovl18.s")
     temp_v1 = &D_800E1B50[D_8004A7C4->objId];
     temp_v1_2 = *temp_v1;
     sp48 = temp_v1_2;
-    if (func_80110B00_ovl18(&sp2C) != 0) {
+    if (func_80110B00(&sp2C) != 0) {
         *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = sp2E;
         temp_v1_2->unk43 = sp2F;
         temp_v1_2->unk3E = sp2C;

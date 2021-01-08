@@ -797,7 +797,7 @@ void *func_800A8100(s32 arg0, s32 arg1, ? arg2, void *arg3) {
             }
             if (arg3 != 0) {
                 sp30 = temp_v0;
-                func_800B2340_ovl1(&sp24, arg3, phi_a2, arg3);
+                func_800B2340(&sp24, arg3, phi_a2, arg3);
                 temp_v0->unk4C->unk4 = sp24;
                 temp_v0->unk4C->unk8 = sp28;
                 temp_v0->unk4C->unkC = sp2C;

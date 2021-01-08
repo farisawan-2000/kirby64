@@ -449,7 +449,7 @@ glabel func_80169A98_ovl3
 /* 0CA520 80169AE0 14A00034 */  bnez  $a1, .L80169BB4_ovl3
 /* 0CA524 80169AE4 8F07003C */   lw    $a3, 0x3c($t8)
 /* 0CA528 80169AE8 00E02825 */  move  $a1, $a3
-/* 0CA52C 80169AEC 0C02C8D0 */  jal   func_800B2340_ovl3
+/* 0CA52C 80169AEC 0C02C8D0 */  jal   func_800B2340
 /* 0CA530 80169AF0 AFA7003C */   sw    $a3, 0x3c($sp)
 /* 0CA534 80169AF4 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 0CA538 80169AF8 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

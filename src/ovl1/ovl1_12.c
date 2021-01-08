@@ -56,7 +56,7 @@ extern u32 D_800D6F38;
 
 extern u32 D_800D6E54;
 extern u32 D_800D6E64;
-extern u32 D_800D6BB0;
+extern u32 gHudDisplayMode;
 
 void func_800BBC6C(void) {
     u32 i;
@@ -75,7 +75,7 @@ void func_800BBC6C(void) {
     D_800D6E54 = D_800ED4E0->unk28;
     gKirbyStars = D_800ED4E0->unk2C;
     D_800D6E64 = D_800ED4E0->unk30;
-    D_800D6BB0 = D_800ED4E0->unk34;
+    gHudDisplayMode = D_800ED4E0->unk34;
     set_soft_rng_seed(D_800ED4E0->unk38);
 
     for (i = 0; i < 16; i++) {

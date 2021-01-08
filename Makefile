@@ -175,6 +175,7 @@ softclean:
 	rm -rf build/us/asm/
 
 # $(BUILD_DIR)/src/ovl0/ovl0_8.o: OPT_FLAGS += -framepointer
+# $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 
 
 $(BUILD_DIR):

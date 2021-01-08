@@ -302,11 +302,11 @@ glabel func_80123354_ovl2
 /* 0AC274 80123804 2631A3D0 */  addiu $s1, %lo(gDisplayListHeads) # addiu $s1, $s1, -0x5c30
 /* 0AC278 80123808 8E300000 */  lw    $s0, ($s1)
 /* 0AC27C 8012380C 3C07DB06 */  lui   $a3, (0xDB060010 >> 16) # lui $a3, 0xdb06
-/* 0AC280 80123810 3C0E800E */  lui   $t6, %hi(D_800DF4D0) # $t6, 0x800e
+/* 0AC280 80123810 3C0E800E */  lui   $t6, %hi(gSegment4StartArray) # $t6, 0x800e
 /* 0AC284 80123814 260D0008 */  addiu $t5, $s0, 8
 /* 0AC288 80123818 34E70010 */  ori   $a3, (0xDB060010 & 0xFFFF) # ori $a3, $a3, 0x10
 /* 0AC28C 8012381C AE2D0000 */  sw    $t5, ($s1)
-/* 0AC290 80123820 25CEF4D0 */  addiu $t6, %lo(D_800DF4D0) # addiu $t6, $t6, -0xb30
+/* 0AC290 80123820 25CEF4D0 */  addiu $t6, %lo(gSegment4StartArray) # addiu $t6, $t6, -0xb30
 /* 0AC294 80123824 028E1021 */  addu  $v0, $s4, $t6
 /* 0AC298 80123828 AE070000 */  sw    $a3, ($s0)
 /* 0AC29C 8012382C 8C4F0000 */  lw    $t7, ($v0)
@@ -404,11 +404,11 @@ glabel func_80123354_ovl2
 /* 0AC40C 8012399C 2631A3D0 */  addiu $s1, %lo(gDisplayListHeads) # addiu $s1, $s1, -0x5c30
 /* 0AC410 801239A0 8E300000 */  lw    $s0, ($s1)
 /* 0AC414 801239A4 3C07DB06 */  lui   $a3, (0xDB060010 >> 16) # lui $a3, 0xdb06
-/* 0AC418 801239A8 3C0E800E */  lui   $t6, %hi(D_800DF4D0) # $t6, 0x800e
+/* 0AC418 801239A8 3C0E800E */  lui   $t6, %hi(gSegment4StartArray) # $t6, 0x800e
 /* 0AC41C 801239AC 260D0008 */  addiu $t5, $s0, 8
 /* 0AC420 801239B0 34E70010 */  ori   $a3, (0xDB060010 & 0xFFFF) # ori $a3, $a3, 0x10
 /* 0AC424 801239B4 AE2D0000 */  sw    $t5, ($s1)
-/* 0AC428 801239B8 25CEF4D0 */  addiu $t6, %lo(D_800DF4D0) # addiu $t6, $t6, -0xb30
+/* 0AC428 801239B8 25CEF4D0 */  addiu $t6, %lo(gSegment4StartArray) # addiu $t6, $t6, -0xb30
 /* 0AC42C 801239BC 028E1021 */  addu  $v0, $s4, $t6
 /* 0AC430 801239C0 AE070000 */  sw    $a3, ($s0)
 /* 0AC434 801239C4 8C4F0000 */  lw    $t7, ($v0)
@@ -506,11 +506,11 @@ glabel func_80123354_ovl2
 /* 0AC5A4 80123B34 2631A3D0 */  addiu $s1, %lo(gDisplayListHeads) # addiu $s1, $s1, -0x5c30
 /* 0AC5A8 80123B38 8E300000 */  lw    $s0, ($s1)
 /* 0AC5AC 80123B3C 3C07DB06 */  lui   $a3, (0xDB060010 >> 16) # lui $a3, 0xdb06
-/* 0AC5B0 80123B40 3C0E800E */  lui   $t6, %hi(D_800DF4D0) # $t6, 0x800e
+/* 0AC5B0 80123B40 3C0E800E */  lui   $t6, %hi(gSegment4StartArray) # $t6, 0x800e
 /* 0AC5B4 80123B44 260D0008 */  addiu $t5, $s0, 8
 /* 0AC5B8 80123B48 34E70010 */  ori   $a3, (0xDB060010 & 0xFFFF) # ori $a3, $a3, 0x10
 /* 0AC5BC 80123B4C AE2D0000 */  sw    $t5, ($s1)
-/* 0AC5C0 80123B50 25CEF4D0 */  addiu $t6, %lo(D_800DF4D0) # addiu $t6, $t6, -0xb30
+/* 0AC5C0 80123B50 25CEF4D0 */  addiu $t6, %lo(gSegment4StartArray) # addiu $t6, $t6, -0xb30
 /* 0AC5C4 80123B54 028E1021 */  addu  $v0, $s4, $t6
 /* 0AC5C8 80123B58 AE070000 */  sw    $a3, ($s0)
 /* 0AC5CC 80123B5C 8C4F0000 */  lw    $t7, ($v0)
@@ -608,11 +608,11 @@ glabel func_80123354_ovl2
 /* 0AC73C 80123CCC 2631A3D0 */  addiu $s1, %lo(gDisplayListHeads) # addiu $s1, $s1, -0x5c30
 /* 0AC740 80123CD0 8E300000 */  lw    $s0, ($s1)
 /* 0AC744 80123CD4 3C07DB06 */  lui   $a3, (0xDB060010 >> 16) # lui $a3, 0xdb06
-/* 0AC748 80123CD8 3C0E800E */  lui   $t6, %hi(D_800DF4D0) # $t6, 0x800e
+/* 0AC748 80123CD8 3C0E800E */  lui   $t6, %hi(gSegment4StartArray) # $t6, 0x800e
 /* 0AC74C 80123CDC 260D0008 */  addiu $t5, $s0, 8
 /* 0AC750 80123CE0 34E70010 */  ori   $a3, (0xDB060010 & 0xFFFF) # ori $a3, $a3, 0x10
 /* 0AC754 80123CE4 AE2D0000 */  sw    $t5, ($s1)
-/* 0AC758 80123CE8 25CEF4D0 */  addiu $t6, %lo(D_800DF4D0) # addiu $t6, $t6, -0xb30
+/* 0AC758 80123CE8 25CEF4D0 */  addiu $t6, %lo(gSegment4StartArray) # addiu $t6, $t6, -0xb30
 /* 0AC75C 80123CEC 028E1021 */  addu  $v0, $s4, $t6
 /* 0AC760 80123CF0 AE070000 */  sw    $a3, ($s0)
 /* 0AC764 80123CF4 8C4F0000 */  lw    $t7, ($v0)

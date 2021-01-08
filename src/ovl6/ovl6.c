@@ -124,7 +124,7 @@ void func_801513F8(s32 arg0, s32 arg1, s32 arg2) {
                     return;
                 }
                 sp2C = temp_v0;
-                func_800B2340_ovl6(&sp20, arg0, 0xFFFF, arg0);
+                func_800B2340(&sp20, arg0, 0xFFFF, arg0);
                 temp_v0->unk4C->unk4 = sp20;
                 temp_v0->unk4C->unk8 = sp24;
                 temp_v0->unk4C->unkC = sp28;
