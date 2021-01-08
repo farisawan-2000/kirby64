@@ -1,3 +1,6 @@
+#ifndef _OVL1_12_H_
+#define _OVL1_12_H_
+
 struct UnkStruct800ED4E0 {
     u32 unk0;
     u32 unk4;
@@ -62,4 +65,6 @@ struct UnkStruct800ED4E0 {
     u16 unk106;
 };
 
-extern struct UnkStruct800ED4E0 *D_800ED4E0;
+extern struct UnkStruct800ED4E0 *D_800ED4E0[];
+
+#endif

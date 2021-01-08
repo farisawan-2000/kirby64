@@ -17,17 +17,17 @@ void func_800BBBA0(void) {
             break;
         case 3:
         case 4:
-            D_800ED4E0 = &D_8022B7C0;
+            D_800ED4E0[0] = &D_8022B7C0;
             func_800BBC6C();
             func_800BB440();
             break;
         case 5:
-            D_800ED4E0 = &D_8022AED8;
+            D_800ED4E0[0] = &D_8022AED8;
             func_800BBC6C();
             func_800BB440();
             break;
         case 6:
-            D_800ED4E0 = &D_8022B428;
+            D_800ED4E0[0] = &D_8022B428;
             func_800BBC6C();
             func_800BB440();
         default:
@@ -64,35 +64,39 @@ void func_800BBC6C(void) {
 
     D_800ED4EC = 0;
     D_800ED4F4 = 0;
-    set_hard_rng_seed(D_800ED4E0->unk0);
-    D_800BE4EC = D_800ED4E0->unk4;
-    D_800BE500 = D_800BE52C = D_800ED4E0->unk8;
-    D_800BE504 = D_800BE530 = D_800ED4E0->unkC;
-    D_800BE508 = D_800BE534 = D_800ED4E0->unk10;
-    D_800BE50C = D_800BE538 = D_800ED4E0->unk14;
-    D_800BE4FC = D_800ED4E0->unk1C;
-    gKirbyLives = D_800ED4E0->unk20;
-    gKirbyHp = D_800ED4E0->unk24;
-    D_800D6E54 = D_800ED4E0->unk28;
-    gKirbyStars = D_800ED4E0->unk2C;
-    D_800D6E64 = D_800ED4E0->unk30;
-    gHudDisplayMode = D_800ED4E0->unk34;
-    set_soft_rng_seed(D_800ED4E0->unk38);
+    set_hard_rng_seed(D_800ED4E0[0]->unk0);
+    D_800BE4EC = D_800ED4E0[0]->unk4;
+    D_800BE500 = D_800BE52C = D_800ED4E0[0]->unk8;
+    D_800BE504 = D_800BE530 = D_800ED4E0[0]->unkC;
+    D_800BE508 = D_800BE534 = D_800ED4E0[0]->unk10;
+    D_800BE50C = D_800BE538 = D_800ED4E0[0]->unk14;
+    D_800BE4FC = D_800ED4E0[0]->unk1C;
+    gKirbyLives = D_800ED4E0[0]->unk20;
+    gKirbyHp = D_800ED4E0[0]->unk24;
+    D_800D6E54 = D_800ED4E0[0]->unk28;
+    gKirbyStars = D_800ED4E0[0]->unk2C;
+    D_800D6E64 = D_800ED4E0[0]->unk30;
+    gHudDisplayMode = D_800ED4E0[0]->unk34;
+    set_soft_rng_seed(D_800ED4E0[0]->unk38);
 
     for (i = 0; i < 16; i++) {
-        D_800D6E20[i] = D_800ED4E0->unk40[i];
+        D_800D6E20[i] = D_800ED4E0[0]->unk40[i];
     }
 
-    D_800D6F38 = D_800ED4E0->unk3C;
+    D_800D6F38 = D_800ED4E0[0]->unk3C;
 }
 
 extern struct UnkStruct80048F20 {
-    u16 unk0[4];
+    // u16 unk0[4];
+    u16 unk0;
+    u16 unk2;
+    u16 unk4;
+    u16 unk6;
     u8 unk8;
     u8 unk9;
     u8 unkA;
     u8 unkB;
-} *D_80048F20;
+} D_80048F20;
 extern u32 D_800BE4F8;
 
 
@@ -112,9 +116,9 @@ void func_800BBDC4(void) {
     u16 phi_a2;
 
     temp_v1 = D_800ED4EC;
-    D_80048F20->unk0[2] = 0;
-    D_80048F20->unk0[1] = 0;
-    D_80048F20->unk0[0] = 0;
+    D_80048F20.unk4 = 0;
+    D_80048F20.unk2 = 0;
+    D_80048F20.unk0 = 0;
     if (temp_v1 < 0) {
         D_800BE4F8 = 2;
         D_800D6F38 = 0;
@@ -123,7 +127,7 @@ void func_800BBDC4(void) {
     temp_t8 = D_800ED4F4 - 1;
     D_800ED4F4 = temp_t8;
     if (temp_t8 <= 0) {
-        temp_a0 = D_800ED4E0;
+        temp_a0 = *D_800ED4E0;
         temp_t4 = temp_v1 + 1;
         temp_a1 = (temp_a0 + (temp_v1 * 2))->unk100;
         D_800ED4EC = temp_t4;
@@ -143,17 +147,17 @@ void func_800BBDC4(void) {
         }
         D_800ED4F4 = temp_a1_2 & 0x7F;
     }
-    temp_a0_2 = D_800ED4E0->unk0[D_800ED4EC];
+    temp_a0_2 = D_800ED4E0[D_800ED4EC * 2];
     temp_a1_3 = temp_a0_2->unk100;
-    // phi_t0 = 0;
+    phi_t0 = 0;
     if (temp_a1_3 & 0x8000) {
         phi_t0 = temp_a0_2->unk102;
     }
-    // phi_a3 = 0;
+    phi_a3 = 0;
     if (temp_a1_3 & 0x4000) {
         phi_a3 = temp_a0_2->unk102;
     }
-    // phi_a2 = 0;
+    phi_a2 = 0;
     if (temp_a1_3 & 0x2000) {
         phi_a2 = temp_a0_2->unk102;
     }
@@ -175,16 +179,17 @@ void func_800BBDC4(void) {
     if (temp_a1_3 & 0x80) {
         phi_a2 = temp_a0_2->unk106;
     }
-    D_80048F20->unk0[0] = phi_t0;
-    D_80048F20->unk0[1] = phi_a3;
-    D_80048F20->unk0[2] = phi_a2;
+    D_80048F20.unk0 = phi_t0;
+    D_80048F20.unk2 = phi_a3;
+    D_80048F20.unk4 = phi_a2;
     if (phi_t0 & 0x80) {
-        D_80048F20->unk9 = 0x40;
+        D_80048F20.unk9 = 0x40;
     }
     if (phi_t0 & 0x40) {
-        D_80048F20->unk9 = -0x40;
+        D_80048F20.unk9 = -0x40;
     }
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_12/func_800BBDC4.s")
 #endif

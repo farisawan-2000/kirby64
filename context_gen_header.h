@@ -1,3 +1,4 @@
+#define GLOBAL_ASM(...)
 #include "src/ovl0/main.c"
 #include "src/ovl0/main.h"
 #include "src/ovl0/ovl0_1.c"
@@ -39,6 +40,8 @@
 #include "src/ovl1/ovl1_2.c"
 #include "src/ovl1/ovl1_3.c"
 #include "src/ovl1/ovl1_6.c"
+#include "src/ovl1/ovl1_12.h"
+#include "src/ovl1/ovl1_12.c"
 #include "src/ovl1/ovl1_6.h"
 #include "src/ovl1/ovl1.c"
 #include "src/ovl1/save_file.c"
