@@ -821,8 +821,11 @@ void draw_kirby_lives(void) {
         if (temp_a2 < 0) {
             temp_a2 = 0;
         }
-        draw_lives_digit_3_args(0x22, temp_a2 / 10, temp_a2); // should be called with 2 args, but then temp_a2 is not placed in a2
-        draw_lives_digit_3_args(0x34, temp_a2 % 10, temp_a2);
+        draw_lives_digit(0x22, temp_a2 / 10);
+
+        temp2 = temp_a2;
+        temp_a2 = temp2 % 10;
+        draw_lives_digit(0x34, temp_a2);
     }
 }
 
