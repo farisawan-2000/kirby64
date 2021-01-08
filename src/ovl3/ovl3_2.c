@@ -1167,6 +1167,7 @@ loop_1:
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158924_ovl3.s")
 #endif
 
+// important???
 #ifdef MIPS_TO_C
 void func_80158B10_ovl3(s32 arg0) {
     struct UnkStruct8004A7C4 *temp_v1;

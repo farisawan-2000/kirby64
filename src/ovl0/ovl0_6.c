@@ -508,7 +508,7 @@ void guOrthoF(float mf[4][4], float l, float r, float b, float t, float n, float
 
 	for (i=0; i<4; i++)
 	    for (j=0; j<4; j++)
-		mf[i][j] *= scale;
+			mf[i][j] *= scale;
 }
 
 void guOrtho(Mtx *m, float l, float r, float b, float t, float n, float f, float scale)

@@ -223,6 +223,7 @@ Vector *func_80019380(Vector *arg0, s32 flag) {
 }
 
 // _super_ granularly negates components of a vector
+// also unused :(
 Vector *func_800193C8(Vector *arg0, u32 flags) {
     do {
         if (flags & 0x40) {
