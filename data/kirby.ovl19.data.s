@@ -18,6 +18,8 @@ glabel D_8022F068
 glabel D_8022F06C
 .word 0x00000000
 
+# there just might be a hidden file boundary!
+
 glabel D_8022F070
 .word func_8021EB6C_ovl19
 .word func_8021ECC4_ovl19
@@ -27,6 +29,9 @@ glabel D_8022F078
 
 glabel D_8022F07C
 .word 0x00000000
+
+
+# another bound
 
 glabel D_8022F080
 .word func_8021EF44_ovl19

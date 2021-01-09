@@ -577,7 +577,7 @@ SECTIONS
 
    /* 0x8021DF20 23E630-24F750 [11120] */
    BEGIN_SEG(ovl19, 0x8021DF20) {
-      BUILD_DIR/asm/ovl19/ovl19.o(.text);
+      BUILD_DIR/src/ovl19/ovl19.o(.text);
       BUILD_DIR/src/ovl19/ovl19_2.o(.text);
       BUILD_DIR/asm/ovl19/ovl19_3.o(.text);
       BUILD_DIR/asm/ovl19/ovl19_4.o(.text);
