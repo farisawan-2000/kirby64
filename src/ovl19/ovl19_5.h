@@ -1,11 +1,6 @@
 #ifndef OVL19_5_H
 #define OVL19_5_H
 
-typedef union s_d {
-	s32 s;
-	f32 f;
-} s_d;
-
 struct EntityThing800E9AA0 {
 	u8 unk0;
 	u8 unk1;

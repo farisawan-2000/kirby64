@@ -43,6 +43,9 @@ struct LayoutNode {
 	u8 unk55;
 	u8 unk56;
 	u8 unk57;
+
+	// goes up to at least 0x80?
+	u32 unk58;
 };
 
 

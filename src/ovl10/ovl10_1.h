@@ -23,7 +23,6 @@ extern f32 D_800E2B10[];
 extern f32 D_800E2CD0[];
 extern f32 D_800E2E90[];
 extern s32 D_800E0D50[];
-extern s32 D_800E8E60[];
 extern s32 D_801F3F94_ovl10;
 extern s32 D_801F4070_ovl10;
 extern f32 D_801F3FA8_ovl10;

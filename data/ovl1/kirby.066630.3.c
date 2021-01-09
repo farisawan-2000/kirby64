@@ -1289,6 +1289,8 @@ u32 D_800D66B8 = 0x800ADC18;
 
 u32 D_800D66BC = 0x00000000;
 
+// ovl1_6 rodata?
+
 u8 D_800D66C0[] = "Can't request job !!!\n";
 
 u8 D_800D66D8[] = "Job Request Deep OverFlow!!\n";
@@ -1296,6 +1298,9 @@ u8 D_800D66D8[] = "Job Request Deep OverFlow!!\n";
 f32 D_800D66F8 = 65535.0f;
 
 f32 D_800D66FC = 9999.0f;
+
+
+// ovl1_7 rodata
 
 u32 D_800D6700 = 0xFF7FFFFF;
 
@@ -1424,6 +1429,10 @@ u32 D_800D67F4 = 0x00000000;
 u32 D_800D67F8 = 0x00000000;
 
 u32 D_800D67FC = 0x00000000;
+
+
+
+// ovl1_8 rodata
 
 f32 D_800D6800 = 2 * M_PI;
 

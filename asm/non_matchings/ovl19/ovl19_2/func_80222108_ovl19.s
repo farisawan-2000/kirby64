@@ -42,11 +42,11 @@ glabel func_80222108_ovl19
 /* 2428B4 802221A4 002E0821 */  addu  $at, $at, $t6
 /* 2428B8 802221A8 AC2C0F10 */  sw    $t4, 0xf10($at)
 /* 2428BC 802221AC 8C430000 */  lw    $v1, ($v0)
-/* 2428C0 802221B0 3C0F800E */ lui $t7, %hi(D_800D9E20)
+/* 2428C0 802221B0 3C0F800E */ lui $t7, %hi(D_800E0D50)
 /* 2428C4 802221B4 3C07800E */  lui   $a3, %hi(gEntitiesAngleYArray) # $a3, 0x800e
 /* 2428C8 802221B8 00031880 */  sll   $v1, $v1, 2
 /* 2428CC 802221BC 01E37821 */  addu  $t7, $t7, $v1
-/* 2428D0 802221C0 8DEF0D50 */  lw    $t7, 0xd50($t7)
+/* 2428D0 802221C0 8DEF0D50 */  lw    $t7, %lo(D_800E0D50)($t7)
 /* 2428D4 802221C4 24E741D0 */  addiu $a3, %lo(gEntitiesAngleYArray) # addiu $a3, $a3, 0x41d0
 /* 2428D8 802221C8 00E34021 */  addu  $t0, $a3, $v1
 /* 2428DC 802221CC 000FC080 */  sll   $t8, $t7, 2

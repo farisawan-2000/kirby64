@@ -4243,7 +4243,7 @@ glabel D_8004A544
 glabel D_8004A548
 .word 0x00000000
 
-glabel D_8004A54C
+glabel gNewEntityStackSize
 .word 0x00000000
 
 glabel D_8004A550

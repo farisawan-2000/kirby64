@@ -2,8 +2,8 @@ glabel func_8000AE84
 /* 00BA84 8000AE84 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 00BA88 8000AE88 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 00BA8C 8000AE8C 8C8E0008 */  lw    $t6, 8($a0)
-/* 00BA90 8000AE90 3C068005 */  lui   $a2, %hi(D_8004A54C) # $a2, 0x8005
-/* 00BA94 8000AE94 24C6A54C */  addiu $a2, %lo(D_8004A54C) # addiu $a2, $a2, -0x5ab4
+/* 00BA90 8000AE90 3C068005 */  lui   $a2, %hi(gNewEntityStackSize) # $a2, 0x8005
+/* 00BA94 8000AE94 24C6A54C */  addiu $a2, %lo(gNewEntityStackSize) # addiu $a2, $a2, -0x5ab4
 /* 00BA98 8000AE98 ACCE0000 */  sw    $t6, ($a2)
 /* 00BA9C 8000AE9C 8C8F0014 */  lw    $t7, 0x14($a0)
 /* 00BAA0 8000AEA0 3C018005 */  lui   $at, %hi(D_8004A550) # $at, 0x8005

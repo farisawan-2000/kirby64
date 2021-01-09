@@ -250,7 +250,7 @@ s32 func_800082D4(struct ObjThreadStack *arg0) {
     }
     if (arg0 != NULL) {
         if (arg0->unk14 == 0 || arg0->unk14 == 2) {
-            return arg0->objThread->unk1BC;
+            return arg0->objThread->objStackSize;
         }
     }
     return 0;
@@ -564,7 +564,7 @@ void func_800089EC(struct Camera *arg0) {
 
 extern u8 D_80040314[];
 extern u8 D_80040340[];
-extern u32 D_8004A54C;
+extern u32 gNewEntityStackSize;
 
 struct ObjThread *get_gobj_thread();
 void func_800080C0(struct ObjProcess *);
@@ -586,14 +586,14 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
     oProcess->kind = kind;
     oProcess->unk15 = 0;
     oProcess->unk18 = arg0;
-    oProcess->unk20 = arg1;
+    oProcess->entryPoint = arg1;
     switch (kind) {
         case 0:
             oThread = get_gobj_thread();
             oProcess->thread = oThread;
             oThread->objStack = &get_gobj_thread_stack()->unk8;
-            oThread->unk1BC = D_8004A54C;
-            osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C / 8]), 0x33);
+            oThread->objStackSize = gNewEntityStackSize;
+            osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
             if (D_8003DE50 >= 20000000) {
                 D_8003DE50 = 10000000;
@@ -614,8 +614,8 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
 extern u8 D_80040368[];
 
 // a somewhat more granular version of func_80008A18
-#ifdef MIPS_TO__
-struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *arg1, u32 pri, s32 arg3, struct ObjStack *arg4, u32 arg5) {
+#ifdef NON_MATCHING
+struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *entry, u32 pri, s32 arg3, struct ObjStack *arg4, u32 stackSize) {
     struct ObjProcess *oProcess;
     struct ObjThread *oThread;
     s32 phi_a1;
@@ -631,25 +631,25 @@ struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThrea
     oProcess->pri = pri;
     oProcess->unk15 = 0;
     oProcess->unk18 = arg0;
-    oProcess->unk20 = arg1;
-    oThread = get_gobj_thread();
-    oProcess->thread = oThread;
-    if (arg5 == 0) {
+    oProcess->entryPoint = entry;
+    oThread = get_gobj_thread(); oProcess->thread = oThread;
+    if (stackSize == 0) {
         oProcess->kind = 0;
         oThread->objStack = &get_gobj_thread_stack()->unk8;
-        oThread->unk1BC = D_8004A54C;
+        oThread->objStackSize = gNewEntityStackSize;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
-        osCreateThread(&oThread->unk8, phi_a1, arg1, arg0, &(oThread->objStack->stack[D_8004A54C >> 3]), 0x33);
+        osCreateThread(&oThread->thread, phi_a1, entry, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
         oThread->objStack->stack[7] = STACK_TOP_MAGIC;
         if (D_8003DE50 >= 20000000) {
             D_8003DE50 = 10000000;
         }
     } else {
         oProcess->kind = 2;
-        oThread->unk1BC = arg5;
+        oThread->objStackSize = stackSize;
         oThread->objStack = arg4;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
-        osCreateThread(&oThread->unk8, phi_a1, arg1, arg0, &(arg4->stack[arg5 >> 3]), 0x33);
+        // one reordered addition here
+        osCreateThread(&oThread->thread, phi_a1, entry, arg0, (&arg4->stack[stackSize / (4 * 2)]), 0x33);
         arg4->stack[7] = STACK_TOP_MAGIC;
         if (D_8003DE50 >= 20000000) {
             D_8003DE50 = 10000000;
@@ -2004,7 +2004,7 @@ void func_8000AE84(void *arg0) {
     s32 phi_a0_15;
     s32 phi_a0_16;
 
-    D_8004A54C = arg0->unk8;
+    gNewEntityStackSize = arg0->unk8;
     D_8004A550 = arg0->unk14;
     if (arg0->unk4 != 0) {
         temp_v1 = arg0->unk0;
@@ -2038,9 +2038,9 @@ loop_2:
             phi_v0 = temp_v0_2;
             phi_a0_2 = phi_a0_11;
 loop_10:
-            phi_v0->unk0 = phi_v0 + D_8004A54C + 8;
+            phi_v0->unk0 = phi_v0 + gNewEntityStackSize + 8;
             temp_a0_2 = phi_a0_2 + 1;
-            temp_v0_3 = phi_v0 + D_8004A54C + 8;
+            temp_v0_3 = phi_v0 + gNewEntityStackSize + 8;
             phi_v0 = temp_v0_3;
             phi_a0_2 = temp_a0_2;
             if (temp_a0_2 < (arg0->unk10 - 1)) {
@@ -2285,7 +2285,7 @@ loop_65:
     if (temp_v0_14 != &D_8004A704) {
         goto loop_65;
     }
-    func_8001479C(&D_8004A704, arg0, &D_8004A54C);
+    func_8001479C(&D_8004A704, arg0, &gNewEntityStackSize);
     osCreateMesgQueue(&D_8004A7E0, &D_8004A7D8, 1);
     D_8004A7C0 = 0;
     D_8004A7B8 = 0;

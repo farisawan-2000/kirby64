@@ -49,7 +49,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80151138.s")
 extern Gfx *gDisplayListHeads[4];
 extern void func_8009E8F4(s32 hidden, u32 a, Gfx **b);
 
-void *func_80151204(s32 arg0) {
+void func_80151204(s32 arg0) {
     gDPPipeSync(gDisplayListHeads[1]++);
     gDPSetRenderMode(gDisplayListHeads[1]++, G_RM_ZB_CLD_SURF, G_RM_ZB_CLD_SURF2);
     func_8009E8F4(arg0, 2, &gDisplayListHeads[1]);
@@ -1086,10 +1086,11 @@ void *func_8015392C(void *arg0) {
     temp_t7 = temp_v0->unk5B;
     temp_v0 = temp_v0 + 8;
     if (temp_t7 != 0) {
-        temp_a0 = gDisplayListHeads[1];
-        gDisplayListHeads[1] = temp_a0 + 8;
-        temp_a0->words.w1 = NULL;
-        temp_a0->words.w0 = 0xE7000000;
+        gDPPipeSync(gDisplayListHeads[1]++);
+        // temp_a0 = gDisplayListHeads[1];
+        // gDisplayListHeads[1] = temp_a0 + 8;
+        // temp_a0->words.w1 = NULL;
+        // temp_a0->words.w0 = 0xE7000000;
         temp_a0_2 = gDisplayListHeads[1];
         gDisplayListHeads[1] = temp_a0_2 + 8;
         temp_a0_2->words.w1 = 0xFFFDF6FB;

@@ -3,40 +3,40 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "ovl1/ovl1_6.h"
+#include "ovl2/ovl2_8.h"
 #include "D_8004A7C4.h"
 
+extern u32 D_800D6E64;
+
 #ifdef MIPS_TO_C
-void func_8021EF00_ovl19(s32 arg0) {
+void func_8021EF00_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 2, &D_8022F080);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021EF00_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8021EF44_ovl19(s32 arg0) {
+extern f32 D_8022F74C;
+extern s32 D_8012E7FC;
+u32 func_8021F0A4_ovl19(struct UnkStruct8004A7C4 *arg0);
+void func_8021E5DC_ovl19(void);
+
+void func_8021EF44_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    struct UnkStruct8004A7C4 *phi_v1;
 
     func_8021DFD0_ovl19();
-    temp_v1 = D_8004A7C4;
     temp_f0 = D_8022F74C;
-    D_800DEF90[temp_v1->objId] = &D_8021E5DC;
-    D_800DF150[temp_v1->objId] = &D_8021F0A4;
-    (&D_800E4550)[temp_v1->objId] = temp_f0;
-    (&D_800E4710)[temp_v1->objId] = temp_f0;
-    (&D_800E48D0)[temp_v1->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = &func_8021E5DC_ovl19;
+    D_800DF150[D_8004A7C4->objId] = &func_8021F0A4_ovl19;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x2006A, 0x1869F, 0x10);
-    *(&D_800E8060 + (D_8004A7C4->objId * 4)) = 0;
-    temp_v1_2 = D_8004A7C4;
-    D_800EBBE0[temp_v1_2->objId] = func_8021E2D0_ovl19(0, 1);
-    phi_v1 = temp_v1_2;
+    D_800E8060[D_8004A7C4->objId] = 0;
+    D_800EBBE0[D_8004A7C4->objId] = func_8021E2D0_ovl19(0, 1);
 loop_1:
-    if (2 != *(&D_800E8060 + (phi_v1->objId * 4))) {
+    if (D_800E8060[D_8004A7C4->objId] != 2) {
         func_8000B6BC(1);
-        phi_v1 = D_8004A7C4;
         goto loop_1;
     }
     func_800AA018(0x203A4);
@@ -44,12 +44,9 @@ loop_1:
     D_8012E7FC = 1;
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021EF44_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-u32 func_8021F0A4_ovl19(s32 arg0) {
+u32 func_8021F0A4_ovl19(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *temp_v0_2;
     u32 temp_v0;
 
@@ -79,7 +76,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F0A4_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8021F174_ovl19(s32 arg0) {
+void func_8021F174_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     struct UnkStruct8004A7C4 *temp_v0;
     u32 temp_v0_2;
@@ -130,40 +127,39 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F174_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8021F3B4_ovl19(s32 arg0) {
+void func_8021F3B4_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 5, &D_8022F088);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F3B4_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8021F3F8_ovl19(s32 arg0) {
+// some meme with the temp float
+#ifdef NON_MATCHING
+extern f32 D_8022F754, D_8022F758;
+void func_8021F600_ovl19(struct UnkStruct8004A7C4 *arg0);
+void func_8021E894_ovl19(s32, s32, f32);
+
+void func_8021F3F8_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
 
     func_8021E184_ovl19();
     D_800E98E0[D_8004A7C4->objId] = 0;
-    temp_v1 = D_8004A7C4;
+    D_800E9AA0[D_8004A7C4->objId] = func_800FCE50();
     temp_f0 = D_8022F754;
-    D_800E9AA0[temp_v1->objId] = func_800FCE50();
-    D_800DEF90[temp_v1->objId] = &D_8021E894;
-    D_800DF150[temp_v1->objId] = &D_8021F600;
-    gEntitiesAngleYArray[temp_v1->objId] = D_8022F758;
-    (&D_800E4550)[temp_v1->objId] = temp_f0;
-    (&D_800E4710)[temp_v1->objId] = temp_f0;
-    (&D_800E48D0)[temp_v1->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = func_8021E894_ovl19;
+    D_800DF150[D_8004A7C4->objId] = func_8021F600_ovl19;
+    gEntitiesAngleYArray[D_8004A7C4->objId] = D_8022F758;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     D_800EBBE0[D_8004A7C4->objId] = func_8021E2D0_ovl19(1, 3);
     D_800EBDA0[D_8004A7C4->objId] = func_8021E2D0_ovl19(1, 4);
     func_800A9864(0x2006F, 0x1869F, 0x10);
     if (D_800D6E64 == 0) {
         func_801230E8(0x203CD, 0x203CE, 0);
-        if (D_800E98E0[D_8004A7C4->objId] == 0) {
-loop_2:
+        while (D_800E98E0[D_8004A7C4->objId] == 0) {
             func_8000B6BC(1);
-            if (D_800E98E0[D_8004A7C4->objId] == 0) {
-                goto loop_2;
-            }
         }
         func_8021FA2C_ovl19();
         func_801230E8(0x203CB, 0x203CC, 1);
@@ -176,7 +172,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F3F8_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8021F600_ovl19(s32 arg0) {
+void func_8021F600_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp34;
     f32 sp30;
     f32 sp2C;
@@ -206,29 +202,25 @@ void func_8021F600_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F600_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8021F6D8_ovl19(s32 arg0) {
+extern f32 D_8022F75C, D_8022F760;
+
+
+void func_8021F6D8_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
 
     func_8021E184_ovl19();
-    temp_v0 = D_8004A7C4;
     temp_f0 = D_8022F75C;
-    D_800DF150[temp_v0->objId] = NULL;
-    gEntitiesAngleYArray[temp_v0->objId] = D_8022F760;
-    (&D_800E4550)[temp_v0->objId] = temp_f0;
-    (&D_800E4710)[temp_v0->objId] = temp_f0;
-    (&D_800E48D0)[temp_v0->objId] = temp_f0;
+    D_800DF150[D_8004A7C4->objId] = NULL;
+    gEntitiesAngleYArray[D_8004A7C4->objId] = D_8022F760;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x20070, 0x1869F, 0x10);
     if (D_800D6E64 == 0) {
         D_800DFBD0[D_8004A7C4->objId][3]->unk54 = 1;
         func_801230E8(0x203DC, 0x203DD, 0);
-        if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] == 0) {
-loop_2:
+        while (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] == 0) {
             func_8000B6BC(1);
-            if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] == 0) {
-                goto loop_2;
-            }
         }
         func_801230E8(0x203DA, 0x203DB, 0);
     } else {
@@ -236,64 +228,45 @@ loop_2:
     }
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F6D8_ovl19.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_8021F8A4_ovl19(s32 arg0) {
-    f32 sp44;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    u32 temp_a2;
+void func_8021F8A4_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    Vector sp44;
 
-    temp_v0 = D_8004A7C4;
-    D_800DEF90[temp_v0->objId] = NULL;
-    (&D_800E4550)[temp_v0->objId] = 0.25f;
-    (&D_800E4710)[temp_v0->objId] = 0.25f;
-    (&D_800E48D0)[temp_v0->objId] = 0.25f;
+    D_800DEF90[D_8004A7C4->objId] = NULL;
+    D_800E4550[D_8004A7C4->objId] = 0.25f;
+    D_800E4710[D_8004A7C4->objId] = 0.25f;
+    D_800E48D0[D_8004A7C4->objId] = 0.25f;
     func_800A9864(0x20071, 0x1869F, 0x10);
-loop_1:
-    temp_a2 = D_800E0D50[D_8004A7C4->objId];
-    func_800B2340(&sp44, D_800DFBD0[temp_a2][1], temp_a2);
-    temp_v0_2 = D_8004A7C4;
-    gEntitiesPosXArray[temp_v0_2->objId] = sp44;
-    gEntitiesPosYArray[temp_v0_2->objId] = sp48 + 0.5f;
-    gEntitiesPosZArray[temp_v0_2->objId] = sp4C;
-    func_8000B6BC(1);
-    goto loop_1;
+    while (1) {
+        func_800B2340(&sp44, D_800DFBD0[D_800E0D50[D_8004A7C4->objId]][1], D_800E0D50[D_8004A7C4->objId]);
+        gEntitiesPosXArray[D_8004A7C4->objId] = sp44.x;
+        gEntitiesPosYArray[D_8004A7C4->objId] = sp44.y + 0.5f;
+        gEntitiesPosZArray[D_8004A7C4->objId] = sp44.z;
+        func_8000B6BC(1);
+    }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021F8A4_ovl19.s")
-#endif
 
-#ifdef MIPS_TO_C
+extern f32 gKirbyHp;
+extern const char D_8022F720[];
+// minor changes that i'm too tired to look at atm lol
+#ifdef NON_MATCHING
 void func_8021FA2C_ovl19(void) {
-    f32 sp34;
-    s32 sp30;
-    s32 sp2C;
-    s32 sp1C;
-    f32 temp_f0;
-    s32 temp_a2;
-    s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    u8 temp_v1_2;
+    Vector sp34;
+    struct EntityThing800E9AA0 *sp2C = D_800E9AA0[D_8004A7C4->objId];
+    s32 temp_v0 = func_800AEC08(0x1C, 0x1E, 0x3C);
 
-    sp2C = D_800E9AA0[D_8004A7C4->objId];
-    temp_v0 = func_800AEC08(0x1C, 0x1E, 0x3C);
-    if (temp_v0 >= 0x3C) {
-block_2:
+    if (temp_v0 >= 0x3C || temp_v0 == -1) {
+// block_2:
         if (temp_v0 != -1) {
             func_800B1900(temp_v0 & 0xFFFF);
         }
         print_error_stub(&D_8022F720);
         return;
     }
-    if (temp_v0 == -1) {
-        goto block_2;
-    }
-    temp_v1 = D_8004A7C4;
-    if (D_800E7880[temp_v1->objId] == 2) {
+    // if (temp_v0 == -1) {
+    //     goto block_2;
+    // }
+    if (D_800E7880[D_8004A7C4->objId] == 2) {
         D_800E77A0[temp_v0] = 5;
         D_800E7880[temp_v0] = 1;
     } else if (6.0f == gKirbyHp) {
@@ -306,22 +279,17 @@ block_2:
     D_800E7730[temp_v0] = 3;
     D_800E76C0[temp_v0] = 0xFF;
     D_800E8E60[temp_v0] = 1;
-    temp_a2 = D_800EBBE0[temp_v1->objId];
-    sp30 = temp_v0;
-    sp1C = temp_v0 * 4;
-    func_800B2340(&sp34, D_800DFBD0[temp_a2][2], temp_a2, temp_v0);
-    D_800E2B10[temp_v0] = sp34;
-    gEntitiesPosXArray[temp_v0] = sp34;
-    D_800E2CD0[temp_v0] = sp38;
-    gEntitiesPosYArray[temp_v0] = sp38;
-    D_800E2E90[temp_v0] = sp3C;
-    gEntitiesPosZArray[temp_v0] = sp3C;
-    temp_v1_2 = sp2C->unk0;
-    D_800E6150[temp_v0] = temp_v1_2;
-    D_800E5F90[temp_v0] = temp_v1_2;
-    temp_f0 = sp2C->unk24;
-    D_800E6D90[temp_v0] = temp_f0;
-    D_800E6BD0[temp_v0] = temp_f0;
+    func_800B2340(&sp34, D_800DFBD0[D_800EBBE0[D_8004A7C4->objId]][2], D_800EBBE0[D_8004A7C4->objId], temp_v0);
+    D_800E2B10[temp_v0] = sp34.x;
+    gEntitiesPosXArray[temp_v0] = sp34.x;
+    D_800E2CD0[temp_v0] = sp34.y;
+    gEntitiesPosYArray[temp_v0] = sp34.y;
+    D_800E2E90[temp_v0] = sp34.z;
+    gEntitiesPosZArray[temp_v0] = sp34.z;
+    D_800E6150[temp_v0] = sp2C->unk0;
+    D_800E5F90[temp_v0] = sp2C->unk0;
+    D_800E6D90[temp_v0] = sp2C->unk24;
+    D_800E6BD0[temp_v0] = sp2C->unk24;
     D_800EC120[D_8004A7C4->objId] = temp_v0;
 }
 #else
@@ -329,48 +297,38 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021FA2C_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8021FC7C_ovl19(s32 arg0) {
+void func_8021FC7C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 2, &D_8022F09C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021FC7C_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8021FCC0_ovl19(s32 arg0) {
-    f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    u32 phi_v0;
+
+// regalloc at the loop
+#ifdef NON_MATCHING
+void func_8021FE5C_ovl19(struct UnkStruct8004A7C4 *arg0);
+extern f32 D_8022F764;
+
+void func_8021FCC0_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    f32 tmp;
 
     func_8021DFD0_ovl19();
-    temp_v1 = D_8004A7C4;
-    temp_f0 = D_8022F764;
-    D_800DEF90[temp_v1->objId] = &D_8021E5DC;
-    D_800DF150[temp_v1->objId] = &D_8021FE5C;
-    gEntitiesAngleYArray[temp_v1->objId] = 0.0f;
-    (&D_800E4550)[temp_v1->objId] = temp_f0;
-    (&D_800E4710)[temp_v1->objId] = temp_f0;
-    (&D_800E48D0)[temp_v1->objId] = temp_f0;
+    tmp = D_8022F764;
+    D_800DEF90[D_8004A7C4->objId] = func_8021E5DC_ovl19;
+    D_800DF150[D_8004A7C4->objId] = func_8021FE5C_ovl19;
+    gEntitiesAngleYArray[D_8004A7C4->objId] = 0.0f;
+    D_800E4550[D_8004A7C4->objId] = tmp;
+    D_800E4710[D_8004A7C4->objId] = tmp;
+    D_800E48D0[D_8004A7C4->objId] = tmp;
     func_800A9864(0x20067, 0x1869F, 0x10);
-    temp_v1_2 = D_8004A7C4;
-    D_800EBBE0[temp_v1_2->objId] = func_8021E2D0_ovl19(2, 1);
-    D_800E98E0[temp_v1_2->objId] = 0;
+    D_800EBBE0[D_8004A7C4->objId] = func_8021E2D0_ovl19(2, 1);
+    D_800E98E0[D_8004A7C4->objId] = 0;
     func_800AA018(0x2035D);
-    temp_v0 = D_8004A7C4->objId;
-    phi_v0 = temp_v0 * 4;
-    if (D_800E98E0[temp_v0] == 0) {
-loop_1:
+    while (D_800E98E0[D_8004A7C4->objId] == 0) {
         func_8000B6BC(1);
-        temp_v0_2 = D_8004A7C4->objId;
-        phi_v0 = temp_v0_2 * 4;
-        if (D_800E98E0[temp_v0_2] == 0) {
-            goto loop_1;
-        }
     }
-    D_800E98E0[*(D_800EBBE0 + phi_v0)] = 1;
+    D_800E98E0[D_800EBBE0[D_8004A7C4->objId]] = 1;
     func_800AA154(0x2035E);
     func_800AFA14();
 }
@@ -379,7 +337,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021FCC0_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 *func_8021FE5C_ovl19(s32 arg0) {
+s32 *func_8021FE5C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp34;
     f32 sp30;
     f32 sp2C;
@@ -428,7 +386,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021FE5C_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8021FF90_ovl19(s32 arg0) {
+void func_8021FF90_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     struct UnkStruct8004A7C4 *temp_v0;
     u32 temp_v0_2;
@@ -470,7 +428,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8021FF90_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_80220138_ovl19(s32 arg0) {
+struct UnkStruct8004A7C4 *func_80220138_ovl19(struct UnkStruct8004A7C4 *arg0) {
     void *sp3C;
     f32 sp38;
     f32 sp34;
@@ -507,7 +465,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220138_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8022023C_ovl19(s32 arg0) {
+void func_8022023C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 3, &D_8022F0A4);
 }
 #else
@@ -515,7 +473,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022023C_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80220280_ovl19(s32 arg0) {
+void func_80220280_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     s32 temp_t0;
     s32 temp_t2;
@@ -576,7 +534,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220280_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-s8 func_8022045C_ovl19(s32 arg0) {
+s8 func_8022045C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     s32 *temp_v1;
     s32 temp_a0;
     s8 temp_v0;
@@ -620,7 +578,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022045C_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8022054C_ovl19(s32 arg0) {
+void func_8022054C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp7C;
     f32 sp78;
     f32 sp74;
@@ -701,7 +659,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022054C_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80220814_ovl19(s32 arg0) {
+void func_80220814_ovl19(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *temp_v0;
     u32 temp_v1;
 
@@ -735,7 +693,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220814_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_802209A0_ovl19(s32 arg0) {
+void func_802209A0_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 4, &D_8022F0D8);
 }
 #else
@@ -743,7 +701,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802209A0_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_802209E4_ovl19(s32 arg0) {
+void func_802209E4_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     s32 temp_v0;
     struct UnkStruct8004A7C4 *temp_v1;
@@ -774,7 +732,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802209E4_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80220B40_ovl19(s32 arg0) {
+void func_80220B40_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp64;
     f32 sp60;
     f32 sp5C;
@@ -827,7 +785,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220B40_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80220D54_ovl19(s32 arg0) {
+void func_80220D54_ovl19(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *temp_v0;
     u32 temp_v0_2;
 
@@ -845,33 +803,20 @@ void func_80220D54_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220D54_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80220E14_ovl19(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v1;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    u32 temp_v0_3;
-
-    temp_v1 = D_8004A7C4;
-    D_800DEF90[temp_v1->objId] = NULL;
-    temp_v0 = temp_v1->objId;
-    gEntitiesPosXArray[temp_v0] = gEntitiesPosXArray[D_800E0D50[temp_v0]];
-    temp_v0_2 = temp_v1->objId;
-    gEntitiesPosYArray[temp_v0_2] = gEntitiesPosYArray[D_800E0D50[temp_v0_2]] + 0.5f;
-    temp_v0_3 = temp_v1->objId;
-    gEntitiesPosZArray[temp_v0_3] = gEntitiesPosZArray[D_800E0D50[temp_v0_3]];
-    (&D_800E4550)[temp_v1->objId] = 0.25f;
-    (&D_800E4710)[temp_v1->objId] = 0.25f;
-    (&D_800E48D0)[temp_v1->objId] = 0.25f;
+void func_80220E14_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    D_800DEF90[D_8004A7C4->objId] = NULL;
+    gEntitiesPosXArray[D_8004A7C4->objId] = gEntitiesPosXArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_800E0D50[D_8004A7C4->objId]] + 0.5f;
+    gEntitiesPosZArray[D_8004A7C4->objId] = gEntitiesPosZArray[D_800E0D50[D_8004A7C4->objId]];
+    D_800E4550[D_8004A7C4->objId] = 0.25f;
+    D_800E4710[D_8004A7C4->objId] = 0.25f;
+    D_800E48D0[D_8004A7C4->objId] = 0.25f;
     func_800A9864(0x20071, 0x1869F, 0x10, D_800E0D50);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220E14_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-void func_80220F48_ovl19(s32 arg0) {
+void func_80220F48_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 4, &D_8022F0E8);
 }
 #else
@@ -879,7 +824,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220F48_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80220F8C_ovl19(s32 arg0) {
+void func_80220F8C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     s32 temp_v0;
     s32 temp_v0_2;
@@ -923,19 +868,16 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80220F8C_ovl19.s")
 #endif
 
+
+extern u32 D_800D71F8;
 #ifdef MIPS_TO_C
 void func_80221108_ovl19(s32 arg0, s32 arg1, f32 arg2) {
-    s32 *temp_a0;
-    s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    s32 temp_v0 = func_8021E2D0_ovl19(5, 2);
 
     if ((arg1 == 0) && (arg2 != 0.0f)) {
-        temp_v0 = func_8021E2D0_ovl19(arg2, 5, 2);
         D_800D71F8 = temp_v0;
-        temp_v1 = D_8004A7C4;
-        D_800EC2E0[temp_v0] = D_800E98E0[temp_v1->objId];
-        temp_a0 = &D_800E98E0[temp_v1->objId];
-        *temp_a0 = *temp_a0 + 1;
+        D_800EC2E0[temp_v0] = D_800E98E0[D_8004A7C4->objId];
+        D_800E98E0[D_8004A7C4->objId]++;
     }
 }
 #else
@@ -943,7 +885,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221108_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_802211A0_ovl19(s32 arg0) {
+void func_802211A0_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp7C;
     f32 sp78;
     f32 sp74;
@@ -1028,17 +970,17 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802211A0_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80221480_ovl19(s32 arg0) {
+void func_80221480_ovl19(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *temp_v0;
     u32 temp_v1;
 
     func_8021E184_ovl19();
     temp_v0 = D_8004A7C4;
-    temp_v1 = temp_v0->objId;
-    gEntitiesPosXArray[temp_v1] = *(&D_8022F0F8 + (D_800EC2E0[temp_v1] * 4));
-    gEntitiesPosYArray[temp_v0->objId] = 110.0f;
-    gEntitiesPosZArray[temp_v0->objId] = -100.0f;
-    func_800A9864(*(&D_8022F104 + ((D_800D6F18 + (D_800EC2E0[temp_v0->objId] * 4))->unk0 * 8)), 0x1869F, 0x10, D_800EC2E0);
+    temp_v1 = D_8004A7C4->objId;
+    gEntitiesPosXArray[D_8004A7C4->objId] = *(&D_8022F0F8 + (D_800EC2E0[D_8004A7C4->objId] * 4));
+    gEntitiesPosYArray[D_8004A7C4->objId] = 110.0f;
+    gEntitiesPosZArray[D_8004A7C4->objId] = -100.0f;
+    func_800A9864(*(&D_8022F104 + ((D_800D6F18 + (D_800EC2E0[D_8004A7C4->objId] * 4))->unk0 * 8)), 0x1869F, 0x10, D_800EC2E0);
     func_800AA018(*(&D_8022F108 + ((D_800D6F18 + (D_800EC2E0[D_8004A7C4->objId] * 4))->unk0 * 8)));
     func_800AFA14();
 }
@@ -1047,7 +989,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221480_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8022159C_ovl19(s32 arg0) {
+void func_8022159C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     struct UnkStruct8004A7C4 *temp_v0;
 
@@ -1065,72 +1007,61 @@ void func_8022159C_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022159C_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_80221654_ovl19(s32 arg0) {
-    f32 sp1C;
-    s32 temp_a2;
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 temp_v1;
+void func_80221654_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    Vector sp1C;
 
-    temp_a2 = (bitwise s32) (&gEntitiesAngleYArray[D_8004A7C4->objId])[0x354];
-    func_800B2340(&sp1C, D_800DFBD0[temp_a2][1], temp_a2);
-    temp_v0 = D_8004A7C4;
-    gEntitiesPosXArray[temp_v0->objId] = sp1C;
-    temp_v1 = temp_v0->objId;
-    gEntitiesPosYArray[temp_v1] = gEntitiesPosYArray[D_800E0D50[temp_v1]];
-    gEntitiesPosZArray[temp_v0->objId] = sp24;
-    return temp_v0;
+    func_800B2340(&sp1C, D_800DFBD0[D_800E0D50[D_8004A7C4->objId]][1], D_800E0D50[D_8004A7C4->objId]);
+    gEntitiesPosXArray[D_8004A7C4->objId] = sp1C.x;
+    gEntitiesPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesPosZArray[D_8004A7C4->objId] = sp1C.z;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221654_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-void func_8022170C_ovl19(s32 arg0) {
+void func_8022170C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 2, &D_8022F13C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_8022170C_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80221750_ovl19(s32 arg0) {
+#ifdef NON_MATCHING
+void func_80221928_ovl19(struct UnkStruct8004A7C4 *arg0);
+void func_8021EA20_ovl19(s32, s32, f32);
+extern f32 D_8022F780;
+
+void func_80221750_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
 
     func_8021E184_ovl19();
-    temp_v0 = D_8004A7C4;
     temp_f0 = D_8022F780;
-    D_800DEF90[temp_v0->objId] = &D_8021EA20;
-    (&D_800E4550)[temp_v0->objId] = temp_f0;
-    (&D_800E4710)[temp_v0->objId] = temp_f0;
-    (&D_800E48D0)[temp_v0->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = func_8021EA20_ovl19;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x20060, 0x1869F, 0x10);
     func_8021E2D0_ovl19(6, 1);
-    D_800DF150[D_8004A7C4->objId] = &func_80221928_ovl19;
-loop_1:
-    D_800E9E20[D_8004A7C4->objId] = 0;
-    func_800AA018(0x202E2);
-    func_800AA864(0x202E1, 1);
-    D_800E9E20[D_8004A7C4->objId] = 1;
-    func_80221BC8_ovl19();
-    if (1 == D_800E9E20[D_8004A7C4->objId]) {
-loop_2:
-        func_8000B6BC(1);
-        if (1 == D_800E9E20[D_8004A7C4->objId]) {
-            goto loop_2;
+    D_800DF150[D_8004A7C4->objId] = func_80221928_ovl19;
+    while (TRUE) {
+        D_800E9E20[D_8004A7C4->objId] = 0;
+        func_800AA018(0x202E2);
+
+        // loads from s1 instead of through an immediate
+        func_800AA864(0x202E1, 1);
+        D_800E9E20[D_8004A7C4->objId] = 1;
+        func_80221BC8_ovl19();
+        while (D_800E9E20[D_8004A7C4->objId] == 1) {
+            func_8000B6BC(1);
         }
+        func_800AA018(0x202E4);
+        func_800AA864(0x202E3, 1);
     }
-    func_800AA018(0x202E4);
-    func_800AA864(0x202E3, 1);
-    goto loop_1;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221750_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_80221928_ovl19(s32 arg0) {
+void func_80221928_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 *temp_a0_2;
     f32 *temp_a0_3;
     f32 temp_f0;
@@ -1280,62 +1211,49 @@ f32 func_80221BC8_ovl19(void) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221BC8_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80221CA8_ovl19(s32 arg0) {
+extern f32 D_8022F7A0;
+void func_80221CA8_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    u32 temp_v0_3;
 
-    temp_v1 = D_8004A7C4;
     temp_f0 = D_8022F7A0;
-    D_800DEF90[temp_v1->objId] = NULL;
-    temp_v0 = temp_v1->objId;
-    gEntitiesPosXArray[temp_v0] = gEntitiesPosXArray[D_800E0D50[temp_v0]];
-    temp_v0_2 = temp_v1->objId;
-    gEntitiesPosYArray[temp_v0_2] = gEntitiesPosYArray[D_800E0D50[temp_v0_2]] + 0.5f;
-    temp_v0_3 = temp_v1->objId;
-    gEntitiesPosZArray[temp_v0_3] = gEntitiesPosZArray[D_800E0D50[temp_v0_3]];
-    (&D_800E4550)[temp_v1->objId] = temp_f0;
-    (&D_800E4710)[temp_v1->objId] = temp_f0;
-    (&D_800E48D0)[temp_v1->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = NULL;
+    gEntitiesPosXArray[D_8004A7C4->objId] = gEntitiesPosXArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_800E0D50[D_8004A7C4->objId]] + 0.5f;
+    gEntitiesPosZArray[D_8004A7C4->objId] = gEntitiesPosZArray[D_800E0D50[D_8004A7C4->objId]];
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x20071, 0x1869F, 0x10, D_800E0D50);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221CA8_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-void func_80221DDC_ovl19(s32 arg0) {
+void func_80221DDC_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 2, &D_8022F144);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221DDC_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80221E20_ovl19(s32 arg0) {
+extern f32 D_8022F7A4;
+void func_80222038_ovl19(struct UnkStruct8004A7C4 *arg0);
+void func_80221FC8_ovl19(s32 arg0, s32 arg1, f32 arg2);
+extern struct KirbyState gKirbyState;
+
+void func_80221E20_ovl19(UNUSED struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
 
     func_8021DFD0_ovl19();
-    temp_v0 = D_8004A7C4;
     temp_f0 = D_8022F7A4;
-    D_800DF150[temp_v0->objId] = &func_80222038_ovl19;
-    (&D_800E4550)[temp_v0->objId] = temp_f0;
-    (&D_800E4710)[temp_v0->objId] = temp_f0;
-    (&D_800E48D0)[temp_v0->objId] = temp_f0;
+    D_800DF150[D_8004A7C4->objId] = &func_80222038_ovl19;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x2006C, 0x1869F, 0x10);
-    *(&D_800E8060 + (D_8004A7C4->objId * 4)) = 0;
+    D_800E8060[D_8004A7C4->objId] = 0;
     func_800AA018(0x203C1);
-    if (1 != *(&D_800E8060 + (D_8004A7C4->objId * 4))) {
-loop_1:
+    while (D_800E8060[D_8004A7C4->objId] != 1) {
         func_8000B6BC(1);
-        if (1 != *(&D_800E8060 + (D_8004A7C4->objId * 4))) {
-            goto loop_1;
-        }
     }
     func_8021E2D0_ovl19(7, 1);
     func_800AA018(0x203C0);
@@ -1343,18 +1261,11 @@ loop_1:
     func_800AF27C();
     func_800F753C();
     func_800AFBB4(0, D_8004A7C4);
-    if (gKirbyState.unk30 == 0) {
-loop_3:
+    while (gKirbyState.unk30 == 0) {
         func_8000B6BC(1);
-        if (gKirbyState.unk30 == 0) {
-            goto loop_3;
-        }
     }
-    func_800B1900(D_8004A7C4->unk2);
+    func_800B1900((u16) D_8004A7C4->objId);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221E20_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80221FC8_ovl19(s32 arg0, s32 arg1, f32 arg2) {
@@ -1373,8 +1284,8 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221FC8_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80222038_ovl19(s32 arg0) {
-    u32 temp_v1;
+void func_80222038_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    u32 D_8004A7C4;
 
     if (*D_800E5F90 == 6) {
         *D_800E0D50 = D_8004A7C4->objId;
@@ -1399,8 +1310,8 @@ void func_80222038_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222038_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80222108_ovl19(s32 arg0) {
+#ifdef MIPS_TO_C 
+void func_80222108_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     struct UnkStruct8004A7C4 *temp_v0_2;
     struct UnkStruct8004A7C4 *temp_v0_3;
@@ -1439,65 +1350,46 @@ void func_80222108_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222108_ovl19.s")
 #endif
 
+#include "ovl2/ovl2_8.h"
+#include "ovl19_2.h"
+extern f32 D_8022F7AC, D_8022F7B0, D_8022F7B4;
 #ifdef MIPS_TO_C
-void *func_802222F0_ovl19(s32 arg0) {
-    f32 sp3C;
-    f32 sp38;
-    f32 sp34;
-    f32 sp30;
-    f32 sp2C;
-    f32 sp28;
-    f32 temp_f0;
-    f32 temp_f0_2;
+void func_802222F0_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    Vector sp34;
+    Vector sp28;
     f32 temp_f2;
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 temp_v1;
     f32 phi_f12;
-    u32 phi_v1;
-    f32 phi_f0;
 
-    temp_v0 = D_8004A7C4;
-    temp_v1 = temp_v0->objId;
-    phi_v1 = temp_v1 * 4;
-    if (D_800E98E0[temp_v1] != 0) {
-        sp38 = 0.0f;
-        sp34 = 0.0f;
-        sp3C = 1.0f;
-        sp2C = 0.0f;
-        sp28 = *gEntitiesPosXArray - gEntitiesPosXArray[temp_v0->objId];
-        sp30 = *gEntitiesPosZArray - gEntitiesPosZArray[temp_v0->objId];
+    if (D_800E98E0[D_8004A7C4->objId] != 0) {
+        sp34.y = 0.0f;
+        sp34.x = 0.0f;
+        sp34.z = 1.0f;
+        sp28.y = 0.0f;
+        sp28.x = gEntitiesPosXArray[0] - gEntitiesPosXArray[D_8004A7C4->objId];
+        sp28.z = gEntitiesPosZArray[0] - gEntitiesPosZArray[D_8004A7C4->objId];
         temp_f2 = func_800F89C0(0.0f, &sp34, &sp28, &D_8004A7C4, gEntitiesPosZArray) * D_8022F7AC;
         if (temp_f2 < 0.0f) {
-            temp_f0 = D_8022F7B4;
-            phi_f12 = temp_f2;
-            if (temp_f2 < temp_f0) {
-                phi_f0 = temp_f0;
-block_5:
-                phi_f12 = phi_f0;
+            if (temp_f2 < D_8022F7B4) {
+                phi_f12 = D_8022F7B4;
             }
         } else {
-            temp_f0_2 = D_8022F7B0;
-            phi_f12 = temp_f2;
-            phi_f0 = temp_f0_2;
-            if (temp_f0_2 < temp_f2) {
-                goto block_5;
+            if (D_8022F7B0 < temp_f2) {
+                phi_f12 = D_8022F7B4;
             }
         }
-        D_800DFBD0[D_8004A7C4->objId][8]->unk34 = phi_f12;
-        D_800DFBD0[D_8004A7C4->objId][8]->unk1C = 30.0f * phi_f12;
-        phi_v1 = D_8004A7C4->objId * 4;
+        D_800DFBD0[D_8004A7C4->objId][8]->angle[2] = phi_f12;
+        D_800DFBD0[D_8004A7C4->objId][8]->pos[0] = 30.0f * phi_f12;
     }
-    D_8022FAB0->unk4 = *(gEntitiesPosXArray + phi_v1);
-    D_8022FAB0->unk8 = gEntitiesPosYArray[*D_8004A7C4];
-    D_8022FAB0->unkC = gEntitiesPosZArray[*D_8004A7C4];
-    return &D_8022FAB0;
+    D_8022FAB0->unk4 = gEntitiesPosXArray[D_8004A7C4->objId];
+    D_8022FAB0->unk8 = gEntitiesPosYArray[D_8004A7C4->objId];
+    D_8022FAB0->unkC = gEntitiesPosZArray[D_8004A7C4->objId];
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802222F0_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_802224BC_ovl19(s32 arg0) {
+void func_802224BC_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 3, &D_8022F14C);
 }
 #else
@@ -1510,10 +1402,8 @@ void func_80222500_ovl19(void) {
     f32 sp40;
     f32 sp3C;
     f32 sp38;
-    f32 sp34;
-    f32 sp30;
-    f32 sp2C;
-    f32 sp20;
+    Vector sp2C;
+    Vector sp20;
     s32 temp_a1;
     struct UnkStruct8004A7C4 *temp_v0;
 
@@ -1533,132 +1423,98 @@ void func_80222500_ovl19(void) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222500_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_802225A4_ovl19(s32 arg0) {
+void func_802226FC_ovl19(struct UnkStruct8004A7C4 *arg0);
+void func_8021EA20_ovl19(s32, s32, f32);
+extern f32 D_8022F7B8;
+
+void func_802225A4_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
 
     func_8021E184_ovl19();
-    temp_v0 = D_8004A7C4;
     temp_f0 = D_8022F7B8;
-    D_800DEF90[temp_v0->objId] = &D_8021EA20;
-    (&D_800E4550)[temp_v0->objId] = temp_f0;
-    (&D_800E4710)[temp_v0->objId] = temp_f0;
-    (&D_800E48D0)[temp_v0->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = func_8021EA20_ovl19;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800AF980(0x18);
     func_800A9864(0x20068, 0x1869F, 0x10);
-    temp_v0_2 = D_8004A7C4;
-    D_800E9E20[temp_v0_2->objId] = 0;
-    D_800DF150[temp_v0_2->objId] = &func_802226FC_ovl19;
+    D_800E9E20[D_8004A7C4->objId] = 0;
+    D_800DF150[D_8004A7C4->objId] = func_802226FC_ovl19;
     func_800AA018(0x2035F);
-    if (D_800E9E20[D_8004A7C4->objId] == 0) {
-loop_1:
+    while (D_800E9E20[D_8004A7C4->objId] == 0) {
         func_8000B6BC(1);
-        if (D_800E9E20[D_8004A7C4->objId] == 0) {
-            goto loop_1;
-        }
     }
     func_800A7678(0x258);
     func_800AA018(0x20360);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802225A4_ovl19.s")
-#endif
 
-#ifdef MIPS_TO_C
-f32 func_802226FC_ovl19(s32 arg0) {
-    f32 temp_f0;
-    f32 temp_f12;
-    f32 temp_f2;
-    f32 temp_ret;
-    u32 temp_v0;
-    f32 phi_return;
+void func_802226FC_ovl19(struct UnkStruct8004A7C4 *arg0) {
+    f32 dz;
+    f32 dy;
+    f32 dx;
 
-    temp_v0 = D_8004A7C4->objId;
-    phi_return = (bitwise f32) (temp_v0 * 4);
-    if (D_800E9E20[temp_v0] == 0) {
-        temp_f0 = *gEntitiesPosZArray - gEntitiesPosZArray[temp_v0];
-        temp_f2 = *gEntitiesPosXArray - gEntitiesPosXArray[temp_v0];
-        temp_f12 = (*gEntitiesPosYArray + 20.0f) - gEntitiesPosYArray[temp_v0];
-        phi_return = temp_f0;
-        if (((temp_f0 * temp_f0) + ((temp_f2 * temp_f2) + (temp_f12 * temp_f12))) < 102400.0f) {
-            func_8021E2D0_ovl19(temp_f12, 9, 1);
-            temp_ret = func_8021E2D0_ovl19(9, 2);
+    if (D_800E9E20[D_8004A7C4->objId] == 0) {
+        dz = gEntitiesPosZArray[0] - gEntitiesPosZArray[D_8004A7C4->objId];
+        dy = gEntitiesPosXArray[0] - gEntitiesPosXArray[D_8004A7C4->objId];
+        dx = (gEntitiesPosYArray[0] + 20.0f) - gEntitiesPosYArray[D_8004A7C4->objId];
+        if (((dz * dz) + ((dy * dy) + (dx * dx))) < 102400.0f) {
+            func_8021E2D0_ovl19(9, 1);
+            func_8021E2D0_ovl19(9, 2);
             D_800E9E20[D_8004A7C4->objId] = 1;
-            phi_return = temp_ret;
         }
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802226FC_ovl19.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_802227F0_ovl19(s32 arg0) {
+void func_802228F8_ovl19(struct UnkStruct8004A7C4 *arg0);
+extern f32 D_8022F7BC;
+
+void func_802227F0_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
 
     func_8021E184_ovl19();
-    temp_v0 = D_8004A7C4;
     temp_f0 = D_8022F7BC;
-    D_800DEF90[temp_v0->objId] = &D_8021EA20;
-    (&D_800E4550)[temp_v0->objId] = temp_f0;
-    (&D_800E4710)[temp_v0->objId] = temp_f0;
-    (&D_800E48D0)[temp_v0->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = func_8021EA20_ovl19;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800AF980(0x18);
     func_800A9864(0x20060, 0x1869F, 0x10);
-    D_800DF150[D_8004A7C4->objId] = &func_802228F8_ovl18;
+    D_800DF150[D_8004A7C4->objId] = func_802228F8_ovl19;
     func_800AA018(0x202DE);
     func_800AA864(0x202DD, 1);
     func_800AA018(0x202E0);
     func_800AA018(0x202DF);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802227F0_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-void func_802228F8_ovl19(s32 arg0) {
+void func_802228F8_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_80222500_ovl19();
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802228F8_ovl19.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80222918_ovl19(s32 arg0) {
+extern f32 D_8022F7C0;
+void func_80222918_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    u32 temp_v0_3;
 
-    temp_v1 = D_8004A7C4;
     temp_f0 = D_8022F7C0;
-    D_800DEF90[temp_v1->objId] = NULL;
-    temp_v0 = temp_v1->objId;
-    gEntitiesPosXArray[temp_v0] = gEntitiesPosXArray[D_800E0D50[temp_v0]];
-    temp_v0_2 = temp_v1->objId;
-    gEntitiesPosYArray[temp_v0_2] = gEntitiesPosYArray[D_800E0D50[temp_v0_2]] + 0.5f;
-    temp_v0_3 = temp_v1->objId;
-    gEntitiesPosZArray[temp_v0_3] = gEntitiesPosZArray[D_800E0D50[temp_v0_3]];
-    (&D_800E4550)[temp_v1->objId] = temp_f0;
-    (&D_800E4710)[temp_v1->objId] = temp_f0;
-    (&D_800E48D0)[temp_v1->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = NULL;
+    gEntitiesPosXArray[D_8004A7C4->objId] = gEntitiesPosXArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_800E0D50[D_8004A7C4->objId]] + 0.5f;
+    gEntitiesPosZArray[D_8004A7C4->objId] = gEntitiesPosZArray[D_800E0D50[D_8004A7C4->objId]];
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_800AF980(0x18, D_800E0D50, gEntitiesPosXArray, gEntitiesPosYArray);
     func_800A9864(0x20071, 0x1869F, 0x10);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222918_ovl19.s")
-#endif
 
 #ifdef MIPS_TO_C
-void func_80222A54_ovl19(s32 arg0) {
+void func_80222A54_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800A447C(D_800E7880[D_8004A7C4->objId], 3, &D_8022F158);
 }
 #else
@@ -1666,7 +1522,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222A54_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80222A98_ovl19(s32 arg0) {
+void func_80222A98_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     s32 temp_v0_2;
     s32 temp_v0_3;
@@ -1710,7 +1566,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222A98_ovl19.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80222CE0_ovl19(s32 arg0) {
+void *func_80222CE0_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 sp24;
     struct UnkStruct8004A7C4 *temp_a0;
     u32 temp_v1;
@@ -1750,11 +1606,9 @@ void *func_80222CE0_ovl19(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80222CE0_ovl19.s")
 #endif
 
-
-extern void func_8021EA20_ovl19(void);
 extern f32 D_8022F7CC;
 
-void func_80222E3C_ovl19(s32 arg0) {
+void func_80222E3C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
 
     func_8021E184_ovl19();
@@ -1777,7 +1631,7 @@ void func_80222E3C_ovl19(s32 arg0) {
 
 extern f32 D_8022F7D0;
 
-void func_80223020_ovl19(s32 arg0) {
+void func_80223020_ovl19(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
 
     func_8021E184_ovl19();

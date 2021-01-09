@@ -42,9 +42,9 @@ glabel func_80008B94
 /* 009828 80008C28 AFA30028 */   sw    $v1, 0x28($sp)
 /* 00982C 80008C2C 8FA30028 */  lw    $v1, 0x28($sp)
 /* 009830 80008C30 8FA7003C */  lw    $a3, 0x3c($sp)
-/* 009834 80008C34 3C088005 */  lui   $t0, %hi(D_8004A54C) # $t0, 0x8005
+/* 009834 80008C34 3C088005 */  lui   $t0, %hi(gNewEntityStackSize) # $t0, 0x8005
 /* 009838 80008C38 24580008 */  addiu $t8, $v0, 8
-/* 00983C 80008C3C 2508A54C */  addiu $t0, %lo(D_8004A54C) # addiu $t0, $t0, -0x5ab4
+/* 00983C 80008C3C 2508A54C */  addiu $t0, %lo(gNewEntityStackSize) # addiu $t0, $t0, -0x5ab4
 /* 009840 80008C40 AC7801B8 */  sw    $t8, 0x1b8($v1)
 /* 009844 80008C44 8D190000 */  lw    $t9, ($t0)
 /* 009848 80008C48 2401FFFF */  li    $at, -1

@@ -36,7 +36,7 @@ struct ObjThread
     struct ObjThread *unk0; // function?
     OSThread thread;
     struct ObjStack *objStack;
-    s32 unk1BC; // stack size?
+    s32 objStackSize; // stack size?
 };
 
 // TODO: is this an ObjThreadStack?
@@ -79,7 +79,7 @@ struct ObjProcess {
     u8 unk17;
     u32 *unk18;
     struct ObjThread *thread;
-    void (*unk20)(void);
+    void (*entryPoint)(struct UnkStruct8004A7C4 *);
 };
 
 // TODO: is this an existing struct instead of a brand new one?

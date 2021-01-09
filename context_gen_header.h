@@ -40,9 +40,10 @@
 #include "src/ovl1/ovl1_2.c"
 #include "src/ovl1/ovl1_3.c"
 #include "src/ovl1/ovl1_6.c"
+#include "src/ovl1/ovl1_6.h"
+#include "src/ovl1/ovl1_7.c"
 #include "src/ovl1/ovl1_12.h"
 #include "src/ovl1/ovl1_12.c"
-#include "src/ovl1/ovl1_6.h"
 #include "src/ovl1/ovl1.c"
 #include "src/ovl1/save_file.c"
 #include "src/ovl1/save_file.h"
@@ -68,3 +69,4 @@
 #include "src/ovl7/yakulib.c"
 #include "src/ovl7/yakulib.h"
 #include "src/ovl20.c"
+
