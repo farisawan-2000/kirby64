@@ -1,0 +1,22 @@
+glabel func_800AEDD0
+/* 057020 800AEDD0 3C0E800E */  lui   $t6, %hi(D_800E0B90) # $t6, 0x800e
+/* 057024 800AEDD4 25CE0B90 */  addiu $t6, %lo(D_800E0B90) # addiu $t6, $t6, 0xb90
+/* 057028 800AEDD8 00051080 */  sll   $v0, $a1, 2
+/* 05702C 800AEDDC 004E1821 */  addu  $v1, $v0, $t6
+/* 057030 800AEDE0 C4640000 */  lwc1  $f4, ($v1)
+/* 057034 800AEDE4 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* 057038 800AEDE8 3C04800E */ lui $a0, %hi(D_800DE350)
+/* 05703C 800AEDEC 46046032 */  c.eq.s $f12, $f4
+/* 057040 800AEDF0 AFBF0014 */  sw    $ra, 0x14($sp)
+/* 057044 800AEDF4 00822021 */  addu  $a0, $a0, $v0
+/* 057048 800AEDF8 45030006 */  bc1tl .L800AEE14_ovl1
+/* 05704C 800AEDFC 8FBF0014 */   lw    $ra, 0x14($sp)
+/* 057050 800AEE00 8C84E350 */ lw $a0, %lo(D_800DE350)($a0)
+/* 057054 800AEE04 44056000 */  mfc1  $a1, $f12
+/* 057058 800AEE08 0C002FE8 */  jal   func_8000BFA0_ovl1
+/* 05705C 800AEE0C E46C0000 */   swc1  $f12, ($v1)
+/* 057060 800AEE10 8FBF0014 */  lw    $ra, 0x14($sp)
+.L800AEE14_ovl1:
+/* 057064 800AEE14 27BD0018 */  addiu $sp, $sp, 0x18
+/* 057068 800AEE18 03E00008 */  jr    $ra
+/* 05706C 800AEE1C 00000000 */   nop   

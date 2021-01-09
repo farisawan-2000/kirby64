@@ -34,7 +34,7 @@ extern struct DynamicBuffer gDynamicBuffer1, gDynamicBuffer2;
 struct ObjThread
 {
     struct ObjThread *unk0; // function?
-    OSThread unk8;
+    OSThread thread;
     struct ObjStack *objStack;
     s32 unk1BC; // stack size?
 };
@@ -52,6 +52,7 @@ struct ObjThreadStack {
     
     // Could these be ObjThreads instead?
     struct ObjThreadStack *unk4;
+    // OSThread?
     struct ObjThreadStack *unk8;
     // Pointer to something (potentially ObjThreadStack)
     struct ObjThreadStack_C *unkC;
@@ -62,7 +63,8 @@ struct ObjThreadStack {
     u16 unk16;
     struct UnkStruct8004A7C4 *unk18; // TODO: rename to something
     struct ObjThread *objThread;
-    u32 pad[10];
+    void (*func)(struct UnkStruct8004A7C4 *);
+    u32 pad[9];
 };
 
 struct ObjProcess {

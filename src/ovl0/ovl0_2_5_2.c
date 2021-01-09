@@ -593,7 +593,7 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
             oProcess->thread = oThread;
             oThread->objStack = &get_gobj_thread_stack()->unk8;
             oThread->unk1BC = D_8004A54C;
-            osCreateThread(&oThread->unk8, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C / 8]), 0x33);
+            osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[D_8004A54C / 8]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
             if (D_8003DE50 >= 20000000) {
                 D_8003DE50 = 10000000;
@@ -686,14 +686,14 @@ void func_80008DA8(struct ObjThreadStack *arg0) {
         }
         switch (arg0->unk14) {
             case 0:
-                osDestroyThread(&arg0->objThread->unk8);
+                osDestroyThread(&arg0->objThread->thread);
                 push_gobj_thread_stack(&arg0->objThread->objStack->stack[0] - 1); // why???
                 func_80007FB8(arg0->objThread);
                 break;
             case 1:
                 break;
             case 2:
-                osDestroyThread(&arg0->objThread->unk8);
+                osDestroyThread(&arg0->objThread->thread);
                 temp_v0_3 = D_8004A550;
                 if (temp_v0_3 != 0) {
                     temp_v0_3(arg0->objThread->objStack);
