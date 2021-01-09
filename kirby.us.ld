@@ -333,7 +333,7 @@ SECTIONS
       . += 0x10;
       BUILD_DIR/src/ovl1/ovl1_7.o(.text);
       . += 0x20;
-      BUILD_DIR/asm/ovl1/ovl1_8.o(.text);
+      BUILD_DIR/src/ovl1/ovl1_8.o(.text);
       BUILD_DIR/src/ovl1/save_file.o(.text);
       BUILD_DIR/src/ovl1/ovl1_10.o(.text);
       BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
