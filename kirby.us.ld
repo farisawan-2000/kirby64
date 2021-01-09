@@ -465,7 +465,7 @@ SECTIONS
    /* 0x801D0C60 17ECB0-1C9B00 [4AE50] */
    BEGIN_SEG(ovl9, 0x801D0C60) {
       BUILD_DIR/asm/ovl9/ovl9.o(.text);
-      BUILD_DIR/asm/ovl9/ovl9_16.o(.text);
+      BUILD_DIR/src/ovl9/ovl9_16.o(.text);
       BUILD_DIR/data/ovl9/data.o(.data);
    }
    END_SEG(ovl9)
