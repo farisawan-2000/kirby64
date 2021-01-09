@@ -467,6 +467,7 @@ SECTIONS
       BUILD_DIR/asm/ovl9/ovl9.o(.text);
       BUILD_DIR/src/ovl9/ovl9_16.o(.text);
       BUILD_DIR/data/ovl9/data.o(.data);
+      BUILD_DIR/data/ovl9/rodata.o(.rodata);
    }
    END_SEG(ovl9)
 
