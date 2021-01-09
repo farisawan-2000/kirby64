@@ -336,7 +336,7 @@ SECTIONS
       BUILD_DIR/src/ovl1/ovl1_8.o(.text);
       BUILD_DIR/src/ovl1/save_file.o(.text);
       BUILD_DIR/src/ovl1/ovl1_10.o(.text);
-      BUILD_DIR/asm/ovl1/ovl1_11.o(.text);
+      BUILD_DIR/src/ovl1/ovl1_11.o(.text);
       BUILD_DIR/src/ovl1/ovl1_12.o(.text);
       . += 0x10;
       BUILD_DIR/src/ovl1/ovl1_13.o(.text);
@@ -347,6 +347,7 @@ SECTIONS
       BUILD_DIR/src/ovl1/ovl1_1.o(.rodata);
       BUILD_DIR/data/ovl1/ovl1_1.rodata.o(.data);
       BUILD_DIR/data/ovl1/kirby.066630.3.o(.data);
+      BUILD_DIR/src/ovl1/ovl1_11.o(.rodata);
       BUILD_DIR/data/ovl1/ovl1_11_rodata.o(.rodata);
       BUILD_DIR/src/ovl1/ovl1_12.o(.rodata);
    }
