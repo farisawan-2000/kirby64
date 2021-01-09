@@ -480,7 +480,7 @@ void func_8021B310_ovl9(struct UnkStruct8004A7C4 *arg0) {
     func_800A9EA4(0x105DD);
     func_800AA864(0x105DC, 1);
     D_800E9E20[D_8004A7C4->objId] = 1;
-    func_800AFA14();
+    func_800AFA14(); 
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021B310_ovl9.s")
