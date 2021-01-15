@@ -1,15 +1,16 @@
 .include "macros.inc"
 .section .data
 
-.balign 2
-glabel bank_0_index_1_geo_start # 0x4AA8F0
-.incbin "assets/geo/bank_0/1/block.bin"
-glabel bank_0_index_1_geo_end
+# this file is C now
+# .balign 2
+# glabel bank_0_index_1_geo_start # 0x4AA8F0
+# .incbin "assets/geo/bank_0/1/block.bin"
+# glabel bank_0_index_1_geo_end
 
-.balign 2
-glabel bank_0_index_2_geo_start # 0x4AB360
-.incbin "assets/geo/bank_0/2/block.bin"
-glabel bank_0_index_2_geo_end
+# .balign 2
+# glabel bank_0_index_2_geo_start # 0x4AB360
+# .incbin "assets/geo/bank_0/2/block.bin"
+# glabel bank_0_index_2_geo_end
 
 .balign 2
 glabel bank_0_index_3_geo_start # 0x4ABED0

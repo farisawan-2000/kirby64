@@ -1,4 +1,4 @@
-# Makefile to rebuild SM64 split image
+# Makefile to rebuild Kirby 64 split image
 
 ################ Target Executable and Sources ###############
 
@@ -64,7 +64,7 @@ LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data asm/banks $(wildcard data/ovl*)
-SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
+SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*) $(wildcard assets/geo/bank*/**)
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 

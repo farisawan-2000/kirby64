@@ -4,6 +4,8 @@
 #include <ultra64.h>
 #include <types.h>
 
+#include "geo_block_header.h"
+
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
 struct ObjStack {
@@ -126,52 +128,9 @@ typedef struct {
 struct MObj {
     /* 0x00 */ struct MObj *next;
     /* 0x04 */ s32 unk_04;
-    /* 0x08 */ u16 h_8;
-    /* 0x0A */ s8 fmt1;
-    /* 0x0B */ s8 siz1;
-    /* 0x0C */ u32 *textures;
-    /* 0x10 */ u16 stretch;
-    /* 0x12 */ u16 sharedOffset;
-    /* 0x14 */ u16 t0w;
-    /* 0x16 */ u16 t0h;
-    /* 0x18 */ s32 halve;
-    /* 0x1C */ f32 xFrac0;
-    /* 0x20 */ f32 yFrac0;
-    /* 0x24 */ f32 xScale;
-    /* 0x28 */ f32 yScale;
-    /* 0x2C */ f32 field_0x2c;
-    /* 0x30 */ f32 field_0x30;
-    /* 0x34 */ u32 *palettes;
-    /* 0x38 */ u16 flags;
-    /* 0x3A */ s8 fmt2;
-    /* 0x3B */ s8 siz2;
-    /* 0x3C */ u16 w2;
-    /* 0x3E */ u16 h2;
-    /* 0x40 */ u16 t1w;
-    /* 0x42 */ u16 t1h;
-    /* 0x44 */ f32 xFrac1;
-    /* 0x48 */ f32 yFrac1;
-    /* 0x4C */ f32 unk_4C;
-    /* 0x50 */ s32 unk_50;
-    /* 0x54 */ s32 unk_54;
-    /* 0x58 */ s8 primR;
-    /* 0x59 */ s8 primG;
-    /* 0x5A */ s8 primB;
-    /* 0x5B */ s8 primA;
-    /* 0x5C */ char unk_5C[0x1];
-    /* 0x5D */ s8 minLOD;
-    /* 0x5E */ char unk_5E[0x2];
-    /* 0x60 */ s8 envR;
-    /* 0x61 */ s8 envG;
-    /* 0x62 */ s8 envB;
-    /* 0x63 */ s8 envA;
-    /* 0x64 */ s8 blendR;
-    /* 0x65 */ s8 blendG;
-    /* 0x66 */ s8 blendB;
-    /* 0x67 */ s8 blendA;
-    /* 0x68 */ u32 lightColor1;
-    /* 0x6C */ u32 lightColor2;
-    /* 0x70 */ char unk_70[0x10];
+
+    struct TextureScroll texScroll;
+    
     /* 0x80 */ u16 texIndex1;
     /* 0x82 */ u16 texIndex2;
     /* 0x84 */ f32 primLOD;
@@ -226,10 +185,10 @@ struct Camera {
 struct Unk80005A98 {
     u32 unk0;
     u32 unk4;
-    u32 unk8;
+    struct Unk80005A98 *unk8;
     u32 unkC;
     u32 unk10;
-    void (*unk14)(void);
+    u32 unk14;
     u32 unk18;
     u32 unk1C;
     OSMesgQueue *unk20;
@@ -244,7 +203,7 @@ struct Unk80005A98 {
     u32 unk44;
     u32 unk48;
     u32 unk4C;
-    u32 unk50;
+    Gfx *unk50;
     u32 unk54;
     u32 unk58;
     u32 unk5C;

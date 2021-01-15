@@ -458,6 +458,8 @@ void func_8001103C(s32 arg0, void *arg1, s32 arg2) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_8001103C.s")
 #endif
 
+// file boundary?
+
 #ifdef MIPS_TO_C
 s32 func_80011180(void *arg0, void *arg1) {
     void *sp2D4;
@@ -727,8 +729,7 @@ loop_15:
                 if (temp_v1 == 4) {
                     if (D_8003DCAB != arg1->unk4->unkE) {
                         *temp_v0_3 = gDynamicBuffer1.top;
-                        temp_s0 = gDynamicBuffer1.top;
-                        gDynamicBuffer1.top = temp_s0 + 0x40;
+                        gDynamicBuffer1.top += sizeof(Mat4);
                         phi_s0 = temp_s0;
 block_36:
                         temp_v0_6 = temp_s2->unk4;
@@ -917,10 +918,9 @@ block_36:
                             sp2D4 = temp_t8_2 + 8;
                             temp_t8_2->unk4 = 0;
                             temp_t8_2->unk0 = 0xD5000001;
-                            temp_t1_4 = sp2D4;
-                            sp2D4 = temp_t1_4 + 8;
-                            temp_t1_4->unk0 = 0xDB000000;
-                            temp_t1_4->unk4 = D_8004AA90->unk0;
+
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, D_8004AA90->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, D_8004AA90->unk4);
                             temp_t7_5 = sp2D4;
                             sp2D4 = temp_t7_5 + 8;
                             temp_t7_5->unk0 = 0xDB000004;
@@ -989,54 +989,19 @@ block_36:
                             sp2D4 = temp_t9_3 + 8;
                             temp_t9_3->unk4 = 0;
                             temp_t9_3->unk0 = 0xD5000001;
-                            temp_t3_4 = sp2D4;
-                            sp2D4 = temp_t3_4 + 8;
-                            temp_t3_4->unk0 = 0xDB000008;
-                            temp_t3_4->unk4 = phi_s0->unk0;
-                            temp_t7_6 = sp2D4;
-                            sp2D4 = temp_t7_6 + 8;
-                            temp_t7_6->unk0 = 0xDB00000C;
-                            temp_t7_6->unk4 = phi_s0->unk4;
-                            temp_t1_6 = sp2D4;
-                            sp2D4 = temp_t1_6 + 8;
-                            temp_t1_6->unk0 = 0xDB000010;
-                            temp_t1_6->unk4 = phi_s0->unk8;
-                            temp_t6_3 = sp2D4;
-                            sp2D4 = temp_t6_3 + 8;
-                            temp_t6_3->unk0 = 0xDB000014;
-                            temp_t6_3->unk4 = phi_s0->unkC;
-                            temp_t2_4 = sp2D4;
-                            sp2D4 = temp_t2_4 + 8;
-                            temp_t2_4->unk0 = 0xDB000000;
-                            temp_t2_4->unk4 = phi_s0->unk10;
-                            temp_t4_3 = sp2D4;
-                            sp2D4 = temp_t4_3 + 8;
-                            temp_t4_3->unk0 = 0xDB000004;
-                            temp_t4_3->unk4 = phi_s0->unk14;
-                            temp_t9_4 = sp2D4;
-                            sp2D4 = temp_t9_4 + 8;
-                            temp_t9_4->unk0 = 0xDB000028;
-                            temp_t9_4->unk4 = phi_s0->unk20;
-                            temp_t5_3 = sp2D4;
-                            sp2D4 = temp_t5_3 + 8;
-                            temp_t5_3->unk0 = 0xDB00002C;
-                            temp_t5_3->unk4 = phi_s0->unk24;
-                            temp_t8_4 = sp2D4;
-                            sp2D4 = temp_t8_4 + 8;
-                            temp_t8_4->unk0 = 0xDB000030;
-                            temp_t8_4->unk4 = phi_s0->unk28;
-                            temp_t3_5 = sp2D4;
-                            sp2D4 = temp_t3_5 + 8;
-                            temp_t3_5->unk0 = 0xDB000034;
-                            temp_t3_5->unk4 = phi_s0->unk2C;
-                            temp_a0_4 = sp2D4;
-                            sp2D4 = temp_a0_4 + 8;
-                            temp_a0_4->unk0 = 0xDB000020;
-                            temp_a0_4->unk4 = phi_s0->unk30;
-                            temp_t1_7 = sp2D4;
-                            sp2D4 = temp_t1_7 + 8;
-                            temp_t1_7->unk0 = 0xDB000024;
-                            temp_t1_7->unk4 = phi_s0->unk34;
+
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 43: // switch 3
@@ -1061,54 +1026,20 @@ block_36:
                             sp2D4 = temp_t7_7 + 8;
                             temp_t7_7->unk4 = 0;
                             temp_t7_7->unk0 = 0xD5000001;
-                            temp_t2_5 = sp2D4;
-                            sp2D4 = temp_t2_5 + 8;
-                            temp_t2_5->unk0 = 0xDB000000;
-                            temp_t2_5->unk4 = phi_s0->unk0;
-                            temp_t4_4 = sp2D4;
-                            sp2D4 = temp_t4_4 + 8;
-                            temp_t4_4->unk0 = 0xDB000004;
-                            temp_t4_4->unk4 = phi_s0->unk4;
-                            temp_t9_5 = sp2D4;
-                            sp2D4 = temp_t9_5 + 8;
-                            temp_t9_5->unk0 = 0xDB000008;
-                            temp_t9_5->unk4 = phi_s0->unk8;
-                            temp_t5_4 = sp2D4;
-                            sp2D4 = temp_t5_4 + 8;
-                            temp_t5_4->unk0 = 0xDB00000C;
-                            temp_t5_4->unk4 = phi_s0->unkC;
-                            temp_t8_5 = sp2D4;
-                            sp2D4 = temp_t8_5 + 8;
-                            temp_t8_5->unk0 = 0xDB000010;
-                            temp_t8_5->unk4 = phi_s0->unk10;
-                            temp_t3_6 = sp2D4;
-                            sp2D4 = temp_t3_6 + 8;
-                            temp_t3_6->unk0 = 0xDB000014;
-                            temp_t3_6->unk4 = phi_s0->unk14;
-                            temp_t7_8 = sp2D4;
-                            sp2D4 = temp_t7_8 + 8;
-                            temp_t7_8->unk0 = 0xDB000020;
-                            temp_t7_8->unk4 = phi_s0->unk20;
-                            temp_t1_8 = sp2D4;
-                            sp2D4 = temp_t1_8 + 8;
-                            temp_t1_8->unk0 = 0xDB000024;
-                            temp_t1_8->unk4 = phi_s0->unk24;
-                            temp_t6_4 = sp2D4;
-                            sp2D4 = temp_t6_4 + 8;
-                            temp_t6_4->unk0 = 0xDB000028;
-                            temp_t6_4->unk4 = phi_s0->unk28;
-                            temp_t2_6 = sp2D4;
-                            sp2D4 = temp_t2_6 + 8;
-                            temp_t2_6->unk0 = 0xDB00002C;
-                            temp_t2_6->unk4 = phi_s0->unk2C;
-                            temp_a0_5 = sp2D4;
-                            sp2D4 = temp_a0_5 + 8;
-                            temp_a0_5->unk0 = 0xDB000030;
-                            temp_a0_5->unk4 = phi_s0->unk30;
-                            temp_t9_6 = sp2D4;
-                            sp2D4 = temp_t9_6 + 8;
-                            temp_t9_6->unk0 = 0xDB000034;
-                            temp_t9_6->unk4 = phi_s0->unk34;
+
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
+
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 44: // switch 3
@@ -1137,54 +1068,20 @@ block_36:
                             sp2D4 = temp_t4_5 + 8;
                             temp_t4_5->unk4 = 0;
                             temp_t4_5->unk0 = 0xD5000001;
-                            temp_t8_6 = sp2D4;
-                            sp2D4 = temp_t8_6 + 8;
-                            temp_t8_6->unk0 = 0xDB000000;
-                            temp_t8_6->unk4 = phi_s0->unk0;
-                            temp_t3_7 = sp2D4;
-                            sp2D4 = temp_t3_7 + 8;
-                            temp_t3_7->unk0 = 0xDB000004;
-                            temp_t3_7->unk4 = phi_s0->unk4;
-                            temp_t7_9 = sp2D4;
-                            sp2D4 = temp_t7_9 + 8;
-                            temp_t7_9->unk0 = 0xDB000008;
-                            temp_t7_9->unk4 = phi_s0->unk8;
-                            temp_t1_9 = sp2D4;
-                            sp2D4 = temp_t1_9 + 8;
-                            temp_t1_9->unk0 = 0xDB00000C;
-                            temp_t1_9->unk4 = phi_s0->unkC;
-                            temp_t6_5 = sp2D4;
-                            sp2D4 = temp_t6_5 + 8;
-                            temp_t6_5->unk0 = 0xDB000010;
-                            temp_t6_5->unk4 = phi_s0->unk10;
-                            temp_t2_7 = sp2D4;
-                            sp2D4 = temp_t2_7 + 8;
-                            temp_t2_7->unk0 = 0xDB000014;
-                            temp_t2_7->unk4 = phi_s0->unk14;
-                            temp_t4_6 = sp2D4;
-                            sp2D4 = temp_t4_6 + 8;
-                            temp_t4_6->unk0 = 0xDB000020;
-                            temp_t4_6->unk4 = phi_s0->unk20;
-                            temp_t9_7 = sp2D4;
-                            sp2D4 = temp_t9_7 + 8;
-                            temp_t9_7->unk0 = 0xDB000024;
-                            temp_t9_7->unk4 = phi_s0->unk24;
-                            temp_t5_5 = sp2D4;
-                            sp2D4 = temp_t5_5 + 8;
-                            temp_t5_5->unk0 = 0xDB000028;
-                            temp_t5_5->unk4 = phi_s0->unk28;
-                            temp_t8_7 = sp2D4;
-                            sp2D4 = temp_t8_7 + 8;
-                            temp_t8_7->unk0 = 0xDB00002C;
-                            temp_t8_7->unk4 = phi_s0->unk2C;
-                            temp_a0_6 = sp2D4;
-                            sp2D4 = temp_a0_6 + 8;
-                            temp_a0_6->unk0 = 0xDB000030;
-                            temp_a0_6->unk4 = phi_s0->unk30;
-                            temp_t7_10 = sp2D4;
-                            sp2D4 = temp_t7_10 + 8;
-                            temp_t7_10->unk0 = 0xDB000034;
-                            temp_t7_10->unk4 = phi_s0->unk34;
+
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
+
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 45: // switch 3
@@ -1213,54 +1110,18 @@ block_36:
                             sp2D4 = temp_t3_8 + 8;
                             temp_t3_8->unk4 = 0;
                             temp_t3_8->unk0 = 0xD5000001;
-                            temp_t6_6 = sp2D4;
-                            sp2D4 = temp_t6_6 + 8;
-                            temp_t6_6->unk0 = 0xDB000000;
-                            temp_t6_6->unk4 = phi_s0->unk0;
-                            temp_t2_8 = sp2D4;
-                            sp2D4 = temp_t2_8 + 8;
-                            temp_t2_8->unk0 = 0xDB000004;
-                            temp_t2_8->unk4 = phi_s0->unk4;
-                            temp_t4_7 = sp2D4;
-                            sp2D4 = temp_t4_7 + 8;
-                            temp_t4_7->unk0 = 0xDB000008;
-                            temp_t4_7->unk4 = phi_s0->unk8;
-                            temp_t9_8 = sp2D4;
-                            sp2D4 = temp_t9_8 + 8;
-                            temp_t9_8->unk0 = 0xDB00000C;
-                            temp_t9_8->unk4 = phi_s0->unkC;
-                            temp_t5_6 = sp2D4;
-                            sp2D4 = temp_t5_6 + 8;
-                            temp_t5_6->unk0 = 0xDB000010;
-                            temp_t5_6->unk4 = phi_s0->unk10;
-                            temp_t8_8 = sp2D4;
-                            sp2D4 = temp_t8_8 + 8;
-                            temp_t8_8->unk0 = 0xDB000014;
-                            temp_t8_8->unk4 = phi_s0->unk14;
-                            temp_t3_9 = sp2D4;
-                            sp2D4 = temp_t3_9 + 8;
-                            temp_t3_9->unk0 = 0xDB000020;
-                            temp_t3_9->unk4 = phi_s0->unk20;
-                            temp_t7_11 = sp2D4;
-                            sp2D4 = temp_t7_11 + 8;
-                            temp_t7_11->unk0 = 0xDB000024;
-                            temp_t7_11->unk4 = phi_s0->unk24;
-                            temp_t1_10 = sp2D4;
-                            sp2D4 = temp_t1_10 + 8;
-                            temp_t1_10->unk0 = 0xDB000028;
-                            temp_t1_10->unk4 = phi_s0->unk28;
-                            temp_t6_7 = sp2D4;
-                            sp2D4 = temp_t6_7 + 8;
-                            temp_t6_7->unk0 = 0xDB00002C;
-                            temp_t6_7->unk4 = phi_s0->unk2C;
-                            temp_a0_7 = sp2D4;
-                            sp2D4 = temp_a0_7 + 8;
-                            temp_a0_7->unk0 = 0xDB000030;
-                            temp_a0_7->unk4 = phi_s0->unk30;
-                            temp_t4_8 = sp2D4;
-                            sp2D4 = temp_t4_8 + 8;
-                            temp_t4_8->unk0 = 0xDB000034;
-                            temp_t4_8->unk4 = phi_s0->unk34;
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 46: // switch 3
@@ -1285,54 +1146,18 @@ block_36:
                             sp2D4 = temp_t2_9 + 8;
                             temp_t2_9->unk4 = 0;
                             temp_t2_9->unk0 = 0xD5000001;
-                            temp_t5_7 = sp2D4;
-                            sp2D4 = temp_t5_7 + 8;
-                            temp_t5_7->unk0 = 0xDB000008;
-                            temp_t5_7->unk4 = phi_s0->unk0;
-                            temp_t8_9 = sp2D4;
-                            sp2D4 = temp_t8_9 + 8;
-                            temp_t8_9->unk0 = 0xDB00000C;
-                            temp_t8_9->unk4 = phi_s0->unk4;
-                            temp_t3_10 = sp2D4;
-                            sp2D4 = temp_t3_10 + 8;
-                            temp_t3_10->unk0 = 0xDB000010;
-                            temp_t3_10->unk4 = phi_s0->unk8;
-                            temp_t7_12 = sp2D4;
-                            sp2D4 = temp_t7_12 + 8;
-                            temp_t7_12->unk0 = 0xDB000014;
-                            temp_t7_12->unk4 = phi_s0->unkC;
-                            temp_t1_11 = sp2D4;
-                            sp2D4 = temp_t1_11 + 8;
-                            temp_t1_11->unk0 = 0xDB000000;
-                            temp_t1_11->unk4 = phi_s0->unk10;
-                            temp_t6_8 = sp2D4;
-                            sp2D4 = temp_t6_8 + 8;
-                            temp_t6_8->unk0 = 0xDB000004;
-                            temp_t6_8->unk4 = phi_s0->unk14;
-                            temp_t2_10 = sp2D4;
-                            sp2D4 = temp_t2_10 + 8;
-                            temp_t2_10->unk0 = 0xDB000028;
-                            temp_t2_10->unk4 = phi_s0->unk20;
-                            temp_t4_9 = sp2D4;
-                            sp2D4 = temp_t4_9 + 8;
-                            temp_t4_9->unk0 = 0xDB00002C;
-                            temp_t4_9->unk4 = phi_s0->unk24;
-                            temp_t9_9 = sp2D4;
-                            sp2D4 = temp_t9_9 + 8;
-                            temp_t9_9->unk0 = 0xDB000030;
-                            temp_t9_9->unk4 = phi_s0->unk28;
-                            temp_t5_8 = sp2D4;
-                            sp2D4 = temp_t5_8 + 8;
-                            temp_t5_8->unk0 = 0xDB000034;
-                            temp_t5_8->unk4 = phi_s0->unk2C;
-                            temp_a0_8 = sp2D4;
-                            sp2D4 = temp_a0_8 + 8;
-                            temp_a0_8->unk0 = 0xDB000020;
-                            temp_a0_8->unk4 = phi_s0->unk30;
-                            temp_t3_11 = sp2D4;
-                            sp2D4 = temp_t3_11 + 8;
-                            temp_t3_11->unk0 = 0xDB000024;
-                            temp_t3_11->unk4 = phi_s0->unk34;
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 47: // switch 3
@@ -1357,54 +1182,18 @@ block_36:
                             sp2D4 = temp_t8_10 + 8;
                             temp_t8_10->unk4 = 0;
                             temp_t8_10->unk0 = 0xD5000001;
-                            temp_t1_12 = sp2D4;
-                            sp2D4 = temp_t1_12 + 8;
-                            temp_t1_12->unk0 = 0xDB000000;
-                            temp_t1_12->unk4 = phi_s0->unk0;
-                            temp_t6_9 = sp2D4;
-                            sp2D4 = temp_t6_9 + 8;
-                            temp_t6_9->unk0 = 0xDB000004;
-                            temp_t6_9->unk4 = phi_s0->unk4;
-                            temp_t2_11 = sp2D4;
-                            sp2D4 = temp_t2_11 + 8;
-                            temp_t2_11->unk0 = 0xDB000008;
-                            temp_t2_11->unk4 = phi_s0->unk8;
-                            temp_t4_10 = sp2D4;
-                            sp2D4 = temp_t4_10 + 8;
-                            temp_t4_10->unk0 = 0xDB00000C;
-                            temp_t4_10->unk4 = phi_s0->unkC;
-                            temp_t9_10 = sp2D4;
-                            sp2D4 = temp_t9_10 + 8;
-                            temp_t9_10->unk0 = 0xDB000010;
-                            temp_t9_10->unk4 = phi_s0->unk10;
-                            temp_t5_9 = sp2D4;
-                            sp2D4 = temp_t5_9 + 8;
-                            temp_t5_9->unk0 = 0xDB000014;
-                            temp_t5_9->unk4 = phi_s0->unk14;
-                            temp_t8_11 = sp2D4;
-                            sp2D4 = temp_t8_11 + 8;
-                            temp_t8_11->unk0 = 0xDB000020;
-                            temp_t8_11->unk4 = phi_s0->unk20;
-                            temp_t3_12 = sp2D4;
-                            sp2D4 = temp_t3_12 + 8;
-                            temp_t3_12->unk0 = 0xDB000024;
-                            temp_t3_12->unk4 = phi_s0->unk24;
-                            temp_t7_13 = sp2D4;
-                            sp2D4 = temp_t7_13 + 8;
-                            temp_t7_13->unk0 = 0xDB000028;
-                            temp_t7_13->unk4 = phi_s0->unk28;
-                            temp_t1_13 = sp2D4;
-                            sp2D4 = temp_t1_13 + 8;
-                            temp_t1_13->unk0 = 0xDB00002C;
-                            temp_t1_13->unk4 = phi_s0->unk2C;
-                            temp_a0_9 = sp2D4;
-                            sp2D4 = temp_a0_9 + 8;
-                            temp_a0_9->unk0 = 0xDB000030;
-                            temp_a0_9->unk4 = phi_s0->unk30;
-                            temp_t2_12 = sp2D4;
-                            sp2D4 = temp_t2_12 + 8;
-                            temp_t2_12->unk0 = 0xDB000034;
-                            temp_t2_12->unk4 = phi_s0->unk34;
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                             goto block_117;
                         case 48: // switch 3
@@ -1429,54 +1218,18 @@ block_36:
                             sp2D4 = temp_t6_10 + 8;
                             temp_t6_10->unk4 = 0;
                             temp_t6_10->unk0 = 0xD5000001;
-                            temp_t9_11 = sp2D4;
-                            sp2D4 = temp_t9_11 + 8;
-                            temp_t9_11->unk0 = 0xDB000008;
-                            temp_t9_11->unk4 = phi_s0->unk0;
-                            temp_t5_10 = sp2D4;
-                            sp2D4 = temp_t5_10 + 8;
-                            temp_t5_10->unk0 = 0xDB00000C;
-                            temp_t5_10->unk4 = phi_s0->unk4;
-                            temp_t8_12 = sp2D4;
-                            sp2D4 = temp_t8_12 + 8;
-                            temp_t8_12->unk0 = 0xDB000010;
-                            temp_t8_12->unk4 = phi_s0->unk8;
-                            temp_t3_13 = sp2D4;
-                            sp2D4 = temp_t3_13 + 8;
-                            temp_t3_13->unk0 = 0xDB000014;
-                            temp_t3_13->unk4 = phi_s0->unkC;
-                            temp_t7_14 = sp2D4;
-                            sp2D4 = temp_t7_14 + 8;
-                            temp_t7_14->unk0 = 0xDB000000;
-                            temp_t7_14->unk4 = phi_s0->unk10;
-                            temp_t1_14 = sp2D4;
-                            sp2D4 = temp_t1_14 + 8;
-                            temp_t1_14->unk0 = 0xDB000004;
-                            temp_t1_14->unk4 = phi_s0->unk14;
-                            temp_t6_11 = sp2D4;
-                            sp2D4 = temp_t6_11 + 8;
-                            temp_t6_11->unk0 = 0xDB000028;
-                            temp_t6_11->unk4 = phi_s0->unk20;
-                            temp_t2_13 = sp2D4;
-                            sp2D4 = temp_t2_13 + 8;
-                            temp_t2_13->unk0 = 0xDB00002C;
-                            temp_t2_13->unk4 = phi_s0->unk24;
-                            temp_t4_11 = sp2D4;
-                            sp2D4 = temp_t4_11 + 8;
-                            temp_t4_11->unk0 = 0xDB000030;
-                            temp_t4_11->unk4 = phi_s0->unk28;
-                            temp_t9_12 = sp2D4;
-                            sp2D4 = temp_t9_12 + 8;
-                            temp_t9_12->unk0 = 0xDB000034;
-                            temp_t9_12->unk4 = phi_s0->unk2C;
-                            temp_a0_10 = sp2D4;
-                            sp2D4 = temp_a0_10 + 8;
-                            temp_a0_10->unk0 = 0xDB000020;
-                            temp_a0_10->unk4 = phi_s0->unk30;
-                            temp_t8_13 = sp2D4;
-                            sp2D4 = temp_t8_13 + 8;
-                            temp_t8_13->unk0 = 0xDB000024;
-                            temp_t8_13->unk4 = phi_s0->unk34;
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_t3 = arg1->unk56 * 4;
                             goto block_116;
                         case 49: // switch 3
@@ -1501,54 +1254,18 @@ block_36:
                             sp2D4 = temp_t5_11 + 8;
                             temp_t5_11->unk4 = 0;
                             temp_t5_11->unk0 = 0xD5000001;
-                            temp_t7_15 = sp2D4;
-                            sp2D4 = temp_t7_15 + 8;
-                            temp_t7_15->unk0 = 0xDB000000;
-                            temp_t7_15->unk4 = phi_s0->unk0;
-                            temp_t1_15 = sp2D4;
-                            sp2D4 = temp_t1_15 + 8;
-                            temp_t1_15->unk0 = 0xDB000004;
-                            temp_t1_15->unk4 = phi_s0->unk4;
-                            temp_t6_12 = sp2D4;
-                            sp2D4 = temp_t6_12 + 8;
-                            temp_t6_12->unk0 = 0xDB000008;
-                            temp_t6_12->unk4 = phi_s0->unk8;
-                            temp_t2_14 = sp2D4;
-                            sp2D4 = temp_t2_14 + 8;
-                            temp_t2_14->unk0 = 0xDB00000C;
-                            temp_t2_14->unk4 = phi_s0->unkC;
-                            temp_t4_12 = sp2D4;
-                            sp2D4 = temp_t4_12 + 8;
-                            temp_t4_12->unk0 = 0xDB000010;
-                            temp_t4_12->unk4 = phi_s0->unk10;
-                            temp_t9_13 = sp2D4;
-                            sp2D4 = temp_t9_13 + 8;
-                            temp_t9_13->unk0 = 0xDB000014;
-                            temp_t9_13->unk4 = phi_s0->unk14;
-                            temp_t5_12 = sp2D4;
-                            sp2D4 = temp_t5_12 + 8;
-                            temp_t5_12->unk0 = 0xDB000020;
-                            temp_t5_12->unk4 = phi_s0->unk20;
-                            temp_t8_14 = sp2D4;
-                            sp2D4 = temp_t8_14 + 8;
-                            temp_t8_14->unk0 = 0xDB000024;
-                            temp_t8_14->unk4 = phi_s0->unk24;
-                            temp_t3_14 = sp2D4;
-                            sp2D4 = temp_t3_14 + 8;
-                            temp_t3_14->unk0 = 0xDB000028;
-                            temp_t3_14->unk4 = phi_s0->unk28;
-                            temp_t7_16 = sp2D4;
-                            sp2D4 = temp_t7_16 + 8;
-                            temp_t7_16->unk0 = 0xDB00002C;
-                            temp_t7_16->unk4 = phi_s0->unk2C;
-                            temp_a0_11 = sp2D4;
-                            sp2D4 = temp_a0_11 + 8;
-                            temp_a0_11->unk0 = 0xDB000030;
-                            temp_a0_11->unk4 = phi_s0->unk30;
-                            temp_t6_13 = sp2D4;
-                            sp2D4 = temp_t6_13 + 8;
-                            temp_t6_13->unk0 = 0xDB000034;
-                            temp_t6_13->unk4 = phi_s0->unk34;
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_I, phi_s0->unk0);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_I, phi_s0->unk4);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_I, phi_s0->unk8);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_I, phi_s0->unkC);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_I, phi_s0->unk10);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_I, phi_s0->unk14);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YX_YY_F, phi_s0->unk20);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_YZ_YW_F, phi_s0->unk24);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZX_ZY_F, phi_s0->unk28);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_ZZ_ZW_F, phi_s0->unk2C);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XX_XY_F, phi_s0->unk30);
+                            gSPInsertMatrix(*arg0++, G_MWO_MATRIX_XZ_XW_F, phi_s0->unk34);
                             phi_a2 = (arg1->unk56 * 4) + arg1;
                         } else {
                         default: // switch 3
@@ -2369,74 +2086,43 @@ void func_80014240(void* arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_80014264(void *arg0) {
+void func_80014264(struct Unk80005A98 *arg0) {
     s32 sp2C;
     f32 sp24;
-    Gfx *temp_v1;
-    Gfx *temp_v1_2;
-    s32 temp_a0_2;
-    void *temp_a0;
-    void *temp_a1;
-    void *temp_a2;
-    void *temp_a2_2;
-    void *temp_s0;
-    void *temp_s0_2;
-    void *phi_a2;
-    void *phi_a2_2;
-    void *phi_a2_3;
     void *phi_s0;
 
-    temp_a2 = arg0;
-    phi_a2_3 = temp_a2;
     if ((arg0->unk54 & 2) == 0) {
-        temp_a1 = temp_a2;
-        arg0 = temp_a2;
         sp24 = D_8004AA94;
-        temp_a2_2 = arg0;
-        sp2C = func_80011180(gDisplayListHeads, temp_a1, temp_a2);
-        phi_a2 = temp_a2_2;
-        if (temp_a2_2->unk50 != 0) {
-            temp_a0 = temp_a2_2;
-            phi_a2 = temp_a2_2;
-            if ((temp_a2_2->unk54 & 1) == 0) {
-                arg0 = temp_a2_2;
-                func_80013300(temp_a0, gDisplayListHeads, temp_a2_2);
-                temp_v1 = *gDisplayListHeads;
-                *gDisplayListHeads = temp_v1 + 8;
-                temp_v1->words.w0 = 0xDE000000;
-                temp_v1->words.w1 = arg0->unk50;
-                phi_a2 = arg0;
+        sp2C = func_80011180(gDisplayListHeads, arg0, arg0);
+        if (arg0->unk50 != 0) {
+            if ((arg0->unk54 & 1) == 0) {
+                func_80013300(arg0, gDisplayListHeads, arg0);
+                gSPDisplayList(gDisplayListHeads[0]++, arg0->unk50);
+                // temp_v1 = *gDisplayListHeads;
+                // *gDisplayListHeads = temp_v1 + 8;
+                // temp_v1->words.w0 = 0xDE000000;
+                // temp_v1->words.w1 = arg0->unk50;
             }
         }
-        temp_a0_2 = phi_a2->unk10;
-        phi_a2_2 = phi_a2;
-        if (temp_a0_2 != 0) {
-            arg0 = phi_a2;
-            func_80014264(temp_a0_2, phi_a2);
-            phi_a2_2 = arg0;
+        if (arg0->unk10 != 0) {
+            func_80014264(arg0->unk10, arg0);
         }
         if (sp2C != 0) {
-            if ((phi_a2_2->unk14 == 1) || (phi_a2_2->unk8 != 0)) {
-                temp_v1_2 = *gDisplayListHeads;
-                *gDisplayListHeads = temp_v1_2 + 8;
-                temp_v1_2->words.w1 = 0x40;
-                temp_v1_2->words.w0 = 0xD8380002;
+            if ((arg0->unk14 == 1) || (arg0->unk8 != 0)) {
+                // temp_v1_2 = *gDisplayListHeads;
+                // *gDisplayListHeads = temp_v1_2 + 8;
+                // temp_v1_2->words.w1 = 0x40;
+                // temp_v1_2->words.w0 = 0xD8380002;
+                gSPPopMatrix(gDisplayListHeads[0]++, G_MTX_MODELVIEW);
             }
         }
         D_8004AA94 = sp24;
-        phi_a2_3 = phi_a2_2;
     }
-    if (phi_a2_3->unkC == 0) {
-        temp_s0 = phi_a2_3->unk8;
-        phi_s0 = temp_s0;
-        if (temp_s0 != 0) {
-loop_13:
+    if (arg0->unkC == 0) {
+        phi_s0 = arg0->unk8;
+        while (phi_s0 != 0) {
             func_80014264(phi_s0);
-            temp_s0_2 = phi_s0->unk8;
-            phi_s0 = temp_s0_2;
-            if (temp_s0_2 != 0) {
-                goto loop_13;
-            }
+            phi_s0 = phi_s0->unk8;
         }
     }
 }
@@ -5512,6 +5198,8 @@ loop_6:
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_800183BC.s")
 #endif
+
+// file boundary???
 
 extern f32 sinf(f32 a);
 extern f32 cosf(f32 a);

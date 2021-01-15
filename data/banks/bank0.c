@@ -2,11 +2,12 @@
 #include "segments.h"
 #include "banks/bank0.h"
 
+extern u32 bank_0_index_1_geo_block_header[];
 u32 *D_800C46A0[] = {
 	NULL,
 	NULL,
 	bank_0_index_1_geo_start,
-	bank_0_index_1_geo_end,
+	bank_0_index_2_geo_start,
 	bank_0_index_2_geo_start,
 	bank_0_index_2_geo_end,
 	bank_0_index_3_geo_start,

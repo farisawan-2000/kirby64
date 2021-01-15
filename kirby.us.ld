@@ -645,7 +645,9 @@ SECTIONS
    }
    END_SEG(data_4A3B60)
 
+   #include "assets/bank0.ld" 
    BEGIN_SEG(bank_data, __romPos) { /*TODO: get a good addr for this*/
+      /*BUILD_DIR/assets/geo/bank_0/1/block.o(.data);*/
       BUILD_DIR/asm/banks/bank0.o(.data);
       BUILD_DIR/asm/banks/bank1.o(.data);
       BUILD_DIR/asm/banks/bank2.o(.data);
