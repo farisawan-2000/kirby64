@@ -17,17 +17,17 @@
 # glabel bank_2_index_4_geo # 0x7DEE90
 # .incbin "assets/geo/bank_2/4/block.bin"
 
-.balign 2
-glabel bank_2_index_5_geo # 0x7DF300
-.incbin "assets/geo/bank_2/5/block.bin"
+# .balign 2
+# glabel bank_2_index_5_geo # 0x7DF300
+# .incbin "assets/geo/bank_2/5/block.bin"
 
-.balign 2
-glabel bank_2_index_6_geo # 0x7DF770
-.incbin "assets/geo/bank_2/6/block.bin"
+# .balign 2
+# glabel bank_2_index_6_geo # 0x7DF770
+# .incbin "assets/geo/bank_2/6/block.bin"
 
-.balign 2
-glabel bank_2_index_7_geo # 0x7DFA70
-.incbin "assets/geo/bank_2/7/block.bin"
+# .balign 2
+# glabel bank_2_index_7_geo # 0x7DFA70
+# .incbin "assets/geo/bank_2/7/block.bin"
 
 .balign 2
 glabel bank_2_index_8_geo # 0x7E38C0

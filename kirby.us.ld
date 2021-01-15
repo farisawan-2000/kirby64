@@ -648,7 +648,7 @@ SECTIONS
    #include "assets/bank0.ld"
    BEGIN_SEG(bank_data1, __romPos) {
       /*BUILD_DIR/assets/geo/bank_0/1/block.o(.data);*/
-      BUILD_DIR/asm/banks/bank0.o(.data);
+      BUILD_DIR/asm/banks/bank0.o(.data); 
       BUILD_DIR/asm/banks/bank1.o(.data);
    }
    END_SEG(bank_data1)
