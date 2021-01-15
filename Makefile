@@ -218,7 +218,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) assets/bank0.ld $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum

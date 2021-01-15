@@ -17,10 +17,10 @@
 # .incbin "assets/geo/bank_0/3/block.bin"
 # glabel bank_0_index_3_geo_end
 
-.balign 2
-glabel bank_0_index_4_geo_start # 0x4ACD30
-.incbin "assets/geo/bank_0/4/block.bin"
-glabel bank_0_index_4_geo_end
+# .balign 2
+# glabel bank_0_index_4_geo_start # 0x4ACD30
+# .incbin "assets/geo/bank_0/4/block.bin"
+# glabel bank_0_index_4_geo_end 
 
 .balign 2
 glabel bank_0_index_5_geo_start # 0x4AFE80
