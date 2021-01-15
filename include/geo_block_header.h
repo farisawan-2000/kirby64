@@ -6,6 +6,11 @@ struct EntryPoint {
 	Gfx *dl;
 };
 
+struct DisplayListPair {
+	Gfx *dl1;
+	Gfx *dl2;
+};
+
 struct Layout {
 	u16 flag;
 	u16 command;
