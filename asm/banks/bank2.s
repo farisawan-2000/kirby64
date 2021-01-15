@@ -1,21 +1,21 @@
 .include "macros.inc"
 .section .data
 
-.balign 2
-glabel bank_2_index_1_geo # 0x7DDF60
-.incbin "assets/geo/bank_2/1/block.bin"
+# .balign 2
+# glabel bank_2_index_1_geo # 0x7DDF60
+# .incbin "assets/geo/bank_2/1/block.bin"
 
-.balign 2
-glabel bank_2_index_2_geo # 0x7DE680
-.incbin "assets/geo/bank_2/2/block.bin"
+# .balign 2
+# glabel bank_2_index_2_geo # 0x7DE680
+# .incbin "assets/geo/bank_2/2/block.bin"
 
-.balign 2
-glabel bank_2_index_3_geo # 0x7DEC30
-.incbin "assets/geo/bank_2/3/block.bin"
+# .balign 2
+# glabel bank_2_index_3_geo # 0x7DEC30
+# .incbin "assets/geo/bank_2/3/block.bin"
 
-.balign 2
-glabel bank_2_index_4_geo # 0x7DEE90
-.incbin "assets/geo/bank_2/4/block.bin"
+# .balign 2
+# glabel bank_2_index_4_geo # 0x7DEE90
+# .incbin "assets/geo/bank_2/4/block.bin"
 
 .balign 2
 glabel bank_2_index_5_geo # 0x7DF300

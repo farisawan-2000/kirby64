@@ -644,12 +644,16 @@ SECTIONS
       BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
    }
    END_SEG(data_4A3B60)
-
+ 
    #include "assets/bank0.ld"
-   BEGIN_SEG(bank_data, __romPos) { /*TODO: get a good addr for this*/
+   BEGIN_SEG(bank_data1, __romPos) {
       /*BUILD_DIR/assets/geo/bank_0/1/block.o(.data);*/
       BUILD_DIR/asm/banks/bank0.o(.data);
       BUILD_DIR/asm/banks/bank1.o(.data);
+   }
+   END_SEG(bank_data1)
+   #include "assets/bank2.ld"
+   BEGIN_SEG(bank_data2, __romPos) {
       BUILD_DIR/asm/banks/bank2.o(.data);
       BUILD_DIR/asm/banks/bank3.o(.data);
       BUILD_DIR/asm/banks/bank4.o(.data);
@@ -657,7 +661,7 @@ SECTIONS
       BUILD_DIR/asm/banks/bank6.o(.data);
       BUILD_DIR/asm/banks/bank7.o(.data);
    }
-   END_SEG(bank_data)
+   END_SEG(bank_data2)
 
    /DISCARD/ :
    {
