@@ -3,6 +3,7 @@
 build/*
 tools/GeoFromBin*
 assets/*.bin
+assets/*.c
 *.z64
 textures/*
 bin/*
