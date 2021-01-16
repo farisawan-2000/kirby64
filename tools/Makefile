@@ -1,9 +1,12 @@
 CC := gcc
-CFLAGS := -I . -Wall -Wextra -Wno-unused-parameter -pedantic -std=c99 -O3 -s
-PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math
+CFLAGS := -I . -Wall -Wextra -Wno-unused-parameter -pedantic -O3 -s
+PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2
 
 iplfontutil_SOURCES := iplfontutil.c
 iplfontutil_CFLAGS := -O2 # faster compile time
+
+gfxdis_f3dex2_SOURCES := gfxdis/gfxdis.c gfxdis/main.c
+gfxdis_f3dex2_CFLAGS := -DF3DEX_GBI_2 -Igfxdis/include/ -Igfxdis/ -O2 -std=gnu99 -Wno-pedantic
 
 n64crc_SOURCES := n64crc.c
 n64crc_CFLAGS := -O2 # faster compile time
