@@ -123,14 +123,14 @@ CC_TEST := gcc -Wall
 ######################## Targets #############################
 
 NOEXTRACT ?= 0
-ifeq ($(VERBOSE),1)
-	DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
-else
-	DUMMY != ./extract_assets.py $(VERSION) CI >&2 || echo FAIL
-endif
-ifeq ($(DUMMY),FAIL)
-  $(error Failed to extract assets)
-endif
+# ifeq ($(VERBOSE),1)
+# 	DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
+# else
+# 	DUMMY != ./extract_assets.py $(VERSION) CI >&2 || echo FAIL
+# endif
+# ifeq ($(DUMMY),FAIL)
+#   $(error Failed to extract assets)
+# endif
 
 
 ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
@@ -148,10 +148,7 @@ ifeq ($(DUMMY),FAIL)
 endif
 
 # Making submodules
-DUMMY != make -C libreultra -j4
-DUMMY != make -C libreultra naudio -j4
-DUMMY != make -C tools -j4
-DUMMY != make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+
 
 
 default: all
@@ -216,9 +213,6 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
-assets/geo/%.c: assets/geo/%.bin
-	python3 tools/scut/GeoFromBin.py $< $@
-
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
 
@@ -255,6 +249,14 @@ test: $(BUILD_DIR)/$(TARGET).z64
 
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
+
+setup: $(ASSET_C_FILES)
+	make -C libreultra -j4
+	make -C libreultra naudio -j4
+	make -C tools -j4
+	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	make -C tools
+	./extract_assets.py $(VERSION)
 
 .PHONY: all clean default diff test distclean
 

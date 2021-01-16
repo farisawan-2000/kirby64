@@ -146,7 +146,6 @@ def main():
     # Go through the assets in roughly alphabetical order (but assets in the same
     # compressed block still go together).
     keys = sorted(list(todo.keys()), key=lambda k: todo[k][0][0])
-
     # Import new assets
     for key in keys:
         assets = todo[key]
@@ -250,6 +249,11 @@ def main():
             else:
                 with open(asset, "wb") as f:
                     f.write(input)
+                if "geo" in asset:
+                    if "bank_0" in asset or "bank_1" in asset or "bank_2" in asset:
+                        asset_c = asset[:-3] + "c"
+                        print("Converting %s to C..." % asset)
+                        subprocess.run("python3 tools/scut/GeoFromBin.py %s %s" % (asset, asset_c), shell=True)
 
     # Remove old assets
     for asset in previous_assets:
