@@ -535,7 +535,6 @@ def WriteGeoF3d2(file,f3d,starts):
     NewStarts = [[i,s] for i,s in enumerate(starts)]
     NewStarts.sort(key= lambda x: x[1])
     NewF3D = [f3d[i[0]] for i in NewStarts]
-    print("ASAJLDKAJL")
     for j,l in enumerate(NewF3D):
         file.write("Gfx bank_%d_index_%d_dl_%08X[] = {\n"%(globBank, globIndex, NewStarts[n][1]))
         n+=1
