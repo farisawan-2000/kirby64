@@ -5,6 +5,10 @@
 
 extern struct TextureScroll *bank_2_index_4_texture_scroll_subheader_04000440[];
 extern struct TextureScroll *bank_2_index_4_texture_scroll_subheader_0400044C[];
+extern Gfx bank_2_index_4_dl_040000E0[];
+extern Gfx bank_2_index_4_dl_04000148[];
+extern Gfx bank_2_index_4_dl_040001B8[];
+extern Gfx bank_2_index_4_dl_04000180[];
 
 extern struct Layout bank_2_index_4_layout_0400028C[];
 extern struct TextureScroll **bank_2_index_4_texscroll_header_0400033C[];
@@ -40,8 +44,6 @@ Vtx bank_2_index_4_vtx_04000060[] = {
     {{{    20,       0,   65516}, 0, {     0,       0}, {0x00, 0x00, 0x00, 0xff}}},
     {{{    20,       0,      20}, 0, {     0,       0}, {0x00, 0x00, 0x00, 0xff}}},
 };
-
-extern Gfx bank_2_index_4_dl_04000148[];
 
 Gfx bank_2_index_4_dl_040000E0[] = {
     gsDPPipeSync(),
@@ -170,7 +172,7 @@ struct TextureScroll **bank_2_index_4_texscroll_header_0400033C[] = {
 };
 
 
-u32 bank_2_index_4_texscroll_ptr_0400034C[] = {
+u32 bank_2_index_4_texture_ptr_0400034C[] = {
     0,
 };
 

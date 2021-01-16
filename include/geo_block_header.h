@@ -6,6 +6,15 @@ struct EntryPoint {
 	Gfx *dl;
 };
 
+struct EntryPoint_1C {
+    Gfx *dl0;
+    Gfx *dl1;
+    Gfx *dl2;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+};
+
 struct DisplayListPair {
 	Gfx *dl1;
 	Gfx *dl2;

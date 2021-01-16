@@ -1,977 +1,977 @@
 .include "macros.inc"
 .section .data
 
-.balign 2
-glabel bank_1_index_1_geo # 0x4FC9A0
-.incbin "assets/geo/bank_1/1/block.bin"
-
-.balign 2
-glabel bank_1_index_2_geo # 0x4FD550
-.incbin "assets/geo/bank_1/2/block.bin"
-
-.balign 2
-glabel bank_1_index_3_geo # 0x4FE100
-.incbin "assets/geo/bank_1/3/block.bin"
-
-.balign 2
-glabel bank_1_index_4_geo # 0x4FEC10
-.incbin "assets/geo/bank_1/4/block.bin"
-
-.balign 2
-glabel bank_1_index_5_geo # 0x4FFA30
-.incbin "assets/geo/bank_1/5/block.bin"
-
-.balign 2
-glabel bank_1_index_6_geo # 0x500410
-.incbin "assets/geo/bank_1/6/block.bin"
-
-.balign 2
-glabel bank_1_index_7_geo # 0x501040
-.incbin "assets/geo/bank_1/7/block.bin"
-
-.balign 2
-glabel bank_1_index_8_geo # 0x5024E0
-.incbin "assets/geo/bank_1/8/block.bin"
-
-.balign 2
-glabel bank_1_index_9_geo # 0x503300
-.incbin "assets/geo/bank_1/9/block.bin"
-
-.balign 2
-glabel bank_1_index_10_geo # 0x504150
-.incbin "assets/geo/bank_1/10/block.bin"
-
-.balign 2
-glabel bank_1_index_11_geo # 0x505B20
-.incbin "assets/geo/bank_1/11/block.bin"
-
-.balign 2
-glabel bank_1_index_12_geo # 0x506270
-.incbin "assets/geo/bank_1/12/block.bin"
-
-.balign 2
-glabel bank_1_index_13_geo # 0x507570
-.incbin "assets/geo/bank_1/13/block.bin"
-
-.balign 2
-glabel bank_1_index_14_geo # 0x507A60
-.incbin "assets/geo/bank_1/14/block.bin"
-
-.balign 2
-glabel bank_1_index_15_geo # 0x507CB0
-.incbin "assets/geo/bank_1/15/block.bin"
-
-.balign 2
-glabel bank_1_index_16_geo # 0x508CB0
-.incbin "assets/geo/bank_1/16/block.bin"
-
-.balign 2
-glabel bank_1_index_17_geo # 0x50A4B0
-.incbin "assets/geo/bank_1/17/block.bin"
-
-.balign 2
-glabel bank_1_index_18_geo # 0x50AA60
-.incbin "assets/geo/bank_1/18/block.bin"
-
-.balign 2
-glabel bank_1_index_19_geo # 0x50B030
-.incbin "assets/geo/bank_1/19/block.bin"
-
-.balign 2
-glabel bank_1_index_20_geo # 0x50BA50
-.incbin "assets/geo/bank_1/20/block.bin"
-
-.balign 2
-glabel bank_1_index_21_geo # 0x50C0D0
-.incbin "assets/geo/bank_1/21/block.bin"
-
-.balign 2
-glabel bank_1_index_22_geo # 0x50D660
-.incbin "assets/geo/bank_1/22/block.bin"
-
-.balign 2
-glabel bank_1_index_23_geo # 0x50E890
-.incbin "assets/geo/bank_1/23/block.bin"
-
-.balign 2
-glabel bank_1_index_24_geo # 0x50F870
-.incbin "assets/geo/bank_1/24/block.bin"
-
-.balign 2
-glabel bank_1_index_25_geo # 0x5104C0
-.incbin "assets/geo/bank_1/25/block.bin"
-
-.balign 2
-glabel bank_1_index_26_geo # 0x510970
-.incbin "assets/geo/bank_1/26/block.bin"
-
-.balign 2
-glabel bank_1_index_27_geo # 0x511210
-.incbin "assets/geo/bank_1/27/block.bin"
-
-.balign 2
-glabel bank_1_index_28_geo # 0x511780
-.incbin "assets/geo/bank_1/28/block.bin"
-
-.balign 2
-glabel bank_1_index_29_geo # 0x5121B0
-.incbin "assets/geo/bank_1/29/block.bin"
-
-.balign 2
-glabel bank_1_index_30_geo # 0x5135A0
-.incbin "assets/geo/bank_1/30/block.bin"
-
-.balign 2
-glabel bank_1_index_31_geo # 0x5140C0
-.incbin "assets/geo/bank_1/31/block.bin"
-
-.balign 2
-glabel bank_1_index_32_geo # 0x514F30
-.incbin "assets/geo/bank_1/32/block.bin"
-
-.balign 2
-glabel bank_1_index_33_geo # 0x515330
-.incbin "assets/geo/bank_1/33/block.bin"
-
-.balign 2
-glabel bank_1_index_34_geo # 0x516200
-.incbin "assets/geo/bank_1/34/block.bin"
-
-.balign 2
-glabel bank_1_index_35_geo # 0x516E80
-.incbin "assets/geo/bank_1/35/block.bin"
-
-.balign 2
-glabel bank_1_index_36_geo # 0x517600
-.incbin "assets/geo/bank_1/36/block.bin"
-
-.balign 2
-glabel bank_1_index_37_geo # 0x517FF0
-.incbin "assets/geo/bank_1/37/block.bin"
-
-.balign 2
-glabel bank_1_index_38_geo # 0x518B70
-.incbin "assets/geo/bank_1/38/block.bin"
-
-.balign 2
-glabel bank_1_index_39_geo # 0x5198E0
-.incbin "assets/geo/bank_1/39/block.bin"
-
-.balign 2
-glabel bank_1_index_40_geo # 0x51A8D0
-.incbin "assets/geo/bank_1/40/block.bin"
-
-.balign 2
-glabel bank_1_index_41_geo # 0x51AFB0
-.incbin "assets/geo/bank_1/41/block.bin"
-
-.balign 2
-glabel bank_1_index_42_geo # 0x51BA30
-.incbin "assets/geo/bank_1/42/block.bin"
-
-.balign 2
-glabel bank_1_index_43_geo # 0x51CA50
-.incbin "assets/geo/bank_1/43/block.bin"
-
-.balign 2
-glabel bank_1_index_44_geo # 0x51D940
-.incbin "assets/geo/bank_1/44/block.bin"
-
-.balign 2
-glabel bank_1_index_45_geo # 0x51E350
-.incbin "assets/geo/bank_1/45/block.bin"
-
-.balign 2
-glabel bank_1_index_46_geo # 0x51F1B0
-.incbin "assets/geo/bank_1/46/block.bin"
-
-.balign 2
-glabel bank_1_index_47_geo # 0x51FB30
-.incbin "assets/geo/bank_1/47/block.bin"
-
-.balign 2
-glabel bank_1_index_48_geo # 0x51FDD0
-.incbin "assets/geo/bank_1/48/block.bin"
-
-.balign 2
-glabel bank_1_index_49_geo # 0x520070
-.incbin "assets/geo/bank_1/49/block.bin"
-
-.balign 2
-glabel bank_1_index_50_geo # 0x520A10
-.incbin "assets/geo/bank_1/50/block.bin"
-
-.balign 2
-glabel bank_1_index_51_geo # 0x521290
-.incbin "assets/geo/bank_1/51/block.bin"
-
-.balign 2
-glabel bank_1_index_52_geo # 0x522360
-.incbin "assets/geo/bank_1/52/block.bin"
-
-.balign 2
-glabel bank_1_index_53_geo # 0x522C90
-.incbin "assets/geo/bank_1/53/block.bin"
-
-.balign 2
-glabel bank_1_index_54_geo # 0x5237A0
-.incbin "assets/geo/bank_1/54/block.bin"
-
-.balign 2
-glabel bank_1_index_55_geo # 0x523FA0
-.incbin "assets/geo/bank_1/55/block.bin"
-
-.balign 2
-glabel bank_1_index_56_geo # 0x5249C0
-.incbin "assets/geo/bank_1/56/block.bin"
-
-.balign 2
-glabel bank_1_index_57_geo # 0x5251B0
-.incbin "assets/geo/bank_1/57/block.bin"
-
-.balign 2
-glabel bank_1_index_58_geo # 0x525ED0
-.incbin "assets/geo/bank_1/58/block.bin"
-
-.balign 2
-glabel bank_1_index_59_geo # 0x526A50
-.incbin "assets/geo/bank_1/59/block.bin"
-
-.balign 2
-glabel bank_1_index_60_geo # 0x5276C0
-.incbin "assets/geo/bank_1/60/block.bin"
-
-.balign 2
-glabel bank_1_index_61_geo # 0x528540
-.incbin "assets/geo/bank_1/61/block.bin"
-
-.balign 2
-glabel bank_1_index_62_geo # 0x528790
-.incbin "assets/geo/bank_1/62/block.bin"
-
-.balign 2
-glabel bank_1_index_63_geo # 0x5293C0
-.incbin "assets/geo/bank_1/63/block.bin"
-
-.balign 2
-glabel bank_1_index_64_geo # 0x52A310
-.incbin "assets/geo/bank_1/64/block.bin"
-
-.balign 2
-glabel bank_1_index_65_geo # 0x52AC60
-.incbin "assets/geo/bank_1/65/block.bin"
-
-.balign 2
-glabel bank_1_index_66_geo # 0x52B3B0
-.incbin "assets/geo/bank_1/66/block.bin"
-
-.balign 2
-glabel bank_1_index_67_geo # 0x52C560
-.incbin "assets/geo/bank_1/67/block.bin"
-
-.balign 2
-glabel bank_1_index_68_geo # 0x52D660
-.incbin "assets/geo/bank_1/68/block.bin"
-
-.balign 2
-glabel bank_1_index_69_geo # 0x52E410
-.incbin "assets/geo/bank_1/69/block.bin"
-
-.balign 2
-glabel bank_1_index_70_geo # 0x52EDC0
-.incbin "assets/geo/bank_1/70/block.bin"
-
-.balign 2
-glabel bank_1_index_71_geo # 0x5307F0
-.incbin "assets/geo/bank_1/71/block.bin"
-
-.balign 2
-glabel bank_1_index_72_geo # 0x531880
-.incbin "assets/geo/bank_1/72/block.bin"
-
-.balign 2
-glabel bank_1_index_73_geo # 0x532C00
-.incbin "assets/geo/bank_1/73/block.bin"
-
-.balign 2
-glabel bank_1_index_74_geo # 0x533E00
-.incbin "assets/geo/bank_1/74/block.bin"
-
-.balign 2
-glabel bank_1_index_75_geo # 0x534500
-.incbin "assets/geo/bank_1/75/block.bin"
-
-.balign 2
-glabel bank_1_index_76_geo # 0x535B70
-.incbin "assets/geo/bank_1/76/block.bin"
-
-.balign 2
-glabel bank_1_index_77_geo # 0x536760
-.incbin "assets/geo/bank_1/77/block.bin"
-
-.balign 2
-glabel bank_1_index_78_geo # 0x5376C0
-.incbin "assets/geo/bank_1/78/block.bin"
-
-.balign 2
-glabel bank_1_index_79_geo # 0x538540
-.incbin "assets/geo/bank_1/79/block.bin"
-
-.balign 2
-glabel bank_1_index_80_geo # 0x538B00
-.incbin "assets/geo/bank_1/80/block.bin"
-
-.balign 2
-glabel bank_1_index_81_geo # 0x538FD0
-.incbin "assets/geo/bank_1/81/block.bin"
-
-.balign 2
-glabel bank_1_index_82_geo # 0x539280
-.incbin "assets/geo/bank_1/82/block.bin"
-
-.balign 2
-glabel bank_1_index_83_geo # 0x53A460
-.incbin "assets/geo/bank_1/83/block.bin"
-
-.balign 2
-glabel bank_1_index_84_geo # 0x53B030
-.incbin "assets/geo/bank_1/84/block.bin"
-
-.balign 2
-glabel bank_1_index_85_geo # 0x53B810
-.incbin "assets/geo/bank_1/85/block.bin"
-
-.balign 2
-glabel bank_1_index_86_geo # 0x53BFA0
-.incbin "assets/geo/bank_1/86/block.bin"
-
-.balign 2
-glabel bank_1_index_87_geo # 0x53C720
-.incbin "assets/geo/bank_1/87/block.bin"
-
-.balign 2
-glabel bank_1_index_88_geo # 0x53CE50
-.incbin "assets/geo/bank_1/88/block.bin"
-
-.balign 2
-glabel bank_1_index_89_geo # 0x53D330
-.incbin "assets/geo/bank_1/89/block.bin"
-
-.balign 2
-glabel bank_1_index_90_geo # 0x53D9F0
-.incbin "assets/geo/bank_1/90/block.bin"
-
-.balign 2
-glabel bank_1_index_91_geo # 0x53E0B0
-.incbin "assets/geo/bank_1/91/block.bin"
-
-.balign 2
-glabel bank_1_index_92_geo # 0x546FE0
-.incbin "assets/geo/bank_1/92/block.bin"
-
-.balign 2
-glabel bank_1_index_93_geo # 0x54B8B0
-.incbin "assets/geo/bank_1/93/block.bin"
-
-.balign 2
-glabel bank_1_index_94_geo # 0x550900
-.incbin "assets/geo/bank_1/94/block.bin"
-
-.balign 2
-glabel bank_1_index_95_geo # 0x554650
-.incbin "assets/geo/bank_1/95/block.bin"
-
-.balign 2
-glabel bank_1_index_96_geo # 0x554A70
-.incbin "assets/geo/bank_1/96/block.bin"
-
-.balign 2
-glabel bank_1_index_97_geo # 0x554DF0
-.incbin "assets/geo/bank_1/97/block.bin"
-
-.balign 2
-glabel bank_1_index_98_geo # 0x555100
-.incbin "assets/geo/bank_1/98/block.bin"
-
-.balign 2
-glabel bank_1_index_99_geo # 0x555470
-.incbin "assets/geo/bank_1/99/block.bin"
-
-.balign 2
-glabel bank_1_index_100_geo # 0x555890
-.incbin "assets/geo/bank_1/100/block.bin"
-
-.balign 2
-glabel bank_1_index_101_geo # 0x555ED0
-.incbin "assets/geo/bank_1/101/block.bin"
-
-.balign 2
-glabel bank_1_index_102_geo # 0x558600
-.incbin "assets/geo/bank_1/102/block.bin"
-
-.balign 2
-glabel bank_1_index_103_geo # 0x55EA70
-.incbin "assets/geo/bank_1/103/block.bin"
-
-.balign 2
-glabel bank_1_index_104_geo # 0x562720
-.incbin "assets/geo/bank_1/104/block.bin"
-
-.balign 2
-glabel bank_1_index_105_geo # 0x565250
-.incbin "assets/geo/bank_1/105/block.bin"
-
-.balign 2
-glabel bank_1_index_106_geo # 0x568070
-.incbin "assets/geo/bank_1/106/block.bin"
-
-.balign 2
-glabel bank_1_index_107_geo # 0x56AE60
-.incbin "assets/geo/bank_1/107/block.bin"
-
-.balign 2
-glabel bank_1_index_108_geo # 0x56C660
-.incbin "assets/geo/bank_1/108/block.bin"
-
-.balign 2
-glabel bank_1_index_109_geo # 0x56EB40
-.incbin "assets/geo/bank_1/109/block.bin"
-
-.balign 2
-glabel bank_1_index_110_geo # 0x570650
-.incbin "assets/geo/bank_1/110/block.bin"
-
-.balign 2
-glabel bank_1_index_111_geo # 0x571630
-.incbin "assets/geo/bank_1/111/block.bin"
-
-.balign 2
-glabel bank_1_index_112_geo # 0x572070
-.incbin "assets/geo/bank_1/112/block.bin"
-
-.balign 2
-glabel bank_1_index_113_geo # 0x572220
-.incbin "assets/geo/bank_1/113/block.bin"
-
-.balign 2
-glabel bank_1_index_114_geo # 0x5725F0
-.incbin "assets/geo/bank_1/114/block.bin"
-
-.balign 2
-glabel bank_1_index_115_geo # 0x5729C0
-.incbin "assets/geo/bank_1/115/block.bin"
-
-.balign 2
-glabel bank_1_index_116_geo # 0x572D90
-.incbin "assets/geo/bank_1/116/block.bin"
-
-.balign 2
-glabel bank_1_index_117_geo # 0x573130
-.incbin "assets/geo/bank_1/117/block.bin"
-
-.balign 2
-glabel bank_1_index_118_geo # 0x5734D0
-.incbin "assets/geo/bank_1/118/block.bin"
-
-.balign 2
-glabel bank_1_index_119_geo # 0x573870
-.incbin "assets/geo/bank_1/119/block.bin"
-
-.balign 2
-glabel bank_1_index_120_geo # 0x576700
-.incbin "assets/geo/bank_1/120/block.bin"
-
-.balign 2
-glabel bank_1_index_121_geo # 0x5779A0
-.incbin "assets/geo/bank_1/121/block.bin"
-
-.balign 2
-glabel bank_1_index_122_geo # 0x578430
-.incbin "assets/geo/bank_1/122/block.bin"
-
-.balign 2
-glabel bank_1_index_123_geo # 0x578EC0
-.incbin "assets/geo/bank_1/123/block.bin"
-
-.balign 2
-glabel bank_1_index_124_geo # 0x579800
-.incbin "assets/geo/bank_1/124/block.bin"
-
-.balign 2
-glabel bank_1_index_125_geo # 0x579C60
-.incbin "assets/geo/bank_1/125/block.bin"
-
-.balign 2
-glabel bank_1_index_126_geo # 0x57A130
-.incbin "assets/geo/bank_1/126/block.bin"
-
-.balign 2
-glabel bank_1_index_127_geo # 0x57A7C0
-.incbin "assets/geo/bank_1/127/block.bin"
-
-.balign 2
-glabel bank_1_index_128_geo # 0x57B350
-.incbin "assets/geo/bank_1/128/block.bin"
-
-.balign 2
-glabel bank_1_index_129_geo # 0x57BAB0
-.incbin "assets/geo/bank_1/129/block.bin"
-
-.balign 2
-glabel bank_1_index_130_geo # 0x57C410
-.incbin "assets/geo/bank_1/130/block.bin"
-
-.balign 2
-glabel bank_1_index_131_geo # 0x57DBC0
-.incbin "assets/geo/bank_1/131/block.bin"
-
-.balign 2
-glabel bank_1_index_132_geo # 0x582690
-.incbin "assets/geo/bank_1/132/block.bin"
-
-.balign 2
-glabel bank_1_index_133_geo # 0x582B60
-.incbin "assets/geo/bank_1/133/block.bin"
-
-.balign 2
-glabel bank_1_index_134_geo # 0x583A40
-.incbin "assets/geo/bank_1/134/block.bin"
-
-.balign 2
-glabel bank_1_index_135_geo # 0x583C90
-.incbin "assets/geo/bank_1/135/block.bin"
-
-.balign 2
-glabel bank_1_index_136_geo # 0x5841C0
-.incbin "assets/geo/bank_1/136/block.bin"
-
-.balign 2
-glabel bank_1_index_137_geo # 0x584410
-.incbin "assets/geo/bank_1/137/block.bin"
-
-.balign 2
-glabel bank_1_index_138_geo # 0x584660
-.incbin "assets/geo/bank_1/138/block.bin"
-
-.balign 2
-glabel bank_1_index_139_geo # 0x584B70
-.incbin "assets/geo/bank_1/139/block.bin"
-
-.balign 2
-glabel bank_1_index_140_geo # 0x584E20
-.incbin "assets/geo/bank_1/140/block.bin"
-
-.balign 2
-glabel bank_1_index_141_geo # 0x585070
-.incbin "assets/geo/bank_1/141/block.bin"
-
-.balign 2
-glabel bank_1_index_142_geo # 0x585590
-.incbin "assets/geo/bank_1/142/block.bin"
-
-.balign 2
-glabel bank_1_index_143_geo # 0x585780
-.incbin "assets/geo/bank_1/143/block.bin"
-
-.balign 2
-glabel bank_1_index_144_geo # 0x585D90
-.incbin "assets/geo/bank_1/144/block.bin"
-
-.balign 2
-glabel bank_1_index_145_geo # 0x586660
-.incbin "assets/geo/bank_1/145/block.bin"
-
-.balign 2
-glabel bank_1_index_146_geo # 0x587090
-.incbin "assets/geo/bank_1/146/block.bin"
-
-.balign 2
-glabel bank_1_index_147_geo # 0x587DF0
-.incbin "assets/geo/bank_1/147/block.bin"
-
-.balign 2
-glabel bank_1_index_148_geo # 0x588420
-.incbin "assets/geo/bank_1/148/block.bin"
-
-.balign 2
-glabel bank_1_index_149_geo # 0x588750
-.incbin "assets/geo/bank_1/149/block.bin"
-
-.balign 2
-glabel bank_1_index_150_geo # 0x588A40
-.incbin "assets/geo/bank_1/150/block.bin"
-
-.balign 2
-glabel bank_1_index_151_geo # 0x588C80
-.incbin "assets/geo/bank_1/151/block.bin"
-
-.balign 2
-glabel bank_1_index_152_geo # 0x589250
-.incbin "assets/geo/bank_1/152/block.bin"
-
-.balign 2
-glabel bank_1_index_153_geo # 0x589590
-.incbin "assets/geo/bank_1/153/block.bin"
-
-.balign 2
-glabel bank_1_index_154_geo # 0x589830
-.incbin "assets/geo/bank_1/154/block.bin"
-
-.balign 2
-glabel bank_1_index_155_geo # 0x589CE0
-.incbin "assets/geo/bank_1/155/block.bin"
-
-.balign 2
-glabel bank_1_index_156_geo # 0x58A2C0
-.incbin "assets/geo/bank_1/156/block.bin"
-
-.balign 2
-glabel bank_1_index_157_geo # 0x58A850
-.incbin "assets/geo/bank_1/157/block.bin"
-
-.balign 2
-glabel bank_1_index_158_geo # 0x58AC30
-.incbin "assets/geo/bank_1/158/block.bin"
-
-.balign 2
-glabel bank_1_index_159_geo # 0x58B0E0
-.incbin "assets/geo/bank_1/159/block.bin"
-
-.balign 2
-glabel bank_1_index_160_geo # 0x58B7B0
-.incbin "assets/geo/bank_1/160/block.bin"
-
-.balign 2
-glabel bank_1_index_161_geo # 0x58BCF0
-.incbin "assets/geo/bank_1/161/block.bin"
-
-.balign 2
-glabel bank_1_index_162_geo # 0x58C3E0
-.incbin "assets/geo/bank_1/162/block.bin"
-
-.balign 2
-glabel bank_1_index_163_geo # 0x58C630
-.incbin "assets/geo/bank_1/163/block.bin"
-
-.balign 2
-glabel bank_1_index_164_geo # 0x58CFA0
-.incbin "assets/geo/bank_1/164/block.bin"
-
-.balign 2
-glabel bank_1_index_165_geo # 0x58D2B0
-.incbin "assets/geo/bank_1/165/block.bin"
-
-.balign 2
-glabel bank_1_index_166_geo # 0x58D500
-.incbin "assets/geo/bank_1/166/block.bin"
-
-.balign 2
-glabel bank_1_index_167_geo # 0x58D9E0
-.incbin "assets/geo/bank_1/167/block.bin"
-
-.balign 2
-glabel bank_1_index_168_geo # 0x58DDA0
-.incbin "assets/geo/bank_1/168/block.bin"
-
-.balign 2
-glabel bank_1_index_169_geo # 0x58E3B0
-.incbin "assets/geo/bank_1/169/block.bin"
-
-.balign 2
-glabel bank_1_index_170_geo # 0x58F030
-.incbin "assets/geo/bank_1/170/block.bin"
-
-.balign 2
-glabel bank_1_index_171_geo # 0x58FD20
-.incbin "assets/geo/bank_1/171/block.bin"
-
-.balign 2
-glabel bank_1_index_172_geo # 0x590A10
-.incbin "assets/geo/bank_1/172/block.bin"
-
-.balign 2
-glabel bank_1_index_173_geo # 0x591270
-.incbin "assets/geo/bank_1/173/block.bin"
-
-.balign 2
-glabel bank_1_index_174_geo # 0x591AD0
-.incbin "assets/geo/bank_1/174/block.bin"
-
-.balign 2
-glabel bank_1_index_175_geo # 0x592330
-.incbin "assets/geo/bank_1/175/block.bin"
-
-.balign 2
-glabel bank_1_index_176_geo # 0x592A70
-.incbin "assets/geo/bank_1/176/block.bin"
-
-.balign 2
-glabel bank_1_index_177_geo # 0x5931B0
-.incbin "assets/geo/bank_1/177/block.bin"
-
-.balign 2
-glabel bank_1_index_178_geo # 0x5938F0
-.incbin "assets/geo/bank_1/178/block.bin"
-
-.balign 2
-glabel bank_1_index_179_geo # 0x593C30
-.incbin "assets/geo/bank_1/179/block.bin"
-
-.balign 2
-glabel bank_1_index_180_geo # 0x594400
-.incbin "assets/geo/bank_1/180/block.bin"
-
-.balign 2
-glabel bank_1_index_181_geo # 0x5947A0
-.incbin "assets/geo/bank_1/181/block.bin"
-
-.balign 2
-glabel bank_1_index_182_geo # 0x594A30
-.incbin "assets/geo/bank_1/182/block.bin"
-
-.balign 2
-glabel bank_1_index_183_geo # 0x594CC0
-.incbin "assets/geo/bank_1/183/block.bin"
-
-.balign 2
-glabel bank_1_index_184_geo # 0x595750
-.incbin "assets/geo/bank_1/184/block.bin"
-
-.balign 2
-glabel bank_1_index_185_geo # 0x596020
-.incbin "assets/geo/bank_1/185/block.bin"
-
-.balign 2
-glabel bank_1_index_186_geo # 0x596400
-.incbin "assets/geo/bank_1/186/block.bin"
-
-.balign 2
-glabel bank_1_index_187_geo # 0x5966D0
-.incbin "assets/geo/bank_1/187/block.bin"
-
-.balign 2
-glabel bank_1_index_188_geo # 0x596940
-.incbin "assets/geo/bank_1/188/block.bin"
-
-.balign 2
-glabel bank_1_index_189_geo # 0x596BB0
-.incbin "assets/geo/bank_1/189/block.bin"
-
-.balign 2
-glabel bank_1_index_190_geo # 0x598CF0
-.incbin "assets/geo/bank_1/190/block.bin"
-
-.balign 2
-glabel bank_1_index_191_geo # 0x599080
-.incbin "assets/geo/bank_1/191/block.bin"
-
-.balign 2
-glabel bank_1_index_192_geo # 0x599540
-.incbin "assets/geo/bank_1/192/block.bin"
-
-.balign 2
-glabel bank_1_index_193_geo # 0x59A020
-.incbin "assets/geo/bank_1/193/block.bin"
-
-.balign 2
-glabel bank_1_index_194_geo # 0x59A460
-.incbin "assets/geo/bank_1/194/block.bin"
-
-.balign 2
-glabel bank_1_index_195_geo # 0x59B6B0
-.incbin "assets/geo/bank_1/195/block.bin"
-
-.balign 2
-glabel bank_1_index_196_geo # 0x59BB10
-.incbin "assets/geo/bank_1/196/block.bin"
-
-.balign 2
-glabel bank_1_index_197_geo # 0x59CF30
-.incbin "assets/geo/bank_1/197/block.bin"
-
-.balign 2
-glabel bank_1_index_198_geo # 0x59D6B0
-.incbin "assets/geo/bank_1/198/block.bin"
-
-.balign 2
-glabel bank_1_index_199_geo # 0x59DEC0
-.incbin "assets/geo/bank_1/199/block.bin"
-
-.balign 2
-glabel bank_1_index_200_geo # 0x59E440
-.incbin "assets/geo/bank_1/200/block.bin"
-
-.balign 2
-glabel bank_1_index_201_geo # 0x59EAC0
-.incbin "assets/geo/bank_1/201/block.bin"
-
-.balign 2
-glabel bank_1_index_202_geo # 0x59F2A0
-.incbin "assets/geo/bank_1/202/block.bin"
-
-.balign 2
-glabel bank_1_index_203_geo # 0x59F850
-.incbin "assets/geo/bank_1/203/block.bin"
-
-.balign 2
-glabel bank_1_index_204_geo # 0x59FDB0
-.incbin "assets/geo/bank_1/204/block.bin"
-
-.balign 2
-glabel bank_1_index_205_geo # 0x5A0690
-.incbin "assets/geo/bank_1/205/block.bin"
-
-.balign 2
-glabel bank_1_index_206_geo # 0x5A0C90
-.incbin "assets/geo/bank_1/206/block.bin"
-
-.balign 2
-glabel bank_1_index_207_geo # 0x5A15C0
-.incbin "assets/geo/bank_1/207/block.bin"
-
-.balign 2
-glabel bank_1_index_208_geo # 0x5A1B20
-.incbin "assets/geo/bank_1/208/block.bin"
-
-.balign 2
-glabel bank_1_index_209_geo # 0x5A2080
-.incbin "assets/geo/bank_1/209/block.bin"
-
-.balign 2
-glabel bank_1_index_210_geo # 0x5A28F0
-.incbin "assets/geo/bank_1/210/block.bin"
-
-.balign 2
-glabel bank_1_index_211_geo # 0x5A2E50
-.incbin "assets/geo/bank_1/211/block.bin"
-
-.balign 2
-glabel bank_1_index_212_geo # 0x5A31C0
-.incbin "assets/geo/bank_1/212/block.bin"
-
-.balign 2
-glabel bank_1_index_213_geo # 0x5A39F0
-.incbin "assets/geo/bank_1/213/block.bin"
-
-.balign 2
-glabel bank_1_index_214_geo # 0x5A4850
-.incbin "assets/geo/bank_1/214/block.bin"
-
-.balign 2
-glabel bank_1_index_215_geo # 0x5A4BC0
-.incbin "assets/geo/bank_1/215/block.bin"
-
-.balign 2
-glabel bank_1_index_216_geo # 0x5A52D0
-.incbin "assets/geo/bank_1/216/block.bin"
-
-.balign 2
-glabel bank_1_index_217_geo # 0x5A5B90
-.incbin "assets/geo/bank_1/217/block.bin"
-
-.balign 2
-glabel bank_1_index_218_geo # 0x5A6210
-.incbin "assets/geo/bank_1/218/block.bin"
-
-.balign 2
-glabel bank_1_index_219_geo # 0x5A64A0
-.incbin "assets/geo/bank_1/219/block.bin"
-
-.balign 2
-glabel bank_1_index_220_geo # 0x5A6780
-.incbin "assets/geo/bank_1/220/block.bin"
-
-.balign 2
-glabel bank_1_index_221_geo # 0x5A69E0
-.incbin "assets/geo/bank_1/221/block.bin"
-
-.balign 2
-glabel bank_1_index_222_geo # 0x5A6C30
-.incbin "assets/geo/bank_1/222/block.bin"
-
-.balign 2
-glabel bank_1_index_223_geo # 0x5A7010
-.incbin "assets/geo/bank_1/223/block.bin"
-
-.balign 2
-glabel bank_1_index_224_geo # 0x5A7680
-.incbin "assets/geo/bank_1/224/block.bin"
-
-.balign 2
-glabel bank_1_index_225_geo # 0x5A7960
-.incbin "assets/geo/bank_1/225/block.bin"
-
-.balign 2
-glabel bank_1_index_226_geo # 0x5A8180
-.incbin "assets/geo/bank_1/226/block.bin"
-
-.balign 2
-glabel bank_1_index_227_geo # 0x5A8900
-.incbin "assets/geo/bank_1/227/block.bin"
-
-.balign 2
-glabel bank_1_index_228_geo # 0x5A8D70
-.incbin "assets/geo/bank_1/228/block.bin"
-
-.balign 2
-glabel bank_1_index_229_geo # 0x5A90D0
-.incbin "assets/geo/bank_1/229/block.bin"
-
-.balign 2
-glabel bank_1_index_230_geo # 0x5A9470
-.incbin "assets/geo/bank_1/230/block.bin"
-
-.balign 2
-glabel bank_1_index_231_geo # 0x5A98E0
-.incbin "assets/geo/bank_1/231/block.bin"
-
-.balign 2
-glabel bank_1_index_232_geo # 0x5A9D50
-.incbin "assets/geo/bank_1/232/block.bin"
-
-.balign 2
-glabel bank_1_index_233_geo # 0x5AA2F0
-.incbin "assets/geo/bank_1/233/block.bin"
-
-.balign 2
-glabel bank_1_index_234_geo # 0x5AA790
-.incbin "assets/geo/bank_1/234/block.bin"
-
-.balign 2
-glabel bank_1_index_235_geo # 0x5AAE40
-.incbin "assets/geo/bank_1/235/block.bin"
-
-.balign 2
-glabel bank_1_index_236_geo # 0x5AB7C0
-.incbin "assets/geo/bank_1/236/block.bin"
-
-.balign 2
-glabel bank_1_index_237_geo # 0x5ACA50
-.incbin "assets/geo/bank_1/237/block.bin"
-
-.balign 2
-glabel bank_1_index_238_geo # 0x5ACCB0
-.incbin "assets/geo/bank_1/238/block.bin"
-
-.balign 2
-glabel bank_1_index_239_geo # 0x5ACF10
-.incbin "assets/geo/bank_1/239/block.bin"
-
-.balign 2
-glabel bank_1_index_240_geo # 0x5AD170
-.incbin "assets/geo/bank_1/240/block.bin"
-
-.balign 2
-glabel bank_1_index_241_geo # 0x5B0870
-.incbin "assets/geo/bank_1/241/block.bin"
-
-.balign 2
-glabel bank_1_index_242_geo # 0x5B0B70
-.incbin "assets/geo/bank_1/242/block.bin"
-
-.balign 2
-glabel bank_1_index_243_geo # 0x5B0E70
-.incbin "assets/geo/bank_1/243/block.bin"
+# .balign 2
+# glabel bank_1_index_1_geo # 0x4FC9A0
+# .incbin "assets/geo/bank_1/1/block.bin"
+
+# .balign 2
+# glabel bank_1_index_2_geo # 0x4FD550
+# .incbin "assets/geo/bank_1/2/block.bin"
+
+# .balign 2
+# glabel bank_1_index_3_geo # 0x4FE100
+# .incbin "assets/geo/bank_1/3/block.bin"
+
+# .balign 2
+# glabel bank_1_index_4_geo # 0x4FEC10
+# .incbin "assets/geo/bank_1/4/block.bin"
+
+# .balign 2
+# glabel bank_1_index_5_geo # 0x4FFA30
+# .incbin "assets/geo/bank_1/5/block.bin"
+
+# .balign 2
+# glabel bank_1_index_6_geo # 0x500410
+# .incbin "assets/geo/bank_1/6/block.bin"
+
+# .balign 2
+# glabel bank_1_index_7_geo # 0x501040
+# .incbin "assets/geo/bank_1/7/block.bin"
+
+# .balign 2
+# glabel bank_1_index_8_geo # 0x5024E0
+# .incbin "assets/geo/bank_1/8/block.bin"
+
+# .balign 2
+# glabel bank_1_index_9_geo # 0x503300
+# .incbin "assets/geo/bank_1/9/block.bin"
+
+# .balign 2
+# glabel bank_1_index_10_geo # 0x504150
+# .incbin "assets/geo/bank_1/10/block.bin"
+
+# .balign 2
+# glabel bank_1_index_11_geo # 0x505B20
+# .incbin "assets/geo/bank_1/11/block.bin"
+
+# .balign 2
+# glabel bank_1_index_12_geo # 0x506270
+# .incbin "assets/geo/bank_1/12/block.bin"
+
+# .balign 2
+# glabel bank_1_index_13_geo # 0x507570
+# .incbin "assets/geo/bank_1/13/block.bin"
+
+# .balign 2
+# glabel bank_1_index_14_geo # 0x507A60
+# .incbin "assets/geo/bank_1/14/block.bin"
+
+# .balign 2
+# glabel bank_1_index_15_geo # 0x507CB0
+# .incbin "assets/geo/bank_1/15/block.bin"
+
+# .balign 2
+# glabel bank_1_index_16_geo # 0x508CB0
+# .incbin "assets/geo/bank_1/16/block.bin"
+
+# .balign 2
+# glabel bank_1_index_17_geo # 0x50A4B0
+# .incbin "assets/geo/bank_1/17/block.bin"
+
+# .balign 2
+# glabel bank_1_index_18_geo # 0x50AA60
+# .incbin "assets/geo/bank_1/18/block.bin"
+
+# .balign 2
+# glabel bank_1_index_19_geo # 0x50B030
+# .incbin "assets/geo/bank_1/19/block.bin"
+
+# .balign 2
+# glabel bank_1_index_20_geo # 0x50BA50
+# .incbin "assets/geo/bank_1/20/block.bin"
+
+# .balign 2
+# glabel bank_1_index_21_geo # 0x50C0D0
+# .incbin "assets/geo/bank_1/21/block.bin"
+
+# .balign 2
+# glabel bank_1_index_22_geo # 0x50D660
+# .incbin "assets/geo/bank_1/22/block.bin"
+
+# .balign 2
+# glabel bank_1_index_23_geo # 0x50E890
+# .incbin "assets/geo/bank_1/23/block.bin"
+
+# .balign 2
+# glabel bank_1_index_24_geo # 0x50F870
+# .incbin "assets/geo/bank_1/24/block.bin"
+
+# .balign 2
+# glabel bank_1_index_25_geo # 0x5104C0
+# .incbin "assets/geo/bank_1/25/block.bin"
+
+# .balign 2
+# glabel bank_1_index_26_geo # 0x510970
+# .incbin "assets/geo/bank_1/26/block.bin"
+
+# .balign 2
+# glabel bank_1_index_27_geo # 0x511210
+# .incbin "assets/geo/bank_1/27/block.bin"
+
+# .balign 2
+# glabel bank_1_index_28_geo # 0x511780
+# .incbin "assets/geo/bank_1/28/block.bin"
+
+# .balign 2
+# glabel bank_1_index_29_geo # 0x5121B0
+# .incbin "assets/geo/bank_1/29/block.bin"
+
+# .balign 2
+# glabel bank_1_index_30_geo # 0x5135A0
+# .incbin "assets/geo/bank_1/30/block.bin"
+
+# .balign 2
+# glabel bank_1_index_31_geo # 0x5140C0
+# .incbin "assets/geo/bank_1/31/block.bin"
+
+# .balign 2
+# glabel bank_1_index_32_geo # 0x514F30
+# .incbin "assets/geo/bank_1/32/block.bin"
+
+# .balign 2
+# glabel bank_1_index_33_geo # 0x515330
+# .incbin "assets/geo/bank_1/33/block.bin"
+
+# .balign 2
+# glabel bank_1_index_34_geo # 0x516200
+# .incbin "assets/geo/bank_1/34/block.bin"
+
+# .balign 2
+# glabel bank_1_index_35_geo # 0x516E80
+# .incbin "assets/geo/bank_1/35/block.bin"
+
+# .balign 2
+# glabel bank_1_index_36_geo # 0x517600
+# .incbin "assets/geo/bank_1/36/block.bin"
+
+# .balign 2
+# glabel bank_1_index_37_geo # 0x517FF0
+# .incbin "assets/geo/bank_1/37/block.bin"
+
+# .balign 2
+# glabel bank_1_index_38_geo # 0x518B70
+# .incbin "assets/geo/bank_1/38/block.bin"
+
+# .balign 2
+# glabel bank_1_index_39_geo # 0x5198E0
+# .incbin "assets/geo/bank_1/39/block.bin"
+
+# .balign 2
+# glabel bank_1_index_40_geo # 0x51A8D0
+# .incbin "assets/geo/bank_1/40/block.bin"
+
+# .balign 2
+# glabel bank_1_index_41_geo # 0x51AFB0
+# .incbin "assets/geo/bank_1/41/block.bin"
+
+# .balign 2
+# glabel bank_1_index_42_geo # 0x51BA30
+# .incbin "assets/geo/bank_1/42/block.bin"
+
+# .balign 2
+# glabel bank_1_index_43_geo # 0x51CA50
+# .incbin "assets/geo/bank_1/43/block.bin"
+
+# .balign 2
+# glabel bank_1_index_44_geo # 0x51D940
+# .incbin "assets/geo/bank_1/44/block.bin"
+
+# .balign 2
+# glabel bank_1_index_45_geo # 0x51E350
+# .incbin "assets/geo/bank_1/45/block.bin"
+
+# .balign 2
+# glabel bank_1_index_46_geo # 0x51F1B0
+# .incbin "assets/geo/bank_1/46/block.bin"
+
+# .balign 2
+# glabel bank_1_index_47_geo # 0x51FB30
+# .incbin "assets/geo/bank_1/47/block.bin"
+
+# .balign 2
+# glabel bank_1_index_48_geo # 0x51FDD0
+# .incbin "assets/geo/bank_1/48/block.bin"
+
+# .balign 2
+# glabel bank_1_index_49_geo # 0x520070
+# .incbin "assets/geo/bank_1/49/block.bin"
+
+# .balign 2
+# glabel bank_1_index_50_geo # 0x520A10
+# .incbin "assets/geo/bank_1/50/block.bin"
+
+# .balign 2
+# glabel bank_1_index_51_geo # 0x521290
+# .incbin "assets/geo/bank_1/51/block.bin"
+
+# .balign 2
+# glabel bank_1_index_52_geo # 0x522360
+# .incbin "assets/geo/bank_1/52/block.bin"
+
+# .balign 2
+# glabel bank_1_index_53_geo # 0x522C90
+# .incbin "assets/geo/bank_1/53/block.bin"
+
+# .balign 2
+# glabel bank_1_index_54_geo # 0x5237A0
+# .incbin "assets/geo/bank_1/54/block.bin"
+
+# .balign 2
+# glabel bank_1_index_55_geo # 0x523FA0
+# .incbin "assets/geo/bank_1/55/block.bin"
+
+# .balign 2
+# glabel bank_1_index_56_geo # 0x5249C0
+# .incbin "assets/geo/bank_1/56/block.bin"
+
+# .balign 2
+# glabel bank_1_index_57_geo # 0x5251B0
+# .incbin "assets/geo/bank_1/57/block.bin"
+
+# .balign 2
+# glabel bank_1_index_58_geo # 0x525ED0
+# .incbin "assets/geo/bank_1/58/block.bin"
+
+# .balign 2
+# glabel bank_1_index_59_geo # 0x526A50
+# .incbin "assets/geo/bank_1/59/block.bin"
+
+# .balign 2
+# glabel bank_1_index_60_geo # 0x5276C0
+# .incbin "assets/geo/bank_1/60/block.bin"
+
+# .balign 2
+# glabel bank_1_index_61_geo # 0x528540
+# .incbin "assets/geo/bank_1/61/block.bin"
+
+# .balign 2
+# glabel bank_1_index_62_geo # 0x528790
+# .incbin "assets/geo/bank_1/62/block.bin"
+
+# .balign 2
+# glabel bank_1_index_63_geo # 0x5293C0
+# .incbin "assets/geo/bank_1/63/block.bin"
+
+# .balign 2
+# glabel bank_1_index_64_geo # 0x52A310
+# .incbin "assets/geo/bank_1/64/block.bin"
+
+# .balign 2
+# glabel bank_1_index_65_geo # 0x52AC60
+# .incbin "assets/geo/bank_1/65/block.bin"
+
+# .balign 2
+# glabel bank_1_index_66_geo # 0x52B3B0
+# .incbin "assets/geo/bank_1/66/block.bin"
+
+# .balign 2
+# glabel bank_1_index_67_geo # 0x52C560
+# .incbin "assets/geo/bank_1/67/block.bin"
+
+# .balign 2
+# glabel bank_1_index_68_geo # 0x52D660
+# .incbin "assets/geo/bank_1/68/block.bin"
+
+# .balign 2
+# glabel bank_1_index_69_geo # 0x52E410
+# .incbin "assets/geo/bank_1/69/block.bin"
+
+# .balign 2
+# glabel bank_1_index_70_geo # 0x52EDC0
+# .incbin "assets/geo/bank_1/70/block.bin"
+
+# .balign 2
+# glabel bank_1_index_71_geo # 0x5307F0
+# .incbin "assets/geo/bank_1/71/block.bin"
+
+# .balign 2
+# glabel bank_1_index_72_geo # 0x531880
+# .incbin "assets/geo/bank_1/72/block.bin"
+
+# .balign 2
+# glabel bank_1_index_73_geo # 0x532C00
+# .incbin "assets/geo/bank_1/73/block.bin"
+
+# .balign 2
+# glabel bank_1_index_74_geo # 0x533E00
+# .incbin "assets/geo/bank_1/74/block.bin"
+
+# .balign 2
+# glabel bank_1_index_75_geo # 0x534500
+# .incbin "assets/geo/bank_1/75/block.bin"
+
+# .balign 2
+# glabel bank_1_index_76_geo # 0x535B70
+# .incbin "assets/geo/bank_1/76/block.bin"
+
+# .balign 2
+# glabel bank_1_index_77_geo # 0x536760
+# .incbin "assets/geo/bank_1/77/block.bin"
+
+# .balign 2
+# glabel bank_1_index_78_geo # 0x5376C0
+# .incbin "assets/geo/bank_1/78/block.bin"
+
+# .balign 2
+# glabel bank_1_index_79_geo # 0x538540
+# .incbin "assets/geo/bank_1/79/block.bin"
+
+# .balign 2
+# glabel bank_1_index_80_geo # 0x538B00
+# .incbin "assets/geo/bank_1/80/block.bin"
+
+# .balign 2
+# glabel bank_1_index_81_geo # 0x538FD0
+# .incbin "assets/geo/bank_1/81/block.bin"
+
+# .balign 2
+# glabel bank_1_index_82_geo # 0x539280
+# .incbin "assets/geo/bank_1/82/block.bin"
+
+# .balign 2
+# glabel bank_1_index_83_geo # 0x53A460
+# .incbin "assets/geo/bank_1/83/block.bin"
+
+# .balign 2
+# glabel bank_1_index_84_geo # 0x53B030
+# .incbin "assets/geo/bank_1/84/block.bin"
+
+# .balign 2
+# glabel bank_1_index_85_geo # 0x53B810
+# .incbin "assets/geo/bank_1/85/block.bin"
+
+# .balign 2
+# glabel bank_1_index_86_geo # 0x53BFA0
+# .incbin "assets/geo/bank_1/86/block.bin"
+
+# .balign 2
+# glabel bank_1_index_87_geo # 0x53C720
+# .incbin "assets/geo/bank_1/87/block.bin"
+
+# .balign 2
+# glabel bank_1_index_88_geo # 0x53CE50
+# .incbin "assets/geo/bank_1/88/block.bin"
+
+# .balign 2
+# glabel bank_1_index_89_geo # 0x53D330
+# .incbin "assets/geo/bank_1/89/block.bin"
+
+# .balign 2
+# glabel bank_1_index_90_geo # 0x53D9F0
+# .incbin "assets/geo/bank_1/90/block.bin"
+
+# .balign 2
+# glabel bank_1_index_91_geo # 0x53E0B0
+# .incbin "assets/geo/bank_1/91/block.bin"
+
+# .balign 2
+# glabel bank_1_index_92_geo # 0x546FE0
+# .incbin "assets/geo/bank_1/92/block.bin"
+
+# .balign 2
+# glabel bank_1_index_93_geo # 0x54B8B0
+# .incbin "assets/geo/bank_1/93/block.bin"
+
+# .balign 2
+# glabel bank_1_index_94_geo # 0x550900
+# .incbin "assets/geo/bank_1/94/block.bin"
+
+# .balign 2
+# glabel bank_1_index_95_geo # 0x554650
+# .incbin "assets/geo/bank_1/95/block.bin"
+
+# .balign 2
+# glabel bank_1_index_96_geo # 0x554A70
+# .incbin "assets/geo/bank_1/96/block.bin"
+
+# .balign 2
+# glabel bank_1_index_97_geo # 0x554DF0
+# .incbin "assets/geo/bank_1/97/block.bin"
+
+# .balign 2
+# glabel bank_1_index_98_geo # 0x555100
+# .incbin "assets/geo/bank_1/98/block.bin"
+
+# .balign 2
+# glabel bank_1_index_99_geo # 0x555470
+# .incbin "assets/geo/bank_1/99/block.bin"
+
+# .balign 2
+# glabel bank_1_index_100_geo # 0x555890
+# .incbin "assets/geo/bank_1/100/block.bin"
+
+# .balign 2
+# glabel bank_1_index_101_geo # 0x555ED0
+# .incbin "assets/geo/bank_1/101/block.bin"
+
+# .balign 2
+# glabel bank_1_index_102_geo # 0x558600
+# .incbin "assets/geo/bank_1/102/block.bin"
+
+# .balign 2
+# glabel bank_1_index_103_geo # 0x55EA70
+# .incbin "assets/geo/bank_1/103/block.bin"
+
+# .balign 2
+# glabel bank_1_index_104_geo # 0x562720
+# .incbin "assets/geo/bank_1/104/block.bin"
+
+# .balign 2
+# glabel bank_1_index_105_geo # 0x565250
+# .incbin "assets/geo/bank_1/105/block.bin"
+
+# .balign 2
+# glabel bank_1_index_106_geo # 0x568070
+# .incbin "assets/geo/bank_1/106/block.bin"
+
+# .balign 2
+# glabel bank_1_index_107_geo # 0x56AE60
+# .incbin "assets/geo/bank_1/107/block.bin"
+
+# .balign 2
+# glabel bank_1_index_108_geo # 0x56C660
+# .incbin "assets/geo/bank_1/108/block.bin"
+
+# .balign 2
+# glabel bank_1_index_109_geo # 0x56EB40
+# .incbin "assets/geo/bank_1/109/block.bin"
+
+# .balign 2
+# glabel bank_1_index_110_geo # 0x570650
+# .incbin "assets/geo/bank_1/110/block.bin"
+
+# .balign 2
+# glabel bank_1_index_111_geo # 0x571630
+# .incbin "assets/geo/bank_1/111/block.bin"
+
+# .balign 2
+# glabel bank_1_index_112_geo # 0x572070
+# .incbin "assets/geo/bank_1/112/block.bin"
+
+# .balign 2
+# glabel bank_1_index_113_geo # 0x572220
+# .incbin "assets/geo/bank_1/113/block.bin"
+
+# .balign 2
+# glabel bank_1_index_114_geo # 0x5725F0
+# .incbin "assets/geo/bank_1/114/block.bin"
+
+# .balign 2
+# glabel bank_1_index_115_geo # 0x5729C0
+# .incbin "assets/geo/bank_1/115/block.bin"
+
+# .balign 2
+# glabel bank_1_index_116_geo # 0x572D90
+# .incbin "assets/geo/bank_1/116/block.bin"
+
+# .balign 2
+# glabel bank_1_index_117_geo # 0x573130
+# .incbin "assets/geo/bank_1/117/block.bin"
+
+# .balign 2
+# glabel bank_1_index_118_geo # 0x5734D0
+# .incbin "assets/geo/bank_1/118/block.bin"
+
+# .balign 2
+# glabel bank_1_index_119_geo # 0x573870
+# .incbin "assets/geo/bank_1/119/block.bin"
+
+# .balign 2
+# glabel bank_1_index_120_geo # 0x576700
+# .incbin "assets/geo/bank_1/120/block.bin"
+
+# .balign 2
+# glabel bank_1_index_121_geo # 0x5779A0
+# .incbin "assets/geo/bank_1/121/block.bin"
+
+# .balign 2
+# glabel bank_1_index_122_geo # 0x578430
+# .incbin "assets/geo/bank_1/122/block.bin"
+
+# .balign 2
+# glabel bank_1_index_123_geo # 0x578EC0
+# .incbin "assets/geo/bank_1/123/block.bin"
+
+# .balign 2
+# glabel bank_1_index_124_geo # 0x579800
+# .incbin "assets/geo/bank_1/124/block.bin"
+
+# .balign 2
+# glabel bank_1_index_125_geo # 0x579C60
+# .incbin "assets/geo/bank_1/125/block.bin"
+
+# .balign 2
+# glabel bank_1_index_126_geo # 0x57A130
+# .incbin "assets/geo/bank_1/126/block.bin"
+
+# .balign 2
+# glabel bank_1_index_127_geo # 0x57A7C0
+# .incbin "assets/geo/bank_1/127/block.bin"
+
+# .balign 2
+# glabel bank_1_index_128_geo # 0x57B350
+# .incbin "assets/geo/bank_1/128/block.bin"
+
+# .balign 2
+# glabel bank_1_index_129_geo # 0x57BAB0
+# .incbin "assets/geo/bank_1/129/block.bin"
+
+# .balign 2
+# glabel bank_1_index_130_geo # 0x57C410
+# .incbin "assets/geo/bank_1/130/block.bin"
+
+# .balign 2
+# glabel bank_1_index_131_geo # 0x57DBC0
+# .incbin "assets/geo/bank_1/131/block.bin"
+
+# .balign 2
+# glabel bank_1_index_132_geo # 0x582690
+# .incbin "assets/geo/bank_1/132/block.bin"
+
+# .balign 2
+# glabel bank_1_index_133_geo # 0x582B60
+# .incbin "assets/geo/bank_1/133/block.bin"
+
+# .balign 2
+# glabel bank_1_index_134_geo # 0x583A40
+# .incbin "assets/geo/bank_1/134/block.bin"
+
+# .balign 2
+# glabel bank_1_index_135_geo # 0x583C90
+# .incbin "assets/geo/bank_1/135/block.bin"
+
+# .balign 2
+# glabel bank_1_index_136_geo # 0x5841C0
+# .incbin "assets/geo/bank_1/136/block.bin"
+
+# .balign 2
+# glabel bank_1_index_137_geo # 0x584410
+# .incbin "assets/geo/bank_1/137/block.bin"
+
+# .balign 2
+# glabel bank_1_index_138_geo # 0x584660
+# .incbin "assets/geo/bank_1/138/block.bin"
+
+# .balign 2
+# glabel bank_1_index_139_geo # 0x584B70
+# .incbin "assets/geo/bank_1/139/block.bin"
+
+# .balign 2
+# glabel bank_1_index_140_geo # 0x584E20
+# .incbin "assets/geo/bank_1/140/block.bin"
+
+# .balign 2
+# glabel bank_1_index_141_geo # 0x585070
+# .incbin "assets/geo/bank_1/141/block.bin"
+
+# .balign 2
+# glabel bank_1_index_142_geo # 0x585590
+# .incbin "assets/geo/bank_1/142/block.bin"
+
+# .balign 2
+# glabel bank_1_index_143_geo # 0x585780
+# .incbin "assets/geo/bank_1/143/block.bin"
+
+# .balign 2
+# glabel bank_1_index_144_geo # 0x585D90
+# .incbin "assets/geo/bank_1/144/block.bin"
+
+# .balign 2
+# glabel bank_1_index_145_geo # 0x586660
+# .incbin "assets/geo/bank_1/145/block.bin"
+
+# .balign 2
+# glabel bank_1_index_146_geo # 0x587090
+# .incbin "assets/geo/bank_1/146/block.bin"
+
+# .balign 2
+# glabel bank_1_index_147_geo # 0x587DF0
+# .incbin "assets/geo/bank_1/147/block.bin"
+
+# .balign 2
+# glabel bank_1_index_148_geo # 0x588420
+# .incbin "assets/geo/bank_1/148/block.bin"
+
+# .balign 2
+# glabel bank_1_index_149_geo # 0x588750
+# .incbin "assets/geo/bank_1/149/block.bin"
+
+# .balign 2
+# glabel bank_1_index_150_geo # 0x588A40
+# .incbin "assets/geo/bank_1/150/block.bin"
+
+# .balign 2
+# glabel bank_1_index_151_geo # 0x588C80
+# .incbin "assets/geo/bank_1/151/block.bin"
+
+# .balign 2
+# glabel bank_1_index_152_geo # 0x589250
+# .incbin "assets/geo/bank_1/152/block.bin"
+
+# .balign 2
+# glabel bank_1_index_153_geo # 0x589590
+# .incbin "assets/geo/bank_1/153/block.bin"
+
+# .balign 2
+# glabel bank_1_index_154_geo # 0x589830
+# .incbin "assets/geo/bank_1/154/block.bin"
+
+# .balign 2
+# glabel bank_1_index_155_geo # 0x589CE0
+# .incbin "assets/geo/bank_1/155/block.bin"
+
+# .balign 2
+# glabel bank_1_index_156_geo # 0x58A2C0
+# .incbin "assets/geo/bank_1/156/block.bin"
+
+# .balign 2
+# glabel bank_1_index_157_geo # 0x58A850
+# .incbin "assets/geo/bank_1/157/block.bin"
+
+# .balign 2
+# glabel bank_1_index_158_geo # 0x58AC30
+# .incbin "assets/geo/bank_1/158/block.bin"
+
+# .balign 2
+# glabel bank_1_index_159_geo # 0x58B0E0
+# .incbin "assets/geo/bank_1/159/block.bin"
+
+# .balign 2
+# glabel bank_1_index_160_geo # 0x58B7B0
+# .incbin "assets/geo/bank_1/160/block.bin"
+
+# .balign 2
+# glabel bank_1_index_161_geo # 0x58BCF0
+# .incbin "assets/geo/bank_1/161/block.bin"
+
+# .balign 2
+# glabel bank_1_index_162_geo # 0x58C3E0
+# .incbin "assets/geo/bank_1/162/block.bin"
+
+# .balign 2
+# glabel bank_1_index_163_geo # 0x58C630
+# .incbin "assets/geo/bank_1/163/block.bin"
+
+# .balign 2
+# glabel bank_1_index_164_geo # 0x58CFA0
+# .incbin "assets/geo/bank_1/164/block.bin"
+
+# .balign 2
+# glabel bank_1_index_165_geo # 0x58D2B0
+# .incbin "assets/geo/bank_1/165/block.bin"
+
+# .balign 2
+# glabel bank_1_index_166_geo # 0x58D500
+# .incbin "assets/geo/bank_1/166/block.bin"
+
+# .balign 2
+# glabel bank_1_index_167_geo # 0x58D9E0
+# .incbin "assets/geo/bank_1/167/block.bin"
+
+# .balign 2
+# glabel bank_1_index_168_geo # 0x58DDA0
+# .incbin "assets/geo/bank_1/168/block.bin"
+
+# .balign 2
+# glabel bank_1_index_169_geo # 0x58E3B0
+# .incbin "assets/geo/bank_1/169/block.bin"
+
+# .balign 2
+# glabel bank_1_index_170_geo # 0x58F030
+# .incbin "assets/geo/bank_1/170/block.bin"
+
+# .balign 2
+# glabel bank_1_index_171_geo # 0x58FD20
+# .incbin "assets/geo/bank_1/171/block.bin"
+
+# .balign 2
+# glabel bank_1_index_172_geo # 0x590A10
+# .incbin "assets/geo/bank_1/172/block.bin"
+
+# .balign 2
+# glabel bank_1_index_173_geo # 0x591270
+# .incbin "assets/geo/bank_1/173/block.bin"
+
+# .balign 2
+# glabel bank_1_index_174_geo # 0x591AD0
+# .incbin "assets/geo/bank_1/174/block.bin"
+
+# .balign 2
+# glabel bank_1_index_175_geo # 0x592330
+# .incbin "assets/geo/bank_1/175/block.bin"
+
+# .balign 2
+# glabel bank_1_index_176_geo # 0x592A70
+# .incbin "assets/geo/bank_1/176/block.bin"
+
+# .balign 2
+# glabel bank_1_index_177_geo # 0x5931B0
+# .incbin "assets/geo/bank_1/177/block.bin"
+
+# .balign 2
+# glabel bank_1_index_178_geo # 0x5938F0
+# .incbin "assets/geo/bank_1/178/block.bin"
+
+# .balign 2
+# glabel bank_1_index_179_geo # 0x593C30
+# .incbin "assets/geo/bank_1/179/block.bin"
+
+# .balign 2
+# glabel bank_1_index_180_geo # 0x594400
+# .incbin "assets/geo/bank_1/180/block.bin"
+
+# .balign 2
+# glabel bank_1_index_181_geo # 0x5947A0
+# .incbin "assets/geo/bank_1/181/block.bin"
+
+# .balign 2
+# glabel bank_1_index_182_geo # 0x594A30
+# .incbin "assets/geo/bank_1/182/block.bin"
+
+# .balign 2
+# glabel bank_1_index_183_geo # 0x594CC0
+# .incbin "assets/geo/bank_1/183/block.bin"
+
+# .balign 2
+# glabel bank_1_index_184_geo # 0x595750
+# .incbin "assets/geo/bank_1/184/block.bin"
+
+# .balign 2
+# glabel bank_1_index_185_geo # 0x596020
+# .incbin "assets/geo/bank_1/185/block.bin"
+
+# .balign 2
+# glabel bank_1_index_186_geo # 0x596400
+# .incbin "assets/geo/bank_1/186/block.bin"
+
+# .balign 2
+# glabel bank_1_index_187_geo # 0x5966D0
+# .incbin "assets/geo/bank_1/187/block.bin"
+
+# .balign 2
+# glabel bank_1_index_188_geo # 0x596940
+# .incbin "assets/geo/bank_1/188/block.bin"
+
+# .balign 2
+# glabel bank_1_index_189_geo # 0x596BB0
+# .incbin "assets/geo/bank_1/189/block.bin"
+
+# .balign 2
+# glabel bank_1_index_190_geo # 0x598CF0
+# .incbin "assets/geo/bank_1/190/block.bin"
+
+# .balign 2
+# glabel bank_1_index_191_geo # 0x599080
+# .incbin "assets/geo/bank_1/191/block.bin"
+
+# .balign 2
+# glabel bank_1_index_192_geo # 0x599540
+# .incbin "assets/geo/bank_1/192/block.bin"
+
+# .balign 2
+# glabel bank_1_index_193_geo # 0x59A020
+# .incbin "assets/geo/bank_1/193/block.bin"
+
+# .balign 2
+# glabel bank_1_index_194_geo # 0x59A460
+# .incbin "assets/geo/bank_1/194/block.bin"
+
+# .balign 2
+# glabel bank_1_index_195_geo # 0x59B6B0
+# .incbin "assets/geo/bank_1/195/block.bin"
+
+# .balign 2
+# glabel bank_1_index_196_geo # 0x59BB10
+# .incbin "assets/geo/bank_1/196/block.bin"
+
+# .balign 2
+# glabel bank_1_index_197_geo # 0x59CF30
+# .incbin "assets/geo/bank_1/197/block.bin"
+
+# .balign 2
+# glabel bank_1_index_198_geo # 0x59D6B0
+# .incbin "assets/geo/bank_1/198/block.bin"
+
+# .balign 2
+# glabel bank_1_index_199_geo # 0x59DEC0
+# .incbin "assets/geo/bank_1/199/block.bin"
+
+# .balign 2
+# glabel bank_1_index_200_geo # 0x59E440
+# .incbin "assets/geo/bank_1/200/block.bin"
+
+# .balign 2
+# glabel bank_1_index_201_geo # 0x59EAC0
+# .incbin "assets/geo/bank_1/201/block.bin"
+
+# .balign 2
+# glabel bank_1_index_202_geo # 0x59F2A0
+# .incbin "assets/geo/bank_1/202/block.bin"
+
+# .balign 2
+# glabel bank_1_index_203_geo # 0x59F850
+# .incbin "assets/geo/bank_1/203/block.bin"
+
+# .balign 2
+# glabel bank_1_index_204_geo # 0x59FDB0
+# .incbin "assets/geo/bank_1/204/block.bin"
+
+# .balign 2
+# glabel bank_1_index_205_geo # 0x5A0690
+# .incbin "assets/geo/bank_1/205/block.bin"
+
+# .balign 2
+# glabel bank_1_index_206_geo # 0x5A0C90
+# .incbin "assets/geo/bank_1/206/block.bin"
+
+# .balign 2
+# glabel bank_1_index_207_geo # 0x5A15C0
+# .incbin "assets/geo/bank_1/207/block.bin"
+
+# .balign 2
+# glabel bank_1_index_208_geo # 0x5A1B20
+# .incbin "assets/geo/bank_1/208/block.bin"
+
+# .balign 2
+# glabel bank_1_index_209_geo # 0x5A2080
+# .incbin "assets/geo/bank_1/209/block.bin"
+
+# .balign 2
+# glabel bank_1_index_210_geo # 0x5A28F0
+# .incbin "assets/geo/bank_1/210/block.bin"
+
+# .balign 2
+# glabel bank_1_index_211_geo # 0x5A2E50
+# .incbin "assets/geo/bank_1/211/block.bin"
+
+# .balign 2
+# glabel bank_1_index_212_geo # 0x5A31C0
+# .incbin "assets/geo/bank_1/212/block.bin"
+
+# .balign 2
+# glabel bank_1_index_213_geo # 0x5A39F0
+# .incbin "assets/geo/bank_1/213/block.bin"
+
+# .balign 2
+# glabel bank_1_index_214_geo # 0x5A4850
+# .incbin "assets/geo/bank_1/214/block.bin"
+
+# .balign 2
+# glabel bank_1_index_215_geo # 0x5A4BC0
+# .incbin "assets/geo/bank_1/215/block.bin"
+
+# .balign 2
+# glabel bank_1_index_216_geo # 0x5A52D0
+# .incbin "assets/geo/bank_1/216/block.bin"
+
+# .balign 2
+# glabel bank_1_index_217_geo # 0x5A5B90
+# .incbin "assets/geo/bank_1/217/block.bin"
+
+# .balign 2
+# glabel bank_1_index_218_geo # 0x5A6210
+# .incbin "assets/geo/bank_1/218/block.bin"
+
+# .balign 2
+# glabel bank_1_index_219_geo # 0x5A64A0
+# .incbin "assets/geo/bank_1/219/block.bin"
+
+# .balign 2
+# glabel bank_1_index_220_geo # 0x5A6780
+# .incbin "assets/geo/bank_1/220/block.bin"
+
+# .balign 2
+# glabel bank_1_index_221_geo # 0x5A69E0
+# .incbin "assets/geo/bank_1/221/block.bin"
+
+# .balign 2
+# glabel bank_1_index_222_geo # 0x5A6C30
+# .incbin "assets/geo/bank_1/222/block.bin"
+
+# .balign 2
+# glabel bank_1_index_223_geo # 0x5A7010
+# .incbin "assets/geo/bank_1/223/block.bin"
+
+# .balign 2
+# glabel bank_1_index_224_geo # 0x5A7680
+# .incbin "assets/geo/bank_1/224/block.bin"
+
+# .balign 2
+# glabel bank_1_index_225_geo # 0x5A7960
+# .incbin "assets/geo/bank_1/225/block.bin"
+
+# .balign 2
+# glabel bank_1_index_226_geo # 0x5A8180
+# .incbin "assets/geo/bank_1/226/block.bin"
+
+# .balign 2
+# glabel bank_1_index_227_geo # 0x5A8900
+# .incbin "assets/geo/bank_1/227/block.bin"
+
+# .balign 2
+# glabel bank_1_index_228_geo # 0x5A8D70
+# .incbin "assets/geo/bank_1/228/block.bin"
+
+# .balign 2
+# glabel bank_1_index_229_geo # 0x5A90D0
+# .incbin "assets/geo/bank_1/229/block.bin"
+
+# .balign 2
+# glabel bank_1_index_230_geo # 0x5A9470
+# .incbin "assets/geo/bank_1/230/block.bin"
+
+# .balign 2
+# glabel bank_1_index_231_geo # 0x5A98E0
+# .incbin "assets/geo/bank_1/231/block.bin"
+
+# .balign 2
+# glabel bank_1_index_232_geo # 0x5A9D50
+# .incbin "assets/geo/bank_1/232/block.bin"
+
+# .balign 2
+# glabel bank_1_index_233_geo # 0x5AA2F0
+# .incbin "assets/geo/bank_1/233/block.bin"
+
+# .balign 2
+# glabel bank_1_index_234_geo # 0x5AA790
+# .incbin "assets/geo/bank_1/234/block.bin"
+
+# .balign 2
+# glabel bank_1_index_235_geo # 0x5AAE40
+# .incbin "assets/geo/bank_1/235/block.bin"
+
+# .balign 2
+# glabel bank_1_index_236_geo # 0x5AB7C0
+# .incbin "assets/geo/bank_1/236/block.bin"
+
+# .balign 2
+# glabel bank_1_index_237_geo # 0x5ACA50
+# .incbin "assets/geo/bank_1/237/block.bin"
+
+# .balign 2
+# glabel bank_1_index_238_geo # 0x5ACCB0
+# .incbin "assets/geo/bank_1/238/block.bin"
+
+# .balign 2
+# glabel bank_1_index_239_geo # 0x5ACF10
+# .incbin "assets/geo/bank_1/239/block.bin"
+
+# .balign 2
+# glabel bank_1_index_240_geo # 0x5AD170
+# .incbin "assets/geo/bank_1/240/block.bin"
+
+# .balign 2
+# glabel bank_1_index_241_geo # 0x5B0870
+# .incbin "assets/geo/bank_1/241/block.bin"
+
+# .balign 2
+# glabel bank_1_index_242_geo # 0x5B0B70
+# .incbin "assets/geo/bank_1/242/block.bin"
+
+# .balign 2
+# glabel bank_1_index_243_geo # 0x5B0E70
+# .incbin "assets/geo/bank_1/243/block.bin"
 
 .balign 2
 glabel bank_1_index_1_image # 0x5B5360

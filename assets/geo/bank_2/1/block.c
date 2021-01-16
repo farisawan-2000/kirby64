@@ -3,6 +3,9 @@
 #include "geo_block_header.h"
 #include "stages.h"
 
+extern Gfx bank_2_index_1_dl_04000330[];
+extern Gfx bank_2_index_1_dl_04000420[];
+extern Gfx bank_2_index_1_dl_04000530[];
 
 extern struct Layout bank_2_index_1_layout_04000668[];
 extern Gfx *bank_2_index_1_tex_img_refs_04000630[];

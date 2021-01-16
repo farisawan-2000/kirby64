@@ -90,6 +90,9 @@ def GetEntryPoints(rom,start,Layout,DLmembers):
                 break
             i+=DLm*4
         entry.append(E)
+    for i in starts:
+        symbols[i | 0x04000000] = "bank_%d_index_%d_entry_point_%08X" % (globBank, globIndex, i | 0x04000000)
+        # print("%08X" % i)
     return [entry,starts]
 
 def GetEntryPoints14(rom,start,ptr):
@@ -106,6 +109,9 @@ def GetEntryPoints14(rom,start,ptr):
             break
         i+=8
     entry.append(E)
+    for i in starts:
+        symbols[i | 0x04000000] = "bank_%d_index_%d_entry_point_%08X" % (globBank, globIndex, i | 0x04000000)
+        # print("%08X" % i)
     return [entry,starts]
 
 def GetEntryPoints1B(rom,start,Layout):
@@ -127,6 +133,9 @@ def GetEntryPoints1B(rom,start,Layout):
         E.append([0,q])
         entry.append(E)
     entry.append([[4,0]])
+    for i in starts:
+        symbols[i | 0x04000000] = "bank_%d_index_%d_entry_point_%08X" % (globBank, globIndex, i | 0x04000000)
+        # print("%08X" % i)
     return [entry,starts]
 
 def GetGroups(rom,start,Layout):
@@ -439,16 +448,26 @@ def WriteGeoHeader(file,GH):
             if h[0][1][0] == 0:
                 buf += "    /*0x%02X*/ NULL,\n"%(h[1],h[0][1][0])
             else:
-                file.write("extern struct Layout %s[];\n" % symbols[h[0][1][0]])
-                # buf += "    /*0x%02X*/ (struct Layout *) 0x%08X,\n"%(h[1],h[0][1][0])
-                buf += "    /*0x%02X*/ %s,\n"%(h[1],symbols[h[0][1][0]])
+                if h[0][1][0] in symbols:
+                    if "entry_point" in symbols[h[0][1][0]]:
+                        file.write("extern struct EntryPoint %s[];\n" % symbols[h[0][1][0]])
+                    elif "_dl_" in symbols[h[0][1][0]]:
+                        file.write("extern Gfx %s[];\n" % symbols[h[0][1][0]])
+                    else:
+                        file.write("extern struct Layout %s[];\n" % symbols[h[0][1][0]])
+                    buf += "    /*0x%02X*/ %s,\n"%(h[1],symbols[h[0][1][0]])
+                else:
+                    buf += "    /*0x%02X*/ 0x%08X,\n"%(h[1],h[0][1][0])
         elif h[1] == 4:
             if h[0][1][0] == 0:
                 buf += "    /*0x%02X*/ NULL,\n"%(h[1])
             else:
-                file.write("extern struct TextureScroll **%s[];\n" % symbols[h[0][1][0]])
+                if h[0][1][0] in symbols:
+                    file.write("extern struct TextureScroll **%s[];\n" % symbols[h[0][1][0]])
                 # buf += "    /*0x%02X*/ (struct TextureScroll **) 0x%08X,\n"%(h[1],h[0][1][0])
-                buf += "    /*0x%02X*/ %s,\n"%(h[1],symbols[h[0][1][0]])
+                    buf += "    /*0x%02X*/ %s,\n"%(h[1],symbols[h[0][1][0]])
+                else:
+                    buf += "    /*0x%02X*/ 0x%08X,\n"%(h[1],h[0][1][0])
         elif h[1] == 0xC:
             if h[0][1][0] == 0:
                 buf += "    /*0x%02X*/ NULL,\n"%(h[1])
@@ -507,52 +526,7 @@ def WriteGeoVerts(file,GV,VBs):
     file.write("};\n\n")
 
 import subprocess
-def WriteGeoF3d(file,f3d,starts):
-    global globBank, globIndex
-
-    n=0
-    #Sorting stuff when writing so its in the same order it is in the ROM
-    NewStarts = [[i,s] for i,s in enumerate(starts)]
-    NewStarts.sort(key= lambda x: x[1])
-    NewF3D = [f3d[i[0]] for i in NewStarts]
-    for j,l in enumerate(NewF3D):
-        file.write("Gfx bank_%d_index_%d_dl_%08X[] = {\n"%(globBank, globIndex, NewStarts[n][1]))
-        n+=1
-        for k,cmd in enumerate(l):
-            #idk why I built this to work off hex strings but now it
-            #fucks my ass and I have to do this dumb method.
-            hs = "%016X"%cmd[0]
-            # print(hs)
-            proc = subprocess.Popen(
-                "tools/gfxdis.f3dex2 -x -d " + str(hs)
-                ,
-                shell=True,
-                stdout=subprocess.PIPE,
-            )
-            toReturn = proc.communicate()[0].decode("ascii")
-
-            toReturn = toReturn.split("\n")[1]
-            if "gsSPVertex" in toReturn:
-                tr2 = toReturn.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                ad = int(tr2[1], 16)
-                if ad in symbols:
-                    tr2[1] = "bank_%d_index_%d_vtx_%08X" % (globBank, globIndex, ad)
-                toReturn = "    gsSPVertex(%s, %s, %s)," % (tr2[1], tr2[2], tr2[3])
-            if "gsSPDisplayList" in toReturn:
-                tr2 = toReturn.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                ad = int(tr2[1], 16)
-                if ad in symbols:
-                    tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
-                toReturn = "    gsSPDisplayList(%s)," % (tr2[1])
-
-            file.write(str(toReturn) + "\n")
-        file.write("};\n\n")
-#    file.write("#DL map is nothing in the original game, its here for me\n")
-#    file.write("DLmap = [\n")
-#    for j,s in enumerate(NewStarts):
-#        file.write("%d,"%s[1])
-#    file.write("\n]\n")
-
+from bank_specific_leftover_data import *
 def WriteGeoF3d2(file,f3d,starts):
     global globBank, globIndex
 
@@ -561,6 +535,7 @@ def WriteGeoF3d2(file,f3d,starts):
     NewStarts = [[i,s] for i,s in enumerate(starts)]
     NewStarts.sort(key= lambda x: x[1])
     NewF3D = [f3d[i[0]] for i in NewStarts]
+    print("ASAJLDKAJL")
     for j,l in enumerate(NewF3D):
         file.write("Gfx bank_%d_index_%d_dl_%08X[] = {\n"%(globBank, globIndex, NewStarts[n][1]))
         n+=1
@@ -570,9 +545,8 @@ def WriteGeoF3d2(file,f3d,starts):
             #idk why I built this to work off hex strings but now it
             #fucks my ass and I have to do this dumb method.
             dl_str += "%016X"%cmd[0]
-            # print(hs)
         proc = subprocess.Popen(
-            "tools/gfxdis.f3dex2 -x -d " + str(dl_str)
+            "tools/gfxdis_f3dex2 -x -d " + str(dl_str)
             ,
             shell=True,
             stdout=subprocess.PIPE,
@@ -596,7 +570,6 @@ def WriteGeoF3d2(file,f3d,starts):
                 tmp_line = "    gsSPDisplayList(%s)," % (tr2[1])
             if "gsSPBranchLessZ" in tmp_line:
                 tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                print(tr2)
                 ad = int(tr2[1], 16)
                 if ad in symbols:
                     tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
@@ -605,6 +578,12 @@ def WriteGeoF3d2(file,f3d,starts):
 
         file.write('\n'.join(tr) + "\n")
         file.write("};\n\n")
+    if int(globIndex) == 112 and int(globBank) == 1:
+        file.write(bank_1_index_112 % (globBank, globIndex))
+    if int(globIndex) == 70 and int(globBank) == 2:
+        file.write(bank_1_index_112 % (globBank, globIndex))
+    if int(globIndex) == 97 and int(globBank) == 2:
+        file.write(bank_1_index_112 % (globBank, globIndex))
 
 def WriteLayout(file,L,env,GH):
     global globBank, globIndex
@@ -708,13 +687,38 @@ def WriteEntryPoints1C(file,SP,starts):
         file.write("// No Entry Points\n")
         return
     for i,ep in enumerate(zip(SP,starts)):
-        file.write("\n// Entry Point at 0x%X\nstruct EntryPoint bank_%d_index_%d_entry_point_%d[] = {\n"%(ep[1],globBank, globIndex,i))
+        file.write("\nstruct EntryPoint_1C bank_%d_index_%d_entry_point_%08X[] = {\n"%(globBank, globIndex,ep[1]))
+        buf = ""
+        if len(ep[0]) > 2:
+            buf = "u32 bank_%d_index_%d_pad[3] = {%08X, %08X, %08X};\n" % (globBank, globIndex,
+                ep[0][2][0],
+                ep[0][2][1],
+                ep[0][2][2]
+                )
+            del ep[0][2]
         for p in ep[0]:
-            if p[0] == 4:
-                file.write("{0x%X,0x%X,0x%X}"%(p[0],p[1],p[2]))
+            # file.write("    {");
+            file.write("    ");
+            if p[0] in symbols:
+                file.write("%s, " % symbols[p[0]])
             else:
-                file.write("{0x%X,0x%X,0x%X},"%(p[0],p[1],p[2]))
+                file.write("0x%08X, " % p[0])
+
+            if p[1] in symbols:
+                file.write("%s, " % symbols[p[1]])
+            else:
+                file.write("0x%08X, " % p[1])
+
+            if p[2] in symbols:
+                file.write("%s,\n"%symbols[p[2]])
+            else:
+                file.write("0x%08X,\n"%p[2])
+            # if p[2] in symbols:
+            #     file.write("%s,}\n"%symbols[p[2]])
+            # else:
+            #     file.write("0x%08X,}\n"%p[2])
         file.write("\n};\n")
+        file.write(buf)
 
 def WriteUnk2(file,GH,unk):
     if unk:
@@ -746,15 +750,20 @@ def WriteTS(file,GH,TS,THS,H2,tPad,tUnk):
                     file.write("    (struct TextureScroll **) 0x%08X"%v + ",\n")
             ga += 4
         file.write("};\n")
-        #write padding
-        symbols[ga] = "bank_%d_index_%d_texture_ptr_%08X" % (globBank, globIndex, ga)
-        file.write("\n\nu32 bank_%d_index_%d_texture_ptr_%08X[] = {\n" % (globBank, globIndex, ga))
+
+        #write padding; dont write bad syntax if there's none
+        if len(tPad) != 0:
+            symbols[ga] = "bank_%d_index_%d_texture_ptr_%08X" % (globBank, globIndex, ga)
+            file.write("\n\nu32 bank_%d_index_%d_texture_ptr_%08X[] = {\n" % (globBank, globIndex, ga))
+        else:
+            file.write("\n")
+
         for j,v in enumerate(tPad):
             # else:
             if v[0] == 0x99999999:
                 file.write("    0x%X"%v + ",\n")
-                if j + 1 != len(tPad):
-                    file.write("u32 bank_%d_index_%d_texscroll_padding_%08X[] = {\n" % (globBank, globIndex, ga + 4))
+                if j + 1 != len(tPad) and j + 2 != len(tPad):
+                    file.write("};\n\nu32 bank_%d_index_%d_texscroll_padding_%08X[] = {\n" % (globBank, globIndex, ga + 4))
                     symbols[ga + 4] = "bank_%d_index_%d_texscroll_padding_%08X" % (globBank, globIndex, ga + 4)
             else:
                 if v[0] == 0:
@@ -768,8 +777,9 @@ def WriteTS(file,GH,TS,THS,H2,tPad,tUnk):
         #Write TS structs
         for i,[t,u] in enumerate(zip(TS,tUnk)):
             if u:
-                file.write("u32 bank_%d_index_%d_texture_ptr_%08X[] = {\n "%(globBank, globIndex, (t[1]-len(u)*4)))
-                symbols[t[1]-len(u)*4] = "bank_%d_index_%d_texture_ptr_%08X"%(globBank, globIndex,t[1]-len(u)*4)
+                if len(u) != 0:
+                    file.write("u32 bank_%d_index_%d_texture_ptr_%08X[] = {\n "%(globBank, globIndex, (t[1]-len(u)*4)))
+                    symbols[t[1]-len(u)*4] = "bank_%d_index_%d_texture_ptr_%08X"%(globBank, globIndex,t[1]-len(u)*4)
                 for p in u:
                     if p == 0x99999999:
                         file.write("    0x%08X,\n"%p)

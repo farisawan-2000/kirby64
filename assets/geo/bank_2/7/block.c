@@ -4,6 +4,23 @@
 #include "stages.h"
 
 extern struct TextureScroll *bank_2_index_7_texture_scroll_subheader_04003978[];
+extern Gfx bank_2_index_7_dl_04001FB0[];
+extern Gfx bank_2_index_7_dl_040025B8[];
+extern Gfx bank_2_index_7_dl_04002D88[];
+extern Gfx bank_2_index_7_dl_04003040[];
+extern Gfx bank_2_index_7_dl_04003328[];
+extern Gfx bank_2_index_7_dl_040022B0[];
+extern Gfx bank_2_index_7_dl_040022E0[];
+extern Gfx bank_2_index_7_dl_040024A0[];
+extern Gfx bank_2_index_7_dl_040025E0[];
+extern Gfx bank_2_index_7_dl_04002A00[];
+extern Gfx bank_2_index_7_dl_04002DB0[];
+extern Gfx bank_2_index_7_dl_04002F20[];
+extern Gfx bank_2_index_7_dl_04003300[];
+extern Gfx bank_2_index_7_dl_04001FD8[];
+extern Gfx bank_2_index_7_dl_04002198[];
+extern Gfx bank_2_index_7_dl_04003068[];
+extern Gfx bank_2_index_7_dl_040031E0[];
 
 extern struct Layout bank_2_index_7_layout_04003594[];
 extern struct TextureScroll **bank_2_index_7_texscroll_header_04003880[];
@@ -823,8 +840,6 @@ Vtx bank_2_index_7_vtx_04001F30[] = {
     {{{    11,      31,   65502}, 0, {     0,       0}, {0x00, 0x00, 0x00, 0xff}}},
     {{{    11,      31,      34}, 0, {     0,       0}, {0x00, 0x00, 0x00, 0xff}}},
 };
-
-extern Gfx bank_2_index_7_dl_040022B0[];
 
 Gfx bank_2_index_7_dl_04001FB0[] = {
     gsDPPipeSync(),
@@ -1797,7 +1812,7 @@ struct TextureScroll **bank_2_index_7_texscroll_header_04003880[] = {
 };
 
 
-u32 bank_2_index_7_texscroll_ptr_040038C4[] = {
+u32 bank_2_index_7_texture_ptr_040038C4[] = {
     BANK_INDEX(2, 8),
     BANK_INDEX(2, 10),
     BANK_INDEX(2, 11),
@@ -1819,7 +1834,7 @@ struct TextureScroll bank_2_index_7_texture_scroll_04003900 = {
     /*0x00*/ 0x0,
     /*0x02*/ 0x2,
     /*0x03*/ 0x2,
-    /*0x04*/ bank_2_index_7_texscroll_ptr_040038C4,
+    /*0x04*/ bank_2_index_7_texture_ptr_040038C4,
     /*0x08*/ 0x1F4,
     /*0x0A*/ 0x0,
     /*0x0C*/ 0x20,

@@ -4,6 +4,7 @@
 #include "stages.h"
 
 extern struct TextureScroll *bank_2_index_6_texture_scroll_subheader_040002D0[];
+extern Gfx bank_2_index_6_dl_040000E0[];
 
 extern struct Layout bank_2_index_6_layout_040001C4[];
 extern struct TextureScroll **bank_2_index_6_texscroll_header_04000248[];
@@ -120,7 +121,7 @@ struct TextureScroll **bank_2_index_6_texscroll_header_04000248[] = {
 };
 
 
-u32 bank_2_index_6_texscroll_ptr_04000254[] = {
+u32 bank_2_index_6_texture_ptr_04000254[] = {
     0,
 };
 

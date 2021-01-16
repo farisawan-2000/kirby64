@@ -57,14 +57,15 @@ OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 TOOLS_DIR = tools
 N64CRC = tools/n64crc
 N64GRAPHICS = $(TOOLS_DIR)/n64graphics
-EMULATOR = mupen64plus
-EMU_FLAGS = --noosd --gfx mupen64plus-video-glide64mk2
+EMULATOR = ~/Downloads/mupen64plus/mupen64plus-gui
+EMU_FLAGS = # --noosd --gfx mupen64plus-video-glide64mk2
 LOADER = loader64
 LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
+ASSET_DIRS := $(wildcard assets/geo/bank_0/**) $(wildcard assets/geo/bank_1/**) $(wildcard assets/geo/bank_2/**)
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data asm/banks $(wildcard data/ovl*)
-SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*) $(wildcard assets/geo/bank*/**)
+SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 
@@ -81,6 +82,10 @@ GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
+ASSET_BIN_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/*.bin))
+ASSET_C_FILES := $(foreach file,$(ASSET_BIN_FILES),$(file:.bin=.c))
+
+
 UCODE_BASE_DIR := ucode
 UCODES := L3DEX2_2.04H S2DEX2_2.04
 
@@ -95,7 +100,8 @@ BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
-           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o)) \
+           	$(foreach file,$(ASSET_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 D_FILES := $(O_FILES:.o=.d)
 
@@ -126,7 +132,7 @@ ifeq ($(DUMMY),FAIL)
 endif
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
 
 # Checking if submodules exist
@@ -169,6 +175,8 @@ distclean:
 	make -C tools clean
 	make -C libreultra clean
 	make -C f3dex2 clean
+	./extract_assets.py --clean
+	python3 tools/decompile_geos.py --clean
 
 softclean:
 	rm -rf build/us/src/
@@ -207,6 +215,12 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
+assets/geo/%.c: assets/geo/%.bin
+	python3 tools/scut/GeoFromBin.py $< $@
+
+$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
+	$(CC) -c $(CFLAGS) -o $@ $<
+
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 	$(CC) -c $(CFLAGS) -o $@ $<
@@ -218,7 +232,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(ASSETS_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
