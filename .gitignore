@@ -9,6 +9,7 @@ bin/*
 .assets-local.txt
 tools/mipspro*/
 tools/gfxdis.f3dex2
+tools/gfxdis_f3dex2
 tools/n64graphics
 tools/armips
 tools/iplfontutil
