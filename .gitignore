@@ -2,8 +2,7 @@
 **/**/*.bin
 build/*
 tools/GeoFromBin*
-assets/*.bin
-assets/*.c
+assets/*
 *.z64
 textures/*
 bin/*
