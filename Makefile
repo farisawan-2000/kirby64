@@ -100,8 +100,9 @@ BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
-           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o)) \
-           	$(foreach file,$(ASSET_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
+           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+
+ASSET_O_FILES := $(foreach file,$(ASSET_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 D_FILES := $(O_FILES:.o=.d)
 
@@ -232,8 +233,8 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
-	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(O_FILES) $(LIBS) -lultra -ln_audio
+$(BUILD_DIR)/$(TARGET).elf: $(ASSET_O_FILES) $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(ASSET_O_FILES) $(O_FILES) $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
@@ -255,7 +256,7 @@ test: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-.PHONY: all clean default diff test
+.PHONY: all clean default diff test distclean
 
 # Remove built-in rules, to improve performance
 MAKEFLAGS += --no-builtin-rules
