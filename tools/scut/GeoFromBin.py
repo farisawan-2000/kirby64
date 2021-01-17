@@ -439,6 +439,12 @@ def WriteGeoBlock(file,GeoBlock,rom):
         file.write("\n// No layout in render mode 0x13\n")
     WriteTS(file,GeoBlock[0],GeoBlock[7],GeoBlock[14],GeoBlock[15],GeoBlock[16],GeoBlock[17])
     WriteUnk2(file,GeoBlock[0],GeoBlock[12])
+    if globBank == 3 and globIndex == 97:
+        file.write("\n%s\n" % bank_3_index_97_hardcode)
+    if globBank == 3 and globIndex == 96:
+        file.write("\n%s\n" % bank_3_index_96_hardcode)
+    if globBank == 3 and globIndex == 98:
+        file.write("\n%s\n" % bank_3_index_98_hardcode)
     file.close()
     del file
 
@@ -623,11 +629,11 @@ def WriteGeoF3d2(file,f3d,starts):
         file.write("};\n\n")
     if int(globIndex) == 112 and int(globBank) == 1:
         file.write(bank_1_index_112 % (globBank, globIndex))
-    if int(globIndex) == 70 and int(globBank) == 2:
-        file.write(bank_1_index_112 % (globBank, globIndex))
-    if int(globIndex) == 97 and int(globBank) == 2:
+    if int(globIndex) in [70, 97] and int(globBank) == 2:
         file.write(bank_1_index_112 % (globBank, globIndex))
     if int(globIndex) == 207 and int(globBank) == 7:
+        file.write(bank_1_index_112 % (globBank, globIndex))
+    if int(globIndex) in [1] and int(globBank) == 3:
         file.write(bank_1_index_112 % (globBank, globIndex))
 
 
