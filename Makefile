@@ -152,8 +152,6 @@ ifeq ($(DUMMY),FAIL)
   $(error Missing submodule f3dex2. Please run 'git submodule update --init')
 endif
 
-# Making submodules
-
 
 
 default: all
@@ -163,7 +161,11 @@ LD_SCRIPT = $(TARGET).ld
 # TEXTURE_DIR = textures
 # RAW_TEXTURE_FILES := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(wildcard $(TEXTURES_DIR)/raw/*.png)))
 
+libreultra/build/2.0I/libultra_rom.a:
+	make -C libreultra -j4
 
+libreultra/build/2.0I/libn_audio.a:
+	make -C libreultra naudio -j4
 
 all: $(BUILD_DIR)/$(TARGET).z64
 	@sha1sum -c $(TARGET).sha1
@@ -175,10 +177,10 @@ clean:
 
 distclean:
 	rm -rf build/
+	tools/extract_assets --clean
 	make -C tools clean
 	make -C libreultra clean
 	make -C f3dex2 clean
-	./extract_assets.py --clean
 	python3 tools/decompile_geos.py --clean
 
 softclean:
@@ -260,8 +262,7 @@ setup: $(ASSET_C_FILES)
 	make -C libreultra naudio -j4
 	make -C tools -j4
 	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-	make -C tools
-	./extract_assets.py $(VERSION)
+	tools/extract_assets $(VERSION)
 
 .PHONY: all clean default diff test distclean
 

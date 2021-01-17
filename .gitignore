@@ -15,6 +15,7 @@ tools/armips
 tools/iplfontutil
 tools/n64crc
 tools/patch_libultra_math
+tools/extract_assets
 *.o
 epic.*
 __pycache__/*
