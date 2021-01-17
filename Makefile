@@ -66,8 +66,8 @@ FixPath = $(subst /,/,$1)
 ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
               $(wildcard assets/geo/bank_1/**) \
               $(wildcard assets/geo/bank_2/**) \
-              $(wildcard assets/geo/bank_7/**) \
-              $(wildcard assets/geo/bank_3/**)
+              $(wildcard assets/geo/bank_7/**)
+#               $(wildcard assets/geo/bank_3/**)
 
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data asm/banks $(wildcard data/ovl*)
 SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
