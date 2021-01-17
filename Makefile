@@ -262,7 +262,7 @@ setup: $(ASSET_C_FILES)
 	make -C libreultra naudio -j4
 	make -C tools -j4
 	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-	make -C tools
+	make -C tools -j4
 	tools/extract_assets $(VERSION)
 
 .PHONY: all clean default diff test distclean
