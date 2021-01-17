@@ -35,6 +35,8 @@ else
   CROSS := mips64-elf-
 endif
 
+GCC := $(CROSS)gcc
+
 AS = $(CROSS)as
 # CC = $(CROSS)gcc
 CPP     := cpp -P -Wno-trigraphs
@@ -119,6 +121,7 @@ OPT_FLAGS := -O2
 INCLUDE_CFLAGS := -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I src -I .
 TARGET_CFLAGS := -nostdinc -I include/libc -DTARGET_N64 -DF3DEX_GBI_2
 CFLAGS = -Wab,-r4300_mul -non_shared -G0 -Xcpluscomm -Xfullwarn -signed $(OPT_FLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) $(MIPSISET)
+GCC_CFLAGS = -Wall $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -march=vr4300 -mtune=vr4300 -mfix4300 -mabi=32 -mno-shared -G 0 -fno-PIC -mno-abicalls -fno-zero-initialized-in-bss -fno-toplevel-reorder -Wno-missing-braces
 
 CC_CHECK := gcc -fsyntax-only -fsigned-char -m32 $(CC_CFLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -std=gnu90 -Wall -Wextra -Wno-format-security -Wno-main -DNON_MATCHING -DAVOID_UB $(VERSION_CFLAGS) $(GRUCODE_CFLAGS)
 
@@ -218,10 +221,10 @@ $(BUILD_DIR)/%.o: %.c
 
 $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
-	$(CC) -c $(CFLAGS) -o $@ $<
+	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
-	$(CC) -c $(CFLAGS) -o $@ $<
+	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
