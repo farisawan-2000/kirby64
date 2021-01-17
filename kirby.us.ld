@@ -644,7 +644,7 @@ SECTIONS
       BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
    }
    END_SEG(data_4A3B60)
- 
+
    #include "assets/bank0.ld"
    BEGIN_SEG(bank0_other, __romPos) {
       BUILD_DIR/asm/banks/bank0.o(.data); 

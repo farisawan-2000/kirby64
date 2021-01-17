@@ -14,13 +14,12 @@ if "--clean" in ''.join(sys.argv):
 	exit(0)
 
 for i in sorted(glob.glob("assets/geo/bank_*/**/block.bin")):
-	if "bank_1" in i or "bank_0" in i or "bank_2" in i:
+	if "bank_1" in i or "bank_0" in i or "bank_2" in i or "bank_7" in i:
 		cfile = i.split("bin")[0] + "c"
-		# proc = subprocess.Popen("ls %s | wc -l" % i.split("bin")[0]+"*", shell=True, stdout=subprocess.PIPE)
-		# if int(proc.communicate()[0].decode("ascii")) > 1:
-		# 	if "--clean" in ''.join(sys.argv):
-		# 		subprocess.run("rm %s" % cfile, shell=True)
-		# 	continue
+		proc = subprocess.Popen("ls %s | wc -l" % (i.split("bin")[0]+"*"), shell=True, stdout=subprocess.PIPE)
+		pc = proc.communicate()[0].decode("ascii")
+		if pc != '' and int(pc) > 1:
+			continue
 		print(cfile)
 		try:
 			subprocess.run("python3 tools/scut/GeoFromBin.py %s %s" % (i, cfile), shell=True, check = True)

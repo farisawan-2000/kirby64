@@ -55,7 +55,7 @@ def GetLayout(rom,start,GH,end):
             q = struct.unpack(Layout.get(s)[0],rom[start+s+i:i+start+s+Layout.get(s)[2]])
             if s == 4:
                 q2 = struct.unpack(Layout.get(s)[0],rom[start+s+i:i+start+s+Layout.get(s)[2]])[0]
-                if q2 != 0:
+                if q2 != 0 and q2 != 0x80000000:
                     symbols[q2] = "bank_%d_index_%d_entry_point_%08X" % (globBank, globIndex, q2)
             v.append([Layout.get(s)[1],q])
         if Envfx:
@@ -188,9 +188,14 @@ def GetMicrocode(rom,start,EP,end,DLmembers):
                                 p.append(newEP)
                                 jumps.append(newEP)
                                 jumped = newEP
-                    if f[0] == endDL or f[0]&0xFFFFFFFF00000000 == JumpEnd:
+                    if f[0] == endDL:
+                        # print("%08X" % (i + 0x040030E8))
+                        break
+                    if f[0]&0xFFFFFFFF00000000 == JumpEnd:
+                        # print("poopsie")
                         break
                     if Fstart+i>end:
+                        # print("oopsie")
                         break
                     i+=8
                 f3d.extend([ex2])
@@ -553,29 +558,68 @@ def WriteGeoF3d2(file,f3d,starts):
         toReturn = proc.communicate()[0].decode("ascii")
 
         tr = toReturn.split("\n")[1:-2]
-        for i in range(len(tr)):
-            tmp_line = tr[i]
-            if "gsSPVertex" in tmp_line:
-                tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                ad = int(tr2[1], 16)
-                if ad in symbols:
-                    tr2[1] = "bank_%d_index_%d_vtx_%08X" % (globBank, globIndex, ad)
-                tmp_line = "    gsSPVertex(%s, %s, %s)," % (tr2[1], tr2[2], tr2[3])
-            if "gsSPDisplayList" in tmp_line:
-                tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                ad = int(tr2[1], 16)
-                if ad in symbols:
-                    tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
-                tmp_line = "    gsSPDisplayList(%s)," % (tr2[1])
-            if "gsSPBranchLessZ" in tmp_line:
-                tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
-                ad = int(tr2[1], 16)
-                if ad in symbols:
-                    tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
-                tmp_line = "    gsSPBranchLessZ(%s, %s, %s, %s, %s, %s)," % (tr2[1], tr2[2], tr2[3], tr2[4], tr2[5], tr2[6])
-            tr[i] = tmp_line
+        # print(len(tr) == len(l))
+        # if n== 2:
+        #     print(toReturn)
+        if len(tr) == len(l):
+            for i in range(len(tr)):
+                tmp_line = tr[i]
+                if "gsSPVertex" in tmp_line:
+                    tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                    ad = int(tr2[1], 16)
+                    if ad in symbols:
+                        tr2[1] = "bank_%d_index_%d_vtx_%08X" % (globBank, globIndex, ad)
+                    tmp_line = "    gsSPVertex(%s, %s, %s)," % (tr2[1], tr2[2], tr2[3])
+                if "gsSPDisplayList" in tmp_line:
+                    tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                    ad = int(tr2[1], 16)
+                    if ad in symbols:
+                        tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
+                    tmp_line = "    gsSPDisplayList(%s)," % (tr2[1])
+                if "gsSPBranchLessZ" in tmp_line:
+                    tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                    ad = int(tr2[1], 16)
+                    if ad in symbols:
+                        tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
+                    tmp_line = "    gsSPBranchLessZ(%s, %s, %s, %s, %s, %s)," % (tr2[1], tr2[2], tr2[3], tr2[4], tr2[5], tr2[6])
+                tr[i] = tmp_line
+            file.write('\n'.join(tr) + "\n")
+        else:
+            # This check was originally intended to fix bank 7,
+            # but since those DL's dont have actual F3D in them,
+            # it will be necessary to find a better solution
+            # for now, the DL's are hardcoded if they fail
+            for i in l:
+                file.write("{0x%08X, 0x%08X},\n" % (i[0] >> 32, i[0] & 0xFFFFFFFF))
+                # proc = subprocess.Popen(
+                #     "tools/gfxdis_f3dex2 -x -i -d " + str(hex(i[0]))[2:]
+                #     ,
+                #     shell=True,
+                #     stdout=subprocess.PIPE,
+                # )
+                # tr = proc.communicate()[0].decode("ascii")
+                # tmp_line = tr.split("\n")[1]
+                # print(tmp_line)
+                # if "gsSPVertex" in tmp_line:
+                #     tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                #     ad = int(tr2[1], 16)
+                #     if ad in symbols:
+                #         tr2[1] = "bank_%d_index_%d_vtx_%08X" % (globBank, globIndex, ad)
+                #     tmp_line = "    gsSPVertex(%s, %s, %s)," % (tr2[1], tr2[2], tr2[3])
+                # if "gsSPDisplayList" in tmp_line:
+                #     tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                #     ad = int(tr2[1], 16)
+                #     if ad in symbols:
+                #         tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
+                #     tmp_line = "    gsSPDisplayList(%s)," % (tr2[1])
+                # if "gsSPBranchLessZ" in tmp_line:
+                #     tr2 = tmp_line.replace(",", " ").replace("(", " ").replace(")"," ").split()
+                #     ad = int(tr2[1], 16)
+                #     if ad in symbols:
+                #         tr2[1] = "bank_%d_index_%d_dl_%08X" % (globBank, globIndex, ad)
+                #     tmp_line = "    gsSPBranchLessZ(%s, %s, %s, %s, %s, %s)," % (tr2[1], tr2[2], tr2[3], tr2[4], tr2[5], tr2[6])
+                # tr[i] = tmp_line
 
-        file.write('\n'.join(tr) + "\n")
         file.write("};\n\n")
     if int(globIndex) == 112 and int(globBank) == 1:
         file.write(bank_1_index_112 % (globBank, globIndex))
@@ -583,6 +627,9 @@ def WriteGeoF3d2(file,f3d,starts):
         file.write(bank_1_index_112 % (globBank, globIndex))
     if int(globIndex) == 97 and int(globBank) == 2:
         file.write(bank_1_index_112 % (globBank, globIndex))
+    if int(globIndex) == 207 and int(globBank) == 7:
+        file.write(bank_1_index_112 % (globBank, globIndex))
+
 
 def WriteLayout(file,L,env,GH):
     global globBank, globIndex
@@ -591,6 +638,7 @@ def WriteLayout(file,L,env,GH):
         return
     # file.write("\n// Layouts Start at 0x%X\n"%GH[0][1][0])
     file.write("\nstruct Layout bank_%d_index_%d_layout_%08X[] = {\n"%(globBank, globIndex, GH[0][1][0]))
+    tmpAddr = GH[0][1][0]
     for i,l in enumerate(L):
         file.write("    {\n")
         for h in zip(l,Layout.keys()):
@@ -608,17 +656,19 @@ def WriteLayout(file,L,env,GH):
                 file.write("        /*0x%02X*/ 0x%X,\n"%(h[1],h[0][1][0]))
             else:
                 file.write("        /*0x%02X*/ {%s},\n"%(h[1],str(h[0][1])[1:-1]))
-    file.write("};\n")
+        tmpAddr += 0x2C
     #repeat for envfx, could do this smarter but I don't feel like it.
+    file.write("// start of Environment Effects" * (len(env) != 0))
     for i,e in enumerate(env):
-        file.write("\nEnvfx_%d = {\n"%i)
+        file.write("\n    {\n")
         for h in zip(e,Layout.keys()):
-            if h[1] == 0x20:
-                file.write("    /*0x%02X*/ %s\n}\n"%(h[1],str(h[0][1])))
-            elif h[1]<8:
-                file.write("    /*0x%02X*/ 0x%X,\n"%(h[1],h[0][1][0]))
+            if h[1]<8:
+                file.write("        /*0x%02X*/ 0x%X,\n"%(h[1],h[0][1][0]))
             else:
-                file.write("    /*0x%02X*/ %s,\n"%(h[1],str(h[0][1])))
+                file.write("        /*0x%02X*/ {%s},\n"%(h[1],str(h[0][1])[1:-1]))
+        file.write("    },\n")
+        tmpAddr += 0x2C
+    file.write("};\n")
 
 def getOffset(segAddr):
     tmp = 0
@@ -679,8 +729,9 @@ def WriteEntryPoints(file,SP,starts):
                     file.write("    {0x%X, (Gfx *) 0x%08X},\n"%(p[0],p[1]))
         file.write("};\n")
 
+padCount = 0
 def WriteEntryPoints1C(file,SP,starts):
-    global globBank, globIndex
+    global globBank, globIndex, padCount
     #this is doodoo brain but don't want to rewrite all stuff
     if len(SP) == 0:
         file.write("// No Entry Points\n")
@@ -689,12 +740,13 @@ def WriteEntryPoints1C(file,SP,starts):
         file.write("\nstruct EntryPoint_1C bank_%d_index_%d_entry_point_%08X[] = {\n"%(globBank, globIndex,ep[1]))
         buf = ""
         if len(ep[0]) > 2:
-            buf = "u32 bank_%d_index_%d_pad[3] = {%08X, %08X, %08X};\n" % (globBank, globIndex,
+            buf = "u32 bank_%d_index_%d_pad_%d[3] = {%08X, %08X, %08X};\n" % (globBank, globIndex, padCount,
                 ep[0][2][0],
                 ep[0][2][1],
                 ep[0][2][2]
                 )
             del ep[0][2]
+            padCount += 1
         for p in ep[0]:
             # file.write("    {");
             file.write("    ");
