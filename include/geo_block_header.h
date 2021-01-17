@@ -30,7 +30,7 @@ struct Layout {
 };
 
 struct GeoBlockHeader {
-   struct Layout *layouts;
+   void *entriesOrLayoutsOrDL;
    struct TextureScroll ***texScrollHeader;
    u32 renderMode;
    Gfx **imgRefs;

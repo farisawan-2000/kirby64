@@ -655,7 +655,7 @@ def WriteLayout(file,L,env,GH):
                     file.write("        /*0x%02X*/ NULL,\n"%h[1])
                 else:
                     if h[0][1][0] in symbols:
-                        file.write("        /*0x%02X*/ %s,\n"%(h[1],symbols[h[0][1][0]]))
+                        file.write("        /*0x%02X*/ (struct EntryPoint *) %s,\n"%(h[1],symbols[h[0][1][0]]))
                     else:
                         file.write("        /*0x%02X*/ (struct EntryPoint *) 0x%08X,\n"%(h[1],h[0][1][0]))
             elif h[1]<8:
@@ -857,6 +857,8 @@ def WriteTS(file,GH,TS,THS,H2,tPad,tUnk):
                         else:
                             file.write("    /*0x%02X*/ %s,\n" % (k, symbols[v[0]]))
                             # file.write("    /*0x%02X*/ "%k+"(u32 *) 0x%08X"%v + ",\n")
+                    elif j == 15:
+                        file.write("    /*0x%02X*/ "%k+"(u32 *)0x%X"%v + ",\n")
                     elif type[0]==">4B":
                         file.write("    /*0x%02X*/ {"%k+str(v)[1:-1] + "},\n")
                     elif j+1==len(t[0]):
