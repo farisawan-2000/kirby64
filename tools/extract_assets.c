@@ -342,6 +342,25 @@ int extractAssets(AssetDef *assetDefs, int numAssets, const char *version)
             FILE *f = fopen_mkdir(assetDefs[i].path, "wb");
             fwrite(&rom[assetDefs[i].offset], 1, assetDefs[i].length, f);
             fclose(f);
+            if (strstr(assetDefs[i].path, "geo") != NULL && (
+                strstr(assetDefs[i].path, "bank_0") != NULL ||
+                strstr(assetDefs[i].path, "bank_1") != NULL ||
+                strstr(assetDefs[i].path, "bank_2") != NULL ||
+                strstr(assetDefs[i].path, "bank_7") != NULL))
+            {
+                char *cmd = malloc(MAX_PATH_LEN * 2 + 64);
+                char *cPath = strdup(assetDefs[i].path);
+
+                cPath[strlen(cPath) - 3] = 'c';
+                cPath[strlen(cPath) - 2] = '\0';
+                sprintf(cmd, "python3 tools/scut/GeoFromBin.py %s %s", assetDefs[i].path, cPath);
+
+                printf("Converting %s to C...\n", assetDefs[i].path);
+                system(cmd);
+                
+                free(cmd);
+                free(cPath);
+            }
             #pragma omp atomic
             missingAssets++;
         }
