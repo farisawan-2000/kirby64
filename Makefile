@@ -127,10 +127,6 @@ CC_TEST := gcc -Wall
 
 ######################## Targets #############################
 
-# Making submodules
-DUMMY != make -C tools -j4
-DUMMY != make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-
 NOEXTRACT ?= 0
 # ifeq ($(VERBOSE),1)
 # 	DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
