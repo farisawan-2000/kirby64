@@ -45,7 +45,7 @@ SECTIONS
 
    /* header and boot */
    BEGIN_SEG(boot, 0xA4000000) {
-      BUILD_DIR/src/rom_header.o(.data);
+      BUILD_DIR/src/rom_header.o(.data*);
       BUILD_DIR/asm/boot2.o(.text);
    }
    END_SEG(boot)
@@ -214,7 +214,7 @@ SECTIONS
    }
    END_SEG(ovl0)
    BEGIN_SEG(ovl0Data1, _ovl0SegmentEnd) {
-      BUILD_DIR/data/kirby.039DF0.o(.data);
+      BUILD_DIR/data/kirby.039DF0.o(.data*);
    }
    END_SEG(ovl0Data1)
 
@@ -233,35 +233,35 @@ SECTIONS
    END_UCODE_TEXT(gspS2DEX2_fifo)
 
    BEGIN_SEG(ovl0Data2, gspS2DEX2_fifoTextEnd) {
-      /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data); */
-      BUILD_DIR/src/ovl0/main.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_2_5.o(.data);
-      BUILD_DIR/src/ovl0/rdp_reset.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_4.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_6.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_7.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_8.o(.data);
-      BUILD_DIR/src/ovl0/ovl0_9.o(.data);
-      BUILD_DIR/asm/ovl0/exception.o(.data);
-      BUILD_DIR/libultra.a:thread.o(.data);
-      BUILD_DIR/libultra.a:siacs.o(.data);
-      BUILD_DIR/libultra.a:controller.o(.data);
-      BUILD_DIR/libultra.a:initialize.o(.data);
+      /* BUILD_DIR/data/kirby.039DF0.0.1.o(.data*); */
+      BUILD_DIR/src/ovl0/main.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_2_5.o(.data*);
+      BUILD_DIR/src/ovl0/rdp_reset.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_4.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_6.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_7.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_8.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0_9.o(.data*);
+      BUILD_DIR/asm/ovl0/exception.o(.data*);
+      BUILD_DIR/libultra.a:thread.o(.data*);
+      BUILD_DIR/libultra.a:siacs.o(.data*);
+      BUILD_DIR/libultra.a:controller.o(.data*);
+      BUILD_DIR/libultra.a:initialize.o(.data*);
 
-      BUILD_DIR/data/kirby.039DF0.0.5.o(.data);
-      BUILD_DIR/libultra.a:pimgr.o(.data);
-      BUILD_DIR/libultra.a:piacs.o(.data);
-      BUILD_DIR/libultra.a:xprintf.o(.data);
-      BUILD_DIR/libultra.a:timerintr.o(.data);
-      BUILD_DIR/libultra.a:vimodentsclan1.o(.data);
-      BUILD_DIR/libultra.a:vimodempallan1.o(.data);
-      BUILD_DIR/libultra.a:vi.o(.data);
-      BUILD_DIR/libultra.a:vimodepallan1.o(.data);
-      BUILD_DIR/src/ovl0/ovl0.o(.data);
-      BUILD_DIR/libultra.a:xlitob.o(.data);
-      BUILD_DIR/libultra.a:vimgr.o(.data);
-      BUILD_DIR/libultra.a:aisetnextbuf.o(.data);
+      BUILD_DIR/data/kirby.039DF0.0.5.o(.data*);
+      BUILD_DIR/libultra.a:pimgr.o(.data*);
+      BUILD_DIR/libultra.a:piacs.o(.data*);
+      BUILD_DIR/libultra.a:xprintf.o(.data*);
+      BUILD_DIR/libultra.a:timerintr.o(.data*);
+      BUILD_DIR/libultra.a:vimodentsclan1.o(.data*);
+      BUILD_DIR/libultra.a:vimodempallan1.o(.data*);
+      BUILD_DIR/libultra.a:vi.o(.data*);
+      BUILD_DIR/libultra.a:vimodepallan1.o(.data*);
+      BUILD_DIR/src/ovl0/ovl0.o(.data*);
+      BUILD_DIR/libultra.a:xlitob.o(.data*);
+      BUILD_DIR/libultra.a:vimgr.o(.data*);
+      BUILD_DIR/libultra.a:aisetnextbuf.o(.data*);
       BUILD_DIR/src/ovl0/main.o(.rodata);
       BUILD_DIR/data/ovl0/ovl0_rodata.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_1.o(.rodata);
@@ -269,19 +269,19 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.2.001.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
-      BUILD_DIR/data/kirby.039DF0.2.01.o(.data);
-      BUILD_DIR/data/ovl0/ovl0_4.rodata.o(.data);
-      BUILD_DIR/data/kirby.039DF0.2.02.o(.data);
+      BUILD_DIR/data/kirby.039DF0.2.01.o(.data*);
+      BUILD_DIR/data/ovl0/ovl0_4.rodata.o(.data*);
+      BUILD_DIR/data/kirby.039DF0.2.02.o(.data*);
       BUILD_DIR/libultra.a:setintmask.o(.rodata);
       BUILD_DIR/libultra.a:sinf.o(.rodata);
-      BUILD_DIR/data/kirby.039DF0.2.05.o(.data);
+      BUILD_DIR/data/kirby.039DF0.2.05.o(.data*);
       BUILD_DIR/libultra.a:devmgr.o(.rodata);
       BUILD_DIR/libultra.a:xprintf.o(.rodata);
       BUILD_DIR/libultra.a:cosf.o(.rodata);
       BUILD_DIR/libultra.a:libm_vals.o(.rodata);
-      BUILD_DIR/data/kirby.039DF0.2.5.o(.data);
+      BUILD_DIR/data/kirby.039DF0.2.5.o(.data*);
       BUILD_DIR/libultra.a:xldtob.o(.rodata);
-      BUILD_DIR/data/kirby.039DF0.3.o(.data);
+      BUILD_DIR/data/kirby.039DF0.3.o(.data*);
    }
    END_SEG(ovl0Data2)
 
@@ -343,10 +343,10 @@ SECTIONS
    }
    END_SEG(ovl1)
    BEGIN_SEG(ovl1Data, _ovl1SegmentEnd) {
-      BUILD_DIR/data/kirby.066630.o(.data);
+      BUILD_DIR/data/kirby.066630.o(.data*);
       BUILD_DIR/src/ovl1/ovl1_1.o(.rodata);
-      BUILD_DIR/data/ovl1/ovl1_1.rodata.o(.data);
-      BUILD_DIR/data/ovl1/kirby.066630.3.o(.data);
+      BUILD_DIR/data/ovl1/ovl1_1.rodata.o(.data*);
+      BUILD_DIR/data/ovl1/kirby.066630.3.o(.data*);
       BUILD_DIR/src/ovl1/ovl1_11.o(.rodata);
       BUILD_DIR/data/ovl1/ovl1_11_rodata.o(.rodata);
       BUILD_DIR/src/ovl1/ovl1_12.o(.rodata);
@@ -374,9 +374,9 @@ SECTIONS
    END_SEG(ovl2)
    BEGIN_SEG(ovl2Data, _ovl2SegmentEnd)
    {
-      BUILD_DIR/data/kirby.0AC900_1.o(.data);
+      BUILD_DIR/data/kirby.0AC900_1.o(.data*);
       BUILD_DIR/src/ovl2/ovl2_3.o(.rodata);
-      BUILD_DIR/data/kirby.0AC900_2.o(.data);
+      BUILD_DIR/data/kirby.0AC900_2.o(.data*);
    }
    END_SEG(ovl2Data)
    BEGIN_NOLOAD(ovl2) {
@@ -395,9 +395,9 @@ SECTIONS
    }
    END_SEG(ovl3)
    BEGIN_SEG(ovl3Data, _ovl3SegmentEnd) {
-      BUILD_DIR/data/kirby.0F0D50.o(.data);
+      BUILD_DIR/data/kirby.0F0D50.o(.data*);
       BUILD_DIR/src/ovl3/ovl3.o(.rodata);
-      BUILD_DIR/data/ovl3/kirby.0F0D50.2.o(.data);
+      BUILD_DIR/data/ovl3/kirby.0F0D50.2.o(.data*);
    }
    END_SEG(ovl3Data)
    BEGIN_NOLOAD(ovl3) {
@@ -409,7 +409,7 @@ SECTIONS
    /* 0x80151100 0F8630-1014F0 [8EC0] */
    BEGIN_SEG(ovl4, 0x80151100) {
       BUILD_DIR/asm/ovl4/ovl4.o(.text);
-      BUILD_DIR/data/kirby.1014F0.o(.data);
+      BUILD_DIR/data/kirby.1014F0.o(.data*);
    }
    END_SEG(ovl4)
    BEGIN_NOLOAD(ovl4) {
@@ -427,7 +427,7 @@ SECTIONS
    /* 0x80151100 135490-139150 [3CC0] */
    BEGIN_SEG(ovl6, 0x80151100) {
       BUILD_DIR/src/ovl6/ovl6.o(.text);
-      BUILD_DIR/data/kirby.139150.o(.data);
+      BUILD_DIR/data/kirby.139150.o(.data*);
    }
    END_SEG(ovl6)
 
@@ -450,7 +450,7 @@ SECTIONS
       BUILD_DIR/src/ovl7/yakulib.o(.text);
       BUILD_DIR/src/ovl7/ovl7_16.o(.text);
       BUILD_DIR/asm/ovl7/ovl7_17.o(.text);
-      BUILD_DIR/data/ovl7/data.o(.data);
+      BUILD_DIR/data/ovl7/data.o(.data*);
       BUILD_DIR/src/ovl7/ovl7_14.o(.rodata);
       BUILD_DIR/src/ovl7/yakulib.o(.rodata);
       BUILD_DIR/data/ovl7/yakulib_rodata.o(.rodata);
@@ -468,7 +468,7 @@ SECTIONS
    BEGIN_SEG(ovl9, 0x801D0C60) {
       BUILD_DIR/asm/ovl9/ovl9.o(.text);
       BUILD_DIR/src/ovl9/ovl9_16.o(.text);
-      BUILD_DIR/data/ovl9/data.o(.data);
+      BUILD_DIR/data/ovl9/data.o(.data*);
       BUILD_DIR/data/ovl9/rodata.o(.rodata);
    }
    END_SEG(ovl9)
@@ -480,7 +480,7 @@ SECTIONS
       BUILD_DIR/src/ovl10/ovl10_2.o(.text);
       BUILD_DIR/src/ovl10/ovl10_3.o(.text);
       BUILD_DIR/asm/ovl10/ovl10_4.o(.text);
-      BUILD_DIR/data/ovl10/data.o(.data);
+      BUILD_DIR/data/ovl10/data.o(.data*);
       BUILD_DIR/src/ovl10/ovl10_3.o(.rodata);
       BUILD_DIR/data/ovl10/data_after_ovl10_3.o(.rodata);
    }
@@ -494,7 +494,7 @@ SECTIONS
    BEGIN_SEG(ovl11, 0x801DB1E0) {
       BUILD_DIR/src/ovl11/boss2.o(.text);
       BUILD_DIR/asm/ovl11/ovl11_2.o(.text);
-      BUILD_DIR/data/ovl11/kirby.1EB3C0.o(.data);
+      BUILD_DIR/data/ovl11/kirby.1EB3C0.o(.data*);
    }
    END_SEG(ovl11)
 
@@ -504,7 +504,7 @@ SECTIONS
    }
    END_SEG(ovl12)
    BEGIN_SEG(ovl12Data, _ovl12SegmentEnd) {
-      BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.data);
+      BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.data*);
    }
    END_SEG(ovl12Data)
 
@@ -542,7 +542,7 @@ SECTIONS
    }
    END_SEG(ovl17)
    BEGIN_SEG(ovl17Data, _ovl17SegmentEnd) {
-      BUILD_DIR/data/ovl17/data.o(.data);
+      BUILD_DIR/data/ovl17/data.o(.data*);
    }
    END_SEG(ovl17Data)
    BEGIN_NOLOAD(ovl17) {
@@ -564,7 +564,7 @@ SECTIONS
    }
    END_SEG(ovl18)
    BEGIN_SEG(ovl18Data, _ovl18SegmentEnd) {
-      BUILD_DIR/data/ovl18/data.o(.data);
+      BUILD_DIR/data/ovl18/data.o(.data*);
       BUILD_DIR/data/ovl18/rodata.o(.rodata);
       BUILD_DIR/src/ovl18/ovl18_1.o(.rodata);
       BUILD_DIR/src/ovl18/ovl18_3.o(.rodata);
@@ -588,7 +588,7 @@ SECTIONS
    }
    END_SEG(ovl19)
    BEGIN_SEG(ovl19Data, _ovl19SegmentEnd) {
-      BUILD_DIR/data/kirby.ovl19.data.o(.data);
+      BUILD_DIR/data/kirby.ovl19.data.o(.data*);
    }
    END_SEG(ovl19Data)
    BEGIN_NOLOAD(ovl19) {
@@ -602,7 +602,7 @@ SECTIONS
    }
    END_SEG(ovl20)
    BEGIN_SEG(ovl20Data, _ovl20SegmentEnd){
-      BUILD_DIR/src/ovl20.o(.data);
+      BUILD_DIR/src/ovl20.o(.data*);
    }
    END_SEG(ovl20Data)
    BEGIN_NOLOAD(ovl20) {
@@ -612,83 +612,83 @@ SECTIONS
    END_NOLOAD(ovl20)
 
    BEGIN_SEG(data_250320, 0) {
-      BUILD_DIR/asm/data/kirby.u.250320.o(.data);
+      BUILD_DIR/asm/data/kirby.u.250320.o(.data*);
    }
    END_SEG(data_250320)
    BEGIN_SEG(data_2A8CB0, 0) {
-      BUILD_DIR/asm/data/kirby.u.2A8CB0.o(.data);
+      BUILD_DIR/asm/data/kirby.u.2A8CB0.o(.data*);
    }
    END_SEG(data_2A8CB0)
 
    BEGIN_SEG(data_2B1510, 0) {
-      BUILD_DIR/asm/data/kirby.u.2B1510.o(.data);
+      BUILD_DIR/asm/data/kirby.u.2B1510.o(.data*);
    }
    END_SEG(data_2B1510)
    BEGIN_SEG(data_3E1400, 0) {
-      BUILD_DIR/asm/data/kirby.u.3E1400.o(.data);
+      BUILD_DIR/asm/data/kirby.u.3E1400.o(.data*);
    }
    END_SEG(data_3E1400)
    BEGIN_SEG(data_3E6BC0, 0) {
-      BUILD_DIR/asm/data/kirby.u.3E6BC0.o(.data);
+      BUILD_DIR/asm/data/kirby.u.3E6BC0.o(.data*);
    }
    END_SEG(data_3E6BC0)
    BEGIN_SEG(data_49F590, 0) {
-      BUILD_DIR/asm/data/kirby.u.49F590.o(.data);
+      BUILD_DIR/asm/data/kirby.u.49F590.o(.data*);
    }
    END_SEG(data_49F590)
    BEGIN_SEG(data_4A0340, 0) {
-      BUILD_DIR/asm/data/kirby.u.4A0340.o(.data);
+      BUILD_DIR/asm/data/kirby.u.4A0340.o(.data*);
    }
    END_SEG(data_4A0340)
    BEGIN_SEG(data_4A3B60, 0) {
-      BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data);
+      BUILD_DIR/asm/data/kirby.u.4A3B60.o(.data*);
    }
    END_SEG(data_4A3B60)
 
    #include "assets/bank0.ld"
    BEGIN_SEG(bank0_other, __romPos) {
-      BUILD_DIR/asm/banks/bank0.o(.data); 
+      BUILD_DIR/asm/banks/bank0.o(.data*); 
    }
    END_SEG(bank0_other)
 
    #include "assets/bank1.ld"
    BEGIN_SEG(bank1_other, __romPos) {
-      BUILD_DIR/asm/banks/bank1.o(.data); 
+      BUILD_DIR/asm/banks/bank1.o(.data*); 
    }
    END_SEG(bank1_other)
 
    #include "assets/bank2.ld"
    BEGIN_SEG(bank2_other, __romPos) {
-      BUILD_DIR/asm/banks/bank2.o(.data); 
+      BUILD_DIR/asm/banks/bank2.o(.data*); 
    }
    END_SEG(bank2_other)
    
    #include "assets/bank3.ld"
    BEGIN_SEG(bank3_other, __romPos) {
-      BUILD_DIR/asm/banks/bank3.o(.data); 
+      BUILD_DIR/asm/banks/bank3.o(.data*); 
    }
    END_SEG(bank3_other)
 
    #include "assets/bank4.ld"
    BEGIN_SEG(bank4_other, __romPos) {
-      BUILD_DIR/asm/banks/bank4.o(.data); 
+      BUILD_DIR/asm/banks/bank4.o(.data*); 
    }
    END_SEG(bank4_other)
 
    BEGIN_SEG(bank5, __romPos) {
-      BUILD_DIR/asm/banks/bank5.o(.data); 
+      BUILD_DIR/asm/banks/bank5.o(.data*); 
    }
    END_SEG(bank5)
 
    #include "assets/bank6.ld"
    BEGIN_SEG(bank6_other, __romPos) {
-      BUILD_DIR/asm/banks/bank6.o(.data); 
+      BUILD_DIR/asm/banks/bank6.o(.data*); 
    }
    END_SEG(bank6_other)
 
    #include "assets/bank7.ld"
    BEGIN_SEG(bank7_other, __romPos) {
-      BUILD_DIR/asm/banks/bank7.o(.data); 
+      BUILD_DIR/asm/banks/bank7.o(.data*); 
    }
    END_SEG(bank7_other)
 
