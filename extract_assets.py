@@ -250,7 +250,7 @@ def main():
                 with open(asset, "wb") as f:
                     f.write(input)
                 if "geo" in asset:
-                    if "bank_0" in asset or "bank_1" in asset or "bank_2" in asset:
+                    if "bank_0" in asset or "bank_1" in asset or "bank_2" in asset or "bank_7" in asset:
                         asset_c = asset[:-3] + "c"
                         print("Converting %s to C..." % asset)
                         subprocess.run("python3 tools/scut/GeoFromBin.py %s %s" % (asset, asset_c), shell=True)
