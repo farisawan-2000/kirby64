@@ -14,19 +14,74 @@
 #define JSMN_PARENT_LINKS
 #include "jsmn.h"
 
+#include "n64graphics.h"
+
+#define ROUND_UP_DIVIDE(x, y) (((x) - 1) / (y) + 1)
+
+enum AssetType {
+    ASSET_BIN,
+    ASSET_IMG,
+};
+
+enum ImageFormat {
+    RGBA32,
+    RGBA16,
+    YUV16,
+    IA16,
+    CI8,
+    I8,
+    IA8,
+    CI4,
+    I4,
+    IA4,
+    NUM_FORMATS,
+    INVALID_FORMAT
+};
+
+const char* const imgFormatStrings[] = {
+    "rgba32",
+    "rgba16",
+    "yuv16",
+    "ia16",
+    "ci8",
+    "i8",
+    "ia8",
+    "ci4",
+    "i4",
+    "ia4",
+};
+
+const uint8_t imgFormatDepths[] = {
+    32,
+    16,
+    16,
+    16,
+    8,
+    8,
+    8,
+    4,
+    4,
+    4
+};
+
 #define TOKEN_COUNT 1048576
 #define MAX_PATH_LEN 256
 
 typedef struct {
     char path[MAX_PATH_LEN + 1];
+    enum AssetType type;
+    enum ImageFormat format; // Only set for image assets
     long offset;
     long length;
+    int width;    // Image width
+    int height;   // Image height
+    long palette; // Image palette offset
 } AssetDef;
 
-char *readFile(const char *filename, long *filelen, int isBinary)
+void *readFile(const char *filename, long *filelen, int isBinary)
 {
     FILE *f = fopen(filename, isBinary ? "rb" : "r");
-    char *retval;
+    void *retval;
 
     if (f == NULL)
     {
@@ -100,7 +155,7 @@ int tokenStrcmp(jsmntok_t *token, const char *fileContents, const char* cmpStr)
     return strncmp(&fileContents[token->start], cmpStr, token->end - token->start);
 }
 
-long processAssetMeta(int assetToken, int metaToken, const char *fileContents, jsmntok_t *tokens)
+long processAssetMetaBin(int assetToken, int metaToken, const char *fileContents, jsmntok_t *tokens)
 {
     int metaDictToken = metaToken + 1;
     int sizeToken = metaDictToken + 1;
@@ -126,12 +181,134 @@ long processAssetMeta(int assetToken, int metaToken, const char *fileContents, j
 
     if (endPtr == &fileContents[tokens[sizeValToken].start])
     {
-        fprintf(stderr, "Invalid size value for asset: ");
+        fprintf(stderr, "Malformed size value for asset: ");
         fprintToken(stderr, &tokens[assetToken], fileContents);
         return -1;
     }
 
     return size;
+}
+
+enum ImageFormat getFormatFromFilename(const char* path, const char *dotPtr)
+{
+    const char *formatDotPtr; // Pointer to the dot before the format type
+    uintptr_t formatLength;
+
+    formatDotPtr = dotPtr - 1;
+
+    while (formatDotPtr > path) // Search backwards until we get to the start of the string or a .
+    {
+        if (*formatDotPtr == '.') // If we found a dot, stop searching
+            break;
+        formatDotPtr--;
+    }
+
+    if (formatDotPtr == path) // If we got to the start of the file path, we didn't find an extension
+    {
+        return INVALID_FORMAT;
+    }
+
+    formatLength = (uintptr_t)dotPtr - (uintptr_t)formatDotPtr - 1;
+
+    for (enum ImageFormat curFmt = 0; curFmt < NUM_FORMATS; curFmt++)
+    {
+        if (strncmp(imgFormatStrings[curFmt], formatDotPtr + 1, formatLength) == 0)
+        {
+            return curFmt;
+        }
+    }
+
+    return INVALID_FORMAT;
+}
+
+void processAssetMetaImg(int assetToken, int metaToken, const char *fileContents, jsmntok_t *tokens, int tokenCount, long *paletteOffset, int *width, int *height)
+{
+    int metaDictToken = metaToken + 1;
+    int curMetaSubToken;
+    char *endPtr;
+    int foundWidth = -1, foundHeight = -1;
+    long foundPalette = -1;
+
+    if (tokens[metaToken].type != JSMN_STRING || tokens[metaDictToken].type != JSMN_OBJECT || tokens[metaToken].size != 1)
+    {
+        fprintf(stderr, "Invalid meta entry for asset: ");
+        fprintToken(stderr, &tokens[assetToken], fileContents);
+        return;
+    }
+
+    curMetaSubToken = metaDictToken + 1;
+
+    for (int i = 0; i < tokens[metaDictToken].size; i++)
+    {
+        int curMetaSubArrayToken = curMetaSubToken + 1;
+        if (tokens[curMetaSubToken].type != JSMN_STRING || tokens[curMetaSubArrayToken].type != JSMN_ARRAY)
+        {
+            fprintf(stderr, "Invalid image meta entry for asset: ");
+            fprintToken(stderr, &tokens[assetToken], fileContents);
+            return;
+        }
+        if (tokenStrcmp(&tokens[curMetaSubToken], fileContents, "dims") == 0)
+        {
+            if (tokens[curMetaSubArrayToken].size != 2)
+            {
+                fprintf(stderr, "Invalid size dimensions for image asset: ");
+                fprintToken(stderr, &tokens[assetToken], fileContents);
+                return;
+            }
+            foundWidth  = strtol(&fileContents[tokens[curMetaSubArrayToken + 1].start], &endPtr, 0);
+            if (endPtr == &fileContents[tokens[curMetaSubArrayToken + 1].start])
+            {
+                fprintf(stderr, "Malformed image width for asset: ");
+                fprintToken(stderr, &tokens[assetToken], fileContents);
+                return;
+            }
+            foundHeight = strtol(&fileContents[tokens[curMetaSubArrayToken + 2].start], &endPtr, 0);
+            if (endPtr == &fileContents[tokens[curMetaSubArrayToken + 2].start])
+            {
+                fprintf(stderr, "Malformed image height for asset: ");
+                fprintToken(stderr, &tokens[assetToken], fileContents);
+                return;
+            }
+        }
+        else if (tokenStrcmp(&tokens[curMetaSubToken], fileContents, "pal") == 0)
+        {
+            if (tokens[curMetaSubArrayToken].size == 0)
+            {
+                fprintf(stderr, "Invalid palette entry for image asset: ");
+                fprintToken(stderr, &tokens[assetToken], fileContents);
+                return;
+            }
+            foundPalette = strtol(&fileContents[tokens[curMetaSubArrayToken + 1].start], &endPtr, 0);
+            if (endPtr == &fileContents[tokens[curMetaSubArrayToken + 2].start])
+            {
+                fprintf(stderr, "Malformed palette entry for asset: ");
+                fprintToken(stderr, &tokens[assetToken], fileContents);
+                return;
+            }
+        }
+        else
+        {
+            fprintf(stderr, "Unknown field in meta entry for asset: ");
+            fprintToken(stderr, &tokens[assetToken], fileContents);
+            return;
+        }
+        curMetaSubToken = skipToNextToken(tokens, metaDictToken, curMetaSubToken, tokenCount);
+    }
+
+    if (foundWidth == -1 || foundHeight == -1)
+    {
+        fprintf(stderr, "No dimensions found for image asset: ");
+        fprintToken(stderr, &tokens[assetToken], fileContents);
+        return;
+    }
+
+    *width = foundWidth;
+    *height = foundHeight;
+
+    if (foundPalette != -1)
+    {
+        *paletteOffset = foundPalette;
+    }
 }
 
 long processAssetOffsets(int assetToken, int offsetsToken, const char *fileContents, jsmntok_t *tokens, int tokenCount, const char *version)
@@ -190,7 +367,7 @@ long processAssetOffsets(int assetToken, int offsetsToken, const char *fileConte
 
     if (endPtr == &fileContents[tokens[romOffsetToken].start])
     {
-        fprintf(stderr, "Invalid rom offset value for asset: ");
+        fprintf(stderr, "Malformed rom offset value for asset: ");
         fprintToken(stderr, &tokens[assetToken], fileContents);
         return -1;
     }
@@ -203,6 +380,8 @@ int readAssetToken(AssetDef *assetDef, int curAssetToken, const char *fileConten
     int curAssetPathStart = tokens[curAssetToken].start;
     int curAssetPathEnd = tokens[curAssetToken].end;
     int curAssetPathLength = curAssetPathEnd - curAssetPathStart;
+
+    char *curAssetDotPtr;
 
     int assetValueToken = curAssetToken + 1; // The token index of the asset dictionary
     int numKeys = tokens[assetValueToken].size; // The number of keys in the asset dictionary
@@ -225,13 +404,78 @@ int readAssetToken(AssetDef *assetDef, int curAssetToken, const char *fileConten
         return 1;
     }
 
+    strncpy(&assetDef->path[0], &fileContents[curAssetPathStart], curAssetPathLength);
+
+    curAssetDotPtr = strrchr(assetDef->path, '.');
+
+    if (curAssetDotPtr == NULL)
+    {
+        fprintf(stderr, "Asset has no file extension: %s\n", assetDef->path);
+        return 1;
+    }
+
+    if (strcmp(curAssetDotPtr, ".bin") == 0)
+    {
+        assetDef->type = ASSET_BIN;
+    }
+    else if (strcmp(curAssetDotPtr, ".png") == 0)
+    {
+        enum ImageFormat format = getFormatFromFilename(assetDef->path, curAssetDotPtr);
+        if (format == INVALID_FORMAT)
+        {
+            fprintf(stderr, "Invalid image format for asset: %s\n", assetDef->path);
+            return 1;
+        }
+        assetDef->type = ASSET_IMG;
+        assetDef->format = format;
+    }
+    else
+    {
+        fprintf(stderr, "Invalid file extension for asset (should be in [bin,png]): %s\n", assetDef->path);
+        return 1;
+    }    
+
     curChildToken = assetValueToken + 1; // Children begin directly after the parent
 
     for (int i = 0; i < numKeys; i++)
     {
         if (tokenStrcmp(&tokens[curChildToken], fileContents, "meta") == 0)
         {
-            length = processAssetMeta(curAssetToken, curChildToken, fileContents, tokens);
+            switch (assetDef->type)
+            {
+                case ASSET_BIN:
+                    length = processAssetMetaBin(curAssetToken, curChildToken, fileContents, tokens);
+                    break;
+                case ASSET_IMG:
+                    {
+                        long palette = 0;
+                        int width = 0, height = 0;
+                        int needsPalette = assetDef->format == CI4 || assetDef->format == CI8;
+                        processAssetMetaImg(curAssetToken, curChildToken, fileContents, tokens, tokenCount, &palette, &width, &height);
+                        if (width != 0 && height != 0)
+                        {
+                            int depth = imgFormatDepths[assetDef->format];
+                            int bits = width * height * depth;
+
+                            if (needsPalette && palette == 0)
+                            {
+                                fprintf(stderr, "No palette offset for color-indexed image: %s\n", assetDef->path);
+                                return 1;
+                            }
+
+                            length = ROUND_UP_DIVIDE(bits, 8);
+                            assetDef->width = width;
+                            assetDef->height = height;
+                            assetDef->palette = palette;
+                        }
+                        else
+                        {
+                            length = -1;
+                        }                        
+                    }
+                    break;
+
+            }
         }
         else if (tokenStrcmp(&tokens[curChildToken], fileContents, "offsets") == 0)
         {
@@ -256,7 +500,6 @@ int readAssetToken(AssetDef *assetDef, int curAssetToken, const char *fileConten
 
     assetDef->length = length;
     assetDef->offset = offset;
-    strncpy(&assetDef->path[0], &fileContents[curAssetPathStart], curAssetPathLength);
     return 0;
 }
 
@@ -314,7 +557,8 @@ int mkpath(const char* file_path, mode_t mode) {
 
 FILE* fopen_mkdir(const char* path, const char* mode)
 {
-    mkpath(path, 0777);
+    if (mkpath(path, 0777) == -1)
+        return NULL;
     return fopen(path, mode);
 }
 
@@ -323,7 +567,7 @@ int extractAssets(AssetDef *assetDefs, int numAssets, const char *version)
     char romName[128];
     long romLength;
     sprintf(romName, "baserom.%s.z64", version);
-    char *rom = readFile(romName, &romLength, 1);
+    uint8_t *rom = readFile(romName, &romLength, 1);
 
     if (rom == NULL)
     {
@@ -332,35 +576,108 @@ int extractAssets(AssetDef *assetDefs, int numAssets, const char *version)
     }
 
     int missingAssets = 0;
+    int errored = 0;
 
     #pragma omp parallel for
     for (int i = 0; i < numAssets; i++)
     {
+        if (errored) continue;
         if (access(assetDefs[i].path, F_OK) != 0)
         {
-            // printf("Extracting asset: %s\n", assetDefs[i].path);
-            FILE *f = fopen_mkdir(assetDefs[i].path, "wb");
-            fwrite(&rom[assetDefs[i].offset], 1, assetDefs[i].length, f);
-            fclose(f);
-            if (strstr(assetDefs[i].path, "geo") != NULL && (
-                strstr(assetDefs[i].path, "bank_0") != NULL ||
-                strstr(assetDefs[i].path, "bank_1") != NULL ||
-                strstr(assetDefs[i].path, "bank_2") != NULL ||
-                strstr(assetDefs[i].path, "bank_7") != NULL))
+            if (assetDefs[i].type == ASSET_BIN)
             {
-                char *cmd = malloc(MAX_PATH_LEN * 2 + 64);
-                char *cPath = strdup(assetDefs[i].path);
+                FILE *f = fopen_mkdir(assetDefs[i].path, "wb");
+                if (f == NULL)
+                {
+                    fprintf(stderr, "Error: could not create file: %s\n", assetDefs[i].path);
+                    errored = 1;
+                    continue;
+                }
+                fwrite(&rom[assetDefs[i].offset], 1, assetDefs[i].length, f);
+                fclose(f);
+                if (strstr(assetDefs[i].path, "geo") != NULL && (
+                    strstr(assetDefs[i].path, "bank_0") != NULL ||
+                    strstr(assetDefs[i].path, "bank_1") != NULL ||
+                    strstr(assetDefs[i].path, "bank_2") != NULL ||
+                    strstr(assetDefs[i].path, "bank_7") != NULL))
+                {
+                    char *cmd = malloc(MAX_PATH_LEN * 2 + 64);
+                    char *cPath = strdup(assetDefs[i].path);
 
-                cPath[strlen(cPath) - 3] = 'c';
-                cPath[strlen(cPath) - 2] = '\0';
-                sprintf(cmd, "python3 tools/scut/GeoFromBin.py %s %s", assetDefs[i].path, cPath);
+                    cPath[strlen(cPath) - 3] = 'c';
+                    cPath[strlen(cPath) - 2] = '\0';
+                    sprintf(cmd, "python3 tools/scut/GeoFromBin.py %s %s", assetDefs[i].path, cPath);
 
-                printf("Converting %s to C...\n", assetDefs[i].path);
-                system(cmd);
-                
-                free(cmd);
-                free(cPath);
+                    printf("Converting %s to C...\n", assetDefs[i].path);
+                    system(cmd);
+                    
+                    free(cmd);
+                    free(cPath);
+                }
             }
+            else if (assetDefs[i].type == ASSET_IMG)
+            {
+                void *image = NULL;
+
+                printf("Extracting image %s...\n", assetDefs[i].path);
+                
+                if (mkpath(assetDefs[i].path, 0777) == -1)
+                {
+                    fprintf(stderr, "Error: could not create file: %s\n", assetDefs[i].path);
+                    errored = 1;
+                    continue;
+                }
+
+                switch (assetDefs[i].format)
+                {
+                    case RGBA32:
+                        image = raw2rgba(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 32);
+                        rgba2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case RGBA16:
+                        image = raw2rgba(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 16);
+                        rgba2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case YUV16:
+                        fprintf(stderr, "YUV textures are unsupported: %s\n", assetDefs[i].path);
+                        break;
+                    case IA16:
+                        image = raw2ia(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 16);
+                        ia2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case CI8:
+                        image = rawci2rgba(&rom[assetDefs[i].offset], &rom[assetDefs[i].palette], assetDefs[i].width, assetDefs[i].height, 8);
+                        rgba2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case I8:
+                        image = raw2i(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 8);
+                        ia2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case IA8:
+                        image = raw2ia(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 8);
+                        ia2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case CI4:
+                        image = rawci2rgba(&rom[assetDefs[i].offset], &rom[assetDefs[i].palette], assetDefs[i].width, assetDefs[i].height, 4);
+                        rgba2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case I4:
+                        image = raw2i(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 4);
+                        ia2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    case IA4:
+                        image = raw2ia(&rom[assetDefs[i].offset], assetDefs[i].width, assetDefs[i].height, 4);
+                        ia2png(assetDefs[i].path, image, assetDefs[i].width, assetDefs[i].height);
+                        break;
+                    default:
+                        fprintf(stderr, "Unknown format for asset: %s\n", assetDefs[i].path); // Should never happen, given that this is checked during json parsing
+                        break;
+                    
+                }
+                if (image != NULL)
+                    free(image);
+            }
+            
             #pragma omp atomic
             missingAssets++;
         }

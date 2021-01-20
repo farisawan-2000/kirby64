@@ -14,8 +14,8 @@ n64crc_CFLAGS := -O2 # faster compile time
 n64graphics_SOURCES := n64graphics.c utils.c
 n64graphics_CFLAGS  := -DN64GRAPHICS_STANDALONE
 
-extract_assets_SOURCES := extract_assets.c
-extract_assets_CFLAGS  := -fopenmp
+extract_assets_SOURCES := extract_assets.c n64graphics.c utils.c
+extract_assets_CFLAGS  := -fopenmp -O2
 
 patch_libultra_math_SOURCES := patch_libultra_math.c
 
