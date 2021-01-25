@@ -1,46 +1,11 @@
-// ml: memory layer?
-
 #include <ultra64.h>
 #include <macros.h>
 #include <config.h>
+#include <PR/gbi.h>
+
 #include "ovl0_2_5.h"
 
-void fatal_printf(const char*, ...);
-
-// unused?
-void func_80007824(struct DynamicBuffer *arg0) {
-    arg0->top = arg0->poolStart;
-}
-
-void *alloc_from_dynamic_buffer(struct DynamicBuffer *arg0, u32 size, u32 alignment) {
-    void *ret;
-    u32 tmp;
-
-    if (alignment != 0) {
-        tmp = alignment - 1;
-        ret = (void*)(((u32)arg0->top + tmp) & ~tmp);
-    } else {
-        ret = arg0->top;
-    }
-    tmp = (u32) ret + size;
-    arg0->top = (void*)tmp;
-    if ((u32) arg0->poolEnd < tmp) {
-        fatal_printf("ml : alloc overflow #%d\n", arg0->id);
-        while (1);
-    }
-    return ret;
-}
-
-void init_dynamic_buffer(struct DynamicBuffer *tracker, u32 id, void *start, u32 size) {
-    tracker->id = id;
-    tracker->top = start;
-    tracker->poolStart = start;
-    tracker->poolEnd = (void*)((s32) start + size);
-    bzero(start, size);
-}
-
 extern u32 D_8004A504;
-#include <PR/gbi.h>
 
 // takes a u32 color and either returns it
 // or packs it into an rgba16 value that gDPSetFillColor can use

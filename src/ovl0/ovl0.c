@@ -21,6 +21,9 @@ u32 D_8003FE10 = 0xFFFFFFFF;
 extern u32 D_80048CD8, D_80048CDC, D_80048CE0, D_80048CE4;
 extern u32 D_80048B8C, D_80048B9C, D_80048BA4;
 
+extern OSMesgQueue gInterruptMesgQueue;
+
+
 void func_80000900(void) {
 
 }
@@ -33,46 +36,51 @@ void func_80000908(void) {
     }
 }
 
-#ifdef MIPS_TO_C
-void func_80000980(void *arg0) {
-    ? sp34;
-    ? sp1C;
+struct InterruptMessage80000980 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    OSMesgQueue *unk20;
+    struct InterruptMessage80000980 *unk24;
+};
 
-    arg0 = arg0;
-    osCreateMesgQueue(&sp1C, &sp34, 1);
+void func_80000980(struct InterruptMessage80000980 *arg0) {
+    OSMesg msg;
+    OSMesgQueue mq;
+
+    osCreateMesgQueue(&mq, &msg, 1);
     arg0->unk14 = 0;
     arg0->unk1C = 1;
-    arg0->unk20 = &sp1C;
+    arg0->unk20 = &mq;
     osSendMesg(&gInterruptMesgQueue, arg0, 0);
-    osRecvMesg(&sp1C, NULL, 1);
+    osRecvMesg(&mq, NULL, 1);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000980.s")
-#endif
 
 struct UnkStruct800009E8 {
     u32 unk0;
     OSMesgQueue *unk4;
 };
-#ifdef MIPS_TO_C
-void func_800009E8(void *arg0, OSMesgQueue *arg1, OSMesg *arg2, s32 arg3) {
-    void *sp3C;
-    ?32 sp1C;
-    ?32 sp18;
 
-    osCreateMesgQueue(arg1, arg2, arg3);
-    arg0->unk4 = arg1;
-    sp18 = 3;
-    sp1C = 0x64;
-    sp3C = arg0;
+void func_800009E8(struct UnkStruct800009E8 *arg0, OSMesgQueue *mq,
+    OSMesg *msg, s32 count) {
+
+    struct InterruptMessage80000980 sp18;
+
+    osCreateMesgQueue(mq, msg, count);
+    arg0->unk4 = mq;
+    sp18.unk0 = 3;
+    sp18.unk4 = 0x64;
+    sp18.unk24 = arg0;
     func_80000980(&sp18);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_800009E8.s")
-#endif
 
 #ifdef MIPS_TO_C
-? func_80000A44(void *arg0) {
+s32 func_80000A44(void *arg0) {
     s32 sp1C;
     s32 temp_a0;
     s32 temp_a0_2;
@@ -744,6 +752,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80001774.s")
 
 // extern OSTask *D_80048B8C;
 #ifdef MIPS_TO_C
+// arg0 isnt an ostask, but arg0->0x28 is
 void func_8000189C(OSTask *arg0) {
     OSTask *sp1C;
     OSTask *temp_a0;

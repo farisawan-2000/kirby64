@@ -58,6 +58,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_1.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.text);
+      BUILD_DIR/src/ovl0/memory_layer.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.text);
       BUILD_DIR/src/ovl0/rdp_reset.o(.text*); /* Why is the asterisk needed? */
       BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
@@ -268,7 +269,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_2.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.001.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
-      BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.rodata);
+      BUILD_DIR/src/ovl0/memory_layer.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data*);
       BUILD_DIR/data/ovl0/ovl0_4.rodata.o(.data*);
       BUILD_DIR/data/kirby.039DF0.2.02.o(.data*);
@@ -318,6 +319,11 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
+   /* edit this line when modifying bss */
+   _mainSegmentNoloadSize = SIZEOF(.ovl0.noload) + 0x40;
+   
+   _mainSegmentNoloadSizeHi = _mainSegmentNoloadSize >> 16;
+   _mainSegmentNoloadSizeLo = _mainSegmentNoloadSize & 0xFFFF;
 
 
    /* 0x8009B540 043790-066630 [22EA0] */

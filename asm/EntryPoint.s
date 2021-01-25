@@ -13,9 +13,9 @@
 .section .text, "ax"
 glabel EntryPoint
 /* 001000 80000400 3C088004 */  lui   $t0, %hi(gEntryStack) # $t0, 0x8004
-/* 001004 80000404 3C090005 */  lui   $t1, (0x000589B0 >> 16) # lui $t1, 5
+/* 001004 80000404 3C090005 */  lui   $t1, (_mainSegmentNoloadSizeHi) # lui $t1, 5
 /* 001008 80000408 25082B90 */  addiu $t0, %lo(gEntryStack) # addiu $t0, $t0, 0x2b90
-/* 00100C 8000040C 352989B0 */  ori   $t1, (0x000589B0 & 0xFFFF) # ori $t1, $t1, 0x89b0
+/* 00100C 8000040C 352989B0 */  ori   $t1, (_mainSegmentNoloadSizeLo) # ori $t1, $t1, 0x89b0
 .L80000410_ovl0:
 /* 001010 80000410 2129FFF8 */  addi  $t1, $t1, -8
 /* 001014 80000414 AD000000 */  sw    $zero, ($t0)

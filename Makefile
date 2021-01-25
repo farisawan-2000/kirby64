@@ -22,7 +22,7 @@ endif
 
 ##################### Compiler Options #######################
 # IRIX_ROOT := tools/ido5.3_compiler
-# IRIX_ROOT := tools/ido7.1
+IRIX_ROOT := tools/ido7.1
 # CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 CC := tools/ido-7.1recomp/cc
 
@@ -155,7 +155,8 @@ ifeq ($(DUMMY),FAIL)
   $(error Missing submodule f3dex2. Please run 'git submodule update --init')
 endif
 
-
+# hardcoded compiler for ml.c until i figure out why it's breaking recomp
+$(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
 default: all
 
