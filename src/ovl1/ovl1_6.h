@@ -10,7 +10,7 @@ extern s32 D_800DE190[];
 extern s32 D_800DDFD0[];
 extern s32 D_800DDE10[];
 extern s32 D_800DDC50[];
-extern s32 D_800DD8D0[];
+extern u32 D_800DD8D0[];
 extern s32 D_800E0810[];
 
 
@@ -27,7 +27,7 @@ extern void (*D_800DF150[])(s32);
 extern void (*D_800DF310[])(s32, s32, f32);
 extern u32 D_800DF850[];
 extern u32 D_800DF690[];
-extern u32 gSegment4StartArray[];
+extern u32 *gSegment4StartArray[];
 
 // i think this is an array of pairs (2-length arrays) of pointers but cba to figure out syntax
 extern struct LayoutNode **D_800DFBD0[];

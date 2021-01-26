@@ -148,10 +148,8 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 sp38;
     f32 sp34;
     f32 sp2C;
-    f32 temp_f0;
     f32 temp_f0_2;
     f32 temp_f10;
-    f32 temp_f12;
     f32 temp_f12_2;
     f32 temp_f12_3;
     f32 temp_f16;
@@ -160,25 +158,20 @@ f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
     f32 temp_f20;
     f32 temp_f22;
     f32 temp_f22_2;
-    f32 temp_f2;
     f32 temp_f2_2;
     f32 temp_f8;
     f32 phi_f18;
     f32 phi_f20;
 
-    temp_f0 = arg1->y;
-    temp_f2 = arg1->z;
-    sp3C = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2));
+    sp3C = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
     sp2C = sinf(arg2);
     temp_f0_2 = cosf(arg2);
     if (sp3C != 0.0f) {
         temp_f22 = arg1->z / sp3C;
         sp34 = arg1->y / sp3C;
-        temp_f12 = arg0->y;
-        temp_f16 = arg0->z;
         sp38 = temp_f22;
-        phi_f18 = (temp_f12 * sp34) + (temp_f16 * temp_f22);
-        phi_f20 = (temp_f12 * temp_f22) - (temp_f16 * sp34);
+        phi_f18 = (arg0->y * sp34) + (arg0->z * temp_f22);
+        phi_f20 = (arg0->y * temp_f22) - (arg0->z * sp34);
     } else {
         phi_f18 = arg0->z;
         phi_f20 = arg0->y;
