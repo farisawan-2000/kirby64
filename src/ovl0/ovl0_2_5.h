@@ -238,6 +238,50 @@ struct InterruptMessageType4 {
     s16 unk36;
 };
 
+// One of the message types sent on the ovl0_2 message queue
+struct Ovl0_2_MessageType1
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+};
+
+// One of the message types sent on the ovl0_2 message queue
+struct Ovl0_2_MessageType2
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+};
+
+// One of the message types sent on the ovl0_2 message queue
+struct Ovl0_2_MessageType3
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+    s32 unk10;
+};
+
+// One of the message types sent on the ovl0_2 message queue
+struct Ovl0_2_MessageType4
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+};
+
+// One of the message types sent on the ovl0_2 message queue
+struct Ovl0_2_MessageType6
+{
+    s32 unk0;
+    s32 unk4;
+    s32 unk8;
+    s32 unkC;
+};
+
 // Buffers allocated to hold the master displaylists
 struct DLBuffer
 {

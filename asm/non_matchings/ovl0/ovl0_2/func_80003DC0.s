@@ -1,4 +1,4 @@
-glabel func_80003DA8
+glabel func_80003DC0
 /* 0049C0 80003DC0 3C038005 */  lui   $v1, %hi(D_80048E98) # $v1, 0x8005
 /* 0049C4 80003DC4 8C638E98 */  lw    $v1, %lo(D_80048E98)($v1)
 /* 0049C8 80003DC8 3C048005 */  lui   $a0, %hi(D_80048E9C) # $a0, 0x8005
@@ -7,8 +7,8 @@ glabel func_80003DA8
 /* 0049D4 80003DD4 00001025 */   move  $v0, $zero
 /* 0049D8 80003DD8 3C068005 */  lui   $a2, %hi(D_80048F20) # $a2, 0x8005
 /* 0049DC 80003DDC 3C088005 */  lui   $t0, %hi(D_80048F20) # $t0, 0x8005
-/* 0049E0 80003DE0 3C078005 */  lui   $a3, %hi(D_80048EA0) # $a3, 0x8005
-/* 0049E4 80003DE4 24E78EA0 */  addiu $a3, %lo(D_80048EA0) # addiu $a3, $a3, -0x7160
+/* 0049E0 80003DE0 3C078005 */  lui   $a3, %hi(gControllers) # $a3, 0x8005
+/* 0049E4 80003DE4 24E78EA0 */  addiu $a3, %lo(gControllers) # addiu $a3, $a3, -0x7160
 /* 0049E8 80003DE8 25088F20 */  addiu $t0, %lo(D_80048F20) # addiu $t0, $t0, -0x70e0
 /* 0049EC 80003DEC 24C68F20 */  addiu $a2, %lo(D_80048F20) # addiu $a2, $a2, -0x70e0
 /* 0049F0 80003DF0 2409000A */  li    $t1, 10

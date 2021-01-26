@@ -13,7 +13,7 @@ glabel func_80004E98
 /* 005AC4 80004EC4 01E00008 */  jr    $t7
 /* 005AC8 80004EC8 00000000 */   nop   
 glabel L80004ECC_ovl0
-/* 005ACC 80004ECC 0C000FF7 */  jal   func_80003FDC
+/* 005ACC 80004ECC 0C000FF7 */  jal   read_controller_input
 /* 005AD0 80004ED0 AFA70028 */   sw    $a3, 0x28($sp)
 /* 005AD4 80004ED4 0C001068 */  jal   func_800041A0
 /* 005AD8 80004ED8 00000000 */   nop   
@@ -101,8 +101,8 @@ glabel L80004FE4_ovl0
 /* 005C0C 8000500C 8FBF0014 */   lw    $ra, 0x14($sp)
 glabel L80005010_ovl0
 /* 005C10 80005010 8CE3000C */  lw    $v1, 0xc($a3)
-/* 005C14 80005014 3C088005 */  lui   $t0, %hi(D_80048EA0) # $t0, 0x8005
-/* 005C18 80005018 25088EA0 */  addiu $t0, %lo(D_80048EA0) # addiu $t0, $t0, -0x7160
+/* 005C14 80005014 3C088005 */  lui   $t0, %hi(gControllers) # $t0, 0x8005
+/* 005C18 80005018 25088EA0 */  addiu $t0, %lo(gControllers) # addiu $t0, $t0, -0x7160
 /* 005C1C 8000501C 0003C940 */  sll   $t9, $v1, 5
 /* 005C20 80005020 03281021 */  addu  $v0, $t9, $t0
 /* 005C24 80005024 9049001C */  lbu   $t1, 0x1c($v0)
@@ -113,10 +113,10 @@ glabel L80005010_ovl0
 /* 005C38 80005038 5160003C */  beql  $t3, $zero, .L8000512C_ovl0
 /* 005C3C 8000503C 8CE40008 */   lw    $a0, 8($a3)
 /* 005C40 80005040 8CE20010 */  lw    $v0, 0x10($a3)
-/* 005C44 80005044 3C048005 */  lui   $a0, %hi(D_80048DA0) # $a0, 0x8005
+/* 005C44 80005044 3C048005 */  lui   $a0, %hi(sSIMesgQueue) # $a0, 0x8005
 /* 005C48 80005048 00603025 */  move  $a2, $v1
 /* 005C4C 8000504C 10400009 */  beqz  $v0, .L80005074_ovl0
-/* 005C50 80005050 24848DA0 */   addiu $a0, %lo(D_80048DA0) # addiu $a0, $a0, -0x7260
+/* 005C50 80005050 24848DA0 */   addiu $a0, %lo(sSIMesgQueue) # addiu $a0, $a0, -0x7260
 /* 005C54 80005054 24010001 */  li    $at, 1
 /* 005C58 80005058 10410012 */  beq   $v0, $at, .L800050A4_ovl0
 /* 005C5C 8000505C 3C0E8005 */   lui   $t6, %hi(D_80048CDC) # $t6, 0x8005
@@ -130,8 +130,8 @@ glabel L80005010_ovl0
 /* 005C78 80005078 01866023 */  subu  $t4, $t4, $a2
 /* 005C7C 8000507C 000C6080 */  sll   $t4, $t4, 2
 /* 005C80 80005080 01866021 */  addu  $t4, $t4, $a2
-/* 005C84 80005084 3C0D8005 */  lui   $t5, %hi(D_800490F0) # $t5, 0x8005
-/* 005C88 80005088 25AD90F0 */  addiu $t5, %lo(D_800490F0) # addiu $t5, $t5, -0x6f10
+/* 005C84 80005084 3C0D8005 */  lui   $t5, %hi(sPakDevices) # $t5, 0x8005
+/* 005C88 80005088 25AD90F0 */  addiu $t5, %lo(sPakDevices) # addiu $t5, $t5, -0x6f10
 /* 005C8C 8000508C 000C60C0 */  sll   $t4, $t4, 3
 /* 005C90 80005090 018D2821 */  addu  $a1, $t4, $t5
 /* 005C94 80005094 0C00BCAD */  jal   func_8002F2B4
@@ -145,8 +145,8 @@ glabel L80005010_ovl0
 /* 005CB0 800050B0 15C0001D */  bnez  $t6, .L80005128_ovl0
 /* 005CB4 800050B4 000F7880 */   sll   $t7, $t7, 2
 /* 005CB8 800050B8 01E67821 */  addu  $t7, $t7, $a2
-/* 005CBC 800050BC 3C188005 */  lui   $t8, %hi(D_800490F0) # $t8, 0x8005
-/* 005CC0 800050C0 271890F0 */  addiu $t8, %lo(D_800490F0) # addiu $t8, $t8, -0x6f10
+/* 005CBC 800050BC 3C188005 */  lui   $t8, %hi(sPakDevices) # $t8, 0x8005
+/* 005CC0 800050C0 271890F0 */  addiu $t8, %lo(sPakDevices) # addiu $t8, $t8, -0x6f10
 /* 005CC4 800050C4 000F78C0 */  sll   $t7, $t7, 3
 /* 005CC8 800050C8 01F82021 */  addu  $a0, $t7, $t8
 /* 005CCC 800050CC 24050001 */  li    $a1, 1
@@ -158,8 +158,8 @@ glabel L80005010_ovl0
 /* 005CE0 800050E0 0326C823 */  subu  $t9, $t9, $a2
 /* 005CE4 800050E4 0019C880 */  sll   $t9, $t9, 2
 /* 005CE8 800050E8 0326C821 */  addu  $t9, $t9, $a2
-/* 005CEC 800050EC 3C088005 */  lui   $t0, %hi(D_800490F0) # $t0, 0x8005
-/* 005CF0 800050F0 250890F0 */  addiu $t0, %lo(D_800490F0) # addiu $t0, $t0, -0x6f10
+/* 005CEC 800050EC 3C088005 */  lui   $t0, %hi(sPakDevices) # $t0, 0x8005
+/* 005CF0 800050F0 250890F0 */  addiu $t0, %lo(sPakDevices) # addiu $t0, $t0, -0x6f10
 /* 005CF4 800050F4 0019C8C0 */  sll   $t9, $t9, 3
 /* 005CF8 800050F8 03282021 */  addu  $a0, $t9, $t0
 /* 005CFC 800050FC AFA40018 */  sw    $a0, 0x18($sp)
@@ -185,8 +185,8 @@ glabel L80005010_ovl0
 /* 005D44 80005144 8FBF0014 */   lw    $ra, 0x14($sp)
 glabel L80005148_ovl0
 /* 005D48 80005148 8CE9000C */  lw    $t1, 0xc($a3)
-/* 005D4C 8000514C 3C0B8005 */  lui   $t3, %hi(D_80048EA0) # $t3, 0x8005
-/* 005D50 80005150 256B8EA0 */  addiu $t3, %lo(D_80048EA0) # addiu $t3, $t3, -0x7160
+/* 005D4C 8000514C 3C0B8005 */  lui   $t3, %hi(gControllers) # $t3, 0x8005
+/* 005D50 80005150 256B8EA0 */  addiu $t3, %lo(gControllers) # addiu $t3, $t3, -0x7160
 /* 005D54 80005154 00095140 */  sll   $t2, $t1, 5
 /* 005D58 80005158 014B1021 */  addu  $v0, $t2, $t3
 /* 005D5C 8000515C 904C001C */  lbu   $t4, 0x1c($v0)

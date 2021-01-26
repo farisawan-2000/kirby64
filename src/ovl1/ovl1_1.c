@@ -157,7 +157,7 @@ loop_1:
     func_800208A0_ovl1(2);
     func_800A74B0();
     func_80022A38_ovl1(&D_800A2904);
-    func_800046D0_ovl1(0x3C);
+    func_800046D0(0x3C);
     func_800B8700();
 }
 #else
@@ -373,7 +373,7 @@ loop_4:
     phi_return = temp_v0_2;
     if (-1 == *phi_v0) {
         phi_v0 = temp_v0_2;
-        if (temp_v0_2 != &D_80048EA0) {
+        if (temp_v0_2 != &gControllers) {
             goto loop_4;
         }
         load_overlay(2);
