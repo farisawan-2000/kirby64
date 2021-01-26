@@ -1,8 +1,8 @@
 glabel func_80004250
 /* 004E50 80004250 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 004E54 80004254 AFB40028 */  sw    $s4, 0x28($sp)
-/* 004E58 80004258 3C148005 */  lui   $s4, %hi(D_80048DA0) # $s4, 0x8005
-/* 004E5C 8000425C 26948DA0 */  addiu $s4, %lo(D_80048DA0) # addiu $s4, $s4, -0x7260
+/* 004E58 80004258 3C148005 */  lui   $s4, %hi(sSIMesgQueue) # $s4, 0x8005
+/* 004E5C 8000425C 26948DA0 */  addiu $s4, %lo(sSIMesgQueue) # addiu $s4, $s4, -0x7260
 /* 004E60 80004260 AFBF002C */  sw    $ra, 0x2c($sp)
 /* 004E64 80004264 3C058005 */  lui   $a1, %hi(D_80048DB8) # $a1, 0x8005
 /* 004E68 80004268 AFB30024 */  sw    $s3, 0x24($sp)
@@ -17,15 +17,15 @@ glabel func_80004250
 /* 004E8C 8000428C 02802825 */  move  $a1, $s4
 /* 004E90 80004290 0C00CAAC */  jal   osSetEventMesg
 /* 004E94 80004294 24060001 */   li    $a2, 1
-/* 004E98 80004298 3C068005 */  lui   $a2, %hi(D_80048E70) # $a2, 0x8005
-/* 004E9C 8000429C 24C68E70 */  addiu $a2, %lo(D_80048E70) # addiu $a2, $a2, -0x7190
+/* 004E98 80004298 3C068005 */  lui   $a2, %hi(sControllerStatuses) # $a2, 0x8005
+/* 004E9C 8000429C 24C68E70 */  addiu $a2, %lo(sControllerStatuses) # addiu $a2, $a2, -0x7190
 /* 004EA0 800042A0 02802025 */  move  $a0, $s4
 /* 004EA4 800042A4 0C00BD34 */  jal   osContInit
 /* 004EA8 800042A8 27A50043 */   addiu $a1, $sp, 0x43
-/* 004EAC 800042AC 3C118005 */  lui   $s1, %hi(D_80048E70) # $s1, 0x8005
-/* 004EB0 800042B0 3C128005 */  lui   $s2, %hi(D_800490F0) # $s2, 0x8005
-/* 004EB4 800042B4 265290F0 */  addiu $s2, %lo(D_800490F0) # addiu $s2, $s2, -0x6f10
-/* 004EB8 800042B8 26318E70 */  addiu $s1, %lo(D_80048E70) # addiu $s1, $s1, -0x7190
+/* 004EAC 800042AC 3C118005 */  lui   $s1, %hi(sControllerStatuses) # $s1, 0x8005
+/* 004EB0 800042B0 3C128005 */  lui   $s2, %hi(sPakDevices) # $s2, 0x8005
+/* 004EB4 800042B4 265290F0 */  addiu $s2, %lo(sPakDevices) # addiu $s2, $s2, -0x6f10
+/* 004EB8 800042B8 26318E70 */  addiu $s1, %lo(sControllerStatuses) # addiu $s1, $s1, -0x7190
 /* 004EBC 800042BC 00008025 */  move  $s0, $zero
 /* 004EC0 800042C0 24130068 */  li    $s3, 104
 .L800042C4_ovl0:
@@ -95,9 +95,9 @@ glabel func_80004250
 /* 004FB4 800043B4 3C048005 */  lui   $a0, %hi(D_800490D0) # $a0, 0x8005
 /* 004FB8 800043B8 248490D0 */  addiu $a0, %lo(D_800490D0) # addiu $a0, $a0, -0x6f30
 /* 004FBC 800043BC 2419000B */  li    $t9, 11
-/* 004FC0 800043C0 3C118005 */  lui   $s1, %hi(D_80048E70) # $s1, 0x8005
-/* 004FC4 800043C4 3C058005 */  lui   $a1, %hi(D_80048E80) # $a1, 0x8005
-/* 004FC8 800043C8 3C028005 */  lui   $v0, %hi(D_80048EA0) # $v0, 0x8005
+/* 004FC0 800043C0 3C118005 */  lui   $s1, %hi(sControllerStatuses) # $s1, 0x8005
+/* 004FC4 800043C4 3C058005 */  lui   $a1, %hi(sContPads) # $a1, 0x8005
+/* 004FC8 800043C8 3C028005 */  lui   $v0, %hi(gControllers) # $v0, 0x8005
 /* 004FCC 800043CC 3C038005 */  lui   $v1, %hi(D_80048F20) # $v1, 0x8005
 /* 004FD0 800043D0 3C078005 */  lui   $a3, %hi(D_80048F48) # $a3, 0x8005
 /* 004FD4 800043D4 AC800000 */  sw    $zero, ($a0)
@@ -106,9 +106,9 @@ glabel func_80004250
 /* 004FE0 800043E0 AC93000C */  sw    $s3, 0xc($a0)
 /* 004FE4 800043E4 24E78F48 */  addiu $a3, %lo(D_80048F48) # addiu $a3, $a3, -0x70b8
 /* 004FE8 800043E8 24638F20 */  addiu $v1, %lo(D_80048F20) # addiu $v1, $v1, -0x70e0
-/* 004FEC 800043EC 24428EA0 */  addiu $v0, %lo(D_80048EA0) # addiu $v0, $v0, -0x7160
-/* 004FF0 800043F0 24A58E80 */  addiu $a1, %lo(D_80048E80) # addiu $a1, $a1, -0x7180
-/* 004FF4 800043F4 26318E70 */  addiu $s1, %lo(D_80048E70) # addiu $s1, $s1, -0x7190
+/* 004FEC 800043EC 24428EA0 */  addiu $v0, %lo(gControllers) # addiu $v0, $v0, -0x7160
+/* 004FF0 800043F0 24A58E80 */  addiu $a1, %lo(sContPads) # addiu $a1, $a1, -0x7180
+/* 004FF4 800043F4 26318E70 */  addiu $s1, %lo(sControllerStatuses) # addiu $s1, $s1, -0x7190
 /* 004FF8 800043F8 2406001E */  li    $a2, 30
 .L800043FC_ovl0:
 /* 004FFC 800043FC A040000F */  sb    $zero, 0xf($v0)

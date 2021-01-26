@@ -178,13 +178,33 @@ rgba *rawci2rgba(const uint8_t *rawci, const uint8_t *palette, int width, int he
       return NULL;
    }
 
-   for (int i = 0; i < width * height; i++) {
-      raw_rgba[2*i]   = palette[2*rawci[i]];
-      raw_rgba[2*i+1] = palette[2*rawci[i]+1];
+
+   switch (depth)
+   {
+      case 4:
+         for (int i = 0; i < width * height / 2; i++)
+         {
+            uint8_t upper = (rawci[i] >> 4) & 0x0F;
+            uint8_t lower = (rawci[i] >> 0) & 0x0F;
+            raw_rgba[4 * i + 0] = palette[2 * upper + 0];
+            raw_rgba[4 * i + 1] = palette[2 * upper + 1];
+            raw_rgba[4 * i + 2] = palette[2 * lower + 0];
+            raw_rgba[4 * i + 3] = palette[2 * lower + 1];
+         }
+         break;
+      case 8:
+         for (int i = 0; i < width * height; i++) {
+            raw_rgba[2*i]   = palette[2*rawci[i]];
+            raw_rgba[2*i+1] = palette[2*rawci[i]+1];
+         }
+         break;
+      default:
+         ERROR("Error invalid depth %d\n", depth);
+         break;
    }
 
    // then convert to RGBA image data
-   img = raw2rgba(raw_rgba, width, height, depth);
+   img = raw2rgba(raw_rgba, width, height, 16);
 
    free(raw_rgba);
 
