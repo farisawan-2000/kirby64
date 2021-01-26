@@ -51,7 +51,7 @@ glabel func_800051E0
 .L8000529C_ovl0:
 /* 005E9C 8000529C 54400006 */  bnezl $v0, .L800052B8_ovl0
 /* 005EA0 800052A0 8EB80000 */   lw    $t8, ($s5)
-/* 005EA4 800052A4 0C000FB3 */  jal   func_80003ECC
+/* 005EA4 800052A4 0C000FB3 */  jal   query_controllers
 /* 005EA8 800052A8 00000000 */   nop   
 /* 005EAC 800052AC 8E8F0000 */  lw    $t7, ($s4)
 /* 005EB0 800052B0 AE0F0000 */  sw    $t7, ($s0)
@@ -59,7 +59,7 @@ glabel func_800051E0
 .L800052B8_ovl0:
 /* 005EB8 800052B8 5300FFED */  beql  $t8, $zero, .L80005270_ovl0
 /* 005EBC 800052BC 02C02025 */   move  $a0, $s6
-/* 005EC0 800052C0 0C000FF7 */  jal   func_80003FDC
+/* 005EC0 800052C0 0C000FF7 */  jal   read_controller_input
 /* 005EC4 800052C4 00000000 */   nop   
 /* 005EC8 800052C8 8E390000 */  lw    $t9, ($s1)
 /* 005ECC 800052CC 5320FFE8 */  beql  $t9, $zero, .L80005270_ovl0

@@ -1,8 +1,10 @@
 #include <ultra64.h>
 #include <macros.h>
+#include <types.h>
+#include "ovl0_2_5.h"
 
 #ifdef MIPS_TO_C
-void *func_80003DA8(void) {
+void *func_80003DC0(void) {
     s32 temp_v0;
     s32 temp_v1;
     s8 temp_a1;
@@ -25,7 +27,7 @@ void *func_80003DA8(void) {
 loop_2:
         temp_a1 = *phi_a0;
         temp_v0 = phi_v0 + 1;
-        if ((&D_80048EA0 + (temp_a1 << 5))->unk1C == 0) {
+        if ((&gControllers + (temp_a1 << 5))->unk1C == 0) {
             temp_t2 = &D_80048F20 + (temp_a1 * 0xA);
             phi_a2->unk0 = (unaligned s32) temp_t2->unk0;
             phi_a2->unk4 = (unaligned s32) temp_t2->unk4;
@@ -66,145 +68,124 @@ loop_8:
     return phi_return;
 }
 #else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003DA8.s")
+GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003DC0.s")
 #endif
 
-extern OSContStatus D_80048E70[4];
-extern OSMesgQueue *D_80048DA0;
+extern OSContStatus sControllerStatuses[MAXCONTROLLERS];
+extern OSMesgQueue *sSIMesgQueue;
 
-struct Unk_D_80048EA0 {
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
-    u16 unk8;
-    u16 unkA;
-    u16 unkC;
-    u8 unkE;
-    u8 unkF;
+struct Controller {
+    u16 buttonHeld;
+    u16 buttonPressed;
+    u16 bufferedButtonPressed;
+    u16 buttonHeldLong;
+    u16 bufferedButtonHeldLong;
+    u16 buttonReleased;
+    u16 bufferedButtonReleased;
+    s8 stick_x;
+    s8 stick_y;
     s32 unk10;
     s32 unk14;
     s32 unk18;
-    u8 unk1C;
-    u8 unk1D;
-    u8 unk1E;
-    u8 unk1F;
+    u8 errno;
+    u8 status;
 };
 
-// Most likely a struct array
-extern u8 D_800490F0[][0x68];
+extern OSPfs sPakDevices[MAXCONTROLLERS];
 
-extern struct Unk_D_80048EA0 D_80048EA0[];
+extern struct Controller gControllers[MAXCONTROLLERS];
 
-void func_80003ECC(void) {
-    s32 phi_s2;
+void query_controllers(void) {
+    s32 port;
 
-    osContStartQuery(&D_80048DA0);
-    osRecvMesg(&D_80048DA0, NULL, 1);
-    osContGetQuery(D_80048E70);
-    for (phi_s2 = 0; phi_s2 != 4; phi_s2++)
+    osContStartQuery(&sSIMesgQueue);
+    osRecvMesg(&sSIMesgQueue, NULL, 1);
+    osContGetQuery(sControllerStatuses);
+    for (port = 0; port < MAXCONTROLLERS; port++)
     {
-        if ((D_80048E70[phi_s2].errno == 0) && ((D_80048E70[phi_s2].status & 1) != 0)) {
-            if (((D_80048EA0[phi_s2].unk1D & 1) == 0) || (D_80048EA0[phi_s2].unk1C != 0)) {
-                func_8002F2B4(&D_80048DA0, &D_800490F0[phi_s2][0], phi_s2);
+        if ((sControllerStatuses[port].errno == 0) && ((sControllerStatuses[port].status & 1) != 0)) {
+            if (((gControllers[port].status & 1) == 0) || (gControllers[port].errno != 0)) {
+                osMotorInit(&sSIMesgQueue, &sPakDevices[port], port);
             }
         }
-        D_80048EA0[phi_s2].unk1C = D_80048E70[phi_s2].errno;
-        D_80048EA0[phi_s2].unk1D = D_80048E70[phi_s2].status;
+        gControllers[port].errno = sControllerStatuses[port].errno;
+        gControllers[port].status = sControllerStatuses[port].status;
     }
 }
 
-struct Unk_D80048E80 {
-    u16 unk0;
-    s8 unk2;
-    s8 unk3;
-    u8 unk4;
-    u8 unk5;
-};
-
-extern struct Unk_D80048E80 D_80048E80[];
+extern OSContPad sContPads[MAXCONTROLLERS];
 
 extern s32 D_80048F48;
 
-void func_80003FDC(void) {
+void read_controller_input(void) {
     s32 i;
 
-    func_8002FD30(&D_80048DA0);
-    osRecvMesg(&D_80048DA0, NULL, 1);
-    func_8002FDB4(D_80048E80);
-    for (i = 0; i != 4; i++)
+    osContStartReadData(&sSIMesgQueue);
+    osRecvMesg(&sSIMesgQueue, NULL, OS_MESG_BLOCK);
+    osContGetReadData(sContPads);
+    for (i = 0; i < MAXCONTROLLERS; i++)
     {
-        if (!D_80048E80[i].unk4 && (D_80048E70[i].status & 1) && D_80048EA0[i].unk1C) {
-            func_8002F2B4(&D_80048DA0, &D_800490F0[i], i);
+        if (!sContPads[i].errno && (sControllerStatuses[i].status & 1) && gControllers[i].errno) {
+            osMotorInit(&sSIMesgQueue, &sPakDevices[i], i);
         }
-        D_80048EA0[i].unk1C = D_80048E80[i].unk4;
-        if (D_80048EA0[i].unk1C == 0) {
-            D_80048EA0[i].unk2 = (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) & D_80048E80[i].unk0;
-            D_80048EA0[i].unkA = (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) & D_80048EA0[i].unk0;
-            if (D_80048E80[i].unk0 ^ D_80048EA0[i].unk0) {
-                D_80048EA0[i].unk6 = D_80048EA0[i].unk2;
-                D_80048EA0[i].unk18 = D_80048EA0[i].unk10;
+        gControllers[i].errno = sContPads[i].errno;
+        if (gControllers[i].errno == 0) {
+            gControllers[i].buttonPressed = (sContPads[i].button ^ gControllers[i].buttonHeld) & sContPads[i].button;
+            gControllers[i].buttonReleased = (sContPads[i].button ^ gControllers[i].buttonHeld) & gControllers[i].buttonHeld;
+            if (sContPads[i].button ^ gControllers[i].buttonHeld) {
+                gControllers[i].buttonHeldLong = gControllers[i].buttonPressed;
+                gControllers[i].unk18 = gControllers[i].unk10;
             } else {
-                D_80048EA0[i].unk18--;
-                if (D_80048EA0[i].unk18 > 0) {
-                    D_80048EA0[i].unk6 = 0;
+                gControllers[i].unk18--;
+                if (gControllers[i].unk18 > 0) {
+                    gControllers[i].buttonHeldLong = 0;
                 } else {
-                    D_80048EA0[i].unk6 = D_80048E80[i].unk0;
-                    D_80048EA0[i].unk18 = D_80048EA0[i].unk14;
+                    gControllers[i].buttonHeldLong = sContPads[i].button;
+                    gControllers[i].unk18 = gControllers[i].unk14;
                 }
             }
-            D_80048EA0[i].unk0 = D_80048E80[i].unk0;
-            D_80048EA0[i].unkE = D_80048E80[i].unk2;
-            D_80048EA0[i].unkF = D_80048E80[i].unk3;
-            D_80048EA0[i].unk4 |= D_80048EA0[i].unk2;
-            D_80048EA0[i].unkC |= D_80048EA0[i].unkA;
-            D_80048EA0[i].unk8 |= D_80048EA0[i].unk6;
+            gControllers[i].buttonHeld = sContPads[i].button;
+            gControllers[i].stick_x = sContPads[i].stick_x;
+            gControllers[i].stick_y = sContPads[i].stick_y;
+            gControllers[i].bufferedButtonPressed |= gControllers[i].buttonPressed;
+            gControllers[i].bufferedButtonReleased |= gControllers[i].buttonReleased;
+            gControllers[i].bufferedButtonHeldLong |= gControllers[i].buttonHeldLong;
         }
     }
     D_80048F48 = 1;
 }
 
-#ifdef MIPS_TO_C
-void func_800041A0(void) {
-    void *temp_v0;
-    void *temp_v1;
-    void *phi_v1;
-    void *phi_v0;
+Controller_800D6FE8 D_80048F20[MAXCONTROLLERS];
 
-    phi_v1 = &D_80048EA0;
-    phi_v0 = &D_80048F20;
-loop_1:
-    if (phi_v1->unk1C == 0) {
-        phi_v0->unk0 = phi_v1->unk0;
-        phi_v0->unk2 = phi_v1->unk4;
-        phi_v0->unk6 = phi_v1->unkC;
-        phi_v0->unk4 = phi_v1->unk8;
-        phi_v0->unk8 = phi_v1->unkE;
-        phi_v0->unk9 = phi_v1->unkF;
-    } else {
-        phi_v0->unk9 = 0;
-        phi_v0->unk4 = 0;
-        phi_v0->unk6 = 0;
-        phi_v0->unk2 = 0;
-        phi_v0->unk0 = 0;
-        phi_v0->unk8 = phi_v0->unk9;
+void func_800041A0() {
+    s32 i = 0;
+
+    for (i = 0; i != MAXCONTROLLERS; i++)
+    {
+        if (gControllers[i].errno == 0) {
+            D_80048F20[i].buttonHeld = gControllers[i].buttonHeld;
+            D_80048F20[i].buttonPressed = gControllers[i].bufferedButtonPressed;
+            D_80048F20[i].buttonReleased = gControllers[i].bufferedButtonReleased;
+            D_80048F20[i].buttonHeldLong = gControllers[i].bufferedButtonHeldLong;
+            D_80048F20[i].stickX = gControllers[i].stick_x;            
+            D_80048F20[i].stickY = gControllers[i].stick_y;
+        } else {
+            D_80048F20[i].buttonHeldLong = 0;
+            D_80048F20[i].buttonReleased = 0;
+            D_80048F20[i].buttonPressed = 0;
+            D_80048F20[i].buttonHeld = 0;
+            D_80048F20[i].stickX = D_80048F20[i].stickY = 0;
+        }
+        gControllers[i].bufferedButtonHeldLong = 0;
+        gControllers[i].bufferedButtonReleased = 0;
+        gControllers[i].bufferedButtonPressed = 0;
+        if (i == 0) // Needed to match, may have been commented out code?
+        {
+        }
     }
-    temp_v0 = phi_v0 + 0xA;
-    temp_v1 = phi_v1 + 0x20;
-    temp_v1->unk-18 = 0;
-    temp_v1->unk-14 = 0;
-    temp_v1->unk-1C = 0;
-    phi_v1 = temp_v1;
-    phi_v0 = temp_v0;
-    if (temp_v0 != &D_80048F48) {
-        goto loop_1;
-    }
-    func_80003DC0(&D_80048F48);
+    func_80003DC0();
     D_80048F48 = 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800041A0.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_80004250(void) {
@@ -232,14 +213,14 @@ void *func_80004250(void) {
     void *phi_a1;
     void *phi_s1_2;
 
-    osCreateMesgQueue(&D_80048DA0, &D_80048DB8, 1);
-    osSetEventMesg(5, &D_80048DA0, 1);
-    osContInit(&D_80048DA0, &sp43);
-    phi_s1 = &D_80048E70;
+    osCreateMesgQueue(&sSIMesgQueue, &D_80048DB8, 1);
+    osSetEventMesg(OS_EVENT_SI, &sSIMesgQueue, 1);
+    osContInit(&sSIMesgQueue, &sp43);
+    phi_s1 = &sControllerStatuses;
     phi_s0 = 0;
 loop_1:
     if ((phi_s1->unk2 & 1) != 0) {
-        func_8002F2B4(&D_80048DA0, &D_800490F0 + (phi_s0 * 0x68), phi_s0);
+        osMotorInit(&sSIMesgQueue, &sPakDevices + (phi_s0 * 0x68), phi_s0);
     }
     temp_s0 = phi_s0 + 1;
     phi_s1 = phi_s1 + 4;
@@ -282,10 +263,10 @@ loop_7:
     D_800490D0.unk4 = 0xB;
     D_800490D0.unk8 = temp_s0_3;
     D_800490D0.unkC = &D_80048E58;
-    phi_v0_3 = &D_80048EA0;
+    phi_v0_3 = &gControllers;
     phi_v1 = &D_80048F20;
-    phi_a1 = &D_80048E80;
-    phi_s1_2 = &D_80048E70;
+    phi_a1 = &sContPads;
+    phi_s1_2 = &sControllerStatuses;
 loop_9:
     phi_v0_3->unkF = 0;
     phi_v1->unk9 = 0;
@@ -371,68 +352,47 @@ void func_800045C0(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800045C0.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_80004624(void) {
-    ?32 sp1C;
+    struct Ovl0_2_MessageType1 msg;
 
-    sp1C = 1;
-    func_800045C0(&sp1C);
+    msg.unk0 = 1;
+    func_800045C0(&msg);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004624.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_8000464C(void) {
-    ?32 sp1C;
+    struct Ovl0_2_MessageType2 msg;
 
-    sp1C = 2;
-    func_800045C0(&sp1C);
+    msg.unk0 = 2;
+    func_800045C0(&msg);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_8000464C.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_80004674(s32 arg0, ?32 arg1) {
-    ?32 sp2C;
-    s32 sp28;
-    ?32 sp1C;
+void func_80004674(s32 arg0, s32 arg1) {
+    struct Ovl0_2_MessageType3 msg;
 
-    sp28 = arg0;
-    sp1C = 3;
-    sp2C = arg1;
-    func_800045C0(&sp1C);
+    msg.unk0 = 3;
+    msg.unkC = arg0;
+    msg.unk10 = arg1;
+
+    func_800045C0(&msg);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004674.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_800046A4(s32 arg0) {
-    s32 sp24;
-    ?32 sp18;
+    struct Ovl0_2_MessageType4 msg;
 
-    sp24 = arg0;
-    sp18 = 4;
-    func_800045C0(&sp18);
+    msg.unk0 = 4;
+    msg.unkC = arg0;
+
+    func_800045C0(&msg);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800046A4.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_800046D0(s32 arg0) {
-    s32 sp24;
-    ?32 sp18;
+    struct Ovl0_2_MessageType6 msg;
 
-    sp24 = arg0;
-    sp18 = 6;
-    func_800045C0(&sp18);
+    msg.unk0 = 6;
+    msg.unkC = arg0;
+
+    func_800045C0(&msg);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800046D0.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800046FC(s32 arg0, s32 arg1) {
@@ -511,26 +471,26 @@ struct Unk_Func8004810 {
 
 #ifdef NEEDS_RODATA
 void func_80004810(struct Unk_Func8004810 *arg0) {
-    arg0->unk3C = func_80035D30(&D_80048DA0, &D_800490F0[arg0->unkC][0], arg0->unkC);
+    arg0->unk3C = func_80035D30(&sSIMesgQueue, &sPakDevices[arg0->unkC][0], arg0->unkC);
     if (arg0->unk3C == 0) {
         switch (arg0->unk10) {
         // temp_t7 = arg0->unk10;
         // if (temp_t7 < 5) {
         //     goto **(&jtbl_8003FF30 + (temp_t7 * 4));
             case 0:
-                arg0->unk3C = func_800320D0(&D_800490F0[arg0->unkC][0], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk28);
+                arg0->unk3C = func_800320D0(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk28);
                 break;
             case 1:
-                arg0->unk3C = func_800350F0(&D_800490F0[arg0->unkC][0], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20);
+                arg0->unk3C = func_800350F0(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20);
                 break;
             case 2:
-                arg0->unk3C = func_80030DF0(&D_800490F0[arg0->unkC][0], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk24, arg0->unk28);
+                arg0->unk3C = func_80030DF0(&sPakDevices[arg0->unkC] arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk24, arg0->unk28);
                 break;
             case 3:
-                arg0->unk3C = func_80030794(&D_800490F0[arg0->unkC][0], arg0->unk2C, 0, arg0->unk30, arg0->unk34, arg0->unk38);
+                arg0->unk3C = func_80030794(&sPakDevices[arg0->unkC], arg0->unk2C, 0, arg0->unk30, arg0->unk34, arg0->unk38);
                 break;
             case 4:
-                arg0->unk3C = func_80030794(&D_800490F0[arg0->unkC][0], arg0->unk2C, 1, arg0->unk30, arg0->unk34, arg0->unk38);
+                arg0->unk3C = func_80030794(&sPakDevices[arg0->unkC], arg0->unk2C, 1, arg0->unk30, arg0->unk34, arg0->unk38);
                 break;
         }
     }
@@ -707,19 +667,19 @@ void func_80004DC8(struct Unk_Func8004DC8 *arg0) {
     switch (arg0->unkC)
     {
         case 0:
-            arg0->unk18 = func_80032060(&D_80048DA0);
+            arg0->unk18 = func_80032060(&sSIMesgQueue); // osEepromProbe
             break;
         case 1:
-            arg0->unk18 = osEepromRead(&D_80048DA0, arg0->unkD, arg0->unk10);
+            arg0->unk18 = osEepromRead(&sSIMesgQueue, arg0->unkD, arg0->unk10);
             break;
         case 2:
-            arg0->unk18 = osEepromWrite(&D_80048DA0, arg0->unkD, arg0->unk10);
+            arg0->unk18 = osEepromWrite(&sSIMesgQueue, arg0->unkD, arg0->unk10);
             break;
         case 3:
-            arg0->unk18 = osEepromLongRead(&D_80048DA0, arg0->unkD, arg0->unk10, arg0->unk14);
+            arg0->unk18 = osEepromLongRead(&sSIMesgQueue, arg0->unkD, arg0->unk10, arg0->unk14);
             break;
         case 4:
-            arg0->unk18 = osEepromLongWrite(&D_80048DA0, arg0->unkD, arg0->unk10, arg0->unk14);
+            arg0->unk18 = osEepromLongWrite(&sSIMesgQueue, arg0->unkD, arg0->unk10, arg0->unk14);
             break;
     }
 }
@@ -754,7 +714,7 @@ void func_80004E98(void *arg0) {
         goto **(&jtbl_8003FF58 + (temp_t7 * 4));
     case 0:
         arg0 = temp_a3;
-        func_80003FDC(temp_a3);
+        read_controller_input();
         func_800041A0();
         temp_a0 = arg0->unk8;
         if (temp_a0 != 0) {
@@ -803,7 +763,7 @@ void func_80004E98(void *arg0) {
                 return;
             case 4:
                 temp_v1 = temp_a3->unkC;
-                temp_v0 = (temp_v1 << 5) + &D_80048EA0;
+                temp_v0 = (temp_v1 << 5) + &gControllers;
                 phi_a3 = temp_a3;
                 if (temp_v0->unk1C == 0) {
                     phi_a3 = temp_a3;
@@ -814,7 +774,7 @@ void func_80004E98(void *arg0) {
                                 if (temp_v0_2 != 2) {
                                     phi_a3 = temp_a3;
                                 } else {
-                                    temp_a0_6 = (temp_v1 * 0x68) + &D_800490F0;
+                                    temp_a0_6 = (temp_v1 * 0x68) + &sPakDevices;
                                     sp18 = temp_a0_6;
                                     arg0 = temp_a3;
                                     func_8002F040(temp_a0_6, 0, temp_v1, temp_a3);
@@ -827,13 +787,13 @@ block_24:
                                 phi_a3 = temp_a3;
                                 if (D_80048CDC == 0) {
                                     arg0 = temp_a3;
-                                    func_8002F040((temp_v1 * 0x68) + &D_800490F0, 1, temp_v1, temp_a3);
+                                    func_8002F040((temp_v1 * 0x68) + &sPakDevices, 1, temp_v1, temp_a3);
                                     goto block_24;
                                 }
                             }
                         } else {
                             arg0 = temp_a3;
-                            func_8002F2B4(&D_80048DA0, (temp_v1 * 0x68) + &D_800490F0, temp_v1, temp_a3);
+                            osMotorInit(&sSIMesgQueue, (temp_v1 * 0x68) + &sPakDevices, temp_v1, temp_a3);
                             goto block_24;
                         }
                     }
@@ -847,7 +807,7 @@ block_24:
                 osSendMesg(temp_a0_7, phi_a3->unk4, 0);
                 return;
             case 9:
-                temp_v0_3 = (temp_a3->unkC << 5) + &D_80048EA0;
+                temp_v0_3 = (temp_a3->unkC << 5) + &gControllers;
                 phi_a3_2 = temp_a3;
                 if (temp_v0_3->unk1C == 0) {
                     phi_a3_2 = temp_a3;
@@ -923,13 +883,13 @@ void func_800051E0(s32 arg0) {
                 D_80048F58--;
             }
             if (D_80048F58 == 0) {
-                func_80003ECC(sp44);
+                query_controllers();
                 D_80048F58 = D_80048F54;
             }
             if (D_80048F50 == 0) {
                 continue;
             }
-            func_80003FDC();
+            read_controller_input();
             if (D_80048F4C == 0) {
                 continue;
             }

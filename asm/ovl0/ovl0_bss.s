@@ -337,7 +337,7 @@ glabel D_800490E8
 glabel D_800490EC
 .word 0x00000000
 
-glabel D_800490F0
+glabel sPakDevices
 .word 0x00000000
 
 glabel D_800490F4

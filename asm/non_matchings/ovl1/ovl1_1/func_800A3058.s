@@ -18,8 +18,8 @@ glabel func_800A3058
 /* 04B2E4 800A3094 0C001189 */  jal   D_80004624_ovl1
 /* 04B2E8 800A3098 00000000 */   nop   
 /* 04B2EC 800A309C 3C028005 */  lui   $v0, %hi(D_80048E9C) # $v0, 0x8005
-/* 04B2F0 800A30A0 3C048005 */  lui   $a0, %hi(D_80048EA0) # $a0, 0x8005
-/* 04B2F4 800A30A4 24848EA0 */  addiu $a0, %lo(D_80048EA0) # addiu $a0, $a0, -0x7160
+/* 04B2F0 800A30A0 3C048005 */  lui   $a0, %hi(gControllers) # $a0, 0x8005
+/* 04B2F4 800A30A4 24848EA0 */  addiu $a0, %lo(gControllers) # addiu $a0, $a0, -0x7160
 /* 04B2F8 800A30A8 24428E9C */  addiu $v0, %lo(D_80048E9C) # addiu $v0, $v0, -0x7164
 /* 04B2FC 800A30AC 2403FFFF */  li    $v1, -1
 /* 04B300 800A30B0 804E0000 */  lb    $t6, ($v0)
