@@ -74,45 +74,45 @@ extern const char D_80040670[];
 
 // bss
 
-extern struct ObjThread *gGObjThreadHead; // 0x8004A540
-extern u32 D_8004A544;
-extern u32 D_8004A548;
-extern u32 gNewEntityStackSize; // 0x8004A54C
-extern void (*D_8004A550)(struct ObjStack *);
-extern struct ObjThreadStack* gGObjThreadStackHead; // 0x8004A554
-extern s32 D_8004A558;
-extern struct ObjProcess* gObjectProcessMaybe; // 0x8004A55C
-extern struct ObjThreadStack* D_8004A560[]; // probably length 4
-extern u32 D_8004A570;
+struct ObjThread *gGObjThreadHead; // 0x8004A540
+u32 D_8004A544;
+u32 D_8004A548;
+u32 gNewEntityStackSize; // 0x8004A54C
+void (*D_8004A550)(struct ObjStack *);
+struct ObjThreadStack* gGObjThreadStackHead; // 0x8004A554
+s32 D_8004A558;
+struct ObjProcess* gObjectProcessMaybe; // 0x8004A55C
+struct ObjThreadStack* D_8004A560[4]; // probably length 4
+u32 D_8004A570;
 // 0x8004A574?
-struct UnkStruct8004A578 *D_8004A578[]; // probably length 32 based on loop asm
-extern void* D_8004A5F8[]; // also length 32? lines up with next symbol
-extern struct UnkStruct8004A7C4 *D_8004A678;
+struct UnkStruct8004A578 *D_8004A578[32]; // probably length 32 based on loop asm
+void* D_8004A5F8[32]; // also length 32? lines up with next symbol
+struct UnkStruct8004A7C4 *D_8004A678;
 // 0x8004A67C? file boundary?
-extern struct UnkStruct8004A7C4* D_8004A680[]; // length 7?
-extern struct UnkStruct8004A7C4* D_8004A708[]; // length 33?
-extern u32 D_8004A78C;
-extern void** D_8004A790;
-extern u32 D_8004A794;
-extern void (*D_8004A798)();
-extern struct AnimStack *D_8004A79C;
-extern u32 D_8004A7A0;
-extern struct MObj* D_8004A7A4;
-extern u32 D_8004A7A8;
-extern struct DObj* D_8004A7AC;
-extern u32 D_8004A7B0;
-extern u32 D_8004A7B4;
-extern u32 D_8004A7B8;
-extern struct Camera* D_8004A7BC;
-extern u32 D_8004A7C0;
-extern struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
-extern struct ObjThreadStack *D_8004A7D0;
-extern s32 D_8004A7D4;
-extern OSMesg D_8004A7D8;
+struct UnkStruct8004A7C4* D_8004A680[33]; // length 33?
+struct UnkStruct8004A7C4* D_8004A708[33]; // length 33?
+u32 D_8004A78C;
+void** D_8004A790;
+u32 D_8004A794;
+void (*D_8004A798)();
+struct AnimStack *D_8004A79C;
+u32 D_8004A7A0;
+struct MObj* D_8004A7A4;
+u32 D_8004A7A8;
+struct DObj* D_8004A7AC;
+u32 D_8004A7B0;
+u32 D_8004A7B4;
+u32 D_8004A7B8;
+struct Camera* D_8004A7BC;
+u32 D_8004A7C0;
+struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
+struct ObjThreadStack *D_8004A7D0;
+s32 D_8004A7D4;
+OSMesg D_8004A7D8;
 // 0x8004A7DC?
-extern OSMesgQueue D_8004A7E0;
-extern struct UnkStruct8004A7F8 D_8004A7F8[32]; // length 32 based on loop asm in func_8000AAE0 (unrolled)
-// 0x8004AA78 - 0x8004AA8F?
+OSMesgQueue D_8004A7E0;
+struct UnkStruct8004A7F8 D_8004A7F8[32]; // length 32 based on loop asm in func_8000AAE0 (unrolled)
+static u32 pad1, pad2, pad3, pad4, pad5, pad6; // 0x8004AA78 - 0x8004AA8F?
 
 // end bss
 

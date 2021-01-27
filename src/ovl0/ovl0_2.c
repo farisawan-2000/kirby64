@@ -20,43 +20,83 @@ struct Controller {
     u8 status;
 };
 
-struct UnkStruct800009E8 {
+struct UnkStruct80048F60 {
     u32 unk0;
-    OSMesgQueue *unk4;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
 };
 
-extern OSMesgQueue sSIMesgQueue; // 0x80048DA0
-extern OSMesg D_80048DB8; // 0x80048DB8
-// 0x80048DBC? bss file boundary? lines up with function alignment
-extern struct UnkStruct800009E8 D_80048DC0;
-extern OSMesg D_80048DC8[7];
-// 0x80048DE4?
-extern OSMesgQueue D_80048DE8;
-extern OSMesg D_80048E00[4];
-extern OSMesgQueue D_80048E10;
-extern OSMesg D_80048E28[4];
-extern OSMesgQueue D_80048E38;
-extern OSMesg D_80048E50;
-// 0x80048E54?
-extern OSMesgQueue D_80048E58;
-extern OSContStatus sControllerStatuses[MAXCONTROLLERS]; // 0x80048E70
-extern OSContPad sContPads[MAXCONTROLLERS]; // 0x80048E80
-extern s32 D_80048E98; // num controllers? // 0x80048E98
-extern s8 D_80048E9C[MAXCONTROLLERS]; // 0x80048E9C
-extern struct Controller gControllers[MAXCONTROLLERS]; // 0x80048EA0
-extern Controller_800D6FE8 D_80048F20[MAXCONTROLLERS]; // 0x80048F20
-extern s32 D_80048F48; // 0x80048F48
-extern s32 D_80048F4C; // 0x80048F4C
-extern s32 D_80048F50; // 0x80048F50
-extern s32 D_80048F54; // 0x80048F54
-extern s32 D_80048F58; // 0x80048F58
-// 0x80048F5C? bss file boundary? lines up with function alignment
-// extern struct ... D_80048F60[4]; // 4 * 0x18
-// extern struct ... D_80048FC0[4]; // 4 * 0x44
-// extern struct ... D_800490D0[4]; // 0x20
-extern OSPfs sPakDevices[MAXCONTROLLERS]; // 0x800490F0
+struct UnkStruct80048FC0 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    u32 unk3C;
+    u32 unk40;
+};
 
-// ovl0_2_5.c bss
+struct UnkStruct800490D0 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+};
+
+// bss
+
+OSMesgQueue sSIMesgQueue; // 0x80048DA0
+OSMesg D_80048DB8; // 0x80048DB8
+// 0x80048DBC? bss file boundary? lines up with function alignment
+struct UnkStruct800009E8 D_80048DC0;
+OSMesg D_80048DC8[7];
+// 0x80048DE4?
+OSMesgQueue D_80048DE8;
+OSMesg D_80048E00[4];
+OSMesgQueue D_80048E10;
+OSMesg D_80048E28[4];
+OSMesgQueue D_80048E38;
+OSMesg D_80048E50;
+// 0x80048E54?
+OSMesgQueue D_80048E58;
+OSContStatus sControllerStatuses[MAXCONTROLLERS]; // 0x80048E70
+OSContPad sContPads[MAXCONTROLLERS]; // 0x80048E80
+s32 D_80048E98; // num controllers? // 0x80048E98
+s8 D_80048E9C[MAXCONTROLLERS]; // 0x80048E9C
+struct Controller gControllers[MAXCONTROLLERS]; // 0x80048EA0
+Controller_800D6FE8 D_80048F20[MAXCONTROLLERS]; // 0x80048F20
+s32 D_80048F48; // 0x80048F48
+s32 D_80048F4C; // 0x80048F4C
+s32 D_80048F50; // 0x80048F50
+s32 D_80048F54; // 0x80048F54
+s32 D_80048F58; // 0x80048F58
+// 0x80048F5C? bss file boundary? lines up with function alignment
+struct UnkStruct80048F60 D_80048F60[4]; // 4 * 0x18
+struct UnkStruct80048FC0 D_80048FC0[4]; // 4 * 0x44
+struct UnkStruct800490D0 D_800490D0; // 0x20
+OSPfs sPakDevices[MAXCONTROLLERS]; // 0x800490F0
+
+// end bss, followed by ovl0_2_5.c
 
 void func_80003DC0(void) {
     s32 port;

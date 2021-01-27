@@ -7,14 +7,14 @@
 
 // bss
 
-extern u16 *gZBuffer; // 0x8004A500
-extern u32 D_8004A504;
-extern s32 gCurrScreenWidth; // 0x8004A508
-extern s32 gCurrScreenHeight; // 0x8004A50C
-extern u32 D_8004A510;
-extern u32 D_8004A514;
-extern u32 D_8004A518[];
-extern s16 D_8004A524, D_8004A526, D_8004A528, D_8004A52A;
+u16 *gZBuffer; // 0x8004A500
+u32 D_8004A504;
+s32 gCurrScreenWidth; // 0x8004A508
+s32 gCurrScreenHeight; // 0x8004A50C
+u32 D_8004A510;
+u32 D_8004A514;
+u32 D_8004A518[3];
+s16 D_8004A524, D_8004A526, D_8004A528, D_8004A52A;
 
 // end bss, followed by rdp_reset.c
 

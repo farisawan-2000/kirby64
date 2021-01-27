@@ -20,7 +20,7 @@ extern Gfx resetRDPDisplayList[];
 
 // bss
 
-extern Vp gViewport; // 0x8004A530
+Vp gViewport; // 0x8004A530
 
 // end bss, followed by ovl0_2_5_2.c
 

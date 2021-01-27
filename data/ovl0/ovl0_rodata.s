@@ -19,9 +19,3 @@ glabel jtbl_8003FECC
 .word L80001D3C_ovl0
 .word L80001D74_ovl0
 .word L80001D9C_ovl0
-
-glabel D_8003FEF8
-.word 0x00000000
-
-glabel D_8003FEFC
-.word 0x00000000

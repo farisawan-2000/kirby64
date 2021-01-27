@@ -53,10 +53,9 @@ OSMesg piMesgBuffer[NUM_PI_MESSAGES];
 OSMesgQueue piMesgQueue;
 
 void *D_80048B00;
-u32 pad13[0x7A]; // ovl0's bss
-OSPiHandle *gRomHandle; // in ovl0_1's bss?
-u8 pad_before_8F28[0x80048F28 - 0x80048CF0 - 0x08]; // ovl0_1 and ovl0_2 bss
-u8 D_80048F28, D_80048F29, D_80048F2A, D_80048F2B; // ovl0_2's bss
+u32 pad13[0x1C]; // ?
+
+extern OSPiHandle *gRomHandle;
 
 
 OSThread *unused_get_main_thread(void) {
