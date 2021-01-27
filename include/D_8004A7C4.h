@@ -79,7 +79,10 @@ struct UnkStruct8004A7C4_3C {
 	u32 unk4C;
 	u32 unk50[4];
 	u32 unk60[4];
-	u32 unk70[4];
+	s32 unk70;
+	s32 unk74;
+	f32 unk78;
+	s32 unk7C;
 	struct UnkStruct8004A7C4_3C_80 *unk80;
 	u32 unk84;
 };

@@ -1478,43 +1478,29 @@ void func_8000A544(s32 arg0, void *arg1) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A544.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8000A580(struct UnkStruct8004A7C4 *arg0, ?32 arg1, s32 arg2, ?32 arg3, s32 arg4) {
-    s32 sp24;
-    s32 temp_a2;
+extern u32 D_8003DCA8;
+extern u8 D_8004044C[];
 
-    temp_a2 = arg2 & 0xFF;
-    sp24 = temp_a2;
-    if (temp_a2 >= 0x20) {
-        fatal_printf(&D_8004044C, temp_a2, arg0->unk0);
-loop_2:
-        goto loop_2;
+void func_8000A580(struct UnkStruct8004A7C4 *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
+    if (link >= 0x20) {
+        // "omGLinkObjDLCommon() : dl_link num over : dl_link = %d : id = %d\n"
+        fatal_printf(&D_8004044C, link, arg0->objId);
+        while (1);
     }
-    arg0->unkD = temp_a2;
+    arg0->unkD = link;
     arg0->unk28 = arg3;
     arg0->unk2C = arg1;
     arg0->unk34 = arg4;
-    arg0->unkE = *D_8003DCA8 - 1;
+    arg0->unkE = D_8003DCA8 - 1;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A580.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_8000A5FC(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg4) {
-    struct UnkStruct8004A7C4 *phi_a0;
-
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+void func_8000A5FC(struct UnkStruct8004A7C4 *arg0, s32 arg1, u8 arg2, s32 arg3, s32 arg4) {
+    if (arg0 == NULL) {
+        arg0 = D_8004A7C4;
     }
-    arg0 = phi_a0;
-    func_8000A580(phi_a0, arg2 & 0xFF, arg4);
+    func_8000A580(arg0, arg1, arg2, arg3, arg4);
     func_800085F8(arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A5FC.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8000A640(struct UnkStruct8004A7C4 *arg0, s32 arg2, s32 arg4) {

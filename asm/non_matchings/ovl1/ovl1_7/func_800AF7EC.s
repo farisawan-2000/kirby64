@@ -20,13 +20,13 @@ glabel func_800AF7EC
 .L800AF834_ovl1:
 /* 057A84 800AF834 8D0F0000 */  lw    $t7, ($t0)
 /* 057A88 800AF838 8FAE0020 */  lw    $t6, 0x20($sp)
-/* 057A8C 800AF83C 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 057A8C 800AF83C 3C01800E */ lui $at, %hi(D_800E02D0)
 /* 057A90 800AF840 8DF80000 */  lw    $t8, ($t7)
 /* 057A94 800AF844 93AA002B */  lbu   $t2, 0x2b($sp)
 /* 057A98 800AF848 93A60027 */  lbu   $a2, 0x27($sp)
 /* 057A9C 800AF84C 0018C880 */  sll   $t9, $t8, 2
 /* 057AA0 800AF850 00390821 */  addu  $at, $at, $t9
-/* 057AA4 800AF854 AC2E02D0 */  sw    $t6, 0x2d0($at)
+/* 057AA4 800AF854 AC2E02D0 */  sw    $t6, %lo(D_800E02D0)($at)
 /* 057AA8 800AF858 90690013 */  lbu   $t1, 0x13($v1)
 /* 057AAC 800AF85C 3C05800B */  lui   $a1, %hi(D_800AD1A0) # $a1, 0x800b
 /* 057AB0 800AF860 24A5D1A0 */  addiu $a1, %lo(D_800AD1A0) # addiu $a1, $a1, -0x2e60

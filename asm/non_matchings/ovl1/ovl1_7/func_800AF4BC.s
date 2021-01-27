@@ -31,12 +31,12 @@ glabel func_800AF4BC
 /* 05777C 800AF52C 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 057780 800AF530 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
 /* 057784 800AF534 8E02003C */  lw    $v0, 0x3c($s0)
-/* 057788 800AF538 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 057788 800AF538 3C01800E */ lui $at, %hi(D_800E09D0)
 /* 05778C 800AF53C 8C990000 */  lw    $t9, ($a0)
 /* 057790 800AF540 C4440078 */  lwc1  $f4, 0x78($v0)
 /* 057794 800AF544 00194080 */  sll   $t0, $t9, 2
 /* 057798 800AF548 00280821 */  addu  $at, $at, $t0
-/* 05779C 800AF54C C42009D0 */  lwc1  $f0, 0x9d0($at)
+/* 05779C 800AF54C C42009D0 */ lwc1 $f0, %lo(D_800E09D0)($at)
 /* 0577A0 800AF550 46002032 */  c.eq.s $f4, $f0
 /* 0577A4 800AF554 00000000 */  nop   
 /* 0577A8 800AF558 45030025 */  bc1tl .L800AF5F0_ovl1
@@ -56,12 +56,12 @@ glabel func_800AF4BC
 /* 0577DC 800AF58C 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 0577E0 800AF590 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
 /* 0577E4 800AF594 8E02003C */  lw    $v0, 0x3c($s0)
-/* 0577E8 800AF598 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0577E8 800AF598 3C01800E */ lui $at, %hi(D_800E09D0)
 /* 0577EC 800AF59C 8C8A0000 */  lw    $t2, ($a0)
 /* 0577F0 800AF5A0 C4460078 */  lwc1  $f6, 0x78($v0)
 /* 0577F4 800AF5A4 000A5880 */  sll   $t3, $t2, 2
 /* 0577F8 800AF5A8 002B0821 */  addu  $at, $at, $t3
-/* 0577FC 800AF5AC C42009D0 */  lwc1  $f0, 0x9d0($at)
+/* 0577FC 800AF5AC C42009D0 */ lwc1 $f0, %lo(D_800E09D0)($at)
 /* 057800 800AF5B0 46003032 */  c.eq.s $f6, $f0
 /* 057804 800AF5B4 00000000 */  nop   
 /* 057808 800AF5B8 4503000D */  bc1tl .L800AF5F0_ovl1
@@ -71,12 +71,12 @@ glabel func_800AF4BC
 /* 057818 800AF5C8 00000000 */   nop   
 /* 05781C 800AF5CC 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 057820 800AF5D0 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
-/* 057824 800AF5D4 3C05800E */ lui $a1, %hi(D_800E4F10)
+/* 057824 800AF5D4 3C05800E */ lui $a1, %hi(D_800E0B90)
 /* 057828 800AF5D8 8C8C0000 */  lw    $t4, ($a0)
 /* 05782C 800AF5DC 000C6880 */  sll   $t5, $t4, 2
 /* 057830 800AF5E0 00AD2821 */  addu  $a1, $a1, $t5
 /* 057834 800AF5E4 0C002FE8 */  jal   func_8000BFA0_ovl1
-/* 057838 800AF5E8 8CA50B90 */   lw    $a1, 0xb90($a1)
+/* 057838 800AF5E8 8CA50B90 */ lw $a1, %lo(D_800E0B90)($a1)
 /* 05783C 800AF5EC 8FAE0030 */  lw    $t6, 0x30($sp)
 .L800AF5F0_ovl1:
 /* 057840 800AF5F0 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005

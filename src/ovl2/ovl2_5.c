@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <macros.h>
+#include <PR/gbi.h>
 
 extern Gfx *gDisplayListHeads[4];
 
@@ -15,101 +16,56 @@ void func_800FDA40(Vtx *curVtx, f32 arg1, f32 arg2) {
 
 }
 
-#if 0
-void func_800FDAB8(Vtx* curVtx, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    Vtx* vtxList = curVtx += 4;
+void func_800FDAB8(Vtx *curVtx, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    f32 vtx_3_4_tmp_z;
+    Vtx *vtxList = curVtx += 4;
+    f32 vtx_1_2_tmp_v;
+    f32 arg4_tmp;
+
+    vtx_3_4_tmp_z = ((-40.0f) * arg3) + 20.0f;
+    arg4_tmp = arg4;
 
     (curVtx  )->v.ob[1] = arg2;
-    (curVtx  )->v.ob[2] = (-40.0f * arg4) + 20.0f;
-    (curVtx++)->v.tc[1] = 4032.0f * arg4;
+    (curVtx  )->v.ob[2] = ((-40.0f) * arg4_tmp) + 20.0f;
+    vtx_1_2_tmp_v = 4032.0f * arg4;
+    (curVtx++)->v.tc[1] = vtx_1_2_tmp_v;
+
     (curVtx  )->v.ob[1] = arg2;
-    (curVtx  )->v.ob[2] = (-40.0f * arg4) + 20.0f;
-    (curVtx++)->v.tc[1] = 4032.0f * arg4;
+    (curVtx  )->v.ob[2] = ((-40.0f) * arg4) + 20.0f;
+    (curVtx++)->v.tc[1] = vtx_1_2_tmp_v;
+
     (curVtx  )->v.ob[1] = arg1;
-    (curVtx  )->v.ob[2] = (-40.0f * arg3) + 20.0f;
+    (curVtx  )->v.ob[2] = vtx_3_4_tmp_z;
     (curVtx++)->v.tc[1] = 4032.0f * arg3;
+
     (curVtx  )->v.ob[1] = arg1;
-    (curVtx  )->v.ob[2] = (-40.0f * arg3) + 20.0f;
+    (curVtx  )->v.ob[2] = vtx_3_4_tmp_z;
     (curVtx++)->v.tc[1] = 4032.0f * arg3;
+
     gSPVertex(gDisplayListHeads[0]++, vtxList, 4, 0);
     gSP2Triangles(gDisplayListHeads[0]++, 2, 3, 1, 0x0, 0, 2, 1, 0x0);
 }
-// void func_800FDAB8(Vtx* curVtx, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-//     temp_v0 = arg0 + 0x40;
-//     temp_f6 = arg2;
-//     temp_a0 = temp_v0 + 0x30;
-//     temp_f18 = (-40.0f * arg4) + 20.0f;
-//     temp_v0->unk2 = temp_f6;
-//     temp_v0->unk12 = temp_f6;
-//     temp_f6_2 = 4032.0f * arg4;
-//     temp_v0->unk4 = temp_f18;
-//     temp_v0->unk14 = temp_f18;
-//     temp_v0->unkA = temp_f6_2;
-//     temp_v0->unk1A = temp_f6_2;
-//     temp_f10 = arg1;
-//     temp_f6_3 = (-40.0f * arg3) + 20.0f;
-//     temp_v0->unk22 = temp_f10;
-//     temp_f10_2 = 4032.0f * arg3;
-//     temp_v0->unk24 = temp_f6_3;
-//     temp_v0->unk2A = temp_f10_2;
-//     temp_a0->unk2 = temp_f10;
-//     temp_a0->unk4 = temp_f6_3;
-//     temp_a0->unkA = temp_f10_2;
-//     temp_a1 = *gDisplayListHeads;
-//     *gDisplayListHeads = temp_a1 + 8;
-//     temp_a1->words.w1 = temp_v0;
-//     temp_a1->words.w0 = 0x1004008;
-//     temp_a1_2 = *gDisplayListHeads;
-//     *gDisplayListHeads = temp_a1_2 + 8;
-//     temp_a1_2->words.w1 = 0x402;
-//     temp_a1_2->words.w0 = 0x6040602;
-//     return temp_v0;
-// }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDAB8.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_800FDBB0(void *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    Gfx *temp_a1;
-    Gfx *temp_a1_2;
-    Gfx *temp_a1_3;
-    f32 temp_f14;
-    s32 temp_f12;
-    s32 temp_f12_2;
-    s32 temp_f16;
-    s32 temp_f18;
-    s32 temp_f18_2;
+#ifdef NON_MATCHING
+void *func_800FDBB0(Vtx *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    Vtx *list = arg0 += 4;
 
-    temp_f18 = arg2;
-    temp_f14 = -40.0f * arg4;
-    arg0->unk2 = temp_f18;
-    arg0->unk12 = temp_f18;
-    temp_f12 = arg1;
-    arg0->unk22 = temp_f12;
-    temp_f18_2 = temp_f14 + 20.0f;
-    arg0->unk32 = temp_f12;
-    temp_f16 = 4032.0f * arg4;
-    temp_f12_2 = arg3;
-    arg0->unk44 = temp_f18_2;
-    arg0->unk54 = temp_f18_2;
-    arg0->unk4A = temp_f16;
-    arg0->unk5A = temp_f16;
-    arg0->unk42 = temp_f12_2;
-    arg0->unk52 = temp_f12_2;
-    temp_a1 = *gDisplayListHeads;
-    *gDisplayListHeads = temp_a1 + 8;
-    temp_a1->words.w0 = 0x100600C;
-    temp_a1->words.w1 = arg0;
-    temp_a1_2 = *gDisplayListHeads;
-    *gDisplayListHeads = temp_a1_2 + 8;
-    temp_a1_2->words.w0 = 0x604060A;
-    temp_a1_2->words.w1 = 0x8040A;
-    temp_a1_3 = *gDisplayListHeads;
-    *gDisplayListHeads = temp_a1_3 + 8;
-    temp_a1_3->words.w0 = 0x6080A02;
-    temp_a1_3->words.w1 = 0x802;
-    return arg0;
+    (list++)->v.ob[1] = arg2;
+    (list++)->v.ob[1] = arg2;
+    (list++)->v.ob[1] = arg1;
+    (list++)->v.ob[1] = arg1;
+
+    (list  )->v.ob[1] = arg3;
+    (list  )->v.ob[2] = (-40.0f * arg4) + 20.0f;
+    (list++)->v.tc[1] = 4032.0f * arg4;
+
+    (list  )->v.ob[1] = arg3;
+    (list  )->v.ob[2] = (-40.0f * arg4) + 20.0f;
+    (list++)->v.tc[1] = 4032.0f * arg4;
+
+    gSPVertex(gDisplayListHeads[0]++, arg0, 6, 0);
+    gSP2Triangles(gDisplayListHeads[0]++, 2, 3, 5, 0, 4, 2, 5, 0);
+    gSP2Triangles(gDisplayListHeads[0]++, 4, 5, 1, 0, 0, 4, 1, 0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FDBB0.s")

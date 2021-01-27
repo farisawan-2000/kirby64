@@ -372,18 +372,18 @@ void func_80023CB0_ovl1(u16);
 
 void func_800A7678(s32 arg0) {
     if (arg0 == 0x99999999) {
-        print_error_stub(&D_800D5CE0, arg0);
+        print_error_stub(&D_800D5CE0, arg0); // "use AllStopFGM macro.\n"
         return;
     }
     if (arg0 & 0x80000000) {
-        print_error_stub(&D_800D5CF8, arg0);
+        print_error_stub(&D_800D5CF8, arg0); // "use stopLoopSeml function.\n"
         return;
     }
     if (D_800C0040[arg0] >= 0) {
         func_80023CB0((u16)D_800C0040[arg0]);
         return;
     }
-    print_error_stub(&D_800D5D14, arg0);
+    print_error_stub(&D_800D5D14, arg0); // "Error: No Entry FGM Number: %d\n"
 }
 
 #ifdef MIPS_TO_C

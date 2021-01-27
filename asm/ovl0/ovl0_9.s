@@ -26,9 +26,10 @@ glabel func_800232AC
 /* 023EF0 800232F0 03E00008 */  jr    $ra
 /* 023EF4 800232F4 00000000 */   nop   
 
-glabel func_800232F8
 /* 023EF8 800232F8 00000000 */  nop   
-/* 023EFC 800232FC 00000000 */  nop   
+/* 023EFC 800232FC 00000000 */  nop
+
+glabel func_80023300
 /* 023F00 80023300 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 023F04 80023304 00A03825 */  move  $a3, $a1
 /* 023F08 80023308 AFBF0014 */  sw    $ra, 0x14($sp)
