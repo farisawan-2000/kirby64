@@ -5,18 +5,58 @@
 
 s32 osEPiLinkHandle(OSPiHandle *); // Should be in libultra headers, but not because they're an older version
 
-extern OSMesgQueue D_80048D70;
+// extern OSViMode gCurrentViMode; // 0x80048BF8
+// extern s32 D_80048C48; // 0x80048C48
+
+// bss file boundary? is ovl0.c really multiple files?
+
+// ovl0.c bss?
+// void *D_80048C50[3]; // 0x80048C50 // array based on use in func_80000A44
+// void *D_80048C5C; // 0x80048C5C
+// extern s32 D_80048C60; // 0x80048C60
+// extern s32 D_80048C64; // 0x80048C64
+// void *gCurrFrameBuffer; // 0x80048C68
+// extern s32 D_80048C6C; // 0x80048C6C
+// extern s32 D_80048C70; // 0x80048C70
+// extern s32 D_80048C74; // 0x80048C74
+// extern s32 D_80048C78; // 0x80048C78
+// extern s32 D_80048C7C; // 0x80048C7C
+// extern struct unkD_80048C80 { s32 D_80048C80; s32 unk4; } D_80048C80; // 0x80048C80
+// extern s32 D_80048C88; // 0x80048C88
+// extern s32 D_80048C8C; // 0x80048C8C
+// extern s32 D_80048C90; // 0x80048C90
+// 0x80048C94?
+// extern OSMesg D_80048C98[8]; // 0x80048C98
+// extern OSMesgQueue gInterruptMesgQueue; // 0x80048CB8
+// 0x80048CD0?
+// extern OSMesgQueue *D_80048CD4;
+// extern u32 D_80048CD8;
+extern u32 *D_80048CDC;
+// extern u32 D_80048CE0;
+// extern u32 D_80048CE4;
+
+// bss file boundary
+
+// ovl0.c second file bss?
+extern OSPiHandle *gRomHandle; // 0x80048CF0
+
+// some other file's bss (probably this one)
+
 extern OSMesg D_80048D6C;
+extern OSMesgQueue D_80048D70;
+extern u32 D_80048D88;
+extern void *D_80048D8C;
+extern u32 D_80048D90;
+extern u8* D_80048D94;
+extern u32 D_80048D98;
+extern u32 D_80048D9C;
+
+// end bss, followed by ovl0_2.c
 
 void func_80002BA0(void) {
     osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
 }
 
-extern u32 D_80048D90;
-extern void *D_80048D8C;
-extern u32 D_80048D88;
-extern u32 *D_80048CDC;
-extern OSPiHandle *gRomHandle;
 
 // an actual DMA copy
 void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 direction) {
@@ -463,10 +503,6 @@ loop_94:
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002FC0.s")
 #endif
-
-extern u32 D_80048D9C;
-extern u8* D_80048D94;
-extern u32 D_80048D98;
 
 void func_80003788(u32 arg0, u8* arg1, u32 arg2) {
     D_80048D9C = arg0;

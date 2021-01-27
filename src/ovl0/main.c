@@ -40,23 +40,23 @@ OSThread gMainThread;
  u64 mainThreadStack[MAIN_THREAD_STACK_LEN_U64];
 
 OSThread D_80047F50;
-u64 D_80048100[0x100]; // Stack for D_80047F50
+ u64 D_80048100[0x100]; // Stack for D_80047F50
 
-u8 D_80048900[0x100];
+u8 D_80048900[0x100]; // Boot ucode
 
 u8 gSPImemOkay;
 u8 gSPDmemOkay;
 OSMesg D_80048A04;
 OSMesgQueue D_80048A08;
 
-OSMesg D_80048A20[0x32];
-OSMesgQueue D_80048AE8;
+OSMesg piMesgBuffer[NUM_PI_MESSAGES];
+OSMesgQueue piMesgQueue;
 
 void *D_80048B00;
-u32 pad13[0x7A];
-OSPiHandle *gRomHandle;
-u8 pad_before_8F28[0x80048F28 - 0x80048CF0 - 0x08];
-u8 D_80048F28, D_80048F29, D_80048F2A, D_80048F2B;
+u32 pad13[0x7A]; // ovl0's bss
+OSPiHandle *gRomHandle; // in ovl0_1's bss?
+u8 pad_before_8F28[0x80048F28 - 0x80048CF0 - 0x08]; // ovl0_1 and ovl0_2 bss
+u8 D_80048F28, D_80048F29, D_80048F2A, D_80048F2B; // ovl0_2's bss
 
 
 OSThread *unused_get_main_thread(void) {
@@ -123,24 +123,24 @@ void thread5_main(UNUSED void *arg0) {
     osCreateViManager(0xFE);
     gRomHandle = osCartRomInit();
     func_80002EBC();
-    osCreatePiManager(0x96, &D_80048AE8, &D_80048A20[0], 0x32);
+    osCreatePiManager(OS_PRIORITY_PIMGR, &piMesgQueue, &piMesgBuffer[0], NUM_PI_MESSAGES);
     func_80002BA0();
     dma_read(0xB0000B70, D_80048900, 0x100); // copy function?
     check_sp_imem();
     check_sp_dmem();
     osCreateMesgQueue(&D_80048A08, &D_80048A04, 1);
 
-    osCreateThread(&D_80043040, 3, func_80002598, 0, &D_800431F0[0x80], 0x78);
+    osCreateThread(&D_80043040, 3, func_80002598, NULL, &D_800431F0[0x80], 120);
     SETUP_STACK_AND_START_THREAD(D_80043040, D_800431F0);
-    osRecvMesg(&D_80048A08, 0, 1);
+    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&D_800435F0, 4, func_8001FD64, 0, &D_800437A0[0xC0], 0x6E);
+    osCreateThread(&D_800435F0, 4, func_8001FD64, NULL, &D_800437A0[0xC0], 110);
     SETUP_STACK_AND_START_THREAD(D_800435F0, D_800437A0);
-    osRecvMesg(&D_80048A08, 0, 1);
+    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&D_80047F50, 6, func_800051E0, 0, &D_80048100[0x100], 0x73);
+    osCreateThread(&D_80047F50, 6, func_800051E0, NULL, &D_80048100[0x100], 115);
     SETUP_STACK_AND_START_THREAD(D_80047F50, D_80048100);
-    osRecvMesg(&D_80048A08, 0, 1);
+    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
     
     func_800076D0();
     dma_overlay_load(&mainSegOverlay);
@@ -149,7 +149,7 @@ void thread5_main(UNUSED void *arg0) {
 
 void thread1_idle(void *arg0) {
     crash_screen_start_thread();
-    osCreateThread(&gMainThread, (OSId) 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], (OSPri) 0x32);
+    osCreateThread(&gMainThread, 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
     mainThreadStack[7] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
         osStartThread(&gMainThread);
@@ -161,6 +161,6 @@ void thread1_idle(void *arg0) {
 void main(void) {
     gEntryStack[7] = STACK_TOP_MAGIC;
     osInitialize();
-    osCreateThread(&gIdleThread, 1, thread1_idle, &D_80048B00, &idleThreadStack[IDLE_THREAD_STACK_LEN_U64], 0x7F);
+    osCreateThread(&gIdleThread, 1, thread1_idle, &D_80048B00, &idleThreadStack[IDLE_THREAD_STACK_LEN_U64], OS_PRIORITY_APPMAX);
     SETUP_STACK_AND_START_THREAD(gIdleThread, idleThreadStack);
 }

@@ -5,7 +5,18 @@
 
 #include "ovl0_2_5.h"
 
+// bss
+
+extern u16 *gZBuffer; // 0x8004A500
 extern u32 D_8004A504;
+extern s32 gCurrScreenWidth; // 0x8004A508
+extern s32 gCurrScreenHeight; // 0x8004A50C
+extern u32 D_8004A510;
+extern u32 D_8004A514;
+extern u32 D_8004A518[];
+extern s16 D_8004A524, D_8004A526, D_8004A528, D_8004A52A;
+
+// end bss, followed by rdp_reset.c
 
 // takes a u32 color and either returns it
 // or packs it into an rgba16 value that gDPSetFillColor can use
@@ -15,8 +26,6 @@ u32 func_800078F0(u32 color) {
 
     return (D_8004A504 == 3) ? color : (temp_v0 << 16) | temp_v0;
 }
-
-extern u32 D_8004A518[];
 
 void func_80000980(void*);
 
@@ -37,11 +46,6 @@ void func_80007944(u32 arg0, u32 arg1, u32 arg2) {
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80007944.s")
 #endif
-
-extern s32 gCurrScreenWidth;
-extern s32 gCurrScreenHeight;
-extern u32 D_8004A510;
-extern u32 D_8004A514;
 
 void func_80007998(s32 arg0) {
     D_8004A510 |= arg0;
@@ -64,8 +68,6 @@ void func_800079FC(s32 arg0) {
     D_8004A514 = 1;
 }
 
-extern s16 D_8004A524, D_8004A526, D_8004A528, D_8004A52A;
-extern u32 D_8004A514;
 void func_80007A14(s16 arg0, s16 arg1, s16 arg2, s16 arg3) {
     D_8004A524 = arg0;
     D_8004A526 = arg1;
@@ -115,15 +117,14 @@ struct UnkStruct80007BA4 {
     u32 unk0;
     u32 unk4;
     u32 unk8;
-    u32 fb;
+    u32 zb;
     u32 unk10;
     u32 unk14;
     u32 unk18;
 };
-extern void **gZBuffer;
 
 void func_80007BA4(struct UnkStruct80007BA4 *arg0) {
     func_80007944(arg0->unk0, arg0->unk4, arg0->unk8);
-    gZBuffer = (s32) arg0->fb;
+    gZBuffer = (u16*) arg0->zb;
     func_80007B38(arg0->unk10, arg0->unk14, arg0->unk18);
 }

@@ -795,6 +795,9 @@ func_A4000AC4:
 /* 000B28 A4000B68 00000000 */  nop   
 nop
 
-# 0xA4000B70-0xA4000FFF: IPL3 Font
+# 0xA4000B70-0xA4000BEF: RSP Boot Ucode
+glabel rspboot
+.incbin "bin/rspboot.bin"
+# 0xA4000BF0-0xA4000FFF: IPL3 Font?
 glabel ipl3_font
 .incbin "bin/ipl3font.bin"

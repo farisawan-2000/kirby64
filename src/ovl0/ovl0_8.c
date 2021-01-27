@@ -382,7 +382,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80021D34.s")
 extern u16 *osViGetCurrentFramebuffer(void);
 
 extern s32 gCurrScreenWidth;
-extern s32 D_8004A508;
 #ifdef MIPS_TO_C
 void crash_screen_draw_glyph(s32 x, s32 y, s32 glyph) {
     u32 *data;
