@@ -2,7 +2,7 @@
 #define _MACROS_H_
 
 
-#ifndef __sgi
+#if !defined(__sgi) || defined(__CTX__)
 #define GLOBAL_ASM(...)
 #endif
 

@@ -24,6 +24,11 @@ struct ObjStack {
 //     s32 unk1BC;
 // };
 
+struct UnkStruct800009E8 {
+    u32 unk0;
+    OSMesgQueue *unk4;
+};
+
 struct DynamicBuffer {
     u32 id;
     void *poolStart;
@@ -179,6 +184,27 @@ struct Camera {
     u8 filler[0x80 - 0x4];
     u32 unk80;
     u32 unk84;
+};
+
+struct Unk80005A98_2 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    OSMesgQueue *unk20;
+    u32 unk24;
+    OSTask task;
+    u32 unk68;
+    u32 unk6C;
+    u32 unk70;
+    u32 unk74;
+    u32 unk78;
+    u32 unk7C;
+    u32 unk80;
 };
 
 // Definitely a DObj

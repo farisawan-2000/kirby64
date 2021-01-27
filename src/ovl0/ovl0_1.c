@@ -3,33 +3,44 @@
 #include "PR/os_pi.h"
 #include "main.h"
 
-s32 osEPiLinkHandle(OSPiHandle *); // Should be in libultra headers, but not because they're an older version
+void fatal_printf(const char *arg0, ...);
 
-extern OSMesgQueue D_80048D70;
-extern OSMesg D_80048D6C;
+// actual externs
+extern u32 *D_80048CDC;
+
+// bss
+
+OSPiHandle *gRomHandle; // 0x80048CF0
+// 0x80048CF4?
+OSPiHandle D_80048CF8; // 0x74 bytes
+OSMesg D_80048D6C;
+OSMesgQueue D_80048D70;
+u32 D_80048D88;
+void *D_80048D8C;
+u32 D_80048D90;
+u8* D_80048D94;
+u32 D_80048D98;
+u32 D_80048D9C;
+
+// end bss, followed by ovl0_2.c
 
 void func_80002BA0(void) {
     osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
 }
 
-extern u32 D_80048D90;
-extern void *D_80048D8C;
-extern u32 D_80048D88;
-extern u32 *D_80048CDC;
-extern OSPiHandle *gRomHandle;
 
 // an actual DMA copy
 void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 direction) {
-    u32 pad;
+    UNUSED u32 pad;
     OSIoMesg sp48;
 
     D_80048D88 = physAddr;
     D_80048D8C = (void*)vAddr;
     D_80048D90 = size;
     if (direction == OS_WRITE) {
-        osWritebackDCache(vAddr, size);
+        osWritebackDCache((void*)vAddr, size);
     } else {
-        osInvalDCache(vAddr, size);
+        osInvalDCache((void*)vAddr, size);
     }
     sp48.hdr.pri = 0;
     sp48.hdr.retQueue = &D_80048D70;
@@ -67,7 +78,7 @@ void dma_overlay_load(struct Overlay *ovl) {
         osInvalDCache((void*)(s32) ovl->dataStart, (s32) ovl->dataEnd - (s32) ovl->dataStart);
     }
     if ((u32) ovl->endAddr - (u32) ovl->startAddr != 0) {
-        dma_copy(gRomHandle, ovl->startAddr, ovl->RAMStart, (u32) ovl->endAddr - (u32) ovl->startAddr, 0);
+        dma_copy(gRomHandle, (u32) ovl->startAddr, (u32) ovl->RAMStart, (u32) ovl->endAddr - (u32) ovl->startAddr, 0);
     }
     
     if ((s32) ovl->bssEnd - (s32) ovl->bssStart != 0) {
@@ -82,8 +93,6 @@ void dma_read(u32 physAddr, void *vAddr, u32 size) {
 void dma_write(void *vAddr, u32 physAddr, u32 size) {
     dma_copy(gRomHandle, physAddr, (u32)vAddr, size, OS_WRITE);
 }
-extern OSPiHandle D_80048CF8;
-extern u32 *D_80048D0C; // another PI Handle?
 
 OSPiHandle *func_80002EBC(void) {
     if (D_80048CF8.baseAddress == 0xA8000000) {
@@ -97,7 +106,7 @@ OSPiHandle *func_80002EBC(void) {
     D_80048CF8.relDuration = (u8)2;
     D_80048CF8.domain = (u8)1;
     D_80048CF8.speed = 0;
-    bzero(&D_80048D0C, 0x60);
+    bzero(&D_80048CF8.transferInfo, sizeof(__OSTranxInfo));
     osEPiLinkHandle(&D_80048CF8);
     return &D_80048CF8;
 }
@@ -464,10 +473,6 @@ loop_94:
 GLOBAL_ASM("asm/non_matchings/ovl0_1/func_80002FC0.s")
 #endif
 
-extern u32 D_80048D9C;
-extern u8* D_80048D94;
-extern u32 D_80048D98;
-
 void func_80003788(u32 arg0, u8* arg1, u32 arg2) {
     D_80048D9C = arg0;
     D_80048D94 = arg1;
@@ -482,7 +487,7 @@ void func_800037A4(void) {
 
 void func_800037F0(u32 arg0, u32 arg1, u8* arg2, u32 arg3) {
     func_80003788(arg0, arg2, arg3);
-    func_80002FC0(arg2, arg3, (void*) func_800037A4, arg1);
+    func_80002FC0(arg2, arg3, func_800037A4, arg1);
 }
 
 void func_80003838(u32 arg0, u32 arg1) {

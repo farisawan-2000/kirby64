@@ -5,15 +5,12 @@
 
 #include "ovl0_2_5.h"
 #include "ovl0_3.h"
+#include "ovl0_4.h"
 #include "main.h" 
 #include "D_8004A7C4.h"
 
 extern void func_80000A44(void);
 extern void fatal_printf(const char *fmt, ...);
-
-extern struct ObjThread *gGObjThreadHead;
-extern u8 D_80040230[];
-extern u32 D_8004A544;
 
 s32 D_8003DE50 = 10000000;
 
@@ -51,6 +48,78 @@ f32 D_8003DEF4[4] = {
     0.0f, 1.0f, 1.0f, 1.0f
 };
 
+// rodata
+
+extern const char D_80040230[];
+extern const char D_80040250[];
+extern const char D_80040274[];
+extern const char D_80040294[];
+extern const char D_800402B0[];
+extern const char D_800402C8[];
+extern const char D_800402E0[];
+extern const char D_800402F8[];
+extern const char D_80040314[];
+extern const char D_80040340[];
+extern const char D_80040368[];
+extern const char D_80040394[];
+extern const char D_800403B8[];
+extern const char D_800403DC[];
+extern const char D_80040414[];
+extern const char D_8004044C[];
+extern const char D_80040490[];
+extern const char D_800404CC[];
+extern const char D_80040670[];
+
+// end rodata
+
+// bss
+
+struct ObjThread *gGObjThreadHead; // 0x8004A540
+u32 D_8004A544;
+u32 D_8004A548;
+u32 gNewEntityStackSize; // 0x8004A54C
+void (*D_8004A550)(struct ObjStack *);
+struct ObjThreadStack* gGObjThreadStackHead; // 0x8004A554
+s32 D_8004A558;
+struct ObjProcess* gObjectProcessMaybe; // 0x8004A55C
+struct ObjThreadStack* D_8004A560[4]; // probably length 4
+u32 D_8004A570;
+// 0x8004A574?
+struct UnkStruct8004A578 *D_8004A578[32]; // probably length 32 based on loop asm
+void* D_8004A5F8[32]; // also length 32? lines up with next symbol
+struct UnkStruct8004A7C4 *D_8004A678;
+// 0x8004A67C? file boundary?
+struct UnkStruct8004A7C4* D_8004A680[33]; // length 33?
+struct UnkStruct8004A7C4* D_8004A708[33]; // length 33?
+u32 D_8004A78C;
+void** D_8004A790;
+u32 D_8004A794;
+void (*D_8004A798)();
+struct AnimStack *D_8004A79C;
+u32 D_8004A7A0;
+struct MObj* D_8004A7A4;
+u32 D_8004A7A8;
+struct DObj* D_8004A7AC;
+u32 D_8004A7B0;
+u32 D_8004A7B4;
+u32 D_8004A7B8;
+struct Camera* D_8004A7BC;
+u32 D_8004A7C0;
+struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
+struct ObjThreadStack *D_8004A7D0;
+s32 D_8004A7D4;
+OSMesg D_8004A7D8;
+// 0x8004A7DC?
+OSMesgQueue D_8004A7E0;
+struct UnkStruct8004A7F8 D_8004A7F8[32]; // length 32 based on loop asm in func_8000AAE0 (unrolled)
+static u32 pad1, pad2, pad3, pad4, pad5, pad6; // 0x8004AA78 - 0x8004AA8F?
+
+// end bss
+
+extern struct UnkStruct8004A7C4 *D_800DE44C;
+
+
+
 struct ObjThread *get_gobj_thread(void) {
     struct ObjThread *ret;
     if (gGObjThreadHead == NULL) {
@@ -69,15 +138,11 @@ void func_80007FB8(struct ObjThread *arg0) {
     D_8004A544--;
 }
 
-extern struct ObjThreadStack* gGObjThreadStackHead;
-extern u32 D_8004A548;
-extern u8 D_80040250[];
-
 struct ObjThreadStack *get_gobj_thread_stack(void) {
     struct ObjThreadStack *temp_v0;
 
     if (gGObjThreadStackHead == NULL) {
-        fatal_printf(&D_80040250); // om : couldn't get GObjThreadStack
+        fatal_printf(D_80040250); // om : couldn't get GObjThreadStack
         while (TRUE);
     }
     temp_v0 = gGObjThreadStackHead;
@@ -92,15 +157,11 @@ void push_gobj_thread_stack(struct ObjThreadStack *arg0) {
     D_8004A548--;
 }
 
-extern struct ObjProcess* gObjectProcessMaybe;
-extern u32 D_8004A570;
-extern u8 D_80040274[];
-
 struct ObjProcess *get_gobj_process(void) {
     struct ObjProcess *temp_v0;
 
     if (gObjectProcessMaybe == NULL) {
-        fatal_printf(&D_80040274); // om : couldn't get GObjProcess
+        fatal_printf(D_80040274); // om : couldn't get GObjProcess
         while (TRUE);
     }
     temp_v0 = gObjectProcessMaybe;
@@ -196,8 +257,6 @@ void push_gobj_process(struct ObjProcess *arg0) {
     D_8004A570--;
 }
 
-extern struct ObjThreadStack* D_8004A560[];
-
 void func_800081C4(struct ObjThreadStack *arg0) {
     if (arg0->unkC != 0) {
         arg0->unkC->unk8 = arg0->unk8;
@@ -225,8 +284,6 @@ void *func_80008210(struct ObjThreadStack *arg0) {
         sp1C->unk1C = arg0->unk4;
     }
 }
-
-extern struct ObjThreadStack *D_8004A7D0;
 
 struct ObjThreadStack *func_80008280(void) {
     return D_8004A7D0;
@@ -256,15 +313,10 @@ s32 func_800082D4(struct ObjThreadStack *arg0) {
     return 0;
 }
 
-extern s32 D_8004A558;
-
 // Unused?
 void func_8000831C(s32 arg0) {
     D_8004A558 = arg0;
 }
-
-extern struct UnkStruct8004A7C4 *D_8004A678;
-extern u32 D_8004A78C;
 
 // Unused?
 s32 func_80008328(void) {
@@ -300,9 +352,6 @@ void push_gobj(struct UnkStruct8004A7C4 *arg0) {
     D_8004A678 = arg0;
     D_8004A78C--;
 }
-
-struct UnkStruct8004A578 *D_8004A578[];
-extern void* D_8004A5F8[];
 
 void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     void *temp_v0;
@@ -361,9 +410,6 @@ void func_80008528(struct UnkStruct8004A7C4 *arg0) {
     D_8004A5F8[arg0->unkC] = arg0->unk8;
 }
 
-extern struct UnkStruct8004A7C4* D_8004A680[];
-extern struct UnkStruct8004A7C4* D_8004A708[];
-
 void func_80008590(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
     arg0->unk24 = arg1;
     if (arg1 != 0) {
@@ -419,17 +465,12 @@ void func_800086EC(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-// TODO: Determine types
-extern void** D_8004A790;
-extern u32 D_8004A794;
-extern u8 D_80040294[];
-
 // Another potential pop
 void *object_manager_get_om_mtx(void) {
     void *temp_v0;
 
     if (D_8004A790 == 0) {
-        fatal_printf(&D_80040294); // om : couldn't get OMMtx
+        fatal_printf(D_80040294); // om : couldn't get OMMtx
         while (TRUE);
     }
     temp_v0 = D_8004A790;
@@ -445,16 +486,12 @@ void *func_800087AC(void **arg0) {
     D_8004A794--;
 }
 
-extern struct AnimStack *D_8004A79C;
-extern const char *D_800402B0;
-extern u32 D_8004A7A0;
-
 // pops the top of D_8004A79C?
 struct AnimStack *object_manager_get_animstack(void) {
     struct AnimStack *toReturn;
 
     if (D_8004A79C == 0) {
-        fatal_printf(&D_800402B0); // om : couldn't get AObj
+        fatal_printf(D_800402B0); // om : couldn't get AObj
         while (TRUE);
     }
     toReturn = D_8004A79C;
@@ -486,10 +523,6 @@ void func_80008860(struct AnimStack *arg0) {
     D_8004A79C = arg0;
 }
 
-extern struct MObj* D_8004A7A4;
-extern u32 D_8004A7A8;
-extern u8 D_800402C8[];
-
 // Another potential pop
 struct MObj* object_manager_get_m_obj(void) {
     struct MObj *temp_v0;
@@ -511,16 +544,12 @@ void func_800088E4(struct MObj *arg0) {
     D_8004A7A8--;
 }
 
-extern struct DObj* D_8004A7AC;
-extern u32 D_8004A7B0;
-extern u8 D_800402E0[];
-
 // Another potential pop
 struct DObj *object_manager_get_d_obj(void) {
     struct DObj *temp_v0;
 
     if (D_8004A7AC == 0) {
-        fatal_printf(&D_800402E0); // om : couldn't get DObj
+        fatal_printf(D_800402E0); // om : couldn't get DObj
         while (TRUE);
     }
     temp_v0 = D_8004A7AC;
@@ -536,17 +565,12 @@ void func_80008968(struct DObj *arg0) {
     D_8004A7B0--;
 }
 
-// TODO: Determine types
-extern struct Camera* D_8004A7BC;
-extern u32 D_8004A7C0;
-extern u8 D_800402F8[];
-
 // Another potential pop
 struct Camera *func_80008994(void) {
     struct Camera *temp_v0;
 
     if (D_8004A7BC == 0) {
-        fatal_printf(&D_800402F8); // om : couldn't get Camera
+        fatal_printf(D_800402F8); // om : couldn't get Camera
         while (TRUE);
     }
     temp_v0 = D_8004A7BC;
@@ -561,10 +585,6 @@ void func_800089EC(struct Camera *arg0) {
     D_8004A7BC = arg0;
     D_8004A7C0--;
 }
-
-extern u8 D_80040314[];
-extern u8 D_80040340[];
-extern u32 gNewEntityStackSize;
 
 struct ObjThread *get_gobj_thread();
 void func_800080C0(struct ObjProcess *);
@@ -610,8 +630,6 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
     func_800080C0(oProcess);
     return oProcess;
 }
-
-extern u8 D_80040368[];
 
 // a somewhat more granular version of func_80008A18
 #ifdef NON_MATCHING
@@ -663,8 +681,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
 #endif
 
 
-extern void (*D_8004A550)(struct ObjStack *);
-extern s32 D_8004A7D4;
 void func_8000B6BC(s32 arg);
 
 void func_80008DA8(struct ObjThreadStack *arg0) {
@@ -1295,12 +1311,11 @@ loop_5:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 #endif
 
-extern const char D_800403DC[];
 struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
     struct UnkStruct8004A7C4 *toReturn;
 
     if (link >= 0x20) {
-        fatal_printf(&D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
+        fatal_printf(D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
         while (1);
     }
     toReturn = get_gobj();
@@ -1629,7 +1644,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A830.s")
 #endif
 
 
-extern const char D_80040490[];
 void func_8000A888(struct UnkStruct8004A7C4 *arg0, u8 link, struct UnkStruct8004A7C4 *arg2) {
     if (link >= 0x20) {
         fatal_printf(&D_80040490, link, arg0->objId); // "omGMoveObjDL() : dl_link num over : dl_link = %d : id = %d\n"
@@ -1641,11 +1655,10 @@ void func_8000A888(struct UnkStruct8004A7C4 *arg0, u8 link, struct UnkStruct8004
     func_800085F8(arg0);
 }
 
-extern const char *D_800404CC;
 void func_8000A904(struct UnkStruct8004A7C4 *arg0, u8 link, struct UnkStruct8004A7C4 *arg2) {
 
     if (link >= 0x20) {
-        fatal_printf(&D_800404CC, link, arg0->objId); // "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d\n"
+        fatal_printf(D_800404CC, link, arg0->objId); // "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d\n"
         while (1);
     }
     func_800086EC(arg0);
@@ -2420,12 +2433,10 @@ void func_8000B6B4(s32 arg0) {
 
 extern struct ObjThreadStack *D_8004A7D0;
 #include <PR/os_message.h>
-extern OSMesgQueue *D_8004A7E0;
-extern const char D_80040670[];
 
 void func_8000B6BC(s32 arg) {
     if (D_8004A7D0->objThread->objStack->stack[7] != STACK_TOP_MAGIC) {
-        fatal_printf(&D_80040670, D_8004A7D0->unk18->objId); // "gobjthread stack over  gobjid = %d\n"
+        fatal_printf(D_80040670, D_8004A7D0->unk18->objId); // "gobjthread stack over  gobjid = %d\n"
     }
 
     while (arg != 0) {

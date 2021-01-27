@@ -3,77 +3,6 @@
 #include <types.h>
 #include "ovl0_2_5.h"
 
-#ifdef MIPS_TO_C
-void *func_80003DC0(void) {
-    s32 temp_v0;
-    s32 temp_v1;
-    s8 temp_a1;
-    void *temp_a2;
-    void *temp_t2;
-    void *phi_a0;
-    void *phi_a2;
-    s32 phi_v0;
-    s32 phi_v0_2;
-    void *phi_a2_2;
-    void *phi_return;
-
-    temp_v1 = D_80048E98;
-    phi_v0_2 = 0;
-    phi_return = 0;
-    if (temp_v1 > 0) {
-        phi_a0 = &D_80048E9C;
-        phi_a2 = &D_80048F20;
-        phi_v0 = 0;
-loop_2:
-        temp_a1 = *phi_a0;
-        temp_v0 = phi_v0 + 1;
-        if ((&gControllers + (temp_a1 << 5))->unk1C == 0) {
-            temp_t2 = &D_80048F20 + (temp_a1 * 0xA);
-            phi_a2->unk0 = (unaligned s32) temp_t2->unk0;
-            phi_a2->unk4 = (unaligned s32) temp_t2->unk4;
-            phi_a2->unk8 = temp_t2->unk8;
-        } else {
-            phi_a2->unk9 = 0;
-            phi_a2->unk4 = 0;
-            phi_a2->unk6 = 0;
-            phi_a2->unk2 = 0;
-            phi_a2->unk0 = 0;
-            phi_a2->unk8 = phi_a2->unk9;
-        }
-        phi_a0 = phi_a0 + 1;
-        phi_a2 = phi_a2 + 0xA;
-        phi_v0 = temp_v0;
-        phi_v0_2 = temp_v0;
-        phi_return = temp_v0;
-        if (temp_v0 < temp_v1) {
-            goto loop_2;
-        }
-    }
-    if (phi_v0_2 < 4) {
-        phi_a2_2 = (((phi_v0_2 * 4) + phi_v0_2) * 2) + &D_80048F20;
-loop_8:
-        phi_a2_2->unk9 = 0;
-        temp_a2 = phi_a2_2 + 0xA;
-        temp_a2->unk-6 = 0;
-        temp_a2->unk-4 = 0;
-        temp_a2->unk-8 = 0;
-        temp_a2->unk-A = 0;
-        temp_a2->unk-2 = phi_a2_2->unk9;
-        phi_a2_2 = temp_a2;
-        phi_return = &D_80048F48;
-        if (temp_a2 < &D_80048F48) {
-            goto loop_8;
-        }
-    }
-    return phi_return;
-}
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80003DC0.s")
-#endif
-
-extern OSContStatus sControllerStatuses[MAXCONTROLLERS];
-extern OSMesgQueue *sSIMesgQueue;
-
 struct Controller {
     u16 buttonHeld;
     u16 buttonPressed;
@@ -91,9 +20,110 @@ struct Controller {
     u8 status;
 };
 
-extern OSPfs sPakDevices[MAXCONTROLLERS];
+struct UnkStruct80048F60 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+};
 
-extern struct Controller gControllers[MAXCONTROLLERS];
+struct UnkStruct80048FC0 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    u32 unk3C;
+    u32 unk40;
+};
+
+struct UnkStruct800490D0 {
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    s8 unk10;
+    s8 unk11;
+    s8 unk12;
+    s8 unk13;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+};
+
+// bss
+
+OSMesgQueue sSIMesgQueue; // 0x80048DA0
+OSMesg D_80048DB8; // 0x80048DB8
+// 0x80048DBC? bss file boundary? lines up with function alignment
+struct UnkStruct800009E8 D_80048DC0;
+OSMesg D_80048DC8[7];
+// 0x80048DE4?
+OSMesgQueue D_80048DE8;
+OSMesg D_80048E00[4];
+OSMesgQueue D_80048E10;
+OSMesg D_80048E28[4];
+OSMesgQueue D_80048E38;
+OSMesg D_80048E50;
+// 0x80048E54?
+OSMesgQueue D_80048E58;
+OSContStatus sControllerStatuses[MAXCONTROLLERS]; // 0x80048E70
+OSContPad sContPads[MAXCONTROLLERS]; // 0x80048E80
+s32 D_80048E98; // num controllers? // 0x80048E98
+s8 D_80048E9C[MAXCONTROLLERS]; // 0x80048E9C
+struct Controller gControllers[MAXCONTROLLERS]; // 0x80048EA0
+Controller_800D6FE8 D_80048F20[MAXCONTROLLERS]; // 0x80048F20
+s32 D_80048F48; // 0x80048F48
+s32 D_80048F4C; // 0x80048F4C
+s32 D_80048F50; // 0x80048F50
+s32 D_80048F54; // 0x80048F54
+s32 D_80048F58; // 0x80048F58
+// 0x80048F5C? bss file boundary? lines up with function alignment
+struct UnkStruct80048F60 D_80048F60[4]; // 4 * 0x18
+struct UnkStruct80048FC0 D_80048FC0[4]; // 4 * 0x44
+struct UnkStruct800490D0 D_800490D0; // 0x20
+OSPfs sPakDevices[MAXCONTROLLERS]; // 0x800490F0
+
+// end bss, followed by ovl0_2_5.c
+
+void func_80003DC0(void) {
+    s32 port;
+
+    for (port = 0; port < D_80048E98; port++)
+    {
+        if (gControllers[D_80048E9C[port]].errno == 0) {
+            D_80048F20[port] = D_80048F20[D_80048E9C[port]];
+        } else {
+            D_80048F20[port].stickY = 0;
+            D_80048F20[port].buttonHeldLong = 0;
+            D_80048F20[port].buttonReleased = 0;
+            D_80048F20[port].buttonPressed = 0;
+            D_80048F20[port].buttonHeld = 0;
+            D_80048F20[port].stickX = D_80048F20[port].stickY;
+        }
+    }
+    for (; port < MAXCONTROLLERS; port++)
+    {
+        D_80048F20[port].buttonHeldLong = 0;
+        D_80048F20[port].buttonReleased = 0;
+        D_80048F20[port].buttonPressed = 0;
+        D_80048F20[port].buttonHeld = 0;
+        D_80048F20[port].stickX = D_80048F20[port].stickY = 0;
+    }
+}
+
 
 void query_controllers(void) {
     s32 port;
@@ -112,10 +142,6 @@ void query_controllers(void) {
         gControllers[port].status = sControllerStatuses[port].status;
     }
 }
-
-extern OSContPad sContPads[MAXCONTROLLERS];
-
-extern s32 D_80048F48;
 
 void read_controller_input(void) {
     s32 i;
@@ -155,8 +181,6 @@ void read_controller_input(void) {
     D_80048F48 = 1;
 }
 
-Controller_800D6FE8 D_80048F20[MAXCONTROLLERS];
-
 void func_800041A0() {
     s32 i = 0;
 
@@ -187,140 +211,96 @@ void func_800041A0() {
     D_80048F48 = 0;
 }
 
-#ifdef MIPS_TO_C
-void *func_80004250(void) {
-    ? sp43;
-    s32 temp_s0;
-    s32 temp_s0_2;
-    s32 temp_s0_3;
-    s32 temp_v0_4;
-    s32 temp_v0_5;
-    s32 temp_v0_6;
-    s32 temp_v0_7;
-    void *temp_a1;
-    void *temp_v0;
-    void *temp_v0_2;
-    void *temp_v0_3;
-    void *temp_v1;
-    void *phi_s1;
+// might be a file boundary here based on bss
+
+#ifdef a
+s32 *func_80004250(void) {
+    u8 sp43;
     s32 phi_s0;
     s32 phi_s0_2;
-    void *phi_v0;
     s32 phi_s0_3;
-    void *phi_v0_2;
-    void *phi_v0_3;
-    void *phi_v1;
-    void *phi_a1;
-    void *phi_s1_2;
+    s32 i,j;
 
     osCreateMesgQueue(&sSIMesgQueue, &D_80048DB8, 1);
-    osSetEventMesg(OS_EVENT_SI, &sSIMesgQueue, 1);
-    osContInit(&sSIMesgQueue, &sp43);
-    phi_s1 = &sControllerStatuses;
-    phi_s0 = 0;
-loop_1:
-    if ((phi_s1->unk2 & 1) != 0) {
-        osMotorInit(&sSIMesgQueue, &sPakDevices + (phi_s0 * 0x68), phi_s0);
+    osSetEventMesg(5, &sSIMesgQueue, 1);
+    osContInit(&sSIMesgQueue, &sp43, sControllerStatuses);
+    for (phi_s0 = 0; phi_s0 < MAXCONTROLLERS; phi_s0++)
+    {
+        if ((sControllerStatuses[phi_s0].status & 1) != 0) {
+            osMotorInit(&sSIMesgQueue, &sPakDevices[phi_s0], phi_s0);
+        }
     }
-    temp_s0 = phi_s0 + 1;
-    phi_s1 = phi_s1 + 4;
-    phi_s0 = temp_s0;
-    if (temp_s0 < 4) {
-        goto loop_1;
-    }
+
     osCreateMesgQueue(&D_80048E10, &D_80048E00, 4);
-    phi_s0_2 = 0;
-    phi_v0 = &D_80048F60;
-loop_5:
-    phi_v0->unk8 = phi_s0_2;
-    temp_s0_2 = phi_s0_2 + 1;
-    temp_v0 = phi_v0 + 0x18;
-    temp_v0->unk-18 = 0;
-    temp_v0->unk-14 = 5;
-    temp_v0->unk-C = &D_80048E10;
-    phi_s0_2 = temp_s0_2;
-    phi_v0 = temp_v0;
-    if (temp_s0_2 < 4) {
-        goto loop_5;
+    for (phi_s0_2 = 0; phi_s0_2 < MAXCONTROLLERS; phi_s0_2++)
+    {
+        D_80048F60[phi_s0_2].unk8 = phi_s0_2;
+        D_80048F60[phi_s0_2].unk0 = 0;
+        D_80048F60[phi_s0_2].unk4 = 5;
+        D_80048F60[phi_s0_2].unkC = &D_80048E10;
+        // needs members to result in 0x18 in struct size
     }
+
     osCreateMesgQueue(&D_80048E38, &D_80048E28, 4);
-    phi_s0_3 = 0;
-    phi_v0_2 = &D_80048FC0;
-loop_7:
-    phi_v0_2->unk8 = phi_s0_3;
-    temp_s0_3 = phi_s0_3 + 1;
-    temp_v0_2 = phi_v0_2 + 0x44;
-    temp_v0_2->unk-44 = 0;
-    temp_v0_2->unk-40 = 0xA;
-    temp_v0_2->unk-38 = &D_80048E38;
-    phi_s0_3 = temp_s0_3;
-    phi_v0_2 = temp_v0_2;
-    if (temp_s0_3 < 4) {
-        goto loop_7;
+    for (phi_s0_3 = 0; phi_s0_3 < MAXCONTROLLERS; phi_s0_3++)
+    {
+        D_80048FC0[phi_s0_3].unk8 = phi_s0_3;
+        D_80048FC0[phi_s0_3].unk0 = 0;
+        D_80048FC0[phi_s0_3].unk4 = 0xA;
+        D_80048FC0[phi_s0_3].unkC = &D_80048E38;
+        // needs members to result in 0x44 in struct size
     }
+
     osCreateMesgQueue(&D_80048E58, &D_80048E50, 1);
     D_800490D0.unk0 = 0;
     D_800490D0.unk4 = 0xB;
-    D_800490D0.unk8 = temp_s0_3;
+    D_800490D0.unk8 = phi_s0_3;
     D_800490D0.unkC = &D_80048E58;
-    phi_v0_3 = &gControllers;
-    phi_v1 = &D_80048F20;
-    phi_a1 = &sContPads;
-    phi_s1_2 = &sControllerStatuses;
-loop_9:
-    phi_v0_3->unkF = 0;
-    phi_v1->unk9 = 0;
-    temp_v1 = phi_v1 + 0xA;
-    temp_a1 = phi_a1 + 6;
-    temp_v0_3 = phi_v0_3 + 0x20;
-    temp_a1->unk-6 = 0;
-    temp_v0_3->unk-1A = 0;
-    temp_v0_3->unk-1E = 0;
-    temp_v0_3->unk-20 = 0;
-    temp_v0_3->unk-8 = 0x1E;
-    temp_v0_3->unk-10 = 0x1E;
-    temp_v0_3->unk-C = 5;
-    temp_v1->unk-6 = 0;
-    temp_v1->unk-8 = 0;
-    temp_v1->unk-A = 0;
-    temp_v0_3->unk-12 = phi_v0_3->unkF;
-    temp_v0_3->unk-4 = phi_s1_2->unk3;
-    temp_v0_3->unk-3 = phi_s1_2->unk2;
-    temp_v1->unk-2 = phi_v1->unk9;
-    phi_v0_3 = temp_v0_3;
-    phi_v1 = temp_v1;
-    phi_a1 = temp_a1;
-    phi_s1_2 = phi_s1_2 + 4;
-    if (temp_v1 < &D_80048F48) {
-        goto loop_9;
+    // seems to be 0x20 in size
+
+    for (i = 0; i < MAXCONTROLLERS; i++)
+    {
+        gControllers[i].stick_y = 0;
+        D_80048F20[i].stickY = 0;
+        sContPads[i].button = 0;
+        gControllers[i].buttonHeldLong = 0;
+        gControllers[i].buttonPressed = 0;
+        gControllers[i].buttonHeld = 0;
+        gControllers[i].unk18 = 30;
+        gControllers[i].unk10 = 30;
+        gControllers[i].unk14 = 5;
+        D_80048F20[i].buttonHeldLong = 0;
+        D_80048F20[i].buttonPressed = 0;
+        D_80048F20[i].buttonHeld = 0;
+        gControllers[i].stick_x = gControllers[i].stick_y;
+        gControllers[i].errno = sControllerStatuses[i].errno;
+        gControllers[i].status = sControllerStatuses[i].status;
+        D_80048F20[i].stickX = D_80048F20[i].stickY;
     }
+
     D_80048E98 = 0;
-    D_80048E9C = -1;
-    if (D_80048EBC == 0) {
-        temp_v0_4 = D_80048E98;
-        *(&D_80048E9C + temp_v0_4) = 0;
-        D_80048E98 = temp_v0_4 + 1;
+    D_80048E9C[0] = -1;
+    if (gControllers[0].errno == 0) {
+        D_80048E9C[D_80048E98] = 0;
+        D_80048E98++;
     }
-    D_80048E9D = -1;
-    if (D_80048EDC == 0) {
-        temp_v0_5 = D_80048E98;
-        *(&D_80048E9C + temp_v0_5) = 1;
-        D_80048E98 = temp_v0_5 + 1;
+    D_80048E9C[1] = -1;
+    if (gControllers[1].errno == 0) {
+        D_80048E9C[D_80048E98] = 1;
+        D_80048E98++;
     }
-    D_80048E9E = -1;
-    if (D_80048EFC == 0) {
-        temp_v0_6 = D_80048E98;
-        *(&D_80048E9C + temp_v0_6) = 2;
-        D_80048E98 = temp_v0_6 + 1;
+    D_80048E9C[2] = -1;
+    if (gControllers[2].errno == 0) {
+        D_80048E9C[D_80048E98] = 2;
+        D_80048E98++;
     }
-    D_80048E9F = -1;
-    if (D_80048F1C == 0) {
-        temp_v0_7 = D_80048E98;
-        *(&D_80048E9C + temp_v0_7) = 3;
-        D_80048E98 = temp_v0_7 + 1;
+    D_80048E9C[3] = -1;
+    if (gControllers[3].errno == 0) {
+        D_80048E9C[D_80048E98] = 3;
+        D_80048E98++;
     }
     D_80048F48 = 0;
-    D_80048F4C = 0;
+    D_80048F4C = NULL;
     D_80048F50 = 1;
     D_80048F54 = 1;
     D_80048F58 = 1;
@@ -860,24 +840,23 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004E98.s")
 extern struct {
     u32 unk0;
     OSMesg unk4;
-    u32 *unk8;
+    OSMesgQueue *unk8;
 } *D_8004F4C0;
 
-extern s32 D_80048F50, D_80048F54, D_80048F58;
-extern OSMesgQueue *D_80048DE8;
-extern OSMesgQueue *D_80048A08;
 
-extern s32 *D_80048DC0, *D_80048DC8, *D_80048F4C; // TODO: find types
-#ifdef a
-void func_800051E0(s32 arg0) {
+
+extern OSMesgQueue D_80048A08;
+
+
+#if 0
+void func_800051E0(void *arg) {
     OSMesg sp44;
-    OSMesgQueue *temp_a0;
 
     func_80004250();
-    func_800009E8(&D_80048DC0, &D_80048DE8, &D_80048DC8, 7);
-    osSendMesg(&D_80048A08, 1, 0);
+    func_800009E8(&D_80048DC0, &D_80048DE8, D_80048DC8, 7);
+    osSendMesg(&D_80048A08, 1, OS_MESG_NOBLOCK);
     while(1) {
-        osRecvMesg(&D_80048DE8, &sp44, 1);
+        osRecvMesg(&D_80048DE8, &sp44, OS_MESG_BLOCK);
         if (sp44 == (OSMesg)1) {
             if (D_80048F58 != 0) {
                 D_80048F58--;
@@ -895,12 +874,12 @@ void func_800051E0(s32 arg0) {
             }
             func_800041A0();
             if (D_8004F4C0->unk8 != 0) {
-                osSendMesg(temp_a0, D_8004F4C0->unk4, 0);
+                osSendMesg(D_8004F4C0->unk8, D_8004F4C0->unk4, OS_MESG_NOBLOCK);
             }
-            D_80048F4C = NULL;
+            D_80048F4C = 0;
             continue;
         }
-        func_80004E98(sp44);
+        func_80004E98();
     }
 }
 #else
