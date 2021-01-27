@@ -301,6 +301,13 @@ SECTIONS
 
    BEGIN_NOLOAD(ovl0) {
       BUILD_DIR/src/ovl0/main.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0_1.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0_2.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0_2_5.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.bss);
+      BUILD_DIR/src/ovl0/rdp_reset.o(.bss);
+      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
       BUILD_DIR/libultra.a:sptask.o(.bss);
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);

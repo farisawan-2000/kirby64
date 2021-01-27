@@ -85,55 +85,67 @@ struct UnkStruct8004A490 {
 
 // bss
 
-extern OSMesg D_800492B0[4];
-extern OSMesgQueue D_800492C0;
-extern s16 D_800492D8;
-extern s16 D_800492DA;
-extern s32 D_800492DC;
-extern OSMesg D_800492E0;
-// 0x800492E4?
-extern OSMesgQueue D_800492E8;
-extern struct UnkStruct800009E8 D_80049300;
-extern u32* D_80049308;
-extern OSMesg D_80049310[3];
-// 0x8004931C?
-extern OSMesgQueue D_80049320;
-extern OSMesg D_80049338;
-// 0x8004933C?
-extern OSMesgQueue D_80049340;
-extern u64 D_80049358[SP_DRAM_STACK_SIZE8 / sizeof(u64)];
-// 0x80049758 & 0x8004975C? file boundary?
-extern u64 D_80049760[OS_YIELD_DATA_SIZE / sizeof(u64)];
-// 0x8004A360 & 0x8004A364?
-extern struct DObj *D_8004A368[]; // probably length 2
-extern struct DObj *D_8004A370[]; // probably length 2
-extern struct DObj *D_8004A378[]; // probably length 2
-extern struct DObj *D_8004A380[]; // probably length 2
-extern u32 D_8004A388[]; // probably length 2
-extern struct DLBuffer gDLBuffers[2][4]; // 0x8004A390
-extern Gfx *gDisplayListHeads[4]; // 0x8004A3D0
-extern Gfx* D_8004A3E0[4]; // 0x8004A3E0
-extern u32 D_8004A3F0; // 0x8004A3F0
-extern u32 D_8004A3F4; // 0x8004A3F4
-extern struct DynamicBuffer gDynamicBuffer1; // 0x8004A3F8
-extern struct DynamicBuffer gDynamicBuffer2; // 0x8004A408
-extern struct DynamicBufferSubclass gDynamicBuffer3;
-extern u32 D_8004A438;
-extern u32 D_8004A43C;
-extern u32 D_8004A440;
-extern u16 D_8004A444;
-extern u16 D_8004A446;
-extern u16 D_8004A448;
-extern Gfx* D_8004A44C;
-extern u32 D_8004A450;
+static u32 pad1;
+static u32 pad2;
+s16 D_80049298;
+s16 D_8004929A;
+s16 D_8004929C;
+s16 D_8004929E;
+s8 D_800492A0;
+s8 D_800492A1;
+static u32 pad3;
+static u32 pad4;
+static u32 pad5;
+OSMesg D_800492B0[4];
+OSMesgQueue D_800492C0;
+s16 D_800492D8;
+s16 D_800492DA;
+s32 D_800492DC;
+OSMesg D_800492E0;
+OSMesgQueue D_800492E8;
+struct UnkStruct800009E8 D_80049300;
+u32* D_80049308;
+OSMesg D_80049310[3];
+OSMesgQueue D_80049320;
+OSMesg D_80049338;
+OSMesgQueue D_80049340;
+u64 D_80049358[SP_DRAM_STACK_SIZE8 / sizeof(u64)];
+static u32 pad6, pad7; // 0x80049758 - 0x8004975F? file boundary?
+u64 D_80049760[OS_YIELD_DATA_SIZE / sizeof(u64)];
+static u32 pad8, pad9; // 0x8004A360 - 0x8004A367?
+struct DObj *D_8004A368[2]; // probably length 2
+struct DObj *D_8004A370[2]; // probably length 2
+struct DObj *D_8004A378[2]; // probably length 2
+struct DObj *D_8004A380[2]; // probably length 2
+u32 D_8004A388[2]; // probably length 2
+struct DLBuffer gDLBuffers[2][4]; // 0x8004A390
+Gfx *gDisplayListHeads[4]; // 0x8004A3D0
+Gfx* D_8004A3E0[4]; // 0x8004A3E0
+u32 D_8004A3F0; // 0x8004A3F0
+u32 D_8004A3F4; // 0x8004A3F4
+struct DynamicBuffer gDynamicBuffer1; // 0x8004A3F8
+struct DynamicBuffer gDynamicBuffer2; // 0x8004A408
+struct DynamicBufferSubclass gDynamicBuffer3; // 0x8004A418
+u32 D_8004A42C;
+u32 D_8004A430; 
+u32 D_8004A434;
+u32 D_8004A438;
+u32 D_8004A438;
+u32 D_8004A43C;
+u32 D_8004A440;
+u16 D_8004A444;
+u16 D_8004A446;
+u16 D_8004A448;
+Gfx* D_8004A44C;
+u32 D_8004A450;
 // 0x8004A454?
-extern s32 D_8004A458[]; // probably length 2
-extern s32 D_8004A460;
+s32 D_8004A458[2]; // probably length 2
+s32 D_8004A460;
 // 0x8004A464?
-extern struct DynamicBuffer D_8004A468[];
-extern void (*D_8004A488)();
-extern void (*D_8004A48C)(void);
-extern struct UnkStruct8004A490 D_8004A490;
+struct DynamicBuffer D_8004A468[2];
+void (*D_8004A488)();
+void (*D_8004A48C)(void);
+struct UnkStruct8004A490 D_8004A490;
 
 // end bss, followed by ovl0_2_5_1.c
 

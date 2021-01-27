@@ -24,6 +24,11 @@ struct ObjStack {
 //     s32 unk1BC;
 // };
 
+struct UnkStruct800009E8 {
+    u32 unk0;
+    OSMesgQueue *unk4;
+};
+
 struct DynamicBuffer {
     u32 id;
     void *poolStart;

@@ -2,7 +2,6 @@
 #include <macros.h>
 #include "ovl0_2_5.h"
 
-extern OSViMode gCurrentViMode;
 // ovl0
 u32 D_8003FDC0[6][3] = {
     { 0x2C000000, 0x0000311E, 0x00000140 },
@@ -19,28 +18,10 @@ u32 D_8003FE0C = 0x00000002;
 
 u32 D_8003FE10 = 0xFFFFFFFF;
 
-extern struct UnkStruct800009E8 *D_80048B80;
-extern struct Unk80005A98_2 *D_80048B8C;
-extern struct Unk80005A98_2 *D_80048B90;
-extern void *D_80048C5C;
-extern void *gCurrFrameBuffer;
-extern u32 D_80048C70;
 
-extern OSMesgQueue *D_80048CD4;
-
-extern u32 D_80048C48;
-extern u32 D_80048CD0;
-extern u32 D_80048C74;
-extern u32 D_80048C6C;
-
-extern void *D_80048C60;
-extern u32 D_80048C64;
-
-extern u32 D_80048CD8, D_80048CDC, D_80048CE0, D_80048CE4;
-extern u32 D_80048B9C;
-extern struct Unk80005A98_2 *D_80048BA4;
-
-extern OSMesgQueue gInterruptMesgQueue;
+// rodata
+extern const char D_8003FEA0[];// = "rdp_output_buff over !! size = %d\n byte";
+extern const f32 D_8003FEC8;// = 0.833f;
 
 struct unk_func_80000C54
 {
@@ -51,7 +32,50 @@ struct unk_func_80000C54
     struct unk_func_80000C54 *unk10;
 };
 
-extern struct unk_func_80000C54 *D_80048B84, *D_80048B88, *D_80048B94, *D_80048B98, *D_80048BA0;
+// bss
+
+struct UnkStruct800009E8 *D_80048B80;
+struct unk_func_80000C54 *D_80048B84;
+struct unk_func_80000C54 *D_80048B88;
+struct Unk80005A98_2 *D_80048B8C;
+struct Unk80005A98_2 *D_80048B90;
+struct unk_func_80000C54 *D_80048B94;
+struct unk_func_80000C54 *D_80048B98;
+u32 D_80048B9C;
+struct unk_func_80000C54 *D_80048BA0;
+struct Unk80005A98_2 *D_80048BA4;
+OSViMode D_80048BA8;
+OSViMode gCurrentViMode; // 0x80048BAC
+u32 D_80048C48;
+
+// 0x80048C4C? bss boundary?
+
+void *D_80048C50[3]; // 0x80048C50 // array based on use in func_80000A44
+void *D_80048C5C; // 0x80048C5C
+void *D_80048C60; // 0x80048C60
+s32 D_80048C64; // 0x80048C64
+void *gCurrFrameBuffer; // 0x80048C68
+s32 D_80048C6C; // 0x80048C6C
+s32 D_80048C70; // 0x80048C70
+s32 D_80048C74; // 0x80048C74
+s32 D_80048C78; // 0x80048C78
+u32 D_80048C7C; // 0x80048C7C
+struct unkD_80048C80 { s32 D_80048C80; s32 unk4; } D_80048C80; // 0x80048C80
+s32 D_80048C88; // 0x80048C88
+s32 D_80048C8C; // 0x80048C8C
+s32 D_80048C90; // 0x80048C90
+// 0x80048C94?
+OSMesg D_80048C98[8]; // 0x80048C98
+OSMesgQueue gInterruptMesgQueue; // 0x80048CB8
+u32 D_80048CD0;
+OSMesgQueue *D_80048CD4;
+u32 D_80048CD8;
+u32 *D_80048CDC;
+u32 D_80048CE0;
+u32 D_80048CE4;
+// 0x80048CE8 and 0x80048CEC? bss file boundary?
+
+// end bss, followed by ovl0_1
 
 
 void func_80000900(void) {
@@ -90,11 +114,6 @@ void func_80000980(struct InterruptMessage80000980 *arg0) {
     osSendMesg(&gInterruptMesgQueue, arg0, 0);
     osRecvMesg(&mq, NULL, 1);
 }
-
-struct UnkStruct800009E8 {
-    struct UnkStruct800009E8 *unk0;
-    OSMesgQueue *unk4;
-};
 
 void func_800009E8(struct UnkStruct800009E8 *arg0, OSMesgQueue *mq,
     OSMesg *msg, s32 count) {
@@ -308,52 +327,17 @@ void func_80000E4C(struct unk_func_80000C54 *arg0) {
     }
 }
 
-#ifdef MIPS_TO_C
 void func_80000E9C(void) {
-    OSViMode *temp_t6;
-    OSViMode *temp_t9;
-    u32 temp_v0;
-    OSViMode *phi_t6;
-    OSViMode *phi_t9;
-    u32 phi_v0;
-    u32 phi_v0_2;
-
-    phi_t6 = &gCurrentViMode;
-    phi_t9 = &D_80048BA8;
-loop_1:
-    temp_t6 = phi_t6 + 0xC;
-    temp_t9 = phi_t9 + 0xC;
-    temp_t9->unk-C = phi_t6->type;
-    temp_t9->unk-8 = temp_t6->unk-8;
-    temp_t9->unk-4 = temp_t6->unk-4;
-    phi_t6 = temp_t6;
-    phi_t9 = temp_t9;
-    if (temp_t6 != &gCurrentViMode.fldRegs[1].vBurst) {
-        goto loop_1;
-    }
-    temp_t9->type = temp_t6->type;
-    temp_t9->comRegs.ctrl = temp_t6->comRegs.ctrl;
+    D_80048BA8 = gCurrentViMode;
     osViSetMode(&D_80048BA8);
-    temp_v0 = (D_80048C7C * 0x10) >> 0x1F;
-    if (temp_v0 != 0) {
+    if ((D_80048C7C * 0x10) >> 0x1F != 0) {
         osViSetYScale(1.0f);
-        phi_v0_2 = D_80048C7C * 0x10;
-block_6:
-        phi_v0 = phi_v0_2 >> 0x1F;
-    } else {
-        phi_v0 = temp_v0;
-        if (osTvType == 0) {
-            osViSetYScale(D_8003FEC8);
-            phi_v0_2 = D_80048C7C * 0x10;
-            goto block_6;
-        }
+    } else if (osTvType == 0) {
+        osViSetYScale(D_8003FEC8);
     }
-    osViBlack(phi_v0 & 0xFF);
+    osViBlack((D_80048C7C * 0x10) >> 0x1F);
     D_80048C48 = 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80000E9C.s")
-#endif
 
 #ifdef RESEARCHING
 // some J U I C Y VI mode stuff in here
@@ -1069,8 +1053,6 @@ void func_80002014(void) {
     }
     func_80001E20();
 }
-
-extern const char D_8003FEA0[];
 
 #ifdef MIPS_TO_C
 u32 func_8000206C(void) {

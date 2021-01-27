@@ -84,4 +84,19 @@ s32 osPiReadIo(uintptr_t devAddr, u32 *data);
 
 s32 osPiRawStartDma(s32 dir, u32 cart_addr, void *dram_addr, size_t size);
 s32 osEPiRawStartDma(OSPiHandle *piHandle, s32 dir, u32 cart_addr, void *dram_addr, size_t size);
+
+/* Enhanced PI interface */
+
+extern OSPiHandle *osCartRomInit(void);
+extern OSPiHandle *osLeoDiskInit(void);
+extern OSPiHandle *osDriveRomInit(void);
+
+extern s32 osEPiDeviceType(OSPiHandle *, OSPiInfo *);
+extern s32 osEPiRawWriteIo(OSPiHandle *, u32 , u32);
+extern s32 osEPiRawReadIo(OSPiHandle *, u32 , u32 *);
+extern s32 osEPiWriteIo(OSPiHandle *, u32 , u32 );
+extern s32 osEPiReadIo(OSPiHandle *, u32 , u32 *);
+extern s32 osEPiStartDma(OSPiHandle *, OSIoMesg *, s32);
+extern s32 osEPiLinkHandle(OSPiHandle *);
+
 #endif
