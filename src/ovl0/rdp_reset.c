@@ -13,7 +13,16 @@ Mtx identityMatrix = {{
 	0      ,       0,     0,     0,
 }};
 
-extern Vp gViewport;
+// actual externs
+
+extern s16 *gZBuffer;
+extern Gfx resetRDPDisplayList[];
+
+// bss
+
+extern Vp gViewport; // 0x8004A530
+
+// end bss, followed by ovl0_2_5_2.c
 
 Gfx resetRDPDisplayList[] = {
 	gsDPPipeSync(),
@@ -71,10 +80,6 @@ extern void (*gScissorCallback)(Gfx **);
 void set_scissor_callback(void (*callback)(Gfx**)) {
     gScissorCallback = callback;
 }
-
-extern Gfx resetRDPDisplayList[];
-extern void **gZBuffer;
-extern Vp gViewport;
 
 void reset_rdp_settings(Gfx **dlist) {
     Gfx *dlHead = *dlist;

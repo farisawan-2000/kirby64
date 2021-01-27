@@ -9,8 +9,8 @@
 #include "types.h"
 
 struct UcodeHandler {
-    u32 *text; // ucode text
-    u32 *data; // ucode data
+    long long int *text; // ucode text
+    long long int *data; // ucode data
 };
 
 extern long long int gspF3DEX2_fifoDataStart[];
@@ -45,9 +45,97 @@ struct UcodeHandler D_8003DCAC[16] = {
     {NULL, NULL}
 };
 
-extern void (*D_8004A48C)(void);
 extern void func_80000A44(void);
 extern u32 *gGObjThreadHead;
+
+struct DynamicBufferSubclass {
+    struct DynamicBuffer buffer;
+    u32 unk10;
+};
+
+struct UnkStruct8004A490 {
+    u32 *unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10;
+    u32 unk14;
+    u32 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    u32 unk3C;
+    u32 unk40;
+    u32 unk44;
+    u32 unk48;
+    u32 unk4C;
+    u32 unk50;
+    u32 unk54;
+    u32 unk58;
+    u32 unk5C;
+    u32 unk60;
+    u32 unk64;
+    u32 unk68;
+};
+
+// bss
+
+extern OSMesg D_800492B0[4];
+extern OSMesgQueue D_800492C0;
+extern s16 D_800492D8;
+extern s16 D_800492DA;
+extern s32 D_800492DC;
+extern OSMesg D_800492E0;
+// 0x800492E4?
+extern OSMesgQueue D_800492E8;
+extern struct UnkStruct800009E8 D_80049300;
+extern u32* D_80049308;
+extern OSMesg D_80049310[3];
+// 0x8004931C?
+extern OSMesgQueue D_80049320;
+extern OSMesg D_80049338;
+// 0x8004933C?
+extern OSMesgQueue D_80049340;
+extern u64 D_80049358[SP_DRAM_STACK_SIZE8 / sizeof(u64)];
+// 0x80049758 & 0x8004975C? file boundary?
+extern u64 D_80049760[OS_YIELD_DATA_SIZE / sizeof(u64)];
+// 0x8004A360 & 0x8004A364?
+extern struct DObj *D_8004A368[]; // probably length 2
+extern struct DObj *D_8004A370[]; // probably length 2
+extern struct DObj *D_8004A378[]; // probably length 2
+extern struct DObj *D_8004A380[]; // probably length 2
+extern u32 D_8004A388[]; // probably length 2
+extern struct DLBuffer gDLBuffers[2][4]; // 0x8004A390
+extern Gfx *gDisplayListHeads[4]; // 0x8004A3D0
+extern Gfx* D_8004A3E0[4]; // 0x8004A3E0
+extern u32 D_8004A3F0; // 0x8004A3F0
+extern u32 D_8004A3F4; // 0x8004A3F4
+extern struct DynamicBuffer gDynamicBuffer1; // 0x8004A3F8
+extern struct DynamicBuffer gDynamicBuffer2; // 0x8004A408
+extern struct DynamicBufferSubclass gDynamicBuffer3;
+extern u32 D_8004A438;
+extern u32 D_8004A43C;
+extern u32 D_8004A440;
+extern u16 D_8004A444;
+extern u16 D_8004A446;
+extern u16 D_8004A448;
+extern Gfx* D_8004A44C;
+extern u32 D_8004A450;
+// 0x8004A454?
+extern s32 D_8004A458[]; // probably length 2
+extern s32 D_8004A460;
+// 0x8004A464?
+extern struct DynamicBuffer D_8004A468[];
+extern void (*D_8004A488)();
+extern void (*D_8004A48C)(void);
+extern struct UnkStruct8004A490 D_8004A490;
+
+// end bss, followed by ovl0_2_5_1.c
 
 
 void func_80005350(void *arg0) {
@@ -58,20 +146,29 @@ void func_80005350(void *arg0) {
     D_8004A48C = func_80000A44;
 }
 
-extern u32* D_80049308;
+extern const char D_80040040[];
+extern const char D_80040060[];
+extern const char D_80040080[];
+extern const char D_800400C0[];
+extern u8 D_80048900[];
+
+extern OSMesgQueue gInterruptMesgQueue;
+
+extern const char D_800400A0[];
+
+// These are used in other functions too
+extern u16 D_8004A448;
+
 
 void setup_segment_15(Gfx **arg0) {
     D_80049308 = &(*arg0)->words.w1;
     gSPSegment((*arg0)++, 0x0F, 0x00000000);
 }
 
-extern u32 D_8004A440;
-
 void func_800053A8(s32 arg0) {
     D_8004A440 = arg0;
 }
 
-extern u16 D_8004A444, D_8004A446;
 void func_800053B4(u16 arg0, u16 arg1) {
     D_8004A444 = arg0;
     D_8004A446 = arg1;
@@ -90,10 +187,6 @@ void *alloc_with_alignment(s32 size, s32 alignment) {
     return alloc_from_dynamic_buffer(&gDynamicBuffer2, size, alignment);
 }
 
-extern struct DynamicBuffer D_8004A468[];
-extern struct DynamicBuffer gDynamicBuffer1;
-extern u32 D_8004A450;
-
 void func_80005430(void) {
     gDynamicBuffer1.id        = D_8004A468[D_8004A450].id;
     gDynamicBuffer1.poolStart = D_8004A468[D_8004A450].poolStart;
@@ -101,8 +194,6 @@ void func_80005430(void) {
     gDynamicBuffer1.top       = D_8004A468[D_8004A450].top;
     func_80007830(&gDynamicBuffer1);
 }
-
-extern struct DLBuffer gDLBuffers[2][4];
 
 void func_8000548C(struct DLBuffer arg0[2][4]) {
     s32 i;
@@ -115,14 +206,6 @@ void func_8000548C(struct DLBuffer arg0[2][4]) {
         gDLBuffers[i][3] = arg0[i][3];
     }
 }
-
-extern u16 D_8004A448;
-
-extern Gfx* gDisplayListHeads[4];
-
-extern Gfx* D_8004A3E0[4];
-
-extern Gfx* D_8004A44C;
 
 void reset_rdp_settings(Gfx **dlist);
 
@@ -179,9 +262,6 @@ void func_800056DC(s32 arg0, u32 arg1) {
 
 extern const char D_80040018[];
 
-// These are used in other functions too
-extern u32 D_8004A438, D_8004A43C;
-
 void func_80005734(s32 arg0, u32 arg1, s32 bufSize) {
     D_8003DCA0 = arg0;
     D_8004A438 = arg1;
@@ -197,21 +277,6 @@ void func_80005734(s32 arg0, u32 arg1, s32 bufSize) {
     }
 }
 
-extern struct DObj *D_8004A368[];
-extern struct DObj *D_8004A370[];
-// extern u32 D_8004A370[];
-extern struct DObj *D_8004A378[];
-extern struct DObj *D_8004A380[];
-extern const char D_80040040[];
-extern const char D_80040060[];
-extern const char D_80040080[];
-extern OSMesgQueue D_80049320;
-
-extern OSMesgQueue gInterruptMesgQueue;
-
-extern const char D_800400A0[];
-
-extern OSMesgQueue D_80049340;
 
 struct DObj *func_800057AC(void) {
     struct DObj *tmp;
@@ -322,18 +387,9 @@ void func_800059F8(void) {
     func_80005530();
 }
 
-extern u32 D_80049760[]; // TODO; is this a different type?
-extern u32 D_80049358;
-extern const char D_800400C0[];
-extern u32 D_8004A3F4;
-extern u8 D_80048900[];
-
-// These are used in other functions too
-extern u16 D_8004A448;
-
-void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 ucodeIndex, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
+void func_80005A98(struct Unk80005A98_2 *arg0, s32 arg1, u32 ucodeIndex, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {
     struct UcodeHandler *temp_v0;
-    s32 new;
+    s32 ucodeType;
 
     arg0->unk0 = 1;
     arg0->unk4 = 0x32;
@@ -345,7 +401,7 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 ucodeIndex, s32 arg3,
         arg0->unk14 = 0;
         arg0->unk68 = 0;
     }
-    new = 1;
+    ucodeType = 1;
     arg0->unk6C = arg1;
     arg0->unk70 = D_8004A3F4;
     if (arg1 != 0) {
@@ -357,21 +413,21 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 ucodeIndex, s32 arg3,
     arg0->unk18 = 2;
     arg0->unk80 = D_8004A450;
     arg0->unk7C = 0; 
-    arg0->unk28 = new;
-    arg0->unk2C = 4;
-    arg0->unk30 = &D_80048900;
-    arg0->unk34 = 0x100;
+    arg0->task.t.type = ucodeType;
+    arg0->task.t.flags = OS_TASK_LOADABLE;
+    arg0->task.t.ucode_boot = (u64*)&D_80048900;
+    arg0->task.t.ucode_boot_size = 0x100;
     temp_v0 = &D_8003DCAC[ucodeIndex];
     if (temp_v0->text == NULL) {
         fatal_printf("gtl : ucode isn't included  kind = %d\n", ucodeIndex);
         while (1);
     }
-    arg0->unk38 = temp_v0->text;
-    arg0->unk40 = temp_v0->data;
-    arg0->unk3C = 0x1000;
-    arg0->unk44 = 0x800;
-    arg0->unk48 = OS_DCACHE_ROUNDUP_SIZE(&D_80049358);
-    arg0->unk4C = 0x400;
+    arg0->task.t.ucode = (u64*)temp_v0->text;
+    arg0->task.t.ucode_data = (u64*)temp_v0->data;
+    arg0->task.t.ucode_size = SP_UCODE_SIZE;
+    arg0->task.t.ucode_data_size = SP_UCODE_DATA_SIZE;
+    arg0->task.t.dram_stack = (u64*)OS_DCACHE_ROUNDUP_SIZE(&D_80049358);
+    arg0->task.t.dram_stack_size = SP_DRAM_STACK_SIZE8;
 
     switch (ucodeIndex) {
         case 0:
@@ -381,23 +437,23 @@ void func_80005A98(struct Unk80005A98 *arg0, s32 arg1, u32 ucodeIndex, s32 arg3,
         case 8:
         case 12:
         case 14:
-            arg0->unk50 = arg5;
-            arg0->unk54 = arg5 + arg6;
+            arg0->task.t.output_buff = (u64*)arg5;
+            arg0->task.t.output_buff_size = (u64*)(arg5 + arg6);
             arg0->unk74 = 2;
             break;
         case 1: case 3: case 5: case 7: case 13:
         case 9:
         case 15:
-            arg0->unk50 = 0;
-            arg0->unk54 = 0;
+            arg0->task.t.output_buff = NULL;
+            arg0->task.t.output_buff_size = NULL;
             arg0->unk74 = 0;
             break;
         case 10: case 11: break;
     }
-    arg0->unk58 = arg4;
-    arg0->unk5C = 0;
-    arg0->unk60 = (((u32)&D_80049760 + 0xF) / 16) * 16;
-    arg0->unk64 = 0xC00;
+    arg0->task.t.data_ptr = (u64*)arg4;
+    arg0->task.t.data_size = 0;
+    arg0->task.t.yield_data_ptr = (u64*)OS_DCACHE_ROUNDUP_SIZE(&D_80049760);
+    arg0->task.t.yield_data_size = OS_YIELD_DATA_SIZE;
     osWritebackDCacheAll();
     osSendMesg(&gInterruptMesgQueue, arg0, 0);
 }
@@ -835,9 +891,6 @@ loop_1:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000630C.s")
 #endif
 
-extern s32 D_8004A460;
-extern s32 D_8004A458[];
-
 
 u32 func_80006628(s32 arg0) {
     s32 sp3C;
@@ -887,13 +940,9 @@ void func_80006740(void) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80006740.s")
 #endif
 
-extern u32 D_8004A3F0;
-
 void func_800067B8(void) {
     D_8004A3F0 = 1;
 }
-
-extern u32 D_8004A3F4;
 
 void func_800067C8(s32 arg0) {
     D_8004A3F0 = 2;
@@ -923,9 +972,6 @@ u8 func_800067E0(void) {
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800067E0.s")
 #endif
-
-extern OSMesgQueue D_800492E8;
-extern s32 D_800492DC;
 
 void func_80006854(void) {
     if (D_800492DC == 1) {
@@ -1024,8 +1070,6 @@ struct UNK_FUNC_80006DF8
     void (*unk4)();
 };
 
-extern void (*D_8004A488)();
-
 void func_80006DF8(struct UNK_FUNC_80006DF8 *arg0) {
     D_8004A488();
     arg0->unk4();
@@ -1037,8 +1081,6 @@ struct unk_func8006E30 {
     u32 unk8;
     void (*unkC)(void);
 };
-
-extern u32 D_8004A388[];
 
 void func_80006E30(struct unk_func8006E30 *arg0) {
     func_80005430();
@@ -1191,13 +1233,6 @@ struct unk_func80007328 {
 extern u32 D_80006DF8;
 extern u32 D_80006E30;
 
-struct DynamicBufferSubclass {
-    struct DynamicBuffer buffer;
-    u32 unk10;
-};
-
-extern struct DynamicBufferSubclass gDynamicBuffer3;
-
 void func_80007328(struct unk_func80007328 *arg0) {
 
     alloc_region(arg0->unkC, arg0->unk10);
@@ -1205,38 +1240,6 @@ void func_80007328(struct unk_func80007328 *arg0) {
     gDynamicBuffer3.unk10 = &D_80006E30;
     func_8000708C(arg0, 0);
 }
-
-struct UnkStruct8004A490 {
-    u32 *unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-    u32 unk14;
-    u32 unk18;
-    u32 unk1C;
-    u32 unk20;
-    u32 unk24;
-    u32 unk28;
-    u32 unk2C;
-    u32 unk30;
-    u32 unk34;
-    u32 unk38;
-    u32 unk3C;
-    u32 unk40;
-    u32 unk44;
-    u32 unk48;
-    u32 unk4C;
-    u32 unk50;
-    u32 unk54;
-    u32 unk58;
-    u32 unk5C;
-    u32 unk60;
-    u32 unk64;
-    u32 unk68;
-};
-
-extern struct UnkStruct8004A490 D_8004A490;
 
 extern u32 D_80006EE4;
 extern u32 D_80006E94;
@@ -1290,8 +1293,6 @@ void func_80007380(struct UnkStructFunc80007380 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80007380.s")
 #endif
 
-extern s16 D_800492D8;
-extern s16 D_800492DA;
 
 void func_800075DC(u16 arg0, u16 arg1) {
     D_800492D8 = arg0;
@@ -1321,11 +1322,9 @@ void func_80007674(s32 arg0) {
     }
 }
 
-extern s32 D_8004A454[];
-
 u32 func_80007694(s32 arg0) {
     if ((arg0 == 1) || (arg0 == 2)) {
-        if (D_8004A454[arg0] == 0) {
+        if (D_8004A458[arg0 - 1] == 0) {
             return 1;
         }
     }
@@ -1335,12 +1334,6 @@ u32 func_80007694(s32 arg0) {
 // extern s16 D_8004A444;
 // extern s16 D_8004A446;
 
-extern struct UnkStruct800009E8 D_80049300;
-extern OSMesgQueue D_800492C0;
-extern OSMesg D_800492B0;
-extern OSMesg D_80049310;
-extern OSMesg D_80049338;
-extern OSMesg D_800492E0;
 
 #if NON_MATCHING
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
