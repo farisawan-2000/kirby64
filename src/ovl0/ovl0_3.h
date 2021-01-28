@@ -54,6 +54,11 @@ struct Animation {
   f32 scale; // unk74
   u32 unk78;
   f32 unk7C;
+  u32 unk80;
+  u32 unk84;
+  u32 unk88;
+  u32 unk8C;
+  struct Animation *unk90;
 };
 
 void func_8000C3D8(struct Animation *anim);

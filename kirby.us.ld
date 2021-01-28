@@ -61,7 +61,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/memory_layer.o(.text);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.text);
       BUILD_DIR/src/ovl0/rdp_reset.o(.text*); /* Why is the asterisk needed? */
-      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.text);
+      BUILD_DIR/src/ovl0/object_manager.o(.text);
       BUILD_DIR/src/ovl0/ovl0_3.o(.text);
       BUILD_DIR/src/ovl0/ovl0_4.o(.text);
       BUILD_DIR/src/ovl0/ovl0_5.o(.text);
@@ -238,7 +238,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/main.o(.data*);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.data*);
       BUILD_DIR/src/ovl0/rdp_reset.o(.data*);
-      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.data*);
+      BUILD_DIR/src/ovl0/object_manager.o(.data*);
       BUILD_DIR/src/ovl0/ovl0_4.o(.data*);
       BUILD_DIR/src/ovl0/ovl0_6.o(.data*);
       BUILD_DIR/src/ovl0/ovl0_7.o(.data*);
@@ -307,7 +307,7 @@ SECTIONS
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.bss);
       BUILD_DIR/src/ovl0/ovl0_2_5_1.o(.bss);
       BUILD_DIR/src/ovl0/rdp_reset.o(.bss);
-      BUILD_DIR/src/ovl0/ovl0_2_5_2.o(.bss);
+      BUILD_DIR/src/ovl0/object_manager.o(.bss);
       BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
       BUILD_DIR/libultra.a:sptask.o(.bss);
       BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);

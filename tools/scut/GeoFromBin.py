@@ -785,6 +785,7 @@ def WriteUnk2(file,GH,unk):
             #     file.write(" 0x%X"%u + "\n")
             # else:
             file.write("    BANK_INDEX(%d, %d)"%(u[0] >> 16, u[0] & 0xFFFF) + ",\n")
+            # file.write("    0x%08X"%(u[0]) + ",\n")
         file.write("};\n")
     else:
         file.write("\n// No Animations\n")
