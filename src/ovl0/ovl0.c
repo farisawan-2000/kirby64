@@ -327,15 +327,17 @@ void func_80000E4C(struct unk_func_80000C54 *arg0) {
     }
 }
 
+#define GET_BIT(x, n) (((u32)(x) << (31 - (n))) >> 31)
+
 void func_80000E9C(void) {
     D_80048BA8 = gCurrentViMode;
     osViSetMode(&D_80048BA8);
-    if ((D_80048C7C * 0x10) >> 0x1F != 0) {
+    if (GET_BIT(D_80048C7C, 27)) {
         osViSetYScale(1.0f);
-    } else if (osTvType == 0) {
+    } else if (osTvType == TV_TYPE_PAL) {
         osViSetYScale(D_8003FEC8);
     }
-    osViBlack((D_80048C7C * 0x10) >> 0x1F);
+    osViBlack(GET_BIT(D_80048C7C, 27));
     D_80048C48 = 0;
 }
 
