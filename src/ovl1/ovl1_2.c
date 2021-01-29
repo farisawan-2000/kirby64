@@ -531,13 +531,9 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A78D0.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_800A7A40(void) {
     func_800A7A70(1, 0x30007, 0x30008);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A40.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800A7A70(s32 arg0, ? arg1, s32 arg2) {

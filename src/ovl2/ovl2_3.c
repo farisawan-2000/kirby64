@@ -2100,13 +2100,9 @@ void *func_800FB9B4(void) {
 GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800FB9B4.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_800FBA78(void) {
     func_801DC98C_ovl2();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800FBA78.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800FBA98(void) {

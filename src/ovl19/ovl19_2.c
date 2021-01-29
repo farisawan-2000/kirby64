@@ -1488,13 +1488,9 @@ void func_802227F0_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800AFA14();
 }
 
-#ifdef MIPS_TO_C
 void func_802228F8_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_80222500_ovl19();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_802228F8_ovl19.s")
-#endif
 
 extern f32 D_8022F7C0;
 void func_80222918_ovl19(struct UnkStruct8004A7C4 *arg0) {

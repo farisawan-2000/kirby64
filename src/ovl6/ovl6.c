@@ -96,13 +96,9 @@ loop_1:
 GLOBAL_ASM("asm/non_matchings/ovl6/func_801512F0.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801513C8(void) {
     func_800A7A70(0, 0x40001, 0x40002);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_801513C8.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801513F8(s32 arg0, s32 arg1, s32 arg2) {
@@ -946,13 +942,9 @@ void func_80153670(void) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80153670.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801536A0(s32 arg0) {
 
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_801536A0.s")
-#endif
 
 #ifdef MIPS_TO_C
 u32 **func_801536A8(void) {
@@ -1375,13 +1367,9 @@ void *func_80153F2C(void) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80153F2C.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_8015403C(void) {
     func_80153F2C_ovl6();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_8015403C.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8015405C(void) {
@@ -1475,14 +1463,10 @@ void func_80154180(void) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80154180.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801541EC(void) {
     func_8009C0E4();
     func_800A2024();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_801541EC.s")
-#endif
 
 #ifdef MIPS_TO_C
 u32 func_80154214(void) {
@@ -2012,15 +1996,11 @@ void func_80154BA0(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80154BA0.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_80154C08(void) {
     func_8000AAE0_ovl6();
     func_80153064_ovl6();
     func_800AC610();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl6/func_80154C08.s")
-#endif
 
 #ifdef MIPS_TO_C
 void *func_80154C38(s32 arg0) {
