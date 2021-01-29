@@ -2,6 +2,7 @@
 #include <macros.h>
 #include <types.h>
 #include "ovl0_2_5.h"
+#include "ovl0_2.h"
 
 struct Controller {
     u16 buttonHeld;

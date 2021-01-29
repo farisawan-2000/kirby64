@@ -349,6 +349,7 @@ SECTIONS
       BUILD_DIR/src/ovl1/ovl1_8.o(.text);
       BUILD_DIR/src/ovl1/save_file.o(.text);
       BUILD_DIR/src/ovl1/ovl1_10.o(.text);
+      . += 0x10;
       BUILD_DIR/src/ovl1/ovl1_11.o(.text);
       BUILD_DIR/src/ovl1/ovl1_12.o(.text);
       . += 0x10;

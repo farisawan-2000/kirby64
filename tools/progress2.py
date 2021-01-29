@@ -81,6 +81,10 @@ for line in mapFile:
         if (section == ".text"):
             if (objFile.startswith("build/us/src")):
                 src += size
+            if (objFile.startswith("build/us/libultra.a")):
+                src += size
+            if (objFile.startswith("build/us/libn_audio.a")):
+                src += size
             elif (objFile.startswith("build/us/asm")):
                 asm += size
 
