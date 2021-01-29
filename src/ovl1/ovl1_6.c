@@ -183,110 +183,97 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 #endif
 
 struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
-#ifdef MIPS_TO_C
-u32 request_job(s32 arg0, u32 arg1, u32 arg2, s32 arg3, void (*)(void) arg4) {
-    void *sp34;
-    s32 sp28;
-    void *sp24;
-    s32 temp_v0_2;
-    s32 temp_v1_2;
-    s32 temp_v1_3;
-    s32 temp_v1_4;
-    struct UnkStruct8004A7C4 *temp_v1;
-    u32 temp_s0;
-    u32 temp_s0_2;
-    u8 temp_a0;
-    u8 temp_v0;
-    void *temp_t0;
-    void *temp_v0_3;
-    u32 phi_a1;
-    u32 phi_a2;
-    void *phi_v0;
-    u32 phi_s0;
-    u32 phi_s0_2;
-    s32 phi_v0_2;
-    u8 phi_a0;
+struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
+void func_800B0F28(void);
+extern u32 D_800DDA90[];
+s32 func_800B0D90(void *arg0);
+void func_800B1878(s32 arg0);
+void func_800B1870(s32 arg0);
+void func_800B0D24(s32 arg0);
+extern const char D_800D66C0[];
+extern const char D_800D66D8[];
 
-    phi_a1 = arg1;
+struct UnkStruct800D4FD0 {
+        u8 unk0[4];
+        void (*unk4)(void);
+    };
+
+extern struct UnkStruct800D4FD0 *D_800D4FD0[];
+
+// compiles and is decently close
+#ifdef NON_MATCHING
+s32 request_job(s32 arg0, s32 arg1, u32 arg2, s32 arg3, void (*arg4)(void)) {
+    struct UnkStruct8004A7C4 *temp_v0_3;
+    s32 v1;
+    s32 v0;
+    u32 a2;
+    struct UnkStruct800D4FD0 *sp24;
+
     if (arg1 == -1) {
-        phi_a1 = 0;
+        arg1 = 0;
     }
-    phi_a2 = arg2;
     if (arg2 == -1) {
-        phi_a2 = 0x70;
+        arg2 = 0x70;
     }
-    temp_s0 = phi_a1;
-    phi_s0_2 = temp_s0;
-    if (phi_a1 < phi_a2) {
-        phi_v0 = (phi_a1 * 4) + &D_800DD710;
-        phi_s0 = temp_s0;
-loop_6:
-        phi_s0_2 = phi_s0;
-        if (-1 != *phi_v0) {
-            temp_s0_2 = phi_s0 + 1;
-            phi_v0 = phi_v0 + 4;
-            phi_s0 = temp_s0_2;
-            phi_s0_2 = temp_s0_2;
-            if (temp_s0_2 != phi_a2) {
-                goto loop_6;
-            }
+    // tries to find a valid index?
+    while (arg1 < arg2) {
+        if (D_800DD710[arg1] != -1) {
+            arg1++;
         }
     }
-    if (phi_s0_2 >= phi_a2) {
-        print_error_stub(&D_800D66C0, phi_a1, phi_a2);
+    if (arg1 >= arg2) {
+        print_error_stub(&D_800D66C0);
         return -1;
     }
-    temp_v1 = D_8004A7C4;
-    if ((temp_v1 == 0) || (temp_v0 = temp_v1->unkC, (temp_v0 == 0x1A)) || (temp_v1_2 = temp_v0 & 0x18, (temp_v0 == 0x19))) {
-        phi_v0_2 = 0;
-    } else {
-        temp_v0_2 = temp_v1_2 + 8;
-        if (temp_v1_2 == 0) {
-            phi_v0_2 = 8;
-        } else {
-            phi_v0_2 = temp_v0_2;
-            if (temp_v0_2 >= 0x20) {
-                print_error_stub(&D_800D66D8, &D_800B0D24, phi_a2);
-                return -1;
+    // good luck with this
+    if (D_8004A7C4 != NULL) {
+        if (D_8004A7C4->unkC != 0x1A) {
+            v1 = D_8004A7C4->unkC & 0x18;
+            if (D_8004A7C4->unkC == 0x19) {
+block_13:
+                v0 = 0;
+            } else {
+                v0 = v1 + 8;
+                if (v1 == 0) {
+                    v0 = 8;
+                } else {
+                    if (v0 >= 0x20) {
+                        print_error_stub(&D_800D66D8);
+                        return -1;
+                    }
+                }
             }
+        } else {
+            goto block_13;
         }
-    }
-    temp_v1_3 = phi_s0_2 * 4;
-    *(&D_800DD710 + temp_v1_3) = arg0;
-    temp_t0 = (arg0 * 8) + &D_800D4FD0;
-    sp24 = temp_t0;
-    sp28 = temp_v1_3;
-    temp_v0_3 = func_8000A180(phi_s0_2, &D_800B0D24, (*temp_t0 + phi_v0_2) & 0xFF, 0);
-    *(&D_800DE350 + temp_v1_3) = temp_v0_3;
-    sp34 = temp_v0_3;
-    D_800DE510[phi_s0_2] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
-    D_800DE6D0[phi_s0_2] = func_80008A18(sp34, &D_800B0D90, 1, 3);
-    temp_a0 = sp24->unk1;
-    phi_a0 = temp_a0;
-    if ((temp_a0 & 1) != 0) {
-        sp28 = temp_v1_3;
-        D_800DE890[phi_s0_2] = func_80008A18(sp34, &D_800B1878, 0, 2);
-        phi_a0 = sp24->unk1;
-    }
-    if ((phi_a0 & 2) != 0) {
-        sp28 = phi_s0_2 * 4;
-        *(D_800DEA50 + (phi_s0_2 * 4)) = func_80008A18(sp34, &D_800B1870, 1, 1);
-    }
-    sp28 = phi_s0_2 * 4;
-    temp_v1_4 = phi_s0_2 * 4;
-    *(D_800DEC10 + temp_v1_4) = func_80008A18(sp34, arg4, 1, 0);
-    *(D_800DD8D0 + temp_v1_4) = 0;
-    *(&D_800DDA90 + temp_v1_4) = sp34->unkC;
-    *(D_800DF150 + temp_v1_4) = 0;
-    if (arg3 != 0) {
-        *(D_800DEF90 + temp_v1_4) = arg3;
     } else {
-        *(D_800DEF90 + temp_v1_4) = 0;
+        goto block_13;
     }
-    sp34->unk48 = &D_800B0F28;
-    *(&D_800DEDD0 + temp_v1_4) = 0;
-    *(&D_800DF310 + temp_v1_4) = 0;
-    return phi_s0_2;
+    D_800DD710[arg1] = arg0;
+    sp24 = D_800D4FD0[arg0];
+    temp_v0_3 = func_8000A180(arg1, func_800B0D24, D_800D4FD0[arg0 * 2] + v0, 0);
+    D_800DE350[arg1] = temp_v0_3;
+    D_800DE510[arg1] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
+    D_800DE6D0[arg1] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
+    if (sp24->unk0[1] & 1) {
+        D_800DE890[arg1] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
+    }
+    if (sp24->unk0[1] & 2) {
+        D_800DEA50[arg1] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
+    }
+    D_800DEC10[arg1] = func_80008A18(temp_v0_3, arg4, 1, 0);
+    D_800DD8D0[arg1] = 0;
+    D_800DDA90[arg1] = temp_v0_3->unkC;
+    D_800DF150[arg1] = NULL;
+    if (arg3 != 0) {
+        D_800DEF90[arg1] = arg3;
+    } else {
+        D_800DEF90[arg1] = 0;
+    }
+    temp_v0_3->unk48 = func_800B0F28;
+    D_800DEDD0[arg1] = 0;
+    D_800DF310[arg1] = 0;
+    return arg1;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE7A8.s")
