@@ -589,13 +589,9 @@ s32 func_80004C5C(u8 arg0, u8 arg1, ?32 arg2, ?32 arg3) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004C5C.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_80004CD4(void) {
     func_80004C5C(0, 0, 0, 0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004CD4.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80004D00(u8 arg0, s32 arg1, ? arg2) {

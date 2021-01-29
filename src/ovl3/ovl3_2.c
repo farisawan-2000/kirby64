@@ -960,13 +960,9 @@ void func_8015849C_ovl3(void) {
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_8015849C_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80158508_ovl3(void) {
-    func_801583BC_ovl3();
+void func_80158508_ovl3(struct UnkStruct8004A7C4 *arg0) {
+    func_801583BC_ovl3(arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158508_ovl3.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80158528_ovl3(void) {
@@ -1010,21 +1006,13 @@ void func_80158604_ovl3(void) {
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158604_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_80158668_ovl3(void) {
     func_80158294_ovl3();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158668_ovl3.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_80158688_ovl3(void) {
     func_80158294_ovl3();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158688_ovl3.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801586A8_ovl3(void) {
@@ -1068,13 +1056,9 @@ void func_801587AC_ovl3(void) {
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_801587AC_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_8015880C_ovl3(void) {
     func_80158294_ovl3();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_8015880C_ovl3.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8015882C_ovl3(s32 arg0) {

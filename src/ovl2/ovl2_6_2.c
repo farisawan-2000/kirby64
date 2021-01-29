@@ -506,13 +506,9 @@ u8 func_801021BC(struct CollisionTriangle *arg0, struct Normal *arg1, struct Nor
     return 0;
 }
 
-#ifdef MIPS_TO_C
-void func_801021FC(void) {
-    func_80101D50();
+void func_801021FC(struct CollisionTriangle *arg0, u32 arg1, u32 arg2, u32 arg3) {
+    func_80101D50(arg0, arg1, arg2, arg3);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801021FC.s")
-#endif
 
 #ifdef MIPS_TO_C
 ? func_8010221C(void *arg0, void *arg1, void *arg2, ? arg3) {
@@ -8324,13 +8320,9 @@ s32 func_80110014(void *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, 
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80110014.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_80110130(void) {
 
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80110130.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_80110138(s32 arg0, ? arg1, ? arg2, ? arg3) {

@@ -49,13 +49,9 @@ loop_4:
 GLOBAL_ASM("asm/non_matchings/ovl2/func_800F61A0.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_800F629C(void) {
 
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2/func_800F629C.s")
-#endif
 
 #ifdef MIPS_TO_C
 Failed to decompile function func_800F62A4:
