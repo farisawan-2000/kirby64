@@ -289,7 +289,7 @@ block_10:
     D_800E5F90[temp_v0_5] = D_800EA6E0[temp_v0_5];
     temp_v0 = temp_v1->unk0;
     D_800E6BD0[temp_v0] = D_800EA8A0[temp_v0];
-}
+} 
 #else
 GLOBAL_ASM("asm/non_matchings/ovl7/ovl7_16/func_801BDEB0_ovl7.s")
 #endif
@@ -396,7 +396,7 @@ extern f32 D_800E64D0[];
 void func_801BE588_ovl7(UNUSED s32 arg0) {
     func_801A0880_ovl7();
     if ((D_800E5F90[D_8004A7C4->objId] == D_800EA6E0[D_8004A7C4->objId]) && (D_800E83E0[D_8004A7C4->objId] == 0xA)) {
-        if (1.0f != D_800EAA60[D_8004A7C4->objId]) {
+        if (D_800EAA60[D_8004A7C4->objId] != 1.0f) {
             if (D_800EA8A0[D_8004A7C4->objId] == D_800EAA60[D_8004A7C4->objId]) {
                 if (D_800E6BD0[D_8004A7C4->objId] < D_800EA8A0[D_8004A7C4->objId]) {
                     D_800EAA60[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId] * D_800EA8A0[D_8004A7C4->objId];
@@ -405,7 +405,7 @@ void func_801BE588_ovl7(UNUSED s32 arg0) {
         } else if (D_800F6BD0[D_8004A7C4->objId] < D_800E6BD0[D_8004A7C4->objId]) {
             D_800EAA60[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId] * -1.0f;
         } else {
-            if (-1.0f == D_800EAA60[D_8004A7C4->objId]) {
+            if (D_800EAA60[D_8004A7C4->objId] == -1.0f) {
                 if (D_800E6BD0[D_8004A7C4->objId] < D_800EA8A0[D_8004A7C4->objId]) {
                     D_800EAA60[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId] * -1.0f;
                 }

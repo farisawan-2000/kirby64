@@ -46,7 +46,7 @@ SECTIONS
    /* header and boot */
    BEGIN_SEG(boot, 0xA4000000) {
       BUILD_DIR/src/rom_header.o(.data*);
-      BUILD_DIR/asm/boot2.o(.text);
+      BUILD_DIR/asm/boot.o(.text);
    }
    END_SEG(boot)
  
