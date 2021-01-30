@@ -19,6 +19,10 @@ ifndef QEMU_IRIX
   endif
 endif
 
+V := @
+ifeq (VERBOSE, 1)
+	V=
+endif
 
 ##################### Compiler Options #######################
 # IRIX_ROOT := tools/ido5.3_compiler
@@ -239,7 +243,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	-DBUILD_DIR=$(BUILD_DIR)
 
 $(BUILD_DIR)/$(TARGET).elf: $(ASSET_O_FILES) $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
-	$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(ASSET_O_FILES) $(O_FILES) $(LIBS) -lultra -ln_audio
+	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(ASSET_O_FILES) $(O_FILES) $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
