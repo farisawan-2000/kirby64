@@ -240,28 +240,37 @@ extern u32 D_800E0650[];
 
 extern Lights1 D_800BE548;
 
-// _mostly_ regalloc left at this point
-
 #define gSPDoubleLights1(pkt, lt)\
 {\
     gSPNumLights(pkt[0]++,NUMLIGHTS_1);                  \
-    gSPLight(pkt[0]++,&(lt).l[0],1);                   \
-    gSPLight(pkt[0]++,&(lt).a,2);                  \
     gSPNumLights(pkt[1]++,NUMLIGHTS_1);                  \
+    gSPLight(pkt[0]++,&(lt).l[0],1);                   \
     gSPLight(pkt[1]++,&(lt).l[0],1);                   \
+    gSPLight(pkt[0]++,&(lt).a,2);                  \
     gSPLight(pkt[1]++,&(lt).a,2);                  \
 }
 
-// double lights1 macros seem to be reordering
-#if 0
+/**
+ * Full explanation of the non-matching cause in this function:
+ * - Some cases in this function do 2 gSPSetLights1's on D_800BE548.
+ * - Both Lights macros use the same command for the first half of the ucode
+ * - The original code knows to preserve this top half of the command
+ *   in a register in order to save a few instructions
+ * - However, in the current function, the top half is reloaded for both macros,
+ *   instead of just the first one.
+ * - This only happens on the double Lights1 macro that operates on D_800BE548,
+ *   but not the one that operates on temp_a2
+ */
+
+#ifdef NON_MATCHING
 void func_801BC978_ovl7(s32 *arg0) {
     s32 temp_v0;
     Lights1 *temp_a2;
 
     temp_v0 = *arg0;
-    if ((D_800DD8D0[temp_v0] & 0x40) == 0) {
+    if (!(D_800DD8D0[temp_v0] & 0x40)) {
         temp_a2 = D_800E0650[temp_v0];
-        switch (func_800AB0F4(arg0)) {
+        switch (func_800AB0F4(arg0) - 6) {
             case 13:
                 gSPSegment(gDisplayListHeads[0]++, 4, gSegment4StartArray[temp_v0]);
                 if (temp_a2 != NULL) {
@@ -293,6 +302,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                 }
                 func_800AB3A0(arg0);
+                goto fum1; fum1:;
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 break;
             case 14:
@@ -312,7 +322,9 @@ void func_801BC978_ovl7(s32 *arg0) {
                 if (temp_a2 != NULL) {
                     gSPSetLights1(gDisplayListHeads[0]++, (*temp_a2));
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
-                } func_800AB244(arg0);
+                }
+                func_800AB244(arg0);
+                // goto fum2; fum2:;
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
@@ -325,6 +337,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB314(arg0);
+                // goto fum3; fum3:;
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
                 break;
@@ -337,6 +350,7 @@ void func_801BC978_ovl7(s32 *arg0) {
                     gSPSetLights1(gDisplayListHeads[1]++, (*temp_a2));
                 }
                 func_800AB3F4(arg0);
+                // goto fum4; fum4:;
                 gSPSetLights1(gDisplayListHeads[0]++, D_800BE548);
                 gSPSetLights1(gDisplayListHeads[1]++, D_800BE548);
         }

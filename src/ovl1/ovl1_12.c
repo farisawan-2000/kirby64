@@ -130,15 +130,15 @@ void func_800BBDC4(void) {
         temp_a0 = *D_800ED4E0;
         temp_t4 = temp_v1 + 1;
         temp_a1 = (temp_a0 + (temp_v1 * 2))->unk100;
-        D_800ED4EC = temp_t4;
+        D_800ED4EC++;
         if ((temp_a1 & 0xE000) != 0) {
-            D_800ED4EC = temp_t4 + 1;
+            D_800ED4EC++;
         }
         if ((temp_a1 & 0x1C00) != 0) {
-            D_800ED4EC = D_800ED4EC + 1;
+            D_800ED4EC++;
         }
         if ((temp_a1 & 0x380) != 0) {
-            D_800ED4EC = D_800ED4EC + 1;
+            D_800ED4EC++;
         }
         temp_a1_2 = (temp_a0 + (D_800ED4EC * 2))->unk100;
         if (temp_a1_2 == 0xFFFF) {

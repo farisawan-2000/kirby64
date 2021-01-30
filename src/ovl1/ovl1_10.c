@@ -308,8 +308,8 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_10/func_800BAF50.s")
 
 #ifdef MIPS_TO_C
 void func_800BB028(void *arg0) {
-    ? sp34;
-    ? sp1C;
+    OSMesg sp34;
+    OSMesgQueue sp1C;
 
     arg0 = arg0;
     osCreateMesgQueue(&sp1C, &sp34, 1);
