@@ -789,10 +789,10 @@ void func_8011CFF4(s32 arg0) {
         D_800DDC50[temp_v0_2->objId] = temp_v1_3;
         gKirbyState.actionChange = -1;
         if (D_800D6FB2 == 2) {
-            func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_8022947C);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_8022947C);
             return;
         }
-        func_800B1EC8((&D_800DE510[temp_v0_2->objId])[-0x6BC], &D_8016C510);
+        restart_thread_with_new_function((&gEntitiesGObjThreadStackArray[temp_v0_2->objId])[-0x6BC], &D_8016C510);
     }
 }
 #else
@@ -1432,7 +1432,7 @@ f32 func_8011E374(void) {
     sp30 = 0.0f;
     sp28 = D_800E6A10[D_8004A7C4->objId];
     func_8001E344_ovl2(&sp2C, D_80129114->unk4[D_800E5F90[D_8004A7C4->objId]].unk4, (bitwise s32) D_800E6BD0[D_8004A7C4->objId]);
-    temp_f0 = func_800F89C0(&sp20, &sp2C);
+    temp_f0 = vec3_abs_angle_diff(&sp20, &sp2C);
     phi_f2 = temp_f0;
     if (temp_f0 < 0.0f) {
         phi_f2 = temp_f0 + D_80128F1C;
@@ -1549,7 +1549,7 @@ f32 func_8011E548(void) {
                     sp2C = 0.0f;
                     sp28 = 0.0f;
                     sp30 = D_800E6A10[D_8004A7C4->objId];
-                    gKirbyState.unk7C = func_800F89C0(&sp28, &sp34);
+                    gKirbyState.unk7C = vec3_abs_angle_diff(&sp28, &sp34);
                     temp_f2_2 = gKirbyState.unk7C;
                     if (temp_f2_2 < 0.0f) {
                         gKirbyState.unk7C = temp_f2_2 + D_80128F38;
@@ -3045,7 +3045,7 @@ void func_80122FB0(s32 arg0) {
 
     temp_v0 = D_8004A7C4;
     D_800DDE10[temp_v0->objId] = arg0;
-    func_800B1EC8(D_800DE890[temp_v0->objId], &D_80177098);
+    restart_thread_with_new_function(D_800DE890[temp_v0->objId], &D_80177098);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122FB0.s")

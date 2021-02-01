@@ -5,18 +5,18 @@
 
 .balign 16
 glabel jtbl_800D6940
-.word L800BB7A0_ovl1
-.word L800BB7C0_ovl1
-.word L800BB7A0_ovl1
-.word L800BB7C0_ovl1
-.word L800BB7A0_ovl1
-.word L800BB7C0_ovl1
-.word L800BB7A0_ovl1
-.word L800BB7C0_ovl1
-.word L800BB7B0_ovl1
-.word L800BB874_ovl1
-.word L800BB7B0_ovl1
-.word L800BB874_ovl1
+.word 0x800BB7A0
+.word 0x800BB7C0
+.word 0x800BB7A0
+.word 0x800BB7C0
+.word 0x800BB7A0
+.word 0x800BB7C0
+.word 0x800BB7A0
+.word 0x800BB7C0
+.word 0x800BB7B0
+.word 0x800BB874
+.word 0x800BB7B0
+.word 0x800BB874
 
 
 glabel D_800D6970

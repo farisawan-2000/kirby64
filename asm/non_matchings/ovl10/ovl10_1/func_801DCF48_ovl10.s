@@ -11,7 +11,7 @@ glabel func_801DCF48_ovl10
 /* 1CDCDC 801DCF6C 24010001 */  li    $at, 1
 /* 1CDCE0 801DCF70 8C430000 */  lw    $v1, ($v0)
 /* 1CDCE4 801DCF74 240F0009 */  li    $t7, 9
-/* 1CDCE8 801DCF78 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1CDCE8 801DCF78 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1CDCEC 801DCF7C 00031880 */  sll   $v1, $v1, 2
 /* 1CDCF0 801DCF80 01C37021 */  addu  $t6, $t6, $v1
 /* 1CDCF4 801DCF84 8DCE83E0 */ lw $t6, %lo(D_800E83E0)($t6)
@@ -24,8 +24,8 @@ glabel func_801DCF48_ovl10
 /* 1CDD10 801DCFA0 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 /* 1CDD14 801DCFA4 0018C880 */  sll   $t9, $t8, 2
 /* 1CDD18 801DCFA8 00992021 */  addu  $a0, $a0, $t9
-/* 1CDD1C 801DCFAC 0C02C7B2 */  jal   func_800B1EC8
-/* 1CDD20 801DCFB0 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1CDD1C 801DCFAC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1CDD20 801DCFB0 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 .L801DCFB4_ovl10:
 /* 1CDD24 801DCFB4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1CDD28 801DCFB8 27BD0018 */  addiu $sp, $sp, 0x18

@@ -72,7 +72,7 @@ glabel func_80158B10_ovl3
 /* 0B965C 80158C1C 000E7880 */  sll   $t7, $t6, 2
 /* 0B9660 80158C20 008F2021 */  addu  $a0, $a0, $t7
 /* 0B9664 80158C24 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 0B9668 80158C28 0C02C7B2 */  jal   func_800B1EC8
+/* 0B9668 80158C28 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 0B966C 80158C2C 24A5785C */   addiu $a1, %lo(D_8022785C) # addiu $a1, $a1, 0x785c
 .L80158C30_ovl3:
 /* 0B9670 80158C30 8FBF0014 */  lw    $ra, 0x14($sp)

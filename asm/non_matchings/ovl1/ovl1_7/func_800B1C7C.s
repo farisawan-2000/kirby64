@@ -47,9 +47,9 @@ glabel func_800B1C7C
 /* 059F78 800B1D28 00002825 */  move  $a1, $zero
 /* 059F7C 800B1D2C 0C02C782 */  jal   func_800B1E08
 /* 059F80 800B1D30 02003025 */   move  $a2, $s0
-/* 059F84 800B1D34 3C05800E */ lui $a1, %hi(D_800DE510)
+/* 059F84 800B1D34 3C05800E */ lui $a1, %hi(gEntitiesGObjThreadStackArray)
 /* 059F88 800B1D38 00B22821 */  addu  $a1, $a1, $s2
-/* 059F8C 800B1D3C 8CA5E510 */ lw $a1, %lo(D_800DE510)($a1)
+/* 059F8C 800B1D3C 8CA5E510 */ lw $a1, %lo(gEntitiesGObjThreadStackArray)($a1)
 /* 059F90 800B1D40 24040002 */  li    $a0, 2
 /* 059F94 800B1D44 0C02C782 */  jal   func_800B1E08
 /* 059F98 800B1D48 02003025 */   move  $a2, $s0

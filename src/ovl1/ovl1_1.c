@@ -40,7 +40,7 @@ extern const char D_800D5B40[];
 extern const char D_800D5B48[];
 
 extern u32 D_8003DE54;
-extern struct ObjThreadStack *D_8004A7D0;
+extern struct GObjThreadStack *D_8004A7D0;
 extern u32 D_80048D88, D_80048D8C, D_80048D90;
 
 #ifdef NON_MATCHING
@@ -75,7 +75,7 @@ OSThread *func_800A2904(void) {
                             func_80022B88("stack:%x\n", D_8004A7D0->objThread->objStack);
                             func_80022B88("thread pc:%x\n", D_8004A7D0->objThread->thread.context.pc);
                             func_80022B88("id:%d\n", D_8004A7D0->objThread->thread.id);
-                            func_80022B88("ptr:%x\n", D_8004A7D0->pad[0]);
+                            func_80022B88("ptr:%x\n", D_8004A7D0->ptr);
                             sp1C = &D_8004A7D0->objThread->thread;
                             break;
                         case 1:
@@ -1201,7 +1201,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A4414.s")
 
 
 // executes a set of (arg1 - arg0) callback functions
-void func_800A447C(u32 arg0, u32 arg1, void (*callback[])(struct UnkStruct8004A7C4 *a1)) {
+void call_virtual_function(u32 arg0, u32 arg1, void (*callback[])(struct UnkStruct8004A7C4 *a1)) {
     // all of the function i've seen called from here have no arguments...
     if (arg0 < arg1) callback[arg0](D_8004A7C4);
 }
@@ -2145,7 +2145,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A57C8.s")
 #endif
 
 
-extern u32 D_800D6B3C, D_800D6B40, D_800D6B34, D_800D6B38;
+extern s32 D_800D6B3C, D_800D6B40, D_800D6B34, D_800D6B38;
 extern u8 D_800D6B28, D_800D6B29, D_800D6B2A, D_800D6B2B;
 #include <PR/gbi.h>
 extern Gfx *gDisplayListHeads[];

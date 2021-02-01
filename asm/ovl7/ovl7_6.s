@@ -73,7 +73,7 @@ glabel func_801ACFD0
 /* 153134 801AD0C4 8C6B0000 */  lw    $t3, ($v1)
 /* 153138 801AD0C8 000B6080 */  sll   $t4, $t3, 2
 /* 15313C 801AD0CC 008C2021 */  addu  $a0, $a0, $t4
-/* 153140 801AD0D0 0C02911F */  jal   func_800A447C
+/* 153140 801AD0D0 0C02911F */  jal   call_virtual_function
 /* 153144 801AD0D4 8C84DC50 */   lw    $a0, -0x23b0($a0)
 /* 153148 801AD0D8 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 15314C 801AD0DC 27BD0018 */  addiu $sp, $sp, 0x18

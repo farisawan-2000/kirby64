@@ -90,7 +90,7 @@ glabel func_800F8E6C
 /* 081A34 800F8FC4 44805000 */  mtc1  $zero, $f10
 /* 081A38 800F8FC8 27A4004C */  addiu $a0, $sp, 0x4c
 /* 081A3C 800F8FCC 27A50058 */  addiu $a1, $sp, 0x58
-/* 081A40 800F8FD0 0C03E270 */  jal   func_800F89C0
+/* 081A40 800F8FD0 0C03E270 */  jal   vec3_abs_angle_diff
 /* 081A44 800F8FD4 E7AA005C */   swc1  $f10, 0x5c($sp)
 /* 081A48 800F8FD8 44808000 */  mtc1  $zero, $f16
 /* 081A4C 800F8FDC 3C0C800E */  lui   $t4, %hi(D_800E17D0) # $t4, 0x800e

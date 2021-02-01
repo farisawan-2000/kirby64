@@ -46,14 +46,14 @@ glabel func_8021F4E8_ovl18
 /* 231F30 8021F590 00002825 */   move  $a1, $zero
 /* 231F34 8021F594 3C0C8005 */  lui   $t4, %hi(D_8004A7C4) # $t4, 0x8005
 /* 231F38 8021F598 8D8CA7C4 */  lw    $t4, %lo(D_8004A7C4)($t4)
-/* 231F3C 8021F59C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 231F3C 8021F59C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 231F40 8021F5A0 3C05801A */  lui   $a1, %hi(D_801A3E80) # $a1, 0x801a
 /* 231F44 8021F5A4 8D8D0000 */  lw    $t5, ($t4)
 /* 231F48 8021F5A8 24A53E80 */  addiu $a1, %lo(D_801A3E80) # addiu $a1, $a1, 0x3e80
 /* 231F4C 8021F5AC 000D7080 */  sll   $t6, $t5, 2
 /* 231F50 8021F5B0 008E2021 */  addu  $a0, $a0, $t6
-/* 231F54 8021F5B4 0C02C7B2 */  jal   func_800B1EC8
-/* 231F58 8021F5B8 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 231F54 8021F5B4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 231F58 8021F5B8 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 .L8021F5BC_ovl18:
 /* 231F5C 8021F5BC 8FBF0014 */  lw    $ra, 0x14($sp)
 .L8021F5C0_ovl18:

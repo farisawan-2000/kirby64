@@ -15,7 +15,7 @@ void func_801DB1E0_ovl11(void *arg0) {
     func_800FF0A8(D_800E1B50[D_8004A7C4->objId]->unk80, temp_a3);
     D_800E0810[D_8004A7C4->objId] = 0x18;
     func_8000A888_ovl11(arg0, arg0->unkD, D_800E0810[D_8004A7C4->objId]);
-    func_800A447C(D_800E7880[D_8004A7C4->objId], 4, &D_801E0B00[0]);
+    call_virtual_function(D_800E7880[D_8004A7C4->objId], 4, &D_801E0B00[0]);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB1E0_ovl11.s")
@@ -76,9 +76,9 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB31C_ovl11.s")
 #include "buffers.h"
 extern const char D_801E0BE0[];
 extern f32 D_801E0C0C;
-extern void func_800F98EC(s32, f32);
-extern void func_800B1900(u16, s32);
-#ifdef NON_MATCHING
+extern int func_800F98EC(s32, f32);
+extern void func_800B1900(u16);
+
 void func_801DB34C_ovl11(void) {
     f32 temp_f22;
     s32 temp_v0;
@@ -90,8 +90,7 @@ void func_801DB34C_ovl11(void) {
         temp_v0 = func_800AEC08(0x19, 0x1E, 0x3C);
         if (temp_v0 >= 0x3C || temp_v0 == -1) {
             print_error_stub(&D_801E0BE0);
-            // this function need an argument in the middle of the existing ones
-            func_800B1900(temp_v0, temp_v0);
+            func_800B1900(temp_v0);
             return;
         }
         D_800DDC50[temp_v0] = D_800DDC50[D_8004A7C4->objId];
@@ -115,15 +114,12 @@ void func_801DB34C_ovl11(void) {
         D_800EA520[temp_v0] = D_8004A7C4->objId;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB34C_ovl11.s")
-#endif
 
 extern f32 gEntitiesPosXArray[];
 extern f32 gEntitiesPosZArray[];
 extern f32 gEntitiesAngleYArray[];
 
-extern f32 func_800F89C0(Vector *arg0, Vector *arg1);
+extern f32 vec3_abs_angle_diff(Vector *arg0, Vector *arg1);
 
 f32 func_801DB5C8_ovl11(void) {
     Vector sp2C;
@@ -135,7 +131,7 @@ f32 func_801DB5C8_ovl11(void) {
     sp20.x = gEntitiesPosXArray[0] - gEntitiesPosXArray[D_8004A7C4->objId];
     sp20.y = 0.0f;
     sp20.z = gEntitiesPosZArray[0] - gEntitiesPosZArray[D_8004A7C4->objId];
-    return func_800F89C0(&sp2C, &sp20);
+    return vec3_abs_angle_diff(&sp2C, &sp20);
 }
 
 #ifdef MIPS_TO_C
@@ -241,7 +237,7 @@ void func_801DB7D0_ovl11(void) {
 // extern u32 D_800DDC50[];
 extern u32 *D_801E0B24;
 void func_801DB8A0_ovl11(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B24);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B24);
 }
 
 #ifdef MIPS_TO_C
@@ -304,7 +300,7 @@ block_10:
         }
     }
     if (temp_a2 != phi_a2) {
-        func_800B1EC8(*(D_800DE510 + phi_v0), &D_801DB8A0);
+        restart_thread_with_new_function(*(gEntitiesGObjThreadStackArray + phi_v0), &D_801DB8A0);
     }
 }
 #else
@@ -328,7 +324,7 @@ void func_801DB9E0_ovl11(s32 arg0) {
     func_801DB34C_ovl11();
     D_800E9560[D_8004A7C4->objId] = -1;
     D_800E93A0[D_8004A7C4->objId] = D_800E9560[D_8004A7C4->objId];
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B24);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B24);
 }
 
 #ifdef MIPS_TO_C
@@ -363,7 +359,7 @@ void func_801DBB4C_ovl11(s32 arg0) {
         D_800EC2E0[temp_v0_2->objId] = -1;
         phi_v1 = temp_v0_2->objId * 4;
     }
-    func_800A447C(*(D_800DDFD0 + phi_v1), 5, &D_801E0B38);
+    call_virtual_function(*(D_800DDFD0 + phi_v1), 5, &D_801E0B38);
     temp_v1_3 = D_8004A7C4->objId;
     phi_v1_2 = temp_v1_3 * 4;
     if (D_800E9FE0[temp_v1_3] != 0) {
@@ -377,7 +373,7 @@ void func_801DBB4C_ovl11(s32 arg0) {
     if (D_800D70D8 <= 0.0f) {
         temp_v0_3 = D_8004A7C4;
         D_800DDC50[temp_v0_3->objId] = 4;
-        func_800B1EC8(D_800DE510[temp_v0_3->objId], &D_801DB8A0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_3->objId], &D_801DB8A0);
     }
 }
 #else
@@ -405,7 +401,7 @@ void func_801DBD58_ovl11(s32 arg0) {
 void func_801DBDF8_ovl11(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
         D_800DDC50[D_8004A7C4->objId] = 1;
-        func_800B1EC8(D_800DE510[D_8004A7C4->objId], &func_801DB8A0_ovl11);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_801DB8A0_ovl11);
     }
 }
 
@@ -475,7 +471,7 @@ void func_801DC064_ovl11(s32 arg0) {
 void func_801DC158_ovl11(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
         D_800DDC50[D_8004A7C4->objId] = 1;
-        func_800B1EC8(D_800DE510[D_8004A7C4->objId], func_801DB8A0_ovl11);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], func_801DB8A0_ovl11);
     }
 }
 
@@ -487,7 +483,7 @@ void func_801DC1C4_ovl11(s32 arg0) {
     func_800BB468(2, 0);
     temp_v0 = D_8004A7C4;
     D_800E7880[temp_v0->objId] = 1;
-    func_800A447C(D_800E7880[temp_v0->objId], 4, &D_801E0B00);
+    call_virtual_function(D_800E7880[temp_v0->objId], 4, &D_801E0B00);
     func_800AFA14();
 }
 #else
@@ -501,7 +497,7 @@ void func_801DC250_ovl11(s32 arg0) {
 
 #ifdef MIPS_TO_C
 void func_801DC258_ovl11(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 9, &D_801E0B4C);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 9, &D_801E0B4C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC258_ovl11.s")
@@ -679,7 +675,7 @@ void func_801DC45C_ovl11(void) {
         }
     }
     if (temp_a2 != phi_a2) {
-        func_800B1EC8(*(D_800DE510 + phi_v1), &D_801DC258);
+        restart_thread_with_new_function(*(gEntitiesGObjThreadStackArray + phi_v1), &D_801DC258);
     }
 }
 #else
@@ -812,7 +808,7 @@ void func_801DC83C_ovl11(void) {
         func_801DC7B8_ovl11();
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 8;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801DC258);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801DC258);
     }
 }
 #else
@@ -837,7 +833,7 @@ void func_801DC8F8_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     D_800E93A0[temp_v1] = D_800E9560[temp_v1];
     func_800BC1FC(D_800D70D8, &D_800D70D8, D_800E9560);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 9, &D_801E0B4C);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 9, &D_801E0B4C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC8F8_ovl11.s")
@@ -848,7 +844,7 @@ void func_801DCA48_ovl11(s32 arg0) {
     u32 temp_v0;
     u32 phi_v0;
 
-    func_800A447C(D_800DDFD0[D_8004A7C4->objId], 9, &D_801E0B70);
+    call_virtual_function(D_800DDFD0[D_8004A7C4->objId], 9, &D_801E0B70);
     temp_v0 = D_8004A7C4->objId;
     phi_v0 = temp_v0 * 4;
     if (D_800E9FE0[temp_v0] != 0) {
@@ -894,7 +890,7 @@ void func_801DCBE0_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DC258);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DC258);
     }
 }
 #else
@@ -1015,7 +1011,7 @@ void func_801DCF70_ovl11(s32 arg0) {
         if (4 == temp_v1) {
             if (4 == D_800E9AA0[temp_v0]) {
                 D_800DDC50[temp_v0] = 4;
-                func_800B1EC8(D_800DE510[temp_a2->objId], &D_801DC258);
+                restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_a2->objId], &D_801DC258);
                 return;
             }
         } else {
@@ -1064,7 +1060,7 @@ void func_801DD160_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DC258);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DC258);
     }
 }
 #else
@@ -1257,7 +1253,7 @@ void func_801DD588_ovl11(s32 arg0) {
             func_800A7678(0x177);
             temp_v0_3 = D_8004A7C4;
             D_800DDC50[temp_v0_3->objId] = 6;
-            func_800B1EC8(D_800DE510[temp_v0_3->objId], &D_801DC258);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_3->objId], &D_801DC258);
             return;
         }
         temp_a0_2 = D_800E9C60 + phi_v1;
@@ -1304,7 +1300,7 @@ void func_801DD7D4_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DC258);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DC258);
     }
 }
 #else
@@ -1367,7 +1363,7 @@ void func_801DD9C8_ovl11(s32 arg0) {
     if (D_800E9E20[temp_v1] != 0) {
         D_800E9720[temp_v1] = 0;
         D_800DDC50[temp_v0->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DC258);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DC258);
     }
 }
 #else
@@ -1456,7 +1452,7 @@ void func_801DDB9C_ovl11(s32 arg0) {
     temp_v0_2 = D_8004A7C4->objId;
     temp_v1_2 = *(D_800E83E0 + (temp_v0_2 * 4));
     if (temp_v1_2 == 1) {
-        func_800B1EC8(D_800DE510[temp_v0_2], &D_801DEB78);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2], &D_801DEB78);
         return 1;
     }
     if (temp_v1_2 != 2) {
@@ -1532,7 +1528,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDE08_ovl11.s")
 
 #ifdef MIPS_TO_C
 void func_801DDEC0_ovl11(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B9C);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B9C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDEC0_ovl11.s")
@@ -1561,7 +1557,7 @@ void func_801DDF08_ovl11(s32 arg0) {
     D_800E7CE0[temp_v0_2->objId] = 0x6C;
     D_800E6A10[temp_v0_2->objId] = -1.0f;
     func_801A0D50_ovl11(&D_801DDEC0);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B9C);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801E0B9C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDF08_ovl11.s")
@@ -1580,7 +1576,7 @@ u32 func_801DE038_ovl11(void) {
         func_801A0D74_ovl11();
         phi_v0 = D_8004A7C4->objId * 4;
     }
-    func_800A447C(*(D_800DDFD0 + phi_v0), 5, &D_801E0BB0);
+    call_virtual_function(*(D_800DDFD0 + phi_v0), 5, &D_801E0BB0);
     func_8019BE9C_ovl11(6);
     temp_v0_2 = D_8004A7C4->objId;
     phi_return = temp_v0_2 * 4;
@@ -1627,7 +1623,7 @@ void func_801DE1EC_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DDEC0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DDEC0);
     }
 }
 #else
@@ -1727,7 +1723,7 @@ void func_801DE454_ovl11(s32 arg0) {
             } else {
                 D_800DDC50[temp_v0_2] = 2;
             }
-            func_800B1EC8(D_800DE510[temp_v1_2->objId], &D_801DDEC0);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1_2->objId], &D_801DDEC0);
             return;
         }
         *temp_v1 = temp_a0 - 1;
@@ -1849,11 +1845,11 @@ void func_801DE8D0_ovl11(s32 arg0) {
             D_800E1B50[temp_v1]->unk3C = 1;
             temp_v0_2 = D_8004A7C4;
             D_800DDC50[temp_v0_2->objId] = 1;
-            func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801DDEC0);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801DDEC0);
             return;
         }
         D_800DDC50[temp_v1_2] = 2;
-        func_800B1EC8(D_800DDC50[temp_v0->objId], &D_801DDEC0);
+        restart_thread_with_new_function(D_800DDC50[temp_v0->objId], &D_801DDEC0);
     }
 }
 #else
@@ -1900,7 +1896,7 @@ void func_801DEAE8_ovl11(s32 arg0) {
         D_800E1B50[temp_v0]->unk3C = 1;
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801DDEC0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801DDEC0);
     }
 }
 #else
@@ -1975,7 +1971,7 @@ s32 func_801DEC08_ovl11(s32 arg0) {
         temp_v0_3 = temp_v1_2->objId;
         temp_a0 = *(D_800E83E0 + (temp_v0_3 * 4));
         if (temp_a0 == 1) {
-            func_800B1EC8(D_800DE510[temp_v0_3], &D_801DF5B8);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_3], &D_801DF5B8);
             return 1;
         }
         if (temp_a0 == 2) {
@@ -2056,7 +2052,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEED0_ovl11.s")
 
 #ifdef MIPS_TO_C
 void func_801DEF9C_ovl11(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801E0BC4);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801E0BC4);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEF9C_ovl11.s")
@@ -2079,7 +2075,7 @@ void func_801DEFE4_ovl11(s32 arg0) {
     func_800A9760(0x1009D);
     temp_v0_2 = D_8004A7C4;
     D_800DDC50[temp_v0_2->objId] = 0;
-    func_800A447C(D_800DDC50[temp_v0_2->objId], 3, &D_801E0BC4);
+    call_virtual_function(D_800DDC50[temp_v0_2->objId], 3, &D_801E0BC4);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEFE4_ovl11.s")
@@ -2096,7 +2092,7 @@ u32 func_801DF0B4_ovl11(s32 arg0) {
 
     temp_v0 = D_8004A7C4->objId;
     sp1C = D_800DFBD0[temp_v0]->unk4;
-    func_800A447C(D_800DDFD0[temp_v0], 3, &D_801E0BD0);
+    call_virtual_function(D_800DDFD0[temp_v0], 3, &D_801E0BD0);
     temp_v0_2 = D_8004A7C4->objId;
     temp_v0_2 = temp_v0_2 * 4;
     phi_return = temp_v0_2;
@@ -2168,7 +2164,7 @@ void func_801DF318_ovl11(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DEF9C);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DEF9C);
     }
 }
 #else
@@ -2201,13 +2197,13 @@ void func_801DF3DC_ovl11(s32 arg0) {
     temp_a1 = *temp_a0;
     if (temp_a1 == 0) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DEF9C);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DEF9C);
         return;
     }
     *temp_a0 = temp_a1 - 1;
     if (D_800D70D8 <= 0.0f) {
         D_800DDC50[temp_v0->objId] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801DEF9C);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801DEF9C);
     }
 }
 #else

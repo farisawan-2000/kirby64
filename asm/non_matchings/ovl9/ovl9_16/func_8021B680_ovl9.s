@@ -13,7 +13,7 @@ glabel func_8021B680_ovl9
 /* 1C96FC 8021B6AC 24050002 */  li    $a1, 2
 /* 1C9700 8021B6B0 000FC080 */  sll   $t8, $t7, 2
 /* 1C9704 8021B6B4 00982021 */  addu  $a0, $a0, $t8
-/* 1C9708 8021B6B8 0C02911F */  jal   func_800A447C
+/* 1C9708 8021B6B8 0C02911F */  jal   call_virtual_function
 /* 1C970C 8021B6BC 8C84DFD0 */ lw $a0, %lo(D_800DDFD0)($a0)
 .L8021B6C0_ovl9:
 /* 1C9710 8021B6C0 8FBF0014 */  lw    $ra, 0x14($sp)

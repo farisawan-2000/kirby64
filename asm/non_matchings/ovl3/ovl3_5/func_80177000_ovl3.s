@@ -31,7 +31,7 @@ glabel func_80177000_ovl3
 /* 0D7AB4 80177074 8C4C0000 */  lw    $t4, ($v0)
 /* 0D7AB8 80177078 000C6880 */  sll   $t5, $t4, 2
 /* 0D7ABC 8017707C 006D7021 */  addu  $t6, $v1, $t5
-/* 0D7AC0 80177080 0C02911F */  jal   func_800A447C
+/* 0D7AC0 80177080 0C02911F */  jal   call_virtual_function
 /* 0D7AC4 80177084 8DC40000 */   lw    $a0, ($t6)
 /* 0D7AC8 80177088 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0D7ACC 8017708C 27BD0018 */  addiu $sp, $sp, 0x18

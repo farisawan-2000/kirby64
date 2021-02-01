@@ -287,7 +287,7 @@ glabel func_801AEE04_ovl7
 /* 154EAC 801AEE3C 3C04800E */  lui   $a0, 0x800e
 /* 154EB0 801AEE40 00832021 */  addu  $a0, $a0, $v1
 /* 154EB4 801AEE44 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 154EB8 801AEE48 0C02C7B2 */  jal   func_800B1EC8
+/* 154EB8 801AEE48 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 154EBC 801AEE4C 24A5CF84 */   addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
 /* 154EC0 801AEE50 10000058 */  b     .L801AEFB4_ovl7
 /* 154EC4 801AEE54 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -354,7 +354,7 @@ glabel func_801AEE04_ovl7
 /* 154FA0 801AEF30 248BFFFF */   addiu $t3, $a0, -1
 /* 154FA4 801AEF34 3C04800E */  lui   $a0, 0x800e
 /* 154FA8 801AEF38 00832021 */  addu  $a0, $a0, $v1
-/* 154FAC 801AEF3C 0C02C7B2 */  jal   func_800B1EC8
+/* 154FAC 801AEF3C 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 154FB0 801AEF40 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 154FB4 801AEF44 3C068005 */  lui   $a2, %hi(D_8004A7C4) # $a2, 0x8005
 /* 154FB8 801AEF48 10000002 */  b     .L801AEF54_ovl7
@@ -384,7 +384,7 @@ glabel func_801AEE04_ovl7
 /* 15500C 801AEF9C 24A5CF84 */  addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
 /* 155010 801AEFA0 0018C880 */  sll   $t9, $t8, 2
 /* 155014 801AEFA4 00992021 */  addu  $a0, $a0, $t9
-/* 155018 801AEFA8 0C02C7B2 */  jal   func_800B1EC8
+/* 155018 801AEFA8 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 15501C 801AEFAC 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 155020 801AEFB0 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801AEFB4_ovl7:
@@ -578,7 +578,7 @@ glabel func_801AF104_ovl7
 /* 1552F0 801AF280 8C780000 */  lw    $t8, ($v1)
 /* 1552F4 801AF284 24050001 */  li    $a1, 1
 /* 1552F8 801AF288 00982021 */  addu  $a0, $a0, $t8
-/* 1552FC 801AF28C 0C02911F */  jal   func_800A447C
+/* 1552FC 801AF28C 0C02911F */  jal   call_virtual_function
 /* 155300 801AF290 90847880 */   lbu   $a0, 0x7880($a0)
 /* 155304 801AF294 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 155308 801AF298 27BD0030 */  addiu $sp, $sp, 0x30
@@ -635,7 +635,7 @@ glabel func_801AF314_ovl7
 /* 1553C0 801AF350 8DCF0000 */  lw    $t7, ($t6)
 /* 1553C4 801AF354 000FC080 */  sll   $t8, $t7, 2
 /* 1553C8 801AF358 0218C821 */  addu  $t9, $s0, $t8
-/* 1553CC 801AF35C 0C02911F */  jal   func_800A447C
+/* 1553CC 801AF35C 0C02911F */  jal   call_virtual_function
 /* 1553D0 801AF360 8F240000 */   lw    $a0, ($t9)
 /* 1553D4 801AF364 1000FFF8 */  b     .L801AF348_ovl7
 /* 1553D8 801AF368 8E2E0000 */   lw    $t6, ($s1)
@@ -759,7 +759,7 @@ glabel func_801AF398_ovl7
 /* 15559C 801AF52C 24050004 */  li    $a1, 4
 /* 1555A0 801AF530 000FC080 */  sll   $t8, $t7, 2
 /* 1555A4 801AF534 00982021 */  addu  $a0, $a0, $t8
-/* 1555A8 801AF538 0C02911F */  jal   func_800A447C
+/* 1555A8 801AF538 0C02911F */  jal   call_virtual_function
 /* 1555AC 801AF53C 8C84DFD0 */   lw    $a0, -0x2030($a0)
 /* 1555B0 801AF540 8E190000 */  lw    $t9, ($s0)
 .L801AF544_ovl7:
@@ -809,7 +809,7 @@ glabel func_801AF398_ovl7
 /* 15565C 801AF5EC 00E27821 */  addu  $t7, $a3, $v0
 /* 155660 801AF5F0 45020006 */  bc1fl .L801AF60C_ovl7
 /* 155664 801AF5F4 8DF80000 */   lw    $t8, ($t7)
-/* 155668 801AF5F8 0C02C7B2 */  jal   func_800B1EC8
+/* 155668 801AF5F8 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 15566C 801AF5FC 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 155670 801AF600 10000080 */  b     .L801AF804_ovl7
 /* 155674 801AF604 8FBF001C */   lw    $ra, 0x1c($sp)
@@ -890,7 +890,7 @@ glabel func_801AF398_ovl7
 /* 15579C 801AF72C 24A5F314 */  addiu $a1, %lo(D_801AF314) # addiu $a1, $a1, -0xcec
 /* 1557A0 801AF730 00084880 */  sll   $t1, $t0, 2
 /* 1557A4 801AF734 00892021 */  addu  $a0, $a0, $t1
-/* 1557A8 801AF738 0C02C7B2 */  jal   func_800B1EC8
+/* 1557A8 801AF738 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 1557AC 801AF73C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1557B0 801AF740 10000030 */  b     .L801AF804_ovl7
 /* 1557B4 801AF744 8FBF001C */   lw    $ra, 0x1c($sp)
@@ -941,7 +941,7 @@ glabel func_801AF398_ovl7
 /* 15585C 801AF7EC 24A5CF84 */  addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
 /* 155860 801AF7F0 000D7080 */  sll   $t6, $t5, 2
 /* 155864 801AF7F4 008E2021 */  addu  $a0, $a0, $t6
-/* 155868 801AF7F8 0C02C7B2 */  jal   func_800B1EC8
+/* 155868 801AF7F8 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 15586C 801AF7FC 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 155870 801AF800 8FBF001C */  lw    $ra, 0x1c($sp)
 .L801AF804_ovl7:

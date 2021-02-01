@@ -74,15 +74,15 @@ extern const char D_80040670[];
 
 // bss
 
-struct ObjThread *gGObjThreadHead; // 0x8004A540
+struct GObjThread *gGObjThreadHead; // 0x8004A540
 u32 D_8004A544;
 u32 D_8004A548;
 u32 gNewEntityStackSize; // 0x8004A54C
 void (*D_8004A550)(struct ObjStack *);
-struct ObjThreadStack* gGObjThreadStackHead; // 0x8004A554
+struct GObjThreadStack* gGObjThreadStackHead; // 0x8004A554
 s32 D_8004A558;
-struct ObjProcess* gObjectProcessMaybe; // 0x8004A55C
-struct ObjThreadStack* D_8004A560[4]; // probably length 4
+struct GObjProcess* gObjectProcessMaybe; // 0x8004A55C
+struct GObjThreadStack* D_8004A560[4]; // probably length 4
 u32 D_8004A570;
 // 0x8004A574?
 struct UnkStruct8004A578 *D_8004A578[32]; // probably length 32 based on loop asm
@@ -106,7 +106,7 @@ u32 D_8004A7B8;
 struct Camera* D_8004A7BC;
 u32 D_8004A7C0;
 struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
-struct ObjThreadStack *D_8004A7D0;
+struct GObjThreadStack *D_8004A7D0;
 s32 D_8004A7D4;
 OSMesg D_8004A7D8;
 // 0x8004A7DC?
@@ -120,8 +120,8 @@ extern struct UnkStruct8004A7C4 *D_800DE44C;
 
 
 
-struct ObjThread *get_gobj_thread(void) {
-    struct ObjThread *ret;
+struct GObjThread *get_gobj_thread(void) {
+    struct GObjThread *ret;
     if (gGObjThreadHead == NULL) {
         fatal_printf(D_80040230); // om : couldn't get GObjThread
         while (TRUE);
@@ -132,14 +132,14 @@ struct ObjThread *get_gobj_thread(void) {
     return ret;
 }
 
-void func_80007FB8(struct ObjThread *arg0) {
+void func_80007FB8(struct GObjThread *arg0) {
     arg0->unk0 = gGObjThreadHead;
     gGObjThreadHead = arg0;
     D_8004A544--;
 }
 
-struct ObjThreadStack *get_gobj_thread_stack(void) {
-    struct ObjThreadStack *temp_v0;
+struct GObjThreadStack *get_gobj_thread_stack(void) {
+    struct GObjThreadStack *temp_v0;
 
     if (gGObjThreadStackHead == NULL) {
         fatal_printf(D_80040250); // om : couldn't get GObjThreadStack
@@ -151,14 +151,14 @@ struct ObjThreadStack *get_gobj_thread_stack(void) {
     return temp_v0;
 }
 
-void push_gobj_thread_stack(struct ObjThreadStack *arg0) {
+void push_gobj_thread_stack(struct GObjThreadStack *arg0) {
     arg0->unk0 = gGObjThreadStackHead;
     gGObjThreadStackHead = arg0;
     D_8004A548--;
 }
 
-struct ObjProcess *get_gobj_process(void) {
-    struct ObjProcess *temp_v0;
+struct GObjProcess *get_gobj_process(void) {
+    struct GObjProcess *temp_v0;
 
     if (gObjectProcessMaybe == NULL) {
         fatal_printf(D_80040274); // om : couldn't get GObjProcess
@@ -171,9 +171,9 @@ struct ObjProcess *get_gobj_process(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_800080C0(struct ObjProcess *arg0) {
-    struct ObjProcess *temp_v1_4;
-    struct ObjThreadStack **temp_v1_3;
+void func_800080C0(struct GObjProcess *arg0) {
+    struct GObjProcess *temp_v1_4;
+    struct GObjThreadStack **temp_v1_3;
     u32 temp_a2;
     u32 temp_a3;
     u8 *temp_v1_5;
@@ -251,13 +251,13 @@ block_7:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800080C0.s")
 #endif
 
-void push_gobj_process(struct ObjProcess *arg0) {
+void push_gobj_process(struct GObjProcess *arg0) {
     arg0->unk0 = gObjectProcessMaybe;
     gObjectProcessMaybe = arg0;
     D_8004A570--;
 }
 
-void func_800081C4(struct ObjThreadStack *arg0) {
+void func_800081C4(struct GObjThreadStack *arg0) {
     if (arg0->unkC != 0) {
         arg0->unkC->unk8 = arg0->unk8;
     } else {
@@ -268,7 +268,7 @@ void func_800081C4(struct ObjThreadStack *arg0) {
     }
 }
 
-void *func_80008210(struct ObjThreadStack *arg0) {
+void *func_80008210(struct GObjThreadStack *arg0) {
     struct UnkStruct8004A7C4 *sp1C;
 
     sp1C = arg0->unk18;
@@ -285,12 +285,12 @@ void *func_80008210(struct ObjThreadStack *arg0) {
     }
 }
 
-struct ObjThreadStack *func_80008280(void) {
+struct GObjThreadStack *func_80008280(void) {
     return D_8004A7D0;
 }
 
 // Unused?
-struct ObjStack *func_8000828C(struct ObjThreadStack *arg0) {
+struct ObjStack *func_8000828C(struct GObjThreadStack *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
@@ -301,7 +301,7 @@ struct ObjStack *func_8000828C(struct ObjThreadStack *arg0) {
 }
 
 // Unused?
-s32 func_800082D4(struct ObjThreadStack *arg0) {
+s32 func_800082D4(struct GObjThreadStack *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
@@ -586,13 +586,13 @@ void func_800089EC(struct Camera *arg0) {
     D_8004A7C0--;
 }
 
-struct ObjThread *get_gobj_thread();
-void func_800080C0(struct ObjProcess *);
+struct GObjThread *get_gobj_thread();
+void func_800080C0(struct GObjProcess *);
 
-struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(void), u8 kind, u32 pri) {
-    struct ObjProcess *sp24;
-    struct ObjThread *oThread;
-    struct ObjProcess *oProcess;
+struct GObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(void), u8 kind, u32 pri) {
+    struct GObjProcess *sp24;
+    struct GObjThread *oThread;
+    struct GObjProcess *oProcess;
     
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
@@ -633,9 +633,9 @@ struct ObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(vo
 
 // a somewhat more granular version of func_80008A18
 #ifdef NON_MATCHING
-struct ObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct ObjThread *entry, u32 pri, s32 arg3, struct ObjStack *arg4, u32 stackSize) {
-    struct ObjProcess *oProcess;
-    struct ObjThread *oThread;
+struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThread *entry, u32 pri, s32 arg3, struct ObjStack *arg4, u32 stackSize) {
+    struct GObjProcess *oProcess;
+    struct GObjThread *oThread;
     s32 phi_a1;
 
     if (arg0 == 0) {
@@ -682,8 +682,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
 
 void func_8000B6BC(s32 arg);
 
-void func_80008DA8(struct ObjThreadStack *arg0) {
-    void (*temp_v0)(struct ObjThreadStack *);
+void func_80008DA8(struct GObjThreadStack *arg0) {
+    void (*temp_v0)(struct GObjThreadStack *);
     u8 temp_v0_4;
     void (*temp_v0_3)(struct ObjStack *);
 
@@ -1337,10 +1337,10 @@ struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void)
     return toReturn;
 }
 
-struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3) {
+struct UnkStruct8004A7C4 *func_8000A180(s32 id, s32 arg1, u8 arg2, u32 arg3) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2, arg3);
+    temp_v0 = object_manager_g_add_common(id, arg1, arg2, arg3);
     if (temp_v0 == NULL) {
         return NULL;
     } else {
@@ -1408,7 +1408,7 @@ void func_8000A29C(struct UnkStruct8004A7C4 *arg0) {
 
 #ifdef MIPS_TO_C
 void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, struct UnkStruct8004A7C4 *arg4) {
-    struct ObjThreadStack *sp20;
+    struct GObjThreadStack *sp20;
 
     if (arg2 >= 0x20) {
         fatal_printf(&D_80040414, arg2, arg1->objId); // "omGMoveCommon() : link num over : link = %d : id = %d\n"
@@ -1706,16 +1706,16 @@ u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void *func_8000AC3C(struct ObjThreadStack *arg0) {
+void *func_8000AC3C(struct GObjThreadStack *arg0) {
     void *sp1C;
     s32 temp_v0_2;
     s32 temp_v0_3;
     struct Obj *temp_a0;
-    struct ObjThreadStack *temp_a3;
+    struct GObjThreadStack *temp_a3;
     u8 temp_v0;
     void *temp_v1;
     void *temp_v1_2;
-    struct ObjThreadStack *phi_a3;
+    struct GObjThreadStack *phi_a3;
     void *phi_v1;
     void *phi_v1_2;
     void *phi_v1_3;
@@ -1866,10 +1866,10 @@ void func_8000AE84(void *arg0) {
     struct DObj *temp_v0_10;
     struct MObj *temp_v0_9;
     struct MObj *temp_v1_5;
-    struct ObjProcess *temp_v0_4;
-    struct ObjProcess *temp_v1_2;
-    struct ObjThreadStack *temp_v0_2;
-    struct ObjThreadStack *temp_v0_3;
+    struct GObjProcess *temp_v0_4;
+    struct GObjProcess *temp_v1_2;
+    struct GObjThreadStack *temp_v0_2;
+    struct GObjThreadStack *temp_v0_3;
     struct UnkStruct8004A7C4 *temp_t9;
     struct UnkStruct8004A7C4 *temp_v0_6;
     u32 *temp_v0;
@@ -1887,12 +1887,12 @@ void func_8000AE84(void *arg0) {
     u32 *phi_v1;
     s32 phi_a0;
     u32 *phi_v1_2;
-    struct ObjThreadStack *phi_v0;
+    struct GObjThreadStack *phi_v0;
     u32 phi_a0_2;
-    struct ObjThreadStack *phi_v0_2;
-    struct ObjProcess *phi_v1_3;
+    struct GObjThreadStack *phi_v0_2;
+    struct GObjProcess *phi_v1_3;
     s32 phi_a0_3;
-    struct ObjProcess *phi_v1_4;
+    struct GObjProcess *phi_v1_4;
     u32 phi_v0_3;
     struct UnkStruct8004A7C4 *phi_v0_4;
     s32 phi_a0_4;
@@ -2351,7 +2351,7 @@ void func_8000B6B4(s32 arg0) {
 
 }
 
-extern struct ObjThreadStack *D_8004A7D0;
+extern struct GObjThreadStack *D_8004A7D0;
 #include <PR/os_message.h>
 
 void func_8000B6BC(s32 arg) {
@@ -2392,7 +2392,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B758.s")
 #endif
 
 void func_8000B78C(struct UnkStruct8004A7C4 *arg0) {
-    struct ObjThreadStack *phi_v0;
+    struct GObjThreadStack *phi_v0;
 
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
@@ -2405,14 +2405,14 @@ void func_8000B78C(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-void func_8000B7C0(struct ObjThreadStack *arg0) {
+void func_8000B7C0(struct GObjThreadStack *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
     arg0->unk15 = 1;
 }
 
-void func_8000B7D8(struct ObjThreadStack *arg0) {
+void func_8000B7D8(struct GObjThreadStack *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
@@ -2486,8 +2486,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B830.s")
 #endif
 
 void func_8000B870(struct UnkStruct8004A7C4 *arg0) {
-    struct ObjThreadStack *temp_s1;
-    struct ObjThreadStack *phi_s0;
+    struct GObjThreadStack *temp_s1;
+    struct GObjThreadStack *phi_s0;
 
     if (arg0 == 0) {
         arg0 = D_8004A7C4;

@@ -168,7 +168,7 @@ glabel func_801E1550_ovl10
 /* 1D2540 801E17D0 3C01800E */ lui $at, %hi(D_800DDC50)
 /* 1D2544 801E17D4 2419000F */  li    $t9, 15
 /* 1D2548 801E17D8 8C680000 */  lw    $t0, ($v1)
-/* 1D254C 801E17DC 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1D254C 801E17DC 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1D2550 801E17E0 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1D2554 801E17E4 00087880 */  sll   $t7, $t0, 2
 /* 1D2558 801E17E8 002F0821 */  addu  $at, $at, $t7
@@ -177,8 +177,8 @@ glabel func_801E1550_ovl10
 /* 1D2564 801E17F4 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 /* 1D2568 801E17F8 00095080 */  sll   $t2, $t1, 2
 /* 1D256C 801E17FC 008A2021 */  addu  $a0, $a0, $t2
-/* 1D2570 801E1800 0C02C7B2 */  jal   func_800B1EC8
-/* 1D2574 801E1804 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1D2570 801E1800 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1D2574 801E1804 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 1D2578 801E1808 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 1D257C 801E180C 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
 /* 1D2580 801E1810 3C01800F */ lui $at, %hi(D_800EC120)
@@ -199,12 +199,12 @@ glabel func_801E1550_ovl10
 /* 1D25B8 801E1848 00260821 */  addu  $at, $at, $a2
 /* 1D25BC 801E184C AC38DC50 */ sw $t8, %lo(D_800DDC50)($at)
 /* 1D25C0 801E1850 8C680000 */  lw    $t0, ($v1)
-/* 1D25C4 801E1854 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1D25C4 801E1854 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1D25C8 801E1858 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1D25CC 801E185C 0008C880 */  sll   $t9, $t0, 2
 /* 1D25D0 801E1860 00992021 */  addu  $a0, $a0, $t9
-/* 1D25D4 801E1864 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
-/* 1D25D8 801E1868 0C02C7B2 */  jal   func_800B1EC8
+/* 1D25D4 801E1864 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 1D25D8 801E1868 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 1D25DC 801E186C 24A5BD38 */   addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 .L801E1870_ovl10:
 /* 1D25E0 801E1870 8FBF0014 */  lw    $ra, 0x14($sp)

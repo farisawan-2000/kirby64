@@ -143,7 +143,7 @@ glabel func_8011E548
 /* 0A71D8 8011E768 C5840000 */  lwc1  $f4, ($t4)
 /* 0A71DC 8011E76C 27A40028 */  addiu $a0, $sp, 0x28
 /* 0A71E0 8011E770 27A50034 */  addiu $a1, $sp, 0x34
-/* 0A71E4 8011E774 0C03E270 */  jal   func_800F89C0
+/* 0A71E4 8011E774 0C03E270 */  jal   vec3_abs_angle_diff
 /* 0A71E8 8011E778 E7A40030 */   swc1  $f4, 0x30($sp)
 /* 0A71EC 8011E77C 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0A71F0 8011E780 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

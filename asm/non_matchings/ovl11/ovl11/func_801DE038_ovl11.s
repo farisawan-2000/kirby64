@@ -22,7 +22,7 @@ glabel func_801DE038_ovl11
 /* 1E8944 801DE084 3C06801E */  lui   $a2, %hi(D_801E0BB0) # $a2, 0x801e
 /* 1E8948 801DE088 24C60BB0 */  addiu $a2, %lo(D_801E0BB0) # addiu $a2, $a2, 0xbb0
 /* 1E894C 801DE08C 8C84DFD0 */ lw $a0, %lo(D_800DDFD0)($a0)
-/* 1E8950 801DE090 0C02911F */  jal   func_800A447C
+/* 1E8950 801DE090 0C02911F */  jal   call_virtual_function
 /* 1E8954 801DE094 24050005 */   li    $a1, 5
 /* 1E8958 801DE098 0C066FA7 */  jal   func_8019BE9C_ovl11
 /* 1E895C 801DE09C 24040006 */   li    $a0, 6

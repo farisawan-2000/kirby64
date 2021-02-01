@@ -13,7 +13,7 @@ extern u8 D_800E7880[];
 
 extern s32 D_800DDC50[];
 
-extern void func_800A447C(s32, s32, void (*c));
+extern void call_virtual_function(s32, s32, void (*c));
 
 extern void (*D_8022AB80[58])(void);
 
@@ -60,7 +60,7 @@ extern f32 D_8022BBC0;
 extern f32 D_8022BC00;
 extern f32 D_8022BC04;
 
-extern s32 D_800DE510[];
+extern s32 gEntitiesGObjThreadStackArray[];
 extern s32 D_800E9720[];
 extern s32 D_800B7790;
 extern s32 D_8022A988;
@@ -79,7 +79,7 @@ void func_800AED20(f32);
 void func_80220818_ovl18(s32);
 void func_8022ABC0_ovl18(void);
 void func_80220AA8_ovl18(s32);
-void func_800B1EC8(s32, void (*c));
+void restart_thread_with_new_function(s32, void (*c));
 u32 func_8019B738_ovl18(f32);
 void func_80221440_ovl18(void);
 

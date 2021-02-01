@@ -109,7 +109,7 @@ void func_800BB98C(s32 arg0, s32 arg1) {
     f32 temp_f0;
     s32 temp_a0_2;
     s32 temp_v0_3;
-    struct ObjProcess **temp_a0;
+    struct GObjProcess **temp_a0;
     struct UnkStruct8004A7C4 *temp_t7;
     struct UnkStruct8004A7C4 *temp_v0;
     struct UnkStruct8004A7C4_3C *temp_v0_4;
@@ -134,7 +134,7 @@ void func_800BB98C(s32 arg0, s32 arg1) {
         func_80007C00(temp_s0 + 8, 10.0f, 10.0f, 310.0f, 230.0f);
         temp_v0_3 = func_800AEC08(0x2B, 0x3C, 0x4A);
         temp_t7 = D_8004A7C4;
-        temp_a0 = &D_800DE510[temp_v0_3];
+        temp_a0 = &gEntitiesGObjThreadStackArray[temp_v0_3];
         D_8004A7C4 = D_800DE350[temp_v0_3];
         sp2C = temp_v0_3;
         sp28 = temp_t7;

@@ -610,12 +610,12 @@ glabel func_801DBA8C_ovl17
 /* 226CDC 801DBAEC 1000000C */  b     .L801DBB20_ovl17
 /* 226CE0 801DBAF0 8C84A7C4 */   lw    $a0, %lo(D_8004A7C4)($a0)
 .L801DBAF4_ovl17:
-/* 226CE4 801DBAF4 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 226CE4 801DBAF4 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 226CE8 801DBAF8 00832021 */  addu  $a0, $a0, $v1
 /* 226CEC 801DBAFC 3C05801E */  lui   $a1, %hi(D_801DC460) # $a1, 0x801e
 /* 226CF0 801DBB00 24A5C460 */  addiu $a1, %lo(D_801DC460) # addiu $a1, $a1, -0x3ba0
-/* 226CF4 801DBB04 0C02C7B2 */  jal   func_800B1EC8
-/* 226CF8 801DBB08 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 226CF4 801DBB04 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 226CF8 801DBB08 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 226CFC 801DBB0C 24040003 */  li    $a0, 3
 /* 226D00 801DBB10 0C02ED1A */  jal   func_800BB468
 /* 226D04 801DBB14 00002825 */   move  $a1, $zero

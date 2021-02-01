@@ -47,7 +47,7 @@ glabel func_801E4A74_ovl10
 /* 1D5898 801E4B28 00ED7021 */  addu  $t6, $a3, $t5
 /* 1D589C 801E4B2C C5C40000 */  lwc1  $f4, ($t6)
 /* 1D58A0 801E4B30 46049181 */  sub.s $f6, $f18, $f4
-/* 1D58A4 801E4B34 0C03E270 */  jal   func_800F89C0
+/* 1D58A4 801E4B34 0C03E270 */  jal   vec3_abs_angle_diff
 /* 1D58A8 801E4B38 E7A60034 */   swc1  $f6, 0x34($sp)
 /* 1D58AC 801E4B3C 44807000 */  mtc1  $zero, $f14
 /* 1D58B0 801E4B40 8FA30044 */  lw    $v1, 0x44($sp)

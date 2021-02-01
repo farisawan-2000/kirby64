@@ -14,7 +14,7 @@ glabel func_8021A5C0_ovl9
 /* 1C8640 8021A5F0 01C27021 */  addu  $t6, $t6, $v0
 /* 1C8644 8021A5F4 8DCE98E0 */ lw $t6, %lo(D_800E98E0)($t6)
 /* 1C8648 8021A5F8 00220821 */  addu  $at, $at, $v0
-/* 1C864C 8021A5FC 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1C864C 8021A5FC 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1C8650 8021A600 11C0000B */  beqz  $t6, .L8021A630_ovl9
 /* 1C8654 8021A604 01024021 */   addu  $t0, $t0, $v0
 /* 1C8658 8021A608 AC2FDC50 */ sw $t7, %lo(D_800DDC50)($at)
@@ -23,8 +23,8 @@ glabel func_8021A5C0_ovl9
 /* 1C8664 8021A614 24A5A22C */  addiu $a1, %lo(func_8021A22C) # addiu $a1, $a1, -0x5dd4
 /* 1C8668 8021A618 0018C880 */  sll   $t9, $t8, 2
 /* 1C866C 8021A61C 00992021 */  addu  $a0, $a0, $t9
-/* 1C8670 8021A620 0C02C7B2 */  jal   func_800B1EC8
-/* 1C8674 8021A624 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1C8670 8021A620 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1C8674 8021A624 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 1C8678 8021A628 10000010 */  b     .L8021A66C_ovl9
 /* 1C867C 8021A62C 8FBF0014 */   lw    $ra, 0x14($sp)
 .L8021A630_ovl9:
@@ -35,12 +35,12 @@ glabel func_8021A5C0_ovl9
 /* 1C8690 8021A640 24090002 */   li    $t1, 2
 /* 1C8694 8021A644 AC29DC50 */ sw $t1, %lo(D_800DDC50)($at)
 /* 1C8698 8021A648 8C6A0000 */  lw    $t2, ($v1)
-/* 1C869C 8021A64C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1C869C 8021A64C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1C86A0 8021A650 3C058022 */  lui   $a1, %hi(func_8021A22C) # $a1, 0x8022
 /* 1C86A4 8021A654 000A5880 */  sll   $t3, $t2, 2
 /* 1C86A8 8021A658 008B2021 */  addu  $a0, $a0, $t3
-/* 1C86AC 8021A65C 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
-/* 1C86B0 8021A660 0C02C7B2 */  jal   func_800B1EC8
+/* 1C86AC 8021A65C 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 1C86B0 8021A660 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 1C86B4 8021A664 24A5A22C */   addiu $a1, %lo(func_8021A22C) # addiu $a1, $a1, -0x5dd4
 .L8021A668_ovl9:
 /* 1C86B8 8021A668 8FBF0014 */  lw    $ra, 0x14($sp)

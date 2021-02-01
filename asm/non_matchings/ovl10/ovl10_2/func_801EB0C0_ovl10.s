@@ -49,12 +49,12 @@ glabel func_801EB0C0_ovl10
 /* 1DBEE4 801EB174 8C430000 */  lw    $v1, ($v0)
 /* 1DBEE8 801EB178 00031880 */  sll   $v1, $v1, 2
 .L801EB17C_ovl10:
-/* 1DBEEC 801EB17C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1DBEEC 801EB17C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1DBEF0 801EB180 00832021 */  addu  $a0, $a0, $v1
 /* 1DBEF4 801EB184 3C05801F */  lui   $a1, %hi(D_801EA784) # $a1, 0x801f
 /* 1DBEF8 801EB188 24A5A784 */  addiu $a1, %lo(D_801EA784) # addiu $a1, $a1, -0x587c
-/* 1DBEFC 801EB18C 0C02C7B2 */  jal   func_800B1EC8
-/* 1DBF00 801EB190 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1DBEFC 801EB18C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1DBF00 801EB190 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 1DBF04 801EB194 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801EB198_ovl10:
 /* 1DBF08 801EB198 27BD0018 */  addiu $sp, $sp, 0x18

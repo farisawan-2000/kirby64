@@ -29,7 +29,7 @@ glabel func_8016BF60_ovl3
 /* 0CCA08 8016BFC8 24A57000 */  addiu $a1, %lo(D_80177000) # addiu $a1, $a1, 0x7000
 /* 0CCA0C 8016BFCC 000B6080 */  sll   $t4, $t3, 2
 /* 0CCA10 8016BFD0 008C2021 */  addu  $a0, $a0, $t4
-/* 0CCA14 8016BFD4 0C02C7B2 */  jal   func_800B1EC8
+/* 0CCA14 8016BFD4 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 0CCA18 8016BFD8 8C84E890 */   lw    $a0, -0x1770($a0)
 /* 0CCA1C 8016BFDC 0C04723E */  jal   func_8011C8F8
 /* 0CCA20 8016BFE0 00000000 */   nop   
@@ -384,7 +384,7 @@ glabel func_8016BF60_ovl3
 /* 0CCF2C 8016C4EC 000B5080 */  sll   $t2, $t3, 2
 /* 0CCF30 8016C4F0 006A6021 */  addu  $t4, $v1, $t2
 /* 0CCF34 8016C4F4 8D840000 */  lw    $a0, ($t4)
-/* 0CCF38 8016C4F8 0C02911F */  jal   func_800A447C
+/* 0CCF38 8016C4F8 0C02911F */  jal   call_virtual_function
 /* 0CCF3C 8016C4FC 24050056 */   li    $a1, 86
 /* 0CCF40 8016C500 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0CCF44 8016C504 27BD0018 */  addiu $sp, $sp, 0x18

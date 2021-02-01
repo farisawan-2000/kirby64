@@ -5,7 +5,7 @@
 #include "ovl0/ovl0_2_5.h"
 
 
-// ObjThreadStack?
+// GObjThreadStack?
 struct UnkStruct800B1EC8 {
 	struct UnkStruct800B1EC8 *unk0;
 	struct UnkStruct800B1EC8 *unk4;
@@ -14,7 +14,7 @@ struct UnkStruct800B1EC8 {
 	u32 unk10;
 	u32 unk14; // pointer?
 	u32 *unk18;
-	ObjThread *unk1C;
+	GObjThread *unk1C;
 
 	void (*unk20)(struct UnkStruct8004A7C4 *);
 

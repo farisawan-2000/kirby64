@@ -114,7 +114,7 @@ glabel func_801DDEB8_ovl10
 /* 1CEDE4 801DE074 3C01800E */ lui $at, %hi(D_800DDC50)
 /* 1CEDE8 801DE078 24080006 */  li    $t0, 6
 /* 1CEDEC 801DE07C 8C690000 */  lw    $t1, ($v1)
-/* 1CEDF0 801DE080 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1CEDF0 801DE080 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1CEDF4 801DE084 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1CEDF8 801DE088 0009C080 */  sll   $t8, $t1, 2
 /* 1CEDFC 801DE08C 00380821 */  addu  $at, $at, $t8
@@ -123,8 +123,8 @@ glabel func_801DDEB8_ovl10
 /* 1CEE08 801DE098 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 /* 1CEE0C 801DE09C 000A5880 */  sll   $t3, $t2, 2
 /* 1CEE10 801DE0A0 008B2021 */  addu  $a0, $a0, $t3
-/* 1CEE14 801DE0A4 0C02C7B2 */  jal   func_800B1EC8
-/* 1CEE18 801DE0A8 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1CEE14 801DE0A4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1CEE18 801DE0A8 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 1CEE1C 801DE0AC 8E030000 */  lw    $v1, ($s0)
 /* 1CEE20 801DE0B0 3C01800F */ lui $at, %hi(D_800EC120)
 /* 1CEE24 801DE0B4 8C6C0000 */  lw    $t4, ($v1)
@@ -144,12 +144,12 @@ glabel func_801DDEB8_ovl10
 /* 1CEE58 801DE0E8 00260821 */  addu  $at, $at, $a2
 /* 1CEE5C 801DE0EC AC39DC50 */ sw $t9, %lo(D_800DDC50)($at)
 /* 1CEE60 801DE0F0 8C690000 */  lw    $t1, ($v1)
-/* 1CEE64 801DE0F4 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1CEE64 801DE0F4 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 1CEE68 801DE0F8 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1CEE6C 801DE0FC 00094080 */  sll   $t0, $t1, 2
 /* 1CEE70 801DE100 00882021 */  addu  $a0, $a0, $t0
-/* 1CEE74 801DE104 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
-/* 1CEE78 801DE108 0C02C7B2 */  jal   func_800B1EC8
+/* 1CEE74 801DE104 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 1CEE78 801DE108 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 1CEE7C 801DE10C 24A5BD38 */   addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8
 .L801DE110_ovl10:
 /* 1CEE80 801DE110 8FBF001C */  lw    $ra, 0x1c($sp)

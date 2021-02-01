@@ -122,7 +122,7 @@ glabel func_8021F70C_ovl18
 /* 232278 8021F8D8 AFA30048 */   sw    $v1, 0x48($sp)
 /* 23227C 8021F8DC 8FA30048 */  lw    $v1, 0x48($sp)
 /* 232280 8021F8E0 24090001 */  li    $t1, 1
-/* 232284 8021F8E4 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 232284 8021F8E4 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 232288 8021F8E8 AC600094 */  sw    $zero, 0x94($v1)
 /* 23228C 8021F8EC A0690040 */  sb    $t1, 0x40($v1)
 /* 232290 8021F8F0 8E0A0000 */  lw    $t2, ($s0)
@@ -131,20 +131,20 @@ glabel func_8021F70C_ovl18
 /* 23229C 8021F8FC 8D4F0000 */  lw    $t7, ($t2)
 /* 2322A0 8021F900 000FC080 */  sll   $t8, $t7, 2
 /* 2322A4 8021F904 00982021 */  addu  $a0, $a0, $t8
-/* 2322A8 8021F908 0C02C7B2 */  jal   func_800B1EC8
-/* 2322AC 8021F90C 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 2322A8 8021F908 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 2322AC 8021F90C 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 2322B0 8021F910 10000012 */  b     .L8021F95C_ovl18
 /* 2322B4 8021F914 24020001 */   li    $v0, 1
 .L8021F918_ovl18:
 /* 2322B8 8021F918 8E190000 */  lw    $t9, ($s0)
-/* 2322BC 8021F91C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 2322BC 8021F91C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 2322C0 8021F920 3C05801A */  lui   $a1, %hi(D_801A3E80) # $a1, 0x801a
 /* 2322C4 8021F924 8F2C0000 */  lw    $t4, ($t9)
 /* 2322C8 8021F928 24A53E80 */  addiu $a1, %lo(D_801A3E80) # addiu $a1, $a1, 0x3e80
 /* 2322CC 8021F92C 000C6880 */  sll   $t5, $t4, 2
 /* 2322D0 8021F930 008D2021 */  addu  $a0, $a0, $t5
-/* 2322D4 8021F934 0C02C7B2 */  jal   func_800B1EC8
-/* 2322D8 8021F938 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 2322D4 8021F934 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 2322D8 8021F938 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 2322DC 8021F93C 10000007 */  b     .L8021F95C_ovl18
 /* 2322E0 8021F940 24020001 */   li    $v0, 1
 .L8021F944_ovl18:

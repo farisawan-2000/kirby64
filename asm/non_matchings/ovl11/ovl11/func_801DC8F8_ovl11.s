@@ -77,7 +77,7 @@ glabel func_801DC8F8_ovl11
 /* 1E72E4 801DCA24 24050009 */  li    $a1, 9
 /* 1E72E8 801DCA28 00085080 */  sll   $t2, $t0, 2
 /* 1E72EC 801DCA2C 008A2021 */  addu  $a0, $a0, $t2
-/* 1E72F0 801DCA30 0C02911F */  jal   func_800A447C
+/* 1E72F0 801DCA30 0C02911F */  jal   call_virtual_function
 /* 1E72F4 801DCA34 8C84DC50 */ lw $a0, %lo(D_800DDC50)($a0)
 /* 1E72F8 801DCA38 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E72FC 801DCA3C 27BD0018 */  addiu $sp, $sp, 0x18

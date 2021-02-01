@@ -10,7 +10,7 @@ glabel func_8021EF00_ovl19
 /* 23F630 8021EF20 008F2021 */  addu  $a0, $a0, $t7
 /* 23F634 8021EF24 90847880 */ lbu $a0, %lo(D_800E7880)($a0)
 /* 23F638 8021EF28 24C6F080 */  addiu $a2, %lo(D_8022F080) # addiu $a2, $a2, -0xf80
-/* 23F63C 8021EF2C 0C02911F */  jal   func_800A447C
+/* 23F63C 8021EF2C 0C02911F */  jal   call_virtual_function
 /* 23F640 8021EF30 24050002 */   li    $a1, 2
 /* 23F644 8021EF34 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 23F648 8021EF38 27BD0018 */  addiu $sp, $sp, 0x18

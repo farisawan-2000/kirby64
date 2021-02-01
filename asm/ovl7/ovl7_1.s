@@ -963,7 +963,7 @@ glabel func_80199628_ovl7
 /* 13F6CC 8019965C 00001025 */  move  $v0, $zero
 /* 13F6D0 80199660 10A00005 */  beqz  $a1, .L80199678_ovl7
 /* 13F6D4 80199664 00000000 */   nop   
-/* 13F6D8 80199668 0C02C7B2 */  jal   func_800B1EC8
+/* 13F6D8 80199668 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F6DC 8019966C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F6E0 80199670 10000001 */  b     .L80199678_ovl7
 /* 13F6E4 80199674 24020001 */   li    $v0, 1
@@ -1008,7 +1008,7 @@ glabel func_80199688_ovl7
 /* 13F770 80199700 24A569B0 */  addiu $a1, %lo(D_801A69B0) # addiu $a1, $a1, 0x69b0
 /* 13F774 80199704 000A5880 */  sll   $t3, $t2, 2
 /* 13F778 80199708 008B2021 */  addu  $a0, $a0, $t3
-/* 13F77C 8019970C 0C02C7B2 */  jal   func_800B1EC8
+/* 13F77C 8019970C 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F780 80199710 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F784 80199714 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13F788 80199718 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1050,7 +1050,7 @@ glabel func_80199724_ovl7
 /* 13F80C 8019979C 24A56DF0 */  addiu $a1, %lo(D_801A6DF0) # addiu $a1, $a1, 0x6df0
 /* 13F810 801997A0 000A5880 */  sll   $t3, $t2, 2
 /* 13F814 801997A4 008B2021 */  addu  $a0, $a0, $t3
-/* 13F818 801997A8 0C02C7B2 */  jal   func_800B1EC8
+/* 13F818 801997A8 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F81C 801997AC 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F820 801997B0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13F824 801997B4 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1092,7 +1092,7 @@ glabel func_801997C0_ovl7
 /* 13F8A8 80199838 24A5C364 */  addiu $a1, %lo(D_801AC364) # addiu $a1, $a1, -0x3c9c
 /* 13F8AC 8019983C 000A5880 */  sll   $t3, $t2, 2
 /* 13F8B0 80199840 008B2021 */  addu  $a0, $a0, $t3
-/* 13F8B4 80199844 0C02C7B2 */  jal   func_800B1EC8
+/* 13F8B4 80199844 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F8B8 80199848 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F8BC 8019984C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13F8C0 80199850 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1142,7 +1142,7 @@ glabel func_8019985C_ovl7
 /* 13F964 801998F4 24A569B0 */  addiu $a1, %lo(D_801A69B0) # addiu $a1, $a1, 0x69b0
 /* 13F968 801998F8 000FC080 */  sll   $t8, $t7, 2
 /* 13F96C 801998FC 00982021 */  addu  $a0, $a0, $t8
-/* 13F970 80199900 0C02C7B2 */  jal   func_800B1EC8
+/* 13F970 80199900 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F974 80199904 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F978 80199908 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13F97C 8019990C 27BD0020 */  addiu $sp, $sp, 0x20
@@ -1170,7 +1170,7 @@ glabel func_80199918_ovl7
 /* 13F9CC 8019995C 8D090000 */  lw    $t1, ($t0)
 /* 13F9D0 80199960 00095080 */  sll   $t2, $t1, 2
 /* 13F9D4 80199964 008A2021 */  addu  $a0, $a0, $t2
-/* 13F9D8 80199968 0C02C7B2 */  jal   func_800B1EC8
+/* 13F9D8 80199968 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13F9DC 8019996C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13F9E0 80199970 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13F9E4 80199974 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1195,7 +1195,7 @@ glabel func_80199980_ovl7
 /* 13FA28 801999B8 00194080 */  sll   $t0, $t9, 2
 /* 13FA2C 801999BC 00882021 */  addu  $a0, $a0, $t0
 /* 13FA30 801999C0 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 13FA34 801999C4 0C02C7B2 */  jal   func_800B1EC8
+/* 13FA34 801999C4 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13FA38 801999C8 24A56C10 */   addiu $a1, %lo(D_801A6C10) # addiu $a1, $a1, 0x6c10
 /* 13FA3C 801999CC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13FA40 801999D0 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1220,7 +1220,7 @@ glabel func_801999DC_ovl7
 /* 13FA84 80199A14 00194080 */  sll   $t0, $t9, 2
 /* 13FA88 80199A18 00882021 */  addu  $a0, $a0, $t0
 /* 13FA8C 80199A1C 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 13FA90 80199A20 0C02C7B2 */  jal   func_800B1EC8
+/* 13FA90 80199A20 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13FA94 80199A24 24A5C710 */   addiu $a1, %lo(D_8020C710) # addiu $a1, $a1, -0x38f0
 /* 13FA98 80199A28 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 13FA9C 80199A2C 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1347,7 +1347,7 @@ glabel func_80199A38_ovl7
 /* 13FC54 80199BE4 24A56DF0 */  addiu $a1, %lo(D_801A6DF0) # addiu $a1, $a1, 0x6df0
 /* 13FC58 80199BE8 0018C880 */  sll   $t9, $t8, 2
 /* 13FC5C 80199BEC 00992021 */  addu  $a0, $a0, $t9
-/* 13FC60 80199BF0 0C02C7B2 */  jal   func_800B1EC8
+/* 13FC60 80199BF0 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13FC64 80199BF4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13FC68 80199BF8 10000052 */  b     .L80199D44_ovl7
 /* 13FC6C 80199BFC 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -1434,7 +1434,7 @@ glabel func_80199A38_ovl7
 /* 13FD9C 80199D2C 24A56DF0 */  addiu $a1, %lo(D_801A6DF0) # addiu $a1, $a1, 0x6df0
 /* 13FDA0 80199D30 000E6880 */  sll   $t5, $t6, 2
 /* 13FDA4 80199D34 008D2021 */  addu  $a0, $a0, $t5
-/* 13FDA8 80199D38 0C02C7B2 */  jal   func_800B1EC8
+/* 13FDA8 80199D38 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13FDAC 80199D3C 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L80199D40_ovl7:
 /* 13FDB0 80199D40 8FBF0014 */  lw    $ra, 0x14($sp)
@@ -1483,7 +1483,7 @@ glabel func_80199D50_ovl7
 /* 13FE50 80199DE0 24A56DF0 */  addiu $a1, %lo(D_801A6DF0) # addiu $a1, $a1, 0x6df0
 /* 13FE54 80199DE4 000D7080 */  sll   $t6, $t5, 2
 /* 13FE58 80199DE8 008E2021 */  addu  $a0, $a0, $t6
-/* 13FE5C 80199DEC 0C02C7B2 */  jal   func_800B1EC8
+/* 13FE5C 80199DEC 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 13FE60 80199DF0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 13FE64 80199DF4 10000004 */  b     .L80199E08_ovl7
 /* 13FE68 80199DF8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2160,7 +2160,7 @@ glabel func_8019A740_ovl7
 /* 1407F4 8019A784 00084880 */  sll   $t1, $t0, 2
 /* 1407F8 8019A788 00892021 */  addu  $a0, $a0, $t1
 /* 1407FC 8019A78C 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 140800 8019A790 0C02C7B2 */  jal   func_800B1EC8
+/* 140800 8019A790 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 140804 8019A794 24A5C448 */   addiu $a1, %lo(D_801AC448) # addiu $a1, $a1, -0x3bb8
 /* 140808 8019A798 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 14080C 8019A79C 27BD0018 */  addiu $sp, $sp, 0x18

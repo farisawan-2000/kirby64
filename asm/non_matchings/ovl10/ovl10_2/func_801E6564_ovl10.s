@@ -25,7 +25,7 @@ glabel func_801E6564_ovl10
 /* 1D732C 801E65BC 3C06801F */  lui   $a2, %hi(D_801F451C_ovl10) # $a2, 0x801f
 /* 1D7330 801E65C0 24C6451C */  addiu $a2, %lo(D_801F451C_ovl10) # addiu $a2, $a2, 0x451c
 /* 1D7334 801E65C4 8C84DFD0 */ lw $a0, %lo(D_800DDFD0)($a0)
-/* 1D7338 801E65C8 0C02911F */  jal   func_800A447C
+/* 1D7338 801E65C8 0C02911F */  jal   call_virtual_function
 /* 1D733C 801E65CC 24050003 */   li    $a1, 3
 /* 1D7340 801E65D0 3C198005 */  lui   $t9, %hi(D_8004A7C4) # $t9, 0x8005
 /* 1D7344 801E65D4 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)

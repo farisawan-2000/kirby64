@@ -1182,7 +1182,7 @@ void func_80158B10_ovl3(s32 arg0) {
         gKirbyState.actionChange = -1;
         D_800D6FB2 = 1;
         gKirbyState.unk44 = -1;
-        func_800B1EC8(((temp_v1->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
+        restart_thread_with_new_function(((temp_v1->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
     }
 }
 #else
@@ -1222,7 +1222,7 @@ void func_80158CA8_ovl3(s32 arg0) {
     D_800E6D90[temp_v0->objId] = D_80196F74;
     temp_v1_2 = temp_v0->objId;
     ((temp_v1_2 * 4) + 0x800E0000)->unk6BD0 = D_800E6D90[temp_v1_2];
-    func_800B1EC8(((temp_v0->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
+    restart_thread_with_new_function(((temp_v0->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80158CA8_ovl3.s")
@@ -1281,7 +1281,7 @@ void func_80158EEC_ovl3(s32 arg0) {
             temp_v0_3 = D_8004A7C4;
             temp_v1_3 = temp_v0_3->objId * 4;
             (temp_v1_3 + 0x800F0000)->unk-39A0 = (temp_v1_3 + 0x800E0000)->unk2790;
-            func_800B1EC8(((temp_v0_3->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
+            restart_thread_with_new_function(((temp_v0_3->objId * 4) + 0x800E0000)->unk-1AF0, &D_8022785C);
         }
     } else {
         temp_v0_4 = *0x8004A7C4;

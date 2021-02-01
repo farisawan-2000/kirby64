@@ -11,12 +11,12 @@ glabel func_802244FC_ovl18
 /* 236EC0 80224520 8C650000 */  lw    $a1, ($v1)
 /* 236EC4 80224524 14A00009 */  bnez  $a1, .L8022454C_ovl18
 /* 236EC8 80224528 24B8FFFF */   addiu $t8, $a1, -1
-/* 236ECC 8022452C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 236ECC 8022452C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
 /* 236ED0 80224530 00822021 */  addu  $a0, $a0, $v0
 /* 236ED4 80224534 3C05801B */  lui   $a1, %hi(D_801ACF84) # $a1, 0x801b
 /* 236ED8 80224538 24A5CF84 */  addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
-/* 236EDC 8022453C 0C02C7B2 */  jal   func_800B1EC8
-/* 236EE0 80224540 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 236EDC 8022453C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 236EE0 80224540 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
 /* 236EE4 80224544 10000004 */  b     .L80224558_ovl18
 /* 236EE8 80224548 8FBF0014 */   lw    $ra, 0x14($sp)
 .L8022454C_ovl18:

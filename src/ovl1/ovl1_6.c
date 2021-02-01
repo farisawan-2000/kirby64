@@ -28,12 +28,14 @@ void func_800AE138(s32 arg0) {
     D_800DE350[arg0] = 0;
     D_800DD710[arg0] = -1;
 
-    // ObjProcess buffers
-    D_800DEC10[arg0] = 0;
-    D_800DEA50[arg0] = 0;
-    D_800DE890[arg0] = 0;
-    D_800DE6D0[arg0] = 0;
-    D_800DE510[arg0] = 0;
+    // GObjProcess buffers
+    D_800DEC10[arg0] = NULL;
+    D_800DEA50[arg0] = NULL;
+    D_800DE890[arg0] = NULL;
+    D_800DE6D0[arg0] = NULL;
+    // this one in particular is one that entities use for thread function changes.
+    // Should be an GObjThreadStack array
+    gEntitiesGObjThreadStackArray[arg0] = NULL;
 
     D_800DE190[arg0] = 0;
     D_800DDFD0[arg0] = 0;
@@ -182,7 +184,7 @@ void func_800AE138(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 #endif
 
-struct ObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
+struct GObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 void func_800B0F28(void);
 extern u32 D_800DDA90[];
@@ -202,26 +204,26 @@ extern struct UnkStruct800D4FD0 *D_800D4FD0[];
 
 // compiles and is decently close
 #ifdef NON_MATCHING
-s32 request_job(s32 arg0, s32 arg1, u32 arg2, s32 arg3, void (*arg4)(void)) {
+s32 request_job(s32 id, s32 minIndex, u32 max_index, s32 arg3, void (*arg4)(void)) {
     struct UnkStruct8004A7C4 *temp_v0_3;
     s32 v1;
     s32 v0;
     u32 a2;
     struct UnkStruct800D4FD0 *sp24;
 
-    if (arg1 == -1) {
-        arg1 = 0;
+    if (minIndex == -1) {
+        minIndex = 0;
     }
-    if (arg2 == -1) {
-        arg2 = 0x70;
+    if (max_index == -1) {
+        max_index = 0x70;
     }
     // tries to find a valid index?
-    while (arg1 < arg2) {
-        if (D_800DD710[arg1] != -1) {
-            arg1++;
+    while (minIndex < max_index) {
+        if (D_800DD710[minIndex] != -1) {
+            minIndex++;
         }
     }
-    if (arg1 >= arg2) {
+    if (minIndex >= max_index) {
         print_error_stub(&D_800D66C0);
         return -1;
     }
@@ -249,39 +251,39 @@ block_13:
     } else {
         goto block_13;
     }
-    D_800DD710[arg1] = arg0;
-    sp24 = D_800D4FD0[arg0];
-    temp_v0_3 = func_8000A180(arg1, func_800B0D24, D_800D4FD0[arg0 * 2] + v0, 0);
-    D_800DE350[arg1] = temp_v0_3;
-    D_800DE510[arg1] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
-    D_800DE6D0[arg1] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
+    D_800DD710[minIndex] = id;
+    sp24 = D_800D4FD0[id];
+    temp_v0_3 = func_8000A180(minIndex, func_800B0D24, D_800D4FD0[id * 2] + v0, 0);
+    D_800DE350[minIndex] = temp_v0_3;
+    gEntitiesGObjThreadStackArray[minIndex] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
+    D_800DE6D0[minIndex] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
     if (sp24->unk0[1] & 1) {
-        D_800DE890[arg1] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
+        D_800DE890[minIndex] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
     }
     if (sp24->unk0[1] & 2) {
-        D_800DEA50[arg1] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
+        D_800DEA50[minIndex] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
     }
-    D_800DEC10[arg1] = func_80008A18(temp_v0_3, arg4, 1, 0);
-    D_800DD8D0[arg1] = 0;
-    D_800DDA90[arg1] = temp_v0_3->unkC;
-    D_800DF150[arg1] = NULL;
+    D_800DEC10[minIndex] = func_80008A18(temp_v0_3, arg4, 1, 0);
+    D_800DD8D0[minIndex] = 0;
+    D_800DDA90[minIndex] = temp_v0_3->unkC;
+    D_800DF150[minIndex] = NULL;
     if (arg3 != 0) {
-        D_800DEF90[arg1] = arg3;
+        D_800DEF90[minIndex] = arg3;
     } else {
-        D_800DEF90[arg1] = 0;
+        D_800DEF90[minIndex] = 0;
     }
     temp_v0_3->unk48 = func_800B0F28;
-    D_800DEDD0[arg1] = 0;
-    D_800DF310[arg1] = 0;
-    return arg1;
+    D_800DEDD0[minIndex] = 0;
+    D_800DF310[minIndex] = 0;
+    return minIndex;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE7A8.s")
 #endif
 
 extern void func_800B1434(void);
-s32 func_800AEA64(s32 arg0, s32 arg1, s32 arg2) {
-    s32 idx = request_job(arg0, arg1, arg2, 0, &func_800B1434);
+s32 func_800AEA64(s32 id, s32 minIndex, s32 max_index) {
+    s32 idx = request_job(id, minIndex, max_index, NULL, &func_800B1434);
 
     if (idx == -1) {
         return -1;

@@ -266,7 +266,7 @@ glabel func_80186A20_ovl3
 /* 0E7838 80186DF8 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0E783C 80186DFC 000B6080 */  sll   $t4, $t3, 2
 /* 0E7840 80186E00 008C2021 */  addu  $a0, $a0, $t4
-/* 0E7844 80186E04 0C02C7B2 */  jal   func_800B1EC8
+/* 0E7844 80186E04 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 0E7848 80186E08 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0E784C 80186E0C 8E4D0044 */  lw    $t5, 0x44($s2)
 /* 0E7850 80186E10 AE4D003C */  sw    $t5, 0x3c($s2)

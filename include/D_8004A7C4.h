@@ -25,7 +25,10 @@ struct UnkStruct8004A7C4_3C_80 {
     u32 unk44;
     u32 unk48;
     u32 unk4C;
-    u32 unk50;
+    u8 unk50;
+    u8 unk51;
+    u8 unk52;
+    u8 unk53;
     u32 unk54;
     u32 unk58;
     u32 unk5C;
@@ -142,7 +145,7 @@ struct UnkStruct8004A7C4 {
     u8 unkF;
     u32 unk10;
     void (*unk14)(void);
-    struct ObjThreadStack *unk18;
+    struct GObjThreadStack *unk18;
     u32 unk1C;
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;

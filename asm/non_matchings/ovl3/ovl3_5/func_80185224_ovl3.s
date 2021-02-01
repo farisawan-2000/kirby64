@@ -303,7 +303,7 @@ glabel func_80185224_ovl3
 /* 0E60B0 80185670 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0E60B4 80185674 000FC080 */  sll   $t8, $t7, 2
 /* 0E60B8 80185678 00982021 */  addu  $a0, $a0, $t8
-/* 0E60BC 8018567C 0C02C7B2 */  jal   func_800B1EC8
+/* 0E60BC 8018567C 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 0E60C0 80185680 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0E60C4 80185684 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0E60C8 80185688 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

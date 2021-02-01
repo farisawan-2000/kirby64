@@ -227,7 +227,7 @@ glabel func_801717F0_ovl3
 /* 0D258C 80171B4C 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0D2590 80171B50 000E7880 */  sll   $t7, $t6, 2
 /* 0D2594 80171B54 008F2021 */  addu  $a0, $a0, $t7
-/* 0D2598 80171B58 0C02C7B2 */  jal   func_800B1EC8
+/* 0D2598 80171B58 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 0D259C 80171B5C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0D25A0 80171B60 100000A4 */  b     .L80171DF4_ovl3
 /* 0D25A4 80171B64 8FBF0014 */   lw    $ra, 0x14($sp)

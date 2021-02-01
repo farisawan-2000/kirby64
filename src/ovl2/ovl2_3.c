@@ -63,7 +63,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_3/func_800F88C8.s")
 
 // gets the angle difference between two vectors, and
 // negates the result if the cross product has a negative Y component
-f32 func_800F89C0(Vector *arg0, Vector *arg1) {
+f32 vec3_abs_angle_diff(Vector *arg0, Vector *arg1) {
     Vector sp1C;
 
     vec3_normalized_cross_product(arg0, arg1, &sp1C);
@@ -344,7 +344,7 @@ void func_800F8E6C(void *arg0) {
         sp54 = (temp_s0 + 0x800E0000)->unk6A10;
         func_8001E344_ovl2(&sp58, temp_a1_2, (bitwise s32) D_800E6BD0[temp_a2]);
         sp5C = 0.0f;
-        temp_f0_3 = func_800F89C0(&sp4C, &sp58);
+        temp_f0_3 = vec3_abs_angle_diff(&sp4C, &sp58);
         temp_v0_2 = &D_800E17D0[temp_a2];
         temp_cond = temp_f0_3 < 0.0f;
         *temp_v0_2 = temp_f0_3;
@@ -2784,35 +2784,35 @@ extern u32 D_801242D0;
 
 void func_800FCF0C(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 0x6B, &D_801242D0);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 0x6B, &D_801242D0);
 }
 
 extern u32 D_8012447C;
 
 void func_800FCF58(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 3, &D_8012447C);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 3, &D_8012447C);
 }
 
 extern u32 D_80124488;
 
 void func_800FCFA4(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 7, &D_80124488);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 7, &D_80124488);
 }
 
 extern u32 D_801244A4;
 
 void func_800FCFF0(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 0xE, &D_801244A4);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 0xE, &D_801244A4);
 }
 
 extern u32 D_801244DC;
 
 void func_800FD03C(UNUSED s32 arg0) {
     func_80199568_ovl2();
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 0x2C, &D_801244DC);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 0x2C, &D_801244DC);
 }
 
 extern u32 D_80129124;
@@ -2877,5 +2877,5 @@ void func_800FD194(s32 arg0) {
     D_800E6850[D_8004A7C4->objId] = 65535.0f;
     D_800E0490[D_8004A7C4->objId] = 0;
     D_801D02AC[D_8004A7C4->objId][0] = 0;
-    func_800A447C(D_800E77A0[D_8004A7C4->objId], 0xB, &D_8012458C, D_800E3910);
+    call_virtual_function(D_800E77A0[D_8004A7C4->objId], 0xB, &D_8012458C, D_800E3910);
 }

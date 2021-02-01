@@ -20,16 +20,16 @@ extern void (*D_801F43F0_ovl10[])(s32);
 
 void func_801E2D40_ovl10(s32 arg0) {
     func_8019B9B0_ovl10();
-    func_800A447C(D_800E7880[D_8004A7C4->objId], 3, &D_801F43F0_ovl10);
+    call_virtual_function(D_800E7880[D_8004A7C4->objId], 3, &D_801F43F0_ovl10);
     while (1)
-        func_800A447C(D_800DDC50[D_8004A7C4->objId], 1, &D_801F43F0_ovl10[3]);
+        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_801F43F0_ovl10[3]);
 }
 
 void func_801E2DD8_ovl10(s32 arg0) {
     func_8019B9B0_ovl10();
-    func_800A447C(D_800E7880[D_8004A7C4->objId], 3, &D_801F43F0_ovl10);
+    call_virtual_function(D_800E7880[D_8004A7C4->objId], 3, &D_801F43F0_ovl10);
     while (1)
-        func_800A447C(D_800DDC50[D_8004A7C4->objId], 1, &D_801F43F0_ovl10[3]);
+        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_801F43F0_ovl10[3]);
 }
 
 void func_801E2E78_ovl10(s32 arg0) {
@@ -261,7 +261,7 @@ void func_801E3770_ovl10(void *arg0) {
     D_800DEF90[D_8004A7C4->objId] = &D_801DB678;
     D_800E8920[D_8004A7C4->objId] = 1;
     func_800FF0A8(sp1C->unk80);
-    func_800A447C(D_800E7880[D_8004A7C4->objId], 9, &D_801F4400_ovl10);
+    call_virtual_function(D_800E7880[D_8004A7C4->objId], 9, &D_801F4400_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E3770_ovl10.s")
@@ -309,7 +309,7 @@ block_11:
             func_8019EBCC_ovl10(D_800DE350[temp_v0_2->objId], temp_a1);
             temp_v0_3 = D_8004A7C4;
             D_800DDC50[temp_v0_3->objId] = 7;
-            func_800B1EC8(D_800DE510[temp_v0_3->objId], &D_801E5754);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_3->objId], &D_801E5754);
             return 1;
         }
         if (temp_v1 == 2) {
@@ -354,7 +354,7 @@ void func_801E3A64_ovl10(void) {
 
 #ifdef MIPS_TO_C
 void func_801E3BE4_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 9, &D_801F44B4_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 9, &D_801F44B4_ovl10);
 }
 #else
 void func_801E3BE4_ovl10(s32 arg0);
@@ -387,7 +387,7 @@ void func_801E3C2C_ovl10(s32 arg0) {
     func_801A0D50_ovl10(&func_801E3BE4_ovl10);
     D_800EC2E0[D_8004A7C4->objId] = 0x1E;
     func_801E3A64_ovl10();
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 9, &D_801F44B0_ovl10[1]);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 9, &D_801F44B0_ovl10[1]);
 }
 
 extern void func_800BC1FC(s32);
@@ -409,7 +409,7 @@ void func_801E3E04_ovl10(s32 arg0) {
         phi_a3 = func_801A0D74_ovl10(arg0);
     }
     if (phi_a3 == 0) {
-        func_800A447C(D_800DDFD0[D_8004A7C4->objId], 9, &D_801F44B0_ovl10[10]);
+        call_virtual_function(D_800DDFD0[D_8004A7C4->objId], 9, &D_801F44B0_ovl10[10]);
     }
     if (D_800E9C60[D_8004A7C4->objId] != 0) {
         if (D_800DDC50[D_8004A7C4->objId] != 7) {
@@ -444,7 +444,7 @@ void func_801E4030_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 1;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E3BE4);
     }
 }
 #else
@@ -559,7 +559,7 @@ void func_801E4518_ovl10(s32 arg0) {
             } else {
                 (&D_800DDC50[D_8004A7C4->objId])[-0x8EC] = 1;
             }
-            func_800B1EC8(D_800DE510[D_8004A7C4->objId], &D_801E3BE4);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801E3BE4);
         }
     }
 }
@@ -611,7 +611,7 @@ void func_801E48C8_ovl10(s32 arg0) {
         temp_a0 = &D_800E9E20[temp_v0];
         if (3 == *temp_a0) {
             D_800DDC50[temp_v0] = 3;
-            func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E3BE4);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E3BE4);
             return;
         }
         if ((D_800DD8D0[temp_v0] >> 0x1E) != 0) {
@@ -700,7 +700,7 @@ f32 func_801E4A74_ovl10(void) {
     temp_f2 = temp_v1->unk34;
     temp_f12 = temp_f2;
     phi_v0 = 1;
-    if (func_800F89C0(&sp38, &sp2C, gEntitiesPosXArray, gEntitiesPosZArray) < 0.0f) {
+    if (vec3_abs_angle_diff(&sp38, &sp2C, gEntitiesPosXArray, gEntitiesPosZArray) < 0.0f) {
         phi_v0 = -1;
     }
     temp_v1->unk34 = temp_f2 + (D_801F4B20_ovl10 * phi_v0);
@@ -756,7 +756,7 @@ void func_801E4C7C_ovl10(s32 arg0) {
         } else {
             D_800DDC50[temp_v0_2] = 4;
         }
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E3BE4);
     }
 }
 #else
@@ -868,7 +868,7 @@ void func_801E50A4_ovl10(s32 arg0) {
     }
     if (*(D_800E9E20 + phi_v0) == 2) {
         *(D_800DDC50 + phi_v0) = 8;
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E3BE4);
     }
 }
 #else
@@ -911,7 +911,7 @@ void func_801E5278_ovl10(s32 arg0) {
         } else {
             D_800DDC50[D_8004A7C4->objId] = 5;
         }
-        func_800B1EC8(D_800DE510[D_8004A7C4->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801E3BE4);
     }
 }
 #else
@@ -958,7 +958,7 @@ void func_801E5468_ovl10(s32 arg0) {
         D_800E64D0[temp_v1_2] = D_800E6690[temp_v1_2];
         D_800E6850[temp_v0->objId] = D_801F4B2C_ovl10;
         D_800DDC50[temp_v0->objId] = 6;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E3BE4);
     }
 }
 #else
@@ -1010,7 +1010,7 @@ void func_801E56C4_ovl10(s32 arg0) {
     if (D_800E9E20[temp_a2] != 0) {
         *temp_v0 = -*temp_v0;
         D_800DDC50[temp_v1->objId] = 5;
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E3BE4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E3BE4);
     }
 }
 #else
@@ -1193,7 +1193,7 @@ f32 func_801E5C4C_ovl10(void *arg0, s32 arg1) {
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E5C4C_ovl10.s")
 #endif
 
-void func_800F98EC(u32, f32, struct EntityThing800E9AA0 *);
+int func_800F98EC(u32, f32);
 void func_801A2558_ovl10(s32);
 
 void func_801E5CF0_ovl10(f32 arg0) {
@@ -1204,7 +1204,7 @@ void func_801E5CF0_ovl10(f32 arg0) {
     D_800E5F90[D_8004A7C4->objId] = temp_a2->unk0;
     D_800E6BD0[D_8004A7C4->objId] = temp_a2->unk24;
     D_800E8E60[D_8004A7C4->objId] = 0;
-    func_800F98EC(D_8004A7C4->objId, arg0, temp_a2);
+    func_800F98EC(D_8004A7C4->objId, arg0);
     func_801A2558_ovl10((s32)(sp1C->unk88->unk10));
     func_800FF0C4(sp1C->unk80);
 }
@@ -1365,7 +1365,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E5F60_ovl10.s")
     temp_a0 = *(D_800E83E0 + (temp_a1_2 * 4));
     if (temp_a0 == 1) {
 block_16:
-        func_800B1EC8(D_800DE510[temp_a1_2], &D_801EB9DC);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_a1_2], &D_801EB9DC);
         return 1;
     }
     if (temp_a0 == 2) {
@@ -1386,7 +1386,7 @@ block_16:
         (&D_800DB160 + (temp_v0_2->objId * 4))->unkD50 = sp3C;
     }
     gKirbyState.unkB2 = gKirbyState.unkB2 + 1;
-    func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801A7000);
+    restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801A7000);
     return 1;
 }
 #else
@@ -1454,7 +1454,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E63E4_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E63FC_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4510_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4510_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E63FC_ovl10.s")
@@ -1482,7 +1482,7 @@ void func_801E6444_ovl10(s32 arg0) {
     func_800A9760(0x1005F);
     sp1C->unk98 = &D_801CB494;
     func_801A0D50_ovl10(&D_801E63FC);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4510_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4510_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E6444_ovl10.s")
@@ -1504,7 +1504,7 @@ void func_801E6564_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 3, &D_801F451C_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 3, &D_801F451C_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -1547,7 +1547,7 @@ void func_801E66E0_ovl10(s32 arg0) {
         func_800AED20(D_800D6B10);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E63FC);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E63FC);
     }
 }
 #else
@@ -1670,7 +1670,7 @@ void func_801E6AB4_ovl10(s32 arg0) {
     if (2 == *(D_800E9E20 + phi_v0)) {
         *(D_800E8920 + phi_v0) = 1;
         D_800DDC50[temp_v1->objId] = 2;
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E63FC);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E63FC);
     }
 }
 #else
@@ -1725,7 +1725,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E6CAC_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E6D08_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4528_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4528_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E6D08_ovl10.s")
@@ -1756,7 +1756,7 @@ void func_801E6D50_ovl10(s32 arg0) {
     func_800A9760(0x10060);
     temp_t7->unk98 = &D_801CB590;
     func_801A0D50_ovl10(&D_801E6D08);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4528_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4528_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E6D50_ovl10.s")
@@ -1778,7 +1778,7 @@ void func_801E6E84_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 3, &D_801F4534_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 3, &D_801F4534_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -1821,7 +1821,7 @@ void func_801E7000_ovl10(s32 arg0) {
         func_800AED20(D_800D6B10);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E6D08);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E6D08);
     }
 }
 #else
@@ -1880,7 +1880,7 @@ void func_801E7248_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] == 1) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E6D08);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E6D08);
     }
 }
 #else
@@ -1973,7 +1973,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E7424_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E75E4_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4540_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4540_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E75E4_ovl10.s")
@@ -2004,7 +2004,7 @@ void func_801E762C_ovl10(s32 arg0) {
     func_800A9760(0x10065);
     temp_t7->unk98 = &D_801CB494;
     func_801A0D50_ovl10(&D_801E75E4);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4540_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4540_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E762C_ovl10.s")
@@ -2026,7 +2026,7 @@ void func_801E7760_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 3, &D_801F454C_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 3, &D_801F454C_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -2068,7 +2068,7 @@ void func_801E78D4_ovl10(s32 arg0) {
         func_800AED20(D_800D6B10);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E75E4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E75E4);
     }
 }
 #else
@@ -2155,7 +2155,7 @@ void func_801E7C38_ovl10(s32 arg0) {
     if (D_800E9E20[temp_v1] == 1) {
         D_800E8920[temp_v1] = 1;
         D_800DDC50[temp_v0->objId] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E75E4);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E75E4);
     }
 }
 #else
@@ -2243,7 +2243,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E7ED4_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E8008_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4558_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4558_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E8008_ovl10.s")
@@ -2274,7 +2274,7 @@ void func_801E8050_ovl10(s32 arg0) {
     func_800A9760(0x10064);
     temp_t7->unk98 = &D_801CB590;
     func_801A0D50_ovl10(&D_801E8008);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4558_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4558_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E8050_ovl10.s")
@@ -2296,7 +2296,7 @@ void func_801E8184_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 3, &D_801F4564_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 3, &D_801F4564_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -2339,7 +2339,7 @@ void func_801E8300_ovl10(s32 arg0) {
         func_800AED20(D_800D6B10);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E8008);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E8008);
     }
 }
 #else
@@ -2398,7 +2398,7 @@ void func_801E8548_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] == 1) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E8008);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E8008);
     }
 }
 #else
@@ -2521,7 +2521,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E88E4_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E8988_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4570_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4570_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E8988_ovl10.s")
@@ -2549,7 +2549,7 @@ void func_801E89D0_ovl10(s32 arg0) {
     D_800DDC50[D_8004A7C4->objId] = 0;
     func_800A9760(0x10061, &D_8004A7C4);
     func_801A0D50_ovl10(&D_801E8988);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4570_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_801F4570_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E89D0_ovl10.s")
@@ -2571,7 +2571,7 @@ void func_801E8AF8_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 3, &D_801F457C_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 3, &D_801F457C_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -2613,7 +2613,7 @@ void func_801E8C68_ovl10(s32 arg0) {
         func_800AED20(D_800D6B10);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 1;
-        func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E8988);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E8988);
     }
 }
 #else
@@ -2682,7 +2682,7 @@ void func_801E8F24_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E8988);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E8988);
     }
 }
 #else
@@ -2754,7 +2754,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E9128_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801E91B0_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 6, &D_801F4588_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 6, &D_801F4588_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E91B0_ovl10.s")
@@ -2785,7 +2785,7 @@ void func_801E91F8_ovl10(s32 arg0) {
     func_800A9760(0x10062);
     temp_t7->unk98 = &D_801F4124_ovl10;
     func_801A0D50_ovl10(&D_801E91B0);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 6, &D_801F4588_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 6, &D_801F4588_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E91F8_ovl10.s")
@@ -2807,7 +2807,7 @@ void func_801E932C_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 6, &D_801F45A0_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 6, &D_801F45A0_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -2860,7 +2860,7 @@ void func_801E94C4_ovl10(s32 arg0) {
             func_800AED20(D_800D6B10);
             temp_v0_2 = D_8004A7C4;
             D_800DDC50[temp_v0_2->objId] = 1;
-            func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801E91B0);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801E91B0);
         }
     }
 }
@@ -2922,7 +2922,7 @@ void func_801E9770_ovl10(s32 arg0) {
         D_800E9FE0[temp_v1] = -1;
         D_800E9560[temp_v0->objId] = 0;
         D_800DDC50[temp_v0->objId] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E91B0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E91B0);
     }
 }
 #else
@@ -3000,7 +3000,7 @@ void func_801E9A10_ovl10(s32 arg0) {
         } else {
             (&D_800DDC50[temp_v0])[-0x8EC] = 3;
         }
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801E91B0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801E91B0);
     }
 }
 #else
@@ -3147,7 +3147,7 @@ void func_801E9DCC_ovl10(s32 arg0) {
     }
     if (*(D_800E9E20 + phi_v0) != 0) {
         *(D_800DDC50 + phi_v0) = 5;
-        func_800B1EC8(D_800DE510[phi_v1->objId], &D_801E91B0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[phi_v1->objId], &D_801E91B0);
     }
 }
 #else
@@ -3291,7 +3291,7 @@ void func_801EA1E4_ovl10(s32 arg0) {
     }
     if (phi_a0 == 3) {
         *(D_800DDC50 + phi_v1) = 5;
-        func_800B1EC8(D_800DE510[phi_v0->objId], &D_801E91B0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[phi_v0->objId], &D_801E91B0);
     }
 }
 #else
@@ -3398,7 +3398,7 @@ void func_801EA718_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801E91B0);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801E91B0);
     }
 }
 #else
@@ -3407,7 +3407,7 @@ GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EA718_ovl10.s")
 
 #ifdef MIPS_TO_C
 void func_801EA784_ovl10(s32 arg0) {
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801F45B8_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801F45B8_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EA784_ovl10.s")
@@ -3438,7 +3438,7 @@ void func_801EA7CC_ovl10(s32 arg0) {
     func_800A9760(0x10063);
     temp_t7->unk98 = &D_801CB494;
     func_801A0D50_ovl10(&D_801EA784);
-    func_800A447C(D_800DDC50[D_8004A7C4->objId], 5, &D_801F45B8_ovl10);
+    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 5, &D_801F45B8_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EA7CC_ovl10.s")
@@ -3460,7 +3460,7 @@ void func_801EA900_ovl10(void) {
     }
     phi_v1_2 = phi_v1;
     if (phi_a1 == 0) {
-        func_800A447C(*(D_800DDFD0 + phi_v1), 5, &D_801F45CC_ovl10);
+        call_virtual_function(*(D_800DDFD0 + phi_v1), 5, &D_801F45CC_ovl10);
         phi_v1_2 = D_8004A7C4->objId * 4;
     }
     if (*(D_800E9C60 + phi_v1_2) != 0) {
@@ -3513,7 +3513,7 @@ void func_801EAA98_ovl10(s32 arg0) {
             func_800AED20(D_800D6B10);
             temp_v0_2 = D_8004A7C4;
             D_800DDC50[temp_v0_2->objId] = 1;
-            func_800B1EC8(D_800DE510[temp_v0_2->objId], &D_801EA784);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_801EA784);
         }
     }
 }
@@ -3633,7 +3633,7 @@ void func_801EAF3C_ovl10(s32 arg0) {
     }
     if (2 == *(D_800E9E20 + phi_v0)) {
         *(D_800DDC50 + phi_v0) = 2;
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801EA784);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801EA784);
     }
 }
 #else
@@ -3695,7 +3695,7 @@ block_6:
         } else {
             goto block_4;
         }
-        func_800B1EC8(*(D_800DE510 + phi_v1), &D_801EA784);
+        restart_thread_with_new_function(*(gEntitiesGObjThreadStackArray + phi_v1), &D_801EA784);
     }
 }
 #else
@@ -3780,7 +3780,7 @@ void func_801EB39C_ovl10(s32 arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800DDC50[temp_v1] = 2;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801EA784);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801EA784);
     }
 }
 #else
@@ -3865,7 +3865,7 @@ void func_801EB744_ovl10(s32 arg0) {
     temp_a0 = &D_800E9E20[temp_v0];
     if (2 == *temp_a0) {
         D_800DDC50[temp_v0] = 2;
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801EA784);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801EA784);
         return;
     }
     if (D_800E8920[temp_v0] == 0) {
@@ -4083,7 +4083,7 @@ void func_801EBDE8_ovl10(void) {
         temp_a0_2 = &D_800E9720[temp_v1];
         temp_a1 = *temp_a0_2;
         if (temp_a1 == 0) {
-            func_800B1EC8(D_800DE510[temp_v1], &D_801ACF84);
+            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1], &D_801ACF84);
             return;
         }
         *temp_a0_2 = temp_a1 - 1;
@@ -4241,7 +4241,7 @@ void func_801EC2A0_ovl10(s32 arg0) {
     D_800E9AA0[temp_v0->objId] = 0;
     D_800E9C60[temp_v0->objId] = 0;
     D_800E9E20[temp_v0->objId] = 0;
-    func_800A447C(D_800E7880[temp_v0->objId], 1, &D_801F45E0_ovl10);
+    call_virtual_function(D_800E7880[temp_v0->objId], 1, &D_801F45E0_ovl10);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801EC2A0_ovl10.s")
@@ -4272,7 +4272,7 @@ loop_1:
     temp_s1->unk8C = temp_s1->unk88->unk14;
     temp_v0 = D_8004A7C4;
     D_800DF150[temp_v0->objId] = &D_801EC4CC;
-    func_800A447C(D_800DDC50[temp_v0->objId], 0xF, &D_801F45E4_ovl10);
+    call_virtual_function(D_800DDC50[temp_v0->objId], 0xF, &D_801F45E4_ovl10);
     phi_s0 = D_8004A7C4->objId * 4;
     goto loop_1;
 }
@@ -4312,7 +4312,7 @@ void func_801EC4CC_ovl10(s32 arg0) {
         *temp_v0_2 = *temp_v0_2 - 1;
     }
     if (0.0f == func_801A0D74_ovl10(arg0)) {
-        func_800A447C(D_800DDFD0[D_8004A7C4->objId], 0xF, &D_801F4620_ovl10);
+        call_virtual_function(D_800DDFD0[D_8004A7C4->objId], 0xF, &D_801F4620_ovl10);
     }
     if ((0.0f == func_801EEB30_ovl10()) && (sp18->unk3C == 0)) {
         temp_v0_3 = D_800E9AA0[D_8004A7C4->objId];
@@ -4325,7 +4325,7 @@ void func_801EC4CC_ovl10(s32 arg0) {
             } else if (func_801EEED4_ovl10(arg0) != 0) {
                 temp_v0_4 = D_8004A7C4;
                 D_800DDC50[temp_v0_4->objId] = 9;
-                func_800B1EC8(D_800DE510[temp_v0_4->objId], &D_801EC3C8);
+                restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_4->objId], &D_801EC3C8);
                 return;
             }
         } else if (func_801EEE44_ovl10(arg0) != 0) {
@@ -4590,7 +4590,7 @@ void func_801ECE90_ovl10(void) {
     if ((sp1C->unk3C == 0) && (func_8019A9AC_ovl10(0, 0x43700000) == 2)) {
         temp_v0 = D_8004A7C4;
         D_800DDC50[temp_v0->objId] = 4;
-        func_800B1EC8(D_800DE510[temp_v0->objId], &D_801EC3C8);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0->objId], &D_801EC3C8);
     }
 }
 #else
@@ -4679,7 +4679,7 @@ void func_801ED208_ovl10(s32 arg0) {
         } else {
             (&D_800DDC50[temp_v0])[-0x8EC] = 7;
         }
-        func_800B1EC8(D_800DE510[temp_v1->objId], &D_801EC3C8);
+        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v1->objId], &D_801EC3C8);
     }
 }
 #else

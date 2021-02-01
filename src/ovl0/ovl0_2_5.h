@@ -13,9 +13,9 @@ struct ObjStack {
     u64 stack[0x20];
 };
 
-// if a function that uses ObjThread doesnt match, try this definition
-// struct ObjThread {
-//     struct ObjThread *unk0;
+// if a function that uses GObjThread doesnt match, try this definition
+// struct GObjThread {
+//     struct GObjThread *unk0;
 //     u32 unk4;
 //     OSThread *unk8;
 //     u8 filler[0x1B8 - 0x04 - 0x08];
@@ -38,30 +38,30 @@ struct DynamicBuffer {
 
 extern struct DynamicBuffer gDynamicBuffer1, gDynamicBuffer2;
 
-struct ObjThread
+struct GObjThread
 {
-    struct ObjThread *unk0; // function?
+    struct GObjThread *unk0; // function?
     OSThread thread;
     struct ObjStack *objStack;
-    s32 objStackSize; // stack size?
+    s32 objStackSize;
 };
 
-// TODO: is this an ObjThreadStack?
+// TODO: is this an GObjThreadStack?
 struct ObjThreadStack_C {
     u32 unk0;
     u32 unk4;
-    struct ObjThreadStack *unk8;
+    struct GObjThreadStack *unk8;
     struct ObjThreadStack_C *unkC;
 };
 
-struct ObjThreadStack {
-    struct ObjThreadStack *unk0;
+struct GObjThreadStack {
+    struct GObjThreadStack *unk0;
     
     // Could these be ObjThreads instead?
-    struct ObjThreadStack *unk4;
+    struct GObjThreadStack *unk4;
     // OSThread?
-    struct ObjThreadStack *unk8;
-    // Pointer to something (potentially ObjThreadStack)
+    struct GObjThreadStack *unk8;
+    // Pointer to something (potentially GObjThreadStack)
     struct ObjThreadStack_C *unkC;
     // some sort of index?
     u32 unk10;
@@ -69,13 +69,17 @@ struct ObjThreadStack {
     u8 unk15;
     u16 unk16;
     struct UnkStruct8004A7C4 *unk18; // TODO: rename to something
-    struct ObjThread *objThread;
+    struct GObjThread *objThread;
     void (*func)(struct UnkStruct8004A7C4 *);
-    u32 pad[9];
+    // from debug strings
+    u32 *ptr;
+
+    // TODO: why was this 9 long?
+    // u32 pad[9];
 };
 
-struct ObjProcess {
-    struct ObjProcess* unk0;
+struct GObjProcess {
+    struct GObjProcess* unk0;
     u32 unk4;
     u32 unk8;
     u32 unkC;
@@ -85,7 +89,7 @@ struct ObjProcess {
     u8 unk16;
     u8 unk17;
     u32 *unk18;
-    struct ObjThread *thread;
+    struct GObjThread *thread;
     void (*entryPoint)(struct UnkStruct8004A7C4 *);
 };
 
