@@ -2724,6 +2724,8 @@ glabel D_801F4218_ovl10
 glabel D_801F421C_ovl10
 .word 0x80199688
 
+# start of ovl10_1 vtable
+
 glabel D_801F4220_ovl10
 .word 0x801DBE00
 

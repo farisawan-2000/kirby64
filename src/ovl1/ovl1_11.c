@@ -14,6 +14,7 @@ void func_800BB580(s32 arg0) {
 extern s32 D_800D6B24;
 extern u8 D_800D6B2B;
 extern s16 D_800D6B30;
+
 #ifdef MIPS_TO_C
 void func_800BB588(struct UnkStruct8004A7C4 *arg0) {
     while (1) {
@@ -21,9 +22,9 @@ void func_800BB588(struct UnkStruct8004A7C4 *arg0) {
             D_800D6B30++;
             switch (D_800D6B2B) {
                 case 0:
-                    D_800D6B24 = 0;
-                    func_8000A29C_ovl1(D_800D6B24);
-                    func_800B1900(arg0->objId & 0xFFFF);
+                    // D_800D6B24 = 0;
+                    func_8000A29C_ovl1(D_800D6B24 = 0);
+                    func_800B1900(arg0->objId);
                     break;
                 case 2:
                     D_800D6B24 = 0;
