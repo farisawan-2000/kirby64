@@ -27,8 +27,8 @@ endif
 ##################### Compiler Options #######################
 # IRIX_ROOT := tools/ido5.3_compiler
 IRIX_ROOT := tools/ido7.1
-CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
-# CC := tools/ido-7.1recomp/cc
+# CC        := $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
+CC := tools/ido-7.1recomp/cc
 
 
 ifeq ($(shell type mips-linux-gnu-ld >/dev/null 2>/dev/null; echo $$?), 0)
