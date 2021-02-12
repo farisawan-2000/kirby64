@@ -12,4 +12,4 @@ fi
 
 #echo "Replace $1 with $2?"
 #read
-git grep -rl "$1" | xargs sed -i "s/\b$1\b/$2/g"
+git grep -rl "$1" src/ data/ asm/ include/ | xargs sed -i "s/\b$1\b/$2/g"

@@ -73,6 +73,8 @@ extern f32 D_800E5350[];
 extern f32 D_800E5190[];
 extern f32 D_800E4FD0[];
 
+extern u32 D_800DDA90[];
+
 extern u8 D_800E7650[];
 
 extern s32 D_800E8AE0[];

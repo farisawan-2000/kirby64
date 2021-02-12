@@ -154,10 +154,10 @@ struct CollisionHeader
 {
 /*0x0*/    struct CollisionTriangle    *Triangles;
 /*0x4*/    u32       Len_Triangles;
-union {
+union v {
 /*0x8*/    s16       *Vertices;
            f32       *VerticesF; 
-};
+} vertices;
 /*0xC*/    u32       Len_Vertices;
 /*0x10*/   struct Normal *Triangle_Normals;
 /*0x14*/   u32       Len_Triangle_Normals;

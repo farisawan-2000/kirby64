@@ -200,6 +200,8 @@ softclean:
 	rm -rf build/us/asm/
 
 # $(BUILD_DIR)/src/ovl0/ovl0_8.o: OPT_FLAGS += -framepointer
+$(BUILD_DIR)/src/ovl7/yakulib.o: OPT_FLAGS = -O2
+$(BUILD_DIR)/src/ovl7/yakulib.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 # $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 
 

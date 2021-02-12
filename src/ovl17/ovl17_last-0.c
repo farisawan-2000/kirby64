@@ -120,7 +120,6 @@ GLOBAL_ASM("asm/non_matchings/ovl17/ovl17_last-0/func_801E4668_ovl17.s")
 extern float D_801E56CC, D_801E56C8;
 void func_801E4DD4_ovl17(s32 arg0);
 extern s32 D_800B4924;
-extern s32 D_800DDA90[];
 #ifdef NON_MATCHING
 void func_801E49B8_ovl17(s32 arg0) {
     Vector sp3C;
