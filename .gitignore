@@ -26,3 +26,5 @@ ctx.c
 # Use these for scratch work
 *.x
 strings/*
+# asm-differ .o file diffs
+expected/*
