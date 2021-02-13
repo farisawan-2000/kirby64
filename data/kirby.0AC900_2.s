@@ -1,137 +1,21 @@
 .include "macros.inc"
 .section .data
 
+.balign 4
 glabel D_801288E0
-.word 0x4578706C
+.asciiz "Explosion(model) Request Error![effect.cc]\n"
 
-glabel D_801288E4
-.word 0x6F73696F
-
-glabel D_801288E8
-.word 0x6E286D6F
-
-glabel D_801288EC
-.word 0x64656C29
-
-glabel D_801288F0
-.word 0x20526571
-
-glabel D_801288F4
-.word 0x75657374
-
-glabel D_801288F8
-.word 0x20457272
-
-glabel D_801288FC
-.word 0x6F72215B
-
-glabel D_80128900
-.word 0x65666665
-
-glabel D_80128904
-.word 0x63742E63
-
-glabel D_80128908
-.word 0x635D0A00
-
+.balign 4
 glabel D_8012890C
-.word 0x4578706C
+.asciiz "ExplosionPos(model) Request Error![effect.cc]\n"
 
-glabel D_80128910
-.word 0x6F73696F
-
-glabel D_80128914
-.word 0x6E506F73
-
-glabel D_80128918
-.word 0x286D6F64
-
-glabel D_8012891C
-.word 0x656C2920
-
-glabel D_80128920
-.word 0x52657175
-
-glabel D_80128924
-.word 0x65737420
-
-glabel D_80128928
-.word 0x4572726F
-
-glabel D_8012892C
-.word 0x72215B65
-
-glabel D_80128930
-.word 0x66666563
-
-glabel D_80128934
-.word 0x742E6363
-
-glabel D_80128938
-.word 0x5D0A0000
-
+.balign 4
 glabel D_8012893C
-.word 0x4578706C
+.asciiz "ExplosionPos(model) Request Error![effect.cc]\n"
 
-glabel D_80128940
-.word 0x6F73696F
-
-glabel D_80128944
-.word 0x6E506F73
-
-glabel D_80128948
-.word 0x286D6F64
-
-glabel D_8012894C
-.word 0x656C2920
-
-glabel D_80128950
-.word 0x52657175
-
-glabel D_80128954
-.word 0x65737420
-
-glabel D_80128958
-.word 0x4572726F
-
-glabel D_8012895C
-.word 0x72215B65
-
-glabel D_80128960
-.word 0x66666563
-
-glabel D_80128964
-.word 0x742E6363
-
-glabel D_80128968
-.word 0x5D0A0000
-
+.balign 4
 glabel D_8012896C
-.word 0x45666665
-
-glabel D_80128970
-.word 0x63742052
-
-glabel D_80128974
-.word 0x65717565
-
-glabel D_80128978
-.word 0x73742045
-
-glabel D_8012897C
-.word 0x72726F72
-
-glabel D_80128980
-.word 0x215B6566
-
-glabel D_80128984
-.word 0x66656374
-
-glabel D_80128988
-.word 0x2E63635D
-
-glabel D_8012898C
-.word 0x0A000000
+.asciiz "Effect Request Error![effect.cc]\n"
 
 glabel D_80128990
 .word 0x38D1B717
@@ -664,68 +548,13 @@ glabel D_80128C4C
 glabel D_80128C50
 .word 0x00000000
 
+.balign 4
 glabel D_80128C54
-.word 0x456E7472
+.asciiz "Entry Error. CollEne Global Shape Buff Over!!\n"
 
-glabel D_80128C58
-.word 0x79204572
-
-glabel D_80128C5C
-.word 0x726F722E
-
-glabel D_80128C60
-.word 0x20436F6C
-
-glabel D_80128C64
-.word 0x6C456E65
-
-glabel D_80128C68
-.word 0x20476C6F
-
-glabel D_80128C6C
-.word 0x62616C20
-
-glabel D_80128C70
-.word 0x53686170
-
-glabel D_80128C74
-.word 0x65204275
-
-glabel D_80128C78
-.word 0x6666204F
-
-glabel D_80128C7C
-.word 0x76657221
-
-glabel D_80128C80
-.word 0x210A0000
-
+.balign 4
 glabel D_80128C84
-.word 0x456E7472
-
-glabel D_80128C88
-.word 0x79204572
-
-glabel D_80128C8C
-.word 0x726F722E
-
-glabel D_80128C90
-.word 0x20436F6C
-
-glabel D_80128C94
-.word 0x6C456E65
-
-glabel D_80128C98
-.word 0x20427566
-
-glabel D_80128C9C
-.word 0x66204F76
-
-glabel D_80128CA0
-.word 0x65722121
-
-glabel D_80128CA4
-.word 0x0A000000
+.asciiz "Entry Error. CollEne Buff Over!!\n"
 
 glabel D_80128CA8
 .word 0x461C3C00

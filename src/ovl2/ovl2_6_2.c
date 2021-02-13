@@ -9438,12 +9438,12 @@ void *func_80111C88(void *arg0, ?32 arg1) {
 
     phi_v0 = arg0->unk0 ? 1 : 0;
     if ((phi_v0 + D_8012CF28 + arg0->unk4) >= 0xB) {
-        print_error_stub(&D_80128C54, arg0);
+        print_error_stub(&D_80128C54, arg0); // "Entry Error. CollEne Global Shape Buff Over!!\n"
         while (1);
     }
     temp_v0 = D_8012D0C4;
     if (temp_v0 == 5) {
-        print_error_stub(&D_80128C84, arg0);
+        print_error_stub(&D_80128C84, arg0); // "Entry Error. CollEne Buff Over!!\n"
         while (1);
     }
     temp_a2 = (temp_v0 * 0x28) + &D_8012D0C8;

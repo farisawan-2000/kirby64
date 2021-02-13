@@ -18,9 +18,9 @@ glabel func_800FD9D4
 .L800FDA14_ovl2:
 /* 086484 800FDA14 8FAE0020 */  lw    $t6, 0x20($sp)
 /* 086488 800FDA18 00027880 */  sll   $t7, $v0, 2
-/* 08648C 800FDA1C 3C01800E */  lui   $at, 0x800e
+/* 08648C 800FDA1C 3C01800E */ lui $at, %hi(D_800DDC50)
 /* 086490 800FDA20 002F0821 */  addu  $at, $at, $t7
-/* 086494 800FDA24 AC2EDC50 */  sw    $t6, -0x23b0($at)
+/* 086494 800FDA24 AC2EDC50 */ sw $t6, %lo(D_800DDC50)($at)
 .L800FDA28_ovl2:
 /* 086498 800FDA28 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 08649C 800FDA2C 27BD0020 */  addiu $sp, $sp, 0x20

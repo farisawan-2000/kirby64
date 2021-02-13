@@ -10,9 +10,6 @@
 #include "ovl1/ovl1_6.h"
 extern Controller_800D6FE8 D_800D6FE8;
 
-
-
-
 void *func_8011BA10(struct CollisionTriangle *tri, u32 arg1) {
     u32 i;
     struct DynGeo_List *destructGroups;

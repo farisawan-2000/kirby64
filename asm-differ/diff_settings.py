@@ -1,6 +1,6 @@
 def apply(config, args):
-    config["baseimg"] = "target.bin"
-    config["myimg"] = "baserom.us.z64"
+    config["baseimg"] = "baserom.us.z64"
+    config["myimg"] = "build/us/kirby.us.z64"
     config["mapfile"] = "build/us/kirby.us.map"
     config["source_directories"] = ["."]
     #config["arch"] = "mips"
