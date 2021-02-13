@@ -68,5 +68,7 @@
 #include "src/ovl7/ovl7_16.c"
 #include "src/ovl7/yakulib.c"
 #include "src/ovl7/yakulib.h"
+#include "src/ovl17/ovl17.c"
+#include "src/ovl16/ovl16.c"
 #include "src/ovl20.c"
 

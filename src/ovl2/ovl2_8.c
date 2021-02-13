@@ -602,40 +602,32 @@ extern struct {
 void func_800F88C8(s32, s32, f32);
 // some sort of init_kirby function?
 #ifdef MIPS_TO_C
-struct UnkStruct8004A7C4 *func_8011C8F8(void) {
+void func_8011C8F8(void) {
     f32 temp_f0;
     s32 temp_t7;
-    s32 temp_v0_4;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
-    struct UnkStruct8004A7C4 *temp_v0_5;
-    u32 temp_a3;
+    s32 temp_v0;
 
-    temp_v0_2 = D_8004A7C4;
     temp_f0 = D_80128E24;
-    D_800DEF90[temp_v0_2->objId] = &D_800B531C;
-    D_800DEDD0[temp_v0_2->objId] = &D_8011CFF4;
-    D_800E4550[temp_v0_2->objId] = temp_f0;
-    D_800E4710[temp_v0_2->objId] = temp_f0;
-    D_800E48D0[temp_v0_2->objId] = temp_f0;
+    D_800DEF90[D_8004A7C4->objId] = &D_800B531C;
+    D_800DEDD0[D_8004A7C4->objId] = &D_8011CFF4;
+    D_800E4550[D_8004A7C4->objId] = temp_f0;
+    D_800E4710[D_8004A7C4->objId] = temp_f0;
+    D_800E48D0[D_8004A7C4->objId] = temp_f0;
     func_80112A0C();
     func_80111534(D_8004A7C4->objId);
     D_800D6F10 = 0;
     D_8012EADC = 0;
-    temp_v0_3 = D_8004A7C4;
     D_8012EAE0 = 0;
-    D_800E7B20[temp_v0_3->objId] = gKirbyHp;
-    D_800E8920[temp_v0_3->objId] = 1;
-    D_800E8AE0[temp_v0_3->objId] = 0;
-    D_800E7CE0[temp_v0_3->objId] = 0;
-    D_800E7EA0[temp_v0_3->objId] = 0;
-    D_800E8060[temp_v0_3->objId] = 0;
-    D_800E8760[temp_v0_3->objId] = 0;
+    D_800E7B20[D_8004A7C4->objId] = gKirbyHp;
+    D_800E8920[D_8004A7C4->objId] = 1;
+    D_800E8AE0[D_8004A7C4->objId] = 0;
+    D_800E7CE0[D_8004A7C4->objId] = 0;
+    D_800E7EA0[D_8004A7C4->objId] = 0;
+    D_800E8060[D_8004A7C4->objId] = 0;
+    D_800E8760[D_8004A7C4->objId] = 0;
     gKirbyState.actionChange = -1;
     gKirbyState.action = 0;
     gKirbyState.previousAction = 0;
-    temp_t7 = 0 & 0xFF;
     if (D_800BE4F0 == 0x21) {
         gKirbyState.abilityInUse = 0;
         gKirbyState.ability = 0;
@@ -646,11 +638,11 @@ struct UnkStruct8004A7C4 *func_8011C8F8(void) {
     gKirbyState.unk7 = 0;
     gKirbyState.unk24 = 0;
     gKirbyState.unk9 = 0;
-    gKirbyState.isTurning = 0 & 0xFF;
-    gKirbyState.unk30 = temp_t7 & 0xFF;
+    gKirbyState.isTurning = (u8) 0 & 0xFF;
+    gKirbyState.unk30 = (u8) 0 & 0xFF;
     gKirbyState.unkA = 0;
-    gKirbyState.turnDirection = temp_t7;
-    gKirbyState.unk8 = temp_t7;
+    gKirbyState.turnDirection = (u8) 0;
+    gKirbyState.unk8 = (u8) 0;
     gKirbyState.unk14 = 0;
     gKirbyState.unk150 = 0;
     gKirbyState.unk153 = 0;
@@ -680,8 +672,8 @@ struct UnkStruct8004A7C4 *func_8011C8F8(void) {
     gKirbyState.unk70 = 0;
     gKirbyState.unk74 = 0;
     gKirbyState.abilityState = 0;
-    gKirbyState.unk18 = temp_t7;
-    gKirbyState.unk17 = temp_t7;
+    gKirbyState.unk18 = (u8) 0;
+    gKirbyState.unk17 = (u8) 0;
     gKirbyState.unkB = 0;
     gKirbyState.unk15C = 0;
     gKirbyState.unk154 = 0;
@@ -689,31 +681,28 @@ struct UnkStruct8004A7C4 *func_8011C8F8(void) {
     gKirbyState.unkB8 = 0;
     gKirbyState.unkBA = 0;
     gKirbyState.unk158 = 1.0f;
-    temp_v0_4 = func_800F8560();
-    if ((temp_v0_4 != 0) && (temp_v0_4 != 0xA)) {
+    temp_v0 = func_800F8560();
+    if ((temp_v0 != 0) && (temp_v0 != 0xA)) {
         gKirbyState.unk4 = 0;
         gKirbyState.numberInhaled = 0;
     }
-    temp_v0_5 = D_8004A7C4;
-    gKirbyState.unk178 = D_800E3050[temp_v0_5->objId];
-    gKirbyState.unk17C = D_800E3210[temp_v0_5->objId];
+    gKirbyState.vel[1] = D_800E3050[D_8004A7C4->objId];
+    gKirbyState.vel[2] = D_800E3210[D_8004A7C4->objId];
     gKirbyState.unk168 = 0.0f;
     gKirbyState.unk160 = 0;
     gKirbyState.unk162 = 0x14;
     gKirbyState.unk16C = 0;
     D_80198830.unk8 = 3;
     D_80198830.unk10 = -1;
-    gKirbyState.unk180 = D_800E33D0[temp_v0_5->objId];
+    gKirbyState.unk180 = D_800E33D0[D_8004A7C4->objId];
     gKirbyState.unk164 = gKirbyState.unk168;
-    D_800EC820[temp_v0_5->objId] = 0.0f;
-    temp_a3 = temp_v0_5->objId;
-    D_800EC660[temp_a3] = D_800EC820[temp_a3];
-    func_800F88C8(D_800DE350[temp_v0_5->objId], D_800BE50C, (bitwise s32) D_800BE510, temp_a3 * 4);
-    temp_v0 = D_8004A7C4;
-    D_800E6A10[temp_v0->objId] = 1.0f;
-    D_800E17D0[temp_v0->objId] = D_80128E28;
-    return temp_v0;
+    D_800EC820[D_8004A7C4->objId] = 0.0f;
+    D_800EC660[D_8004A7C4->objId] = D_800EC820[D_8004A7C4->objId];
+    func_800F88C8(D_800DE350[D_8004A7C4->objId], D_800BE50C, D_800BE510);
+    D_800E6A10[D_8004A7C4->objId] = 1.0f;
+    D_800E17D0[D_8004A7C4->objId] = D_80128E28;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C8F8.s")
 #endif
