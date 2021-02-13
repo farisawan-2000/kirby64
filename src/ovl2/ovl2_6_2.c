@@ -286,10 +286,9 @@ extern u32 D_8012BD00;
 #define PVPDP(a, b) ( a->x*b->x +  a->y*b->y +  a->z*b->z)
 #define NVPDP(a, b) (-a->x*b->x + -a->y*b->y + -a->z*b->z)
 
-u32 func_80101920(struct CollisionTriangle *triangle, struct Normal *arg1, Vector *arg2, struct Normal *arg3);
-#ifdef NON_MATCHING
-u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *arg2, struct Normal *arg3) {
-    u32 code = arg0->normalType;
+// TODO: column limit of 104
+u32 func_80101920(struct CollisionTriangle *triangle, struct Normal *normal, Vector *vec, struct Normal *n2) {
+    u32 code = triangle->normalType;
 
     if (!(code & NON_SOLID)) {
         if ((code & NO_SHADOW) && (D_8012BD00 >> 31) == 0) {
@@ -297,31 +296,36 @@ u32 func_80101920(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *a
         }
         code &= 3;
         if (code != 0) {
-            if ((code == DOUBLE_SIDED_NORMAL) && arg3 && arg2) {
-                if ((0.0f < VEC_DOT(arg1, arg3) && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2))) {
-                    return 0;
+            if (code == DOUBLE_SIDED_NORMAL) {
+                if (n2 && vec) {
+                    if ((0.0f < VEC_DOT(normal, n2))) {
+                        if (0.0f < VEC_DOT_FIRST_ARG_NEGATE(normal, vec)) {
+                            return 0;
+                        } else {
+                            goto match_label;
+                        }
+                    }
+                    else if (0.0f < VEC_DOT(normal, vec)) {
+                        return 0;
+                    }
                 }
-                if (0.0f < VEC_DOT(arg1, arg2)) {
-                    return 0;
-                }
+                match_label:
                 return 1;
             }
             else if (code & FORWARD_NORMAL) {
-                if (arg2 && (0.0f < VEC_DOT(arg1, arg2)) || arg3 && (0.0f < VEC_DOT(arg1, arg3))) {
+                if (vec && (0.0f < VEC_DOT(normal, vec)) || n2 && (0.0f < VEC_DOT(normal, n2))) {
                     return 0;
                 }
             } else {
-                if (arg2 && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg2) || arg3 && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(arg1, arg3)) {
+                if (vec && (0.0f < VEC_DOT_FIRST_ARG_NEGATE(normal, vec)) || (n2 && 0.0f < VEC_DOT_FIRST_ARG_NEGATE(normal, n2))) {
                     return 0;
                 }
             }
             return 1;
         }
-    } else return 0;
+    }
+    return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80101920.s")
-#endif
 
 u32 func_80101BA0(struct CollisionTriangle *triangle, struct Normal *normal, Vector *va, Vector *vb) {
     u32 code = triangle->normalType;
@@ -329,8 +333,7 @@ u32 func_80101BA0(struct CollisionTriangle *triangle, struct Normal *normal, Vec
         if ((code & NO_SHADOW) && D_8012BD00 >> 31 == 0) {
             return 0;
         }
-        else
-        {
+        else {
             code &= DOUBLE_SIDED_NORMAL;
             if (code != 0) {
                 if (code == DOUBLE_SIDED_NORMAL) {
@@ -643,7 +646,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801024E8.s")
 #endif
 
 #ifdef MIPS_TO_C
-u8 func_80102570(struct Normal *arg0, u16 *arg1, Vector *currPos, s32 arg3, struct CollisionTriangle *arg4) {
+s32 func_80102570(struct Normal *arg0, u16 *arg1, Vector *currPos, s32 arg3, struct CollisionTriangle *arg4) {
     struct CollisionTriangle *sp64;
     f32 temp_f0;
     f32 temp_f0_2;
@@ -780,7 +783,7 @@ loop_57:
             if (temp_t6_2 == arg3) {
 block_70:
                 if ((temp_t5_3 & 0x8000) != 0) {
-                    arg4->vertex = NULL;
+                    *arg4 = NULL;
                     return 0;
                 }
                 phi_s2_3 = phi_s2_3 + 2;
@@ -789,16 +792,16 @@ block_70:
                 goto loop_57;
             }
             temp_v0_3 = temp_s3->header.Vertices;
-            temp_f0_6 = currPos->y;
-            temp_f12_3 = currPos->x;
-            if (temp_s3->using32BitVertices != 0) {
-                temp_a0_5 = temp_v0_3 + (temp_t6_2->vertex * 0xC);
+            temp_f0_6 = arg2->y;
+            temp_f12_3 = arg2->x;
+            if (temp_s3->usingFloatVertices != 0) {
+                temp_a0_5 = temp_v0_3 + (temp_t6_2->vertex[0] * 0xC);
                 temp_f2_3 = temp_a0_5->unk0;
                 temp_f14_3 = temp_a0_5->unk4;
-                temp_a1_5 = temp_v0_3 + (temp_t6_2->unk2 * 0xC);
+                temp_a1_5 = temp_v0_3 + (temp_t6_2->vertex[1] * 0xC);
                 temp_f28_5 = temp_a1_5->unk0;
                 temp_f30_3 = temp_a1_5->unk4;
-                temp_a2_5 = temp_v0_3 + (temp_t6_2->unk4 * 0xC);
+                temp_a2_5 = temp_v0_3 + (temp_t6_2->vertex[2] * 0xC);
                 temp_f16_3 = temp_a2_5->unk0;
                 temp_f18_3 = temp_a2_5->unk4;
                 phi_f20_2 = ((temp_f28_5 - temp_f2_3) * (temp_f0_6 - temp_f14_3)) - ((temp_f12_3 - temp_f2_3) * (temp_f30_3 - temp_f14_3));
@@ -806,13 +809,13 @@ block_70:
                 phi_f8_2 = (temp_f2_3 - temp_f16_3) * (temp_f0_6 - temp_f18_3);
                 phi_f10_2 = (temp_f12_3 - temp_f16_3) * (temp_f14_3 - temp_f18_3);
             } else {
-                temp_a2_6 = temp_v0_3 + (temp_t6_2->vertex * 6);
+                temp_a2_6 = temp_v0_3 + (temp_t6_2->vertex[0] * 6);
                 temp_t2_3 = temp_a2_6->unk2;
                 temp_t1_3 = temp_a2_6->unk0;
-                temp_a3_3 = temp_v0_3 + (temp_t6_2->unk2 * 6);
+                temp_a3_3 = temp_v0_3 + (temp_t6_2->vertex[1] * 6);
                 temp_a0_6 = temp_a3_3->unk0;
                 temp_a1_6 = temp_a3_3->unk2;
-                temp_t0_3 = temp_v0_3 + (temp_t6_2->unk4 * 6);
+                temp_t0_3 = temp_v0_3 + (temp_t6_2->vertex[2] * 6);
                 temp_t3_3 = temp_t0_3->unk0;
                 temp_t4_3 = temp_t0_3->unk2;
                 phi_f20_2 = ((temp_a0_6 - temp_t1_3) * (temp_f0_6 - temp_t2_3)) - ((temp_f12_3 - temp_t1_3) * (temp_a1_6 - temp_t2_3));
@@ -822,13 +825,13 @@ block_70:
             }
             temp_f28_6 = phi_f8_2 - phi_f10_2;
             if (!(phi_f20_2 <= 0.5f) || !(phi_f22_2 <= 0.5f) || !(temp_f28_6 <= 0.5f)) {
-                if ((-0.5f <= phi_f20_2) && (-0.5f <= phi_f22_2) && (-0.5f <= temp_f28_6)) {
+                if ((phi_f20_2 >= -0.5f) && (phi_f22_2 >= -0.5f) && (temp_f28_6 >= -0.5f)) {
 
                 } else {
                     goto block_70;
                 }
             }
-            arg4->vertex = sp64;
+            *arg4 = sp64;
             if ((*(temp_s3->header.Triangle_Cells + phi_s4_3) & 0x8000) == 0) {
                 *arg1 = phi_s7_3;
                 return 1;
@@ -844,7 +847,7 @@ loop_30:
         if (temp_s5 == arg3) {
 block_53:
             if ((temp_t5_2 & 0x8000) != 0) {
-                arg4->vertex = NULL;
+                *arg4 = NULL;
                 return 0;
             }
             phi_s2_2 = phi_s2_2 + 2;
@@ -853,31 +856,31 @@ block_53:
             goto loop_30;
         }
         temp_v0_2 = temp_s3->header.Vertices;
-        temp_f2_2 = currPos->z;
-        temp_f12_2 = currPos->x;
-        if (temp_s3->using32BitVertices == 0) {
-            temp_a2_4 = temp_v0_2 + (temp_s5->vertex * 6);
+        temp_f2_2 = arg2->z;
+        temp_f12_2 = arg2->x;
+        if (temp_s3->usingFloatVertices == 0) {
+            temp_a2_4 = temp_v0_2 + (temp_s5->vertex[0] * 6);
             temp_t4_2 = temp_a2_4->unk4;
             temp_t3_2 = temp_a2_4->unk0;
-            temp_a3_2 = temp_v0_2 + (temp_s5->unk2 * 6);
+            temp_a3_2 = temp_v0_2 + (temp_s5->vertex[1] * 6);
             temp_a0_4 = temp_a3_2->unk0;
             temp_a1_4 = temp_a3_2->unk4;
-            temp_t0_2 = temp_v0_2 + (temp_s5->unk4 * 6);
+            temp_t0_2 = temp_v0_2 + (temp_s5->vertex[2] * 6);
             temp_t1_2 = temp_t0_2->unk0;
             temp_t2_2 = temp_t0_2->unk4;
             temp_f20_2 = ((temp_a0_4 - temp_t3_2) * (temp_f2_2 - temp_t4_2)) - ((temp_f12_2 - temp_t3_2) * (temp_a1_4 - temp_t4_2));
             temp_f22_2 = ((temp_t1_2 - temp_a0_4) * (temp_f2_2 - temp_a1_4)) - ((temp_f12_2 - temp_a0_4) * (temp_t2_2 - temp_a1_4));
             if ((temp_f20_2 <= 0.5f) && (temp_f22_2 <= 0.5f)) {
                 if ((((temp_t3_2 - temp_t1_2) * (temp_f2_2 - temp_t2_2)) - ((temp_f12_2 - temp_t1_2) * (temp_t4_2 - temp_t2_2))) <= 0.5f) {
-                    arg4->vertex = temp_s5;
+                    *arg4 = temp_s5;
                     if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
                         *arg1 = phi_s7_2;
                         return 1;
                     }
                     return 0;
                 }
-            } else if ((-0.5f <= temp_f20_2) && (-0.5f <= temp_f22_2) && (-0.5f <= (((temp_t3_2 - temp_t1_2) * (temp_f2_2 - temp_t2_2)) - ((temp_f12_2 - temp_t1_2) * (temp_t4_2 - temp_t2_2))))) {
-                arg4->vertex = temp_s5;
+            } else if ((temp_f20_2 >= -0.5f) && (temp_f22_2 >= -0.5f) && ((((temp_t3_2 - temp_t1_2) * (temp_f2_2 - temp_t2_2)) - ((temp_f12_2 - temp_t1_2) * (temp_t4_2 - temp_t2_2))) >= -0.5f)) {
+                *arg4 = temp_s5;
                 if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
                     *arg1 = phi_s7_2;
                     return 1;
@@ -886,26 +889,26 @@ block_53:
             }
             goto block_53;
         }
-        temp_a0_3 = temp_v0_2 + (temp_s5->vertex * 0xC);
+        temp_a0_3 = temp_v0_2 + (temp_s5->vertex[0] * 0xC);
         temp_f0_5 = temp_a0_3->unk0;
         temp_f14_2 = temp_a0_3->unk8;
-        temp_a1_3 = temp_v0_2 + (temp_s5->unk2 * 0xC);
+        temp_a1_3 = temp_v0_2 + (temp_s5->vertex[1] * 0xC);
         temp_f28_3 = temp_a1_3->unk0;
         temp_f30_2 = temp_a1_3->unk8;
-        temp_a2_3 = temp_v0_2 + (temp_s5->unk4 * 0xC);
+        temp_a2_3 = temp_v0_2 + (temp_s5->vertex[2] * 0xC);
         temp_f16_2 = temp_a2_3->unk0;
         temp_f18_2 = temp_a2_3->unk8;
         temp_f20 = ((temp_f28_3 - temp_f0_5) * (temp_f2_2 - temp_f14_2)) - ((temp_f12_2 - temp_f0_5) * (temp_f30_2 - temp_f14_2));
         temp_f22 = ((temp_f16_2 - temp_f28_3) * (temp_f2_2 - temp_f30_2)) - ((temp_f12_2 - temp_f28_3) * (temp_f18_2 - temp_f30_2));
         temp_f28_4 = ((temp_f0_5 - temp_f16_2) * (temp_f2_2 - temp_f18_2)) - ((temp_f12_2 - temp_f16_2) * (temp_f14_2 - temp_f18_2));
         if (!(temp_f20 <= 0.5f) || !(temp_f22 <= 0.5f) || !(temp_f28_4 <= 0.5f)) {
-            if ((-0.5f <= temp_f20) && (-0.5f <= temp_f22) && (-0.5f <= temp_f28_4)) {
+            if ((temp_f20 >= -0.5f) && (temp_f22 >= -0.5f) && (temp_f28_4 >= -0.5f)) {
 
             } else {
                 goto block_53;
             }
         }
-        arg4->vertex = temp_s5;
+        *arg4 = temp_s5;
         if ((*(temp_s3->header.Triangle_Cells + phi_s4_2) & 0x8000) == 0) {
             *arg1 = phi_s7_2;
             return 1;
@@ -925,7 +928,7 @@ loop_12:
     if (temp_t6 == arg3) {
 block_25:
         if ((temp_t5 & 0x8000) != 0) {
-            arg4->vertex = NULL;
+            *arg4 = NULL;
             return 0;
         }
         phi_s2 = phi_s2 + 2;
@@ -934,16 +937,16 @@ block_25:
         goto loop_12;
     }
     temp_v0 = temp_s3->header.Vertices;
-    temp_f2 = currPos->z;
-    temp_f0_4 = currPos->y;
-    if (temp_s3->using32BitVertices != 0) {
-        temp_a0 = temp_v0 + (temp_t6->vertex * 0xC);
+    temp_f2 = arg2->z;
+    temp_f0_4 = arg2->y;
+    if (temp_s3->usingFloatVertices != 0) {
+        temp_a0 = temp_v0 + (temp_t6->vertex[0] * 0xC);
         temp_f12 = temp_a0->unk4;
         temp_f14 = temp_a0->unk8;
-        temp_a1 = temp_v0 + (temp_t6->unk2 * 0xC);
+        temp_a1 = temp_v0 + (temp_t6->vertex[1] * 0xC);
         temp_f28 = temp_a1->unk4;
         temp_f30 = temp_a1->unk8;
-        temp_a2 = temp_v0 + (temp_t6->unk4 * 0xC);
+        temp_a2 = temp_v0 + (temp_t6->vertex[2] * 0xC);
         temp_f16 = temp_a2->unk4;
         temp_f18 = temp_a2->unk8;
         phi_f20 = ((temp_f28 - temp_f12) * (temp_f2 - temp_f14)) - ((temp_f0_4 - temp_f12) * (temp_f30 - temp_f14));
@@ -951,13 +954,13 @@ block_25:
         phi_f8 = (temp_f12 - temp_f16) * (temp_f2 - temp_f18);
         phi_f10 = (temp_f0_4 - temp_f16) * (temp_f14 - temp_f18);
     } else {
-        temp_a2_2 = temp_v0 + (temp_t6->vertex * 6);
+        temp_a2_2 = temp_v0 + (temp_t6->vertex[0] * 6);
         temp_t2 = temp_a2_2->unk4;
         temp_t1 = temp_a2_2->unk2;
-        temp_a3 = temp_v0 + (temp_t6->unk2 * 6);
+        temp_a3 = temp_v0 + (temp_t6->vertex[1] * 6);
         temp_a0_2 = temp_a3->unk2;
         temp_a1_2 = temp_a3->unk4;
-        temp_t0 = temp_v0 + (temp_t6->unk4 * 6);
+        temp_t0 = temp_v0 + (temp_t6->vertex[2] * 6);
         temp_t3 = temp_t0->unk2;
         temp_t4 = temp_t0->unk4;
         phi_f20 = ((temp_a0_2 - temp_t1) * (temp_f2 - temp_t2)) - ((temp_f0_4 - temp_t1) * (temp_a1_2 - temp_t2));
@@ -967,13 +970,13 @@ block_25:
     }
     temp_f28_2 = phi_f8 - phi_f10;
     if (!(phi_f20 <= 0.5f) || !(phi_f22 <= 0.5f) || !(temp_f28_2 <= 0.5f)) {
-        if ((-0.5f <= phi_f20) && (-0.5f <= phi_f22) && (-0.5f <= temp_f28_2)) {
+        if ((phi_f20 >= -0.5f) && (phi_f22 >= -0.5f) && (temp_f28_2 >= -0.5f)) {
 
         } else {
             goto block_25;
         }
     }
-    arg4->vertex = sp64;
+    *arg4 = sp64;
     if ((*(temp_s3->header.Triangle_Cells + phi_s4) & 0x8000) == 0) {
         *arg1 = phi_s7;
         return 1;
@@ -1072,57 +1075,34 @@ u32 func_80103004(f32 *MAXLRP, Vector *arg1, struct Normal **arg2, struct Collis
     return 0;
 }
 
-#ifdef MIPS_TO_C
-? func_801033A8(void *arg0, void *arg1, void *arg2) {
-    f32 sp14;
-    f32 sp8;
-    f32 temp_f0;
-    f32 temp_f0_2;
-    f32 temp_f0_3;
-    f32 temp_f0_4;
-    f32 temp_f0_5;
-    f32 temp_f0_6;
-    ? phi_return;
+#include "ovl2_8.h"
 
-    sp14.unk0 = arg1->unk0;
-    sp14.unk4 = arg1->unk4;
-    sp14.unk8 = arg1->unk8;
-    sp8.unk0 = arg2->unk0;
-    sp8.unk4 = arg2->unk4;
-    sp8.unk8 = arg2->unk8;
-    temp_f0 = arg0->unkA0;
-    if ((sp14 < temp_f0) && (sp8 < temp_f0)) {
+u32 func_801033A8(struct struct8011BA10_temp *arg0, Vector *arg1, Vector *arg2) {
+    Vector sp14;
+    Vector sp8;
+
+    sp14 = *arg1;
+    sp8 = *arg2;
+    if ((sp14.x < arg0->unkA0) && (sp8.x < arg0->unkA0)) {
         return 0;
     }
-    temp_f0_2 = arg0->unkAC;
-    if ((temp_f0_2 < sp14) && (temp_f0_2 < sp8)) {
+    if ((arg0->unkAC < sp14.x) && (arg0->unkAC < sp8.x)) {
         return 0;
     }
-    temp_f0_3 = arg0->unkA4;
-    if ((sp18 < temp_f0_3) && (spC < temp_f0_3)) {
+    if ((sp14.y < arg0->unkA4) && (sp8.y < arg0->unkA4)) {
         return 0;
     }
-    temp_f0_4 = arg0->unkB0;
-    if ((temp_f0_4 < sp18) && (temp_f0_4 < spC)) {
+    if ((arg0->unkB0 < sp14.y) && (arg0->unkB0 < sp8.y)) {
         return 0;
     }
-    temp_f0_5 = arg0->unkA8;
-    if ((sp1C < temp_f0_5) && (sp10 < temp_f0_5)) {
+    if ((sp14.z < arg0->unkA8) && (sp8.z < arg0->unkA8)) {
         return 0;
     }
-    temp_f0_6 = arg0->unkB4;
-    phi_return = 1;
-    if (temp_f0_6 < sp1C) {
-        phi_return = 1;
-        if (temp_f0_6 < sp10) {
-            phi_return = 0;
-        }
+    if (arg0->unkB4 < sp14.z && arg0->unkB4 < sp8.z) {
+        return 0;
     }
-    return phi_return;
+    return 1;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801033A8.s")
-#endif
 
 #ifdef MIPS_TO_C
 ? func_80103528(void *arg0, void *arg1, ? arg2, ? arg3, void *arg4) {

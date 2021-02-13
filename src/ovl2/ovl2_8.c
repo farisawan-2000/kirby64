@@ -10,16 +10,7 @@
 #include "ovl1/ovl1_6.h"
 extern Controller_800D6FE8 D_800D6FE8;
 
-struct struct8011BA10_temp {
-    u8 unk0;
-    u8 unk1;
-    u8 filler0[2];
-    struct vCollisionHeader *unk4;
-    u8 filler1[0xB0];
-}; // dunno if this is how this actually works
 
-extern struct struct8011BA10_temp D_8012D948[];
-extern struct struct8011BA10_temp D_8012940C;
 
 
 void *func_8011BA10(struct CollisionTriangle *tri, u32 arg1) {
