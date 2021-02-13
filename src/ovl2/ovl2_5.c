@@ -47,7 +47,7 @@ void func_800FDAB8(Vtx *curVtx, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
 }
 
 #ifdef NON_MATCHING
-void *func_800FDBB0(Vtx *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+void *func_800FDBB0 (Vtx *arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     Vtx *list = arg0 += 4;
 
     (list++)->v.ob[1] = arg2;

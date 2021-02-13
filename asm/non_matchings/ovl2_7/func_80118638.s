@@ -7,17 +7,17 @@ glabel func_80118638
 /* 0A10BC 8011864C F7B60020 */  sdc1  $f22, 0x20($sp)
 /* 0A10C0 80118650 F7B40018 */  sdc1  $f20, 0x18($sp)
 /* 0A10C4 80118654 8C830000 */  lw    $v1, ($a0)
-/* 0A10C8 80118658 3C01800E */  lui   $at, 0x800e
+/* 0A10C8 80118658 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 0A10CC 8011865C 27A40040 */  addiu $a0, $sp, 0x40
 /* 0A10D0 80118660 00031080 */  sll   $v0, $v1, 2
 /* 0A10D4 80118664 00220821 */  addu  $at, $at, $v0
-/* 0A10D8 80118668 C42425D0 */  lwc1  $f4, 0x25d0($at)
-/* 0A10DC 8011866C 3C01800E */  lui   $at, 0x800e
+/* 0A10D8 80118668 C42425D0 */ lwc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 0A10DC 8011866C 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 0A10E0 80118670 00220821 */  addu  $at, $at, $v0
-/* 0A10E4 80118674 C4262790 */  lwc1  $f6, 0x2790($at)
-/* 0A10E8 80118678 3C01800E */  lui   $at, 0x800e
+/* 0A10E4 80118674 C4262790 */ lwc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 0A10E8 80118678 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
 /* 0A10EC 8011867C 00220821 */  addu  $at, $at, $v0
-/* 0A10F0 80118680 C4282950 */  lwc1  $f8, 0x2950($at)
+/* 0A10F0 80118680 C4282950 */ lwc1 $f8, %lo(gEntitiesPosZArray)($at)
 /* 0A10F4 80118684 E7A40040 */  swc1  $f4, 0x40($sp)
 /* 0A10F8 80118688 E7A60044 */  swc1  $f6, 0x44($sp)
 /* 0A10FC 8011868C 0C0437E7 */  jal   func_8010DF9C
@@ -30,13 +30,13 @@ glabel func_80118638
 .L801186A8_ovl2:
 /* 0A1118 801186A8 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
 /* 0A111C 801186AC 8FB10054 */  lw    $s1, 0x54($sp)
-/* 0A1120 801186B0 3C01800E */  lui   $at, 0x800e
+/* 0A1120 801186B0 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 0A1124 801186B4 8DCF0000 */  lw    $t7, ($t6)
 /* 0A1128 801186B8 02202025 */  move  $a0, $s1
 /* 0A112C 801186BC 000FC080 */  sll   $t8, $t7, 2
 /* 0A1130 801186C0 00380821 */  addu  $at, $at, $t8
 /* 0A1134 801186C4 0C0438A8 */  jal   func_8010E2A0
-/* 0A1138 801186C8 AC20EF90 */   sw    $zero, -0x1070($at)
+/* 0A1138 801186C8 AC20EF90 */ sw $zero, %lo(D_800DEF90)($at)
 /* 0A113C 801186CC 3C014270 */  li    $at, 0x42700000 # 60.000000
 /* 0A1140 801186D0 4481B000 */  mtc1  $at, $f22
 /* 0A1144 801186D4 3C0142F0 */  li    $at, 0x42F00000 # 120.000000

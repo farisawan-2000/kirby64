@@ -51,12 +51,12 @@ glabel func_8011A678
 /* 0A31A4 8011A734 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 0A31A8 8011A738 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 0A31AC 8011A73C 3C198011 */  lui   $t9, %hi(func_80112B4C) # $t9, 0x8011
-/* 0A31B0 8011A740 3C01800E */  lui   $at, 0x800e
+/* 0A31B0 8011A740 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 0A31B4 8011A744 8D090000 */  lw    $t1, ($t0)
 /* 0A31B8 8011A748 27392B4C */  addiu $t9, %lo(func_80112B4C) # addiu $t9, $t9, 0x2b4c
 /* 0A31BC 8011A74C 00095080 */  sll   $t2, $t1, 2
 /* 0A31C0 8011A750 002A0821 */  addu  $at, $at, $t2
-/* 0A31C4 8011A754 AC39EF90 */  sw    $t9, -0x1070($at)
+/* 0A31C4 8011A754 AC39EF90 */ sw $t9, %lo(D_800DEF90)($at)
 .L8011A758_ovl2:
 /* 0A31C8 8011A758 0C044AD3 */  jal   func_80112B4C
 /* 0A31CC 8011A75C 8FA40018 */   lw    $a0, 0x18($sp)

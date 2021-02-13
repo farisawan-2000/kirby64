@@ -33,10 +33,10 @@ glabel func_80117F28
 /* 0A0A0C 80117F9C 8C490000 */  lw    $t1, ($v0)
 /* 0A0A10 80117FA0 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 0A0A14 80117FA4 44813000 */  mtc1  $at, $f6
-/* 0A0A18 80117FA8 3C01800E */  lui   $at, 0x800e
+/* 0A0A18 80117FA8 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 0A0A1C 80117FAC 00095080 */  sll   $t2, $t1, 2
 /* 0A0A20 80117FB0 002A0821 */  addu  $at, $at, $t2
-/* 0A0A24 80117FB4 E4263C90 */  swc1  $f6, 0x3c90($at)
+/* 0A0A24 80117FB4 E4263C90 */ swc1 $f6, %lo(D_800E3C90)($at)
 /* 0A0A28 80117FB8 8C430000 */  lw    $v1, ($v0)
 /* 0A0A2C 80117FBC 3C11800E */  lui   $s1, %hi(gEntitiesPosYArray) # $s1, 0x800e
 /* 0A0A30 80117FC0 26312790 */  addiu $s1, %lo(gEntitiesPosYArray) # addiu $s1, $s1, 0x2790
@@ -64,7 +64,7 @@ glabel func_80117F28
 /* 0A0A84 80118014 44808000 */  mtc1  $zero, $f16
 .L80118018_ovl2:
 /* 0A0A88 80118018 00C36821 */  addu  $t5, $a2, $v1
-/* 0A0A8C 8011801C 3C01800E */  lui   $at, 0x800e
+/* 0A0A8C 8011801C 3C01800E */ lui $at, %hi(D_800E3210)
 /* 0A0A90 80118020 E5B00000 */  swc1  $f16, ($t5)
 /* 0A0A94 80118024 8C430000 */  lw    $v1, ($v0)
 /* 0A0A98 80118028 3C09800E */  lui   $t1, %hi(gEntitiesPosXArray) # $t1, 0x800e
@@ -74,14 +74,14 @@ glabel func_80117F28
 /* 0A0AA8 80118038 C5D20000 */  lwc1  $f18, ($t6)
 /* 0A0AAC 8011803C 00230821 */  addu  $at, $at, $v1
 /* 0A0AB0 80118040 00002025 */  move  $a0, $zero
-/* 0A0AB4 80118044 E4323210 */  swc1  $f18, 0x3210($at)
+/* 0A0AB4 80118044 E4323210 */ swc1 $f18, %lo(D_800E3210)($at)
 /* 0A0AB8 80118048 8C4F0000 */  lw    $t7, ($v0)
 /* 0A0ABC 8011804C 3C018013 */  lui   $at, %hi(D_80128D50) # $at, 0x8013
 /* 0A0AC0 80118050 C4248D50 */  lwc1  $f4, %lo(D_80128D50)($at)
-/* 0A0AC4 80118054 3C01800E */  lui   $at, 0x800e
+/* 0A0AC4 80118054 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 0A0AC8 80118058 000FC080 */  sll   $t8, $t7, 2
 /* 0A0ACC 8011805C 00380821 */  addu  $at, $at, $t8
-/* 0A0AD0 80118060 E4243C90 */  swc1  $f4, 0x3c90($at)
+/* 0A0AD0 80118060 E4243C90 */ swc1 $f4, %lo(D_800E3C90)($at)
 /* 0A0AD4 80118064 8C590000 */  lw    $t9, ($v0)
 /* 0A0AD8 80118068 3C018013 */  lui   $at, %hi(D_80128D54) # $at, 0x8013
 /* 0A0ADC 8011806C C4288D54 */  lwc1  $f8, %lo(D_80128D54)($at)

@@ -20,44 +20,28 @@ void func_800FD330(s32 arg0) {
 extern u32 D_80124624;
 extern s32 D_800B4D40;
 
-#ifdef MIPS_TO_C
-void func_800FD418(void *arg0) {
-    s32 temp_v1;
-    u32 (*)[3] temp_s0;
-    u32 (*)[3] temp_s0_2;
-    u32 temp_a1;
-    u32 temp_v0;
-    u32 (*)[3] phi_s0;
-    s32 phi_v1;
+// has an easy way to bring the diff down to one instruction,
+// but the operands to that instructions are in the wrong order
+#ifdef NON_MATCHING
+void func_800FD418(struct UnkStruct8004A7C4 *arg0) {
+    s32 temp_v0 = D_800EC2E0[D_8004A7C4->objId];
+    u32 tmp;
 
-    temp_a1 = D_8004A7C4->objId;
-    temp_v0 = D_800EC2E0[temp_a1];
-    if (temp_v0 < 0xA) {
-        temp_s0 = &D_801245C4[temp_v0];
-        temp_v1 = *temp_s0;
-        phi_s0 = temp_s0;
-        phi_v1 = temp_v1;
-        if (temp_v1 == 0) {
-block_2:
-            temp_s0_2 = &D_801245C4[temp_v0];
-            func_800B1900(temp_a1 & 0xFFFF);
-            phi_s0 = temp_s0_2;
-            phi_v1 = *temp_s0_2;
-        }
-    } else {
-        goto block_2;
+    // temp_v0 = D_800EC2E0[D_8004A7C4->objId];
+    if (!(temp_v0 < 0xA) || D_801245C4[temp_v0][0] == 0) {
+        func_800B1900(D_8004A7C4->objId & 0xFFFF);
     }
-    if (phi_s0 == &D_80124624) {
+    if (D_801245C4[temp_v0] == D_801245C4[8]) {
         D_800DEF90[D_8004A7C4->objId] = &D_800B4D40;
     }
-    func_800A9864(phi_v1, 0x1869F, 0x10);
-    func_800AA018(phi_s0->unk4);
-    func_800AA018(phi_s0->unk8);
-    arg0->unk3C->unk1C = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk20 = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk24 = gEntitiesPosZArray[D_8004A7C4->objId];
+    func_800A9864(tmp = D_801245C4[temp_v0][0], 0x0001869F, 0x10);
+    func_800AA018(D_801245C4[temp_v0][1]);
+    func_800AA018(D_801245C4[temp_v0][2]);
+    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
     func_800AF27C();
-    func_800B1900(D_8004A7C4->unk2);
+    func_800B1900((u16) D_8004A7C4->objId);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD418.s")
@@ -68,42 +52,32 @@ s32 func_800FD9D4(s32);
 extern u32 D_80124630;
 extern const char D_801288E0[];
 
-#ifdef MIPS_TO_C
-? func_800FD570(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    f32 sp30;
-    f32 sp2C;
-    f32 sp28;
-    s32 temp_v0_3;
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 (*)[3] temp_v0_2;
+// no idea tbh
+#ifdef NON_MATCHING 
+u32 func_800FD570(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    Vector sp28;
 
     if (arg0 != 0) {
-        arg2 = arg2;
-        arg3 = arg3;
         func_800A4794(&sp28, arg0, arg0);
     } else {
-        temp_v0 = D_8004A7C4;
-        sp28 = gEntitiesPosXArray[temp_v0->objId];
-        sp2C = gEntitiesPosYArray[temp_v0->objId];
-        sp30 = gEntitiesPosZArray[temp_v0->objId];
+        sp28.x = gEntitiesPosXArray[D_8004A7C4->objId];
+        sp28.y = gEntitiesPosYArray[D_8004A7C4->objId];
+        sp28.z = gEntitiesPosZArray[D_8004A7C4->objId];
     }
-    temp_v0_2 = &D_801245C4[arg1];
-    if (temp_v0_2->unk0 != 0) {
-        arg2 = arg2;
-        arg3 = arg3;
-        temp_v0_3 = func_800FD9D4(0);
+    if (D_801245C4[arg1][0] != 0) {
+        u32 temp_v0_3 = func_800FD9D4(0);
         if (temp_v0_3 == -1) {
             print_error_stub(D_801288E0);
             return 0;
         }
         D_800EC2E0[temp_v0_3] = arg1;
-        gEntitiesPosXArray[temp_v0_3] = sp28 + arg2;
-        gEntitiesPosYArray[temp_v0_3] = sp2C + arg3;
-        gEntitiesPosZArray[temp_v0_3] = sp30 + arg4;
-    } else if (temp_v0_2 != &D_80124630) {
-        func_800A7F74(3, 2, temp_v0_2->unk4, sp28 + arg2, sp2C + arg3, sp30 + arg4);
+        gEntitiesPosXArray[temp_v0_3] = sp28.x + arg2;
+        gEntitiesPosYArray[temp_v0_3] = sp28.y + arg3;
+        gEntitiesPosZArray[temp_v0_3] = sp28.z + arg4;
+    } else if (D_801245C4[arg1] != D_801245C4[9]) {
+        func_800A7F74(3, 2, D_801245C4[arg1][1], sp28.x + arg2, sp28.y + arg3, sp28.z + arg4);
     } else {
-        func_800A7F74(0, 2, temp_v0_2->unk4, sp28 + arg2, sp2C + arg3, sp30 + arg4);
+        func_800A7F74(0, 2, D_801245C4[arg1][1], sp28.x + arg2, sp28.y + arg3, sp28.z + arg4);
     }
     return 1;
 }
@@ -111,32 +85,34 @@ extern const char D_801288E0[];
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD570.s")
 #endif
 
-#ifdef MIPS_TO_C
-s32 func_800FD754(s32 *arg0, f32 arg1, f32 arg2, f32 arg3) {
-    s32 temp_v0_2;
-    void *temp_v0;
 
-    temp_v0 = (((arg0 * 4) - arg0) * 4) + D_801245C4;
-    if (temp_v0->unk0 != 0) {
-        arg0 = arg0;
-        arg1 = arg1;
-        arg2 = arg2;
-        temp_v0_2 = func_800FD9D4(0);
-        if (temp_v0_2 != -1) {
+extern const char D_8012890C[];
+
+// uhh idk but it matches better than the function above it
+#ifdef NON_MATCHING
+s32 func_800FD754(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
+    u32 *temp_v0;
+
+    temp_v0 = D_801245C4[arg0 * 3];
+    if (temp_v0[0] != 0) {
+        s32 temp_v0_2 = func_800FD9D4(0);
+        if (temp_v0_2 == -1) {
+            print_error_stub(&D_8012890C);
+        }
+        else {
             D_800EC2E0[temp_v0_2] = arg0;
             gEntitiesPosXArray[temp_v0_2] = arg1;
             gEntitiesPosYArray[temp_v0_2] = arg2;
             gEntitiesPosZArray[temp_v0_2] = arg3;
             return 1;
         }
-        print_error_stub(&D_8012890C, arg0);
         return 0;
     }
-    if (temp_v0 != &D_80124630) {
-        func_800A7F74(3, 2, temp_v0->unk4, arg1, arg2, arg3);
+    if (temp_v0 != D_801245C4[9]) {
+        func_800A7F74(3, 2, temp_v0[1], arg1, arg2, arg3);
         return;
     }
-    func_800A7F74(0, 2, temp_v0->unk4, arg1, arg2, arg3);
+    func_800A7F74(0, 2, temp_v0[1], arg1, arg2, arg3);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_4/func_800FD754.s")

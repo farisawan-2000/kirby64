@@ -1,10 +1,10 @@
 glabel func_80118B60
 /* 0A15D0 80118B60 3C0E800C */  lui   $t6, %hi(D_800BE508) # $t6, 0x800c
 /* 0A15D4 80118B64 8DCEE508 */  lw    $t6, %lo(D_800BE508)($t6)
-/* 0A15D8 80118B68 3C0F800D */  lui   $t7, 0x800d
+/* 0A15D8 80118B68 3C0F800D */ lui $t7, %hi(D_800D6E20)
 /* 0A15DC 80118B6C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0A15E0 80118B70 01EE7821 */  addu  $t7, $t7, $t6
-/* 0A15E4 80118B74 91EF6E20 */  lbu   $t7, 0x6e20($t7)
+/* 0A15E4 80118B74 91EF6E20 */ lbu $t7, %lo(D_800D6E20)($t7)
 /* 0A15E8 80118B78 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A15EC 80118B7C AFA5001C */  sw    $a1, 0x1c($sp)
 /* 0A15F0 80118B80 11E00005 */  beqz  $t7, .L80118B98_ovl2

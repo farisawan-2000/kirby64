@@ -44,18 +44,18 @@ glabel func_8011B0A4
 /* 0A3BB0 8011B140 00000000 */   nop   
 /* 0A3BB4 8011B144 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
 /* 0A3BB8 8011B148 3C0F8012 */  lui   $t7, %hi(D_8011B050) # $t7, 0x8012
-/* 0A3BBC 8011B14C 3C01800E */  lui   $at, 0x800e
+/* 0A3BBC 8011B14C 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 0A3BC0 8011B150 8F190000 */  lw    $t9, ($t8)
 /* 0A3BC4 8011B154 25EFB050 */  addiu $t7, %lo(D_8011B050) # addiu $t7, $t7, -0x4fb0
 /* 0A3BC8 8011B158 460E0081 */  sub.s $f2, $f0, $f14
 /* 0A3BCC 8011B15C 00194080 */  sll   $t0, $t9, 2
 /* 0A3BD0 8011B160 00280821 */  addu  $at, $at, $t0
-/* 0A3BD4 8011B164 AC2FEF90 */  sw    $t7, -0x1070($at)
+/* 0A3BD4 8011B164 AC2FEF90 */ sw $t7, %lo(D_800DEF90)($at)
 .L8011B168_ovl2:
-/* 0A3BD8 8011B168 3C01800E */  lui   $at, 0x800e
+/* 0A3BD8 8011B168 3C01800E */ lui $at, %hi(D_800E3050)
 /* 0A3BDC 8011B16C 00230821 */  addu  $at, $at, $v1
 /* 0A3BE0 8011B170 0C02D249 */  jal   D_800B4924_ovl2
-/* 0A3BE4 8011B174 E4223050 */   swc1  $f2, 0x3050($at)
+/* 0A3BE4 8011B174 E4223050 */ swc1 $f2, %lo(D_800E3050)($at)
 /* 0A3BE8 8011B178 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0A3BEC 8011B17C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0A3BF0 8011B180 03E00008 */  jr    $ra

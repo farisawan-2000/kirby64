@@ -1,10 +1,10 @@
 glabel func_80118CC8
 /* 0A1738 80118CC8 3C0E800C */  lui   $t6, %hi(D_800BE508) # $t6, 0x800c
 /* 0A173C 80118CCC 8DCEE508 */  lw    $t6, %lo(D_800BE508)($t6)
-/* 0A1740 80118CD0 3C0F800D */  lui   $t7, 0x800d
+/* 0A1740 80118CD0 3C0F800D */ lui $t7, %hi(D_800D6E20)
 /* 0A1744 80118CD4 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 0A1748 80118CD8 01EE7821 */  addu  $t7, $t7, $t6
-/* 0A174C 80118CDC 91EF6E20 */  lbu   $t7, 0x6e20($t7)
+/* 0A174C 80118CDC 91EF6E20 */ lbu $t7, %lo(D_800D6E20)($t7)
 /* 0A1750 80118CE0 AFB00018 */  sw    $s0, 0x18($sp)
 /* 0A1754 80118CE4 00808025 */  move  $s0, $a0
 /* 0A1758 80118CE8 11E00005 */  beqz  $t7, .L80118D00_ovl2

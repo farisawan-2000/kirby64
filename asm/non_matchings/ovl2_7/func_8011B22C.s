@@ -34,29 +34,29 @@ glabel func_8011B22C
 /* 0A3D1C 8011B2AC 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 0A3D20 8011B2B0 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
 /* 0A3D24 8011B2B4 3C0F8012 */  lui   $t7, %hi(D_8011B188) # $t7, 0x8012
-/* 0A3D28 8011B2B8 3C01800E */  lui   $at, 0x800e
+/* 0A3D28 8011B2B8 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 0A3D2C 8011B2BC 8F190000 */  lw    $t9, ($t8)
 /* 0A3D30 8011B2C0 25EFB188 */  addiu $t7, %lo(D_8011B188) # addiu $t7, $t7, -0x4e78
 /* 0A3D34 8011B2C4 24090007 */  li    $t1, 7
 /* 0A3D38 8011B2C8 00194080 */  sll   $t0, $t9, 2
 /* 0A3D3C 8011B2CC 00280821 */  addu  $at, $at, $t0
-/* 0A3D40 8011B2D0 AC2FEF90 */  sw    $t7, -0x1070($at)
-/* 0A3D44 8011B2D4 3C01800F */  lui   $at, 0x800f
+/* 0A3D40 8011B2D0 AC2FEF90 */ sw $t7, %lo(D_800DEF90)($at)
+/* 0A3D44 8011B2D4 3C01800F */ lui $at, %hi(D_800E98E0)
 /* 0A3D48 8011B2D8 00300821 */  addu  $at, $at, $s0
-/* 0A3D4C 8011B2DC AC2998E0 */  sw    $t1, -0x6720($at)
-/* 0A3D50 8011B2E0 3C01800F */  lui   $at, 0x800f
+/* 0A3D4C 8011B2DC AC2998E0 */ sw $t1, %lo(D_800E98E0)($at)
+/* 0A3D50 8011B2E0 3C01800F */ lui $at, %hi(D_800E9AA0)
 /* 0A3D54 8011B2E4 00300821 */  addu  $at, $at, $s0
 /* 0A3D58 8011B2E8 240A005A */  li    $t2, 90
-/* 0A3D5C 8011B2EC AC2A9AA0 */  sw    $t2, -0x6560($at)
+/* 0A3D5C 8011B2EC AC2A9AA0 */ sw $t2, %lo(D_800E9AA0)($at)
 /* 0A3D60 8011B2F0 3C018013 */  lui   $at, %hi(D_80128D68) # $at, 0x8013
 /* 0A3D64 8011B2F4 C4288D68 */  lwc1  $f8, %lo(D_80128D68)($at)
 /* 0A3D68 8011B2F8 3C014060 */  li    $at, 0x40600000 # 3.500000
 /* 0A3D6C 8011B2FC 8FAB0020 */  lw    $t3, 0x20($sp)
 /* 0A3D70 8011B300 44815000 */  mtc1  $at, $f10
-/* 0A3D74 8011B304 3C01800E */  lui   $at, 0x800e
+/* 0A3D74 8011B304 3C01800E */ lui $at, %hi(D_800E3050)
 /* 0A3D78 8011B308 00300821 */  addu  $at, $at, $s0
 /* 0A3D7C 8011B30C E5680000 */  swc1  $f8, ($t3)
-/* 0A3D80 8011B310 E42A3050 */  swc1  $f10, 0x3050($at)
+/* 0A3D80 8011B310 E42A3050 */ swc1 $f10, %lo(D_800E3050)($at)
 /* 0A3D84 8011B314 8FBF001C */  lw    $ra, 0x1c($sp)
 .L8011B318_ovl2:
 /* 0A3D88 8011B318 8FB00018 */  lw    $s0, 0x18($sp)

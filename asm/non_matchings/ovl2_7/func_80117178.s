@@ -17,14 +17,14 @@ glabel func_80117178
 /* 09FC24 801171B4 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 09FC28 801171B8 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 09FC2C 801171BC 3C198011 */  lui   $t9, %hi(func_80112B4C) # $t9, 0x8011
-/* 09FC30 801171C0 3C01800E */  lui   $at, 0x800e
+/* 09FC30 801171C0 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 09FC34 801171C4 8D090000 */  lw    $t1, ($t0)
 /* 09FC38 801171C8 27392B4C */  addiu $t9, %lo(func_80112B4C) # addiu $t9, $t9, 0x2b4c
 /* 09FC3C 801171CC 2404004A */  li    $a0, 74
 /* 09FC40 801171D0 00095080 */  sll   $t2, $t1, 2
 /* 09FC44 801171D4 002A0821 */  addu  $at, $at, $t2
 /* 09FC48 801171D8 0C047939 */  jal   func_8011E4E4
-/* 09FC4C 801171DC AC39EF90 */   sw    $t9, -0x1070($at)
+/* 09FC4C 801171DC AC39EF90 */ sw $t9, %lo(D_800DEF90)($at)
 /* 09FC50 801171E0 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801171E4_ovl2:
 /* 09FC54 801171E4 27BD0020 */  addiu $sp, $sp, 0x20

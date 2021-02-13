@@ -13,12 +13,12 @@ glabel func_8011AEF0
 /* 0A398C 8011AF1C 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 0A3990 8011AF20 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 0A3994 8011AF24 3C198012 */  lui   $t9, %hi(D_8011AE6C) # $t9, 0x8012
-/* 0A3998 8011AF28 3C01800E */  lui   $at, 0x800e
+/* 0A3998 8011AF28 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 0A399C 8011AF2C 8D090000 */  lw    $t1, ($t0)
 /* 0A39A0 8011AF30 2739AE6C */  addiu $t9, %lo(D_8011AE6C) # addiu $t9, $t9, -0x5194
 /* 0A39A4 8011AF34 00095080 */  sll   $t2, $t1, 2
 /* 0A39A8 8011AF38 002A0821 */  addu  $at, $at, $t2
-/* 0A39AC 8011AF3C AC39EF90 */  sw    $t9, -0x1070($at)
+/* 0A39AC 8011AF3C AC39EF90 */ sw $t9, %lo(D_800DEF90)($at)
 /* 0A39B0 8011AF40 8FBF0014 */  lw    $ra, 0x14($sp)
 .L8011AF44_ovl2:
 /* 0A39B4 8011AF44 27BD0020 */  addiu $sp, $sp, 0x20

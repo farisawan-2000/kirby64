@@ -13777,7 +13777,13 @@ glabel D_8012D88C
 .word 0x00000000
 
 glabel D_8012D890
-.word 0x00000000
+.byte 0
+glabel D_8012D891
+.byte 0
+glabel D_8012D892
+.byte 0
+glabel D_8012D893
+.byte 0
 
 glabel D_8012D894
 .word 0x00000000
@@ -14053,7 +14059,13 @@ glabel D_8012D9FC
 .word 0x00000000
 
 glabel D_8012DA00
-.word 0x00000000
+.byte 0
+glabel D_8012DA01
+.byte 0
+glabel D_8012DA02
+.byte 0
+glabel D_8012DA03
+.byte 0
 
 glabel D_8012DA04
 .word 0x00000000
