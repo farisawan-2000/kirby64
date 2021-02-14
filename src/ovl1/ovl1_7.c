@@ -143,7 +143,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800AF0F4.s")
 #endif
 
 u32 func_800AF230(void) {
-    if ((D_800DD8D0[D_8004A7C4->objId] >> 0x1E) != 0) {
+    if ((((u32)D_800DD8D0[D_8004A7C4->objId]) >> 0x1E) != 0) {
         D_800DD8D0[D_8004A7C4->objId] &= 0x3FFFFFFF;
         return 1;
     }

@@ -7949,3 +7949,4 @@ __osContRamWrite = 0x800370D0;
 /* Reserved section for symbols that wont need to be removed */
 func_80300170 = D_80300170;
 gDisplayListHead = gDisplayListHeads;
+__D_800E9AA0 = D_800E9AA0;
