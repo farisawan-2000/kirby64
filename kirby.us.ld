@@ -374,7 +374,7 @@ SECTIONS
    END_NOLOAD(ovl1)
 
    /* 0x800F61A0 07EC10-0AC900 [2DCF0] */
-   BEGIN_SEG(ovl2, 0x800F61A0) {
+   BEGIN_SEG(ovl2, 0x800F61A0) SUBALIGN(16) {
       BUILD_DIR/src/ovl2/ovl2.o(.text);
       BUILD_DIR/src/ovl2/ovl2_2.o(.text);
       BUILD_DIR/src/ovl2/ovl2_3.o(.text);

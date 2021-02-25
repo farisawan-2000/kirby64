@@ -2644,7 +2644,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801164D4.s")
 
 extern const f32 D_80128D1C, D_80128D20, D_80128D24,D_80128D28;
 s32 random_soft_s32_range(s32);
-// i think the code is correct, but it needs shuffling (esp. that loop)
+// loop doesnt pad enough bytes
 #ifdef NON_MATCHING
 void func_80116508(s32 *arg0) {
     f32 temp_f0_2;
@@ -2655,8 +2655,10 @@ void func_80116508(s32 *arg0) {
     f32 temp_f2_3;
     f32 temp_f30;
 
-    D_800E98E0[*arg0] = 0;
-    D_800EA6E0[*arg0] = gEntitiesPosYArray[*arg0];
+    u32 tmp = *arg0;
+
+    D_800EA6E0[tmp] = gEntitiesPosYArray[tmp];
+    D_800E98E0[tmp] = 0;
     temp_f30 = D_80128D1C;
     while (TRUE) {
         if (random_soft_s32_range(2) != 0) {
@@ -2664,19 +2666,19 @@ void func_80116508(s32 *arg0) {
         } else {
             D_800E3210[D_8004A7C4->objId] = -0.25f;
         }
-    loop_4:
-        // temp_v0 = D_800E98E0[*arg0];
-        if (D_800E98E0[*arg0] == 0) {
-            f32 temp_f0 = gEntitiesPosYArray[*arg0] - D_800EA6E0[*arg0];
-            if (temp_f0 >= 15.0f) {
-                D_800E3210[D_8004A7C4->objId] = -0.25f;
-            } else if (temp_f0 <= -10.0f) {
+        while (TRUE) {
+            if (D_800E98E0[tmp] == 0) {
+                f32 temp_f0 = gEntitiesPosYArray[tmp] - D_800EA6E0[tmp];
+                if (temp_f0 >= 15.0f) {
+                    D_800E3210[D_8004A7C4->objId] = -0.25f;
+                } else if (temp_f0 <= -10.0f) {
                 D_800E3210[D_8004A7C4->objId] = 0.25f;
-            }
-            func_8000B6BC(1);
-            goto loop_4;
+                }
+                func_8000B6BC(1);
+                continue;
+            } else break;
         }
-        if (D_800E98E0[*arg0] == 1) {
+        if (D_800E98E0[tmp] == 1) {
             D_800E3590[D_8004A7C4->objId] = 0.0f;
             D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
             D_800E3AD0[D_8004A7C4->objId] = temp_f30;
@@ -2718,10 +2720,10 @@ void func_80116508(s32 *arg0) {
             temp_f2_2 = D_800E3E50[D_8004A7C4->objId];
             D_800E3C90[D_8004A7C4->objId] = temp_f2_2;
             D_800E3AD0[D_8004A7C4->objId] = temp_f2_2;
-            D_800E98E0[*arg0] = 0;
+            D_800E98E0[tmp] = 0;
             continue;
         }
-        if (D_800E98E0[*arg0] != 2) {
+        if (D_800E98E0[tmp] != 2) {
             continue;
         }
         D_800E3590[D_8004A7C4->objId] = 0.0f;
@@ -4045,24 +4047,20 @@ void func_80119168(void) {
 
 #ifdef MIPS_TO_C
 void func_80119188(void *arg0) {
-    u32 temp_v0;
-
     if (D_800D6E20[D_800BE508] != 0) {
         func_80118A60(0x3C);
     } else {
         func_80118A60(0x1E);
-        if (D_800D6E18 == 0) {
-loop_3:
+        while (D_800D6E18 == 0) {
             func_8000B6BC(1);
-            if (D_800D6E18 == 0) {
-                goto loop_3;
-            }
         }
         arg0->unk48 = &D_80114E80;
         func_800AECC0(D_800D6B10);
         func_800AED20(D_800D6B10);
-        temp_v0 = D_8004A7C4->objId;
-        func_800FD754(1, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v0], (bitwise f32) (bitwise s32) gEntitiesPosYArray[temp_v0], (bitwise f32) (bitwise s32) gEntitiesPosZArray[temp_v0]);
+        func_800FD754(1,
+                      gEntitiesPosXArray[D_8004A7C4->objId],
+                      gEntitiesPosYArray[D_8004A7C4->objId],
+                      gEntitiesPosZArray[D_8004A7C4->objId]);
     }
     func_80008DA8(NULL);
 }

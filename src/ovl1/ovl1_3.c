@@ -1086,7 +1086,7 @@ void func_800A9864(u32 listIndex, u32 arg1, u32 arg2) {
     // u32 *temp_v0 = D_800D00C4[listIndex >> 0x10 * 4 + ((listIndex & 0xFFFF) * 4)];
 
     D_800E02D0[D_8004A7C4->objId] = listIndex;
-    temp_v0 = D_800D00C4[listIndex >> 0x10 * 4 + ((listIndex & 0xFFFF) * 4)];
+    temp_v0 = D_800D00C4[listIndex >> 0x10][listIndex & 0xFFFF];
     // temp_v0 = *(D_800D00C4 + ((listIndex >> 0x10) * 4)) + ((listIndex & 0xFFFF) * 4);
     if (temp_v0 != 0) {
         gSegment4StartArray[D_8004A7C4->objId] = temp_v0;
@@ -1108,6 +1108,7 @@ void func_800A9864(u32 listIndex, u32 arg1, u32 arg2) {
     func_800A9648(temp_v0);
 }
 #else
+void func_800A9864(u32 listIndex, u32 arg1, u32 arg2);
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A9864.s")
 #endif
 
@@ -1455,8 +1456,8 @@ void func_800AA2A0(void) {
     func_800AA174();
 }
 
-void func_800AA2C8(void) {
-    func_800A9864();
+void func_800AA2C8(s32 arg0, s32 arg1, s32 arg2) {
+    func_800A9864(arg0, arg1, arg2);
     func_800AA174();
 }
 

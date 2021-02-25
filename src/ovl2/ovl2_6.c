@@ -87,25 +87,22 @@ extern struct UNK_D_800D478C D_800D478C[];
 // Almost matching
 #ifdef MIPS_TO_C
 void func_800FF64C(s32 arg0) {
-    u16 temp_a1;
-    struct UNK_D_800D478C *temp_a3;
     struct UNK_D_8012BBF8_unk0 *temp_v1;
+    u16 temp_a1;
     u32 phi_v0;
 
-    for (phi_v0 = 0; phi_v0 < D_8012B9B0; phi_v0++)
-    {
+    for (phi_v0 = 0; phi_v0 < D_8012B9B0; phi_v0++) {
         temp_a1 = D_8012B9B8[phi_v0].unk8;
-        if (((temp_a1 & 0xC0) != 0) && (arg0 == D_8012B9B8[phi_v0].unkA)) {
+        if ((D_8012B9B8[phi_v0].unk8 & 0xC0) && (arg0 == D_8012B9B8[phi_v0].unkA)) {
             temp_v1 = D_8012BBF8[phi_v0].unk0;
             if (temp_v1 != 0) {
-                temp_a3 = &D_800D478C[arg0];
-                temp_v1->unk14 = temp_a3->unk0;
-                temp_v1->unk15 = temp_a3->unk1;
-                temp_v1->unk16 = temp_a3->unk2;
-                if ((temp_a1 & 0x40) != 0) {
-                    temp_v1->unk18 = temp_a3->unk3;
-                    temp_v1->unk19 = temp_a3->unk4;
-                    temp_v1->unk1A = temp_a3->unk5;
+                temp_v1->unk14 = D_800D478C[arg0].unk0;
+                temp_v1->unk15 = D_800D478C[arg0].unk1;
+                temp_v1->unk16 = D_800D478C[arg0].unk2;
+                if (temp_a1 & 0x40) {
+                    temp_v1->unk18 = D_800D478C[arg0].unk3;
+                    temp_v1->unk19 = D_800D478C[arg0].unk4;
+                    temp_v1->unk1A = D_800D478C[arg0].unk5;
                 }
             }
         }
@@ -178,10 +175,10 @@ void func_800FF71C(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
 #ifdef MIPS_TO_C
 Failed to decompile function func_800FF9B4:
 
-Unable to determine jump table for jr instruction.
+Unable to determine jump table for jr instruction at ../kirby_decomp/asm/non_matchings/ovl2_6/func_800FF9B4.s line 327.
 
 There must be a read of a variable in the same block as
-the instruction, which has a name starting with "jtbl".
+the instruction, which has a name starting with "jtbl"/"jpt_".
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF9B4.s")
 #endif
@@ -206,18 +203,18 @@ void func_80100790(void *arg0) {
     s32 temp_lo_2;
     s32 temp_s6;
     s32 temp_s6_2;
+    struct SomeColorThing *temp_s0;
     u16 temp_t0;
     u16 temp_t1;
     u16 temp_v0;
+    u32 temp_s0_2;
     u8 temp_t0_2;
     u8 temp_t4;
-    void *temp_s0;
-    void *temp_s0_2;
     void *temp_s1;
     void *temp_s1_2;
     void *temp_s3;
     void *temp_v1;
-    void *phi_s0;
+    struct SomeColorThing *phi_s0;
     f32 phi_f8;
     f32 phi_f18;
     s32 phi_s6;
@@ -323,22 +320,21 @@ void *func_80100AC8(void *arg0) {
     f32 temp_f12;
     f32 temp_f14;
     f32 temp_f2;
-    f32 temp_f6;
     s16 temp_s1;
     s32 temp_s6;
     s32 temp_s7;
+    struct UNK_D_800D478C *temp_v1_2;
+    struct UNK_D_8012BBF8 *temp_s2;
+    struct UNK_D_8012BBF8_unk0 *temp_ret;
+    struct UNK_D_8012BBF8_unk0 *temp_v0_3;
     u16 temp_a0;
     u32 temp_s3;
     u32 temp_v1;
-    u8 temp_t1;
-    u8 temp_t7;
-    void *temp_ret;
-    void *temp_s2;
+    u8 *temp_v1_3;
     void *temp_s4;
     void *temp_v0;
     void *temp_v0_2;
-    void *temp_v1_2;
-    void *phi_s0;
+    struct UNK_D_8012B9B8 *phi_s0;
     u32 phi_s3;
     s16 phi_s1;
     u32 phi_v1;
@@ -355,10 +351,9 @@ void *func_80100AC8(void *arg0) {
     temp_f0 = temp_v0->unk10 * 0.25f;
     temp_s4 = (temp_s7 * 0x18) + &D_8012BB98;
     temp_f2 = temp_v0->unk12 * 0.25f;
-    temp_f6 = temp_v0->unk8;
-    temp_v0 = temp_v0 + 8;
-    temp_s4->unk0 = temp_f6 * 0.5f;
-    temp_s4->unk4 = temp_v0->unk2 * 0.5f;
+    temp_v0_2 = temp_v0 + 8;
+    temp_s4->unk0 = temp_v0->unk8 * 0.5f;
+    temp_s4->unk4 = temp_v0_2->unk2 * 0.5f;
     temp_f12 = temp_s4->unk0 * 0.5f;
     temp_f14 = temp_s4->unk4 * 0.5f;
     temp_s4->unk8 = temp_f0 - temp_f12;
@@ -366,41 +361,38 @@ void *func_80100AC8(void *arg0) {
     temp_s4->unk10 = temp_f0 + temp_f12;
     temp_s4->unk14 = temp_f2 + temp_f14;
     temp_v1 = D_8012B9B0;
-    phi_return = temp_v0;
+    phi_return = temp_v0_2;
     if (temp_v1 != 0) {
-        phi_s0 = &D_8012B9B8;
+        phi_s0 = D_8012B9B8;
         phi_s3 = 0;
         phi_v1 = temp_v1;
-        phi_return_2 = temp_v0;
+        phi_return_2 = temp_v0_2;
 loop_2:
         if (temp_s6 == phi_s0->unk4) {
-            temp_s2 = (phi_s3 * 0x10) + &D_8012BBF8;
+            temp_s2 = &D_8012BBF8[phi_s3];
             temp_ret = func_800AC954(arg0, 1, func_800A8C40(phi_s0->unk0));
-            temp_v0_2 = temp_ret;
+            temp_v0_3 = temp_ret;
             temp_a0 = phi_s0->unk8;
-            temp_v0_2->unk20 = phi_s0->unkC + temp_s4->unk8;
-            temp_v0_2->unk24 = phi_s0->unkE + temp_s4->unkC;
-            temp_v0_2->unk28 = phi_s0->unk10;
-            temp_v0_2->unk2C = phi_s0->unk14;
+            temp_v0_3->unk20 = phi_s0->unkC + temp_s4->unk8;
+            temp_v0_3->unk24 = phi_s0->unkE + temp_s4->unkC;
+            temp_v0_3->unk28 = phi_s0->unk10;
+            temp_v0_3->unk2C = phi_s0->unk14;
             if ((temp_a0 & 0x20) != 0) {
-                temp_v0_2->unk13 = temp_v0_2->unk13 | 2;
+                temp_v0_3->unk13 = temp_v0_3->unk13 | 2;
             }
             phi_s1_3 = 0;
             if ((temp_a0 & 0xC0) != 0) {
-                temp_v1_2 = &D_800D478C + (phi_s0->unkA * 0xC);
-                temp_t7 = *temp_v1_2;
-                temp_v1_2 = temp_v1_2 + 2;
-                temp_v0_2->unk14 = temp_t7;
-                temp_v0_2->unk15 = temp_v1_2->unk-1;
-                temp_v0_2->unk17 = 0xFF;
-                temp_v0_2->unk16 = temp_v1_2->unk0;
+                temp_v1_2 = &D_800D478C[phi_s0->unkA];
+                temp_v1_3 = &temp_v1_2->unk2;
+                temp_v0_3->unk14 = temp_v1_2->unk0;
+                temp_v0_3->unk15 = temp_v1_3[-1];
+                temp_v0_3->unk17 = 0xFF;
+                temp_v0_3->unk16 = temp_v1_3->unk0;
                 if ((temp_a0 & 0x40) != 0) {
-                    temp_t1 = temp_v1_2->unk1;
-                    temp_v1_2 = temp_v1_2 + 3;
-                    temp_v0_2->unk18 = temp_t1;
-                    temp_v0_2->unk19 = temp_v1_2->unk-1;
-                    temp_v0_2->unk1B = 0xFF;
-                    temp_v0_2->unk1A = temp_v1_2->unk0;
+                    temp_v0_3->unk18 = temp_v1_3[1];
+                    temp_v0_3->unk19 = temp_v1_3[3].unk-1;
+                    temp_v0_3->unk1B = 0xFF;
+                    temp_v0_3->unk1A = temp_v1_3[3];
                     phi_s1_3 = 1;
                 } else {
                     phi_s1_3 = 0;
@@ -409,24 +401,24 @@ loop_2:
                     }
                 }
             }
-            if (((temp_a0 & 0x105) != 0) || (phi_s1_2 = phi_s1_3, (0.0f != phi_s0->unk18))) {
+            if (((temp_a0 & 0x105) != 0) || (phi_s1_2 = phi_s1_3, (phi_s0->unk18 != 0.0f))) {
                 temp_s1 = (phi_s1_3 | 4) & 0xFFFF;
                 phi_s1_2 = temp_s1;
                 if ((temp_a0 & 0x400) != 0) {
-                    temp_v0_2->unkBA = 1;
-                    temp_v0_2->unk5A = 1;
+                    temp_v0_3->unkBA = 1;
+                    temp_v0_3->unk5A = 1;
                     phi_s1_2 = (temp_s1 | 0x10) & 0xFFFF;
                 }
             }
-            if (((temp_a0 & 0x200) != 0) || (phi_s1 = phi_s1_2, (0.0f != phi_s0->unk1C))) {
+            if (((temp_a0 & 0x200) != 0) || (phi_s1 = phi_s1_2, (phi_s0->unk1C != 0.0f))) {
                 phi_s1 = (phi_s1_2 | 8) & 0xFFFF;
             }
-            temp_s2->unk0 = temp_v0_2;
+            temp_s2->unk0 = temp_v0_3;
             temp_s2->unkC = temp_s7;
             temp_s2->unkE = phi_s1;
             temp_s2->unk8 = 0.0f;
-            temp_s2->unk4 = temp_v0_2->unk24;
-            temp_v0_2->unk3C = temp_s2;
+            temp_s2->unk4 = temp_v0_3->unk24;
+            temp_v0_3->unk3C = temp_s2;
             phi_v1 = D_8012B9B0;
             phi_return_2 = temp_ret;
         }
@@ -452,8 +444,7 @@ u32 func_80100DF8(s32 arg0) {
     u32 i;
 
     phi_v0 = D_80124740[arg0];
-    for (i = 0; i < D_8012B9B0; i++)
-    {
+    for (i = 0; i < D_8012B9B0; i++) {
         if (phi_v0 == D_8012B9B8[i].unk4) {
             return 1;
         }
@@ -490,34 +481,34 @@ f32 func_80100EE4(s32 arg0) {
     f32 sp2C;
     f32 sp28;
     f32 sp24;
-    s32 sp1C;
+    u32 sp1C;
     f32 temp_f0;
     f32 temp_f0_2;
     f32 temp_f0_3;
     f32 temp_f0_4;
     f32 temp_f0_5;
     f32 temp_f0_6;
+    f32 temp_f0_7;
     f32 temp_f12;
     f32 temp_f12_2;
     f32 temp_f14;
-    f32 temp_f16;
     f32 temp_f18;
     f32 temp_f18_2;
     f32 temp_f2;
     f32 temp_f2_2;
     f32 temp_f8;
     f32 temp_ret;
-    s32 temp_v0;
+    s32 temp_v1_2;
+    struct UNK_D_8012B9B8 *temp_v1;
     u16 temp_a1;
     u16 temp_a3;
     u16 temp_t8;
-    u16 temp_v1_2;
     u32 temp_t2;
+    u32 temp_v0;
     void *temp_a2;
     void *temp_v0_2;
-    void *temp_v1;
     f32 phi_f14;
-    void *phi_a0;
+    struct UNK_D_8012BBF8 *phi_a0;
     u32 phi_t2;
     f32 phi_f2;
     f32 phi_f2_2;
@@ -535,11 +526,10 @@ f32 func_80100EE4(s32 arg0) {
     f32 phi_return_3;
 
     temp_f18 = D_800D7B20.unkC;
-    temp_f16 = D_800D7B20.unk0 - temp_f18;
     temp_f0 = D_800D7B38.unkC;
     sp40 = temp_f0 - temp_f18;
     sp3C = D_800D7B38.unk10;
-    sp28 = temp_f16;
+    sp28 = D_800D7B20.unk0 - temp_f18;
     sp24 = D_800D7B20.unk8 - D_800D7B20.unk14;
     sp30 = atan2f(D_800D7B38.unk8 - D_800D7B38.unk14, D_800D7B38.unk0 - temp_f0);
     sp2C = atan2f(sp24, sp28);
@@ -559,11 +549,11 @@ f32 func_80100EE4(s32 arg0) {
     temp_v0_2 = D_800D799C->unk3C;
     temp_f18_2 = (sp30 - phi_f14) / (((temp_v0_2->unk20 * D_80128A3C) / 180.0f) * temp_v0_2->unk24);
     sp38 = temp_f18_2;
-    temp_ret = atan2f(D_800D7B20.unk4 - D_800D7B20.unk10, sqrtf((sp28 * sp28) + (sp24 * sp24), phi_f14, 1));
+    temp_ret = atan2f(D_800D7B20.unk4 - D_800D7B20.unk10, sqrtf((sp28 * sp28) + (sp24 * sp24)));
     sp34 = temp_ret / ((D_800D799C->unk3C->unk20 * D_80128A40) / 180.0f);
     phi_return = temp_ret;
     if (D_8012B9B0 != 0) {
-        phi_a0 = &D_8012BBF8;
+        phi_a0 = D_8012BBF8;
         phi_t2 = 0;
         phi_return_3 = temp_ret;
 loop_8:
@@ -571,15 +561,15 @@ loop_8:
         phi_return_2 = phi_return_3;
         if (temp_a2 != 0) {
             temp_a3 = phi_a0->unkC;
-            temp_v1 = &D_8012B9B8 + (phi_t2 * 0x30);
+            temp_v1 = &D_8012B9B8[phi_t2];
             temp_a1 = temp_v1->unk8;
-            if (((temp_a1 & 0xA) != 0) || (phi_return_2 = phi_return_3, (0.0f != temp_v1->unk1C))) {
-                temp_f12 = temp_v1->unk1C;
+            if (((temp_a1 & 0xA) != 0) || (phi_return_2 = phi_return_3, ((bitwise f32) temp_v1->unk1C != 0.0f))) {
+                temp_f12 = (bitwise f32) temp_v1->unk1C;
                 temp_f2 = phi_a0->unk4;
                 temp_f14 = (temp_a2->unk1E - 1) * temp_a2->unk2C;
                 phi_f2_4 = temp_f2;
                 phi_return_2 = phi_return_3;
-                if (0.0f != temp_f12) {
+                if (temp_f12 != 0.0f) {
                     phi_a0->unk8 = phi_a0->unk8 + temp_f12;
                     temp_f0_2 = phi_a0->unk8;
                     phi_a0->unk8 = temp_f0_2 - ((temp_f0_2 / temp_f14) * temp_f14);
@@ -588,18 +578,18 @@ loop_8:
                 }
                 phi_f2_3 = phi_f2_4;
                 if ((temp_a1 & 8) != 0) {
-                    phi_f2_3 = phi_f2_4 + ((&D_8012BB98 + (temp_a3 * 0x18))->unk4 * sp34 * temp_v1->unk2C);
+                    phi_f2_3 = phi_f2_4 + ((&D_8012BB98 + (temp_a3 * 0x18))->unk4 * sp34 * (bitwise f32) temp_v1->unk2C);
                 }
                 phi_f2 = phi_f2_3;
                 if ((temp_a1 & 2) != 0) {
-                    phi_f2 = phi_f2_3 + (sp3C * temp_v1->unk24);
+                    phi_f2 = phi_f2_3 + (sp3C * (bitwise f32) temp_v1->unk24);
                 }
                 phi_f2_2 = phi_f2;
                 if ((phi_a0->unkE & 8) != 0) {
                     temp_f0_3 = phi_f2 - (&D_8012BB98 + (temp_a3 * 0x18))->unkC;
                     phi_v0_2 = 0;
                     phi_return_2 = temp_f0_3;
-                    if (0.0f < temp_f0_3) {
+                    if (temp_f0_3 > 0.0f) {
                         phi_v0_2 = 1;
                         phi_return_2 = (bitwise f32) 1;
                     }
@@ -607,7 +597,7 @@ loop_8:
                 }
                 temp_a2->unk24 = phi_f2_2;
             }
-            if (((temp_a1 & 5) != 0) || (0.0f != temp_v1->unk18)) {
+            if (((temp_a1 & 5) != 0) || ((bitwise f32) temp_v1->unk18 != 0.0f)) {
                 temp_t8 = temp_a2->unk1C;
                 temp_f8 = temp_t8;
                 phi_f8 = temp_f8;
@@ -615,25 +605,25 @@ loop_8:
                     phi_f8 = temp_f8 + 4294967296.0f;
                 }
                 temp_f12_2 = phi_f8 * temp_a2->unk28;
-                temp_f0_4 = temp_a2->unk20 + temp_v1->unk18;
+                temp_f0_4 = temp_a2->unk20 + (bitwise f32) temp_v1->unk18;
                 phi_f0_3 = temp_f0_4;
                 phi_return_2 = temp_f0_4;
                 if ((temp_a1 & 1) != 0) {
-                    temp_f0_4 = temp_f0_4 + (sp40 * temp_v1->unk20);
-                    phi_f0_3 = temp_f0_4;
-                    phi_return_2 = temp_f0_4;
+                    temp_f0_5 = temp_f0_4 + (sp40 * (bitwise f32) temp_v1->unk20);
+                    phi_f0_3 = temp_f0_5;
+                    phi_return_2 = temp_f0_5;
                 }
                 phi_f0 = phi_f0_3;
                 if ((temp_a1 & 4) != 0) {
-                    temp_f0_5 = phi_f0_3 + (*(&D_8012BB98 + (temp_a3 * 0x18)) * temp_f18_2 * temp_v1->unk28);
-                    phi_f0 = temp_f0_5;
-                    phi_return_2 = temp_f0_5;
+                    temp_f0_6 = phi_f0_3 + (*(&D_8012BB98 + (temp_a3 * 0x18)) * temp_f18_2 * (bitwise f32) temp_v1->unk28);
+                    phi_f0 = temp_f0_6;
+                    phi_return_2 = temp_f0_6;
                 }
                 temp_v1_2 = phi_a0->unkE & 4;
                 phi_f0_2 = phi_f0;
                 if (temp_v1_2 != 0) {
                     temp_f2_2 = phi_f0 - (&D_8012BB98 + (temp_a3 * 0x18))->unk8;
-                    if (0.0f < temp_f2_2) {
+                    if (temp_f2_2 > 0.0f) {
                         phi_v0 = (temp_f2_2 / temp_f12_2) + 1;
                     } else {
                         phi_v0 = temp_f2_2 / temp_f12_2;
@@ -645,9 +635,9 @@ loop_8:
                             phi_v0_3 = phi_v0 + 1;
                         }
                     }
-                    temp_f0_6 = phi_f0 - (phi_v0_3 * temp_f12_2);
-                    phi_f0_2 = temp_f0_6;
-                    phi_return_2 = temp_f0_6;
+                    temp_f0_7 = phi_f0 - (phi_v0_3 * temp_f12_2);
+                    phi_f0_2 = temp_f0_7;
+                    phi_return_2 = temp_f0_7;
                 }
                 temp_a2->unk20 = phi_f0_2;
             }
@@ -670,8 +660,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_80100EE4.s")
 void func_8010133C(void) {
     u32 i;
 
-    for (i = 0; i < 10; i++)
-    {
+    for (i = 0; i < 10; i++) {
         D_8012BBF8[i].unk0 = NULL;
     }
 }
