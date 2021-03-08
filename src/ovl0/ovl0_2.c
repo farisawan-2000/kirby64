@@ -617,13 +617,9 @@ void func_80004D68(u8 arg0, ? arg1) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004D68.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80004D98(u8 arg0, ? arg1) {
+void func_80004D98(u8 arg0, s32 arg1) {
     func_80004C5C(2, arg0, arg1, 0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004D98.s")
-#endif
 
 // Sent as an OSMesg based on code path
 struct Unk_Func8004DC8 {
