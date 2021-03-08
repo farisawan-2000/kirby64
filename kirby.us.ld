@@ -423,6 +423,7 @@ SECTIONS
    /* 0x80151100 0F8630-1014F0 [8EC0] */
    BEGIN_SEG(ovl4, 0x80151100) {
       BUILD_DIR/asm/ovl4/ovl4.o(.text);
+      BUILD_DIR/asm/ovl4/ovl4_2.o(.text);
       BUILD_DIR/data/kirby.1014F0.o(.data*);
    }
    END_SEG(ovl4)

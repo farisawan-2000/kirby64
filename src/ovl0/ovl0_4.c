@@ -4307,7 +4307,7 @@ void *func_8001663C(void *arg0, void *arg1, s32 arg2) {
     if ((arg2 == 0) || (phi_v1 = temp_v1, (arg2 == 1))) {
         phi_v1 = temp_v1;
         if ((arg1->unk80 & 0x20) != 0) {
-            func_80005DE4(arg0, D_8004A446);
+            append_microcode_load(arg0, D_8004A446);
             D_8004A448 = 1;
             phi_v1 = *arg0;
         }
@@ -4436,7 +4436,7 @@ void func_80016940(Gfx** arg0, Vp *arg1, s32 arg2) {
     if ((arg2 == 0) || (phi_v1 = temp_v1, (arg2 == 1))) {
         phi_v1 = temp_v1;
         if ((arg1->unk80 & 0x20) != 0) {
-            func_80005DE4(arg0, D_8004A446);
+            append_microcode_load(arg0, D_8004A446);
             D_8004A448 = 1;
             phi_v1 = *arg0;
         }

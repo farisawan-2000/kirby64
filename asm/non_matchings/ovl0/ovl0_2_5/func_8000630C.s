@@ -32,7 +32,7 @@ glabel func_8000630C
 /* 006F7C 8000637C 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
 /* 006F80 80006380 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 006F84 80006384 02002025 */  move  $a0, $s0
-/* 006F88 80006388 0C001779 */  jal   func_80005DE4
+/* 006F88 80006388 0C001779 */  jal   append_microcode_load
 /* 006F8C 8000638C 00402825 */   move  $a1, $v0
 /* 006F90 80006390 8E020000 */  lw    $v0, ($s0)
 /* 006F94 80006394 8FA60050 */  lw    $a2, 0x50($sp)
@@ -54,7 +54,7 @@ glabel func_8000630C
 /* 006FD0 800063D0 11800005 */  beqz  $t4, .L800063E8_ovl0
 /* 006FD4 800063D4 3C058005 */   lui   $a1, %hi(D_8004A444) # $a1, 0x8005
 /* 006FD8 800063D8 94A5A444 */  lhu   $a1, %lo(D_8004A444)($a1)
-/* 006FDC 800063DC 0C001779 */  jal   func_80005DE4
+/* 006FDC 800063DC 0C001779 */  jal   append_microcode_load
 /* 006FE0 800063E0 AFA60050 */   sw    $a2, 0x50($sp)
 /* 006FE4 800063E4 8FA60050 */  lw    $a2, 0x50($sp)
 .L800063E8_ovl0:
@@ -78,7 +78,7 @@ glabel func_8000630C
 /* 007028 80006428 3C108005 */  lui   $s0, %hi(gDisplayListHeads) # $s0, 0x8005
 /* 00702C 8000642C 2610A3D0 */  addiu $s0, %lo(gDisplayListHeads) # addiu $s0, $s0, -0x5c30
 /* 007030 80006430 02002025 */  move  $a0, $s0
-/* 007034 80006434 0C001779 */  jal   func_80005DE4
+/* 007034 80006434 0C001779 */  jal   append_microcode_load
 /* 007038 80006438 00402825 */   move  $a1, $v0
 /* 00703C 8000643C 8E020000 */  lw    $v0, ($s0)
 /* 007040 80006440 8FA60050 */  lw    $a2, 0x50($sp)
@@ -103,7 +103,7 @@ glabel func_8000630C
 /* 007088 80006488 3C058005 */  lui   $a1, %hi(D_8004A444) # $a1, 0x8005
 /* 00708C 8000648C 94A5A444 */  lhu   $a1, %lo(D_8004A444)($a1)
 /* 007090 80006490 2484A3D8 */  addiu $a0, %lo(gDisplayListHead3) # addiu $a0, $a0, -0x5c28
-/* 007094 80006494 0C001779 */  jal   func_80005DE4
+/* 007094 80006494 0C001779 */  jal   append_microcode_load
 /* 007098 80006498 AFA70024 */   sw    $a3, 0x24($sp)
 /* 00709C 8000649C 8E020008 */  lw    $v0, 8($s0)
 /* 0070A0 800064A0 8FA70024 */  lw    $a3, 0x24($sp)
@@ -131,7 +131,7 @@ glabel func_8000630C
 /* 0070F0 800064F0 3C058005 */  lui   $a1, %hi(D_8004A444) # $a1, 0x8005
 /* 0070F4 800064F4 94A5A444 */  lhu   $a1, %lo(D_8004A444)($a1)
 /* 0070F8 800064F8 2484A3D8 */  addiu $a0, %lo(gDisplayListHead3) # addiu $a0, $a0, -0x5c28
-/* 0070FC 800064FC 0C001779 */  jal   func_80005DE4
+/* 0070FC 800064FC 0C001779 */  jal   append_microcode_load
 /* 007100 80006500 AFA70024 */   sw    $a3, 0x24($sp)
 /* 007104 80006504 8E020008 */  lw    $v0, 8($s0)
 /* 007108 80006508 8FA70024 */  lw    $a3, 0x24($sp)
@@ -155,7 +155,7 @@ glabel func_8000630C
 /* 007148 80006548 0C001719 */  jal   func_80005C64
 /* 00714C 8000654C 00000000 */   nop   
 /* 007150 80006550 02002025 */  move  $a0, $s0
-/* 007154 80006554 0C001779 */  jal   func_80005DE4
+/* 007154 80006554 0C001779 */  jal   append_microcode_load
 /* 007158 80006558 00402825 */   move  $a1, $v0
 /* 00715C 8000655C 8E030004 */  lw    $v1, 4($s0)
 /* 007160 80006560 3C0FDE01 */  lui   $t7, 0xde01
@@ -172,7 +172,7 @@ glabel func_8000630C
 /* 007188 80006588 2484A3D4 */  addiu $a0, %lo(gDisplayListHead2) # addiu $a0, $a0, -0x5c2c
 /* 00718C 8000658C 13200003 */  beqz  $t9, .L8000659C_ovl0
 /* 007190 80006590 3C058005 */   lui   $a1, %hi(D_8004A444) # $a1, 0x8005
-/* 007194 80006594 0C001779 */  jal   func_80005DE4
+/* 007194 80006594 0C001779 */  jal   append_microcode_load
 /* 007198 80006598 94A5A444 */   lhu   $a1, %lo(D_8004A444)($a1)
 .L8000659C_ovl0:
 /* 00719C 8000659C 8E030004 */  lw    $v1, 4($s0)
@@ -192,7 +192,7 @@ glabel func_8000630C
 /* 0071CC 800065CC 3C048005 */   lui   $a0, %hi(gDisplayListHead4) # $a0, 0x8005
 /* 0071D0 800065D0 3C058005 */  lui   $a1, %hi(D_8004A444) # $a1, 0x8005
 /* 0071D4 800065D4 94A5A444 */  lhu   $a1, %lo(D_8004A444)($a1)
-/* 0071D8 800065D8 0C001779 */  jal   func_80005DE4
+/* 0071D8 800065D8 0C001779 */  jal   append_microcode_load
 /* 0071DC 800065DC 2484A3DC */   addiu $a0, %lo(gDisplayListHead4) # addiu $a0, $a0, -0x5c24
 /* 0071E0 800065E0 8E03000C */  lw    $v1, 0xc($s0)
 /* 0071E4 800065E4 3C0EDE01 */  lui   $t6, 0xde01

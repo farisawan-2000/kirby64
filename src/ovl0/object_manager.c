@@ -1337,10 +1337,10 @@ struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void)
     return toReturn;
 }
 
-struct UnkStruct8004A7C4 *func_8000A180(s32 id, s32 arg1, u8 arg2, u32 arg3) {
+struct UnkStruct8004A7C4 *func_8000A180(s32 id, void (*func)(void), u8 link, u32 arg3) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(id, arg1, arg2, arg3);
+    temp_v0 = object_manager_g_add_common(id, func, link, arg3);
     if (temp_v0 == NULL) {
         return NULL;
     } else {
@@ -2740,12 +2740,12 @@ struct UnkStruct8004A7C4 *func_8000BCA4(s32 arg0, s32 arg1, s32 arg2, u32 arg3,
     return temp_v0;
 }
 
-struct UnkStruct8004A7C4 *func_8000BD3C(s32 arg0, s32 arg1, s32 arg2, u32 arg3, s32 arg4, s32 arg5,
+struct UnkStruct8004A7C4 *func_8000BD3C(s32 id, void (*func)(void), s32 link, u32 arg3, s32 arg4, s32 arg5,
     s32 arg6, s32 arg7, s32 arg8, u8 arg9, s32 argA, u32 argB, s32 argC) {
     struct UnkStruct8004A7C4 *temp_v0;
     struct Camera *temp_v0_2;
 
-    temp_v0 = func_8000A180(arg0, arg1, arg2 & 0xFF, arg3);
+    temp_v0 = func_8000A180(id, func, (u8) link, arg3);
     if (temp_v0 == 0) {
         return NULL;
     }

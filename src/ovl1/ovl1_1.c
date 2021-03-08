@@ -393,7 +393,7 @@ void func_800A30E8(void) {
     load_overlay(17);
 }
 
-void func_800A3128(void) {
+void load_menu_overlays(void) {
     load_overlay(2);
     load_overlay(3);
 }
@@ -768,7 +768,7 @@ void func_800A377C(s32 arg0) {
                     continue;
                 }
             case 9: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_800A2CE4();
                 func_800B87E0();
                 func_80158048_ovl1();
@@ -785,7 +785,7 @@ void func_800A377C(s32 arg0) {
                     func_800B9C50(D_800D6B88);
                     func_80154D60_ovl1(1, 2);
                 }
-                func_800A3128();
+                load_menu_overlays();
                 func_800A2D5C();
                 func_80159A54_ovl1();
                 if (D_800D6B78 != 0) {
@@ -805,7 +805,7 @@ void func_800A377C(s32 arg0) {
                     }
                 }
             case 11: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_800A2D68();
                 func_8015531C_ovl1();
                 if (D_800D6B78 == 0) {
@@ -964,7 +964,7 @@ block_77:
                 }
             case 15: // switch 1
             case 16: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80159EFC_ovl1();
                 D_800BE4F0 = 1;
                 continue;
@@ -1001,56 +1001,56 @@ block_77:
                 func_800A34C8();
                 continue;
             case 26: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_8017F594_ovl1();
                 continue;
             case 27: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_8017CC3C_ovl1();
                 continue;
             case 24: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_801822AC_ovl1();
                 temp_t0_2 = D_800BE4F0;
                 D_800BE4F0 = 0xA;
                 D_800D6B68 = temp_t0_2;
                 continue;
             case 22: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_801802A8_ovl1();
                 continue;
             case 21: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_8017ECA4_ovl1();
                 temp_t9 = D_800BE4F0;
                 D_800BE4F0 = 0xA;
                 D_800D6B68 = temp_t9;
                 continue;
             case 25: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80182FE8_ovl1();
                 continue;
             case 23: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80185EEC_ovl1();
                 temp_t1_2 = D_800BE4F0;
                 D_800BE4F0 = 0xA;
                 D_800D6B68 = temp_t1_2;
                 continue;
             case 28: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80177A30_ovl1();
                 continue;
             case 29: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_8016FAB0_ovl1();
                 continue;
             case 30: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80165370_ovl1();
                 continue;
             case 31: // switch 1
-                func_800A3128();
+                load_menu_overlays();
                 func_80179D48_ovl1();
         }
     }
