@@ -265,6 +265,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x801290D0,
 		(void*) 0x8012EAF0,
 	},
+	// menu ovl4
 	{
 		(void*) 0x000F8630,
 		(void*) 0x00103BB0,
@@ -276,6 +277,7 @@ struct Overlay D_800BE5D0[20] = {
 		(void*) 0x8015C680,
 		(void*) 0x8015C730,
 	},
+	// menu ovl5
 	{
 		(void*) 0x00103BB0,
 		(void*) 0x00135490,
