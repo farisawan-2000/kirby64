@@ -2766,7 +2766,7 @@ struct UnkStruct8004A7C4 *func_8000BD3C(s32 id, void (*func)(void), s32 link, u3
 
 void func_8001806C(struct unk80017FEC *arg0);
 
-struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, struct UnkStruct8004A7C4_3C_80 *arg3, s32 arg4) {
+struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     struct UnkStruct8004A7C4 *temp_v0;
     struct UnkStruct8004A7C4_3C *temp_v1;
 

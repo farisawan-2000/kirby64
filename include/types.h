@@ -87,12 +87,12 @@ struct BankHeader {
 };
 
 typedef struct Controller_800D6FE8 {
-  u16 buttonHeld;
-  u16 buttonPressed;
-  u16 buttonHeldLong; // this one becomes active a bit after buttonDown
-  u16 buttonReleased;
-  s8 stickX;
-  s8 stickY;
+  /* 0x00 */ u16 buttonHeld;
+  /* 0x02 */ u16 buttonPressed;
+  /* 0x04 */ u16 buttonHeldLong; // this one becomes active a bit after buttonDown
+  /* 0x06 */ u16 buttonReleased;
+  /* 0x08 */ s8 stickX;
+  /* 0x09 */ s8 stickY;
 } Controller_800D6FE8;
 
 struct KirbyState_114 {
