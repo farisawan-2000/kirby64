@@ -428,6 +428,9 @@ SECTIONS
       BUILD_DIR/data/kirby.1014F0.o(.data*);
       BUILD_DIR/src/ovl4/ovl4.o(.rodata);
       BUILD_DIR/data/ovl4/ovl4_rodata_2.o(.data*);
+      /*BUILD_DIR/src/ovl4/ovl4_3.o(.rodata);*/
+      BUILD_DIR/data/ovl4/ovl4_3_rodata.o(.data*);
+      BUILD_DIR/data/ovl4/ovl4_rodata_3.o(.data*);
    }
    END_SEG(ovl4)
    BEGIN_NOLOAD(ovl4) {

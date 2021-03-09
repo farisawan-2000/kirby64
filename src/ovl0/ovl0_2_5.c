@@ -48,6 +48,13 @@ struct UcodeHandler D_8003DCAC[16] = {
 extern void func_80000A44(void);
 extern u32 *gGObjThreadHead;
 
+extern u8 D_80048900[];
+
+extern OSMesgQueue gInterruptMesgQueue;
+
+// These are used in other functions too
+extern u16 D_8004A448;
+
 struct DynamicBufferSubclass {
     struct DynamicBuffer buffer;
     u32 unk10;
@@ -158,18 +165,6 @@ void func_80005350(void *arg0) {
     D_8004A48C = func_80000A44;
 }
 
-extern const char D_80040040[];
-extern const char D_80040060[];
-extern const char D_80040080[];
-extern const char D_800400C0[];
-extern u8 D_80048900[];
-
-extern OSMesgQueue gInterruptMesgQueue;
-
-extern const char D_800400A0[];
-
-// These are used in other functions too
-extern u16 D_8004A448;
 
 
 void setup_segment_15(Gfx **arg0) {
@@ -516,6 +511,7 @@ void func_80005CC0(s32 arg0, s32 arg1) {
         phi_a2 = func_80005C64();
     }
     switch(phi_a2) {
+        // sprite microcode
         case 1:
         case 3:
         case 5:
@@ -525,6 +521,7 @@ void func_80005CC0(s32 arg0, s32 arg1) {
         case 15:
             func_80005A98(func_800057AC(), 0, phi_a2, D_8004A450, arg1, 0, 0);
             break;
+        // line microcode
         case 0: case 2: case 4: case 6: 
         case 8:
         case 12:
@@ -878,6 +875,7 @@ u8 func_800067E0(void) {
         func_80000980(temp_a0);
         return 1;
     }
+}
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800067E0.s")
 #endif
@@ -973,8 +971,7 @@ loop_20:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800068E4.s")
 #endif
 
-struct UNK_FUNC_80006DF8
-{
+struct UNK_FUNC_80006DF8 {
     u32 unk0;
     void (*unk4)();
 };
@@ -1143,7 +1140,6 @@ extern u32 D_80006DF8;
 extern u32 D_80006E30;
 
 void func_80007328(struct unk_func80007328 *arg0) {
-
     alloc_region(arg0->unkC, arg0->unk10);
     gDynamicBuffer3.buffer.poolEnd = &D_80006DF8;
     gDynamicBuffer3.unk10 = &D_80006E30;

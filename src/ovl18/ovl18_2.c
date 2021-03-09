@@ -15,8 +15,7 @@ extern s32 D_800E0D50[];
 void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0);
 
 void func_8019D958_ovl18(u16);
-// regalloc moment, one rogue instruction
-#ifdef NON_MATCHING
+
 void func_80221E90_ovl18(s32 arg0) {
     u32 temp_a3;
 
@@ -26,13 +25,11 @@ void func_80221E90_ovl18(s32 arg0) {
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;
     temp_a3 = D_800E0D50[D_8004A7C4->objId];
-    if (0) {}
 
-    if ((D_800DD710[D_800E0D50[D_8004A7C4->objId]] == -1) || (D_8004A7C4->objId != D_800EBBE0[D_800E0D50[D_8004A7C4->objId]])) {
-        func_8019D958_ovl18(D_8004A7C4->objId); //, temp_a1, D_8004A7C4->objId, temp_a3, temp_a1);
+    if ((D_800DD710[temp_a3] == -1) || (D_8004A7C4->objId != D_800EBBE0[temp_a3])) {
+        func_8019D958_ovl18(D_8004A7C4->objId);
     }
 
-    // This line is the issue
     D_800E6A10[D_8004A7C4->objId] = D_800E6A10[temp_a3];
     D_800EA6E0[D_8004A7C4->objId] = D_800EADE0[temp_a3];
     D_800E5F90[D_8004A7C4->objId] = D_800E5F90[temp_a3];
@@ -48,9 +45,6 @@ void func_80221E90_ovl18(s32 arg0) {
     func_8000B6BC(0x3C);
     D_801ACF84_ovl18(arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_2/func_80221E90_ovl18.s")
-#endif
 
 extern u32 D_800BE4EC;
 extern void func_800A8100(u32, u32, u32, u32);
