@@ -441,6 +441,7 @@ SECTIONS
    /* 0x8015C740 103BB0-12D410 [29860] */
    BEGIN_SEG(ovl5, 0x8015C740) {
       BUILD_DIR/asm/ovl5/ovl5.o(.text);
+      BUILD_DIR/data/ovl5/data.o(.data);
    }
    END_SEG(ovl5)
 

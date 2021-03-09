@@ -45362,4 +45362,4 @@
 /* 12D408 80185F98 00000000 */  nop   
 /* 12D40C 80185F9C 00000000 */  nop   
 # Unknown region 12D410-135490 [8080]
-.incbin "bin/kirby.u.12D410.bin"
+# .incbin "bin/kirby.u.12D410.bin"
