@@ -1,4 +1,4 @@
-/*#include "bank_header.ld.in"
+#include "bank_header.ld.in"
 GEO(3, 1)
 GEO(3, 2)
 GEO(3, 3)
@@ -97,6 +97,7 @@ GEO(3, 95)
 GEO(3, 96)
 GEO(3, 97)
 GEO(3, 98)
+/*
 GEO(3, 99)
 GEO(3, 100)
 GEO(3, 101)

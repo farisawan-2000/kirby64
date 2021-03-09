@@ -14,7 +14,11 @@ if "--clean" in ''.join(sys.argv):
 	exit(0)
 
 for i in sorted(glob.glob("assets/geo/bank_*/**/block.bin")):
-	if "bank_1" in i or "bank_0" in i or "bank_2" in i or "bank_7" in i:
+	if "bank_1" in i\
+	or "bank_0" in i\
+	or "bank_2" in i\
+	or "bank_3" in i\
+	or "bank_7" in i:
 		cfile = i.split("bin")[0] + "c"
 		proc = subprocess.Popen("ls %s | wc -l" % (i.split("bin")[0]+"*"), shell=True, stdout=subprocess.PIPE)
 		pc = proc.communicate()[0].decode("ascii")
