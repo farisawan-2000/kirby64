@@ -20972,7 +20972,7 @@ glabel D_800DD6EC
 glabel D_800DD6F0
 .word 0x00000000
 
-glabel D_800DD6F4
+glabel sTextureImageCommand
 .word 0x00000000
 
 glabel D_800DD6F8
