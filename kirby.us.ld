@@ -444,6 +444,10 @@ SECTIONS
       BUILD_DIR/data/ovl5/data.o(.data);
    }
    END_SEG(ovl5)
+   BEGIN_NOLOAD(ovl5) {
+      BUILD_DIR/data/ovl5/ovl5_bss.o(.bss);
+   }
+   END_NOLOAD(ovl5)
 
    /* only loaded in the opening cutscene? */
    /* 0x80151100 135490-139150 [3CC0] */

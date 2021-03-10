@@ -39322,7 +39322,9 @@ glabel D_800ECA1C
 .word 0x00000000
 
 glabel D_800ECA20
-.word 0x00000000
+.half 0x0000
+glabel D_800ECA22
+.half 0x0000
 
 glabel D_800ECA24
 .word 0x00000000

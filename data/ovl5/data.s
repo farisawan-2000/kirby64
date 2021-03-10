@@ -1819,10 +1819,22 @@ glabel D_80186914_ovl5
 .word 0x00000000
 
 glabel D_80186918_ovl5
-.word 0x04040205
+.byte 0x04
+glabel D_80186919_ovl5
+.byte 0x04
+glabel D_8018691A_ovl5
+.byte 0x02
+glabel D_8018691B_ovl5
+.byte 0x05
 
 glabel D_8018691C_ovl5
-.word 0x08060306
+.byte 0x08
+glabel D_8018691D_ovl5
+.byte 0x06
+glabel D_8018691E_ovl5
+.byte 0x03
+glabel D_8018691F_ovl5
+.byte 0x06
 
 glabel D_80186920_ovl5
 .word 0x01080A04
@@ -3439,10 +3451,21 @@ glabel D_80187184_ovl5
 .word 0x00000000
 
 glabel D_80187188_ovl5
-.word 0x00000000
-
+.byte 0x00
+glabel D_80187189_ovl5
+.byte 0x00
+glabel D_8018718A_ovl5
+.byte 0x00
+glabel D_8018718B_ovl5
+.byte 0x00
 glabel D_8018718C_ovl5
-.word 0x00000000
+.byte 0x00
+glabel D_8018718D_ovl5
+.byte 0x00
+glabel D_8018718E_ovl5
+.byte 0x00
+glabel D_8018718F_ovl5
+.byte 0x00
 
 glabel D_80187190_ovl5
 .word 0x00020403
