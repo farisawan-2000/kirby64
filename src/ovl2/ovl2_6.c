@@ -113,27 +113,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_800FF64C.s")
 #endif
 
 #include "PR/gbi.h"
+#include "ovl1/ovl1_5.h"
 extern Gfx *gDisplayListHeads[4];
-struct SomeColorThing { // TODO: is this a generic S2DEX structure?
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u8 unk10;
-    u8 unk11;
-    u8 unk12;
-    u8 surfaceFlags;
 
-    u8 primColorRed;
-    u8 primColorGreen;
-    u8 primColorBlue;
-    u8 primColorAlpha;
-
-    u8 envColorRed;
-    u8 envColorGreen;
-    u8 envColorBlue;
-    u8 envColorAlpha;
-};
 
 #define G_CC_UNK1 PRIMITIVE, 0, TEXEL0, 0, 0, 0, 0, TEXEL0
 #define G_CC_UNK2 0, 0, 0, PRIMITIVE, 0, 0, 0, TEXEL0
@@ -141,10 +123,10 @@ struct SomeColorThing { // TODO: is this a generic S2DEX structure?
 #define TRANSPARENT_SURFACE (1 << 1)
 
 // S2D code :o
-void func_800FF71C(struct SomeColorThing *arg0, u8 arg1, u8 arg2) {
+void func_800FF71C(struct UnkStruct800AC954 *arg0, u8 arg1, u8 arg2) {
     gDPPipeSync(gDisplayListHeads[0]++);
     gDPSetCycleType(gDisplayListHeads[0]++, G_CYC_1CYCLE)
-    if (arg0->surfaceFlags & TRANSPARENT_SURFACE) {
+    if (arg0->renderFlags & TRANSPARENT_SURFACE) {
         gDPSetRenderMode(gDisplayListHeads[0]++, G_RM_XLU_SURF, G_RM_XLU_SURF2);
         gSPObjRenderMode(gDisplayListHeads[0]++, (G_OBJRM_BILERP | G_OBJRM_XLU));
     } else {

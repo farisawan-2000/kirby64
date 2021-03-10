@@ -489,20 +489,20 @@ glabel func_800ABB4C
 .L800AC234_ovl1:
 /* 054484 800AC234 8FB90060 */  lw    $t9, 0x60($sp)
 /* 054488 800AC238 24010003 */  li    $at, 3
-/* 05448C 800AC23C 3C03800E */  lui   $v1, %hi(D_800DD6F8) # $v1, 0x800e
+/* 05448C 800AC23C 3C03800E */  lui   $v1, %hi(sSetTileCommand) # $v1, 0x800e
 /* 054490 800AC240 1721000F */  bne   $t9, $at, .L800AC280_ovl1
-/* 054494 800AC244 2463D6F8 */   addiu $v1, %lo(D_800DD6F8) # addiu $v1, $v1, -0x2908
+/* 054494 800AC244 2463D6F8 */   addiu $v1, %lo(sSetTileCommand) # addiu $v1, $v1, -0x2908
 /* 054498 800AC248 3C01FD17 */  lui   $at, (0xFD17FFFF >> 16) # lui $at, 0xfd17
 /* 05449C 800AC24C 3421FFFF */  ori   $at, (0xFD17FFFF & 0xFFFF) # ori $at, $at, 0xffff
 /* 0544A0 800AC250 00027043 */  sra   $t6, $v0, 1
 /* 0544A4 800AC254 8FAF005C */  lw    $t7, 0x5c($sp)
 /* 0544A8 800AC258 01C1C021 */  addu  $t8, $t6, $at
-/* 0544AC 800AC25C 3C01800E */  lui   $at, %hi(D_800DD6F4) # $at, 0x800e
-/* 0544B0 800AC260 AC38D6F4 */  sw    $t8, %lo(D_800DD6F4)($at)
-/* 0544B4 800AC264 3C03800E */  lui   $v1, %hi(D_800DD6F8) # $v1, 0x800e
+/* 0544AC 800AC25C 3C01800E */  lui   $at, %hi(sTextureImageCommand) # $at, 0x800e
+/* 0544B0 800AC260 AC38D6F4 */  sw    $t8, %lo(sTextureImageCommand)($at)
+/* 0544B4 800AC264 3C03800E */  lui   $v1, %hi(sSetTileCommand) # $v1, 0x800e
 /* 0544B8 800AC268 3C01F518 */  lui   $at, 0xf518
 /* 0544BC 800AC26C 000FCA40 */  sll   $t9, $t7, 9
-/* 0544C0 800AC270 2463D6F8 */  addiu $v1, %lo(D_800DD6F8) # addiu $v1, $v1, -0x2908
+/* 0544C0 800AC270 2463D6F8 */  addiu $v1, %lo(sSetTileCommand) # addiu $v1, $v1, -0x2908
 /* 0544C4 800AC274 03217021 */  addu  $t6, $t9, $at
 /* 0544C8 800AC278 1000000C */  b     .L800AC2AC_ovl1
 /* 0544CC 800AC27C AC6E0000 */   sw    $t6, ($v1)
@@ -512,8 +512,8 @@ glabel func_800ABB4C
 /* 0544D8 800AC288 0002C043 */  sra   $t8, $v0, 1
 /* 0544DC 800AC28C 8FB9005C */  lw    $t9, 0x5c($sp)
 /* 0544E0 800AC290 03017821 */  addu  $t7, $t8, $at
-/* 0544E4 800AC294 3C01800E */  lui   $at, %hi(D_800DD6F4) # $at, 0x800e
-/* 0544E8 800AC298 AC2FD6F4 */  sw    $t7, %lo(D_800DD6F4)($at)
+/* 0544E4 800AC294 3C01800E */  lui   $at, %hi(sTextureImageCommand) # $at, 0x800e
+/* 0544E8 800AC298 AC2FD6F4 */  sw    $t7, %lo(sTextureImageCommand)($at)
 /* 0544EC 800AC29C 3C01F510 */  lui   $at, 0xf510
 /* 0544F0 800AC2A0 00197240 */  sll   $t6, $t9, 9
 /* 0544F4 800AC2A4 01C1C021 */  addu  $t8, $t6, $at

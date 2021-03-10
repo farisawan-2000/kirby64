@@ -20975,7 +20975,7 @@ glabel D_800DD6F0
 glabel sTextureImageCommand
 .word 0x00000000
 
-glabel D_800DD6F8
+glabel sSetTileCommand
 .word 0x00000000
 
 glabel D_800DD6FC

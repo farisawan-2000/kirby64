@@ -156,7 +156,7 @@ glabel func_800AB804
 /* 053CAC 800ABA5C 8FA40060 */  lw    $a0, 0x60($sp)
 .L800ABA60_ovl1:
 /* 053CB0 800ABA60 1A00000B */  blez  $s0, .L800ABA90_ovl1
-/* 053CB4 800ABA64 3C0D800E */   lui   $t5, %hi(D_800DD6F8) # $t5, 0x800e
+/* 053CB4 800ABA64 3C0D800E */   lui   $t5, %hi(sSetTileCommand) # $t5, 0x800e
 /* 053CB8 800ABA68 3C0E800E */  lui   $t6, %hi(D_800DD6FC) # $t6, 0x800e
 /* 053CBC 800ABA6C 95CED6FC */  lhu   $t6, %lo(D_800DD6FC)($t6)
 /* 053CC0 800ABA70 8E250000 */  lw    $a1, ($s1)
@@ -168,7 +168,7 @@ glabel func_800AB804
 /* 053CD8 800ABA88 1000000B */  b     .L800ABAB8_ovl1
 /* 053CDC 800ABA8C 864F0000 */   lh    $t7, ($s2)
 .L800ABA90_ovl1:
-/* 053CE0 800ABA90 8DADD6F8 */  lw    $t5, %lo(D_800DD6F8)($t5)
+/* 053CE0 800ABA90 8DADD6F8 */  lw    $t5, %lo(sSetTileCommand)($t5)
 /* 053CE4 800ABA94 8C8F0000 */  lw    $t7, ($a0)
 /* 053CE8 800ABA98 3C180700 */  lui   $t8, 0x700
 /* 053CEC 800ABA9C ADED0000 */  sw    $t5, ($t7)

@@ -1,8 +1,8 @@
 glabel func_800AB6D8
 /* 053928 800AB6D8 AFA60008 */  sw    $a2, 8($sp)
 /* 05392C 800AB6DC AFA7000C */  sw    $a3, 0xc($sp)
-/* 053930 800AB6E0 3C0E800E */  lui   $t6, %hi(D_800DD6F4) # $t6, 0x800e
-/* 053934 800AB6E4 8DCED6F4 */  lw    $t6, %lo(D_800DD6F4)($t6)
+/* 053930 800AB6E0 3C0E800E */  lui   $t6, %hi(sTextureImageCommand) # $t6, 0x800e
+/* 053934 800AB6E4 8DCED6F4 */  lw    $t6, %lo(sTextureImageCommand)($t6)
 /* 053938 800AB6E8 8C8F0000 */  lw    $t7, ($a0)
 /* 05393C 800AB6EC 3C09E600 */  lui   $t1, 0xe600
 /* 053940 800AB6F0 3C0DF400 */  lui   $t5, 0xf400

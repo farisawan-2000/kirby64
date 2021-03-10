@@ -5,14 +5,14 @@ glabel func_800AB790
 /* 0539EC 800AB79C AFA70024 */  sw    $a3, 0x24($sp)
 /* 0539F0 800AB7A0 8C8F0000 */  lw    $t7, ($a0)
 /* 0539F4 800AB7A4 3C0EE800 */  lui   $t6, 0xe800
-/* 0539F8 800AB7A8 3C09800E */  lui   $t1, %hi(D_800DD6F8) # $t1, 0x800e
+/* 0539F8 800AB7A8 3C09800E */  lui   $t1, %hi(sSetTileCommand) # $t1, 0x800e
 /* 0539FC 800AB7AC ADEE0000 */  sw    $t6, ($t7)
 /* 053A00 800AB7B0 8C980000 */  lw    $t8, ($a0)
 /* 053A04 800AB7B4 3C0C0700 */  lui   $t4, 0x700
 /* 053A08 800AB7B8 00063400 */  sll   $a2, $a2, 0x10
 /* 053A0C 800AB7BC 27190008 */  addiu $t9, $t8, 8
 /* 053A10 800AB7C0 AC990000 */  sw    $t9, ($a0)
-/* 053A14 800AB7C4 8D29D6F8 */  lw    $t1, %lo(D_800DD6F8)($t1)
+/* 053A14 800AB7C4 8D29D6F8 */  lw    $t1, %lo(sSetTileCommand)($t1)
 /* 053A18 800AB7C8 87A80026 */  lh    $t0, 0x26($sp)
 /* 053A1C 800AB7CC 00063403 */  sra   $a2, $a2, 0x10
 /* 053A20 800AB7D0 01095025 */  or    $t2, $t0, $t1
