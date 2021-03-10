@@ -444,6 +444,7 @@ SECTIONS
       BUILD_DIR/asm/ovl5/ovl5_1.o(.text);
       BUILD_DIR/asm/ovl5/ovl5_11.o(.text);
       BUILD_DIR/data/ovl5/data.o(.data);
+      BUILD_DIR/data/ovl5/rodata.o(.rodata);
    }
    END_SEG(ovl5)
    BEGIN_NOLOAD(ovl5) {
