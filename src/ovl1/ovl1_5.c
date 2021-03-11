@@ -796,7 +796,7 @@ void func_800AC8E0(void *arg0, void *arg1) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_5/func_800AC8E0.s")
 #endif
 
-s32 func_800AC924(uObjMtx *mtx) {
+void func_800AC924(uObjMtx *mtx) {
     mtx->m.A = mtx->m.D = 0x10000;
     mtx->m.B = mtx->m.C = 0;
     mtx->m.X = mtx->m.Y = 0;

@@ -1,6 +1,7 @@
+#include <PR/gs2dex.h>
+
 #ifndef OVL1_5_H
 #define OVL1_5_H
-#include <PR/gs2dex.h>
 
 struct UnkStruct800AC954_68 {
     u32 unk0;
@@ -13,6 +14,7 @@ struct UnkStruct800AC954_68 {
     u32 unk14;
 };
 
+// spobj? according to debug string
 struct UnkStruct800AC954 {
     u32 unk0;
     u32 unk4;

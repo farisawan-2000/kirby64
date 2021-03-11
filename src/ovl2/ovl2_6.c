@@ -135,19 +135,34 @@ void func_800FF71C(struct UnkStruct800AC954 *arg0, u8 arg1, u8 arg2) {
     }
     if (arg2 & (1 | 2)) {
         if (arg2 & 1) {
-            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue,
+            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0,
+                            arg0->primColorRed,
+                            arg0->primColorGreen,
+                            arg0->primColorBlue,
                             arg0->primColorAlpha);
-            gDPSetEnvColor(gDisplayListHeads[0]++, arg0->envColorRed, arg0->envColorGreen, arg0->envColorBlue, arg0->envColorAlpha);
+            gDPSetEnvColor(gDisplayListHeads[0]++,
+                           arg0->envColorRed,
+                           arg0->envColorGreen,
+                           arg0->envColorBlue,
+                           arg0->envColorAlpha);
             gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_BLENDPEDECALA, G_CC_BLENDPEDECALA);
             return;
         } else {
-            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue, arg0->primColorAlpha);
+            gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0,
+                            arg0->primColorRed,
+                            arg0->primColorGreen,
+                            arg0->primColorBlue,
+                            arg0->primColorAlpha);
             gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_UNK1, G_CC_UNK1);
             return;
         }
     }
     if (arg1 == 4) {
-        gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0, arg0->primColorRed, arg0->primColorGreen, arg0->primColorBlue, arg0->primColorAlpha);
+        gDPSetPrimColor(gDisplayListHeads[0]++, 0, 0,
+                        arg0->primColorRed,
+                        arg0->primColorGreen,
+                        arg0->primColorBlue,
+                        arg0->primColorAlpha);
         gDPSetCombineMode(gDisplayListHeads[0]++, G_CC_UNK2, G_CC_UNK2);
         return;
     }
