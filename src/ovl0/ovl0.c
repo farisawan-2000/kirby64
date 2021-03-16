@@ -3,18 +3,36 @@
 #include "ovl0_2_5.h"
 
 // ovl0
-u32 D_8003FDC0[6][3] = {
-    { 0x2C000000, 0x0000311E, 0x00000140 },
-    { 0x04541E3A, 0x00000271, 0x00170C69 },
-    { 0x0C6F0C6D, 0x00800300, 0x00000200 },
-    { 0x00000000, 0x00000280, 0x00000400 },
-    { 0x002F0269, 0x0009026B, 0x00000002 },
-    { 0x00000280, 0x00000400, 0x002F0269 },
+OSViMode D_8003FDC0 = {
+    0x2C,
+    {
+        0x0000311E,
+        0x00000140,
+        0x04541E3A,
+        0x00000271,
+        0x00170C69,
+        0x0C6F0C6D,
+        0x00800300,
+        0x00000200,
+        0x00000000,
+    },
+    {
+        {
+            0x280,
+            0x400,
+            0x002F0269,
+            0x0009026B,
+            2,
+        },
+        {
+            0x280,
+            0x400,
+            0x002F0269,
+            0x0009026B,
+            2,
+        }
+    },
 };
-
-u32 D_8003FE08 = 0x0009026B;
-
-u32 D_8003FE0C = 0x00000002;
 
 u32 D_8003FE10 = 0xFFFFFFFF;
 
@@ -59,7 +77,13 @@ s32 D_80048C6C; // 0x80048C6C
 s32 D_80048C70; // 0x80048C70
 s32 D_80048C74; // 0x80048C74
 s32 D_80048C78; // 0x80048C78
-u32 D_80048C7C; // 0x80048C7C
+
+
+union {
+    u32 d;
+    u8 b[4];
+} D_80048C7C; // 0x80048C7C
+
 struct unkD_80048C80 { s32 D_80048C80; s32 unk4; } D_80048C80; // 0x80048C80
 s32 D_80048C88; // 0x80048C88
 s32 D_80048C8C; // 0x80048C8C
@@ -71,7 +95,10 @@ u32 D_80048CD0;
 OSMesgQueue *D_80048CD4;
 u32 D_80048CD8;
 u32 *D_80048CDC;
+
+// rsp done after pre-nmi?
 u32 D_80048CE0;
+
 u32 D_80048CE4;
 // 0x80048CE8 and 0x80048CEC? bss file boundary?
 
@@ -332,12 +359,12 @@ void func_80000E4C(struct unk_func_80000C54 *arg0) {
 void func_80000E9C(void) {
     D_80048BA8 = gCurrentViMode;
     osViSetMode(&D_80048BA8);
-    if (GET_BIT(D_80048C7C, 27)) {
+    if (GET_BIT(D_80048C7C.d, 27)) {
         osViSetYScale(1.0f);
     } else if (osTvType == TV_TYPE_PAL) {
         osViSetYScale(D_8003FEC8);
     }
-    osViBlack(GET_BIT(D_80048C7C, 27));
+    osViBlack(GET_BIT(D_80048C7C.d, 27));
     D_80048C48 = 0;
 }
 
@@ -1282,7 +1309,7 @@ void func_8000256C(u32 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_80002598(s32 arg0) {
+void thread3_main(s32 arg0) {
     u32 *sp84;
     ? sp30;
     ? *temp_t5_2;
@@ -1449,7 +1476,7 @@ loop_9:
             temp_t7_2->comRegs.ctrl = temp_t8_6->unk4;
         }
     } else {
-        phi_t9 = D_8003FDC0;
+        sp30 = D_8003FDC0;
         phi_t7_3 = &sp30;
 loop_12:
         temp_t9 = phi_t9 + 0xC;
@@ -1499,62 +1526,63 @@ loop_16:
     D_80048BFC = 0x10016;
     osViSetMode(&D_80048BA8);
     osViBlack(1);
-    temp_t7_6 = D_80048C7C.unk0 | 0x80;
+    temp_t7_6 = D_80048C7C.b[0] | 0x80;
     temp_t6_3 = temp_t7_6 & 0xBF;
-    D_80048C7C.unk0 = temp_t7_6;
+    D_80048C7C.b[0] = temp_t7_6;
     temp_t9_3 = temp_t6_3 & 0xDF;
-    D_80048C7C.unk0 = temp_t6_3;
+    D_80048C7C.b[0] = temp_t6_3;
     temp_t5_3 = temp_t9_3 & 0xEF;
-    D_80048C7C.unk0 = temp_t9_3;
+    D_80048C7C.b[0] = temp_t9_3;
     temp_t4 = temp_t5_3 | 8;
-    D_80048C7C.unk0 = temp_t5_3;
-    D_80048C7C.unk0 = temp_t4;
+    D_80048C7C.b[0] = temp_t5_3;
+    D_80048C7C.b[0] = temp_t4;
     temp_t7_7 = temp_t4 & 0xFB;
-    D_80048C7C.unk0 = temp_t7_7;
+    D_80048C7C.b[0] = temp_t7_7;
     temp_t4_2 = temp_t7_7 | 2;
-    D_80048C7C.unk0 = temp_t4_2;
-    D_80048C7C.unk0 = temp_t4_2 | 1;
-    D_80048C7C.unk1 = D_80048C7C.unk1 | 0x80;
+    D_80048C7C.b[0] = temp_t4_2;
+    D_80048C7C.b[0] = temp_t4_2 | 1;
+    D_80048C7C.b[1] |= 0x80;
     osCreateMesgQueue(&gInterruptMesgQueue, &D_80048C98, 8);
     osViSetEvent(&gInterruptMesgQueue, 1, 1);
     osSetEventMesg(4, &gInterruptMesgQueue, 2);
     osSetEventMesg(9, &gInterruptMesgQueue, 3);
     osSetEventMesg(0xE, &gInterruptMesgQueue, 0x63);
     osSendMesg(&D_80048A08, 1, 0);
-loop_26:
-    osRecvMesg(&gInterruptMesgQueue, &sp84, 1);
-    if (sp84 == 1) {
-        func_80002014(sp84);
-        goto loop_26;
-    }
-    if (sp84 == 2) {
-        func_8000206C(sp84);
-        if (D_80048CDC != 1) {
-            goto loop_26;
+    while (1) {
+        osRecvMesg(&gInterruptMesgQueue, &sp84, 1);
+        if (sp84 == 1) {
+            func_80002014(sp84);
+            continue;
         }
-        if (D_80048CE0 != -1) {
-            goto loop_26;
+        if (sp84 == 2) {
+            func_8000206C(sp84);
+            if (D_80048CDC != 1) {
+                continue;
+            }
+            if (D_80048CE0 != -1) {
+                continue;
+            }
+            D_80048CE0 = osAfterPreNMI();
+            continue;
         }
-        D_80048CE0 = osAfterPreNMI();
-        goto loop_26;
-    }
-    if (sp84 == 3) {
-        func_800022DC(sp84);
-        goto loop_26;
-    }
-    if (sp84 == 0x63) {
-        temp_v0_2 = D_80048CD8;
-        if (temp_v0_2 == 0) {
-            goto loop_26;
+        if (sp84 == 3) {
+            func_800022DC(sp84);
+            continue;
         }
-        temp_v0_2(sp84);
-        goto loop_26;
+        if (sp84 == 0x63) {
+            temp_v0_2 = D_80048CD8;
+            if (temp_v0_2 == 0) {
+                continue;
+            }
+            temp_v0_2(sp84);
+            continue;
+        }
+        if (D_80048CDC != 0) {
+            continue;
+        }
+        func_8000256C(sp84);
+
     }
-    if (D_80048CDC != 0) {
-        goto loop_26;
-    }
-    func_8000256C(sp84);
-    goto loop_26;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80002598.s")

@@ -1,4 +1,4 @@
-glabel func_80002598
+glabel thread3_main
 /* 003198 80002598 3C018005 */  lui   $at, %hi(D_80048B80) # $at, 0x8005
 /* 00319C 8000259C AC208B80 */  sw    $zero, %lo(D_80048B80)($at)
 /* 0031A0 800025A0 27BDFF78 */  addiu $sp, $sp, -0x88
