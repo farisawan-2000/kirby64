@@ -127,23 +127,22 @@ SECTIONS
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
       BUILD_DIR/asm/ovl0/contpfs.o(.text);
+
       BUILD_DIR/libultra.a:conteepprobe.o(.text);
       BUILD_DIR/libultra.a:pfssearchfile.o(.text);
       BUILD_DIR/libultra.a:pimgr.o(.text);
       BUILD_DIR/libultra.a:piacs.o(.text);
-
-
       BUILD_DIR/libultra.a:devmgr.o(.text);
-
       BUILD_DIR/libultra.a:pirawdma.o(.text);
-
       BUILD_DIR/libultra.a:seteventmesg.o(.text);
       BUILD_DIR/libultra.a:sqrtf.o(.text);
-      BUILD_DIR/asm/ovl0/set_pc_abstraction.o(.text);
+      BUILD_DIR/libultra.a:afterprenmi.o(.text);
       BUILD_DIR/libultra.a:contquery.o(.text);
       BUILD_DIR/libultra.a:xprintf.o(.text);
       BUILD_DIR/libultra.a:epidma.o(.text);
+
       BUILD_DIR/asm/ovl0/potential_leo_function.o(.text);
+
       BUILD_DIR/libultra.a:string.o(.text); 
       BUILD_DIR/libultra.a:createmesgqueue.o(.text);
       BUILD_DIR/libultra.a:invalicache.o(.text);
@@ -169,7 +168,9 @@ SECTIONS
       BUILD_DIR/libultra.a:bcopy.o(.text);
       BUILD_DIR/libultra.a:copy.o(.text);
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
+
       BUILD_DIR/asm/ovl0/1_func_after_bcopy.o(.text);
+
       BUILD_DIR/libultra.a:interrupt.o(.text);
       BUILD_DIR/libultra.a:vi.o(.text);
       BUILD_DIR/libultra.a:viswapcontext.o(.text);
@@ -193,9 +194,7 @@ SECTIONS
       BUILD_DIR/libultra.a:spsetstat.o(.text);
       BUILD_DIR/libultra.a:spgetstat.o(.text);
 
-      /* TODO: match this (rename the function if you're doing this) */
       BUILD_DIR/libultra.a:vimgr.o(.text);
-      /*BUILD_DIR/asm/ovl0/vi_manager.o(.text);*/
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
       BUILD_DIR/libultra.a:writebackdcacheall.o(.text);
       BUILD_DIR/libultra.a:startthread.o(.text);

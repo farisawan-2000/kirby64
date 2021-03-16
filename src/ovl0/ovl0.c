@@ -1535,7 +1535,7 @@ loop_26:
         if (D_80048CE0 != -1) {
             goto loop_26;
         }
-        D_80048CE0 = func_80032B30();
+        D_80048CE0 = osAfterPreNMI();
         goto loop_26;
     }
     if (sp84 == 3) {
@@ -1570,7 +1570,7 @@ void func_80002AF8(void) {
         func_800047F0(i);
         func_800047D0(i);
     }
-    D_80048CE0 = func_80032B30();
+    D_80048CE0 = osAfterPreNMI();
 }
 
 void func_80002B70(s32 arg0) {
