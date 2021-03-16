@@ -171,15 +171,8 @@ SECTIONS
       BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
       BUILD_DIR/asm/ovl0/1_func_after_bcopy.o(.text);
       BUILD_DIR/libultra.a:interrupt.o(.text);
-
       BUILD_DIR/libultra.a:vi.o(.text);
-
-      /* TODO: match this */
       BUILD_DIR/libultra.a:viswapcontext.o(.text);
-      /*BUILD_DIR/src/ovl0/swapcontext.o(.text);*/
-      /*BUILD_DIR/asm/ovl0/__osViSwapContext.o(.text);*/
-
-
       BUILD_DIR/libultra.a:pigetcmdq.o(.text);
       BUILD_DIR/libultra.a:cosf.o(.text);
       BUILD_DIR/libultra.a:settime.o(.text);
@@ -201,8 +194,8 @@ SECTIONS
       BUILD_DIR/libultra.a:spgetstat.o(.text);
 
       /* TODO: match this (rename the function if you're doing this) */
-      /*BUILD_DIR/libultra.a:vimgr.o(.text);*/
-      BUILD_DIR/asm/ovl0/vi_manager.o(.text);
+      BUILD_DIR/libultra.a:vimgr.o(.text);
+      /*BUILD_DIR/asm/ovl0/vi_manager.o(.text);*/
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
       BUILD_DIR/libultra.a:writebackdcacheall.o(.text);
       BUILD_DIR/libultra.a:startthread.o(.text);
