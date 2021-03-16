@@ -175,8 +175,9 @@ SECTIONS
       BUILD_DIR/libultra.a:vi.o(.text);
 
       /* TODO: match this */
-      /*BUILD_DIR/libultra.a:viswapcontext.o(.text);*/
-      BUILD_DIR/asm/ovl0/__osViSwapContext.o(.text);
+      BUILD_DIR/libultra.a:viswapcontext.o(.text);
+      /*BUILD_DIR/src/ovl0/swapcontext.o(.text);*/
+      /*BUILD_DIR/asm/ovl0/__osViSwapContext.o(.text);*/
 
 
       BUILD_DIR/libultra.a:pigetcmdq.o(.text);

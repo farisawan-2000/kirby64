@@ -1663,7 +1663,7 @@ void func_801548F8(void) {
     if (D_8015A688 != 0) {
         D_8015A684 = D_8015A684 - 1;
     }
-    D_800AD1A0_ovl6();
+    D_800AD1A0();
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_801548F8.s")

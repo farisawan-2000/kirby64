@@ -16,7 +16,7 @@ struct UnkStruct800AC954_68 {
 
 // spobj? according to debug string
 struct UnkStruct800AC954 {
-    u32 unk0;
+    struct UnkStruct800AC954 *unk0;
     u32 unk4;
     u32 unk8;
     u32 unkC;

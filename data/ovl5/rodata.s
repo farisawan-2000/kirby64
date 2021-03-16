@@ -300,83 +300,21 @@ glabel D_8018D5E8_ovl5
 glabel D_8018D5EC_ovl5
 .word 0x00000000
 
+.balign 4
 glabel D_8018D5F0_ovl5
-.word 0x4E6F6E65
+.asciiz "None Revival Block\n"
 
-glabel D_8018D5F4_ovl5
-.word 0x20526576
-
-glabel D_8018D5F8_ovl5
-.word 0x6976616C
-
-glabel D_8018D5FC_ovl5
-.word 0x20426C6F
-
-glabel D_8018D600_ovl5
-.word 0x636B0A00
-
+.balign 4
 glabel D_8018D604_ovl5
-.word 0x63686172
+.asciiz "chara mainLoop exit\n"
 
-glabel D_8018D608_ovl5
-.word 0x61206D61
-
-glabel D_8018D60C_ovl5
-.word 0x696E4C6F
-
-glabel D_8018D610_ovl5
-.word 0x6F702065
-
-glabel D_8018D614_ovl5
-.word 0x7869740A
-
-glabel D_8018D618_ovl5
-.word 0x00000000
-
+.balign 4
 glabel D_8018D61C_ovl5
-.word 0x63707520
+.asciiz "cpu targetPos error, dir...%d\n"
 
-glabel D_8018D620_ovl5
-.word 0x74617267
-
-glabel D_8018D624_ovl5
-.word 0x6574506F
-
-glabel D_8018D628_ovl5
-.word 0x73206572
-
-glabel D_8018D62C_ovl5
-.word 0x726F722C
-
-glabel D_8018D630_ovl5
-.word 0x20646972
-
-glabel D_8018D634_ovl5
-.word 0x2E2E2E25
-
-glabel D_8018D638_ovl5
-.word 0x640A0000
-
+.balign 4
 glabel D_8018D63C_ovl5
-.word 0x43707520
-
-glabel D_8018D640_ovl5
-.word 0x72756E61
-
-glabel D_8018D644_ovl5
-.word 0x77617920
-
-glabel D_8018D648_ovl5
-.word 0x64697220
-
-glabel D_8018D64C_ovl5
-.word 0x4552524F
-
-glabel D_8018D650_ovl5
-.word 0x52212121
-
-glabel D_8018D654_ovl5
-.word 0x0A000000
+.asciiz "Cpu runaway dir ERROR!!!\n"
 
 glabel D_8018D658_ovl5
 .word 0x801655D8
@@ -600,53 +538,19 @@ glabel D_8018D778_ovl5
 glabel D_8018D77C_ovl5
 .word 0x00000000
 
+# file split
+
+.balign 4
 glabel D_8018D780_ovl5
-.word 0x42616420
+.asciiz "Bad safe step in 980\n"
 
-glabel D_8018D784_ovl5
-.word 0x73616665
-
-glabel D_8018D788_ovl5
-.word 0x20737465
-
-glabel D_8018D78C_ovl5
-.word 0x7020696E
-
-glabel D_8018D790_ovl5
-.word 0x20393830
-
-glabel D_8018D794_ovl5
-.word 0x0A000000
-
+.balign 4
 glabel D_8018D798_ovl5
-.word 0x42616420
+.asciiz "Bad nextStep poxZ\n"
 
-glabel D_8018D79C_ovl5
-.word 0x6E657874
-
-glabel D_8018D7A0_ovl5
-.word 0x53746570
-
-glabel D_8018D7A4_ovl5
-.word 0x20706F78
-
-glabel D_8018D7A8_ovl5
-.word 0x5A0A0000
-
+.balign 4
 glabel D_8018D7AC_ovl5
-.word 0x42616420
-
-glabel D_8018D7B0_ovl5
-.word 0x4C617374
-
-glabel D_8018D7B4_ovl5
-.word 0x53746570
-
-glabel D_8018D7B8_ovl5
-.word 0x2E2E2E25
-
-glabel D_8018D7BC_ovl5
-.word 0x640A0000
+.asciiz "Bad LastStep...%d\n"
 
 glabel D_8018D7C0_ovl5
 .word 0x8016FD3C

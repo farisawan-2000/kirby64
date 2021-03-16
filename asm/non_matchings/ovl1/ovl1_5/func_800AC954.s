@@ -5,7 +5,7 @@ glabel func_800AC954
 /* 054BB0 800AC960 00C08025 */  move  $s0, $a2
 /* 054BB4 800AC964 AFB10018 */  sw    $s1, 0x18($sp)
 /* 054BB8 800AC968 AFA50024 */  sw    $a1, 0x24($sp)
-/* 054BBC 800AC96C 0C02B16C */  jal   func_800AC5B0
+/* 054BBC 800AC96C 0C02B16C */  jal   pop_spobj
 /* 054BC0 800AC970 AFA40020 */   sw    $a0, 0x20($sp)
 /* 054BC4 800AC974 8FA60024 */  lw    $a2, 0x24($sp)
 /* 054BC8 800AC978 8FA70020 */  lw    $a3, 0x20($sp)
