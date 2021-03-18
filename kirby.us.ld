@@ -309,6 +309,7 @@ SECTIONS
       BUILD_DIR/libultra.a:pimgr.o(.bss);
       BUILD_DIR/libultra.a:piacs.o(.bss);
       BUILD_DIR/libultra.a:seteventmesg.o(.bss);
+      /*BUILD_DIR/libultra.a:leodiskinit.o(.bss);*/
       BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
       BUILD_DIR/libultra.a:timerintr.o(.bss);
       BUILD_DIR/libultra.a:cartrominit.o(.bss);
@@ -316,7 +317,6 @@ SECTIONS
       BUILD_DIR/libultra.a:vimgr.o(.bss);
       /*BUILD_DIR/asm/ovl0/vi_manager.o(.bss);*/
       BUILD_DIR/libultra.a:conteepread.o(.bss);
-      BUILD_DIR/src/ovl0/ovl0_3.o(.rodata);
    }
    END_NOLOAD(ovl0)
    /* edit this line when modifying bss */
