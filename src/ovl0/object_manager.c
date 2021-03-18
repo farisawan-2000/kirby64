@@ -189,7 +189,7 @@ void func_800080C0(struct GObjProcess *arg0) {
     temp_a2 = arg0->unk18;
     temp_a3 = arg0->unk10;
     phi_a2 = temp_a2;
-    phi_a1 = temp_a2->unkC;
+    phi_a1 = temp_a2->link;
 loop_1:
     temp_t0 = phi_a1 - 1;
     phi_a2_2 = phi_a2;
@@ -202,7 +202,7 @@ loop_3:
             if (temp_a3 == phi_v1->unk10) {
                 arg0->unk8 = phi_v1->unk8;
                 phi_v1->unk8 = arg0;
-                arg0->unkC = phi_v1;
+                arg0->link = phi_v1;
             } else {
                 temp_v1_2 = phi_v1->unk4;
                 phi_v1 = temp_v1_2;
@@ -224,7 +224,7 @@ block_7:
                     temp_v1_3 = &D_8004A560[temp_a3];
                     arg0->unk8 = *temp_v1_3;
                     *temp_v1_3 = arg0;
-                    arg0->unkC = NULL;
+                    arg0->link = NULL;
                 }
             }
         } else {
@@ -235,7 +235,7 @@ block_7:
     }
     temp_v1_4 = arg0->unk8;
     if (temp_v1_4 != 0) {
-        temp_v1_4->unkC = arg0;
+        temp_v1_4->link = arg0;
     }
     temp_v1_5 = temp_a2->unk1C;
     if (temp_v1_5 != 0) {
@@ -361,20 +361,20 @@ void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg
         arg0->unk4 = arg1->unk4;
         arg1->unk4 = arg0;
     } else {
-        arg0->unk4 = D_8004A578[arg0->unkC];
-        D_8004A578[arg0->unkC] = arg0;
+        arg0->unk4 = D_8004A578[arg0->link];
+        D_8004A578[arg0->link] = arg0;
     }
     if (arg0->unk4 != 0) {
         arg0->unk4->unk8 = arg0;
     } else {
-        D_8004A5F8[arg0->unkC] = arg0;
+        D_8004A5F8[arg0->link] = arg0;
     }
 }
 
 void func_80008434(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *phi_a1;
 
-    phi_a1 = D_8004A5F8[arg0->unkC];
+    phi_a1 = D_8004A5F8[arg0->link];
     while (phi_a1 != 0 && phi_a1->unk10 < arg0->unk10) {
         phi_a1 = phi_a1->unk8;
     }
@@ -385,14 +385,14 @@ void func_800084A0(struct UnkStruct8004A7C4 *arg0) {
     struct UnkStruct8004A7C4 *phi_v0;
     struct UnkStruct8004A7C4 *phi_a1;
 
-    phi_v0 = D_8004A578[arg0->unkC];
+    phi_v0 = D_8004A578[arg0->link];
     while (phi_v0 != 0 && arg0->unk10 < phi_v0->unk10) {
             phi_v0 = phi_v0->unk4;
     }
     if (phi_v0 != 0) {
         phi_a1 = phi_v0->unk8;
     } else {
-        phi_a1 =  D_8004A5F8[arg0->unkC];
+        phi_a1 =  D_8004A5F8[arg0->link];
     }
     func_800083CC(arg0, phi_a1);
 }
@@ -401,13 +401,13 @@ void func_80008528(struct UnkStruct8004A7C4 *arg0) {
     if (arg0->unk8 != 0) {
         arg0->unk8->unk4 = arg0->unk4;
     } else {
-        D_8004A578[arg0->unkC] = arg0->unk4;
+        D_8004A578[arg0->link] = arg0->unk4;
     }
     if (arg0->unk4 != 0) {
         arg0->unk4->unk8 = arg0->unk8;
         return;
     }
-    D_8004A5F8[arg0->unkC] = arg0->unk8;
+    D_8004A5F8[arg0->link] = arg0->unk8;
 }
 
 void func_80008590(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
@@ -1008,11 +1008,11 @@ loop_4:
             }
         }
         phi_a0->unk8 = temp_v0;
-        temp_v0->unkC = phi_a0;
+        temp_v0->link = phi_a0;
     } else {
         arg0->unkF = 1;
         arg0->unk3C = temp_v0;
-        temp_v0->unkC = 0;
+        temp_v0->link = 0;
     }
     temp_v0->unk4 = arg0;
     temp_v0->unk14 = 1;
@@ -1036,9 +1036,9 @@ struct DObj *func_80009CE8(void *arg0, u8 *arg1) {
     temp_v0 = object_manager_get_d_obj();
     temp_v1 = arg0->unk8;
     if (temp_v1 != 0) {
-        temp_v1->unkC = temp_v0;
+        temp_v1->link = temp_v0;
     }
-    temp_v0->unkC = arg0;
+    temp_v0->link = arg0;
     temp_v0->unk8 = arg0->unk8;
     arg0->unk8 = temp_v0;
     temp_v0->unk4 = arg0->unk4;
@@ -1079,10 +1079,10 @@ loop_2:
             }
         }
         phi_a0->unk8 = temp_v0;
-        temp_v0->unkC = phi_a0;
+        temp_v0->link = phi_a0;
     } else {
         arg0->unk10 = temp_v0;
-        temp_v0->unkC = 0;
+        temp_v0->link = 0;
     }
     temp_v0->unk14 = arg0;
     temp_v0->unk10 = NULL;
@@ -1147,7 +1147,7 @@ loop_1:
     } else if (arg0 == temp_v0->unk10) {
         temp_v0->unk10 = arg0->unk8;
     }
-    temp_v0_4 = arg0->unkC;
+    temp_v0_4 = arg0->link;
     if (temp_v0_4 != 0) {
         temp_v0_4->unk8 = arg0->unk8;
     }
@@ -1155,7 +1155,7 @@ loop_1:
     phi_s1 = arg0;
     phi_s0_2 = 0;
     if (temp_v0_5 != 0) {
-        temp_v0_5->unkC = arg0->unkC;
+        temp_v0_5->link = arg0->link;
         phi_s1 = arg0;
         phi_s0_2 = 0;
     }
@@ -1322,7 +1322,7 @@ struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void)
         return NULL;
     }
     toReturn->objId = id;
-    toReturn->unkC = link;
+    toReturn->link = link;
     toReturn->unk10 = arg3;
     toReturn->unk14 = arg1;
     toReturn->unk18 = 0;
@@ -1363,7 +1363,7 @@ struct UnkStruct8004A7C4 *func_8000A1C0(s32 arg0, s32 arg1, u8 arg2, s32 arg3) {
 struct UnkStruct8004A7C4 *func_8000A200(s32 arg0, s32 arg1, struct UnkStruct8004A7C4 *arg2) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->link, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1374,7 +1374,7 @@ struct UnkStruct8004A7C4 *func_8000A200(s32 arg0, s32 arg1, struct UnkStruct8004
 struct UnkStruct8004A7C4 *func_8000A24C(s32 arg0, s32 arg1, struct UnkStruct8004A7C4 *arg2) {
     struct UnkStruct8004A7C4 *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->unkC, arg2->unk10);
+    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->link, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1425,7 +1425,7 @@ void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, 
         sp20 = sp20->unk0;
     }
     func_80008528(arg1);
-    arg1->unkC = arg2;
+    arg1->link = arg2;
     arg1->unk10 = arg3;
     switch (arg0) {
         case 0:
@@ -1461,11 +1461,11 @@ void func_8000A4D0(struct UnkStruct8004A7C4 *arg0, u8 arg1, s32 arg2) {
 }
 
 void func_8000A508(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
-    func_8000A350(2, arg0, arg1->unkC, arg1->unk10, arg1);
+    func_8000A350(2, arg0, arg1->link, arg1->unk10, arg1);
 }
 
 void func_8000A544(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
-    func_8000A350(3, arg0, arg1->unkC, arg1->unk10, arg1);
+    func_8000A350(3, arg0, arg1->link, arg1->unk10, arg1);
 }
 
 extern u32 D_8003DCA8;
@@ -1952,7 +1952,7 @@ loop_2:
         phi_a0_11 = 0;
     }
     if ((arg0->unk10 != 0) && (arg0->unk8 != 0)) {
-        temp_v0_2 = arg0->unkC;
+        temp_v0_2 = arg0->link;
         gGObjThreadStackHead = temp_v0_2;
         phi_v0_2 = temp_v0_2;
         phi_a0_3 = phi_a0_11;
@@ -2197,7 +2197,7 @@ loop_65:
     temp_v0_14->unk-C = 0;
     phi_v1_12->unk8 = 0;
     temp_v0_14->unk-8 = 0;
-    phi_v1_12->unkC = 0;
+    phi_v1_12->link = 0;
     temp_v0_14->unk-4 = 0;
     temp_v1_7 = phi_v1_12 + 0x10;
     temp_v1_7->unk-10 = 0;
@@ -2672,7 +2672,7 @@ loop_3:
             phi_v0_3 = temp_v0_4;
         }
         phi_v0_3->unk1C = phi_s0->unk8;
-        phi_v0_3->unk20 = phi_s0->unkC;
+        phi_v0_3->unk20 = phi_s0->link;
         phi_v0_3->unk24 = phi_s0->unk10;
         if (phi_s1 != 0) {
             *phi_s1 = phi_v0_3;

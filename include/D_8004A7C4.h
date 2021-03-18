@@ -139,7 +139,7 @@ struct UnkStruct8004A7C4 {
 	u32 objId;
 	struct UnkStruct8004A7C4* unk4;
     struct UnkStruct8004A7C4* unk8;
-    u8 unkC;
+    u8 link;
     u8 unkD;
     u8 unkE;
     u8 unkF;

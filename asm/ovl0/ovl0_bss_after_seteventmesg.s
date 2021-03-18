@@ -1,6 +1,6 @@
 .include "macros.inc"
 .section .bss
-glabel D_8009A160
+glabel LeoDiskHandle
 .word 0x00000000
 
 glabel D_8009A164

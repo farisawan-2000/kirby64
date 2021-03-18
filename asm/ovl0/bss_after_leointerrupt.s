@@ -943,7 +943,7 @@ glabel D_80098E70
 glabel D_80098E74
 .word 0x00000000
 
-glabel LeoDiskHandle
+glabel LeoDiskHandle80098E78
 .word 0x00000000
 
 glabel D_80098E7C

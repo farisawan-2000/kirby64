@@ -229,9 +229,23 @@ s32 request_job(s32 id, s32 minIndex, u32 max_index, s32 arg3, void (*arg4)(void
     }
     // good luck with this
     if (D_8004A7C4 != NULL) {
-        if (D_8004A7C4->unkC != 0x1A) {
-            v1 = D_8004A7C4->unkC & 0x18;
-            if (D_8004A7C4->unkC == 0x19) {
+        switch (D_8004A7C4->link) {
+            case 0x1A:
+            default:
+                v0 = v1 + 8;
+                if (v1 == 0) {
+                    v0 = 8;
+                } else {
+                    if (v0 >= 0x20) {
+                        print_error_stub(&D_800D66D8);
+                        return -1;
+                    }
+                }
+                break;
+        }
+        if (D_8004A7C4->link != 0x1A) {
+            v1 = D_8004A7C4->link & 0x18;
+            if (D_8004A7C4->link == 0x19) {
 block_13:
                 v0 = 0;
             } else {
@@ -265,7 +279,7 @@ block_13:
     }
     D_800DEC10[minIndex] = func_80008A18(temp_v0_3, arg4, 1, 0);
     D_800DD8D0[minIndex] = 0;
-    D_800DDA90[minIndex] = temp_v0_3->unkC;
+    D_800DDA90[minIndex] = temp_v0_3->link;
     D_800DF150[minIndex] = NULL;
     if (arg3 != 0) {
         D_800DEF90[minIndex] = arg3;

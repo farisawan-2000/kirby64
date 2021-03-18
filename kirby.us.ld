@@ -141,7 +141,7 @@ SECTIONS
       BUILD_DIR/libultra.a:xprintf.o(.text);
       BUILD_DIR/libultra.a:epidma.o(.text);
 
-      BUILD_DIR/asm/ovl0/potential_leo_function.o(.text);
+      BUILD_DIR/src/ovl0/potential_leo_function.o(.text);
 
       BUILD_DIR/libultra.a:string.o(.text); 
       BUILD_DIR/libultra.a:createmesgqueue.o(.text);
