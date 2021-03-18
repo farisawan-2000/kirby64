@@ -25,3 +25,5 @@ EXTERN(osPfsFindFile);
 EXTERN(__osPiCreateAccessQueue);
 EXTERN(__osPiGetAccess);
 EXTERN(__osPiRelAccess);
+
+EXTERN(osLeoDiskInit);

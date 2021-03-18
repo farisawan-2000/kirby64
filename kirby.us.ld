@@ -141,7 +141,8 @@ SECTIONS
       BUILD_DIR/libultra.a:xprintf.o(.text);
       BUILD_DIR/libultra.a:epidma.o(.text);
 
-      BUILD_DIR/src/ovl0/potential_leo_function.o(.text);
+      BUILD_DIR/libultra.a:leodiskinit.o(.text);
+      /*BUILD_DIR/src/ovl0/potential_leo _function.o(.text);*/
 
       BUILD_DIR/libultra.a:string.o(.text); 
       BUILD_DIR/libultra.a:createmesgqueue.o(.text);
@@ -309,8 +310,8 @@ SECTIONS
       BUILD_DIR/libultra.a:pimgr.o(.bss);
       BUILD_DIR/libultra.a:piacs.o(.bss);
       BUILD_DIR/libultra.a:seteventmesg.o(.bss);
-      /*BUILD_DIR/libultra.a:leodiskinit.o(.bss);*/
-      BUILD_DIR/asm/ovl0/ovl0_bss_after_seteventmesg.o(.bss);
+      BUILD_DIR/libultra.a:leodiskinit.o(.bss);
+      /*BUILD_DIR/src/ovl0/potential_leo_function.o(.bss);*/
       BUILD_DIR/libultra.a:timerintr.o(.bss);
       BUILD_DIR/libultra.a:cartrominit.o(.bss);
       BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
