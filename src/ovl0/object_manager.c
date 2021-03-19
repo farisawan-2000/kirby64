@@ -85,7 +85,7 @@ struct GObjProcess* gObjectProcessMaybe; // 0x8004A55C
 struct GObjThreadStack* D_8004A560[4]; // probably length 4
 u32 D_8004A570;
 // 0x8004A574?
-struct UnkStruct8004A578 *D_8004A578[32]; // probably length 32 based on loop asm
+struct UnkStruct8004A7C4 *D_8004A578[32]; // probably length 32 based on loop asm
 void* D_8004A5F8[32]; // also length 32? lines up with next symbol
 struct UnkStruct8004A7C4 *D_8004A678;
 // 0x8004A67C? file boundary?
@@ -314,7 +314,7 @@ s32 func_800082D4(struct GObjThreadStack *arg0) {
 }
 
 // Unused?
-void func_8000831C(s32 arg0) {
+void func_8000831C(void (*arg0)(struct GObjThreadStack *)) {
     D_8004A558 = arg0;
 }
 
@@ -354,8 +354,6 @@ void push_gobj(struct UnkStruct8004A7C4 *arg0) {
 }
 
 void func_800083CC(struct UnkStruct8004A7C4 *arg0, struct UnkStruct8004A7C4 *arg1) {
-    void *temp_v0;
-
     arg0->unk8 = arg1;
     if (arg1 != 0) {
         arg0->unk4 = arg1->unk4;
@@ -387,12 +385,12 @@ void func_800084A0(struct UnkStruct8004A7C4 *arg0) {
 
     phi_v0 = D_8004A578[arg0->link];
     while (phi_v0 != 0 && arg0->unk10 < phi_v0->unk10) {
-            phi_v0 = phi_v0->unk4;
+        phi_v0 = phi_v0->unk4;
     }
     if (phi_v0 != 0) {
         phi_a1 = phi_v0->unk8;
     } else {
-        phi_a1 =  D_8004A5F8[arg0->link];
+        phi_a1 = D_8004A5F8[arg0->link];
     }
     func_800083CC(arg0, phi_a1);
 }
@@ -678,7 +676,6 @@ struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThr
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
 #endif
-
 
 void func_8000B6BC(s32 arg);
 
@@ -1123,16 +1120,10 @@ void func_80009DF4(struct DObj *arg0) {
     struct MObj *phi_s2;
     struct AnimStack *phi_s1_3;
 
-    temp_s0 = arg0->unk10;
-    phi_s0 = temp_s0;
-    if (temp_s0 != 0) {
-loop_1:
+    phi_s0 = arg0->unk10;
+    while (phi_s0 != 0) {
         func_80009DF4(phi_s0);
-        temp_s0_2 = arg0->unk10;
-        phi_s0 = temp_s0_2;
-        if (temp_s0_2 != 0) {
-            goto loop_1;
-        }
+        phi_s0 = arg0->unk10;
     }
     temp_v0 = arg0->unk14;
     if (temp_v0 == 1) {
@@ -1313,7 +1304,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 struct UnkStruct8004A7C4 *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
     struct UnkStruct8004A7C4 *toReturn;
 
-    if (link >= 0x20) {
+    if (link >= 32) {
         fatal_printf(D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
         while (1);
     }
@@ -1683,7 +1674,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AAE0.s")
 extern s32 D_8004A7D4;
 u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
     u32 temp_a1;
-    u32 sp1C;
     s32 temp_v0;
 
     D_8003DE54 = 1;
@@ -1698,7 +1688,6 @@ u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
             D_8004A7D4 = 0;
         } else {
             D_8004A7D4 = 0;
-            sp1C = temp_a1;
             func_8000A29C(arg0);
         }
     }
@@ -2281,7 +2270,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B448.s")
 
 #ifdef MIPS_TO_C
 void func_8000B4D4(struct UnkStruct8004A7C4 *arg0, s32 (*arg1)(struct UnkStruct8004A7C4*, s32), s32 arg2, s32 arg3) {
-    struct UnkStruct8004A578 *phi_s0;
+    struct UnkStruct8004A7C4 *phi_s0;
 
     phi_s0 = D_8004A578[arg0->objId];
     while (phi_s0 != NULL) {
@@ -2520,14 +2509,12 @@ void func_8000B908(struct DObj *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B908.s")
 #endif
 
-#ifdef MIPS_TO_C
+// struct?
 void func_8000B950(s32 arg0) {
-    func_80009658(3, 0);
+    func_80009658(arg0, 3, 0);
     func_80009658(arg0, 6, 0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B950.s")
-#endif
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B950.s")
 
 // unused? don't mind if i do!
 void func_8000B988(struct UnkStruct8004A7C4 *arg0) {
@@ -2704,11 +2691,11 @@ void func_8000BBE0(struct UnkStruct8004A7C4 *arg0) {
 // loop meme
 #ifdef NON_MATCHING
 void func_8000BC34(void) {
-    struct UnkStruct8004A578 *phi_s0;
-    int temp_s2;
+    struct UnkStruct8004A7C4 *phi_s0;
+    int i;
 
-    for (temp_s2 = 0; temp_s2 < 32; temp_s2++) {
-        phi_s0 = D_8004A578[temp_s2];
+    for (i = 0; i < 32; i++) {
+        phi_s0 = D_8004A578[i];
         while (phi_s0 != NULL) {
             func_8000A29C(phi_s0);
             phi_s0 = phi_s0->unk4;

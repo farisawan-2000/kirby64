@@ -963,14 +963,13 @@ void *func_8015372C(void) {
 GLOBAL_ASM("asm/non_matchings/ovl6/func_8015372C.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8015374C(void *arg0) {
-    void *temp_v0;
-    void *temp_v0_2;
+// regalloc
+#ifdef NON_MATCHING
+void func_8015374C(struct UnkStruct8004A7C4 *arg0) {
+    struct UnkStruct8004A7C4_3C_80 *temp_v0;
 
-    temp_v0_2 = arg0->unk3C->unk80;
-    temp_v0 = temp_v0_2 + 8;
-    if (temp_v0_2->unk5B != 0) {
+    temp_v0 = &arg0->unk3C->unk80->unk8;
+    if (arg0->unk3C->unk80->unk5B != 0) {
         gDPPipeSync(gDisplayListHeads[1]++);
         gDPSetCombineMode(gDisplayListHeads[1]++, G_CC_PRIMITIVE, G_CC_PRIMITIVE);
         gDPSetRenderMode(gDisplayListHeads[1]++, G_RM_CLD_SURF, G_RM_CLD_SURF2);

@@ -109,7 +109,7 @@ extern void func_80002EBC(void); // Initializes a PI Handle
 extern void func_80002BA0(void);
 extern void dma_read(u32 x, void *y, u32 z);
 extern void thread3_main(void *);
-extern void func_8001FD64(void *);
+extern void thread4_audio(void *);
 extern void func_800051E0(void *);
 void dma_overlay_load(struct Overlay *);
 void func_800076D0();
@@ -133,7 +133,7 @@ void thread5_main(UNUSED void *arg0) {
     SETUP_STACK_AND_START_THREAD(D_80043040, D_800431F0);
     osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&D_800435F0, 4, func_8001FD64, NULL, &D_800437A0[0xC0], 110);
+    osCreateThread(&D_800435F0, 4, thread4_audio, NULL, &D_800437A0[0xC0], 110);
     SETUP_STACK_AND_START_THREAD(D_800435F0, D_800437A0);
     osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
 

@@ -65,4 +65,8 @@
 
 #define HW_REG(reg, type) *(volatile type *)(uintptr_t)(reg | 0xa0000000)
 
+#define ALIGN16(x) (((x) + 0xF) & -0x10)
+#define ALIGN8(x) (((x) + 7) & -8)
+#define ALIGN4(x) (((x) + 3) & -4)
+
 #endif

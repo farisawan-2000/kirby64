@@ -4,3 +4,6 @@
 [submodule "f3dex2"]
 	path = f3dex2
 	url = https://github.com/Mr-Wiseguy/f3dex2
+[submodule "asm-processor"]
+	path = asm-processor
+	url = https://github.com/simonlindholm/asm-processor/

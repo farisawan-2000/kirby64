@@ -355,11 +355,6 @@ struct Camera *func_80009F7C(struct UnkStruct8004A7C4*);
 void func_80009B5C(struct UnkStruct8004A7C4_3C *);
 struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);
 
-struct UnkStruct8004A578 {
-    u32 unk0;
-    struct UnkStruct8004A578 *unk4;
-};
-
 struct UnkStructFunc80007380 {
     u32 unk0;
     u32 unk4;

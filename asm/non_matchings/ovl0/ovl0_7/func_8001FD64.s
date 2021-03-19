@@ -1,4 +1,4 @@
-glabel func_8001FD64
+glabel thread4_audio
 /* 020964 8001FD64 27BDFF80 */  addiu $sp, $sp, -0x80
 /* 020968 8001FD68 AFBF004C */  sw    $ra, 0x4c($sp)
 /* 02096C 8001FD6C AFBE0048 */  sw    $fp, 0x48($sp)

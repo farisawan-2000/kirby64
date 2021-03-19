@@ -459,7 +459,7 @@ void func_80004810(struct Unk_Func8004810 *arg0) {
         // if (temp_t7 < 5) {
         //     goto **(&jtbl_8003FF30 + (temp_t7 * 4));
             case 0:
-                arg0->unk3C = func_800320D0(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk28);
+                arg0->unk3C = osPfsFindFile(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk28);
                 break;
             case 1:
                 arg0->unk3C = func_800350F0(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20);

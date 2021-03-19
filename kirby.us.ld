@@ -126,6 +126,10 @@ SECTIONS
       BUILD_DIR/libultra.a:visetmode.o(.text);
 
       BUILD_DIR/asm/ovl0/ovl0_afterException.o(.text);
+      /*BUILD_DIR/libultra.a:pfsallocatefile.o(.text);*/
+      BUILD_DIR/libultra.a:pfsfreeblocks.o(.text);
+      BUILD_DIR/libultra.a:probetlb.o(.text);
+      BUILD_DIR/libultra.a:getcount.o(.text);
       BUILD_DIR/asm/ovl0/contpfs.o(.text);
 
       BUILD_DIR/libultra.a:conteepprobe.o(.text);
