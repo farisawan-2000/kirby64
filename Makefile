@@ -264,7 +264,7 @@ $(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
 $(BUILD_DIR)/$(TARGET).objdump: $(BUILD_DIR)/$(TARGET).elf
 	$(OBJDUMP) -D $< > $@
 
-$(GLOBAL_ASM_O_FILES): CC := $(PYTHON) asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+$(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
 test: $(BUILD_DIR)/$(TARGET).z64
 	$(EMULATOR) $(EMU_FLAGS) $<

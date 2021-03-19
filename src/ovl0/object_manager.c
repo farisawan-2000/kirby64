@@ -717,7 +717,6 @@ void func_80008DA8(struct GObjThreadStack *arg0) {
     }
 }
 
-
 #ifdef MIPS_TO_C
 Failed to decompile function func_80008EC4:
 
