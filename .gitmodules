@@ -5,5 +5,5 @@
 	path = f3dex2
 	url = https://github.com/Mr-Wiseguy/f3dex2
 [submodule "asm-processor"]
-	path = asm-processor
-	url = https://github.com/simonlindholm/asm-processor/
+	path = tools/asm-processor
+	url = https://github.com/farisawan-2000/asm-processor/
