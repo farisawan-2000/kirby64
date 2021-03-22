@@ -150,8 +150,7 @@ struct UnkStruct8004A7C4 {
     u32 unk10;
     // render callback according to HSD? Can we even trust HSD here?
     void (*unk14)(void);
-    // A GObjProcess in HSD
-    struct GObjThreadStack *unk18;
+    struct GObjProcess *unk18;
     u32 unk1C;
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;

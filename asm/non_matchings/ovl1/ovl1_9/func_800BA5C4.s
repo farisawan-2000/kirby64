@@ -1,4 +1,4 @@
-glabel func_800BA5C4
+glabel save_file_set_to_full_completion
 /* 062814 800BA5C4 00047880 */  sll   $t7, $a0, 2
 /* 062818 800BA5C8 01E47823 */  subu  $t7, $t7, $a0
 /* 06281C 800BA5CC 000F7880 */  sll   $t7, $t7, 2

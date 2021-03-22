@@ -1330,7 +1330,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800BA40C.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_800BA5C4(u32 arg0) {
+u32 save_file_set_to_full_completion(u32 arg0) {
     void *sp24;
     void *sp20;
     void *sp1C;

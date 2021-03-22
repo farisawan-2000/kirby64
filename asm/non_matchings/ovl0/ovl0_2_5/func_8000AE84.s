@@ -111,9 +111,9 @@ glabel func_8000AE84
 /* 00BC04 8000B004 11A00016 */  beqz  $t5, .L8000B060_ovl0
 /* 00BC08 8000B008 00000000 */   nop   
 /* 00BC0C 8000B00C 8CA20020 */  lw    $v0, 0x20($a1)
-/* 00BC10 8000B010 3C018005 */  lui   $at, %hi(D_8004A678) # $at, 0x8005
+/* 00BC10 8000B010 3C018005 */  lui   $at, %hi(gGObjHead) # $at, 0x8005
 /* 00BC14 8000B014 00002025 */  move  $a0, $zero
-/* 00BC18 8000B018 AC22A678 */  sw    $v0, %lo(D_8004A678)($at)
+/* 00BC18 8000B018 AC22A678 */  sw    $v0, %lo(gGObjHead)($at)
 /* 00BC1C 8000B01C 8CAE0024 */  lw    $t6, 0x24($a1)
 /* 00BC20 8000B020 25CFFFFF */  addiu $t7, $t6, -1
 /* 00BC24 8000B024 19E0000C */  blez  $t7, .L8000B058_ovl0
@@ -134,8 +134,8 @@ glabel func_8000AE84
 /* 00BC58 8000B058 10000004 */  b     .L8000B06C_ovl0
 /* 00BC5C 8000B05C AC400004 */   sw    $zero, 4($v0)
 .L8000B060_ovl0:
-/* 00BC60 8000B060 3C018005 */  lui   $at, %hi(D_8004A678) # $at, 0x8005
-/* 00BC64 8000B064 AC20A678 */  sw    $zero, %lo(D_8004A678)($at)
+/* 00BC60 8000B060 3C018005 */  lui   $at, %hi(gGObjHead) # $at, 0x8005
+/* 00BC64 8000B064 AC20A678 */  sw    $zero, %lo(gGObjHead)($at)
 /* 00BC68 8000B068 00002025 */  move  $a0, $zero
 .L8000B06C_ovl0:
 /* 00BC6C 8000B06C 8CAD0034 */  lw    $t5, 0x34($a1)

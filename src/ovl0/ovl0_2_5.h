@@ -79,10 +79,10 @@ struct GObjThreadStack {
 };
 
 struct GObjProcess {
-    struct GObjProcess* unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
+    struct GObjProcess *unk0;
+    struct GObjProcess *unk4;
+    struct GObjProcess *unk8;
+    struct GObjProcess *unkC;
     /* 0x10 */ u32 pri;
     /* 0x14 */ u8 kind;
     u8 unk15;

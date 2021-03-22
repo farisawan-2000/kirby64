@@ -32,7 +32,7 @@ glabel func_8000A350
 /* 00AFBC 8000A3BC 12200007 */  beqz  $s1, .L8000A3DC_ovl0
 /* 00AFC0 8000A3C0 00000000 */   nop   
 .L8000A3C4_ovl0:
-/* 00AFC4 8000A3C4 0C002071 */  jal   func_800081C4
+/* 00AFC4 8000A3C4 0C002071 */  jal   unlink_gobj_process
 /* 00AFC8 8000A3C8 02202025 */   move  $a0, $s1
 /* 00AFCC 8000A3CC 8E310000 */  lw    $s1, ($s1)
 /* 00AFD0 8000A3D0 1620FFFC */  bnez  $s1, .L8000A3C4_ovl0

@@ -37,7 +37,7 @@ extern f32 D_80159FF4_ovl4[];
 
 extern s32 D_800D6B74;
 
-void func_80151100_ovl4(s32 arg0) {
+void check_save_file_completion_cheat_code(s32 arg0) {
     if (D_80048F20[1].buttonHeld & L_TRIG) {
         switch (D_800E9C60[D_8004A7C4->objId]) {
             case 0:
@@ -71,7 +71,7 @@ void func_80151100_ovl4(s32 arg0) {
                  && (gSaveBuffer1.files[2].level != 0x99999999)
                  && (gSaveBuffer1.files[1].level == 0x99999999))
                 {
-                    func_800BA5C4(2);
+                    save_file_set_to_full_completion(2);
                     func_800A7678(1);
                     D_800E9C60[D_8004A7C4->objId] = -1;
                 }
@@ -94,6 +94,7 @@ void func_80151274_ovl4(void) {
     D_800E48D0[D_8004A7C4->objId] = temp_f0;
 }
 
+// handles menu states? (n64 logo, hal logo, cutscene, etc.)
 void func_80151338_ovl4(s32 arg0) {
     gEntitiesPosXArray[D_8004A7C4->objId] = 0.0f;
     gEntitiesPosYArray[D_8004A7C4->objId] = 0.0f;
@@ -119,7 +120,7 @@ void func_80151338_ovl4(s32 arg0) {
             func_800AF8C0(0x18, 0xE, 4);
             func_800A57A0(0xFF, 0xFF, 0xFF);
             func_800A5A14(0xFF, -8, 0);
-            D_800DF150[D_8004A7C4->objId] = func_80151100_ovl4;
+            D_800DF150[D_8004A7C4->objId] = check_save_file_completion_cheat_code;
             func_8000B6BC(0x78);
             func_800A57A0(0, 0, 0);
             func_800A5A14(0, 8, 2);

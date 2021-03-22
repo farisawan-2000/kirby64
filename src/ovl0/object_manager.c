@@ -81,13 +81,13 @@ u32 gNewEntityStackSize; // 0x8004A54C
 void (*D_8004A550)(struct ObjStack *);
 struct GObjThreadStack* gGObjThreadStackHead; // 0x8004A554
 s32 D_8004A558;
-struct GObjProcess* gObjectProcessMaybe; // 0x8004A55C
-struct GObjThreadStack* D_8004A560[4]; // probably length 4
+struct GObjProcess *gObjectProcessMaybe; // 0x8004A55C
+struct GObjProcess *D_8004A560[4]; // probably length 4
 u32 D_8004A570;
 // 0x8004A574?
 struct UnkStruct8004A7C4 *D_8004A578[32]; // probably length 32 based on loop asm
 void* D_8004A5F8[32]; // also length 32? lines up with next symbol
-struct UnkStruct8004A7C4 *D_8004A678;
+struct UnkStruct8004A7C4 *gGObjHead;
 // 0x8004A67C? file boundary?
 struct UnkStruct8004A7C4* D_8004A680[33]; // length 33?
 struct UnkStruct8004A7C4* D_8004A708[33]; // length 33?
@@ -257,22 +257,24 @@ void push_gobj_process(struct GObjProcess *arg0) {
     D_8004A570--;
 }
 
-void func_800081C4(struct GObjThreadStack *arg0) {
+// either removes arg0 from the next/prev linked list,
+// or from the parent/child linked list
+void unlink_gobj_process(struct GObjProcess *arg0) {
     if (arg0->unkC != 0) {
         arg0->unkC->unk8 = arg0->unk8;
     } else {
-        D_8004A560[arg0->unk10] = arg0->unk8;
+        D_8004A560[arg0->pri] = arg0->unk8;
     }
     if (arg0->unk8 != 0) {
         arg0->unk8->unkC = arg0->unkC;
     }
 }
 
-void *func_80008210(struct GObjThreadStack *arg0) {
+void func_80008210(struct GObjProcess *arg0) {
     struct UnkStruct8004A7C4 *sp1C;
 
     sp1C = arg0->unk18;
-    func_800081C4(arg0);
+    unlink_gobj_process(arg0);
     if (arg0->unk4 != 0) {
         arg0->unk4->unk0 = arg0->unk0;
     } else {
@@ -323,7 +325,7 @@ s32 func_80008328(void) {
     struct UnkStruct8004A7C4 *phi_v0;
     s32 phi_v1;
 
-    phi_v0 = D_8004A678;
+    phi_v0 = gGObjHead;
     phi_v1 = 0;
     while (phi_v0 != 0) {
         phi_v0 = phi_v0->unk4;
@@ -333,23 +335,23 @@ s32 func_80008328(void) {
 }
 
 // Another potential pop
-// TODO: D_8004A678 might be 8004A7C4 struct
+// TODO: gGObjHead might be 8004A7C4 struct
 struct UnkStruct8004A7C4 *get_gobj(void) {
     struct UnkStruct8004A7C4 *head;
 
-    if (D_8004A678 == NULL) {
+    if (gGObjHead == NULL) {
         return NULL;
     }
-    head = D_8004A678;
-    D_8004A678 = D_8004A678->unk4;
+    head = gGObjHead;
+    gGObjHead = gGObjHead->unk4;
     D_8004A78C++;
     return head;
 }
 
 // Another potential push
 void push_gobj(struct UnkStruct8004A7C4 *arg0) {
-    arg0->unk4 = D_8004A678;
-    D_8004A678 = arg0;
+    arg0->unk4 = gGObjHead;
+    gGObjHead = arg0;
     D_8004A78C--;
 }
 
@@ -630,7 +632,6 @@ struct GObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(v
 }
 
 // a somewhat more granular version of func_80008A18
-#ifdef NON_MATCHING
 struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThread *entry, u32 pri, s32 arg3, struct ObjStack *arg4, u32 stackSize) {
     struct GObjProcess *oProcess;
     struct GObjThread *oThread;
@@ -664,8 +665,9 @@ struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThr
         oThread->objStackSize = stackSize;
         oThread->objStack = arg4;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
-        // one reordered addition here
-        osCreateThread(&oThread->thread, phi_a1, entry, arg0, (&arg4->stack[stackSize / (4 * 2)]), 0x33);
+        osCreateThread(&oThread->thread, phi_a1, entry, arg0,
+            ((stackSize / 8) + (u64 *)&arg4->stack),
+            0x33);
         arg4->stack[7] = STACK_TOP_MAGIC;
         if (D_8003DE50 >= 20000000)
             D_8003DE50 = 10000000;
@@ -673,9 +675,6 @@ struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThr
     func_800080C0(oProcess);
     return oProcess;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80008B94.s")
-#endif
 
 void func_8000B6BC(s32 arg);
 
@@ -1397,11 +1396,11 @@ void func_8000A29C(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, struct UnkStruct8004A7C4 *arg4) {
-    struct GObjThreadStack *sp20;
+void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 link, u32 arg3, struct UnkStruct8004A7C4 *arg4) {
+    struct GObjProcess *sp20;
 
-    if (arg2 >= 0x20) {
-        fatal_printf(&D_80040414, arg2, arg1->objId); // "omGMoveCommon() : link num over : link = %d : id = %d\n"
+    if (link >= 32) {
+        fatal_printf(&D_80040414, link, arg1->objId); // "omGMoveCommon() : link num over : link = %d : id = %d\n"
         while (1);
     }
     if (arg1 == NULL) {
@@ -1410,12 +1409,12 @@ void func_8000A350(s32 arg0, struct UnkStruct8004A7C4 *arg1, u8 arg2, u32 arg3, 
     sp20 = arg1->unk18;
     arg1->unk18 = NULL;
     arg1->unk1C = 0;
-    while (sp20 != 0) {
-        func_800081C4(sp20);
+    while (sp20 != NULL) {
+        unlink_gobj_process(sp20);
         sp20 = sp20->unk0;
     }
     func_80008528(arg1);
-    arg1->link = arg2;
+    arg1->link = link;
     arg1->unk10 = arg3;
     switch (arg0) {
         case 0:
@@ -1995,7 +1994,7 @@ loop_20:
     }
     if (arg0->unk24 != 0) {
         temp_v0_6 = arg0->unk20;
-        D_8004A678 = temp_v0_6;
+        gGObjHead = temp_v0_6;
         phi_v0_4 = temp_v0_6;
         phi_a0_4 = 0;
         phi_v0_5 = temp_v0_6;
@@ -2013,7 +2012,7 @@ loop_23:
         }
         phi_v0_5->unk4 = 0;
     } else {
-        D_8004A678 = NULL;
+        gGObjHead = NULL;
         phi_a0_12 = 0;
     }
     D_8004A798 = arg0->unk34;
