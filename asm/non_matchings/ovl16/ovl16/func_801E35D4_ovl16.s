@@ -360,14 +360,14 @@ glabel func_801E35D4_ovl16
 /* 219D9C 801E3AEC 2A410008 */  slti  $at, $s2, 8
 /* 219DA0 801E3AF0 50200004 */  beql  $at, $zero, .L801E3B04_ovl16
 /* 219DA4 801E3AF4 92B10000 */   lbu   $s1, ($s5)
-/* 219DA8 801E3AF8 0C029D9E */  jal   func_800A7678
+/* 219DA8 801E3AF8 0C029D9E */  jal   play_sound
 /* 219DAC 801E3AFC 240401AF */   li    $a0, 431
 /* 219DB0 801E3B00 92B10000 */  lbu   $s1, ($s5)
 .L801E3B04_ovl16:
 /* 219DB4 801E3B04 2A210008 */  slti  $at, $s1, 8
 /* 219DB8 801E3B08 50200004 */  beql  $at, $zero, .L801E3B1C_ovl16
 /* 219DBC 801E3B0C 2A410008 */   slti  $at, $s2, 8
-/* 219DC0 801E3B10 0C029D9E */  jal   func_800A7678
+/* 219DC0 801E3B10 0C029D9E */  jal   play_sound
 /* 219DC4 801E3B14 240401AD */   li    $a0, 429
 /* 219DC8 801E3B18 2A410008 */  slti  $at, $s2, 8
 .L801E3B1C_ovl16:

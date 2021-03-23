@@ -126,7 +126,7 @@ glabel func_801ECF48_ovl10
 /* 1DDE9C 801ED12C 3C01800F */ lui $at, %hi(D_800E8920)
 /* 1DDEA0 801ED130 000B6080 */  sll   $t4, $t3, 2
 /* 1DDEA4 801ED134 002C0821 */  addu  $at, $at, $t4
-/* 1DDEA8 801ED138 0C029D9E */  jal   func_800A7678
+/* 1DDEA8 801ED138 0C029D9E */  jal   play_sound
 /* 1DDEAC 801ED13C AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 1DDEB0 801ED140 3C014000 */  li    $at, 0x40000000 # 2.000000
 /* 1DDEB4 801ED144 4481A000 */  mtc1  $at, $f20

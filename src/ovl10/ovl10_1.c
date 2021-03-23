@@ -180,11 +180,11 @@ void func_801DC598_ovl10(s32 arg0) {
         temp_v0_2 = *(&D_800EA520 + temp_s0);
         if (temp_v0_2 >= 0x64) {
             if (temp_v0_2 < 0x78) {
-                func_800A7678(0x1DF);
+                play_sound(0x1DF);
             }
         }
     }
-    func_800A7678(0x28);
+    play_sound(0x28);
     temp_v0_3 = D_8004A7C4;
     temp_v1 = D_800E5F90[sp3C];
     *(&D_800E6150 + (temp_v0_3->unk0 * 4)) = temp_v1;
@@ -230,7 +230,7 @@ void func_801DC598_ovl10(s32 arg0) {
         temp_v0_6 = *(&D_800EA520 + temp_s0);
         if (temp_v0_6 >= 0x64) {
             if (temp_v0_6 < 0x78) {
-                func_800A7678(0x1DD);
+                play_sound(0x1DD);
             }
         }
     }
@@ -729,7 +729,7 @@ void func_801DDB88_ovl10(s32 arg0) {
     func_800AA018(0x102C1, temp_a1_2 * 4);
     func_800AA018(0x102C0);
     *(&D_800EA360 + (D_8004A7C4->objId * 4)) = func_800A8234(6, 2, 2);
-    func_800A7678(0x1DD);
+    play_sound(0x1DD);
     temp_a0_3 = D_8004A7C4;
     *(&D_800EA520 + (temp_a0_3->unk0 * 4)) = 0x64;
     temp_a1_3 = temp_a0_3->unk0 * 4;
@@ -757,7 +757,7 @@ loop_3:
             goto loop_3;
         }
     }
-    func_800A7678(0x1DF);
+    play_sound(0x1DF);
     temp_a0_5 = D_8004A7C4;
     *(&D_800E6690 + (temp_a0_5->unk0 * 4)) = 0.0f;
     temp_a1_5 = temp_a0_5->unk0;
@@ -898,7 +898,7 @@ loop_3:
             goto loop_3;
         }
     }
-    func_800A7678(0x1DA);
+    play_sound(0x1DA);
     func_800AA018(0x102C3);
     func_800AA154(0x102C2);
     temp_v0_2 = D_8004A7C4->objId;
@@ -968,7 +968,7 @@ loop_16:
         phi_a2 = 0xC;
     }
     func_800A7F74(6, 2, phi_a2, (bitwise s32) gEntitiesPosXArray[temp_v1_5], gEntitiesPosYArray[temp_v1_5], gEntitiesPosZArray[temp_v1_5]);
-    func_800A7678(0x1D8);
+    play_sound(0x1D8);
     *(&D_800E9FE0 + (D_8004A7C4->objId * 4)) = 1;
     func_800AF27C();
     func_800AA018(0x102C7);
@@ -1064,7 +1064,7 @@ loop_8:
             goto loop_8;
         }
     }
-    func_800A7678(0x1D9);
+    play_sound(0x1D9);
     func_800AA018(0x102CB);
     func_800AA154(0x102CA);
     func_800AECC0(D_800D6B10);
@@ -1080,7 +1080,7 @@ loop_10:
     }
     func_801DBF70_ovl10(5, 0.0f);
     func_800FB914(2);
-    func_800A7678(0x1D6);
+    play_sound(0x1D6);
     temp_v0_3 = D_8004A7C4;
     D_800E3910[temp_v0_3->unk0] = 0.0f;
     temp_v1_2 = temp_v0_3->unk0;
@@ -1240,7 +1240,7 @@ block_16:
     temp_s3 = sp78 * 4;
     func_800AA018(*(&D_801F4310_ovl10 + temp_s3));
     func_800AA018(*(&D_801F4308_ovl10 + temp_s3));
-    func_800A7678(0x1D7);
+    play_sound(0x1D7);
     temp_v1_4 = D_8004A7C4;
     *(&D_800EA520 + (temp_v1_4->unk0 * 4)) = 0;
     temp_v0_3 = temp_v1_4->unk0 * 4;
@@ -1299,7 +1299,7 @@ loop_22:
             func_801ACCA0_ovl10(6, 0, D_800E6A10[D_8004A7C4->objId] * -40.0f, 0x41700000);
             func_801ACCA0_ovl10(6, 1, D_800E6A10[D_8004A7C4->objId] * 40.0f, 0x41700000);
             func_800FB914(2);
-            func_800A7678(0x1D6);
+            play_sound(0x1D6);
             func_8000B6BC(4);
             temp_v0_10 = D_8004A7C4->objId;
             func_800A7F74(6, 2, 1, (bitwise s32) gEntitiesPosXArray[temp_v0_10], gEntitiesPosYArray[temp_v0_10], gEntitiesPosZArray[temp_v0_10]);
@@ -1379,8 +1379,8 @@ void func_801DF394_ovl10(s32 arg0) {
     D_800E1B50[temp_v0->unk0]->unk8C = &D_801F39F4_ovl10;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
     func_800B33F4(D_800E1B50);
-    func_800A7678(0x1DF);
-    func_800A7678(0x2A);
+    play_sound(0x1DF);
+    play_sound(0x2A);
     func_800BB468(2, 0);
     temp_v0_2 = *(&D_800EA360 + (D_8004A7C4->objId * 4));
     if (temp_v0_2 != 0) {
@@ -2468,7 +2468,7 @@ void func_801E100C_ovl10(s32 arg0) {
     if (*temp_v1 < 0x78) {
 loop_11:
         func_8000B6BC(5);
-        func_800A7678(0x1DC);
+        play_sound(0x1DC);
         func_800AF27C();
         temp_v0_3 = D_8004A7C4;
         temp_a0_3 = temp_v0_3->unk0;
@@ -2799,7 +2799,7 @@ loop_16:
         phi_a2 = 0xC;
     }
     func_800A7F74(6, 2, phi_a2, (bitwise s32) gEntitiesPosXArray[temp_v1_5], gEntitiesPosYArray[temp_v1_5], gEntitiesPosZArray[temp_v1_5]);
-    func_800A7678(0x1D8);
+    play_sound(0x1D8);
     *(&D_800E9FE0 + (D_8004A7C4->objId * 4)) = 1;
     func_800AF27C();
     func_800AA018(0x102F5);
@@ -2841,7 +2841,7 @@ void func_801E1DD0_ovl10(s32 arg0) {
     D_800E1B50[temp_v1->unk0]->unk8C = &D_801F3AA8_ovl10;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
     func_800B33F4();
-    func_800A7678(0x1DE);
+    play_sound(0x1DE);
     func_800AA018(0x102F9);
     func_800AA154(0x102F8);
     func_800AA018(0x102FB);
@@ -2854,7 +2854,7 @@ loop_2:
         func_800AA018(0x102FC);
         func_8000B6BC(5);
         func_801ACCA0_ovl10(7, 2, 0x41F00000, 0x420C0000);
-        func_800A7678(0x1E0);
+        play_sound(0x1E0);
         func_800AF27C();
         func_8000B6BC(0xF);
         temp_v1_3 = D_8004A7C4;
@@ -2954,7 +2954,7 @@ s32 func_801E206C_ovl10(s32 arg0) {
     D_800E1B50[temp_a0->unk0]->unk8C = &D_801F3ACC_ovl10;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
     func_800B33F4(temp_a0);
-    func_800A7678(0x2A);
+    play_sound(0x2A);
     func_800BB468(3, 0);
     sp10 = 0.0f;
     func_800FD570(0, 1, 0.0f, *temp_s1->unk88->unk10);

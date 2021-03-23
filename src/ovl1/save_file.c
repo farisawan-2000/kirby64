@@ -480,7 +480,7 @@ void calc_header_checksum(void) {
 #ifdef MIPS_TO_C
 void func_800B9104(void) {
     D_80004624_ovl1();
-    if ((*D_80048F20 & 0x830) == 0x830) {
+    if ((*gPlayerControllers & 0x830) == 0x830) {
         gSaveBuffer1.unk1B4 = gSaveBuffer1.unk1B4 + 1;
         gSaveBuffer1.unk118 = gSaveBuffer1.unk118 + 1;
     }

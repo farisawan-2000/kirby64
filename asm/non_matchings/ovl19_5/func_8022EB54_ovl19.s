@@ -94,7 +94,7 @@ glabel func_8022EB54_ovl19
 /* 24F3D4 8022ECC4 3C01800E */ lui $at, %hi(D_800E3AD0)
 /* 24F3D8 8022ECC8 000C6880 */  sll   $t5, $t4, 2
 /* 24F3DC 8022ECCC 002D0821 */  addu  $at, $at, $t5
-/* 24F3E0 8022ECD0 0C029D9E */  jal   func_800A7678
+/* 24F3E0 8022ECD0 0C029D9E */  jal   play_sound
 /* 24F3E4 8022ECD4 E4223AD0 */ swc1 $f2, %lo(D_800E3AD0)($at)
 /* 24F3E8 8022ECD8 1000000A */  b     .L8022ED04_ovl19
 /* 24F3EC 8022ECDC 8FBF0014 */   lw    $ra, 0x14($sp)

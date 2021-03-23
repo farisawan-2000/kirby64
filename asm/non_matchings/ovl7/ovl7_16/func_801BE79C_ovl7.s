@@ -76,7 +76,7 @@ glabel func_801BE79C_ovl7
 /* 164930 801BE8C0 904B0000 */  lbu   $t3, ($v0)
 /* 164934 801BE8C4 240400CB */  li    $a0, 203
 /* 164938 801BE8C8 256C0001 */  addiu $t4, $t3, 1
-/* 16493C 801BE8CC 0C029D9E */  jal   func_800A7678
+/* 16493C 801BE8CC 0C029D9E */  jal   play_sound
 /* 164940 801BE8D0 A04C0000 */   sb    $t4, ($v0)
 /* 164944 801BE8D4 2404000C */  li    $a0, 12
 /* 164948 801BE8D8 0C02ED1A */  jal   func_800BB468
@@ -112,7 +112,7 @@ glabel func_801BE79C_ovl7
 /* 1649B8 801BE948 3C01800D */ lui $at, %hi(D_800D6BC0)
 /* 1649BC 801BE94C 240400CE */  li    $a0, 206
 /* 1649C0 801BE950 00390821 */  addu  $at, $at, $t9
-/* 1649C4 801BE954 0C029D9E */  jal   func_800A7678
+/* 1649C4 801BE954 0C029D9E */  jal   play_sound
 /* 1649C8 801BE958 A02F6BC0 */ sb $t7, %lo(D_800D6BC0)($at)
 /* 1649CC 801BE95C 2404000C */  li    $a0, 12
 /* 1649D0 801BE960 0C02ED1A */  jal   func_800BB468
@@ -124,7 +124,7 @@ glabel func_801BE79C_ovl7
 .L801BE978_ovl7:
 /* 1649E8 801BE978 0C02F096 */  jal   change_kirby_lives
 /* 1649EC 801BE97C 24040001 */   li    $a0, 1
-/* 1649F0 801BE980 0C029D9E */  jal   func_800A7678
+/* 1649F0 801BE980 0C029D9E */  jal   play_sound
 /* 1649F4 801BE984 24040001 */   li    $a0, 1
 /* 1649F8 801BE988 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1649FC 801BE98C 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -135,14 +135,14 @@ glabel func_801BE79C_ovl7
 /* 164A0C 801BE99C 44816000 */  mtc1  $at, $f12
 /* 164A10 801BE9A0 0C02EFF8 */  jal   change_kirby_hp
 /* 164A14 801BE9A4 00000000 */   nop   
-/* 164A18 801BE9A8 0C029D9E */  jal   func_800A7678
+/* 164A18 801BE9A8 0C029D9E */  jal   play_sound
 /* 164A1C 801BE9AC 240400CA */   li    $a0, 202
 /* 164A20 801BE9B0 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 164A24 801BE9B4 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
 /* 164A28 801BE9B8 1000000C */  b     .L801BE9EC_ovl7
 /* 164A2C 801BE9BC 8C460000 */   lw    $a2, ($v0)
 .L801BE9C0_ovl7:
-/* 164A30 801BE9C0 0C029D9E */  jal   func_800A7678
+/* 164A30 801BE9C0 0C029D9E */  jal   play_sound
 /* 164A34 801BE9C4 240400CB */   li    $a0, 203
 /* 164A38 801BE9C8 2404000C */  li    $a0, 12
 /* 164A3C 801BE9CC 0C02ED1A */  jal   func_800BB468

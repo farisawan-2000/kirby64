@@ -8662,7 +8662,7 @@ block_17:
                 set_kirby_action_2(0x15, 0x16, phi_a3);
                 gKirbyState.isTurning = gKirbyState.isTurning & -8;
                 func_8011DC5C();
-                func_800A7678(0x1E9);
+                play_sound(0x1E9);
                 goto block_31;
             } else {
                 if ((arg1->unk10 & 1) != 0) {

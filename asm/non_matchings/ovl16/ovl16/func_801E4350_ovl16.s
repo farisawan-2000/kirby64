@@ -112,7 +112,7 @@ glabel func_801E4350_ovl16
 /* 21A7A0 801E44F0 8D2A0000 */  lw    $t2, ($t1)
 /* 21A7A4 801E44F4 5540000A */  bnezl $t2, .L801E4520_ovl16
 /* 21A7A8 801E44F8 461AA083 */   div.s $f2, $f20, $f26
-/* 21A7AC 801E44FC 0C029D9E */  jal   func_800A7678
+/* 21A7AC 801E44FC 0C029D9E */  jal   play_sound
 /* 21A7B0 801E4500 240401AD */   li    $a0, 429
 /* 21A7B4 801E4504 8E6C0000 */  lw    $t4, ($s3)
 /* 21A7B8 801E4508 240B0001 */  li    $t3, 1

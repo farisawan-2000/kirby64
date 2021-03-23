@@ -98,14 +98,14 @@ glabel func_80004250
 /* 004FC0 800043C0 3C118005 */  lui   $s1, %hi(sControllerStatuses) # $s1, 0x8005
 /* 004FC4 800043C4 3C058005 */  lui   $a1, %hi(sContPads) # $a1, 0x8005
 /* 004FC8 800043C8 3C028005 */  lui   $v0, %hi(gControllers) # $v0, 0x8005
-/* 004FCC 800043CC 3C038005 */  lui   $v1, %hi(D_80048F20) # $v1, 0x8005
+/* 004FCC 800043CC 3C038005 */  lui   $v1, %hi(gPlayerControllers) # $v1, 0x8005
 /* 004FD0 800043D0 3C078005 */  lui   $a3, %hi(D_80048F48) # $a3, 0x8005
 /* 004FD4 800043D4 AC800000 */  sw    $zero, ($a0)
 /* 004FD8 800043D8 AC990004 */  sw    $t9, 4($a0)
 /* 004FDC 800043DC AC900008 */  sw    $s0, 8($a0)
 /* 004FE0 800043E0 AC93000C */  sw    $s3, 0xc($a0)
 /* 004FE4 800043E4 24E78F48 */  addiu $a3, %lo(D_80048F48) # addiu $a3, $a3, -0x70b8
-/* 004FE8 800043E8 24638F20 */  addiu $v1, %lo(D_80048F20) # addiu $v1, $v1, -0x70e0
+/* 004FE8 800043E8 24638F20 */  addiu $v1, %lo(gPlayerControllers) # addiu $v1, $v1, -0x70e0
 /* 004FEC 800043EC 24428EA0 */  addiu $v0, %lo(gControllers) # addiu $v0, $v0, -0x7160
 /* 004FF0 800043F0 24A58E80 */  addiu $a1, %lo(sContPads) # addiu $a1, $a1, -0x7180
 /* 004FF4 800043F4 26318E70 */  addiu $s1, %lo(sControllerStatuses) # addiu $s1, $s1, -0x7190

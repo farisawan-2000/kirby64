@@ -214,10 +214,10 @@ extern u32 D_800D6B24;
 
 void func_8015CB7C_ovl5(void) {
     if ((D_800D6B24 == 0) && (D_800D7178.unk74 == 0)) {
-        if (D_80048F20[0].buttonPressed & 0x1000) {
+        if (gPlayerControllers[0].buttonPressed & 0x1000) {
             s32 phi_v0;
 
-            func_800A7678(0x24C);
+            play_sound(0x24C);
             func_800A699C();
             D_800D7178.unk74 = 1;
             if (0) {

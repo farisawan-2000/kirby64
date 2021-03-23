@@ -202,9 +202,9 @@ void func_800F6830(void) {
     void *temp_v0;
     void *temp_v1;
 
-    D_800D6F40 = D_80048F20.unk0;
-    D_800D6F42 = D_80048F20.unk2;
-    D_800D6F44 = D_80048F20.unk4;
+    D_800D6F40 = gPlayerControllers.unk0;
+    D_800D6F42 = gPlayerControllers.unk2;
+    D_800D6F44 = gPlayerControllers.unk4;
     if (D_800D7B68 != 0) {
         temp_v0 = D_800D799C->unk3C;
         sp3C = temp_v0;

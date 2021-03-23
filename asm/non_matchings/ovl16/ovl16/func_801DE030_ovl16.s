@@ -224,7 +224,7 @@ glabel func_801DE030_ovl16
 /* 21464C 801DE39C 02AA6021 */  addu  $t4, $s5, $t2
 /* 214650 801DE3A0 0C02BEED */  jal   func_800AFBB4
 /* 214654 801DE3A4 E5800000 */   swc1  $f0, ($t4)
-/* 214658 801DE3A8 0C029D9E */  jal   func_800A7678
+/* 214658 801DE3A8 0C029D9E */  jal   play_sound
 /* 21465C 801DE3AC 240401B0 */   li    $a0, 432
 /* 214660 801DE3B0 3C040001 */  lui   $a0, (0x0001066F >> 16) # lui $a0, 1
 /* 214664 801DE3B4 0C02A806 */  jal   func_800AA018

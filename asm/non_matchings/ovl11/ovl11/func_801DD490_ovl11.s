@@ -32,7 +32,7 @@ glabel func_801DD490_ovl11
 /* 1E7DC8 801DD508 3C01800E */ lui $at, %hi(D_800DDFD0)
 /* 1E7DCC 801DD50C 000F7080 */  sll   $t6, $t7, 2
 /* 1E7DD0 801DD510 002E0821 */  addu  $at, $at, $t6
-/* 1E7DD4 801DD514 0C029D9E */  jal   func_800A7678
+/* 1E7DD4 801DD514 0C029D9E */  jal   play_sound
 /* 1E7DD8 801DD518 AC2DDFD0 */ sw $t5, %lo(D_800DDFD0)($at)
 /* 1E7DDC 801DD51C 3C040001 */  lui   $a0, (0x000103EC >> 16) # lui $a0, 1
 /* 1E7DE0 801DD520 0C02A806 */  jal   func_800AA018

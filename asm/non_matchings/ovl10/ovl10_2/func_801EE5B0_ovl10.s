@@ -70,7 +70,7 @@ glabel func_801EE5B0_ovl10
 /* 1DF428 801EE6B8 3C01800E */ lui $at, %hi(D_800E4C50)
 /* 1DF42C 801EE6BC 00220821 */  addu  $at, $at, $v0
 /* 1DF430 801EE6C0 46128102 */  mul.s $f4, $f16, $f18
-/* 1DF434 801EE6C4 0C029D9E */  jal   func_800A7678
+/* 1DF434 801EE6C4 0C029D9E */  jal   play_sound
 /* 1DF438 801EE6C8 E4244C50 */ swc1 $f4, %lo(D_800E4C50)($at)
 /* 1DF43C 801EE6CC 8E0C0088 */  lw    $t4, 0x88($s0)
 /* 1DF440 801EE6D0 4406A000 */  mfc1  $a2, $f20

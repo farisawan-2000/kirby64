@@ -252,7 +252,7 @@ void func_8022309C_ovl18(UNUSED s32 arg0, s32 arg1, f32 arg2) {
             D_800E48D0[temp_v0] = 2.0f;
             D_800E4710[temp_v0] = 2.0f;
             D_800E4550[temp_v0] = 2.0f;
-            func_800A7678(0x97);
+            play_sound(0x97);
             D_800E9AA0[D_8004A7C4->objId] = 1;
         }
     }
@@ -466,7 +466,7 @@ void func_80223E50_ovl18(UNUSED s32 arg0) {
         D_800E9720[D_8004A7C4->objId]--;
         return;
     }
-    func_800A7678(0x244);
+    play_sound(0x244);
     D_800DDC50[D_8004A7C4->objId] = 4;
     restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_802239CC_ovl18);
 }

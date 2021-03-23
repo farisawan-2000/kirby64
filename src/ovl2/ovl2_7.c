@@ -2587,12 +2587,12 @@ void func_801162F4(void *arg0) {
     D_80129210.unkC = D_80128D14;
     D_80129210.unk14 = D_80128D18;
     func_8000B6BC(0x14);
-    func_800A7678(0x183);
+    play_sound(0x183);
     func_8000B6BC(0x28);
     D_800DF150[D_8004A7C4->objId] = &D_80116260;
     func_800AF27C();
     D_800DF150[D_8004A7C4->objId] = NULL;
-    func_800A7678(0x181);
+    play_sound(0x181);
     func_80008DA8(NULL);
 }
 #else
@@ -3097,7 +3097,7 @@ void func_80117570(void *arg0) {
         *temp_v0_2 = temp_t1;
         if (temp_t1 == 0) {
             sp1C = temp_v1;
-            func_800A7678(0xC);
+            play_sound(0xC);
             D_800E3750[temp_v0] = -0.5f;
             D_800E3C90[temp_v0] = D_80128D38;
             D_800DEF90[D_8004A7C4->objId] = &D_801173F4;
@@ -4692,7 +4692,7 @@ void func_8011A2F4(void *arg0) {
         func_800AA018(temp_v1->unk8);
         D_800DEF90[D_8004A7C4->objId] = temp_v1->unk14;
         D_800D6F24 = temp_v0 - 0xBF;
-        func_800A7678(0x1FD);
+        play_sound(0x1FD);
     }
 }
 #else
@@ -4847,7 +4847,7 @@ void func_8011A7A8(void *arg0) {
         func_800AA018(temp_v1->unk8);
         D_800DEF90[D_8004A7C4->objId] = temp_v1->unk14;
         D_800D6F24 = temp_v0 - 0xCD;
-        func_800A7678(0x1FD);
+        play_sound(0x1FD);
     }
 }
 #else

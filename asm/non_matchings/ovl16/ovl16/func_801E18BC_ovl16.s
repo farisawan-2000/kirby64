@@ -141,7 +141,7 @@ glabel func_801E18BC_ovl16
 /* 217D8C 801E1ADC 00C26821 */  addu  $t5, $a2, $v0
 .L801E1AE0_ovl16:
 /* 217D90 801E1AE0 E5A00000 */  swc1  $f0, ($t5)
-/* 217D94 801E1AE4 0C029D9E */  jal   func_800A7678
+/* 217D94 801E1AE4 0C029D9E */  jal   play_sound
 /* 217D98 801E1AE8 240401AA */   li    $a0, 426
 /* 217D9C 801E1AEC 8E230000 */  lw    $v1, ($s1)
 /* 217DA0 801E1AF0 8C620000 */  lw    $v0, ($v1)

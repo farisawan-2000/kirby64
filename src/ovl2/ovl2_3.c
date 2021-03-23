@@ -1547,7 +1547,7 @@ loop_2:
             goto loop_2;
         }
     }
-    temp_v1 = *D_80048F20;
+    temp_v1 = *gPlayerControllers;
     phi_v0_2 = 0;
     if ((temp_v1 & 0x100) != 0) {
         phi_v0_2 = 1;
@@ -1757,7 +1757,7 @@ loop_2:
     D_801293CC = 8.0f;
     D_801293C4 = 4.0f;
     D_801293C8 = 4.0f;
-    temp_v0 = *D_80048F20;
+    temp_v0 = *gPlayerControllers;
     phi_v1_2 = 0;
     if ((temp_v0 & 0x100) != 0) {
         phi_v1_2 = 1;

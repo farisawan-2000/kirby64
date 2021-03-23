@@ -636,7 +636,7 @@ block_14:
         }
         gEntitiesPosYArray[temp_a0] = 60.0f;
         if (D_800D6E30[D_800BE508] == 0) {
-            func_800A7678(0x112);
+            play_sound(0x112);
             func_800A7F74(3, 0, 0xCE, 0x43960000, gEntitiesPosYArray[D_8004A7C4->objId], 0.0f);
             func_8000B6BC(0x12);
             sp74 = 0.0f;
@@ -648,7 +648,7 @@ block_14:
             sp60 = 1.0f;
             sp64 = 1.0f;
             sp78 = gEntitiesPosYArray[D_8004A7C4->objId];
-            func_800A7678(0x1FC);
+            play_sound(0x1FC);
             func_800FCD14(0xFF, 3, 0.5f, 3, 7, 2, 0, 0, 0x13, &sp74, &sp68, &sp5C);
         }
     }
@@ -761,7 +761,7 @@ loop_1:
     }
     func_800F8E6C(arg0);
     if (D_800D6E30[D_800BE508] == 0) {
-        func_800A7678(0x112);
+        play_sound(0x112);
         temp_v0 = D_8004A7C4->objId;
         func_800A7F74(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]);
         func_8000B6BC(0x12);
@@ -774,7 +774,7 @@ loop_1:
         sp48 = 1.0f;
         sp44 = 1.0f;
         sp60 = gEntitiesPosYArray[D_8004A7C4->objId];
-        func_800A7678(0x1FC);
+        play_sound(0x1FC);
         temp_v0_2 = D_8004A7C4->objId;
         func_800FCD14(0xFF, *(&D_800E5F93 + (temp_v0_2 * 4)), (bitwise f32) (bitwise s32) D_800E6BD0[temp_v0_2], 3, 7, 2, 0, 0, 0x28, &sp5C, &sp50, &sp44);
     }
@@ -945,7 +945,7 @@ block_13:
     gEntitiesPosYArray[temp_v1] = 160.0f;
     phi_a2 = temp_a2_2;
     if (D_800D6E30[D_800BE508] == 0) {
-        func_800A7678(0x112);
+        play_sound(0x112);
         temp_v1_2 = D_8004A7C4->objId;
         func_800A7F74(3, 0, 0xCE, (bitwise s32) gEntitiesPosXArray[temp_v1_2], gEntitiesPosYArray[temp_v1_2], gEntitiesPosZArray[temp_v1_2]);
         func_8000B6BC(0x12);
@@ -958,7 +958,7 @@ block_13:
         sp60 = 1.0f;
         sp64 = 1.0f;
         sp78 = gEntitiesPosYArray[D_8004A7C4->objId];
-        func_800A7678(0x1FC);
+        play_sound(0x1FC);
         temp_v1_3 = D_8004A7C4->objId;
         func_800FCD14(0xFF, *(&D_800E5F93 + (temp_v1_3 * 4)), (bitwise f32) (bitwise s32) D_800E6BD0[temp_v1_3], 3, 7, 2, 0, 0, 0x35, &sp74, &sp68, &sp5C);
         phi_a2 = D_8004A7C4;
@@ -1302,7 +1302,7 @@ void func_80222038_ovl19(struct UnkStruct8004A7C4 *arg0) {
         } else {
             gKirbyState.isTurning = gKirbyState.isTurning & -2;
         }
-        func_800A7678(0x190);
+        play_sound(0x190);
         D_800DF150[D_8004A7C4->objId] = NULL;
     }
 }
@@ -1444,7 +1444,7 @@ void func_802225A4_ovl19(struct UnkStruct8004A7C4 *arg0) {
     while (D_800E9E20[D_8004A7C4->objId] == 0) {
         func_8000B6BC(1);
     }
-    func_800A7678(0x258);
+    play_sound(0x258);
     func_800AA018(0x20360);
     func_800AFA14();
 }

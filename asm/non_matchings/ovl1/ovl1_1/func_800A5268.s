@@ -4,8 +4,8 @@ glabel func_800A5268
 /* 04D4C0 800A5270 0C04848B */  jal   func_8012122C
 /* 04D4C4 800A5274 00000000 */   nop   
 /* 04D4C8 800A5278 14400011 */  bnez  $v0, .L800A52C0_ovl1
-/* 04D4CC 800A527C 3C038005 */   lui   $v1, %hi(D_80048F20) # $v1, 0x8005
-/* 04D4D0 800A5280 24638F20 */  addiu $v1, %lo(D_80048F20) # addiu $v1, $v1, -0x70e0
+/* 04D4CC 800A527C 3C038005 */   lui   $v1, %hi(gPlayerControllers) # $v1, 0x8005
+/* 04D4D0 800A5280 24638F20 */  addiu $v1, %lo(gPlayerControllers) # addiu $v1, $v1, -0x70e0
 /* 04D4D4 800A5284 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
 /* 04D4D8 800A5288 24426FE8 */  addiu $v0, %lo(D_800D6FE8) # addiu $v0, $v0, 0x6fe8
 /* 04D4DC 800A528C 946E0000 */  lhu   $t6, ($v1)

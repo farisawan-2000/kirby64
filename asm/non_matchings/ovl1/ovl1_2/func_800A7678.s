@@ -1,4 +1,4 @@
-glabel func_800A7678
+glabel play_sound
 /* 04F8C8 800A7678 3C019999 */  lui   $at, (0x99999999 >> 16) # lui $at, 0x9999
 /* 04F8CC 800A767C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04F8D0 800A7680 34219999 */  ori   $at, (0x99999999 & 0xFFFF) # ori $at, $at, 0x9999

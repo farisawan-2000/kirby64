@@ -601,7 +601,7 @@ glabel func_801DBA8C_ovl17
 /* 226CB8 801DBAC8 14410015 */  bne   $v0, $at, .L801DBB20_ovl17
 /* 226CBC 801DBACC 00000000 */   nop   
 /* 226CC0 801DBAD0 ACA00000 */  sw    $zero, ($a1)
-/* 226CC4 801DBAD4 0C029D9E */  jal   func_800A7678
+/* 226CC4 801DBAD4 0C029D9E */  jal   play_sound
 /* 226CC8 801DBAD8 240400D8 */   li    $a0, 216
 /* 226CCC 801DBADC 00002025 */  move  $a0, $zero
 /* 226CD0 801DBAE0 0C02ED1A */  jal   func_800BB468
@@ -790,7 +790,7 @@ glabel func_801DBA8C_ovl17
 /* 226F74 801DBD84 8F397098 */  lw    $t9, %lo(D_800D7098)($t9)
 /* 226F78 801DBD88 57200004 */  bnezl $t9, .L801DBD9C_ovl17
 /* 226F7C 801DBD8C 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 226F80 801DBD90 0C029D9E */  jal   func_800A7678
+/* 226F80 801DBD90 0C029D9E */  jal   play_sound
 /* 226F84 801DBD94 240401C1 */   li    $a0, 449
 .L801DBD98_ovl17:
 /* 226F88 801DBD98 8FBF0014 */  lw    $ra, 0x14($sp)
@@ -800,8 +800,8 @@ glabel func_801DBA8C_ovl17
 /* 226F94 801DBDA4 00000000 */   nop   
 
 glabel func_801DBDA8_ovl17
-/* 226F98 801DBDA8 3C058005 */  lui   $a1, %hi(D_80048F20) # $a1, 0x8005
-/* 226F9C 801DBDAC 94A58F20 */  lhu   $a1, %lo(D_80048F20)($a1)
+/* 226F98 801DBDA8 3C058005 */  lui   $a1, %hi(gPlayerControllers) # $a1, 0x8005
+/* 226F9C 801DBDAC 94A58F20 */  lhu   $a1, %lo(gPlayerControllers)($a1)
 /* 226FA0 801DBDB0 27BDFF28 */  addiu $sp, $sp, -0xd8
 /* 226FA4 801DBDB4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 226FA8 801DBDB8 30A20C00 */  andi  $v0, $a1, 0xc00
@@ -1357,7 +1357,7 @@ glabel func_801DC460_ovl17
 /* 2277CC 801DC5DC 002C0821 */  addu  $at, $at, $t4
 /* 2277D0 801DC5E0 0C04768D */  jal   func_8011DA34
 /* 2277D4 801DC5E4 E4223AD0 */ swc1 $f2, %lo(D_800E3AD0)($at)
-/* 2277D8 801DC5E8 0C029D9E */  jal   func_800A7678
+/* 2277D8 801DC5E8 0C029D9E */  jal   play_sound
 /* 2277DC 801DC5EC 240400D8 */   li    $a0, 216
 /* 2277E0 801DC5F0 00002025 */  move  $a0, $zero
 /* 2277E4 801DC5F4 0C029D6C */  jal   func_800A75B0
@@ -1724,8 +1724,8 @@ glabel func_801DC98C_ovl17
 /* 227D30 801DCB40 00000000 */   nop   
 
 glabel func_801DCB44_ovl17
-/* 227D34 801DCB44 3C028005 */  lui   $v0, %hi(D_80048F20) # $v0, 0x8005
-/* 227D38 801DCB48 94428F20 */  lhu   $v0, %lo(D_80048F20)($v0)
+/* 227D34 801DCB44 3C028005 */  lui   $v0, %hi(gPlayerControllers) # $v0, 0x8005
+/* 227D38 801DCB48 94428F20 */  lhu   $v0, %lo(gPlayerControllers)($v0)
 /* 227D3C 801DCB4C 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 227D40 801DCB50 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 227D44 801DCB54 30450300 */  andi  $a1, $v0, 0x300

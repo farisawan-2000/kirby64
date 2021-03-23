@@ -30,7 +30,7 @@ glabel func_8011C720
 /* 0A5200 8011C790 10000023 */  b     .L8011C820_ovl2
 /* 0A5204 8011C794 00000000 */   nop   
 /* 0A5208 8011C798 24040136 */  li    $a0, 310
-/* 0A520C 8011C79C 0C029D9E */  jal   func_800A7678
+/* 0A520C 8011C79C 0C029D9E */  jal   play_sound
 /* 0A5210 8011C7A0 AFA50018 */   sw    $a1, 0x18($sp)
 /* 0A5214 8011C7A4 3C03800D */  lui   $v1, %hi(D_800D6FB0) # $v1, 0x800d
 /* 0A5218 8011C7A8 24636FB0 */  addiu $v1, %lo(D_800D6FB0) # addiu $v1, $v1, 0x6fb0

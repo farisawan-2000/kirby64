@@ -55,7 +55,7 @@ glabel func_800B0F28
 /* 059240 800B0FF0 8FA40044 */  lw    $a0, 0x44($sp)
 /* 059244 800B0FF4 0482004E */  bltzl $a0, .L800B1130_ovl1
 /* 059248 800B0FF8 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 05924C 800B0FFC 0C029D9E */  jal   func_800A7678
+/* 05924C 800B0FFC 0C029D9E */  jal   play_sound
 /* 059250 800B1000 00000000 */   nop   
 /* 059254 800B1004 1000004A */  b     .L800B1130_ovl1
 /* 059258 800B1008 8FBF0014 */   lw    $ra, 0x14($sp)

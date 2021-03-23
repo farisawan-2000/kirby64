@@ -96,7 +96,7 @@ extern struct UnkStruct80048F20 {
     u8 unk9;
     u8 unkA;
     u8 unkB;
-} D_80048F20;
+} gPlayerControllers;
 extern u32 D_800BE4F8;
 
 
@@ -116,9 +116,9 @@ void func_800BBDC4(void) {
     u16 phi_a2;
 
     temp_v1 = D_800ED4EC;
-    D_80048F20.unk4 = 0;
-    D_80048F20.unk2 = 0;
-    D_80048F20.unk0 = 0;
+    gPlayerControllers.unk4 = 0;
+    gPlayerControllers.unk2 = 0;
+    gPlayerControllers.unk0 = 0;
     if (temp_v1 < 0) {
         D_800BE4F8 = 2;
         D_800D6F38 = 0;
@@ -179,14 +179,14 @@ void func_800BBDC4(void) {
     if (temp_a1_3 & 0x80) {
         phi_a2 = temp_a0_2->unk106;
     }
-    D_80048F20.unk0 = phi_t0;
-    D_80048F20.unk2 = phi_a3;
-    D_80048F20.unk4 = phi_a2;
+    gPlayerControllers.unk0 = phi_t0;
+    gPlayerControllers.unk2 = phi_a3;
+    gPlayerControllers.unk4 = phi_a2;
     if (phi_t0 & 0x80) {
-        D_80048F20.unk9 = 0x40;
+        gPlayerControllers.unk9 = 0x40;
     }
     if (phi_t0 & 0x40) {
-        D_80048F20.unk9 = -0x40;
+        gPlayerControllers.unk9 = -0x40;
     }
 }
 

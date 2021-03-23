@@ -399,13 +399,13 @@ glabel func_80174C10_ovl3
 /* 0D5C18 801751D8 29C10002 */  slti  $at, $t6, 2
 /* 0D5C1C 801751DC 14200006 */  bnez  $at, .L801751F8_ovl3
 /* 0D5C20 801751E0 00000000 */   nop   
-/* 0D5C24 801751E4 0C029D9E */  jal   func_800A7678
+/* 0D5C24 801751E4 0C029D9E */  jal   play_sound
 /* 0D5C28 801751E8 240400D9 */   li    $a0, 217
 /* 0D5C2C 801751EC 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0D5C30 801751F0 10000005 */  b     .L80175208_ovl3
 /* 0D5C34 801751F4 24E7E7C0 */   addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 .L801751F8_ovl3:
-/* 0D5C38 801751F8 0C029D9E */  jal   func_800A7678
+/* 0D5C38 801751F8 0C029D9E */  jal   play_sound
 /* 0D5C3C 801751FC 240400D8 */   li    $a0, 216
 /* 0D5C40 80175200 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0D5C44 80175204 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
@@ -523,12 +523,12 @@ glabel func_80174C10_ovl3
 /* 0D5DDC 8017539C 29E10002 */  slti  $at, $t7, 2
 /* 0D5DE0 801753A0 14200005 */  bnez  $at, .L801753B8_ovl3
 /* 0D5DE4 801753A4 00000000 */   nop   
-/* 0D5DE8 801753A8 0C029D9E */  jal   func_800A7678
+/* 0D5DE8 801753A8 0C029D9E */  jal   play_sound
 /* 0D5DEC 801753AC 240400D9 */   li    $a0, 217
 /* 0D5DF0 801753B0 10000004 */  b     .L801753C4_ovl3
 /* 0D5DF4 801753B4 3C040002 */   lui   $a0, 2
 .L801753B8_ovl3:
-/* 0D5DF8 801753B8 0C029D9E */  jal   func_800A7678
+/* 0D5DF8 801753B8 0C029D9E */  jal   play_sound
 /* 0D5DFC 801753BC 240400D8 */   li    $a0, 216
 /* 0D5E00 801753C0 3C040002 */  lui   $a0, (0x000200BF >> 16) # lui $a0, 2
 .L801753C4_ovl3:
@@ -543,7 +543,7 @@ glabel func_80174C10_ovl3
 /* 0D5E24 801753E4 100000BD */  b     .L801756DC_ovl3
 /* 0D5E28 801753E8 8C63A7C4 */   lw    $v1, %lo(D_8004A7C4)($v1)
 .L801753EC_ovl3:
-/* 0D5E2C 801753EC 0C029D9E */  jal   func_800A7678
+/* 0D5E2C 801753EC 0C029D9E */  jal   play_sound
 /* 0D5E30 801753F0 240400DB */   li    $a0, 219
 /* 0D5E34 801753F4 3C040002 */  lui   $a0, (0x00020161 >> 16) # lui $a0, 2
 /* 0D5E38 801753F8 3C050002 */  lui   $a1, (0x00020162 >> 16) # lui $a1, 2
@@ -576,13 +576,13 @@ glabel func_80174C10_ovl3
 /* 0D5EA0 80175460 24010001 */  li    $at, 1
 /* 0D5EA4 80175464 11210006 */  beq   $t1, $at, .L80175480_ovl3
 /* 0D5EA8 80175468 00000000 */   nop   
-/* 0D5EAC 8017546C 0C029D9E */  jal   func_800A7678
+/* 0D5EAC 8017546C 0C029D9E */  jal   play_sound
 /* 0D5EB0 80175470 240400D9 */   li    $a0, 217
 /* 0D5EB4 80175474 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0D5EB8 80175478 10000005 */  b     .L80175490_ovl3
 /* 0D5EBC 8017547C 24E7E7C0 */   addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840
 .L80175480_ovl3:
-/* 0D5EC0 80175480 0C029D9E */  jal   func_800A7678
+/* 0D5EC0 80175480 0C029D9E */  jal   play_sound
 /* 0D5EC4 80175484 240400DB */   li    $a0, 219
 /* 0D5EC8 80175488 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0D5ECC 8017548C 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

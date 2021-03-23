@@ -164,7 +164,7 @@ loop_6:
                 if (temp_v0_3 != 7) {
                     goto loop_6;
                 }
-                func_800A7678(0x2A);
+                play_sound(0x2A);
                 func_800BB468(2, 0);
                 temp_v1 = D_8004A7C4->objId;
                 func_800FD754(1, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v1], (bitwise f32) (bitwise s32) gEntitiesPosYArray[temp_v1], (bitwise f32) (bitwise s32) gEntitiesPosZArray[temp_v1]);
@@ -207,7 +207,7 @@ block_15:
         if (*temp_v0_5 < 0x14) {
             *temp_v0_5 = 0x14;
         }
-        func_800A7678(0x2A);
+        play_sound(0x2A);
         func_800BB468(2, 0);
         temp_v1_4 = D_8004A7C4->objId;
         func_800FD754(1, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v1_4], (bitwise f32) (bitwise s32) gEntitiesPosYArray[temp_v1_4], (bitwise f32) (bitwise s32) gEntitiesPosZArray[temp_v1_4]);
@@ -373,7 +373,7 @@ block_33:
                     }
                     if ((&D_800D7098)[0xA] == 0) {
                         (&D_800D7098)[0xA] = 1;
-                        func_800A7678(0x1B6);
+                        play_sound(0x1B6);
                         temp_v0_6 = func_8019E0A4_ovl16(5, 8);
                         if (temp_v0_6 != -1) {
                             temp_v1_7 = sp34->unk3A;
@@ -424,7 +424,7 @@ block_58:
                 } else {
                     if ((&D_800D7098)[0xA] == 0) {
                         (&D_800D7098)[0xA] = 1;
-                        func_800A7678(0x1B6);
+                        play_sound(0x1B6);
                         temp_v0_4 = func_8019E0A4_ovl16(5, 8);
                         if (temp_v0_4 != -1) {
                             temp_v1_4 = sp34->unk3A;
@@ -469,7 +469,7 @@ block_46:
                 }
                 if ((&D_800D7098)[0xA] == 0) {
                     (&D_800D7098)[0xA] = 1;
-                    func_800A7678(0x1B6);
+                    play_sound(0x1B6);
                     temp_v0_8 = func_8019E0A4_ovl16(5, 8);
                     if (temp_v0_8 != -1) {
                         temp_v1_10 = sp34->unk3A;
@@ -562,7 +562,7 @@ block_20:
 block_21:
                     if (D_800D7098.unk28 == 0) {
                         D_800D7098.unk28 = 1;
-                        func_800A7678(0x1B6);
+                        play_sound(0x1B6);
                         temp_v0_3 = func_8019E0A4_ovl16(5, 8);
                         if (temp_v0_3 != -1) {
                             temp_v1_2 = sp2C->unk3A;
@@ -587,7 +587,7 @@ block_21:
         if (D_800E83E0[temp_v0_4->objId] == 6) {
             if ((&D_800D7098)[0xA] == 0) {
                 (&D_800D7098)[0xA] = 1;
-                func_800A7678(0x1B6);
+                play_sound(0x1B6);
                 temp_v0_5 = func_8019E0A4_ovl16(5, 8);
                 if (temp_v0_5 != -1) {
                     temp_v1_3 = sp2C->unk3A;
@@ -1134,7 +1134,7 @@ loop_5:
     }
     if (((&D_800D7098)[1] == 5) && ((&D_800D7098)[6] == 0) && (D_800DDC50[temp_s0] != 1)) {
         gEntitiesPosYArray[D_8004A7C4->objId] = 0.0f;
-        func_800A7678(0x1C5);
+        play_sound(0x1C5);
         func_800AA018(*(&D_801EF738_ovl16 + (D_800E98E0[D_8004A7C4->objId] * 4)));
         func_800AA154(*(&D_801EF730_ovl16 + (D_800E98E0[D_8004A7C4->objId] * 4)));
         func_800AA018(*(&D_801EF758_ovl16 + (D_800E98E0[D_8004A7C4->objId] * 4)));
@@ -1200,7 +1200,7 @@ loop_1:
         phi_v1 = temp_v1;
         phi_v0 = temp_v0_3;
         if (temp_v1 == 0) {
-            func_800A7678(0x1AE);
+            play_sound(0x1AE);
             temp_v0_4 = &D_800E98E0[D_8004A7C4->objId];
             phi_v1 = *temp_v0_4;
             phi_v0 = temp_v0_4;
@@ -2208,7 +2208,7 @@ loop_5:
     temp_v1_2 = D_8004A7C4;
     D_800E9E20[temp_v1_2->objId] = 0;
     D_800EA6E0[temp_v1_2->objId] = 10.0f;
-    func_800A7678(0x1AB);
+    play_sound(0x1AB);
     func_800AA018(0x10479);
     func_800AA154(0x10478);
     func_800AA018(0x1047B);
@@ -2221,7 +2221,7 @@ loop_13:
         }
     }
     func_8000B6BC(0x1E);
-    func_800A7678(0x1AA);
+    play_sound(0x1AA);
     temp_v0 = func_801ACC34_ovl16(0x30, 0);
     temp_s2 = temp_v0 * 4;
     D_800E8E60[temp_v0] = 1;
@@ -2492,7 +2492,7 @@ loop_5:
     temp_v1_2 = D_8004A7C4;
     D_800E9E20[temp_v1_2->objId] = 0;
     D_800EA6E0[temp_v1_2->objId] = 10.0f;
-    func_800A7678(0x1AB);
+    play_sound(0x1AB);
     func_800AA018(0x10473);
     func_800AA154(0x10472);
     func_800AA018(0x10475);
@@ -2505,7 +2505,7 @@ loop_13:
         }
     }
     func_8000B6BC(0x1E);
-    func_800A7678(0x1AA);
+    play_sound(0x1AA);
     temp_v0 = func_801ACC34_ovl16(0x30, 1);
     temp_s2 = temp_v0 * 4;
     D_800E8E60[temp_v0] = 1;
@@ -2668,7 +2668,7 @@ loop_1:
     temp_t0_3 = D_8004A7C4;
     D_800E9E20[temp_t0_3->objId] = 0;
     D_800EA6E0[temp_t0_3->objId] = 10.0f;
-    func_800A7678(0x1AB);
+    play_sound(0x1AB);
     func_800AA018(0x1047F);
     func_800AA154(0x1047E);
     func_800AA018(0x10481);
@@ -2681,7 +2681,7 @@ loop_3:
         }
     }
     func_8000B6BC(0x1E);
-    func_800A7678(0x1AA);
+    play_sound(0x1AA);
     temp_v0_3 = func_801ACC34_ovl16(0x30, 0);
     temp_a2 = temp_v0_3 * 4;
     D_800E8E60[temp_v0_3] = 1;
@@ -2924,7 +2924,7 @@ s32 func_801E18BC_ovl16(s32 arg0) {
             phi_v0_4 = temp_v1->objId * 4;
         }
         *(D_800EA6E0 + phi_v0_4) = -10.0f;
-        func_800A7678(0x1AA);
+        play_sound(0x1AA);
         temp_v0_8 = D_8004A7C4->objId;
         temp_v0_9 = temp_v0_8 * 4;
         phi_v0_5 = temp_v0_9;
@@ -3116,7 +3116,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 8;
     func_800AA018(0x104E0);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 1.0f;
     D_800EA8A0[D_8004A7C4->objId] = D_801EFF10_ovl16;
@@ -3127,7 +3127,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = D_801EFF18_ovl16;
     func_8000B6BC(5);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 2.5f;
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
@@ -3138,7 +3138,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     func_8000B6BC(0x23);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 2.5f;
     D_800EA8A0[D_8004A7C4->objId] = D_801EFF20_ovl16;
@@ -3148,7 +3148,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = D_801EFF28_ovl16;
     func_8000B6BC(5);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 1.0f;
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
@@ -3159,7 +3159,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     func_8000B6BC(0x23);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 1.0f;
     D_800EA8A0[D_8004A7C4->objId] = D_801EFF30_ovl16;
@@ -3169,7 +3169,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = D_801EFF38_ovl16;
     func_8000B6BC(5);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 2.5f;
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
@@ -3180,7 +3180,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     func_8000B6BC(0x23);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 2.5f;
     D_800EA8A0[D_8004A7C4->objId] = D_801EFF40_ovl16;
@@ -3190,7 +3190,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = D_801EFF48_ovl16;
     func_8000B6BC(5);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 1.0f;
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
@@ -3201,7 +3201,7 @@ void func_801E20D8_ovl16(struct UnkStruct8004A7C4 *arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     func_8000B6BC(0x23);
     if (func_801E1F40_ovl16() != 0) {
-        func_800A7678(0x1B9);
+        play_sound(0x1B9);
     }
     D_800EA6E0[D_8004A7C4->objId] = 1.0f;
     D_800DFBD0[D_8004A7C4->objId][4]->scale.x = D_800EA6E0[D_8004A7C4->objId];
@@ -3445,7 +3445,7 @@ block_14:
                                     temp_a1_2 = D_8004A7C4;
                                     D_800E0D50[temp_v0_2] = temp_a1_2->objId;
                                     D_800EA1A0[temp_v0_2] = D_800E9E20[temp_a1_2->objId] / 0x3C;
-                                    func_800A7678(0x1B7);
+                                    play_sound(0x1B7);
                                 }
                             }
                         } else {
@@ -3832,11 +3832,11 @@ loop_20:
 loop_65:
     temp_s2_2 = *phi_s6_3;
     if (temp_s2_2 < 8) {
-        func_800A7678(0x1AF);
+        play_sound(0x1AF);
     }
     temp_s1 = *phi_s5;
     if (temp_s1 < 8) {
-        func_800A7678(0x1AD);
+        play_sound(0x1AD);
     }
     if ((temp_s2_2 < 8) || (temp_s1 < 8)) {
         if (temp_s1 < 8) {
@@ -4187,7 +4187,7 @@ loop_1:
         }
         if (phi_f0 < phi_f20_2) {
             if (D_800EA360[temp_a0] == 0) {
-                func_800A7678(0x1AD);
+                play_sound(0x1AD);
                 D_800EA360[D_8004A7C4->objId] = 1;
             }
             temp_f2_2 = phi_f20_2 / 260.0f;
@@ -4315,7 +4315,7 @@ void func_801E4754_ovl16(s32 arg0) {
     }
     D_800E3590[D_8004A7C4->objId] = 0.0f;
     D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
-    func_800A7678(0x1B3);
+    play_sound(0x1B3);
     func_800AA018(0x104C4);
     for (phi_s0 = 0; phi_s0 < 4; phi_s0++) {
         temp_v0_4 = func_801ACC34_ovl16(0x34, 0);
@@ -4361,7 +4361,7 @@ void func_801E4754_ovl16(s32 arg0) {
     func_800AA018(0x104C6);
     func_8000B6BC(0x1E);
     D_800E9FE0[D_8004A7C4->objId] = 1;
-    func_800A7678(0x1B4);
+    play_sound(0x1B4);
     // ternary?
     if (gEntitiesPosXArray[D_8004A7C4->objId] < 0.0f) {
         D_800EA1A0[D_8004A7C4->objId] = 0;
@@ -4390,7 +4390,7 @@ void func_801E4754_ovl16(s32 arg0) {
     D_800E3590[D_8004A7C4->objId] = 0.0f;
     D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
     D_800E3AD0[D_8004A7C4->objId] = D_801EFF98_ovl16;
-    func_800A7678(0x1B4);
+    play_sound(0x1B4);
     // ternary?
     if (D_800EA1A0[D_8004A7C4->objId] != 0) {
         D_800EA1A0[D_8004A7C4->objId] = 0;
@@ -4419,7 +4419,7 @@ void func_801E4754_ovl16(s32 arg0) {
     D_800E3590[D_8004A7C4->objId] = 0.0f;
     D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
     D_800E3AD0[D_8004A7C4->objId] = D_801EFFA4_ovl16;
-    func_800A7678(0x1B4);
+    play_sound(0x1B4);
     // ternary?
     if (D_800EA1A0[D_8004A7C4->objId] != 0) {
         D_800EA1A0[D_8004A7C4->objId] = 0;
@@ -5594,7 +5594,7 @@ void func_801E7A38_ovl16(s32 arg0) {
     if (D_800D6E5C != 0.0f) {
         func_800BC11C(D_800E7B20[D_8004A7C4->objId]);
     }
-    func_800A7678(0x1B8);
+    play_sound(0x1B8);
     func_800BB468(3, 0);
     temp_v0_3 = D_8004A7C4->objId;
     func_800FD754(2, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v0_3], (bitwise f32) (bitwise s32) gEntitiesPosYArray[temp_v0_3], (bitwise f32) (bitwise s32) gEntitiesPosZArray[temp_v0_3]);

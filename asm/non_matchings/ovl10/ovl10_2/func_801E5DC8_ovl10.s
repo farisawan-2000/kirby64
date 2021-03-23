@@ -28,7 +28,7 @@ glabel func_801E5DC8_ovl10
 /* 1D6BA0 801E5E30 8D6C0000 */  lw    $t4, ($t3)
 /* 1D6BA4 801E5E34 000C6880 */  sll   $t5, $t4, 2
 /* 1D6BA8 801E5E38 002D0821 */  addu  $at, $at, $t5
-/* 1D6BAC 801E5E3C 0C029D9E */  jal   func_800A7678
+/* 1D6BAC 801E5E3C 0C029D9E */  jal   play_sound
 /* 1D6BB0 801E5E40 AC2AA1A0 */ sw $t2, %lo(D_800EA1A0)($at)
 /* 1D6BB4 801E5E44 3C058005 */  lui   $a1, %hi(D_8004A7C4) # $a1, 0x8005
 /* 1D6BB8 801E5E48 8CA5A7C4 */  lw    $a1, %lo(D_8004A7C4)($a1)

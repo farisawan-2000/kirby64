@@ -488,7 +488,7 @@ glabel func_8016CA8C_ovl3
 /* 0CDBA4 8016D164 8DCE6B54 */  lw    $t6, %lo(D_800D6B54)($t6)
 /* 0CDBA8 8016D168 55C00004 */  bnezl $t6, .L8016D17C_ovl3
 /* 0CDBAC 8016D16C 8E820034 */   lw    $v0, 0x34($s4)
-/* 0CDBB0 8016D170 0C029D9E */  jal   func_800A7678
+/* 0CDBB0 8016D170 0C029D9E */  jal   play_sound
 /* 0CDBB4 8016D174 240400EB */   li    $a0, 235
 /* 0CDBB8 8016D178 8E820034 */  lw    $v0, 0x34($s4)
 .L8016D17C_ovl3:

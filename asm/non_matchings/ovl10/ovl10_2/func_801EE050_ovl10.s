@@ -64,7 +64,7 @@ glabel func_801EE050_ovl10
 /* 1DEEB8 801EE148 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 1DEEBC 801EE14C 000D7080 */  sll   $t6, $t5, 2
 /* 1DEEC0 801EE150 002E0821 */  addu  $at, $at, $t6
-/* 1DEEC4 801EE154 0C029D9E */  jal   func_800A7678
+/* 1DEEC4 801EE154 0C029D9E */  jal   play_sound
 /* 1DEEC8 801EE158 E4243C90 */ swc1 $f4, %lo(D_800E3C90)($at)
 /* 1DEECC 801EE15C 0C03EE45 */  jal   func_800FB914
 /* 1DEED0 801EE160 24040001 */   li    $a0, 1

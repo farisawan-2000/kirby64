@@ -61,7 +61,7 @@ glabel func_80181110_ovl3
 /* 0E1C3C 801811FC 002D0821 */  addu  $at, $at, $t5
 /* 0E1C40 80181200 E4263C90 */  swc1  $f6, 0x3c90($at)
 .L80181204_ovl3:
-/* 0E1C44 80181204 0C029D9E */  jal   func_800A7678
+/* 0E1C44 80181204 0C029D9E */  jal   play_sound
 /* 0E1C48 80181208 240400BB */   li    $a0, 187
 /* 0E1C4C 8018120C 3C0C8019 */  lui   $t4, %hi(D_80190378) # $t4, 0x8019
 /* 0E1C50 80181210 258C0378 */  addiu $t4, %lo(D_80190378) # addiu $t4, $t4, 0x378
@@ -308,7 +308,7 @@ glabel func_80181110_ovl3
 /* 0E1FDC 8018159C 00000000 */   nop   
 /* 0E1FE0 801815A0 0C04783A */  jal   func_8011E0E8
 /* 0E1FE4 801815A4 00000000 */   nop   
-/* 0E1FE8 801815A8 0C029D9E */  jal   func_800A7678
+/* 0E1FE8 801815A8 0C029D9E */  jal   play_sound
 /* 0E1FEC 801815AC 2404024B */   li    $a0, 587
 /* 0E1FF0 801815B0 0C047585 */  jal   func_8011D614
 /* 0E1FF4 801815B4 AE0000A0 */   sw    $zero, 0xa0($s0)

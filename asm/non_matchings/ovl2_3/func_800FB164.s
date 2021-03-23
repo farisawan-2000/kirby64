@@ -44,13 +44,13 @@ glabel func_800FB164
 /* 083C74 800FB204 252993C8 */  addiu $t1, %lo(D_801293C8) # addiu $t1, $t1, -0x6c38
 /* 083C78 800FB208 250893CC */  addiu $t0, %lo(D_801293CC) # addiu $t0, $t0, -0x6c34
 /* 083C7C 800FB20C 24C693B4 */  addiu $a2, %lo(D_801293B4) # addiu $a2, $a2, -0x6c4c
-/* 083C80 800FB210 3C028005 */  lui   $v0, %hi(D_80048F20) # $v0, 0x8005
+/* 083C80 800FB210 3C028005 */  lui   $v0, %hi(gPlayerControllers) # $v0, 0x8005
 /* 083C84 800FB214 E4C00000 */  swc1  $f0, ($a2)
 /* 083C88 800FB218 E5400000 */  swc1  $f0, ($t2)
 /* 083C8C 800FB21C E5000000 */  swc1  $f0, ($t0)
 /* 083C90 800FB220 E4A20000 */  swc1  $f2, ($a1)
 /* 083C94 800FB224 E5220000 */  swc1  $f2, ($t1)
-/* 083C98 800FB228 94428F20 */  lhu   $v0, %lo(D_80048F20)($v0)
+/* 083C98 800FB228 94428F20 */  lhu   $v0, %lo(gPlayerControllers)($v0)
 /* 083C9C 800FB22C 00001825 */  move  $v1, $zero
 /* 083CA0 800FB230 304F0100 */  andi  $t7, $v0, 0x100
 /* 083CA4 800FB234 11E00002 */  beqz  $t7, .L800FB240_ovl2

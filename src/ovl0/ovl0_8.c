@@ -565,7 +565,7 @@ void crash_screen_print_fpcsr(u32 fpcsr) {
     }
 }
 
-extern u16 D_80048F20;
+extern u16 gPlayerControllers;
 
 u8 func_80022248(u32 arg0, s32 arg1) {
     do {
@@ -575,7 +575,7 @@ u8 func_80022248(u32 arg0, s32 arg1) {
             return 1;
         }
     }
-    while (arg0 != D_80048F20);
+    while (arg0 != gPlayerControllers);
 
     return 0;
 }

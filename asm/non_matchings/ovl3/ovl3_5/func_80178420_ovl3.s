@@ -83,7 +83,7 @@ glabel func_80178420_ovl3
 /* 0D8F94 80178554 3C01800E */  lui   $at, 0x800e
 /* 0D8F98 80178558 000FC080 */  sll   $t8, $t7, 2
 /* 0D8F9C 8017855C 00380821 */  addu  $at, $at, $t8
-/* 0D8FA0 80178560 0C029D9E */  jal   func_800A7678
+/* 0D8FA0 80178560 0C029D9E */  jal   play_sound
 /* 0D8FA4 80178564 E4223C90 */   swc1  $f2, 0x3c90($at)
 /* 0D8FA8 80178568 24040007 */  li    $a0, 7
 /* 0D8FAC 8017856C 0C048BDB */  jal   set_kirby_action_1
@@ -147,7 +147,7 @@ glabel func_80178420_ovl3
 /* 0D908C 8017864C 3C01800E */  li    $at, 0x800E0000 # -0.000000
 /* 0D9090 80178650 00084880 */  sll   $t1, $t0, 2
 /* 0D9094 80178654 00290821 */  addu  $at, $at, $t1
-/* 0D9098 80178658 0C029D9E */  jal   func_800A7678
+/* 0D9098 80178658 0C029D9E */  jal   play_sound
 /* 0D909C 8017865C E4226850 */   swc1  $f2, 0x6850($at)
 /* 0D90A0 80178660 24040007 */  li    $a0, 7
 /* 0D90A4 80178664 0C048BDB */  jal   set_kirby_action_1

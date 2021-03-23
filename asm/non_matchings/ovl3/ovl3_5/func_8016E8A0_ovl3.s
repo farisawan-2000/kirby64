@@ -201,7 +201,7 @@ glabel func_8016E8A0_ovl3
 /* 0CF5E4 8016EBA4 8C84C2E0 */  lw    $a0, -0x3d20($a0)
 /* 0CF5E8 8016EBA8 10810008 */  beq   $a0, $at, .L8016EBCC_ovl3
 /* 0CF5EC 8016EBAC 00000000 */   nop   
-/* 0CF5F0 8016EBB0 0C029D9E */  jal   func_800A7678
+/* 0CF5F0 8016EBB0 0C029D9E */  jal   play_sound
 /* 0CF5F4 8016EBB4 00000000 */   nop   
 /* 0CF5F8 8016EBB8 8E060000 */  lw    $a2, ($s0)
 /* 0CF5FC 8016EBBC 3C0A800E */  lui   $t2, %hi(D_800E3750) # $t2, 0x800e

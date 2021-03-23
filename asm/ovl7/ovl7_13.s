@@ -1860,7 +1860,7 @@ glabel func_801BA8A0_ovl7
 .L801BAA20_ovl7:
 /* 160A90 801BAA20 0C06B30D */  jal   func_801ACC34_ovl7
 /* 160A94 801BAA24 00002825 */   move  $a1, $zero
-/* 160A98 801BAA28 0C029D9E */  jal   func_800A7678
+/* 160A98 801BAA28 0C029D9E */  jal   play_sound
 /* 160A9C 801BAA2C 24040169 */   li    $a0, 361
 /* 160AA0 801BAA30 0C006291 */  jal   random_soft_s32_range
 /* 160AA4 801BAA34 2404000A */   li    $a0, 10

@@ -46,7 +46,7 @@ void func_801BB9D0(s32 arg0, s32 arg1, f32 arg2) {
             gEntitiesPosZArray[temp_v0] = 0.0f;
             gEntitiesPosXArray[temp_v0] = 0.0f;
         }
-        func_800A7678(0xA7);
+        play_sound(0xA7);
     }
 }
 

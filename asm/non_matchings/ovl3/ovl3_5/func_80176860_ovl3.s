@@ -120,7 +120,7 @@ glabel func_80176860_ovl3
 /* 0D7468 80176A28 3C0140C0 */  li    $at, 0x40C00000 # 6.000000
 .L80176A2C_ovl3:
 /* 0D746C 80176A2C 4481F000 */  mtc1  $at, $f30
-/* 0D7470 80176A30 0C029D9E */  jal   func_800A7678
+/* 0D7470 80176A30 0C029D9E */  jal   play_sound
 /* 0D7474 80176A34 2404010B */   li    $a0, 267
 /* 0D7478 80176A38 92C20004 */  lbu   $v0, 4($s6)
 /* 0D747C 80176A3C 3C050002 */  lui   $a1, (0x00020007 >> 16) # lui $a1, 2
@@ -225,7 +225,7 @@ glabel func_80176860_ovl3
 /* 0D75F0 80176BB0 8DAF0000 */  lw    $t7, ($t5)
 /* 0D75F4 80176BB4 000FC080 */  sll   $t8, $t7, 2
 /* 0D75F8 80176BB8 02B84821 */  addu  $t1, $s5, $t8
-/* 0D75FC 80176BBC 0C029D9E */  jal   func_800A7678
+/* 0D75FC 80176BBC 0C029D9E */  jal   play_sound
 /* 0D7600 80176BC0 AD2E0000 */   sw    $t6, ($t1)
 /* 0D7604 80176BC4 0C02BB30 */  jal   func_800AECC0
 /* 0D7608 80176BC8 4600E306 */   mov.s $f12, $f28

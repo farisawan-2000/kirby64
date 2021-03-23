@@ -85,7 +85,7 @@ OSContPad sContPads[MAXCONTROLLERS]; // 0x80048E80
 s32 D_80048E98; // num controllers? // 0x80048E98
 s8 D_80048E9C[MAXCONTROLLERS]; // 0x80048E9C
 struct Controller gControllers[MAXCONTROLLERS]; // 0x80048EA0
-Controller_800D6FE8 D_80048F20[MAXCONTROLLERS]; // 0x80048F20
+Controller_800D6FE8 gPlayerControllers[MAXCONTROLLERS]; // 0x80048F20
 s32 D_80048F48; // 0x80048F48
 s32 D_80048F4C; // 0x80048F4C
 s32 D_80048F50; // 0x80048F50
@@ -105,23 +105,23 @@ void func_80003DC0(void) {
     for (port = 0; port < D_80048E98; port++)
     {
         if (gControllers[D_80048E9C[port]].errno == 0) {
-            D_80048F20[port] = D_80048F20[D_80048E9C[port]];
+            gPlayerControllers[port] = gPlayerControllers[D_80048E9C[port]];
         } else {
-            D_80048F20[port].stickY = 0;
-            D_80048F20[port].buttonHeldLong = 0;
-            D_80048F20[port].buttonReleased = 0;
-            D_80048F20[port].buttonPressed = 0;
-            D_80048F20[port].buttonHeld = 0;
-            D_80048F20[port].stickX = D_80048F20[port].stickY;
+            gPlayerControllers[port].stickY = 0;
+            gPlayerControllers[port].buttonHeldLong = 0;
+            gPlayerControllers[port].buttonReleased = 0;
+            gPlayerControllers[port].buttonPressed = 0;
+            gPlayerControllers[port].buttonHeld = 0;
+            gPlayerControllers[port].stickX = gPlayerControllers[port].stickY;
         }
     }
     for (; port < MAXCONTROLLERS; port++)
     {
-        D_80048F20[port].buttonHeldLong = 0;
-        D_80048F20[port].buttonReleased = 0;
-        D_80048F20[port].buttonPressed = 0;
-        D_80048F20[port].buttonHeld = 0;
-        D_80048F20[port].stickX = D_80048F20[port].stickY = 0;
+        gPlayerControllers[port].buttonHeldLong = 0;
+        gPlayerControllers[port].buttonReleased = 0;
+        gPlayerControllers[port].buttonPressed = 0;
+        gPlayerControllers[port].buttonHeld = 0;
+        gPlayerControllers[port].stickX = gPlayerControllers[port].stickY = 0;
     }
 }
 
@@ -188,18 +188,18 @@ void func_800041A0() {
     for (i = 0; i != MAXCONTROLLERS; i++)
     {
         if (gControllers[i].errno == 0) {
-            D_80048F20[i].buttonHeld = gControllers[i].buttonHeld;
-            D_80048F20[i].buttonPressed = gControllers[i].bufferedButtonPressed;
-            D_80048F20[i].buttonReleased = gControllers[i].bufferedButtonReleased;
-            D_80048F20[i].buttonHeldLong = gControllers[i].bufferedButtonHeldLong;
-            D_80048F20[i].stickX = gControllers[i].stick_x;            
-            D_80048F20[i].stickY = gControllers[i].stick_y;
+            gPlayerControllers[i].buttonHeld = gControllers[i].buttonHeld;
+            gPlayerControllers[i].buttonPressed = gControllers[i].bufferedButtonPressed;
+            gPlayerControllers[i].buttonReleased = gControllers[i].bufferedButtonReleased;
+            gPlayerControllers[i].buttonHeldLong = gControllers[i].bufferedButtonHeldLong;
+            gPlayerControllers[i].stickX = gControllers[i].stick_x;            
+            gPlayerControllers[i].stickY = gControllers[i].stick_y;
         } else {
-            D_80048F20[i].buttonHeldLong = 0;
-            D_80048F20[i].buttonReleased = 0;
-            D_80048F20[i].buttonPressed = 0;
-            D_80048F20[i].buttonHeld = 0;
-            D_80048F20[i].stickX = D_80048F20[i].stickY = 0;
+            gPlayerControllers[i].buttonHeldLong = 0;
+            gPlayerControllers[i].buttonReleased = 0;
+            gPlayerControllers[i].buttonPressed = 0;
+            gPlayerControllers[i].buttonHeld = 0;
+            gPlayerControllers[i].stickX = gPlayerControllers[i].stickY = 0;
         }
         gControllers[i].bufferedButtonHeldLong = 0;
         gControllers[i].bufferedButtonReleased = 0;
@@ -262,7 +262,7 @@ s32 *func_80004250(void) {
     for (i = 0; i < MAXCONTROLLERS; i++)
     {
         gControllers[i].stick_y = 0;
-        D_80048F20[i].stickY = 0;
+        gPlayerControllers[i].stickY = 0;
         sContPads[i].button = 0;
         gControllers[i].buttonHeldLong = 0;
         gControllers[i].buttonPressed = 0;
@@ -270,13 +270,13 @@ s32 *func_80004250(void) {
         gControllers[i].unk18 = 30;
         gControllers[i].unk10 = 30;
         gControllers[i].unk14 = 5;
-        D_80048F20[i].buttonHeldLong = 0;
-        D_80048F20[i].buttonPressed = 0;
-        D_80048F20[i].buttonHeld = 0;
+        gPlayerControllers[i].buttonHeldLong = 0;
+        gPlayerControllers[i].buttonPressed = 0;
+        gPlayerControllers[i].buttonHeld = 0;
         gControllers[i].stick_x = gControllers[i].stick_y;
         gControllers[i].errno = sControllerStatuses[i].errno;
         gControllers[i].status = sControllerStatuses[i].status;
-        D_80048F20[i].stickX = D_80048F20[i].stickY;
+        gPlayerControllers[i].stickX = gPlayerControllers[i].stickY;
     }
 
     D_80048E98 = 0;

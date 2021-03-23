@@ -15,15 +15,15 @@ glabel func_80174AEC_ovl3
 /* 0D5560 80174B20 304E0002 */  andi  $t6, $v0, 2
 /* 0D5564 80174B24 11C00005 */  beqz  $t6, .L80174B3C_ovl3
 /* 0D5568 80174B28 00000000 */   nop   
-/* 0D556C 80174B2C 0C029D9E */  jal   func_800A7678
+/* 0D556C 80174B2C 0C029D9E */  jal   play_sound
 /* 0D5570 80174B30 240400DE */   li    $a0, 222
 /* 0D5574 80174B34 10000003 */  b     .L80174B44_ovl3
 /* 0D5578 80174B38 00000000 */   nop   
 .L80174B3C_ovl3:
-/* 0D557C 80174B3C 0C029D9E */  jal   func_800A7678
+/* 0D557C 80174B3C 0C029D9E */  jal   play_sound
 /* 0D5580 80174B40 240400DF */   li    $a0, 223
 .L80174B44_ovl3:
-/* 0D5584 80174B44 0C029D9E */  jal   func_800A7678
+/* 0D5584 80174B44 0C029D9E */  jal   play_sound
 /* 0D5588 80174B48 240400E7 */   li    $a0, 231
 /* 0D558C 80174B4C 3C028013 */  lui   $v0, %hi(gKirbyState) # $v0, 0x8013
 /* 0D5590 80174B50 2442E7C0 */  addiu $v0, %lo(gKirbyState) # addiu $v0, $v0, -0x1840

@@ -204,7 +204,7 @@ glabel func_801EAB98_ovl10
 /* 1DBC28 801EAEB8 240401CA */  li    $a0, 458
 /* 1DBC2C 801EAEBC 000F6080 */  sll   $t4, $t7, 2
 /* 1DBC30 801EAEC0 002C0821 */  addu  $at, $at, $t4
-/* 1DBC34 801EAEC4 0C029D9E */  jal   func_800A7678
+/* 1DBC34 801EAEC4 0C029D9E */  jal   play_sound
 /* 1DBC38 801EAEC8 E432AA60 */ swc1 $f18, %lo(D_800EAA60)($at)
 /* 1DBC3C 801EAECC 8E380000 */  lw    $t8, ($s1)
 /* 1DBC40 801EAED0 3C01800F */ lui $at, %hi(D_800E8920)

@@ -26,7 +26,7 @@ glabel func_80117570
 /* 0A0040 801175D0 2509FFFF */  addiu $t1, $t0, -1
 /* 0A0044 801175D4 15200019 */  bnez  $t1, .L8011763C_ovl2
 /* 0A0048 801175D8 AC490000 */   sw    $t1, ($v0)
-/* 0A004C 801175DC 0C029D9E */  jal   func_800A7678
+/* 0A004C 801175DC 0C029D9E */  jal   play_sound
 /* 0A0050 801175E0 AFA3001C */   sw    $v1, 0x1c($sp)
 /* 0A0054 801175E4 3C01BF00 */  li    $at, 0xBF000000 # -0.500000
 /* 0A0058 801175E8 8FA3001C */  lw    $v1, 0x1c($sp)

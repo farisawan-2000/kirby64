@@ -21,10 +21,10 @@ s32 func_80158120_ovl4(void) {
         return 0;
     }
 
-    if ((D_80048F20[0].buttonHeldLong & 0x100) != 0) {
+    if ((gPlayerControllers[0].buttonHeldLong & 0x100) != 0) {
         phi_v1 = 1;
     }
-    if ((D_80048F20[0].buttonHeldLong & 0x200) != 0) {
+    if ((gPlayerControllers[0].buttonHeldLong & 0x200) != 0) {
         phi_v1 = -1;
     }
     return phi_v1;
@@ -75,7 +75,7 @@ void func_80158224_ovl4(s32 arg0) {
     func_800B2F54(0x10, D_8015C360[D_8015C71C], func_80159124_ovl4(D_800D6B98));
     func_800A71A0(0x10);
     if (D_800D6B7C != 0) {
-        func_800A7678(0x115);
+        play_sound(0x115);
         D_800E9E20[D_8004A7C4->objId] = D_800D6B98 + 1;
         func_8000B6BC(5);
         D_800D6B7C = 0;
@@ -107,9 +107,9 @@ void func_80158428_ovl4(s32 arg0) {
         D_800E98E0[D_8015C718] = 0;
         return;
     }
-    if ((D_80048F20[0].buttonPressed & 0x9000) != 0) {
+    if ((gPlayerControllers[0].buttonPressed & 0x9000) != 0) {
         D_8015C710 = 1;
-        func_800A7678(0xF0);
+        play_sound(0xF0);
         return;
     }
     tmp_func_return = func_80158120_ovl4();
@@ -117,7 +117,7 @@ void func_80158428_ovl4(s32 arg0) {
         if (D_800D6B98 < func_8015874C_ovl4()) {
             D_800E9E20[D_8004A7C4->objId] = D_800D6B98 + 1;
             D_800E9C60[D_8004A7C4->objId] = 2;
-            func_800A7678(0x115);
+            play_sound(0x115);
             D_800D6B9C = 0;
             D_800E98E0[D_8004A7C4->objId] = 0x25;
         } else {
@@ -126,7 +126,7 @@ void func_80158428_ovl4(s32 arg0) {
             {
                 D_800E9E20[D_8004A7C4->objId] = 0;
                 D_800E9C60[D_8004A7C4->objId] = 2;
-                func_800A7678(0x115);
+                play_sound(0x115);
                 D_800D6B9C = 0;
                 D_800E98E0[D_8004A7C4->objId] = 0x25;
             }
@@ -136,7 +136,7 @@ void func_80158428_ovl4(s32 arg0) {
         if (D_800D6B98 > 0) {
             D_800E9E20[D_8004A7C4->objId] = D_800D6B98 - 1;
             D_800E9C60[D_8004A7C4->objId] = 1;
-            func_800A7678(0x115);
+            play_sound(0x115);
             D_800D6B9C = 0;
             D_800E98E0[D_8004A7C4->objId] = 0x25;
             return;
@@ -146,7 +146,7 @@ void func_80158428_ovl4(s32 arg0) {
         {
                 D_800E9E20[D_8004A7C4->objId] = func_8015874C_ovl4();
                 D_800E9C60[D_8004A7C4->objId] = 1;
-                func_800A7678(0x115);
+                play_sound(0x115);
                 D_800D6B9C = 0;
                 D_800E98E0[D_8004A7C4->objId] = 0x25;
         }
@@ -570,7 +570,7 @@ extern s32 D_800D6B24;
 extern s32 D_8015C720;
 
 void func_80159D78_ovl4(s32 arg0) {
-    if ((D_800D6B24 == 0) && (D_8015C720 == 1) && (D_80048F20[0].buttonPressed & 0x9000)) {
+    if ((D_800D6B24 == 0) && (D_8015C720 == 1) && (gPlayerControllers[0].buttonPressed & 0x9000)) {
         func_800A5744(0, 0, 0);
         func_800A5A14(0, 0x10, 2);
     }

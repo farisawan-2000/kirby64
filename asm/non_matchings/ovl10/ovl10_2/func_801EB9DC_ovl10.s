@@ -14,7 +14,7 @@ glabel func_801EB9DC_ovl10
 /* 1DC77C 801EBA0C 8C65001C */  lw    $a1, 0x1c($v1)
 /* 1DC780 801EBA10 10A10005 */  beq   $a1, $at, .L801EBA28_ovl10
 /* 1DC784 801EBA14 00A02025 */   move  $a0, $a1
-/* 1DC788 801EBA18 0C029D9E */  jal   func_800A7678
+/* 1DC788 801EBA18 0C029D9E */  jal   play_sound
 /* 1DC78C 801EBA1C AFA20024 */   sw    $v0, 0x24($sp)
 /* 1DC790 801EBA20 8FA20024 */  lw    $v0, 0x24($sp)
 /* 1DC794 801EBA24 8C430094 */  lw    $v1, 0x94($v0)

@@ -86,7 +86,7 @@ glabel func_80185788_ovl3
 .L801858D0_ovl3:
 /* 0E6310 801858D0 AC2A9560 */  sw    $t2, -0x6aa0($at)
 .L801858D4_ovl3:
-/* 0E6314 801858D4 0C029D9E */  jal   func_800A7678
+/* 0E6314 801858D4 0C029D9E */  jal   play_sound
 /* 0E6318 801858D8 2404005A */   li    $a0, 90
 /* 0E631C 801858DC 0C05A4F1 */  jal   func_801693C4_ovl3
 /* 0E6320 801858E0 2404000F */   li    $a0, 15

@@ -49,7 +49,7 @@ s32 func_801E4488_ovl17(void) {
                 D_800E7CE0[D_8004A7C4->objId] = 0x276U;
                 D_800DDC50[D_8004A7C4->objId] = 3;
                 restart_thread_with_new_function((s32) gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_801E40F4);
-                func_800A7678(0x1C3);
+                play_sound(0x1C3);
                 if (sp28.unkC != 0) {
                     D_800E98E0[sp28.unkC] = 1;
                 }
@@ -58,7 +58,7 @@ s32 func_801E4488_ovl17(void) {
                 D_800DDC50[D_8004A7C4->objId] = 2;
                 restart_thread_with_new_function((s32) gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_801E40F4);
                 D_800E7CE0[D_8004A7C4->objId] = 1;
-                func_800A7678(0x1BE);
+                play_sound(0x1BE);
                 if (sp28.unkC != 0) {
                     D_800E98E0[sp28.unkC] = 1;
                 }

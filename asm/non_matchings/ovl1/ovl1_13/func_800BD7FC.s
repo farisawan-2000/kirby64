@@ -60,7 +60,7 @@ glabel func_800BD7FC
 /* 065B20 800BD8D0 AE400000 */  sw    $zero, ($s2)
 /* 065B24 800BD8D4 ACAB0000 */  sw    $t3, ($a1)
 /* 065B28 800BD8D8 AE000000 */  sw    $zero, ($s0)
-/* 065B2C 800BD8DC 0C029D9E */  jal   func_800A7678
+/* 065B2C 800BD8DC 0C029D9E */  jal   play_sound
 /* 065B30 800BD8E0 24040001 */   li    $a0, 1
 /* 065B34 800BD8E4 0C02F096 */  jal   change_kirby_lives
 /* 065B38 800BD8E8 24040001 */   li    $a0, 1
@@ -69,7 +69,7 @@ glabel func_800BD7FC
 .L800BD8F4_ovl1:
 /* 065B44 800BD8F4 240C0003 */  li    $t4, 3
 /* 065B48 800BD8F8 AE2C0000 */  sw    $t4, ($s1)
-/* 065B4C 800BD8FC 0C029D9E */  jal   func_800A7678
+/* 065B4C 800BD8FC 0C029D9E */  jal   play_sound
 /* 065B50 800BD900 24040117 */   li    $a0, 279
 /* 065B54 800BD904 8E040000 */  lw    $a0, ($s0)
 /* 065B58 800BD908 24050001 */  li    $a1, 1

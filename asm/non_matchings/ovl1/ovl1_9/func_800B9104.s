@@ -3,8 +3,8 @@ glabel func_800B9104
 /* 061358 800B9108 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 06135C 800B910C 0C001189 */  jal   D_80004624_ovl1
 /* 061360 800B9110 00000000 */   nop   
-/* 061364 800B9114 3C0E8005 */  lui   $t6, %hi(D_80048F20) # $t6, 0x8005
-/* 061368 800B9118 95CE8F20 */  lhu   $t6, %lo(D_80048F20)($t6)
+/* 061364 800B9114 3C0E8005 */  lui   $t6, %hi(gPlayerControllers) # $t6, 0x8005
+/* 061368 800B9118 95CE8F20 */  lhu   $t6, %lo(gPlayerControllers)($t6)
 /* 06136C 800B911C 24010830 */  li    $at, 2096
 /* 061370 800B9120 3C03800F */  lui   $v1, %hi(gSaveBuffer1) # $v1, 0x800f
 /* 061374 800B9124 31CF0830 */  andi  $t7, $t6, 0x830

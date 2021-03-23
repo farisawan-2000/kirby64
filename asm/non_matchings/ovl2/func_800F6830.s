@@ -1,6 +1,6 @@
 glabel func_800F6830
-/* 07F2A0 800F6830 3C088005 */  lui   $t0, %hi(D_80048F20) # $t0, 0x8005
-/* 07F2A4 800F6834 25088F20 */  addiu $t0, %lo(D_80048F20) # addiu $t0, $t0, -0x70e0
+/* 07F2A0 800F6830 3C088005 */  lui   $t0, %hi(gPlayerControllers) # $t0, 0x8005
+/* 07F2A4 800F6834 25088F20 */  addiu $t0, %lo(gPlayerControllers) # addiu $t0, $t0, -0x70e0
 /* 07F2A8 800F6838 950E0000 */  lhu   $t6, ($t0)
 /* 07F2AC 800F683C 3C01800D */  lui   $at, %hi(D_800D6F40) # $at, 0x800d
 /* 07F2B0 800F6840 3C19800D */  lui   $t9, %hi(D_800D7B68) # $t9, 0x800d

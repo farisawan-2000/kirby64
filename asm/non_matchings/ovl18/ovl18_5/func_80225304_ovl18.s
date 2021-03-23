@@ -48,7 +48,7 @@ glabel func_80225304_ovl18
 .L802253BC_ovl18:
 /* 237D5C 802253BC 0C06B30D */  jal   func_801ACC34_ovl18
 /* 237D60 802253C0 00002825 */   move  $a1, $zero
-/* 237D64 802253C4 0C029D9E */  jal   func_800A7678
+/* 237D64 802253C4 0C029D9E */  jal   play_sound
 /* 237D68 802253C8 24040169 */   li    $a0, 361
 /* 237D6C 802253CC 0C006291 */  jal   random_soft_s32_range
 /* 237D70 802253D0 2404000A */   li    $a0, 10

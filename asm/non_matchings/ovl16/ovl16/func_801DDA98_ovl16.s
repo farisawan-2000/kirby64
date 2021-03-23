@@ -144,7 +144,7 @@ glabel func_801DDA98_ovl16
 /* 213F70 801DDCC0 8D190000 */  lw    $t9, ($t0)
 /* 213F74 801DDCC4 00194880 */  sll   $t1, $t9, 2
 /* 213F78 801DDCC8 02E95821 */  addu  $t3, $s7, $t1
-/* 213F7C 801DDCCC 0C029D9E */  jal   func_800A7678
+/* 213F7C 801DDCCC 0C029D9E */  jal   play_sound
 /* 213F80 801DDCD0 E5720000 */   swc1  $f18, ($t3)
 /* 213F84 801DDCD4 8ECA0000 */  lw    $t2, ($s6)
 /* 213F88 801DDCD8 3C0E800F */ lui $t6, %hi(D_800E98E0)

@@ -42,7 +42,7 @@ glabel func_8011A2F4
 /* 0A2E04 8011A394 3C01800D */  lui   $at, %hi(D_800D6F24) # $at, 0x800d
 /* 0A2E08 8011A398 2459FF41 */  addiu $t9, $v0, -0xbf
 /* 0A2E0C 8011A39C AC396F24 */  sw    $t9, %lo(D_800D6F24)($at)
-/* 0A2E10 8011A3A0 0C029D9E */  jal   func_800A7678
+/* 0A2E10 8011A3A0 0C029D9E */  jal   play_sound
 /* 0A2E14 8011A3A4 240401FD */   li    $a0, 509
 /* 0A2E18 8011A3A8 8FBF0014 */  lw    $ra, 0x14($sp)
 .L8011A3AC_ovl2:

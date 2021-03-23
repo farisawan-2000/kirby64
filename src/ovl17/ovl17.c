@@ -73,10 +73,10 @@ void func_801DD704_ovl17(s32 arg0) {
     func_800AA018(0x10692);
     D_800E98E0[D_8004A7C4->objId] = func_800A8234(0, 0, 0x42);
     func_8000B6BC(0x82);
-    func_800A7678(0x264);
+    play_sound(0x264);
     func_800BC0F0(1);
     func_8000B6BC(0x20);
-    func_800A7678(0x266);
+    play_sound(0x266);
     func_800BC0F0(2);
     func_800AF27C();
     if (D_800E98E0[D_8004A7C4->objId] != 0) {

@@ -1396,7 +1396,7 @@ glabel func_801E09C4_ovl11
 /* 1EB390 801E0AD0 46003207 */  neg.s $f8, $f6
 /* 1EB394 801E0AD4 240401D9 */  li    $a0, 473
 /* 1EB398 801E0AD8 460A4402 */  mul.s $f16, $f8, $f10
-/* 1EB39C 801E0ADC 0C029D9E */  jal   func_800A7678
+/* 1EB39C 801E0ADC 0C029D9E */  jal   play_sound
 /* 1EB3A0 801E0AE0 E4700000 */   swc1  $f16, ($v1)
 .L801E0AE4_ovl11:
 /* 1EB3A4 801E0AE4 8FBF0014 */  lw    $ra, 0x14($sp)

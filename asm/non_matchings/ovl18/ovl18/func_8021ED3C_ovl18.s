@@ -362,7 +362,7 @@ glabel func_8021ED3C_ovl18
 /* 231C54 8021F2B4 24070003 */  li    $a3, 3
 /* 231C58 8021F2B8 0C03F345 */  jal   func_800FCD14
 /* 231C5C 8021F2BC AFAD0020 */   sw    $t5, 0x20($sp)
-/* 231C60 8021F2C0 0C029D9E */  jal   func_800A7678
+/* 231C60 8021F2C0 0C029D9E */  jal   play_sound
 /* 231C64 8021F2C4 24040226 */   li    $a0, 550
 .L8021F2C8_ovl18:
 /* 231C68 8021F2C8 3C01800D */  lui   $at, %hi(D_800D6E98) # $at, 0x800d

@@ -15,7 +15,7 @@ glabel func_8017492C_ovl3
 /* 0D53A0 80174960 2401FFFE */  li    $at, -2
 /* 0D53A4 80174964 51C1000A */  beql  $t6, $at, .L80174990_ovl3
 /* 0D53A8 80174968 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 0D53AC 8017496C 0C029D9E */  jal   func_800A7678
+/* 0D53AC 8017496C 0C029D9E */  jal   play_sound
 /* 0D53B0 80174970 240400E5 */   li    $a0, 229
 /* 0D53B4 80174974 3C028013 */  lui   $v0, %hi(gKirbyState) # $v0, 0x8013
 /* 0D53B8 80174978 2442E7C0 */  addiu $v0, %lo(gKirbyState) # addiu $v0, $v0, -0x1840

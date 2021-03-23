@@ -83,7 +83,7 @@ glabel func_80177438_ovl3
 /* 0D7FAC 8017756C 3C01800E */  lui   $at, 0x800e
 /* 0D7FB0 80177570 000FC080 */  sll   $t8, $t7, 2
 /* 0D7FB4 80177574 00380821 */  addu  $at, $at, $t8
-/* 0D7FB8 80177578 0C029D9E */  jal   func_800A7678
+/* 0D7FB8 80177578 0C029D9E */  jal   play_sound
 /* 0D7FBC 8017757C E4283C90 */   swc1  $f8, 0x3c90($at)
 /* 0D7FC0 80177580 24040007 */  li    $a0, 7
 /* 0D7FC4 80177584 0C048BDB */  jal   set_kirby_action_1

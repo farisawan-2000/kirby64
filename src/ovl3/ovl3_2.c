@@ -454,7 +454,7 @@ block_48:
                     goto block_48;
                 }
                 ((phi_a1_4->objId * 4) + 0x800E0000)->unk-CF0 = &D_80122CA0;
-                func_800A7678(0x10B);
+                play_sound(0x10B);
                 if (gKirbyState.unk3C == 3) {
                     temp_a1_5 = D_8004A7C4;
                     ((temp_a1_5->objId * 4) + 0x800E0000)->unk64D0 = 0.0f;
@@ -477,7 +477,7 @@ block_48:
                     phi_at = (temp_a1->objId * 4) + 0x800E0000;
                 }
                 phi_at->unk3C90 = 16.0f;
-                func_800A7678(0xF7);
+                play_sound(0xF7);
                 temp_v1_4 = gKirbyState.unk4;
                 gKirbyState.unk40 = 8.0f;
                 if (temp_v1_4 != 0) {
@@ -705,7 +705,7 @@ block_35:
                 if (((temp_v1_10 + 0x800F0000)->unk-7520 & 6) != 0) {
                     set_kirby_action_1(0, 1);
                 } else {
-                    func_800A7678(0x149);
+                    play_sound(0x149);
                     temp_a2_3 = D_8004A7C4;
                     D_800E3750[temp_a2_3->objId] = 0.0f;
                     temp_v1_11 = temp_a2_3->objId;
@@ -1196,7 +1196,7 @@ void func_80158C40_ovl3(s32 arg0) {
     func_80157C5C_ovl3(arg0);
     func_800FBE1C();
     func_800FA414(3);
-    func_800A7678(0x1EF);
+    play_sound(0x1EF);
     func_800AFA14();
 }
 #else
@@ -1410,7 +1410,7 @@ loop_19:
     ((phi_v1->objId * 4) + 0x800E0000)->unk3210 = 12.0f;
     ((phi_v1->objId * 4) + 0x800E0000)->unk3750 = D_80196F94;
     ((phi_v1->objId * 4) + 0x800E0000)->unk3C90 = 16.0f;
-    func_800A7678(0xF7);
+    play_sound(0xF7);
     temp_a0_3 = D_8012E7C4;
     if (temp_a0_3 != 0) {
         if (temp_a0_3 != 1) {
@@ -1715,7 +1715,7 @@ loop_1:
     ((((D_8004A7C4->objId * 4) + 0x800E0000)->unkD50 * 4) + 0x800F0000)->unk-7FA0 = 2;
     func_8000B6BC(0x1A);
     func_801230E8(0x2009F, 0x200A0, 0);
-    func_800A7678(0x259);
+    play_sound(0x259);
     temp_v0_2 = D_8004A7C4;
     ((temp_v0_2->objId * 4) + 0x800E0000)->unk3210 = 70.0f;
     ((temp_v0_2->objId * 4) + 0x800E0000)->unk3750 = 0.0f;

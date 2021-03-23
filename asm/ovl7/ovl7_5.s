@@ -1154,7 +1154,7 @@ glabel func_801A7524_ovl7
 /* 14E174 801A8104 E4328820 */  swc1  $f18, %lo(D_80198820)($at)
 /* 14E178 801A8108 0C03F55C */  jal   func_800FD570
 /* 14E17C 801A810C E7AE0010 */   swc1  $f14, 0x10($sp)
-/* 14E180 801A8110 0C029D9E */  jal   func_800A7678
+/* 14E180 801A8110 0C029D9E */  jal   play_sound
 /* 14E184 801A8114 24040158 */   li    $a0, 344
 /* 14E188 801A8118 3C198005 */  lui   $t9, %hi(D_8004A7C4) # $t9, 0x8005
 /* 14E18C 801A811C 8F39A7C4 */  lw    $t9, %lo(D_8004A7C4)($t9)
@@ -3957,12 +3957,12 @@ glabel func_801AA914_ovl7
 /* 150AC0 801AAA50 2861002C */   slti  $at, $v1, 0x2c
 /* 150AC4 801AAA54 10200005 */  beqz  $at, .L801AAA6C_ovl7
 /* 150AC8 801AAA58 00000000 */   nop   
-/* 150ACC 801AAA5C 0C029D9E */  jal   func_800A7678
+/* 150ACC 801AAA5C 0C029D9E */  jal   play_sound
 /* 150AD0 801AAA60 2404011B */   li    $a0, 283
 /* 150AD4 801AAA64 10000003 */  b     .L801AAA74_ovl7
 /* 150AD8 801AAA68 00000000 */   nop   
 .L801AAA6C_ovl7:
-/* 150ADC 801AAA6C 0C029D9E */  jal   func_800A7678
+/* 150ADC 801AAA6C 0C029D9E */  jal   play_sound
 /* 150AE0 801AAA70 240400E1 */   li    $a0, 225
 .L801AAA74_ovl7:
 /* 150AE4 801AAA74 0C06B1B4 */  jal   func_801AC6D0_ovl7
@@ -5514,7 +5514,7 @@ glabel func_801AC11C_ovl7
 /* 1521D4 801AC164 8C44001C */  lw    $a0, 0x1c($v0)
 /* 1521D8 801AC168 50810005 */  beql  $a0, $at, .L801AC180_ovl7
 /* 1521DC 801AC16C 44800000 */   mtc1  $zero, $f0
-/* 1521E0 801AC170 0C029D9E */  jal   func_800A7678
+/* 1521E0 801AC170 0C029D9E */  jal   play_sound
 /* 1521E4 801AC174 00000000 */   nop   
 /* 1521E8 801AC178 8E020094 */  lw    $v0, 0x94($s0)
 /* 1521EC 801AC17C 44800000 */  mtc1  $zero, $f0
@@ -5701,7 +5701,7 @@ glabel func_801AC364_ovl7
 /* 152490 801AC420 00230821 */  addu  $at, $at, $v1
 /* 152494 801AC424 AC280D50 */  sw    $t0, 0xd50($at)
 .L801AC428_ovl7:
-/* 152498 801AC428 0C029D9E */  jal   func_800A7678
+/* 152498 801AC428 0C029D9E */  jal   play_sound
 /* 15249C 801AC42C 2404000E */   li    $a0, 14
 /* 1524A0 801AC430 0C06B0B6 */  jal   func_801AC2D8_ovl7
 /* 1524A4 801AC434 8FA40018 */   lw    $a0, 0x18($sp)
@@ -5744,7 +5744,7 @@ glabel func_801AC448_ovl7
 /* 152530 801AC4C0 00002825 */  move  $a1, $zero
 /* 152534 801AC4C4 0C03F55C */  jal   func_800FD570
 /* 152538 801AC4C8 E7A00010 */   swc1  $f0, 0x10($sp)
-/* 15253C 801AC4CC 0C029D9E */  jal   func_800A7678
+/* 15253C 801AC4CC 0C029D9E */  jal   play_sound
 /* 152540 801AC4D0 24040158 */   li    $a0, 344
 /* 152544 801AC4D4 0C06B0B6 */  jal   func_801AC2D8_ovl7
 /* 152548 801AC4D8 8FA40028 */   lw    $a0, 0x28($sp)

@@ -401,7 +401,7 @@ loop_8:
     func_800A5A14(0, 0x10, 0);
     func_80020A20_ovl1(0, 0x5000, 0x10);
     func_80023884_ovl1();
-    func_800A7678(0xED);
+    play_sound(0xED);
     if (D_800D6B24 != 0) {
 loop_10:
         func_8000B6BC(1);
@@ -423,18 +423,18 @@ loop_14:
     if ((D_80048F22 & 0x9000) == 0) {
         phi_v0 = D_80048F22;
         if ((D_80048F22 & 0x800) != 0) {
-            func_800A7678(0x113);
+            play_sound(0x113);
             *(&D_800E98E0 + (D_8004A7C4->objId * 4)) = 0;
             phi_v0 = D_80048F22;
         }
         if ((phi_v0 & 0x400) != 0) {
-            func_800A7678(0x113);
+            play_sound(0x113);
             *(&D_800E98E0 + (D_8004A7C4->objId * 4)) = 1;
         }
         func_8000B6BC(1);
         goto loop_14;
     }
-    func_800A7678(0xED);
+    play_sound(0xED);
     temp_v0 = D_8004A7C4->objId * 4;
     if ((1 == *(&D_800E98E0 + temp_v0)) && (1 != *(&D_800E9E20 + temp_v0))) {
         if (D_800BE4F0 == 0x21) {
@@ -845,7 +845,7 @@ void func_800BD6E0(void) {
         if (D_800D6EC0 == 0) {
             if (func_800F8560(1) != 3) {
                 if (D_800D6B24 == 0) {
-                    func_800A7678(0xEC);
+                    play_sound(0xEC);
                     D_800D6EC0 = (s32) (D_800D6EC0 + 1);
                 }
             }
@@ -869,7 +869,7 @@ void func_800BD6E0(void) {
             phi_a0 = temp_a0;
             phi_a1 = 0;
         } else {
-            func_800A7678(0xD3, 0, &D_800D6EA4, 1);
+            play_sound(0xD3, 0, &D_800D6EA4, 1);
             temp_t4 = D_800D6EA4 + 1;
             temp_at = temp_t4 < 2;
             D_800D6EA4 = temp_t4;
@@ -936,12 +936,12 @@ loop_7:
                 D_800F4D10 = 0;
                 gKirbyStars = (s32) (gKirbyStars - 0x1E);
                 D_800D6E98 = 0;
-                func_800A7678(1, &gKirbyStars);
+                play_sound(1, &gKirbyStars);
                 change_kirby_lives(1);
                 goto loop_2;
             }
             D_800D6EBC = 3;
-            func_800A7678(0x117, &gKirbyStars);
+            play_sound(0x117, &gKirbyStars);
             draw_star_segments(D_800D6E98 - 1, 1);
         }
     }
@@ -996,7 +996,7 @@ loop_10:
             return;
         }
         if (D_800D6E9C == 0) {
-            func_800A7678(0xD3, D_800D6E94, &D_800D6E9C);
+            play_sound(0xD3, D_800D6E94, &D_800D6E9C);
             temp_t2 = D_800D6EAC + 1;
             D_800D6EAC = temp_t2;
             temp_s0_2 = temp_t2 - 1;
@@ -1014,7 +1014,7 @@ loop_10:
                 phi_s0_2 = temp_s0_3;
                 phi_a1 = 0;
             } else {
-                func_800A7678(0xD3, 0, &D_800D6E9C);
+                play_sound(0xD3, 0, &D_800D6E9C);
                 temp_t6 = D_800D6EAC + 1;
                 D_800D6EAC = temp_t6;
                 phi_s0_2 = temp_t6 - 1;

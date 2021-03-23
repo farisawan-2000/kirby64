@@ -914,7 +914,7 @@ glabel func_801F0050_ovl10
 /* 1E129C 801F052C 00280821 */  addu  $at, $at, $t0
 /* 1E12A0 801F0530 240D0003 */  li    $t5, 3
 /* 1E12A4 801F0534 AC2D9C60 */  sw    $t5, -0x63a0($at)
-/* 1E12A8 801F0538 0C029D9E */  jal   func_800A7678
+/* 1E12A8 801F0538 0C029D9E */  jal   play_sound
 /* 1E12AC 801F053C 240400F7 */   li    $a0, 247
 /* 1E12B0 801F0540 8E0E0000 */  lw    $t6, ($s0)
 /* 1E12B4 801F0544 3C01800E */  lui   $at, 0x800e
@@ -1073,7 +1073,7 @@ glabel func_801F0050_ovl10
 /* 1E1504 801F0794 00AD2821 */  addu  $a1, $a1, $t5
 /* 1E1508 801F0798 0C02BEED */  jal   func_800AFBB4
 /* 1E150C 801F079C 8CA5E350 */   lw    $a1, -0x1cb0($a1)
-/* 1E1510 801F07A0 0C029D9E */  jal   func_800A7678
+/* 1E1510 801F07A0 0C029D9E */  jal   play_sound
 /* 1E1514 801F07A4 240400CA */   li    $a0, 202
 /* 1E1518 801F07A8 8E0C0000 */  lw    $t4, ($s0)
 /* 1E151C 801F07AC 3C01800F */  lui   $at, 0x800f
@@ -1417,7 +1417,7 @@ glabel func_801F0050_ovl10
 /* 1E1A14 801F0CA4 24040001 */   li    $a0, 1
 /* 1E1A18 801F0CA8 0C02F096 */  jal   change_kirby_lives
 /* 1E1A1C 801F0CAC AFA70030 */   sw    $a3, 0x30($sp)
-/* 1E1A20 801F0CB0 0C029D9E */  jal   func_800A7678
+/* 1E1A20 801F0CB0 0C029D9E */  jal   play_sound
 /* 1E1A24 801F0CB4 24040001 */   li    $a0, 1
 /* 1E1A28 801F0CB8 8FA70030 */  lw    $a3, 0x30($sp)
 .L801F0CBC_ovl10:
@@ -1429,12 +1429,12 @@ glabel func_801F0050_ovl10
 /* 1E1A40 801F0CD0 25294800 */  addiu $t1, %lo(D_801F4800) # addiu $t1, $t1, 0x4800
 /* 1E1A44 801F0CD4 15490005 */  bne   $t2, $t1, .L801F0CEC_ovl10
 /* 1E1A48 801F0CD8 00000000 */   nop   
-/* 1E1A4C 801F0CDC 0C029D9E */  jal   func_800A7678
+/* 1E1A4C 801F0CDC 0C029D9E */  jal   play_sound
 /* 1E1A50 801F0CE0 24040271 */   li    $a0, 625
 /* 1E1A54 801F0CE4 1000002C */  b     .L801F0D98_ovl10
 /* 1E1A58 801F0CE8 24040028 */   li    $a0, 40
 .L801F0CEC_ovl10:
-/* 1E1A5C 801F0CEC 0C029D9E */  jal   func_800A7678
+/* 1E1A5C 801F0CEC 0C029D9E */  jal   play_sound
 /* 1E1A60 801F0CF0 24040273 */   li    $a0, 627
 /* 1E1A64 801F0CF4 10000028 */  b     .L801F0D98_ovl10
 /* 1E1A68 801F0CF8 24040028 */   li    $a0, 40

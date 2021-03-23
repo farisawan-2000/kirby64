@@ -1,7 +1,7 @@
 glabel func_80122C30
 /* 0AB6A0 80122C30 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0AB6A4 80122C34 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0AB6A8 80122C38 0C029D9E */  jal   func_800A7678
+/* 0AB6A8 80122C38 0C029D9E */  jal   play_sound
 /* 0AB6AC 80122C3C 24040102 */   li    $a0, 258
 /* 0AB6B0 80122C40 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 0AB6B4 80122C44 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)

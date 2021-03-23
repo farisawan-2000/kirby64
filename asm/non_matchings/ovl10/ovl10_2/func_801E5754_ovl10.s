@@ -18,7 +18,7 @@ glabel func_801E5754_ovl10
 /* 1D6504 801E5794 8D04001C */  lw    $a0, 0x1c($t0)
 /* 1D6508 801E5798 50810006 */  beql  $a0, $at, .L801E57B4_ovl10
 /* 1D650C 801E579C 8C58008C */   lw    $t8, 0x8c($v0)
-/* 1D6510 801E57A0 0C029D9E */  jal   func_800A7678
+/* 1D6510 801E57A0 0C029D9E */  jal   play_sound
 /* 1D6514 801E57A4 AFA20024 */   sw    $v0, 0x24($sp)
 /* 1D6518 801E57A8 8FA20024 */  lw    $v0, 0x24($sp)
 /* 1D651C 801E57AC 8C480094 */  lw    $t0, 0x94($v0)

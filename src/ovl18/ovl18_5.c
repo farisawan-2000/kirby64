@@ -70,7 +70,7 @@ void func_802248D0_ovl18(s32 arg0) {
     D_800E6690[D_8004A7C4->objId] = 0.0f;
     D_800E64D0[D_8004A7C4->objId] = D_800E6690[D_8004A7C4->objId];
     D_800E6850[D_8004A7C4->objId] = 65535.0f;
-    func_800A7678(0xA1);
+    play_sound(0xA1);
     func_800AF27C();
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14();
@@ -166,7 +166,7 @@ void func_80224E50_ovl18(s32 arg0) {
     func_800AA018(0x101CE);
     func_800AA018(0x101CF);
     D_800E98E0[D_8004A7C4->objId] = 1;
-    func_800A7678(0x160);
+    play_sound(0x160);
     func_8000B6BC(5);
     D_800E98E0[D_8004A7C4->objId] = 2;
     func_800AEFFC(7);
@@ -247,7 +247,7 @@ void func_80225304_ovl18(s32 arg0) {
     D_800E6850[D_8004A7C4->objId] = 3.5f;
     while (1) {
         func_801ACC34_ovl18(0x45, 0);
-        func_800A7678(0x169);
+        play_sound(0x169);
         func_8000B6BC(random_soft_s32_range(0xA) + 0x1E);
     }
 }
@@ -298,7 +298,7 @@ void func_80225650_ovl18(s32 arg0) {
     gEntitiesAngleYArray[D_8004A7C4->objId] = 0.0f;
     func_80225958_ovl18();
     func_80225B44_ovl18();
-    func_800A7678(0x168);
+    play_sound(0x168);
     func_800AFA14();
 }
 

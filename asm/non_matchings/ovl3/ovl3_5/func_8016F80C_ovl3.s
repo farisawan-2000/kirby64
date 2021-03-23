@@ -137,7 +137,7 @@ glabel func_8016F80C_ovl3
 /* 0D0454 8016FA14 002D0821 */  addu  $at, $at, $t5
 /* 0D0458 8016FA18 0C02ED1A */  jal   func_800BB468
 /* 0D045C 8016FA1C E4223C90 */   swc1  $f2, 0x3c90($at)
-/* 0D0460 8016FA20 0C029D9E */  jal   func_800A7678
+/* 0D0460 8016FA20 0C029D9E */  jal   play_sound
 /* 0D0464 8016FA24 24040110 */   li    $a0, 272
 /* 0D0468 8016FA28 3C040002 */  lui   $a0, (0x00020025 >> 16) # lui $a0, 2
 /* 0D046C 8016FA2C 3C050002 */  lui   $a1, (0x00020026 >> 16) # lui $a1, 2

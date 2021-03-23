@@ -79,7 +79,7 @@ glabel func_801E4488_ovl17
 /* 22F7A0 801E45B0 240401BE */  li    $a0, 446
 /* 22F7A4 801E45B4 00194080 */  sll   $t0, $t9, 2
 /* 22F7A8 801E45B8 00280821 */  addu  $at, $at, $t0
-/* 22F7AC 801E45BC 0C029D9E */  jal   func_800A7678
+/* 22F7AC 801E45BC 0C029D9E */  jal   play_sound
 /* 22F7B0 801E45C0 AC2F7CE0 */ sw $t7, %lo(D_800E7CE0)($at)
 /* 22F7B4 801E45C4 8FA20034 */  lw    $v0, 0x34($sp)
 /* 22F7B8 801E45C8 24090001 */  li    $t1, 1
@@ -108,7 +108,7 @@ glabel func_801E4488_ovl17
 /* 22F80C 801E461C 00992021 */  addu  $a0, $a0, $t9
 /* 22F810 801E4620 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 22F814 801E4624 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
-/* 22F818 801E4628 0C029D9E */  jal   func_800A7678
+/* 22F818 801E4628 0C029D9E */  jal   play_sound
 /* 22F81C 801E462C 240401C3 */   li    $a0, 451
 /* 22F820 801E4630 8FA20034 */  lw    $v0, 0x34($sp)
 /* 22F824 801E4634 240F0001 */  li    $t7, 1

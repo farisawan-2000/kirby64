@@ -2,8 +2,8 @@ glabel func_800BBDC4
 /* 064014 800BBDC4 3C06800F */  lui   $a2, %hi(D_800ED4EC) # $a2, 0x800f
 /* 064018 800BBDC8 24C6D4EC */  addiu $a2, %lo(D_800ED4EC) # addiu $a2, $a2, -0x2b14
 /* 06401C 800BBDCC 8CC30000 */  lw    $v1, ($a2)
-/* 064020 800BBDD0 3C098005 */  lui   $t1, %hi(D_80048F20) # $t1, 0x8005
-/* 064024 800BBDD4 25298F20 */  addiu $t1, %lo(D_80048F20) # addiu $t1, $t1, -0x70e0
+/* 064020 800BBDD0 3C098005 */  lui   $t1, %hi(gPlayerControllers) # $t1, 0x8005
+/* 064024 800BBDD4 25298F20 */  addiu $t1, %lo(gPlayerControllers) # addiu $t1, $t1, -0x70e0
 /* 064028 800BBDD8 A5200004 */  sh    $zero, 4($t1)
 /* 06402C 800BBDDC A5200002 */  sh    $zero, 2($t1)
 /* 064030 800BBDE0 04610007 */  bgez  $v1, .L800BBE00_ovl1

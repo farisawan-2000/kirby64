@@ -87,7 +87,7 @@ glabel func_801B0550
 /* 1566EC 801B067C 00380821 */  addu  $at, $at, $t8
 /* 1566F0 801B0680 E42AC660 */  swc1  $f10, -0x39a0($at)
 .L801B0684_ovl7:
-/* 1566F4 801B0684 0C029D9E */  jal   func_800A7678
+/* 1566F4 801B0684 0C029D9E */  jal   play_sound
 /* 1566F8 801B0688 240400A7 */   li    $a0, 167
 .L801B068C_ovl7:
 /* 1566FC 801B068C 8FBF0014 */  lw    $ra, 0x14($sp)

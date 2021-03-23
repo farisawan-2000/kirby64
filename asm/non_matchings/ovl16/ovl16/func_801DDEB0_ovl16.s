@@ -58,7 +58,7 @@ glabel func_801DDEB0_ovl16
 /* 21423C 801DDF8C 8C430000 */  lw    $v1, ($v0)
 /* 214240 801DDF90 54600009 */  bnezl $v1, .L801DDFB8_ovl16
 /* 214244 801DDF94 246C0001 */   addiu $t4, $v1, 1
-/* 214248 801DDF98 0C029D9E */  jal   func_800A7678
+/* 214248 801DDF98 0C029D9E */  jal   play_sound
 /* 21424C 801DDF9C 240401AE */   li    $a0, 430
 /* 214250 801DDFA0 8E890000 */  lw    $t1, ($s4)
 /* 214254 801DDFA4 8D2A0000 */  lw    $t2, ($t1)

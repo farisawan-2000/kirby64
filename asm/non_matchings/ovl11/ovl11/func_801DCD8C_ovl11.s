@@ -23,7 +23,7 @@ glabel func_801DCD8C_ovl11
 /* 1E76A0 801DCDE0 24040176 */  li    $a0, 374
 /* 1E76A4 801DCDE4 E5E80000 */  swc1  $f8, ($t7)
 /* 1E76A8 801DCDE8 8C780000 */  lw    $t8, ($v1)
-/* 1E76AC 801DCDEC 0C029D9E */  jal   func_800A7678
+/* 1E76AC 801DCDEC 0C029D9E */  jal   play_sound
 /* 1E76B0 801DCDF0 AC38A520 */ sw $t8, %lo(D_800EA520)($at)
 .L801DCDF4_ovl11:
 /* 1E76B4 801DCDF4 8FBF0014 */  lw    $ra, 0x14($sp)

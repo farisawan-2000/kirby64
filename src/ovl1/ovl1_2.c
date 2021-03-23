@@ -370,7 +370,7 @@ extern const char D_800D5D14[];
 extern s16 D_800C0040[];
 void func_80023CB0_ovl1(u16);
 
-void func_800A7678(s32 arg0) {
+void play_sound(s32 arg0) {
     if (arg0 == 0x99999999) {
         print_error_stub(&D_800D5CE0, arg0); // "use AllStopFGM macro.\n"
         return;

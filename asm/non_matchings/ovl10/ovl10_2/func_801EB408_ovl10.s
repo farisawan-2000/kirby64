@@ -69,7 +69,7 @@ glabel func_801EB408_ovl10
 /* 1DC280 801EB510 240401D0 */  li    $a0, 464
 /* 1DC284 801EB514 000F7080 */  sll   $t6, $t7, 2
 /* 1DC288 801EB518 022EC021 */  addu  $t8, $s1, $t6
-/* 1DC28C 801EB51C 0C029D9E */  jal   func_800A7678
+/* 1DC28C 801EB51C 0C029D9E */  jal   play_sound
 /* 1DC290 801EB520 AF000000 */   sw    $zero, ($t8)
 /* 1DC294 801EB524 3C040001 */  lui   $a0, (0x00010380 >> 16) # lui $a0, 1
 /* 1DC298 801EB528 0C02A7A9 */  jal   func_800A9EA4
@@ -121,7 +121,7 @@ glabel func_801EB408_ovl10
 .L801EB5D4_ovl10:
 /* 1DC344 801EB5D4 0C02CD48 */  jal   func_800B3520
 /* 1DC348 801EB5D8 00000000 */   nop   
-/* 1DC34C 801EB5DC 0C029D9E */  jal   func_800A7678
+/* 1DC34C 801EB5DC 0C029D9E */  jal   play_sound
 /* 1DC350 801EB5E0 240401CB */   li    $a0, 459
 /* 1DC354 801EB5E4 0C03EE45 */  jal   func_800FB914
 /* 1DC358 801EB5E8 24040003 */   li    $a0, 3

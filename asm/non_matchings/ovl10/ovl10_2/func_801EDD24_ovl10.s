@@ -97,7 +97,7 @@ glabel func_801EDD24_ovl10
 /* 1DEBFC 801EDE8C 00000000 */   nop   
 /* 1DEC00 801EDE90 AC2DC2E0 */  sw    $t5, %lo(D_800EC2E0)($at)
 .L801EDE94_ovl10:
-/* 1DEC04 801EDE94 0C029D9E */  jal   func_800A7678
+/* 1DEC04 801EDE94 0C029D9E */  jal   play_sound
 /* 1DEC08 801EDE98 240401EE */   li    $a0, 494
 /* 1DEC0C 801EDE9C 8E430000 */  lw    $v1, ($s2)
 /* 1DEC10 801EDEA0 3C10800F */  lui   $s0, %hi(D_800E9560) # $s0, 0x800f

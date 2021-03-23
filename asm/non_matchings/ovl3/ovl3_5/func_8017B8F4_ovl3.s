@@ -173,7 +173,7 @@ glabel func_8017B8F4_ovl3
 /* 0DC5C4 8017BB84 3C01800E */  lui   $at, 0x800e
 /* 0DC5C8 8017BB88 000C6880 */  sll   $t5, $t4, 2
 /* 0DC5CC 8017BB8C 002D0821 */  addu  $at, $at, $t5
-/* 0DC5D0 8017BB90 0C029D9E */  jal   func_800A7678
+/* 0DC5D0 8017BB90 0C029D9E */  jal   play_sound
 /* 0DC5D4 8017BB94 E4326850 */   swc1  $f18, 0x6850($at)
 /* 0DC5D8 8017BB98 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0DC5DC 8017BB9C 2508E7C0 */  addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840

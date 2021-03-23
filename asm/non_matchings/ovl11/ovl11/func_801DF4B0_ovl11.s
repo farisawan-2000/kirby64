@@ -15,7 +15,7 @@ glabel func_801DF4B0_ovl11
 /* 1E9DA4 801DF4E4 240401CD */  li    $a0, 461
 /* 1E9DA8 801DF4E8 00194080 */  sll   $t0, $t9, 2
 /* 1E9DAC 801DF4EC 00280821 */  addu  $at, $at, $t0
-/* 1E9DB0 801DF4F0 0C029D9E */  jal   func_800A7678
+/* 1E9DB0 801DF4F0 0C029D9E */  jal   play_sound
 /* 1E9DB4 801DF4F4 AC38DFD0 */ sw $t8, %lo(D_800DDFD0)($at)
 /* 1E9DB8 801DF4F8 3C040001 */  lui   $a0, (0x00010556 >> 16) # lui $a0, 1
 /* 1E9DBC 801DF4FC 0C02A806 */  jal   func_800AA018

@@ -15,7 +15,7 @@ glabel func_800FAC74
 /* 083718 800FACA8 46082032 */  c.eq.s $f4, $f8
 /* 08371C 800FACAC 00C08025 */  move  $s0, $a2
 /* 083720 800FACB0 00803825 */  move  $a3, $a0
-/* 083724 800FACB4 3C038005 */  lui   $v1, %hi(D_80048F20) # $v1, 0x8005
+/* 083724 800FACB4 3C038005 */  lui   $v1, %hi(gPlayerControllers) # $v1, 0x8005
 /* 083728 800FACB8 4500000D */  bc1f  .L800FACF0_ovl2
 /* 08372C 800FACBC AFAF005C */   sw    $t7, 0x5c($sp)
 /* 083730 800FACC0 00C04825 */  move  $t1, $a2
@@ -32,7 +32,7 @@ glabel func_800FAC74
 /* 083758 800FACE8 152BFFF8 */  bne   $t1, $t3, .L800FACCC_ovl2
 /* 08375C 800FACEC AD48FFFC */   sw    $t0, -4($t2)
 .L800FACF0_ovl2:
-/* 083760 800FACF0 94638F20 */  lhu   $v1, %lo(D_80048F20)($v1)
+/* 083760 800FACF0 94638F20 */  lhu   $v1, %lo(gPlayerControllers)($v1)
 /* 083764 800FACF4 00001025 */  move  $v0, $zero
 /* 083768 800FACF8 3C0E800C */  lui   $t6, %hi(D_800BE4F8) # $t6, 0x800c
 /* 08376C 800FACFC 306C0100 */  andi  $t4, $v1, 0x100

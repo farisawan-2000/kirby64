@@ -97,7 +97,7 @@ block_13:
             func_800F9020(&sp6C, sp80, (bitwise s32) sp50);
             sp70 = gEntitiesPosYArray[D_8004A7C4->objId] + ((random_soft_s32_range(temp_s0->unk10) / 5) * 5);
             if ((temp_s0->unk0 & 0xF) != 7) {
-                func_800A7678(0x112);
+                play_sound(0x112);
                 func_800A7F74(3, 0, 0xCE, (bitwise s32) sp6C, sp70, sp74);
                 func_8000B6BC(0x12);
             }
@@ -113,7 +113,7 @@ block_13:
         func_800F9020(&sp6C, sp80, (bitwise s32) sp50);
         sp70 = gEntitiesPosYArray[D_8004A7C4->objId] + temp_s0->unk10;
         if ((temp_s0->unk0 & 0xF) != 7) {
-            func_800A7678(0x112);
+            play_sound(0x112);
             func_800A7F74(3, 0, 0xCE, (bitwise s32) sp6C, sp70, sp74);
             func_8000B6BC(0x12);
         }
@@ -533,7 +533,7 @@ loop_12:
         sp84 = 0.0f;
         sp80 = 0.0f;
         func_800FCD14(0xFF, spAB, (bitwise s32) spA0, 3, 7, 2, 0, 0, temp_s0_3->unkC, &sp8C, &sp80, &sp74);
-        func_800A7678(0x226);
+        play_sound(0x226);
     }
     D_800D6E98 = 0;
     func_800AFA14();
@@ -769,7 +769,7 @@ block_7:
         }
         *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = 0x12;
         sp48 = temp_v1_3;
-        func_800A7678(0xF4);
+        play_sound(0xF4);
         temp_v1_3->unk94 = 0;
         temp_v1_3->unk40 = 1;
         restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801A3E80);
@@ -795,7 +795,7 @@ void func_8021F970_ovl18(void) {
     s32 sp18;
 
     sp18 = D_800E77A0[D_8004A7C4->objId] - 0x4E;
-    func_800A7678(0x28);
+    play_sound(0x28);
     sp1C->unk3D = D_802297E4[sp18];
     D_800E7CE0[D_8004A7C4->objId] = D_802297E4[sp18];
     D_800D70D8.unk0 = gEntitiesPosXArray[D_8004A7C4->objId];

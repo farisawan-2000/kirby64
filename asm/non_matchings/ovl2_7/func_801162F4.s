@@ -51,7 +51,7 @@ glabel func_801162F4
 /* 09EE24 801163B4 C4288D18 */  lwc1  $f8, %lo(D_80128D18)($at)
 /* 09EE28 801163B8 0C002DAF */  jal   func_8000B6BC
 /* 09EE2C 801163BC E4480014 */   swc1  $f8, 0x14($v0)
-/* 09EE30 801163C0 0C029D9E */  jal   func_800A7678
+/* 09EE30 801163C0 0C029D9E */  jal   play_sound
 /* 09EE34 801163C4 24040183 */   li    $a0, 387
 /* 09EE38 801163C8 0C002DAF */  jal   func_8000B6BC
 /* 09EE3C 801163CC 24040028 */   li    $a0, 40
@@ -72,7 +72,7 @@ glabel func_801162F4
 /* 09EE78 80116408 8F290000 */  lw    $t1, ($t9)
 /* 09EE7C 8011640C 00095080 */  sll   $t2, $t1, 2
 /* 09EE80 80116410 020A4021 */  addu  $t0, $s0, $t2
-/* 09EE84 80116414 0C029D9E */  jal   func_800A7678
+/* 09EE84 80116414 0C029D9E */  jal   play_sound
 /* 09EE88 80116418 AD000000 */   sw    $zero, ($t0)
 /* 09EE8C 8011641C 0C00236A */  jal   func_80008DA8
 /* 09EE90 80116420 00002025 */   move  $a0, $zero

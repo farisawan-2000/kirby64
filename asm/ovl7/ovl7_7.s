@@ -1152,7 +1152,7 @@ glabel func_801AFAB0_ovl7
 /* 155B78 801AFB08 00290821 */  addu  $at, $at, $t1
 /* 155B7C 801AFB0C 0C066C59 */  jal   func_8019B164_ovl7
 /* 155B80 801AFB10 AC208920 */   sw    $zero, -0x76e0($at)
-/* 155B84 801AFB14 0C029D9E */  jal   func_800A7678
+/* 155B84 801AFB14 0C029D9E */  jal   play_sound
 /* 155B88 801AFB18 24040022 */   li    $a0, 34
 /* 155B8C 801AFB1C 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 155B90 801AFB20 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -1588,7 +1588,7 @@ glabel func_801B00BC_ovl7
 /* 1561DC 801B016C 24040006 */  li    $a0, 6
 /* 1561E0 801B0170 0C02ED1A */  jal   func_800BB468
 /* 1561E4 801B0174 24050010 */   li    $a1, 16
-/* 1561E8 801B0178 0C029D9E */  jal   func_800A7678
+/* 1561E8 801B0178 0C029D9E */  jal   play_sound
 /* 1561EC 801B017C 24040020 */   li    $a0, 32
 /* 1561F0 801B0180 8E020000 */  lw    $v0, ($s0)
 /* 1561F4 801B0184 3C01801D */  lui   $at, %hi(D_801CE274) # $at, 0x801d

@@ -17,7 +17,7 @@ glabel func_801E9B7C_ovl10
 /* 1DA928 801E9BB8 44070000 */  mfc1  $a3, $f0
 /* 1DA92C 801E9BBC 0C06B328 */  jal   func_801ACCA0_ovl10
 /* 1DA930 801E9BC0 00000000 */   nop   
-/* 1DA934 801E9BC4 0C029D9E */  jal   func_800A7678
+/* 1DA934 801E9BC4 0C029D9E */  jal   play_sound
 /* 1DA938 801E9BC8 240401D4 */   li    $a0, 468
 .L801E9BCC_ovl10:
 /* 1DA93C 801E9BCC 8FBF0014 */  lw    $ra, 0x14($sp)

@@ -3,6 +3,6 @@
 #include "types.h"
 
 extern s8 D_80048E9C[MAXCONTROLLERS];
-extern Controller_800D6FE8 D_80048F20[MAXCONTROLLERS];
+extern Controller_800D6FE8 gPlayerControllers[MAXCONTROLLERS];
 
 #endif

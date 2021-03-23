@@ -77,7 +77,7 @@ void func_802205AC_ovl18(s32 arg0) {
     func_800AECC0(0.0f);
     func_800AED20(0.0f);
     D_800EBBE0[D_8004A7C4->objId] = func_801ACC34_ovl18(0x2E, 0);
-    func_800A7678(0xA6);
+    play_sound(0xA6);
     func_8000B6BC(4);
     func_800AECC0(D_800D6B10);
     do {
@@ -377,7 +377,7 @@ void func_80221498_ovl18(s32 arg0) {
         D_800E3210[D_8004A7C4->objId] = 4.5f;
         D_800E3750[D_8004A7C4->objId] = -0.25f;
         D_800E3C90[D_8004A7C4->objId] = 4.5f;
-        func_800A7678(0x167);
+        play_sound(0x167);
         while (D_800E8920[D_8004A7C4->objId] == 0) {
             func_8000B6BC(1);
         }
@@ -457,7 +457,7 @@ void func_80221B5C_ovl18(s32 arg0) {
     D_800E3210[D_8004A7C4->objId] = 10.0f;
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     D_800E3C90[D_8004A7C4->objId] = 10.0f;
-    func_800A7678(0x16A);
+    play_sound(0x16A);
     func_800AFA14();
 }
 

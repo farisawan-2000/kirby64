@@ -118,7 +118,7 @@ struct LayoutNode *func_8011BB98(struct CollisionTriangle *tri, u32 arg1) {
 
 void func_8011BD08(struct CollisionTriangle *tri, u32 arg1) {
     func_8011BB98(tri, arg1);
-    func_800A7678(10);
+    play_sound(10);
 }
 
 // start is the same as the above functions
@@ -361,7 +361,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011BF4C.s")
 #endif
 
 void func_8011C2A0(void *arg0) {
-    func_800A7678(11);
+    play_sound(11);
     func_8011BA10(*(u32 *)((u32)arg0+0x84), 20); // todo: struct
 }
 
@@ -2215,10 +2215,10 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121658.s")
 ? func_801217B8(void) {
     if (func_80121658() != 0) {
         if ((D_800E8AE0[D_8004A7C4->objId] & 6) == 0) {
-            func_800A7678(0x149);
+            play_sound(0x149);
             return 1;
         }
-        func_800A7678(0x149);
+        play_sound(0x149);
         return 1;
     }
     return 0;
@@ -2361,7 +2361,7 @@ void *func_80121BCC(s32 arg0) {
             phi_return = temp_v0_2;
             if ((gEntitiesPosYArray[temp_v0] - D_800E2CD0[temp_v0]) < D_80129090) {
                 D_8012E7DC = 0xF0;
-                func_800A7678(arg0);
+                play_sound(arg0);
                 func_800A8100(5, 1, 0x16, 0);
                 func_800A8100(5, 1, 0x1A, 0);
                 phi_return = func_800A8100(5, 1, 0x1D, 0);
@@ -2488,7 +2488,7 @@ void func_80121F50(void) {
                 D_800E9C60[phi_v0] = 5;
                 D_800E6A10[phi_v0] = -D_800E6A10[D_8004A7C4->objId];
             }
-            func_800A7678(0x118);
+            play_sound(0x118);
             phi_a2 = &gKirbyState;
         }
         phi_a2->isTakingDamage = 0;
@@ -2845,7 +2845,7 @@ block_4:
             func_800A7F74(5, 1, phi_a2, (bitwise f32) *(gEntitiesPosXArray + phi_v0), *(gEntitiesPosYArray + phi_v0), *(gEntitiesPosZArray + phi_v0));
         }
     } else {
-        func_800A7678(0x45);
+        play_sound(0x45);
         phi_a2 = *(&D_80128448 + (D_8012E8CA * 0x1C));
         phi_v0 = D_8004A7C4->objId * 4;
         goto block_4;
@@ -2886,7 +2886,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122B40.s")
 
 #ifdef MIPS_TO_C
 void func_80122C30(void) {
-    func_800A7678(0x102);
+    play_sound(0x102);
     D_8012E80C = func_800A8100(5, 1, *(&D_80128448 + 2 + (D_8012E8CA * 0x1C)), D_800DFBD0[D_8004A7C4->objId][1]);
 }
 #else
@@ -3073,7 +3073,7 @@ void func_801230E8(s32 arg0, s32 arg1, s32 arg2) {
 
 void func_8012310C(s32 currentInhale) {
     if (currentInhale != 0) {
-        func_800A7678(0x104);
+        play_sound(0x104);
     }
     func_800BC298(currentInhale);
 }

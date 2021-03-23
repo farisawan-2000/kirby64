@@ -4,6 +4,7 @@
 #include "D_8004A7C4.h"
 #include "ovl1/save_file.h"
 #include "ovl0/ovl0_2.h"
+#include "sounds.h"
 
 void func_80151990_ovl4(s32 arg0);
 void func_80151A0C_ovl4(s32 arg0);
@@ -38,41 +39,41 @@ extern f32 D_80159FF4_ovl4[];
 extern s32 D_800D6B74;
 
 void check_save_file_completion_cheat_code(s32 arg0) {
-    if (D_80048F20[1].buttonHeld & L_TRIG) {
+    if (gPlayerControllers[1].buttonHeld & L_TRIG) {
         switch (D_800E9C60[D_8004A7C4->objId]) {
             case 0:
-                if (D_80048F20[1].buttonPressed & U_CBUTTONS) {
+                if (gPlayerControllers[1].buttonPressed & U_CBUTTONS) {
                     D_800E9C60[D_8004A7C4->objId]++;
                 }
                 break;
             case 1:
-                if (D_80048F20[1].buttonPressed & U_CBUTTONS) {
+                if (gPlayerControllers[1].buttonPressed & U_CBUTTONS) {
                     D_800E9C60[D_8004A7C4->objId]++;
                 }
                 break;
             case 2:
-                if (D_80048F20[1].buttonPressed & R_TRIG) {
+                if (gPlayerControllers[1].buttonPressed & R_TRIG) {
                     D_800E9C60[D_8004A7C4->objId]++;
                 }
                 break;
             case 3:
-                if (D_80048F20[1].buttonPressed & R_CBUTTONS) {
+                if (gPlayerControllers[1].buttonPressed & R_CBUTTONS) {
                     D_800E9C60[D_8004A7C4->objId]++;
                 }
                 break;
             case 4:
-                if (D_80048F20[1].buttonPressed & L_CBUTTONS) {
+                if (gPlayerControllers[1].buttonPressed & L_CBUTTONS) {
                     D_800E9C60[D_8004A7C4->objId]++;
                 }
                 break;
             case 5:
-                if ((D_80048F20[1].buttonPressed & START_BUTTON)
+                if ((gPlayerControllers[1].buttonPressed & START_BUTTON)
                  && (gSaveBuffer1.files[2].cutscenesWatched == 1)
                  && (gSaveBuffer1.files[2].level != 0x99999999)
                  && (gSaveBuffer1.files[1].level == 0x99999999))
                 {
                     save_file_set_to_full_completion(2);
-                    func_800A7678(1);
+                    play_sound(SOUND_KIRBY_1UP);
                     D_800E9C60[D_8004A7C4->objId] = -1;
                 }
                 break;
@@ -201,8 +202,8 @@ void func_80151338_ovl4(s32 arg0) {
 void func_80151990_ovl4(s32 arg0) {
     random_u16();
     random_soft_u16();
-    if ((D_800D6B24 == 0) && (D_80048F20[0].buttonPressed & (A_BUTTON | START_BUTTON))) {
-        func_800A7678(0xED);
+    if ((D_800D6B24 == 0) && (gPlayerControllers[0].buttonPressed & (A_BUTTON | START_BUTTON))) {
+        play_sound(0xED);
         func_800A57A0(0, 0, 0);
         func_800A5A14(0, 0x10, 2);
         D_800D6B74 = 0;
@@ -223,11 +224,11 @@ void func_80151A0C_ovl4(s32 arg0) {
             func_800A57A0(0, 0, 0);
             func_800A5A14(0, 0x10, 2);
         }
-        else if (D_80048F20[0].buttonPressed & (A_BUTTON | START_BUTTON)) {
-            if ((D_80048F20[0].buttonHeld & SHOULDER_BTN_COMBO) == SHOULDER_BTN_COMBO) {
-                func_800A7678(0xE2);
+        else if (gPlayerControllers[0].buttonPressed & (A_BUTTON | START_BUTTON)) {
+            if ((gPlayerControllers[0].buttonHeld & SHOULDER_BTN_COMBO) == SHOULDER_BTN_COMBO) {
+                play_sound(0xE2);
             } else {
-                func_800A7678(0xED);
+                play_sound(0xED);
             }
             func_800A57A0(0, 0, 0);
             func_800A5A14(0, 0x10, 2);

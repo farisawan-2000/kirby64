@@ -182,7 +182,7 @@ extern u32 D_800D6B74;
 extern void (*D_8022AE14[])(u32);
 extern u16 D_800D6B30;
 extern u32 D_800EC2E0[];
-extern u16 D_80048F20[];
+extern u16 gPlayerControllers[];
 extern u32 D_800D6B24;
 
 void func_80226FD8_ovl18(u32 arg0) {
@@ -196,17 +196,17 @@ void func_80226FD8_ovl18(u32 arg0) {
     D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
     func_8000B6BC(15.0f * D_800D6B14);
     while (1) {
-        temp_v0 = D_80048F20[1];
+        temp_v0 = gPlayerControllers[1];
         if (temp_v0 & 0x9000 && D_800D6B24 == 0) {
-            func_800A7678(0xED);
+            play_sound(0xED);
             func_800A5A14(0, 0xC, 2);
             break;
         } else if (((temp_v0 & 0x200) != 0) && (D_800D6B24 == 0)) {
-            func_800A7678(0x113);
+            play_sound(0x113);
             D_800E98E0[D_8004A7C4->objId] = 0;
             D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
         } else if (((temp_v0 & 0x100) != 0) && (D_800D6B24 == 0)) {
-            func_800A7678(0x113);
+            play_sound(0x113);
             D_800E98E0[D_8004A7C4->objId] = 1;
             D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
         }
