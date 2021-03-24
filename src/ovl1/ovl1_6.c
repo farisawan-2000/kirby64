@@ -35,7 +35,7 @@ void func_800AE138(s32 arg0) {
     D_800DE6D0[arg0] = NULL;
     // this one in particular is one that entities use for thread function changes.
     // Should be an GObjThreadStack array
-    gEntitiesGObjThreadStackArray[arg0] = NULL;
+    gEntityGObjProcessArray[arg0] = NULL;
 
     D_800DE190[arg0] = 0;
     D_800DDFD0[arg0] = 0;
@@ -269,7 +269,7 @@ block_13:
     sp24 = D_800D4FD0[id];
     temp_v0_3 = func_8000A180(minIndex, func_800B0D24, D_800D4FD0[id * 2] + v0, 0);
     D_800DE350[minIndex] = temp_v0_3;
-    gEntitiesGObjThreadStackArray[minIndex] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
+    gEntityGObjProcessArray[minIndex] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
     D_800DE6D0[minIndex] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
     if (sp24->unk0[1] & 1) {
         D_800DE890[minIndex] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
@@ -314,12 +314,12 @@ extern void func_800B158C(void);
 // todo: should this really be a define?
 #define FAIL -1
 
-s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
+s32 func_800AEADC(u8 arg0, s32 id, s32 minIndex, s32 maxIndex) {
     s32 idx;
 
     switch (arg0) {
         case 0:
-            idx = request_job(arg1, arg2, arg3, &func_800B4924, &func_800B143C);
+            idx = request_job(id, minIndex, maxIndex, &func_800B4924, &func_800B143C);
             if (idx == FAIL) {
                 return FAIL;
             }
@@ -327,7 +327,7 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
         case 1:
             return FAIL;
         case 2:
-            idx = request_job(arg1, arg2, arg3, &func_800B4AB8, &func_800B158C);
+            idx = request_job(id, minIndex, maxIndex, &func_800B4AB8, &func_800B158C);
             if (idx == FAIL) {
                 return FAIL;
             }
@@ -340,15 +340,16 @@ s32 func_800AEADC(u8 arg0, s32 arg1, s32 arg2, s32 arg3) {
     return idx;
 }
 
-s32 func_800AEC08(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC(0, arg0, arg1, arg2);
+// alloc object with id and index range?
+s32 func_800AEC08(s32 id, s32 minIndex, s32 maxIndex) {
+    return func_800AEADC(0, id, minIndex, maxIndex);
 }
 
-s32 func_800AEC3C(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC(1, arg0, arg1, arg2);
+s32 func_800AEC3C(s32 id, s32 minIndex, s32 maxIndex) {
+    return func_800AEADC(1, id, minIndex, maxIndex);
 }
 
-s32 func_800AEC70(s32 arg0, s32 arg1, s32 arg2) {
-    return func_800AEADC(2, arg0, arg1, arg2);
+s32 func_800AEC70(s32 id, s32 minIndex, s32 maxIndex) {
+    return func_800AEADC(2, id, minIndex, maxIndex);
 }
 

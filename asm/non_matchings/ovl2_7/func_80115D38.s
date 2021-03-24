@@ -12,11 +12,11 @@ glabel func_80115D38
 /* 09E7D0 80115D60 3C18800E */ lui $t8, %hi(D_800DE350)
 /* 09E7D4 80115D64 0303C021 */  addu  $t8, $t8, $v1
 /* 09E7D8 80115D68 8F18E350 */ lw $t8, %lo(D_800DE350)($t8)
-/* 09E7DC 80115D6C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 09E7DC 80115D6C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 09E7E0 80115D70 3C018005 */  lui   $at, %hi(D_8004A7C4) # $at, 0x8005
 /* 09E7E4 80115D74 00832021 */  addu  $a0, $a0, $v1
 /* 09E7E8 80115D78 AFA20020 */  sw    $v0, 0x20($sp)
-/* 09E7EC 80115D7C 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 09E7EC 80115D7C 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 09E7F0 80115D80 0C00236A */  jal   func_80008DA8
 /* 09E7F4 80115D84 AC38A7C4 */   sw    $t8, %lo(D_8004A7C4)($at)
 /* 09E7F8 80115D88 0C02BE60 */  jal   func_800AF980

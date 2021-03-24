@@ -239,11 +239,11 @@ glabel func_801DBBCC_ovl16
 /* 2121FC 801DBF4C 8C84A7C4 */   lw    $a0, %lo(D_8004A7C4)($a0)
 .L801DBF50_ovl16:
 /* 212200 801DBF50 81EA003A */  lb    $t2, 0x3a($t7)
-/* 212204 801DBF54 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 212204 801DBF54 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 212208 801DBF58 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 21220C 801DBF5C 000AC880 */  sll   $t9, $t2, 2
 /* 212210 801DBF60 00992021 */  addu  $a0, $a0, $t9
-/* 212214 801DBF64 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 212214 801DBF64 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 212218 801DBF68 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 21221C 801DBF6C 24A5C11C */   addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
 /* 212220 801DBF70 8FA40048 */  lw    $a0, 0x48($sp)

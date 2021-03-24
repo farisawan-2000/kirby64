@@ -13,7 +13,7 @@ glabel func_801DE1EC_ovl11
 /* 1E8AD8 801DE218 00230821 */  addu  $at, $at, $v1
 /* 1E8ADC 801DE21C 240F0001 */  li    $t7, 1
 /* 1E8AE0 801DE220 11C00009 */  beqz  $t6, .L801DE248_ovl11
-/* 1E8AE4 801DE224 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 1E8AE4 801DE224 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1E8AE8 801DE228 AC2FDC50 */ sw $t7, %lo(D_800DDC50)($at)
 /* 1E8AEC 801DE22C 8C580000 */  lw    $t8, ($v0)
 /* 1E8AF0 801DE230 3C05801E */  lui   $a1, %hi(D_801DDEC0) # $a1, 0x801e
@@ -21,7 +21,7 @@ glabel func_801DE1EC_ovl11
 /* 1E8AF8 801DE238 0018C880 */  sll   $t9, $t8, 2
 /* 1E8AFC 801DE23C 00992021 */  addu  $a0, $a0, $t9
 /* 1E8B00 801DE240 0C02C7B2 */  jal   restart_thread_with_new_function
-/* 1E8B04 801DE244 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 1E8B04 801DE244 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L801DE248_ovl11:
 /* 1E8B08 801DE248 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E8B0C 801DE24C 27BD0018 */  addiu $sp, $sp, 0x18

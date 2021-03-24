@@ -55,7 +55,7 @@ void func_802204F8_ovl18(s32 arg0) {
     }
     if ((D_800E98E0[D_8004A7C4->objId] <= 0) && (func_8019B738_ovl18(D_8022BBC0) != 0)) {
         D_800DDC50[D_8004A7C4->objId] = 1;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_802202B8_ovl18);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &func_802202B8_ovl18);
     }
 }
 
@@ -434,7 +434,7 @@ void func_80221934_ovl18(s32 arg0) {
 void func_80221A04_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->objId] == 0) {
         D_800DDC50[D_8004A7C4->objId] = 2;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_80221758_ovl18);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     } else D_800E9720[D_8004A7C4->objId]--;
 }
 
@@ -448,7 +448,7 @@ void func_80221A84_ovl18(s32 arg0) {
 void func_80221ADC_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->objId] == 0) {
         D_800DDC50[D_8004A7C4->objId] = 3;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_80221758_ovl18);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     } else D_800E9720[D_8004A7C4->objId]--;
 }
 
@@ -468,7 +468,7 @@ void func_80221BF0_ovl18(s32 arg0) {
         D_800E3C90[D_8004A7C4->objId] = 65535.0f;
         gEntitiesPosYArray[D_8004A7C4->objId] = D_800EA8A0[D_8004A7C4->objId];
         D_800DDC50[D_8004A7C4->objId] = 1;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_80221758_ovl18);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     }
 }
 
@@ -488,6 +488,6 @@ void func_80221D78_ovl18(s32 arg0) {
         gEntitiesPosYArray[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId];
         D_800E9720[D_8004A7C4->objId] = 0xF;
         D_800DDC50[D_8004A7C4->objId] = 0;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &func_80221758_ovl18);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     }
 }

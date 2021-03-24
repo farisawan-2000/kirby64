@@ -93,7 +93,7 @@ loop_1:
                 D_800E7B20[phi_s0];
                 if ((D_801EFDF8_ovl16 < D_800E7B20[phi_s0]) && (D_800E7B20[phi_s0] < D_801EFDF4_ovl16) && (D_800E83E0[phi_s0] != 1) && (D_800E0D50[phi_s0] != 0)) {
                     *(D_800DDC50 + phi_s0) = -1;
-                    restart_thread_with_new_function(gEntitiesGObjThreadStackArray[phi_s0], &D_801A3E80);
+                    restart_thread_with_new_function(gEntityGObjProcessArray[phi_s0], &D_801A3E80);
                 }
             }
         }
@@ -176,7 +176,7 @@ loop_6:
                     phi_a2 = D_8004A7C4;
                 }
                 D_800DDC50[phi_a2->objId] = *(&D_801EF5E0_ovl16 + (D_800D709C * 4));
-                restart_thread_with_new_function(*(&gEntitiesGObjThreadStackArray + (phi_a2->objId * 4)), &func_801DB338_ovl16, phi_a2);
+                restart_thread_with_new_function(*(&gEntityGObjProcessArray + (phi_a2->objId * 4)), &func_801DB338_ovl16, phi_a2);
                 phi_v1_3 = D_8004A7C4->objId;
 block_15:
                 phi_v1_2 = phi_v1_3 * 4;
@@ -216,7 +216,7 @@ block_15:
         }
         temp_a2_3 = D_8004A7C4;
         D_800DDC50[temp_a2_3->objId] = *(&D_801EF5E0_ovl16 + (D_800D709C * 4));
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_a2_3->objId], &func_801DB338_ovl16, temp_a2_3);
+        restart_thread_with_new_function(gEntityGObjProcessArray[temp_a2_3->objId], &func_801DB338_ovl16, temp_a2_3);
     }
     return sp1C;
 }
@@ -349,7 +349,7 @@ s32 func_801DBBCC_ovl16(s32 arg0, s32 arg1, s32 arg2) {
                     phi_a0 = temp_a0_2;
                 } else {
 block_31:
-                    restart_thread_with_new_function(*(&gEntitiesGObjThreadStackArray + (sp34->unk3A * 4)), &func_801AC11C);
+                    restart_thread_with_new_function(*(&gEntityGObjProcessArray + (sp34->unk3A * 4)), &func_801AC11C);
                     func_801E7EE0_ovl16(sp48, &sp30, &sp2C);
                     temp_v0_5 = *(&D_801EF5FC_ovl16 + ((&D_800D7098)[1] * 4));
                     if (sp30 == temp_v0_5) {
@@ -558,7 +558,7 @@ s32 func_801DC314_ovl16(s32 arg0, s32 arg1, s32 arg2) {
                     phi_v1 = &D_800E83E0[temp_v0_2->objId];
                 } else {
 block_20:
-                    restart_thread_with_new_function(*(&gEntitiesGObjThreadStackArray + (sp2C->unk3A * 4)), &func_801AC11C, &D_800D7098);
+                    restart_thread_with_new_function(*(&gEntityGObjProcessArray + (sp2C->unk3A * 4)), &func_801AC11C, &D_800D7098);
 block_21:
                     if (D_800D7098.unk28 == 0) {
                         D_800D7098.unk28 = 1;

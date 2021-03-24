@@ -332,7 +332,7 @@ void func_801BE1A8_ovl7(UNUSED s32 arg0) {
     func_801A0880_ovl7();
     if (D_800E83E0[D_8004A7C4->objId] == 1) {
         D_800E7730[D_8004A7C4->objId] = 6;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801BE79C);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &D_801BE79C);
     }
 }
 

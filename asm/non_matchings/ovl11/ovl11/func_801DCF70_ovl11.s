@@ -21,7 +21,7 @@ glabel func_801DCF70_ovl11
 /* 1E787C 801DCFBC 3C01800E */ lui $at, %hi(D_800DDC50)
 /* 1E7880 801DCFC0 00220821 */  addu  $at, $at, $v0
 /* 1E7884 801DCFC4 14EF0037 */  bne   $a3, $t7, .L801DD0A4_ovl11
-/* 1E7888 801DCFC8 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 1E7888 801DCFC8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1E788C 801DCFCC AC27DC50 */ sw $a3, %lo(D_800DDC50)($at)
 /* 1E7890 801DCFD0 8CD80000 */  lw    $t8, ($a2)
 /* 1E7894 801DCFD4 3C05801E */  lui   $a1, %hi(D_801DC258) # $a1, 0x801e

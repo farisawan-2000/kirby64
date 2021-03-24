@@ -2373,7 +2373,7 @@ void func_80115D38(struct UnkStruct8004A7C4 *arg0) {
     sp24 = arg0->objId;
     temp_v0 = func_800AEC08(0x1E, 0x1E, 0x3C);
     temp_t8 = D_800DE350[temp_v0];
-    temp_a0 = &gEntitiesGObjThreadStackArray[temp_v0];
+    temp_a0 = &gEntityGObjProcessArray[temp_v0];
     sp20 = temp_v0;
     D_8004A7C4 = temp_t8;
     func_80008DA8(*temp_a0);

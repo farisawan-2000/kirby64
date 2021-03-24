@@ -17,11 +17,11 @@ glabel func_80225724_ovl18
 /* 238100 80225760 00220821 */  addu  $at, $at, $v0
 /* 238104 80225764 AC2FDC50 */ sw $t7, %lo(D_800DDC50)($at)
 /* 238108 80225768 8C780000 */  lw    $t8, ($v1)
-/* 23810C 8022576C 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 23810C 8022576C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 238110 80225770 3C058022 */  lui   $a1, %hi(func_80225478_ovl18) # $a1, 0x8022
 /* 238114 80225774 0018C880 */  sll   $t9, $t8, 2
 /* 238118 80225778 00992021 */  addu  $a0, $a0, $t9
-/* 23811C 8022577C 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 23811C 8022577C 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 238120 80225780 0C02C7B2 */  jal   restart_thread_with_new_function
 /* 238124 80225784 24A55478 */   addiu $a1, %lo(func_80225478_ovl18) # addiu $a1, $a1, 0x5478
 /* 238128 80225788 10000003 */  b     .L80225798_ovl18

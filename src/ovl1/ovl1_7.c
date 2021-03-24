@@ -1394,7 +1394,7 @@ u32 *func_800B1C7C(void *arg0) {
         return temp_v0;
     }
     func_800B1E08(1, 0, temp_s0);
-    func_800B1E08(2, gEntitiesGObjThreadStackArray[temp_s0], temp_s0);
+    func_800B1E08(2, gEntityGObjProcessArray[temp_s0], temp_s0);
     func_800B1E08(4, 0, temp_s0);
     func_800B1E08(8, 0, temp_s0);
     func_800B1E08(0x10, D_800DE890[temp_s0], temp_s0);
@@ -1470,18 +1470,16 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B1E08.s")
 // current entity stack size?
 extern u32 gNewEntityStackSize;
 
-// TODO: why does this take an GObjThreadStack
-//       when it's called with an GObjProcess?
-void restart_thread_with_new_function(struct GObjThreadStack *ts, void (*func)(struct UnkStruct8004A7C4 *)) {
+void restart_thread_with_new_function(struct GObjProcess *ts, void (*func)(struct UnkStruct8004A7C4 *)) {
     struct GObjThread *temp_v0;
-    s32 sp28;
+    s32 id;
 
-    temp_v0 = ts->objThread;
-    sp28 = temp_v0->thread.id;
-    ts->func = func;
+    temp_v0 = ts->thread;
+    id = temp_v0->thread.id;
+    ts->entryPoint = func;
     osDestroyThread(&temp_v0->thread);
     osCreateThread(&temp_v0->thread,
-                   sp28,
+                   id,
                    func,
                    ts->unk18,
                    &temp_v0->objStack->stack[gNewEntityStackSize / 8],

@@ -19,9 +19,9 @@ glabel func_800AE138
 /* 0563CC 800AE17C 3C01800E */ lui $at, %hi(D_800DE6D0)
 /* 0563D0 800AE180 00220821 */  addu  $at, $at, $v0
 /* 0563D4 800AE184 AC20E6D0 */ sw $zero, %lo(D_800DE6D0)($at)
-/* 0563D8 800AE188 3C01800E */ lui $at, %hi(gEntitiesGObjThreadStackArray)
+/* 0563D8 800AE188 3C01800E */ lui $at, %hi(gEntityGObjProcessArray)
 /* 0563DC 800AE18C 00220821 */  addu  $at, $at, $v0
-/* 0563E0 800AE190 AC20E510 */ sw $zero, %lo(gEntitiesGObjThreadStackArray)($at)
+/* 0563E0 800AE190 AC20E510 */ sw $zero, %lo(gEntityGObjProcessArray)($at)
 /* 0563E4 800AE194 3C01800E */ lui $at, %hi(D_800DE190)
 /* 0563E8 800AE198 00220821 */  addu  $at, $at, $v0
 /* 0563EC 800AE19C AC20E190 */ sw $zero, %lo(D_800DE190)($at)

@@ -6460,12 +6460,12 @@ glabel func_80162A44_ovl5
 /* 109EEC 80162A7C 10610008 */  beq   $v1, $at, .L80162AA0_ovl5
 /* 109EF0 80162A80 24010004 */   li    $at, 4
 /* 109EF4 80162A84 10610006 */  beq   $v1, $at, .L80162AA0_ovl5
-/* 109EF8 80162A88 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 109EF8 80162A88 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 109EFC 80162A8C 00822021 */  addu  $a0, $a0, $v0
 /* 109F00 80162A90 3C058016 */  lui   $a1, %hi(D_8016253C) # $a1, 0x8016
 /* 109F04 80162A94 24A5253C */  addiu $a1, %lo(D_8016253C) # addiu $a1, $a1, 0x253c
 /* 109F08 80162A98 0C02C7B2 */  jal   restart_thread_with_new_function
-/* 109F0C 80162A9C 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 109F0C 80162A9C 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L80162AA0_ovl5:
 /* 109F10 80162AA0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 109F14 80162AA4 27BD0018 */  addiu $sp, $sp, 0x18
@@ -15370,8 +15370,8 @@ glabel func_8016A774_ovl5
 /* 111DD4 8016A964 8CC80000 */  lw    $t0, ($a2)
 /* 111DD8 8016A968 24150002 */  li    $s5, 2
 /* 111DDC 8016A96C 16A80009 */  bne   $s5, $t0, .L8016A994_ovl5
-/* 111DE0 8016A970 3C13800E */   lui   $s3, %hi(gEntitiesGObjThreadStackArray) # $s3, 0x800e
-/* 111DE4 8016A974 2673E510 */  addiu $s3, %lo(gEntitiesGObjThreadStackArray) # addiu $s3, $s3, -0x1af0
+/* 111DE0 8016A970 3C13800E */   lui   $s3, %hi(gEntityGObjProcessArray) # $s3, 0x800e
+/* 111DE4 8016A974 2673E510 */  addiu $s3, %lo(gEntityGObjProcessArray) # addiu $s3, $s3, -0x1af0
 /* 111DE8 8016A978 02634821 */  addu  $t1, $s3, $v1
 /* 111DEC 8016A97C 3C058016 */  lui   $a1, %hi(D_801668E0) # $a1, 0x8016
 /* 111DF0 8016A980 24A568E0 */  addiu $a1, %lo(D_801668E0) # addiu $a1, $a1, 0x68e0
@@ -15380,8 +15380,8 @@ glabel func_8016A774_ovl5
 /* 111DFC 8016A98C 1000000D */  b     .L8016A9C4_ovl5
 /* 111E00 8016A990 02208025 */   move  $s0, $s1
 .L8016A994_ovl5:
-/* 111E04 8016A994 3C13800E */  lui   $s3, %hi(gEntitiesGObjThreadStackArray) # $s3, 0x800e
-/* 111E08 8016A998 2673E510 */  addiu $s3, %lo(gEntitiesGObjThreadStackArray) # addiu $s3, $s3, -0x1af0
+/* 111E04 8016A994 3C13800E */  lui   $s3, %hi(gEntityGObjProcessArray) # $s3, 0x800e
+/* 111E08 8016A998 2673E510 */  addiu $s3, %lo(gEntityGObjProcessArray) # addiu $s3, $s3, -0x1af0
 /* 111E0C 8016A99C 240A0001 */  li    $t2, 1
 /* 111E10 8016A9A0 02635821 */  addu  $t3, $s3, $v1
 /* 111E14 8016A9A4 3C058016 */  lui   $a1, %hi(D_8016689C) # $a1, 0x8016

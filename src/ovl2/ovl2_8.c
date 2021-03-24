@@ -766,10 +766,10 @@ void func_8011CFF4(s32 arg0) {
         D_800DDC50[temp_v0_2->objId] = temp_v1_3;
         gKirbyState.actionChange = -1;
         if (D_800D6FB2 == 2) {
-            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[temp_v0_2->objId], &D_8022947C);
+            restart_thread_with_new_function(gEntityGObjProcessArray[temp_v0_2->objId], &D_8022947C);
             return;
         }
-        restart_thread_with_new_function((&gEntitiesGObjThreadStackArray[temp_v0_2->objId])[-0x6BC], &D_8016C510);
+        restart_thread_with_new_function((&gEntityGObjProcessArray[temp_v0_2->objId])[-0x6BC], &D_8016C510);
     }
 }
 #else

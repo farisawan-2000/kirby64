@@ -67,13 +67,13 @@ glabel func_801DB528_ovl16
 /* 2118D4 801DB624 3C01800E */ lui $at, %hi(D_800DDC50)
 /* 2118D8 801DB628 00300821 */  addu  $at, $at, $s0
 /* 2118DC 801DB62C 11200007 */  beqz  $t1, .L801DB64C_ovl16
-/* 2118E0 801DB630 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 2118E0 801DB630 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 2118E4 801DB634 00902021 */  addu  $a0, $a0, $s0
 /* 2118E8 801DB638 3C05801A */  lui   $a1, %hi(D_801A3E80) # $a1, 0x801a
 /* 2118EC 801DB63C AC33DC50 */ sw $s3, %lo(D_800DDC50)($at)
 /* 2118F0 801DB640 24A53E80 */  addiu $a1, %lo(D_801A3E80) # addiu $a1, $a1, 0x3e80
 /* 2118F4 801DB644 0C02C7B2 */  jal   restart_thread_with_new_function
-/* 2118F8 801DB648 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 2118F8 801DB648 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L801DB64C_ovl16:
 /* 2118FC 801DB64C 26310001 */  addiu $s1, $s1, 1
 .L801DB650_ovl16:

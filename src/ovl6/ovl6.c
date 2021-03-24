@@ -991,7 +991,7 @@ void func_80153868(void) {
         sp1C = D_8004A7C4;
         func_800AEC08(0x11, 0x3F, 0x40);
         D_8004A7C4 = D_800DE44C;
-        func_80008DA8(gEntitiesGObjThreadStackArray[0x3F]);
+        func_80008DA8(gEntityGObjProcessArray[0x3F]);
         func_80008DA8(D_800DE6D0[0x3F]);
         func_80008DA8(D_800DEC10[0x3F]);
         func_80008A18(D_8004A7C4, &func_8000E324, 1, 3);

@@ -60,7 +60,7 @@ extern f32 D_8022BBC0;
 extern f32 D_8022BC00;
 extern f32 D_8022BC04;
 
-extern s32 gEntitiesGObjThreadStackArray[];
+extern s32 gEntityGObjProcessArray[];
 extern s32 D_800E9720[];
 extern s32 D_800B7790;
 extern s32 D_8022A988;

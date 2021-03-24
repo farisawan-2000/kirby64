@@ -96,10 +96,10 @@ glabel request_job
 /* 056B44 800AE8F4 0C002286 */  jal   func_80008A18
 /* 056B48 800AE8F8 8DA50004 */   lw    $a1, 4($t5)
 /* 056B4C 800AE8FC 8FA30028 */  lw    $v1, 0x28($sp)
-/* 056B50 800AE900 3C01800E */ lui $at, %hi(gEntitiesGObjThreadStackArray)
+/* 056B50 800AE900 3C01800E */ lui $at, %hi(gEntityGObjProcessArray)
 /* 056B54 800AE904 3C05800B */  lui   $a1, %hi(D_800B0D90) # $a1, 0x800b
 /* 056B58 800AE908 00230821 */  addu  $at, $at, $v1
-/* 056B5C 800AE90C AC22E510 */ sw $v0, %lo(gEntitiesGObjThreadStackArray)($at)
+/* 056B5C 800AE90C AC22E510 */ sw $v0, %lo(gEntityGObjProcessArray)($at)
 /* 056B60 800AE910 24A50D90 */  addiu $a1, %lo(D_800B0D90) # addiu $a1, $a1, 0xd90
 /* 056B64 800AE914 8FA40034 */  lw    $a0, 0x34($sp)
 /* 056B68 800AE918 24060001 */  li    $a2, 1

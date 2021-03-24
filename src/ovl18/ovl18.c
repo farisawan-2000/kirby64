@@ -641,7 +641,7 @@ void func_8021F4E8_ovl18(void) {
         }
         if (func_800BC11C(D_800D6E58) == 0) {
             func_800BB468(2, 0);
-            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801A3E80);
+            restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &D_801A3E80);
         }
     }
 }
@@ -764,7 +764,7 @@ block_7:
         sp48 = phi_v1;
         temp_v1_3 = phi_v1;
         if (func_801A0244_ovl18(sp38, phi_a1) == -1) {
-            restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801A3E80);
+            restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &D_801A3E80);
             return 1;
         }
         *(&D_800E83E0 + (D_8004A7C4->objId * 4)) = 0x12;
@@ -772,7 +772,7 @@ block_7:
         play_sound(0xF4);
         temp_v1_3->unk94 = 0;
         temp_v1_3->unk40 = 1;
-        restart_thread_with_new_function(gEntitiesGObjThreadStackArray[D_8004A7C4->objId], &D_801A3E80);
+        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], &D_801A3E80);
         return 1;
     }
     if (temp_a0 != 2) {

@@ -70,11 +70,11 @@ glabel func_800BB98C
 /* 063CEC 800BBA9C 8F18E350 */ lw $t8, %lo(D_800DE350)($t8)
 /* 063CF0 800BBAA0 2631A7C4 */  addiu $s1, %lo(D_8004A7C4) # addiu $s1, $s1, -0x583c
 /* 063CF4 800BBAA4 8E2F0000 */  lw    $t7, ($s1)
-/* 063CF8 800BBAA8 3C04800E */ lui $a0, %hi(gEntitiesGObjThreadStackArray)
+/* 063CF8 800BBAA8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 063CFC 800BBAAC 00832021 */  addu  $a0, $a0, $v1
 /* 063D00 800BBAB0 AE380000 */  sw    $t8, ($s1)
 /* 063D04 800BBAB4 AFA2002C */  sw    $v0, 0x2c($sp)
-/* 063D08 800BBAB8 8C84E510 */ lw $a0, %lo(gEntitiesGObjThreadStackArray)($a0)
+/* 063D08 800BBAB8 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 063D0C 800BBABC 0C00236A */  jal   func_80008DA8
 /* 063D10 800BBAC0 AFAF0028 */   sw    $t7, 0x28($sp)
 /* 063D14 800BBAC4 8FB0002C */  lw    $s0, 0x2c($sp)
