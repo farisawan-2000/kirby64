@@ -489,6 +489,9 @@ SECTIONS
    /* 0x801D0C60 174740-17B360 [6C20] */
    BEGIN_SEG(ovl8, 0x801D0C60) {
       BUILD_DIR/asm/ovl8/ovl8.o(.text);
+      BUILD_DIR/asm/ovl8/ovl8_2.o(.text);
+      BUILD_DIR/asm/ovl8/ovl8_3.o(.text);
+      BUILD_DIR/asm/ovl8/ovl8_4.o(.text);
       BUILD_DIR/data/ovl8/data.o(.data);
    }
    END_SEG(ovl8)
