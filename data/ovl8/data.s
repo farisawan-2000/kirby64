@@ -10788,113 +10788,45 @@ glabel D_801DB0A8_ovl8
 glabel D_801DB0AC_ovl8
 .word 0x0A000000
 
-glabel D_801DB0B0_ovl8
-.word 0x801D271C
+glabel jtbl_801DB0B0_ovl8
+.word L801D271C_ovl8
+.word L801D27DC_ovl8
+.word L801D2730_ovl8
+.word L801D27DC_ovl8
+.word L801D2744_ovl8
+.word L801D27DC_ovl8
+.word L801D2758_ovl8
+.word L801D27DC_ovl8
+.word L801D2780_ovl8
+.word L801D27DC_ovl8
+.word L801D27BC_ovl8
+.word L801D27DC_ovl8
+.word L801D2674_ovl8
+.word L801D27DC_ovl8
+.word L801D27A8_ovl8
+.word L801D27DC_ovl8
+.word L801D27DC_ovl8
+.word L801D27DC_ovl8
+.word L801D27DC_ovl8
+.word L801D27DC_ovl8
+.word L801D2794_ovl8
+.word L801D27DC_ovl8
+.word L801D276C_ovl8
+.word L801D27DC_ovl8
+.word L801D2688_ovl8
+.word L801D27DC_ovl8
+.word L801D269C_ovl8
 
-glabel D_801DB0B4_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0B8_ovl8
-.word 0x801D2730
-
-glabel D_801DB0BC_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0C0_ovl8
-.word 0x801D2744
-
-glabel D_801DB0C4_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0C8_ovl8
-.word 0x801D2758
-
-glabel D_801DB0CC_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0D0_ovl8
-.word 0x801D2780
-
-glabel D_801DB0D4_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0D8_ovl8
-.word 0x801D27BC
-
-glabel D_801DB0DC_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0E0_ovl8
-.word 0x801D2674
-
-glabel D_801DB0E4_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0E8_ovl8
-.word 0x801D27A8
-
-glabel D_801DB0EC_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0F0_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0F4_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0F8_ovl8
-.word 0x801D27DC
-
-glabel D_801DB0FC_ovl8
-.word 0x801D27DC
-
-glabel D_801DB100_ovl8
-.word 0x801D2794
-
-glabel D_801DB104_ovl8
-.word 0x801D27DC
-
-glabel D_801DB108_ovl8
-.word 0x801D276C
-
-glabel D_801DB10C_ovl8
-.word 0x801D27DC
-
-glabel D_801DB110_ovl8
-.word 0x801D2688
-
-glabel D_801DB114_ovl8
-.word 0x801D27DC
-
-glabel D_801DB118_ovl8
-.word 0x801D269C
-
-glabel D_801DB11C_ovl8
-.word 0x801D291C
-
-glabel D_801DB120_ovl8
-.word 0x801D291C
-
-glabel D_801DB124_ovl8
-.word 0x801D291C
-
-glabel D_801DB128_ovl8
-.word 0x801D291C
-
-glabel D_801DB12C_ovl8
-.word 0x801D292C
-
-glabel D_801DB130_ovl8
-.word 0x801D292C
-
-glabel D_801DB134_ovl8
-.word 0x801D291C
-
-glabel D_801DB138_ovl8
-.word 0x801D291C
-
-glabel D_801DB13C_ovl8
-.word 0x801D291C
+glabel jtbl_801DB11C_ovl8
+.word L801D291C_ovl8
+.word L801D291C_ovl8
+.word L801D291C_ovl8
+.word L801D291C_ovl8
+.word L801D292C_ovl8
+.word L801D292C_ovl8
+.word L801D291C_ovl8
+.word L801D291C_ovl8
+.word L801D291C_ovl8
 
 glabel D_801DB140_ovl8
 .word 0x40B33333
@@ -10926,23 +10858,16 @@ glabel D_801DB160_ovl8
 glabel D_801DB164_ovl8
 .word 0x3D4CCCCD
 
-glabel D_801DB168_ovl8
-.word 0x801D4564
+glabel jtbl_801DB168_ovl8
+.word L801D4564_ovl8
+.word L801D4564_ovl8
+.word L801D4564_ovl8
+.word L801D4564_ovl8
+.word L801D4564_ovl8
+.word L801D4564_ovl8
 
-glabel D_801DB16C_ovl8
-.word 0x801D4564
 
-glabel D_801DB170_ovl8
-.word 0x801D4564
-
-glabel D_801DB174_ovl8
-.word 0x801D4564
-
-glabel D_801DB178_ovl8
-.word 0x801D4564
-
-glabel D_801DB17C_ovl8
-.word 0x801D4564
+# ovl8_4 rodata
 
 glabel D_801DB180_ovl8
 .word 0x3DCCCCCD
@@ -10950,23 +10875,13 @@ glabel D_801DB180_ovl8
 glabel D_801DB184_ovl8
 .word 0xBDCCCCCD
 
-glabel D_801DB188_ovl8
-.word 0x801D4D70
-
-glabel D_801DB18C_ovl8
-.word 0x801D4D70
-
-glabel D_801DB190_ovl8
-.word 0x801D4C7C
-
-glabel D_801DB194_ovl8
-.word 0x801D4CE0
-
-glabel D_801DB198_ovl8
-.word 0x801D4D70
-
-glabel D_801DB19C_ovl8
-.word 0x801D4D28
+glabel jtbl_801DB188_ovl8
+.word L801D4D70_ovl8
+.word L801D4D70_ovl8
+.word L801D4C7C_ovl8
+.word L801D4CE0_ovl8
+.word L801D4D70_ovl8
+.word L801D4D28_ovl8
 
 glabel D_801DB1A0_ovl8
 .word 0x3DCCCCCD
