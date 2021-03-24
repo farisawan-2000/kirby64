@@ -1493,7 +1493,7 @@
 /* 0FA890 80153360 904F0006 */  lbu   $t7, 6($v0)
 /* 0FA894 80153364 55E0000C */  bnezl $t7, .L80153398_ovl4
 /* 0FA898 80153368 00001025 */   move  $v0, $zero
-/* 0FA89C 8015336C 0C02E7D4 */  jal   func_800B9F50
+/* 0FA89C 8015336C 0C02E7D4 */  jal   check_cutscene_watched
 /* 0FA8A0 80153370 2404000D */   li    $a0, 13
 /* 0FA8A4 80153374 14400007 */  bnez  $v0, .L80153394_ovl4
 /* 0FA8A8 80153378 3C18800D */   lui   $t8, %hi(D_800D6BA8) # $t8, 0x800d

@@ -9,7 +9,7 @@ glabel func_800A336C
 /* 04B5D8 800A3388 00027080 */   sll   $t6, $v0, 2
 /* 04B5DC 800A338C 3C04800C */ lui $a0, %hi(D_800BE414)
 /* 04B5E0 800A3390 008E2021 */  addu  $a0, $a0, $t6
-/* 04B5E4 800A3394 0C02E7D4 */  jal   func_800B9F50
+/* 04B5E4 800A3394 0C02E7D4 */  jal   check_cutscene_watched
 /* 04B5E8 800A3398 8C84E414 */ lw $a0, %lo(D_800BE414)($a0)
 /* 04B5EC 800A339C 14400016 */  bnez  $v0, .L800A33F8_ovl1
 /* 04B5F0 800A33A0 3C0F800C */   lui   $t7, %hi(D_800BE500) # $t7, 0x800c
@@ -19,7 +19,7 @@ glabel func_800A336C
 /* 04B600 800A33B0 000FC080 */  sll   $t8, $t7, 2
 /* 04B604 800A33B4 00982021 */  addu  $a0, $a0, $t8
 /* 04B608 800A33B8 8C84E414 */ lw $a0, %lo(D_800BE414)($a0)
-/* 04B60C 800A33BC 0C02E7E4 */  jal   func_800B9F90
+/* 04B60C 800A33BC 0C02E7E4 */  jal   set_cutscene_watched
 /* 04B610 800A33C0 8CA56B88 */   lw    $a1, %lo(D_800D6B88)($a1)
 /* 04B614 800A33C4 3C04800D */  lui   $a0, %hi(D_800D6B88) # $a0, 0x800d
 /* 04B618 800A33C8 0C02E714 */  jal   func_800B9C50

@@ -38,7 +38,7 @@ glabel func_800A3230
 /* 04B50C 800A32BC 904B0001 */  lbu   $t3, 1($v0)
 /* 04B510 800A32C0 554B001E */  bnel  $t2, $t3, .L800A333C_ovl1
 /* 04B514 800A32C4 26100003 */   addiu $s0, $s0, 3
-/* 04B518 800A32C8 0C02E7D4 */  jal   func_800B9F50
+/* 04B518 800A32C8 0C02E7D4 */  jal   check_cutscene_watched
 /* 04B51C 800A32CC 90440002 */   lbu   $a0, 2($v0)
 /* 04B520 800A32D0 5440001A */  bnezl $v0, .L800A333C_ovl1
 /* 04B524 800A32D4 26100003 */   addiu $s0, $s0, 3
@@ -51,7 +51,7 @@ glabel func_800A3230
 /* 04B540 800A32F0 000D6840 */  sll   $t5, $t5, 1
 /* 04B544 800A32F4 022D7021 */  addu  $t6, $s1, $t5
 /* 04B548 800A32F8 01D07821 */  addu  $t7, $t6, $s0
-/* 04B54C 800A32FC 0C02E7E4 */  jal   func_800B9F90
+/* 04B54C 800A32FC 0C02E7E4 */  jal   set_cutscene_watched
 /* 04B550 800A3300 91E40002 */   lbu   $a0, 2($t7)
 /* 04B554 800A3304 0C02E714 */  jal   func_800B9C50
 /* 04B558 800A3308 8E640000 */   lw    $a0, ($s3)

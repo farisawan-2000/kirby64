@@ -23,6 +23,7 @@ extern Gfx* gDisplayListHeads[4];
 extern u32 D_800DD8D0[];
 extern u32 D_800E0650[];
 
+
 extern Lights1 D_800BE548;
 
 #define gSPDoubleLights1(pkt, lt)\
@@ -254,6 +255,7 @@ s32 func_801BC794_ovl7(s32 arg0) {
  * Full explanation of the non-matching cause in this function:
  * - Some cases in this function do 2 gSPSetLights1's on D_800BE548.
  * - Both Lights macros use the same command for the first half of the ucode
+ *   (0xDB000018)
  * - The original code knows to preserve this top half of the command
  *   in a register in order to save a few instructions
  * - However, in the current function, the top half is reloaded for both macros,

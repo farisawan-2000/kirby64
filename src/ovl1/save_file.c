@@ -781,7 +781,7 @@ u8 func_800B96A0(s32 arg0, s32 arg1) {
         gCurrentWorld = gSaveBuffer1.files[arg0].world;
         gCurrentLevel = gSaveBuffer1.files[arg0].level;
         D_800D6B98 = gSaveBuffer1.files[arg0].data8;
-        D_800D6BA0 = gSaveBuffer1.files[arg0].cutscenesWatched;
+        gCutscenesWatched = gSaveBuffer1.files[arg0].cutscenesWatched;
         D_800D6BA8 = gSaveBuffer1.files[arg0].percentComplete;
         D_800D6BAC = gSaveBuffer1.files[arg0].soundSetting;
         gHudDisplayMode = gSaveBuffer1.files[arg0].hudDisplay;
@@ -794,7 +794,7 @@ u8 func_800B96A0(s32 arg0, s32 arg1) {
         gSaveBuffer1.files[arg0].world = gCurrentWorld;
         gSaveBuffer1.files[arg0].level = gCurrentLevel;
         gSaveBuffer1.files[arg0].data8 = D_800D6B98;
-        gSaveBuffer1.files[arg0].cutscenesWatched = D_800D6BA0;
+        gSaveBuffer1.files[arg0].cutscenesWatched = gCutscenesWatched;
         gSaveBuffer1.files[arg0].percentComplete = D_800D6BA8;
         gSaveBuffer1.files[arg0].soundSetting = D_800D6BAC;
         gSaveBuffer1.files[arg0].hudDisplay = gHudDisplayMode;
@@ -998,108 +998,39 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9DC8.s")
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9DF8.s")
 #endif
 
-#ifdef MIPS_TO_C
-? func_800B9E4C(void) {
-    u8 temp_v1;
-    u8 temp_v1_2;
-    u8 temp_v1_3;
-    u8 temp_v1_4;
-    void *temp_a0;
-    void *phi_a0;
-    s32 phi_v0;
-    s32 phi_v0_2;
-    s32 phi_v0_3;
-    s32 phi_v0_4;
-    s32 phi_v0_5;
-    s32 phi_v0_6;
-    s32 phi_v0_7;
-    s32 phi_v0_8;
-    s32 phi_v0_9;
-    s32 phi_v0_10;
-    s32 phi_v0_11;
-    s32 phi_v0_12;
-    s32 phi_v0_13;
+extern u8 D_800D6BC8[];
+extern u8 D_800D6BC5;
 
-    phi_a0 = &D_800D6BC8;
-    phi_v0_13 = 0;
-loop_1:
-    temp_v1 = phi_a0->unk0;
-    phi_v0_12 = phi_v0_13;
-    if ((temp_v1 & 1) != 0) {
-        phi_v0_12 = phi_v0_13 + 1;
+s32 func_800B9E4C(void) {
+    s32 v0;
+    s32 a0;
+
+    v0 = 0;
+
+    for (a0 = 0; a0 < 24; a0++) {
+        if (D_800D6BC8[a0] & 1) {
+            v0++;
+        }
+        if (D_800D6BC8[a0] & 2) {
+            v0++;
+        }
+        if (D_800D6BC8[a0] & 4) {
+            v0++;
+        }
     }
-    phi_v0_11 = phi_v0_12;
-    if ((temp_v1 & 2) != 0) {
-        phi_v0_11 = phi_v0_12 + 1;
-    }
-    phi_v0_10 = phi_v0_11;
-    if ((temp_v1 & 4) != 0) {
-        phi_v0_10 = phi_v0_11 + 1;
-    }
-    temp_v1_2 = phi_a0->unk1;
-    phi_v0_9 = phi_v0_10;
-    if ((temp_v1_2 & 1) != 0) {
-        phi_v0_9 = phi_v0_10 + 1;
-    }
-    phi_v0_8 = phi_v0_9;
-    if ((temp_v1_2 & 2) != 0) {
-        phi_v0_8 = phi_v0_9 + 1;
-    }
-    phi_v0_7 = phi_v0_8;
-    if ((temp_v1_2 & 4) != 0) {
-        phi_v0_7 = phi_v0_8 + 1;
-    }
-    temp_v1_3 = phi_a0->unk2;
-    phi_v0_6 = phi_v0_7;
-    if ((temp_v1_3 & 1) != 0) {
-        phi_v0_6 = phi_v0_7 + 1;
-    }
-    phi_v0_5 = phi_v0_6;
-    if ((temp_v1_3 & 2) != 0) {
-        phi_v0_5 = phi_v0_6 + 1;
-    }
-    phi_v0_4 = phi_v0_5;
-    if ((temp_v1_3 & 4) != 0) {
-        phi_v0_4 = phi_v0_5 + 1;
-    }
-    temp_v1_4 = phi_a0->unk3;
-    temp_a0 = phi_a0 + 4;
-    phi_v0_3 = phi_v0_4;
-    if ((temp_v1_4 & 1) != 0) {
-        phi_v0_3 = phi_v0_4 + 1;
-    }
-    phi_v0_2 = phi_v0_3;
-    if ((temp_v1_4 & 2) != 0) {
-        phi_v0_2 = phi_v0_3 + 1;
-    }
-    phi_v0 = phi_v0_2;
-    if ((temp_v1_4 & 4) != 0) {
-        phi_v0 = phi_v0_2 + 1;
-    }
-    phi_a0 = temp_a0;
-    phi_v0_13 = phi_v0;
-    if (temp_a0 != &D_800D6BE0) {
-        goto loop_1;
-    }
-    if (phi_v0 < 0x42) {
+    if (v0 < 0x42) {
         return 0;
     }
-    if (*0x800D6BC5 != 0) {
+    if (D_800D6BC5 != 0) {
         return 1;
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9E4C.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_800B9F50(s32 arg0) {
-    return (D_800D6BA0 >> arg0) & 1;
+extern u32 gCutscenesWatched;
+s32 check_cutscene_watched(s32 arg0) {
+    return (gCutscenesWatched >> arg0) & 1;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9F50.s")
-#endif
 
 #ifdef MIPS_TO_C
 s32 func_800B9F64(s32 arg0, s32 arg1) {
@@ -1110,14 +1041,13 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9F64.s")
 #endif
 
 
-extern u32 D_800D6BA0;
-s32 func_800B9F90(s32 arg0, s32 fileNum) {
-    D_800D6BA0 |= (1 << arg0);
+s32 set_cutscene_watched(s32 arg0, s32 fileNum) {
+    gCutscenesWatched |= (1 << arg0);
     
     if (fileNum >= 0 && fileNum < 3) {
-        gSaveBuffer1.files[fileNum].cutscenesWatched = D_800D6BA0;
+        gSaveBuffer1.files[fileNum].cutscenesWatched = gCutscenesWatched;
     }
-    return D_800D6BA0;
+    return gCutscenesWatched;
 }
 
 #ifdef MIPS_TO_C

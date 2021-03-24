@@ -86,17 +86,7 @@ void func_800BBC6C(void) {
     D_800D6F38 = D_800ED4E0[0]->unk3C;
 }
 
-extern struct UnkStruct80048F20 {
-    // u16 unk0[4];
-    u16 unk0;
-    u16 unk2;
-    u16 unk4;
-    u16 unk6;
-    u8 unk8;
-    u8 unk9;
-    u8 unkA;
-    u8 unkB;
-} gPlayerControllers;
+#include "ovl0/ovl0_2.h"
 extern u32 D_800BE4F8;
 
 
@@ -116,17 +106,15 @@ void func_800BBDC4(void) {
     u16 phi_a2;
 
     temp_v1 = D_800ED4EC;
-    gPlayerControllers.unk4 = 0;
-    gPlayerControllers.unk2 = 0;
-    gPlayerControllers.unk0 = 0;
+    gPlayerControllers[0].buttonHeldLong = 0;
+    gPlayerControllers[0].buttonPressed = 0;
+    gPlayerControllers[0].buttonHeld = 0;
     if (temp_v1 < 0) {
         D_800BE4F8 = 2;
         D_800D6F38 = 0;
         return;
     }
-    temp_t8 = D_800ED4F4 - 1;
-    D_800ED4F4 = temp_t8;
-    if (temp_t8 <= 0) {
+    if (--D_800ED4F4 <= 0) {
         temp_a0 = *D_800ED4E0;
         temp_t4 = temp_v1 + 1;
         temp_a1 = (temp_a0 + (temp_v1 * 2))->unk100;
@@ -179,14 +167,14 @@ void func_800BBDC4(void) {
     if (temp_a1_3 & 0x80) {
         phi_a2 = temp_a0_2->unk106;
     }
-    gPlayerControllers.unk0 = phi_t0;
-    gPlayerControllers.unk2 = phi_a3;
-    gPlayerControllers.unk4 = phi_a2;
+    gPlayerControllers[0].buttonHeld = phi_t0;
+    gPlayerControllers[0].buttonPressed = phi_a3;
+    gPlayerControllers[0].buttonHeldLong = phi_a2;
     if (phi_t0 & 0x80) {
-        gPlayerControllers.unk9 = 0x40;
+        gPlayerControllers[0].stickY = 0x40;
     }
     if (phi_t0 & 0x40) {
-        gPlayerControllers.unk9 = -0x40;
+        gPlayerControllers[0].stickY = -0x40;
     }
 }
 

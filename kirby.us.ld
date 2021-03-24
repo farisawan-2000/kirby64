@@ -198,7 +198,6 @@ SECTIONS
       BUILD_DIR/libultra.a:dp.o(.text);
       BUILD_DIR/libultra.a:spsetstat.o(.text);
       BUILD_DIR/libultra.a:spgetstat.o(.text);
-
       BUILD_DIR/libultra.a:vimgr.o(.text);
       BUILD_DIR/libultra.a:vigetcurrcontext.o(.text);
       BUILD_DIR/libultra.a:writebackdcacheall.o(.text);
@@ -490,6 +489,7 @@ SECTIONS
    /* 0x801D0C60 174740-17B360 [6C20] */
    BEGIN_SEG(ovl8, 0x801D0C60) {
       BUILD_DIR/asm/ovl8/ovl8.o(.text);
+      BUILD_DIR/data/ovl8/data.o(.data);
    }
    END_SEG(ovl8)
 

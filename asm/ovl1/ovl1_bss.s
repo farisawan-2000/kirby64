@@ -365,7 +365,7 @@ glabel D_800D6B98
 glabel D_800D6B9C
 .word 0x00000000
 
-glabel D_800D6BA0
+glabel gCutscenesWatched
 .word 0x00000000
 
 glabel D_800D6BA4

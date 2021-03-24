@@ -161,10 +161,6 @@ endif
 # hardcoded compiler for ml.c until i figure out why it's breaking recomp
 $(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
-
-# $(BUILD_DIR)/src/ovl1/ovl1_11.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
-# $(BUILD_DIR)/src/ovl1/ovl1_11.o: OPT_FLAGS = -O3
-
 default: all
 
 TARGET = kirby.us
@@ -201,7 +197,7 @@ softclean:
 # $(BUILD_DIR)/src/ovl0/ovl0_8.o: OPT_FLAGS += -framepointer
 $(BUILD_DIR)/src/ovl7/yakulib.o: OPT_FLAGS = -O2
 $(BUILD_DIR)/src/ovl1/ovl1_5.o: OPT_FLAGS = -O2
-$(BUILD_DIR)/src/ovl7/yakulib.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
+# $(BUILD_DIR)/src/ovl7/yakulib.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
 # $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 

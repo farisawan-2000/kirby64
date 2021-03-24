@@ -19,8 +19,8 @@ glabel func_800B96A0
 /* 061934 800B96E4 3C01800D */  lui   $at, %hi(D_800D6B98) # $at, 0x800d
 /* 061938 800B96E8 AC296B98 */  sw    $t1, %lo(D_800D6B98)($at)
 /* 06193C 800B96EC 8C4A001C */  lw    $t2, 0x1c($v0)
-/* 061940 800B96F0 3C01800D */  lui   $at, %hi(D_800D6BA0) # $at, 0x800d
-/* 061944 800B96F4 AC2A6BA0 */  sw    $t2, %lo(D_800D6BA0)($at)
+/* 061940 800B96F0 3C01800D */  lui   $at, %hi(gCutscenesWatched) # $at, 0x800d
+/* 061944 800B96F4 AC2A6BA0 */  sw    $t2, %lo(gCutscenesWatched)($at)
 /* 061948 800B96F8 904B0020 */  lbu   $t3, 0x20($v0)
 /* 06194C 800B96FC 3C01800D */  lui   $at, %hi(D_800D6BA8) # $at, 0x800d
 /* 061950 800B9700 AC2B6BA8 */  sw    $t3, %lo(D_800D6BA8)($at)
@@ -61,13 +61,13 @@ glabel func_800B96A0
 /* 0619D8 800B9788 AC4C0010 */  sw    $t4, 0x10($v0)
 /* 0619DC 800B978C 8DAD6B94 */  lw    $t5, %lo(gCurrentLevel)($t5)
 /* 0619E0 800B9790 3C0E800D */  lui   $t6, %hi(D_800D6B98) # $t6, 0x800d
-/* 0619E4 800B9794 3C0F800D */  lui   $t7, %hi(D_800D6BA0) # $t7, 0x800d
+/* 0619E4 800B9794 3C0F800D */  lui   $t7, %hi(gCutscenesWatched) # $t7, 0x800d
 /* 0619E8 800B9798 AC4D0014 */  sw    $t5, 0x14($v0)
 /* 0619EC 800B979C 8DCE6B98 */  lw    $t6, %lo(D_800D6B98)($t6)
 /* 0619F0 800B97A0 3C18800D */  lui   $t8, %hi(D_800D6BA8) # $t8, 0x800d
 /* 0619F4 800B97A4 3C19800D */  lui   $t9, %hi(D_800D6BAC) # $t9, 0x800d
 /* 0619F8 800B97A8 AC4E0018 */  sw    $t6, 0x18($v0)
-/* 0619FC 800B97AC 8DEF6BA0 */  lw    $t7, %lo(D_800D6BA0)($t7)
+/* 0619FC 800B97AC 8DEF6BA0 */  lw    $t7, %lo(gCutscenesWatched)($t7)
 /* 061A00 800B97B0 3C09800D */  lui   $t1, %hi(gHudDisplayMode) # $t1, 0x800d
 /* 061A04 800B97B4 3C0A800D */  lui   $t2, %hi(D_800D6BB5) # $t2, 0x800d
 /* 061A08 800B97B8 AC4F001C */  sw    $t7, 0x1c($v0)

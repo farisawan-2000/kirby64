@@ -91,6 +91,7 @@ struct GObjProcess {
     struct UnkStruct8004A7C4 *unk18;
     struct GObjThread *thread;
     void (*entryPoint)(struct UnkStruct8004A7C4 *);
+    u32 *ptr;
 };
 
 // TODO: is this an existing struct instead of a brand new one?
