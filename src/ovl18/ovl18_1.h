@@ -2,8 +2,7 @@
 #define OVL_18_1_H
 
 #include "unk_structs/D_800E1B50.h"
-
-extern s32 *D_800DEF90[];
+extern void (*D_800DEF90[])(s32);
 
 extern void (*D_800DF150[])(s32);
 
@@ -79,7 +78,7 @@ void func_800AED20(f32);
 void func_80220818_ovl18(s32);
 void func_8022ABC0_ovl18(void);
 void func_80220AA8_ovl18(s32);
-void restart_thread_with_new_function(s32, void (*c));
+void assign_new_process_entry(s32, void (*c));
 u32 func_8019B738_ovl18(f32);
 void func_80221440_ovl18(void);
 

@@ -435,7 +435,7 @@ glabel func_8018271C_ovl3
 /* 0E37A8 80182D68 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0E37AC 80182D6C 00095080 */  sll   $t2, $t1, 2
 /* 0E37B0 80182D70 008A2021 */  addu  $a0, $a0, $t2
-/* 0E37B4 80182D74 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0E37B4 80182D74 0C02C7B2 */  jal   assign_new_process_entry
 /* 0E37B8 80182D78 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0E37BC 80182D7C 3C078013 */  lui   $a3, %hi(gKirbyState) # $a3, 0x8013
 /* 0E37C0 80182D80 24E7E7C0 */  addiu $a3, %lo(gKirbyState) # addiu $a3, $a3, -0x1840

@@ -137,7 +137,7 @@ glabel func_8017C1FC_ovl3
 /* 0DCE24 8017C3E4 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0DCE28 8017C3E8 00095080 */  sll   $t2, $t1, 2
 /* 0DCE2C 8017C3EC 008A2021 */  addu  $a0, $a0, $t2
-/* 0DCE30 8017C3F0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0DCE30 8017C3F0 0C02C7B2 */  jal   assign_new_process_entry
 /* 0DCE34 8017C3F4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0DCE38 8017C3F8 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0DCE3C 8017C3FC 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840

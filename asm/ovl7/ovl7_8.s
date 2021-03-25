@@ -1072,7 +1072,7 @@ glabel func_801B152C_ovl7
 /* 1575D8 801B1568 00822021 */  addu  $a0, $a0, $v0
 /* 1575DC 801B156C 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 1575E0 801B1570 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 1575E4 801B1574 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1575E4 801B1574 0C02C7B2 */  jal   assign_new_process_entry
 /* 1575E8 801B1578 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1575EC 801B157C 1000001A */  b     .L801B15E8_ovl7
 /* 1575F0 801B1580 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -1080,7 +1080,7 @@ glabel func_801B152C_ovl7
 /* 1575F4 801B1584 00822021 */  addu  $a0, $a0, $v0
 /* 1575F8 801B1588 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 1575FC 801B158C 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 157600 801B1590 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 157600 801B1590 0C02C7B2 */  jal   assign_new_process_entry
 /* 157604 801B1594 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 157608 801B1598 10000013 */  b     .L801B15E8_ovl7
 /* 15760C 801B159C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -1230,7 +1230,7 @@ glabel func_801B1784_ovl7
 /* 157830 801B17C0 00822021 */  addu  $a0, $a0, $v0
 /* 157834 801B17C4 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 157838 801B17C8 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 15783C 801B17CC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 15783C 801B17CC 0C02C7B2 */  jal   assign_new_process_entry
 /* 157840 801B17D0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 157844 801B17D4 1000001A */  b     .L801B1840_ovl7
 /* 157848 801B17D8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -1238,7 +1238,7 @@ glabel func_801B1784_ovl7
 /* 15784C 801B17DC 00822021 */  addu  $a0, $a0, $v0
 /* 157850 801B17E0 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 157854 801B17E4 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 157858 801B17E8 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 157858 801B17E8 0C02C7B2 */  jal   assign_new_process_entry
 /* 15785C 801B17EC 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 157860 801B17F0 10000013 */  b     .L801B1840_ovl7
 /* 157864 801B17F4 8FBF0014 */   lw    $ra, 0x14($sp)

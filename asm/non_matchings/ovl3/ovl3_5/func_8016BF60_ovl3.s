@@ -29,7 +29,7 @@ glabel func_8016BF60_ovl3
 /* 0CCA08 8016BFC8 24A57000 */  addiu $a1, %lo(D_80177000) # addiu $a1, $a1, 0x7000
 /* 0CCA0C 8016BFCC 000B6080 */  sll   $t4, $t3, 2
 /* 0CCA10 8016BFD0 008C2021 */  addu  $a0, $a0, $t4
-/* 0CCA14 8016BFD4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0CCA14 8016BFD4 0C02C7B2 */  jal   assign_new_process_entry
 /* 0CCA18 8016BFD8 8C84E890 */   lw    $a0, -0x1770($a0)
 /* 0CCA1C 8016BFDC 0C04723E */  jal   func_8011C8F8
 /* 0CCA20 8016BFE0 00000000 */   nop   

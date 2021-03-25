@@ -267,6 +267,7 @@ SECTIONS
       BUILD_DIR/data/kirby.039DF0.2.001.o(.rodata);
       BUILD_DIR/src/ovl0/ovl0_2_5.o(.rodata);
       BUILD_DIR/src/ovl0/memory_layer.o(.rodata);
+      BUILD_DIR/src/ovl0/object_manager.o(.rodata);
       BUILD_DIR/data/kirby.039DF0.2.01.o(.data*);
       BUILD_DIR/data/ovl0/ovl0_4.rodata.o(.data*);
       BUILD_DIR/data/kirby.039DF0.2.02.o(.data*);

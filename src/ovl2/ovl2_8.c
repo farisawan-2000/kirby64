@@ -766,10 +766,10 @@ void func_8011CFF4(s32 arg0) {
         D_800DDC50[temp_v0_2->objId] = temp_v1_3;
         gKirbyState.actionChange = -1;
         if (D_800D6FB2 == 2) {
-            restart_thread_with_new_function(gEntityGObjProcessArray[temp_v0_2->objId], &D_8022947C);
+            assign_new_process_entry(gEntityGObjProcessArray[temp_v0_2->objId], &D_8022947C);
             return;
         }
-        restart_thread_with_new_function((&gEntityGObjProcessArray[temp_v0_2->objId])[-0x6BC], &D_8016C510);
+        assign_new_process_entry((&gEntityGObjProcessArray[temp_v0_2->objId])[-0x6BC], &D_8016C510);
     }
 }
 #else
@@ -3022,7 +3022,7 @@ void func_80122FB0(s32 arg0) {
 
     temp_v0 = D_8004A7C4;
     D_800DDE10[temp_v0->objId] = arg0;
-    restart_thread_with_new_function(D_800DE890[temp_v0->objId], &D_80177098);
+    assign_new_process_entry(D_800DE890[temp_v0->objId], &D_80177098);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122FB0.s")

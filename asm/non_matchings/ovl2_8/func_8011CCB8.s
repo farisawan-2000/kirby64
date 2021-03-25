@@ -170,7 +170,7 @@ glabel func_8011CCB8
 /* 0A59A0 8011CF30 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 0A59A4 8011CF34 AFA80028 */  sw    $t0, 0x28($sp)
 /* 0A59A8 8011CF38 24A5C4EC */  addiu $a1, $a1, %lo(func_801AC4EC_ovl7)
-/* 0A59AC 8011CF3C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0A59AC 8011CF3C 0C02C7B2 */  jal   assign_new_process_entry
 /* 0A59B0 8011CF40 AC2E8220 */ sw $t6, %lo(D_800E8220)($at)
 /* 0A59B4 8011CF44 8FA20028 */  lw    $v0, 0x28($sp)
 .L8011CF48_ovl2:

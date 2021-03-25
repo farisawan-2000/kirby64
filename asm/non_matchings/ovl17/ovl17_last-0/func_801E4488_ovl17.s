@@ -69,7 +69,7 @@ glabel func_801E4488_ovl17
 /* 22F778 801E4588 000A7080 */  sll   $t6, $t2, 2
 /* 22F77C 801E458C 008E2021 */  addu  $a0, $a0, $t6
 /* 22F780 801E4590 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
-/* 22F784 801E4594 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 22F784 801E4594 0C02C7B2 */  jal   assign_new_process_entry
 /* 22F788 801E4598 24A540F4 */   addiu $a1, %lo(func_801E40F4) # addiu $a1, $a1, 0x40f4
 /* 22F78C 801E459C 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 22F790 801E45A0 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
@@ -106,7 +106,7 @@ glabel func_801E4488_ovl17
 /* 22F804 801E4614 24A540F4 */  addiu $a1, %lo(func_801E40F4) # addiu $a1, $a1, 0x40f4
 /* 22F808 801E4618 0018C880 */  sll   $t9, $t8, 2
 /* 22F80C 801E461C 00992021 */  addu  $a0, $a0, $t9
-/* 22F810 801E4620 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 22F810 801E4620 0C02C7B2 */  jal   assign_new_process_entry
 /* 22F814 801E4624 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 22F818 801E4628 0C029D9E */  jal   play_sound
 /* 22F81C 801E462C 240401C3 */   li    $a0, 451

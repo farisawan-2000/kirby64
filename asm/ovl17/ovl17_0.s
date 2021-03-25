@@ -614,7 +614,7 @@ glabel func_801DBA8C_ovl17
 /* 226CE8 801DBAF8 00832021 */  addu  $a0, $a0, $v1
 /* 226CEC 801DBAFC 3C05801E */  lui   $a1, %hi(D_801DC460) # $a1, 0x801e
 /* 226CF0 801DBB00 24A5C460 */  addiu $a1, %lo(D_801DC460) # addiu $a1, $a1, -0x3ba0
-/* 226CF4 801DBB04 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 226CF4 801DBB04 0C02C7B2 */  jal   assign_new_process_entry
 /* 226CF8 801DBB08 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 226CFC 801DBB0C 24040003 */  li    $a0, 3
 /* 226D00 801DBB10 0C02ED1A */  jal   func_800BB468

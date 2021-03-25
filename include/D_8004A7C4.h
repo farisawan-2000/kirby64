@@ -124,33 +124,21 @@ struct UnkStruct8004A7C4_3C_duplicate {
 	u32 unk84;
 };
 
-
-struct UnkStruct8004A7C4_18 {
-	struct UnkStruct8004A7C4_18 *next;
-	u32 unk4;
-	u32 unk8;
-	u32 unkC;
-	u32 unk10;
-	u8 unk14;
-	u8 unk15;
-	u8 unk16;
-	u8 unk17;
-};
-
 // GObj?
 struct UnkStruct8004A7C4 {
 	u32 objId;
 	struct UnkStruct8004A7C4* unk4;
     struct UnkStruct8004A7C4* unk8;
     u8 link;
-    u8 unkD;
+    // todo: find the array this indexes
+    u8 dl_link;
     // seems to be similar to other GObj's in proximity
     u8 unkE;
     u8 unkF;
     u32 unk10;
     // render callback according to HSD? Can we even trust HSD here?
     void (*unk14)(void);
-    struct GObjProcess *unk18;
+    struct GObjProcess *proc;
     u32 unk1C;
     struct UnkStruct8004A7C4* unk20;
     struct UnkStruct8004A7C4* unk24;

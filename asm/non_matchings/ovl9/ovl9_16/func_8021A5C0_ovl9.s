@@ -23,7 +23,7 @@ glabel func_8021A5C0_ovl9
 /* 1C8664 8021A614 24A5A22C */  addiu $a1, %lo(func_8021A22C) # addiu $a1, $a1, -0x5dd4
 /* 1C8668 8021A618 0018C880 */  sll   $t9, $t8, 2
 /* 1C866C 8021A61C 00992021 */  addu  $a0, $a0, $t9
-/* 1C8670 8021A620 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1C8670 8021A620 0C02C7B2 */  jal   assign_new_process_entry
 /* 1C8674 8021A624 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 1C8678 8021A628 10000010 */  b     .L8021A66C_ovl9
 /* 1C867C 8021A62C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -40,7 +40,7 @@ glabel func_8021A5C0_ovl9
 /* 1C86A4 8021A654 000A5880 */  sll   $t3, $t2, 2
 /* 1C86A8 8021A658 008B2021 */  addu  $a0, $a0, $t3
 /* 1C86AC 8021A65C 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
-/* 1C86B0 8021A660 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1C86B0 8021A660 0C02C7B2 */  jal   assign_new_process_entry
 /* 1C86B4 8021A664 24A5A22C */   addiu $a1, %lo(func_8021A22C) # addiu $a1, $a1, -0x5dd4
 .L8021A668_ovl9:
 /* 1C86B8 8021A668 8FBF0014 */  lw    $ra, 0x14($sp)

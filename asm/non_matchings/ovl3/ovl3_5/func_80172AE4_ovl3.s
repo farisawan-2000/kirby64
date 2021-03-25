@@ -454,7 +454,7 @@ glabel func_80172AE4_ovl3
 /* 0D3B88 80173148 3C05801B */  lui   $a1, %hi(D_801A9618) # $a1, 0x801b
 /* 0D3B8C 8017314C AC318220 */  sw    $s1, -0x7de0($at)
 /* 0D3B90 80173150 24A59618 */  addiu $a1, %lo(D_801A9618) # addiu $a1, $a1, -0x69e8
-/* 0D3B94 80173154 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0D3B94 80173154 0C02C7B2 */  jal   assign_new_process_entry
 /* 0D3B98 80173158 8C84E510 */   lw    $a0, -0x1af0($a0)
 .L8017315C_ovl3:
 /* 0D3B9C 8017315C 0C029D9E */  jal   play_sound

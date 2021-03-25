@@ -1075,7 +1075,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A9760.s")
 //     u32 unk0;
 // } 
 
-// extern u32 *D_800D00C4[][4];
+extern u32 ***D_800D00C4;
 void func_800AF9B8(u16, u8);
 
 #ifdef MIPS_TO_C

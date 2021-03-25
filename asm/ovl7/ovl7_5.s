@@ -2192,7 +2192,7 @@ glabel func_801A8FFC_ovl7
 /* 14F100 801A9090 00195080 */  sll   $t2, $t9, 2
 /* 14F104 801A9094 008A2021 */  addu  $a0, $a0, $t2
 /* 14F108 801A9098 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 14F10C 801A909C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14F10C 801A909C 0C02C7B2 */  jal   assign_new_process_entry
 /* 14F110 801A90A0 24A596C4 */   addiu $a1, %lo(D_801A96C4) # addiu $a1, $a1, -0x693c
 /* 14F114 801A90A4 1000006D */  b     .L801A925C_ovl7
 /* 14F118 801A90A8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2273,7 +2273,7 @@ glabel func_801A8FFC_ovl7
 /* 14F234 801A91C4 24A5A914 */  addiu $a1, %lo(D_801AA914) # addiu $a1, $a1, -0x56ec
 /* 14F238 801A91C8 0018C880 */  sll   $t9, $t8, 2
 /* 14F23C 801A91CC 00992021 */  addu  $a0, $a0, $t9
-/* 14F240 801A91D0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14F240 801A91D0 0C02C7B2 */  jal   assign_new_process_entry
 /* 14F244 801A91D4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14F248 801A91D8 10000020 */  b     .L801A925C_ovl7
 /* 14F24C 801A91DC 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2293,7 +2293,7 @@ glabel func_801A8FFC_ovl7
 /* 14F27C 801A920C 24A5A914 */  addiu $a1, %lo(D_801AA914) # addiu $a1, $a1, -0x56ec
 /* 14F280 801A9210 000C6880 */  sll   $t5, $t4, 2
 /* 14F284 801A9214 008D2021 */  addu  $a0, $a0, $t5
-/* 14F288 801A9218 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14F288 801A9218 0C02C7B2 */  jal   assign_new_process_entry
 /* 14F28C 801A921C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14F290 801A9220 1000000E */  b     .L801A925C_ovl7
 /* 14F294 801A9224 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2827,12 +2827,12 @@ glabel func_801A9930_ovl7
 /* 14FA40 801A99D0 00822021 */  addu  $a0, $a0, $v0
 /* 14FA44 801A99D4 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 14FA48 801A99D8 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 14FA4C 801A99DC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FA4C 801A99DC 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FA50 801A99E0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FA54 801A99E4 10000174 */  b     .L801A9FB8_ovl7
 /* 14FA58 801A99E8 8FBF0014 */   lw    $ra, 0x14($sp)
 .L801A99EC_ovl7:
-/* 14FA5C 801A99EC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FA5C 801A99EC 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FA60 801A99F0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FA64 801A99F4 10000170 */  b     .L801A9FB8_ovl7
 /* 14FA68 801A99F8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2856,7 +2856,7 @@ glabel func_801A9930_ovl7
 /* 14FAAC 801A9A3C 00822021 */  addu  $a0, $a0, $v0
 /* 14FAB0 801A9A40 3C05801B */  lui   $a1, %hi(D_801AA1D4) # $a1, 0x801b
 /* 14FAB4 801A9A44 24A5A1D4 */  addiu $a1, %lo(D_801AA1D4) # addiu $a1, $a1, -0x5e2c
-/* 14FAB8 801A9A48 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FAB8 801A9A48 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FABC 801A9A4C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FAC0 801A9A50 10000159 */  b     .L801A9FB8_ovl7
 /* 14FAC4 801A9A54 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2878,7 +2878,7 @@ glabel func_801A9930_ovl7
 /* 14FB04 801A9A94 3C05801B */  lui   $a1, %hi(func_801A8CDC) # $a1, 0x801b
 /* 14FB08 801A9A98 24A58CDC */  addiu $a1, %lo(func_801A8CDC) # addiu $a1, $a1, -0x7324
 /* 14FB0C 801A9A9C 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 14FB10 801A9AA0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FB10 801A9AA0 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FB14 801A9AA4 AFA60030 */   sw    $a2, 0x30($sp)
 /* 14FB18 801A9AA8 8FA60030 */  lw    $a2, 0x30($sp)
 /* 14FB1C 801A9AAC 3C0D8013 */  lui   $t5, %hi(gKirbyState) # $t5, 0x8013
@@ -2906,7 +2906,7 @@ glabel func_801A9930_ovl7
 /* 14FB74 801A9B04 00822021 */  addu  $a0, $a0, $v0
 /* 14FB78 801A9B08 3C05801B */  lui   $a1, %hi(D_801AC448) # $a1, 0x801b
 /* 14FB7C 801A9B0C 24A5C448 */  addiu $a1, %lo(D_801AC448) # addiu $a1, $a1, -0x3bb8
-/* 14FB80 801A9B10 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FB80 801A9B10 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FB84 801A9B14 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FB88 801A9B18 10000127 */  b     .L801A9FB8_ovl7
 /* 14FB8C 801A9B1C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2966,7 +2966,7 @@ glabel func_801A9930_ovl7
 /* 14FC58 801A9BE8 24A5C448 */  addiu $a1, %lo(D_801AC448) # addiu $a1, $a1, -0x3bb8
 /* 14FC5C 801A9BEC 000FC080 */  sll   $t8, $t7, 2
 /* 14FC60 801A9BF0 00982021 */  addu  $a0, $a0, $t8
-/* 14FC64 801A9BF4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FC64 801A9BF4 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FC68 801A9BF8 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FC6C 801A9BFC 100000EE */  b     .L801A9FB8_ovl7
 /* 14FC70 801A9C00 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -2975,7 +2975,7 @@ glabel func_801A9930_ovl7
 /* 14FC78 801A9C08 3C04800E */  lui   $a0, 0x800e
 /* 14FC7C 801A9C0C 00197080 */  sll   $t6, $t9, 2
 /* 14FC80 801A9C10 008E2021 */  addu  $a0, $a0, $t6
-/* 14FC84 801A9C14 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 14FC84 801A9C14 0C02C7B2 */  jal   assign_new_process_entry
 /* 14FC88 801A9C18 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 14FC8C 801A9C1C 100000E6 */  b     .L801A9FB8_ovl7
 /* 14FC90 801A9C20 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -3363,7 +3363,7 @@ glabel func_801AA190_ovl7
 /* 15021C 801AA1AC 000FC080 */  sll   $t8, $t7, 2
 /* 150220 801AA1B0 00982021 */  addu  $a0, $a0, $t8
 /* 150224 801AA1B4 8C84E510 */  lw    $a0, -0x1af0($a0)
-/* 150228 801AA1B8 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 150228 801AA1B8 0C02C7B2 */  jal   assign_new_process_entry
 /* 15022C 801AA1BC 24A5B5A4 */   addiu $a1, %lo(D_801AB5A4) # addiu $a1, $a1, -0x4a5c
 /* 150230 801AA1C0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 150234 801AA1C4 27BD0018 */  addiu $sp, $sp, 0x18
@@ -4045,7 +4045,7 @@ glabel func_801AAAF8_ovl7
 /* 150C08 801AAB98 00822021 */  addu  $a0, $a0, $v0
 /* 150C0C 801AAB9C 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 150C10 801AABA0 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 150C14 801AABA4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 150C14 801AABA4 0C02C7B2 */  jal   assign_new_process_entry
 /* 150C18 801AABA8 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 150C1C 801AABAC 100000A9 */  b     .L801AAE54_ovl7
 /* 150C20 801AABB0 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -4053,7 +4053,7 @@ glabel func_801AAAF8_ovl7
 /* 150C24 801AABB4 00822021 */  addu  $a0, $a0, $v0
 /* 150C28 801AABB8 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 150C2C 801AABBC 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 150C30 801AABC0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 150C30 801AABC0 0C02C7B2 */  jal   assign_new_process_entry
 /* 150C34 801AABC4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 150C38 801AABC8 100000A2 */  b     .L801AAE54_ovl7
 /* 150C3C 801AABCC 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -4583,7 +4583,7 @@ glabel func_801AB2F4_ovl7
 /* 151404 801AB394 00822021 */  addu  $a0, $a0, $v0
 /* 151408 801AB398 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 15140C 801AB39C 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 151410 801AB3A0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 151410 801AB3A0 0C02C7B2 */  jal   assign_new_process_entry
 /* 151414 801AB3A4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 151418 801AB3A8 1000007B */  b     .L801AB598_ovl7
 /* 15141C 801AB3AC 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -4591,7 +4591,7 @@ glabel func_801AB2F4_ovl7
 /* 151420 801AB3B0 00822021 */  addu  $a0, $a0, $v0
 /* 151424 801AB3B4 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 151428 801AB3B8 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 15142C 801AB3BC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 15142C 801AB3BC 0C02C7B2 */  jal   assign_new_process_entry
 /* 151430 801AB3C0 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 151434 801AB3C4 10000074 */  b     .L801AB598_ovl7
 /* 151438 801AB3C8 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -4956,7 +4956,7 @@ glabel func_801AB884_ovl7
 /* 151994 801AB924 00832021 */  addu  $a0, $a0, $v1
 /* 151998 801AB928 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 15199C 801AB92C 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 1519A0 801AB930 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1519A0 801AB930 0C02C7B2 */  jal   assign_new_process_entry
 /* 1519A4 801AB934 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1519A8 801AB938 10000096 */  b     .L801ABB94_ovl7
 /* 1519AC 801AB93C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -4964,7 +4964,7 @@ glabel func_801AB884_ovl7
 /* 1519B0 801AB940 00832021 */  addu  $a0, $a0, $v1
 /* 1519B4 801AB944 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 1519B8 801AB948 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 1519BC 801AB94C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1519BC 801AB94C 0C02C7B2 */  jal   assign_new_process_entry
 /* 1519C0 801AB950 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1519C4 801AB954 1000008F */  b     .L801ABB94_ovl7
 /* 1519C8 801AB958 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -6003,7 +6003,7 @@ glabel func_801AC840_ovl7
 /* 1528EC 801AC87C 00822021 */  addu  $a0, $a0, $v0
 /* 1528F0 801AC880 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 1528F4 801AC884 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 1528F8 801AC888 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1528F8 801AC888 0C02C7B2 */  jal   assign_new_process_entry
 /* 1528FC 801AC88C 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 152900 801AC890 1000001A */  b     .L801AC8FC_ovl7
 /* 152904 801AC894 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -6011,7 +6011,7 @@ glabel func_801AC840_ovl7
 /* 152908 801AC898 00822021 */  addu  $a0, $a0, $v0
 /* 15290C 801AC89C 3C05801B */  lui   $a1, %hi(func_801AC11C) # $a1, 0x801b
 /* 152910 801AC8A0 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
-/* 152914 801AC8A4 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 152914 801AC8A4 0C02C7B2 */  jal   assign_new_process_entry
 /* 152918 801AC8A8 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 15291C 801AC8AC 10000013 */  b     .L801AC8FC_ovl7
 /* 152920 801AC8B0 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -6059,7 +6059,7 @@ glabel func_801AC908_ovl7
 /* 1529B4 801AC944 00822021 */  addu  $a0, $a0, $v0
 /* 1529B8 801AC948 3C05801B */  lui   $a1, %hi(D_801AC33C) # $a1, 0x801b
 /* 1529BC 801AC94C 24A5C33C */  addiu $a1, %lo(D_801AC33C) # addiu $a1, $a1, -0x3cc4
-/* 1529C0 801AC950 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1529C0 801AC950 0C02C7B2 */  jal   assign_new_process_entry
 /* 1529C4 801AC954 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1529C8 801AC958 1000001A */  b     .L801AC9C4_ovl7
 /* 1529CC 801AC95C 8FBF0014 */   lw    $ra, 0x14($sp)
@@ -6067,7 +6067,7 @@ glabel func_801AC908_ovl7
 /* 1529D0 801AC960 00822021 */  addu  $a0, $a0, $v0
 /* 1529D4 801AC964 3C05801B */  lui   $a1, %hi(D_801AC364) # $a1, 0x801b
 /* 1529D8 801AC968 24A5C364 */  addiu $a1, %lo(D_801AC364) # addiu $a1, $a1, -0x3c9c
-/* 1529DC 801AC96C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1529DC 801AC96C 0C02C7B2 */  jal   assign_new_process_entry
 /* 1529E0 801AC970 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 1529E4 801AC974 10000013 */  b     .L801AC9C4_ovl7
 /* 1529E8 801AC978 8FBF0014 */   lw    $ra, 0x14($sp)

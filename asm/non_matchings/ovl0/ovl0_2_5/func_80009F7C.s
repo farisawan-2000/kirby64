@@ -8,7 +8,7 @@ glabel func_80009F7C
 .L80009F94_ovl0:
 /* 00AB94 80009F94 240E0003 */  li    $t6, 3
 /* 00AB98 80009F98 A0CE000F */  sb    $t6, 0xf($a2)
-/* 00AB9C 80009F9C 0C002265 */  jal   func_80008994
+/* 00AB9C 80009F9C 0C002265 */  jal   object_manager_get_camera
 /* 00ABA0 80009FA0 AFA60020 */   sw    $a2, 0x20($sp)
 /* 00ABA4 80009FA4 8FA60020 */  lw    $a2, 0x20($sp)
 /* 00ABA8 80009FA8 24440008 */  addiu $a0, $v0, 8

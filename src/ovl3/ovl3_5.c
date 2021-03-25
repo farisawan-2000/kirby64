@@ -511,7 +511,7 @@ block_2:
             phi_v0 = temp_v0;
             phi_return = temp_v0;
             if (temp_v1 != (temp_v0 + 0x800F0000)->unk-6720) {
-                restart_thread_with_new_function((temp_v0 + 0x800E0000)->unk-1AF0, &D_8016C510);
+                assign_new_process_entry((temp_v0 + 0x800E0000)->unk-1AF0, &D_8016C510);
                 temp_v0_2 = D_8004A7C4->objId * 4;
                 phi_a0 = D_8012E7E0;
                 phi_v0 = temp_v0_2;
@@ -527,7 +527,7 @@ block_2:
             if (*temp_v1_2 == 0) {
                 phi_a0 = D_8012E7E0;
                 phi_v1 = (D_8004A7C4->objId * 4) + &D_800E9AA0;
-                phi_return = restart_thread_with_new_function((temp_v0_3 + 0x800E0000)->unk-1AF0, &D_8016C510);
+                phi_return = assign_new_process_entry((temp_v0_3 + 0x800E0000)->unk-1AF0, &D_8016C510);
             }
         }
         *phi_v1 = phi_a0;
@@ -536,7 +536,7 @@ block_2:
     temp_v0_4 = D_8004A7C4->objId * 4;
     phi_return_2 = temp_v0_4;
     if (temp_v1 != (temp_v0_4 + 0x800F0000)->unk-6720) {
-        phi_return_2 = restart_thread_with_new_function((temp_v0_4 + 0x800E0000)->unk-1AF0, &D_8016C510);
+        phi_return_2 = assign_new_process_entry((temp_v0_4 + 0x800E0000)->unk-1AF0, &D_8016C510);
     }
     return phi_return_2;
 }
@@ -2346,7 +2346,7 @@ block_14:
                             phi_t0 = &gKirbyState;
                             if (temp_v1_2 == 0x3C) {
                                 gKirbyState.unk44 = 2U;
-                                restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
+                                assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
                                 goto block_14;
                             }
                         }
@@ -2423,7 +2423,7 @@ block_34:
                                 if (phi_t0_3->unkE4 == 0) {
                                     phi_t0_4 = phi_t0_3;
                                     if ((D_800D6FEA & 0x8000) != 0) {
-                                        restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
+                                        assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
                                         phi_t0_4 = &gKirbyState;
                                     }
                                 }
@@ -2579,7 +2579,7 @@ struct KirbyState *func_801717F0_ovl3(s32 arg0) {
             if (temp_ret != 0) {
                 func_8011DC5C();
                 func_8011E0E8();
-                return restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
+                return assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
             }
             phi_return = temp_ret;
             if (D_8012E7C5 != 0xA) {
@@ -2802,7 +2802,7 @@ u32 func_80172234_ovl3(s32 arg0) {
                 if (temp_ret != 0) {
                     func_8011DC5C(&gKirbyState);
                     func_8011E0E8();
-                    return restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
+                    return assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
                 }
                 phi_return_2 = temp_ret;
                 if (gKirbyState.action != 0xB) {
@@ -3227,7 +3227,7 @@ block_21:
         if (phi_v0 != -1) {
             temp_v0_9 = phi_v0 * 4;
             (temp_v0_9 + 0x800F0000)->unk-7DE0 = (?32) (u8)1U;
-            restart_thread_with_new_function((temp_v0_9 + 0x800E0000)->unk-1AF0, &D_801A9618);
+            assign_new_process_entry((temp_v0_9 + 0x800E0000)->unk-1AF0, &D_801A9618);
         }
     }
     play_sound(0xE5);
@@ -3854,7 +3854,7 @@ void func_80174504_ovl3(s32 arg0) {
         if (phi_v0 != -1) {
             temp_v0 = phi_v0 * 4;
             (temp_v0 + 0x800F0000)->unk-7DE0 = 1;
-            restart_thread_with_new_function((temp_v0 + 0x800E0000)->unk-1AF0, &D_801A9618);
+            assign_new_process_entry((temp_v0 + 0x800E0000)->unk-1AF0, &D_801A9618);
             gKirbyState.unk4 = 1;
             gKirbyState.currentInhale = gKirbyState.ability;
         }
@@ -6765,7 +6765,7 @@ void func_8017C1FC_ovl3(s32 arg0) {
     }
     func_80120CCC(D_80197608, D_8019760C);
     if (gKirbyState.unk3C != gKirbyState.unk44) {
-        restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
+        assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510);
         gKirbyState.unk3C = gKirbyState.unk44;
     }
 }
@@ -7888,7 +7888,7 @@ block_3:
                 phi_v0 = temp_v0;
                 phi_a0 = temp_a0;
                 if ((D_800D6FEA & 0x4000) != 0) {
-                    restart_thread_with_new_function((temp_v0 + 0x800E0000)->unk-1AF0, &D_8016C510, temp_a2);
+                    assign_new_process_entry((temp_v0 + 0x800E0000)->unk-1AF0, &D_8016C510, temp_a2);
                     temp_a0_2 = D_8004A7C4;
                     phi_v0_2 = *temp_a0_2;
                     phi_a0 = temp_a0_2;
@@ -9247,7 +9247,7 @@ struct KirbyState *func_80183428_ovl3(s32 arg0) {
     if (phi_v1 != 0) {
         if (2 != temp_a0) {
             gKirbyState.unk44 = 2;
-            restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510, 2);
+            assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510, 2);
         }
     }
     if (gKirbyState.unk30 != 0) {
@@ -9990,7 +9990,7 @@ block_46:
         goto block_17;
     }
     if (gKirbyState.unk3C != gKirbyState.unk44) {
-        temp_ret = restart_thread_with_new_function(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510, &gKirbyState);
+        temp_ret = assign_new_process_entry(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1AF0, &D_8016C510, &gKirbyState);
         gKirbyState.unk3C = (u32) gKirbyState.unk44;
         phi_return = temp_ret;
     }

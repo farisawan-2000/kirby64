@@ -142,12 +142,12 @@ void func_8021A5C0_ovl9(void) {
     temp_v0 = temp_v1->objId;
     if (D_800E98E0[temp_v0] != 0) {
         D_800DDC50[temp_v0] = 1;
-        restart_thread_with_new_function(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
+        assign_new_process_entry(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
         return;
     }
     if (D_800E9C60[temp_v0] != 0) {
         D_800DDC50[temp_v0] = 2;
-        restart_thread_with_new_function(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
+        assign_new_process_entry(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
     }
 }
 #else
@@ -211,12 +211,12 @@ void func_8021A93C_ovl9(void) {
     func_8021A9F0_ovl9();
     if (D_800E98E0[D_8004A7C4->objId] != 0) {
         D_800DDC50[D_8004A7C4->objId] = 1;
-        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
         return;
     }
     if (D_800EA520[D_8004A7C4->objId] != 0) {
         D_800DDC50[D_8004A7C4->objId] = 0;
-        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
     }
 }
 
@@ -376,7 +376,7 @@ void func_8021AD88_ovl9(struct UnkStruct8004A7C4 *arg0) {
         D_800E3C90[D_8004A7C4->objId] = temp_f2;
         D_800E3AD0[D_8004A7C4->objId] = temp_f2;
         D_800DDC50[D_8004A7C4->objId] = 1;
-        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
     else if (D_800E9720[D_8004A7C4->objId] != 0) {
         D_800E9720[D_8004A7C4->objId]--;
@@ -395,7 +395,7 @@ void func_8021AD88_ovl9(struct UnkStruct8004A7C4 *arg0) {
         D_800E3C90[D_8004A7C4->objId] = temp_f2_2;
         D_800E3AD0[D_8004A7C4->objId] = temp_f2_2;
         D_800DDC50[D_8004A7C4->objId] = 2;
-        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
 }
 #else
@@ -438,7 +438,7 @@ void func_8021B0D0_ovl9(struct UnkStruct8004A7C4 *arg0) {
         func_8019CD68_ovl9(temp_a0, temp_a1, temp_a2, temp_a3 * 4);
         temp_v0_2 = D_8004A7C4;
         D_800DDC50[temp_v0_2->objId] = 0;
-        restart_thread_with_new_function(gEntityGObjProcessArray[temp_v0_2->objId], &D_8021ABB4);
+        assign_new_process_entry(gEntityGObjProcessArray[temp_v0_2->objId], &D_8021ABB4);
     }
 }
 #else
@@ -460,7 +460,7 @@ s32 func_8019A7E8_ovl9(f32);
 void func_8021B27C_ovl9(struct UnkStruct8004A7C4 *arg0) {
     if ((D_800E9E20[D_8004A7C4->objId] != 0) && (func_8019A7E8_ovl9(120.0f) == 0)) {
         D_800DDC50[D_8004A7C4->objId] = 3;
-        restart_thread_with_new_function(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
 }
 
@@ -492,7 +492,7 @@ void func_8021B3A0_ovl9(struct UnkStruct8004A7C4 *arg0) {
     if (D_800E9E20[temp_v1] != 0) {
         D_800E9720[temp_v1] = 0x3C;
         D_800DDC50[temp_v0->objId] = 0;
-        restart_thread_with_new_function(gEntityGObjProcessArray[temp_v0->objId], &D_8021ABB4);
+        assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_8021ABB4);
     }
 }
 #else
@@ -603,7 +603,7 @@ void func_8021B71C_ovl9(struct UnkStruct8004A7C4 *arg0) {
     if (func_8019A7E8_ovl9(0x43200000) != 0) {
         temp_v0 = D_8004A7C4;
         D_800DDC50[temp_v0->objId] = 1;
-        restart_thread_with_new_function(gEntityGObjProcessArray[temp_v0->objId], &D_8021B58C);
+        assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_8021B58C);
     }
 }
 #else

@@ -57,7 +57,7 @@ glabel func_801EAA98_ovl10
 /* 1DB8E4 801EAB74 24A5A784 */  addiu $a1, %lo(D_801EA784) # addiu $a1, $a1, -0x587c
 /* 1DB8E8 801EAB78 00095080 */  sll   $t2, $t1, 2
 /* 1DB8EC 801EAB7C 008A2021 */  addu  $a0, $a0, $t2
-/* 1DB8F0 801EAB80 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1DB8F0 801EAB80 0C02C7B2 */  jal   assign_new_process_entry
 /* 1DB8F4 801EAB84 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 1DB8F8 801EAB88 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801EAB8C_ovl10:

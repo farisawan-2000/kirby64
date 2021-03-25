@@ -133,7 +133,7 @@ glabel func_801DC314_ovl16
 /* 2127A8 801DC4F8 24A5C11C */  addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
 /* 2127AC 801DC4FC 000FC080 */  sll   $t8, $t7, 2
 /* 2127B0 801DC500 00982021 */  addu  $a0, $a0, $t8
-/* 2127B4 801DC504 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 2127B4 801DC504 0C02C7B2 */  jal   assign_new_process_entry
 /* 2127B8 801DC508 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 2127BC 801DC50C 3C06800D */  lui   $a2, %hi(D_800D7098) # $a2, 0x800d
 /* 2127C0 801DC510 24C67098 */  addiu $a2, %lo(D_800D7098) # addiu $a2, $a2, 0x7098

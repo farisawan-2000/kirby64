@@ -39,7 +39,7 @@ glabel func_802204F8_ovl18
 /* 232F28 80220588 24A502B8 */  addiu $a1, %lo(func_802202B8_ovl18) # addiu $a1, $a1, 0x2b8
 /* 232F2C 8022058C 000D7080 */  sll   $t6, $t5, 2
 /* 232F30 80220590 008E2021 */  addu  $a0, $a0, $t6
-/* 232F34 80220594 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 232F34 80220594 0C02C7B2 */  jal   assign_new_process_entry
 /* 232F38 80220598 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L8022059C_ovl18:
 /* 232F3C 8022059C 8FBF0014 */  lw    $ra, 0x14($sp)

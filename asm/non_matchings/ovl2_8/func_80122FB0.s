@@ -14,7 +14,7 @@ glabel func_80122FB0
 /* 0ABA50 80122FE0 24A57098 */  addiu $a1, %lo(D_80177098) # addiu $a1, $a1, 0x7098
 /* 0ABA54 80122FE4 0018C880 */  sll   $t9, $t8, 2
 /* 0ABA58 80122FE8 00992021 */  addu  $a0, $a0, $t9
-/* 0ABA5C 80122FEC 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0ABA5C 80122FEC 0C02C7B2 */  jal   assign_new_process_entry
 /* 0ABA60 80122FF0 8C84E890 */ lw $a0, %lo(D_800DE890)($a0)
 /* 0ABA64 80122FF4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 0ABA68 80122FF8 27BD0018 */  addiu $sp, $sp, 0x18

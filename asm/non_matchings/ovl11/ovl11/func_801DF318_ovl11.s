@@ -20,7 +20,7 @@ glabel func_801DF318_ovl11
 /* 1E9C20 801DF360 24A5EF9C */  addiu $a1, %lo(D_801DEF9C) # addiu $a1, $a1, -0x1064
 /* 1E9C24 801DF364 0018C880 */  sll   $t9, $t8, 2
 /* 1E9C28 801DF368 00992021 */  addu  $a0, $a0, $t9
-/* 1E9C2C 801DF36C 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 1E9C2C 801DF36C 0C02C7B2 */  jal   assign_new_process_entry
 /* 1E9C30 801DF370 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L801DF374_ovl11:
 /* 1E9C34 801DF374 8FBF0014 */  lw    $ra, 0x14($sp)

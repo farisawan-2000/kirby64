@@ -244,7 +244,7 @@ glabel func_801DBBCC_ovl16
 /* 21220C 801DBF5C 000AC880 */  sll   $t9, $t2, 2
 /* 212210 801DBF60 00992021 */  addu  $a0, $a0, $t9
 /* 212214 801DBF64 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
-/* 212218 801DBF68 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 212218 801DBF68 0C02C7B2 */  jal   assign_new_process_entry
 /* 21221C 801DBF6C 24A5C11C */   addiu $a1, %lo(func_801AC11C) # addiu $a1, $a1, -0x3ee4
 /* 212220 801DBF70 8FA40048 */  lw    $a0, 0x48($sp)
 /* 212224 801DBF74 27A50030 */  addiu $a1, $sp, 0x30

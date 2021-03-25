@@ -72,7 +72,7 @@ glabel func_801DB528_ovl16
 /* 2118E8 801DB638 3C05801A */  lui   $a1, %hi(D_801A3E80) # $a1, 0x801a
 /* 2118EC 801DB63C AC33DC50 */ sw $s3, %lo(D_800DDC50)($at)
 /* 2118F0 801DB640 24A53E80 */  addiu $a1, %lo(D_801A3E80) # addiu $a1, $a1, 0x3e80
-/* 2118F4 801DB644 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 2118F4 801DB644 0C02C7B2 */  jal   assign_new_process_entry
 /* 2118F8 801DB648 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L801DB64C_ovl16:
 /* 2118FC 801DB64C 26310001 */  addiu $s1, $s1, 1

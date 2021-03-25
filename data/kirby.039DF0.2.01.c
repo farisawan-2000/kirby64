@@ -7,15 +7,15 @@
 
 
 // ovl0_2_5 rodata
-u8 D_80040230[] = "om : couldn't get GObjThread\n";
-u8 D_80040250[] = "om : couldn't get GObjThreadStack\n";
-u8 D_80040274[] = "om : couldn't get GObjProcess\n";
-u8 D_80040294[] = "om : couldn't get OMMtx\n";
-u8 D_800402B0[] = "om : couldn't get AObj\n";
-u8 D_800402C8[] = "om : couldn't get MObj\n";
-u8 D_800402E0[] = "om : couldn't get DObj\n";
-u8 D_800402F8[] = "om : couldn't get Camera\n";
-u8 D_80040314[] = "om : GObjProcess's priority is bad value\n";
+// u8 D_80040230[] = "om : couldn't get GObjThread\n";
+// u8 D_80040250[] = "om : couldn't get GObjThreadStack\n";
+// u8 D_80040274[] = "om : couldn't get GObjProcess\n";
+// u8 D_80040294[] = "om : couldn't get OMMtx\n";
+// u8 D_800402B0[] = "om : couldn't get AObj\n";
+// u8 D_800402C8[] = "om : couldn't get MObj\n";
+// u8 D_800402E0[] = "om : couldn't get DObj\n";
+// u8 D_800402F8[] = "om : couldn't get Camera\n";
+// u8 D_80040314[] = "om : GObjProcess's priority is bad value\n";
 u8 D_80040340[] = "om : GObjProcess's kind is bad value\n";
 u8 D_80040368[] = "om : GObjProcess's priority is bad value\n";
 u8 D_80040394[] = "om : couldn't add OMMtx for DObj\n";

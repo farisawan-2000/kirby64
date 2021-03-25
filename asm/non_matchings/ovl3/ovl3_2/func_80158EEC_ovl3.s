@@ -94,7 +94,7 @@ glabel func_80158EEC_ovl3
 /* 0B9A98 80159058 8C4D0000 */  lw    $t5, ($v0)
 /* 0B9A9C 8015905C 000D7880 */  sll   $t7, $t5, 2
 /* 0B9AA0 80159060 008F2021 */  addu  $a0, $a0, $t7
-/* 0B9AA4 80159064 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0B9AA4 80159064 0C02C7B2 */  jal   assign_new_process_entry
 /* 0B9AA8 80159068 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0B9AAC 8015906C 10000035 */  b     .L80159144_ovl3
 /* 0B9AB0 80159070 00000000 */   nop   

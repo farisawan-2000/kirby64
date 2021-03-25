@@ -1611,7 +1611,15 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_8/func_800B5C28.s")
 
 extern const f32 D_800D6848;
 
+#define ATTEMPT_CORRECT(x, val) \
+    {\
+        while ((val) <= (x)) (x) -= (val);\
+        while ((x) < 0.0f) (x) += (val);\
+    }
+
 // idk if this requires rodata
+// but i do want to use the above macro since it's used a lot in this game
+
 #ifdef NON_MATCHING
 void func_800B5E14(s32 arg0) {
     f32 temp_2_pi;

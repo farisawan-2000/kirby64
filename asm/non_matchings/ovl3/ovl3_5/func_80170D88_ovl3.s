@@ -89,7 +89,7 @@ glabel func_80170D88_ovl3
 /* 0D1914 80170ED4 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0D1918 80170ED8 00194880 */  sll   $t1, $t9, 2
 /* 0D191C 80170EDC 00892021 */  addu  $a0, $a0, $t1
-/* 0D1920 80170EE0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0D1920 80170EE0 0C02C7B2 */  jal   assign_new_process_entry
 /* 0D1924 80170EE4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0D1928 80170EE8 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0D192C 80170EEC 2508E7C0 */  addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840
@@ -289,7 +289,7 @@ glabel func_80170D88_ovl3
 /* 0D1C04 801711C4 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0D1C08 801711C8 0018C880 */  sll   $t9, $t8, 2
 /* 0D1C0C 801711CC 00992021 */  addu  $a0, $a0, $t9
-/* 0D1C10 801711D0 0C02C7B2 */  jal   restart_thread_with_new_function
+/* 0D1C10 801711D0 0C02C7B2 */  jal   assign_new_process_entry
 /* 0D1C14 801711D4 8C84E510 */   lw    $a0, -0x1af0($a0)
 /* 0D1C18 801711D8 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0D1C1C 801711DC 10000003 */  b     .L801711EC_ovl3
