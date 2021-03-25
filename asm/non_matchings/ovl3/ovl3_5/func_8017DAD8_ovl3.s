@@ -14,9 +14,9 @@ glabel func_8017DAD8_ovl3
 /* 0DE548 8017DB08 0C058CAE */  jal   func_801632B8_ovl3
 /* 0DE54C 8017DB0C 24040003 */   li    $a0, 3
 /* 0DE550 8017DB10 00027080 */  sll   $t6, $v0, 2
-/* 0DE554 8017DB14 3C01800E */  lui   $at, 0x800e
+/* 0DE554 8017DB14 3C01800E */ lui $at, %hi(D_800E1D10)
 /* 0DE558 8017DB18 002E0821 */  addu  $at, $at, $t6
-/* 0DE55C 8017DB1C AC301D10 */  sw    $s0, 0x1d10($at)
+/* 0DE55C 8017DB1C AC301D10 */ sw $s0, %lo(D_800E1D10)($at)
 /* 0DE560 8017DB20 3C108013 */  lui   $s0, %hi(gKirbyState) # $s0, 0x8013
 /* 0DE564 8017DB24 AFA20024 */  sw    $v0, 0x24($sp)
 /* 0DE568 8017DB28 2610E7C0 */  addiu $s0, %lo(gKirbyState) # addiu $s0, $s0, -0x1840
@@ -32,19 +32,19 @@ glabel func_8017DAD8_ovl3
 /* 0DE58C 8017DB4C 8E18003C */  lw    $t8, 0x3c($s0)
 /* 0DE590 8017DB50 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 0DE594 8017DB54 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
-/* 0DE598 8017DB58 3C01800F */  lui   $at, 0x800f
+/* 0DE598 8017DB58 3C01800F */ lui $at, %hi(D_800EC2E0)
 /* 0DE59C 8017DB5C 00031880 */  sll   $v1, $v1, 2
 /* 0DE5A0 8017DB60 00230821 */  addu  $at, $at, $v1
-/* 0DE5A4 8017DB64 AC38C2E0 */  sw    $t8, -0x3d20($at)
+/* 0DE5A4 8017DB64 AC38C2E0 */ sw $t8, %lo(D_800EC2E0)($at)
 /* 0DE5A8 8017DB68 8C990000 */  lw    $t9, ($a0)
 /* 0DE5AC 8017DB6C 3C06800F */  lui   $a2, %hi(D_800EA8A0) # $a2, 0x800f
 /* 0DE5B0 8017DB70 24C6A8A0 */  addiu $a2, %lo(D_800EA8A0) # addiu $a2, $a2, -0x5760
 /* 0DE5B4 8017DB74 00194080 */  sll   $t0, $t9, 2
 /* 0DE5B8 8017DB78 00C84821 */  addu  $t1, $a2, $t0
 /* 0DE5BC 8017DB7C C5260000 */  lwc1  $f6, ($t1)
-/* 0DE5C0 8017DB80 3C01800F */  lui   $at, 0x800f
+/* 0DE5C0 8017DB80 3C01800F */ lui $at, %hi(D_800EC660)
 /* 0DE5C4 8017DB84 00230821 */  addu  $at, $at, $v1
-/* 0DE5C8 8017DB88 E426C660 */  swc1  $f6, -0x39a0($at)
+/* 0DE5C8 8017DB88 E426C660 */ swc1 $f6, %lo(D_800EC660)($at)
 /* 0DE5CC 8017DB8C 8C8A0000 */  lw    $t2, ($a0)
 /* 0DE5D0 8017DB90 000A5880 */  sll   $t3, $t2, 2
 /* 0DE5D4 8017DB94 00CB2821 */  addu  $a1, $a2, $t3

@@ -6118,7 +6118,7 @@ glabel func_801ED634_ovl16
 .L801ED9F8_ovl16:
 /* 223CA8 801ED9F8 3C040001 */  lui   $a0, (0x00010490 >> 16) # lui $a0, 1
 /* 223CAC 801ED9FC 0C02A855 */  jal   func_800AA154
-/* 223CB0 801EDA00 34840490 */   ori   $a0, (0x00010490 & 0xFFFF) # ori $a0, $a0, 0x490
+/* 223CB0 801EDA00 34840490 */   ori   $a0, (0x00010490 & 0xFFFF) # ori $a0, $a0, 0x0490
 /* 223CB4 801EDA04 8E090010 */  lw    $t1, 0x10($s0)
 /* 223CB8 801EDA08 29210003 */  slti  $at, $t1, 3
 /* 223CBC 801EDA0C 14200008 */  bnez  $at, .L801EDA30_ovl16

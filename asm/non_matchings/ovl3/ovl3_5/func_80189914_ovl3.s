@@ -91,7 +91,7 @@ glabel func_80189914_ovl3
 /* 0EA4B4 80189A74 240400BA */  li    $a0, 186
 /* 0EA4B8 80189A78 000B6080 */  sll   $t4, $t3, 2
 /* 0EA4BC 80189A7C 002C0821 */  addu  $at, $at, $t4
-/* 0EA4C0 80189A80 AC2A0490 */  sw    $t2, 0x490($at)
+/* 0EA4C0 80189A80 AC2A0490 */  sw    $t2, 0x0490($at)
 /* 0EA4C4 80189A84 AE0D015C */  sw    $t5, 0x15c($s0)
 /* 0EA4C8 80189A88 0C029D9E */  jal   play_sound
 /* 0EA4CC 80189A8C AE0F0154 */   sw    $t7, 0x154($s0)

@@ -42,7 +42,7 @@ def exposedLui(l):
 		return True
 	return False
 
-def handleStagedLine(l, ls, d):
+def handleStagedLine(l, ls, d, fname):
 	stage = ls[lineNum]
 	x = l.split("lui")
 	x2 = x[-2:][-1][:-1]
@@ -54,6 +54,7 @@ def handleStagedLine(l, ls, d):
 	except Exception as e:
 		print(stagedRegs)
 		print(l, ls[len(ls) - lineNum])
+		print(fname)
 		exit(1)
 	hint = int(hi, 16)
 	lont = int(lo, 16)
@@ -104,7 +105,7 @@ for i in sys.argv[1:]: # xargs support lul
 						# print(line[:-1])
 			if exposedLui(line):
 				# lineList[lineNum] = ""
-				handleStagedLine(line, lineList, None)
+				handleStagedLine(line, lineList, None, i)
 				# print(line[:-1], "bruh", lineList[lineNum])
 			lineNum-=1
 	e = open(i, 'w')

@@ -2354,7 +2354,7 @@ glabel func_8016B74C_ovl3
 /* 0CC1DC 8016B79C 24070008 */  li    $a3, 8
 /* 0CC1E0 8016B7A0 00031880 */  sll   $v1, $v1, 2
 /* 0CC1E4 8016B7A4 00A32821 */  addu  $a1, $a1, $v1
-/* 0CC1E8 8016B7A8 8CA50490 */  lw    $a1, 0x490($a1)
+/* 0CC1E8 8016B7A8 8CA50490 */  lw    $a1, 0x0490($a1)
 /* 0CC1EC 8016B7AC 00230821 */  addu  $at, $at, $v1
 /* 0CC1F0 8016B7B0 C4242B10 */  lwc1  $f4, 0x2b10($at)
 /* 0CC1F4 8016B7B4 8CA40004 */  lw    $a0, 4($a1)

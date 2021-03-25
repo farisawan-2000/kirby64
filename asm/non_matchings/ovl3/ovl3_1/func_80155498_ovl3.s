@@ -8,7 +8,7 @@ glabel func_80155498_ovl3
 /* 0B5EF0 801554B0 3C01800F */  lui   $at, 0x800f
 /* 0B5EF4 801554B4 00031880 */  sll   $v1, $v1, 2
 /* 0B5EF8 801554B8 01E37821 */  addu  $t7, $t7, $v1
-/* 0B5EFC 801554BC 8DEF0490 */  lw    $t7, 0x490($t7)
+/* 0B5EFC 801554BC 8DEF0490 */  lw    $t7, 0x0490($t7)
 /* 0B5F00 801554C0 00230821 */  addu  $at, $at, $v1
 /* 0B5F04 801554C4 00001025 */  move  $v0, $zero
 /* 0B5F08 801554C8 15E00003 */  bnez  $t7, .L801554D8_ovl3

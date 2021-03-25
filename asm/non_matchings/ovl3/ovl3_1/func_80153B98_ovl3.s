@@ -9,7 +9,7 @@ glabel func_80153B98_ovl3
 /* 0B45F4 80153BB4 3C01800E */  lui   $at, 0x800e
 /* 0B45F8 80153BB8 00042080 */  sll   $a0, $a0, 2
 /* 0B45FC 80153BBC 00A42821 */  addu  $a1, $a1, $a0
-/* 0B4600 80153BC0 8CA50490 */  lw    $a1, 0x490($a1)
+/* 0B4600 80153BC0 8CA50490 */  lw    $a1, 0x0490($a1)
 /* 0B4604 80153BC4 00240821 */  addu  $at, $at, $a0
 /* 0B4608 80153BC8 C42425D0 */  lwc1  $f4, 0x25d0($at)
 /* 0B460C 80153BCC 3C078013 */  lui   $a3, %hi(gPositionState) # $a3, 0x8013

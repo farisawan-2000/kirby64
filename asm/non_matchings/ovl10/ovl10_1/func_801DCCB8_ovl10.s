@@ -58,7 +58,7 @@ glabel func_801DCCB8_ovl10
 /* 1CDB08 801DCD98 000C6880 */  sll   $t5, $t4, 2
 /* 1CDB0C 801DCD9C 002D0821 */  addu  $at, $at, $t5
 /* 1CDB10 801DCDA0 0C068AB7 */  jal   func_801A2ADC_ovl10
-/* 1CDB14 801DCDA4 AC240490 */   sw    $a0, 0x490($at)
+/* 1CDB14 801DCDA4 AC240490 */   sw    $a0, 0x0490($at)
 /* 1CDB18 801DCDA8 8E0E0000 */  lw    $t6, ($s0)
 /* 1CDB1C 801DCDAC 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 1CDB20 801DCDB0 3C01800E */ lui $at, %hi(D_800DDC50)

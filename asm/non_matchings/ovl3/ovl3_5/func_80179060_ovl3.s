@@ -4,30 +4,30 @@ glabel func_80179060_ovl3
 /* 0D9AA8 80179068 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 0D9AAC 8017906C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0D9AB0 80179070 8C430000 */  lw    $v1, ($v0)
-/* 0D9AB4 80179074 3C0E800F */  lui   $t6, 0x800f
-/* 0D9AB8 80179078 3C01800E */  lui   $at, 0x800e
+/* 0D9AB4 80179074 3C0E800F */ lui $t6, %hi(D_800E8AE0)
+/* 0D9AB8 80179078 3C01800E */ lui $at, %hi(D_800E25D0)
 /* 0D9ABC 8017907C 00031880 */  sll   $v1, $v1, 2
 /* 0D9AC0 80179080 01C37021 */  addu  $t6, $t6, $v1
-/* 0D9AC4 80179084 8DCE8AE0 */  lw    $t6, -0x7520($t6)
+/* 0D9AC4 80179084 8DCE8AE0 */ lw $t6, %lo(D_800E8AE0)($t6)
 /* 0D9AC8 80179088 00230821 */  addu  $at, $at, $v1
 /* 0D9ACC 8017908C 31CF0006 */  andi  $t7, $t6, 6
 /* 0D9AD0 80179090 51E00023 */  beql  $t7, $zero, .L80179120_ovl3
 /* 0D9AD4 80179094 00001025 */   move  $v0, $zero
-/* 0D9AD8 80179098 C42425D0 */  lwc1  $f4, 0x25d0($at)
-/* 0D9ADC 8017909C 3C01800E */  lui   $at, 0x800e
+/* 0D9AD8 80179098 C42425D0 */ lwc1 $f4, %lo(D_800E25D0)($at)
+/* 0D9ADC 8017909C 3C01800E */ lui $at, %hi(D_800E2790)
 /* 0D9AE0 801790A0 27A40028 */  addiu $a0, $sp, 0x28
 /* 0D9AE4 801790A4 E7A40028 */  swc1  $f4, 0x28($sp)
 /* 0D9AE8 801790A8 8C580000 */  lw    $t8, ($v0)
 /* 0D9AEC 801790AC 0018C880 */  sll   $t9, $t8, 2
 /* 0D9AF0 801790B0 00390821 */  addu  $at, $at, $t9
-/* 0D9AF4 801790B4 C4262790 */  lwc1  $f6, 0x2790($at)
-/* 0D9AF8 801790B8 3C01800E */  lui   $at, 0x800e
+/* 0D9AF4 801790B4 C4262790 */ lwc1 $f6, %lo(D_800E2790)($at)
+/* 0D9AF8 801790B8 3C01800E */ lui $at, %hi(D_800E2950)
 /* 0D9AFC 801790BC 460C3200 */  add.s $f8, $f6, $f12
 /* 0D9B00 801790C0 E7A8002C */  swc1  $f8, 0x2c($sp)
 /* 0D9B04 801790C4 8C480000 */  lw    $t0, ($v0)
 /* 0D9B08 801790C8 00084880 */  sll   $t1, $t0, 2
 /* 0D9B0C 801790CC 00290821 */  addu  $at, $at, $t1
-/* 0D9B10 801790D0 C42A2950 */  lwc1  $f10, 0x2950($at)
+/* 0D9B10 801790D0 C42A2950 */ lwc1 $f10, %lo(D_800E2950)($at)
 /* 0D9B14 801790D4 0C0437E7 */  jal   func_8010DF9C
 /* 0D9B18 801790D8 E7AA0030 */   swc1  $f10, 0x30($sp)
 /* 0D9B1C 801790DC 00402025 */  move  $a0, $v0

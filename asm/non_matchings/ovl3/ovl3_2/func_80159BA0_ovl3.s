@@ -69,7 +69,7 @@ glabel func_80159BA0_ovl3
 /* 0BA6E0 80159CA0 258C26E8 */  addiu $t4, %lo(D_801926E8) # addiu $t4, $t4, 0x26e8
 /* 0BA6E4 80159CA4 000D7880 */  sll   $t7, $t5, 2
 /* 0BA6E8 80159CA8 002F0821 */  addu  $at, $at, $t7
-/* 0BA6EC 80159CAC AC2C0490 */  sw    $t4, 0x490($at)
+/* 0BA6EC 80159CAC AC2C0490 */  sw    $t4, 0x0490($at)
 /* 0BA6F0 80159CB0 3C018013 */  lui   $at, %hi(D_8012E7C4) # $at, 0x8013
 /* 0BA6F4 80159CB4 1000001A */  b     .L80159D20_ovl3
 /* 0BA6F8 80159CB8 A020E7C4 */   sb    $zero, %lo(D_8012E7C4)($at)

@@ -9,7 +9,7 @@ glabel func_80155088_ovl3
 /* 0B5AE4 801550A4 3C01800E */  lui   $at, 0x800e
 /* 0B5AE8 801550A8 00021080 */  sll   $v0, $v0, 2
 /* 0B5AEC 801550AC 00A22821 */  addu  $a1, $a1, $v0
-/* 0B5AF0 801550B0 8CA50490 */  lw    $a1, 0x490($a1)
+/* 0B5AF0 801550B0 8CA50490 */  lw    $a1, 0x0490($a1)
 /* 0B5AF4 801550B4 00220821 */  addu  $at, $at, $v0
 /* 0B5AF8 801550B8 C42425D0 */  lwc1  $f4, 0x25d0($at)
 /* 0B5AFC 801550BC 8CA30004 */  lw    $v1, 4($a1)

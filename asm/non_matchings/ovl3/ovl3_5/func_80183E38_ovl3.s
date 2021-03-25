@@ -30,7 +30,7 @@ glabel func_80183E38_ovl3
 /* 0E48E8 80183EA8 258C0358 */  addiu $t4, %lo(D_80190358) # addiu $t4, $t4, 0x358
 /* 0E48EC 80183EAC 000A5880 */  sll   $t3, $t2, 2
 /* 0E48F0 80183EB0 002B0821 */  addu  $at, $at, $t3
-/* 0E48F4 80183EB4 AC290490 */  sw    $t1, 0x490($at)
+/* 0E48F4 80183EB4 AC290490 */  sw    $t1, 0x0490($at)
 /* 0E48F8 80183EB8 3C040002 */  lui   $a0, (0x00020018 >> 16) # lui $a0, 2
 /* 0E48FC 80183EBC AE0C015C */  sw    $t4, 0x15c($s0)
 /* 0E4900 80183EC0 0C048BC2 */  jal   func_80122F08

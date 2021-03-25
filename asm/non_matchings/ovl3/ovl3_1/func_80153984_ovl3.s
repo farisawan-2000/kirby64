@@ -8,7 +8,7 @@ glabel func_80153984_ovl3
 /* 0B43DC 8015399C 3C05800F */  lui   $a1, %hi(D_800E8AE0) # $a1, 0x800f
 /* 0B43E0 801539A0 00031880 */  sll   $v1, $v1, 2
 /* 0B43E4 801539A4 01C37021 */  addu  $t6, $t6, $v1
-/* 0B43E8 801539A8 8DCE0490 */  lw    $t6, 0x490($t6)
+/* 0B43E8 801539A8 8DCE0490 */  lw    $t6, 0x0490($t6)
 /* 0B43EC 801539AC 24A58AE0 */  addiu $a1, %lo(D_800E8AE0) # addiu $a1, $a1, -0x7520
 /* 0B43F0 801539B0 00A37821 */  addu  $t7, $a1, $v1
 /* 0B43F4 801539B4 15C0000B */  bnez  $t6, .L801539E4_ovl3

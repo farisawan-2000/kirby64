@@ -18,13 +18,13 @@ glabel func_80174B7C_ovl3
 /* 0D55F8 80174BB8 51C00012 */  beql  $t6, $zero, .L80174C04_ovl3
 /* 0D55FC 80174BBC 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 0D5600 80174BC0 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)
-/* 0D5604 80174BC4 3C08800F */  lui   $t0, 0x800f
+/* 0D5604 80174BC4 3C08800F */ lui $t0, %hi(D_800E8920)
 /* 0D5608 80174BC8 24050006 */  li    $a1, 6
 /* 0D560C 80174BCC 8DF80000 */  lw    $t8, ($t7)
 /* 0D5610 80174BD0 00002025 */  move  $a0, $zero
 /* 0D5614 80174BD4 0018C880 */  sll   $t9, $t8, 2
 /* 0D5618 80174BD8 01194021 */  addu  $t0, $t0, $t9
-/* 0D561C 80174BDC 8D088920 */  lw    $t0, -0x76e0($t0)
+/* 0D561C 80174BDC 8D088920 */ lw $t0, %lo(D_800E8920)($t0)
 /* 0D5620 80174BE0 15000005 */  bnez  $t0, .L80174BF8_ovl3
 /* 0D5624 80174BE4 00000000 */   nop   
 /* 0D5628 80174BE8 0C048BDB */  jal   set_kirby_action_1

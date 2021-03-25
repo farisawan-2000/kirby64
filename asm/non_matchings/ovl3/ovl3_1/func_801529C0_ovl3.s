@@ -8,7 +8,7 @@ glabel func_801529C0_ovl3
 /* 0B3418 801529D8 3C058013 */  lui   $a1, %hi(gPositionState) # $a1, 0x8013
 /* 0B341C 801529DC 000FC080 */  sll   $t8, $t7, 2
 /* 0B3420 801529E0 00581021 */  addu  $v0, $v0, $t8
-/* 0B3424 801529E4 8C420490 */  lw    $v0, 0x490($v0)
+/* 0B3424 801529E4 8C420490 */  lw    $v0, 0x0490($v0)
 /* 0B3428 801529E8 24A5E968 */  addiu $a1, %lo(gPositionState) # addiu $a1, $a1, -0x1698
 /* 0B342C 801529EC 8C440004 */  lw    $a0, 4($v0)
 /* 0B3430 801529F0 0C054A0A */  jal   func_80152828_ovl3
