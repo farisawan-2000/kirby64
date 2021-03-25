@@ -37,27 +37,7 @@ loop_1:
     D_800D79E0[i] = 0;
     D_800D7A08[i] = 0;
     D_800BF8F8[i] = 0;
-    phi_v1->unk0 = 0;
-    phi_a0->unk0 = 0;
-    phi_a1->unk0 = 0;
-    *phi_a2->unk0 = 0;
-    phi_a1->unk4 = 0;
-    phi_a0->unk4 = 0;
-    phi_v1->unk4 = 0;
-    *phi_a2->unk4 = 0;
-    phi_a1->unk8 = 0;
-    phi_a0->unk8 = 0;
-    phi_v1->unk8 = 0;
-    *phi_a2->unk8 = 0;
-    phi_a1->unkC = 0;
-    phi_a0->unkC = 0;
-    phi_v1->unkC = 0;
-    temp_a2 = phi_a2 + 0x10;
-    *phi_a2->unkC = 0;
-    phi_v1 = phi_v1 + 0x10;
-    phi_a0 = phi_a0 + 0x10;
-    phi_a1 = phi_a1 + 0x10;
-    phi_a2 = temp_a2;
+
     if (temp_a2 != &D_800BF918) {
         goto loop_1;
     }
@@ -218,8 +198,10 @@ void *func_800A71E0(void) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A71E0.s")
 #endif
 
+extern struct UnkStruct8004A7C4 *D_800D79BC;
+
 #ifdef MIPS_TO_C
-void func_800A72AC(void *arg0) {
+void func_800A72AC(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
     void *temp_v1;
 
@@ -234,6 +216,7 @@ void func_800A72AC(void *arg0) {
     temp_v0->unk54 = temp_v1->unk54;
     temp_v0->unk58 = temp_v1->unk58;
     temp_v0->unk5C = temp_v1->unk5C;
+
     temp_v0->unk20 = temp_v1->unk20;
     temp_v0->unk24 = temp_v1->unk24;
     temp_v0->unk28 = temp_v1->unk28;

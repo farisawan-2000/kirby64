@@ -162,54 +162,53 @@ void func_800BAD0C(s32 arg0) {
     void *phi_s1;
 
     func_800009E8_ovl1(&sp78, &D_800ED4C8, &sp58, 8);
-loop_1:
-    osRecvMesg(&D_800ED4C8, &sp54, 1);
-    phi_s2 = &D_800ED4A0;
-    phi_s3 = 0;
-    if (sp54 == 1) {
-loop_2:
-        if (phi_s2->unk4->unk0->unk10 != 0) {
-            func_800BAAE4(phi_s2);
-            temp_s1 = phi_s2->unk4;
-            temp_s0 = temp_s1->unk0;
-            if (func_800BAB68(phi_s2, temp_s0, phi_s3) == 0) {
-                func_800BA7A0(phi_s2, temp_s0, phi_s3);
-                temp_v0 = temp_s0->unk8;
-                temp_s0->unk2 = temp_s0->unk2 - 1;
-                if (temp_v0 > 0) {
-                    temp_s0->unk8 = temp_v0 - 1;
-                }
-                temp_s1_2 = temp_s1->unk4;
-                phi_s1 = temp_s1_2;
-                if (temp_s1_2 != 0) {
-loop_7:
-                    temp_s0_2 = phi_s1->unk0;
-                    if (temp_s0_2->unk10 != 0) {
-                        func_800BA90C(phi_s2, temp_s0_2);
-                        temp_v0_2 = temp_s0_2->unk8;
-                        temp_s0_2->unk2 = temp_s0_2->unk2 - 1;
-                        if (temp_v0_2 > 0) {
-                            temp_s0_2->unk8 = temp_v0_2 - 1;
-                        }
-                        temp_s1_3 = phi_s1->unk4;
-                        phi_s1 = temp_s1_3;
-                        if (temp_s1_3 != 0) {
-                            goto loop_7;
+    while (1) {
+        osRecvMesg(&D_800ED4C8, &sp54, 1);
+        phi_s2 = &D_800ED4A0;
+        phi_s3 = 0;
+        if (sp54 == 1) {
+    loop_2:
+            if (phi_s2->unk4->unk0->unk10 != 0) {
+                func_800BAAE4(phi_s2);
+                temp_s1 = phi_s2->unk4;
+                temp_s0 = temp_s1->unk0;
+                if (func_800BAB68(phi_s2, temp_s0, phi_s3) == 0) {
+                    func_800BA7A0(phi_s2, temp_s0, phi_s3);
+                    temp_v0 = temp_s0->unk8;
+                    temp_s0->unk2 = temp_s0->unk2 - 1;
+                    if (temp_v0 > 0) {
+                        temp_s0->unk8 = temp_v0 - 1;
+                    }
+                    temp_s1_2 = temp_s1->unk4;
+                    phi_s1 = temp_s1_2;
+                    while (temp_s1_2 != 0) {
+                        temp_s0_2 = phi_s1->unk0;
+                        if (temp_s0_2->unk10 != 0) {
+                            func_800BA90C(phi_s2, temp_s0_2);
+                            temp_v0_2 = temp_s0_2->unk8;
+                            temp_s0_2->unk2 = temp_s0_2->unk2 - 1;
+                            if (temp_v0_2 > 0) {
+                                temp_s0_2->unk8 = temp_v0_2 - 1;
+                            }
+                            temp_s1_3 = phi_s1->unk4;
+                            phi_s1 = temp_s1_3;
+                            if (temp_s1_3 != 0) {
+                                goto loop_7;
+                            }
                         }
                     }
                 }
             }
+            temp_s3 = phi_s3 + 1;
+            phi_s2 = phi_s2 + 8;
+            phi_s3 = temp_s3;
+            if (temp_s3 != 4) {
+                goto loop_2;
+            }
+            continue;
         }
-        temp_s3 = phi_s3 + 1;
-        phi_s2 = phi_s2 + 8;
-        phi_s3 = temp_s3;
-        if (temp_s3 != 4) {
-            goto loop_2;
-        }
-        goto loop_1;
+        func_800BAC0C(sp54);
     }
-    func_800BAC0C(sp54);
-    goto loop_1;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_10/func_800BAD0C.s")
