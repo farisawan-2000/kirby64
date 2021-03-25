@@ -51,7 +51,7 @@ glabel func_8017B3C4_ovl3
 .L8017B484_ovl3:
 /* 0DBEC4 8017B484 8E300000 */  lw    $s0, ($s1)
 /* 0DBEC8 8017B488 3C08800F */ lui $t0, %hi(D_800E8AE0)
-/* 0DBECC 8017B48C 3C018019 */ lui $at, %hi(D_8018AC20)
+/* 0DBECC 8017B48C 3C018019 */ lui $at, %hi(D_801975E0)
 /* 0DBED0 8017B490 8E020000 */  lw    $v0, ($s0)
 /* 0DBED4 8017B494 00021080 */  sll   $v0, $v0, 2
 /* 0DBED8 8017B498 01024021 */  addu  $t0, $t0, $v0
@@ -64,9 +64,9 @@ glabel func_8017B3C4_ovl3
 /* 0DBEF4 8017B4B4 3C01800F */ lui $at, %hi(D_800EAC20)
 /* 0DBEF8 8017B4B8 00220821 */  addu  $at, $at, $v0
 /* 0DBEFC 8017B4BC 10000005 */  b     .L8017B4D4_ovl3
-/* 0DBF00 8017B4C0 E424AC20 */ swc1 $f4, %lo(D_8018AC20)(D_800EAC20)$at)
+/* 0DBF00 8017B4C0 E424AC20 */ swc1 $f4, %lo(D_800EAC20)($at)
 .L8017B4C4_ovl3:
-/* 0DBF04 8017B4C4 C42675E0 */  lwc1  $f6, 0x75e0($at)
+/* 0DBF04 8017B4C4 C42675E0 */  lwc1  $f6, %lo(D_801975E0)($at)
 /* 0DBF08 8017B4C8 3C01800F */ lui $at, %hi(D_800EAC20)
 /* 0DBF0C 8017B4CC 00220821 */  addu  $at, $at, $v0
 /* 0DBF10 8017B4D0 E426AC20 */ swc1 $f6, %lo(D_800EAC20)($at)
@@ -95,7 +95,7 @@ glabel func_8017B3C4_ovl3
 /* 0DBF68 8017B528 44815000 */  mtc1  $at, $f10
 /* 0DBF6C 8017B52C 3C048019 */  lui   $a0, %hi(D_80193B34) # $a0, 0x8019
 /* 0DBF70 8017B530 C7080034 */  lwc1  $f8, 0x34($t8)
-/* 0DBF74 8017B534 3C018019 */ lui $at, %hi(D_8018AA60)
+/* 0DBF74 8017B534 3C018019 */ lui $at, %hi(D_801975E8)
 /* 0DBF78 8017B538 24843B34 */  addiu $a0, %lo(D_80193B34) # addiu $a0, $a0, 0x3b34
 /* 0DBF7C 8017B53C E4480000 */  swc1  $f8, ($v0)
 /* 0DBF80 8017B540 8E190000 */  lw    $t9, ($s0)
@@ -232,7 +232,7 @@ glabel func_8017B3C4_ovl3
 /* 0DC180 8017B740 000FC080 */  sll   $t8, $t7, 2
 /* 0DC184 8017B744 00380821 */  addu  $at, $at, $t8
 /* 0DC188 8017B748 1000000B */  b     .L8017B778_ovl3
-/* 0DC18C 8017B74C E432AA60 */ swc1 $f18, %lo(D_8018AA60)(D_800EAA60)$at)
+/* 0DC18C 8017B74C E432AA60 */ swc1 $f18, %lo(D_800EAA60)($at)
 .L8017B750_ovl3:
 /* 0DC190 8017B750 5320000A */  beql  $t9, $zero, .L8017B77C_ovl3
 /* 0DC194 8017B754 8FBF001C */   lw    $ra, 0x1c($sp)

@@ -7,7 +7,7 @@
 # .word L800A2AF4_ovl1
 
 # .text
-glabel func_800A2904
+glabel crash_screen_print_page_3
 /* 04AB54 800A2904 3C0E8004 */  lui   $t6, %hi(D_8003DE54) # $t6, 0x8004
 /* 04AB58 800A2908 8DCEDE54 */  lw    $t6, %lo(D_8003DE54)($t6)
 /* 04AB5C 800A290C 27BDFFE0 */  addiu $sp, $sp, -0x20
@@ -40,7 +40,7 @@ glabel func_800A2904
 /* 04ABC0 800A2970 0C008AE2 */  jal   func_80022B88
 /* 04ABC4 800A2974 8C450014 */   lw    $a1, 0x14($v0)
 /* 04ABC8 800A2978 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
-/* 04ABCC 800A297C 0C028A30 */  jal   func_800A28C0
+/* 04ABCC 800A297C 0C028A30 */  jal   crash_screen_print_gobj_info
 /* 04ABD0 800A2980 8C84A7C4 */   lw    $a0, %lo(D_8004A7C4)($a0)
 /* 04ABD4 800A2984 10000071 */  b     .L800A2B4C_ovl1
 /* 04ABD8 800A2988 00000000 */   nop   
@@ -118,7 +118,7 @@ glabel func_800A2904
 /* 04ACEC 800A2A9C 8C45001C */   lw    $a1, 0x1c($v0)
 .L800A2AA0_ovl1:
 /* 04ACF0 800A2AA0 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
-/* 04ACF4 800A2AA4 0C028A30 */  jal   func_800A28C0
+/* 04ACF4 800A2AA4 0C028A30 */  jal   crash_screen_print_gobj_info
 /* 04ACF8 800A2AA8 8C84A7C4 */   lw    $a0, %lo(D_8004A7C4)($a0)
 /* 04ACFC 800A2AAC 10000027 */  b     .L800A2B4C_ovl1
 /* 04AD00 800A2AB0 00000000 */   nop   
@@ -135,7 +135,7 @@ glabel func_800A2904
 /* 04AD28 800A2AD8 0C008AE2 */  jal   func_80022B88
 /* 04AD2C 800A2ADC 8C45002C */   lw    $a1, 0x2c($v0)
 /* 04AD30 800A2AE0 3C048005 */  lui   $a0, %hi(D_8004A7C8) # $a0, 0x8005
-/* 04AD34 800A2AE4 0C028A30 */  jal   func_800A28C0
+/* 04AD34 800A2AE4 0C028A30 */  jal   crash_screen_print_gobj_info
 /* 04AD38 800A2AE8 8C84A7C8 */   lw    $a0, %lo(D_8004A7C8)($a0)
 /* 04AD3C 800A2AEC 10000017 */  b     .L800A2B4C_ovl1
 /* 04AD40 800A2AF0 00000000 */   nop   
@@ -161,7 +161,7 @@ glabel func_800A2904
 /* 04AD88 800A2B38 0C008AE2 */  jal   func_80022B88
 /* 04AD8C 800A2B3C 8C45002C */   lw    $a1, 0x2c($v0)
 /* 04AD90 800A2B40 3C048005 */  lui   $a0, %hi(D_8004A7CC) # $a0, 0x8005
-/* 04AD94 800A2B44 0C028A30 */  jal   func_800A28C0
+/* 04AD94 800A2B44 0C028A30 */  jal   crash_screen_print_gobj_info
 /* 04AD98 800A2B48 8C84A7CC */   lw    $a0, %lo(D_8004A7CC)($a0)
 .L800A2B4C_ovl1:
 /* 04AD9C 800A2B4C 3C04800D */  lui   $a0, %hi(D_800D5B38) # $a0, 0x800d

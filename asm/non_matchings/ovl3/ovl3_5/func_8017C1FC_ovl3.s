@@ -131,14 +131,14 @@ glabel func_8017C1FC_ovl3
 /* 0DCE0C 8017C3CC 5319000F */  beql  $t8, $t9, .L8017C40C_ovl3
 /* 0DCE10 8017C3D0 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 0DCE14 8017C3D4 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
-/* 0DCE18 8017C3D8 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 0DCE18 8017C3D8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 0DCE1C 8017C3DC 3C058017 */  lui   $a1, %hi(D_8016C510) # $a1, 0x8017
 /* 0DCE20 8017C3E0 8D090000 */  lw    $t1, ($t0)
 /* 0DCE24 8017C3E4 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0DCE28 8017C3E8 00095080 */  sll   $t2, $t1, 2
 /* 0DCE2C 8017C3EC 008A2021 */  addu  $a0, $a0, $t2
 /* 0DCE30 8017C3F0 0C02C7B2 */  jal   assign_new_process_entry
-/* 0DCE34 8017C3F4 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 0DCE34 8017C3F4 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 0DCE38 8017C3F8 3C038013 */  lui   $v1, %hi(gKirbyState) # $v1, 0x8013
 /* 0DCE3C 8017C3FC 2463E7C0 */  addiu $v1, %lo(gKirbyState) # addiu $v1, $v1, -0x1840
 /* 0DCE40 8017C400 8C6B0044 */  lw    $t3, 0x44($v1)

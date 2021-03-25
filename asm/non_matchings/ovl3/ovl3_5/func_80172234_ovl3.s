@@ -236,14 +236,14 @@ glabel func_80172234_ovl3
 /* 0D2FF4 801725B4 00000000 */   nop   
 /* 0D2FF8 801725B8 3C0B8005 */  lui   $t3, %hi(D_8004A7C4) # $t3, 0x8005
 /* 0D2FFC 801725BC 8D6BA7C4 */  lw    $t3, %lo(D_8004A7C4)($t3)
-/* 0D3000 801725C0 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 0D3000 801725C0 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 0D3004 801725C4 3C058017 */  lui   $a1, %hi(D_8016C510) # $a1, 0x8017
 /* 0D3008 801725C8 8D6C0000 */  lw    $t4, ($t3)
 /* 0D300C 801725CC 24A5C510 */  addiu $a1, %lo(D_8016C510) # addiu $a1, $a1, -0x3af0
 /* 0D3010 801725D0 000C6880 */  sll   $t5, $t4, 2
 /* 0D3014 801725D4 008D2021 */  addu  $a0, $a0, $t5
 /* 0D3018 801725D8 0C02C7B2 */  jal   assign_new_process_entry
-/* 0D301C 801725DC 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 0D301C 801725DC 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 0D3020 801725E0 1000007A */  b     .L801727CC_ovl3
 /* 0D3024 801725E4 8FBF0014 */   lw    $ra, 0x14($sp)
 .L801725E8_ovl3:

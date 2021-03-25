@@ -5,4 +5,5 @@ D_800E4010 gEntitiesAngleXArray
 D_800E41D0 gEntitiesAngleYArray
 D_800E4390 gEntitiesAngleZArray
 D_800DF4D0 gSegment4StartArray
-D_800DE510 gEntitiesGObjThreadStackArray
+D_800DE510 gEntityGObjProcessArray
+gEntitiesGObjThreadStackArray gEntityGObjProcessArray

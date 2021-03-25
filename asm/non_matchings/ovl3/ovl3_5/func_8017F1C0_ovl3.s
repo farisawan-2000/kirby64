@@ -404,11 +404,11 @@ glabel func_8017F1C0_ovl3
 /* 0E0204 8017F7C4 AF0C0000 */   sw    $t4, ($t8)
 /* 0E0208 8017F7C8 8E590000 */  lw    $t9, ($s2)
 .L8017F7CC_ovl3:
-/* 0E020C 8017F7CC 3C01800E */ lui $at, %hi(D_800E4010)
+/* 0E020C 8017F7CC 3C01800E */ lui $at, %hi(gEntitiesAngleXArray)
 /* 0E0210 8017F7D0 8F280000 */  lw    $t0, ($t9)
 /* 0E0214 8017F7D4 00084880 */  sll   $t1, $t0, 2
 /* 0E0218 8017F7D8 00290821 */  addu  $at, $at, $t1
-/* 0E021C 8017F7DC E4344010 */ swc1 $f20, %lo(D_800E4010)($at)
+/* 0E021C 8017F7DC E4344010 */ swc1 $f20, %lo(gEntitiesAngleXArray)($at)
 /* 0E0220 8017F7E0 0C04828A */  jal   func_80120A28
 /* 0E0224 8017F7E4 AEE000A0 */   sw    $zero, 0xa0($s7)
 /* 0E0228 8017F7E8 0C029D9E */  jal   play_sound

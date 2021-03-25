@@ -446,7 +446,7 @@ glabel func_80172AE4_ovl3
 .L8017312C_ovl3:
 /* 0D3B6C 8017312C 2401FFFF */  li    $at, -1
 /* 0D3B70 80173130 1041000A */  beq   $v0, $at, .L8017315C_ovl3
-/* 0D3B74 80173134 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 0D3B74 80173134 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 0D3B78 80173138 00031080 */  sll   $v0, $v1, 2
 /* 0D3B7C 8017313C 3C01800F */ lui $at, %hi(D_800E8220)
 /* 0D3B80 80173140 00220821 */  addu  $at, $at, $v0
@@ -455,7 +455,7 @@ glabel func_80172AE4_ovl3
 /* 0D3B8C 8017314C AC318220 */ sw $s1, %lo(D_800E8220)($at)
 /* 0D3B90 80173150 24A59618 */  addiu $a1, %lo(D_801A9618) # addiu $a1, $a1, -0x69e8
 /* 0D3B94 80173154 0C02C7B2 */  jal   assign_new_process_entry
-/* 0D3B98 80173158 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 0D3B98 80173158 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 .L8017315C_ovl3:
 /* 0D3B9C 8017315C 0C029D9E */  jal   play_sound
 /* 0D3BA0 80173160 240400E5 */   li    $a0, 229

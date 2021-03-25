@@ -95,11 +95,11 @@ glabel func_80174C10_ovl3
 /* 0D57AC 80174D6C 3C01800D */  lui   $at, %hi(D_800D6F10) # $at, 0x800d
 /* 0D57B0 80174D70 AC206F10 */  sw    $zero, %lo(D_800D6F10)($at)
 /* 0D57B4 80174D74 8C6A0000 */  lw    $t2, ($v1)
-/* 0D57B8 80174D78 3C01800E */ lui $at, %hi(D_800E4010)
+/* 0D57B8 80174D78 3C01800E */ lui $at, %hi(gEntitiesAngleXArray)
 /* 0D57BC 80174D7C 2409FFFF */  li    $t1, -1
 /* 0D57C0 80174D80 000A4080 */  sll   $t0, $t2, 2
 /* 0D57C4 80174D84 00280821 */  addu  $at, $at, $t0
-/* 0D57C8 80174D88 E4284010 */ swc1 $f8, %lo(D_800E4010)($at)
+/* 0D57C8 80174D88 E4284010 */ swc1 $f8, %lo(gEntitiesAngleXArray)($at)
 /* 0D57CC 80174D8C ACE00034 */  sw    $zero, 0x34($a3)
 /* 0D57D0 80174D90 A0E00007 */  sb    $zero, 7($a3)
 /* 0D57D4 80174D94 A0E000B0 */  sb    $zero, 0xb0($a3)
@@ -242,7 +242,7 @@ glabel func_80174C10_ovl3
 /* 0D59DC 80174F9C 00000000 */  nop   
 /* 0D59E0 80174FA0 45020009 */  bc1fl .L80174FC8_ovl3
 /* 0D59E4 80174FA4 ACE00044 */   sw    $zero, 0x44($a3)
-/* 0D59E8 80174FA8 C4286A10 */ lwc1 $f8, %lo(D_800E6A10)(D_800E6A10)$at)
+/* 0D59E8 80174FA8 C4286A10 */ lwc1 $f8, %lo(D_800E6A10)($at)
 /* 0D59EC 80174FAC 46081032 */  c.eq.s $f2, $f8
 /* 0D59F0 80174FB0 00000000 */  nop   
 /* 0D59F4 80174FB4 45000003 */  bc1f  .L80174FC4_ovl3
@@ -452,7 +452,7 @@ glabel func_80174C10_ovl3
 /* 0D5CDC 8017529C C4267468 */  lwc1  $f6, %lo(D_80197468)($at)
 /* 0D5CE0 801752A0 3C01800E */ lui $at, %hi(D_800E3750)
 /* 0D5CE4 801752A4 00220821 */  addu  $at, $at, $v0
-/* 0D5CE8 801752A8 E4263750 */ swc1 $f6, %lo(D_80193750)(D_800E3750)$at)
+/* 0D5CE8 801752A8 E4263750 */ swc1 $f6, %lo(D_80193750)($at)
 /* 0D5CEC 801752AC 8C680000 */  lw    $t0, ($v1)
 /* 0D5CF0 801752B0 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 0D5CF4 801752B4 44814000 */  mtc1  $at, $f8
@@ -629,7 +629,7 @@ glabel func_80174C10_ovl3
 /* 0D5F5C 8017551C 3C01800E */ lui $at, %hi(D_800E3210)
 /* 0D5F60 80175520 44807000 */  mtc1  $zero, $f14
 /* 0D5F64 80175524 00220821 */  addu  $at, $at, $v0
-/* 0D5F68 80175528 E4203210 */ swc1 $f0, %lo(D_80193210)(D_800E3210)$at)
+/* 0D5F68 80175528 E4203210 */ swc1 $f0, %lo(D_800E3210)($at)
 /* 0D5F6C 8017552C 8C6F0000 */  lw    $t7, ($v1)
 /* 0D5F70 80175530 460E603C */  c.lt.s $f12, $f14
 /* 0D5F74 80175534 3C01800E */ lui $at, %hi(D_800E3750)

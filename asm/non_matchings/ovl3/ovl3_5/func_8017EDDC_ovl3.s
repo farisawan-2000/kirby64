@@ -63,10 +63,10 @@ glabel func_8017EDDC_ovl3
 /* 0DF908 8017EEC8 312A4000 */  andi  $t2, $t1, 0x4000
 /* 0DF90C 8017EECC 11400014 */  beqz  $t2, .L8017EF20_ovl3
 /* 0DF910 8017EED0 00000000 */   nop   
-/* 0DF914 8017EED4 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 0DF914 8017EED4 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 0DF918 8017EED8 00822021 */  addu  $a0, $a0, $v0
 /* 0DF91C 8017EEDC 0C02C7B2 */  jal   assign_new_process_entry
-/* 0DF920 8017EEE0 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 0DF920 8017EEE0 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 0DF924 8017EEE4 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 0DF928 8017EEE8 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)
 /* 0DF92C 8017EEEC 8C820000 */  lw    $v0, ($a0)

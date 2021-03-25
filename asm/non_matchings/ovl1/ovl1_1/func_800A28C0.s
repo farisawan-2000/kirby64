@@ -1,4 +1,4 @@
-glabel func_800A28C0
+glabel crash_screen_print_gobj_info
 /* 04AB10 800A28C0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 04AB14 800A28C4 AFA40018 */  sw    $a0, 0x18($sp)
 /* 04AB18 800A28C8 8FAE0018 */  lw    $t6, 0x18($sp)

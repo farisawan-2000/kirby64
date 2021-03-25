@@ -21,22 +21,22 @@ glabel func_8018E3B0_ovl3
 /* 0EEE3C 8018E3FC E7240000 */  swc1  $f4, ($t9)
 /* 0EEE40 8018E400 8C490000 */  lw    $t1, ($v0)
 /* 0EEE44 8018E404 C4860004 */  lwc1  $f6, 4($a0)
-/* 0EEE48 8018E408 3C01800E */  lui   $at, 0x800e
+/* 0EEE48 8018E408 3C01800E */ lui $at, %hi(D_800E6690)
 /* 0EEE4C 8018E40C 00095080 */  sll   $t2, $t1, 2
 /* 0EEE50 8018E410 002A0821 */  addu  $at, $at, $t2
-/* 0EEE54 8018E414 E4266690 */  swc1  $f6, 0x6690($at)
+/* 0EEE54 8018E414 E4266690 */ swc1 $f6, %lo(D_800E6690)($at)
 /* 0EEE58 8018E418 8C4B0000 */  lw    $t3, ($v0)
 /* 0EEE5C 8018E41C C4880008 */  lwc1  $f8, 8($a0)
-/* 0EEE60 8018E420 3C01800E */  lui   $at, 0x800e
+/* 0EEE60 8018E420 3C01800E */ lui $at, %hi(D_800E6850)
 /* 0EEE64 8018E424 000B6080 */  sll   $t4, $t3, 2
 /* 0EEE68 8018E428 002C0821 */  addu  $at, $at, $t4
-/* 0EEE6C 8018E42C E4286850 */  swc1  $f8, 0x6850($at)
+/* 0EEE6C 8018E42C E4286850 */ swc1 $f8, %lo(D_800E6850)($at)
 /* 0EEE70 8018E430 8C430000 */  lw    $v1, ($v0)
-/* 0EEE74 8018E434 3C0D800F */  lui   $t5, 0x800f
+/* 0EEE74 8018E434 3C0D800F */ lui $t5, %hi(D_800E8920)
 /* 0EEE78 8018E438 3C04801A */  lui   $a0, %hi(D_80198858) # $a0, 0x801a
 /* 0EEE7C 8018E43C 00031880 */  sll   $v1, $v1, 2
 /* 0EEE80 8018E440 01A36821 */  addu  $t5, $t5, $v1
-/* 0EEE84 8018E444 8DAD8920 */  lw    $t5, -0x76e0($t5)
+/* 0EEE84 8018E444 8DAD8920 */ lw $t5, %lo(D_800E8920)($t5)
 /* 0EEE88 8018E448 3C07800E */  lui   $a3, %hi(D_800E3750) # $a3, 0x800e
 /* 0EEE8C 8018E44C 24E73750 */  addiu $a3, %lo(D_800E3750) # addiu $a3, $a3, 0x3750
 /* 0EEE90 8018E450 11A00027 */  beqz  $t5, .L8018E4F0_ovl3
@@ -107,7 +107,7 @@ glabel func_8018E3B0_ovl3
 /* 0EEF84 8018E544 8C430000 */   lw    $v1, ($v0)
 /* 0EEF88 8018E548 8C430000 */  lw    $v1, ($v0)
 /* 0EEF8C 8018E54C 44805000 */  mtc1  $zero, $f10
-/* 0EEF90 8018E550 3C01800F */  lui   $at, 0x800f
+/* 0EEF90 8018E550 3C01800F */ lui $at, %hi(D_800EC2E0)
 /* 0EEF94 8018E554 00031880 */  sll   $v1, $v1, 2
 /* 0EEF98 8018E558 00A3C821 */  addu  $t9, $a1, $v1
 /* 0EEF9C 8018E55C C7300000 */  lwc1  $f16, ($t9)
@@ -117,7 +117,7 @@ glabel func_8018E3B0_ovl3
 /* 0EEFAC 8018E56C 00000000 */  nop   
 /* 0EEFB0 8018E570 45020008 */  bc1fl .L8018E594_ovl3
 /* 0EEFB4 8018E574 8C430000 */   lw    $v1, ($v0)
-/* 0EEFB8 8018E578 AC29C2E0 */  sw    $t1, -0x3d20($at)
+/* 0EEFB8 8018E578 AC29C2E0 */ sw $t1, %lo(D_800EC2E0)($at)
 /* 0EEFBC 8018E57C 24040004 */  li    $a0, 4
 /* 0EEFC0 8018E580 0C048BDB */  jal   set_kirby_action_1
 /* 0EEFC4 8018E584 24050005 */   li    $a1, 5
