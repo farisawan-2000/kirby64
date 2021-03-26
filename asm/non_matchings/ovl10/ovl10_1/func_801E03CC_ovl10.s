@@ -22,9 +22,9 @@ glabel func_801E03CC_ovl10
 /* 1D118C 801E041C 0323C821 */  addu  $t9, $t9, $v1
 /* 1D1190 801E0420 8F3983E0 */ lw $t9, %lo(D_800E83E0)($t9)
 /* 1D1194 801E0424 1721000A */  bne   $t9, $at, .L801E0450_ovl10
-/* 1D1198 801E0428 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D1198 801E0428 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D119C 801E042C 00230821 */  addu  $at, $at, $v1
-/* 1D11A0 801E0430 AC28DC50 */ sw $t0, %lo(D_800DDC50)($at)
+/* 1D11A0 801E0430 AC28DC50 */ sw $t0, %lo(gEntityVtableIndexArray)($at)
 /* 1D11A4 801E0434 8C490000 */  lw    $t1, ($v0)
 /* 1D11A8 801E0438 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1D11AC 801E043C 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8

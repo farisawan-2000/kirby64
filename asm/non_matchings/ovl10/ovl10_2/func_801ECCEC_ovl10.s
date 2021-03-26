@@ -97,12 +97,12 @@ glabel func_801ECCEC_ovl10
 /* 1DDBD0 801ECE60 3C0C8005 */  lui   $t4, %hi(D_8004A7C4) # $t4, 0x8005
 /* 1DDBD4 801ECE64 8D8CA7C4 */  lw    $t4, %lo(D_8004A7C4)($t4)
 /* 1DDBD8 801ECE68 8FBF001C */  lw    $ra, 0x1c($sp)
-/* 1DDBDC 801ECE6C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DDBDC 801ECE6C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DDBE0 801ECE70 8D8D0000 */  lw    $t5, ($t4)
 /* 1DDBE4 801ECE74 240B0001 */  li    $t3, 1
 /* 1DDBE8 801ECE78 8FB00018 */  lw    $s0, 0x18($sp)
 /* 1DDBEC 801ECE7C 000D7080 */  sll   $t6, $t5, 2
 /* 1DDBF0 801ECE80 002E0821 */  addu  $at, $at, $t6
-/* 1DDBF4 801ECE84 AC2BDC50 */ sw $t3, %lo(D_800DDC50)($at)
+/* 1DDBF4 801ECE84 AC2BDC50 */ sw $t3, %lo(gEntityVtableIndexArray)($at)
 /* 1DDBF8 801ECE88 03E00008 */  jr    $ra
 /* 1DDBFC 801ECE8C 27BD0020 */   addiu $sp, $sp, 0x20

@@ -620,14 +620,14 @@ glabel func_801AF314_ovl7
 /* 155388 801AF318 AFB20020 */  sw    $s2, 0x20($sp)
 /* 15538C 801AF31C AFB1001C */  sw    $s1, 0x1c($sp)
 /* 155390 801AF320 AFB00018 */  sw    $s0, 0x18($sp)
-/* 155394 801AF324 3C10800E */  lui   $s0, %hi(D_800DDC50) # $s0, 0x800e
+/* 155394 801AF324 3C10800E */  lui   $s0, %hi(gEntityVtableIndexArray) # $s0, 0x800e
 /* 155398 801AF328 3C118005 */  lui   $s1, %hi(D_8004A7C4) # $s1, 0x8005
 /* 15539C 801AF32C 3C12801D */  lui   $s2, %hi(D_801CD594) # $s2, 0x801d
 /* 1553A0 801AF330 AFBF0024 */  sw    $ra, 0x24($sp)
 /* 1553A4 801AF334 AFA40028 */  sw    $a0, 0x28($sp)
 /* 1553A8 801AF338 2652D594 */  addiu $s2, %lo(D_801CD594) # addiu $s2, $s2, -0x2a6c
 /* 1553AC 801AF33C 2631A7C4 */  addiu $s1, %lo(D_8004A7C4) # addiu $s1, $s1, -0x583c
-/* 1553B0 801AF340 2610DC50 */  addiu $s0, %lo(D_800DDC50) # addiu $s0, $s0, -0x23b0
+/* 1553B0 801AF340 2610DC50 */  addiu $s0, %lo(gEntityVtableIndexArray) # addiu $s0, $s0, -0x23b0
 /* 1553B4 801AF344 8E2E0000 */  lw    $t6, ($s1)
 .L801AF348_ovl7:
 /* 1553B8 801AF348 24050004 */  li    $a1, 4

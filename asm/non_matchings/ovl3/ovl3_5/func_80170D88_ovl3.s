@@ -22,7 +22,7 @@ glabel func_80170D88_ovl3
 /* 0D1818 80170DD8 00000000 */   nop   
 /* 0D181C 80170DDC AC208920 */ sw $zero, %lo(D_800E8920)($at)
 .L80170DE0_ovl3:
-/* 0D1820 80170DE0 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D1820 80170DE0 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D1824 80170DE4 27A40024 */   addiu $a0, $sp, 0x24
 /* 0D1828 80170DE8 3C18800D */  lui   $t8, %hi(D_800D6B54) # $t8, 0x800d
 /* 0D182C 80170DEC 8F186B54 */  lw    $t8, %lo(D_800D6B54)($t8)

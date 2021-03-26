@@ -55,8 +55,8 @@ glabel func_801E74E8_ovl16
 /* 21D86C 801E75BC 00230821 */  addu  $at, $at, $v1
 /* 21D870 801E75C0 E4283AD0 */ swc1 $f8, %lo(D_800E3AD0)($at)
 /* 21D874 801E75C4 8C4D0000 */  lw    $t5, ($v0)
-/* 21D878 801E75C8 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21D878 801E75C8 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 21D87C 801E75CC 000D7880 */  sll   $t7, $t5, 2
 /* 21D880 801E75D0 002F0821 */  addu  $at, $at, $t7
 /* 21D884 801E75D4 03E00008 */  jr    $ra
-/* 21D888 801E75D8 AC2CDC50 */ sw $t4, %lo(D_800DDC50)($at)
+/* 21D888 801E75D8 AC2CDC50 */ sw $t4, %lo(gEntityVtableIndexArray)($at)

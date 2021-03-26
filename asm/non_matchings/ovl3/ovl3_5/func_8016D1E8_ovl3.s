@@ -22,7 +22,7 @@ glabel func_8016D1E8_ovl3
 /* 0CDC78 8016D238 AC2898E0 */ sw $t0, %lo(D_800E98E0)($at)
 /* 0CDC7C 8016D23C 0C0473D6 */  jal   func_8011CF58
 /* 0CDC80 8016D240 00000000 */   nop   
-/* 0CDC84 8016D244 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0CDC84 8016D244 0C0547A5 */  jal   ovl3_process_command_string
 /* 0CDC88 8016D248 27A40028 */   addiu $a0, $sp, 0x28
 /* 0CDC8C 8016D24C 3C058013 */  lui   $a1, %hi(gKirbyState) # $a1, 0x8013
 /* 0CDC90 8016D250 14400004 */  bnez  $v0, .L8016D264_ovl3

@@ -45,12 +45,12 @@ glabel func_801717F0_ovl3
 /* 0D22D4 80171894 8D4A98E0 */ lw $t2, %lo(D_800E98E0)($t2)
 /* 0D22D8 80171898 15410005 */  bne   $t2, $at, .L801718B0_ovl3
 /* 0D22DC 8017189C 00000000 */   nop   
-/* 0D22E0 801718A0 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D22E0 801718A0 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D22E4 801718A4 27A4003C */   addiu $a0, $sp, 0x3c
 /* 0D22E8 801718A8 10000003 */  b     .L801718B8_ovl3
 /* 0D22EC 801718AC 00000000 */   nop   
 .L801718B0_ovl3:
-/* 0D22F0 801718B0 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D22F0 801718B0 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D22F4 801718B4 27A40040 */   addiu $a0, $sp, 0x40
 .L801718B8_ovl3:
 /* 0D22F8 801718B8 10400097 */  beqz  $v0, .L80171B18_ovl3

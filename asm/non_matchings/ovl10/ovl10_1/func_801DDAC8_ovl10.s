@@ -40,12 +40,12 @@ glabel func_801DDAC8_ovl10
 .L801DDB5C_ovl10:
 /* 1CE8CC 801DDB5C 8C6E0000 */  lw    $t6, ($v1)
 /* 1CE8D0 801DDB60 8FBF0024 */  lw    $ra, 0x24($sp)
-/* 1CE8D4 801DDB64 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1CE8D4 801DDB64 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1CE8D8 801DDB68 000E7880 */  sll   $t7, $t6, 2
 /* 1CE8DC 801DDB6C 002F0821 */  addu  $at, $at, $t7
 /* 1CE8E0 801DDB70 8FB00018 */  lw    $s0, 0x18($sp)
 /* 1CE8E4 801DDB74 8FB1001C */  lw    $s1, 0x1c($sp)
 /* 1CE8E8 801DDB78 8FB20020 */  lw    $s2, 0x20($sp)
-/* 1CE8EC 801DDB7C AC25DC50 */ sw $a1, %lo(D_800DDC50)($at)
+/* 1CE8EC 801DDB7C AC25DC50 */ sw $a1, %lo(gEntityVtableIndexArray)($at)
 /* 1CE8F0 801DDB80 03E00008 */  jr    $ra
 /* 1CE8F4 801DDB84 27BD0028 */   addiu $sp, $sp, 0x28

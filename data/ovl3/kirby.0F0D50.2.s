@@ -923,38 +923,16 @@ glabel D_801972F8
 
 glabel jtbl_80197314
 .word 0x8016C1EC
-
-glabel D_80197318
 .word 0x8016C1CC
-
-glabel D_8019731C
 .word 0x8016C2DC
-
-glabel D_80197320
 .word 0x8016C2DC
-
-glabel D_80197324
 .word 0x8016C268
-
-glabel D_80197328
 .word 0x8016C354
-
-glabel D_8019732C
 .word 0x8016C354
-
-glabel D_80197330
 .word 0x8016C3FC
-
-glabel D_80197334
 .word 0x8016C3FC
-
-glabel D_80197338
 .word 0x8016C1EC
-
-glabel D_8019733C
 .word 0x8016C2DC
-
-glabel D_80197340
 .word 0x8016C268
 
 glabel D_80197344

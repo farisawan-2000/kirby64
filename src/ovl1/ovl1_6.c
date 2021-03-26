@@ -40,7 +40,7 @@ void func_800AE138(s32 arg0) {
     D_800DE190[arg0] = 0;
     D_800DDFD0[arg0] = 0;
     D_800DDE10[arg0] = 0;
-    D_800DDC50[arg0] = 0;
+    gEntityVtableIndexArray[arg0] = 0;
     D_800DD8D0[arg0] = 0;
     D_800E0810[arg0] = 0x10;
     temp_f0 = D_800D6B10;

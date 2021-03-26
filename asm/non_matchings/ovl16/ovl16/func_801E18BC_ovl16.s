@@ -218,12 +218,12 @@ glabel func_801E18BC_ovl16
 .L801E1BF0_ovl16:
 /* 217EA0 801E1BF0 8C6A0000 */  lw    $t2, ($v1)
 /* 217EA4 801E1BF4 8FBF001C */  lw    $ra, 0x1c($sp)
-/* 217EA8 801E1BF8 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 217EA8 801E1BF8 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 217EAC 801E1BFC 000A5880 */  sll   $t3, $t2, 2
 /* 217EB0 801E1C00 002B0821 */  addu  $at, $at, $t3
 /* 217EB4 801E1C04 24090007 */  li    $t1, 7
 /* 217EB8 801E1C08 8FB00014 */  lw    $s0, 0x14($sp)
 /* 217EBC 801E1C0C 8FB10018 */  lw    $s1, 0x18($sp)
-/* 217EC0 801E1C10 AC29DC50 */ sw $t1, %lo(D_800DDC50)($at)
+/* 217EC0 801E1C10 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 /* 217EC4 801E1C14 03E00008 */  jr    $ra
 /* 217EC8 801E1C18 27BD0020 */   addiu $sp, $sp, 0x20

@@ -18,8 +18,8 @@ glabel func_801E2D40_ovl10
 /* 1D3AF0 801E2D80 0C02911F */  jal   call_virtual_function
 /* 1D3AF4 801E2D84 90847880 */ lbu $a0, %lo(D_800E7880)($a0)
 /* 1D3AF8 801E2D88 3C12801F */  lui   $s2, %hi(D_801F43FC_ovl10) # $s2, 0x801f
-/* 1D3AFC 801E2D8C 3C11800E */  lui   $s1, %hi(D_800DDC50) # $s1, 0x800e
-/* 1D3B00 801E2D90 2631DC50 */  addiu $s1, %lo(D_800DDC50) # addiu $s1, $s1, -0x23b0
+/* 1D3AFC 801E2D8C 3C11800E */  lui   $s1, %hi(gEntityVtableIndexArray) # $s1, 0x800e
+/* 1D3B00 801E2D90 2631DC50 */  addiu $s1, %lo(gEntityVtableIndexArray) # addiu $s1, $s1, -0x23b0
 /* 1D3B04 801E2D94 265243FC */  addiu $s2, %lo(D_801F43FC_ovl10) # addiu $s2, $s2, 0x43fc
 /* 1D3B08 801E2D98 8E180000 */  lw    $t8, ($s0)
 .L801E2D9C_ovl10:

@@ -52,8 +52,8 @@ glabel func_801DC598_ovl10
 /* 1CD3D0 801DC660 0C0288B5 */  jal   func_800A22D4
 /* 1CD3D4 801DC664 00402025 */   move  $a0, $v0
 .L801DC668_ovl10:
-/* 1CD3D8 801DC668 3C0F800E */  lui   $t7, %hi(D_800DDC50) # $t7, 0x800e
-/* 1CD3DC 801DC66C 25EFDC50 */  addiu $t7, %lo(D_800DDC50) # addiu $t7, $t7, -0x23b0
+/* 1CD3D8 801DC668 3C0F800E */  lui   $t7, %hi(gEntityVtableIndexArray) # $t7, 0x800e
+/* 1CD3DC 801DC66C 25EFDC50 */  addiu $t7, %lo(gEntityVtableIndexArray) # addiu $t7, $t7, -0x23b0
 /* 1CD3E0 801DC670 020F6821 */  addu  $t5, $s0, $t7
 /* 1CD3E4 801DC674 AFAD0024 */  sw    $t5, 0x24($sp)
 /* 1CD3E8 801DC678 8DB90000 */  lw    $t9, ($t5)

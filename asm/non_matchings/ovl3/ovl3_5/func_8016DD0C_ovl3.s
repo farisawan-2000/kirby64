@@ -12,7 +12,7 @@ glabel func_8016DD0C_ovl3
 /* 0CE774 8016DD34 B9D90006 */   swr   $t9, 6($t6)
 /* 0CE778 8016DD38 0C0473D6 */  jal   func_8011CF58
 /* 0CE77C 8016DD3C 00000000 */   nop   
-/* 0CE780 8016DD40 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0CE780 8016DD40 0C0547A5 */  jal   ovl3_process_command_string
 /* 0CE784 8016DD44 27A40018 */   addiu $a0, $sp, 0x18
 /* 0CE788 8016DD48 14400023 */  bnez  $v0, .L8016DDD8_ovl3
 /* 0CE78C 8016DD4C 3C088005 */   lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005

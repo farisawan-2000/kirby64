@@ -70,11 +70,11 @@ glabel func_801E3E04_ovl10
 /* 1D4C74 801E3F04 3C0D800F */ lui $t5, %hi(D_800E9C60)
 /* 1D4C78 801E3F08 01A36821 */  addu  $t5, $t5, $v1
 /* 1D4C7C 801E3F0C 8DAD9C60 */ lw $t5, %lo(D_800E9C60)($t5)
-/* 1D4C80 801E3F10 3C0E800E */ lui $t6, %hi(D_800DDC50)
+/* 1D4C80 801E3F10 3C0E800E */ lui $t6, %hi(gEntityVtableIndexArray)
 /* 1D4C84 801E3F14 01C37021 */  addu  $t6, $t6, $v1
 /* 1D4C88 801E3F18 11A0000B */  beqz  $t5, .L801E3F48_ovl10
 /* 1D4C8C 801E3F1C 00000000 */   nop   
-/* 1D4C90 801E3F20 8DCEDC50 */ lw $t6, %lo(D_800DDC50)($t6)
+/* 1D4C90 801E3F20 8DCEDC50 */ lw $t6, %lo(gEntityVtableIndexArray)($t6)
 /* 1D4C94 801E3F24 24010007 */  li    $at, 7
 /* 1D4C98 801E3F28 11C10007 */  beq   $t6, $at, .L801E3F48_ovl10
 /* 1D4C9C 801E3F2C 00000000 */   nop   

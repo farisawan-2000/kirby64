@@ -22001,7 +22001,7 @@ glabel D_800DDC48
 glabel D_800DDC4C
 .word 0x00000000
 
-glabel D_800DDC50
+glabel gEntityVtableIndexArray
 .word 0x00000000
 
 glabel D_800DDC54

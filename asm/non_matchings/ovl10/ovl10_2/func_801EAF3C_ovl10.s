@@ -41,10 +41,10 @@ glabel func_801EAF3C_ovl10
 .L801EAFD4_ovl10:
 /* 1DBD44 801EAFD4 8DEF9E20 */ lw $t7, %lo(D_800E9E20)($t7)
 /* 1DBD48 801EAFD8 24060002 */  li    $a2, 2
-/* 1DBD4C 801EAFDC 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DBD4C 801EAFDC 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DBD50 801EAFE0 14CF0009 */  bne   $a2, $t7, .L801EB008_ovl10
 /* 1DBD54 801EAFE4 00220821 */   addu  $at, $at, $v0
-/* 1DBD58 801EAFE8 AC26DC50 */ sw $a2, %lo(D_800DDC50)($at)
+/* 1DBD58 801EAFE8 AC26DC50 */ sw $a2, %lo(gEntityVtableIndexArray)($at)
 /* 1DBD5C 801EAFEC 8C780000 */  lw    $t8, ($v1)
 /* 1DBD60 801EAFF0 3C05801F */  lui   $a1, %hi(D_801EA784) # $a1, 0x801f
 /* 1DBD64 801EAFF4 24A5A784 */  addiu $a1, %lo(D_801EA784) # addiu $a1, $a1, -0x587c

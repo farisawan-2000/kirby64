@@ -482,7 +482,7 @@ GLOBAL_ASM("asm/non_matchings/ovl4/ovl4_3/func_801598C4_ovl4.s")
 s32 func_80159B00_ovl4(void) {
     s32 temp_v0;
 
-    temp_v0 = *(&D_800DDC50 + (*D_8004A7C4 * 4));
+    temp_v0 = *(&gEntityVtableIndexArray + (*D_8004A7C4 * 4));
     if (temp_v0 == 0) {
         return func_80159B68_ovl4();
     }
@@ -593,11 +593,11 @@ void func_80159DE8_ovl4(void) {
     temp_v0 = func_800AEC08(5, 0, 0x70);
     temp_t8 = temp_v0 * 4;
     D_800D71F8 = temp_v0;
-    *(&D_800DDC50 + temp_t8) = 0;
+    *(&gEntityVtableIndexArray + temp_t8) = 0;
     temp_v0_2 = func_800AEC08(5, 0, 0x70);
     temp_t1 = temp_v0_2 * 4;
     D_800D71FC = temp_v0_2;
-    *(&D_800DDC50 + temp_t1) = 1;
+    *(&gEntityVtableIndexArray + temp_t1) = 1;
     func_8000A180(0, &D_80159D78, 0x1A, 0x80000000);
     func_800A5744(0, 0, 0);
     func_800A5A14(0xFF, -0x10, 0);

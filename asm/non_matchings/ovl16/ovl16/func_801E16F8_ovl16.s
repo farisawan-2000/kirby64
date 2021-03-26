@@ -50,10 +50,10 @@ glabel func_801E16F8_ovl16
 /* 217A68 801E17B8 AC2070A8 */  sw    $zero, %lo(D_800D70A8)($at)
 /* 217A6C 801E17BC 8D2A0000 */  lw    $t2, ($t1)
 /* 217A70 801E17C0 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 217A74 801E17C4 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 217A74 801E17C4 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 217A78 801E17C8 000A5880 */  sll   $t3, $t2, 2
 /* 217A7C 801E17CC 002B0821 */  addu  $at, $at, $t3
 /* 217A80 801E17D0 24080021 */  li    $t0, 33
-/* 217A84 801E17D4 AC28DC50 */ sw $t0, %lo(D_800DDC50)($at)
+/* 217A84 801E17D4 AC28DC50 */ sw $t0, %lo(gEntityVtableIndexArray)($at)
 /* 217A88 801E17D8 03E00008 */  jr    $ra
 /* 217A8C 801E17DC 27BD0018 */   addiu $sp, $sp, 0x18

@@ -22,7 +22,7 @@ GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021A1A0_ovl9.s")
 
 void func_8021A22C_ovl9(struct UnkStruct8004A7C4 *arg0) {
     while (1)
-        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 3, &D_8021CE00_ovl9[1]);
+        call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 3, &D_8021CE00_ovl9[1]);
 }
 
 #ifdef MIPS_TO_C
@@ -86,7 +86,7 @@ void func_8021A418_ovl9(struct UnkStruct8004A7C4 *arg0) {
     D_800E98E0[D_8004A7C4->objId] = 0;
     D_800E9C60[D_8004A7C4->objId] = 0;
     D_800DF150[D_8004A7C4->objId] = &func_8021A494_ovl9;
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_8021A22C_ovl9(arg0);
 }
 
@@ -141,12 +141,12 @@ void func_8021A5C0_ovl9(void) {
     temp_v1 = D_8004A7C4;
     temp_v0 = temp_v1->objId;
     if (D_800E98E0[temp_v0] != 0) {
-        D_800DDC50[temp_v0] = 1;
+        gEntityVtableIndexArray[temp_v0] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
         return;
     }
     if (D_800E9C60[temp_v0] != 0) {
-        D_800DDC50[temp_v0] = 2;
+        gEntityVtableIndexArray[temp_v0] = 2;
         assign_new_process_entry(gEntityGObjProcessArray[temp_v1->objId], &func_8021A22C);
     }
 }
@@ -210,12 +210,12 @@ void func_8021A7FC_ovl9(struct UnkStruct8004A7C4 *arg0) {
 void func_8021A93C_ovl9(void) {
     func_8021A9F0_ovl9();
     if (D_800E98E0[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
         return;
     }
     if (D_800EA520[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021A22C_ovl9);
     }
 }
@@ -307,7 +307,7 @@ GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021AB6C_ovl9.s")
 #endif
 
 void func_8021ABB4_ovl9(struct UnkStruct8004A7C4 *arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 4, &D_8021CE00_ovl9[8]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 4, &D_8021CE00_ovl9[8]);
 }
 
 
@@ -316,11 +316,11 @@ void func_8021ACA4_ovl9(struct UnkStruct8004A7C4 *arg0);
 
 void func_8021ABFC_ovl9(struct UnkStruct8004A7C4 *arg0) {
     D_800DF150[D_8004A7C4->objId] = func_8021ACA4_ovl9;
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_8021B424_ovl9();
     func_8019CD08_ovl9(120.0f);
     D_800E9720[D_8004A7C4->objId] = 0;
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 4, &D_8021CE00_ovl9[8]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 4, &D_8021CE00_ovl9[8]);
 }
 
 #ifdef MIPS_TO_C
@@ -375,7 +375,7 @@ void func_8021AD88_ovl9(struct UnkStruct8004A7C4 *arg0) {
         temp_f2 = D_800E3E50[D_8004A7C4->objId];
         D_800E3C90[D_8004A7C4->objId] = temp_f2;
         D_800E3AD0[D_8004A7C4->objId] = temp_f2;
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
     else if (D_800E9720[D_8004A7C4->objId] != 0) {
@@ -394,7 +394,7 @@ void func_8021AD88_ovl9(struct UnkStruct8004A7C4 *arg0) {
         temp_f2_2 = D_800E3E50[D_8004A7C4->objId];
         D_800E3C90[D_8004A7C4->objId] = temp_f2_2;
         D_800E3AD0[D_8004A7C4->objId] = temp_f2_2;
-        D_800DDC50[D_8004A7C4->objId] = 2;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
 }
@@ -437,7 +437,7 @@ void func_8021B0D0_ovl9(struct UnkStruct8004A7C4 *arg0) {
         *temp_a2 = *temp_a2 + D_8021DEE8_ovl9;
         func_8019CD68_ovl9(temp_a0, temp_a1, temp_a2, temp_a3 * 4);
         temp_v0_2 = D_8004A7C4;
-        D_800DDC50[temp_v0_2->objId] = 0;
+        gEntityVtableIndexArray[temp_v0_2->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[temp_v0_2->objId], &D_8021ABB4);
     }
 }
@@ -459,7 +459,7 @@ void func_8021B1D0_ovl9(struct UnkStruct8004A7C4 *arg0) {
 s32 func_8019A7E8_ovl9(f32);
 void func_8021B27C_ovl9(struct UnkStruct8004A7C4 *arg0) {
     if ((D_800E9E20[D_8004A7C4->objId] != 0) && (func_8019A7E8_ovl9(120.0f) == 0)) {
-        D_800DDC50[D_8004A7C4->objId] = 3;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 3;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8021ABB4_ovl9);
     }
 }
@@ -491,7 +491,7 @@ void func_8021B3A0_ovl9(struct UnkStruct8004A7C4 *arg0) {
     temp_v1 = temp_v0->objId;
     if (D_800E9E20[temp_v1] != 0) {
         D_800E9720[temp_v1] = 0x3C;
-        D_800DDC50[temp_v0->objId] = 0;
+        gEntityVtableIndexArray[temp_v0->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_8021ABB4);
     }
 }
@@ -546,7 +546,7 @@ GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021B528_ovl9.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_8021B58C_ovl9(struct UnkStruct8004A7C4 *arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8021CE44_ovl9);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8021CE44_ovl9);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021B58C_ovl9.s")
@@ -563,11 +563,11 @@ void func_8021B5D4_ovl9(struct UnkStruct8004A7C4 *arg0) {
     temp_a1 = temp_v1->objId;
     D_800DF150[temp_a1] = &D_8021B680;
     temp_v0 = D_800E1B50[temp_a1];
-    D_800DDC50[temp_v1->objId] = 0;
+    gEntityVtableIndexArray[temp_v1->objId] = 0;
     temp_v0->unk42 = 2;
     temp_v0->unk98 = &D_801CD21C;
     func_801A0D50_ovl9(&D_8021B58C, temp_a1 * 4);
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8021CE44_ovl9);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8021CE44_ovl9);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_16/func_8021B5D4_ovl9.s")
@@ -602,7 +602,7 @@ void func_8021B71C_ovl9(struct UnkStruct8004A7C4 *arg0) {
 
     if (func_8019A7E8_ovl9(0x43200000) != 0) {
         temp_v0 = D_8004A7C4;
-        D_800DDC50[temp_v0->objId] = 1;
+        gEntityVtableIndexArray[temp_v0->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_8021B58C);
     }
 }

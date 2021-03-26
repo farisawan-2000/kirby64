@@ -84,9 +84,9 @@ glabel func_801EA1E4_ovl10
 .L801EA320_ovl10:
 /* 1DB090 801EA320 1481000C */  bne   $a0, $at, .L801EA354_ovl10
 /* 1DB094 801EA324 24090005 */   li    $t1, 5
-/* 1DB098 801EA328 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DB098 801EA328 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DB09C 801EA32C 00230821 */  addu  $at, $at, $v1
-/* 1DB0A0 801EA330 AC29DC50 */ sw $t1, %lo(D_800DDC50)($at)
+/* 1DB0A0 801EA330 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 /* 1DB0A4 801EA334 8C4A0000 */  lw    $t2, ($v0)
 /* 1DB0A8 801EA338 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1DB0AC 801EA33C 3C05801F */  lui   $a1, %hi(D_801E91B0) # $a1, 0x801f

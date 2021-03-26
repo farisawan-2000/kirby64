@@ -135,7 +135,7 @@ glabel func_801E6E0C_ovl16
 /* 21D2B8 801E7008 AD6A0000 */  sw    $t2, ($t3)
 /* 21D2BC 801E700C 8C6D0000 */  lw    $t5, ($v1)
 /* 21D2C0 801E7010 8FBF003C */  lw    $ra, 0x3c($sp)
-/* 21D2C4 801E7014 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21D2C4 801E7014 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 21D2C8 801E7018 000D7880 */  sll   $t7, $t5, 2
 /* 21D2CC 801E701C 002F0821 */  addu  $at, $at, $t7
 /* 21D2D0 801E7020 240C001F */  li    $t4, 31
@@ -148,6 +148,6 @@ glabel func_801E6E0C_ovl16
 /* 21D2EC 801E703C 8FB10020 */  lw    $s1, 0x20($sp)
 /* 21D2F0 801E7040 8FB0001C */  lw    $s0, 0x1c($sp)
 /* 21D2F4 801E7044 D7B40010 */  ldc1  $f20, 0x10($sp)
-/* 21D2F8 801E7048 AC2CDC50 */ sw $t4, %lo(D_800DDC50)($at)
+/* 21D2F8 801E7048 AC2CDC50 */ sw $t4, %lo(gEntityVtableIndexArray)($at)
 /* 21D2FC 801E704C 03E00008 */  jr    $ra
 /* 21D300 801E7050 27BD0040 */   addiu $sp, $sp, 0x40

@@ -1179,7 +1179,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A4414.s")
 #endif
 
 
-// executes a set of (arg1 - arg0) callback functions
+// executes the virtual function at index arg0
 void call_virtual_function(u32 arg0, u32 arg1, void (*callback[])(struct UnkStruct8004A7C4 *a1)) {
     // all of the function i've seen called from here have no arguments...
     if (arg0 < arg1) callback[arg0](D_8004A7C4);

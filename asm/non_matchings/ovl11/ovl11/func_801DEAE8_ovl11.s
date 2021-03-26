@@ -17,14 +17,14 @@ glabel func_801DEAE8_ovl11
 /* 1E93E4 801DEB24 24180001 */   li    $t8, 1
 /* 1E93E8 801DEB28 A078003C */  sb    $t8, 0x3c($v1)
 /* 1E93EC 801DEB2C 8CC20000 */  lw    $v0, ($a2)
-/* 1E93F0 801DEB30 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1E93F0 801DEB30 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1E93F4 801DEB34 24190001 */  li    $t9, 1
 /* 1E93F8 801DEB38 8C480000 */  lw    $t0, ($v0)
 /* 1E93FC 801DEB3C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1E9400 801DEB40 3C05801E */  lui   $a1, %hi(D_801DDEC0) # $a1, 0x801e
 /* 1E9404 801DEB44 00084880 */  sll   $t1, $t0, 2
 /* 1E9408 801DEB48 00290821 */  addu  $at, $at, $t1
-/* 1E940C 801DEB4C AC39DC50 */ sw $t9, %lo(D_800DDC50)($at)
+/* 1E940C 801DEB4C AC39DC50 */ sw $t9, %lo(gEntityVtableIndexArray)($at)
 /* 1E9410 801DEB50 8C4A0000 */  lw    $t2, ($v0)
 /* 1E9414 801DEB54 24A5DEC0 */  addiu $a1, %lo(D_801DDEC0) # addiu $a1, $a1, -0x2140
 /* 1E9418 801DEB58 000A5880 */  sll   $t3, $t2, 2

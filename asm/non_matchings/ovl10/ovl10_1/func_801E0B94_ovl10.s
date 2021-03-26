@@ -178,9 +178,9 @@ glabel func_801E0B94_ovl10
 /* 1D1BA4 801E0E34 01A36821 */  addu  $t5, $t5, $v1
 /* 1D1BA8 801E0E38 8DAD83E0 */ lw $t5, %lo(D_800E83E0)($t5)
 /* 1D1BAC 801E0E3C 15A1000A */  bne   $t5, $at, .L801E0E68_ovl10
-/* 1D1BB0 801E0E40 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D1BB0 801E0E40 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D1BB4 801E0E44 00230821 */  addu  $at, $at, $v1
-/* 1D1BB8 801E0E48 AC2CDC50 */ sw $t4, %lo(D_800DDC50)($at)
+/* 1D1BB8 801E0E48 AC2CDC50 */ sw $t4, %lo(gEntityVtableIndexArray)($at)
 /* 1D1BBC 801E0E4C 8CCE0000 */  lw    $t6, ($a2)
 /* 1D1BC0 801E0E50 3C05801E */  lui   $a1, %hi(D_801DBD38) # $a1, 0x801e
 /* 1D1BC4 801E0E54 24A5BD38 */  addiu $a1, %lo(D_801DBD38) # addiu $a1, $a1, -0x42c8

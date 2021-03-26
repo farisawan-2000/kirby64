@@ -20,9 +20,9 @@ glabel func_801E48C8_ovl10
 /* 1D5680 801E4910 3C09800E */ lui $t1, %hi(D_800DD8D0)
 /* 1D5684 801E4914 14D8000E */  bne   $a2, $t8, .L801E4950_ovl10
 /* 1D5688 801E4918 01224821 */   addu  $t1, $t1, $v0
-/* 1D568C 801E491C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D568C 801E491C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D5690 801E4920 00220821 */  addu  $at, $at, $v0
-/* 1D5694 801E4924 AC26DC50 */ sw $a2, %lo(D_800DDC50)($at)
+/* 1D5694 801E4924 AC26DC50 */ sw $a2, %lo(gEntityVtableIndexArray)($at)
 /* 1D5698 801E4928 8C790000 */  lw    $t9, ($v1)
 /* 1D569C 801E492C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1D56A0 801E4930 3C05801E */  lui   $a1, %hi(D_801E3BE4) # $a1, 0x801e

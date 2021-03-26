@@ -116,10 +116,10 @@ glabel func_801DCBF8_ovl16
 /* 213050 801DCDA0 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 213054 801DCDA4 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
 /* 213058 801DCDA8 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 21305C 801DCDAC 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21305C 801DCDAC 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 213060 801DCDB0 8DCF0000 */  lw    $t7, ($t6)
 /* 213064 801DCDB4 27BD0018 */  addiu $sp, $sp, 0x18
 /* 213068 801DCDB8 000FC080 */  sll   $t8, $t7, 2
 /* 21306C 801DCDBC 00380821 */  addu  $at, $at, $t8
 /* 213070 801DCDC0 03E00008 */  jr    $ra
-/* 213074 801DCDC4 AC20DC50 */ sw $zero, %lo(D_800DDC50)($at)
+/* 213074 801DCDC4 AC20DC50 */ sw $zero, %lo(gEntityVtableIndexArray)($at)

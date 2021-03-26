@@ -5,11 +5,11 @@ glabel func_801E8988_ovl10
 /* 1D9704 801E8994 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1D9708 801E8998 AFA40018 */  sw    $a0, 0x18($sp)
 /* 1D970C 801E899C 8DCF0000 */  lw    $t7, ($t6)
-/* 1D9710 801E89A0 3C04800E */ lui $a0, %hi(D_800DDC50)
+/* 1D9710 801E89A0 3C04800E */ lui $a0, %hi(gEntityVtableIndexArray)
 /* 1D9714 801E89A4 3C06801F */  lui   $a2, %hi(D_801F4570_ovl10) # $a2, 0x801f
 /* 1D9718 801E89A8 000FC080 */  sll   $t8, $t7, 2
 /* 1D971C 801E89AC 00982021 */  addu  $a0, $a0, $t8
-/* 1D9720 801E89B0 8C84DC50 */ lw $a0, %lo(D_800DDC50)($a0)
+/* 1D9720 801E89B0 8C84DC50 */ lw $a0, %lo(gEntityVtableIndexArray)($a0)
 /* 1D9724 801E89B4 24C64570 */  addiu $a2, %lo(D_801F4570_ovl10) # addiu $a2, $a2, 0x4570
 /* 1D9728 801E89B8 0C02911F */  jal   call_virtual_function
 /* 1D972C 801E89BC 24050003 */   li    $a1, 3

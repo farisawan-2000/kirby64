@@ -12,8 +12,8 @@ glabel func_801E4024_ovl16
 /* 21A2FC 801E404C 3C01800D */  lui   $at, %hi(D_800D70A8) # $at, 0x800d
 /* 21A300 801E4050 AC2070A8 */  sw    $zero, %lo(D_800D70A8)($at)
 /* 21A304 801E4054 8C480000 */  lw    $t0, ($v0)
-/* 21A308 801E4058 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21A308 801E4058 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 21A30C 801E405C 00084880 */  sll   $t1, $t0, 2
 /* 21A310 801E4060 00290821 */  addu  $at, $at, $t1
 /* 21A314 801E4064 03E00008 */  jr    $ra
-/* 21A318 801E4068 AC39DC50 */ sw $t9, %lo(D_800DDC50)($at)
+/* 21A318 801E4068 AC39DC50 */ sw $t9, %lo(gEntityVtableIndexArray)($at)

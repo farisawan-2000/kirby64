@@ -805,12 +805,12 @@ glabel func_801E4754_ovl16
 /* 21B60C 801E535C 00280821 */  addu  $at, $at, $t0
 /* 21B610 801E5360 AC209FE0 */ sw $zero, %lo(D_800E9FE0)($at)
 /* 21B614 801E5364 8C6A0000 */  lw    $t2, ($v1)
-/* 21B618 801E5368 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21B618 801E5368 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 21B61C 801E536C 8FB10024 */  lw    $s1, 0x24($sp)
 /* 21B620 801E5370 000A6880 */  sll   $t5, $t2, 2
 /* 21B624 801E5374 002D0821 */  addu  $at, $at, $t5
 /* 21B628 801E5378 8FB00020 */  lw    $s0, 0x20($sp)
 /* 21B62C 801E537C D7B40018 */  ldc1  $f20, 0x18($sp)
-/* 21B630 801E5380 AC29DC50 */ sw $t1, %lo(D_800DDC50)($at)
+/* 21B630 801E5380 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 /* 21B634 801E5384 03E00008 */  jr    $ra
 /* 21B638 801E5388 27BD0038 */   addiu $sp, $sp, 0x38

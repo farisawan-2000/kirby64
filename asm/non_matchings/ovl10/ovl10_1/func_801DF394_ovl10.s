@@ -70,11 +70,11 @@ glabel func_801DF394_ovl10
 /* 1D0210 801DF4A0 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 1D0214 801DF4A4 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
 /* 1D0218 801DF4A8 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 1D021C 801DF4AC 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D021C 801DF4AC 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D0220 801DF4B0 8F0C0000 */  lw    $t4, ($t8)
 /* 1D0224 801DF4B4 240E000A */  li    $t6, 10
 /* 1D0228 801DF4B8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1D022C 801DF4BC 000C4080 */  sll   $t0, $t4, 2
 /* 1D0230 801DF4C0 00280821 */  addu  $at, $at, $t0
 /* 1D0234 801DF4C4 03E00008 */  jr    $ra
-/* 1D0238 801DF4C8 AC2EDC50 */ sw $t6, %lo(D_800DDC50)($at)
+/* 1D0238 801DF4C8 AC2EDC50 */ sw $t6, %lo(gEntityVtableIndexArray)($at)

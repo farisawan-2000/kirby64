@@ -4,11 +4,11 @@ glabel func_80159B00_ovl4
 /* 101038 80159B08 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 10103C 80159B0C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 101040 80159B10 8DCF0000 */  lw    $t7, ($t6)
-/* 101044 80159B14 3C02800E */ lui $v0, %hi(D_800DDC50)
+/* 101044 80159B14 3C02800E */ lui $v0, %hi(gEntityVtableIndexArray)
 /* 101048 80159B18 24010001 */  li    $at, 1
 /* 10104C 80159B1C 000FC080 */  sll   $t8, $t7, 2
 /* 101050 80159B20 00581021 */  addu  $v0, $v0, $t8
-/* 101054 80159B24 8C42DC50 */ lw $v0, %lo(D_800DDC50)($v0)
+/* 101054 80159B24 8C42DC50 */ lw $v0, %lo(gEntityVtableIndexArray)($v0)
 /* 101058 80159B28 10400005 */  beqz  $v0, .L80159B40_ovl4
 /* 10105C 80159B2C 00000000 */   nop   
 /* 101060 80159B30 10410007 */  beq   $v0, $at, .L80159B50_ovl4

@@ -43,9 +43,9 @@ glabel func_801EEFCC_ovl10
 /* 1DFDD4 801EF064 1000001C */  b     .L801EF0D8_ovl10
 /* 1DFDD8 801EF068 8FBF0024 */   lw    $ra, 0x24($sp)
 .L801EF06C_ovl10:
-/* 1DFDDC 801EF06C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DFDDC 801EF06C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DFDE0 801EF070 00240821 */  addu  $at, $at, $a0
-/* 1DFDE4 801EF074 AC32DC50 */ sw $s2, %lo(D_800DDC50)($at)
+/* 1DFDE4 801EF074 AC32DC50 */ sw $s2, %lo(gEntityVtableIndexArray)($at)
 /* 1DFDE8 801EF078 8C6F0000 */  lw    $t7, ($v1)
 /* 1DFDEC 801EF07C 3C19800F */  lui   $t9, %hi(D_800E98E0) # $t9, 0x800f
 /* 1DFDF0 801EF080 273998E0 */  addiu $t9, %lo(D_800E98E0) # addiu $t9, $t9, -0x6720
@@ -53,9 +53,9 @@ glabel func_801EEFCC_ovl10
 /* 1DFDF8 801EF088 10000012 */  b     .L801EF0D4_ovl10
 /* 1DFDFC 801EF08C 03193021 */   addu  $a2, $t8, $t9
 .L801EF090_ovl10:
-/* 1DFE00 801EF090 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DFE00 801EF090 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DFE04 801EF094 00240821 */  addu  $at, $at, $a0
-/* 1DFE08 801EF098 AC28DC50 */ sw $t0, %lo(D_800DDC50)($at)
+/* 1DFE08 801EF098 AC28DC50 */ sw $t0, %lo(gEntityVtableIndexArray)($at)
 /* 1DFE0C 801EF09C 8C690000 */  lw    $t1, ($v1)
 /* 1DFE10 801EF0A0 3C0B800F */  lui   $t3, %hi(D_800E98E0) # $t3, 0x800f
 /* 1DFE14 801EF0A4 256B98E0 */  addiu $t3, %lo(D_800E98E0) # addiu $t3, $t3, -0x6720
@@ -63,9 +63,9 @@ glabel func_801EEFCC_ovl10
 /* 1DFE1C 801EF0AC 10000009 */  b     .L801EF0D4_ovl10
 /* 1DFE20 801EF0B0 014B3021 */   addu  $a2, $t2, $t3
 .L801EF0B4_ovl10:
-/* 1DFE24 801EF0B4 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DFE24 801EF0B4 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DFE28 801EF0B8 00240821 */  addu  $at, $at, $a0
-/* 1DFE2C 801EF0BC AC2CDC50 */ sw $t4, %lo(D_800DDC50)($at)
+/* 1DFE2C 801EF0BC AC2CDC50 */ sw $t4, %lo(gEntityVtableIndexArray)($at)
 /* 1DFE30 801EF0C0 8C6D0000 */  lw    $t5, ($v1)
 /* 1DFE34 801EF0C4 3C0F800F */  lui   $t7, %hi(D_800E98E0) # $t7, 0x800f
 /* 1DFE38 801EF0C8 25EF98E0 */  addiu $t7, %lo(D_800E98E0) # addiu $t7, $t7, -0x6720

@@ -59,7 +59,7 @@ glabel func_80172234_ovl3
 /* 0D2D48 80172308 8CAF003C */  lw    $t7, 0x3c($a1)
 /* 0D2D4C 8017230C 15E000A1 */  bnez  $t7, .L80172594_ovl3
 /* 0D2D50 80172310 00000000 */   nop   
-/* 0D2D54 80172314 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D2D54 80172314 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D2D58 80172318 27A4003C */   addiu $a0, $sp, 0x3c
 /* 0D2D5C 8017231C 1040009D */  beqz  $v0, .L80172594_ovl3
 /* 0D2D60 80172320 00000000 */   nop   

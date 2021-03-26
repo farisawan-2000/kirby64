@@ -43,9 +43,9 @@ glabel func_801E50A4_ovl10
 /* 1D5EB0 801E5140 8DEF9E20 */ lw $t7, %lo(D_800E9E20)($t7)
 /* 1D5EB4 801E5144 24010002 */  li    $at, 2
 /* 1D5EB8 801E5148 15E1000A */  bne   $t7, $at, .L801E5174_ovl10
-/* 1D5EBC 801E514C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D5EBC 801E514C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D5EC0 801E5150 00220821 */  addu  $at, $at, $v0
-/* 1D5EC4 801E5154 AC38DC50 */ sw $t8, %lo(D_800DDC50)($at)
+/* 1D5EC4 801E5154 AC38DC50 */ sw $t8, %lo(gEntityVtableIndexArray)($at)
 /* 1D5EC8 801E5158 8C790000 */  lw    $t9, ($v1)
 /* 1D5ECC 801E515C 3C05801E */  lui   $a1, %hi(D_801E3BE4) # $a1, 0x801e
 /* 1D5ED0 801E5160 24A53BE4 */  addiu $a1, %lo(D_801E3BE4) # addiu $a1, $a1, 0x3be4

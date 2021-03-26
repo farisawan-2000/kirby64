@@ -248,9 +248,9 @@ glabel func_801ED2CC_ovl10
 .L801ED69C_ovl10:
 /* 1DE40C 801ED69C 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801ED6A0_ovl10:
-/* 1DE410 801ED6A0 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DE410 801ED6A0 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DE414 801ED6A4 00230821 */  addu  $at, $at, $v1
 /* 1DE418 801ED6A8 240D0006 */  li    $t5, 6
-/* 1DE41C 801ED6AC AC2DDC50 */ sw $t5, %lo(D_800DDC50)($at)
+/* 1DE41C 801ED6AC AC2DDC50 */ sw $t5, %lo(gEntityVtableIndexArray)($at)
 /* 1DE420 801ED6B0 03E00008 */  jr    $ra
 /* 1DE424 801ED6B4 27BD0018 */   addiu $sp, $sp, 0x18

@@ -15,12 +15,12 @@ void func_802201C0_ovl18(s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 1, &D_8022AB80);
     while(1)
-        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[1]);
+        call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[1]);
 }
 
 void func_802202B8_ovl18(s32 arg0) {
     while(1)
-        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[1]);
+        call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[1]);
 }
 
 void func_80220338_ovl18(s32 arg0) {
@@ -30,7 +30,7 @@ void func_80220338_ovl18(s32 arg0) {
     D_800E1B50[D_8004A7C4->objId]->unk8C = &D_8022A184;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_8022A940;
     D_800E98E0[D_8004A7C4->objId] = 0x1E;
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
 }
 
 void func_80220424_ovl18(void) {
@@ -54,7 +54,7 @@ void func_802204F8_ovl18(s32 arg0) {
         D_800E98E0[D_8004A7C4->objId] -= 1;
     }
     if ((D_800E98E0[D_8004A7C4->objId] <= 0) && (func_8019B738_ovl18(D_8022BBC0) != 0)) {
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_802202B8_ovl18);
     }
 }
@@ -85,7 +85,7 @@ void func_802205AC_ovl18(s32 arg0) {
         func_800AA154(0x10023);
     } while (0);
     D_800E98E0[D_8004A7C4->objId] = 0x1E;
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
 }
 
 void func_80220720_ovl18(s32 arg0) {
@@ -99,12 +99,12 @@ void func_80220728_ovl18(s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 1, &D_8022AB80[5]);
     while(1)
-        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[6]);
+        call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[6]);
 }
 
 void func_80220818_ovl18(s32 arg0) {
     while(1)
-        call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[6]);
+        call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[6]);
 }
 
 void func_80220898_ovl18(s32 arg0) {
@@ -125,7 +125,7 @@ void func_80220898_ovl18(s32 arg0) {
     D_800EA8A0[D_8004A7C4->objId] = gEntitiesPosXArray[D_8004A7C4->objId];
     D_800EAA60[D_8004A7C4->objId] = gEntitiesPosYArray[D_8004A7C4->objId];
     D_800EAC20[D_8004A7C4->objId] = gEntitiesPosZArray[D_8004A7C4->objId];
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
 }
 
 void func_80220AA8_ovl18(s32 arg0) {
@@ -334,7 +334,7 @@ void func_80221288_ovl18(s32 arg0) {
 }
 
 void func_802212E8_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[9]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[9]);
 }
 
 
@@ -346,9 +346,9 @@ void func_80221330_ovl18(s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_80221440_ovl18;
     D_800E48D0[D_8004A7C4->objId] = 2.0f;
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];;
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_801A0D50_ovl18(&func_802212E8_ovl18, &D_800E48D0);
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[9]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[9]);
 }
 
 void func_80221440_ovl18(void) {
@@ -400,7 +400,7 @@ void func_802216C8_ovl18(s32 arg0) {
 }
 
 void func_80221758_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 4, &D_8022AB80[12]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 4, &D_8022AB80[12]);
 }
 
 void func_802217A0_ovl18(s32 arg0) {
@@ -413,8 +413,8 @@ void func_802217A0_ovl18(s32 arg0) {
     gEntitiesPosYArray[D_8004A7C4->objId] -= 110.0f;
     D_800EA6E0[D_8004A7C4->objId] = gEntitiesPosYArray[D_8004A7C4->objId];
     D_800EA8A0[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId] + 60.0f;
-    D_800DDC50[D_8004A7C4->objId] = 0;
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 4, &D_8022AB80[12]);
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 4, &D_8022AB80[12]);
 }
 
 void func_802218E4_ovl18(s32 arg0) {
@@ -433,7 +433,7 @@ void func_80221934_ovl18(s32 arg0) {
 
 void func_80221A04_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->objId] == 0) {
-        D_800DDC50[D_8004A7C4->objId] = 2;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     } else D_800E9720[D_8004A7C4->objId]--;
 }
@@ -447,7 +447,7 @@ void func_80221A84_ovl18(s32 arg0) {
 
 void func_80221ADC_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->objId] == 0) {
-        D_800DDC50[D_8004A7C4->objId] = 3;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 3;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     } else D_800E9720[D_8004A7C4->objId]--;
 }
@@ -467,7 +467,7 @@ void func_80221BF0_ovl18(s32 arg0) {
         D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId];
         D_800E3C90[D_8004A7C4->objId] = 65535.0f;
         gEntitiesPosYArray[D_8004A7C4->objId] = D_800EA8A0[D_8004A7C4->objId];
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     }
 }
@@ -487,7 +487,7 @@ void func_80221D78_ovl18(s32 arg0) {
         D_800E3C90[D_8004A7C4->objId] = 65535.0f;
         gEntitiesPosYArray[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId];
         D_800E9720[D_8004A7C4->objId] = 0xF;
-        D_800DDC50[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80221758_ovl18);
     }
 }

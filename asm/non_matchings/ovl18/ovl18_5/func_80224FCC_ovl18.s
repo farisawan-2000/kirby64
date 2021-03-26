@@ -53,7 +53,7 @@ glabel func_80224FCC_ovl18
 /* 237A2C 8022508C 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 237A30 80225090 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
 /* 237A34 80225094 3C0A800F */ lui $t2, %hi(D_800E9E20)
-/* 237A38 80225098 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 237A38 80225098 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 237A3C 8022509C 8C430000 */  lw    $v1, ($v0)
 /* 237A40 802250A0 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 237A44 802250A4 00031880 */  sll   $v1, $v1, 2
@@ -62,7 +62,7 @@ glabel func_80224FCC_ovl18
 /* 237A50 802250B0 00230821 */  addu  $at, $at, $v1
 /* 237A54 802250B4 5140000A */  beql  $t2, $zero, .L802250E0_ovl18
 /* 237A58 802250B8 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 237A5C 802250BC AC20DC50 */ sw $zero, %lo(D_800DDC50)($at)
+/* 237A5C 802250BC AC20DC50 */ sw $zero, %lo(gEntityVtableIndexArray)($at)
 /* 237A60 802250C0 8C4B0000 */  lw    $t3, ($v0)
 /* 237A64 802250C4 3C058022 */  lui   $a1, %hi(func_80224B54_ovl18) # $a1, 0x8022
 /* 237A68 802250C8 24A54B54 */  addiu $a1, %lo(func_80224B54_ovl18) # addiu $a1, $a1, 0x4b54

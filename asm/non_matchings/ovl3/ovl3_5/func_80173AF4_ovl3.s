@@ -28,7 +28,7 @@ glabel func_80173AF4_ovl3
 .L80173B5C_ovl3:
 /* 0D459C 80173B5C 0C054E61 */  jal   func_80153984_ovl3
 /* 0D45A0 80173B60 00000000 */   nop   
-/* 0D45A4 80173B64 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D45A4 80173B64 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D45A8 80173B68 27A4001C */   addiu $a0, $sp, 0x1c
 /* 0D45AC 80173B6C 10400003 */  beqz  $v0, .L80173B7C_ovl3
 /* 0D45B0 80173B70 00000000 */   nop   

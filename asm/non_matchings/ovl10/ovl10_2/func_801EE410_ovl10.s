@@ -93,11 +93,11 @@ glabel func_801EE410_ovl10
 /* 1DF2EC 801EE57C 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 1DF2F0 801EE580 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 1DF2F4 801EE584 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 1DF2F8 801EE588 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DF2F8 801EE588 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DF2FC 801EE58C 8D090000 */  lw    $t1, ($t0)
 /* 1DF300 801EE590 24190001 */  li    $t9, 1
 /* 1DF304 801EE594 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1DF308 801EE598 00095080 */  sll   $t2, $t1, 2
 /* 1DF30C 801EE59C 002A0821 */  addu  $at, $at, $t2
 /* 1DF310 801EE5A0 03E00008 */  jr    $ra
-/* 1DF314 801EE5A4 AC39DC50 */ sw $t9, %lo(D_800DDC50)($at)
+/* 1DF314 801EE5A4 AC39DC50 */ sw $t9, %lo(gEntityVtableIndexArray)($at)

@@ -269,7 +269,7 @@ glabel func_801DE650_ovl10
 /* 1CF7CC 801DEA5C 348402CE */   ori   $a0, (0x000102CE & 0xFFFF) # ori $a0, $a0, 0x2ce
 /* 1CF7D0 801DEA60 8E090000 */  lw    $t1, ($s0)
 /* 1CF7D4 801DEA64 8FBF002C */  lw    $ra, 0x2c($sp)
-/* 1CF7D8 801DEA68 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1CF7D8 801DEA68 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1CF7DC 801DEA6C 8D2D0000 */  lw    $t5, ($t1)
 /* 1CF7E0 801DEA70 240B0002 */  li    $t3, 2
 /* 1CF7E4 801DEA74 8FB00020 */  lw    $s0, 0x20($sp)
@@ -278,6 +278,6 @@ glabel func_801DE650_ovl10
 /* 1CF7F0 801DEA80 D7B40018 */  ldc1  $f20, 0x18($sp)
 /* 1CF7F4 801DEA84 8FB10024 */  lw    $s1, 0x24($sp)
 /* 1CF7F8 801DEA88 8FB20028 */  lw    $s2, 0x28($sp)
-/* 1CF7FC 801DEA8C AC2BDC50 */ sw $t3, %lo(D_800DDC50)($at)
+/* 1CF7FC 801DEA8C AC2BDC50 */ sw $t3, %lo(gEntityVtableIndexArray)($at)
 /* 1CF800 801DEA90 03E00008 */  jr    $ra
 /* 1CF804 801DEA94 27BD0030 */   addiu $sp, $sp, 0x30

@@ -27,14 +27,14 @@ glabel func_802204F8_ovl18
 /* 232EF8 80220558 10400010 */  beqz  $v0, .L8022059C_ovl18
 /* 232EFC 8022055C 3C028005 */   lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 232F00 80220560 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
-/* 232F04 80220564 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 232F04 80220564 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 232F08 80220568 240A0001 */  li    $t2, 1
 /* 232F0C 8022056C 8C4B0000 */  lw    $t3, ($v0)
 /* 232F10 80220570 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 232F14 80220574 3C058022 */  lui   $a1, %hi(func_802202B8_ovl18) # $a1, 0x8022
 /* 232F18 80220578 000B6080 */  sll   $t4, $t3, 2
 /* 232F1C 8022057C 002C0821 */  addu  $at, $at, $t4
-/* 232F20 80220580 AC2ADC50 */ sw $t2, %lo(D_800DDC50)($at)
+/* 232F20 80220580 AC2ADC50 */ sw $t2, %lo(gEntityVtableIndexArray)($at)
 /* 232F24 80220584 8C4D0000 */  lw    $t5, ($v0)
 /* 232F28 80220588 24A502B8 */  addiu $a1, %lo(func_802202B8_ovl18) # addiu $a1, $a1, 0x2b8
 /* 232F2C 8022058C 000D7080 */  sll   $t6, $t5, 2

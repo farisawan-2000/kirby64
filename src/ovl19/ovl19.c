@@ -14,7 +14,7 @@ void func_8021DF20_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800AED20(D_800D6B10);
     D_800E8760[D_8004A7C4->objId] = 0;
     D_800E83E0[D_8004A7C4->objId] = D_800E8760[D_8004A7C4->objId];
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 0xA, &D_8022F040[0]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 0xA, &D_8022F040[0]);
 }
 
 
@@ -369,7 +369,7 @@ void func_8021EA40_ovl19(struct UnkStruct8004A7C4 *arg0) {
     D_800E1450[D_8004A7C4->objId] = D_800E1450[D_800E0D50[D_8004A7C4->objId]];
     D_800E6A10[D_8004A7C4->objId] = D_800E6A10[D_800E0D50[D_8004A7C4->objId]];
     D_800E6BD0[D_8004A7C4->objId] = D_800E6BD0[D_800E0D50[D_8004A7C4->objId]];
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022F070[0]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022F070[0]);
 }
 
 extern f32 D_8022F70C;
@@ -437,7 +437,7 @@ s32 func_8021EE88_ovl19(struct UnkStruct8004A7C4 *arg0) {
 
     temp_v0 = func_800AEC08(0x16, 0x3C, 0x4A);
     if (temp_v0 != -1) {
-        D_800DDC50[temp_v0] = arg0;
+        gEntityVtableIndexArray[temp_v0] = arg0;
     } else {
         print_error_stub(&D_8022F6E0);
     }

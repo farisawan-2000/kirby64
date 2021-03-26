@@ -60,7 +60,7 @@ glabel func_80176DE0_ovl3
 /* 0D78FC 80176EBC 256CFFFF */  addiu $t4, $t3, -1
 /* 0D7900 80176EC0 AC6C0000 */  sw    $t4, ($v1)
 .L80176EC4_ovl3:
-/* 0D7904 80176EC4 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D7904 80176EC4 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D7908 80176EC8 27A40028 */   addiu $a0, $sp, 0x28
 /* 0D790C 80176ECC 3C058005 */  lui   $a1, %hi(D_8004A7C4) # $a1, 0x8005
 /* 0D7910 80176ED0 14400047 */  bnez  $v0, .L80176FF0_ovl3

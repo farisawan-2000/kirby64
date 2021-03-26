@@ -6,7 +6,7 @@ glabel func_80172A3C_ovl3
 /* 0D348C 80172A4C AFA40020 */  sw    $a0, 0x20($sp)
 /* 0D3490 80172A50 0C054E61 */  jal   func_80153984_ovl3
 /* 0D3494 80172A54 AFAE001C */   sw    $t6, 0x1c($sp)
-/* 0D3498 80172A58 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D3498 80172A58 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D349C 80172A5C 27A4001C */   addiu $a0, $sp, 0x1c
 /* 0D34A0 80172A60 14400015 */  bnez  $v0, .L80172AB8_ovl3
 /* 0D34A4 80172A64 3C0F8013 */   lui   $t7, %hi(D_8012E7F4) # $t7, 0x8013

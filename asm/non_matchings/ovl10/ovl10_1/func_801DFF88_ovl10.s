@@ -269,15 +269,15 @@ glabel func_801DFF88_ovl10
 .L801E0370_ovl10:
 /* 1D10E0 801E0370 14A00006 */  bnez  $a1, .L801E038C_ovl10
 /* 1D10E4 801E0374 240A000D */   li    $t2, 13
-/* 1D10E8 801E0378 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D10E8 801E0378 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D10EC 801E037C 00230821 */  addu  $at, $at, $v1
 /* 1D10F0 801E0380 240B000C */  li    $t3, 12
 /* 1D10F4 801E0384 10000004 */  b     .L801E0398_ovl10
-/* 1D10F8 801E0388 AC2BDC50 */ sw $t3, %lo(D_800DDC50)($at)
+/* 1D10F8 801E0388 AC2BDC50 */ sw $t3, %lo(gEntityVtableIndexArray)($at)
 .L801E038C_ovl10:
-/* 1D10FC 801E038C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1D10FC 801E038C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1D1100 801E0390 00230821 */  addu  $at, $at, $v1
-/* 1D1104 801E0394 AC2ADC50 */ sw $t2, %lo(D_800DDC50)($at)
+/* 1D1104 801E0394 AC2ADC50 */ sw $t2, %lo(gEntityVtableIndexArray)($at)
 .L801E0398_ovl10:
 /* 1D1108 801E0398 8FBF004C */  lw    $ra, 0x4c($sp)
 /* 1D110C 801E039C D7B40010 */  ldc1  $f20, 0x10($sp)

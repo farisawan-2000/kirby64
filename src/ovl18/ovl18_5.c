@@ -21,7 +21,7 @@ void func_80224580_ovl18(s32 arg0) {
 }
 
 void func_802245E0_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[61]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[61]);
 }
 
 void func_80224628_ovl18(s32 arg0) {
@@ -32,9 +32,9 @@ void func_80224628_ovl18(s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_80224738_ovl18;
     D_800E48D0[D_8004A7C4->objId] = 2.0f;
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_801A0D50_ovl18(&func_802245E0_ovl18, D_800E48D0);
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[61]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[61]);
 }
 
 void func_80224738_ovl18(void) {
@@ -57,7 +57,7 @@ void func_80224790_ovl18(s32 arg0) {
 
 void func_80224864_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_802245E0_ovl18);
     }
 }
@@ -93,7 +93,7 @@ void func_802249D8_ovl18(UNUSED s32 arg0) {
         }
     }
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_802245E0_ovl18);
     }
 }
@@ -110,7 +110,7 @@ void func_80224AF4_ovl18(s32 arg0) {
 }
 
 void func_80224B54_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[66]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[66]);
 }
 
 void func_80224B9C_ovl18(s32 arg0) {
@@ -121,9 +121,9 @@ void func_80224B9C_ovl18(s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_80224CAC_ovl18;
     D_800E48D0[D_8004A7C4->objId] = 2.0f;
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_801A0D50_ovl18(&func_80224B54_ovl18, D_800E48D0);
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[66]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[66]);
 }
 
 void func_80224CAC_ovl18(void) {
@@ -147,7 +147,7 @@ void func_80224D04_ovl18(s32 arg0) {
 
 void func_80224DE4_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80224B54_ovl18);
     }
 }
@@ -196,7 +196,7 @@ void func_80224FCC_ovl18(UNUSED s32 arg0) {
         }
     }
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80224B54_ovl18);
     }
 }
@@ -210,7 +210,7 @@ void func_802250EC_ovl18(s32 arg0) {
 }
 
 void func_8022514C_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[71]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[71]);
 }
 
 void func_80225194_ovl18(s32 arg0) {
@@ -221,9 +221,9 @@ void func_80225194_ovl18(s32 arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_802252A4_ovl18;
     D_800E48D0[D_8004A7C4->objId] = 1.5f;
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
-    D_800DDC50[D_8004A7C4->objId] = 0;
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_801A0D50_ovl18(&func_8022514C_ovl18, D_800E48D0);
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 1, &D_8022AB80[71]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[71]);
 }
 
 void func_802252A4_ovl18(void) {
@@ -265,7 +265,7 @@ void func_80225418_ovl18(s32 arg0) {
 }
 
 void func_80225478_ovl18(s32 arg0) {
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[90]);
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[90]);
 }
 
 void func_802254C0_ovl18(s32 arg0) {
@@ -276,8 +276,8 @@ void func_802254C0_ovl18(s32 arg0) {
     D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
     D_800E93A0[D_8004A7C4->objId] = 0;
     gEntitiesAngleYArray[D_8004A7C4->objId] = 0.0f;
-    D_800DDC50[D_8004A7C4->objId] = 0;
-    call_virtual_function(D_800DDC50[D_8004A7C4->objId], 2, &D_8022AB80[90]);
+    gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
+    call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, &D_8022AB80[90]);
 }
 
 void func_802255C0_ovl18(s32 arg0) {
@@ -305,7 +305,7 @@ void func_80225650_ovl18(s32 arg0) {
 #ifdef NON_MATCHING
 void func_80225724_ovl18(s32 arg0) {
     if (D_800E9720[D_8004A7C4->objId]-- == 0) {
-        D_800DDC50[D_8004A7C4->objId] = 1;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80225478_ovl18);
     } else D_800E9720[D_8004A7C4->objId]--;
 }
@@ -331,7 +331,7 @@ void func_802257A4_ovl18(s32 arg0) {
 
 void func_802258EC_ovl18(s32 arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
-        D_800DDC50[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_80225478_ovl18);
     }
 }

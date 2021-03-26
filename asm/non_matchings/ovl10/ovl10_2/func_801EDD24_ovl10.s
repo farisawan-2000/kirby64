@@ -139,12 +139,12 @@ glabel func_801EDD24_ovl10
 /* 1DEC9C 801EDF2C 8E2A0000 */   lw    $t2, ($s1)
 /* 1DECA0 801EDF30 8FBF0024 */  lw    $ra, 0x24($sp)
 .L801EDF34_ovl10:
-/* 1DECA4 801EDF34 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1DECA4 801EDF34 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1DECA8 801EDF38 00250821 */  addu  $at, $at, $a1
 /* 1DECAC 801EDF3C 2419000A */  li    $t9, 10
 /* 1DECB0 801EDF40 8FB00018 */  lw    $s0, 0x18($sp)
 /* 1DECB4 801EDF44 8FB1001C */  lw    $s1, 0x1c($sp)
 /* 1DECB8 801EDF48 8FB20020 */  lw    $s2, 0x20($sp)
-/* 1DECBC 801EDF4C AC39DC50 */ sw $t9, %lo(D_800DDC50)($at)
+/* 1DECBC 801EDF4C AC39DC50 */ sw $t9, %lo(gEntityVtableIndexArray)($at)
 /* 1DECC0 801EDF50 03E00008 */  jr    $ra
 /* 1DECC4 801EDF54 27BD0028 */   addiu $sp, $sp, 0x28

@@ -18,11 +18,11 @@ glabel func_801DCF70_ovl11
 /* 1E7870 801DCFB0 3C0F800F */ lui $t7, %hi(D_800E9AA0)
 /* 1E7874 801DCFB4 01E27821 */  addu  $t7, $t7, $v0
 /* 1E7878 801DCFB8 8DEF9AA0 */ lw $t7, %lo(D_800E9AA0)($t7)
-/* 1E787C 801DCFBC 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1E787C 801DCFBC 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1E7880 801DCFC0 00220821 */  addu  $at, $at, $v0
 /* 1E7884 801DCFC4 14EF0037 */  bne   $a3, $t7, .L801DD0A4_ovl11
 /* 1E7888 801DCFC8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
-/* 1E788C 801DCFCC AC27DC50 */ sw $a3, %lo(D_800DDC50)($at)
+/* 1E788C 801DCFCC AC27DC50 */ sw $a3, %lo(gEntityVtableIndexArray)($at)
 /* 1E7890 801DCFD0 8CD80000 */  lw    $t8, ($a2)
 /* 1E7894 801DCFD4 3C05801E */  lui   $a1, %hi(D_801DC258) # $a1, 0x801e
 /* 1E7898 801DCFD8 24A5C258 */  addiu $a1, %lo(D_801DC258) # addiu $a1, $a1, -0x3da8

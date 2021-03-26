@@ -8,7 +8,7 @@ glabel func_8016FFF8_ovl3
 /* 0D0A50 80170010 27AE0024 */  addiu $t6, $sp, 0x24
 /* 0D0A54 80170014 0C054E61 */  jal   func_80153984_ovl3
 /* 0D0A58 80170018 B9D90002 */   swr   $t9, 2($t6)
-/* 0D0A5C 8017001C 0C0547A5 */  jal   func_80151E94_ovl3
+/* 0D0A5C 8017001C 0C0547A5 */  jal   ovl3_process_command_string
 /* 0D0A60 80170020 27A40024 */   addiu $a0, $sp, 0x24
 /* 0D0A64 80170024 10400009 */  beqz  $v0, .L8017004C_ovl3
 /* 0D0A68 80170028 3C038013 */   lui   $v1, %hi(gKirbyState) # $v1, 0x8013

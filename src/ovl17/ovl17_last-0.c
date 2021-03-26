@@ -47,7 +47,7 @@ s32 func_801E4488_ovl17(void) {
         switch (D_800E83E0[D_8004A7C4->objId]) {
             case 1:
                 D_800E7CE0[D_8004A7C4->objId] = 0x276U;
-                D_800DDC50[D_8004A7C4->objId] = 3;
+                gEntityVtableIndexArray[D_8004A7C4->objId] = 3;
                 assign_new_process_entry((s32) gEntityGObjProcessArray[D_8004A7C4->objId], &func_801E40F4);
                 play_sound(0x1C3);
                 if (sp28.unkC != 0) {
@@ -55,7 +55,7 @@ s32 func_801E4488_ovl17(void) {
                 }
                 break;
             case 2:
-                D_800DDC50[D_8004A7C4->objId] = 2;
+                gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
                 assign_new_process_entry((s32) gEntityGObjProcessArray[D_8004A7C4->objId], &func_801E40F4);
                 D_800E7CE0[D_8004A7C4->objId] = 1;
                 play_sound(0x1BE);

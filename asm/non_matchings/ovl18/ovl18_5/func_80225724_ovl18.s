@@ -11,11 +11,11 @@ glabel func_80225724_ovl18
 /* 2380E8 80225748 004E2021 */  addu  $a0, $v0, $t6
 /* 2380EC 8022574C 8C850000 */  lw    $a1, ($a0)
 /* 2380F0 80225750 240F0001 */  li    $t7, 1
-/* 2380F4 80225754 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 2380F4 80225754 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 2380F8 80225758 14A0000D */  bnez  $a1, .L80225790_ovl18
 /* 2380FC 8022575C 24A8FFFF */   addiu $t0, $a1, -1
 /* 238100 80225760 00220821 */  addu  $at, $at, $v0
-/* 238104 80225764 AC2FDC50 */ sw $t7, %lo(D_800DDC50)($at)
+/* 238104 80225764 AC2FDC50 */ sw $t7, %lo(gEntityVtableIndexArray)($at)
 /* 238108 80225768 8C780000 */  lw    $t8, ($v1)
 /* 23810C 8022576C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 238110 80225770 3C058022 */  lui   $a1, %hi(func_80225478_ovl18) # $a1, 0x8022

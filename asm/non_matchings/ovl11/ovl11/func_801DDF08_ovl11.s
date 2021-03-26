@@ -35,13 +35,13 @@ glabel func_801DDF08_ovl11
 /* 1E884C 801DDF8C 2463A7C4 */  addiu $v1, %lo(D_8004A7C4) # addiu $v1, $v1, -0x583c
 /* 1E8850 801DDF90 8C6A0000 */  lw    $t2, ($v1)
 /* 1E8854 801DDF94 8FAE001C */  lw    $t6, 0x1c($sp)
-/* 1E8858 801DDF98 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 1E8858 801DDF98 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1E885C 801DDF9C 8D4B0000 */  lw    $t3, ($t2)
 /* 1E8860 801DDFA0 3C0D801E */  lui   $t5, %hi(D_801DAF18) # $t5, 0x801e
 /* 1E8864 801DDFA4 25ADAF18 */  addiu $t5, %lo(D_801DAF18) # addiu $t5, $t5, -0x50e8
 /* 1E8868 801DDFA8 000B6080 */  sll   $t4, $t3, 2
 /* 1E886C 801DDFAC 002C0821 */  addu  $at, $at, $t4
-/* 1E8870 801DDFB0 AC20DC50 */ sw $zero, %lo(D_800DDC50)($at)
+/* 1E8870 801DDFB0 AC20DC50 */ sw $zero, %lo(gEntityVtableIndexArray)($at)
 /* 1E8874 801DDFB4 ADCD0098 */  sw    $t5, 0x98($t6)
 /* 1E8878 801DDFB8 8C620000 */  lw    $v0, ($v1)
 /* 1E887C 801DDFBC 3C01800E */ lui $at, %hi(D_800E7CE0)
@@ -62,7 +62,7 @@ glabel func_801DDF08_ovl11
 /* 1E88B8 801DDFF8 E4246A10 */ swc1 $f4, %lo(D_800E6A10)($at)
 /* 1E88BC 801DDFFC 3C0A8005 */  lui   $t2, %hi(D_8004A7C4) # $t2, 0x8005
 /* 1E88C0 801DE000 8D4AA7C4 */  lw    $t2, %lo(D_8004A7C4)($t2)
-/* 1E88C4 801DE004 3C04800E */ lui $a0, %hi(D_800DDC50)
+/* 1E88C4 801DE004 3C04800E */ lui $a0, %hi(gEntityVtableIndexArray)
 /* 1E88C8 801DE008 3C06801E */  lui   $a2, %hi(D_801E0B9C) # $a2, 0x801e
 /* 1E88CC 801DE00C 8D4B0000 */  lw    $t3, ($t2)
 /* 1E88D0 801DE010 24C60B9C */  addiu $a2, %lo(D_801E0B9C) # addiu $a2, $a2, 0xb9c
@@ -70,7 +70,7 @@ glabel func_801DDF08_ovl11
 /* 1E88D8 801DE018 000B6080 */  sll   $t4, $t3, 2
 /* 1E88DC 801DE01C 008C2021 */  addu  $a0, $a0, $t4
 /* 1E88E0 801DE020 0C02911F */  jal   call_virtual_function
-/* 1E88E4 801DE024 8C84DC50 */ lw $a0, %lo(D_800DDC50)($a0)
+/* 1E88E4 801DE024 8C84DC50 */ lw $a0, %lo(gEntityVtableIndexArray)($a0)
 /* 1E88E8 801DE028 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 1E88EC 801DE02C 27BD0020 */  addiu $sp, $sp, 0x20
 /* 1E88F0 801DE030 03E00008 */  jr    $ra

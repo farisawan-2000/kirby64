@@ -40,9 +40,9 @@ glabel func_801E4698_ovl16
 /* 21A9E0 801E4730 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 21A9E4 801E4734 01184021 */  addu  $t0, $t0, $t8
 /* 21A9E8 801E4738 8D08F9B4 */ lw $t0, %lo(D_801EF9B4_ovl16)($t0)
-/* 21A9EC 801E473C 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 21A9EC 801E473C 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 21A9F0 801E4740 00195080 */  sll   $t2, $t9, 2
 /* 21A9F4 801E4744 002A0821 */  addu  $at, $at, $t2
 /* 21A9F8 801E4748 27BD0018 */  addiu $sp, $sp, 0x18
 /* 21A9FC 801E474C 03E00008 */  jr    $ra
-/* 21AA00 801E4750 AC28DC50 */ sw $t0, %lo(D_800DDC50)($at)
+/* 21AA00 801E4750 AC28DC50 */ sw $t0, %lo(gEntityVtableIndexArray)($at)

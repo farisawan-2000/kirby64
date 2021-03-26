@@ -211,7 +211,7 @@ glabel func_801E2E44_ovl16
 /* 219404 801E3154 AC289AA0 */ sw $t0, %lo(D_800E9AA0)($at)
 /* 219408 801E3158 8CAA0000 */  lw    $t2, ($a1)
 /* 21940C 801E315C 8FBF0044 */  lw    $ra, 0x44($sp)
-/* 219410 801E3160 3C01800E */ lui $at, %hi(D_800DDC50)
+/* 219410 801E3160 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 219414 801E3164 000A5880 */  sll   $t3, $t2, 2
 /* 219418 801E3168 002B0821 */  addu  $at, $at, $t3
 /* 21941C 801E316C 2409000F */  li    $t1, 15
@@ -225,6 +225,6 @@ glabel func_801E2E44_ovl16
 /* 21943C 801E318C 8FB60038 */  lw    $s6, 0x38($sp)
 /* 219440 801E3190 8FB7003C */  lw    $s7, 0x3c($sp)
 /* 219444 801E3194 8FBE0040 */  lw    $fp, 0x40($sp)
-/* 219448 801E3198 AC29DC50 */ sw $t1, %lo(D_800DDC50)($at)
+/* 219448 801E3198 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 /* 21944C 801E319C 03E00008 */  jr    $ra
 /* 219450 801E31A0 27BD0048 */   addiu $sp, $sp, 0x48
