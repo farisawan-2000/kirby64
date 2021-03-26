@@ -94,6 +94,7 @@ typedef struct Controller_800D6FE8 {
   /* 0x08 */ s8 stickX;
   /* 0x09 */ s8 stickY;
 } Controller_800D6FE8;
+extern Controller_800D6FE8 D_800D6FE8;
 
 struct KirbyState_114 {
     u32 unk0;
@@ -179,7 +180,8 @@ struct KirbyState {
     u8 numberInhaling;			// 0xB3
     u16 numberInhaled;			// 0xB4
     u16 unkB6;
-    u16 unkB8;
+    u8 unkB8;
+    u8 unkB9;
     u16 unkBA;
     u32 unkBC;
     u32 unkC0;
@@ -188,7 +190,7 @@ struct KirbyState {
     u32 unkCC;
     u16 jumpHeight;				// 0xD0
     u16 isFullJump;				// 0xD2
-    u16 damageType;				// 0xD4
+    s16 damageType;				// 0xD4
     u16 damageFlashTimer;		// 0xD6
     u16 damagePaletteTimer;	// 0xD8
     u16 damagePaletteIndex;	// 0xDA

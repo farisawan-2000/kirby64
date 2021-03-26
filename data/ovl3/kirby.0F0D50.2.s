@@ -921,7 +921,7 @@ glabel D_801972D0
 glabel D_801972F8
 .asciiz "Pole Door Error![kirby.cc]\n"
 
-glabel D_80197314
+glabel jtbl_80197314
 .word 0x8016C1EC
 
 glabel D_80197318
