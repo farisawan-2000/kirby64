@@ -117,7 +117,7 @@ struct KirbyState {
     u8 unkA;
     u8 unkB;
     s8 abilityState;				// 0xC
-    u8 unkD;
+    s8 unkD;
     u8 unkE;
     u8 unkF;
     u32 unk10;

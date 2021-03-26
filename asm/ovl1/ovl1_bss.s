@@ -971,7 +971,7 @@ glabel D_800D6EC0
 glabel D_800D6EC4
 .word 0x00000000
 
-glabel D_800D6EC8
+glabel gGameTampered
 .word 0x00000000
 
 glabel D_800D6ECC

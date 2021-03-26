@@ -1,7 +1,7 @@
 #include <ultra64.h>
 #include "macros.h"
 
-extern u32 D_800D6EC8;
+extern u32 gGameTampered;
 u32 D_803000E0[] = {
     0xDA041370, 0x5206ECBC, 0xD9BDE3B8, 0xDA1CECB0,
     0xF1B9E2E6, 0xD9BFECB8, 0xDA17ECB0, 0x7076ECA8,
@@ -34,8 +34,8 @@ void tamper_check_ovl20(void) {
 
     osWritebackDCache(&D_80300170, 0xC0);
     osInvalICache(&D_80300170, 0xC0);
-    D_800D6EC8 = 0;
+    gGameTampered = 0;
     if ((*func_80300170)() == 0) {
-        D_800D6EC8 = 1;
+        gGameTampered = 1;
     }
 }

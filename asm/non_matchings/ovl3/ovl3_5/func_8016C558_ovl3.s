@@ -266,8 +266,8 @@ glabel func_8016C558_ovl3
 /* 0CD378 8016C938 018B6021 */  addu  $t4, $t4, $t3
 /* 0CD37C 8016C93C 8D8C8920 */ lw $t4, %lo(D_800E8920)($t4)
 /* 0CD380 8016C940 1180000F */  beqz  $t4, .L8016C980_ovl3
-/* 0CD384 8016C944 3C0D800D */   lui   $t5, %hi(D_800D6EC8) # $t5, 0x800d
-/* 0CD388 8016C948 8DAD6EC8 */  lw    $t5, %lo(D_800D6EC8)($t5)
+/* 0CD384 8016C944 3C0D800D */   lui   $t5, %hi(gGameTampered) # $t5, 0x800d
+/* 0CD388 8016C948 8DAD6EC8 */  lw    $t5, %lo(gGameTampered)($t5)
 /* 0CD38C 8016C94C 240F00F0 */  li    $t7, 240
 /* 0CD390 8016C950 51A0000A */  beql  $t5, $zero, .L8016C97C_ovl3
 /* 0CD394 8016C954 ACEF001C */   sw    $t7, 0x1c($a3)

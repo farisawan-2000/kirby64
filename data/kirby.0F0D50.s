@@ -19680,6 +19680,8 @@ glabel D_80196988
 glabel D_8019698C
 .word 0x00000000
 
+# kirby.cc .data
+
 glabel D_80196990
 .word 0x8016CA8C
 

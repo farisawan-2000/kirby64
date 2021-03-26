@@ -164,7 +164,7 @@ void func_800A2C80(void) {
     func_80020CC4_ovl1(0x7800);
     func_800A41B0(0x3F800000);
     func_80004674_ovl1(0x10, 2);
-    D_800D6EC8 = 0;
+    gGameTampered = 0;
     func_800BB418();
 }
 #else

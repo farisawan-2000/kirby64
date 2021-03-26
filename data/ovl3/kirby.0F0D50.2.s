@@ -913,29 +913,13 @@ glabel D_801972C8
 glabel D_801972CC
 .word 0x00000000
 
+.balign 4
 glabel D_801972D0
 .asciiz "No MapIn Action Number[kirby.cc]:%d\n"
 
+.balign 4
 glabel D_801972F8
-.word 0x506F6C65
-
-glabel D_801972FC
-.word 0x20446F6F
-
-glabel D_80197300
-.word 0x72204572
-
-glabel D_80197304
-.word 0x726F7221
-
-glabel D_80197308
-.word 0x5B6B6972
-
-glabel D_8019730C
-.word 0x62792E63
-
-glabel D_80197310
-.word 0x635D0A00
+.asciiz "Pole Door Error![kirby.cc]\n"
 
 glabel D_80197314
 .word 0x8016C1EC

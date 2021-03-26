@@ -591,13 +591,6 @@ extern s32 D_8012EADC;
 extern s32 D_8012EAE0;
 extern f32 gKirbyHp;
 extern s32 D_800D6E54;
-extern struct {
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-} D_80198830;
 
 void func_800F88C8(s32, s32, f32);
 // some sort of init_kirby function?
