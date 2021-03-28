@@ -40909,11 +40909,11 @@ glabel func_80181DF8_ovl5
 /* 129288 80181E18 0018C880 */  sll   $t9, $t8, 2
 /* 12928C 80181E1C 00390821 */  addu  $at, $at, $t9
 /* 129290 80181E20 25CE1E58 */  addiu $t6, %lo(D_80181E58) # addiu $t6, $t6, 0x1e58
-/* 129294 80181E24 3C048019 */  lui   $a0, %hi(D_8018A104_ovl5) # $a0, 0x8019
+/* 129294 80181E24 3C048019 */  lui   $a0, %hi(sKirbyHeadphoneModel) # $a0, 0x8019
 /* 129298 80181E28 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 12929C 80181E2C AC2EF150 */ sw $t6, %lo(D_800DF150)($at)
 /* 1292A0 80181E30 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
-/* 1292A4 80181E34 8C84A104 */  lw    $a0, %lo(D_8018A104_ovl5)($a0)
+/* 1292A4 80181E34 8C84A104 */  lw    $a0, %lo(sKirbyHeadphoneModel)($a0)
 /* 1292A8 80181E38 0C02A619 */  jal   func_800A9864
 /* 1292AC 80181E3C 24060010 */   li    $a2, 16
 /* 1292B0 80181E40 0C02BE85 */  jal   func_800AFA14

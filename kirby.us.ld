@@ -415,6 +415,8 @@ SECTIONS
         BUILD_DIR/data/ovl3/kirby.o(.data*);
         BUILD_DIR/data/ovl3/kirby.0F0D50.1.o(.data*);
         BUILD_DIR/data/ovl3/kirby.0F0D50.2.o(.data*);
+        BUILD_DIR/src/ovl3/ovl3_5.o(.rodata*);
+        BUILD_DIR/data/ovl3/kirby_rodata.o(.rodata*);
     }
     END_SEG(ovl3Data)
     BEGIN_NOLOAD(ovl3) {

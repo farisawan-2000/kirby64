@@ -12578,8 +12578,9 @@ glabel D_8018A0FC_ovl5
 glabel D_8018A100_ovl5
 .word 0x000300B5
 
-glabel D_8018A104_ovl5
-.word 0x00030004
+
+glabel sKirbyHeadphoneModel
+MODEL_KIRBY_HEADPHONES
 
 glabel D_8018A108_ovl5
 .word 0x00030002

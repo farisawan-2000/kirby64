@@ -56,26 +56,8 @@ struct ObjThreadStack_C {
 
 struct GObjThreadStack {
     struct GObjThreadStack *unk0;
-    
-    // Could these be ObjThreads instead?
     struct GObjThreadStack *unk4;
-    // OSThread?
-    struct GObjThreadStack *unk8;
-    // Pointer to something (potentially GObjThreadStack)
-    struct ObjThreadStack_C *unkC;
-    // some sort of index?
-    u32 unk10;
-    u8 unk14;
-    u8 unk15;
-    u16 unk16;
-    struct UnkStruct8004A7C4 *unk18; // TODO: rename to something
-    struct GObjThread *objThread;
-    void (*func)(struct UnkStruct8004A7C4 *);
-    // from debug strings
-    u32 *ptr;
-
-    // TODO: why was this 9 long?
-    // u32 pad[9];
+    struct ObjStack *unk8;
 };
 
 struct GObjProcess {

@@ -1444,7 +1444,9 @@ u32 D_8015AB68 = 0x029A029A;
 
 u32 D_8015AB6C = 0x00000000;
 
-u32 D_8015AB70 = 0x00030004;
+// bank 3 index 4 texture
+u32 sMenuLevelPercentImage = 0x00030004;
+
 
 u32 D_8015AB74 = 0x00000001;
 

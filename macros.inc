@@ -19,3 +19,8 @@
 	.half \bank
 	.half \index
 .endm
+
+.macro MODEL_KIRBY_HEADPHONES
+	BANK_INDEX 3, 4
+.endm
+

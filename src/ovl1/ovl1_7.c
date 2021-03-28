@@ -1147,7 +1147,7 @@ struct UnkStruct8004A7C4 *func_800B18B4(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B18B4.s")
 #endif
 
-extern struct GObjThreadStack *D_8004A7D0;
+extern struct GObjProcess *D_8004A7D0;
 void func_800A9D64(u16);
 void func_800A99E4(u32);
 
@@ -1159,7 +1159,7 @@ void func_800B1900(u16 arg0) {
     func_800A99E4(arg0);
     if (temp_t7 == D_8004A7C4) {
         func_800AE138(D_8004A7C4->objId);
-        if (D_8004A7D0->unk14 == 0) {
+        if (D_8004A7D0->kind == 0) {
             func_8000A29C_ovl1(D_8004A7C4);
             func_8000B6BC(1);
             return;

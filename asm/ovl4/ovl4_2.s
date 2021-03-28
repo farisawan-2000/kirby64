@@ -5240,8 +5240,8 @@
 /* 0FDFB0 80156A80 24060016 */  li    $a2, 22
 /* 0FDFB4 80156A84 0C00297F */  jal   func_8000A5FC_ovl4
 /* 0FDFB8 80156A88 3C078000 */   lui   $a3, 0x8000
-/* 0FDFBC 80156A8C 3C058016 */  lui   $a1, %hi(D_8015AB70) # $a1, 0x8016
-/* 0FDFC0 80156A90 24A5AB70 */  addiu $a1, %lo(D_8015AB70) # addiu $a1, $a1, -0x5490
+/* 0FDFBC 80156A8C 3C058016 */  lui   $a1, %hi(sMenuLevelPercentImage) # $a1, 0x8016
+/* 0FDFC0 80156A90 24A5AB70 */  addiu $a1, %lo(sMenuLevelPercentImage) # addiu $a1, $a1, -0x5490
 /* 0FDFC4 80156A94 0C0571D0 */  jal   func_8015C740_ovl4
 /* 0FDFC8 80156A98 02002025 */   move  $a0, $s0
 /* 0FDFCC 80156A9C 3C040003 */  lui   $a0, (0x00030001 >> 16) # lui $a0, 3

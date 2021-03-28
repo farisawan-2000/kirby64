@@ -176,18 +176,17 @@ struct KirbyState {
     u32 isHoldingEntity;		// 0xAC
     u8 isInhaling;				// 0xB0
     u8 isInhalingBlock;			// 0xB1
-    u8 unkB2;
-    u8 numberInhaling;			// 0xB3
-    u16 numberInhaled;			// 0xB4
+    s16 numberInhaling;			// 0xB2
+    s16 numberInhaled;			// 0xB4
     u16 unkB6;
     u8 unkB8;
     u8 unkB9;
     u16 unkBA;
-    u32 unkBC;
-    u32 unkC0;
-    u32 unkC4;
-    u32 unkC8;
-    u32 unkCC;
+    f32 unkBC;
+    f32 unkC0;
+    f32 unkC4;
+    f32 unkC8;
+    f32 unkCC;
     u16 jumpHeight;				// 0xD0
     u16 isFullJump;				// 0xD2
     s16 damageType;				// 0xD4
