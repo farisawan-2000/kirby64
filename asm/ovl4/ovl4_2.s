@@ -4641,8 +4641,8 @@
 /* 0FD6D8 801561A8 24060016 */  li    $a2, 22
 /* 0FD6DC 801561AC 0C00297F */  jal   func_8000A5FC_ovl4
 /* 0FD6E0 801561B0 3C078000 */   lui   $a3, 0x8000
-/* 0FD6E4 801561B4 3C058016 */  lui   $a1, %hi(D_8015AB50) # $a1, 0x8016
-/* 0FD6E8 801561B8 24A5AB50 */  addiu $a1, %lo(D_8015AB50) # addiu $a1, $a1, -0x54b0
+/* 0FD6E4 801561B4 3C058016 */  lui   $a1, %hi(sFileSelectBackgroundImage) # $a1, 0x8016
+/* 0FD6E8 801561B8 24A5AB50 */  addiu $a1, %lo(sFileSelectBackgroundImage) # addiu $a1, $a1, -0x54b0
 /* 0FD6EC 801561BC 0C0571D0 */  jal   func_8015C740_ovl4
 /* 0FD6F0 801561C0 8FA40020 */   lw    $a0, 0x20($sp)
 /* 0FD6F4 801561C4 0C02BE85 */  jal   func_800AFA14

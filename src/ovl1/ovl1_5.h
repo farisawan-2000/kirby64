@@ -37,8 +37,8 @@ struct UnkStruct800AC954 {
 
     u16 unk1C;
     u16 unk1E;
-    f32 unk20;
-    f32 unk24;
+    f32 xOffset;
+    f32 yOffset;
     f32 unk28;
     f32 unk2C;
     f32 unk30;

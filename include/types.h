@@ -74,6 +74,18 @@ struct Entity {
    /* 0x20  */ Vec3f scale;
 };
 
+#define NO_COL 0x29A
+// some sort of image desciptor
+struct UnkStruct8015C740 {
+    s32 image;
+    s32 mode; // how func_800AC954 will handle the image
+    f32 xOffset;
+    f32 yOffset;
+    u16 primColor[3];
+    u16 envColor[3];
+    u8 flags;
+};
+
 // technically everything in this struct is a void *, but it's so much easier this way
 struct BankHeader {
     /* 0x0  */ u32 *geoBlockTable;

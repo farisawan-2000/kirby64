@@ -8,38 +8,30 @@
 
 struct UnkStruct800AC954 *func_800AC954(s32, s32, s32);
 
-struct UnkStruct8015C740 {
-    s32 unk0;
-    s32 unk4;
-    f32 unk8;
-    f32 unkC;
-    u16 unk10[3];
-    u16 unk16[3];
-    u8 unk1C;
-};
+
 extern const char D_8018D450_ovl5[];
 
 struct UnkStruct800AC954 *func_8015C740_ovl5(s32 arg0, struct UnkStruct8015C740 *arg1) {
     struct UnkStruct800AC954 *temp_v0; 
 
-    temp_v0 = func_800AC954(arg0, arg1->unk4, func_800A8C40(arg1->unk0));
+    temp_v0 = func_800AC954(arg0, arg1->mode, func_800A8C40(arg1->image));
     if (temp_v0 == NULL) {
         fatal_printf(D_8018D450_ovl5); // "Can't get spobj in mglib\n"
         while (1);
     }
-    temp_v0->unk20 = arg1->unk8;
-    temp_v0->unk24 = arg1->unkC;
-    if (arg1->unk10[0] != 0x29A) {
-        temp_v0->primColorRed = arg1->unk10[0];
-        temp_v0->primColorGreen = arg1->unk10[1];
-        temp_v0->primColorBlue = arg1->unk10[2];
+    temp_v0->xOffset = arg1->xOffset;
+    temp_v0->yOffset = arg1->yOffset;
+    if (arg1->primColor[0] != 0x29A) {
+        temp_v0->primColorRed = arg1->primColor[0];
+        temp_v0->primColorGreen = arg1->primColor[1];
+        temp_v0->primColorBlue = arg1->primColor[2];
     }
-    if (arg1->unk16[0] != 0x29A) {
-        temp_v0->envColorRed = arg1->unk16[0];
-        temp_v0->envColorGreen = arg1->unk16[1];
-        temp_v0->envColorBlue = arg1->unk16[2];
+    if (arg1->envColor[0] != 0x29A) {
+        temp_v0->envColorRed = arg1->envColor[0];
+        temp_v0->envColorGreen = arg1->envColor[1];
+        temp_v0->envColorBlue = arg1->envColor[2];
     }
-    temp_v0->renderFlags |= arg1->unk1C;
+    temp_v0->renderFlags |= arg1->flags;
     return temp_v0;
 }
 
