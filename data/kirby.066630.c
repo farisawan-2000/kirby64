@@ -1,5 +1,6 @@
 #include "types.h"
 #include "segments.h"
+
  
 u32 D_800BE3E0 = 0x00000000;
 
@@ -239,8 +240,6 @@ u32 D_800BE5C4 = 0xBFF08004;
 u32 D_800BE5C8 = 0xBFF08000;
 
 u32 D_800BE5CC = 0xA4600010;
-
-
 
 struct Overlay D_800BE5D0[20] = {
 	{
@@ -4109,7 +4108,7 @@ u32 D_800C052C = 0x0116014C;
 
 u16 D_800C0530[2] = {0x003F, 0x0276};
 
-u8 D_800C0534[][0x18] = {
+u8 sMusicNames[][0x18] = {
 	"001K4BOSS1             ",
     "002K4BOSS2             ",
     "060K4BOSS3             ",
@@ -4175,7 +4174,7 @@ u8 D_800C0534[][0x18] = {
     "058ZZZZ                ",
 };
 
-u8 D_800C0B1C[][0x18] = {
+u8 sSoundNames[][0x18] = {
     "0011UP1                ",
     "0021UP1SUB1            ",
     "0031UP1SUB2            ",

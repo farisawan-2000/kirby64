@@ -1360,7 +1360,7 @@ glabel func_801DC460_ovl17
 /* 2277D8 801DC5E8 0C029D9E */  jal   play_sound
 /* 2277DC 801DC5EC 240400D8 */   li    $a0, 216
 /* 2277E0 801DC5F0 00002025 */  move  $a0, $zero
-/* 2277E4 801DC5F4 0C029D6C */  jal   func_800A75B0
+/* 2277E4 801DC5F4 0C029D6C */  jal   play_music
 /* 2277E8 801DC5F8 24050005 */   li    $a1, 5
 /* 2277EC 801DC5FC 0C0771C9 */  jal   func_801DC724_ovl17
 /* 2277F0 801DC600 00000000 */   nop   

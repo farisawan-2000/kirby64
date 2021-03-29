@@ -174,7 +174,7 @@ loop_15:
     if ((temp_v0_5 >= 3) && (temp_v0_5 != 4)) {
         phi_a1_2 = 0;
     }
-    func_800A75B0(0, phi_a1_2);
+    play_music(0, phi_a1_2);
     if (func_800F8560() == 2) {
         func_800BB98C(2, 0);
         return;

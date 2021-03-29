@@ -302,10 +302,10 @@ glabel D_800D6B44
 glabel D_800D6B48
 .word 0x00000000
 
-glabel D_800D6B4C
+glabel sMusicCount
 .word 0x00000000
 
-glabel D_800D6B50
+glabel sSoundCount
 .word 0x00000000
 
 glabel D_800D6B54

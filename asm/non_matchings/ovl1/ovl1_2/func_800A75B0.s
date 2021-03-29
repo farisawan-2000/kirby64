@@ -1,4 +1,4 @@
-glabel func_800A75B0
+glabel play_music
 /* 04F800 800A75B0 3C03800D */  lui   $v1, %hi(D_800D6B44) # $v1, 0x800d
 /* 04F804 800A75B4 24636B44 */  addiu $v1, %lo(D_800D6B44) # addiu $v1, $v1, 0x6b44
 /* 04F808 800A75B8 8C6E0000 */  lw    $t6, ($v1)

@@ -205,7 +205,7 @@ glabel func_800F64B0
 /* 07F20C 800F679C 00000000 */   nop   
 /* 07F210 800F67A0 00002825 */  move  $a1, $zero
 .L800F67A4_ovl2:
-/* 07F214 800F67A4 0C029D6C */  jal   func_800A75B0
+/* 07F214 800F67A4 0C029D6C */  jal   play_music
 /* 07F218 800F67A8 00002025 */   move  $a0, $zero
 /* 07F21C 800F67AC 0C03E158 */  jal   func_800F8560
 /* 07F220 800F67B0 00000000 */   nop   

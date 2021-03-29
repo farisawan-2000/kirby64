@@ -33,7 +33,7 @@ glabel func_80121D3C
 /* 0AA828 80121DB8 8D086B54 */  lw    $t0, %lo(D_800D6B54)($t0)
 /* 0AA82C 80121DBC 55000051 */  bnezl $t0, .L80121F04_ovl2
 /* 0AA830 80121DC0 8FBF001C */   lw    $ra, 0x1c($sp)
-/* 0AA834 80121DC4 0C029D6C */  jal   func_800A75B0
+/* 0AA834 80121DC4 0C029D6C */  jal   play_music
 /* 0AA838 80121DC8 00002025 */   move  $a0, $zero
 /* 0AA83C 80121DCC 3C098000 */  lui   $t1, 0x8000
 /* 0AA840 80121DD0 1000004B */  b     .L80121F00_ovl2
@@ -78,7 +78,7 @@ glabel func_80121D3C
 /* 0AA8D4 80121E64 0C02ED1A */  jal   func_800BB468
 /* 0AA8D8 80121E68 AE0F0054 */   sw    $t7, 0x54($s0)
 /* 0AA8DC 80121E6C 00002025 */  move  $a0, $zero
-/* 0AA8E0 80121E70 0C029D6C */  jal   func_800A75B0
+/* 0AA8E0 80121E70 0C029D6C */  jal   play_music
 /* 0AA8E4 80121E74 2405001F */   li    $a1, 31
 /* 0AA8E8 80121E78 24040001 */  li    $a0, 1
 /* 0AA8EC 80121E7C 24050001 */  li    $a1, 1

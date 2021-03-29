@@ -3052,7 +3052,7 @@ glabel func_80185D1C_ovl5
 /* 12D1D8 80185D68 0C02A1C9 */  jal   func_800A8724
 /* 12D1DC 80185D6C 00002025 */   move  $a0, $zero
 /* 12D1E0 80185D70 00002025 */  move  $a0, $zero
-/* 12D1E4 80185D74 0C029D6C */  jal   func_800A75B0
+/* 12D1E4 80185D74 0C029D6C */  jal   play_music
 /* 12D1E8 80185D78 2405003B */   li    $a1, 59
 /* 12D1EC 80185D7C 0C029AF0 */  jal   func_800A6BC0
 /* 12D1F0 80185D80 2404000A */   li    $a0, 10

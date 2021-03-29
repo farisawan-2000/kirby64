@@ -288,17 +288,17 @@ void func_800A74B0(void) {
     while (func_80020EB4_ovl1() != 0);
 }
 
-extern u32 D_800D6B4C, D_800D6B50;
+extern u32 sMusicCount, sSoundCount;
 extern u16 D_800C0530[2];
 // regalloc moment
 #ifdef NON_MATCHING
 void func_800A74D8(void) {
     func_80020C88_ovl1();
-    func_800A75B0(0, 0x99999999);
+    play_music(0, 0x99999999);
     while (func_80020BB8_ovl1(0) != 0);
     func_80020998_ovl1(0, 0x7800);
-    D_800D6B4C = D_800C0530[0] - 1;
-    D_800D6B50 = D_800C0530[1];
+    sMusicCount = D_800C0530[0] - 1;
+    sSoundCount = D_800C0530[1];
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A74D8.s")
@@ -307,10 +307,10 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A74D8.s")
 #ifdef MIPS_TO_C
 void *func_800A7554(void) {
     func_80020C88_ovl1();
-    func_800A75B0(0, 0x99999999);
+    play_music(0, 0x99999999);
     func_80020998_ovl1(0, 0x7800);
-    D_800D6B4C = D_800C0530.unk0 - 1;
-    D_800D6B50 = D_800C0530.unk2;
+    sMusicCount = D_800C0530.unk0 - 1;
+    sSoundCount = D_800C0530.unk2;
     return &D_800C0530;
 }
 #else
@@ -318,7 +318,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7554.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_800A75B0(s32 arg1) {
+? play_music(s32 arg1) {
     s16 temp_v0;
 
     if (arg1 == D_800D6B44) {
@@ -369,43 +369,26 @@ void play_sound(s32 arg0) {
     print_error_stub(&D_800D5D14, arg0); // "Error: No Entry FGM Number: %d\n"
 }
 
-#ifdef MIPS_TO_C
-s32 func_800A7704(void *arg0) {
-    return (arg0->unk2 + (arg0->unk0 * 0x64) + (arg0->unk1 * 0xA)) - 0x14D0;
+s32 sound_str_atoi(u8 *str) {
+    return ((str[0] * 100) + (str[1] * 10) + (str[2] * 1))
+         - ((   '0' * 100) + (   '0' * 10) + (   '0' * 1));
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7704.s")
-#endif
 
-#ifdef MIPS_TO_C
-? func_800A7740(s32 arg0) {
-    if (arg0 < 0) {
-block_2:
+extern u8 sMusicNames[][0x18];
+s32 get_music_id_from_index(s32 idx) {
+    if (idx < 0 || idx >= sMusicCount) {
         return -1;
     }
-    if (arg0 >= D_800D6B4C) {
-        goto block_2;
-    }
-    return func_800A7704((arg0 * 0x18) + &D_800C0534, arg0);
+    return sound_str_atoi(sMusicNames[idx]);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7740.s")
-#endif
 
-#ifdef MIPS_TO_C
-? func_800A7794(s32 arg0) {
-    if (arg0 < 0) {
-block_2:
+extern u8 sSoundNames[][0x18];
+s32 get_sound_id_from_index(s32 idx) {
+    if (idx < 0 || idx >= sSoundCount) {
         return -1;
     }
-    if (arg0 >= D_800D6B50) {
-        goto block_2;
-    }
-    return func_800A7704((arg0 * 0x18) + &D_800C0B1C, arg0);
+    return sound_str_atoi(sSoundNames[idx]);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7794.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800A77E8(s32 arg0, void *arg1, void *arg2) {

@@ -1098,7 +1098,7 @@ glabel func_801DE850_ovl17
 /* 229B3C 801DE94C 00000000 */   nop   
 /* 229B40 801DE950 3C059999 */  lui   $a1, (0x99999999 >> 16) # lui $a1, 0x9999
 /* 229B44 801DE954 34A59999 */  ori   $a1, (0x99999999 & 0xFFFF) # ori $a1, $a1, 0x9999
-/* 229B48 801DE958 0C029D6C */  jal   func_800A75B0
+/* 229B48 801DE958 0C029D6C */  jal   play_music
 /* 229B4C 801DE95C 00002025 */   move  $a0, $zero
 /* 229B50 801DE960 0C002DAF */  jal   func_8000B6BC
 /* 229B54 801DE964 240400FA */   li    $a0, 250

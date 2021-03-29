@@ -1,7 +1,7 @@
 glabel func_800AFBEC
 /* 057E3C 800AFBEC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 057E40 800AFBF0 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 057E44 800AFBF4 0C029D6C */  jal   func_800A75B0
+/* 057E44 800AFBF4 0C029D6C */  jal   play_music
 /* 057E48 800AFBF8 AFA60020 */   sw    $a2, 0x20($sp)
 /* 057E4C 800AFBFC 8FA40020 */  lw    $a0, 0x20($sp)
 /* 057E50 800AFC00 50800004 */  beql  $a0, $zero, .L800AFC14_ovl1

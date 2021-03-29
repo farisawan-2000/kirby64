@@ -461,7 +461,7 @@ void func_801598C4_ovl4(void) {
     func_800A8724(0);
     func_800A7A40();
     func_80159828_ovl4();
-    func_800A75B0(0, 0x25);
+    play_music(0, 0x25);
     func_800A6BC0(0xB);
     *(&D_800E98E0 + (func_800AEA64(2, 0, 0x70) * 4)) = 0;
     *(&D_800E98E0 + (func_800AEC08(2, 0, 0x70) * 4)) = 1;
@@ -509,7 +509,7 @@ void func_80159B68_ovl4(s32 arg0) {
     func_800A9864(0x300B7, 0x1869F, 0x10);
     D_8015C720 = 2;
     func_8000B6BC(0x1E);
-    func_800A75B0(0, 0x17);
+    play_music(0, 0x17);
     func_800AFA14();
 }
 #else

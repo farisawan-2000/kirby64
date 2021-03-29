@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "types.h"
+#include "sounds.h"
 #include "stages.h"
 #include "buffers.h"
 
@@ -900,14 +901,14 @@ void func_8016DDE8_ovl3(struct UnkStruct8004A7C4 *arg0) {
         phi_v0 = 1;
     }
     if (phi_v0 != 0) {
-        play_sound(0x10B);
+        play_sound(SOUND_OYOGI1);
         temp_v0_2 = D_8004A7C4;
         gKirbyState.unkCC = 4.0f;
         D_800E3210[temp_v0_2->objId] = 8.5f;
         D_800E3750[temp_v0_2->objId] = D_8019735C;
         D_800E3C90[temp_v0_2->objId] = 8.5f;
     } else {
-        play_sound(0xF7);
+        play_sound(SOUND_MYJUMP1);
         gKirbyState.unkCC = 8.0f;
         temp_v0_3 = D_8004A7C4;
         D_800E3210[temp_v0_3->objId] = func_80123144(0x41880000);
@@ -1295,100 +1296,70 @@ loop_26:
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_8016E8A0_ovl3.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8016EE5C_ovl3(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v1;
-    u32 temp_v0;
-    u32 temp_v0_2;
-    u32 temp_v0_3;
-    u32 temp_v0_4;
+s32 func_80111A04(s32, s32);
 
-    temp_v0 = D_8004A7C4->objId;
-    if (((bitwise f32) gKirbyState.unkCC < D_800E3210[temp_v0]) && (gKirbyState.unk4 == 0)) {
-        func_80111C4C(func_80111A04(&D_80190F2C, temp_v0));
+void func_8016EE5C_ovl3(struct UnkStruct8004A7C4 *arg0) {
+    if ((gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) && (gKirbyState.unk4 == 0)) {
+        func_80111C4C(func_80111A04(&D_80190F2C, D_8004A7C4->objId));
     }
-    if ((D_800D6FE8.buttonHeld & 0x8000) != 0) {
-        temp_v1 = D_8004A7C4;
-        temp_v0_2 = temp_v1->objId;
-        D_800E64D0[temp_v0_2] = D_800EA8A0[temp_v0_2];
-        temp_v0_3 = temp_v1->objId;
-        D_800E6690[temp_v0_3] = D_800EAA60[temp_v0_3];
-        temp_v0_4 = temp_v1->objId;
-        D_800E6850[temp_v0_4] = D_800EAC20[temp_v0_4];
+    if (D_800D6FE8.buttonHeld & 0x8000) {
+        D_800E64D0[D_8004A7C4->objId] = D_800EA8A0[D_8004A7C4->objId];
+        D_800E6690[D_8004A7C4->objId] = D_800EAA60[D_8004A7C4->objId];
+        D_800E6850[D_8004A7C4->objId] = D_800EAC20[D_8004A7C4->objId];
         set_kirby_action_1(3, 5);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_8016EE5C_ovl3.s")
-#endif
 
-#ifdef MIPS_TO_C
+extern f32 D_8019737C, D_80197380;
+s32 func_800AA888(s32);
+
+// regalloc
+// this file sucks
+#ifdef NON_MATCHING
 void func_8016EF5C_ovl3(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    u32 temp_v1;
-    u8 temp_a0;
-    u8 phi_a0;
-
     func_8011CF58();
-    temp_v0 = D_8004A7C4;
-    D_800DDFD0[temp_v0->objId] = 5;
-    temp_a0 = gKirbyState.unk4;
-    if (temp_a0 == 1) {
-        D_800E0490[temp_v0->objId] = &D_80192704;
-    } else {
-        D_800E0490[temp_v0->objId] = &D_801926E8;
-    }
-    if (temp_a0 == 1) {
-        gKirbyState.unk15C = &D_801903E0;
-    } else {
-        gKirbyState.unk15C = &D_80190358;
-    }
-    D_800E83E0[temp_v0->objId] = 0;
-    D_800E9560[temp_v0->objId] = 0;
-    D_800E9720[temp_v0->objId] = 0x17;
-    temp_v1 = temp_v0->objId;
-    if ((D_800E8AE0[temp_v1] & 6) != 0) {
+    D_800DDFD0[D_8004A7C4->objId] = 5;
+    D_800E0490[D_8004A7C4->objId] = (gKirbyState.unk4 == 1) ? &D_80192704 : &D_801926E8;
+    gKirbyState.unk15C = (gKirbyState.unk4 == 1) ? &D_801903E0 : &D_80190358;
+    D_800E83E0[D_8004A7C4->objId] = 0;
+    D_800E9560[D_8004A7C4->objId] = 0;
+    D_800E9720[D_8004A7C4->objId] = 0x17;
+    if ((D_800E8AE0[D_8004A7C4->objId] & 6) != 0) {
         func_80120A28();
-        temp_v0_2 = D_8004A7C4;
-        D_800E3750[temp_v0_2->objId] = D_8019737C;
-        D_800E3C90[temp_v0_2->objId] = 1.0f;
-        phi_a0 = D_8012E7C4;
+        D_800E3750[D_8004A7C4->objId] = D_8019737C;
+        D_800E3C90[D_8004A7C4->objId] = 1.0f;
     } else {
-        D_800E3750[temp_v1] = D_80193750.unk7380;
-        D_800E3C90[temp_v0->objId] = 16.0f;
-        phi_a0 = temp_a0;
+        D_800E3750[D_8004A7C4->objId] = D_80197380;
+        D_800E3C90[D_8004A7C4->objId] = 16.0f;
     }
-    if (phi_a0 != 0) {
-        if (phi_a0 != 1) {
-            if (phi_a0 != 2) {
-
-            } else {
-                if (func_800AA888(0x20007, 1) == 0) {
-                    func_80122F08(0x20007);
-                }
-                if (D_8012E7C6 == 0x1B) {
-                    func_800AA78C(0x200C1, 0x20007, 12.0f);
-                }
-                func_801230E8(0x200C1, 0x200C2, 0);
+    switch (gKirbyState.unk4) {
+        case 0:
+            if (func_800AA888(0x20007) == 0) {
+                func_80122F08(0x20007);
             }
-        } else {
-            if (func_800AA888(0x20009, 1) == 0) {
+            if (gKirbyState.previousAction == 0x1B) {
+                func_800AA78C(0x20089, 0x20007, 12.0f);
+            }
+            func_801230E8(0x20089, 0x2008A, 0);
+            break;
+        case 1:
+            if (func_800AA888(0x20009) == 0) {
                 func_80122F08(0x20009);
             }
-            if (D_8012E7C6 == 0x1B) {
+            if (gKirbyState.previousAction == 0x1B) {
                 func_800AA78C(0x20165, 0x20009, 12.0f);
             }
             func_801230E8(0x20165, 0x20166, 0);
-        }
-    } else {
-        if (func_800AA888(0x20007, 1) == 0) {
-            func_80122F08(0x20007);
-        }
-        if (D_8012E7C6 == 0x1B) {
-            func_800AA78C(0x20089, 0x20007, 12.0f);
-        }
-        func_801230E8(0x20089, 0x2008A, 0);
+            break;
+        case 2:
+            if (func_800AA888(0x20007) == 0) {
+                func_80122F08(0x20007);
+            }
+            if (gKirbyState.previousAction == 0x1B) {
+                func_800AA78C(0x200C1, 0x20007, 12.0f);
+            }
+            func_801230E8(0x200C1, 0x200C2, 0);
+            break;
     }
     func_800AFA14();
 }
@@ -10017,19 +9988,18 @@ the instruction, which has a name starting with "jtbl"/"jpt_".
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_8018E608_ovl3.s")
 #endif
 
-
 void func_8018F2B4_ovl3(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     if (arg1 == 0 && arg2 != 0.0f) {
         if (D_800E8AE0[D_8004A7C4->objId] & 7) {
             if ((D_800E8AE0[D_8004A7C4->objId] & 2)) {
-                play_sound(0x10C);
+                play_sound(SOUND_OYOGIWALK1);
             }
-            else play_sound(9);
+            else play_sound(SOUND_ASIOTOMIZU1);
         }
         else if (gKirbyState.unk7 == 1) {
-            play_sound(0x267);
+            play_sound(SOUND_ASIOTO1D);
         }
-        else play_sound(5);
+        else play_sound(SOUND_ASIOTO1);
     }
 }
 

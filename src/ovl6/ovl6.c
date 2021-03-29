@@ -1081,8 +1081,8 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153AA8.s")
 
 #ifdef MIPS_TO_C
 void func_80153AF8(void) {
-    func_800A75B0(0, 0x99999999);
-    func_800A75B0(0, D_8015A560->listIndex);
+    play_music(0, 0x99999999);
+    play_music(0, D_8015A560->listIndex);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl6/func_80153AF8.s")

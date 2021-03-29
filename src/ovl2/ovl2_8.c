@@ -802,7 +802,7 @@ void func_8011D40C(void) {
         func_800FA414(6);
         D_800D708C = D_801290D8->unk14;
         func_80020998_ovl2(0, 0x7800);
-        func_800A75B0(0, 5);
+        play_music(0, 5);
     }
 }
 
@@ -2418,7 +2418,7 @@ void func_80121D3C(void) {
             func_800A22D4(gKirbyState.unk6C);
             temp_a1 = gKirbyState.unk54;
             if ((temp_a1 != 0x80000000) && (D_800D6B54 == 0)) {
-                func_800A75B0(0, temp_a1);
+                play_music(0, temp_a1);
                 gKirbyState.unk54 = 0x80000000;
                 return;
             }
@@ -2427,7 +2427,7 @@ void func_80121D3C(void) {
             gKirbyState.unk6A = 0x258;
             gKirbyState.unk54 = D_800D6B44;
             func_800BB468(4, 0x28);
-            func_800A75B0(0, 0x1F);
+            play_music(0, 0x1F);
             temp_v0_3 = func_800A8234(1, 1, 7);
             gKirbyState.unk6C = temp_v0_3;
             temp_v0_3->unk4C->unk4 = gEntitiesPosXArray[D_8004A7C4->objId];
