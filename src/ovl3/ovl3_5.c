@@ -9988,6 +9988,7 @@ the instruction, which has a name starting with "jtbl"/"jpt_".
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_8018E608_ovl3.s")
 #endif
 
+// kirby footsteps?
 void func_8018F2B4_ovl3(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     if (arg1 == 0 && arg2 != 0.0f) {
         if (D_800E8AE0[D_8004A7C4->objId] & 7) {

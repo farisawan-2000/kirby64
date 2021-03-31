@@ -57,7 +57,7 @@ glabel func_80009DF4
 /* 00AAB4 80009EB4 8E240058 */  lw    $a0, 0x58($s1)
 /* 00AAB8 80009EB8 50800004 */  beql  $a0, $zero, .L80009ECC_ovl0
 /* 00AABC 80009EBC 26100004 */   addiu $s0, $s0, 4
-/* 00AAC0 80009EC0 0C0021EB */  jal   func_800087AC
+/* 00AAC0 80009EC0 0C0021EB */  jal   push_om_mtx
 /* 00AAC4 80009EC4 00000000 */   nop   
 /* 00AAC8 80009EC8 26100004 */  addiu $s0, $s0, 4
 .L80009ECC_ovl0:

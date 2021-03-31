@@ -11077,6 +11077,7 @@ glabel D_8022AE48
 
 glabel D_8022AE4C
 .word 0x00000000
+# gobjprocess instantiator
 .word 0x8000AD88
 .word func_800A73B0
 .word _ovl19SegNoloadEnd
@@ -11094,6 +11095,7 @@ glabel D_8022AE4C
 .word 0x00000000
 .word 0x00004000
 .word 0x00000000
+# some message sender
 .word 0x8000464C
 
 .word 0x00000080

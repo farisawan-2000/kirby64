@@ -15,7 +15,7 @@ glabel func_8000A02C
 /* 00AC5C 8000A05C 8E240064 */  lw    $a0, 0x64($s1)
 /* 00AC60 8000A060 50800004 */  beql  $a0, $zero, .L8000A074_ovl0
 /* 00AC64 8000A064 26100004 */   addiu $s0, $s0, 4
-/* 00AC68 8000A068 0C0021EB */  jal   func_800087AC
+/* 00AC68 8000A068 0C0021EB */  jal   push_om_mtx
 /* 00AC6C 8000A06C 00000000 */   nop   
 /* 00AC70 8000A070 26100004 */  addiu $s0, $s0, 4
 .L8000A074_ovl0:

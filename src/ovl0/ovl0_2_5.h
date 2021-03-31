@@ -46,18 +46,10 @@ struct GObjThread
     s32 objStackSize;
 };
 
-// TODO: is this an GObjThreadStack?
-struct ObjThreadStack_C {
-    u32 unk0;
-    u32 unk4;
-    struct GObjThreadStack *unk8;
-    struct ObjThreadStack_C *unkC;
-};
-
 struct GObjThreadStack {
     struct GObjThreadStack *unk0;
     struct GObjThreadStack *unk4;
-    struct ObjStack *unk8;
+    u64 stack[8];
 };
 
 struct GObjProcess {
@@ -74,6 +66,10 @@ struct GObjProcess {
     struct GObjThread *thread;
     void (*entryPoint)(struct UnkStruct8004A7C4 *);
     u32 *ptr;
+};
+
+struct OMMtx {
+    struct OMMtx *next;
 };
 
 // TODO: is this an existing struct instead of a brand new one?

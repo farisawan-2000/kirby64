@@ -41,4 +41,7 @@
 // 		mat[0][0] = a0; \
 // }
 
+#define COMBINE_INTEGRAL(a, b) ((a & 0xffff0000 ) | ((b >> 16)))
+#define COMBINE_FRACTIONAL(a, b) ((a << 16)) | (b & 0xffff)
+
 #endif

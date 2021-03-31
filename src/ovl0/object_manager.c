@@ -92,7 +92,7 @@ struct UnkStruct8004A7C4 *gGObjHead;
 struct UnkStruct8004A7C4* D_8004A680[33]; // length 33?
 struct UnkStruct8004A7C4* D_8004A708[33]; // length 33?
 u32 D_8004A78C;
-void** D_8004A790;
+struct OMMtx *gOMMtxHead;
 u32 D_8004A794;
 void (*D_8004A798)();
 struct AnimStack *D_8004A79C;
@@ -132,7 +132,7 @@ struct GObjThread *get_gobj_thread(void) {
     return ret;
 }
 
-void func_80007FB8(struct GObjThread *arg0) {
+void push_gobj_thread(struct GObjThread *arg0) {
     arg0->unk0 = gGObjThreadHead;
     gGObjThreadHead = arg0;
     D_8004A544--;
@@ -466,23 +466,23 @@ void func_800086EC(struct UnkStruct8004A7C4 *arg0) {
 }
 
 // Another potential pop
-void *object_manager_get_om_mtx(void) {
-    void *temp_v0;
+struct OMMtx *object_manager_get_om_mtx(void) {
+    struct OMMtx *tmp;
 
-    if (D_8004A790 == 0) {
+    if (gOMMtxHead == 0) {
         fatal_printf("om : couldn't get OMMtx\n");
         while (TRUE);
     }
-    temp_v0 = D_8004A790;
-    D_8004A790 = *D_8004A790; // TODO: This is probably the first member of a struct
+    tmp = gOMMtxHead;
+    gOMMtxHead = gOMMtxHead->next;
     D_8004A794++;
-    return temp_v0;
+    return tmp;
 }
 
 // Another potential push
-void *func_800087AC(void **arg0) {
-    *arg0 = D_8004A790;
-    D_8004A790 = arg0;
+void push_om_mtx(struct OMMtx *arg0) {
+    arg0->next = gOMMtxHead;
+    gOMMtxHead = arg0;
     D_8004A794--;
 }
 
@@ -611,7 +611,7 @@ struct GObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(v
         case 0:
             oThread = get_gobj_thread();
             oProcess->thread = oThread;
-            oThread->objStack = &get_gobj_thread_stack()->unk8;
+            oThread->objStack = &get_gobj_thread_stack()->stack;
             oThread->objStackSize = gNewEntityStackSize;
             osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
@@ -652,7 +652,7 @@ struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThr
     oThread = get_gobj_thread(); oProcess->thread = oThread;
     if (stackSize == 0) {
         oProcess->kind = 0;
-        oThread->objStack = &get_gobj_thread_stack()->unk8;
+        oThread->objStack = &get_gobj_thread_stack()->stack;
         oThread->objStackSize = gNewEntityStackSize;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
         osCreateThread(&oThread->thread, phi_a1, entry, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
@@ -699,7 +699,7 @@ void func_80008DA8(struct GObjProcess *arg0) {
             case 0:
                 osDestroyThread(&arg0->thread->thread);
                 push_gobj_thread_stack(&arg0->thread->objStack->stack[0] - 1); // why???
-                func_80007FB8(arg0->thread);
+                push_gobj_thread(arg0->thread);
                 break;
             case 1:
                 break;
@@ -709,7 +709,7 @@ void func_80008DA8(struct GObjProcess *arg0) {
                 if (temp_v0_3 != 0) {
                     temp_v0_3(arg0->thread->objStack);
                 }
-                func_80007FB8(arg0->thread);
+                push_gobj_thread(arg0->thread);
         }
         func_80008210(arg0);
         push_gobj_process(arg0);
@@ -1176,7 +1176,7 @@ loop_1:
 loop_12:
     temp_a0 = phi_s1->unk58;
     if (temp_a0 != 0) {
-        func_800087AC(temp_a0);
+        push_om_mtx(temp_a0);
     }
     temp_s0_3 = phi_s0_2 + 4;
     phi_s1 = phi_s1 + 4;
@@ -1299,7 +1299,7 @@ void func_8000A02C(struct Camera *arg0) {
 loop_1:
     temp_a0 = phi_s1->unk64;
     if (temp_a0 != 0) {
-        func_800087AC(temp_a0);
+        push_om_mtx(temp_a0);
     }
     temp_s0 = phi_s0 + 4;
     phi_s1 = phi_s1 + 4;
@@ -1724,7 +1724,6 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AAE0.s")
 extern s32 D_8004A7D4;
 u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
     u32 temp_a1;
-    s32 temp_v0;
 
     D_8003DE54 = 1;
     D_8004A7C4 = arg0;
@@ -1732,9 +1731,8 @@ u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
     temp_a1 = arg0->unk4;
     D_8004A7C4 = NULL;
     D_8003DE54 = 0;
-    temp_v0 = D_8004A7D4;
-    if (temp_v0 != 0) {
-        if (temp_v0 != 2) {
+    if (D_8004A7D4 != 0) {
+        if (D_8004A7D4 != 2) {
             D_8004A7D4 = 0;
         } else {
             D_8004A7D4 = 0;
@@ -1832,68 +1830,36 @@ block_16:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AC3C.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_8000AD88(void) {
-    struct GObjProcess *temp_s0_2;
-    struct UnkStruct8004A7C4 **temp_s1;
-    struct UnkStruct8004A7C4 *temp_s0;
-    void *temp_s1_2;
-    struct UnkStruct8004A7C4 **phi_s1;
-    struct UnkStruct8004A7C4 *phi_s0;
-    struct UnkStruct8004A7C4 *phi_s0_2;
-    void *phi_s1_2;
-    struct GObjProcess *phi_s0_3;
-    struct GObjProcess *phi_s0_4;
+    s32 i;
 
     D_8004A7D4 = 0;
     D_8004A7C4 = NULL;
     D_8004A7D0 = NULL;
-    phi_s1 = D_8004A578;
-loop_1:
-    temp_s0 = *phi_s1;
-    phi_s0 = temp_s0;
-    if (temp_s0 != 0) {
-loop_2:
-        if (((phi_s0->unk44 & 0x40) == 0) && (phi_s0->unk14 != 0)) {
-            phi_s0_2 = func_8000ABAC(phi_s0);
-        } else {
-            phi_s0_2 = phi_s0->unk4;
-        }
-        phi_s0 = phi_s0_2;
-        if (phi_s0_2 != 0) {
-            goto loop_2;
+    for (i = 0; i < 32; i++) {
+        struct UnkStruct8004A7C4 *tmp = D_8004A578[i];
+
+        while (tmp != NULL) {
+            if (((tmp->unk44 & 0x40) == 0) && (tmp->unk14 != NULL)) {
+                tmp = func_8000ABAC(tmp);
+            } else {
+                tmp = tmp->unk4;
+            }
         }
     }
-    temp_s1 = phi_s1 + 4;
-    phi_s1 = temp_s1;
-    if (temp_s1 < D_8004A5F8) {
-        goto loop_1;
-    }
-    phi_s1_2 = &D_8004A56C;
-loop_9:
-    temp_s0_2 = *phi_s1_2;
-    phi_s0_3 = temp_s0_2;
-    if (temp_s0_2 != 0) {
-loop_10:
-        if (phi_s0_3->unk15 == 0) {
-            phi_s0_4 = func_8000AC3C(phi_s0_3);
-        } else {
-            phi_s0_4 = phi_s0_3->unk8;
+
+    for (i = 3; i >= 0; i--) {
+        struct GObjProcess *tmp = D_8004A560[i];
+
+        while (tmp != NULL) {
+            if (tmp->unk15 == 0) {
+                tmp = func_8000AC3C(tmp);
+            } else {
+                tmp = tmp->unk8;
+            }
         }
-        phi_s0_3 = phi_s0_4;
-        if (phi_s0_4 != 0) {
-            goto loop_10;
-        }
-    }
-    temp_s1_2 = phi_s1_2 - 4;
-    phi_s1_2 = temp_s1_2;
-    if (temp_s1_2 >= D_8004A560) {
-        goto loop_9;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AD88.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8000AE84(void *arg0) {
@@ -2079,7 +2045,7 @@ loop_23:
     D_8004A798 = arg0->unk34;
     if (arg0->unk30 != 0) {
         temp_v1_3 = arg0->unk2C;
-        D_8004A790 = temp_v1_3;
+        gOMMtxHead = temp_v1_3;
         phi_v1_5 = temp_v1_3;
         phi_a0_5 = phi_a0_12;
         phi_v1_6 = temp_v1_3;
@@ -2099,7 +2065,7 @@ loop_29:
         }
         *phi_v1_6 = 0;
     } else {
-        D_8004A790 = NULL;
+        gOMMtxHead = NULL;
         phi_a0_13 = phi_a0_12;
     }
     if (arg0->unk3C != 0) {

@@ -143,58 +143,48 @@ Vector *vec3_negate(Vector *arg0) {
 }
 
 #ifdef MIPS_TO_C
-f32 func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
-    f32 sp3C;
+void func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
+    f32 yz_dist;
     f32 sp38;
     f32 sp34;
     f32 sp2C;
     f32 temp_f0_2;
-    f32 temp_f10;
     f32 temp_f12_2;
     f32 temp_f12_3;
-    f32 temp_f16;
     f32 temp_f16_2;
     f32 temp_f16_3;
     f32 temp_f20;
     f32 temp_f22;
-    f32 temp_f22_2;
     f32 temp_f2_2;
-    f32 temp_f8;
     f32 phi_f18;
     f32 phi_f20;
 
-    sp3C = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
+    yz_dist = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
     sp2C = sinf(arg2);
     temp_f0_2 = cosf(arg2);
-    if (sp3C != 0.0f) {
-        temp_f22 = arg1->z / sp3C;
-        sp34 = arg1->y / sp3C;
-        sp38 = temp_f22;
+    if (yz_dist != 0.0f) {
+        temp_f22 = arg1->z / yz_dist;
+        sp34 = arg1->y / yz_dist;
         phi_f18 = (arg0->y * sp34) + (arg0->z * temp_f22);
         phi_f20 = (arg0->y * temp_f22) - (arg0->z * sp34);
     } else {
         phi_f18 = arg0->z;
         phi_f20 = arg0->y;
     }
-    temp_f22_2 = arg1->x;
-    temp_f16_2 = (arg0->x * sp3C) - (phi_f18 * temp_f22_2);
-    temp_f12_2 = (temp_f22_2 * arg0->x) + (phi_f18 * sp3C);
+    temp_f16_2 = (arg0->x * yz_dist) - (phi_f18 * arg1->x);
+    temp_f12_2 = (arg1->x * arg0->x) + (phi_f18 * yz_dist);
     temp_f2_2 = (temp_f16_2 * temp_f0_2) - (phi_f20 * sp2C);
     temp_f20 = (temp_f16_2 * sp2C) + (phi_f20 * temp_f0_2);
-    temp_f16_3 = (temp_f2_2 * sp3C) + (temp_f12_2 * temp_f22_2);
-    temp_f12_3 = (-temp_f2_2 * temp_f22_2) + (temp_f12_2 * sp3C);
-    if (sp3C != 0.0f) {
-        temp_f8 = temp_f20 * sp38;
-        temp_f10 = -temp_f20;
+    temp_f16_3 = (temp_f2_2 * yz_dist) + (temp_f12_2 * arg1->x);
+    temp_f12_3 = (-temp_f2_2 * arg1->x) + (temp_f12_2 * yz_dist);
+    if (yz_dist != 0.0f) {
         arg0->x = temp_f16_3;
-        arg0->y = temp_f8 + (temp_f12_3 * sp34);
-        arg0->z = (temp_f10 * sp34) + (temp_f12_3 * sp38);
-        return sp38;
+        arg0->y = (temp_f20 * temp_f22) + (temp_f12_3 * sp34);
+        arg0->z = (-temp_f20 * sp34) + (temp_f12_3 * temp_f22);
     }
     arg0->x = temp_f16_3;
     arg0->y = temp_f20;
     arg0->z = temp_f12_3;
-    return sp38;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
