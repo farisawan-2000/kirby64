@@ -2,6 +2,7 @@
 **/**/*.bin
 build/*
 tools/GeoFromBin*
+tools/level_settings/convert
 assets/**/*
 *.z64
 textures/*
