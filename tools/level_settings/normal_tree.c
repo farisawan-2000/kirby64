@@ -44,6 +44,8 @@ void write_normaltree(NormalTree *n) {
                                              n->nmlGroups[i].tri_idx
         );
     }
+    free(n->nmlGroups);
+    free(n);
 }
 
 

@@ -737,6 +737,10 @@ SECTIONS
     }
     END_SEG(bank7_other)
 
+
+    #include "assets/levels.ld"
+
+
     /DISCARD/ :
     {
         *(*);

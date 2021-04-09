@@ -838,7 +838,7 @@ extern struct {
 
 
 
-extern OSMesgQueue D_80048A08;
+extern OSMesgQueue gThreadInitializedMQ;
 
 
 #if 0
@@ -847,7 +847,7 @@ void func_800051E0(void *arg) {
 
     func_80004250();
     func_800009E8(&D_80048DC0, &D_80048DE8, D_80048DC8, 7);
-    osSendMesg(&D_80048A08, 1, OS_MESG_NOBLOCK);
+    osSendMesg(&gThreadInitializedMQ, 1, OS_MESG_NOBLOCK);
     while(1) {
         osRecvMesg(&D_80048DE8, &sp44, OS_MESG_BLOCK);
         if (sp44 == (OSMesg)1) {

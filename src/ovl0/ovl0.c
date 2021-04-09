@@ -1547,7 +1547,7 @@ loop_16:
     osSetEventMesg(4, &gInterruptMesgQueue, 2);
     osSetEventMesg(9, &gInterruptMesgQueue, 3);
     osSetEventMesg(0xE, &gInterruptMesgQueue, 0x63);
-    osSendMesg(&D_80048A08, 1, 0);
+    osSendMesg(&gThreadInitializedMQ, 1, 0);
     while (1) {
         osRecvMesg(&gInterruptMesgQueue, &sp84, 1);
         if (sp84 == 1) {

@@ -6,8 +6,25 @@
     bank_##bank##_index_##index##_geo_end = __romPos + SIZEOF(.bank_##bank##_index_##index); \
     __romPos += SIZEOF(.bank_##bank##_index_##index);
 
+#define START_MISC(bank, index) \
+    bank_##bank##_index_##index##_misc = __romPos; \
+    .bank_##bank##_index_##index_misc 0 : AT(__romPos)
+
+#define END_MISC(bank, index) \
+    bank_##bank##_index_##index##_misc_end = __romPos + SIZEOF(.bank_##bank##_index_##index_misc); \
+    __romPos += SIZEOF(.bank_##bank##_index_##index_misc);
+
+
+
 #define GEO(bank, index) \
 	START_GEO(bank, index) {\
 		BUILD_DIR/assets/geo/bank_##bank/index/block.o(.data);\
 	}\
 	END_GEO(bank, index)
+
+#define MISC(bank, index) \
+	START_GEO(bank, index) {\
+		BUILD_DIR/assets/misc/bank_##bank/index/block.o(.data);\
+	}\
+	END_GEO(bank, index)
+

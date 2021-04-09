@@ -30,24 +30,24 @@ u64 gEntryStack[ENTRY_STACK_LEN_U64]; // Stack pointer set to this by EntryPoint
 OSThread gIdleThread;
  u64 idleThreadStack[IDLE_THREAD_STACK_LEN_U64];
 
-OSThread D_80043040;
- u64 D_800431F0[0x80]; // Stack for D_80043040
-
-OSThread D_800435F0;
- u64 D_800437A0[0xC0]; // Stack for D_800435F0
-
 OSThread gMainThread;
+ u64 gThread3Stack[0x80]; // Stack for gMainThread
+
+OSThread gAudioThread;
+ u64 gThread4Stack[0xC0]; // Stack for gAudioThread
+
+OSThread gGameThread;
  u64 mainThreadStack[MAIN_THREAD_STACK_LEN_U64];
 
-OSThread D_80047F50;
- u64 D_80048100[0x100]; // Stack for D_80047F50
+OSThread gControllerThread;
+ u64 gThread6Stack[0x100]; // Stack for gControllerThread
 
-u8 D_80048900[0x100]; // Boot ucode
+u8 gRSPBootUcode[0x100]; // Boot ucode
 
 u8 gSPImemOkay;
 u8 gSPDmemOkay;
 OSMesg D_80048A04;
-OSMesgQueue D_80048A08;
+OSMesgQueue gThreadInitializedMQ;
 
 OSMesg piMesgBuffer[NUM_PI_MESSAGES];
 OSMesgQueue piMesgQueue;
@@ -59,7 +59,7 @@ extern OSPiHandle *gRomHandle;
 
 
 OSThread *unused_get_main_thread(void) {
-    return &gMainThread;
+    return &gGameThread;
 }
 
 u64 *unused_get_main_thread_stack(void) {
@@ -96,7 +96,7 @@ void func_80000510(void) {
     if (idleThreadStack[7] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(1);
     }
-    if (D_800431F0[7] != STACK_TOP_MAGIC) {
+    if (gThread3Stack[7] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(3);
     }
     if (mainThreadStack[7] != STACK_TOP_MAGIC) {
@@ -113,7 +113,7 @@ extern void thread4_audio(void *);
 extern void func_800051E0(void *);
 void dma_overlay_load(struct Overlay *);
 void func_800076D0();
-void func_800A377C(s32);
+void game_tick(s32);
 void crash_screen_start_thread();
 
 extern OSPiHandle *osCartRomInit(void);
@@ -124,34 +124,34 @@ void thread5_main(UNUSED void *arg0) {
     func_80002EBC();
     osCreatePiManager(OS_PRIORITY_PIMGR, &piMesgQueue, &piMesgBuffer[0], NUM_PI_MESSAGES);
     func_80002BA0();
-    dma_read(0xB0000B70, D_80048900, 0x100); // copy function?
+    dma_read(0xB0000B70, gRSPBootUcode, sizeof(gRSPBootUcode));
     check_sp_imem();
     check_sp_dmem();
-    osCreateMesgQueue(&D_80048A08, &D_80048A04, 1);
+    osCreateMesgQueue(&gThreadInitializedMQ, &D_80048A04, 1);
 
-    osCreateThread(&D_80043040, 3, thread3_main, NULL, &D_800431F0[0x80], 120);
-    SETUP_STACK_AND_START_THREAD(D_80043040, D_800431F0);
-    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
+    osCreateThread(&gMainThread, 3, thread3_main, NULL, &gThread3Stack[0x80], 120);
+    SETUP_STACK_AND_START_THREAD(gMainThread, gThread3Stack);
+    osRecvMesg(&gThreadInitializedMQ, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&D_800435F0, 4, thread4_audio, NULL, &D_800437A0[0xC0], 110);
-    SETUP_STACK_AND_START_THREAD(D_800435F0, D_800437A0);
-    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
+    osCreateThread(&gAudioThread, 4, thread4_audio, NULL, &gThread4Stack[0xC0], 110);
+    SETUP_STACK_AND_START_THREAD(gAudioThread, gThread4Stack);
+    osRecvMesg(&gThreadInitializedMQ, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&D_80047F50, 6, func_800051E0, NULL, &D_80048100[0x100], 115);
-    SETUP_STACK_AND_START_THREAD(D_80047F50, D_80048100);
-    osRecvMesg(&D_80048A08, NULL, OS_MESG_BLOCK);
+    osCreateThread(&gControllerThread, 6, func_800051E0, NULL, &gThread6Stack[0x100], 115);
+    SETUP_STACK_AND_START_THREAD(gControllerThread, gThread6Stack);
+    osRecvMesg(&gThreadInitializedMQ, NULL, OS_MESG_BLOCK);
     
     func_800076D0();
     dma_overlay_load(&mainSegOverlay);
-    func_800A377C(0);
+    game_tick(0);
 }
 
 void thread1_idle(void *arg0) {
     crash_screen_start_thread();
-    osCreateThread(&gMainThread, 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
+    osCreateThread(&gGameThread, 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
     mainThreadStack[7] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
-        osStartThread(&gMainThread);
+        osStartThread(&gGameThread);
     }
     osSetThreadPri(NULL, OS_PRIORITY_IDLE);
     while (1);

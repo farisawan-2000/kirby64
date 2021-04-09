@@ -292,8 +292,8 @@ glabel thread3_main
 /* 0035EC 800029EC 02402825 */  move  $a1, $s2
 /* 0035F0 800029F0 0C00CAAC */  jal   osSetEventMesg
 /* 0035F4 800029F4 24060063 */   li    $a2, 99
-/* 0035F8 800029F8 3C048005 */  lui   $a0, %hi(D_80048A08) # $a0, 0x8005
-/* 0035FC 800029FC 24848A08 */  addiu $a0, %lo(D_80048A08) # addiu $a0, $a0, -0x75f8
+/* 0035F8 800029F8 3C048005 */  lui   $a0, %hi(gThreadInitializedMQ) # $a0, 0x8005
+/* 0035FC 800029FC 24848A08 */  addiu $a0, %lo(gThreadInitializedMQ) # addiu $a0, $a0, -0x75f8
 /* 003600 80002A00 24050001 */  li    $a1, 1
 /* 003604 80002A04 0C00B4BC */  jal   osSendMesg
 /* 003608 80002A08 00003025 */   move  $a2, $zero

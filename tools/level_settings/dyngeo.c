@@ -8,7 +8,7 @@
 static void init_dyngeolist(DynGeo_List **d, int len) {
     (*d) = malloc(sizeof(DynGeo_List));
 
-    (*d)->groups = calloc(len, sizeof(DynGeo));
+    (*d)->groups = malloc(len * sizeof(DynGeo));
     (*d)->len = 0;
 }
 
@@ -50,5 +50,7 @@ void write_destructible_geometry(DynGeo_List *d) {
     for (int i = 0; i < how_many_shorts_to_align(d); i++) {
         printf(".half 9999\n");
     }
+    free(d->groups);
+    free(d);
 }
 

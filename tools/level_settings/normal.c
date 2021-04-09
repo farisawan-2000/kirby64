@@ -50,7 +50,7 @@ void write_normals(NormalList *n) {
 void read_water_normals(NormalList **n) {
     int offset = colHeader.waterNormOffset;
 
-    init_NormalList(n, colHeader.waterNormLen);
+    init_NormalList(n, colHeader.waterNormLen + 5);
 
     for (int i = 0; i < colHeader.waterNormLen; i++) {
         float x = read_float(offset);
@@ -72,6 +72,8 @@ void write_water_normals(NormalList *n) {
                                n->normals[i].originOffset
         );
     }
+
+    free(n->normals);
     free(n);
 }
 

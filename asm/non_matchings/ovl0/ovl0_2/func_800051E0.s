@@ -19,8 +19,8 @@ glabel func_800051E0
 /* 005E24 80005224 02C02825 */  move  $a1, $s6
 /* 005E28 80005228 0C00027A */  jal   func_800009E8
 /* 005E2C 8000522C 24070007 */   li    $a3, 7
-/* 005E30 80005230 3C048005 */  lui   $a0, %hi(D_80048A08) # $a0, 0x8005
-/* 005E34 80005234 24848A08 */  addiu $a0, %lo(D_80048A08) # addiu $a0, $a0, -0x75f8
+/* 005E30 80005230 3C048005 */  lui   $a0, %hi(gThreadInitializedMQ) # $a0, 0x8005
+/* 005E34 80005234 24848A08 */  addiu $a0, %lo(gThreadInitializedMQ) # addiu $a0, $a0, -0x75f8
 /* 005E38 80005238 24050001 */  li    $a1, 1
 /* 005E3C 8000523C 0C00B4BC */  jal   osSendMesg
 /* 005E40 80005240 00003025 */   move  $a2, $zero

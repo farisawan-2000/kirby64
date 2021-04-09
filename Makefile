@@ -74,7 +74,9 @@ ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
               $(wildcard assets/geo/bank_2/**) \
               $(wildcard assets/geo/bank_7/**) $(wildcard assets/geo/bank_3/**)
 
-ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib asm/data asm/banks $(wildcard data/ovl*)
+ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib \
+            asm/data asm/banks $(wildcard data/ovl*)
+            
 SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
@@ -158,6 +160,8 @@ ifeq ($(DUMMY),FAIL)
   $(error Missing submodule f3dex2. Please run 'git submodule update --init')
 endif
 
+DUMMY != python3 tools/level_settings/helper.py 7
+
 # hardcoded compiler for ml.c until i figure out why it's breaking recomp
 $(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
 
@@ -233,6 +237,13 @@ $(BUILD_DIR)/data/%.o: data/%.c
 
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
+
+assets/geo/%.s: assets/geo/%.bin
+	$(info hi)
+	python3 tools/level_settings/helper.py $@
+
+$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
+	$(AS) -c $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<

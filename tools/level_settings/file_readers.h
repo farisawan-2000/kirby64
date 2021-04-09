@@ -4,6 +4,7 @@
 extern char read_8b(int offset);
 extern short read_16b(int offset);
 extern int read_32b(int offset);
+extern unsigned int read_32u(int offset);
 extern float read_float(int offset);
 
 #endif

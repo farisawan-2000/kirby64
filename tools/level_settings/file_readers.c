@@ -21,6 +21,13 @@ int read_32b(int offset) {
          | fb[offset + 3];
 }
 
+unsigned int read_32u(int offset) {
+    return fb[offset]     << 24
+         | fb[offset + 1] << 16
+         | fb[offset + 2] << 8
+         | fb[offset + 3];
+}
+
 float read_float(int offset) {
     int x =fb[offset]     << 24
          | fb[offset + 1] << 16

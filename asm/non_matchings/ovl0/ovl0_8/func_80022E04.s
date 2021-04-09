@@ -82,8 +82,8 @@ glabel func_80022E04
 /* 023B3C 80022F3C 24040404 */  li    $a0, 1028
 /* 023B40 80022F40 0C008892 */  jal   func_80022248
 /* 023B44 80022F44 00002825 */   move  $a1, $zero
-/* 023B48 80022F48 3C048004 */  lui   $a0, %hi(gMainThread) # $a0, 0x8004
-/* 023B4C 80022F4C 24843DA0 */  addiu $a0, %lo(gMainThread) # addiu $a0, $a0, 0x3da0
+/* 023B48 80022F48 3C048004 */  lui   $a0, %hi(gGameThread) # $a0, 0x8004
+/* 023B4C 80022F4C 24843DA0 */  addiu $a0, %lo(gGameThread) # addiu $a0, $a0, 0x3da0
 /* 023B50 80022F50 0C0088B1 */  jal   func_800222C4
 /* 023B54 80022F54 24050002 */   li    $a1, 2
 /* 023B58 80022F58 8E6F0000 */  lw    $t7, ($s3)

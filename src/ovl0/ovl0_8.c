@@ -895,7 +895,7 @@ void func_80022E04(s32 arg0) {
         func_80022248(0x4100, 0);
         func_80022248(0, 0);
         func_80022248(0x404, 0);
-        func_800222C4(&gMainThread, 2);
+        func_800222C4(&gGameThread, 2);
         if (D_80096EF8 != 0) {
             func_80022248(0, 0);
             func_80022248(0x2030, 0);

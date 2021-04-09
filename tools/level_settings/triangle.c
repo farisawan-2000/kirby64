@@ -73,5 +73,8 @@ void write_tris(Trilist *t) {
             t->tris[i].colType
         );
     }
+
+    free(t->tris);
+    free(t);
 }
 

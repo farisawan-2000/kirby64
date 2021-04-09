@@ -95,6 +95,71 @@ char *water_nml_fmt(int offset, int bank, int index) {
 	return x;
 }
 
+// Node Header Items
+
+char *path_header_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_headers_%X", bank, index, offset);
+	return x;
+}
+
+char *unk_bytes_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_bytes_%X", bank, index, offset);
+	return x;
+}
+
+char *unk_floats_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_floats_%X", bank, index, offset);
+	return x;
+}
+
+char *path_footer_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_footer_%X", bank, index, offset);
+	return x;
+}
+
+char *path_connector_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_connector_%X", bank, index, offset);
+	return x;
+}
+
+char *kirbynode_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_kirbynode_%X", bank, index, offset);
+	return x;
+}
+
+char *path_mtx_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_matrix_%X", bank, index, offset);
+	return x;
+}
+
+char *path_bounds_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_bounds_%X", bank, index, offset);
+	return x;
+}
+
+char *path_unk14_fmt(int offset, int bank, int index) {
+	static char x[0x40];
+
+	snprintf(x, 0x40, "bank_%d_index_%d_path_unk14_%X", bank, index, offset);
+	return x;
+}
+
 
 
 

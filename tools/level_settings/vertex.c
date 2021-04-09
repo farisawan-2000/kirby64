@@ -48,5 +48,8 @@ void write_verts(Vertlist *v) {
     for (int i = 0; i < how_many_shorts_to_align(v); i++) {
         printf(".half 9999\n");
     }
+
+    free(v->vertices);
+    free(v);
 }
 

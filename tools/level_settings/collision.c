@@ -30,13 +30,25 @@ void read_col_header(int offset) {
 void write_col_header(int offset) {
     printf("glabel %s\n", col_header_fmt(offset, _bank, _index));
 
-    printf("    .word %s\n", tri_fmt(colHeader.triangleOffset, _bank, _index));
+    if (colHeader.triangleOffset == 0) {
+        printf("    .word 0\n");
+    } else {
+        printf("    .word %s\n", tri_fmt(colHeader.triangleOffset, _bank, _index));
+    }
     printf("    .word %d\n", colHeader.triLen);
 
-    printf("    .word %s\n", vert_fmt(colHeader.vertOffset, _bank, _index));
+    if (colHeader.vertOffset == 0) {
+        printf("    .word 0\n");
+    } else {
+        printf("    .word %s\n", vert_fmt(colHeader.vertOffset, _bank, _index));
+    }
     printf("    .word %d\n", colHeader.vertLen);
 
-    printf("    .word %s\n", nml_fmt(colHeader.normalOffset, _bank, _index));
+    if (colHeader.normalOffset == 0) {
+        printf("    .word 0\n");
+    } else {
+        printf("    .word %s\n", nml_fmt(colHeader.normalOffset, _bank, _index));
+    }
     printf("    .word %d\n", colHeader.normalLen);
 
     printf("    .word %s\n", tricell_fmt(colHeader.triCellOffset, _bank, _index));
@@ -47,9 +59,17 @@ void write_col_header(int offset) {
     printf("    .word %s\n", dyngeo_fmt(colHeader.destructGroups, _bank, _index));
     printf("    .word %s\n", dynidx_fmt(colHeader.destructIndices, _bank, _index));
 
-    printf("    .word %s\n", water_fmt(colHeader.waterOffset, _bank, _index));
+    if (colHeader.waterOffset == 0) {
+        printf("    .word 0\n");
+    } else {
+        printf("    .word %s\n", water_fmt(colHeader.waterOffset, _bank, _index));
+    }
     printf("    .word %d\n", colHeader.waterLen);
 
-    printf("    .word %s\n", water_nml_fmt(colHeader.waterNormOffset, _bank, _index));
+    if (colHeader.waterNormOffset == 0) {
+        printf("    .word 0\n");
+    } else {
+        printf("    .word %s\n", water_nml_fmt(colHeader.waterNormOffset, _bank, _index));
+    }
     printf("    .word %d\n", colHeader.waterNormLen);
 }

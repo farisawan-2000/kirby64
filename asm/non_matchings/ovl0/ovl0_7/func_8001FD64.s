@@ -54,8 +54,8 @@ glabel thread4_audio
 /* 020A2C 8001FE2C AD8FFFFC */   sw    $t7, -4($t4)
 /* 020A30 8001FE30 8DAF0000 */  lw    $t7, ($t5)
 /* 020A34 8001FE34 8DAB0004 */  lw    $t3, 4($t5)
-/* 020A38 8001FE38 3C048005 */  lui   $a0, %hi(D_80048A08) # $a0, 0x8005
-/* 020A3C 8001FE3C 24848A08 */  addiu $a0, %lo(D_80048A08) # addiu $a0, $a0, -0x75f8
+/* 020A38 8001FE38 3C048005 */  lui   $a0, %hi(gThreadInitializedMQ) # $a0, 0x8005
+/* 020A3C 8001FE3C 24848A08 */  addiu $a0, %lo(gThreadInitializedMQ) # addiu $a0, $a0, -0x75f8
 /* 020A40 8001FE40 24050001 */  li    $a1, 1
 /* 020A44 8001FE44 00003025 */  move  $a2, $zero
 /* 020A48 8001FE48 AD8F0000 */  sw    $t7, ($t4)
@@ -203,13 +203,13 @@ glabel thread4_audio
 /* 020C68 80020068 8E0E0000 */  lw    $t6, ($s0)
 /* 020C6C 8002006C 8F39644C */  lw    $t9, %lo(D_8009644C)($t9)
 /* 020C70 80020070 8FCF0000 */  lw    $t7, ($fp)
-/* 020C74 80020074 3C188005 */  lui   $t8, %hi(D_80048900) # $t8, 0x8005
+/* 020C74 80020074 3C188005 */  lui   $t8, %hi(gRSPBootUcode) # $t8, 0x8005
 /* 020C78 80020078 032E6823 */  subu  $t5, $t9, $t6
 /* 020C7C 8002007C 000D60C3 */  sra   $t4, $t5, 3
 /* 020C80 80020080 000C58C0 */  sll   $t3, $t4, 3
 /* 020C84 80020084 ADEB005C */  sw    $t3, 0x5c($t7)
 /* 020C88 80020088 8FD90000 */  lw    $t9, ($fp)
-/* 020C8C 8002008C 27188900 */  addiu $t8, %lo(D_80048900) # addiu $t8, $t8, -0x7700
+/* 020C8C 8002008C 27188900 */  addiu $t8, %lo(gRSPBootUcode) # addiu $t8, $t8, -0x7700
 /* 020C90 80020090 240E0100 */  li    $t6, 256
 /* 020C94 80020094 AF380030 */  sw    $t8, 0x30($t9)
 /* 020C98 80020098 8FCD0000 */  lw    $t5, ($fp)
@@ -623,12 +623,12 @@ glabel thread4_audio
 /* 021284 80020684 8F2C0000 */  lw    $t4, ($t9)
 /* 021288 80020688 8F2F0004 */  lw    $t7, 4($t9)
 /* 02128C 8002068C 3C018004 */  lui   $at, %hi(D_8003F330) # $at, 0x8004
-/* 021290 80020690 3C048005 */  lui   $a0, %hi(D_80048A08) # $a0, 0x8005
+/* 021290 80020690 3C048005 */  lui   $a0, %hi(gThreadInitializedMQ) # $a0, 0x8005
 /* 021294 80020694 ADCC0000 */  sw    $t4, ($t6)
 /* 021298 80020698 ADCF0004 */  sw    $t7, 4($t6)
 /* 02129C 8002069C AC20F330 */  sw    $zero, %lo(D_8003F330)($at)
 /* 0212A0 800206A0 AFA00070 */  sw    $zero, 0x70($sp)
-/* 0212A4 800206A4 24848A08 */  addiu $a0, %lo(D_80048A08) # addiu $a0, $a0, -0x75f8
+/* 0212A4 800206A4 24848A08 */  addiu $a0, %lo(gThreadInitializedMQ) # addiu $a0, $a0, -0x75f8
 /* 0212A8 800206A8 24050001 */  li    $a1, 1
 /* 0212AC 800206AC 0C00B4BC */  jal   osSendMesg
 /* 0212B0 800206B0 00003025 */   move  $a2, $zero

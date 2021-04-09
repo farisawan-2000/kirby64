@@ -54,7 +54,7 @@
 # .word L800A3DC8_ovl1
 
 # .text
-glabel func_800A377C
+glabel game_tick
 /* 04B9CC 800A377C 27BDFFC0 */  addiu $sp, $sp, -0x40
 /* 04B9D0 800A3780 AFA40040 */  sw    $a0, 0x40($sp)
 /* 04B9D4 800A3784 AFBF003C */  sw    $ra, 0x3c($sp)

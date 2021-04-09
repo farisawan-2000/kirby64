@@ -48,7 +48,7 @@ struct UcodeHandler D_8003DCAC[16] = {
 extern void func_80000A44(void);
 extern u32 *gGObjThreadHead;
 
-extern u8 D_80048900[];
+extern u8 gRSPBootUcode[];
 
 extern OSMesgQueue gInterruptMesgQueue;
 
@@ -422,7 +422,7 @@ void func_80005A98(struct Unk80005A98_2 *arg0, s32 arg1, u32 ucodeIndex, s32 arg
     arg0->unk7C = 0; 
     arg0->task.t.type = ucodeType;
     arg0->task.t.flags = OS_TASK_LOADABLE;
-    arg0->task.t.ucode_boot = (u64*)&D_80048900;
+    arg0->task.t.ucode_boot = (u64*)&gRSPBootUcode;
     arg0->task.t.ucode_boot_size = 0x100;
     temp_v0 = &D_8003DCAC[ucodeIndex];
     if (temp_v0->text == NULL) {
