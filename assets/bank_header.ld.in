@@ -27,3 +27,9 @@
         BUILD_DIR/assets/misc/bank_##bank/index/block.o(.data*);\
     }\
     END_MISC(bank, index)
+
+#define LEVEL(bank, index) \
+    START_MISC(bank, index) {\
+        BUILD_DIR/assets/misc/bank_##bank/index/level.o(.data*);\
+    }\
+    END_MISC(bank, index)

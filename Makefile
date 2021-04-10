@@ -84,6 +84,11 @@ BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 DATA_DIRS := actors
 DATA_FILES := $(foreach dir,$(DATA_DIRS),$(wildcard $(dir)/*.c))
 
+LEVEL_DIRS = $(wildcard assets/misc/bank_7/*)
+LEVEL_FILES = $(foreach dir, $(LEVEL_DIRS), $(wildcard $(dir)/level.bin))
+LEVEL_S_FILES = $(foreach file, $(LEVEL_FILES), $(file:.bin=.s))
+LEVEL_O_FILES = $(foreach file, $(LEVEL_S_FILES), $(BUILD_DIR)/$(file:.s=.o))
+
 TEXTURES_DIR = textures
 
 MIPSISET := -mips2 -32
@@ -92,6 +97,7 @@ GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(wildcard src/*/*.c)
 GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
 ASSET_BIN_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/*.bin))
@@ -136,17 +142,9 @@ CC_TEST := gcc -Wall
 ######################## Targets #############################
 
 NOEXTRACT ?= 0
-# ifeq ($(VERBOSE),1)
-# 	DUMMY != ./extract_assets.py $(VERSION) >&2 || echo FAIL
-# else
-# 	DUMMY != ./extract_assets.py $(VERSION) CI >&2 || echo FAIL
-# endif
-# ifeq ($(DUMMY),FAIL)
-#   $(error Failed to extract assets)
-# endif
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
 
 # Checking if submodules exist
@@ -160,7 +158,6 @@ ifeq ($(DUMMY),FAIL)
   $(error Missing submodule f3dex2. Please run 'git submodule update --init')
 endif
 
-DUMMY != python3 tools/level_settings/helper.py 7
 
 # hardcoded compiler for ml.c until i figure out why it's breaking recomp
 $(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) $(IRIX_ROOT)/usr/bin/cc
@@ -171,6 +168,7 @@ TARGET = kirby.us
 LD_SCRIPT = $(TARGET).ld
 # TEXTURE_DIR = textures
 # RAW_TEXTURE_FILES := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(wildcard $(TEXTURES_DIR)/raw/*.png)))
+
 
 libreultra/build/2.0I/libultra_rom.a:
 	make -C libreultra -j4
@@ -209,9 +207,8 @@ $(BUILD_DIR)/src/ovl1/ovl1_5.o: OPT_FLAGS = -O2
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
-# $(BUILD_DIR)/actors/%.o: $(BUILD_DIR)/actors/%.c
-# 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
-# 	$(CC) -c $(CFLAGS) -o $@ $<
+assets/misc/%.s: assets/misc/%.bin
+	python3 tools/level_settings/helper.py $<
 
 $(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
 	cp $< $@
@@ -238,12 +235,11 @@ $(BUILD_DIR)/data/%.o: data/%.c
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-assets/geo/%.s: assets/geo/%.bin
-	$(info hi)
-	python3 tools/level_settings/helper.py $@
-
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
 	$(AS) -c $(ASFLAGS) -o $@ $<
+
+$(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
+	$(AS) $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
@@ -256,7 +252,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(ASSET_O_FILES) $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
