@@ -20,19 +20,22 @@ extract_assets_CFLAGS  := -fopenmp -O2
 patch_libultra_math_SOURCES := patch_libultra_math.c
 
 # who cares if you have armips, just use our version
-# ifeq (, $(shell which armips 2> /dev/null))
 CXX_PROGRAMS := armips
-# endif
+
 
 default: all
 
-all: $(PROGRAMS) $(CXX_PROGRAMS)
+
+level_settings/convert: $(wildcard level_settings/*.c)
+	$(CC) $(CFLAGS) -o $@ $^
+
+all: $(PROGRAMS) $(CXX_PROGRAMS) level_settings/convert
 
 armips: armips.cpp
 	$(CXX) $(CXXFLAGS) -fno-exceptions -fno-rtti -pipe $^ -o $@ -lpthread $(ARMIPS_FLAGS)
 
 clean:
-	$(RM) $(PROGRAMS) $(CXXPROGRAMS)
+	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert
 
 define COMPILE
 $(1): $($1_SOURCES)

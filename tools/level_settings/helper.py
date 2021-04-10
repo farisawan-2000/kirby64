@@ -7,12 +7,10 @@ if bank == "clean":
 	os.system("rm assets/misc/bank_7/**/*.s")
 	exit()
 
-compile_file_list = glob.glob("tools/level_settings/*.c")
 
-
-if not os.path.isfile("tools/level_settings/convert"):
-	print("convert doesnt exist! building...")
-	os.system("gcc -g -o tools/level_settings/convert tools/level_settings/*.c")
+# if not os.path.isfile("tools/level_settings/convert"):
+# 	print("convert doesnt exist! building...")
+# 	os.system("gcc -g -o tools/level_settings/convert tools/level_settings/*.c")
 
 path = sys.argv[1][:-4]
 t = path.split("/")
