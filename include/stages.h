@@ -16,7 +16,7 @@ struct StageArea {
   /*0x16*/ u16   stageContents;            // Cutscene related?
   /*0x18*/ u32   biDustSettings;   // Bank-index of Dust particle settings
   /*0x1C*/ u32   biDustImg;        // Bank-index of Dust particle image
-  /*0x20*/ u32   areaName;         // Pointer to developer ASCII level name
+  /*0x20*/ const char   *areaName;         // Pointer to developer ASCII level name
 };
 
 // stageContents defines

@@ -72,7 +72,8 @@ FixPath = $(subst /,/,$1)
 ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
               $(wildcard assets/geo/bank_1/**) \
               $(wildcard assets/geo/bank_2/**) \
-              $(wildcard assets/geo/bank_7/**) $(wildcard assets/geo/bank_3/**)
+              $(wildcard assets/geo/bank_7/**) \
+              $(wildcard assets/geo/bank_3/**)
 
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib \
             asm/data asm/banks $(wildcard data/ovl*)
@@ -100,8 +101,8 @@ S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
-ASSET_BIN_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/*.bin))
-ASSET_C_FILES := $(foreach file,$(ASSET_BIN_FILES),$(file:.bin=.c))
+MODEL_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/geo.bin))
+MODEL_C_FILES := $(foreach file,$(MODEL_FILES),$(file:.bin=.c))
 
 
 UCODE_BASE_DIR := ucode
@@ -120,7 +121,7 @@ BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
 
-ASSET_O_FILES := $(foreach file,$(ASSET_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
+ASSET_O_FILES := $(foreach file,$(MODEL_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 D_FILES := $(O_FILES:.o=.d)
 
@@ -232,6 +233,9 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
+assets/geo/%.c: assets/geo/%.bin
+	python3 tools/decompile_geos.py $<
+
 $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
@@ -252,7 +256,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD)
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(ASSET_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(MODEL_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
@@ -275,7 +279,7 @@ test: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-setup: $(ASSET_C_FILES)
+setup: $(MODEL_C_FILES)
 	make -C libreultra -j4
 	make -C libreultra naudio -j4
 	make -C tools -j4

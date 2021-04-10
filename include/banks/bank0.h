@@ -3,27 +3,16 @@
 
 #include <ultra64.h>
 
-extern u32 bank_0_index_1_geo_start[];
-extern u32 bank_0_index_2_geo_start[];
-extern u32 bank_0_index_3_geo_start[];
-extern u32 bank_0_index_4_geo_start[];
-extern u32 bank_0_index_5_geo_start[];
-extern u32 bank_0_index_6_geo_start[];
-extern u32 bank_0_index_7_geo_start[];
-extern u32 bank_0_index_8_geo_start[];
-extern u32 bank_0_index_9_geo_start[];
-extern u32 bank_0_index_10_geo_start[];
-
-extern u32 bank_0_index_1_geo_end[];
-extern u32 bank_0_index_2_geo_end[];
-extern u32 bank_0_index_3_geo_end[];
-extern u32 bank_0_index_4_geo_end[];
-extern u32 bank_0_index_5_geo_end[];
-extern u32 bank_0_index_6_geo_end[];
-extern u32 bank_0_index_7_geo_end[];
-extern u32 bank_0_index_8_geo_end[];
-extern u32 bank_0_index_9_geo_end[];
-extern u32 bank_0_index_10_geo_end[];
+extern u32 bank_0_index_1_geo[];
+extern u32 bank_0_index_2_geo[];
+extern u32 bank_0_index_3_geo[];
+extern u32 bank_0_index_4_geo[];
+extern u32 bank_0_index_5_geo[];
+extern u32 bank_0_index_6_geo[];
+extern u32 bank_0_index_7_geo[];
+extern u32 bank_0_index_8_geo[];
+extern u32 bank_0_index_9_geo[];
+extern u32 bank_0_index_10_geo[];
 
 extern u32 bank_0_index_1_image_start[];
 extern u32 bank_0_index_2_image_start[];

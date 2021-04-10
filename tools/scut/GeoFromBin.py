@@ -897,7 +897,7 @@ def SingleGeo(Bank,Index):
     globIndex = Index
     #[start,end] = GetPointers(Bank,Index,"Geo_Block",Kirb)
     name = ("Bank_%d_Index_%d_Geo"%(Bank,Index))
-    stage = open(sys.argv[2],'w')
+    stage = open(sys.argv[1].split("bin")[0]+"c",'w')
     Kirb=open(sys.argv[1],'rb')
     Kirb=Kirb.read()
     stage.write("// Bank " + str(Bank) + " ID " + str(Index) + "\n")
