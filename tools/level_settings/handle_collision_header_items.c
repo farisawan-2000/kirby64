@@ -58,6 +58,9 @@ void handle_collision_header_items(void) {
         for (int i = 0; i < colHeader.triCellLen; i++) {
             printf("    .half 0x%04X\n", cells[i]);
         }
+        if ((colHeader.triCellOffset + (sizeof(short) * colHeader.triCellLen)) % 4) {
+            printf("    .half 0x9999\n");
+        }
         printf("\n");
     }
     if (colHeader.triNormCellOffset != 0) {

@@ -23,11 +23,10 @@ void read_main_header(void) {
 
 void write_main_header(void) {
     printf("glabel %s\n", main_header_fmt(_bank, _index));
-    printf("    .word %s\n    .word %s\n    .word %s\n.word 0\n",
-          col_header_fmt(colHeaderStart, _bank, _index),
-          node_header_fmt(nodeHeaderStart, _bank, _index),
-          entity_list_fmt(entityStart, _bank, _index)
-    );
+    PRINT_POINTER(colHeaderStart, col_header_fmt(colHeaderStart, _bank, _index));
+    PRINT_POINTER(nodeHeaderStart, node_header_fmt(nodeHeaderStart, _bank, _index));
+    PRINT_POINTER(entityStart, entity_list_fmt(entityStart, _bank, _index));
+    printf("    .word 0\n");
 }
 
 int main(int argc, char **argv) {
@@ -64,6 +63,12 @@ int main(int argc, char **argv) {
 
     if (entityStart != 0)
         handle_entities(entityStart);
+
+    if (_bank == 7 && _index == 239) {
+        printf(".balign 4\n");
+        printf(".asciiz \"999\\n\"\n");
+        printf(".skip 11\n");
+    }
 
     free(fb);
 }

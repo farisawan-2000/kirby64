@@ -38,7 +38,7 @@ void read_normals(NormalList **n) {
 
 void write_normals(NormalList *n) {
     for (int i = 0; i < n->len; i++) {
-        printf("    .float %f, %f, %f, %f\n", n->normals[i].x,
+        printf("    .float %.10e, %.10e, %.10e, %.10e\n", n->normals[i].x,
                                n->normals[i].y,
                                n->normals[i].z,
                                n->normals[i].originOffset
@@ -66,7 +66,7 @@ void read_water_normals(NormalList **n) {
 
 void write_water_normals(NormalList *n) {
     for (int i = 0; i < n->len; i++) {
-        printf("    .float %f, %f, %f, %f\n", n->normals[i].x,
+        printf("    .float %.10e, %.10e, %.10e, %.10e\n", n->normals[i].x,
                                n->normals[i].y,
                                n->normals[i].z,
                                n->normals[i].originOffset

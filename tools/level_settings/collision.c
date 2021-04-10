@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "level_settings_to_asm.h"
 #include "collision.h"
 #include "strings.h"
 
@@ -30,18 +31,11 @@ void read_col_header(int offset) {
 void write_col_header(int offset) {
     printf("glabel %s\n", col_header_fmt(offset, _bank, _index));
 
-    if (colHeader.triangleOffset == 0) {
-        printf("    .word 0\n");
-    } else {
-        printf("    .word %s\n", tri_fmt(colHeader.triangleOffset, _bank, _index));
-    }
+
+    PRINT_POINTER(colHeader.triangleOffset, tri_fmt(colHeader.triangleOffset, _bank, _index));
     printf("    .word %d\n", colHeader.triLen);
 
-    if (colHeader.vertOffset == 0) {
-        printf("    .word 0\n");
-    } else {
-        printf("    .word %s\n", vert_fmt(colHeader.vertOffset, _bank, _index));
-    }
+    PRINT_POINTER(colHeader.vertOffset, vert_fmt(colHeader.vertOffset, _bank, _index));
     printf("    .word %d\n", colHeader.vertLen);
 
     if (colHeader.normalOffset == 0) {
@@ -51,13 +45,15 @@ void write_col_header(int offset) {
     }
     printf("    .word %d\n", colHeader.normalLen);
 
-    printf("    .word %s\n", tricell_fmt(colHeader.triCellOffset, _bank, _index));
+    PRINT_POINTER(colHeader.triCellOffset, tricell_fmt(colHeader.triCellOffset, _bank, _index));
     printf("    .word %d\n", colHeader.triCellLen);
 
-    printf("    .word %s\n", nmltree_fmt(colHeader.triNormCellOffset, _bank, _index));
+    PRINT_POINTER(colHeader.triNormCellOffset, nmltree_fmt(colHeader.triNormCellOffset, _bank, _index));
+    printf("    .word %d\n", colHeader.triNormCellLen);
+    printf("    .word %d\n", colHeader.normCellBSP);
 
-    printf("    .word %s\n", dyngeo_fmt(colHeader.destructGroups, _bank, _index));
-    printf("    .word %s\n", dynidx_fmt(colHeader.destructIndices, _bank, _index));
+    PRINT_POINTER(colHeader.destructGroups, dyngeo_fmt(colHeader.destructGroups, _bank, _index));
+    PRINT_POINTER(colHeader.destructIndices, dynidx_fmt(colHeader.destructIndices, _bank, _index));
 
     if (colHeader.waterOffset == 0) {
         printf("    .word 0\n");

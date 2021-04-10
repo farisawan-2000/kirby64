@@ -4,21 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// struct water
-// {
-// 	unsigned short    nml_count;
-// 	unsigned short    nml_idx;
-// 	unsigned char     active;
-// 	unsigned char     is_flowing;
-// 	unsigned char     flow_direction;
-// 	unsigned char     flow_speed;
-// 	// coords of bounding box
-// 	float    ulx;
-// 	float    ulz;
-// 	float    lrx;
-// 	float    lrz;
-// };
-// typedef struct water Water;
+struct water
+{
+	unsigned short    nml_count;
+	unsigned short    nml_idx;
+	unsigned char     active;
+	unsigned char     is_flowing;
+	unsigned char     flow_direction;
+	unsigned char     flow_speed;
+	// coords of bounding box
+	float    ulx;
+	float    ulz;
+	float    lrx;
+	float    lrz;
+};
+typedef struct water Water;
 
 // Water *water;
 
@@ -58,5 +58,6 @@ void write_water(int offset, int len) {
 		printf("    .float %f\n", read_float(offset + 20));
 
 		if (i < (len - 1)) printf("\n");
+		offset += sizeof(Water);
 	}
 }

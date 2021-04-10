@@ -19,4 +19,7 @@ for i in range(59, 240):
 	if not os.path.isfile(path+".s"):
 		print("Assembling bank %s index %d..." % (bank, i))
 		os.system("./tools/level_settings/convert %s.bin %s %d > %s.s" % (path, bank, i, path))
-		os.system("mips-linux-gnu-as -o build/us/%s.o -Iinclude %s.s" % (path, path))
+		os.system("mips-linux-gnu-as --no-pad-sections -o build/us/%s.o -Iinclude %s.s" % (path, path))
+
+os.system("touch kirby.us.ld")
+

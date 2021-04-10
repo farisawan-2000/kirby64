@@ -1,4 +1,5 @@
 #include "normal_tree.h"
+#include "level_settings_to_asm.h"
 #include "file_readers.h"
 #include "collision.h"
 #include "triangle.h"
@@ -37,13 +38,36 @@ void read_normaltree(NormalTree **n) {
 }
 
 void write_normaltree(NormalTree *n) {
+
+    int offset = colHeader.triNormCellOffset;
+    int offsetBound = colHeaderStart;
+
+    if (colHeader.waterNormOffset != 0) {
+        offsetBound = colHeader.waterNormOffset;
+    } else
+    if (colHeader.destructGroups != 0) {
+        offsetBound = colHeader.destructGroups;
+    }
+
     for (int i = 0; i < colHeader.triNormCellLen; i++) {
         printf("    .half %d, %d, %d, %d\n", n->nmlGroups[i].idx,
                                              n->nmlGroups[i].left_child,
                                              n->nmlGroups[i].right_child,
                                              n->nmlGroups[i].tri_idx
         );
+
+        offset += (sizeof(short) * 4);
     }
+
+    if (offset < offsetBound) {
+        printf("\n");
+        printf("# unpointed garbage data\n");
+    }
+
+    for (int i = offset; i < offsetBound; i++) {
+        printf(".byte %d\n", read_8b(i));
+    }
+
     free(n->nmlGroups);
     free(n);
 }

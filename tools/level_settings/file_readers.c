@@ -5,6 +5,7 @@
 
 extern unsigned char *fb;
 
+
 char read_8b(int offset) {
     return fb[offset];
 }
@@ -29,12 +30,15 @@ unsigned int read_32u(int offset) {
 }
 
 float read_float(int offset) {
-    int x =fb[offset]     << 24
+    union{
+        unsigned int d;
+        float f;
+    } x;
+
+    x.d =  fb[offset    ] << 24
          | fb[offset + 1] << 16
          | fb[offset + 2] << 8
          | fb[offset + 3];
-    char s[0x20];
 
-    snprintf(s, 0x20, "%f", *(float *)&x);
-    return atof(s);
+    return x.f;
 }

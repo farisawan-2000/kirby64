@@ -11,4 +11,15 @@ extern int colHeaderStart;
 extern int nodeHeaderStart;
 extern int entityStart;
 
+
+#define PRINT_POINTER(ptr, str) \
+    {\
+        if ((ptr) == 0) {\
+            printf("    .word 0\n");\
+        } else {\
+            printf("    .word %s\n", (str));\
+        }\
+    }
+
+
 #endif

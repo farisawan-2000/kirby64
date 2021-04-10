@@ -57,7 +57,9 @@ void read_path_footers(int *offset_list, int len) {
 }
 
 // MtxColList *m;
-void handle_path_mtx(int ptr, int len) {
+void handle_path_mtx(int ptr, int ptrEnd) {
+    int len = (ptrEnd - ptr) / (12);
+
     printf("glabel %s\n", path_mtx_fmt(ptr, _bank, _index));
 
     for (int i = 0; i < len; i++) {
@@ -72,6 +74,7 @@ void handle_path_mtx(int ptr, int len) {
 
 void handle_path_bounds(int ptr, int len) {
     printf("glabel %s\n", path_bounds_fmt(ptr, _bank, _index));
+
     for (int i = 0; i < len; i++) {
         printf("    .float %f\n", read_float(ptr));
         ptr += sizeof(float);
@@ -96,7 +99,7 @@ void handle_path_unk14(int off, int len) {
 
 void write_path_nodes(void) {
     for (int i = 0; i < flist->len; i++) {
-        handle_path_mtx(flist->items.footers[i].mtxPtr, flist->items.footers[i].sectionCount);
+        handle_path_mtx(flist->items.footers[i].mtxPtr, flist->items.footers[i].bounds);
         handle_path_bounds(flist->items.footers[i].bounds, flist->items.footers[i].sectionCount);
 
         if (flist->items.footers[i].unk14 != 0) {
@@ -112,7 +115,7 @@ void write_path_nodes(void) {
         printf("    .float %f\n", flist->items.footers[i].realLength);
         printf("    .word %s\n", path_bounds_fmt(flist->items.footers[i].bounds, _bank, _index));
         if (flist->items.footers[i].unk14 == 0) {
-            printf("    .word 0\n", flist->items.footers[i].unk14);
+            printf("    .word 0\n");
         } else {
             printf("    .word %s\n", path_unk14_fmt(flist->items.footers[i].unk14, _bank, _index));
         }

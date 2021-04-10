@@ -6185,6 +6185,7 @@ glabel bank_7_index_57_misc # 0x1D4168C
 glabel bank_7_index_58_misc # 0x1D41B78
 .incbin "assets/misc/bank_7/58/block.bin"
 
+
 # .balign 2
 # glabel bank_7_index_59_misc # 0x1D43468
 # .incbin "assets/misc/bank_7/59/block.bin"

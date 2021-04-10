@@ -45,9 +45,11 @@ void write_verts(Vertlist *v) {
                                v->vertices[i].z
         );
     }
-    for (int i = 0; i < how_many_shorts_to_align(v); i++) {
-        printf(".half 9999\n");
+    // for (int i = 0; i < how_many_shorts_to_align(v); i++) {
+    if ((colHeader.vertOffset + (3 * sizeof(short) * v->len)) % 4) {
+        printf(".half 0x9999\n");
     }
+    // }
 
     free(v->vertices);
     free(v);

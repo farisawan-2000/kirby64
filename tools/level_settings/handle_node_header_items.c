@@ -64,6 +64,27 @@ void write_floats(void) {
     }
 }
 
+void handle_node_connectors(int *offsets, int *lens) {
+    // printf(".half 0\n");
+    for (int i = 0; i < nodeHeader.pathNodeLen; i++) {
+        if (offsets[i] == 0) continue;
+
+        printf("glabel %s\n", path_connector_fmt(offsets[i], _bank, _index));
+
+        if (lens[i] == 0) lens[i]++;
+        for (int j = 0; j < lens[i]; j++) {
+            printf("    .byte %d, %d, %d, %d\n",
+                read_8b(offsets[i]),
+                read_8b(offsets[i]+1),
+                read_8b(offsets[i]+2),
+                read_8b(offsets[i]+3)
+                );
+            offsets[i] += 4;
+        }
+    }
+}
+
+
 extern PathList *headers;
 void handle_node_header_items(void) {
     read_node_header();
@@ -75,15 +96,26 @@ void handle_node_header_items(void) {
 
     int *list = malloc(sizeof(int) * nodeHeader.pathNodeLen);
     int *nodes = malloc(sizeof(int) * nodeHeader.pathNodeLen);
+    int *connectors = malloc(sizeof(int) * nodeHeader.pathNodeLen);
+    int *connectorLengths = malloc(sizeof(int) * nodeHeader.pathNodeLen);
     for (int i = 0; i < nodeHeader.pathNodeLen; i++) {
         list[i] = headers->items.headers[i].footer;
         nodes[i] = headers->items.headers[i].kirbyNode;
+        connectors[i] = headers->items.headers[i].nodeConnectors;
+        connectorLengths[i] = headers->items.headers[i].countConnectors;
     }
     read_path_footers(list, nodeHeader.pathNodeLen);
+    free(list);
 
     write_path_nodes();
 
     handle_kirby_nodes(nodes, nodeHeader.pathNodeLen);
+    free(nodes);
+
+
+    handle_node_connectors(connectors, connectorLengths);
+    free(connectors);
+    free(connectorLengths);
 
     if (nodeHeader.bytePointer != 0) {
         write_bytes();

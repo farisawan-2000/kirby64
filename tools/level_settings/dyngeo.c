@@ -19,7 +19,7 @@ static void add_dyngeo(DynGeo_List **d, short ct, short idx, short num) {
 }
 
 static int how_many_shorts_to_align(DynGeo_List *d) {
-    return (4 - ((3 * d->len) % 4));
+    return ((d->len + 3) & ~3) - d->len;
 }
 
 void read_destructible_geometry(DynGeo_List **d) {
@@ -47,8 +47,8 @@ void write_destructible_geometry(DynGeo_List *d) {
                                d->groups[i].layout_num
         );
     }
-    for (int i = 0; i < how_many_shorts_to_align(d); i++) {
-        printf(".half 9999\n");
+    if ((colHeader.destructGroups + (3 * sizeof(short) * d->len)) % 4) {
+        printf(".half 0x9999\n");
     }
     free(d->groups);
     free(d);
