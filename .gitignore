@@ -23,6 +23,7 @@ __pycache__/*
 tools/scut/__pycache__/*
 tools/temp_tools/__pycache__/*
 tools/asm-processor/__pycache__/*
+asm-differ/__pycache__/*
 .vscode/*
 ctx.c
 # Use these for scratch work
