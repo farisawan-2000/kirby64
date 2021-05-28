@@ -3716,20 +3716,12 @@ glabel D_8021CE00_ovl9
 
 glabel D_8021CE04_ovl9
 .word 0x8021A4DC
-
-glabel D_8021CE08_ovl9
 .word 0x8021A678
-
-glabel D_8021CE0C_ovl9
 .word 0x8021A7FC
 
 glabel D_8021CE10_ovl9
 .word 0x8021A5C0
-
-glabel D_8021CE14_ovl9
 .word 0x8021A7F4
-
-glabel D_8021CE18_ovl9
 .word 0x8021A93C
 
 glabel D_8021CE1C_ovl9
@@ -3737,26 +3729,14 @@ glabel D_8021CE1C_ovl9
 
 glabel D_8021CE20_ovl9
 .word 0x8021ACEC
-
-glabel D_8021CE24_ovl9
 .word 0x8021B028
-
-glabel D_8021CE28_ovl9
 .word 0x8021B1D0
-
-glabel D_8021CE2C_ovl9
 .word 0x8021B310
 
 glabel D_8021CE30_ovl9
 .word 0x8021AD88
-
-glabel D_8021CE34_ovl9
 .word 0x8021B0D0
-
-glabel D_8021CE38_ovl9
 .word 0x8021B27C
-
-glabel D_8021CE3C_ovl9
 .word 0x8021B3A0
 
 glabel D_8021CE40_ovl9
@@ -3764,23 +3744,10 @@ glabel D_8021CE40_ovl9
 
 glabel D_8021CE44_ovl9
 .word 0x8021B6D0
-
-glabel D_8021CE48_ovl9
 .word 0x8021B788
 
 glabel D_8021CE4C_ovl9
 .word 0x8021B71C
-
-glabel D_8021CE50_ovl9
 .word 0x8021B848
 
-glabel D_8021CE54_ovl9
-.word 0x00000000
-
-glabel D_8021CE58_ovl9
-.word 0x00000000
-
-glabel D_8021CE5C_ovl9
-.word 0x00000000
-
-
+.balign 16

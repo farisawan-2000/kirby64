@@ -1,6 +1,8 @@
 #ifndef SOUNDS_H
 #define SOUNDS_H
 
+// TODO: get better sound names i guess
+
 enum KirbySounds {
     /* 001 */ SOUND_1UP1 = 1,
     /* 002 */ SOUND_1UP1SUB1,

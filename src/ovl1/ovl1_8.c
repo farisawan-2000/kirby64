@@ -1609,9 +1609,9 @@ block_9:
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_8/func_800B5C28.s")
 #endif
 
-extern const f32 D_800D6848;
+extern f32 D_800D6848;
 
-#define ATTEMPT_CORRECT(x, val) \
+#define CLAMP_RADIAN(x, val) \
     {\
         while ((val) <= (x)) (x) -= (val);\
         while ((x) < 0.0f) (x) += (val);\
@@ -1622,27 +1622,23 @@ extern const f32 D_800D6848;
 
 #ifdef NON_MATCHING
 void func_800B5E14(s32 arg0) {
-    f32 temp_2_pi;
-
-    temp_2_pi = D_800D6848;
-
-    while (gEntitiesAngleXArray[D_8004A7C4->objId] >= temp_2_pi) {
-        gEntitiesAngleXArray[D_8004A7C4->objId] -= temp_2_pi;
+    while (gEntitiesAngleXArray[D_8004A7C4->objId] >= D_800D6848) {
+        gEntitiesAngleXArray[D_8004A7C4->objId] -= D_800D6848;
     }
     while (gEntitiesAngleXArray[D_8004A7C4->objId] < 0.0f) {
-        gEntitiesAngleXArray[D_8004A7C4->objId] += temp_2_pi;
+        gEntitiesAngleXArray[D_8004A7C4->objId] += D_800D6848;
     }
-    while (gEntitiesAngleYArray[D_8004A7C4->objId] >= temp_2_pi) {
-        gEntitiesAngleYArray[D_8004A7C4->objId] -= temp_2_pi;
+    while (gEntitiesAngleYArray[D_8004A7C4->objId] >= D_800D6848) {
+        gEntitiesAngleYArray[D_8004A7C4->objId] -= D_800D6848;
     }
     while (gEntitiesAngleYArray[D_8004A7C4->objId] < 0.0f) {
-        gEntitiesAngleYArray[D_8004A7C4->objId] += temp_2_pi;
+        gEntitiesAngleYArray[D_8004A7C4->objId] += D_800D6848;
     }
-    while (gEntitiesAngleZArray[D_8004A7C4->objId] >= temp_2_pi) {
-        gEntitiesAngleZArray[D_8004A7C4->objId] -= temp_2_pi;
+    while (gEntitiesAngleZArray[D_8004A7C4->objId] >= D_800D6848) {
+        gEntitiesAngleZArray[D_8004A7C4->objId] -= D_800D6848;
     }
     while (gEntitiesAngleZArray[D_8004A7C4->objId] < 0.0f) {
-        gEntitiesAngleZArray[D_8004A7C4->objId] += temp_2_pi;
+        gEntitiesAngleZArray[D_8004A7C4->objId] += D_800D6848;
     }
 }
 #else

@@ -10,52 +10,29 @@ void calc_header_checksum(void);
 u32 calc_save_header_checksum(void);
 extern u16 D_800ECB00[];
 
-#ifdef MIPS_TO_C
+#ifdef NON_MATCHING
 void func_800B86FC(void) {
-    struct EEPROM *temp_t8;
-    struct EEPROM *temp_t9;
-    struct EEPROM *temp_v0;
-    struct EEPROM *phi_v0;
+    s32 i;
     s32 phi_v1;
-    struct EEPROM *phi_t9;
-    struct EEPROM *phi_t8;
-    s32 phi_v1_2;
 
     func_80004D00_ovl1(0, &gSaveBuffer1, 0x118);
-    if (calc_save_header_checksum() != D_800ECA04) {
+    if (calc_save_header_checksum() != gSaveBuffer1.header.checksum) {
         func_800B9008();
     }
-    phi_v0 = &gSaveBuffer1;
-    phi_v1_2 = 0;
-loop_3:
-    temp_v0 = phi_v0 + 0x58;
-    phi_v1 = phi_v1_2;
-    if (phi_v0->unk14 != 0x99999999) {
-        phi_v1 = phi_v1_2 + 1;
+    
+    for (i = 0; i < 3; i++) {
+        if (gSaveBuffer1.files[i].checksum == 0x99999999) {
+            break;
+        }
     }
-    phi_v0 = temp_v0;
-    phi_v1_2 = phi_v1;
-    if (temp_v0 != D_800ECB00) {
-        goto loop_3;
-    }
-    D_800ECA00 = phi_v1;
+
+    gSaveBuffer1.header.head[2] = i;
     calc_header_checksum();
     func_800B8BDC();
-    phi_t9 = &gSaveBuffer1;
-    phi_t8 = &gSaveBuffer2;
-loop_7:
-    temp_t9 = phi_t9 + 0xC;
-    temp_t8 = phi_t8 + 0xC;
-    temp_t8->unk-C = phi_t9->header.head;
-    temp_t8->unk-8 = temp_t9->unk-8;
-    temp_t8->unk-4 = temp_t9->unk-4;
-    phi_t9 = temp_t9;
-    phi_t8 = temp_t8;
-    if (temp_t9 != (&gSaveBuffer1 + 0x1B0)) {
-        goto loop_7;
-    }
-    temp_t8->header.head = temp_t9->header.head;
-    temp_t8->unk4 = temp_t9->unk4;
+
+    gSaveBuffer2 = gSaveBuffer1;
+
+    // gSaveBuffer2.header.head[0] = gSaveBuffer1.header.head[0];
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B86FC.s")
@@ -296,7 +273,6 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B8C08.s")
 
 extern void calc_file_checksum(u32 fileNum);
 extern u8 D_800D5150[]; // TODO: get correct type for this
-// init_save_file_maybe
 #ifdef MIPS_TO_C
 void init_save_file_maybe(u32 fileNum) {
     s32 i;
@@ -457,11 +433,24 @@ u32 calc_save_header_checksum(void) {
     u32 resultBuffer = SAVE_CHECKSUM_MAGIC;
 
 
-    while (i != saveEnd) {
+    do {
         resultBuffer += *(i++);
-        // i++;
     }
+    while (i != saveEnd);
+        // i++;
     return resultBuffer;
+
+    // int i = 0;
+    // u32 resultBuffer = SAVE_CHECKSUM_MAGIC;
+
+    // do {
+    //     resultBuffer += gSaveBuffer1.header.head[i++];
+    // } while (i < 3);
+
+    // for (i = 0; i < 3; i++) {
+    //     resultBuffer += gSaveBuffer1.header.head[i];
+    // }
+    // return resultBuffer;
 
     // s32 *i = gSaveBuffer1.header.head;
     // s32 *saveEnd = &gSaveBuffer1.header.checksum;
@@ -472,6 +461,7 @@ u32 calc_save_header_checksum(void) {
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_9/func_800B9068.s")
 #endif
+
 
 void calc_header_checksum(void) {
     gSaveBuffer1.header.checksum = calc_save_header_checksum();

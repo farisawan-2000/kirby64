@@ -609,13 +609,29 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A8BAC.s")
 #endif
 
 
-extern u32 ***D_800D0104;
+struct BGHeader {
+    u8 fmt;
+    u8 siz;
+    u8 unk2; // color count?
+    u16 width;
+    u16 height;
+    u32 imgOffset;
+    u32 palOffset;
+};
+
+extern struct BGHeader ***D_800D0104;
+
+// parses the Header of an S2DEX background file and relocates image/palette offset
 #ifdef MIPS_TO_C
 s32 func_800A8C40(u32 arg0) {
-    if (D_800D0104[arg0 >> 16][arg0 & 0xFFFF] == NULL) {
-        D_800D0104[arg0 >> 16][arg0 & 0xFFFF] = func_800A8B0C(3, D_800D0104[arg0 >> 16]);
-        D_800D0104[arg0 >> 16][arg0 & 0xFFFF][2] += D_800D0104[arg0 >> 16][arg0 & 0xFFFF][0];
-        D_800D0104[arg0 >> 16][arg0 & 0xFFFF][3] += D_800D0104[arg0 >> 16][arg0 & 0xFFFF][0];
+    struct BGHeader *header = D_800D0104[arg0 >> 16][arg0 & 0xFFFF];
+    if (header == NULL) {
+        header = func_800A8B0C(D_800D0104[arg0 >> 16], 3);
+
+        D_800D0104[arg0 >> 16][arg0 & 0xFFFF] = header;
+
+        header->imgOffset += (int) header;
+        header->palOffset += (int) header;
     }
     return D_800D0104[arg0 >> 16][arg0 & 0xFFFF];
 }

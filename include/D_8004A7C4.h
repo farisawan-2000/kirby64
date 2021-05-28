@@ -159,4 +159,7 @@ struct UnkStruct8004A7C4 {
 // size: 0x50
 extern struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
 extern struct UnkStruct8004A7C4 *D_800DE44C;
+
+typedef void (*VTABLE[])(struct UnkStruct8004A7C4 *);
+
 #endif

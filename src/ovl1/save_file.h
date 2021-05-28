@@ -29,7 +29,8 @@ typedef struct {
 
                 // the range in question
     /* 0x3C */  u32 shards[6];
-    u32 checksum;
+    
+    /* 0x54 */ u32 checksum;
 } File;
 
 struct EEPHeader {

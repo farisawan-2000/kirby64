@@ -143,7 +143,7 @@ Vector *vec3_negate(Vector *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_800191F8(Vector *arg0, Vector *arg1, f32 arg2) {
+void func_800191F8(Vector *arg0, LookAt *arg1, f32 arg2) {
     f32 yz_dist;
     f32 sp38;
     f32 sp34;

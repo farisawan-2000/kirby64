@@ -35,8 +35,8 @@ struct UnkStruct800AC954 {
     u8 envColorBlue;
     u8 envColorAlpha;
 
-    u16 unk1C;
-    u16 unk1E;
+    u16 width;
+    u16 height;
     f32 xOffset;
     f32 yOffset;
     f32 unk28;

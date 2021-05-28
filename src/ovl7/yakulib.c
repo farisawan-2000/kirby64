@@ -254,7 +254,7 @@ s32 func_801BC794_ovl7(s32 arg0) {
 /**
  * Full explanation of the non-matching cause in this function:
  * - Some cases in this function do 2 gSPSetLights1's on D_800BE548.
- * - Both Lights macros use the same command for the first half of the ucode
+ * - Both Lights macros use the same code for the first half of the command
  *   (0xDB000018)
  * - The original code knows to preserve this top half of the command
  *   in a register in order to save a few instructions

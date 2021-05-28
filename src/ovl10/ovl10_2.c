@@ -2096,13 +2096,13 @@ void func_801E7990_ovl10(s32 arg0) {
     u8 temp_a3;
 
     temp_v0 = D_8004A7C4;
-    temp_v1 = temp_v0->objId;
+    temp_v1 = D_8004A7C4->objId;
     D_800E9C60[temp_v1] = 0;
     sp5C = D_800DFBD0[temp_v1][2];
-    D_800E9E20[temp_v0->objId] = 0;
-    D_800DDFD0[temp_v0->objId] = 1;
-    D_800E6A10[temp_v0->objId] = -1.0f;
-    temp_v1_2 = temp_v0->objId;
+    D_800E9E20[D_8004A7C4->objId] = 0;
+    D_800DDFD0[D_8004A7C4->objId] = 1;
+    D_800E6A10[D_8004A7C4->objId] = -1.0f;
+    temp_v1_2 = D_8004A7C4->objId;
     D_800E9FE0[temp_v1_2] = D_800E6A10[temp_v1_2];
     func_800A9EA4(0x103AC, D_800E6A10);
     func_800AA864(0x103AB, 2);
@@ -2112,8 +2112,8 @@ void func_801E7990_ovl10(s32 arg0) {
     func_800A9EA4(0x103A8);
     func_800A9EA4(0x103A7);
     func_801E63E4_ovl10(&sp54);
-    temp_v0_2 = D_8004A7C4;
-    D_800EA8A0[temp_v0_2->objId] = sp54;
+    D_8004A7C4 = D_8004A7C4;
+    D_800EA8A0[D_8004A7C4->objId] = sp54;
     temp_a3 = sp58 + 0x14;
     sp53 = temp_a3;
     temp_a0 = &sp44;
@@ -2125,20 +2125,20 @@ void func_801E7990_ovl10(s32 arg0) {
     sp5C->unk54 = 0;
     func_8000B6BC((temp_a3 - 4) & 0xFF);
     temp_v0_3 = D_8004A7C4;
-    D_800E3910[temp_v0_3->objId] = 0.0f;
-    temp_v1_3 = temp_v0_3->objId;
+    D_800E3910[D_8004A7C4->objId] = 0.0f;
+    temp_v1_3 = D_8004A7C4->objId;
     temp_f0 = D_800E3910[temp_v1_3];
     D_800E3750[temp_v1_3] = temp_f0;
-    D_800E3590[temp_v0_3->objId] = temp_f0;
-    D_800E33D0[temp_v0_3->objId] = temp_f0;
-    D_800E3210[temp_v0_3->objId] = temp_f0;
-    D_800E3050[temp_v0_3->objId] = temp_f0;
-    D_800E3E50[temp_v0_3->objId] = D_801F4B3C_ovl10;
-    temp_v1_4 = temp_v0_3->objId;
+    D_800E3590[D_8004A7C4->objId] = temp_f0;
+    D_800E33D0[D_8004A7C4->objId] = temp_f0;
+    D_800E3210[D_8004A7C4->objId] = temp_f0;
+    D_800E3050[D_8004A7C4->objId] = temp_f0;
+    D_800E3E50[D_8004A7C4->objId] = D_801F4B3C_ovl10;
+    temp_v1_4 = D_8004A7C4->objId;
     temp_f2 = D_800E3E50[temp_v1_4];
     D_800E3C90[temp_v1_4] = temp_f2;
-    D_800E3AD0[temp_v0_3->objId] = temp_f2;
-    D_800E9E20[temp_v0_3->objId] = 1;
+    D_800E3AD0[D_8004A7C4->objId] = temp_f2;
+    D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14(D_800E3910, D_800E3E50);
 }
 #else
