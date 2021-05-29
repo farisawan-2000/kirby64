@@ -496,11 +496,11 @@ SECTIONS
     /* 0x801D0C60 174740-17B360 [6C20] */
     BEGIN_SEG(ovl8, 0x801D0C60) {
         BUILD_DIR/src/ovl8/ovl8.o(.text);
-        BUILD_DIR/src/ovl8/ovl8_2.o(.text);
+        BUILD_DIR/src/ovl8/eneeff.o(.text);
         BUILD_DIR/asm/ovl8/ovl8_3.o(.text);
         BUILD_DIR/asm/ovl8/ovl8_4.o(.text);
         BUILD_DIR/data/ovl8/data.o(.data);
-        BUILD_DIR/src/ovl8/ovl8_2.o(.rodata);
+        BUILD_DIR/src/ovl8/eneeff.o(.rodata);
         BUILD_DIR/data/ovl8/rodata.o(.rodata);
     }
     END_SEG(ovl8)
@@ -625,8 +625,8 @@ SECTIONS
 
     /* 0x8021DF20 23E630-24F750 [11120] */
     BEGIN_SEG(ovl19, 0x8021DF20) {
-        BUILD_DIR/src/ovl19/ovl19.o(.text);
-        BUILD_DIR/src/ovl19/ovl19_2.o(.text);
+        BUILD_DIR/src/ovl19/helplib.o(.text);
+        BUILD_DIR/src/ovl19/helper.o(.text);
         BUILD_DIR/asm/ovl19/ovl19_3.o(.text);
         BUILD_DIR/asm/ovl19/ovl19_4.o(.text);
         BUILD_DIR/src/ovl19/ovl19_5.o(.text);

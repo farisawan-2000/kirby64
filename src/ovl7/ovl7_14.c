@@ -2,7 +2,7 @@
 #include <macros.h>
 #include "unk_structs/D_800E1B50.h"
 #include "D_8004A7C4.h"
-
+#include "sounds.h"
 
 extern f32 D_800E6A10[];
 extern f32 D_800D6B10;
@@ -46,7 +46,7 @@ void func_801BB9D0(s32 arg0, s32 arg1, f32 arg2) {
             gEntitiesPosZArray[temp_v0] = 0.0f;
             gEntitiesPosXArray[temp_v0] = 0.0f;
         }
-        play_sound(0xA7);
+        play_sound(SOUND_ENESHOT2);
     }
 }
 
@@ -99,10 +99,10 @@ void func_801BBBF4_ovl7(s32 arg0) {
     D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId];
     D_800E3C90[D_8004A7C4->objId] = 65535.0f;
     func_8000B6BC(0x3C);
-    D_801AC364_ovl7(arg0);
+    func_801AC364_ovl7(arg0);
 }
 
 void func_801BBE1C_ovl7(s32 arg0) {
     func_801AB008_ovl7();
-    D_801AC908_ovl7(arg0);
+    func_801AC908_ovl7(arg0);
 }
