@@ -1259,8 +1259,8 @@ glabel func_801E1CB4_ovl17
 .L801E1F90_ovl17:
 /* 22D180 801E1F90 3C04800E */ lui $a0, %hi(D_800DEC10)
 /* 22D184 801E1F94 00822021 */  addu  $a0, $a0, $v0
-/* 22D188 801E1F98 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 22D18C 801E1F9C 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 22D188 801E1F98 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 22D18C 801E1F9C 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 22D190 801E1FA0 0C02C7DA */  jal   func_800B1F68
 /* 22D194 801E1FA4 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
 /* 22D198 801E1FA8 00002025 */  move  $a0, $zero
@@ -2757,8 +2757,8 @@ glabel func_801E34F4_ovl17
 /* 22E798 801E35A8 00380821 */  addu  $at, $at, $t8
 /* 22E79C 801E35AC E4247B20 */ swc1 $f4, %lo(D_800E7B20)($at)
 /* 22E7A0 801E35B0 8C680000 */  lw    $t0, ($v1)
-/* 22E7A4 801E35B4 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 22E7A8 801E35B8 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 22E7A4 801E35B4 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 22E7A8 801E35B8 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 22E7AC 801E35BC 0008C880 */  sll   $t9, $t0, 2
 /* 22E7B0 801E35C0 00992021 */  addu  $a0, $a0, $t9
 /* 22E7B4 801E35C4 0C02C7DA */  jal   func_800B1F68
@@ -3009,8 +3009,8 @@ glabel func_801E389C_ovl17
 /* 22EB44 801E3954 00280821 */  addu  $at, $at, $t0
 /* 22EB48 801E3958 E4247B20 */ swc1 $f4, %lo(D_800E7B20)($at)
 /* 22EB4C 801E395C 8C490000 */  lw    $t1, ($v0)
-/* 22EB50 801E3960 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 22EB54 801E3964 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 22EB50 801E3960 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 22EB54 801E3964 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 22EB58 801E3968 00095080 */  sll   $t2, $t1, 2
 /* 22EB5C 801E396C 008A2021 */  addu  $a0, $a0, $t2
 /* 22EB60 801E3970 0C02C7DA */  jal   func_800B1F68

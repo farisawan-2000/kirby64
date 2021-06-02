@@ -276,6 +276,9 @@ $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(A
 test: $(BUILD_DIR)/$(TARGET).z64
 	$(EMULATOR) $(EMU_FLAGS) $<
 
+test-pj64: $(BUILD_DIR)/$(TARGET).z64
+	wine ~/Desktop/new64/Project64.exe $<
+
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 

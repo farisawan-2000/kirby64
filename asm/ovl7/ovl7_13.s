@@ -187,8 +187,8 @@ glabel func_801B9150_ovl7
 /* 15F228 801B91B8 002A0821 */  addu  $at, $at, $t2
 /* 15F22C 801B91BC AC20F150 */  sw    $zero, -0xeb0($at)
 /* 15F230 801B91C0 8C4B0000 */  lw    $t3, ($v0)
-/* 15F234 801B91C4 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 15F238 801B91C8 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 15F234 801B91C4 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 15F238 801B91C8 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 15F23C 801B91CC 000B6080 */  sll   $t4, $t3, 2
 /* 15F240 801B91D0 008C2021 */  addu  $a0, $a0, $t4
 /* 15F244 801B91D4 0C02C7DA */  jal   func_800B1F68

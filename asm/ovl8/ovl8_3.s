@@ -1698,8 +1698,8 @@ glabel func_801D447C_ovl8
 /* 177F74 801D4494 3C01800E */ lui $at, %hi(D_800DEDD0)
 /* 177F78 801D4498 3C04800E */ lui $a0, %hi(D_800DEC10)
 /* 177F7C 801D449C 8C4E0000 */  lw    $t6, ($v0)
-/* 177F80 801D44A0 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 177F84 801D44A4 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 177F80 801D44A0 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 177F84 801D44A4 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 177F88 801D44A8 000E7880 */  sll   $t7, $t6, 2
 /* 177F8C 801D44AC 002F0821 */  addu  $at, $at, $t7
 /* 177F90 801D44B0 AC20EDD0 */ sw $zero, %lo(D_800DEDD0)($at)

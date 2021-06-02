@@ -23,8 +23,8 @@ glabel func_8022054C_ovl19
 /* 240CB0 802205A0 00390821 */  addu  $at, $at, $t9
 /* 240CB4 802205A4 AC20EF90 */ sw $zero, %lo(D_800DEF90)($at)
 /* 240CB8 802205A8 8C680000 */  lw    $t0, ($v1)
-/* 240CBC 802205AC 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 240CC0 802205B0 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 240CBC 802205AC 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 240CC0 802205B0 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 240CC4 802205B4 00084880 */  sll   $t1, $t0, 2
 /* 240CC8 802205B8 00892021 */  addu  $a0, $a0, $t1
 /* 240CCC 802205BC 0C02C7DA */  jal   func_800B1F68

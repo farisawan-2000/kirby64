@@ -11,8 +11,8 @@ glabel func_800F6C98
 /* 07F72C 800F6CBC 002F0821 */  addu  $at, $at, $t7
 /* 07F730 800F6CC0 AC20EF90 */  sw    $zero, -0x1070($at)
 /* 07F734 800F6CC4 8C580000 */  lw    $t8, ($v0)
-/* 07F738 800F6CC8 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 07F73C 800F6CCC 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 07F738 800F6CC8 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 07F73C 800F6CCC 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 07F740 800F6CD0 0018C880 */  sll   $t9, $t8, 2
 /* 07F744 800F6CD4 00992021 */  addu  $a0, $a0, $t9
 /* 07F748 800F6CD8 0C02C7DA */  jal   func_800B1F68

@@ -560,10 +560,10 @@ glabel func_80169C10_ovl3
 /* 0CA6C4 80169C84 AC38F150 */  sw    $t8, -0xeb0($at)
 /* 0CA6C8 80169C88 8C480000 */  lw    $t0, ($v0)
 /* 0CA6CC 80169C8C 3C01800E */  lui   $at, 0x800e
-/* 0CA6D0 80169C90 3C19800B */  lui   $t9, %hi(D_800B4954) # $t9, 0x800b
+/* 0CA6D0 80169C90 3C19800B */  lui   $t9, %hi(func_800B4954) # $t9, 0x800b
 /* 0CA6D4 80169C94 00084880 */  sll   $t1, $t0, 2
 /* 0CA6D8 80169C98 00290821 */  addu  $at, $at, $t1
-/* 0CA6DC 80169C9C 27394954 */  addiu $t9, %lo(D_800B4954) # addiu $t9, $t9, 0x4954
+/* 0CA6DC 80169C9C 27394954 */  addiu $t9, %lo(func_800B4954) # addiu $t9, $t9, 0x4954
 /* 0CA6E0 80169CA0 AC39EF90 */  sw    $t9, -0x1070($at)
 /* 0CA6E4 80169CA4 8C4A0000 */  lw    $t2, ($v0)
 /* 0CA6E8 80169CA8 3C13800F */  lui   $s3, %hi(D_800E8920) # $s3, 0x800f
@@ -1030,10 +1030,10 @@ glabel func_8016A308_ovl3
 /* 0CADCC 8016A38C AC38F150 */  sw    $t8, -0xeb0($at)
 /* 0CADD0 8016A390 8E080000 */  lw    $t0, ($s0)
 /* 0CADD4 8016A394 3C01800E */  lui   $at, 0x800e
-/* 0CADD8 8016A398 3C19800B */  lui   $t9, %hi(D_800B4954) # $t9, 0x800b
+/* 0CADD8 8016A398 3C19800B */  lui   $t9, %hi(func_800B4954) # $t9, 0x800b
 /* 0CADDC 8016A39C 00084880 */  sll   $t1, $t0, 2
 /* 0CADE0 8016A3A0 00290821 */  addu  $at, $at, $t1
-/* 0CADE4 8016A3A4 27394954 */  addiu $t9, %lo(D_800B4954) # addiu $t9, $t9, 0x4954
+/* 0CADE4 8016A3A4 27394954 */  addiu $t9, %lo(func_800B4954) # addiu $t9, $t9, 0x4954
 /* 0CADE8 8016A3A8 AC39EF90 */  sw    $t9, -0x1070($at)
 /* 0CADEC 8016A3AC 8E0B0000 */  lw    $t3, ($s0)
 /* 0CADF0 8016A3B0 3C11800F */  lui   $s1, %hi(D_800E8920) # $s1, 0x800f
@@ -1809,8 +1809,8 @@ glabel func_8016AAA4_ovl3
 /* 0CB9A0 8016AF60 022DC021 */  addu  $t8, $s1, $t5
 /* 0CB9A4 8016AF64 AF190000 */  sw    $t9, ($t8)
 /* 0CB9A8 8016AF68 8C4C0000 */  lw    $t4, ($v0)
-/* 0CB9AC 8016AF6C 3C0D800B */  lui   $t5, %hi(D_800B4954) # $t5, 0x800b
-/* 0CB9B0 8016AF70 25AD4954 */  addiu $t5, %lo(D_800B4954) # addiu $t5, $t5, 0x4954
+/* 0CB9AC 8016AF6C 3C0D800B */  lui   $t5, %hi(func_800B4954) # $t5, 0x800b
+/* 0CB9B0 8016AF70 25AD4954 */  addiu $t5, %lo(func_800B4954) # addiu $t5, $t5, 0x4954
 /* 0CB9B4 8016AF74 000C7880 */  sll   $t7, $t4, 2
 /* 0CB9B8 8016AF78 002F0821 */  addu  $at, $at, $t7
 /* 0CB9BC 8016AF7C AC2EDA90 */  sw    $t6, -0x2570($at)

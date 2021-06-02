@@ -416,7 +416,7 @@ loop_1:
     }
     temp_t4->unk0 = temp_t8_3->unk0;
     temp_t4->unk4 = temp_t8_3->unk4;
-    func_800B1F68(D_800DEC10[temp_s1->unk0], &D_800B1434);
+    func_800B1F68(D_800DEC10[temp_s1->unk0], &func_800B1434);
     D_800DEF90[D_8004A7C4->objId] = &D_800B491C;
     func_800AF9B8(0x24, 0x10);
     temp_a1 = &D_800DD8D0[D_8004A7C4->objId];

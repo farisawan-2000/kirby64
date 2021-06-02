@@ -20,10 +20,10 @@ glabel func_801DCA44_ovl10
 /* 1CD7FC 801DCA8C 00000000 */   nop   
 /* 1CD800 801DCA90 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1CD804 801DCA94 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
-/* 1CD808 801DCA98 3C0E800B */  lui   $t6, %hi(D_800B4954) # $t6, 0x800b
+/* 1CD808 801DCA98 3C0E800B */  lui   $t6, %hi(func_800B4954) # $t6, 0x800b
 /* 1CD80C 801DCA9C 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 1CD810 801DCAA0 8C4F0000 */  lw    $t7, ($v0)
-/* 1CD814 801DCAA4 25CE4954 */  addiu $t6, %lo(D_800B4954) # addiu $t6, $t6, 0x4954
+/* 1CD814 801DCAA4 25CE4954 */  addiu $t6, %lo(func_800B4954) # addiu $t6, $t6, 0x4954
 /* 1CD818 801DCAA8 8FA30018 */  lw    $v1, 0x18($sp)
 /* 1CD81C 801DCAAC 000FC080 */  sll   $t8, $t7, 2
 /* 1CD820 801DCAB0 00380821 */  addu  $at, $at, $t8

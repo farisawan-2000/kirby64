@@ -359,506 +359,226 @@ glabel D_8022F25C
 
 glabel D_8022F260
 BANK_INDEX 2, 0x0338
-
-glabel D_8022F264
 .word 0x00000000
-
-glabel D_8022F268
 BANK_INDEX 2, 0x031F
-
-glabel D_8022F26C
 BANK_INDEX 2, 0x0320
-
-glabel D_8022F270
 BANK_INDEX 2, 0x0137
-
-glabel D_8022F274
 BANK_INDEX 2, 0x0138
 
 glabel D_8022F278
 BANK_INDEX 2, 0x0335
-
-glabel D_8022F27C
 .word 0x00000000
-
-glabel D_8022F280
 BANK_INDEX 2, 0x0305
-
-glabel D_8022F284
 BANK_INDEX 2, 0x0306
-
-glabel D_8022F288
 BANK_INDEX 2, 0x011D
-
-glabel D_8022F28C
 BANK_INDEX 2, 0x011E
 
 glabel D_8022F290
 BANK_INDEX 2, 0x0336
-
-glabel D_8022F294
 .word 0x00000000
-
-glabel D_8022F298
 BANK_INDEX 2, 0x0307
-
-glabel D_8022F29C
 BANK_INDEX 2, 0x0308
-
-glabel D_8022F2A0
 BANK_INDEX 2, 0x011F
-
-glabel D_8022F2A4
 BANK_INDEX 2, 0x0120
 
 glabel D_8022F2A8
 BANK_INDEX 2, 0x0341
-
-glabel D_8022F2AC
 .word 0x00000000
-
-glabel D_8022F2B0
 BANK_INDEX 2, 0x0311
-
-glabel D_8022F2B4
 BANK_INDEX 2, 0x0312
-
-glabel D_8022F2B8
 BANK_INDEX 2, 0x012B
-
-glabel D_8022F2BC
 BANK_INDEX 2, 0x012C
 
 glabel D_8022F2C0
 BANK_INDEX 2, 0x0342
-
-glabel D_8022F2C4
 .word 0x00000000
-
-glabel D_8022F2C8
 BANK_INDEX 2, 0x0313
-
-glabel D_8022F2CC
 BANK_INDEX 2, 0x0312
-
-glabel D_8022F2D0
 BANK_INDEX 2, 0x012D
-
-glabel D_8022F2D4
 BANK_INDEX 2, 0x012C
 
 glabel D_8022F2D8
 BANK_INDEX 2, 0x0343
-
-glabel D_8022F2DC
 .word 0x00000000
-
-glabel D_8022F2E0
 BANK_INDEX 2, 0x0315
-
-glabel D_8022F2E4
 BANK_INDEX 2, 0x0316
-
-glabel D_8022F2E8
 BANK_INDEX 2, 0x012F
-
-glabel D_8022F2EC
 BANK_INDEX 2, 0x0130
 
 glabel D_8022F2F0
 BANK_INDEX 2, 0x033E
-
-glabel D_8022F2F4
 .word 0x00000000
-
-glabel D_8022F2F8
 BANK_INDEX 2, 0x030B
-
-glabel D_8022F2FC
 BANK_INDEX 2, 0x0124
-
-glabel D_8022F300
 BANK_INDEX 2, 0x0123
-
-glabel D_8022F304
 BANK_INDEX 2, 0x0124
 
 glabel D_8022F308
 BANK_INDEX 2, 0x033F
-
-glabel D_8022F30C
 .word 0x00000000
-
-glabel D_8022F310
 BANK_INDEX 2, 0x030D
-
-glabel D_8022F314
 BANK_INDEX 2, 0x0126
-
-glabel D_8022F318
 BANK_INDEX 2, 0x0125
-
-glabel D_8022F31C
 BANK_INDEX 2, 0x0126
 
 glabel D_8022F320
 BANK_INDEX 2, 0x033D
-
-glabel D_8022F324
 .word 0x00000000
-
-glabel D_8022F328
 BANK_INDEX 2, 0x0309
-
-glabel D_8022F32C
 BANK_INDEX 2, 0x030A
-
-glabel D_8022F330
 BANK_INDEX 2, 0x0121
-
-glabel D_8022F334
 BANK_INDEX 2, 0x0122
 
 glabel D_8022F338
 BANK_INDEX 2, 0x0340
-
-glabel D_8022F33C
 .word 0x00000000
-
-glabel D_8022F340
 BANK_INDEX 2, 0x030F
-
-glabel D_8022F344
 BANK_INDEX 2, 0x0310
-
-glabel D_8022F348
 BANK_INDEX 2, 0x0127
-
-glabel D_8022F34C
 BANK_INDEX 2, 0x0128
 
 glabel D_8022F350
 BANK_INDEX 2, 0x033B
-
-glabel D_8022F354
 .word 0x00000000
-
-glabel D_8022F358
 BANK_INDEX 2, 0x0301
-
-glabel D_8022F35C
 BANK_INDEX 2, 0x0302
-
-glabel D_8022F360
 BANK_INDEX 2, 0x0119
-
-glabel D_8022F364
 BANK_INDEX 2, 0x011A
 
 glabel D_8022F368
 BANK_INDEX 2, 0x033C
-
-glabel D_8022F36C
 .word 0x00000000
-
-glabel D_8022F370
 BANK_INDEX 2, 0x0303
-
-glabel D_8022F374
 BANK_INDEX 2, 0x0304
-
-glabel D_8022F378
 BANK_INDEX 2, 0x011B
-
-glabel D_8022F37C
 BANK_INDEX 2, 0x011C
 
 glabel D_8022F380
 BANK_INDEX 2, 0x033A
-
-glabel D_8022F384
 .word 0x00000000
-
-glabel D_8022F388
 BANK_INDEX 2, 0x02FF
-
-glabel D_8022F38C
 .word 0x00000000
-
-glabel D_8022F390
 BANK_INDEX 2, 0x0117
-
-glabel D_8022F394
 .word 0x00000000
 
 glabel D_8022F398
 BANK_INDEX 2, 0x0346
-
-glabel D_8022F39C
 .word 0x00000000
-
-glabel D_8022F3A0
 BANK_INDEX 2, 0x02FB
-
-glabel D_8022F3A4
 BANK_INDEX 2, 0x02FC
-
-glabel D_8022F3A8
 .word 0x00000000
-
-glabel D_8022F3AC
 .word 0x00000000
 
 glabel D_8022F3B0
 BANK_INDEX 2, 0x0347
-
-glabel D_8022F3B4
 .word 0x00000000
-
-glabel D_8022F3B8
 BANK_INDEX 2, 0x02FD
-
-glabel D_8022F3BC
 BANK_INDEX 2, 0x02FC
-
-glabel D_8022F3C0
 BANK_INDEX 2, 0x00F1
-
-glabel D_8022F3C4
 BANK_INDEX 2, 0x00F0
 
 glabel D_8022F3C8
 BANK_INDEX 2, 0x0344
-
-glabel D_8022F3CC
 .word 0x00000000
-
-glabel D_8022F3D0
 BANK_INDEX 2, 0x02F7
-
-glabel D_8022F3D4
 BANK_INDEX 2, 0x02F8
-
-glabel D_8022F3D8
 BANK_INDEX 2, 0x00EB
-
-glabel D_8022F3DC
 BANK_INDEX 2, 0x00EC
 
 glabel D_8022F3E0
 BANK_INDEX 2, 0x0345
-
-glabel D_8022F3E4
 .word 0x00000000
-
-glabel D_8022F3E8
 BANK_INDEX 2, 0x02F9
-
-glabel D_8022F3EC
 BANK_INDEX 2, 0x02FA
-
-glabel D_8022F3F0
 BANK_INDEX 2, 0x00ED
-
-glabel D_8022F3F4
 BANK_INDEX 2, 0x00EE
 
 glabel D_8022F3F8
 BANK_INDEX 2, 0x0353
-
-glabel D_8022F3FC
 .word 0x00000000
-
-glabel D_8022F400
 BANK_INDEX 2, 0x0311
-
-glabel D_8022F404
 BANK_INDEX 2, 0x0312
-
-glabel D_8022F408
 BANK_INDEX 2, 0x012B
-
-glabel D_8022F40C
 BANK_INDEX 2, 0x012C
 
 glabel D_8022F410
 BANK_INDEX 2, 0x0354
-
-glabel D_8022F414
 .word 0x00000000
-
-glabel D_8022F418
 BANK_INDEX 2, 0x0313
-
-glabel D_8022F41C
 BANK_INDEX 2, 0x0312
-
-glabel D_8022F420
 BANK_INDEX 2, 0x012D
-
-glabel D_8022F424
 BANK_INDEX 2, 0x012C
 
 glabel D_8022F428
 BANK_INDEX 2, 0x0355
-
-glabel D_8022F42C
 .word 0x00000000
-
-glabel D_8022F430
 BANK_INDEX 2, 0x0315
-
-glabel D_8022F434
 BANK_INDEX 2, 0x0316
-
-glabel D_8022F438
 BANK_INDEX 2, 0x012F
-
-glabel D_8022F43C
 BANK_INDEX 2, 0x0130
 
 glabel D_8022F440
 BANK_INDEX 2, 0x0350
-
-glabel D_8022F444
 .word 0x00000000
-
-glabel D_8022F448
 BANK_INDEX 2, 0x030B
-
-glabel D_8022F44C
 BANK_INDEX 2, 0x0124
-
-glabel D_8022F450
 BANK_INDEX 2, 0x0123
-
-glabel D_8022F454
 BANK_INDEX 2, 0x0124
 
 glabel D_8022F458
 BANK_INDEX 2, 0x0351
-
-glabel D_8022F45C
 .word 0x00000000
-
-glabel D_8022F460
 BANK_INDEX 2, 0x030D
-
-glabel D_8022F464
 BANK_INDEX 2, 0x0126
-
-glabel D_8022F468
 BANK_INDEX 2, 0x0125
-
-glabel D_8022F46C
 BANK_INDEX 2, 0x0126
 
 glabel D_8022F470
 BANK_INDEX 2, 0x034F
-
-glabel D_8022F474
 .word 0x00000000
-
-glabel D_8022F478
 BANK_INDEX 2, 0x0309
-
-glabel D_8022F47C
 BANK_INDEX 2, 0x030A
-
-glabel D_8022F480
 BANK_INDEX 2, 0x0121
-
-glabel D_8022F484
 BANK_INDEX 2, 0x0122
 
 glabel D_8022F488
 BANK_INDEX 2, 0x0352
-
-glabel D_8022F48C
 .word 0x00000000
-
-glabel D_8022F490
 BANK_INDEX 2, 0x030F
-
-glabel D_8022F494
 BANK_INDEX 2, 0x0310
-
-glabel D_8022F498
 BANK_INDEX 2, 0x0127
-
-glabel D_8022F49C
 BANK_INDEX 2, 0x0128
 
 glabel D_8022F4A0
 BANK_INDEX 2, 0x034D
-
-glabel D_8022F4A4
 .word 0x00000000
-
-glabel D_8022F4A8
 BANK_INDEX 2, 0x0301
-
-glabel D_8022F4AC
 BANK_INDEX 2, 0x0302
-
-glabel D_8022F4B0
 BANK_INDEX 2, 0x0119
-
-glabel D_8022F4B4
 BANK_INDEX 2, 0x011A
 
 glabel D_8022F4B8
 BANK_INDEX 2, 0x034E
-
-glabel D_8022F4BC
 .word 0x00000000
-
-glabel D_8022F4C0
 BANK_INDEX 2, 0x0303
-
-glabel D_8022F4C4
 BANK_INDEX 2, 0x0304
-
-glabel D_8022F4C8
 BANK_INDEX 2, 0x011B
-
-glabel D_8022F4CC
 BANK_INDEX 2, 0x011C
 
 glabel D_8022F4D0
 BANK_INDEX 2, 0x034C
-
-glabel D_8022F4D4
 .word 0x00000000
-
-glabel D_8022F4D8
 BANK_INDEX 2, 0x02FF
-
-glabel D_8022F4DC
 .word 0x00000000
-
-glabel D_8022F4E0
 BANK_INDEX 2, 0x0117
-
-glabel D_8022F4E4
 .word 0x00000000
 
 glabel D_8022F4E8
 BANK_INDEX 2, 0x0356
-
-glabel D_8022F4EC
 .word 0x00000000
-
-glabel D_8022F4F0
 BANK_INDEX 2, 0x02F1
-
-glabel D_8022F4F4
 BANK_INDEX 2, 0x02F2
-
-glabel D_8022F4F8
 BANK_INDEX 2, 0x00E7
-
-glabel D_8022F4FC
 BANK_INDEX 2, 0x00E8
 
 glabel D_8022F500
@@ -1108,583 +828,3 @@ glabel D_8022F698
 
 glabel D_8022F69C
 .word 0x00000000
-
-.balign 4
-glabel D_8022F6A0
-.asciiz "reqHelpChildTrk  Request Error!![helplib.cc]\n"
-
-glabel D_8022F6D0
-.word 0x4426AA3D
-
-glabel D_8022F6D4
-.word 0x4426AA3D
-
-glabel D_8022F6D8
-.word 0x00000000
-
-glabel D_8022F6DC
-.word 0x00000000
-
-.balign 4
-glabel D_8022F6E0
-.asciiz "Helper Effect Request Error![helpeff.cc]\n"
-
-glabel D_8022F70C
-.float 0.2
-
-glabel D_8022F710
-.float 0.2
-
-glabel D_8022F714
-.word 0x00000000
-
-glabel D_8022F718
-.word 0x00000000
-
-glabel D_8022F71C
-.word 0x00000000
-
-.balign 4
-glabel D_8022F720
-.asciiz "drawItemReq  Request Error!![helper.cc]\n"
-
-glabel D_8022F74C
-.float 0.2
-
-glabel D_8022F750
-.float 0.2
-
-glabel D_8022F754
-.float 0.2
-
-glabel D_8022F758
-.word 0x3FC90FDB
-
-glabel D_8022F75C
-.float 0.2
-
-glabel D_8022F760
-.word 0x3FC90FDB
-
-glabel D_8022F764
-.float 0.2
-
-glabel D_8022F768
-.float 0.2
-
-glabel D_8022F76C
-.word 0x3FC90FDB
-
-glabel D_8022F770
-.float 0.2
-
-glabel D_8022F774
-.float 0.2
-
-glabel D_8022F778
-.float 0.2
-
-glabel D_8022F77C
-.float 0.2
-
-glabel D_8022F780
-.float 0.2
-
-glabel D_8022F784
-.word 0x40C6D3F2
-
-glabel D_8022F788
-.word 0x3D8EFA35
-
-glabel D_8022F78C
-.word 0x3D8EFA35
-
-glabel D_8022F790
-.word 0x3D8EFA35
-
-glabel D_8022F794
-.word 0x40C6D3F2
-
-glabel D_8022F798
-.word 0x40490FDB
-
-glabel D_8022F79C
-.word 0xBD8EFA35
-
-glabel D_8022F7A0
-.float 0.2
-
-glabel D_8022F7A4
-.float 0.2
-
-glabel D_8022F7A8
-.float 0.2
-
-glabel D_8022F7AC
-.word 0x3F19999A
-
-glabel D_8022F7B0
-.word 0xBF490FDB
-
-glabel D_8022F7B4
-.word 0x3F490FDB
-
-glabel D_8022F7B8
-.float 0.2
-
-glabel D_8022F7BC
-.float 0.2
-
-glabel D_8022F7C0
-.float 0.2
-
-glabel D_8022F7C4
-.float 0.2
-
-glabel D_8022F7C8
-.word 0x3FC90FDB
-
-glabel D_8022F7CC
-.float 0.2
-
-glabel D_8022F7D0
-.float 0.2
-
-glabel D_8022F7D4
-.word 0x00000000
-
-glabel D_8022F7D8
-.word 0x00000000
-
-glabel D_8022F7DC
-.word 0x00000000
-
-glabel jtbl_8022F7E0
-.word L802234F0_ovl19
-.word L802235C0_ovl19
-.word L80223764_ovl19
-.word L80223818_ovl19
-.word L80223884_ovl19
-.word L802239C4_ovl19
-.word L8022342C_ovl19
-.word L80223C04_ovl19
-
-glabel D_8022F800
-.word 0x3D2E147B
-
-glabel D_8022F804
-.word 0xBF7B0CDD
-
-glabel D_8022F808
-.word 0xBF7B0CDD
-
-glabel D_8022F80C
-.word 0x3F490FDB
-
-glabel D_8022F810
-.word 0xBF7B0CDD
-
-glabel D_8022F814
-.word 0xBE666666
-
-glabel D_8022F818
-.word 0xBF7B0CDD
-
-glabel D_8022F81C
-.float 65535.0
-
-glabel D_8022F820
-.word 0xBF7B0CDD
-
-glabel D_8022F824
-.word 0xBF7B0CDD
-
-glabel D_8022F828
-.word 0x3E32B8C3
-
-glabel jtbl_8022F82C
-.word L80224144_ovl19
-.word L80224198_ovl19
-.word L802241C0_ovl19
-.word L802241EC_ovl19
-.word L80224254_ovl19
-.word L80224398_ovl19
-.word L80224294_ovl19
-.word L80224334_ovl19
-
-glabel D_8022F84C
-.word 0x40490FDB
-
-glabel D_8022F850
-.float 0.025
-
-glabel D_8022F854
-.word 0x40490FDB
-
-glabel jtbl_8022F858
-.word L80224CB8_ovl19
-.word L80224D88_ovl19
-.word L80224F28_ovl19
-.word L80224FDC_ovl19
-.word L80225048_ovl19
-.word L80225188_ovl19
-.word L80224B14_ovl19
-.word L802253C4_ovl19
-
-glabel D_8022F878
-.float 0.2
-
-glabel D_8022F87C
-.word 0xBF7B0CDD
-
-glabel D_8022F880
-.word 0xBF9CE80A
-
-glabel D_8022F884
-.word 0x3F490FDB
-
-glabel D_8022F888
-.word 0xBF7B0CDD
-
-glabel D_8022F88C
-.word 0xBE666666
-
-glabel D_8022F890
-.word 0xBF7B0CDD
-
-glabel D_8022F894
-.float 65535.0
-
-glabel D_8022F898
-.float 65535.0
-
-glabel D_8022F89C
-.word 0xBF7B0CDD
-
-glabel D_8022F8A0
-.word 0x3E32B8C3
-
-glabel jtbl_8022F8A4
-.word L8022590C_ovl19
-.word L80225960_ovl19
-.word L80225988_ovl19
-.word L802259B4_ovl19
-.word L80225A1C_ovl19
-.word L80225AC0_ovl19
-.word L80225C7C_ovl19
-.word L80225A5C_ovl19
-
-glabel D_8022F8C4
-.word 0x3EE66666
-
-glabel D_8022F8C8
-.float 0.025
-
-glabel jtbl_8022F8CC
-.word L8022633C_ovl19
-.word L802263D4_ovl19
-.word L80226574_ovl19
-.word L8022662C_ovl19
-.word L80226698_ovl19
-.word L802267DC_ovl19
-.word L80226A80_ovl19
-.word L80226A1C_ovl19
-
-glabel D_8022F8EC
-.word 0xBF7B0CDD
-
-glabel D_8022F8F0
-.word 0xBF7B0CDD
-
-glabel D_8022F8F4
-.word 0x3F490FDB
-
-glabel D_8022F8F8
-.word 0xBF7B0CDD
-
-glabel D_8022F8FC
-.word 0xBE666666
-
-glabel D_8022F900
-.word 0xBF7B0CDD
-
-glabel D_8022F904
-.float 65535.0
-
-glabel D_8022F908
-.float 65535.0
-
-glabel D_8022F90C
-.word 0xBF7B0CDD
-
-glabel jtbl_8022F910
-.word L80226C78_ovl19
-.word L80226CD4_ovl19
-.word L80226CF8_ovl19
-.word L80226D28_ovl19
-.word L80226D9C_ovl19
-.word L80226E48_ovl19
-.word L80226E48_ovl19
-.word L80226DE4_ovl19
-
-glabel D_8022F930
-.float 0.1
-
-glabel D_8022F934
-.float 0.2
-
-glabel D_8022F938
-.float 0.025
-
-glabel D_8022F93C
-.float 0.2
-
-glabel D_8022F940
-.float 0.2
-
-glabel D_8022F944
-.float 0.2
-
-glabel D_8022F948
-.float 65535.0
-
-glabel D_8022F94C
-.word 0x3D0F5C29
-
-glabel D_8022F950
-.float 0.2
-
-glabel D_8022F954
-.float 65535.0
-
-glabel D_8022F958
-.word 0x3ECCCCCD
-
-glabel D_8022F95C
-.word 0x3FC90FDB
-
-glabel D_8022F960
-.float 0.2
-
-glabel D_8022F964
-.word 0x42186666
-
-glabel D_8022F968
-.word 0x3EBAE148
-
-glabel D_8022F96C
-.float 65535.0
-
-glabel D_8022F970
-.asciiz "No List Id:%d\n"
-
-glabel D_8022F980
-.word 0x3D6147AE
-
-glabel D_8022F984
-.word 0x3E970A3D
-
-glabel D_8022F988
-.word 0x3E8A3D71
-
-glabel D_8022F98C
-.float 65535.0
-
-glabel D_8022F990
-.word 0xBF7B0CDD
-
-glabel D_8022F994
-.float 65535.0
-
-glabel D_8022F998
-.float 65535.0
-
-glabel D_8022F99C
-.word 0xBF7B0CDD
-
-glabel D_8022F9A0
-.word 0xBF7B0CDD
-
-glabel D_8022F9A4
-.float 65535.0
-
-glabel D_8022F9A8
-.float 65535.0
-
-glabel jtbl_8022F9AC
-.word L8022B024_ovl19
-.word L8022B080_ovl19
-.word L8022B0EC_ovl19
-.word L8022B14C_ovl19
-.word L8022B1C0_ovl19
-
-glabel D_8022F9C0
-.word 0xBF7B0CDD
-
-glabel D_8022F9C4
-.float 65535.0
-
-glabel D_8022F9C8
-.float 65535.0
-
-glabel jtbl_8022F9CC
-.word L8022B664_ovl19
-.word L8022B664_ovl19
-.word L8022B714_ovl19
-.word L8022B78C_ovl19
-.word L8022B7F0_ovl19
-.word L8022B86C_ovl19
-
-glabel D_8022F9E4
-.float 65535.0
-
-glabel D_8022F9E8
-.float 65535.0
-
-glabel D_8022F9EC
-.word 0xBF7B0CDD
-
-glabel D_8022F9F0
-.word 0xBF7B0CDD
-
-glabel D_8022F9F4
-.float 65535.0
-
-glabel D_8022F9F8
-.word 0xBECCCCCD
-
-glabel D_8022F9FC
-.word 0x3ECCCCCD
-
-glabel D_8022FA00
-.word 0xBF7B0CDD
-
-glabel D_8022FA04
-.float 65535.0
-
-glabel D_8022FA08
-.word 0xBF7B0CDD
-
-glabel D_8022FA0C
-.float 65535.0
-
-glabel D_8022FA10
-.word 0xBF7B0CDD
-
-glabel D_8022FA14
-.float 65535.0
-
-glabel D_8022FA18
-.word 0xBECCCCCD
-
-glabel D_8022FA1C
-.word 0x3ECCCCCD
-
-glabel D_8022FA20
-.word 0xBF7B0CDD
-
-glabel D_8022FA24
-.float 65535.0
-
-glabel D_8022FA28
-.word 0xBF7B0CDD
-
-glabel D_8022FA2C
-.float 65535.0
-
-glabel D_8022FA30
-.float 65535.0
-
-glabel D_8022FA34
-.word 0xBF7B0CDD
-
-glabel D_8022FA38
-.float 65535.0
-
-glabel D_8022FA3C
-.float 65535.0
-
-glabel D_8022FA40
-.float 0.2
-
-glabel D_8022FA44
-.word 0x3D6147AE
-
-glabel D_8022FA48
-.word 0x3E8A3D71
-
-glabel D_8022FA4C
-.word 0x3E970A3D
-
-glabel D_8022FA50
-.float 0.2
-
-glabel D_8022FA54
-.word 0x3E19999A
-
-glabel D_8022FA58
-.float 65535.0
-
-glabel D_8022FA5C
-.word 0xBF333333
-
-glabel D_8022FA60
-.float 65535.0
-
-glabel D_8022FA64
-.word 0x3D6147AE
-
-glabel D_8022FA68
-.float 65535.0
-
-glabel D_8022FA6C
-.word 0xBF1851EC
-
-glabel D_8022FA70
-.float 65535.0
-
-glabel D_8022FA74
-.word 0x3E8A3D71
-
-glabel D_8022FA78
-.float 65535.0
-
-glabel D_8022FA7C
-.word 0xBF1D70A4
-
-glabel D_8022FA80
-.float 65535.0
-
-glabel D_8022FA84
-.word 0x3E970A3D
-
-glabel D_8022FA88
-.word 0x3EBD70A4
-
-glabel D_8022FA8C
-.float 0.2
-
-glabel D_8022FA90
-.word 0x4426AA3D
-
-glabel D_8022FA94
-.float 65535.0
-
-glabel D_8022FA98
-.word 0x4426AA3D
-
-glabel D_8022FA9C
-.float 65535.0
-
-glabel D_8022FAA0
-.word 0x4426AA3D
-
-glabel D_8022FAA4
-.float 65535.0
-
-glabel D_8022FAA8
-.word 0x00000000
-
-glabel D_8022FAAC
-.word 0x00000000
-

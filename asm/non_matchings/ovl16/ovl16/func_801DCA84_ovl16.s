@@ -23,8 +23,8 @@ glabel func_801DCA84_ovl16
 /* 212D88 801DCAD8 00390821 */  addu  $at, $at, $t9
 /* 212D8C 801DCADC AC2FEF90 */ sw $t7, %lo(D_800DEF90)($at)
 /* 212D90 801DCAE0 8C680000 */  lw    $t0, ($v1)
-/* 212D94 801DCAE4 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 212D98 801DCAE8 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 212D94 801DCAE4 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 212D98 801DCAE8 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 212D9C 801DCAEC 00084880 */  sll   $t1, $t0, 2
 /* 212DA0 801DCAF0 00892021 */  addu  $a0, $a0, $t1
 /* 212DA4 801DCAF4 0C02C7DA */  jal   func_800B1F68

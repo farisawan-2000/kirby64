@@ -44,7 +44,7 @@ void func_801DBE00_ovl10(s32 arg0) {
     func_800B19F4(0x7D, D_8004A7C4->objId);
     func_800AFBB4(0, D_8004A7C4);
     D_800DEF90[D_8004A7C4->objId] = NULL;
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &D_800B1434);
+    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     D_800DF150[D_8004A7C4->objId] = NULL;
     D_800E98E0[D_8004A7C4->objId] = func_801DBF70_ovl10(3, 0.0f);
     D_800E9AA0[D_8004A7C4->objId] = func_801DBF70_ovl10(4, 0.0f);
@@ -84,9 +84,9 @@ void func_801DC0EC_ovl10(s32 arg0) {
     func_8019BB58_ovl10();
     func_800B19F4(0x71, D_8004A7C4->objId);
     func_800AFBB4(0, D_8004A7C4);
-    D_800DEF90[D_8004A7C4->objId] = &D_800B4954;
+    D_800DEF90[D_8004A7C4->objId] = &func_800B4954;
     D_800DDFD0[D_8004A7C4->objId] = 0;
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &D_800B1434);
+    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     D_800E6A10[D_8004A7C4->objId] = (D_800E7880[D_8004A7C4->objId] == 2) ? 1.0f : -1.0f;
     func_801A0D50_ovl10(&func_801DBD38_ovl10);
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
@@ -111,9 +111,9 @@ void func_801DC2F4_ovl10(s32 arg0) {
     func_8019BB58_ovl10();
     func_800B19F4(0x71, D_8004A7C4->objId);
     func_800AFBB4(0, D_8004A7C4);
-    D_800DEF90[D_8004A7C4->objId] = &D_800B4954;
+    D_800DEF90[D_8004A7C4->objId] = &func_800B4954;
     D_800DDFD0[D_8004A7C4->objId] = 0;
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &D_800B1434);
+    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     D_800E6A10[D_8004A7C4->objId] = (D_800E7880[D_8004A7C4->objId] == 4) ? 1.0f : -1.0f;
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800E2CD0[D_8004A7C4->objId] = 140.0f;
@@ -265,7 +265,7 @@ void func_801DCA44_ovl10(s32 arg0) {
     func_800A9864(0x100D8, 0x23, 0x10);
     func_8019BB58_ovl10();
     temp_v0 = D_8004A7C4;
-    D_800DEF90[temp_v0->unk0] = &D_800B4954;
+    D_800DEF90[temp_v0->unk0] = &func_800B4954;
     D_800DF150[temp_v0->unk0] = NULL;
     temp_a1 = D_800E5F90[sp18];
     *(&D_800E6150 + (temp_v0->unk0 * 4)) = temp_a1;

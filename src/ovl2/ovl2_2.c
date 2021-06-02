@@ -36,7 +36,7 @@ void func_800F6C98(s32 arg0) {
 
     temp_v0 = D_8004A7C4;
     ((temp_v0->unk0 * 4) + 0x800E0000)->unk-1070 = 0;
-    func_800B1F68(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
+    func_800B1F68(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &func_800B1434);
     func_8000B6BC(120.0f * D_800D6B14);
     temp_v0_2 = D_8004A7C4->objId;
     temp_v1 = ((temp_v0_2 * 4) + 0x800F0000)->unk-6720;
@@ -89,7 +89,7 @@ void func_800F6E30(s32 arg0) {
     u32 phi_s3;
     s32 phi_v1;
 
-    func_800B1F68(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &D_800B1434);
+    func_800B1F68(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &func_800B1434);
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
     func_800AF980(0x18);
     ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;

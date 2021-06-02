@@ -1491,7 +1491,7 @@ loop_40:
     func_800B2340(&sp24, ((*(D_800E0D50 + (phi_v1_3->objId * 4)) * 4) + 0x800E0000)->unk-430->unkC, 0xFFFF, D_800E0D50);
     temp_v1_5 = D_8004A7C4;
     ((temp_v1_5->objId * 4) + 0x800E0000)->unk2790 = sp28;
-    ((temp_v1_5->objId * 4) + 0x800E0000)->unk-1070 = &D_800B4954;
+    ((temp_v1_5->objId * 4) + 0x800E0000)->unk-1070 = &func_800B4954;
     temp_a2 = temp_v1_5->objId;
     func_800F98EC(temp_a2, gEntitiesPosXArray[temp_a2] - gEntitiesPosXArray[((temp_a2 * 4) + 0x800E0000)->unkD50]);
     func_800FBE1C();

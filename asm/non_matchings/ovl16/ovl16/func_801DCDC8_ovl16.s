@@ -265,8 +265,8 @@ glabel L801DD0B4_ovl16
 glabel L801DD1C0_ovl16
 /* 213470 801DD1C0 3C04800E */ lui $a0, %hi(D_800DEC10)
 /* 213474 801DD1C4 00822021 */  addu  $a0, $a0, $v0
-/* 213478 801DD1C8 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
-/* 21347C 801DD1CC 24A51434 */  addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 213478 801DD1C8 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
+/* 21347C 801DD1CC 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 213480 801DD1D0 0C02C7DA */  jal   func_800B1F68
 /* 213484 801DD1D4 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
 /* 213488 801DD1D8 8E590000 */  lw    $t9, ($s2)

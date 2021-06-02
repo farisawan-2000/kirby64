@@ -627,17 +627,19 @@ SECTIONS
     BEGIN_SEG(ovl19, 0x8021DF20) {
         BUILD_DIR/src/ovl19/helplib.o(.text);
         BUILD_DIR/src/ovl19/helper.o(.text);
-        BUILD_DIR/asm/ovl19/ovl19_3.o(.text);
+        BUILD_DIR/src/ovl19/ovl19_3.o(.text);
         BUILD_DIR/asm/ovl19/ovl19_4.o(.text);
         BUILD_DIR/src/ovl19/ovl19_5.o(.text);
     }
     END_SEG(ovl19)
     BEGIN_SEG(ovl19Data, _ovl19SegmentEnd) {
         BUILD_DIR/data/kirby.ovl19.data.o(.data*);
+        BUILD_DIR/data/kirby.ovl19.rodata.o(.rodata*);
     }
     END_SEG(ovl19Data)
     BEGIN_NOLOAD(ovl19) {
         BUILD_DIR/asm/ovl19/ovl19_bss.o(.bss);
+        BUILD_DIR/src/ovl19/ovl19_3.o(.rodata); 
     }
     END_NOLOAD(ovl19)
 

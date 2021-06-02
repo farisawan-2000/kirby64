@@ -7,7 +7,7 @@ extern void (*D_801F4240_ovl10[])(struct UnkStruct8004A7C4 *a0);
 
 extern s32 D_800DEC10[];
 
-extern s32 D_800B1434;
+extern s32 func_800B1434;
 
 extern s32 D_800EBDA0[];
 extern s32 D_800EBF60[];
@@ -41,4 +41,4 @@ extern void func_800AECC0(f32);
 extern void func_800AED20(f32);
 extern void func_800BC1FC(s32);
 extern void func_8019BB58_ovl10(void);
-extern s32 D_800B4954;
+extern s32 func_800B4954;

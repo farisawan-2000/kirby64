@@ -6,12 +6,12 @@ glabel func_800F72B0
 /* 07FD30 800F72C0 AFA40018 */  sw    $a0, 0x18($sp)
 /* 07FD34 800F72C4 8DCF0000 */  lw    $t7, ($t6)
 /* 07FD38 800F72C8 3C04800E */  lui   $a0, 0x800e
-/* 07FD3C 800F72CC 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
+/* 07FD3C 800F72CC 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
 /* 07FD40 800F72D0 000FC080 */  sll   $t8, $t7, 2
 /* 07FD44 800F72D4 00982021 */  addu  $a0, $a0, $t8
 /* 07FD48 800F72D8 8C84EC10 */  lw    $a0, -0x13f0($a0)
 /* 07FD4C 800F72DC 0C02C7DA */  jal   func_800B1F68
-/* 07FD50 800F72E0 24A51434 */   addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
+/* 07FD50 800F72E0 24A51434 */   addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 07FD54 800F72E4 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 07FD58 800F72E8 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 07FD5C 800F72EC 3C19800B */  lui   $t9, %hi(D_800B491C) # $t9, 0x800b
