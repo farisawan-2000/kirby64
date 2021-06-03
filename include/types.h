@@ -157,7 +157,9 @@ struct KirbyState {
     f32 unk40;
     u32 unk44;
     u32 unk48;
+    // struct pointer
     u32 unk4C;
+    // struct pointer
     u32 unk50;
     u32 unk54;
     u32 unk58;

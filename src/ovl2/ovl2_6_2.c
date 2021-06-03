@@ -1736,36 +1736,20 @@ void func_801046A0(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_801046A0.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_8010474C(void *arg0, void *arg1) {
-    void *sp5C;
-    void *sp58;
-    ?32 sp54;
-    ?32 sp50;
-    ?32 sp4C;
-    ?32 sp44;
-    ? sp2C;
-    ? sp20;
-    ? sp18;
+u32 func_8010474C(Vector *v0, Vector *v1) {
+    struct CollisionState newColState;
 
-    gCollisionState = &sp18;
-    sp20.unk0 = arg0->unk0;
-    sp20.unk4 = arg0->unk4;
-    sp20.unk8 = arg0->unk8;
-    sp2C.unk0 = arg1->unk0;
-    sp2C.unk4 = arg1->unk4;
-    sp2C.unk8 = arg1->unk8;
-    sp44 = 0;
-    sp54 = 0;
-    sp5C = &func_80102364;
-    sp58 = &func_80101F4C;
-    sp4C = 0;
-    sp50 = 0;
-    func_80103D80(0, 0, 0, 0);
+    gCollisionState = &newColState;
+    newColState.currPos = *v0;
+    newColState.nextPos = *v1;
+    newColState.someNormal = NULL;
+    newColState.unk3C = NULL;
+    newColState.unk44 = func_80102364;
+    newColState.unk40 = func_80101F4C;
+    newColState.unk34 = NULL;
+    newColState.unk38 = NULL;
+    return func_80103D80(0, 0, 0, 0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010474C.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801047F0(void *arg0, void *arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6) {

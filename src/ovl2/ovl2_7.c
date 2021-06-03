@@ -1,6 +1,9 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "D_8004A7C4.h"
+#include "ovl1/ovl1_6.h"
+#include "buffers.h"
+#include "unk_structs/D_800DE350.h"
 
 #ifdef MIPS_TO_C
 f32 func_80111F10(void) {
@@ -163,7 +166,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801121E0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_801123AC(void *arg0) {
+void *func_801123AC(struct UnkStruct8004A7C4 *arg0) {
     f32 sp1C;
     f32 temp_f0;
     void *temp_v0;
@@ -195,7 +198,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801123AC.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_80112498(void *arg0) {
+? func_80112498(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f14;
     s32 temp_a1;
     void *temp_v1;
@@ -225,7 +228,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112498.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_8011253C(void *arg0) {
+? func_8011253C(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
@@ -255,7 +258,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011253C.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_80112600(void *arg0) {
+? func_80112600(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f14;
     s32 temp_a1;
     void *temp_v1;
@@ -285,7 +288,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112600.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_801126A4(void *arg0) {
+? func_801126A4(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
@@ -315,7 +318,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801126A4.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_80112768(void *arg0) {
+? func_80112768(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = D_8012D934;
@@ -329,7 +332,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112768.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_801127D8(void *arg0) {
+? func_801127D8(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v1;
 
     temp_v1 = D_8012D934;
@@ -341,7 +344,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801127D8.s")
 #endif
 
 #ifdef MIPS_TO_C
-? func_80112828(void *arg0) {
+? func_80112828(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = D_8012D934;
@@ -483,7 +486,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112A40.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80112B4C(void *arg0) {
+void func_80112B4C(struct UnkStruct8004A7C4 *arg0) {
     void *sp3C;
     s32 sp28;
     f32 *sp24;
@@ -594,7 +597,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112CD4.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_80112ED4(void *arg0, void *arg1, void *arg2) {
+f32 func_80112ED4(struct UnkStruct8004A7C4 *arg0, void *arg1, void *arg2) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
@@ -612,7 +615,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112ED4.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_80112F70(void *arg0, void *arg1, void *arg2) {
+f32 func_80112F70(struct UnkStruct8004A7C4 *arg0, void *arg1, void *arg2) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
@@ -630,7 +633,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80112F70.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_80113028(void *arg0, void *arg1) {
+f32 func_80113028(struct UnkStruct8004A7C4 *arg0, void *arg1) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f14;
@@ -1251,7 +1254,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801133C8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void (*)(struct UnkStruct8004A7C4 *) func_80113F08(void *arg0, s32 arg2) {
+void (*)(struct UnkStruct8004A7C4 *) func_80113F08(struct UnkStruct8004A7C4 *arg0, s32 arg2) {
     struct struct8011BA10_temp *sp114;
     u32 sp110;
     f32 sp104;
@@ -1739,7 +1742,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80114974.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801149C0(void *arg0) {
+void func_801149C0(struct UnkStruct8004A7C4 *arg0) {
     func_8000B6BC(1);
     *(&D_801249C0 + (D_800E77A0[*arg0] * 4))(arg0);
 }
@@ -1866,7 +1869,7 @@ void func_80114CCC(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80114CF4(void *arg0) {
+void func_80114CF4(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (arg0->unk4C * 0xC) + &D_80126CD0;
@@ -1928,7 +1931,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80114DBC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80114E80(void *arg0, s32 arg1, f32 arg2) {
+void *func_80114E80(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     void *sp24;
     void *sp20;
     void *sp18;
@@ -1996,7 +1999,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80114E80.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115070(void *arg0) {
+void func_80115070(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_a0;
     void *temp_s0;
 
@@ -2016,7 +2019,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115070.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011511C(void *arg0) {
+void func_8011511C(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -2031,7 +2034,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011511C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801151BC(void *arg0) {
+void func_801151BC(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
     void *sp18;
 
@@ -2049,7 +2052,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801151BC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115270(void *arg0) {
+void func_80115270(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
     void *sp18;
 
@@ -2068,7 +2071,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115270.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 func_80115330(void *arg0) {
+s32 func_80115330(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_v0;
 
     func_80112B4C();
@@ -2083,7 +2086,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115330.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801153B8(void *arg0) {
+void func_801153B8(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -2097,7 +2100,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801153B8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011544C(void *arg0) {
+void func_8011544C(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -2112,7 +2115,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011544C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801154F0(void *arg0) {
+void func_801154F0(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -2125,7 +2128,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801154F0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115578(void *arg0) {
+void func_80115578(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_a0;
     void *temp_s0;
 
@@ -2222,7 +2225,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011572C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115888(void *arg0) {
+void func_80115888(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_v1;
 
     func_80112B4C();
@@ -2285,7 +2288,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011591C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115A7C(void *arg0) {
+void func_80115A7C(struct UnkStruct8004A7C4 *arg0) {
     D_800E98E0[*arg0] = 0;
     func_801153B8();
 }
@@ -2298,7 +2301,7 @@ void func_80115AAC(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80115ACC(void *arg0) {
+void func_80115ACC(struct UnkStruct8004A7C4 *arg0) {
     D_800B4924_ovl2();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         func_800AA018(0x202E9);
@@ -2310,6 +2313,7 @@ void func_80115ACC(void *arg0) {
     func_80121284(1);
 }
 #else
+void func_80115ACC(struct UnkStruct8004A7C4 *arg0);
 GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115ACC.s")
 #endif
 
@@ -2359,49 +2363,39 @@ void func_80115C4C(struct UnkStruct8004A7C4 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115C4C.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80115D38(struct UnkStruct8004A7C4 *arg0) {
-    s32 sp24;
-    s32 sp20;
-    s32 sp18;
-    f32 temp_f0;
-    s32 temp_a1;
-    s32 temp_t8;
-    s32 temp_v0;
-    struct GObjThreadStack **temp_a0;
+void func_80115EAC(struct UnkStruct8004A7C4 *this);
+extern f32 D_80128CF0;
+#ifdef NON_MATCHING
+void func_80115D38(struct UnkStruct8004A7C4 *this) {
+    // f32 temp_f0;
+    s32 idx = func_800AEC08(0x1E, 0x1E, 0x3C);
 
-    sp24 = arg0->objId;
-    temp_v0 = func_800AEC08(0x1E, 0x1E, 0x3C);
-    temp_t8 = D_800DE350[temp_v0];
-    temp_a0 = &gEntityGObjProcessArray[temp_v0];
-    sp20 = temp_v0;
-    D_8004A7C4 = temp_t8;
-    func_80008DA8(*temp_a0);
+    // idx = func_800AEC08(0x1E, 0x1E, 0x3C);
+    D_8004A7C4 = D_800DE350[idx];
+    func_80008DA8(gEntityGObjProcessArray[idx]);
     func_800AF980(0x17);
     func_800A9864(0x20060, 0x1869F, 0x10);
-    temp_a1 = sp24 * 4;
-    temp_f0 = D_80128CF0;
-    gEntitiesPosXArray[sp20] = gEntitiesPosXArray[sp24];
-    gEntitiesPosYArray[sp20] = gEntitiesPosYArray[sp24] + 220.0f;
-    gEntitiesPosZArray[sp20] = gEntitiesPosZArray[sp24];
-    D_800E48D0[sp20] = temp_f0;
-    D_800E4710[sp20] = temp_f0;
-    sp18 = temp_a1;
-    D_800E4550[sp20] = temp_f0;
+    // temp_f0 = D_80128CF0;
+    gEntitiesPosXArray[idx] = gEntitiesPosXArray[this->objId];
+    gEntitiesPosYArray[idx] = gEntitiesPosYArray[this->objId] + 220.0f;
+    gEntitiesPosZArray[idx] = gEntitiesPosZArray[this->objId];
+    D_800E48D0[idx] = D_80128CF0;
+    D_800E4710[idx] = D_80128CF0;
+    D_800E4550[idx] = D_80128CF0;
     func_800AA018(0x202E5);
     func_800AA018(0x202E6);
-    D_800DEF90[D_8004A7C4->objId] = &D_80115ACC;
-    D_800E98E0[sp24] = sp20;
-    D_8004A7C4 = arg0;
-    func_801153B8(arg0, temp_a1);
+    D_800DEF90[D_8004A7C4->objId] = &func_80115ACC;
+    D_800E98E0[this->objId] = idx;
+    D_8004A7C4 = this;
+    func_801153B8(this);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115D38.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80115EAC(void *arg0) {
-    D_800E98E0[*arg0] = 0;
+void func_80115EAC(struct UnkStruct8004A7C4 *this) {
+    D_800E98E0[this->objId] = 0;
     func_8011511C();
 }
 #else
@@ -2417,7 +2411,7 @@ void func_80115EFC(s32 arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_80115F04(void *arg0) {
+void func_80115F04(struct UnkStruct8004A7C4 *arg0) {
     void *sp6C;
     f32 sp60;
     f32 sp5C;
@@ -2503,7 +2497,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80115F04.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80116118(void *arg0) {
+void func_80116118(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
     f32 *temp_v1;
     f32 temp_f0;
@@ -2527,7 +2521,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116118.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801161D4(void *arg0) {
+void func_801161D4(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     D_800EA6E0[arg0->unk0] = 0.0f;
@@ -2567,7 +2561,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116260.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801162F4(void *arg0) {
+void func_801162F4(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_a0;
     u32 temp_v0;
     void *temp_s0;
@@ -2600,7 +2594,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801162F4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80116438(void *arg0) {
+void func_80116438(struct UnkStruct8004A7C4 *arg0) {
     D_800D7098.unk0 = *arg0;
     func_801154F0();
     func_80116508(arg0);
@@ -2610,7 +2604,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116438.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011646C(void *arg0) {
+void func_8011646C(struct UnkStruct8004A7C4 *arg0) {
     D_800D709C = *arg0;
     func_801154F0();
     func_80116508(arg0);
@@ -2620,7 +2614,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011646C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801164A0(void *arg0) {
+void func_801164A0(struct UnkStruct8004A7C4 *arg0) {
     D_800D70A0 = *arg0;
     func_801154F0();
     func_80116508(arg0);
@@ -2630,7 +2624,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801164A0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801164D4(void *arg0) {
+void func_801164D4(struct UnkStruct8004A7C4 *arg0) {
     D_800D70A4 = *arg0;
     func_801154F0();
     func_80116508(arg0);
@@ -2646,7 +2640,7 @@ extern const f32 D_80128D1C, D_80128D20, D_80128D24,D_80128D28;
 s32 random_soft_s32_range(s32);
 // loop doesnt pad enough bytes
 #ifdef NON_MATCHING
-void func_80116508(s32 *arg0) {
+void func_80116508(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0_2;
     f32 temp_f0_3;
     f32 temp_f0_4;
@@ -2655,28 +2649,25 @@ void func_80116508(s32 *arg0) {
     f32 temp_f2_3;
     f32 temp_f30;
 
-    u32 tmp = *arg0;
+    u32 tmp = arg0->objId;
 
     D_800EA6E0[tmp] = gEntitiesPosYArray[tmp];
     D_800E98E0[tmp] = 0;
     temp_f30 = D_80128D1C;
-    while (TRUE) {
-        if (random_soft_s32_range(2) != 0) {
-            D_800E3210[D_8004A7C4->objId] = 0.25f;
-        } else {
-            D_800E3210[D_8004A7C4->objId] = -0.25f;
-        }
+    for (;;) {
+        D_800E3210[D_8004A7C4->objId] = (random_soft_s32_range(2) != 0) ? 0.25f : -0.25f;
         while (TRUE) {
             if (D_800E98E0[tmp] == 0) {
                 f32 temp_f0 = gEntitiesPosYArray[tmp] - D_800EA6E0[tmp];
                 if (temp_f0 >= 15.0f) {
                     D_800E3210[D_8004A7C4->objId] = -0.25f;
                 } else if (temp_f0 <= -10.0f) {
-                D_800E3210[D_8004A7C4->objId] = 0.25f;
+                    D_800E3210[D_8004A7C4->objId] = 0.25f;
                 }
                 func_8000B6BC(1);
-                continue;
-            } else break;
+            } else {
+                break;
+            }
         }
         if (D_800E98E0[tmp] == 1) {
             D_800E3590[D_8004A7C4->objId] = 0.0f;
@@ -2721,31 +2712,29 @@ void func_80116508(s32 *arg0) {
             D_800E3C90[D_8004A7C4->objId] = temp_f2_2;
             D_800E3AD0[D_8004A7C4->objId] = temp_f2_2;
             D_800E98E0[tmp] = 0;
-            continue;
         }
-        if (D_800E98E0[tmp] != 2) {
-            continue;
+        else if (D_800E98E0[tmp] == 2) {
+            D_800E3590[D_8004A7C4->objId] = 0.0f;
+            D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
+            D_800E3AD0[D_8004A7C4->objId] = temp_f30;
+            D_800E3210[D_8004A7C4->objId] = -8.0f;
+            D_800E33D0[D_8004A7C4->objId] = 0.0f;
+            D_800E3910[D_8004A7C4->objId] = 0.0f;
+            D_800E3E50[D_8004A7C4->objId] = temp_f30;
+            func_8000B6BC(0xA);
+            D_800E3910[D_8004A7C4->objId] = 0.0f;
+            temp_f0_4 = D_800E3910[D_8004A7C4->objId];
+            D_800E3750[D_8004A7C4->objId] = temp_f0_4;
+            D_800E3590[D_8004A7C4->objId] = temp_f0_4;
+            D_800E33D0[D_8004A7C4->objId] = temp_f0_4;
+            D_800E3210[D_8004A7C4->objId] = temp_f0_4;
+            D_800E3050[D_8004A7C4->objId] = temp_f0_4;
+            D_800E3E50[D_8004A7C4->objId] = temp_f30;
+            temp_f2_3 = D_800E3E50[D_8004A7C4->objId];
+            D_800E3C90[D_8004A7C4->objId] = temp_f2_3;
+            D_800E3AD0[D_8004A7C4->objId] = temp_f2_3;
+            func_800AFA14();
         }
-        D_800E3590[D_8004A7C4->objId] = 0.0f;
-        D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
-        D_800E3AD0[D_8004A7C4->objId] = temp_f30;
-        D_800E3210[D_8004A7C4->objId] = -8.0f;
-        D_800E33D0[D_8004A7C4->objId] = 0.0f;
-        D_800E3910[D_8004A7C4->objId] = 0.0f;
-        D_800E3E50[D_8004A7C4->objId] = temp_f30;
-        func_8000B6BC(0xA);
-        D_800E3910[D_8004A7C4->objId] = 0.0f;
-        temp_f0_4 = D_800E3910[D_8004A7C4->objId];
-        D_800E3750[D_8004A7C4->objId] = temp_f0_4;
-        D_800E3590[D_8004A7C4->objId] = temp_f0_4;
-        D_800E33D0[D_8004A7C4->objId] = temp_f0_4;
-        D_800E3210[D_8004A7C4->objId] = temp_f0_4;
-        D_800E3050[D_8004A7C4->objId] = temp_f0_4;
-        D_800E3E50[D_8004A7C4->objId] = temp_f30;
-        temp_f2_3 = D_800E3E50[D_8004A7C4->objId];
-        D_800E3C90[D_8004A7C4->objId] = temp_f2_3;
-        D_800E3AD0[D_8004A7C4->objId] = temp_f2_3;
-        func_800AFA14();
     }
 }
 #else
@@ -2753,7 +2742,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116508.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80116B68(void *arg0) {
+void func_80116B68(struct UnkStruct8004A7C4 *arg0) {
     D_800D7098.unk0 = *arg0;
     func_80115070();
 }
@@ -2762,7 +2751,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116B68.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80116B90(void *arg0) {
+void func_80116B90(struct UnkStruct8004A7C4 *arg0) {
     void *temp_s0;
 
     temp_s0 = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -2881,7 +2870,7 @@ void func_80116F60(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80116F80(void *arg0) {
+void func_80116F80(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -2893,12 +2882,12 @@ void func_80116F80(void *arg0) {
     }
 }
 #else
-void func_80116F80(void *arg0);
+void func_80116F80(struct UnkStruct8004A7C4 *arg0);
 GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80116F80.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80116FF8(void *arg0) {
+void func_80116FF8(struct UnkStruct8004A7C4 *arg0) {
     if (arg0->unk40 <= 900.0f) {
         func_80112B4C();
         return;
@@ -2944,7 +2933,7 @@ void func_80117158(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80117178(void *arg0) {
+void func_80117178(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -2964,7 +2953,7 @@ void func_801171F0(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80117210(void *arg0) {
+void func_80117210(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp20;
     s32 sp1C;
@@ -2994,7 +2983,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117210.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 *func_80117328(void *arg0) {
+s32 *func_80117328(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp1C;
     s32 *temp_v0;
@@ -3030,7 +3019,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117328.s")
 #endif
 
 #ifdef MIPS_TO_C
-f32 func_801173F4(void *arg0) {
+f32 func_801173F4(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp20;
     f32 sp1C;
@@ -3078,7 +3067,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801173F4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80117570(void *arg0) {
+void func_80117570(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp1C;
     s32 *temp_v0_2;
@@ -3112,7 +3101,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117570.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011764C(void *arg0) {
+void func_8011764C(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_v1;
 
     temp_v1 = *arg0;
@@ -3149,7 +3138,7 @@ void func_80117738(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80117758(void *arg0) {
+void func_80117758(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3161,7 +3150,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117758.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80117784(void *arg0) {
+void func_80117784(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3173,7 +3162,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117784.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801177B0(void *arg0) {
+void func_801177B0(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3185,7 +3174,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801177B0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801177DC(void *arg0) {
+void func_801177DC(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3197,7 +3186,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801177DC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80117808(void *arg0) {
+void func_80117808(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3209,7 +3198,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80117808.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80117834(void *arg0) {
+void func_80117834(struct UnkStruct8004A7C4 *arg0) {
     void *temp_s0;
     void *temp_v0;
 
@@ -3473,7 +3462,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801180B8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118130(void *arg0) {
+void func_80118130(struct UnkStruct8004A7C4 *arg0) {
     func_80112B4C();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         D_800DEF90[D_8004A7C4->objId] = func_80112B4C;
@@ -3486,7 +3475,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118130.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801181AC(void *arg0) {
+void func_801181AC(struct UnkStruct8004A7C4 *arg0) {
     void *sp18;
     f32 temp_f0;
     s32 temp_v0;
@@ -3512,7 +3501,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801181AC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118270(void *arg0) {
+void func_80118270(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3524,7 +3513,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118270.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011829C(void *arg0) {
+void func_8011829C(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3536,7 +3525,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011829C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801182C8(void *arg0) {
+void func_801182C8(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3548,7 +3537,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801182C8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801182F4(void *arg0) {
+void func_801182F4(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3610,7 +3599,7 @@ void func_80118498(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_801184B8(void *arg0) {
+void func_801184B8(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     s32 temp_v1;
     f32 phi_f2;
@@ -3656,7 +3645,7 @@ void func_80118618(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80118638(void *arg0) {
+void func_80118638(struct UnkStruct8004A7C4 *arg0) {
     s32 sp54;
     f32 sp48;
     f32 sp44;
@@ -3687,7 +3676,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118638.s")
 #endif
 
 #ifdef MIPS_TO_C
-void *func_80118760(void *arg0) {
+void *func_80118760(struct UnkStruct8004A7C4 *arg0) {
     s32 temp_v1;
     void *temp_v0;
     void *temp_v0_2;
@@ -3780,7 +3769,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011890C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118A60(void *arg0, s32 arg1) {
+void func_80118A60(struct UnkStruct8004A7C4 *arg0, s32 arg1) {
     f32 sp20;
     f32 temp_f0;
     s32 temp_a0;
@@ -3916,7 +3905,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118D84.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118E44(void *arg0, ? arg1) {
+void func_80118E44(struct UnkStruct8004A7C4 *arg0, ? arg1) {
     s32 temp_s0;
 
     func_80115618();
@@ -3950,7 +3939,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118E44.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118F70(void *arg0) {
+void func_80118F70(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -3962,7 +3951,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80118F70.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80118F9C(void *arg0) {
+void func_80118F9C(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4006,7 +3995,7 @@ void func_80119090(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_801190B0(void *arg0) {
+void func_801190B0(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4018,7 +4007,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_801190B0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801190DC(void *arg0) {
+void func_801190DC(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4046,7 +4035,7 @@ void func_80119168(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80119188(void *arg0) {
+void func_80119188(struct UnkStruct8004A7C4 *arg0) {
     if (D_800D6E20[D_800BE508] != 0) {
         func_80118A60(0x3C);
     } else {
@@ -4097,7 +4086,7 @@ void func_80119300(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80119320(void *arg0) {
+void func_80119320(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
     void *sp18;
     void *temp_v1;
@@ -4252,7 +4241,7 @@ void func_8011976C(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011978C(void *arg0) {
+void func_8011978C(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 phi_f2;
 
@@ -4304,7 +4293,7 @@ void func_8011990C(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011992C(void *arg0) {
+void func_8011992C(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = (D_800E77A0[*arg0] * 0x1C) + &D_80124E14;
@@ -4397,7 +4386,7 @@ void func_80119C20(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80119C40(void *arg0) {
+void func_80119C40(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4409,7 +4398,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119C40.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119C6C(void *arg0) {
+void func_80119C6C(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4421,7 +4410,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119C6C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119C98(void *arg0) {
+void func_80119C98(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4433,7 +4422,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119C98.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119CC4(void *arg0) {
+void func_80119CC4(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4445,7 +4434,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119CC4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119CF0(void *arg0) {
+void func_80119CF0(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4457,7 +4446,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119CF0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119D1C(void *arg0) {
+void func_80119D1C(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4469,7 +4458,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119D1C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119D48(void *arg0) {
+void func_80119D48(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4481,7 +4470,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_80119D48.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_80119D74(void *arg0) {
+void func_80119D74(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -4603,7 +4592,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011A060.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011A0FC(void *arg0) {
+void func_8011A0FC(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -4621,7 +4610,7 @@ void func_8011A178(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011A198(void *arg0) {
+void func_8011A198(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -4676,7 +4665,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011A294.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011A2F4(void *arg0) {
+void func_8011A2F4(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp20;
     void *sp18;
@@ -4790,7 +4779,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011A638.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011A678(void *arg0) {
+void func_8011A678(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 temp_f0_2;
     s32 temp_v0;
@@ -4831,7 +4820,7 @@ void func_8011A770(s32 arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011A7A8(void *arg0) {
+void func_8011A7A8(struct UnkStruct8004A7C4 *arg0) {
     void *sp24;
     s32 sp20;
     void *sp18;
@@ -4903,7 +4892,7 @@ void func_8011A9CC(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011A9EC(void *arg0) {
+void func_8011A9EC(struct UnkStruct8004A7C4 *arg0) {
     func_80112B4C();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         func_800AECC0(0.0f);
@@ -4917,7 +4906,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011A9EC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011AA7C(void *arg0) {
+void func_8011AA7C(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
     s32 temp_v1;
     u16 temp_v0;
@@ -5027,7 +5016,7 @@ void func_8011ADDC(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011ADFC(void *arg0) {
+void func_8011ADFC(struct UnkStruct8004A7C4 *arg0) {
     func_80112B4C();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         func_8011E504();
@@ -5039,7 +5028,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011ADFC.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011AE6C(void *arg0) {
+void func_8011AE6C(struct UnkStruct8004A7C4 *arg0) {
     if (func_8012122C() == 1) {
         func_800AA018(((D_800E77A0[*arg0] * 0x1C) + &D_80124E14)->unk8);
         D_800DEF90[D_8004A7C4->objId] = &D_8011ADFC;
@@ -5050,7 +5039,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011AE6C.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011AEF0(void *arg0) {
+void func_8011AEF0(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -5064,7 +5053,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011AEF0.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011AF50(void *arg0) {
+void func_8011AF50(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -5098,7 +5087,7 @@ void func_8011B030(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011B050(void *arg0) {
+void func_8011B050(struct UnkStruct8004A7C4 *arg0) {
     D_800E3050[*arg0] = 0.0f;
     D_800B4924_ovl2();
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
@@ -5108,7 +5097,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B050.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B0A4(void *arg0) {
+void func_8011B0A4(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f14;
@@ -5143,7 +5132,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B0A4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B188(void *arg0) {
+void func_8011B188(struct UnkStruct8004A7C4 *arg0) {
     s32 sp1C;
     s32 sp18;
     s32 *temp_v0;
@@ -5177,7 +5166,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B188.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B22C(void *arg0) {
+void func_8011B22C(struct UnkStruct8004A7C4 *arg0) {
     s32 sp28;
     f32 *sp20;
     f32 *temp_a2;
@@ -5211,7 +5200,7 @@ void func_8011B328(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011B348(void *arg0) {
+void func_8011B348(struct UnkStruct8004A7C4 *arg0) {
     func_80112B4C();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         func_800FB914(ERROR(Read from unset register $f12));
@@ -5223,7 +5212,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B348.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B3B8(void *arg0) {
+void func_8011B3B8(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     func_800FB914((bitwise f32) arg0);
@@ -5236,7 +5225,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B3B8.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B3F4(void *arg0) {
+void func_8011B3F4(struct UnkStruct8004A7C4 *arg0) {
     func_80112B4C();
     if ((D_800DD8D0[*arg0] * 2) < 0) {
         D_800DEF90[D_8004A7C4->objId] = func_80112B4C;
@@ -5248,7 +5237,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B3F4.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B464(void *arg0) {
+void func_8011B464(struct UnkStruct8004A7C4 *arg0) {
     void *sp18;
     f32 temp_f0;
     s32 temp_v0;
@@ -5274,7 +5263,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B464.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B528(void *arg0) {
+void func_8011B528(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -5286,7 +5275,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B528.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B554(void *arg0) {
+void func_8011B554(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -5298,7 +5287,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B554.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B580(void *arg0) {
+void func_8011B580(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -5310,7 +5299,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B580.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8011B5AC(void *arg0) {
+void func_8011B5AC(struct UnkStruct8004A7C4 *arg0) {
     void *temp_v0;
 
     temp_v0 = arg0->unk4C;
@@ -5354,7 +5343,7 @@ void func_8011B6B8(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011B6D8(void *arg0) {
+void func_8011B6D8(struct UnkStruct8004A7C4 *arg0) {
     f32 temp_f0;
     f32 temp_f2;
     s32 temp_v1;
@@ -5381,7 +5370,7 @@ void func_8011B794(s32 arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_8011B7CC(void *arg0) {
+void func_8011B7CC(struct UnkStruct8004A7C4 *arg0) {
     void *sp1C;
 
     sp1C = arg0->unk4C;
@@ -5403,32 +5392,29 @@ void func_8011B858(void) {
     func_80118C88();
 }
 
-#ifdef MIPS_TO_C
+extern f32 D_800D6B14;
+extern s32 D_800D6E14;
+void func_800AECC0(f32);
+void func_800AED20(f32);
+
 void func_8011B878(s32 arg0) {
     func_80115578();
     func_80118760(arg0);
     func_800AECC0(0.0f);
     func_800AED20(0.0f);
-    if (D_800D6E14 == 0) {
-loop_1:
+    while (D_800D6E14 == 0) {
         func_8000B6BC(1);
-        if (D_800D6E14 == 0) {
-            goto loop_1;
-        }
     }
     func_800AECC0(D_800D6B10);
     func_800AED20(D_800D6B10);
-    func_8000B6BC(30.0f * D_800D6B14);
+    func_8000B6BC((s32) (30.0f * D_800D6B14));
     func_800AECC0(0.0f);
     func_800AED20(0.0f);
     func_80008DA8(NULL);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011B878.s")
-#endif
 
-void func_8011B944(void) {
-    func_8011B878();
+void func_8011B944(struct UnkStruct8004A7C4 *arg0) {
+    func_8011B878(arg0);
 }
 
 void func_8011B964(void) {
@@ -5439,14 +5425,14 @@ void func_8011B984(void) {
     func_80115070();
 }
 
-void func_8011B9A4(void) {
-    func_8011B878();
+void func_8011B9A4(struct UnkStruct8004A7C4 *arg0) {
+    func_8011B878(arg0);
 }
 
 void func_8011B9C4(void) {
     func_80118C88();
 }
 
-void func_8011B9E4(void) {
-    func_8011B878();
+void func_8011B9E4(struct UnkStruct8004A7C4 *arg0) {
+    func_8011B878(arg0);
 }

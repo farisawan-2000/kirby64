@@ -1,7 +1,11 @@
 #include <ultra64.h>
 #include <macros.h>
 
-extern Gfx *gDisplayListHeads;
+#include "ovl1/ovl1_6.h"
+#include "D_8004A7C4.h"
+#include "buffers.h"
+
+extern Gfx *gDisplayListHeads[4];
 
 extern u32 D_800BE4F8;
 extern u32 D_800BE4FC;
@@ -25,38 +29,21 @@ void func_800F6C88(void) {
     D_800BE4F8 = 7;
 }
 
-#ifdef MIPS_TO_C
-void func_800F6C98(s32 arg0) {
-    s32 temp_v0_2;
-    s32 temp_v0_3;
-    s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_v0;
-    s32 phi_v1;
-    s32 phi_v0;
+extern f32 D_800D6B14;
+void func_800B1434(void);
 
-    temp_v0 = D_8004A7C4;
-    ((temp_v0->unk0 * 4) + 0x800E0000)->unk-1070 = 0;
-    func_800B1F68(((temp_v0->unk0 * 4) + 0x800E0000)->unk-13F0, &func_800B1434);
-    func_8000B6BC(120.0f * D_800D6B14);
-    temp_v0_2 = D_8004A7C4->objId;
-    temp_v1 = ((temp_v0_2 * 4) + 0x800F0000)->unk-6720;
-    phi_v1 = temp_v1;
-    phi_v0 = temp_v0_2;
-    if (temp_v1 == 3) {
+void func_800F6C98(s32 arg0) {
+    D_800DEF90[D_8004A7C4->objId] = NULL;
+    func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
+    func_8000B6BC((u32) (120.0f * D_800D6B14));
+    if (D_800E98E0[D_8004A7C4->objId] == 3) {
         func_800F6C68();
-        temp_v0_3 = D_8004A7C4->objId;
-        phi_v1 = ((temp_v0_3 * 4) + 0x800F0000)->unk-6720;
-        phi_v0 = temp_v0_3;
     }
-    if (phi_v1 == 4) {
+    if (D_800E98E0[D_8004A7C4->objId] == 4) {
         func_800F6C78();
-        phi_v0 = D_8004A7C4->objId;
     }
-    func_800B1900(phi_v0 & 0xFFFF);
+    func_800B1900(D_8004A7C4->objId & 0xFFFF);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6C98.s")
-#endif
 
 void func_800F6E04(UNUSED s32 arg0) {
 
@@ -72,13 +59,13 @@ void func_800F6E0C(void *arg0, UNUSED void *arg1, UNUSED void *arg2) {
 void func_800F6E30(s32 arg0) {
     s32 temp_a0;
     s32 temp_s0;
-    s32 temp_v0_3;
     s32 temp_v1;
     s32 temp_v1_2;
     s32 temp_v1_3;
     struct UnkStruct8004A7C4 *temp_v0_4;
     struct UnkStruct8004A7C4 *temp_v0_5;
     u32 temp_s3;
+    u32 temp_v0_3;
     void *temp_v0;
     void *temp_v0_2;
     void *temp_v0_6;
@@ -89,15 +76,15 @@ void func_800F6E30(s32 arg0) {
     u32 phi_s3;
     s32 phi_v1;
 
-    func_800B1F68(((D_8004A7C4->objId * 4) + 0x800E0000)->unk-13F0, &func_800B1434);
-    ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-1070 = &D_800F6E04;
+    func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
+    D_800DEF90[D_8004A7C4->objId] = &D_800F6E04;
     func_800AF980(0x18);
-    ((D_8004A7C4->objId * 4) + 0x800E0000)->unk-EB0 = &D_800F7258;
-    func_800A9864(*D_801290D8, 0x26, 0x10);
-    func_800A2550(((D_801290D0 * 4) + 0x800E0000)->unk-5F0);
+    D_800DF150[D_8004A7C4->objId] = &D_800F7258;
+    func_800A9864(D_801290D8->filler, 0x26, 0x10);
+    func_800A2550(*(&D_800DFA10 + (D_801290D0 * 4)));
     func_800B3070(0x10, (bitwise s32) D_800D6B10);
     temp_v1 = D_8004A7C4->objId * 4;
-    temp_v0 = (temp_v1 + 0x800E0000)->unk-B30;
+    temp_v0 = *(&gSegment4StartArray + temp_v1);
     temp_a0 = temp_v0->unk14;
     phi_v1 = temp_v1;
     if (temp_a0 != 0) {
@@ -117,12 +104,12 @@ loop_3:
                     if (temp_v1_2 != 2) {
 
                     } else {
-                        func_800FA414(0x8000000D, temp_v0_2);
+                        func_800FA414(0x8000000D);
                         func_800AAF34(0x10, temp_s0, 0);
                         func_801129AC();
                         func_801129DC();
                         temp_v0_3 = D_800BE500;
-                        if ((1 == temp_v0_3) && (D_800BE504 == 0)) {
+                        if ((temp_v0_3 == 1) && (D_800BE504 == 0)) {
                             D_800D6E44 = 1;
                         }
                         if ((temp_v0_3 == 3) && (D_800BE504 == 0)) {
@@ -131,31 +118,29 @@ loop_3:
                     }
                 } else if (phi_s1 == 0) {
                     temp_v0_4 = D_8004A7C4;
-                    *(&D_800DF850 + (temp_v0_4->unk0 * 4)) = temp_v0_2;
-                    ((temp_v0_4->unk0 * 4) + 0x800E0000)->unk110 = temp_s0;
-                    func_800AEEB4(**(&D_800DF850 + (temp_v0_4->unk0 * 4)), 0, temp_v0_2);
+                    D_800DF850[temp_v0_4->objId] = temp_v0_2;
+                    D_800E0110[temp_v0_4->objId] = temp_s0;
+                    func_800AEEB4(*D_800DF850[temp_v0_4->objId], 0, temp_v0_2);
                     D_8012E7B4 = 0;
-                    phi_s1 = phi_s1 + 1;
+                    phi_s1 += 1;
                 } else {
-                    *0x80130000 = temp_v0_2;
-                    phi_s1 = phi_s1 + 1;
+                    D_8012F310 = temp_v0_2;
+                    phi_s1 += 1;
                 }
             } else if (phi_s2 == 0) {
-                temp_v0_5 = D_8004A7C4;
-                *(&D_800DF690 + (temp_v0_5->unk0 * 4)) = temp_v0_2;
-                ((temp_v0_5->unk0 * 4) + 0x800E0000)->unk-B0 = temp_s0;
-                func_800AEE20(**(&D_800DF690 + (temp_v0_5->unk0 * 4)), 0, temp_v0_2);
+                D_800DF690[D_8004A7C4->objId] = temp_v0_2;
+                D_800DFF50[D_8004A7C4->objId] = temp_s0;
+                func_800AEE20(D_800DF690[D_8004A7C4->objId], 0, temp_v0_2);
                 D_8012E7B0 = 0;
-                phi_s2 = phi_s2 + 1;
+                phi_s2 += 1;
             } else {
-                *0x80130000 = temp_v0_2;
-                phi_s2 = phi_s2 + 1;
+                D_8012F310 = temp_v0_2;
+                phi_s2 += 1;
             }
             temp_s3 = phi_s3 + 1;
-            temp_v1_3 = D_8004A7C4->objId * 4;
-            temp_v0_6 = (temp_v1_3 + 0x800E0000)->unk-B30;
+            temp_v0_6 = gSegment4StartArray[D_8004A7C4->objId];
             phi_v0 = temp_v0_6;
-            phi_s4 = phi_s4 + 4;
+            phi_s4 += 4;
             phi_s3 = temp_s3;
             phi_v1 = temp_v1_3;
             if (temp_s3 < temp_v0_6->unk14) {
@@ -163,47 +148,25 @@ loop_3:
             }
         }
     }
-    (phi_v1 + 0x800E0000)->unk-CF0 = &D_800F6E0C;
+    D_800DF310[D_8004A7C4->objId] = &D_800F6E0C;
     func_800AFA14();
-}
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E30.s")
 #endif
 
+extern s32 D_800BE500, D_800BE504;
+extern void (*D_800D4F10[])(struct UnkStruct8004A7C4 *);
 
-#ifdef MIPS_TO_C
-void func_800F716C(void *arg0) {
-    Gfx *temp_a1;
-    Gfx *temp_a1_2;
-    Gfx *temp_v1;
-    Gfx *temp_v1_2;
-    Gfx *phi_a1;
-
+void func_800F716C(struct UnkStruct8004A7C4 *arg0) {
     if ((D_800BE500 == 1) && (D_800BE504 == 2)) {
-        temp_v1 = gDisplayListHeads->unk0;
-        gDisplayListHeads->unk0 = temp_v1 + 8;
-        temp_v1->words.w0 = 0xDB080000;
-        temp_v1->words.w1 = 0x8E0071;
-        temp_a1 = gDisplayListHeads[1];
-        gDisplayListHeads[1] = temp_a1 + 8;
-        temp_a1->words.w1 = 0x8E0071;
-        phi_a1 = temp_a1;
+        gSPFogPosition(gDisplayListHeads[0]++, 102, 1003);
+        gSPFogPosition(gDisplayListHeads[1]++, 102, 1003);
     } else {
-        temp_v1_2 = gDisplayListHeads->unk0;
-        gDisplayListHeads->unk0 = temp_v1_2 + 8;
-        temp_v1_2->words.w0 = 0xDB080000;
-        temp_v1_2->words.w1 = 0x640FAC0;
-        temp_a1_2 = gDisplayListHeads[1];
-        gDisplayListHeads[1] = temp_a1_2 + 8;
-        temp_a1_2->words.w1 = 0x640FAC0;
-        phi_a1 = temp_a1_2;
+        gSPFogPosition(gDisplayListHeads[0]++, 920, 1000);
+        gSPFogPosition(gDisplayListHeads[1]++, 920, 1000);
     }
-    phi_a1->words.w0 = 0xDB080000;
-    ((((*arg0 * 4) + 0x800E0000)->unk-B30->unk8 * 4) + 0x800D0000)->unk4F10(arg0, phi_a1, gDisplayListHeads, arg0);
+    D_800D4F10[gSegment4StartArray[arg0->objId][2]](arg0);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F716C.s")
-#endif
 
 extern u32 D_800D7010;
 extern u32 D_800D7028;
@@ -856,16 +819,12 @@ f32 func_800F8728(s32 arg0, f32 arg1, f32 arg2) {
 GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8728.s")
 #endif
 
-#ifdef MIPS_TO_C
-? func_800F8824(void *arg0, f32 arg1) {
-    f32 sp18;
-
-    if (arg0 != 0) {
-        sp18 = sinf(arg1);
-        return atanf(-((cosf(arg1) * arg0->unk8) + (arg0->unk0 * sp18)) / arg0->unk4, arg0);
+f32 sinf(f32);
+f32 atanf(f32);
+#include "types.h"
+f32 func_800F8824(Vector *arg0, f32 arg1) {
+    if (arg0 != NULL) {
+        return atanf(-((arg0->x * sinf(arg1)) + (cosf(arg1) * arg0->z)) / arg0->y);
     }
     return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8824.s")
-#endif
