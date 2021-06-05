@@ -14,7 +14,7 @@ extern void play_sound(s32 a);
 
 extern struct KirbyState gKirbyState;
 
-void (*vtbl_80196990[])(struct UnkStruct8004A7C4 *) = {
+VTABLE vtbl_80196990 = {
     0x8016CA8C,    0x8016D3A8,    0x8016DA14,    0x8016DDE8,
     0x8016E638,    0x8016E8A0,    0x8016EF5C,    0x8016F6DC,
     0x8016F80C,    0x8016FD88,    0x801702F0,    0x80170794,
@@ -25,7 +25,7 @@ void (*vtbl_80196990[])(struct UnkStruct8004A7C4 *) = {
     0x801772E0,    0x801776E8,    0x80177B40,    0x80177E78,
 };
 
-void (*D_80196A10[])(struct UnkStruct8004A7C4 *) = {
+VTABLE D_80196A10 = {
     0x801782C8,    0x80178728,    0x801789D8,    0x80179370,
     0x80179C28,    0x8017B068,    0x8017B78C,    0x8017BD68,
     0x8017BF34,    0x8017C418,    0x8017CF60,    0x8017D8E8,
@@ -42,7 +42,7 @@ void (*D_80196A10[])(struct UnkStruct8004A7C4 *) = {
     0x801586A8,    0x801587AC,
 };
 
-void (*D_80196AE8[])(struct UnkStruct8004A7C4 *) = {
+VTABLE D_80196AE8 = {
     0x8016D1E8,    0x8016D81C,    0x8016DD0C,    0x8016E15C,
     0x8016EE5C,    0x8016F240,    0x8016F7C8,    0x8016FB58,
     0x8016FFF8,    0x80170638,    0x80170A24,    0x80170D88,

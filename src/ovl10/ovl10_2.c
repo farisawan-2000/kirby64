@@ -539,19 +539,18 @@ void func_801E4518_ovl10(s32 arg0) {
     if (D_800EA1A0[D_8004A7C4->objId] >= 0) {
         if (D_800E9720[D_8004A7C4->objId] != 0) {
             D_800E9720[D_8004A7C4->objId]--;
-            return;
         }
-        if (D_800EA1A0[D_8004A7C4->objId] < temp_a0->unk1) {
+        else if (D_800EA1A0[D_8004A7C4->objId] < temp_a0->unk1) {
             D_800E9720[D_8004A7C4->objId] = temp_a0->unk2;
             D_800E2090[D_8004A7C4->objId] = *((D_800EA1A0[D_8004A7C4->objId] * 8) + temp_a3);
             D_800E2250[D_8004A7C4->objId] = ((D_800EA1A0[D_8004A7C4->objId] * 8) + temp_a3)->unk4;
             D_800EA1A0[D_8004A7C4->objId]++;
-            return;
         }
-        D_800EA1A0[D_8004A7C4->objId] = -1;
-        return;
+        else {
+            D_800EA1A0[D_8004A7C4->objId] = -1;
+        }
     }
-    if (D_800E9E20[D_8004A7C4->objId] != 0) {
+    else if (D_800E9E20[D_8004A7C4->objId] != 0) {
         if ((D_800DD8D0[D_8004A7C4->objId] >> 0x1E) != 0) {
             D_800E93A0[D_8004A7C4->objId]--;
             if (D_800E93A0[D_8004A7C4->objId] == 0) {

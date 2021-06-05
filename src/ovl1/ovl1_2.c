@@ -55,104 +55,95 @@ s32 func_800A6F40(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A6F40.s")
 #endif
 
-#ifdef MIPS_TO_C
-f32 func_800A6F68(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
-    f32 temp_f2;
-    s32 temp_v1;
-    void *temp_v0;
-    f32 phi_return;
+#include "unk_structs/D_800D79D8.h"
+extern f32 D_800D7A28[];
+extern f32 D_800D7A50[];
+extern f32 D_800D7A78[];
+extern f32 D_800D7AA0[];
+extern f32 D_800D7AC8[];
+extern f32 D_800D7AF0[];
+extern const f32 D_800D5CAC;
 
-    temp_v1 = ((((arg0 & 0xFFFF) - 0xA) >> 1) & 0xFFFF) * 4;
-    temp_v0 = *(&D_800D79D8 + temp_v1);
-    phi_return = (bitwise f32) temp_v0;
-    if (temp_v0 != 0) {
-        temp_f2 = D_800D5CAC;
-        if (arg1 != temp_f2) {
-            temp_v0->unk3C = arg1;
-            *(&D_800D7A28 + temp_v1) = arg1;
+void func_800A6F68(u16 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9) {
+    f32 f_65535f;
+    u16 idx;
+    f32 tmp;
+    struct UnkStruct800D79D8 *st;
+
+    idx = (((arg0 - 10) >> 1));
+    tmp = arg6;
+    st = D_800D79D8[idx];
+    if (st) {
+        f_65535f = D_800D5CAC;
+        if (arg1 != f_65535f) {
+            st->unk3C = arg1;
+            D_800D7A28[idx] = arg1;
         }
-        if (arg2 != temp_f2) {
-            temp_v0->unk40 = arg2;
-            *(&D_800D7A50 + temp_v1) = arg2;
+        if (arg2 != f_65535f) {
+            st->unk40 = arg2;
+            D_800D7A50[idx] = arg2;
         }
-        if (arg3 != temp_f2) {
-            temp_v0->unk44 = arg3;
-            *(&D_800D7A78 + temp_v1) = arg3;
+        if (arg3 != f_65535f) {
+            st->unk44 = arg3;
+            D_800D7A78[idx] = arg3;
         }
-        if (arg4 != temp_f2) {
-            temp_v0->unk48 = arg4;
-            *(&D_800D7AA0 + temp_v1) = arg4;
+        if (arg4 != f_65535f) {
+            st->unk48 = arg4;
+            D_800D7AA0[idx] = arg4;
         }
-        if (arg5 != temp_f2) {
-            temp_v0->unk4C = arg5;
-            *(&D_800D7AC8 + temp_v1) = arg5;
+        if (arg5 != f_65535f) {
+            st->unk4C = arg5;
+            D_800D7AC8[idx] = arg5;
         }
-        if (arg6 != temp_f2) {
-            temp_v0->unk50 = arg6;
-            *(&D_800D7AF0 + temp_v1) = arg6;
+        if (tmp != f_65535f) {
+            st->unk50 = tmp;
+            D_800D7AF0[idx] = tmp;
         }
-        if (arg7 != temp_f2) {
-            temp_v0->unk54 = arg7;
+        if (arg7 != f_65535f) {
+            st->unk54 = arg7;
         }
-        if (arg8 != temp_f2) {
-            temp_v0->unk58 = arg8;
+        if (arg8 != f_65535f) {
+            st->unk58 = arg8;
         }
-        phi_return = arg9;
-        if (arg9 != temp_f2) {
-            temp_v0->unk5C = arg9;
-            phi_return = arg9;
+        if (arg9 != f_65535f) {
+            st->unk5C = arg9;
         }
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A6F68.s")
-#endif
 
-#ifdef MIPS_TO_C
-f32 func_800A70C4(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
-    f32 temp_f2;
-    void *temp_v0;
-    f32 phi_return;
+extern const f32 D_800D5CB0;
+void func_800A70C4(u16 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4) {
+    f32 f_65535f;
+    f32 tmp;
+    struct UnkStruct800D79D8 *st;
 
-    temp_v0 = D_800D79D8[(((((arg0 & 0xFFFF) - 0xA) >> 1) & 0xFFFF))];
-    phi_return = (bitwise f32) temp_v0;
-    if (temp_v0 != 0) {
-        temp_f2 = D_800D5CB0;
-        if (arg1 != temp_f2) {
-            temp_v0->unk20 = arg1;
+    st = D_800D79D8[(u16)(arg0 - 10 >> 1)];
+    tmp = arg4;
+    if (st) {
+        f_65535f = D_800D5CB0;
+        if (arg1 != f_65535f) {
+            st->unk20 = arg1;
         }
-        if (arg2 != temp_f2) {
-            temp_v0->unk24 = arg2;
+        if (arg2 != f_65535f) {
+            st->unk24 = arg2;
         }
-        if (arg3 != temp_f2) {
-            temp_v0->unk28 = arg3;
+        if (arg3 != f_65535f) {
+            st->unk28 = arg3;
         }
-        phi_return = arg4;
-        if (arg4 != temp_f2) {
-            temp_v0->unk2C = arg4;
-            phi_return = arg4;
+        if (tmp != f_65535f) {
+            st->unk2C = tmp;
         }
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A70C4.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_800A7160(s32 arg0, s32 arg1) {
-    void *temp_v0;
+void func_800A7160(u16 arg0, u32 arg1) {
+    struct UnkStruct800D79D8 *st;
 
-    temp_v0 = *(&D_800D79D8 + (((((arg0 & 0xFFFF) - 0xA) >> 1) & 0xFFFF) * 4));
-    if (temp_v0 != 0) {
-        temp_v0->unk80 = temp_v0->unk80 | arg1;
+    st = D_800D79D8[(u16)(arg0 - 10 >> 1)];
+    if (st) {
+        st->unk80 |= arg1;
     }
-    return temp_v0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7160.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_800A71A0(s32 arg0) {
@@ -317,29 +308,25 @@ void *func_800A7554(void) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7554.s")
 #endif
 
+extern s32 D_800D6B44;
+extern const char *D_800D5CC0;
+extern s16 D_800BFFC0[];
 #ifdef MIPS_TO_C
-? play_music(s32 arg1) {
-    s16 temp_v0;
-
-    if (arg1 == D_800D6B44) {
-
+s32 play_music(s32 arg0, s32 arg1) {
+    if (arg1 != D_800D6B44) {
+        D_800D6B44 = arg1;
+        if (D_800BFFC0[arg1] >= 0) {
+            return func_80020914_ovl1(D_800BFFC0[arg1]);
+        }
+        if (arg1 != 0) {
+            print_error_stub(&D_800D5CC0);
+        }
     } else if (arg1 == 0x99999999) {
         func_800208D4_ovl1();
         D_800D6B44 = arg1;
     } else if (arg1 == 0x80000000) {
         func_80020968_ovl1();
         D_800D6B44 = arg1;
-    } else {
-        D_800D6B44 = arg1;
-        temp_v0 = *(&D_800BFFC0 + (arg1 * 2));
-        if (temp_v0 >= 0) {
-            return func_80020914_ovl1(temp_v0);
-        }
-        if (arg1 == 0) {
-
-        } else {
-            print_error_stub(&D_800D5CC0);
-        }
     }
     return 0;
 }
@@ -497,20 +484,17 @@ loop_3:
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A78D0.s")
 #endif
 
+void func_800A7A70(s32 arg0, s32 arg1, s32 arg2);
+
 void func_800A7A40(void) {
     func_800A7A70(1, 0x30007, 0x30008);
 }
 
-#ifdef MIPS_TO_C
-void func_800A7A70(s32 arg0, ? arg1, s32 arg2) {
-    s32 sp1C;
-
-    sp1C = func_800A9AA8(arg1, 3);
-    func_8009B768(arg0, sp1C, func_800A9AA8(arg2, 3));
+void func_800A7A70(s32 arg0, s32 arg1, s32 arg2) {
+    s32 tmp = func_800A9AA8(arg1, 3);
+    
+    func_8009B768(arg0, tmp, func_800A9AA8(arg2, 3));
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7A70.s")
-#endif
 
 extern s32 D_8012D920;
 extern Gfx *gDisplayListHeads[4];
@@ -567,7 +551,6 @@ f32 func_800A7BF4(void *arg0, void *arg1) {
     phi_return = temp_f0;
     if (255.0f < temp_f0) {
         phi_f0 = 255.0f;
-        phi_return = 255.0f;
     }
     phi_f12 = temp_f12;
     if (255.0f < temp_f12) {
@@ -580,7 +563,6 @@ f32 func_800A7BF4(void *arg0, void *arg1) {
     arg0->unk0 = phi_f0 << 8;
     arg0->unk2 = phi_f12 << 8;
     arg0->unk4 = phi_f14 << 8;
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7BF4.s")
