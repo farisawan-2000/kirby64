@@ -129,7 +129,7 @@ struct KirbyState {
     u8 unk9;
     u8 unkA;
     u8 unkB;
-    s8 abilityState;				// 0xC
+    u8 abilityState;				// 0xC
     s8 unkD;
     u8 unkE;
     u8 unkF;
@@ -221,7 +221,8 @@ struct KirbyState {
     u32 horizontalCollision;	// 0xFC
     u16 ceilingType;				// 0x100
     u16 floorType;				// 0x102
-    u32 unk104;
+    u16 unk104;
+    u16 unk106;
     u16 unk108;
     u16 unk10A;
     u32 unk10C;

@@ -5,7 +5,7 @@
 
 // same as D_800E1B50?
 struct UnkStruct8004A7C4_3C_80 {
-    u32 unk0;
+    struct UnkStruct8004A7C4_3C_80 *unk0;
     u32 unk4;
     struct UnkStruct8004A7C4_3C_80 *unk8;
     u32 unkC;
@@ -45,7 +45,7 @@ struct UnkStruct8004A7C4_3C_80 {
     u32 unk7C;
     u32 unk80;
     u32 unk84;
-    u32 unk88;
+    f32 unk88;
     u32 unk8C;
     u32 unk90;
     u32 unk94;
@@ -156,7 +156,8 @@ struct UnkStruct8004A7C4 {
 	// goes up by 2.0f per frame until it hits 40.0f, then resets to 0.0f
 	f32 unk40;
 	u32 unk44;
-	u32 unk48;
+	// grab arguments
+	void (*unk48)(void);
 	u32 unk4C;
 };
 // size: 0x50

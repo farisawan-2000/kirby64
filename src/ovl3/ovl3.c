@@ -370,7 +370,6 @@ u32 func_80151B78_ovl3(void) {
     return 0;
 }
 
-extern u8 D_8012E7C4;
 extern f32 D_8012E7F8;
 
 extern f32 D_80196DD0;
@@ -378,7 +377,7 @@ extern f32 D_80196DD0;
 u8 func_80151C78_ovl3(void) {
     if ((D_800E8AE0[D_8004A7C4->objId] & 6) != 0) {
         if (D_800E8920[D_8004A7C4->objId] != 0) {
-            switch (D_8012E7C4) {
+            switch (gKirbyState.unk4) {
                 case 0:
                     if (D_800D6FE8.buttonHeld & D_JPAD) {
                         set_kirby_action_1(9, 14);
