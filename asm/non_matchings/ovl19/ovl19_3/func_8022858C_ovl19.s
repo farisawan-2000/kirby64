@@ -93,21 +93,21 @@ glabel func_8022858C_ovl19
 /* 248E04 802286F4 002B0821 */  addu  $at, $at, $t3
 /* 248E08 802286F8 AC29F150 */ sw $t1, %lo(D_800DF150)($at)
 /* 248E0C 802286FC 8C6C0000 */  lw    $t4, ($v1)
-/* 248E10 80228700 3C01800E */ lui $at, %hi(D_800E4550)
+/* 248E10 80228700 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 248E14 80228704 000C6880 */  sll   $t5, $t4, 2
 /* 248E18 80228708 002D0821 */  addu  $at, $at, $t5
-/* 248E1C 8022870C E4204550 */ swc1 $f0, %lo(D_800E4550)($at)
+/* 248E1C 8022870C E4204550 */ swc1 $f0, %lo(gEntitiesScaleXArray)($at)
 /* 248E20 80228710 8C6E0000 */  lw    $t6, ($v1)
-/* 248E24 80228714 3C01800E */ lui $at, %hi(D_800E4710)
+/* 248E24 80228714 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 248E28 80228718 000E7880 */  sll   $t7, $t6, 2
 /* 248E2C 8022871C 002F0821 */  addu  $at, $at, $t7
-/* 248E30 80228720 E4204710 */ swc1 $f0, %lo(D_800E4710)($at)
+/* 248E30 80228720 E4204710 */ swc1 $f0, %lo(gEntitiesScaleYArray)($at)
 /* 248E34 80228724 8C790000 */  lw    $t9, ($v1)
-/* 248E38 80228728 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 248E38 80228728 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 248E3C 8022872C 0019C080 */  sll   $t8, $t9, 2
 /* 248E40 80228730 00380821 */  addu  $at, $at, $t8
 /* 248E44 80228734 0C02A619 */  jal   func_800A9864
-/* 248E48 80228738 E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
+/* 248E48 80228738 E42048D0 */ swc1 $f0, %lo(gEntitiesScaleZArray)($at)
 /* 248E4C 8022873C 8E230000 */  lw    $v1, ($s1)
 /* 248E50 80228740 3C01800E */ lui $at, %hi(D_800E5F90)
 /* 248E54 80228744 240A0005 */  li    $t2, 5

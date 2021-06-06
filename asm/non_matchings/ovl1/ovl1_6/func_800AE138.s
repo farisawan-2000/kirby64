@@ -176,15 +176,15 @@ glabel func_800AE138
 /* 056640 800AE3F0 3C01800E */ lui $at, %hi(D_800E10D0)
 /* 056644 800AE3F4 00220821 */  addu  $at, $at, $v0
 /* 056648 800AE3F8 E42210D0 */ swc1 $f2, %lo(D_800E10D0)($at)
-/* 05664C 800AE3FC 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 05664C 800AE3FC 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 056650 800AE400 00220821 */  addu  $at, $at, $v0
-/* 056654 800AE404 E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
-/* 056658 800AE408 3C01800E */ lui $at, %hi(D_800E4710)
+/* 056654 800AE404 E42048D0 */ swc1 $f0, %lo(gEntitiesScaleZArray)($at)
+/* 056658 800AE408 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 05665C 800AE40C 00220821 */  addu  $at, $at, $v0
-/* 056660 800AE410 E4204710 */ swc1 $f0, %lo(D_800E4710)($at)
-/* 056664 800AE414 3C01800E */ lui $at, %hi(D_800E4550)
+/* 056660 800AE410 E4204710 */ swc1 $f0, %lo(gEntitiesScaleYArray)($at)
+/* 056664 800AE414 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 056668 800AE418 00220821 */  addu  $at, $at, $v0
-/* 05666C 800AE41C E4204550 */ swc1 $f0, %lo(D_800E4550)($at)
+/* 05666C 800AE41C E4204550 */ swc1 $f0, %lo(gEntitiesScaleXArray)($at)
 /* 056670 800AE420 3C01800E */ lui $at, %hi(D_800E5DD0)
 /* 056674 800AE424 00220821 */  addu  $at, $at, $v0
 /* 056678 800AE428 E4225DD0 */ swc1 $f2, %lo(D_800E5DD0)($at)

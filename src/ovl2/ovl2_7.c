@@ -529,9 +529,9 @@ void func_80112B4C(struct UnkStruct8004A7C4 *arg0) {
         gEntitiesAngleXArray[temp_a1] = temp_v1_2->unk0;
         gEntitiesAngleYArray[temp_a1] = temp_v1_2->unk4;
         gEntitiesAngleZArray[temp_a1] = temp_v1_2->unk8;
-        D_800E4550[temp_a1] = temp_a0->unk0;
-        D_800E4710[temp_a1] = temp_a0->unk4;
-        D_800E48D0[temp_a1] = temp_a0->unk8;
+        gEntitiesScaleXArray[temp_a1] = temp_a0->unk0;
+        gEntitiesScaleYArray[temp_a1] = temp_a0->unk4;
+        gEntitiesScaleZArray[temp_a1] = temp_a0->unk8;
     }
 }
 #else
@@ -569,9 +569,9 @@ f32 func_80112CD4(s32 arg0, void *arg1) {
     sp4C = temp_f0;
     sp54 = sinf(*temp_v0_3);
     temp_f0_2 = cosf(*temp_v0_3);
-    temp_f2 = D_800E4550[arg0];
-    temp_f12 = D_800E4710[arg0];
-    temp_f18 = D_800E48D0[arg0];
+    temp_f2 = gEntitiesScaleXArray[arg0];
+    temp_f12 = gEntitiesScaleYArray[arg0];
+    temp_f18 = gEntitiesScaleZArray[arg0];
     arg1->unk0 = sp4C * temp_f0_2 * temp_f2;
     arg1->unk4 = sp4C * sp54 * temp_f2;
     arg1->unk8 = -sp58 * temp_f2;
@@ -2379,9 +2379,9 @@ void func_80115D38(struct UnkStruct8004A7C4 *this) {
     gEntitiesNextPosXArray[idx] = gEntitiesNextPosXArray[this->objId];
     gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[this->objId] + 220.0f;
     gEntitiesNextPosZArray[idx] = gEntitiesNextPosZArray[this->objId];
-    D_800E48D0[idx] = D_80128CF0;
-    D_800E4710[idx] = D_80128CF0;
-    D_800E4550[idx] = D_80128CF0;
+    gEntitiesScaleZArray[idx] = D_80128CF0;
+    gEntitiesScaleYArray[idx] = D_80128CF0;
+    gEntitiesScaleXArray[idx] = D_80128CF0;
     func_800AA018(0x202E5);
     func_800AA018(0x202E6);
     D_800DEF90[D_8004A7C4->objId] = &func_80115ACC;

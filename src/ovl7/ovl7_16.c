@@ -467,9 +467,9 @@ void func_801BE79C_ovl7(s32 arg0) {
     *(&D_800DEF90 + temp_v1) = &D_800B7138;
     sp28 = *(&D_800E1B50 + temp_v1);
     *(&D_800DF150 + (*temp_v0 * 4)) = &D_801BEE54;
-    *(&D_800E4550 + (*temp_v0 * 4)) = 1.0f;
-    *(&D_800E4710 + (*temp_v0 * 4)) = 1.0f;
-    *(&D_800E48D0 + (*temp_v0 * 4)) = 1.0f;
+    *(&gEntitiesScaleXArray + (*temp_v0 * 4)) = 1.0f;
+    *(&gEntitiesScaleYArray + (*temp_v0 * 4)) = 1.0f;
+    *(&gEntitiesScaleZArray + (*temp_v0 * 4)) = 1.0f;
     func_8019BB58_ovl7();
     temp_v0_2 = sp28->unk34;
     if (temp_v0_2 != 0) {

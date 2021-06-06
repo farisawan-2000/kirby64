@@ -90,9 +90,9 @@ void func_80151274_ovl4(void) {
     temp_f0 = 0.2f;
     gEntitiesAngleYArray[D_8004A7C4->objId] =
         (D_80159FF4_ovl4[tmp & 7] * M_PI_F) / 180.0f;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
 }
 
 // handles menu states? (n64 logo, hal logo, cutscene, etc.)

@@ -56,30 +56,30 @@ glabel func_800B143C
 /* 059764 800B1514 000E7880 */  sll   $t7, $t6, 2
 /* 059768 800B1518 002F0821 */  addu  $at, $at, $t7
 /* 05976C 800B151C C4324390 */ lwc1 $f18, %lo(gEntitiesAngleZArray)($at)
-/* 059770 800B1520 3C01800E */ lui $at, %hi(D_800E4550)
+/* 059770 800B1520 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 059774 800B1524 E7120038 */  swc1  $f18, 0x38($t8)
 /* 059778 800B1528 8CB90000 */  lw    $t9, ($a1)
 /* 05977C 800B152C 8C8A003C */  lw    $t2, 0x3c($a0)
 /* 059780 800B1530 8F280000 */  lw    $t0, ($t9)
 /* 059784 800B1534 00084880 */  sll   $t1, $t0, 2
 /* 059788 800B1538 00290821 */  addu  $at, $at, $t1
-/* 05978C 800B153C C4244550 */ lwc1 $f4, %lo(D_800E4550)($at)
-/* 059790 800B1540 3C01800E */ lui $at, %hi(D_800E4710)
+/* 05978C 800B153C C4244550 */ lwc1 $f4, %lo(gEntitiesScaleXArray)($at)
+/* 059790 800B1540 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 059794 800B1544 E5440040 */  swc1  $f4, 0x40($t2)
 /* 059798 800B1548 8CAB0000 */  lw    $t3, ($a1)
 /* 05979C 800B154C 8C8E003C */  lw    $t6, 0x3c($a0)
 /* 0597A0 800B1550 8D6C0000 */  lw    $t4, ($t3)
 /* 0597A4 800B1554 000C6880 */  sll   $t5, $t4, 2
 /* 0597A8 800B1558 002D0821 */  addu  $at, $at, $t5
-/* 0597AC 800B155C C4264710 */ lwc1 $f6, %lo(D_800E4710)($at)
-/* 0597B0 800B1560 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 0597AC 800B155C C4264710 */ lwc1 $f6, %lo(gEntitiesScaleYArray)($at)
+/* 0597B0 800B1560 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 0597B4 800B1564 E5C60044 */  swc1  $f6, 0x44($t6)
 /* 0597B8 800B1568 8CAF0000 */  lw    $t7, ($a1)
 /* 0597BC 800B156C 8C88003C */  lw    $t0, 0x3c($a0)
 /* 0597C0 800B1570 8DF80000 */  lw    $t8, ($t7)
 /* 0597C4 800B1574 0018C880 */  sll   $t9, $t8, 2
 /* 0597C8 800B1578 00390821 */  addu  $at, $at, $t9
-/* 0597CC 800B157C C42848D0 */ lwc1 $f8, %lo(D_800E48D0)($at)
+/* 0597CC 800B157C C42848D0 */ lwc1 $f8, %lo(gEntitiesScaleZArray)($at)
 /* 0597D0 800B1580 E5080048 */  swc1  $f8, 0x48($t0)
 .L800B1584_ovl1:
 /* 0597D4 800B1584 03E00008 */  jr    $ra

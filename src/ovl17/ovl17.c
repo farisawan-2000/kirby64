@@ -21,9 +21,9 @@ void func_801DD440_ovl17(struct UnkStruct8004A7C4 *arg0) {
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
-    arg0->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
-    arg0->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
+    arg0->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
     func_8000B6BC(0x126);
     func_800AECC0(0.0f);
     func_800AED20(0.0f);
@@ -39,9 +39,9 @@ void func_801DD60C_ovl17(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = &D_800B5094;
     D_800DDA90[D_8004A7C4->objId] = 0x25;
     D_800E0F10[D_8004A7C4->objId] = 0x19;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x100F1, 0x23, 0x10);
     func_800AA018(0x1068D);
     func_800AA018(0x1068E);
@@ -63,9 +63,9 @@ void func_801DD704_ovl17(s32 arg0) {
 
     temp_f0 = D_801E55A4;
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
     D_800DDA90[D_8004A7C4->objId] = 0x22;
     D_800DF150[D_8004A7C4->objId] = &func_801DD88C_ovl17;
     func_800A9864(0x100F3, 0x23, 0x10);

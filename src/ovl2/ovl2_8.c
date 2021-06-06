@@ -603,9 +603,9 @@ void func_8011C8F8(void) {
     temp_f0 = D_80128E24;
     D_800DEF90[D_8004A7C4->objId] = &D_800B531C;
     D_800DEDD0[D_8004A7C4->objId] = &D_8011CFF4;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
     func_80112A0C();
     func_80111534(D_8004A7C4->objId);
     D_800D6F10 = 0;
@@ -883,7 +883,7 @@ void func_8011D67C(void) {
     if (D_800D6FB2 == 2) {
         func_8011CF58();
         temp_v0 = D_8004A7C4;
-        (&D_800E4550[temp_v0->objId])[0x124] = (bitwise f32) &D_80192F64;
+        (&gEntitiesScaleXArray[temp_v0->objId])[0x124] = (bitwise f32) &D_80192F64;
         gKirbyState.unk15C = &D_801923DC;
         gKirbyState.unk154 = 2;
         phi_v0 = temp_v0;
@@ -891,16 +891,16 @@ void func_8011D67C(void) {
         if (func_800AA888(0x20007) == 0) {
             func_8011CF58();
             func_80122F08(0x20007);
-            (&D_800E4550[D_8004A7C4->objId])[0x124] = (bitwise f32) &D_801926E8;
+            (&gEntitiesScaleXArray[D_8004A7C4->objId])[0x124] = (bitwise f32) &D_801926E8;
             gKirbyState.unk15C = &D_80190358;
             gKirbyState.unk154 = 2;
         }
         phi_v0 = D_8004A7C4;
     }
     temp_f0 = D_80128EF0;
-    D_800E4550[phi_v0->objId] = temp_f0;
-    D_800E4710[phi_v0->objId] = temp_f0;
-    D_800E48D0[phi_v0->objId] = temp_f0;
+    gEntitiesScaleXArray[phi_v0->objId] = temp_f0;
+    gEntitiesScaleYArray[phi_v0->objId] = temp_f0;
+    gEntitiesScaleZArray[phi_v0->objId] = temp_f0;
     if (D_800E8920[phi_v0->objId] == 1) {
         temp_v0_2 = D_800D6FE8.buttonHeld;
         if ((temp_v0_2 & 0x400) == 0) {
@@ -1423,8 +1423,8 @@ void func_8011E438(void) {
     D_800E3210[0] = 0.0f;
     D_800E3750[0] = D_80128F20;
     D_800E3C90[0] = 16.0f;
-    D_800E48D0[0] = D_80128F24;
-    D_800E4550[0] = D_800E4710[0] = D_800E48D0[0];
+    gEntitiesScaleZArray[0] = D_80128F24;
+    gEntitiesScaleXArray[0] = gEntitiesScaleYArray[0] = gEntitiesScaleZArray[0];
 }
 
 void func_8011E4E4(u32 arg0) {

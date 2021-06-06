@@ -798,9 +798,9 @@ void func_8021F970_ovl18(void) {
     D_800D70D8.unkC = gEntitiesAngleXArray[D_8004A7C4->objId];
     D_800D70D8.unk10 = gEntitiesAngleYArray[D_8004A7C4->objId];
     D_800D70D8.unk14 = gEntitiesAngleZArray[D_8004A7C4->objId];
-    D_800D70D8.unk18 = D_800E4550[D_8004A7C4->objId];
-    D_800D70D8.unk1C = D_800E4710[D_8004A7C4->objId];
-    D_800D70D8.unk20 = D_800E48D0[D_8004A7C4->objId];
+    D_800D70D8.unk18 = gEntitiesScaleXArray[D_8004A7C4->objId];
+    D_800D70D8.unk1C = gEntitiesScaleYArray[D_8004A7C4->objId];
+    D_800D70D8.unk20 = gEntitiesScaleZArray[D_8004A7C4->objId];
     D_800D7098.unk0 = 1;
     D_800D7098.unk4 = 0;
     D_800D7098.unk8 = 0;
@@ -822,9 +822,9 @@ void func_8021FB18_ovl18(void) {
     gEntitiesAngleXArray[D_8004A7C4->objId] = D_800D70D8.unkC;
     gEntitiesAngleYArray[D_8004A7C4->objId] = D_800D70D8.unk10;
     gEntitiesAngleZArray[D_8004A7C4->objId] = D_800D70D8.unk14;
-    D_800E4550[D_8004A7C4->objId] = D_800D70D8.unk18;
-    D_800E4710[D_8004A7C4->objId] = D_800D70D8.unk1C;
-    D_800E48D0[D_8004A7C4->objId] = D_800D70D8.unk20;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = D_800D70D8.unk18;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = D_800D70D8.unk1C;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = D_800D70D8.unk20;
     D_800D7098.unk0 = 0;
     func_800B1BF0(0, D_8004A7C4->objId);
 }
@@ -858,11 +858,11 @@ f32 func_8021FC40_ovl18(void) {
     temp_f0 = D_800D70D8.unk18;
     temp_a0 = D_800D7098.unk8 + D_800D7098.unk4;
     temp_f2 = temp_a0;
-    D_800E4550[temp_v1->unk0] = (temp_f0 * temp_f16 * temp_f2) + temp_f0;
+    gEntitiesScaleXArray[temp_v1->unk0] = (temp_f0 * temp_f16 * temp_f2) + temp_f0;
     temp_f12 = D_800D70D8.unk1C;
-    D_800E4710[temp_v1->unk0] = temp_f12 - (temp_f12 * temp_f16 * temp_f2);
+    gEntitiesScaleYArray[temp_v1->unk0] = temp_f12 - (temp_f12 * temp_f16 * temp_f2);
     temp_f14 = D_800D70D8.unk20;
-    D_800E48D0[temp_v1->unk0] = (temp_f14 * temp_f16 * temp_f2) + temp_f14;
+    gEntitiesScaleZArray[temp_v1->unk0] = (temp_f14 * temp_f16 * temp_f2) + temp_f14;
     D_800D7098.unk4 = temp_a0;
     return temp_f0;
 }

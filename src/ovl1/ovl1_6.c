@@ -95,9 +95,9 @@ void func_800AE138(s32 arg0) {
     D_800E10D0[arg0] = 0.0f;
 
     if (1){
-        D_800E48D0[arg0] = //1.0f;
-        D_800E4710[arg0] = //1.0f;
-        D_800E4550[arg0] = 1.0f;
+        gEntitiesScaleZArray[arg0] = //1.0f;
+        gEntitiesScaleYArray[arg0] = //1.0f;
+        gEntitiesScaleXArray[arg0] = 1.0f;
     }
 
     D_800E5DD0[arg0] = 0.0f;

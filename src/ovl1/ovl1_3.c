@@ -1443,9 +1443,9 @@ void func_800AA174(void) {
     D_8004A7C4->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     D_8004A7C4->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
 }
 
 void func_800AA2A0(void) {

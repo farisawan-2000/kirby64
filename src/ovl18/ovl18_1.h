@@ -16,11 +16,11 @@ extern void call_virtual_function(s32, s32, void (*c));
 
 extern void (*D_8022AB80[58])(void);
 
-extern f32 D_800E48D0[];
+extern f32 gEntitiesScaleZArray[];
 
-extern f32 D_800E4710[];
+extern f32 gEntitiesScaleYArray[];
 
-extern f32 D_800E4550[];
+extern f32 gEntitiesScaleXArray[];
 
 extern s32 D_800E98E0[];
 

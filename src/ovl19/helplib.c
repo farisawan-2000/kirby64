@@ -246,9 +246,9 @@ void func_8021EB6C_ovl19(struct UnkStruct8004A7C4 *arg0) {
     temp_f0 = D_8022F70C;
     D_800DEF90[D_8004A7C4->objId] = func_800B5094;
     D_800DF150[D_8004A7C4->objId] = func_8021EC64_ovl19;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x20062, 0x1869F, 0x10);
     func_800AA154(0x20324);
     temp_v0_2 = D_8004A7C4;
@@ -272,9 +272,9 @@ void func_8021ECC4_ovl19(struct UnkStruct8004A7C4 *arg0) {
 
     temp_f0 = D_8022F710;
     D_800DF150[D_8004A7C4->objId] = func_8021ED80_ovl19;
-    D_800E4550[D_8004A7C4->objId] = temp_f0;
-    D_800E4710[D_8004A7C4->objId] = temp_f0;
-    D_800E48D0[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = temp_f0;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = temp_f0;
     func_800A9864(0x20063, 0x1869F, 0x10);
     func_800AA018(0x20327);
     func_800AA018(0x20326);

@@ -2980,13 +2980,13 @@ glabel func_801F2098_ovl10
 /* 1E308C 801F231C AC22A520 */   sw    $v0, -0x5ae0($at)
 /* 1E3090 801F2320 3C01801F */  lui   $at, %hi(D_801F4CB4) # $at, 0x801f
 /* 1E3094 801F2324 3C15800E */  lui   $s5, %hi(D_800DE350) # $s5, 0x800e
-/* 1E3098 801F2328 3C14800E */  lui   $s4, %hi(D_800E48D0) # $s4, 0x800e
-/* 1E309C 801F232C 3C13800E */  lui   $s3, %hi(D_800E4710) # $s3, 0x800e
-/* 1E30A0 801F2330 3C12800E */  lui   $s2, %hi(D_800E4550) # $s2, 0x800e
+/* 1E3098 801F2328 3C14800E */  lui   $s4, %hi(gEntitiesScaleZArray) # $s4, 0x800e
+/* 1E309C 801F232C 3C13800E */  lui   $s3, %hi(gEntitiesScaleYArray) # $s3, 0x800e
+/* 1E30A0 801F2330 3C12800E */  lui   $s2, %hi(gEntitiesScaleXArray) # $s2, 0x800e
 /* 1E30A4 801F2334 4480B000 */  mtc1  $zero, $f22
-/* 1E30A8 801F2338 26524550 */  addiu $s2, %lo(D_800E4550) # addiu $s2, $s2, 0x4550
-/* 1E30AC 801F233C 26734710 */  addiu $s3, %lo(D_800E4710) # addiu $s3, $s3, 0x4710
-/* 1E30B0 801F2340 269448D0 */  addiu $s4, %lo(D_800E48D0) # addiu $s4, $s4, 0x48d0
+/* 1E30A8 801F2338 26524550 */  addiu $s2, %lo(gEntitiesScaleXArray) # addiu $s2, $s2, 0x4550
+/* 1E30AC 801F233C 26734710 */  addiu $s3, %lo(gEntitiesScaleYArray) # addiu $s3, $s3, 0x4710
+/* 1E30B0 801F2340 269448D0 */  addiu $s4, %lo(gEntitiesScaleZArray) # addiu $s4, $s4, 0x48d0
 /* 1E30B4 801F2344 26B5E350 */  addiu $s5, %lo(D_800DE350) # addiu $s5, $s5, -0x1cb0
 /* 1E30B8 801F2348 C4384CB4 */  lwc1  $f24, %lo(D_801F4CB4)($at)
 /* 1E30BC 801F234C 24160001 */  li    $s6, 1

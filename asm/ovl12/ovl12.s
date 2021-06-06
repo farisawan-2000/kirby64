@@ -5324,8 +5324,8 @@ glabel func_801DFE8C_ovl12
 glabel func_801DFED8_ovl12
 /* 1F0218 801DFED8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1F021C 801DFEDC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
-/* 1F0220 801DFEE0 3C05800E */  lui   $a1, %hi(D_800E4550) # $a1, 0x800e
-/* 1F0224 801DFEE4 24A54550 */  addiu $a1, %lo(D_800E4550) # addiu $a1, $a1, 0x4550
+/* 1F0220 801DFEE0 3C05800E */  lui   $a1, %hi(gEntitiesScaleXArray) # $a1, 0x800e
+/* 1F0224 801DFEE4 24A54550 */  addiu $a1, %lo(gEntitiesScaleXArray) # addiu $a1, $a1, 0x4550
 /* 1F0228 801DFEE8 8C430000 */  lw    $v1, ($v0)
 /* 1F022C 801DFEEC 3C013F00 */  li    $at, 0x3F000000 # 0.500000
 /* 1F0230 801DFEF0 44811000 */  mtc1  $at, $f2
@@ -5338,11 +5338,11 @@ glabel func_801DFED8_ovl12
 /* 1F024C 801DFF0C 45000015 */  bc1f  .L801DFF64_ovl12
 /* 1F0250 801DFF10 00000000 */   nop   
 /* 1F0254 801DFF14 C4222DB0 */  lwc1  $f2, %lo(D_801E2DB0)($at)
-/* 1F0258 801DFF18 3C18800E */  lui   $t8, %hi(D_800E4710) # $t8, 0x800e
-/* 1F025C 801DFF1C 27184710 */  addiu $t8, %lo(D_800E4710) # addiu $t8, $t8, 0x4710
+/* 1F0258 801DFF18 3C18800E */  lui   $t8, %hi(gEntitiesScaleYArray) # $t8, 0x800e
+/* 1F025C 801DFF1C 27184710 */  addiu $t8, %lo(gEntitiesScaleYArray) # addiu $t8, $t8, 0x4710
 /* 1F0260 801DFF20 46020101 */  sub.s $f4, $f0, $f2
-/* 1F0264 801DFF24 3C06800E */  lui   $a2, %hi(D_800E48D0) # $a2, 0x800e
-/* 1F0268 801DFF28 24C648D0 */  addiu $a2, %lo(D_800E48D0) # addiu $a2, $a2, 0x48d0
+/* 1F0264 801DFF24 3C06800E */  lui   $a2, %hi(gEntitiesScaleZArray) # $a2, 0x800e
+/* 1F0268 801DFF28 24C648D0 */  addiu $a2, %lo(gEntitiesScaleZArray) # addiu $a2, $a2, 0x48d0
 /* 1F026C 801DFF2C E4840000 */  swc1  $f4, ($a0)
 /* 1F0270 801DFF30 8C4E0000 */  lw    $t6, ($v0)
 /* 1F0274 801DFF34 000E7880 */  sll   $t7, $t6, 2
@@ -5359,8 +5359,8 @@ glabel func_801DFED8_ovl12
 /* 1F02A0 801DFF60 E4B00000 */   swc1  $f16, ($a1)
 
 .L801DFF64_ovl12:
-/* 1F02A4 801DFF64 3C06800E */  lui   $a2, %hi(D_800E48D0) # $a2, 0x800e
-/* 1F02A8 801DFF68 24C648D0 */  addiu $a2, %lo(D_800E48D0) # addiu $a2, $a2, 0x48d0
+/* 1F02A4 801DFF64 3C06800E */  lui   $a2, %hi(gEntitiesScaleZArray) # $a2, 0x800e
+/* 1F02A8 801DFF68 24C648D0 */  addiu $a2, %lo(gEntitiesScaleZArray) # addiu $a2, $a2, 0x48d0
 /* 1F02AC 801DFF6C 00C34821 */  addu  $t1, $a2, $v1
 /* 1F02B0 801DFF70 E5220000 */  swc1  $f2, ($t1)
 /* 1F02B4 801DFF74 8C430000 */  lw    $v1, ($v0)

@@ -13804,7 +13804,7 @@ glabel D_800E4548
 glabel D_800E454C
 .word 0x00000000
 
-glabel D_800E4550
+glabel gEntitiesScaleXArray
 .word 0x00000000
 
 glabel D_800E4554
@@ -14140,7 +14140,7 @@ glabel D_800E4708
 glabel D_800E470C
 .word 0x00000000
 
-glabel D_800E4710
+glabel gEntitiesScaleYArray
 .word 0x00000000
 
 glabel D_800E4714
@@ -14476,7 +14476,7 @@ glabel D_800E48C8
 glabel D_800E48CC
 .word 0x00000000
 
-glabel D_800E48D0
+glabel gEntitiesScaleZArray
 .word 0x00000000
 
 glabel D_800E48D4

@@ -10979,15 +10979,15 @@
 /* 1FD6C4 801E5744 3C01800E */  lui   $at, 0x800e
 /* 1FD6C8 801E5748 46062202 */  mul.s $f8, $f4, $f6
 /* 1FD6CC 801E574C 00230821 */  addu  $at, $at, $v1
-/* 1FD6D0 801E5750 3C12800E */  lui   $s2, %hi(D_800E4710) # $s2, 0x800e
-/* 1FD6D4 801E5754 3C11800E */  lui   $s1, %hi(D_800E4550) # $s1, 0x800e
-/* 1FD6D8 801E5758 26314550 */  addiu $s1, %lo(D_800E4550) # addiu $s1, $s1, 0x4550
-/* 1FD6DC 801E575C 26524710 */  addiu $s2, %lo(D_800E4710) # addiu $s2, $s2, 0x4710
+/* 1FD6D0 801E5750 3C12800E */  lui   $s2, %hi(gEntitiesScaleYArray) # $s2, 0x800e
+/* 1FD6D4 801E5754 3C11800E */  lui   $s1, %hi(gEntitiesScaleXArray) # $s1, 0x800e
+/* 1FD6D8 801E5758 26314550 */  addiu $s1, %lo(gEntitiesScaleXArray) # addiu $s1, $s1, 0x4550
+/* 1FD6DC 801E575C 26524710 */  addiu $s2, %lo(gEntitiesScaleYArray) # addiu $s2, $s2, 0x4710
 /* 1FD6E0 801E5760 4500001C */  bc1f  .L801E57D4_ovl13
 /* 1FD6E4 801E5764 E42864D0 */   swc1  $f8, 0x64d0($at)
 /* 1FD6E8 801E5768 3C01801E */  lui   $at, %hi(D_801E5E34) # $at, 0x801e
-/* 1FD6EC 801E576C 3C10800E */  lui   $s0, %hi(D_800E48D0) # $s0, 0x800e
-/* 1FD6F0 801E5770 261048D0 */  addiu $s0, %lo(D_800E48D0) # addiu $s0, $s0, 0x48d0
+/* 1FD6EC 801E576C 3C10800E */  lui   $s0, %hi(gEntitiesScaleZArray) # $s0, 0x800e
+/* 1FD6F0 801E5770 261048D0 */  addiu $s0, %lo(gEntitiesScaleZArray) # addiu $s0, $s0, 0x48d0
 /* 1FD6F4 801E5774 C4365E34 */  lwc1  $f22, %lo(D_801E5E34)($at)
 /* 1FD6F8 801E5778 8E620000 */  lw    $v0, ($s3)
 .L801E577C_ovl13:
@@ -11015,8 +11015,8 @@
 /* 1FD750 801E57D0 8E620000 */  lw    $v0, ($s3)
 .L801E57D4_ovl13:
 /* 1FD754 801E57D4 8C4A0000 */  lw    $t2, ($v0)
-/* 1FD758 801E57D8 3C11800E */  lui   $s1, %hi(D_800E4550) # $s1, 0x800e
-/* 1FD75C 801E57DC 26314550 */  addiu $s1, %lo(D_800E4550) # addiu $s1, $s1, 0x4550
+/* 1FD758 801E57D8 3C11800E */  lui   $s1, %hi(gEntitiesScaleXArray) # $s1, 0x800e
+/* 1FD75C 801E57DC 26314550 */  addiu $s1, %lo(gEntitiesScaleXArray) # addiu $s1, $s1, 0x4550
 /* 1FD760 801E57E0 000A6080 */  sll   $t4, $t2, 2
 /* 1FD764 801E57E4 022C7021 */  addu  $t6, $s1, $t4
 /* 1FD768 801E57E8 E5D80000 */  swc1  $f24, ($t6)

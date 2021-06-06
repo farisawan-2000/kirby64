@@ -25,8 +25,8 @@ void func_802202B8_ovl18(s32 arg0) {
 
 void func_80220338_ovl18(s32 arg0) {
     func_8021F4A0_ovl18();
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     D_800E1B50[D_8004A7C4->objId]->unk8C = &D_8022A184;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_8022A940;
     D_800E98E0[D_8004A7C4->objId] = 0x1E;
@@ -109,8 +109,8 @@ void func_80220818_ovl18(s32 arg0) {
 
 void func_80220898_ovl18(s32 arg0) {
     func_8021F4A0_ovl18();
-    D_800E48D0[D_8004A7C4->objId] = 3.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 3.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     D_800DEF90[D_8004A7C4->objId] = &D_800B7138;
     D_800E1B50[D_8004A7C4->objId]->unk8C = &D_8022A214;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_8022A964;
@@ -344,10 +344,10 @@ void func_80221330_ovl18(s32 arg0) {
     func_8021F4A0_ovl18();
     sp1C->unk98 = &D_8022A988;
     D_800DF150[D_8004A7C4->objId] = &func_80221440_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];;
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
-    func_801A0D50_ovl18(&func_802212E8_ovl18, &D_800E48D0);
+    func_801A0D50_ovl18(&func_802212E8_ovl18, &gEntitiesScaleZArray);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[9]);
 }
 
@@ -407,9 +407,9 @@ void func_802217A0_ovl18(s32 arg0) {
     func_8021F4A0_ovl18();
     func_801A3280_ovl18();
     D_800DF150[D_8004A7C4->objId] = &func_802218E4_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] =
-    D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] =
+    gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     gEntitiesNextPosYArray[D_8004A7C4->objId] -= 110.0f;
     D_800EA6E0[D_8004A7C4->objId] = gEntitiesNextPosYArray[D_8004A7C4->objId];
     D_800EA8A0[D_8004A7C4->objId] = D_800EA6E0[D_8004A7C4->objId] + 60.0f;

@@ -12,9 +12,9 @@ void func_80224320_ovl18(s32 arg0) {
     struct UnkStruct800E1B50 *temp_a3 = D_800E1B50[D_8004A7C4->objId];
 
     D_800E98E0[D_8004A7C4->objId] = 0x3C;
-    D_800E4550[D_8004A7C4->objId] = D_800E4550[D_800E0D50[D_8004A7C4->objId]];
-    D_800E4710[D_8004A7C4->objId] = D_800E4710[D_800E0D50[D_8004A7C4->objId]];
-    D_800E48D0[D_8004A7C4->objId] = D_800E48D0[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleXArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_800E0D50[D_8004A7C4->objId]];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_800E0D50[D_8004A7C4->objId]];
     D_800DF150[D_8004A7C4->objId] = &func_802244FC_ovl18;
     temp_a3->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;

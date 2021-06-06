@@ -135,9 +135,9 @@ void func_801E49B8_ovl17(s32 arg0) {
     tmp = D_801E56C8;
     D_800DDA90[D_8004A7C4->objId] = 0x23;
     D_800E98E0[D_8004A7C4->objId] = 0;
-    D_800E4550[D_8004A7C4->objId] = tmp;
-    D_800E4710[D_8004A7C4->objId] = tmp;
-    D_800E48D0[D_8004A7C4->objId] = tmp;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = tmp;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = tmp;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = tmp;
     gEntitiesAngleXArray[D_8004A7C4->objId] = gEntitiesAngleXArray[D_800E0D50[D_8004A7C4->objId]];
     gEntitiesAngleYArray[D_8004A7C4->objId] = gEntitiesAngleYArray[D_800E0D50[D_8004A7C4->objId]];
     gEntitiesAngleZArray[D_8004A7C4->objId] = gEntitiesAngleZArray[D_800E0D50[D_8004A7C4->objId]];

@@ -2629,9 +2629,9 @@ extern f32 gEntitiesAngleXArray[];
 extern f32 gEntitiesAngleYArray[];
 extern f32 gEntitiesAngleZArray[];
 extern s32 D_800E91E0[];
-extern f32 D_800E48D0[];
-extern f32 D_800E4710[];
-extern f32 D_800E4550[];
+extern f32 gEntitiesScaleZArray[];
+extern f32 gEntitiesScaleYArray[];
+extern f32 gEntitiesScaleXArray[];
 
 s32 func_800FCA84(s32 arg0, u8 bankID, u8 entID,
     u8 action, u8 respawnFlag, u8 unk5, s16 saveToEeprom,
@@ -2706,7 +2706,7 @@ s32 func_800FCA84(s32 arg0, u8 bankID, u8 entID,
     gEntitiesAngleYArray[temp_v0] = (*angle)[1];
     gEntitiesAngleZArray[temp_v0] = (*angle)[2];
     D_800E91E0[temp_v0] = saveToEeprom;
-    D_800E4550[temp_v0] = D_800E4710[temp_v0] = D_800E48D0[temp_v0] = *scale[0];
+    gEntitiesScaleXArray[temp_v0] = gEntitiesScaleYArray[temp_v0] = gEntitiesScaleZArray[temp_v0] = *scale[0];
 }
 
 extern u32 D_800E8E60[];

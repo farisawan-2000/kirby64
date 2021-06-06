@@ -14,10 +14,10 @@ glabel func_80177270_ovl3
 /* 0D7CE0 801772A0 51E00007 */  beql  $t7, $zero, .L801772C0_ovl3
 /* 0D7CE4 801772A4 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 0D7CE8 801772A8 C42474EC */  lwc1  $f4, %lo(D_801974EC)($at)
-/* 0D7CEC 801772AC 3C01800E */ lui $at, %hi(D_800E4710)
+/* 0D7CEC 801772AC 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 0D7CF0 801772B0 00220821 */  addu  $at, $at, $v0
 /* 0D7CF4 801772B4 0C048BEC */  jal   func_80122FB0
-/* 0D7CF8 801772B8 E4244710 */ swc1 $f4, %lo(D_800E4710)($at)
+/* 0D7CF8 801772B8 E4244710 */ swc1 $f4, %lo(gEntitiesScaleYArray)($at)
 /* 0D7CFC 801772BC 8FBF0014 */  lw    $ra, 0x14($sp)
 .L801772C0_ovl3:
 /* 0D7D00 801772C0 27BD0018 */  addiu $sp, $sp, 0x18

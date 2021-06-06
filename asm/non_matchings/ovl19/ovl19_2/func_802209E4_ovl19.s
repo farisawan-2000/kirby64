@@ -55,26 +55,26 @@ glabel func_802209E4_ovl19
 /* 2411C4 80220AB4 002E0821 */  addu  $at, $at, $t6
 /* 2411C8 80220AB8 E4282950 */ swc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 2411CC 80220ABC 8C6F0000 */  lw    $t7, ($v1)
-/* 2411D0 80220AC0 3C01800E */ lui $at, %hi(D_800E4550)
+/* 2411D0 80220AC0 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 2411D4 80220AC4 3C040002 */  lui   $a0, (0x0002006F >> 16) # lui $a0, 2
 /* 2411D8 80220AC8 000FC880 */  sll   $t9, $t7, 2
 /* 2411DC 80220ACC 00390821 */  addu  $at, $at, $t9
-/* 2411E0 80220AD0 E4204550 */ swc1 $f0, %lo(D_800E4550)($at)
+/* 2411E0 80220AD0 E4204550 */ swc1 $f0, %lo(gEntitiesScaleXArray)($at)
 /* 2411E4 80220AD4 8C780000 */  lw    $t8, ($v1)
-/* 2411E8 80220AD8 3C01800E */ lui $at, %hi(D_800E4710)
+/* 2411E8 80220AD8 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 2411EC 80220ADC 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 2411F0 80220AE0 00184080 */  sll   $t0, $t8, 2
 /* 2411F4 80220AE4 00280821 */  addu  $at, $at, $t0
-/* 2411F8 80220AE8 E4204710 */ swc1 $f0, %lo(D_800E4710)($at)
+/* 2411F8 80220AE8 E4204710 */ swc1 $f0, %lo(gEntitiesScaleYArray)($at)
 /* 2411FC 80220AEC 8C690000 */  lw    $t1, ($v1)
-/* 241200 80220AF0 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 241200 80220AF0 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 241204 80220AF4 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
 /* 241208 80220AF8 00095080 */  sll   $t2, $t1, 2
 /* 24120C 80220AFC 002A0821 */  addu  $at, $at, $t2
 /* 241210 80220B00 3484006F */  ori   $a0, (0x0002006F & 0xFFFF) # ori $a0, $a0, 0x6f
 /* 241214 80220B04 24060010 */  li    $a2, 16
 /* 241218 80220B08 0C02A619 */  jal   func_800A9864
-/* 24121C 80220B0C E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
+/* 24121C 80220B0C E42048D0 */ swc1 $f0, %lo(gEntitiesScaleZArray)($at)
 /* 241220 80220B10 3C040002 */  lui   $a0, (0x000203D5 >> 16) # lui $a0, 2
 /* 241224 80220B14 3C050002 */  lui   $a1, (0x000203D6 >> 16) # lui $a1, 2
 /* 241228 80220B18 34A503D6 */  ori   $a1, (0x000203D6 & 0xFFFF) # ori $a1, $a1, 0x3d6

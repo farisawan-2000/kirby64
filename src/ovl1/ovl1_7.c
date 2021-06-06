@@ -554,9 +554,9 @@ void func_800AFA88(struct UnkStruct8004A7C4 *arg0) {
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
-    arg0->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
-    arg0->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
+    arg0->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
 }
 
 #ifdef MIPS_TO_C
@@ -651,15 +651,15 @@ extern f32 D_800D6714;
 void func_800AFEB8(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     if (arg0 != D_800D6714) {
         D_800E4FD0[D_8004A7C4->objId] = arg0;
-        D_800E4550[D_8004A7C4->objId] = D_800E4FD0[D_8004A7C4->objId];
+        gEntitiesScaleXArray[D_8004A7C4->objId] = D_800E4FD0[D_8004A7C4->objId];
     }
     if (arg1 != D_800D6714) {
         D_800E5190[D_8004A7C4->objId] = arg1;
-        D_800E4710[D_8004A7C4->objId] = D_800E5190[D_8004A7C4->objId];
+        gEntitiesScaleYArray[D_8004A7C4->objId] = D_800E5190[D_8004A7C4->objId];
     }
     if (arg2 != D_800D6714) {
         D_800E5350[D_8004A7C4->objId] = arg2;
-        D_800E48D0[D_8004A7C4->objId] = D_800E5350[D_8004A7C4->objId];
+        gEntitiesScaleZArray[D_8004A7C4->objId] = D_800E5350[D_8004A7C4->objId];
     }
     if (arg3 != 0) {
         func_8000B6BC(arg3);
@@ -706,15 +706,15 @@ extern f32 D_800D6720;
 void func_800B01DC(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     if (arg0 != D_800D6720) {
         D_800E4FD0[D_8004A7C4->objId] += arg0;
-        D_800E4550[D_8004A7C4->objId] = D_800E4FD0[D_8004A7C4->objId];
+        gEntitiesScaleXArray[D_8004A7C4->objId] = D_800E4FD0[D_8004A7C4->objId];
     }
     if (arg1 != D_800D6720) {
         D_800E5190[D_8004A7C4->objId] += arg1;
-        D_800E4710[D_8004A7C4->objId] = D_800E5190[D_8004A7C4->objId];
+        gEntitiesScaleYArray[D_8004A7C4->objId] = D_800E5190[D_8004A7C4->objId];
     }
     if (arg2 != D_800D6720) {
         D_800E5350[D_8004A7C4->objId] += arg2;
-        D_800E48D0[D_8004A7C4->objId] = D_800E5350[D_8004A7C4->objId];
+        gEntitiesScaleZArray[D_8004A7C4->objId] = D_800E5350[D_8004A7C4->objId];
     }
     if (arg3 != 0) {
         func_8000B6BC(arg3);
@@ -1057,9 +1057,9 @@ void func_800B143C(void) {
             ERROR(Read from unset register $a0)->unk3C->unk30 = gEntitiesAngleXArray[D_8004A7C4->objId];
             ERROR(Read from unset register $a0)->unk3C->unk34 = gEntitiesAngleYArray[D_8004A7C4->objId];
             ERROR(Read from unset register $a0)->unk3C->unk38 = gEntitiesAngleZArray[D_8004A7C4->objId];
-            ERROR(Read from unset register $a0)->unk3C->unk40 = D_800E4550[D_8004A7C4->objId];
-            ERROR(Read from unset register $a0)->unk3C->unk44 = D_800E4710[D_8004A7C4->objId];
-            ERROR(Read from unset register $a0)->unk3C->unk48 = D_800E48D0[D_8004A7C4->objId];
+            ERROR(Read from unset register $a0)->unk3C->unk40 = gEntitiesScaleXArray[D_8004A7C4->objId];
+            ERROR(Read from unset register $a0)->unk3C->unk44 = gEntitiesScaleYArray[D_8004A7C4->objId];
+            ERROR(Read from unset register $a0)->unk3C->unk48 = gEntitiesScaleZArray[D_8004A7C4->objId];
         }
     }
 }
@@ -1724,9 +1724,9 @@ loop_5:
             guMtxCatF(&spB8, &sp78, &spB8);
         }
     } else {
-        temp_f0_4 = D_800E4550[arg2];
-        temp_f2 = D_800E4710[arg2];
-        temp_f12 = D_800E48D0[arg2];
+        temp_f0_4 = gEntitiesScaleXArray[arg2];
+        temp_f2 = gEntitiesScaleYArray[arg2];
+        temp_f12 = gEntitiesScaleZArray[arg2];
         if ((temp_f0_4 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
             func_8001B4AC_ovl1(temp_f12, &sp78, temp_f0_4, temp_f2, temp_f12);
             guMtxCatF(&spB8, &sp78, &spB8);
@@ -1857,9 +1857,9 @@ loop_5:
 block_14:
         }
     } else {
-        temp_f0_2 = D_800E4550[phi_s5];
-        temp_f2 = D_800E4710[phi_s5];
-        temp_f12 = D_800E48D0[phi_s5];
+        temp_f0_2 = gEntitiesScaleXArray[phi_s5];
+        temp_f2 = gEntitiesScaleYArray[phi_s5];
+        temp_f12 = gEntitiesScaleZArray[phi_s5];
         if ((temp_f0_2 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
             func_8001B4AC_ovl1(temp_f12, &sp50, temp_f0_2, temp_f2, temp_f12);
             guMtxCatF(&sp90, &sp50, &sp90);
@@ -1931,9 +1931,9 @@ loop_5:
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
     } else {
-        temp_f0_5 = D_800E4550[arg2];
-        temp_f2 = D_800E4710[arg2];
-        temp_f12 = D_800E48D0[arg2];
+        temp_f0_5 = gEntitiesScaleXArray[arg2];
+        temp_f2 = gEntitiesScaleYArray[arg2];
+        temp_f12 = gEntitiesScaleZArray[arg2];
         if ((temp_f0_5 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
             func_8001B4AC_ovl1(temp_f12, &sp7C, 1.0f / temp_f0_5, 1.0f / temp_f2, 1.0f / temp_f12);
             guMtxCatF(&sp7C, &spBC, &spBC);

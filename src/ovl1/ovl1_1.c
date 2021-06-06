@@ -2388,7 +2388,7 @@ f32 func_800A5F94(s32 arg0, void *arg1) {
     sp3C = temp_f0_2;
     sp44 = func_800A5B64(*temp_v0_3);
     temp_f0_3 = func_800A5BDC(*temp_v0_3);
-    temp_v0_4 = &D_800E4550[arg0];
+    temp_v0_4 = &gEntitiesScaleXArray[arg0];
     arg1->unk0 = sp3C * temp_f0_3;
     arg1->unk4 = sp3C * sp44;
     arg1->unk8 = -sp48;
@@ -2406,14 +2406,14 @@ f32 func_800A5F94(s32 arg0, void *arg1) {
         arg1->unk4 = arg1->unk4 * *temp_v0_4;
         arg1->unk8 = arg1->unk8 * *temp_v0_4;
     }
-    temp_v0_5 = &D_800E4710[arg0];
+    temp_v0_5 = &gEntitiesScaleYArray[arg0];
     temp_f0_4 = *temp_v0_5;
     if (1.0f != temp_f0_4) {
         arg1->unkC = arg1->unkC * temp_f0_4;
         arg1->unk10 = arg1->unk10 * *temp_v0_5;
         arg1->unk14 = arg1->unk14 * *temp_v0_5;
     }
-    temp_v0_6 = &D_800E48D0[arg0];
+    temp_v0_6 = &gEntitiesScaleZArray[arg0];
     temp_f0 = *temp_v0_6;
     if (1.0f != temp_f0) {
         arg1->unk18 = arg1->unk18 * temp_f0;

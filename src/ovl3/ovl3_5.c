@@ -55,7 +55,7 @@ VTABLE D_80196AE8 = {
     0x8017B8F4,    0x8017BEF4,    0x8017C1FC,    0x8017CAF8,
 };
 
-void (*D_80196B88[])(struct UnkStruct8004A7C4 *) = {
+VTABLE D_80196B88 = {
     0x8017D430,    0x8017DBB8,    0x8017E1EC,    0x8017E54C,
     0x8017EDDC,    0x8017F988,    0x80180B58,    0x801810D0,
     0x801815F4,    0x80181CFC,    0x8018271C,    0x80183428,
@@ -3905,9 +3905,9 @@ void func_80176490_ovl3(struct UnkStruct8004A7C4 *arg0) {
     func_800B1F68(D_800DEA50[D_8004A7C4->objId], func_800B1870);
     func_80122F08(0x20007);
     temp_f12 = D_801974BC;
-    D_800E4550[D_8004A7C4->objId] = D_801974B8;
-    D_800E4710[D_8004A7C4->objId] = D_801974B8;
-    D_800E48D0[D_8004A7C4->objId] = D_801974B8;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = D_801974B8;
+    gEntitiesScaleYArray[D_8004A7C4->objId] = D_801974B8;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = D_801974B8;
     gKirbyState.unk15C = 0;
     D_800DF310[D_8004A7C4->objId] = 0;
     D_800D6F10 = 0;
@@ -4209,11 +4209,11 @@ void func_80177174_ovl3(struct UnkStruct8004A7C4 *arg0) {
     temp_v0 = D_8004A7C4;
     D_800EB4E0[temp_v0->objId] = 0;
     D_800DE190[temp_v0->objId] = 1;
-    D_800E4710[temp_v0->objId] = D_801974E0;
-    temp_v1 = &D_800E4710[temp_v0->objId];
+    gEntitiesScaleYArray[temp_v0->objId] = D_801974E0;
+    temp_v1 = &gEntitiesScaleYArray[temp_v0->objId];
     *temp_v1 = *temp_v1 + D_801974E4;
     func_8000B6BC(2);
-    temp_v1_2 = &D_800E4710[D_8004A7C4->objId];
+    temp_v1_2 = &gEntitiesScaleYArray[D_8004A7C4->objId];
     *temp_v1_2 = *temp_v1_2 + D_801974E8;
     func_8000B6BC(2);
     temp_v0_2 = &D_800EB4E0[D_8004A7C4->objId];
@@ -4232,7 +4232,7 @@ s32 func_80177270_ovl3(struct UnkStruct8004A7C4 *arg0) {
     temp_v0 = D_8004A7C4->objId;
     phi_return = temp_v0 * 4;
     if (D_800EB4E0[temp_v0] != 0) {
-        D_800E4710[temp_v0] = D_801974EC;
+        gEntitiesScaleYArray[temp_v0] = D_801974EC;
         phi_return = func_80122FB0(0);
     }
     return phi_return;
@@ -7472,9 +7472,9 @@ void func_8017F1C0_ovl3(void *arg0) {
                     temp_f0_2 = D_801976D0;
                     temp_v1_2 = D_8004A7C4;
                     gKirbyState.unk38 = 1.0f;
-                    D_800E4550[temp_v1_2->objId] = temp_f0_2;
-                    D_800E4710[temp_v1_2->objId] = temp_f0_2;
-                    D_800E48D0[temp_v1_2->objId] = temp_f0_2;
+                    gEntitiesScaleXArray[temp_v1_2->objId] = temp_f0_2;
+                    gEntitiesScaleYArray[temp_v1_2->objId] = temp_f0_2;
+                    gEntitiesScaleZArray[temp_v1_2->objId] = temp_f0_2;
                     func_800AF27C();
                     gKirbyState.unk30 = gKirbyState.unk30 + 1;
                 }

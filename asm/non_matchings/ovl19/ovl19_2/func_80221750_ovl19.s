@@ -23,26 +23,26 @@ glabel func_80221750_ovl19
 /* 241EB4 802217A4 25CEEA20 */  addiu $t6, %lo(D_8021EA20) # addiu $t6, $t6, -0x15e0
 /* 241EB8 802217A8 AC2EEF90 */ sw $t6, %lo(D_800DEF90)($at)
 /* 241EBC 802217AC 8C590000 */  lw    $t9, ($v0)
-/* 241EC0 802217B0 3C01800E */ lui $at, %hi(D_800E4550)
+/* 241EC0 802217B0 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 241EC4 802217B4 3C040002 */  lui   $a0, (0x00020060 >> 16) # lui $a0, 2
 /* 241EC8 802217B8 00194080 */  sll   $t0, $t9, 2
 /* 241ECC 802217BC 00280821 */  addu  $at, $at, $t0
-/* 241ED0 802217C0 E4204550 */ swc1 $f0, %lo(D_800E4550)($at)
+/* 241ED0 802217C0 E4204550 */ swc1 $f0, %lo(gEntitiesScaleXArray)($at)
 /* 241ED4 802217C4 8C490000 */  lw    $t1, ($v0)
-/* 241ED8 802217C8 3C01800E */ lui $at, %hi(D_800E4710)
+/* 241ED8 802217C8 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 241EDC 802217CC 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 241EE0 802217D0 00095080 */  sll   $t2, $t1, 2
 /* 241EE4 802217D4 002A0821 */  addu  $at, $at, $t2
-/* 241EE8 802217D8 E4204710 */ swc1 $f0, %lo(D_800E4710)($at)
+/* 241EE8 802217D8 E4204710 */ swc1 $f0, %lo(gEntitiesScaleYArray)($at)
 /* 241EEC 802217DC 8C4B0000 */  lw    $t3, ($v0)
-/* 241EF0 802217E0 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 241EF0 802217E0 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 241EF4 802217E4 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
 /* 241EF8 802217E8 000B6080 */  sll   $t4, $t3, 2
 /* 241EFC 802217EC 002C0821 */  addu  $at, $at, $t4
 /* 241F00 802217F0 34840060 */  ori   $a0, (0x00020060 & 0xFFFF) # ori $a0, $a0, 0x60
 /* 241F04 802217F4 24060010 */  li    $a2, 16
 /* 241F08 802217F8 0C02A619 */  jal   func_800A9864
-/* 241F0C 802217FC E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
+/* 241F0C 802217FC E42048D0 */ swc1 $f0, %lo(gEntitiesScaleZArray)($at)
 /* 241F10 80221800 24040006 */  li    $a0, 6
 /* 241F14 80221804 0C0878B4 */  jal   func_8021E2D0_ovl19
 /* 241F18 80221808 24050001 */   li    $a1, 1

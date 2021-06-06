@@ -1485,12 +1485,12 @@ glabel func_801D5B20_ovl8
 /* 17969C 801D5BBC AC39EF90 */ sw $t9, %lo(D_800DEF90)($at)
 /* 1796A0 801D5BC0 8C6A0000 */  lw    $t2, ($v1)
 /* 1796A4 801D5BC4 3C01800F */ lui $at, %hi(D_800E8920)
-/* 1796A8 801D5BC8 3C15800E */  lui   $s5, %hi(D_800E4710) # $s5, 0x800e
+/* 1796A8 801D5BC8 3C15800E */  lui   $s5, %hi(gEntitiesScaleYArray) # $s5, 0x800e
 /* 1796AC 801D5BCC 000A5880 */  sll   $t3, $t2, 2
 /* 1796B0 801D5BD0 002B0821 */  addu  $at, $at, $t3
 /* 1796B4 801D5BD4 AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 1796B8 801D5BD8 8C710000 */  lw    $s1, ($v1)
-/* 1796BC 801D5BDC 26B54710 */  addiu $s5, %lo(D_800E4710) # addiu $s5, $s5, 0x4710
+/* 1796BC 801D5BDC 26B54710 */  addiu $s5, %lo(gEntitiesScaleYArray) # addiu $s5, $s5, 0x4710
 /* 1796C0 801D5BE0 3C14800F */  lui   $s4, %hi(D_800EA6E0) # $s4, 0x800f
 /* 1796C4 801D5BE4 00118880 */  sll   $s1, $s1, 2
 /* 1796C8 801D5BE8 02B16021 */  addu  $t4, $s5, $s1

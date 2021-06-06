@@ -1101,8 +1101,8 @@ glabel func_8016A308_ovl3
 /* 0CAEDC 8016A49C 3C01800F */  lui   $at, 0x800f
 /* 0CAEE0 8016A4A0 E5E00000 */  swc1  $f0, ($t7)
 /* 0CAEE4 8016A4A4 8E180000 */  lw    $t8, ($s0)
-/* 0CAEE8 8016A4A8 3C15800E */  lui   $s5, %hi(D_800E4710) # $s5, 0x800e
-/* 0CAEEC 8016A4AC 26B54710 */  addiu $s5, %lo(D_800E4710) # addiu $s5, $s5, 0x4710
+/* 0CAEE8 8016A4A8 3C15800E */  lui   $s5, %hi(gEntitiesScaleYArray) # $s5, 0x800e
+/* 0CAEEC 8016A4AC 26B54710 */  addiu $s5, %lo(gEntitiesScaleYArray) # addiu $s5, $s5, 0x4710
 /* 0CAEF0 8016A4B0 00184080 */  sll   $t0, $t8, 2
 /* 0CAEF4 8016A4B4 00280821 */  addu  $at, $at, $t0
 /* 0CAEF8 8016A4B8 E420A6E0 */  swc1  $f0, -0x5920($at)

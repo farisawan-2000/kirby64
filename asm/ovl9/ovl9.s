@@ -8070,8 +8070,8 @@ glabel func_801D8260_ovl9
 /* 1862FC 801D82AC 8C4C0000 */  lw    $t4, ($v0)
 /* 186300 801D82B0 3C014000 */  li    $at, 0x40000000 # 2.000000
 /* 186304 801D82B4 44812000 */  mtc1  $at, $f4
-/* 186308 801D82B8 3C06800E */  lui   $a2, %hi(D_800E48D0) # $a2, 0x800e
-/* 18630C 801D82BC 24C648D0 */  addiu $a2, %lo(D_800E48D0) # addiu $a2, $a2, 0x48d0
+/* 186308 801D82B8 3C06800E */  lui   $a2, %hi(gEntitiesScaleZArray) # $a2, 0x800e
+/* 18630C 801D82BC 24C648D0 */  addiu $a2, %lo(gEntitiesScaleZArray) # addiu $a2, $a2, 0x48d0
 /* 186310 801D82C0 000C6880 */  sll   $t5, $t4, 2
 /* 186314 801D82C4 00CD7821 */  addu  $t7, $a2, $t5
 /* 186318 801D82C8 E5E40000 */  swc1  $f4, ($t7)
@@ -8793,8 +8793,8 @@ glabel func_801D8D4C_ovl9
 /* 186DA4 801D8D54 AFA40000 */  sw    $a0, ($sp)
 /* 186DA8 801D8D58 44802000 */  mtc1  $zero, $f4
 /* 186DAC 801D8D5C 8C4E0000 */  lw    $t6, ($v0)
-/* 186DB0 801D8D60 3C04800E */  lui   $a0, %hi(D_800E48D0) # $a0, 0x800e
-/* 186DB4 801D8D64 248448D0 */  addiu $a0, %lo(D_800E48D0) # addiu $a0, $a0, 0x48d0
+/* 186DB0 801D8D60 3C04800E */  lui   $a0, %hi(gEntitiesScaleZArray) # $a0, 0x800e
+/* 186DB4 801D8D64 248448D0 */  addiu $a0, %lo(gEntitiesScaleZArray) # addiu $a0, $a0, 0x48d0
 /* 186DB8 801D8D68 000E7880 */  sll   $t7, $t6, 2
 /* 186DBC 801D8D6C 008FC021 */  addu  $t8, $a0, $t7
 /* 186DC0 801D8D70 E7040000 */  swc1  $f4, ($t8)
@@ -36539,8 +36539,8 @@ glabel func_801F2584_ovl9
 /* 1A067C 801F262C 3C014000 */  li    $at, 0x40000000 # 2.000000
 /* 1A0680 801F2630 44812000 */  mtc1  $at, $f4
 /* 1A0684 801F2634 8C590000 */  lw    $t9, ($v0)
-/* 1A0688 801F2638 3C05800E */  lui   $a1, %hi(D_800E48D0) # $a1, 0x800e
-/* 1A068C 801F263C 24A548D0 */  addiu $a1, %lo(D_800E48D0) # addiu $a1, $a1, 0x48d0
+/* 1A0688 801F2638 3C05800E */  lui   $a1, %hi(gEntitiesScaleZArray) # $a1, 0x800e
+/* 1A068C 801F263C 24A548D0 */  addiu $a1, %lo(gEntitiesScaleZArray) # addiu $a1, $a1, 0x48d0
 /* 1A0690 801F2640 00195080 */  sll   $t2, $t9, 2
 /* 1A0694 801F2644 00AA5821 */  addu  $t3, $a1, $t2
 /* 1A0698 801F2648 E5640000 */  swc1  $f4, ($t3)

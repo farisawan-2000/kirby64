@@ -69,17 +69,20 @@ struct UnkStruct8004A7C4_3C {
 	u32 unk14;
 	u32 unk18;
 
+	// pos
 	Vector unk1C;
 
 	u32 unk28;
 	u32 unk2C;
 
+	// angle
 	Vector unk30;
 
 	// TODO: how is this actually structured?
 	// some code thinks unk3C is the vector while others
 	// think unk40 is
 	f32 unk3C;
+	// scale
 	Vector unk40;
 
 	u32 unk4C;

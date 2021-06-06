@@ -468,30 +468,30 @@ glabel func_801DB770_ovl10
 /* 1CC620 801DB8B0 0018C880 */  sll   $t9, $t8, 2
 /* 1CC624 801DB8B4 00390821 */  addu  $at, $at, $t9
 /* 1CC628 801DB8B8 C4324390 */ lwc1 $f18, %lo(gEntitiesAngleZArray)($at)
-/* 1CC62C 801DB8BC 3C01800E */ lui $at, %hi(D_800E4550)
+/* 1CC62C 801DB8BC 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 1CC630 801DB8C0 E5120038 */  swc1  $f18, 0x38($t0)
 /* 1CC634 801DB8C4 8E490000 */  lw    $t1, ($s2)
 /* 1CC638 801DB8C8 8E0C003C */  lw    $t4, 0x3c($s0)
 /* 1CC63C 801DB8CC 8D2A0000 */  lw    $t2, ($t1)
 /* 1CC640 801DB8D0 000A5880 */  sll   $t3, $t2, 2
 /* 1CC644 801DB8D4 002B0821 */  addu  $at, $at, $t3
-/* 1CC648 801DB8D8 C4244550 */ lwc1 $f4, %lo(D_800E4550)($at)
-/* 1CC64C 801DB8DC 3C01800E */ lui $at, %hi(D_800E4710)
+/* 1CC648 801DB8D8 C4244550 */ lwc1 $f4, %lo(gEntitiesScaleXArray)($at)
+/* 1CC64C 801DB8DC 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 1CC650 801DB8E0 E5840040 */  swc1  $f4, 0x40($t4)
 /* 1CC654 801DB8E4 8E4D0000 */  lw    $t5, ($s2)
 /* 1CC658 801DB8E8 8E18003C */  lw    $t8, 0x3c($s0)
 /* 1CC65C 801DB8EC 8DAE0000 */  lw    $t6, ($t5)
 /* 1CC660 801DB8F0 000E7880 */  sll   $t7, $t6, 2
 /* 1CC664 801DB8F4 002F0821 */  addu  $at, $at, $t7
-/* 1CC668 801DB8F8 C4264710 */ lwc1 $f6, %lo(D_800E4710)($at)
-/* 1CC66C 801DB8FC 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 1CC668 801DB8F8 C4264710 */ lwc1 $f6, %lo(gEntitiesScaleYArray)($at)
+/* 1CC66C 801DB8FC 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 1CC670 801DB900 E7060044 */  swc1  $f6, 0x44($t8)
 /* 1CC674 801DB904 8E590000 */  lw    $t9, ($s2)
 /* 1CC678 801DB908 8E0A003C */  lw    $t2, 0x3c($s0)
 /* 1CC67C 801DB90C 8F280000 */  lw    $t0, ($t9)
 /* 1CC680 801DB910 00084880 */  sll   $t1, $t0, 2
 /* 1CC684 801DB914 00290821 */  addu  $at, $at, $t1
-/* 1CC688 801DB918 C42848D0 */ lwc1 $f8, %lo(D_800E48D0)($at)
+/* 1CC688 801DB918 C42848D0 */ lwc1 $f8, %lo(gEntitiesScaleZArray)($at)
 /* 1CC68C 801DB91C 0C02A806 */  jal   func_800AA018
 /* 1CC690 801DB920 E5480048 */   swc1  $f8, 0x48($t2)
 /* 1CC694 801DB924 10000009 */  b     .L801DB94C_ovl10
@@ -620,30 +620,30 @@ glabel func_801DB9DC_ovl10
 /* 1CC864 801DBAF4 00084880 */  sll   $t1, $t0, 2
 /* 1CC868 801DBAF8 00290821 */  addu  $at, $at, $t1
 /* 1CC86C 801DBAFC C4324390 */ lwc1 $f18, %lo(gEntitiesAngleZArray)($at)
-/* 1CC870 801DBB00 3C01800E */ lui $at, %hi(D_800E4550)
+/* 1CC870 801DBB00 3C01800E */ lui $at, %hi(gEntitiesScaleXArray)
 /* 1CC874 801DBB04 E5520038 */  swc1  $f18, 0x38($t2)
 /* 1CC878 801DBB08 8E0B0000 */  lw    $t3, ($s0)
 /* 1CC87C 801DBB0C 8E2E003C */  lw    $t6, 0x3c($s1)
 /* 1CC880 801DBB10 8D6C0000 */  lw    $t4, ($t3)
 /* 1CC884 801DBB14 000C6880 */  sll   $t5, $t4, 2
 /* 1CC888 801DBB18 002D0821 */  addu  $at, $at, $t5
-/* 1CC88C 801DBB1C C4244550 */ lwc1 $f4, %lo(D_800E4550)($at)
-/* 1CC890 801DBB20 3C01800E */ lui $at, %hi(D_800E4710)
+/* 1CC88C 801DBB1C C4244550 */ lwc1 $f4, %lo(gEntitiesScaleXArray)($at)
+/* 1CC890 801DBB20 3C01800E */ lui $at, %hi(gEntitiesScaleYArray)
 /* 1CC894 801DBB24 E5C40040 */  swc1  $f4, 0x40($t6)
 /* 1CC898 801DBB28 8E0F0000 */  lw    $t7, ($s0)
 /* 1CC89C 801DBB2C 8E28003C */  lw    $t0, 0x3c($s1)
 /* 1CC8A0 801DBB30 8DF80000 */  lw    $t8, ($t7)
 /* 1CC8A4 801DBB34 0018C880 */  sll   $t9, $t8, 2
 /* 1CC8A8 801DBB38 00390821 */  addu  $at, $at, $t9
-/* 1CC8AC 801DBB3C C4264710 */ lwc1 $f6, %lo(D_800E4710)($at)
-/* 1CC8B0 801DBB40 3C01800E */ lui $at, %hi(D_800E48D0)
+/* 1CC8AC 801DBB3C C4264710 */ lwc1 $f6, %lo(gEntitiesScaleYArray)($at)
+/* 1CC8B0 801DBB40 3C01800E */ lui $at, %hi(gEntitiesScaleZArray)
 /* 1CC8B4 801DBB44 E5060044 */  swc1  $f6, 0x44($t0)
 /* 1CC8B8 801DBB48 8E090000 */  lw    $t1, ($s0)
 /* 1CC8BC 801DBB4C 8E2C003C */  lw    $t4, 0x3c($s1)
 /* 1CC8C0 801DBB50 8D2A0000 */  lw    $t2, ($t1)
 /* 1CC8C4 801DBB54 000A5880 */  sll   $t3, $t2, 2
 /* 1CC8C8 801DBB58 002B0821 */  addu  $at, $at, $t3
-/* 1CC8CC 801DBB5C C42848D0 */ lwc1 $f8, %lo(D_800E48D0)($at)
+/* 1CC8CC 801DBB5C C42848D0 */ lwc1 $f8, %lo(gEntitiesScaleZArray)($at)
 /* 1CC8D0 801DBB60 0C02A806 */  jal   func_800AA018
 /* 1CC8D4 801DBB64 E5880048 */   swc1  $f8, 0x48($t4)
 /* 1CC8D8 801DBB68 0C02BC8C */  jal   func_800AF230

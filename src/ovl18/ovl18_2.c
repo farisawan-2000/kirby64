@@ -19,8 +19,8 @@ void func_8019D958_ovl18(u16);
 void func_80221E90_ovl18(s32 arg0) {
     u32 temp_a3;
 
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     D_800DF150[D_8004A7C4->objId] = &func_80222168_ovl18;
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;

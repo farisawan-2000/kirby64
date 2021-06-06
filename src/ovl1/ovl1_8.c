@@ -964,9 +964,9 @@ void func_800B4B9C(s32 arg0) {
     gEntitiesAngleXArray[D_8004A7C4->objId] = gEntitiesAngleXArray[D_800E0D50[D_8004A7C4->objId]] + D_800E4A90[D_8004A7C4->objId];
     gEntitiesAngleYArray[D_8004A7C4->objId] = gEntitiesAngleYArray[D_800E0D50[D_8004A7C4->objId]] + D_800E4C50[D_8004A7C4->objId];
     gEntitiesAngleZArray[D_8004A7C4->objId] = gEntitiesAngleZArray[D_800E0D50[D_8004A7C4->objId]] + D_800E4E10[D_8004A7C4->objId];
-    D_800E4550[D_8004A7C4->objId] = D_800E4550[D_800E0D50[D_8004A7C4->objId]] * D_800E4FD0[D_8004A7C4->objId];
-    D_800E4710[D_8004A7C4->objId] = D_800E4710[D_800E0D50[D_8004A7C4->objId]] * D_800E5190[D_8004A7C4->objId];
-    D_800E48D0[D_8004A7C4->objId] = D_800E48D0[D_800E0D50[D_8004A7C4->objId]] * D_800E5350[D_8004A7C4->objId];
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleXArray[D_800E0D50[D_8004A7C4->objId]] * D_800E4FD0[D_8004A7C4->objId];
+    gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_800E0D50[D_8004A7C4->objId]] * D_800E5190[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_800E0D50[D_8004A7C4->objId]] * D_800E5350[D_8004A7C4->objId];
     func_800B3838(D_800E0D50, gEntitiesAngleXArray, gEntitiesAngleYArray, gEntitiesAngleZArray);
 }
 #else

@@ -46,9 +46,9 @@ void func_801D223C_ovl8(struct UnkStruct8004A7C4 *this) {
     this->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     this->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     this->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    this->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
-    this->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
-    this->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
+    this->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    this->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    this->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
     func_800AA018(0x10621);
     D_800DF310[D_8004A7C4->objId] = func_801D2040_ovl8;
     func_800AF27C();

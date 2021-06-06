@@ -26,10 +26,10 @@ void func_802222C8_ovl18(UNUSED s32 arg0) {
     func_8021F4A0_ovl18();
     tmp->unk98 = &D_8022A9AC;
     D_800DF150[D_8004A7C4->objId] = &func_802223D8_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
-    func_801A0D50_ovl18(&func_80222280_ovl18, D_800E48D0);
+    func_801A0D50_ovl18(&func_80222280_ovl18, gEntitiesScaleZArray);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[21]);
 }
 
@@ -71,8 +71,8 @@ void func_802225B8_ovl18(UNUSED s32 *arg0) {
     func_8021F4A0_ovl18();
     sp1C->unk98 = &D_8022A9D0;
     D_800DF150[D_8004A7C4->objId] = &func_802226E0_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     func_8019BC34_ovl18(120.0f);
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     func_801A0D50_ovl18(&func_80222570_ovl18);
@@ -128,10 +128,10 @@ void func_80222940_ovl18(UNUSED s32 arg0) {
     func_8021F4A0_ovl18();
     sp1C->unk98 = &D_8022A9F4;
     D_800DF150[D_8004A7C4->objId] = &func_80222A54_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];;
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];;
     gEntityVtableIndexArray[D_8004A7C4->objId] = 6;
-    func_801A0D50_ovl18(&func_802228F8_ovl18, D_800E48D0);
+    func_801A0D50_ovl18(&func_802228F8_ovl18, gEntitiesScaleZArray);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 7, &D_8022AB80[27]);
 }
 
@@ -249,9 +249,9 @@ void func_8022309C_ovl18(UNUSED s32 arg0, s32 arg1, f32 arg2) {
             func_801ACCA0_ovl18(0x2F, 0, 64.0f, 0);
             temp_v0 = func_801AE940_ovl18(5, 0, -40.0f);
             gEntitiesAngleYArray[temp_v0] = gEntitiesAngleYArray[D_8004A7C4->objId];
-            D_800E48D0[temp_v0] = 2.0f;
-            D_800E4710[temp_v0] = 2.0f;
-            D_800E4550[temp_v0] = 2.0f;
+            gEntitiesScaleZArray[temp_v0] = 2.0f;
+            gEntitiesScaleYArray[temp_v0] = 2.0f;
+            gEntitiesScaleXArray[temp_v0] = 2.0f;
             play_sound(0x97);
             D_800E9AA0[D_8004A7C4->objId] = 1;
         }
@@ -356,10 +356,10 @@ void func_8022372C_ovl18(UNUSED s32 arg0) {
     func_8021F4A0_ovl18();
     sp1C->unk98 = &D_8022AA60;
     D_800DF150[D_8004A7C4->objId] = &func_8022383C_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 1.5f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 1.5f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
-    func_801A0D50_ovl18(&func_802236E4_ovl18, D_800E48D0);
+    func_801A0D50_ovl18(&func_802236E4_ovl18, gEntitiesScaleZArray);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[42]);
 }
 
@@ -398,8 +398,8 @@ void func_80223A14_ovl18(UNUSED s32 arg0) {
     func_8021F4A0_ovl18();
     func_801A3280_ovl18();
     D_800DF150[D_8004A7C4->objId] = func_80223B4C_ovl18;
-    D_800E48D0[D_8004A7C4->objId] = 2.0f;
-    D_800E4550[D_8004A7C4->objId] = D_800E4710[D_8004A7C4->objId] = D_800E48D0[D_8004A7C4->objId];
+    gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
+    gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];
     D_800E93A0[D_8004A7C4->objId] = -1;
     D_800E9720[D_8004A7C4->objId] = 0xA;
     D_800EB320[D_8004A7C4->objId] = 380.0f;
