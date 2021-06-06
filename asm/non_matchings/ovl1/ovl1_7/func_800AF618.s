@@ -74,7 +74,7 @@ glabel func_800AF618
 /* 05796C 800AF71C 8E080000 */  lw    $t0, ($s0)
 .L800AF720_ovl1:
 /* 057970 800AF720 8E0A003C */  lw    $t2, 0x3c($s0)
-/* 057974 800AF724 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 057974 800AF724 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 057978 800AF728 00084880 */  sll   $t1, $t0, 2
 /* 05797C 800AF72C 00290821 */  addu  $at, $at, $t1
 /* 057980 800AF730 C42009D0 */  lwc1  $f0, 0x9d0($at)

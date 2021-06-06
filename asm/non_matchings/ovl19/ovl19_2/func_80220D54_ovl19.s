@@ -6,29 +6,29 @@ glabel func_80220D54_ovl19
 /* 241474 80220D64 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 241478 80220D68 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
 /* 24147C 80220D6C 44800000 */  mtc1  $zero, $f0
-/* 241480 80220D70 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 241480 80220D70 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 241484 80220D74 8C4E0000 */  lw    $t6, ($v0)
 /* 241488 80220D78 3C040002 */  lui   $a0, (0x00020079 >> 16) # lui $a0, 2
 /* 24148C 80220D7C 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 241490 80220D80 000E7880 */  sll   $t7, $t6, 2
 /* 241494 80220D84 002F0821 */  addu  $at, $at, $t7
-/* 241498 80220D88 E42025D0 */ swc1 $f0, %lo(gEntitiesPosXArray)($at)
+/* 241498 80220D88 E42025D0 */ swc1 $f0, %lo(gEntitiesNextPosXArray)($at)
 /* 24149C 80220D8C 8C580000 */  lw    $t8, ($v0)
-/* 2414A0 80220D90 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 2414A0 80220D90 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 2414A4 80220D94 34A5869F */  ori   $a1, (0x0001869F & 0xFFFF) # ori $a1, $a1, 0x869f
 /* 2414A8 80220D98 0018C880 */  sll   $t9, $t8, 2
 /* 2414AC 80220D9C 00390821 */  addu  $at, $at, $t9
-/* 2414B0 80220DA0 E4202790 */ swc1 $f0, %lo(gEntitiesPosYArray)($at)
+/* 2414B0 80220DA0 E4202790 */ swc1 $f0, %lo(gEntitiesNextPosYArray)($at)
 /* 2414B4 80220DA4 8C480000 */  lw    $t0, ($v0)
 /* 2414B8 80220DA8 3C01C30C */  li    $at, 0xC30C0000 # -140.000000
 /* 2414BC 80220DAC 44812000 */  mtc1  $at, $f4
-/* 2414C0 80220DB0 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 2414C0 80220DB0 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 2414C4 80220DB4 00084880 */  sll   $t1, $t0, 2
 /* 2414C8 80220DB8 00290821 */  addu  $at, $at, $t1
 /* 2414CC 80220DBC 34840079 */  ori   $a0, (0x00020079 & 0xFFFF) # ori $a0, $a0, 0x79
 /* 2414D0 80220DC0 24060010 */  li    $a2, 16
 /* 2414D4 80220DC4 0C02A619 */  jal   func_800A9864
-/* 2414D8 80220DC8 E4242950 */ swc1 $f4, %lo(gEntitiesPosZArray)($at)
+/* 2414D8 80220DC8 E4242950 */ swc1 $f4, %lo(gEntitiesNextPosZArray)($at)
 /* 2414DC 80220DCC 3C0A8005 */  lui   $t2, %hi(D_8004A7C4) # $t2, 0x8005
 /* 2414E0 80220DD0 8D4AA7C4 */  lw    $t2, %lo(D_8004A7C4)($t2)
 /* 2414E4 80220DD4 3C0C800E */ lui $t4, %hi(D_800DFBD0)

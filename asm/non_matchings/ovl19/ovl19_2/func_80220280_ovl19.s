@@ -84,10 +84,10 @@ glabel func_80220280_ovl19
 /* 240ACC 802203BC 8C6F0000 */  lw    $t7, ($v1)
 /* 240AD0 802203C0 3C01430C */  li    $at, 0x430C0000 # 140.000000
 /* 240AD4 802203C4 44812000 */  mtc1  $at, $f4
-/* 240AD8 802203C8 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 240AD8 802203C8 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 240ADC 802203CC 000F7080 */  sll   $t6, $t7, 2
 /* 240AE0 802203D0 002E0821 */  addu  $at, $at, $t6
-/* 240AE4 802203D4 E42425D0 */ swc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 240AE4 802203D4 E42425D0 */ swc1 $f4, %lo(gEntitiesNextPosXArray)($at)
 /* 240AE8 802203D8 8C780000 */  lw    $t8, ($v1)
 /* 240AEC 802203DC 3C01800E */ lui $at, %hi(D_800E4550)
 /* 240AF0 802203E0 3C040002 */  lui   $a0, (0x0002006F >> 16) # lui $a0, 2

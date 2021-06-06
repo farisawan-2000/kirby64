@@ -1435,9 +1435,9 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AA154.s")
 #endif
 
 void func_800AA174(void) {
-    D_8004A7C4->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
 
     D_8004A7C4->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     D_8004A7C4->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];

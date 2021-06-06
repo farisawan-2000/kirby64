@@ -1664,21 +1664,21 @@ glabel func_801AE8AC_ovl7
 /* 15493C 801AE8CC 10000018 */  b     .L801AE930_ovl7
 /* 154940 801AE8D0 2402FFFF */   li    $v0, -1
 .L801AE8D4_ovl7:
-/* 154944 801AE8D4 3C0E800E */  lui   $t6, %hi(gEntitiesPosXArray) # $t6, 0x800e
-/* 154948 801AE8D8 25CE25D0 */  addiu $t6, %lo(gEntitiesPosXArray) # addiu $t6, $t6, 0x25d0
+/* 154944 801AE8D4 3C0E800E */  lui   $t6, %hi(gEntitiesNextPosXArray) # $t6, 0x800e
+/* 154948 801AE8D8 25CE25D0 */  addiu $t6, %lo(gEntitiesNextPosXArray) # addiu $t6, $t6, 0x25d0
 /* 15494C 801AE8DC 00071880 */  sll   $v1, $a3, 2
 /* 154950 801AE8E0 006E2021 */  addu  $a0, $v1, $t6
 /* 154954 801AE8E4 C4840000 */  lwc1  $f4, ($a0)
 /* 154958 801AE8E8 C5060000 */  lwc1  $f6, ($t0)
-/* 15495C 801AE8EC 3C0F800E */  lui   $t7, %hi(gEntitiesPosYArray) # $t7, 0x800e
-/* 154960 801AE8F0 25EF2790 */  addiu $t7, %lo(gEntitiesPosYArray) # addiu $t7, $t7, 0x2790
+/* 15495C 801AE8EC 3C0F800E */  lui   $t7, %hi(gEntitiesNextPosYArray) # $t7, 0x800e
+/* 154960 801AE8F0 25EF2790 */  addiu $t7, %lo(gEntitiesNextPosYArray) # addiu $t7, $t7, 0x2790
 /* 154964 801AE8F4 46062200 */  add.s $f8, $f4, $f6
 /* 154968 801AE8F8 006F2821 */  addu  $a1, $v1, $t7
 /* 15496C 801AE8FC C4AA0000 */  lwc1  $f10, ($a1)
-/* 154970 801AE900 3C18800E */  lui   $t8, %hi(gEntitiesPosZArray) # $t8, 0x800e
+/* 154970 801AE900 3C18800E */  lui   $t8, %hi(gEntitiesNextPosZArray) # $t8, 0x800e
 /* 154974 801AE904 E4880000 */  swc1  $f8, ($a0)
 /* 154978 801AE908 C5100004 */  lwc1  $f16, 4($t0)
-/* 15497C 801AE90C 27182950 */  addiu $t8, %lo(gEntitiesPosZArray) # addiu $t8, $t8, 0x2950
+/* 15497C 801AE90C 27182950 */  addiu $t8, %lo(gEntitiesNextPosZArray) # addiu $t8, $t8, 0x2950
 /* 154980 801AE910 00783021 */  addu  $a2, $v1, $t8
 /* 154984 801AE914 46105480 */  add.s $f18, $f10, $f16
 /* 154988 801AE918 C4C40000 */  lwc1  $f4, ($a2)
@@ -1707,9 +1707,9 @@ glabel func_801AE940_ovl7
 .L801AE968_ovl7:
 /* 1549D8 801AE968 00061880 */  sll   $v1, $a2, 2
 /* 1549DC 801AE96C 3C01800F */  lui   $at, 0x800f
-/* 1549E0 801AE970 3C0E800E */  lui   $t6, %hi(gEntitiesPosYArray) # $t6, 0x800e
+/* 1549E0 801AE970 3C0E800E */  lui   $t6, %hi(gEntitiesNextPosYArray) # $t6, 0x800e
 /* 1549E4 801AE974 00230821 */  addu  $at, $at, $v1
-/* 1549E8 801AE978 25CE2790 */  addiu $t6, %lo(gEntitiesPosYArray) # addiu $t6, $t6, 0x2790
+/* 1549E8 801AE978 25CE2790 */  addiu $t6, %lo(gEntitiesNextPosYArray) # addiu $t6, $t6, 0x2790
 /* 1549EC 801AE97C AC208E60 */  sw    $zero, -0x71a0($at)
 /* 1549F0 801AE980 006E1021 */  addu  $v0, $v1, $t6
 /* 1549F4 801AE984 C4440000 */  lwc1  $f4, ($v0)

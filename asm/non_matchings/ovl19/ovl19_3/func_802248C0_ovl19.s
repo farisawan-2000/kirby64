@@ -780,8 +780,8 @@ glabel L802253C4_ovl19
 /* 245B94 80225484 24090006 */  li    $t1, 6
 /* 245B98 80225488 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 /* 245B9C 8022548C 8E480000 */  lw    $t0, ($s2)
-/* 245BA0 80225490 3C05800E */  lui   $a1, %hi(gEntitiesPosYArray) # $a1, 0x800e
-/* 245BA4 80225494 24A52790 */  addiu $a1, %lo(gEntitiesPosYArray) # addiu $a1, $a1, 0x2790
+/* 245BA0 80225490 3C05800E */  lui   $a1, %hi(gEntitiesNextPosYArray) # $a1, 0x800e
+/* 245BA4 80225494 24A52790 */  addiu $a1, %lo(gEntitiesNextPosYArray) # addiu $a1, $a1, 0x2790
 /* 245BA8 80225498 8D0A0000 */  lw    $t2, ($t0)
 /* 245BAC 8022549C 00A36021 */  addu  $t4, $a1, $v1
 /* 245BB0 802254A0 00408025 */  move  $s0, $v0

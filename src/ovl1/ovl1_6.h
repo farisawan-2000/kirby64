@@ -39,12 +39,12 @@ extern f32 D_800E2410[];
 extern f32 D_800E2250[];
 extern f32 D_800E2090[];
 
-extern f32 D_800E2E90[];
-extern f32 D_800E2CD0[];
-extern f32 D_800E2B10[];
 extern f32 gEntitiesPosZArray[];
 extern f32 gEntitiesPosYArray[];
 extern f32 gEntitiesPosXArray[];
+extern f32 gEntitiesNextPosZArray[];
+extern f32 gEntitiesNextPosYArray[];
+extern f32 gEntitiesNextPosXArray[];
 extern f32 D_800E3910[];
 extern f32 D_800E3750[];
 extern f32 D_800E3590[];

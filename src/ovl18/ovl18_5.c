@@ -368,9 +368,9 @@ void func_80225958_ovl18(void) {
     D_800E3050[D_8004A7C4->objId] = sp2C.x;
     D_800E3210[D_8004A7C4->objId] = sp2C.y;
     D_800E8920[D_8004A7C4->objId] = 0;
-    gEntitiesPosXArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
-    gEntitiesPosYArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
-    gEntitiesPosZArray[D_8004A7C4->objId] = sp3C->unk8;
+    gEntitiesNextPosXArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = D_8022ACA4[D_800E93A0[D_8004A7C4->objId] * 4];
+    gEntitiesNextPosZArray[D_8004A7C4->objId] = sp3C->unk8;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl18/ovl18_5/func_80225958_ovl18.s")

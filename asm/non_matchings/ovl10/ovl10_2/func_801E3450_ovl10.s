@@ -15,11 +15,11 @@ glabel func_801E3450_ovl10
 /* 1D41F4 801E3484 00827821 */  addu  $t7, $a0, $v0
 /* 1D41F8 801E3488 C5E40000 */  lwc1  $f4, ($t7)
 /* 1D41FC 801E348C 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
-/* 1D4200 801E3490 3C03800E */  lui   $v1, %hi(gEntitiesPosYArray) # $v1, 0x800e
+/* 1D4200 801E3490 3C03800E */  lui   $v1, %hi(gEntitiesNextPosYArray) # $v1, 0x800e
 /* 1D4204 801E3494 46049032 */  c.eq.s $f18, $f4
 /* 1D4208 801E3498 44814000 */  mtc1  $at, $f8
 /* 1D420C 801E349C 46000306 */  mov.s $f12, $f0
-/* 1D4210 801E34A0 24632790 */  addiu $v1, %lo(gEntitiesPosYArray) # addiu $v1, $v1, 0x2790
+/* 1D4210 801E34A0 24632790 */  addiu $v1, %lo(gEntitiesNextPosYArray) # addiu $v1, $v1, 0x2790
 /* 1D4214 801E34A4 4502000A */  bc1fl .L801E34D0_ovl10
 /* 1D4218 801E34A8 44808000 */   mtc1  $zero, $f16
 /* 1D421C 801E34AC 44808000 */  mtc1  $zero, $f16

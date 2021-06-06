@@ -2420,9 +2420,9 @@ f32 func_800A5F94(s32 arg0, void *arg1) {
         arg1->unk1C = arg1->unk1C * *temp_v0_6;
         arg1->unk20 = arg1->unk20 * *temp_v0_6;
     }
-    arg1->unk24 = gEntitiesPosXArray[arg0];
-    arg1->unk28 = gEntitiesPosYArray[arg0];
-    arg1->unk2C = gEntitiesPosZArray[arg0];
+    arg1->unk24 = gEntitiesNextPosXArray[arg0];
+    arg1->unk28 = gEntitiesNextPosYArray[arg0];
+    arg1->unk2C = gEntitiesNextPosZArray[arg0];
     return temp_f0;
 }
 #else

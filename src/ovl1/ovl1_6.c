@@ -70,12 +70,12 @@ void func_800AE138(s32 arg0) {
 
     D_800E2090[arg0] = 0.0f;
     temp_f12 = D_800D66F8;
-    D_800E2E90[arg0] = 0.0f;
-    D_800E2CD0[arg0] = 0.0f;
-    D_800E2B10[arg0] = 0.0f;
     gEntitiesPosZArray[arg0] = 0.0f;
     gEntitiesPosYArray[arg0] = 0.0f;
     gEntitiesPosXArray[arg0] = 0.0f;
+    gEntitiesNextPosZArray[arg0] = 0.0f;
+    gEntitiesNextPosYArray[arg0] = 0.0f;
+    gEntitiesNextPosXArray[arg0] = 0.0f;
     D_800E3910[arg0] = 0.0f;
     D_800E3750[arg0] = 0.0f;
     D_800E3590[arg0] = 0.0f;

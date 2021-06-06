@@ -35,7 +35,7 @@ void func_801EF3F0_ovl10(s32 arg0) {
         D_800E3210[D_8004A7C4->objId] *= 0.8f;
     }
     if (D_800EC2E0[D_8004A7C4->objId] == 3) {
-        gEntitiesPosYArray[D_8004A7C4->objId] += 20.0f;
+        gEntitiesNextPosYArray[D_8004A7C4->objId] += 20.0f;
         D_800E64D0[D_8004A7C4->objId] *= 1.2f;
     }
     D_800E8920[D_8004A7C4->objId] = 0;

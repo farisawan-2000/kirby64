@@ -37,9 +37,9 @@ void func_800FD418(struct UnkStruct8004A7C4 *arg0) {
     func_800A9864(tmp = D_801245C4[temp_v0][0], 0x0001869F, 0x10);
     func_800AA018(D_801245C4[temp_v0][1]);
     func_800AA018(D_801245C4[temp_v0][2]);
-    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     func_800AF27C();
     func_800B1900((u16) D_8004A7C4->objId);
 }
@@ -60,9 +60,9 @@ u32 func_800FD570(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32 arg4) {
     if (arg0 != 0) {
         func_800A4794(&sp28, arg0, arg0);
     } else {
-        sp28.x = gEntitiesPosXArray[D_8004A7C4->objId];
-        sp28.y = gEntitiesPosYArray[D_8004A7C4->objId];
-        sp28.z = gEntitiesPosZArray[D_8004A7C4->objId];
+        sp28.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+        sp28.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+        sp28.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     }
     if (D_801245C4[arg1][0] != 0) {
         u32 temp_v0_3 = func_800FD9D4(0);
@@ -71,9 +71,9 @@ u32 func_800FD570(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32 arg4) {
             return 0;
         }
         D_800EC2E0[temp_v0_3] = arg1;
-        gEntitiesPosXArray[temp_v0_3] = sp28.x + arg2;
-        gEntitiesPosYArray[temp_v0_3] = sp28.y + arg3;
-        gEntitiesPosZArray[temp_v0_3] = sp28.z + arg4;
+        gEntitiesNextPosXArray[temp_v0_3] = sp28.x + arg2;
+        gEntitiesNextPosYArray[temp_v0_3] = sp28.y + arg3;
+        gEntitiesNextPosZArray[temp_v0_3] = sp28.z + arg4;
     } else if (D_801245C4[arg1] != D_801245C4[9]) {
         func_800A7F74(3, 2, D_801245C4[arg1][1], sp28.x + arg2, sp28.y + arg3, sp28.z + arg4);
     } else {
@@ -101,9 +101,9 @@ s32 func_800FD754(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
         }
         else {
             D_800EC2E0[temp_v0_2] = arg0;
-            gEntitiesPosXArray[temp_v0_2] = arg1;
-            gEntitiesPosYArray[temp_v0_2] = arg2;
-            gEntitiesPosZArray[temp_v0_2] = arg3;
+            gEntitiesNextPosXArray[temp_v0_2] = arg1;
+            gEntitiesNextPosYArray[temp_v0_2] = arg2;
+            gEntitiesNextPosZArray[temp_v0_2] = arg3;
             return 1;
         }
         return 0;
@@ -130,9 +130,9 @@ u32 func_800FD874(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f3
             print_error_stub(&D_8012893C);
         } else {
             D_800EC2E0[temp_v0] = arg0;
-            gEntitiesPosXArray[temp_v0] = arg1;
-            gEntitiesPosYArray[temp_v0] = arg2;
-            gEntitiesPosZArray[temp_v0] = arg3;
+            gEntitiesNextPosXArray[temp_v0] = arg1;
+            gEntitiesNextPosYArray[temp_v0] = arg2;
+            gEntitiesNextPosZArray[temp_v0] = arg3;
             gEntitiesAngleXArray[temp_v0] = arg4;
             gEntitiesAngleYArray[temp_v0] = arg5;
             gEntitiesAngleZArray[temp_v0] = arg6;
@@ -147,9 +147,9 @@ s32 func_800FD968(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
 
     temp_v0 = func_800FD9D4(arg0);
     if (temp_v0 != -1) {
-        gEntitiesPosXArray[temp_v0] = arg1;
-        gEntitiesPosYArray[temp_v0] = arg2;
-        gEntitiesPosZArray[temp_v0] = arg3;
+        gEntitiesNextPosXArray[temp_v0] = arg1;
+        gEntitiesNextPosYArray[temp_v0] = arg2;
+        gEntitiesNextPosZArray[temp_v0] = arg3;
     }
     return temp_v0;
 }

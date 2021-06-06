@@ -16,8 +16,8 @@ glabel func_8017B8F4_ovl3
 /* 0DC36C 8017B92C AC2F98E0 */ sw $t7, %lo(D_800E98E0)($at)
 /* 0DC370 8017B930 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 0DC374 8017B934 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
-/* 0DC378 8017B938 3C09800E */  lui   $t1, %hi(gEntitiesPosYArray) # $t1, 0x800e
-/* 0DC37C 8017B93C 25292790 */  addiu $t1, %lo(gEntitiesPosYArray) # addiu $t1, $t1, 0x2790
+/* 0DC378 8017B938 3C09800E */  lui   $t1, %hi(gEntitiesNextPosYArray) # $t1, 0x800e
+/* 0DC37C 8017B93C 25292790 */  addiu $t1, %lo(gEntitiesNextPosYArray) # addiu $t1, $t1, 0x2790
 /* 0DC380 8017B940 8C780000 */  lw    $t8, ($v1)
 /* 0DC384 8017B944 3C01800F */  lui   $at, %hi(D_800EC9E4) # $at, 0x800f
 /* 0DC388 8017B948 C426C9E4 */  lwc1  $f6, %lo(D_800EC9E4)($at)
@@ -35,19 +35,19 @@ glabel func_8017B8F4_ovl3
 /* 0DC3B8 8017B978 24070001 */   li    $a3, 1
 .L8017B97C_ovl3:
 /* 0DC3BC 8017B97C 8C6B0000 */  lw    $t3, ($v1)
-/* 0DC3C0 8017B980 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0DC3C0 8017B980 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0DC3C4 8017B984 27A40038 */  addiu $a0, $sp, 0x38
 /* 0DC3C8 8017B988 000B6080 */  sll   $t4, $t3, 2
 /* 0DC3CC 8017B98C 002C0821 */  addu  $at, $at, $t4
-/* 0DC3D0 8017B990 C42A25D0 */ lwc1 $f10, %lo(gEntitiesPosXArray)($at)
-/* 0DC3D4 8017B994 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0DC3D0 8017B990 C42A25D0 */ lwc1 $f10, %lo(gEntitiesNextPosXArray)($at)
+/* 0DC3D4 8017B994 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0DC3D8 8017B998 3C0541A0 */  lui   $a1, 0x41a0
 /* 0DC3DC 8017B99C E7AA0038 */  swc1  $f10, 0x38($sp)
 /* 0DC3E0 8017B9A0 8C6D0000 */  lw    $t5, ($v1)
 /* 0DC3E4 8017B9A4 24060004 */  li    $a2, 4
 /* 0DC3E8 8017B9A8 000D7080 */  sll   $t6, $t5, 2
 /* 0DC3EC 8017B9AC 002E0821 */  addu  $at, $at, $t6
-/* 0DC3F0 8017B9B0 C4302950 */ lwc1 $f16, %lo(gEntitiesPosZArray)($at)
+/* 0DC3F0 8017B9B0 C4302950 */ lwc1 $f16, %lo(gEntitiesNextPosZArray)($at)
 /* 0DC3F4 8017B9B4 E7B00040 */  swc1  $f16, 0x40($sp)
 /* 0DC3F8 8017B9B8 8C6F0000 */  lw    $t7, ($v1)
 /* 0DC3FC 8017B9BC 000FC080 */  sll   $t8, $t7, 2

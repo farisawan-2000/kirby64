@@ -943,8 +943,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011D67C.s")
         return 0;
     }
     temp_a2 = D_8004A7C4->objId;
-    temp_f2 = (gEntitiesPosXArray[temp_a2] + arg0->unk0) - gEntitiesPosXArray[arg1];
-    sp1C = gEntitiesPosZArray[temp_a2] + arg0->unk8;
+    temp_f2 = (gEntitiesNextPosXArray[temp_a2] + arg0->unk0) - gEntitiesNextPosXArray[arg1];
+    sp1C = gEntitiesNextPosZArray[temp_a2] + arg0->unk8;
     temp_f14 = arg0->unkC;
     temp_f16 = temp_f14 * arg2;
     if (temp_f16 < temp_f2) {
@@ -956,7 +956,7 @@ block_4:
         goto block_4;
     }
     temp_f14_2 = arg0->unk10;
-    temp_f2_2 = (gEntitiesPosYArray[temp_a2] + arg0->unk4) - gEntitiesPosYArray[arg1];
+    temp_f2_2 = (gEntitiesNextPosYArray[temp_a2] + arg0->unk4) - gEntitiesNextPosYArray[arg1];
     if ((temp_f14_2 * arg2) < temp_f2_2) {
 block_7:
         return 0;
@@ -964,7 +964,7 @@ block_7:
     if (temp_f2_2 < (-temp_f14_2 * arg2)) {
         goto block_7;
     }
-    temp_f2_3 = sp1C - gEntitiesPosZArray[arg1];
+    temp_f2_3 = sp1C - gEntitiesNextPosZArray[arg1];
     if (temp_f16 < temp_f2_3) {
 block_10:
         return 0;
@@ -2089,12 +2089,12 @@ void func_801212A4(void) {
         temp_v0 = D_8004A7C4;
         temp_a0 = &sp2C;
         temp_a1 = &sp20;
-        sp2C = D_800E2B10[temp_v0->objId];
-        sp30 = D_800E2CD0[temp_v0->objId];
-        sp34 = D_800E2E90[temp_v0->objId];
-        sp20 = gEntitiesPosXArray[temp_v0->objId];
-        sp24 = gEntitiesPosYArray[temp_v0->objId];
-        sp28 = gEntitiesPosZArray[temp_v0->objId];
+        sp2C = gEntitiesPosXArray[temp_v0->objId];
+        sp30 = gEntitiesPosYArray[temp_v0->objId];
+        sp34 = gEntitiesPosZArray[temp_v0->objId];
+        sp20 = gEntitiesNextPosXArray[temp_v0->objId];
+        sp24 = gEntitiesNextPosYArray[temp_v0->objId];
+        sp28 = gEntitiesNextPosZArray[temp_v0->objId];
         if (func_8010474C(temp_a0, temp_a1) != 0) {
             if (D_800D6B54 == 0) {
                 func_8011D40C();
@@ -2352,7 +2352,7 @@ void *func_80121BCC(s32 arg0) {
         phi_return = temp_v0_2;
         if ((temp_v1 & 6) != 0) {
             phi_return = temp_v0_2;
-            if ((gEntitiesPosYArray[temp_v0] - D_800E2CD0[temp_v0]) < D_80129090) {
+            if ((gEntitiesNextPosYArray[temp_v0] - gEntitiesPosYArray[temp_v0]) < D_80129090) {
                 D_8012E7DC = 0xF0;
                 play_sound(arg0);
                 func_800A8100(5, 1, 0x16, 0);
@@ -2408,9 +2408,9 @@ void func_80121D3C(void) {
             if (gKirbyState.unk6A != 0) {
                 gKirbyState.unk68 = 2;
                 temp_v0_2 = gKirbyState.unk6C;
-                temp_v0_2->unk4C->unk4 = gEntitiesPosXArray[D_8004A7C4->objId];
-                temp_v0_2->unk4C->unk8 = gEntitiesPosYArray[D_8004A7C4->objId] + 20.0f;
-                temp_v0_2->unk4C->unkC = gEntitiesPosZArray[D_8004A7C4->objId];
+                temp_v0_2->unk4C->unk4 = gEntitiesNextPosXArray[D_8004A7C4->objId];
+                temp_v0_2->unk4C->unk8 = gEntitiesNextPosYArray[D_8004A7C4->objId] + 20.0f;
+                temp_v0_2->unk4C->unkC = gEntitiesNextPosZArray[D_8004A7C4->objId];
                 return;
             }
             gKirbyState.unk68 = 0;
@@ -2430,9 +2430,9 @@ void func_80121D3C(void) {
             play_music(0, 0x1F);
             temp_v0_3 = func_800A8234(1, 1, 7);
             gKirbyState.unk6C = temp_v0_3;
-            temp_v0_3->unk4C->unk4 = gEntitiesPosXArray[D_8004A7C4->objId];
-            temp_v0_3->unk4C->unk8 = gEntitiesPosYArray[D_8004A7C4->objId] + 20.0f;
-            temp_v0_3->unk4C->unkC = gEntitiesPosZArray[D_8004A7C4->objId];
+            temp_v0_3->unk4C->unk4 = gEntitiesNextPosXArray[D_8004A7C4->objId];
+            temp_v0_3->unk4C->unk8 = gEntitiesNextPosYArray[D_8004A7C4->objId] + 20.0f;
+            temp_v0_3->unk4C->unkC = gEntitiesNextPosZArray[D_8004A7C4->objId];
         }
     }
 }
@@ -2529,13 +2529,13 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
         temp_v0 = D_8004A7C4;
         temp_v1 = temp_v0->objId;
         temp_a0 = D_800E0490[temp_v1]->unk4;
-        sp48 = D_800E2B10[temp_v1];
+        sp48 = gEntitiesPosXArray[temp_v1];
         temp_a1 = &sp3C;
-        sp4C = D_800E2CD0[temp_v0->objId] + *temp_a0;
-        sp50 = D_800E2E90[temp_v0->objId];
-        sp3C = gEntitiesPosXArray[temp_v0->objId];
-        sp40 = gEntitiesPosYArray[temp_v0->objId] + *temp_a0;
-        sp44 = gEntitiesPosZArray[temp_v0->objId];
+        sp4C = gEntitiesPosYArray[temp_v0->objId] + *temp_a0;
+        sp50 = gEntitiesPosZArray[temp_v0->objId];
+        sp3C = gEntitiesNextPosXArray[temp_v0->objId];
+        sp40 = gEntitiesNextPosYArray[temp_v0->objId] + *temp_a0;
+        sp44 = gEntitiesNextPosZArray[temp_v0->objId];
         temp_v1_2 = temp_v0->objId;
         temp_f0 = D_800E6BD0[temp_v1_2] - D_800E6D90[temp_v1_2];
         if ((temp_f0 != 0.0f) && (sp60 = temp_f0, (func_80104AB4(&sp48, temp_a1, 1, 8, &sp38) != 0)) && (sp60 = temp_f0, func_8010DC00(sp38, &sp54), (sp58 == 0.0f))) {
@@ -2572,7 +2572,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
             }
         } else {
             temp_v1_3 = *D_8004A7C4;
-            temp_f0_2 = gEntitiesPosYArray[temp_v1_3] - D_800E2CD0[temp_v1_3];
+            temp_f0_2 = gEntitiesNextPosYArray[temp_v1_3] - gEntitiesPosYArray[temp_v1_3];
             if (temp_f0_2 == 0.0f) {
 block_32:
                 return 0;
@@ -2784,8 +2784,8 @@ loop_14:
             temp_v0_3 = D_8004A7C4->objId;
             func_8001E300_ovl2(&sp2C, D_80129114->unk4[D_800E5F90[temp_v0_3]].unk4, (bitwise s32) D_800E6BD0[temp_v0_3]);
             temp_v1_2 = D_8004A7C4;
-            gEntitiesPosXArray[temp_v1_2->objId] = sp2C;
-            gEntitiesPosZArray[temp_v1_2->objId] = sp34;
+            gEntitiesNextPosXArray[temp_v1_2->objId] = sp2C;
+            gEntitiesNextPosZArray[temp_v1_2->objId] = sp34;
             gKirbyState.unk168 = 0.0f;
             gKirbyState.unk30 = 0;
             gKirbyState.unk164 = gKirbyState.unk168;
@@ -2835,7 +2835,7 @@ void func_80122A80(void) {
             phi_a2 = 6;
             phi_v0 = temp_v0 * 4;
 block_4:
-            func_800A7F74(5, 1, phi_a2, (bitwise f32) *(gEntitiesPosXArray + phi_v0), *(gEntitiesPosYArray + phi_v0), *(gEntitiesPosZArray + phi_v0));
+            func_800A7F74(5, 1, phi_a2, (bitwise f32) *(gEntitiesNextPosXArray + phi_v0), *(gEntitiesNextPosYArray + phi_v0), *(gEntitiesNextPosZArray + phi_v0));
         }
     } else {
         play_sound(0x45);
@@ -2871,7 +2871,7 @@ void func_80122B40(void) {
         else
             phi_a2 = D_8012844C[gKirbyState.unk10A * 7][0];
     }
-    func_800A7F74(5, 1, phi_a2, gEntitiesPosXArray[D_8004A7C4->objId], gEntitiesPosYArray[D_8004A7C4->objId], gEntitiesPosZArray[D_8004A7C4->objId]);
+    func_800A7F74(5, 1, phi_a2, gEntitiesNextPosXArray[D_8004A7C4->objId], gEntitiesNextPosYArray[D_8004A7C4->objId], gEntitiesNextPosZArray[D_8004A7C4->objId]);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122B40.s")
@@ -2921,9 +2921,9 @@ void func_80122CE8(void) {
     s32 phi_s3;
 
     temp_v1 = D_8004A7C4->objId;
-    sp7C = gEntitiesPosXArray[temp_v1];
-    sp80 = *D_800E0490[temp_v1]->unk4 + gEntitiesPosYArray[temp_v1];
-    sp84 = gEntitiesPosZArray[temp_v1];
+    sp7C = gEntitiesNextPosXArray[temp_v1];
+    sp80 = *D_800E0490[temp_v1]->unk4 + gEntitiesNextPosYArray[temp_v1];
+    sp84 = gEntitiesNextPosZArray[temp_v1];
     temp_v0 = func_8010DF9C(&sp7C);
     if ((temp_v0 != 0) && (temp_v0 != 0)) {
         temp_s5 = &sp64;

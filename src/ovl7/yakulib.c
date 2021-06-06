@@ -40,9 +40,9 @@ extern f32 gEntitiesAngleXArray[];
 extern f32 gEntitiesAngleYArray[];
 extern f32 gEntitiesAngleZArray[];
 
-extern f32 gEntitiesPosXArray[];
-extern f32 gEntitiesPosYArray[];
-extern f32 gEntitiesPosZArray[];
+extern f32 gEntitiesNextPosXArray[];
+extern f32 gEntitiesNextPosYArray[];
+extern f32 gEntitiesNextPosZArray[];
 
 extern f32 D_801CE578;
 
@@ -75,9 +75,9 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
     D_800E8E60[idx] = 1;
     D_800E1D10[idx] = arg1;
     func_800A4794(&sp28, arg0, idx);
-    gEntitiesPosXArray[idx] = sp28.x;
-    gEntitiesPosYArray[idx] = sp28.y;
-    gEntitiesPosZArray[idx] = sp28.z;
+    gEntitiesNextPosXArray[idx] = sp28.x;
+    gEntitiesNextPosYArray[idx] = sp28.y;
+    gEntitiesNextPosZArray[idx] = sp28.z;
     func_800A4DB8(&sp1C, arg0);
     gEntitiesAngleXArray[idx] = sp1C.x;
     gEntitiesAngleYArray[idx] = sp1C.y + D_801CE578;
@@ -110,9 +110,9 @@ s32 func_801BBFE4_ovl7(s32 arg0) {
     D_800E6A10[idx] = D_800E6A10[D_800E0D50[idx]];
     if (D_800E0D50[idx] == 0) {
         sp1C = idx;
-        gEntitiesPosYArray[idx] = func_8019B144_ovl7();
+        gEntitiesNextPosYArray[idx] = func_8019B144_ovl7();
     } else {
-        gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_800E0D50[idx]];
+        gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_800E0D50[idx]];
     }
     gEntitiesAngleXArray[idx] = gEntitiesAngleXArray[D_800E0D50[idx]];
     gEntitiesAngleYArray[idx] = gEntitiesAngleYArray[D_800E0D50[idx]];
@@ -152,9 +152,9 @@ s32 func_801BC27C_ovl7(s32 arg0, s32 arg1) {
     D_800E6A10[idx] = D_800E6A10[D_800E0D50[idx]];
     if (D_800E0D50[idx] == 0) {
         sp1C = idx;
-        gEntitiesPosYArray[idx] = func_8019B144_ovl7();
+        gEntitiesNextPosYArray[idx] = func_8019B144_ovl7();
     } else {
-        gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_800E0D50[idx]];
+        gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_800E0D50[idx]];
     }
     gEntitiesAngleXArray[idx] = gEntitiesAngleXArray[D_800E0D50[idx]];
     gEntitiesAngleYArray[idx] = gEntitiesAngleYArray[D_800E0D50[idx]];
@@ -198,9 +198,9 @@ s32 func_801BC580_ovl7(s32 arg0) {
     D_800E6A10[idx] = D_800E6A10[D_800E0D50[idx]];
     if (D_800E0D50[idx] == 0) {
         sp1C = idx;
-        gEntitiesPosYArray[idx] = func_8019B144_ovl7();
+        gEntitiesNextPosYArray[idx] = func_8019B144_ovl7();
     } else {
-        gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_800E0D50[idx]];
+        gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_800E0D50[idx]];
     }
     gEntitiesAngleXArray[idx] = gEntitiesAngleXArray[D_800E0D50[idx]];
     gEntitiesAngleYArray[idx] = gEntitiesAngleYArray[D_800E0D50[idx]];
@@ -237,17 +237,17 @@ s32 func_801BC794_ovl7(s32 arg0) {
     D_800E6A10[idx] = D_800E6A10[D_800E0D50[idx]];
     if (D_800E0D50[idx] == 0) {
         sp1C = idx;
-        gEntitiesPosYArray[idx] = func_8019B144_ovl7();
+        gEntitiesNextPosYArray[idx] = func_8019B144_ovl7();
     } else {
-        gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_800E0D50[idx]];
+        gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_800E0D50[idx]];
     }
     gEntitiesAngleXArray[idx] = gEntitiesAngleXArray[D_800E0D50[idx]];
     gEntitiesAngleYArray[idx] = gEntitiesAngleYArray[D_800E0D50[idx]];
     gEntitiesAngleZArray[idx] = gEntitiesAngleZArray[D_800E0D50[idx]];
     D_800E8E60[idx] = D_800E8E60[D_800E0D50[idx]];
-    gEntitiesPosXArray[idx] = gEntitiesPosXArray[D_800E0D50[idx]];
-    gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_800E0D50[idx]];
-    gEntitiesPosZArray[idx] = gEntitiesPosZArray[D_800E0D50[idx]];
+    gEntitiesNextPosXArray[idx] = gEntitiesNextPosXArray[D_800E0D50[idx]];
+    gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_800E0D50[idx]];
+    gEntitiesNextPosZArray[idx] = gEntitiesNextPosZArray[D_800E0D50[idx]];
     return idx;
 }
 

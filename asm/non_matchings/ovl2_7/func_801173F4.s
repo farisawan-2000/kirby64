@@ -16,8 +16,8 @@ glabel func_801173F4
 /* 09FE9C 8011742C 0C02D249 */  jal   D_800B4924_ovl2
 /* 09FEA0 80117430 E7AC001C */   swc1  $f12, 0x1c($sp)
 /* 09FEA4 80117434 8FA50020 */  lw    $a1, 0x20($sp)
-/* 09FEA8 80117438 3C08800E */  lui   $t0, %hi(gEntitiesPosYArray) # $t0, 0x800e
-/* 09FEAC 8011743C 25082790 */  addiu $t0, %lo(gEntitiesPosYArray) # addiu $t0, $t0, 0x2790
+/* 09FEA8 80117438 3C08800E */  lui   $t0, %hi(gEntitiesNextPosYArray) # $t0, 0x800e
+/* 09FEAC 8011743C 25082790 */  addiu $t0, %lo(gEntitiesNextPosYArray) # addiu $t0, $t0, 0x2790
 /* 09FEB0 80117440 00051880 */  sll   $v1, $a1, 2
 /* 09FEB4 80117444 3C01800F */ lui $at, %hi(D_800EA6E0)
 /* 09FEB8 80117448 00230821 */  addu  $at, $at, $v1
@@ -31,11 +31,11 @@ glabel func_801173F4
 /* 09FED8 80117468 45020019 */  bc1fl .L801174D0_ovl2
 /* 09FEDC 8011746C 4602003C */   c.lt.s $f0, $f2
 /* 09FEE0 80117470 460C0080 */  add.s $f2, $f0, $f12
-/* 09FEE4 80117474 3C01800E */ lui $at, %hi(D_800E2CD0)
+/* 09FEE4 80117474 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 09FEE8 80117478 00230821 */  addu  $at, $at, $v1
 /* 09FEEC 8011747C 3C0B8005 */  lui   $t3, %hi(D_8004A7C4) # $t3, 0x8005
 /* 09FEF0 80117480 E4420000 */  swc1  $f2, ($v0)
-/* 09FEF4 80117484 C4262CD0 */ lwc1 $f6, %lo(D_800E2CD0)($at)
+/* 09FEF4 80117484 C4262CD0 */ lwc1 $f6, %lo(gEntitiesPosYArray)($at)
 /* 09FEF8 80117488 3C01800E */ lui $at, %hi(D_800E3210)
 /* 09FEFC 8011748C 00230821 */  addu  $at, $at, $v1
 /* 09FF00 80117490 46061201 */  sub.s $f8, $f2, $f6
@@ -55,12 +55,12 @@ glabel func_801173F4
 /* 09FF38 801174C8 AC2AEF90 */ sw $t2, %lo(D_800DEF90)($at)
 /* 09FF3C 801174CC 4602003C */  c.lt.s $f0, $f2
 .L801174D0_ovl2:
-/* 09FF40 801174D0 3C01800E */ lui $at, %hi(D_800E2CD0)
+/* 09FF40 801174D0 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 09FF44 801174D4 00230821 */  addu  $at, $at, $v1
 /* 09FF48 801174D8 45000007 */  bc1f  .L801174F8_ovl2
 /* 09FF4C 801174DC 00000000 */   nop   
 /* 09FF50 801174E0 E4400000 */  swc1  $f0, ($v0)
-/* 09FF54 801174E4 C42A2CD0 */ lwc1 $f10, %lo(D_800E2CD0)($at)
+/* 09FF54 801174E4 C42A2CD0 */ lwc1 $f10, %lo(gEntitiesPosYArray)($at)
 /* 09FF58 801174E8 3C01800E */ lui $at, %hi(D_800E3210)
 /* 09FF5C 801174EC 00230821 */  addu  $at, $at, $v1
 /* 09FF60 801174F0 460A0401 */  sub.s $f16, $f0, $f10

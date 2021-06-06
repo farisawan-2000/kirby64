@@ -1198,25 +1198,25 @@
 /* 0FA438 80152F08 00402825 */   move  $a1, $v0
 /* 0FA43C 80152F0C 8E620000 */  lw    $v0, ($s3)
 /* 0FA440 80152F10 C7A40050 */  lwc1  $f4, 0x50($sp)
-/* 0FA444 80152F14 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0FA444 80152F14 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0FA448 80152F18 8C590000 */  lw    $t9, ($v0)
 /* 0FA44C 80152F1C C7A60054 */  lwc1  $f6, 0x54($sp)
 /* 0FA450 80152F20 C7A80058 */  lwc1  $f8, 0x58($sp)
 /* 0FA454 80152F24 00194080 */  sll   $t0, $t9, 2
 /* 0FA458 80152F28 00280821 */  addu  $at, $at, $t0
-/* 0FA45C 80152F2C E42425D0 */ swc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 0FA45C 80152F2C E42425D0 */ swc1 $f4, %lo(gEntitiesNextPosXArray)($at)
 /* 0FA460 80152F30 8C490000 */  lw    $t1, ($v0)
-/* 0FA464 80152F34 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0FA464 80152F34 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0FA468 80152F38 27A40044 */  addiu $a0, $sp, 0x44
 /* 0FA46C 80152F3C 00095080 */  sll   $t2, $t1, 2
 /* 0FA470 80152F40 002A0821 */  addu  $at, $at, $t2
-/* 0FA474 80152F44 E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 0FA474 80152F44 E4262790 */ swc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 0FA478 80152F48 8C4B0000 */  lw    $t3, ($v0)
-/* 0FA47C 80152F4C 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0FA47C 80152F4C 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0FA480 80152F50 02002825 */  move  $a1, $s0
 /* 0FA484 80152F54 000B6080 */  sll   $t4, $t3, 2
 /* 0FA488 80152F58 002C0821 */  addu  $at, $at, $t4
-/* 0FA48C 80152F5C E4282950 */ swc1 $f8, %lo(gEntitiesPosZArray)($at)
+/* 0FA48C 80152F5C E4282950 */ swc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 0FA490 80152F60 0C02C9B6 */  jal   func_800B26D8
 /* 0FA494 80152F64 8E260000 */   lw    $a2, ($s1)
 /* 0FA498 80152F68 8E620000 */  lw    $v0, ($s3)
@@ -1316,25 +1316,25 @@
 /* 0FA604 801530D4 3C108005 */  lui   $s0, %hi(D_8004A7C4) # $s0, 0x8005
 /* 0FA608 801530D8 8E10A7C4 */  lw    $s0, %lo(D_8004A7C4)($s0)
 /* 0FA60C 801530DC C7A4003C */  lwc1  $f4, 0x3c($sp)
-/* 0FA610 801530E0 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0FA610 801530E0 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0FA614 801530E4 8E0C0000 */  lw    $t4, ($s0)
 /* 0FA618 801530E8 C7A60040 */  lwc1  $f6, 0x40($sp)
 /* 0FA61C 801530EC C7A80044 */  lwc1  $f8, 0x44($sp)
 /* 0FA620 801530F0 000C6880 */  sll   $t5, $t4, 2
 /* 0FA624 801530F4 002D0821 */  addu  $at, $at, $t5
-/* 0FA628 801530F8 E42425D0 */ swc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 0FA628 801530F8 E42425D0 */ swc1 $f4, %lo(gEntitiesNextPosXArray)($at)
 /* 0FA62C 801530FC 8E0E0000 */  lw    $t6, ($s0)
-/* 0FA630 80153100 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0FA630 80153100 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0FA634 80153104 3C0B800D */  lui   $t3, %hi(D_800D6B98) # $t3, 0x800d
 /* 0FA638 80153108 000E7880 */  sll   $t7, $t6, 2
 /* 0FA63C 8015310C 002F0821 */  addu  $at, $at, $t7
-/* 0FA640 80153110 E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 0FA640 80153110 E4262790 */ swc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 0FA644 80153114 8E190000 */  lw    $t9, ($s0)
-/* 0FA648 80153118 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0FA648 80153118 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0FA64C 8015311C 8D6B6B98 */  lw    $t3, %lo(D_800D6B98)($t3)
 /* 0FA650 80153120 00194080 */  sll   $t0, $t9, 2
 /* 0FA654 80153124 00280821 */  addu  $at, $at, $t0
-/* 0FA658 80153128 E4282950 */ swc1 $f8, %lo(gEntitiesPosZArray)($at)
+/* 0FA658 80153128 E4282950 */ swc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 0FA65C 8015312C 8E710000 */  lw    $s1, ($s3)
 /* 0FA660 80153130 3C0D8016 */ lui $t5, %hi(D_8015A924)
 /* 0FA664 80153134 000B6080 */  sll   $t4, $t3, 2
@@ -2833,23 +2833,23 @@
 /* 0FBC34 80154704 24C6FFFF */   addiu $a2, $a2, -1
 /* 0FBC38 80154708 8E650000 */  lw    $a1, ($s3)
 /* 0FBC3C 8015470C C7A4007C */  lwc1  $f4, 0x7c($sp)
-/* 0FBC40 80154710 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0FBC40 80154710 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0FBC44 80154714 8CB80000 */  lw    $t8, ($a1)
 /* 0FBC48 80154718 C7A60080 */  lwc1  $f6, 0x80($sp)
 /* 0FBC4C 8015471C C7A80084 */  lwc1  $f8, 0x84($sp)
 /* 0FBC50 80154720 00187080 */  sll   $t6, $t8, 2
 /* 0FBC54 80154724 002E0821 */  addu  $at, $at, $t6
-/* 0FBC58 80154728 E42425D0 */ swc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 0FBC58 80154728 E42425D0 */ swc1 $f4, %lo(gEntitiesNextPosXArray)($at)
 /* 0FBC5C 8015472C 8CB90000 */  lw    $t9, ($a1)
-/* 0FBC60 80154730 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0FBC60 80154730 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0FBC64 80154734 00194080 */  sll   $t0, $t9, 2
 /* 0FBC68 80154738 00280821 */  addu  $at, $at, $t0
-/* 0FBC6C 8015473C E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 0FBC6C 8015473C E4262790 */ swc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 0FBC70 80154740 8CA90000 */  lw    $t1, ($a1)
-/* 0FBC74 80154744 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0FBC74 80154744 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0FBC78 80154748 00095880 */  sll   $t3, $t1, 2
 /* 0FBC7C 8015474C 002B0821 */  addu  $at, $at, $t3
-/* 0FBC80 80154750 E4282950 */ swc1 $f8, %lo(gEntitiesPosZArray)($at)
+/* 0FBC80 80154750 E4282950 */ swc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 0FBC84 80154754 8CA30000 */  lw    $v1, ($a1)
 /* 0FBC88 80154758 00031880 */  sll   $v1, $v1, 2
 /* 0FBC8C 8015475C 02836021 */  addu  $t4, $s4, $v1
@@ -3182,23 +3182,23 @@
 /* 0FC168 80154C38 24C6FFFF */   addiu $a2, $a2, -1
 /* 0FC16C 80154C3C 8E650000 */  lw    $a1, ($s3)
 /* 0FC170 80154C40 C7A6007C */  lwc1  $f6, 0x7c($sp)
-/* 0FC174 80154C44 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0FC174 80154C44 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0FC178 80154C48 8CAB0000 */  lw    $t3, ($a1)
 /* 0FC17C 80154C4C C7A80080 */  lwc1  $f8, 0x80($sp)
 /* 0FC180 80154C50 C7AA0084 */  lwc1  $f10, 0x84($sp)
 /* 0FC184 80154C54 000B6080 */  sll   $t4, $t3, 2
 /* 0FC188 80154C58 002C0821 */  addu  $at, $at, $t4
-/* 0FC18C 80154C5C E42625D0 */ swc1 $f6, %lo(gEntitiesPosXArray)($at)
+/* 0FC18C 80154C5C E42625D0 */ swc1 $f6, %lo(gEntitiesNextPosXArray)($at)
 /* 0FC190 80154C60 8CAA0000 */  lw    $t2, ($a1)
-/* 0FC194 80154C64 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0FC194 80154C64 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0FC198 80154C68 000A6880 */  sll   $t5, $t2, 2
 /* 0FC19C 80154C6C 002D0821 */  addu  $at, $at, $t5
-/* 0FC1A0 80154C70 E4282790 */ swc1 $f8, %lo(gEntitiesPosYArray)($at)
+/* 0FC1A0 80154C70 E4282790 */ swc1 $f8, %lo(gEntitiesNextPosYArray)($at)
 /* 0FC1A4 80154C74 8CAF0000 */  lw    $t7, ($a1)
-/* 0FC1A8 80154C78 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0FC1A8 80154C78 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0FC1AC 80154C7C 000FC080 */  sll   $t8, $t7, 2
 /* 0FC1B0 80154C80 00380821 */  addu  $at, $at, $t8
-/* 0FC1B4 80154C84 E42A2950 */ swc1 $f10, %lo(gEntitiesPosZArray)($at)
+/* 0FC1B4 80154C84 E42A2950 */ swc1 $f10, %lo(gEntitiesNextPosZArray)($at)
 /* 0FC1B8 80154C88 8CA30000 */  lw    $v1, ($a1)
 /* 0FC1BC 80154C8C 00031880 */  sll   $v1, $v1, 2
 /* 0FC1C0 80154C90 02837021 */  addu  $t6, $s4, $v1
@@ -3377,23 +3377,23 @@
 /* 0FC460 80154F30 00280821 */  addu  $at, $at, $t0
 /* 0FC464 80154F34 E4263C90 */ swc1 $f6, %lo(D_800E3C90)($at)
 /* 0FC468 80154F38 8C490000 */  lw    $t1, ($v0)
-/* 0FC46C 80154F3C 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 0FC46C 80154F3C 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 0FC470 80154F40 8F186B9C */  lw    $t8, %lo(D_800D6B9C)($t8)
 /* 0FC474 80154F44 00095080 */  sll   $t2, $t1, 2
 /* 0FC478 80154F48 002A0821 */  addu  $at, $at, $t2
-/* 0FC47C 80154F4C E42025D0 */ swc1 $f0, %lo(gEntitiesPosXArray)($at)
+/* 0FC47C 80154F4C E42025D0 */ swc1 $f0, %lo(gEntitiesNextPosXArray)($at)
 /* 0FC480 80154F50 8C4B0000 */  lw    $t3, ($v0)
-/* 0FC484 80154F54 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0FC484 80154F54 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0FC488 80154F58 3C050001 */  lui   $a1, (0x0001869F >> 16) # lui $a1, 1
 /* 0FC48C 80154F5C 000B6080 */  sll   $t4, $t3, 2
 /* 0FC490 80154F60 002C0821 */  addu  $at, $at, $t4
-/* 0FC494 80154F64 E4202790 */ swc1 $f0, %lo(gEntitiesPosYArray)($at)
+/* 0FC494 80154F64 E4202790 */ swc1 $f0, %lo(gEntitiesNextPosYArray)($at)
 /* 0FC498 80154F68 8C4D0000 */  lw    $t5, ($v0)
-/* 0FC49C 80154F6C 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 0FC49C 80154F6C 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 0FC4A0 80154F70 3C0B800D */  lui   $t3, %hi(D_800D6B98) # $t3, 0x800d
 /* 0FC4A4 80154F74 000D7080 */  sll   $t6, $t5, 2
 /* 0FC4A8 80154F78 002E0821 */  addu  $at, $at, $t6
-/* 0FC4AC 80154F7C E4202950 */ swc1 $f0, %lo(gEntitiesPosZArray)($at)
+/* 0FC4AC 80154F7C E4202950 */ swc1 $f0, %lo(gEntitiesNextPosZArray)($at)
 /* 0FC4B0 80154F80 8C4F0000 */  lw    $t7, ($v0)
 /* 0FC4B4 80154F84 3C018016 */  lui   $at, %hi(D_8015C694) # $at, 0x8016
 /* 0FC4B8 80154F88 8D6B6B98 */  lw    $t3, %lo(D_800D6B98)($t3)

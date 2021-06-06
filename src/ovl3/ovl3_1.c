@@ -450,7 +450,7 @@ void func_801529C0_ovl3(void) {
             phi_t1 = D_8004A7C4;
         }
     }
-    *(&gEntitiesPosYArray + (*phi_t1 * 4)) = (f32) phi_t4->unk8;
+    *(&gEntitiesNextPosYArray + (*phi_t1 * 4)) = (f32) phi_t4->unk8;
     temp_v1_2 = *phi_t1 * 4;
     if (((((temp_v1_2 + 0x800F0000)->unk-76E0 != 0) || !((temp_v1_2 + 0x800E0000)->unk3210 <= 0.0f)) || (0.0f == (temp_v1_2 + 0x800E0000)->unk64D0)) || (gKirbyState.abilityInUse != 0)) {
         if (gKirbyState.abilityInUse == 0x12) {
@@ -467,16 +467,16 @@ block_20:
             temp_f8 = (cosf(gPositionState.unk24) * phi_f2) + ((*D_8004A7C4 * 4) + 0x800E0000)->unk2950;
             sp4C = temp_f8;
             sp58 = temp_f8;
-            sp48 = (*(&gEntitiesPosYArray + (*D_8004A7C4 * 4)) + sp64->unk4->unk0) + sp64->unk4->unk8;
-            sp54 = (*(&gEntitiesPosYArray + (*D_8004A7C4 * 4)) + sp64->unk4->unk0) + sp64->unk4->unk4;
+            sp48 = (*(&gEntitiesNextPosYArray + (*D_8004A7C4 * 4)) + sp64->unk4->unk0) + sp64->unk4->unk8;
+            sp54 = (*(&gEntitiesNextPosYArray + (*D_8004A7C4 * 4)) + sp64->unk4->unk0) + sp64->unk4->unk4;
             if (func_80104B70(&sp50, &sp44, 0, &sp38, 0, 0, 0) != 0) {
                 temp_v1_3 = *D_8004A7C4 * 4;
-                if ((sp3C - *(&gEntitiesPosYArray + temp_v1_3)) < *sp64->unk4) {
+                if ((sp3C - *(&gEntitiesNextPosYArray + temp_v1_3)) < *sp64->unk4) {
                     (temp_v1_3 + 0x800F0000)->unk-76E0 = 1;
                     D_8012BCA0.unk8 = 0;
                     D_8012BCA0.unk0 = (s16) (((((u32) D_8012BCA0.unk0 >> 0x13) | 0x200) * 8) | ((u16) D_8012BCA0.unk0 & 7));
-                    *(&gEntitiesPosYArray + (*D_8004A7C4 * 4)) = sp3C;
-                    gPositionState.unk8 = (f32) *(&gEntitiesPosYArray + (*D_8004A7C4 * 4));
+                    *(&gEntitiesNextPosYArray + (*D_8004A7C4 * 4)) = sp3C;
+                    gPositionState.unk8 = (f32) *(&gEntitiesNextPosYArray + (*D_8004A7C4 * 4));
                 }
             }
         }
@@ -827,11 +827,11 @@ loop_24:
         if (phi_t3 == -1U) {
             if (temp_t5 != -1U) {
                 temp_a2 = &spF0;
-                spE8 = *((*D_8004A7C4 * 4) + &gEntitiesPosYArray);
+                spE8 = *((*D_8004A7C4 * 4) + &gEntitiesNextPosYArray);
                 spF0 = ((*D_8004A7C4 * 4) + 0x800E0000)->unk2B10;
                 spF8 = ((*D_8004A7C4 * 4) + 0x800E0000)->unk2E90;
                 temp_v1_4 = (temp_t5 * 4) + &sp8C;
-                spF4 = (*((*D_8004A7C4 * 4) + &gEntitiesPosYArray) + arg0->unk0) + arg0->unk4;
+                spF4 = (*((*D_8004A7C4 * 4) + &gEntitiesNextPosYArray) + arg0->unk0) + arg0->unk4;
                 sp10C = temp_t5;
                 sp110 = temp_t4;
                 sp114 = phi_t3;
@@ -1429,12 +1429,12 @@ f32 func_80154648_ovl3(s32 arg0, void *arg1, void *arg2) {
     func_80105180(arg1);
     temp_a0 = (*D_8004A7C4 * 4) + 0x800E0000;
     temp_a3 = arg0 * 4;
-    temp_t0 = temp_a3 + &gEntitiesPosXArray;
+    temp_t0 = temp_a3 + &gEntitiesNextPosXArray;
     temp_a1 = arg1;
     temp_a2 = arg2;
-    temp_t1 = temp_a3 + &gEntitiesPosYArray;
+    temp_t1 = temp_a3 + &gEntitiesNextPosYArray;
     temp_a1->unk4 = (f32) *temp_t0;
-    temp_t2 = temp_a3 + &gEntitiesPosZArray;
+    temp_t2 = temp_a3 + &gEntitiesNextPosZArray;
     temp_a1->unk8 = (f32) (*temp_t1 + 20.0f);
     temp_a1->unkC = (f32) *temp_t2;
     temp_a1->unk10 = (f32) temp_a0->unk490->unk4->unk0;

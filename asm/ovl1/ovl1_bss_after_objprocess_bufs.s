@@ -8422,7 +8422,7 @@ glabel D_800E25C8
 glabel D_800E25CC
 .word 0x00000000
 
-glabel gEntitiesPosXArray
+glabel gEntitiesNextPosXArray
 .word 0x00000000
 
 glabel D_800E25D4
@@ -8758,7 +8758,7 @@ glabel D_800E2788
 glabel D_800E278C
 .word 0x00000000
 
-glabel gEntitiesPosYArray
+glabel gEntitiesNextPosYArray
 .word 0x00000000
 
 glabel D_800E2794
@@ -9094,7 +9094,7 @@ glabel D_800E2948
 glabel D_800E294C
 .word 0x00000000
 
-glabel gEntitiesPosZArray
+glabel gEntitiesNextPosZArray
 .word 0x00000000
 
 glabel D_800E2954
@@ -9430,7 +9430,7 @@ glabel D_800E2B08
 glabel D_800E2B0C
 .word 0x00000000
 
-glabel D_800E2B10
+glabel gEntitiesPosXArray
 .word 0x00000000
 
 glabel D_800E2B14
@@ -9766,7 +9766,7 @@ glabel D_800E2CC8
 glabel D_800E2CCC
 .word 0x00000000
 
-glabel D_800E2CD0
+glabel gEntitiesPosYArray
 .word 0x00000000
 
 glabel D_800E2CD4
@@ -10102,7 +10102,7 @@ glabel D_800E2E88
 glabel D_800E2E8C
 .word 0x00000000
 
-glabel D_800E2E90
+glabel gEntitiesPosZArray
 .word 0x00000000
 
 glabel D_800E2E94

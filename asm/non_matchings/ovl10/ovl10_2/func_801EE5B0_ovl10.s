@@ -33,8 +33,8 @@ glabel func_801EE5B0_ovl10
 /* 1DF39C 801EE62C 4480A000 */  mtc1  $zero, $f20
 /* 1DF3A0 801EE630 3C01800F */ lui $at, %hi(D_800E9020)
 /* 1DF3A4 801EE634 8C690000 */  lw    $t1, ($v1)
-/* 1DF3A8 801EE638 3C04800E */  lui   $a0, %hi(gEntitiesPosXArray) # $a0, 0x800e
-/* 1DF3AC 801EE63C 248425D0 */  addiu $a0, %lo(gEntitiesPosXArray) # addiu $a0, $a0, 0x25d0
+/* 1DF3A8 801EE638 3C04800E */  lui   $a0, %hi(gEntitiesNextPosXArray) # $a0, 0x800e
+/* 1DF3AC 801EE63C 248425D0 */  addiu $a0, %lo(gEntitiesNextPosXArray) # addiu $a0, $a0, 0x25d0
 /* 1DF3B0 801EE640 00095080 */  sll   $t2, $t1, 2
 /* 1DF3B4 801EE644 002A0821 */  addu  $at, $at, $t2
 /* 1DF3B8 801EE648 E4349020 */ swc1 $f20, %lo(D_800E9020)($at)

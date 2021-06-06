@@ -127,8 +127,8 @@ glabel func_8017D430_ovl3
 /* 0DE050 8017D610 0C054E61 */  jal   func_80153984_ovl3
 /* 0DE054 8017D614 2610A7C4 */   addiu $s0, %lo(D_8004A7C4) # addiu $s0, $s0, -0x583c
 /* 0DE058 8017D618 8E0E0000 */  lw    $t6, ($s0)
-/* 0DE05C 8017D61C 3C19800E */  lui   $t9, %hi(gEntitiesPosYArray) # $t9, 0x800e
-/* 0DE060 8017D620 27392790 */  addiu $t9, %lo(gEntitiesPosYArray) # addiu $t9, $t9, 0x2790
+/* 0DE05C 8017D61C 3C19800E */  lui   $t9, %hi(gEntitiesNextPosYArray) # $t9, 0x800e
+/* 0DE060 8017D620 27392790 */  addiu $t9, %lo(gEntitiesNextPosYArray) # addiu $t9, $t9, 0x2790
 /* 0DE064 8017D624 8DCF0000 */  lw    $t7, ($t6)
 /* 0DE068 8017D628 3C01800F */  lui   $at, %hi(D_800EC9E4) # $at, 0x800f
 /* 0DE06C 8017D62C C426C9E4 */  lwc1  $f6, %lo(D_800EC9E4)($at)

@@ -15,9 +15,9 @@ void func_801DD440_ovl17(struct UnkStruct8004A7C4 *arg0) {
     func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     func_800AA018(0x1067C);
     func_800AA018(0x1067D);
-    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];

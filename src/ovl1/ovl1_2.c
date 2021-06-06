@@ -747,9 +747,9 @@ void *func_800A8100(s32 arg0, s32 arg1, ? arg2, void *arg3) {
                 temp_v0->unk4C->unkC = sp2C;
                 return temp_v0;
             }
-            temp_a0->unk4 = gEntitiesPosXArray[phi_a2];
-            temp_v0->unk4C->unk8 = gEntitiesPosYArray[phi_a2];
-            temp_v0->unk4C->unkC = gEntitiesPosZArray[phi_a2];
+            temp_a0->unk4 = gEntitiesNextPosXArray[phi_a2];
+            temp_v0->unk4C->unk8 = gEntitiesNextPosYArray[phi_a2];
+            temp_v0->unk4C->unkC = gEntitiesNextPosZArray[phi_a2];
             return temp_v0;
         }
     }

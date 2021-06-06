@@ -24,12 +24,12 @@ void func_801D2040_ovl8(s32 arg0, s32 arg1, f32 arg2) {
         D_800E7730[newIdx] = 2;
         D_800E77A0[newIdx] = 0;
         D_800E7880[newIdx] = 3;
-        gEntitiesPosXArray[newIdx] = gEntitiesPosXArray[D_8004A7C4->objId];
-        gEntitiesPosYArray[newIdx] = gEntitiesPosYArray[D_8004A7C4->objId];
-        gEntitiesPosZArray[newIdx] = gEntitiesPosZArray[D_8004A7C4->objId];
-        D_800E2B10[newIdx] = gEntitiesPosXArray[newIdx];
-        D_800E2CD0[newIdx] = gEntitiesPosYArray[newIdx];
-        D_800E2E90[newIdx] = gEntitiesPosZArray[newIdx];
+        gEntitiesNextPosXArray[newIdx] = gEntitiesNextPosXArray[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[newIdx] = gEntitiesNextPosYArray[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[newIdx] = gEntitiesNextPosZArray[D_8004A7C4->objId];
+        gEntitiesPosXArray[newIdx] = gEntitiesNextPosXArray[newIdx];
+        gEntitiesPosYArray[newIdx] = gEntitiesNextPosYArray[newIdx];
+        gEntitiesPosZArray[newIdx] = gEntitiesNextPosZArray[newIdx];
         D_800E8E60[newIdx] = 1;
         D_800EA520[newIdx] = D_800EA520[D_8004A7C4->objId];
         gEntitiesAngleYArray[newIdx] = gEntitiesAngleYArray[D_8004A7C4->objId];
@@ -40,9 +40,9 @@ void func_801D2040_ovl8(s32 arg0, s32 arg1, f32 arg2) {
 
 void func_801D223C_ovl8(struct UnkStruct8004A7C4 *arg0) {
     func_800A9864(0x100DE, 0x1869F, 0x10, arg0);
-    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
@@ -201,9 +201,9 @@ void func_801D29C8_ovl8(struct UnkStruct8004A7C4 *arg0) {
             func_800AA018(0x10680);
             break;
     }
-    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];

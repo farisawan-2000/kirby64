@@ -413,7 +413,7 @@ loop_8:
         func_800AFA88(phi_s0_3);
         phi_s0_4 = D_8004A7C4;
     }
-    temp_f0 = (&gEntitiesPosXArray[phi_s0_4->objId])[0x274];
+    temp_f0 = (&gEntitiesNextPosXArray[phi_s0_4->objId])[0x274];
     phi_return = temp_f0;
     if (phi_s0_4->unk3C->unk78 != temp_f0) {
         phi_return = func_8000BEF4_ovl1(phi_s0_4, temp_f0);
@@ -548,9 +548,9 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800AFA54.s")
 #endif
 
 void func_800AFA88(struct UnkStruct8004A7C4 *arg0) {
-    arg0->unk3C->unk1C.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
@@ -613,15 +613,15 @@ extern f32 D_800D670C;
 void func_800AFC88(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     if (arg0 != D_800D670C) {
         D_800E2090[D_8004A7C4->objId] = arg0;
-        gEntitiesPosXArray[D_8004A7C4->objId] = D_800E2090[D_8004A7C4->objId];
+        gEntitiesNextPosXArray[D_8004A7C4->objId] = D_800E2090[D_8004A7C4->objId];
     }
     if (arg1 != D_800D670C) {
         D_800E2250[D_8004A7C4->objId] = arg1;
-        gEntitiesPosYArray[D_8004A7C4->objId] = D_800E2250[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[D_8004A7C4->objId] = D_800E2250[D_8004A7C4->objId];
     }
     if (arg2 != D_800D670C) {
         D_800E2410[D_8004A7C4->objId] = arg2;
-        gEntitiesPosZArray[D_8004A7C4->objId] = D_800E2410[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[D_8004A7C4->objId] = D_800E2410[D_8004A7C4->objId];
     }
     if (arg3 != 0) {
         func_8000B6BC(arg3);
@@ -670,15 +670,15 @@ extern f32 D_800D6718;
 void func_800AFFD0(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     if (arg0 != D_800D6718) {
         D_800E2090[D_8004A7C4->objId] += arg0;
-        gEntitiesPosXArray[D_8004A7C4->objId] = D_800E2090[D_8004A7C4->objId];
+        gEntitiesNextPosXArray[D_8004A7C4->objId] = D_800E2090[D_8004A7C4->objId];
     }
     if (arg1 != D_800D6718) {
         D_800E2250[D_8004A7C4->objId] += arg1;
-        gEntitiesPosYArray[D_8004A7C4->objId] = D_800E2250[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[D_8004A7C4->objId] = D_800E2250[D_8004A7C4->objId];
     }
     if (arg2 != D_800D6718) {
         D_800E2410[D_8004A7C4->objId] += arg2;
-        gEntitiesPosZArray[D_8004A7C4->objId] = D_800E2410[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[D_8004A7C4->objId] = D_800E2410[D_8004A7C4->objId];
     }
     if (arg3 != 0) {
         func_8000B6BC(arg3);
@@ -1051,9 +1051,9 @@ void func_800B143C(void) {
     if ((D_800DD8D0[temp_v0] & 0x40) == 0) {
         temp_v1 = ERROR(Read from unset register $a0)->unk3C;
         if (temp_v1 != 0) {
-            temp_v1->unk1C = gEntitiesPosXArray[temp_v0];
-            ERROR(Read from unset register $a0)->unk3C->unk20 = gEntitiesPosYArray[D_8004A7C4->objId];
-            ERROR(Read from unset register $a0)->unk3C->unk24 = gEntitiesPosZArray[D_8004A7C4->objId];
+            temp_v1->unk1C = gEntitiesNextPosXArray[temp_v0];
+            ERROR(Read from unset register $a0)->unk3C->unk20 = gEntitiesNextPosYArray[D_8004A7C4->objId];
+            ERROR(Read from unset register $a0)->unk3C->unk24 = gEntitiesNextPosZArray[D_8004A7C4->objId];
             ERROR(Read from unset register $a0)->unk3C->unk30 = gEntitiesAngleXArray[D_8004A7C4->objId];
             ERROR(Read from unset register $a0)->unk3C->unk34 = gEntitiesAngleYArray[D_8004A7C4->objId];
             ERROR(Read from unset register $a0)->unk3C->unk38 = gEntitiesAngleZArray[D_8004A7C4->objId];
@@ -1738,9 +1738,9 @@ loop_5:
             _guRotateRPYF(&sp78, temp_f0_5, temp_f2_2, temp_f12_2);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
-        temp_f0_6 = gEntitiesPosXArray[arg2];
-        temp_f2_3 = gEntitiesPosYArray[arg2];
-        temp_f12_3 = gEntitiesPosZArray[arg2];
+        temp_f0_6 = gEntitiesNextPosXArray[arg2];
+        temp_f2_3 = gEntitiesNextPosYArray[arg2];
+        temp_f12_3 = gEntitiesNextPosZArray[arg2];
         if ((temp_f0_6 != 0.0f) || (temp_f2_3 != 0.0f) || (temp_f12_3 != 0.0f)) {
             func_8001B6E4_ovl1(temp_f12_3, &sp78, temp_f0_6, temp_f2_3, temp_f12_3);
             guMtxCatF(&spB8, &sp78, &spB8);
@@ -1945,9 +1945,9 @@ loop_5:
             func_800A465C(temp_f12_2, &sp7C, -temp_f0_6, -temp_f2_2, -temp_f12_2);
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
-        temp_f0_7 = gEntitiesPosXArray[arg2];
-        temp_f2_3 = gEntitiesPosYArray[arg2];
-        temp_f12_3 = gEntitiesPosZArray[arg2];
+        temp_f0_7 = gEntitiesNextPosXArray[arg2];
+        temp_f2_3 = gEntitiesNextPosYArray[arg2];
+        temp_f12_3 = gEntitiesNextPosZArray[arg2];
         if ((temp_f0_7 != 0.0f) || (temp_f2_3 != 0.0f) || (temp_f12_3 != 0.0f)) {
             func_8001B6E4_ovl1(temp_f12_3, &sp7C, -temp_f0_7, -temp_f2_3, -temp_f12_3);
             guMtxCatF(&sp7C, &spBC, &spBC);
@@ -2083,7 +2083,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B30BC.s")
     u32 temp_v0;
 
     temp_v0 = D_8004A7C4->objId;
-    if (func_800B3234(gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]) != 0) {
+    if (func_800B3234(gEntitiesNextPosXArray[temp_v0], gEntitiesNextPosYArray[temp_v0], gEntitiesNextPosZArray[temp_v0]) != 0) {
         return 0;
     }
     return 1;
@@ -2102,7 +2102,7 @@ void func_800B31B4(void) {
     temp_v0 = D_8004A7C4->objId;
     temp_a0 = D_800DE350[temp_v0];
     sp18 = temp_a0;
-    if (func_800B3234(gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], temp_a0, (bitwise s32) gEntitiesPosZArray[temp_v0]) != 0) {
+    if (func_800B3234(gEntitiesNextPosXArray[temp_v0], gEntitiesNextPosYArray[temp_v0], temp_a0, (bitwise s32) gEntitiesNextPosZArray[temp_v0]) != 0) {
         temp_a0->unk48 = 0;
         func_8019B7D8_ovl1(temp_a0);
         func_8019D8A0_ovl1(D_8004A7C4->unk2);
@@ -2133,7 +2133,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B31B4.s")
     D_800E6F50[temp_v1->objId].z = 0.0f;
     temp_a0 = temp_v1->objId;
     temp_a1 = &sp30;
-    if (gEntitiesPosYArray[temp_a0] < D_800D67E8) {
+    if (gEntitiesNextPosYArray[temp_a0] < D_800D67E8) {
         D_800E6F50[temp_a0].z = 1.0f;
         return 1;
     }
@@ -2144,9 +2144,9 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B31B4.s")
     sp2C = func_800A4F48(D_800D799C->unk3C, temp_a1, 0x3FD9999A, 0x4019999A);
     D_800E6F50[temp_v1_2->objId].x = sp30;
     D_800E6F50[temp_v1_2->objId].y = sp34;
-    temp_f0 = arg0 - *gEntitiesPosXArray;
-    temp_f2 = arg1 - (*gEntitiesPosYArray + 20.0f);
-    temp_f14 = arg2 - *gEntitiesPosZArray;
+    temp_f0 = arg0 - *gEntitiesNextPosXArray;
+    temp_f2 = arg1 - (*gEntitiesNextPosYArray + 20.0f);
+    temp_f14 = arg2 - *gEntitiesNextPosZArray;
     temp_v1_3 = D_8004A7C4;
     D_800E6F50[temp_v1_3->objId].originOffset = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2) + (temp_f14 * temp_f14));
     if (sp2C == 0) {

@@ -1017,14 +1017,14 @@ glabel func_80188238_ovl3
 /* 0E9B60 80189120 8DA50038 */   lw    $a1, 0x38($t5)
 /* 0E9B64 80189124 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 0E9B68 80189128 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
-/* 0E9B6C 8018912C 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0E9B6C 8018912C 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0E9B70 80189130 C7A2006C */  lwc1  $f2, 0x6c($sp)
 /* 0E9B74 80189134 8DCC0000 */  lw    $t4, ($t6)
 /* 0E9B78 80189138 C7B20074 */  lwc1  $f18, 0x74($sp)
 /* 0E9B7C 8018913C 3C028013 */  lui   $v0, %hi(D_8012E9C8) # $v0, 0x8013
 /* 0E9B80 80189140 000CC080 */  sll   $t8, $t4, 2
 /* 0E9B84 80189144 00380821 */  addu  $at, $at, $t8
-/* 0E9B88 80189148 C4242790 */ lwc1 $f4, %lo(gEntitiesPosYArray)($at)
+/* 0E9B88 80189148 C4242790 */ lwc1 $f4, %lo(gEntitiesNextPosYArray)($at)
 /* 0E9B8C 8018914C 3C01C120 */  li    $at, 0xC1200000 # -10.000000
 /* 0E9B90 80189150 44813000 */  mtc1  $at, $f6
 /* 0E9B94 80189154 3C014302 */  li    $at, 0x43020000 # 130.000000
@@ -1345,14 +1345,14 @@ glabel func_80188238_ovl3
 /* 0EA054 80189614 8F250038 */   lw    $a1, 0x38($t9)
 /* 0EA058 80189618 3C078005 */  lui   $a3, %hi(D_8004A7C4) # $a3, 0x8005
 /* 0EA05C 8018961C 8CE7A7C4 */  lw    $a3, %lo(D_8004A7C4)($a3)
-/* 0EA060 80189620 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0EA060 80189620 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0EA064 80189624 C7AA004C */  lwc1  $f10, 0x4c($sp)
 /* 0EA068 80189628 8CEA0000 */  lw    $t2, ($a3)
 /* 0EA06C 8018962C 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0EA070 80189630 2508E7C0 */  addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840
 /* 0EA074 80189634 000A5880 */  sll   $t3, $t2, 2
 /* 0EA078 80189638 002B0821 */  addu  $at, $at, $t3
-/* 0EA07C 8018963C C4302790 */ lwc1 $f16, %lo(gEntitiesPosYArray)($at)
+/* 0EA07C 8018963C C4302790 */ lwc1 $f16, %lo(gEntitiesNextPosYArray)($at)
 /* 0EA080 80189640 3C028013 */  lui   $v0, %hi(D_8012E9C8) # $v0, 0x8013
 /* 0EA084 80189644 3C01C2F0 */  li    $at, 0xC2F00000 # -120.000000
 /* 0EA088 80189648 46105001 */  sub.s $f0, $f10, $f16

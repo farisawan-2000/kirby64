@@ -9,9 +9,9 @@ glabel func_801D1E58_ovl8
 /* 175954 801D1E74 44812000 */  mtc1  $at, $f4
 /* 175958 801D1E78 8DCF0000 */  lw    $t7, ($t6)
 /* 17595C 801D1E7C 8FBF0014 */  lw    $ra, 0x14($sp)
-/* 175960 801D1E80 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 175960 801D1E80 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 175964 801D1E84 000FC080 */  sll   $t8, $t7, 2
 /* 175968 801D1E88 00380821 */  addu  $at, $at, $t8
 /* 17596C 801D1E8C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 175970 801D1E90 03E00008 */  jr    $ra
-/* 175974 801D1E94 E4242790 */ swc1 $f4, %lo(gEntitiesPosYArray)($at)
+/* 175974 801D1E94 E4242790 */ swc1 $f4, %lo(gEntitiesNextPosYArray)($at)

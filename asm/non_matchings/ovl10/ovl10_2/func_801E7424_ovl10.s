@@ -18,12 +18,12 @@ glabel func_801E7424_ovl10
 /* 1D81D4 801E7464 E7A40048 */   swc1  $f4, 0x48($sp)
 /* 1D81D8 801E7468 3C098005 */  lui   $t1, %hi(D_8004A7C4) # $t1, 0x8005
 /* 1D81DC 801E746C 8D29A7C4 */  lw    $t1, %lo(D_8004A7C4)($t1)
-/* 1D81E0 801E7470 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 1D81E0 801E7470 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 1D81E4 801E7474 C7AE0048 */  lwc1  $f14, 0x48($sp)
 /* 1D81E8 801E7478 8D2A0000 */  lw    $t2, ($t1)
 /* 1D81EC 801E747C 000A5880 */  sll   $t3, $t2, 2
 /* 1D81F0 801E7480 002B0821 */  addu  $at, $at, $t3
-/* 1D81F4 801E7484 C4262790 */ lwc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 1D81F4 801E7484 C4262790 */ lwc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 1D81F8 801E7488 0C0061C3 */  jal   atan2f
 /* 1D81FC 801E748C 46060301 */   sub.s $f12, $f0, $f6
 /* 1D8200 801E7490 44801000 */  mtc1  $zero, $f2

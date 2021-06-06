@@ -5,12 +5,12 @@ glabel func_801DFD48_ovl16
 /* 216004 801DFD54 3C014375 */  li    $at, 0x43750000 # 245.000000
 /* 216008 801DFD58 8DC20000 */  lw    $v0, ($t6)
 /* 21600C 801DFD5C 44812000 */  mtc1  $at, $f4
-/* 216010 801DFD60 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 216010 801DFD60 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 216014 801DFD64 00021080 */  sll   $v0, $v0, 2
 /* 216018 801DFD68 01E27821 */  addu  $t7, $t7, $v0
 /* 21601C 801DFD6C 8DEFFBD0 */ lw $t7, %lo(D_800DFBD0)($t7)
 /* 216020 801DFD70 00220821 */  addu  $at, $at, $v0
-/* 216024 801DFD74 C4262790 */ lwc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 216024 801DFD74 C4262790 */ lwc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 216028 801DFD78 8DE30014 */  lw    $v1, 0x14($t7)
 /* 21602C 801DFD7C 3C18800F */  lui   $t8, %hi(D_800E9E20) # $t8, 0x800f
 /* 216030 801DFD80 27189E20 */  addiu $t8, %lo(D_800E9E20) # addiu $t8, $t8, -0x61e0

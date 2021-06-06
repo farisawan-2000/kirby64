@@ -226,14 +226,14 @@ void func_800F8C70(struct UnkStruct800DE350 *arg0) {
 
     temp_v0 = *arg0;
     temp_v1 = temp_v0 * 4;
-    temp_f6 = (D_800E2CD0[temp_v0] + *(&gEntitiesPosYArray + temp_v1) + 20.0f) / 2.0f;
+    temp_f6 = (gEntitiesPosYArray[temp_v0] + *(&gEntitiesNextPosYArray + temp_v1) + 20.0f) / 2.0f;
     sp2C = temp_v1;
     temp_a0 = &sp60;
     temp_a1 = &sp54;
-    sp60 = D_800E2B10[temp_v0];
-    sp68 = D_800E2E90[temp_v0];
-    sp54 = *(&gEntitiesPosXArray + temp_v1);
-    sp5C = *(&gEntitiesPosZArray + temp_v1);
+    sp60 = gEntitiesPosXArray[temp_v0];
+    sp68 = gEntitiesPosZArray[temp_v0];
+    sp54 = *(&gEntitiesNextPosXArray + temp_v1);
+    sp5C = *(&gEntitiesNextPosZArray + temp_v1);
     sp58 = temp_f6;
     sp64 = temp_f6;
     if (func_801046A0(temp_a0, temp_a1, 0, 0, 0, &sp50) != 0) {
@@ -2622,9 +2622,9 @@ extern u16 D_800E77A0[];
 extern s8 D_800E7880[];
 extern s8 D_800E78F0[];
 extern s32 D_800E8AE0[];
-extern f32 gEntitiesPosXArray[];
-extern f32 gEntitiesPosYArray[];
-extern f32 gEntitiesPosZArray[];
+extern f32 gEntitiesNextPosXArray[];
+extern f32 gEntitiesNextPosYArray[];
+extern f32 gEntitiesNextPosZArray[];
 extern f32 gEntitiesAngleXArray[];
 extern f32 gEntitiesAngleYArray[];
 extern f32 gEntitiesAngleZArray[];
@@ -2699,9 +2699,9 @@ s32 func_800FCA84(s32 arg0, u8 bankID, u8 entID,
 
     D_800E8AE0[temp_v0] = (respawnFlag & 2) ? 2 : 0;
 
-    gEntitiesPosXArray[temp_v0] = (*pos)[0];
-    gEntitiesPosYArray[temp_v0] = (*pos)[1];
-    gEntitiesPosZArray[temp_v0] = (*pos)[2];
+    gEntitiesNextPosXArray[temp_v0] = (*pos)[0];
+    gEntitiesNextPosYArray[temp_v0] = (*pos)[1];
+    gEntitiesNextPosZArray[temp_v0] = (*pos)[2];
     gEntitiesAngleXArray[temp_v0] = (*angle)[0];
     gEntitiesAngleYArray[temp_v0] = (*angle)[1];
     gEntitiesAngleZArray[temp_v0] = (*angle)[2];

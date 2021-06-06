@@ -47,10 +47,10 @@ glabel func_8022889C_ovl19
 /* 249060 80228950 8C6F0000 */  lw    $t7, ($v1)
 /* 249064 80228954 3C018023 */  lui   $at, %hi(D_8022F964) # $at, 0x8023
 /* 249068 80228958 C426F964 */  lwc1  $f6, %lo(D_8022F964)($at)
-/* 24906C 8022895C 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 24906C 8022895C 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 249070 80228960 000FC080 */  sll   $t8, $t7, 2
 /* 249074 80228964 00380821 */  addu  $at, $at, $t8
-/* 249078 80228968 E4262790 */ swc1 $f6, %lo(gEntitiesPosYArray)($at)
+/* 249078 80228968 E4262790 */ swc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 24907C 8022896C 8C6E0000 */  lw    $t6, ($v1)
 /* 249080 80228970 3C01800E */ lui $at, %hi(D_800E4550)
 /* 249084 80228974 3C040002 */  lui   $a0, (0x00020066 >> 16) # lui $a0, 2

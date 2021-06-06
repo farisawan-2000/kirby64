@@ -91,7 +91,7 @@ glabel func_802211A0_ovl19
 /* 241A00 802212F0 16880005 */  bne   $s4, $t0, .L80221308_ovl19
 /* 241A04 802212F4 00000000 */   nop   
 /* 241A08 802212F8 10000007 */  b     .L80221318_ovl19
-/* 241A0C 802212FC 3C10800E */   lui   $s0, %hi(gEntitiesPosYArray) # $s0, 0x800e
+/* 241A0C 802212FC 3C10800E */   lui   $s0, %hi(gEntitiesNextPosYArray) # $s0, 0x800e
 .L80221300_ovl19:
 /* 241A10 80221300 0C02C640 */  jal   func_800B1900
 /* 241A14 80221304 3044FFFF */   andi  $a0, $v0, 0xffff
@@ -103,7 +103,7 @@ glabel func_802211A0_ovl19
 .L80221318_ovl19:
 /* 241A28 80221318 3C014320 */  li    $at, 0x43200000 # 160.000000
 /* 241A2C 8022131C 44812000 */  mtc1  $at, $f4
-/* 241A30 80221320 26102790 */  addiu $s0, %lo(gEntitiesPosYArray) # addiu $s0, $s0, 0x2790
+/* 241A30 80221320 26102790 */  addiu $s0, %lo(gEntitiesNextPosYArray) # addiu $s0, $s0, 0x2790
 /* 241A34 80221324 02036021 */  addu  $t4, $s0, $v1
 /* 241A38 80221328 3C0D800C */  lui   $t5, %hi(D_800BE508) # $t5, 0x800c
 /* 241A3C 8022132C E5840000 */  swc1  $f4, ($t4)
@@ -116,18 +116,18 @@ glabel func_802211A0_ovl19
 /* 241A58 80221348 0C029D9E */  jal   play_sound
 /* 241A5C 8022134C 24040112 */   li    $a0, 274
 /* 241A60 80221350 8E6F0000 */  lw    $t7, ($s3)
-/* 241A64 80221354 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
-/* 241A68 80221358 3C07800E */ lui $a3, %hi(gEntitiesPosXArray)
+/* 241A64 80221354 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
+/* 241A68 80221358 3C07800E */ lui $a3, %hi(gEntitiesNextPosXArray)
 /* 241A6C 8022135C 8DE30000 */  lw    $v1, ($t7)
 /* 241A70 80221360 24040003 */  li    $a0, 3
 /* 241A74 80221364 00002825 */  move  $a1, $zero
 /* 241A78 80221368 00031880 */  sll   $v1, $v1, 2
 /* 241A7C 8022136C 0203C021 */  addu  $t8, $s0, $v1
 /* 241A80 80221370 00230821 */  addu  $at, $at, $v1
-/* 241A84 80221374 C4282950 */ lwc1 $f8, %lo(gEntitiesPosZArray)($at)
+/* 241A84 80221374 C4282950 */ lwc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 241A88 80221378 C7060000 */  lwc1  $f6, ($t8)
 /* 241A8C 8022137C 00E33821 */  addu  $a3, $a3, $v1
-/* 241A90 80221380 8CE725D0 */ lw $a3, %lo(gEntitiesPosXArray)($a3)
+/* 241A90 80221380 8CE725D0 */ lw $a3, %lo(gEntitiesNextPosXArray)($a3)
 /* 241A94 80221384 240600CE */  li    $a2, 206
 /* 241A98 80221388 E7A80014 */  swc1  $f8, 0x14($sp)
 /* 241A9C 8022138C 0C029FDD */  jal   func_800A7F74

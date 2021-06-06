@@ -1493,7 +1493,7 @@ loop_40:
     ((temp_v1_5->objId * 4) + 0x800E0000)->unk2790 = sp28;
     ((temp_v1_5->objId * 4) + 0x800E0000)->unk-1070 = &func_800B4954;
     temp_a2 = temp_v1_5->objId;
-    func_800F98EC(temp_a2, gEntitiesPosXArray[temp_a2] - gEntitiesPosXArray[((temp_a2 * 4) + 0x800E0000)->unkD50]);
+    func_800F98EC(temp_a2, gEntitiesNextPosXArray[temp_a2] - gEntitiesNextPosXArray[((temp_a2 * 4) + 0x800E0000)->unkD50]);
     func_800FBE1C();
     func_800FA414(3);
     func_800BB468(4, 0x28);
@@ -1672,7 +1672,7 @@ void *func_80159EF0_ovl3(s32 arg0) {
         ((temp_v0_3->objId * 4) + 0x800F0000)->unk-78A0 = 0;
         phi_v0 = temp_v0_3;
     } else {
-        temp_a0 = &gEntitiesPosYArray[temp_v1];
+        temp_a0 = &gEntitiesNextPosYArray[temp_v1];
         *temp_a0 = *temp_a0 - D_80196FAC;
         phi_v0 = temp_v0;
     }

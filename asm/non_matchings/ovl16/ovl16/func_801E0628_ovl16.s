@@ -5,12 +5,12 @@ glabel func_801E0628_ovl16
 /* 2168E4 801E0634 3C014375 */  li    $at, 0x43750000 # 245.000000
 /* 2168E8 801E0638 8DC20000 */  lw    $v0, ($t6)
 /* 2168EC 801E063C 44812000 */  mtc1  $at, $f4
-/* 2168F0 801E0640 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 2168F0 801E0640 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 2168F4 801E0644 00021080 */  sll   $v0, $v0, 2
 /* 2168F8 801E0648 01E27821 */  addu  $t7, $t7, $v0
 /* 2168FC 801E064C 8DEFFBD0 */ lw $t7, %lo(D_800DFBD0)($t7)
 /* 216900 801E0650 00220821 */  addu  $at, $at, $v0
-/* 216904 801E0654 C42625D0 */ lwc1 $f6, %lo(gEntitiesPosXArray)($at)
+/* 216904 801E0654 C42625D0 */ lwc1 $f6, %lo(gEntitiesNextPosXArray)($at)
 /* 216908 801E0658 8DE3001C */  lw    $v1, 0x1c($t7)
 /* 21690C 801E065C 3C18800F */  lui   $t8, %hi(D_800E9E20) # $t8, 0x800f
 /* 216910 801E0660 27189E20 */  addiu $t8, %lo(D_800E9E20) # addiu $t8, $t8, -0x61e0

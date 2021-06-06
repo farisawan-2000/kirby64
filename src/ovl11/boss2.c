@@ -104,19 +104,19 @@ void func_801DB34C_ovl11(void) {
         D_800E6150[temp_v0] = D_800E5F90[temp_v0];
         D_800E6D90[temp_v0] = D_800E6BD0[temp_v0];
         // regalloc starts here?
+        gEntitiesNextPosXArray[temp_v0] = gEntitiesNextPosXArray[D_8004A7C4->objId];
         gEntitiesPosXArray[temp_v0] = gEntitiesPosXArray[D_8004A7C4->objId];
-        D_800E2B10[temp_v0] = D_800E2B10[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[temp_v0] = gEntitiesNextPosYArray[D_8004A7C4->objId];
         gEntitiesPosYArray[temp_v0] = gEntitiesPosYArray[D_8004A7C4->objId];
-        D_800E2CD0[temp_v0] = D_800E2CD0[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[temp_v0] = gEntitiesNextPosZArray[D_8004A7C4->objId];
         gEntitiesPosZArray[temp_v0] = gEntitiesPosZArray[D_8004A7C4->objId];
-        D_800E2E90[temp_v0] = D_800E2E90[D_8004A7C4->objId];
         D_800E8E60[temp_v0] = 0;
         D_800EA520[temp_v0] = D_8004A7C4->objId;
     }
 }
 
-extern f32 gEntitiesPosXArray[];
-extern f32 gEntitiesPosZArray[];
+extern f32 gEntitiesNextPosXArray[];
+extern f32 gEntitiesNextPosZArray[];
 extern f32 gEntitiesAngleYArray[];
 
 extern f32 vec3_abs_angle_diff(Vector *arg0, Vector *arg1);
@@ -128,9 +128,9 @@ f32 func_801DB5C8_ovl11(void) {
     sp2C.x = sp2C.y = 0.0f;
     sp2C.z = 2.0f;
     vec3_get_euler_rotation(&sp2C, AXIS_Y, gEntitiesAngleYArray[D_8004A7C4->objId]);
-    sp20.x = gEntitiesPosXArray[0] - gEntitiesPosXArray[D_8004A7C4->objId];
+    sp20.x = gEntitiesNextPosXArray[0] - gEntitiesNextPosXArray[D_8004A7C4->objId];
     sp20.y = 0.0f;
-    sp20.z = gEntitiesPosZArray[0] - gEntitiesPosZArray[D_8004A7C4->objId];
+    sp20.z = gEntitiesNextPosZArray[0] - gEntitiesNextPosZArray[D_8004A7C4->objId];
     return vec3_abs_angle_diff(&sp2C, &sp20);
 }
 
@@ -1397,7 +1397,7 @@ void func_801DDA4C_ovl11(s32 arg0) {
         phi_t0 = temp_a1->unk94;
         phi_v0 = D_8004A7C4;
     }
-    func_800FD570(0, phi_t0->unk18, 0.0f, gEntitiesPosYArray[phi_v0->objId] + 100.0f, 0.0f);
+    func_800FD570(0, phi_t0->unk18, 0.0f, gEntitiesNextPosYArray[phi_v0->objId] + 100.0f, 0.0f);
     func_800BB468(3, 0);
     func_8019F1EC_ovl11();
     func_800AA018(0x103F6);

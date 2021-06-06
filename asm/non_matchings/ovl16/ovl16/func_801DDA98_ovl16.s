@@ -83,8 +83,8 @@ glabel func_801DDA98_ovl16
 /* 213E84 801DDBD4 008E2021 */  addu  $a0, $a0, $t6
 /* 213E88 801DDBD8 0C02A619 */  jal   func_800A9864
 /* 213E8C 801DDBDC 8C84F728 */ lw $a0, %lo(D_801EF728_ovl16)($a0)
-/* 213E90 801DDBE0 3C17800E */  lui   $s7, %hi(gEntitiesPosYArray) # $s7, 0x800e
-/* 213E94 801DDBE4 26F72790 */  addiu $s7, %lo(gEntitiesPosYArray) # addiu $s7, $s7, 0x2790
+/* 213E90 801DDBE0 3C17800E */  lui   $s7, %hi(gEntitiesNextPosYArray) # $s7, 0x800e
+/* 213E94 801DDBE4 26F72790 */  addiu $s7, %lo(gEntitiesNextPosYArray) # addiu $s7, $s7, 0x2790
 /* 213E98 801DDBE8 3C014234 */  li    $at, 0x42340000 # 45.000000
 /* 213E9C 801DDBEC 02F39021 */  addu  $s2, $s7, $s3
 /* 213EA0 801DDBF0 4481B000 */  mtc1  $at, $f22

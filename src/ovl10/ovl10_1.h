@@ -19,9 +19,9 @@ extern u16 D_800E77A0[];
 extern s32 D_800E6150[];
 
 extern f32 D_800E6D90[];
-extern f32 D_800E2B10[];
-extern f32 D_800E2CD0[];
-extern f32 D_800E2E90[];
+extern f32 gEntitiesPosXArray[];
+extern f32 gEntitiesPosYArray[];
+extern f32 gEntitiesPosZArray[];
 extern s32 D_800E0D50[];
 extern s32 D_801F3F94_ovl10;
 extern s32 D_801F4070_ovl10;

@@ -130,12 +130,12 @@ glabel func_800B2340
 /* 05A76C 800B251C 3C19800E */  lui   $t9, %hi(gEntitiesAngleXArray) # $t9, 0x800e
 /* 05A770 800B2520 3C08800E */  lui   $t0, %hi(gEntitiesAngleYArray) # $t0, 0x800e
 /* 05A774 800B2524 3C09800E */  lui   $t1, %hi(gEntitiesAngleZArray) # $t1, 0x800e
-/* 05A778 800B2528 3C0A800E */  lui   $t2, %hi(gEntitiesPosXArray) # $t2, 0x800e
-/* 05A77C 800B252C 3C0B800E */  lui   $t3, %hi(gEntitiesPosYArray) # $t3, 0x800e
-/* 05A780 800B2530 3C0C800E */  lui   $t4, %hi(gEntitiesPosZArray) # $t4, 0x800e
-/* 05A784 800B2534 258C2950 */  addiu $t4, %lo(gEntitiesPosZArray) # addiu $t4, $t4, 0x2950
-/* 05A788 800B2538 256B2790 */  addiu $t3, %lo(gEntitiesPosYArray) # addiu $t3, $t3, 0x2790
-/* 05A78C 800B253C 254A25D0 */  addiu $t2, %lo(gEntitiesPosXArray) # addiu $t2, $t2, 0x25d0
+/* 05A778 800B2528 3C0A800E */  lui   $t2, %hi(gEntitiesNextPosXArray) # $t2, 0x800e
+/* 05A77C 800B252C 3C0B800E */  lui   $t3, %hi(gEntitiesNextPosYArray) # $t3, 0x800e
+/* 05A780 800B2530 3C0C800E */  lui   $t4, %hi(gEntitiesNextPosZArray) # $t4, 0x800e
+/* 05A784 800B2534 258C2950 */  addiu $t4, %lo(gEntitiesNextPosZArray) # addiu $t4, $t4, 0x2950
+/* 05A788 800B2538 256B2790 */  addiu $t3, %lo(gEntitiesNextPosYArray) # addiu $t3, $t3, 0x2790
+/* 05A78C 800B253C 254A25D0 */  addiu $t2, %lo(gEntitiesNextPosXArray) # addiu $t2, $t2, 0x25d0
 /* 05A790 800B2540 25294390 */  addiu $t1, %lo(gEntitiesAngleZArray) # addiu $t1, $t1, 0x4390
 /* 05A794 800B2544 250841D0 */  addiu $t0, %lo(gEntitiesAngleYArray) # addiu $t0, $t0, 0x41d0
 /* 05A798 800B2548 27394010 */  addiu $t9, %lo(gEntitiesAngleXArray) # addiu $t9, $t9, 0x4010

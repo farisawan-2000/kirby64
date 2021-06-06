@@ -20,12 +20,12 @@ glabel func_801180B8
 /* 0A0B68 801180F8 3C018013 */  lui   $at, %hi(D_80128D5C) # $at, 0x8013
 /* 0A0B6C 801180FC C4248D5C */  lwc1  $f4, %lo(D_80128D5C)($at)
 /* 0A0B70 80118100 8F190000 */  lw    $t9, ($t8)
-/* 0A0B74 80118104 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 0A0B74 80118104 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 0A0B78 80118108 00002025 */  move  $a0, $zero
 /* 0A0B7C 8011810C 00194080 */  sll   $t0, $t9, 2
 /* 0A0B80 80118110 00280821 */  addu  $at, $at, $t0
 /* 0A0B84 80118114 0C00236A */  jal   func_80008DA8
-/* 0A0B88 80118118 E4242790 */ swc1 $f4, %lo(gEntitiesPosYArray)($at)
+/* 0A0B88 80118118 E4242790 */ swc1 $f4, %lo(gEntitiesNextPosYArray)($at)
 /* 0A0B8C 8011811C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 0A0B90 80118120 8FB00018 */  lw    $s0, 0x18($sp)
 /* 0A0B94 80118124 27BD0020 */  addiu $sp, $sp, 0x20

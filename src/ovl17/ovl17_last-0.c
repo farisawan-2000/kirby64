@@ -142,12 +142,12 @@ void func_801E49B8_ovl17(s32 arg0) {
     gEntitiesAngleYArray[D_8004A7C4->objId] = gEntitiesAngleYArray[D_800E0D50[D_8004A7C4->objId]];
     gEntitiesAngleZArray[D_8004A7C4->objId] = gEntitiesAngleZArray[D_800E0D50[D_8004A7C4->objId]];
     func_800B2340(&sp3C, sp2C, 0xFFFF, gEntitiesAngleXArray);
-    gEntitiesPosXArray[D_8004A7C4->objId] = sp3C.x;
-    gEntitiesPosYArray[D_8004A7C4->objId] = sp3C.y;
-    gEntitiesPosZArray[D_8004A7C4->objId] = sp3C.z;
-    sp30.x = -gEntitiesPosXArray[D_8004A7C4->objId];
-    sp30.y = -gEntitiesPosYArray[D_8004A7C4->objId];
-    sp30.z = -gEntitiesPosZArray[D_8004A7C4->objId];
+    gEntitiesNextPosXArray[D_8004A7C4->objId] = sp3C.x;
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = sp3C.y;
+    gEntitiesNextPosZArray[D_8004A7C4->objId] = sp3C.z;
+    sp30.x = -gEntitiesNextPosXArray[D_8004A7C4->objId];
+    sp30.y = -gEntitiesNextPosYArray[D_8004A7C4->objId];
+    sp30.z = -gEntitiesNextPosZArray[D_8004A7C4->objId];
     vec3_normalize(&sp30);
     // tmp2 = D_801E56CC;
     // source of memes
@@ -171,8 +171,8 @@ GLOBAL_ASM("asm/non_matchings/ovl17/ovl17_last-0/func_801E49B8_ovl17.s")
 
 void func_801E4DD4_ovl17(s32 arg0) {
     if (func_801A03B4_ovl17() != 0) {
-        gEntitiesPosXArray[D_8004A7C4->objId] = D_800E2B10[D_8004A7C4->objId];
-        gEntitiesPosYArray[D_8004A7C4->objId] = D_800E2CD0[D_8004A7C4->objId];
-        gEntitiesPosZArray[D_8004A7C4->objId] = D_800E2E90[D_8004A7C4->objId];
+        gEntitiesNextPosXArray[D_8004A7C4->objId] = gEntitiesPosXArray[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[D_8004A7C4->objId] = gEntitiesPosZArray[D_8004A7C4->objId];
     }
 }

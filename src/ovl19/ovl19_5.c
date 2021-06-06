@@ -60,7 +60,7 @@ extern f32 D_800E3C90[];
 extern f32 D_800E3AD0[];
 extern u32 D_800EC120[];
 extern u32 D_800E0D50[];
-extern f32 gEntitiesPosYArray[];
+extern f32 gEntitiesNextPosYArray[];
 extern f32 D_800E3910[];
 extern u32 D_800D6E64;
 extern f32 D_8022FA94;
@@ -76,8 +76,8 @@ void func_8022E798_ovl19(s32 arg0) {
     sp20 = D_800E9AA0[x];
     if (func_801A0880_ovl19() == 0) {
         if (D_800E3210[D_8004A7C4->objId] != 0.0f) {
-            if (gEntitiesPosYArray[D_8004A7C4->objId] <= sp20->unkC) {
-                gEntitiesPosYArray[D_8004A7C4->objId] = sp20->unkC;
+            if (gEntitiesNextPosYArray[D_8004A7C4->objId] <= sp20->unkC) {
+                gEntitiesNextPosYArray[D_8004A7C4->objId] = sp20->unkC;
                 D_800E3910[D_8004A7C4->objId] = 0.0f;
                 // temp_f0 = D_800E3910[D_8004A7C4->objId];
                 D_800E3750[D_8004A7C4->objId] = 0.0f;//temp_f0;
@@ -159,7 +159,7 @@ void func_8022EB54_ovl19(s32 arg0) {
     if (func_801A0880_ovl19() == 0) {
         temp_v0_2 = D_8004A7C4;
         temp_v1 = temp_v0_2->objId;
-        temp_a1 = &gEntitiesPosYArray[temp_v1];
+        temp_a1 = &gEntitiesNextPosYArray[temp_v1];
         if (D_800E3210[temp_v1] != 0.0f) {
             temp_f12 = sp20->unkC;
             if (*temp_a1 <= temp_f12) {
@@ -237,7 +237,7 @@ void func_8022EE78_ovl19(s32 arg0) {
     if (func_801A0880_ovl19() == 0) {
         temp_v0_2 = D_8004A7C4;
         temp_v1 = temp_v0_2->objId;
-        temp_a1 = &gEntitiesPosYArray[temp_v1];
+        temp_a1 = &gEntitiesNextPosYArray[temp_v1];
         if (D_800E3210[temp_v1] != 0.0f) {
             temp_f12 = sp20->unkC;
             if (*temp_a1 <= temp_f12) {

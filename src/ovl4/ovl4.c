@@ -85,7 +85,7 @@ void func_80151274_ovl4(void) {
     f32 temp_f0;
     s32 tmp;
 
-    gEntitiesPosZArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosZArray[D_8004A7C4->objId] = 0.0f;
     tmp = random_soft_u16();
     temp_f0 = 0.2f;
     gEntitiesAngleYArray[D_8004A7C4->objId] =
@@ -97,8 +97,8 @@ void func_80151274_ovl4(void) {
 
 // handles menu states? (n64 logo, hal logo, cutscene, etc.)
 void func_80151338_ovl4(s32 arg0) {
-    gEntitiesPosXArray[D_8004A7C4->objId] = 0.0f;
-    gEntitiesPosYArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosXArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = 0.0f;
     switch (D_800E98E0[D_8004A7C4->objId]) {
         case 0:
             func_800AF8C0(0x17, 0xE, 4);
@@ -127,8 +127,8 @@ void func_80151338_ovl4(s32 arg0) {
             func_800A5A14(0, 8, 2);
             break;
         case 2:
-            gEntitiesPosXArray[D_8004A7C4->objId] = 10.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = 10.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 10.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = 10.0f;
             func_800AF8C0(0x19, 0x12, 4);
             func_800A6F68(0x10, 0.0f, 0.0f, 600.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
             func_800A57A0(0, 0, 0);
@@ -142,16 +142,16 @@ void func_80151338_ovl4(s32 arg0) {
             break;
         case 5:
             func_800A9864(0x20060, 0x1869F, 0x10);
-            gEntitiesPosXArray[D_8004A7C4->objId] = -150.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = -90.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = -150.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = -90.0f;
             func_80151274_ovl4();
             func_800AA018(0x202DB);
             func_800AA018(0x202DC);
             break;
         case 7:
             func_800A9864(0x2006F, 0x1869F, 0x10);
-            gEntitiesPosXArray[D_8004A7C4->objId] = -75.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = -90.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = -75.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = -90.0f;
             func_80151274_ovl4();
             func_800AA018(0x203D7);
             func_800AA018(0x203D8);
@@ -159,38 +159,38 @@ void func_80151338_ovl4(s32 arg0) {
         case 3: break;
         case 4:
             func_800A9864(0x20007, 0x1869F, 0x10);
-            gEntitiesPosXArray[D_8004A7C4->objId] = 0.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = -90.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 0.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = -90.0f;
             func_80151274_ovl4();
             func_800AA018(0x2009B);
             func_800AA018(0x2009C);
             break;
         case 6:
             func_800A9864(0x2006B, 0x1869F, 0x10);
-            gEntitiesPosXArray[D_8004A7C4->objId] = 75.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = -90.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 75.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = -90.0f;
             func_80151274_ovl4();
             func_800AA018(0x203B2);
             func_800AA018(0x203B3);
             break;
         case 8:
             func_800A9864(0x300C4, 0x1869F, 0x10);
-            gEntitiesPosXArray[D_8004A7C4->objId] = 150.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = -60.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 150.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = -60.0f;
             func_80151274_ovl4();
             func_800AA018(0x301D9);
             break;
         case 9:
-            gEntitiesPosXArray[D_8004A7C4->objId] = 32.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = 88.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 32.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = 88.0f;
             func_800AF8C0(0x1A, 0xE, 6);
             func_800A5B14(arg0, 0xFF, 0xD8, 0, 0xFF);
             func_800A57A0(0, 0, 0);
             func_800A5A14(0xFF, -8, 0);
             break;
         case 10:
-            gEntitiesPosXArray[D_8004A7C4->objId] = 48.0f;
-            gEntitiesPosYArray[D_8004A7C4->objId] = 101.0f;
+            gEntitiesNextPosXArray[D_8004A7C4->objId] = 48.0f;
+            gEntitiesNextPosYArray[D_8004A7C4->objId] = 101.0f;
             func_800AF8C0(0x1B, 0xE, 6);
             func_800A5B14(arg0, 0xF7, 0xD6, 0, 0xFF);
             func_800A57A0(0, 0, 0);

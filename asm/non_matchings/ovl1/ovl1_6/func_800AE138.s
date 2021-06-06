@@ -111,24 +111,24 @@ glabel func_800AE138
 /* 05653C 800AE2EC E4222090 */ swc1 $f2, %lo(D_800E2090)($at)
 /* 056540 800AE2F0 3C01800D */  lui   $at, %hi(D_800D66F8) # $at, 0x800d
 /* 056544 800AE2F4 C42C66F8 */  lwc1  $f12, %lo(D_800D66F8)($at)
-/* 056548 800AE2F8 3C01800E */ lui $at, %hi(D_800E2E90)
+/* 056548 800AE2F8 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
 /* 05654C 800AE2FC 00220821 */  addu  $at, $at, $v0
-/* 056550 800AE300 E4222E90 */ swc1 $f2, %lo(D_800E2E90)($at)
-/* 056554 800AE304 3C01800E */ lui $at, %hi(D_800E2CD0)
+/* 056550 800AE300 E4222E90 */ swc1 $f2, %lo(gEntitiesPosZArray)($at)
+/* 056554 800AE304 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
 /* 056558 800AE308 00220821 */  addu  $at, $at, $v0
-/* 05655C 800AE30C E4222CD0 */ swc1 $f2, %lo(D_800E2CD0)($at)
-/* 056560 800AE310 3C01800E */ lui $at, %hi(D_800E2B10)
+/* 05655C 800AE30C E4222CD0 */ swc1 $f2, %lo(gEntitiesPosYArray)($at)
+/* 056560 800AE310 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
 /* 056564 800AE314 00220821 */  addu  $at, $at, $v0
-/* 056568 800AE318 E4222B10 */ swc1 $f2, %lo(D_800E2B10)($at)
-/* 05656C 800AE31C 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 056568 800AE318 E4222B10 */ swc1 $f2, %lo(gEntitiesPosXArray)($at)
+/* 05656C 800AE31C 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 056570 800AE320 00220821 */  addu  $at, $at, $v0
-/* 056574 800AE324 E4222950 */ swc1 $f2, %lo(gEntitiesPosZArray)($at)
-/* 056578 800AE328 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 056574 800AE324 E4222950 */ swc1 $f2, %lo(gEntitiesNextPosZArray)($at)
+/* 056578 800AE328 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 05657C 800AE32C 00220821 */  addu  $at, $at, $v0
-/* 056580 800AE330 E4222790 */ swc1 $f2, %lo(gEntitiesPosYArray)($at)
-/* 056584 800AE334 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 056580 800AE330 E4222790 */ swc1 $f2, %lo(gEntitiesNextPosYArray)($at)
+/* 056584 800AE334 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 056588 800AE338 00220821 */  addu  $at, $at, $v0
-/* 05658C 800AE33C E42225D0 */ swc1 $f2, %lo(gEntitiesPosXArray)($at)
+/* 05658C 800AE33C E42225D0 */ swc1 $f2, %lo(gEntitiesNextPosXArray)($at)
 /* 056590 800AE340 3C01800E */ lui $at, %hi(D_800E3910)
 /* 056594 800AE344 00220821 */  addu  $at, $at, $v0
 /* 056598 800AE348 E4223910 */ swc1 $f2, %lo(D_800E3910)($at)

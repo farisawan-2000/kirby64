@@ -24,11 +24,11 @@ glabel func_8022EB54_ovl19
 /* 24F2BC 8022EBAC 25083210 */  addiu $t0, %lo(D_800E3210) # addiu $t0, $t0, 0x3210
 /* 24F2C0 8022EBB0 8C430000 */  lw    $v1, ($v0)
 /* 24F2C4 8022EBB4 44802000 */  mtc1  $zero, $f4
-/* 24F2C8 8022EBB8 3C0C800E */  lui   $t4, %hi(gEntitiesPosYArray) # $t4, 0x800e
+/* 24F2C8 8022EBB8 3C0C800E */  lui   $t4, %hi(gEntitiesNextPosYArray) # $t4, 0x800e
 /* 24F2CC 8022EBBC 00031880 */  sll   $v1, $v1, 2
 /* 24F2D0 8022EBC0 01035021 */  addu  $t2, $t0, $v1
 /* 24F2D4 8022EBC4 C5460000 */  lwc1  $f6, ($t2)
-/* 24F2D8 8022EBC8 258C2790 */  addiu $t4, %lo(gEntitiesPosYArray) # addiu $t4, $t4, 0x2790
+/* 24F2D8 8022EBC8 258C2790 */  addiu $t4, %lo(gEntitiesNextPosYArray) # addiu $t4, $t4, 0x2790
 /* 24F2DC 8022EBCC 006C2821 */  addu  $a1, $v1, $t4
 /* 24F2E0 8022EBD0 46062032 */  c.eq.s $f4, $f6
 /* 24F2E4 8022EBD4 8FAB0020 */  lw    $t3, 0x20($sp)

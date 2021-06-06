@@ -8,7 +8,7 @@ extern f32 D_800E6A10[];
 extern f32 D_800D6B10;
 extern s32 D_800E8920[];
 extern void (*D_800DF150[])(s32);
-extern f32 gEntitiesPosYArray[];
+extern f32 gEntitiesNextPosYArray[];
 
 extern u16 D_800E77A0[];
 extern u8 D_800E7730[];
@@ -200,9 +200,9 @@ void func_801BDBFC_ovl7(void) {
         func_801A3E80_ovl7();
     }
     func_800AFBB4(0, D_8004A7C4);
-    v1.x = v2.x = v3.x = v4.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    v1.y = v2.y = v3.y = v4.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    v1.z = v2.z = v3.z = v4.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    v1.x = v2.x = v3.x = v4.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    v1.y = v2.y = v3.y = v4.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    v1.z = v2.z = v3.z = v4.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
@@ -339,9 +339,9 @@ void func_801BE21C_ovl7(UNUSED s32 arg0) {
     Vector v1, v2, v3, v4;
 
     func_800AFBB4(0, D_8004A7C4);
-    v1.x = v2.x = v3.x = v4.x = gEntitiesPosXArray[D_8004A7C4->objId];
-    v1.y = v2.y = v3.y = v4.y = gEntitiesPosYArray[D_8004A7C4->objId];
-    v1.z = v2.z = v3.z = v4.z = gEntitiesPosZArray[D_8004A7C4->objId];
+    v1.x = v2.x = v3.x = v4.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    v1.y = v2.y = v3.y = v4.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    v1.z = v2.z = v3.z = v4.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     v2.x += 60.0f;
     v3.y += 60.0f;
     v4.z += 60.0f;
@@ -547,8 +547,8 @@ block_14:
     *(&D_800E98E0 + phi_v1) = 0;
     *(&D_800E5F90 + (*phi_v0 * 4)) = (s32) D_800E5F90;
     *(&D_800E6BD0 + (*phi_v0 * 4)) = (f32) D_800E6BD0;
-    *(&gEntitiesPosYArray + (*phi_v0 * 4)) = (f32) gEntitiesPosYArray;
-    func_800A9760(0x100C3, &D_800E5F90, &D_800E6BD0, &gEntitiesPosYArray);
+    *(&gEntitiesNextPosYArray + (*phi_v0 * 4)) = (f32) gEntitiesNextPosYArray;
+    func_800A9760(0x100C3, &D_800E5F90, &D_800E6BD0, &gEntitiesNextPosYArray);
     func_800A8100(0, 2, 0x32, (*(&D_800DFBD0 + (*D_8004A7C4 * 4)))->unk4);
     if (func_800B9E4C() != 0) {
         func_800AA018(0x105EC);
@@ -568,7 +568,7 @@ block_14:
     func_800A2300(arg0);
     sp28->unk34 = 0;
     func_800A4794(&sp34, (*(&D_800DFBD0 + (*D_8004A7C4 * 4)))->unk4);
-    *(&gEntitiesPosYArray + (*D_8004A7C4 * 4)) = sp38;
+    *(&gEntitiesNextPosYArray + (*D_8004A7C4 * 4)) = sp38;
     func_800A9760(0x100C4);
     func_800AA018(0x105EE);
     func_8019B164_ovl7();
@@ -676,7 +676,7 @@ void func_801BEF18_ovl7(void) {
 
     func_8019B424_ovl7(D_800DE350[D_8004A7C4->objId]);
     D_800E6690[D_8004A7C4->objId] = D_800E6A10[D_8004A7C4->objId] * 2.5f;
-    temp_f12 = (gEntitiesPosYArray[0] + 20.0f) - gEntitiesPosYArray[D_8004A7C4->objId];
+    temp_f12 = (gEntitiesNextPosYArray[0] + 20.0f) - gEntitiesNextPosYArray[D_8004A7C4->objId];
     if (temp_f12 > 0) {
         D_800E3750[D_8004A7C4->objId] = 2.5f;
     } else {

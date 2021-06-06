@@ -57,16 +57,16 @@ glabel func_800B4D70
 /* 05D09C 800B4E4C E5080000 */   swc1  $f8, ($t0)
 /* 05D0A0 800B4E50 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 05D0A4 800B4E54 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)
-/* 05D0A8 800B4E58 3C05800E */  lui   $a1, %hi(gEntitiesPosYArray) # $a1, 0x800e
-/* 05D0AC 800B4E5C 24A52790 */  addiu $a1, %lo(gEntitiesPosYArray) # addiu $a1, $a1, 0x2790
+/* 05D0A8 800B4E58 3C05800E */  lui   $a1, %hi(gEntitiesNextPosYArray) # $a1, 0x800e
+/* 05D0AC 800B4E5C 24A52790 */  addiu $a1, %lo(gEntitiesNextPosYArray) # addiu $a1, $a1, 0x2790
 /* 05D0B0 800B4E60 8C690000 */  lw    $t1, ($v1)
 /* 05D0B4 800B4E64 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 05D0B8 800B4E68 44818000 */  mtc1  $at, $f16
 /* 05D0BC 800B4E6C 00095080 */  sll   $t2, $t1, 2
 /* 05D0C0 800B4E70 00AA2021 */  addu  $a0, $a1, $t2
 /* 05D0C4 800B4E74 C48A0000 */  lwc1  $f10, ($a0)
-/* 05D0C8 800B4E78 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
-/* 05D0CC 800B4E7C 3C06800E */ lui $a2, %hi(gEntitiesPosZArray)
+/* 05D0C8 800B4E78 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
+/* 05D0CC 800B4E7C 3C06800E */ lui $a2, %hi(gEntitiesNextPosZArray)
 /* 05D0D0 800B4E80 46105480 */  add.s $f18, $f10, $f16
 /* 05D0D4 800B4E84 E4920000 */  swc1  $f18, ($a0)
 /* 05D0D8 800B4E88 8C620000 */  lw    $v0, ($v1)
@@ -74,10 +74,10 @@ glabel func_800B4D70
 /* 05D0E0 800B4E90 00220821 */  addu  $at, $at, $v0
 /* 05D0E4 800B4E94 00A25821 */  addu  $t3, $a1, $v0
 /* 05D0E8 800B4E98 00C23021 */  addu  $a2, $a2, $v0
-/* 05D0EC 800B4E9C 8CC62950 */ lw $a2, %lo(gEntitiesPosZArray)($a2)
+/* 05D0EC 800B4E9C 8CC62950 */ lw $a2, %lo(gEntitiesNextPosZArray)($a2)
 /* 05D0F0 800B4EA0 C56E0000 */  lwc1  $f14, ($t3)
 /* 05D0F4 800B4EA4 0C02CC8D */  jal   func_800B3234
-/* 05D0F8 800B4EA8 C42C25D0 */ lwc1 $f12, %lo(gEntitiesPosXArray)($at)
+/* 05D0F8 800B4EA8 C42C25D0 */ lwc1 $f12, %lo(gEntitiesNextPosXArray)($at)
 /* 05D0FC 800B4EAC 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 05D100 800B4EB0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 05D104 800B4EB4 03E00008 */  jr    $ra

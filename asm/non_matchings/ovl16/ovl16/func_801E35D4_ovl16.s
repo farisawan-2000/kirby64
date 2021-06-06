@@ -158,12 +158,12 @@ glabel func_801E35D4_ovl16
 /* 219AC4 801E3814 3C16801F */  lui   $s6, %hi(D_801F0200) # $s6, 0x801f
 /* 219AC8 801E3818 3C11801F */  lui   $s1, %hi(D_801F0188) # $s1, 0x801f
 /* 219ACC 801E381C 3C12801F */  lui   $s2, %hi(D_801F01D8) # $s2, 0x801f
-/* 219AD0 801E3820 3C15800E */  lui   $s5, %hi(gEntitiesPosYArray) # $s5, 0x800e
-/* 219AD4 801E3824 3C14800E */  lui   $s4, %hi(gEntitiesPosXArray) # $s4, 0x800e
+/* 219AD0 801E3820 3C15800E */  lui   $s5, %hi(gEntitiesNextPosYArray) # $s5, 0x800e
+/* 219AD4 801E3824 3C14800E */  lui   $s4, %hi(gEntitiesNextPosXArray) # $s4, 0x800e
 /* 219AD8 801E3828 4481B000 */  mtc1  $at, $f22
 /* 219ADC 801E382C 4480A000 */  mtc1  $zero, $f20
-/* 219AE0 801E3830 269425D0 */  addiu $s4, %lo(gEntitiesPosXArray) # addiu $s4, $s4, 0x25d0
-/* 219AE4 801E3834 26B52790 */  addiu $s5, %lo(gEntitiesPosYArray) # addiu $s5, $s5, 0x2790
+/* 219AE0 801E3830 269425D0 */  addiu $s4, %lo(gEntitiesNextPosXArray) # addiu $s4, $s4, 0x25d0
+/* 219AE4 801E3834 26B52790 */  addiu $s5, %lo(gEntitiesNextPosYArray) # addiu $s5, $s5, 0x2790
 /* 219AE8 801E3838 265201D8 */  addiu $s2, %lo(D_801F01D8) # addiu $s2, $s2, 0x1d8
 /* 219AEC 801E383C 26310188 */  addiu $s1, %lo(D_801F0188) # addiu $s1, $s1, 0x188
 /* 219AF0 801E3840 26D60200 */  addiu $s6, %lo(D_801F0200) # addiu $s6, $s6, 0x200

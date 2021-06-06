@@ -8,7 +8,7 @@ glabel func_801DDEB8_ovl10
 /* 1CEC40 801DDED0 2610A7C4 */  addiu $s0, %lo(D_8004A7C4) # addiu $s0, $s0, -0x583c
 /* 1CEC44 801DDED4 8E0E0000 */  lw    $t6, ($s0)
 /* 1CEC48 801DDED8 3C03800F */ lui $v1, %hi(D_800EA360)
-/* 1CEC4C 801DDEDC 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 1CEC4C 801DDEDC 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 1CEC50 801DDEE0 8DC60000 */  lw    $a2, ($t6)
 /* 1CEC54 801DDEE4 00063080 */  sll   $a2, $a2, 2
 /* 1CEC58 801DDEE8 00661821 */  addu  $v1, $v1, $a2
@@ -16,24 +16,24 @@ glabel func_801DDEB8_ovl10
 /* 1CEC60 801DDEF0 00260821 */  addu  $at, $at, $a2
 /* 1CEC64 801DDEF4 1060002C */  beqz  $v1, .L801DDFA8_ovl10
 /* 1CEC68 801DDEF8 00000000 */   nop   
-/* 1CEC6C 801DDEFC C42425D0 */ lwc1 $f4, %lo(gEntitiesPosXArray)($at)
+/* 1CEC6C 801DDEFC C42425D0 */ lwc1 $f4, %lo(gEntitiesNextPosXArray)($at)
 /* 1CEC70 801DDF00 8C6F004C */  lw    $t7, 0x4c($v1)
-/* 1CEC74 801DDF04 3C01800E */ lui $at, %hi(gEntitiesPosYArray)
+/* 1CEC74 801DDF04 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 1CEC78 801DDF08 E5E40004 */  swc1  $f4, 4($t7)
 /* 1CEC7C 801DDF0C 8E180000 */  lw    $t8, ($s0)
 /* 1CEC80 801DDF10 8C69004C */  lw    $t1, 0x4c($v1)
 /* 1CEC84 801DDF14 8F190000 */  lw    $t9, ($t8)
 /* 1CEC88 801DDF18 00194080 */  sll   $t0, $t9, 2
 /* 1CEC8C 801DDF1C 00280821 */  addu  $at, $at, $t0
-/* 1CEC90 801DDF20 C4262790 */ lwc1 $f6, %lo(gEntitiesPosYArray)($at)
-/* 1CEC94 801DDF24 3C01800E */ lui $at, %hi(gEntitiesPosZArray)
+/* 1CEC90 801DDF20 C4262790 */ lwc1 $f6, %lo(gEntitiesNextPosYArray)($at)
+/* 1CEC94 801DDF24 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 1CEC98 801DDF28 E5260008 */  swc1  $f6, 8($t1)
 /* 1CEC9C 801DDF2C 8E0A0000 */  lw    $t2, ($s0)
 /* 1CECA0 801DDF30 8C6D004C */  lw    $t5, 0x4c($v1)
 /* 1CECA4 801DDF34 8D4B0000 */  lw    $t3, ($t2)
 /* 1CECA8 801DDF38 000B6080 */  sll   $t4, $t3, 2
 /* 1CECAC 801DDF3C 002C0821 */  addu  $at, $at, $t4
-/* 1CECB0 801DDF40 C4282950 */ lwc1 $f8, %lo(gEntitiesPosZArray)($at)
+/* 1CECB0 801DDF40 C4282950 */ lwc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 1CECB4 801DDF44 3C01800E */ lui $at, %hi(gEntitiesAngleXArray)
 /* 1CECB8 801DDF48 E5A8000C */  swc1  $f8, 0xc($t5)
 /* 1CECBC 801DDF4C 8E0E0000 */  lw    $t6, ($s0)

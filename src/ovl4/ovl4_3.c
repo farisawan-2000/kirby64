@@ -210,9 +210,9 @@ void func_801588F4_ovl4(struct UnkStruct8004A7C4 *arg0, s32 arg1) {
     }
     D_800DF150[D_8004A7C4->objId] = func_80158CFC_ovl4;
     func_800B2340(&posVec, func_801587CC_ovl4(arg1), D_8015C714);
-    gEntitiesPosXArray[D_8004A7C4->objId] = posVec.x;
-    gEntitiesPosYArray[D_8004A7C4->objId] = posVec.y;
-    gEntitiesPosZArray[D_8004A7C4->objId] = posVec.z;
+    gEntitiesNextPosXArray[D_8004A7C4->objId] = posVec.x;
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = posVec.y;
+    gEntitiesNextPosZArray[D_8004A7C4->objId] = posVec.z;
     func_800B26D8(&angleVec, func_801587CC_ovl4(arg1), D_8015C714);
     gEntitiesAngleXArray[D_8004A7C4->objId] = angleVec.x;
     gEntitiesAngleYArray[D_8004A7C4->objId] = angleVec.y;
@@ -400,9 +400,9 @@ void func_80159160_ovl4(s32 arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId];
     D_800E3C90[D_8004A7C4->objId] = D_8015C668;
-    gEntitiesPosXArray[D_8004A7C4->objId] = 0.0f;
-    gEntitiesPosYArray[D_8004A7C4->objId] = 0.0f;
-    gEntitiesPosZArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosXArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = 0.0f;
+    gEntitiesNextPosZArray[D_8004A7C4->objId] = 0.0f;
     D_8015C714 = D_8004A7C4->objId;
     D_800E98E0[D_8004A7C4->objId] = D_800D6B98;
     func_800A9864(0x3000A, 0x1869F, 0x10, &D_800E3750);

@@ -10,8 +10,8 @@ extern s32 D_800E8920[];
 extern void (*D_800DF150[])(s32);
 
 extern f32 D_800EC660[];
-extern f32 gEntitiesPosZArray[];
-extern f32 gEntitiesPosXArray[];
+extern f32 gEntitiesNextPosZArray[];
+extern f32 gEntitiesNextPosXArray[];
 extern s32 func_801ACCA0_ovl7(s32, s32, f32, f32);
 
 extern f32 D_800EC820[];
@@ -43,8 +43,8 @@ void func_801BB9D0(s32 arg0, s32 arg1, f32 arg2) {
         temp_v0 = func_801ACCA0_ovl7(2, 0, 0, 20.0f);
         if (temp_v0 != 0) {
             D_800EC660[temp_v0] = 0.0f;
-            gEntitiesPosZArray[temp_v0] = 0.0f;
-            gEntitiesPosXArray[temp_v0] = 0.0f;
+            gEntitiesNextPosZArray[temp_v0] = 0.0f;
+            gEntitiesNextPosXArray[temp_v0] = 0.0f;
         }
         play_sound(SOUND_ENESHOT2);
     }

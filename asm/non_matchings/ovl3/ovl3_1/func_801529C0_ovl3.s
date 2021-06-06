@@ -144,8 +144,8 @@ glabel func_801529C0_ovl3
 /* 0B361C 80152BDC 8D380000 */  lw    $t8, ($t1)
 .L80152BE0_ovl3:
 /* 0B3620 80152BE0 C5880008 */  lwc1  $f8, 8($t4)
-/* 0B3624 80152BE4 3C0B800E */  lui   $t3, %hi(gEntitiesPosYArray) # $t3, 0x800e
-/* 0B3628 80152BE8 256B2790 */  addiu $t3, %lo(gEntitiesPosYArray) # addiu $t3, $t3, 0x2790
+/* 0B3624 80152BE4 3C0B800E */  lui   $t3, %hi(gEntitiesNextPosYArray) # $t3, 0x800e
+/* 0B3628 80152BE8 256B2790 */  addiu $t3, %lo(gEntitiesNextPosYArray) # addiu $t3, $t3, 0x2790
 /* 0B362C 80152BEC 00187880 */  sll   $t7, $t8, 2
 /* 0B3630 80152BF0 016FC821 */  addu  $t9, $t3, $t7
 /* 0B3634 80152BF4 E7280000 */  swc1  $f8, ($t9)
@@ -226,8 +226,8 @@ glabel func_801529C0_ovl3
 /* 0B3754 80152D14 000EC080 */  sll   $t8, $t6, 2
 /* 0B3758 80152D18 00380821 */  addu  $at, $at, $t8
 /* 0B375C 80152D1C C4262950 */  lwc1  $f6, 0x2950($at)
-/* 0B3760 80152D20 3C0B800E */  lui   $t3, %hi(gEntitiesPosYArray) # $t3, 0x800e
-/* 0B3764 80152D24 256B2790 */  addiu $t3, %lo(gEntitiesPosYArray) # addiu $t3, $t3, 0x2790
+/* 0B3760 80152D20 3C0B800E */  lui   $t3, %hi(gEntitiesNextPosYArray) # $t3, 0x800e
+/* 0B3764 80152D24 256B2790 */  addiu $t3, %lo(gEntitiesNextPosYArray) # addiu $t3, $t3, 0x2790
 /* 0B3768 80152D28 46062200 */  add.s $f8, $f4, $f6
 /* 0B376C 80152D2C 27A40050 */  addiu $a0, $sp, 0x50
 /* 0B3770 80152D30 27A50044 */  addiu $a1, $sp, 0x44
@@ -261,10 +261,10 @@ glabel func_801529C0_ovl3
 /* 0B37E0 80152DA0 E7A40054 */   swc1  $f4, 0x54($sp)
 /* 0B37E4 80152DA4 3C088013 */  lui   $t0, %hi(gKirbyState) # $t0, 0x8013
 /* 0B37E8 80152DA8 3C0A8013 */  lui   $t2, %hi(D_8012BCA0) # $t2, 0x8013
-/* 0B37EC 80152DAC 3C0B800E */  lui   $t3, %hi(gEntitiesPosYArray) # $t3, 0x800e
+/* 0B37EC 80152DAC 3C0B800E */  lui   $t3, %hi(gEntitiesNextPosYArray) # $t3, 0x800e
 /* 0B37F0 80152DB0 3C0C8013 */  lui   $t4, %hi(gPositionState) # $t4, 0x8013
 /* 0B37F4 80152DB4 258CE968 */  addiu $t4, %lo(gPositionState) # addiu $t4, $t4, -0x1698
-/* 0B37F8 80152DB8 256B2790 */  addiu $t3, %lo(gEntitiesPosYArray) # addiu $t3, $t3, 0x2790
+/* 0B37F8 80152DB8 256B2790 */  addiu $t3, %lo(gEntitiesNextPosYArray) # addiu $t3, $t3, 0x2790
 /* 0B37FC 80152DBC 254ABCA0 */  addiu $t2, %lo(D_8012BCA0) # addiu $t2, $t2, -0x4360
 /* 0B3800 80152DC0 10400027 */  beqz  $v0, .L80152E60_ovl3
 /* 0B3804 80152DC4 2508E7C0 */   addiu $t0, %lo(gKirbyState) # addiu $t0, $t0, -0x1840

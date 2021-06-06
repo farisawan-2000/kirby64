@@ -21,9 +21,9 @@ glabel func_801E13A0_ovl10
 /* 1D2154 801E13E4 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 1D2158 801E13E8 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
 /* 1D215C 801E13EC 3C01800E */ lui $at, %hi(D_800E6A10)
-/* 1D2160 801E13F0 3C03800E */  lui   $v1, %hi(gEntitiesPosYArray) # $v1, 0x800e
+/* 1D2160 801E13F0 3C03800E */  lui   $v1, %hi(gEntitiesNextPosYArray) # $v1, 0x800e
 /* 1D2164 801E13F4 8DC20000 */  lw    $v0, ($t6)
-/* 1D2168 801E13F8 24632790 */  addiu $v1, %lo(gEntitiesPosYArray) # addiu $v1, $v1, 0x2790
+/* 1D2168 801E13F8 24632790 */  addiu $v1, %lo(gEntitiesNextPosYArray) # addiu $v1, $v1, 0x2790
 /* 1D216C 801E13FC C4680000 */  lwc1  $f8, ($v1)
 /* 1D2170 801E1400 00021080 */  sll   $v0, $v0, 2
 /* 1D2174 801E1404 00220821 */  addu  $at, $at, $v0

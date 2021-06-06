@@ -38,7 +38,7 @@ glabel func_801EDD24_ovl10
 /* 1DEB24 801EDDB4 C4206A10 */ lwc1 $f0, %lo(D_800E6A10)($at)
 /* 1DEB28 801EDDB8 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 1DEB2C 801EDDBC 44812000 */  mtc1  $at, $f4
-/* 1DEB30 801EDDC0 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 1DEB30 801EDDC0 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 1DEB34 801EDDC4 00250821 */  addu  $at, $at, $a1
 /* 1DEB38 801EDDC8 46002032 */  c.eq.s $f4, $f0
 /* 1DEB3C 801EDDCC 00000000 */  nop   
@@ -52,13 +52,13 @@ glabel func_801EDD24_ovl10
 /* 1DEB5C 801EDDEC 3C01BF80 */   li    $at, 0xBF800000 # -1.000000
 .L801EDDF0_ovl10:
 /* 1DEB60 801EDDF0 44815000 */  mtc1  $at, $f10
-/* 1DEB64 801EDDF4 3C01800E */ lui $at, %hi(gEntitiesPosXArray)
+/* 1DEB64 801EDDF4 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
 /* 1DEB68 801EDDF8 00250821 */  addu  $at, $at, $a1
 /* 1DEB6C 801EDDFC 46005032 */  c.eq.s $f10, $f0
 /* 1DEB70 801EDE00 00000000 */  nop   
 /* 1DEB74 801EDE04 4502000B */  bc1fl .L801EDE34_ovl10
 /* 1DEB78 801EDE08 9208003C */   lbu   $t0, 0x3c($s0)
-/* 1DEB7C 801EDE0C C43025D0 */ lwc1 $f16, %lo(gEntitiesPosXArray)($at)
+/* 1DEB7C 801EDE0C C43025D0 */ lwc1 $f16, %lo(gEntitiesNextPosXArray)($at)
 /* 1DEB80 801EDE10 44809000 */  mtc1  $zero, $f18
 /* 1DEB84 801EDE14 00000000 */  nop   
 /* 1DEB88 801EDE18 4612803C */  c.lt.s $f16, $f18

@@ -36,11 +36,11 @@ void func_8021DFD0_ovl19(void) {
     D_800EBF60[D_8004A7C4->objId] = temp_a3;
     D_800EBDA0[D_8004A7C4->objId] = temp_a3;
     D_800EBBE0[D_8004A7C4->objId] = temp_a3;
-    tmpY = gEntitiesPosYArray[D_8004A7C4->objId];
+    tmpY = gEntitiesNextPosYArray[D_8004A7C4->objId];
     func_800F88C8(D_800DE350[D_8004A7C4->objId],
                   D_800E5F90[D_8004A7C4->objId],
                   D_800E6BD0[D_8004A7C4->objId]);
-    gEntitiesPosYArray[D_8004A7C4->objId] = tmpY;
+    gEntitiesNextPosYArray[D_8004A7C4->objId] = tmpY;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
     func_800F8E6C(D_800DE350[D_8004A7C4->objId]);
     gEntitiesAngleYArray[D_8004A7C4->objId] = D_800E17D0[D_8004A7C4->objId];
@@ -93,12 +93,12 @@ s32 func_8021E2D0_ovl19(u8 arg0, u8 arg1) {
         temp_f0 = D_800E6BD0[D_8004A7C4->objId];
         D_800E6D90[idx] = temp_f0;
         D_800E6BD0[idx] = temp_f0;
+        gEntitiesNextPosXArray[idx] = gEntitiesNextPosXArray[D_8004A7C4->objId];
         gEntitiesPosXArray[idx] = gEntitiesPosXArray[D_8004A7C4->objId];
-        D_800E2B10[idx] = D_800E2B10[D_8004A7C4->objId];
+        gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_8004A7C4->objId];
         gEntitiesPosYArray[idx] = gEntitiesPosYArray[D_8004A7C4->objId];
-        D_800E2CD0[idx] = D_800E2CD0[D_8004A7C4->objId];
+        gEntitiesNextPosZArray[idx] = gEntitiesNextPosZArray[D_8004A7C4->objId];
         gEntitiesPosZArray[idx] = gEntitiesPosZArray[D_8004A7C4->objId];
-        D_800E2E90[idx] = D_800E2E90[D_8004A7C4->objId];
     }
     return idx;
 }
@@ -172,7 +172,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19/func_8021E5DC_ovl19.s")
 
 void func_8021E7DC_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800B4024();
-    if (gEntitiesPosXArray[D_8004A7C4->objId] != D_800E2B10[D_8004A7C4->objId]) {
+    if (gEntitiesNextPosXArray[D_8004A7C4->objId] != gEntitiesPosXArray[D_8004A7C4->objId]) {
         func_800B35F0();
         D_800B4924_ovl19(arg0);
     }
@@ -188,7 +188,7 @@ void func_8021E7DC_ovl19(struct UnkStruct8004A7C4 *arg0) {
 #ifdef NON_MATCHING
 void func_8021E894_ovl19(struct UnkStruct8004A7C4 *arg0) {
     func_800B4024();
-    if (gEntitiesPosXArray[D_8004A7C4->objId] != D_800E2B10[D_8004A7C4->objId]) {
+    if (gEntitiesNextPosXArray[D_8004A7C4->objId] != gEntitiesPosXArray[D_8004A7C4->objId]) {
         func_800B35F0();
         D_800B4924_ovl19(arg0);
     }
@@ -283,9 +283,9 @@ void func_8021ECC4_ovl19(struct UnkStruct8004A7C4 *arg0) {
 
 void func_8021ED80_ovl19(struct UnkStruct8004A7C4 *arg0) {
     if (D_800E8920[D_800E0D50[D_8004A7C4->objId]] != 0) {
-        gEntitiesPosXArray[D_8004A7C4->objId] = gEntitiesPosXArray[D_800E0D50[D_8004A7C4->objId]];
-        gEntitiesPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_800E0D50[D_8004A7C4->objId]];
-        gEntitiesPosZArray[D_8004A7C4->objId] = gEntitiesPosZArray[D_800E0D50[D_8004A7C4->objId]];
+        gEntitiesNextPosXArray[D_8004A7C4->objId] = gEntitiesNextPosXArray[D_800E0D50[D_8004A7C4->objId]];
+        gEntitiesNextPosYArray[D_8004A7C4->objId] = gEntitiesNextPosYArray[D_800E0D50[D_8004A7C4->objId]];
+        gEntitiesNextPosZArray[D_8004A7C4->objId] = gEntitiesNextPosZArray[D_800E0D50[D_8004A7C4->objId]];
         gEntitiesAngleYArray[D_8004A7C4->objId] = gEntitiesAngleYArray[D_800E0D50[D_8004A7C4->objId]];
         func_800AFBB4(1, D_8004A7C4);
     } else {

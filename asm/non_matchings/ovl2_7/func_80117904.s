@@ -28,8 +28,8 @@ glabel func_80117904
 /* 0A03DC 8011796C 0C006291 */  jal   random_soft_s32_range
 /* 0A03E0 80117970 E4263C90 */ swc1 $f6, %lo(D_800E3C90)($at)
 /* 0A03E4 80117974 8E230000 */  lw    $v1, ($s1)
-/* 0A03E8 80117978 3C13800E */  lui   $s3, %hi(gEntitiesPosYArray) # $s3, 0x800e
-/* 0A03EC 8011797C 26732790 */  addiu $s3, %lo(gEntitiesPosYArray) # addiu $s3, $s3, 0x2790
+/* 0A03E8 80117978 3C13800E */  lui   $s3, %hi(gEntitiesNextPosYArray) # $s3, 0x800e
+/* 0A03EC 8011797C 26732790 */  addiu $s3, %lo(gEntitiesNextPosYArray) # addiu $s3, $s3, 0x2790
 /* 0A03F0 80117980 8C700000 */  lw    $s0, ($v1)
 /* 0A03F4 80117984 3C01C4FA */  li    $at, 0xC4FA0000 # -2000.000000
 /* 0A03F8 80117988 4481B000 */  mtc1  $at, $f22
@@ -68,12 +68,12 @@ glabel func_80117904
 /* 0A0474 80117A04 E5600000 */  swc1  $f0, ($t3)
 /* 0A0478 80117A08 8C700000 */  lw    $s0, ($v1)
 /* 0A047C 80117A0C 3C01800E */ lui $at, %hi(D_800E3210)
-/* 0A0480 80117A10 3C19800E */  lui   $t9, %hi(gEntitiesPosXArray) # $t9, 0x800e
+/* 0A0480 80117A10 3C19800E */  lui   $t9, %hi(gEntitiesNextPosXArray) # $t9, 0x800e
 /* 0A0484 80117A14 00108080 */  sll   $s0, $s0, 2
 /* 0A0488 80117A18 00906021 */  addu  $t4, $a0, $s0
 /* 0A048C 80117A1C C5840000 */  lwc1  $f4, ($t4)
 /* 0A0490 80117A20 00300821 */  addu  $at, $at, $s0
-/* 0A0494 80117A24 273925D0 */  addiu $t9, %lo(gEntitiesPosXArray) # addiu $t9, $t9, 0x25d0
+/* 0A0494 80117A24 273925D0 */  addiu $t9, %lo(gEntitiesNextPosXArray) # addiu $t9, $t9, 0x25d0
 /* 0A0498 80117A28 E4243210 */ swc1 $f4, %lo(D_800E3210)($at)
 /* 0A049C 80117A2C 8C6D0000 */  lw    $t5, ($v1)
 /* 0A04A0 80117A30 3C018013 */  lui   $at, %hi(D_80128D3C) # $at, 0x8013

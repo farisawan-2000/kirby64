@@ -5052,9 +5052,9 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_80178B18_ovl3.s")
     temp_v1 = temp_v0->objId;
     if ((D_800E8AE0[temp_v1] & 6) != 0) {
         temp_a0 = &sp28;
-        sp28 = gEntitiesPosXArray[temp_v1];
-        sp2C = gEntitiesPosYArray[temp_v0->objId] + arg0;
-        sp30 = gEntitiesPosZArray[temp_v0->objId];
+        sp28 = gEntitiesNextPosXArray[temp_v1];
+        sp2C = gEntitiesNextPosYArray[temp_v0->objId] + arg0;
+        sp30 = gEntitiesNextPosZArray[temp_v0->objId];
         temp_v0_2 = func_8010DF9C(temp_a0);
         if (temp_v0_2 != 0) {
             phi_v0 = &D_8012BCA0;
@@ -5248,7 +5248,7 @@ void func_8017982C_ovl3(struct UnkStruct8004A7C4 *arg0) {
     if (func_800AA888(0x20007) == 0) {
         func_80153AD4_ovl3();
         temp_a2 = D_8004A7C4;
-        temp_v1 = &gEntitiesPosYArray[temp_a2->objId];
+        temp_v1 = &gEntitiesNextPosYArray[temp_a2->objId];
         *temp_v1 = *temp_v1 - D_800EC9E4;
         D_800E8920[temp_a2->objId] = 0;
     } else {
@@ -5462,7 +5462,7 @@ void func_80179C28_ovl3(void *arg0) {
                     func_80120A28();
                     play_sound(0x11D);
                     temp_v0_7 = D_8004A7C4->objId;
-                    func_800A7F74(2, 1, 0x30, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v0_7], gEntitiesPosYArray[temp_v0_7] + 20.0f, gEntitiesPosZArray[temp_v0_7]);
+                    func_800A7F74(2, 1, 0x30, (bitwise f32) (bitwise s32) gEntitiesNextPosXArray[temp_v0_7], gEntitiesNextPosYArray[temp_v0_7] + 20.0f, gEntitiesNextPosZArray[temp_v0_7]);
                     func_8011D614();
                     func_801230E8(0x2018A, 0x2018B, 1);
                     gKirbyState.abilityInUse = 0;
@@ -5558,7 +5558,7 @@ void func_8017A2C0_ovl3(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
         play_sound(0x120);
         if (sp24 != -1) {
             temp_v0 = D_8004A7C4->objId;
-            func_800A7F74(5, 1, sp24, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]);
+            func_800A7F74(5, 1, sp24, (bitwise f32) (bitwise s32) gEntitiesNextPosXArray[temp_v0], gEntitiesNextPosYArray[temp_v0], gEntitiesNextPosZArray[temp_v0]);
         }
     }
 }
@@ -5853,7 +5853,7 @@ s32 func_8017B8F4_ovl3(struct UnkStruct8004A7C4 *arg0) {
     D_800E98E0[temp_v0] = D_800E8AE0[temp_v0];
     func_80153AD4_ovl3();
     temp_v1 = D_8004A7C4;
-    temp_a0 = &gEntitiesPosYArray[temp_v1->objId];
+    temp_a0 = &gEntitiesNextPosYArray[temp_v1->objId];
     temp_a3 = sp44;
     *temp_a0 = *temp_a0 - D_800EC9E4;
     if (gKirbyState.horizontalCollision != 0) {
@@ -5861,10 +5861,10 @@ block_5:
         phi_a3 = 1;
     } else {
         temp_a0_2 = &sp38;
-        sp38 = gEntitiesPosXArray[temp_v1->objId];
-        sp40 = gEntitiesPosZArray[temp_v1->objId];
+        sp38 = gEntitiesNextPosXArray[temp_v1->objId];
+        sp40 = gEntitiesNextPosZArray[temp_v1->objId];
         sp44 = temp_a3;
-        sp3C = gEntitiesPosYArray[temp_v1->objId];
+        sp3C = gEntitiesNextPosYArray[temp_v1->objId];
         if (func_80155838_ovl3(temp_a0_2, 0x41A00000, 4, temp_a3) != 0) {
             goto block_5;
         } else {
@@ -6411,7 +6411,7 @@ loop_5:
         }
     }
     func_80153984_ovl3(phi_a0_2);
-    temp_v1_3 = &gEntitiesPosYArray[D_8004A7C4->objId];
+    temp_v1_3 = &gEntitiesNextPosYArray[D_8004A7C4->objId];
     *temp_v1_3 = *temp_v1_3 - D_800EC9E4;
     func_8011CF58();
     if (gKirbyState.abilityInUse != 0) {
@@ -7568,7 +7568,7 @@ void func_8017F8B8_ovl3(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
         play_sound(0x120);
         if (sp24 != -1) {
             temp_v0 = D_8004A7C4->objId;
-            func_800A7F74(5, 1, sp24, (bitwise f32) (bitwise s32) gEntitiesPosXArray[temp_v0], gEntitiesPosYArray[temp_v0], gEntitiesPosZArray[temp_v0]);
+            func_800A7F74(5, 1, sp24, (bitwise f32) (bitwise s32) gEntitiesNextPosXArray[temp_v0], gEntitiesNextPosYArray[temp_v0], gEntitiesNextPosZArray[temp_v0]);
         }
     }
 }
@@ -7681,7 +7681,7 @@ void func_80180B58_ovl3(struct UnkStruct8004A7C4 *arg0) {
 
     func_80153AD4_ovl3();
     temp_a3 = D_8004A7C4;
-    temp_v1 = &gEntitiesPosYArray[temp_a3->objId];
+    temp_v1 = &gEntitiesNextPosYArray[temp_a3->objId];
     *temp_v1 = *temp_v1 - D_800EC9E4;
     if (gKirbyState.unk44 == 1) {
         if ((gKirbyState.horizontalCollision == 0) && (gKirbyState.abilityInUse != 0)) {
@@ -8883,17 +8883,17 @@ void func_80183FF4_ovl3(struct UnkStruct8004A7C4 *arg0) {
     D_800E98E0[temp_v1] = D_800E8AE0[temp_v1];
     func_80153AD4_ovl3();
     temp_a3 = D_8004A7C4;
-    temp_v1_2 = &gEntitiesPosYArray[temp_a3->objId];
+    temp_v1_2 = &gEntitiesNextPosYArray[temp_a3->objId];
     *temp_v1_2 = *temp_v1_2 - D_800EC9E4;
     if (gKirbyState.horizontalCollision != 0) {
 block_5:
         phi_t0 = 1;
     } else {
         temp_a0 = &sp38;
-        sp38 = gEntitiesPosXArray[temp_a3->objId];
-        sp40 = gEntitiesPosZArray[temp_a3->objId];
+        sp38 = gEntitiesNextPosXArray[temp_a3->objId];
+        sp40 = gEntitiesNextPosZArray[temp_a3->objId];
         sp4C = sp4C;
-        sp3C = gEntitiesPosYArray[temp_a3->objId];
+        sp3C = gEntitiesNextPosYArray[temp_a3->objId];
         if (func_80155838_ovl3(temp_a0, 0x41A00000, 4, temp_a3) != 0) {
             goto block_5;
         } else {
