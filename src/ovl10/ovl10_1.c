@@ -56,7 +56,7 @@ void func_801DBE00_ovl10(s32 arg0) {
 }
 
 s32 func_801DBF70_ovl10(s32 arg0, f32 arg1) {
-    s32 index = func_800AEC08(0x18, 0x1E, 0x3C);
+    s32 index = request_track_general(0x18, 0x1E, 0x3C);
 
     D_800E76C0[index] = 0xFF;
     D_800E7730[index] = 1;

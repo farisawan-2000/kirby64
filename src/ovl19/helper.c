@@ -241,7 +241,7 @@ extern const char D_8022F720[];
 void func_8021FA2C_ovl19(void) {
     Vector sp34;
     struct EntityThing800E9AA0 *sp2C = D_800E9AA0[D_8004A7C4->objId];
-    s32 temp_v0 = func_800AEC08(0x1C, 0x1E, 0x3C);
+    s32 temp_v0 = request_track_general(0x1C, 0x1E, 0x3C);
 
     if (temp_v0 >= 0x3C || temp_v0 == -1) {
 // block_2:

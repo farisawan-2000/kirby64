@@ -11,7 +11,7 @@ glabel func_8021FA2C_ovl19
 /* 240160 8021FA50 8F399AA0 */ lw $t9, %lo(D_800E9AA0)($t9)
 /* 240164 8021FA54 2405001E */  li    $a1, 30
 /* 240168 8021FA58 2406003C */  li    $a2, 60
-/* 24016C 8021FA5C 0C02BB02 */  jal   func_800AEC08
+/* 24016C 8021FA5C 0C02BB02 */  jal   request_track_general
 /* 240170 8021FA60 AFB9002C */   sw    $t9, 0x2c($sp)
 /* 240174 8021FA64 2841003C */  slti  $at, $v0, 0x3c
 /* 240178 8021FA68 10200004 */  beqz  $at, .L8021FA7C_ovl19

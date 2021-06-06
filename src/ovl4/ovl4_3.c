@@ -463,9 +463,9 @@ void func_801598C4_ovl4(void) {
     play_music(0, 0x25);
     func_800A6BC0(0xB);
     D_800E98E0[func_800AEA64(2, 0, 0x70)] = 0;
-    D_800E98E0[func_800AEC08(2, 0, 0x70)] = 1;
+    D_800E98E0[request_track_general(2, 0, 0x70)] = 1;
     for (phi_s0 = 2; phi_s0 < 9; phi_s0++) {
-        D_800E98E0[func_800AEC08(2, 0, 0x70)] = phi_s0;
+        D_800E98E0[request_track_general(2, 0, 0x70)] = phi_s0;
     }
     D_800E98E0[func_800AEC70(2, 0, 0x70)] = 9;
     func_8000A180(0, func_8015986C_ovl4, 0x1A, 0x80000000);
@@ -594,9 +594,9 @@ void func_80159DE8_ovl4(void) {
     func_800A8724(0);
     func_800A6BC0(4);
     D_8015C720 = 0;
-    D_800D71F8 = func_800AEC08(5, 0, 0x70);
+    D_800D71F8 = request_track_general(5, 0, 0x70);
     gEntityVtableIndexArray[D_800D71F8] = 0;
-    D_800D71FC = func_800AEC08(5, 0, 0x70);
+    D_800D71FC = request_track_general(5, 0, 0x70);
     gEntityVtableIndexArray[D_800D71FC] = 1;
     func_8000A180(0, func_80159D78_ovl4, 0x1A, 0x80000000);
     func_800A5744(0, 0, 0);

@@ -1192,7 +1192,7 @@
 /* 1FEF84 801DC394 AFA40030 */  sw    $a0, 0x30($sp)
 /* 1FEF88 801DC398 24040017 */  li    $a0, 23
 /* 1FEF8C 801DC39C 2405001E */  li    $a1, 30
-/* 1FEF90 801DC3A0 0C02BB02 */  jal   func_800AEC08
+/* 1FEF90 801DC3A0 0C02BB02 */  jal   request_track_general
 /* 1FEF94 801DC3A4 24060050 */   li    $a2, 80
 /* 1FEF98 801DC3A8 2841003C */  slti  $at, $v0, 0x3c
 /* 1FEF9C 801DC3AC 10200004 */  beqz  $at, .L801DC3C0_ovl14
@@ -1388,7 +1388,7 @@
 /* 1FF274 801DC684 AFA70024 */  sw    $a3, 0x24($sp)
 /* 1FF278 801DC688 2405001E */  li    $a1, 30
 /* 1FF27C 801DC68C 2404001A */  li    $a0, 26
-/* 1FF280 801DC690 0C02BB02 */  jal   func_800AEC08
+/* 1FF280 801DC690 0C02BB02 */  jal   request_track_general
 /* 1FF284 801DC694 24060050 */   li    $a2, 80
 /* 1FF288 801DC698 2841003C */  slti  $at, $v0, 0x3c
 /* 1FF28C 801DC69C 8FA30020 */  lw    $v1, 0x20($sp)
@@ -1579,7 +1579,7 @@
 /* 1FF548 801DC958 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1FF54C 801DC95C 24040019 */  li    $a0, 25
 /* 1FF550 801DC960 2405001E */  li    $a1, 30
-/* 1FF554 801DC964 0C02BB02 */  jal   func_800AEC08
+/* 1FF554 801DC964 0C02BB02 */  jal   request_track_general
 /* 1FF558 801DC968 24060050 */   li    $a2, 80
 /* 1FF55C 801DC96C 2841003C */  slti  $at, $v0, 0x3c
 /* 1FF560 801DC970 10200004 */  beqz  $at, .L801DC984_ovl14
@@ -4038,7 +4038,7 @@
 /* 2019E0 801DEDF0 AFB00018 */  sw    $s0, 0x18($sp)
 /* 2019E4 801DEDF4 24040017 */  li    $a0, 23
 /* 2019E8 801DEDF8 2405001E */  li    $a1, 30
-/* 2019EC 801DEDFC 0C02BB02 */  jal   func_800AEC08
+/* 2019EC 801DEDFC 0C02BB02 */  jal   request_track_general
 /* 2019F0 801DEE00 24060050 */   li    $a2, 80
 /* 2019F4 801DEE04 2841003C */  slti  $at, $v0, 0x3c
 /* 2019F8 801DEE08 10200004 */  beqz  $at, .L801DEE1C_ovl14
@@ -4186,7 +4186,7 @@
 /* 201C18 801DF028 E7AC0040 */  swc1  $f12, 0x40($sp)
 /* 201C1C 801DF02C 2404001A */  li    $a0, 26
 /* 201C20 801DF030 2405000E */  li    $a1, 14
-/* 201C24 801DF034 0C02BB02 */  jal   func_800AEC08
+/* 201C24 801DF034 0C02BB02 */  jal   request_track_general
 /* 201C28 801DF038 24060050 */   li    $a2, 80
 /* 201C2C 801DF03C 2841001E */  slti  $at, $v0, 0x1e
 /* 201C30 801DF040 10200004 */  beqz  $at, .L801DF054_ovl14
@@ -4348,7 +4348,7 @@
 /* 201E88 801DF298 AFB00018 */  sw    $s0, 0x18($sp)
 /* 201E8C 801DF29C 2404001A */  li    $a0, 26
 /* 201E90 801DF2A0 2405000E */  li    $a1, 14
-/* 201E94 801DF2A4 0C02BB02 */  jal   func_800AEC08
+/* 201E94 801DF2A4 0C02BB02 */  jal   request_track_general
 /* 201E98 801DF2A8 24060050 */   li    $a2, 80
 /* 201E9C 801DF2AC 2841001E */  slti  $at, $v0, 0x1e
 /* 201EA0 801DF2B0 10200004 */  beqz  $at, .L801DF2C4_ovl14

@@ -133,7 +133,7 @@ void func_800BB98C(s32 arg0, s32 arg1) {
         temp_s0->unk28 = 110.0f;
         temp_s0->unk44 = D_800D6970;
         func_80007C00(temp_s0 + 8, 10.0f, 10.0f, 310.0f, 230.0f);
-        temp_v0_3 = func_800AEC08(0x2B, 0x3C, 0x4A);
+        temp_v0_3 = request_track_general(0x2B, 0x3C, 0x4A);
         temp_t7 = D_8004A7C4;
         temp_a0 = &gEntityGObjProcessArray[temp_v0_3];
         D_8004A7C4 = D_800DE350[temp_v0_3];

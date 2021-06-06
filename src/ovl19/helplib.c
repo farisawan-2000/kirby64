@@ -75,7 +75,7 @@ s32 func_8021E2D0_ovl19(u8 arg0, u8 arg1) {
     f32 temp_f0;
     u32 temp_a1;
 
-    idx = func_800AEC08(0x20, 0x1E, 0x3C);
+    idx = request_track_general(0x20, 0x1E, 0x3C);
     if ((idx >= 0x3C) || (idx == -1)) {
         if (idx != -1) {
             func_800B1900(idx & 0xFFFF);
@@ -297,7 +297,7 @@ extern const char D_8022F6E0[];
 s32 func_8021EE88_ovl19(s32 arg0) {
     s32 temp_v0;
 
-    temp_v0 = func_800AEC08(0x16, 0x3C, 0x4A);
+    temp_v0 = request_track_general(0x16, 0x3C, 0x4A);
     if (temp_v0 != -1) {
         gEntityVtableIndexArray[temp_v0] = arg0;
     } else {

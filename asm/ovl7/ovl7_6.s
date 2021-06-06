@@ -1561,7 +1561,7 @@ glabel func_801AE73C_ovl7
 /* 1547C0 801AE750 AFA70024 */  sw    $a3, 0x24($sp)
 /* 1547C4 801AE754 2406004A */  li    $a2, 74
 /* 1547C8 801AE758 2405003C */  li    $a1, 60
-/* 1547CC 801AE75C 0C02BB02 */  jal   func_800AEC08
+/* 1547CC 801AE75C 0C02BB02 */  jal   request_track_general
 /* 1547D0 801AE760 2404001B */   li    $a0, 27
 /* 1547D4 801AE764 2401FFFF */  li    $at, -1
 /* 1547D8 801AE768 14410003 */  bne   $v0, $at, .L801AE778_ovl7

@@ -1392,7 +1392,7 @@ glabel func_801BA32C_ovl7
 /* 1603A0 801BA330 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 1603A4 801BA334 24040017 */  li    $a0, 23
 /* 1603A8 801BA338 2405001E */  li    $a1, 30
-/* 1603AC 801BA33C 0C02BB02 */  jal   func_800AEC08
+/* 1603AC 801BA33C 0C02BB02 */  jal   request_track_general
 /* 1603B0 801BA340 24060050 */   li    $a2, 80
 /* 1603B4 801BA344 2841003C */  slti  $at, $v0, 0x3c
 /* 1603B8 801BA348 10200004 */  beqz  $at, .L801BA35C_ovl7

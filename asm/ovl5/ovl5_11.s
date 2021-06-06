@@ -1234,7 +1234,7 @@ glabel func_801841C0_ovl5
 /* 12B6C0 80184250 AC309C60 */ sw $s0, %lo(D_800E9C60)($at)
 /* 12B6C4 80184254 2404000F */  li    $a0, 15
 /* 12B6C8 80184258 00002825 */  move  $a1, $zero
-/* 12B6CC 8018425C 0C02BB02 */  jal   func_800AEC08
+/* 12B6CC 8018425C 0C02BB02 */  jal   request_track_general
 /* 12B6D0 80184260 24060070 */   li    $a2, 112
 /* 12B6D4 80184264 00021880 */  sll   $v1, $v0, 2
 /* 12B6D8 80184268 02235021 */  addu  $t2, $s1, $v1
@@ -1256,7 +1256,7 @@ glabel func_801841C0_ovl5
 /* 12B718 801842A8 2404000F */  li    $a0, 15
 /* 12B71C 801842AC 00002825 */  move  $a1, $zero
 /* 12B720 801842B0 24060070 */  li    $a2, 112
-/* 12B724 801842B4 0C02BB02 */  jal   func_800AEC08
+/* 12B724 801842B4 0C02BB02 */  jal   request_track_general
 /* 12B728 801842B8 AFA2002C */   sw    $v0, 0x2c($sp)
 /* 12B72C 801842BC 8FA7002C */  lw    $a3, 0x2c($sp)
 /* 12B730 801842C0 00026080 */  sll   $t4, $v0, 2
@@ -1270,7 +1270,7 @@ glabel func_801841C0_ovl5
 /* 12B750 801842E0 AFA30024 */  sw    $v1, 0x24($sp)
 /* 12B754 801842E4 2404000F */  li    $a0, 15
 /* 12B758 801842E8 00002825 */  move  $a1, $zero
-/* 12B75C 801842EC 0C02BB02 */  jal   func_800AEC08
+/* 12B75C 801842EC 0C02BB02 */  jal   request_track_general
 /* 12B760 801842F0 24060070 */   li    $a2, 112
 /* 12B764 801842F4 8FA30024 */  lw    $v1, 0x24($sp)
 /* 12B768 801842F8 00027880 */  sll   $t7, $v0, 2
@@ -1287,7 +1287,7 @@ glabel func_801841C0_ovl5
 /* 12B790 80184320 2404000F */   li    $a0, 15
 /* 12B794 80184324 00002825 */  move  $a1, $zero
 /* 12B798 80184328 24060070 */  li    $a2, 112
-/* 12B79C 8018432C 0C02BB02 */  jal   func_800AEC08
+/* 12B79C 8018432C 0C02BB02 */  jal   request_track_general
 /* 12B7A0 80184330 AFA7002C */   sw    $a3, 0x2c($sp)
 /* 12B7A4 80184334 8FA7002C */  lw    $a3, 0x2c($sp)
 /* 12B7A8 80184338 00024080 */  sll   $t0, $v0, 2
@@ -1301,7 +1301,7 @@ glabel func_801841C0_ovl5
 /* 12B7C8 80184358 AFA30024 */  sw    $v1, 0x24($sp)
 /* 12B7CC 8018435C 2404000F */  li    $a0, 15
 /* 12B7D0 80184360 00002825 */  move  $a1, $zero
-/* 12B7D4 80184364 0C02BB02 */  jal   func_800AEC08
+/* 12B7D4 80184364 0C02BB02 */  jal   request_track_general
 /* 12B7D8 80184368 24060070 */   li    $a2, 112
 /* 12B7DC 8018436C 8FA30024 */  lw    $v1, 0x24($sp)
 /* 12B7E0 80184370 00026080 */  sll   $t4, $v0, 2

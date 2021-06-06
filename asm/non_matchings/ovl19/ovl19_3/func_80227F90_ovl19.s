@@ -128,7 +128,7 @@ glabel func_80227F90_ovl19
 /* 248894 80228184 E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
 /* 248898 80228188 24040013 */  li    $a0, 19
 /* 24889C 8022818C 2405003C */  li    $a1, 60
-/* 2488A0 80228190 0C02BB02 */  jal   func_800AEC08
+/* 2488A0 80228190 0C02BB02 */  jal   request_track_general
 /* 2488A4 80228194 2406004A */   li    $a2, 74
 /* 2488A8 80228198 00024080 */  sll   $t0, $v0, 2
 /* 2488AC 8022819C 02087021 */  addu  $t6, $s0, $t0
@@ -143,7 +143,7 @@ glabel func_80227F90_ovl19
 /* 2488D0 802281C0 AC208220 */ sw $zero, %lo(D_800E8220)($at)
 /* 2488D4 802281C4 24040013 */  li    $a0, 19
 /* 2488D8 802281C8 2405003C */  li    $a1, 60
-/* 2488DC 802281CC 0C02BB02 */  jal   func_800AEC08
+/* 2488DC 802281CC 0C02BB02 */  jal   request_track_general
 /* 2488E0 802281D0 2406004A */   li    $a2, 74
 /* 2488E4 802281D4 00024080 */  sll   $t0, $v0, 2
 /* 2488E8 802281D8 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)

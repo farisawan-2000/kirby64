@@ -73,7 +73,7 @@ glabel func_8022889C_ovl19
 /* 2490C8 802289B8 E42048D0 */ swc1 $f0, %lo(D_800E48D0)($at)
 /* 2490CC 802289BC 24040013 */  li    $a0, 19
 /* 2490D0 802289C0 2405003C */  li    $a1, 60
-/* 2490D4 802289C4 0C02BB02 */  jal   func_800AEC08
+/* 2490D4 802289C4 0C02BB02 */  jal   request_track_general
 /* 2490D8 802289C8 2406004A */   li    $a2, 74
 /* 2490DC 802289CC 3C10800E */  lui   $s0, %hi(gEntityVtableIndexArray) # $s0, 0x800e
 /* 2490E0 802289D0 00023880 */  sll   $a3, $v0, 2
@@ -90,7 +90,7 @@ glabel func_8022889C_ovl19
 /* 24910C 802289FC AC398220 */ sw $t9, %lo(D_800E8220)($at)
 /* 249110 80228A00 24040013 */  li    $a0, 19
 /* 249114 80228A04 2405003C */  li    $a1, 60
-/* 249118 80228A08 0C02BB02 */  jal   func_800AEC08
+/* 249118 80228A08 0C02BB02 */  jal   request_track_general
 /* 24911C 80228A0C 2406004A */   li    $a2, 74
 /* 249120 80228A10 00023880 */  sll   $a3, $v0, 2
 /* 249124 80228A14 02077821 */  addu  $t7, $s0, $a3

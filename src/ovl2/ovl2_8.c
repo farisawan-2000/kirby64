@@ -536,7 +536,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_8011C720.s")
 extern s32 D_8011D0FC; // probably part of a struct
 
 void func_8011C838(void) {
-    struct UnkStruct800DE350 *temp = D_800DE350[func_800AEC08(18, 0, 1)];
+    struct UnkStruct800DE350 *temp = D_800DE350[request_track_general(18, 0, 1)];
     
     temp->unk48 = &D_8011D0FC;
 }

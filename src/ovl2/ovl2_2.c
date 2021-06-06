@@ -507,9 +507,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F8078.s")
 
 #ifdef MIPS_TO_C
 void func_800F81A4(void) {
-    D_801290D0 = func_800AEC08(0x24, 0x4A, 0x50);
+    D_801290D0 = request_track_general(0x24, 0x4A, 0x50);
     if (D_801290D8->unk4 != 0) {
-        D_801290D4 = func_800AEC08(0x25, 0x4A, 0x50);
+        D_801290D4 = request_track_general(0x25, 0x4A, 0x50);
     }
     if (D_8012B9B0 != 0) {
         func_8010137C();

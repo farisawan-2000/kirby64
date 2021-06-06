@@ -158,7 +158,7 @@ extern const char D_8012896C[];
 s32 func_800FD9D4(s32 arg0) {
     s32 temp_v0;
 
-    temp_v0 = func_800AEC08(0x22, 0x3C, 0x4A);
+    temp_v0 = request_track_general(0x22, 0x3C, 0x4A);
     if (temp_v0 == -1) {
         print_error_stub(&D_8012896C);
     } else {

@@ -3,7 +3,7 @@ glabel func_800F81A4
 /* 080C18 800F81A8 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 080C1C 800F81AC 24040024 */  li    $a0, 36
 /* 080C20 800F81B0 2405004A */  li    $a1, 74
-/* 080C24 800F81B4 0C02BB02 */  jal   func_800AEC08
+/* 080C24 800F81B4 0C02BB02 */  jal   request_track_general
 /* 080C28 800F81B8 24060050 */   li    $a2, 80
 /* 080C2C 800F81BC 3C0E8013 */  lui   $t6, %hi(D_801290D8) # $t6, 0x8013
 /* 080C30 800F81C0 8DCE90D8 */  lw    $t6, %lo(D_801290D8)($t6)
@@ -14,7 +14,7 @@ glabel func_800F81A4
 /* 080C44 800F81D4 2405004A */  li    $a1, 74
 /* 080C48 800F81D8 11E00005 */  beqz  $t7, .L800F81F0_ovl2
 /* 080C4C 800F81DC 00000000 */   nop   
-/* 080C50 800F81E0 0C02BB02 */  jal   func_800AEC08
+/* 080C50 800F81E0 0C02BB02 */  jal   request_track_general
 /* 080C54 800F81E4 24060050 */   li    $a2, 80
 /* 080C58 800F81E8 3C018013 */  lui   $at, %hi(D_801290D4) # $at, 0x8013
 /* 080C5C 800F81EC AC2290D4 */  sw    $v0, %lo(D_801290D4)($at)

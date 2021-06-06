@@ -39,11 +39,11 @@ void func_80223200_ovl19(s32 arg0) {
         // minecart?
         func_800A9760(BANK_INDEX(2, 100));
         gKirbyState.unk154 = 1;
-        func_800AEC08(0x13, 1, 2);
+        request_track_general(0x13, 1, 2);
         D_800E98E4 = 0;
         gEntityVtableIndexArray.unk4 = 1;
         D_800E8224 = 0;
-        func_800AEC08(0x13, 2, 3);
+        request_track_general(0x13, 2, 3);
         gEntityVtableIndexArray.unk8 = 0;
         D_800E8228 = 0;
         gEntitiesPosYArray[D_8004A7C4->objId] = 0.0f;
@@ -686,11 +686,11 @@ void func_802248C0_ovl19(s32 arg0) {
         func_80152348_ovl19(0x41A00000);
         func_800A9760(0x20065);
         gKirbyState.unk154 = 1;
-        func_800AEC08(0x13, 1, 2);
+        request_track_general(0x13, 1, 2);
         D_800E98E4 = 0;
         D_800DDC54 = 1;
         D_800E8220[1] = 1;
-        func_800AEC08(0x13, 2, 3);
+        request_track_general(0x13, 2, 3);
         D_800DDC58 = 0;
         temp_v1_3 = D_8004A7C4;
         D_800E8220[2] = 1;
@@ -709,7 +709,7 @@ void func_802248C0_ovl19(s32 arg0) {
     if (gKirbyState.unk44 < 8) {
         goto **(&jtbl_8022F858 + (gKirbyState.unk44 * 4));
     case 6:
-        temp_v0 = func_800AEC08(0x13, 0x3C, 0x4A);
+        temp_v0 = request_track_general(0x13, 0x3C, 0x4A);
         temp_t2 = temp_v0 * 4;
         D_800D71F8 = temp_v0;
         *(&gEntityVtableIndexArray + temp_t2) = 5;
@@ -932,7 +932,7 @@ loop_31:
                 goto loop_31;
             }
         }
-        temp_v0_13 = func_800AEC08(0x13, 0x3C, 0x4A);
+        temp_v0_13 = request_track_general(0x13, 0x3C, 0x4A);
         temp_v1_10 = temp_v0_13 * 4;
         *(&gEntityVtableIndexArray + temp_v1_10) = 6;
         *(gEntitiesPosYArray + temp_v1_10) = gEntitiesPosYArray[D_8004A7C4->objId];
@@ -1378,11 +1378,11 @@ void func_802260FC_ovl19(s32 arg0) {
         D_800E6850[temp_v1_3->objId] = 0.0f;
         D_800EC2E0[2] = -1;
         D_800EC2E0[1] = -1;
-        func_800AEC08(0x13, 1, 2);
+        request_track_general(0x13, 1, 2);
         D_800E98E4 = 0;
         gEntityVtableIndexArray.unk4 = 1;
         D_800E8224 = 2;
-        func_800AEC08(0x13, 2, 3);
+        request_track_general(0x13, 2, 3);
         gEntityVtableIndexArray.unk8 = 0;
         D_800E8228 = 2;
         D_800EC2E0[2] = -1;
@@ -2227,7 +2227,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_80227D4C_ovl19.s")
 void *func_80227F38_ovl19(void) {
     void *temp_v0;
 
-    func_800AEC08(0x13, 3, 4);
+    request_track_general(0x13, 3, 4);
     temp_v0 = ((D_800D6FB0 & 0xF) * 8) + &D_8022F548;
     D_800DDC5C = temp_v0->unk0;
     D_800E822C = temp_v0->unk4;
@@ -2277,11 +2277,11 @@ void func_80227F90_ovl19(struct UnkStruct8004A7C4 *arg0) {
     D_800E4710[D_8004A7C4->objId] = 0.2f;
     D_800E48D0[D_8004A7C4->objId] = 0.2f;
     func_800A9864(65535.0f, BANK_INDEX(2, 100), 0x20, 0x10);
-    idx = func_800AEC08(0x13, 0x3C, 0x4A);
+    idx = request_track_general(0x13, 0x3C, 0x4A);
     D_800E98E0[idx] = 0;
     gEntityVtableIndexArray[idx] = 1;
     D_800E8220[idx] = 0;
-    idx2 = func_800AEC08(0x13, 0x3C, 0x4A);
+    idx2 = request_track_general(0x13, 0x3C, 0x4A);
     gEntityVtableIndexArray[idx2] = 0;
     D_800E8220[idx2] = 0;
     D_800E9AA0[D_8004A7C4->objId] = idx2;
@@ -2462,13 +2462,13 @@ void func_8022889C_ovl19(s32 arg0, struct UnkStruct800E1B50 *arg1) {
     D_800E4710[temp_v1->objId] = 0.2f;
     D_800E48D0[temp_v1->objId] = 0.2f;
     func_800A9864(0x20066, 0x20, 0x10);
-    temp_v0 = func_800AEC08(0x13, 0x3C, 0x4A);
+    temp_v0 = request_track_general(0x13, 0x3C, 0x4A);
     temp_a3 = temp_v0 * 4;
     D_800E98E0[temp_v0] = 0;
     *(&gEntityVtableIndexArray + temp_a3) = 1;
     sp34 = temp_v0;
     *(D_800E8220 + temp_a3) = 2;
-    temp_v0_2 = func_800AEC08(0x13, 0x3C, 0x4A);
+    temp_v0_2 = request_track_general(0x13, 0x3C, 0x4A);
     temp_a3_2 = temp_v0_2 * 4;
     *(&gEntityVtableIndexArray + temp_a3_2) = 0;
     *(D_800E8220 + temp_a3_2) = 2;

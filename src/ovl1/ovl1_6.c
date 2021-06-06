@@ -314,7 +314,7 @@ extern void func_800B158C(void);
 // todo: should this really be a define?
 #define FAIL -1
 
-s32 func_800AEADC(u8 arg0, s32 id, s32 minIndex, s32 maxIndex) {
+s32 request_track(u8 arg0, s32 id, s32 minIndex, s32 maxIndex) {
     s32 idx;
 
     switch (arg0) {
@@ -341,15 +341,15 @@ s32 func_800AEADC(u8 arg0, s32 id, s32 minIndex, s32 maxIndex) {
 }
 
 // alloc object with id and index range?
-s32 func_800AEC08(s32 id, s32 minIndex, s32 maxIndex) {
-    return func_800AEADC(0, id, minIndex, maxIndex);
+s32 request_track_general(s32 id, s32 minIndex, s32 maxIndex) {
+    return request_track(0, id, minIndex, maxIndex);
 }
 
 s32 func_800AEC3C(s32 id, s32 minIndex, s32 maxIndex) {
-    return func_800AEADC(1, id, minIndex, maxIndex);
+    return request_track(1, id, minIndex, maxIndex);
 }
 
 s32 func_800AEC70(s32 id, s32 minIndex, s32 maxIndex) {
-    return func_800AEADC(2, id, minIndex, maxIndex);
+    return request_track(2, id, minIndex, maxIndex);
 }
 

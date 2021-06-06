@@ -46,7 +46,7 @@ extern f32 gEntitiesPosZArray[];
 
 extern f32 D_801CE578;
 
-s32 func_800AEC08(s32, s32, s32);
+s32 request_track_general(s32, s32, s32);
 
 void func_800A4794(Vector*,s32,s32);
 void func_800A4DB8(Vector*,s32);
@@ -61,7 +61,7 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
     Vector sp28;
     Vector sp1C;
 
-    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    idx = request_track_general(0x1F, 0x1E, 0x3C);
     if (idx == -1) {
         print_error_stub("NmlBlock Request Error![yakulib.cc]\n");
         return -1;
@@ -96,7 +96,7 @@ s32 func_801BBFE4_ovl7(s32 arg0) {
     s32 idx;
     s32 sp1C;
 
-    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    idx = request_track_general(0x1F, 0x1E, 0x3C);
     if (idx == -1) {
         print_error_stub("reqDumpStarTrk Request Error!![yakulib.cc]\n");
         return -1;
@@ -138,7 +138,7 @@ s32 func_801BC27C_ovl7(s32 arg0, s32 arg1) {
     s32 idx;
     s32 sp1C;
 
-    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    idx = request_track_general(0x1F, 0x1E, 0x3C);
     if (idx == -1) {
         print_error_stub("reqMixStarTrk Request Error!![yakulib.cc]\n");
         return -1;
@@ -184,7 +184,7 @@ s32 func_801BC580_ovl7(s32 arg0) {
     s32 idx;
     s32 sp1C;
 
-    idx = func_800AEC08(0x1F, 0x1E, 0x3C);
+    idx = request_track_general(0x1F, 0x1E, 0x3C);
     if (idx == -1) {
         print_error_stub(&D_801CE520);
         return -1;
@@ -223,7 +223,7 @@ s32 func_801BC794_ovl7(s32 arg0) {
     s32 idx;
     s32 sp1C;
 
-    idx = func_800AEC08(0x1C, 0x1E, 0x3C);
+    idx = request_track_general(0x1C, 0x1E, 0x3C);
     if (idx == -1) {
         print_error_stub(&D_801CE54C);
         return -1;

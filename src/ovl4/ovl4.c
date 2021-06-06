@@ -259,7 +259,7 @@ void func_80151B08_ovl4(void) {
         case 1:
             D_800E98E0[func_800AEC70(0, 0x3C, 0x70)] = 2;
             for (phi_s0 = 4; phi_s0 < 9; phi_s0++) {
-                D_800E98E0[func_800AEC08(0, 0x3C, 0x70)] = phi_s0;
+                D_800E98E0[request_track_general(0, 0x3C, 0x70)] = phi_s0;
             }
             break;
         case 4:

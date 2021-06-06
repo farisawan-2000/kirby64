@@ -10,7 +10,7 @@ glabel func_80152DB8
 /* 137168 80152DD8 AFAE002C */  sw    $t6, 0x2c($sp)
 /* 13716C 80152DDC 91E50003 */  lbu   $a1, 3($t7)
 /* 137170 80152DE0 24040011 */  li    $a0, 17
-/* 137174 80152DE4 0C02BB02 */  jal   func_800AEC08
+/* 137174 80152DE4 0C02BB02 */  jal   request_track_general
 /* 137178 80152DE8 24A60001 */   addiu $a2, $a1, 1
 /* 13717C 80152DEC 00021880 */  sll   $v1, $v0, 2
 /* 137180 80152DF0 3C18800E */  lui   $t8, 0x800e

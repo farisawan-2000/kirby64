@@ -1782,7 +1782,7 @@ s32 func_80114A14(struct vCollisionHeader *arg0, void *arg1, u8 arg2) {
     temp_s1->unk2 = 0;
     temp_s1->unk98 = 0;
     temp_s1->unk0 = D_8012D940;
-    temp_v0 = func_800AEC08(0x1D, 0x1E, 0x3C);
+    temp_v0 = request_track_general(0x1D, 0x1E, 0x3C);
     sp24 = temp_v0;
     temp_s1->unk1 = temp_v0;
     temp_v1 = &D_800DE350[temp_v0];
@@ -1892,7 +1892,7 @@ s32 func_80114D54(s32 arg0) {
     phi_return = 0;
     if (temp_v1 != 0) {
         sp1C = temp_v1;
-        temp_ret = func_800AEC08(0x1E, 0x1E, 0x3C);
+        temp_ret = request_track_general(0x1E, 0x1E, 0x3C);
         D_800DE350[temp_ret]->unk4C = temp_v1;
         phi_return = temp_ret;
     }
@@ -1913,7 +1913,7 @@ s32 func_80114DBC(u32 arg0, s32 arg1) {
     if (arg0 < 0x115) {
         temp_v1 = (arg0 * 0x1C) + &D_80124E14;
         if (*temp_v1 == 0) {
-            temp_ret = func_800AEC08(0x1D, 0x1E, 0x3C);
+            temp_ret = request_track_general(0x1D, 0x1E, 0x3C);
             D_800DE350[temp_ret]->unk48 = &D_80114E80;
             return temp_ret;
         }
@@ -2368,9 +2368,9 @@ extern f32 D_80128CF0;
 #ifdef NON_MATCHING
 void func_80115D38(struct UnkStruct8004A7C4 *this) {
     // f32 temp_f0;
-    s32 idx = func_800AEC08(0x1E, 0x1E, 0x3C);
+    s32 idx = request_track_general(0x1E, 0x1E, 0x3C);
 
-    // idx = func_800AEC08(0x1E, 0x1E, 0x3C);
+    // idx = request_track_general(0x1E, 0x1E, 0x3C);
     D_8004A7C4 = D_800DE350[idx];
     func_80008DA8(gEntityGObjProcessArray[idx]);
     func_800AF980(0x17);

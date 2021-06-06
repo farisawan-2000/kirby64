@@ -334,7 +334,7 @@ void func_801E3A64_ovl10(void) {
 
     temp_s1 = D_800E9AA0[D_8004A7C4->objId];
     for (i = 0; i < 2; i++) {
-        temp_v0 = func_800AEC08(0x18, 0x1E, 0x3C);
+        temp_v0 = request_track_general(0x18, 0x1E, 0x3C);
         if (temp_v0 >= 0x3C || temp_v0 == -1) {
             print_error_stub(&D_801F4A80_ovl10);
             func_800B1900(temp_v0 & 0xFFFF);
@@ -457,7 +457,7 @@ void func_801E409C_ovl10(void) {
     s32 temp_v0;
     s32 new;
 
-    temp_v0 = func_800AEC08(0x18, 0x1E, 0x3C);
+    temp_v0 = request_track_general(0x18, 0x1E, 0x3C);
     new = temp_v0;
     if (temp_v0 >= 0x3C || temp_v0 == -1) {
         print_error_stub(&D_801F4AC8_ovl10);
