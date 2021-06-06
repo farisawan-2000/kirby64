@@ -8,7 +8,7 @@ extern const char D_801DB080_ovl8[];
 extern f32 D_800D70D8;
 extern void func_800B1900(u16);
 
-void func_801D2040_ovl8(s32 arg0, s32 arg1, f32 arg2) {
+void func_801D2040_ovl8(struct UnkStruct8004A7C4 *this, s32 arg1, f32 arg2) {
     s32 pad2[3];
     s32 newIdx;
 
@@ -38,17 +38,17 @@ void func_801D2040_ovl8(s32 arg0, s32 arg1, f32 arg2) {
     }
 }
 
-void func_801D223C_ovl8(struct UnkStruct8004A7C4 *arg0) {
-    func_800A9864(0x100DE, 0x1869F, 0x10, arg0);
-    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
-    arg0->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
-    arg0->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
+void func_801D223C_ovl8(struct UnkStruct8004A7C4 *this) {
+    func_800A9864(0x100DE, 0x1869F, 0x10, this);
+    this->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    this->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    this->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    this->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    this->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    this->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+    this->unk3C->unk40.x = D_800E4550[D_8004A7C4->objId];
+    this->unk3C->unk40.y = D_800E4710[D_8004A7C4->objId];
+    this->unk3C->unk40.z = D_800E48D0[D_8004A7C4->objId];
     func_800AA018(0x10621);
     D_800DF310[D_8004A7C4->objId] = func_801D2040_ovl8;
     func_800AF27C();
