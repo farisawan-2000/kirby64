@@ -441,33 +441,24 @@ void func_801DC158_ovl11(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-#ifdef MIPS_TO_C
+extern VTABLE D_801E0B00;
 void func_801DC1C4_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-
     D_800DDFD0[D_8004A7C4->objId] = 4;
     func_800BB468(2, 0);
-    temp_v0 = D_8004A7C4;
-    D_800E7880[temp_v0->objId] = 1;
-    call_virtual_function(D_800E7880[temp_v0->objId], 4, &D_801E0B00);
+    D_800E7880[D_8004A7C4->objId] = 1;
+    call_virtual_function(D_800E7880[D_8004A7C4->objId], 4, &D_801E0B00);
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC1C4_ovl11.s")
-#endif
 
 // stub
 void func_801DC250_ovl11(struct UnkStruct8004A7C4 *arg0) {
 
 }
 
-#ifdef MIPS_TO_C
+extern VTABLE D_801E0B4C;
 void func_801DC258_ovl11(struct UnkStruct8004A7C4 *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 9, &D_801E0B4C);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC258_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 s32 func_801DC2A0_ovl11(f32 arg0) {
