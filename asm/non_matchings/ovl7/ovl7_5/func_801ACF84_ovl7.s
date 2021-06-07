@@ -15,3 +15,6 @@ glabel func_801ACF84_ovl7
 /* 153028 801ACFB8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 15302C 801ACFBC 03E00008 */  jr    $ra
 /* 153030 801ACFC0 00000000 */   nop   
+/* 153034 801ACFC4 00000000 */  nop   
+/* 153038 801ACFC8 00000000 */  nop   
+

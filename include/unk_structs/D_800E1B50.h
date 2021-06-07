@@ -9,7 +9,10 @@ struct SubSub800E1B50_Unk88_UnkC_Unk0_Unk1C {
 };
 
 struct SubSub800E1B50_Unk88_UnkC_Unk0 {
-    u8 filler0[0x1c];
+    u8 filler0[0x10];
+    f32 unk10;
+    s32 unk14;
+    s32 unk18;
     struct SubSub800E1B50_Unk88_UnkC_Unk0_Unk1C *unk1C;
 };
 
@@ -18,6 +21,7 @@ struct SubSub800E1B50_Unk88_UnkC_Unk4 {
 	u32 unk4;
 	u32 unk8;
 	u32 unkC;
+	f32 unk10;
 };
 
 struct SubSub800E1B50_Unk88_UnkC {

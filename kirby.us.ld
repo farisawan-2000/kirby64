@@ -511,6 +511,18 @@ SECTIONS
     /* 0x801D0C60 17ECB0-1C9B00 [4AE50] */
     BEGIN_SEG(ovl9, 0x801D0C60) {
         BUILD_DIR/asm/ovl9/ovl9.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_2.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_3.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_4.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_5.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_6.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_7.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_8.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_9.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_10.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_11.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_12.o(.text);
+        BUILD_DIR/asm/ovl9/ovl9_13.o(.text);
         BUILD_DIR/src/ovl9/ovl9_16.o(.text);
         BUILD_DIR/data/ovl9/data.o(.data*);
         BUILD_DIR/data/ovl9/rodata.o(.rodata);
