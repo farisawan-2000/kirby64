@@ -33,7 +33,7 @@ void func_800AFA14(void);
 void func_801A0880_ovl7(void);
 void* func_800A8100(s32, s32, s32, s32);
 void func_801A3280_ovl7(void);
-void func_801A3E80_ovl7(void);
+void func_801A3E80(void);
 void func_800AFBB4(s32, struct UnkStruct8004A7C4*);
 s32 func_80104C24(Vector*, Vector*);
 
@@ -197,7 +197,7 @@ void func_801BDBFC_ovl7(void) {
 
     if ((D_800E8E60[D_8004A7C4->objId] != 0) || (D_800E5F90[D_8004A7C4->objId] == -1)) {
         temp->unk40 = 1;
-        func_801A3E80_ovl7();
+        func_801A3E80();
     }
     func_800AFBB4(0, D_8004A7C4);
     v1.x = v2.x = v3.x = v4.x = gEntitiesNextPosXArray[D_8004A7C4->objId];

@@ -31,7 +31,7 @@ glabel func_801B1E60
 /* 157F24 801B1EB4 273920BC */  addiu $t9, %lo(D_801B20BC) # addiu $t9, $t9, 0x20bc
 /* 157F28 801B1EB8 3C04801B */  lui   $a0, %hi(D_801B1FD8) # $a0, 0x801b
 /* 157F2C 801B1EBC AC39F150 */  sw    $t9, -0xeb0($at)
-/* 157F30 801B1EC0 0C068354 */  jal   func_801A0D50_ovl7
+/* 157F30 801B1EC0 0C068354 */  jal   func_801A0D50
 /* 157F34 801B1EC4 24841FD8 */   addiu $a0, %lo(D_801B1FD8) # addiu $a0, $a0, 0x1fd8
 /* 157F38 801B1EC8 8E230000 */  lw    $v1, ($s1)
 /* 157F3C 801B1ECC 3C0A800F */  lui   $t2, 0x800f
@@ -46,7 +46,7 @@ glabel func_801B1E60
 /* 157F60 801B1EF0 02002025 */  move  $a0, $s0
 /* 157F64 801B1EF4 15400006 */  bnez  $t2, .L801B1F10_ovl7
 /* 157F68 801B1EF8 00000000 */   nop   
-/* 157F6C 801B1EFC 0C068FA0 */  jal   func_801A3E80_ovl7
+/* 157F6C 801B1EFC 0C068FA0 */  jal   func_801A3E80
 /* 157F70 801B1F00 AD8B0000 */   sw    $t3, ($t4)
 /* 157F74 801B1F04 8E230000 */  lw    $v1, ($s1)
 /* 157F78 801B1F08 8C620000 */  lw    $v0, ($v1)
@@ -847,7 +847,7 @@ glabel func_801B2A94_ovl7
 /* 158B2C 801B2ABC 3C04801C */  lui   $a0, %hi(D_801C3408) # $a0, 0x801c
 /* 158B30 801B2AC0 0C066220 */  jal   func_80198880_ovl7
 /* 158B34 801B2AC4 24843408 */   addiu $a0, %lo(D_801C3408) # addiu $a0, $a0, 0x3408
-/* 158B38 801B2AC8 0C068FA0 */  jal   func_801A3E80_ovl7
+/* 158B38 801B2AC8 0C068FA0 */  jal   func_801A3E80
 /* 158B3C 801B2ACC 8FA40020 */   lw    $a0, 0x20($sp)
 /* 158B40 801B2AD0 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 158B44 801B2AD4 27BD0020 */  addiu $sp, $sp, 0x20
@@ -883,7 +883,7 @@ glabel func_801B2AE0_ovl7
 /* 158BB4 801B2B44 3C04801B */  lui   $a0, %hi(D_801B2C78) # $a0, 0x801b
 /* 158BB8 801B2B48 AC2FF150 */  sw    $t7, -0xeb0($at)
 /* 158BBC 801B2B4C 24842C78 */  addiu $a0, %lo(D_801B2C78) # addiu $a0, $a0, 0x2c78
-/* 158BC0 801B2B50 0C068354 */  jal   func_801A0D50_ovl7
+/* 158BC0 801B2B50 0C068354 */  jal   func_801A0D50
 /* 158BC4 801B2B54 AFA2002C */   sw    $v0, 0x2c($sp)
 /* 158BC8 801B2B58 8E080000 */  lw    $t0, ($s0)
 /* 158BCC 801B2B5C 3C0141A0 */  li    $at, 0x41A00000 # 20.000000

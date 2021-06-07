@@ -38,7 +38,7 @@
 /* 205DB8 801DB258 000D7880 */  sll   $t7, $t5, 2
 /* 205DBC 801DB25C 002F0821 */  addu  $at, $at, $t7
 /* 205DC0 801DB260 AC2BF150 */  sw    $t3, -0xeb0($at)
-/* 205DC4 801DB264 0C068354 */  jal   func_801A0D50_ovl15
+/* 205DC4 801DB264 0C068354 */  jal   func_801A0D50
 /* 205DC8 801DB268 2484B2F8 */   addiu $a0, %lo(D_801DB2F8) # addiu $a0, $a0, -0x4d08
 /* 205DCC 801DB26C 8E420000 */  lw    $v0, ($s2)
 /* 205DD0 801DB270 3C01800F */  lui   $at, 0x800f

@@ -11,7 +11,7 @@ void func_802218E4_ovl18(s32 arg0);
 void func_802201C0_ovl18(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = &D_800B72AC;
     D_800DF150[D_8004A7C4->objId] = &func_80220424_ovl18;
-    func_801A0D50_ovl18(&func_802202B8_ovl18);
+    func_801A0D50(&func_802202B8_ovl18);
     D_800E8920[D_8004A7C4->objId] = 0;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 1, &D_8022AB80);
     while(1)
@@ -95,7 +95,7 @@ void func_80220720_ovl18(s32 arg0) {
 void func_80220728_ovl18(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = &D_800B7138;
     D_800DF150[D_8004A7C4->objId] = &func_80220AA8_ovl18;
-    func_801A0D50_ovl18(&func_80220818_ovl18);
+    func_801A0D50(&func_80220818_ovl18);
     D_800E8920[D_8004A7C4->objId] = 0;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 1, &D_8022AB80[5]);
     while(1)
@@ -347,7 +347,7 @@ void func_80221330_ovl18(s32 arg0) {
     gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
     gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];;
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
-    func_801A0D50_ovl18(&func_802212E8_ovl18, &gEntitiesScaleZArray);
+    func_801A0D50(&func_802212E8_ovl18, &gEntitiesScaleZArray);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[9]);
 }
 

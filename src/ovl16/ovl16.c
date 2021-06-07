@@ -26,7 +26,7 @@ void func_801DB1E0_ovl16(s32 arg0) {
 
     D_800E1B50[D_8004A7C4->objId]->unk39 = t;
     D_800DF150[D_8004A7C4->objId] = &func_801DB3B8_ovl16;
-    func_801A0D50_ovl16(&func_801DB338_ovl16);
+    func_801A0D50(&func_801DB338_ovl16);
     D_800E8920[D_8004A7C4->objId] = 0;
     D_800E9020[D_8004A7C4->objId] = 0.0f;
     D_800E17D0[D_8004A7C4->objId] = D_801EFDF0_ovl16;

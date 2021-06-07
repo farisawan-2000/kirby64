@@ -1477,7 +1477,7 @@ void func_801DDF08_ovl11(struct UnkStruct8004A7C4 *arg0) {
     temp_v0_2 = D_8004A7C4;
     D_800E7CE0[temp_v0_2->objId] = 0x6C;
     D_800E6A10[temp_v0_2->objId] = -1.0f;
-    func_801A0D50_ovl11(&D_801DDEC0);
+    func_801A0D50(&D_801DDEC0);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 5, &D_801E0B9C);
 }
 #else

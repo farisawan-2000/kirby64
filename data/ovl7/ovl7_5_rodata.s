@@ -1,12 +1,12 @@
 .include "macros.inc"
 .section .rodata
 
-glabel D_801CE020
-.asciiz "JL_CatchOver: No CatchInfo Address ID:%x\n"
-.balign 4
+# glabel D_801CE020
+# .asciiz "JL_CatchOver: No CatchInfo Address ID:%x\n"
+# .balign 4
 
-glabel D_801CE04C
-.word 0x477FFF00
+# glabel D_801CE04C
+# .word 0x477FFF00
 
 glabel D_801CE050
 .word 0x40490FDB

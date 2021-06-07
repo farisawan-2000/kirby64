@@ -88,7 +88,7 @@ void func_801DC0EC_ovl10(s32 arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 0;
     func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     D_800E6A10[D_8004A7C4->objId] = (D_800E7880[D_8004A7C4->objId] == 2) ? 1.0f : -1.0f;
-    func_801A0D50_ovl10(&func_801DBD38_ovl10);
+    func_801A0D50(&func_801DBD38_ovl10);
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
     D_800E0490[D_8004A7C4->objId] = &D_801F3F94_ovl10;
     func_801A2ADC_ovl10(&D_801F3F94_ovl10);
@@ -118,7 +118,7 @@ void func_801DC2F4_ovl10(s32 arg0) {
     D_800E8920[D_8004A7C4->objId] = 0;
     gEntitiesPosYArray[D_8004A7C4->objId] = 140.0f;
     gEntitiesNextPosYArray[D_8004A7C4->objId] = gEntitiesPosYArray[D_8004A7C4->objId];
-    func_801A0D50_ovl10(&func_801DBD38_ovl10);
+    func_801A0D50(&func_801DBD38_ovl10);
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4070_ovl10;
     D_800E0490[D_8004A7C4->objId] = &D_801F3FA8_ovl10;
     func_801A2ADC_ovl10(&D_801F3FA8_ovl10);
@@ -289,7 +289,7 @@ void func_801DCCB8_ovl10(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = &func_800B68AC;
     func_800B19F4(0x30, D_8004A7C4->objId);
     D_800E8920[D_8004A7C4->objId] = 1;
-    func_801A0D50_ovl10(&func_801DBD38_ovl10);
+    func_801A0D50(&func_801DBD38_ovl10);
     D_800E1B50[D_8004A7C4->objId]->unk98 = &D_801F4094_ovl10;
     D_800E0490[D_8004A7C4->objId] = &D_801F3F94_ovl10;
     func_801A2ADC_ovl10(&D_801F3F94_ovl10);

@@ -1,0 +1,3 @@
+glabel func_801ACFC4_ovl7
+/* 153034 801ACFC4 00000000 */  nop   
+/* 153038 801ACFC8 00000000 */  nop   

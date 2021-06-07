@@ -472,7 +472,7 @@ SECTIONS
         BUILD_DIR/asm/ovl7/ovl7_2.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_3.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_4.o(.text);
-        BUILD_DIR/asm/ovl7/ovl7_5.o(.text);
+        BUILD_DIR/src/ovl7/ovl7_5.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_6.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_7.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_8.o(.text);
@@ -486,6 +486,7 @@ SECTIONS
         BUILD_DIR/src/ovl7/ovl7_16.o(.text);
         BUILD_DIR/asm/ovl7/ovl7_17.o(.text);
         BUILD_DIR/data/ovl7/data.o(.data*);
+        BUILD_DIR/src/ovl7/ovl7_5.o(.rodata*);
         BUILD_DIR/data/ovl7/ovl7_5_rodata.o(.rodata*);
         BUILD_DIR/data/ovl7/ovl7_6_rodata.o(.rodata*);
         BUILD_DIR/src/ovl7/ovl7_14.o(.rodata);

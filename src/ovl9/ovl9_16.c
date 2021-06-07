@@ -382,7 +382,7 @@ void func_8021B5D4_ovl9(struct UnkStruct8004A7C4 *arg0) {
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
     temp_v0->unk42 = 2;
     temp_v0->unk98 = &D_801CD21C;
-    func_801A0D50_ovl7(func_8021B58C_ovl9);
+    func_801A0D50(func_8021B58C_ovl9);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 2, D_8021CE44_ovl9);
 }
 
