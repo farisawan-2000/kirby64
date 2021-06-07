@@ -87,7 +87,7 @@ void func_801E2F68_ovl10(s32 arg0) {
     D_800E64D0[D_8004A7C4->objId] = D_800E6690[D_8004A7C4->objId];
     D_800E6850[D_8004A7C4->objId] = D_801F4A48_ovl10;
     func_8000B6BC(0x3C);
-    D_801ACF84_ovl10(arg0);
+    func_801ACF84_ovl7(arg0);
 }
 
 void func_801E3244_ovl10(void) {
@@ -128,7 +128,7 @@ void func_801E326C_ovl10(s32 arg0) {
     D_800E64D0[D_8004A7C4->objId] = sinf(func_801E3614_ovl10(arg0)) * 6.0f;
     D_800E3210[D_8004A7C4->objId] = cosf(temp_f0_2) * 6.0f;
     func_8000B6BC(0x1E);
-    D_801ACF84_ovl10(arg0);
+    func_801ACF84_ovl7(arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl10/ovl10_2/func_801E326C_ovl10.s")

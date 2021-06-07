@@ -33,6 +33,15 @@ struct Sub800E1B50_Unk88 {
 	u32 unk10;
 };
 
+struct Sub800E1B50_Unk94 {
+	u32 pad[4];
+	u32 unk10;
+	u32 unk14;
+	u32 unk18;
+	// sound
+	u32 unk1C;
+};
+
 struct Sub800E1B50 {
 	u32 unk0;
 	u32 unk4;
@@ -61,13 +70,21 @@ struct UnkStruct800E1B50 {
     u8 unk43;
 	u32 unk44;
 	u32 unk48;
-	u8 pad2 [0x8C - 0x3C - 4 - 0xC - 0xC];
+	u8 pad2 [0x8C - 0x3C - 4 - 0xC - 0xC - 0x20];
+	u32 unk60;
+	u32 unk64;
+	u32 unk68;
+	u32 unk6C;
+	u32 unk70;
+	u32 unk74;
+	u32 unk78;
+	u32 unk7C;
 	struct Sub800E1B50 *unk80;
 	s32 unk84;
 	struct Sub800E1B50_Unk88 *unk88;
 	s32 *unk8C;
 	u32 unk90;
-	u32 unk94;
+	struct Sub800E1B50_Unk94 *unk94;
 	s32 *unk98;
 };
 

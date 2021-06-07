@@ -1,9 +1,13 @@
-D_800E25D0 gEntitiesPosXArray
-D_800E2790 gEntitiesPosYArray
-D_800E2950 gEntitiesPosZArray
+D_800E25D0 gEntitiesNextPosXArray
+D_800E2790 gEntitiesNextPosYArray
+D_800E2950 gEntitiesNextPosZArray
+D_800E2B10 gEntitiesScaleXArray
+D_800E2CD0 gEntitiesScaleYArray
+D_800E2E90 gEntitiesScaleZArray
 D_800E4010 gEntitiesAngleXArray
 D_800E41D0 gEntitiesAngleYArray
 D_800E4390 gEntitiesAngleZArray
 D_800DF4D0 gSegment4StartArray
 D_800DE510 gEntityGObjProcessArray
+D_800DDC50 gEntityVtableIndexArray
 gEntitiesGObjThreadStackArray gEntityGObjProcessArray

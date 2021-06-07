@@ -12,7 +12,7 @@ extern f32 D_801F4C30, D_801F4C34, D_801F4C38;
 
 void func_801EF760_ovl10(void);
 
-void func_801EF3F0_ovl10(s32 arg0) {
+void func_801EF3F0_ovl10(struct UnkStruct8004A7C4 *this) {
     struct UnkStruct800E1B50 *temp_s0 = D_800E1B50[D_8004A7C4->objId];
 
     D_800DF150[D_8004A7C4->objId] = &func_801EF760_ovl10;
@@ -52,7 +52,7 @@ void func_801EF3F0_ovl10(s32 arg0) {
     }
     func_800B3520();
     func_8000B6BC(0x3C);
-    D_801ACF84_ovl10(arg0);
+    func_801ACF84_ovl7(this);
 }
 
 void func_801EF760_ovl10(void) {

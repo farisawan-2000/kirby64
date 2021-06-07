@@ -1,7 +1,13 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "types.h"
+#include "sounds.h"
+
 #include "ovl0/ovl0_5.h"
+
+#include "buffers.h"
+
+#include "unk_structs/D_800DE350.h"
 
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800E1B50.h"
@@ -64,9 +70,6 @@ loop_1:
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB31C_ovl11.s")
 #endif
 
-#include "D_8004A7C4.h"
-#include "ovl1/ovl1_6.h"
-#include "buffers.h"
 extern const char D_801E0BE0[];
 extern f32 D_801E0C0C;
 extern int func_800F98EC(s32, f32);
@@ -1288,44 +1291,29 @@ void func_801DD840_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     }
 }
 #else
+void func_801DD840_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2);
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD840_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801DD900_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800E9E20[temp_v0->objId] = 0;
-    D_800E9FE0[temp_v0->objId] = 0;
-    D_800DDFD0[temp_v0->objId] = 7;
+    D_800E9E20[D_8004A7C4->objId] = 0;
+    D_800E9FE0[D_8004A7C4->objId] = 0;
+    D_800DDFD0[D_8004A7C4->objId] = 7;
     func_800AA018(0x103EA);
     func_800AA018(0x103E9);
-    D_800DF310[D_8004A7C4->objId] = &D_801DD840;
+    D_800DF310[D_8004A7C4->objId] = func_801DD840_ovl11;
     func_800AF27C();
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD900_ovl11.s")
-#endif
 
-#ifdef MIPS_TO_C
 void func_801DD9C8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 temp_v1;
-
-    temp_v0 = D_8004A7C4;
-    temp_v1 = temp_v0->objId;
-    if (D_800E9E20[temp_v1] != 0) {
-        D_800E9720[temp_v1] = 0;
-        gEntityVtableIndexArray[temp_v0->objId] = 1;
-        assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_801DC258);
+    if (D_800E9E20[D_8004A7C4->objId] != 0) {
+        D_800E9720[D_8004A7C4->objId] = 0;
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801DC258_ovl11);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD9C8_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DDA4C_ovl11(struct UnkStruct8004A7C4 *arg0) {
@@ -1425,16 +1413,13 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDBA4_ovl11.s")
 
 #ifdef MIPS_TO_C
 void func_801DDD80_ovl11(void) {
-    struct CollisionState *temp_v0;
-    u32 temp_v1;
+    struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
-    temp_v1 = D_8004A7C4->objId;
-    temp_v0 = D_800E1B50[temp_v1];
-    temp_v0->unk70 = 2;
-    temp_v0->unk68 = 0x15;
-    temp_v0->unk6C = 1;
+    tmp->unk70 = 2;
+    tmp->unk68 = 0x15;
+    tmp->unk6C = 1;
     D_800EA1A0[D_8004A7C4->objId] = 1;
-    func_801DB2BC_ovl11(D_800DE350[temp_v1], 0x3F800000, &D_8004A7C4);
+    func_801DB2BC_ovl11(D_800DE350[D_8004A7C4->objId], 1.0f);
     play_sound(0x1C9);
 }
 #else
@@ -1442,42 +1427,21 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDD80_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-struct CollisionState *func_801DDE08_ovl11(void) {
-    struct CollisionState *sp1C;
-    s32 temp_a0;
-    s32 temp_t2;
-    s32 temp_t5;
-    s32 temp_t8;
-    struct CollisionState *temp_v0;
-    u32 temp_v1;
-    struct CollisionState *phi_return;
-
-    temp_v1 = D_8004A7C4->objId;
-    temp_v0 = D_800E1B50[temp_v1];
-    temp_a0 = D_800DE350[temp_v1];
-    temp_t8 = temp_v0->unk70 - 1;
-    temp_v0->unk70 = temp_t8;
-    phi_return = temp_v0;
-    if (temp_t8 == 0) {
-        temp_v0->unk70 = 2;
-        temp_t2 = temp_v0->unk6C ^ 1;
-        temp_v0->unk6C = temp_t2;
-        if (temp_t2 != 0) {
-            sp1C = temp_v0;
-            func_801DB2BC_ovl11(temp_a0, 0x3F800000);
+void func_801DDE08_ovl11(void) {
+    tmp = D_800E1B50[D_8004A7C4->objId];
+    temp_a0 = D_800DE350[D_8004A7C4->objId];
+    if (--tmp->unk70 == 0) {
+        tmp->unk70 = 2;
+        tmp->unk6C ^= 1;
+        if (tmp->unk6C != 0) {
+            func_801DB2BC_ovl11(temp_a0, 1.0f);
         } else {
-            sp1C = temp_v0;
-            func_801DB2BC_ovl11(temp_a0, 0);
+            func_801DB2BC_ovl11(temp_a0, 0.0f);
         }
-        temp_t5 = sp1C->unk68 - 1;
-        sp1C->unk68 = temp_t5;
-        phi_return = sp1C;
-        if (temp_t5 == 0) {
+        if (--tmp->unk68 == 0) {
             D_800EA1A0[D_8004A7C4->objId] = 0;
-            phi_return = sp1C;
         }
     }
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDE08_ovl11.s")
@@ -2007,13 +1971,11 @@ struct CollisionState *func_801DEED0_ovl11(void) {
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEED0_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
+extern VTABLE D_801E0BC4;
+
 void func_801DEF9C_ovl11(struct UnkStruct8004A7C4 *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 3, &D_801E0BC4);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEF9C_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DEFE4_ovl11(struct UnkStruct8004A7C4 *arg0) {
@@ -2128,66 +2090,41 @@ void func_801DF318_ovl11(struct UnkStruct8004A7C4 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF318_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801DF384_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800DDFD0[temp_v0->objId] = 1;
-    D_800E9720[temp_v0->objId] = 0x2D;
+    D_800DDFD0[D_8004A7C4->objId] = 1;
+    D_800E9720[D_8004A7C4->objId] = 0x2D;
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF384_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DF3DC_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    s32 *temp_a0;
-    s32 temp_a1;
-    struct UnkStruct8004A7C4 *temp_v0;
-    u32 temp_v1;
-
-    temp_v0 = D_8004A7C4;
-    temp_v1 = temp_v0->objId;
-    temp_a0 = &D_800E9720[temp_v1];
-    temp_a1 = *temp_a0;
-    if (temp_a1 == 0) {
-        gEntityVtableIndexArray[temp_v1] = 2;
-        assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_801DEF9C);
-        return;
+    if (D_800E9720[D_8004A7C4->objId]-- == 0) {
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801DEF9C_ovl11);
     }
-    *temp_a0 = temp_a1 - 1;
-    if (D_800D70D8 <= 0.0f) {
-        gEntityVtableIndexArray[temp_v0->objId] = 2;
-        assign_new_process_entry(gEntityGObjProcessArray[temp_v0->objId], &D_801DEF9C);
+    else if (D_800D70D8 <= 0.0f) {
+        gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801DEF9C_ovl11);
     }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF3DC_ovl11.s")
 #endif
 
-#ifdef MIPS_TO_C
 void func_801DF4B0_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-
-    temp_v0 = D_8004A7C4;
-    D_800E9E20[temp_v0->objId] = 0;
-    D_800DDFD0[temp_v0->objId] = 2;
-    play_sound(0x1CD);
+    D_800E9E20[D_8004A7C4->objId] = 0;
+    D_800DDFD0[D_8004A7C4->objId] = 2;
+    play_sound(SOUND__BADO_ICEDASI);
     func_800AA018(0x10556);
     func_800AA864(0x10555, 1);
     D_800E9E20[D_8004A7C4->objId] = 1;
     func_800AFA14();
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF4B0_ovl11.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_801DF548_ovl11(struct UnkStruct8004A7C4 *arg0) {
     s32 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct UnkStruct8004A7C4 *D_8004A7C4->objId;
     u32 temp_a1;
 
     temp_v1 = D_8004A7C4;
@@ -2203,26 +2140,20 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF548_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
+extern void func_800FD570(s32, u32, f32, u32, f32);
 void func_801DF5B8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct CollisionState *sp24;
-    s32 temp_a1;
-    struct CollisionState **temp_v0;
-    struct CollisionState *temp_v0_2;
-    void *temp_v1;
-    void *phi_v1;
+    struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
-    temp_v0 = &D_800E1B50[D_8004A7C4->objId];
-    temp_v0_2 = *temp_v0;
-    temp_v1 = temp_v0_2->unk94;
-    temp_v0_2->unk40 = 1;
-    temp_a1 = temp_v1->unk1C;
-    phi_v1 = temp_v1;
-    if (temp_a1 != 0x80000000) {
-        sp24 = temp_v0_2;
-        play_sound(temp_a1);
-        phi_v1 = temp_v0_2->unk94;
+    tmp->unk40 = 1;
+    if (tmp->unk94->unk1C != 0x80000000) {
+        play_sound(tmp->unk94->unk1C);
     }
-    func_800FD570(0, phi_v1->unk18, 0.0f, *(*temp_v0)->unk88->unk10, 0.0f);
+    func_800FD570(0,
+                  tmp->unk94->unk18,
+                  0.0f,
+                  tmp->unk88->unk10,
+                  0.0f
+                 );
     D_801A3E80_ovl11(arg0);
 }
 #else
