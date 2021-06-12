@@ -125,14 +125,14 @@ glabel func_802091B4_ovl9
 /* 1B7244 802091F4 A0790040 */  sb    $t9, 0x40($v1)
 /* 1B7248 802091F8 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 1B724C 802091FC 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
-/* 1B7250 80209200 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1B7250 80209200 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1B7254 80209204 3C05801A */  lui   $a1, %hi(D_801A3E80) # $a1, 0x801a
 /* 1B7258 80209208 8D090000 */  lw    $t1, ($t0)
 /* 1B725C 8020920C 24A53E80 */  addiu $a1, %lo(D_801A3E80) # addiu $a1, $a1, 0x3e80
 /* 1B7260 80209210 00095080 */  sll   $t2, $t1, 2
 /* 1B7264 80209214 008A2021 */  addu  $a0, $a0, $t2
 /* 1B7268 80209218 0C02C7B2 */  jal   assign_new_process_entry
-/* 1B726C 8020921C 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1B726C 8020921C 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 1B7270 80209220 10000043 */  b     .L80209330_ovl9
 /* 1B7274 80209224 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80209228_ovl9:
@@ -144,10 +144,10 @@ glabel func_802091B4_ovl9
 /* 1B728C 8020923C 24A5CF84 */  addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
 /* 1B7290 80209240 14800007 */  bnez  $a0, .L80209260_ovl9
 /* 1B7294 80209244 248CFFFF */   addiu $t4, $a0, -1
-/* 1B7298 80209248 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1B7298 80209248 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1B729C 8020924C 00822021 */  addu  $a0, $a0, $v0
 /* 1B72A0 80209250 0C02C7B2 */  jal   assign_new_process_entry
-/* 1B72A4 80209254 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1B72A4 80209254 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 1B72A8 80209258 10000002 */  b     .L80209264_ovl9
 /* 1B72AC 8020925C 00000000 */   nop   
 .L80209260_ovl9:
@@ -333,12 +333,12 @@ glabel func_802094DC_ovl9
 /* 1B7550 80209500 8C650000 */  lw    $a1, ($v1)
 /* 1B7554 80209504 14A00009 */  bnez  $a1, .L8020952C_ovl9
 /* 1B7558 80209508 24B8FFFF */   addiu $t8, $a1, -1
-/* 1B755C 8020950C 3C04800E */ lui $a0, %hi(D_800DE510)
+/* 1B755C 8020950C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1B7560 80209510 00822021 */  addu  $a0, $a0, $v0
 /* 1B7564 80209514 3C05801B */  lui   $a1, %hi(D_801ACF84) # $a1, 0x801b
 /* 1B7568 80209518 24A5CF84 */  addiu $a1, %lo(D_801ACF84) # addiu $a1, $a1, -0x307c
 /* 1B756C 8020951C 0C02C7B2 */  jal   assign_new_process_entry
-/* 1B7570 80209520 8C84E510 */ lw $a0, %lo(D_800DE510)($a0)
+/* 1B7570 80209520 8C84E510 */ lw $a0, %lo(gEntityGObjProcessArray)($a0)
 /* 1B7574 80209524 10000006 */  b     .L80209540_ovl9
 /* 1B7578 80209528 8FBF0014 */   lw    $ra, 0x14($sp)
 .L8020952C_ovl9:
@@ -448,19 +448,19 @@ glabel func_80209698_ovl9
 /* 1B76FC 802096AC 24040003 */   li    $a0, 3
 /* 1B7700 802096B0 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 1B7704 802096B4 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)
-/* 1B7708 802096B8 3C01800E */ lui $at, %hi(D_800E2790)
-/* 1B770C 802096BC 3C07800E */ lui $a3, %hi(D_800E25D0)
+/* 1B7708 802096B8 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
+/* 1B770C 802096BC 3C07800E */ lui $a3, %hi(gEntitiesNextPosXArray)
 /* 1B7710 802096C0 8DC20000 */  lw    $v0, ($t6)
 /* 1B7714 802096C4 24050002 */  li    $a1, 2
 /* 1B7718 802096C8 00003025 */  move  $a2, $zero
 /* 1B771C 802096CC 00021080 */  sll   $v0, $v0, 2
 /* 1B7720 802096D0 00220821 */  addu  $at, $at, $v0
-/* 1B7724 802096D4 C4242790 */ lwc1 $f4, %lo(D_800E2790)($at)
-/* 1B7728 802096D8 3C01800E */ lui $at, %hi(D_800E2950)
+/* 1B7724 802096D4 C4242790 */ lwc1 $f4, %lo(gEntitiesNextPosYArray)($at)
+/* 1B7728 802096D8 3C01800E */ lui $at, %hi(gEntitiesNextPosZArray)
 /* 1B772C 802096DC 00220821 */  addu  $at, $at, $v0
-/* 1B7730 802096E0 C4262950 */ lwc1 $f6, %lo(D_800E2950)($at)
+/* 1B7730 802096E0 C4262950 */ lwc1 $f6, %lo(gEntitiesNextPosZArray)($at)
 /* 1B7734 802096E4 00E23821 */  addu  $a3, $a3, $v0
-/* 1B7738 802096E8 8CE725D0 */ lw $a3, %lo(D_800E25D0)($a3)
+/* 1B7738 802096E8 8CE725D0 */ lw $a3, %lo(gEntitiesNextPosXArray)($a3)
 /* 1B773C 802096EC E7A40010 */  swc1  $f4, 0x10($sp)
 /* 1B7740 802096F0 0C029FDD */  jal   func_800A7F74
 /* 1B7744 802096F4 E7A60014 */   swc1  $f6, 0x14($sp)
