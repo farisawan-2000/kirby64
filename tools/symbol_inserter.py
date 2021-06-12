@@ -8,7 +8,8 @@ checking_symbols = [
 	"lh",
 	"sw",
 	"sb",
-	"sh"
+	"sh",
+	"addiu"
 ]
 
 stagedRegs = {}
@@ -22,8 +23,16 @@ def isProblemLine(l, sp):
 	xtok = x2.replace("("," ").replace(")"," ").split()
 
 	if not("lo" in xtok[0] or "hi" in xtok[0]):
-		if len(xtok[0][1:]) > 4:
+		if "addiu" in l:
 			# print(xtok)
+			# print(l)
+			# print(sp)
+			# print(x)
+			x3 = x[1].split()[0]
+			# print(x3[:-1])
+			stagedRegs[x3[:-1]] = [x[1].split()[1], lineNum]
+		elif len(xtok[0][1:]) > 4:
+			print(xtok[1])
 			stagedRegs[xtok[1]] = [xtok[0], lineNum]
 			# if len(stagedRegs[xtok[1]]) != 2:
 			# 	print(l)
@@ -74,7 +83,7 @@ def handleStagedLine(l, ls, d, fname):
 	line2 = ls[paradigm - stagedRegs[xtok[0]][1]]
 	line2 = line2.split()
 	temp = line2[-1].split("(")
-	temp[0] = "%lo("+sym+")("
+	temp[0] = "%lo("+sym+")(" if "addiu" not in line2 else "%lo("+sym+")"
 	line2[-1] = ''.join(temp)
 	line2 = ' '.join(line2)
 	ls[paradigm - stagedRegs[xtok[0]][1]] = line2+"\n"
