@@ -520,6 +520,7 @@ SECTIONS
         BUILD_DIR/asm/ovl9/ovl9_8.o(.text);
         BUILD_DIR/asm/ovl9/ovl9_9.o(.text);
         BUILD_DIR/src/ovl9/ovl9_10.o(.text);
+        . += 0x10;
         BUILD_DIR/asm/ovl9/ovl9_11.o(.text);
         BUILD_DIR/asm/ovl9/ovl9_12.o(.text);
         BUILD_DIR/asm/ovl9/ovl9_13.o(.text);
