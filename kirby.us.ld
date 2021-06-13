@@ -527,6 +527,8 @@ SECTIONS
         BUILD_DIR/src/ovl9/ovl9_16.o(.text);
         BUILD_DIR/data/ovl9/data.o(.data*);
         BUILD_DIR/data/ovl9/rodata.o(.rodata);
+        BUILD_DIR/src/ovl9/ovl9_13.o(.rodata*);
+        BUILD_DIR/data/ovl9/rodata_11_12.o(.rodata);
     }
     END_SEG(ovl9)
 

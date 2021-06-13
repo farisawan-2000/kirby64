@@ -2,6 +2,7 @@
 #define MATH_H
 
 #define M_PI 3.14159265358979323846
+#define M_PIF 3.14159265358979323846f
 
 float sinf(float);
 double sin(double);
