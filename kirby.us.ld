@@ -523,7 +523,7 @@ SECTIONS
         . += 0x10;
         BUILD_DIR/asm/ovl9/ovl9_11.o(.text);
         BUILD_DIR/asm/ovl9/ovl9_12.o(.text);
-        BUILD_DIR/asm/ovl9/ovl9_13.o(.text);
+        BUILD_DIR/src/ovl9/ovl9_13.o(.text);
         BUILD_DIR/src/ovl9/ovl9_16.o(.text);
         BUILD_DIR/data/ovl9/data.o(.data*);
         BUILD_DIR/data/ovl9/rodata.o(.rodata);
