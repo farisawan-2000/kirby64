@@ -69,4 +69,7 @@
 #define ALIGN8(x) (((x) + 7) & -8)
 #define ALIGN4(x) (((x) + 3) & -4)
 
+// makes it easier to move all the prototypes and externs to the top of the file
+#define IN_FILE
+
 #endif

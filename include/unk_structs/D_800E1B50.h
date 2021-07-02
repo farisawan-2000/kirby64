@@ -54,12 +54,26 @@ struct Sub800E1B50 {
 	f32 unk10;
 };
 
+struct Sub800E1B50_34_4C {
+	u32 unk0;
+	f32 unk4;
+	f32 unk8;
+	f32 unkC;
+	f32 unk10;
+	f32 unk14;
+};
+
+struct Sub800E1B50_Unk34 {
+	u8 pad[0x4C];
+	struct Sub800E1B50_34_4C *unk4C;
+};
+
 struct UnkStruct800E1B50 {
 	f32 unk0;
 	f32 unk4;
 	f32 unk8;
 	u8 pad[0x28];
-    u32 unk34;
+    struct Sub800E1B50_Unk34 *unk34;
     u8 unk38;
     u8 unk39;
     u8 unk3A;
@@ -74,7 +88,7 @@ struct UnkStruct800E1B50 {
     u8 unk43;
 	u32 unk44;
 	u32 unk48;
-	u8 pad2 [0x8C - 0x3C - 4 - 0xC - 0xC - 0x20];
+	u8 pad2 [0x14];
 	u32 unk60;
 	u32 unk64;
 	u32 unk68;
