@@ -14,7 +14,7 @@ OSPiHandle *gRomHandle; // 0x80048CF0
 // 0x80048CF4?
 OSPiHandle D_80048CF8; // 0x74 bytes
 OSMesg D_80048D6C;
-OSMesgQueue D_80048D70;
+OSMesgQueue gDmaMessageQueue;
 u32 D_80048D88;
 void *D_80048D8C;
 u32 D_80048D90;
@@ -24,8 +24,8 @@ u32 D_80048D9C;
 
 // end bss, followed by ovl0_2.c
 
-void func_80002BA0(void) {
-    osCreateMesgQueue(&D_80048D70, &D_80048D6C, 1);
+void init_dma_message_queue(void) {
+    osCreateMesgQueue(&gDmaMessageQueue, &D_80048D6C, 1);
 }
 
 
@@ -43,7 +43,7 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 directio
         osInvalDCache((void*)vAddr, size);
     }
     sp48.hdr.pri = 0;
-    sp48.hdr.retQueue = &D_80048D70;
+    sp48.hdr.retQueue = &gDmaMessageQueue;
     sp48.size = 0x10000;
     while (size >= 0x10001) {
         sp48.dramAddr = (void*)vAddr;
@@ -52,7 +52,7 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 directio
             fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
-        osRecvMesg(&D_80048D70, NULL, 1);
+        osRecvMesg(&gDmaMessageQueue, NULL, OS_MESG_BLOCK);
         size -= 0x10000;
         physAddr += 0x10000;
         vAddr += 0x10000;
@@ -65,7 +65,7 @@ void dma_copy(OSPiHandle *handle, u32 physAddr, u32 vAddr, u32 size, u8 directio
             fatal_printf("dma pi full %x %x %x\n", physAddr, vAddr, size);
             while (1);
         }
-        osRecvMesg(&D_80048D70, NULL, 1);
+        osRecvMesg(&gDmaMessageQueue, NULL, OS_MESG_BLOCK);
     }
 }
 

@@ -31,13 +31,13 @@ OSThread gIdleThread;
  u64 idleThreadStack[IDLE_THREAD_STACK_LEN_U64];
 
 OSThread gMainThread;
- u64 gThread3Stack[0x80]; // Stack for gMainThread
+ u64 gMainThreadStack[0x80]; // Stack for gMainThread
 
 OSThread gAudioThread;
- u64 gThread4Stack[0xC0]; // Stack for gAudioThread
+ u64 gAudioThreadStack[0xC0]; // Stack for gAudioThread
 
 OSThread gGameThread;
- u64 mainThreadStack[MAIN_THREAD_STACK_LEN_U64];
+ u64 gGameThreadStack[MAIN_THREAD_STACK_LEN_U64];
 
 OSThread gControllerThread;
  u64 gThread6Stack[0x100]; // Stack for gControllerThread
@@ -63,7 +63,7 @@ OSThread *unused_get_main_thread(void) {
 }
 
 u64 *unused_get_main_thread_stack(void) {
-    return mainThreadStack;
+    return gGameThreadStack;
 }
 
 u16 unused_get_main_thread_stack_length(void) {
@@ -96,17 +96,17 @@ void func_80000510(void) {
     if (idleThreadStack[7] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(1);
     }
-    if (gThread3Stack[7] != STACK_TOP_MAGIC) {
+    if (gMainThreadStack[7] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(3);
     }
-    if (mainThreadStack[7] != STACK_TOP_MAGIC) {
+    if (gGameThreadStack[7] != STACK_TOP_MAGIC) {
         thread_crash_stack_overflow(5);
     }
 }
 
 extern void osCreateViManager(OSPri x);
 extern void func_80002EBC(void); // Initializes a PI Handle
-extern void func_80002BA0(void);
+extern void init_dma_message_queue(void);
 extern void dma_read(u32 x, void *y, u32 z);
 extern void thread3_main(void *);
 extern void thread4_audio(void *);
@@ -118,23 +118,23 @@ void crash_screen_start_thread();
 
 extern OSPiHandle *osCartRomInit(void);
 
-void thread5_main(UNUSED void *arg0) {
+void thread5_game(UNUSED void *arg0) {
     osCreateViManager(0xFE);
     gRomHandle = osCartRomInit();
     func_80002EBC();
     osCreatePiManager(OS_PRIORITY_PIMGR, &piMesgQueue, &piMesgBuffer[0], NUM_PI_MESSAGES);
-    func_80002BA0();
+    init_dma_message_queue();
     dma_read(0xB0000B70, gRSPBootUcode, sizeof(gRSPBootUcode));
     check_sp_imem();
     check_sp_dmem();
     osCreateMesgQueue(&gThreadInitializedMQ, &D_80048A04, 1);
 
-    osCreateThread(&gMainThread, 3, thread3_main, NULL, &gThread3Stack[0x80], 120);
-    SETUP_STACK_AND_START_THREAD(gMainThread, gThread3Stack);
+    osCreateThread(&gMainThread, 3, thread3_main, NULL, &gMainThreadStack[0x80], 120);
+    SETUP_STACK_AND_START_THREAD(gMainThread, gMainThreadStack);
     osRecvMesg(&gThreadInitializedMQ, NULL, OS_MESG_BLOCK);
 
-    osCreateThread(&gAudioThread, 4, thread4_audio, NULL, &gThread4Stack[0xC0], 110);
-    SETUP_STACK_AND_START_THREAD(gAudioThread, gThread4Stack);
+    osCreateThread(&gAudioThread, 4, thread4_audio, NULL, &gAudioThreadStack[0xC0], 110);
+    SETUP_STACK_AND_START_THREAD(gAudioThread, gAudioThreadStack);
     osRecvMesg(&gThreadInitializedMQ, NULL, OS_MESG_BLOCK);
 
     osCreateThread(&gControllerThread, 6, func_800051E0, NULL, &gThread6Stack[0x100], 115);
@@ -148,8 +148,8 @@ void thread5_main(UNUSED void *arg0) {
 
 void thread1_idle(void *arg0) {
     crash_screen_start_thread();
-    osCreateThread(&gGameThread, 5, thread5_main, arg0, &mainThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
-    mainThreadStack[7] = STACK_TOP_MAGIC;
+    osCreateThread(&gGameThread, 5, thread5_game, arg0, &gGameThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
+    gGameThreadStack[7] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
         osStartThread(&gGameThread);
     }
