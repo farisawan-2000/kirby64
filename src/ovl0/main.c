@@ -118,7 +118,7 @@ void crash_screen_start_thread();
 
 extern OSPiHandle *osCartRomInit(void);
 
-void thread5_game(UNUSED void *arg0) {
+void thread5_game(UNUSED void *arg) {
     osCreateViManager(0xFE);
     gRomHandle = osCartRomInit();
     func_80002EBC();
@@ -146,9 +146,9 @@ void thread5_game(UNUSED void *arg0) {
     game_tick(0);
 }
 
-void thread1_idle(void *arg0) {
+void thread1_idle(void *arg) {
     crash_screen_start_thread();
-    osCreateThread(&gGameThread, 5, thread5_game, arg0, &gGameThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
+    osCreateThread(&gGameThread, 5, thread5_game, arg, &gGameThreadStack[MAIN_THREAD_STACK_LEN_U64], 50);
     gGameThreadStack[7] = STACK_TOP_MAGIC;
     if (D_8003DC94 == 0) {
         osStartThread(&gGameThread);

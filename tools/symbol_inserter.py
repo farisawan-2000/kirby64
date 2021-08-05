@@ -117,7 +117,8 @@ for i in sys.argv[1:]: # xargs support lul
 				handleStagedLine(line, lineList, None, i)
 				# print(line[:-1], "bruh", lineList[lineNum])
 			lineNum-=1
-	e = open(i, 'w')
+	e = open(i, 'w+')
 	e.write(''.join(lineList[::-1]))
 	e.close()
 	stagedRegs = {}
+	symdic = {}

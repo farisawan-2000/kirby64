@@ -260,9 +260,10 @@ struct KirbyState {
     u32 unk16C;
     u32 unk170;
 
-    Vec3f vel;					// 0x74
+    f32 forwardVel;
+    Vec3f vel;					// 0x78
 
-    f32 unk180;
+    // f32 unk180;
     u32 unk184;
     u32 unk188;
     u32 unk18C;

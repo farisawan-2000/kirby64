@@ -296,7 +296,7 @@ void func_8016C558_ovl3(struct UnkStruct8004A7C4 *arg0) {
         gKirbyState.isTurning &= ~4;
     }
     if (gKirbyState.ceilingCollisionNext != 0) {
-        if (gKirbyState.vel[2] > 8.0f) {
+        if (gKirbyState.vel[1] > 8.0f) {
             if (gKirbyState.action != 0xD) {
                 if (gKirbyState.action != 9) {
                     idx = func_801693C4_ovl3(1);
