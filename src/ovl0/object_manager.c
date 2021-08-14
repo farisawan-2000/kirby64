@@ -1758,25 +1758,20 @@ void *func_8000AC3C(struct GObjProcess *arg0) {
     void *phi_v1_3;
 
     D_8003DE54 = 2;
-    temp_a3 = arg0;
     D_8004A7C4 = arg0->unk18;
     D_8004A7D0 = arg0;
-    temp_v0 = arg0->kind;
-    phi_a3 = temp_a3;
     switch (arg0->kind) {
         case 0:
             osStartThread(&arg0->thread->thread);
             osRecvMesg(&D_8004A7E0, NULL, 1);
             break;
         case 1:
-            temp_a0 = temp_a3->unk18;
-            arg0 = temp_a3;
-            temp_a3->thread(temp_a0, 2, temp_a3);
+            arg0->thread(arg0->gobj);
             break;
         case 2:
             break;
     }
-    temp_v1 = phi_a3->unk8;
+    temp_v1 = arg0->unk8;
     D_8004A7C4 = NULL;
     D_8004A7D0 = NULL;
     D_8003DE54 = 0;
