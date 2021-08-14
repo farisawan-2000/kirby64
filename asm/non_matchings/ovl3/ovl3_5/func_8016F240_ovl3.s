@@ -129,10 +129,10 @@ glabel func_8016F240_ovl3
 /* 0CFE64 8016F424 A0E00007 */   sb    $zero, 7($a3)
 /* 0CFE68 8016F428 3C0C800D */  lui   $t4, %hi(D_800D6FAC) # $t4, 0x800d
 /* 0CFE6C 8016F42C 8D8C6FAC */  lw    $t4, %lo(D_800D6FAC)($t4)
-/* 0CFE70 8016F430 3C0D800D */  lui   $t5, %hi(D_800D6FE8) # $t5, 0x800d
+/* 0CFE70 8016F430 3C0D800D */  lui   $t5, %hi(gKirbyController) # $t5, 0x800d
 /* 0CFE74 8016F434 5580000F */  bnezl $t4, .L8016F474_ovl3
 /* 0CFE78 8016F438 24040007 */   li    $a0, 7
-/* 0CFE7C 8016F43C 95AD6FE8 */  lhu   $t5, %lo(D_800D6FE8)($t5)
+/* 0CFE7C 8016F43C 95AD6FE8 */  lhu   $t5, %lo(gKirbyController)($t5)
 /* 0CFE80 8016F440 31AE0400 */  andi  $t6, $t5, 0x400
 /* 0CFE84 8016F444 51C0000B */  beql  $t6, $zero, .L8016F474_ovl3
 /* 0CFE88 8016F448 24040007 */   li    $a0, 7

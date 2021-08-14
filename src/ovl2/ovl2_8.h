@@ -109,7 +109,7 @@ extern struct struct8011BA10_temp D_8012940C;
 extern struct PositionState gPositionState;
 extern struct KirbyState gKirbyState;
 extern f32 D_80128EFC, D_80128EF8, D_80128F24, D_80128F20;
-extern u32 D_800BE4F0, D_8012E818, D_8012E81C, D_8012E820, D_8012E824;
+extern u32 gGameState, D_8012E818, D_8012E81C, D_8012E820, D_8012E824;
 extern s32 D_800D6F10;
 extern u16 D_8012E8C2;
 extern s16 D_8012E922;

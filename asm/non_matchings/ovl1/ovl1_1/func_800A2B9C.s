@@ -27,8 +27,8 @@ glabel func_800A2B9C
 /* 04AE48 800A2BF8 0C000AE2 */  jal   func_80002B88_ovl1
 /* 04AE4C 800A2BFC 00000000 */   nop   
 /* 04AE50 800A2C00 24180001 */  li    $t8, 1
-/* 04AE54 800A2C04 3C01800C */  lui   $at, %hi(D_800BE4F0) # $at, 0x800c
-/* 04AE58 800A2C08 AC38E4F0 */  sw    $t8, %lo(D_800BE4F0)($at)
+/* 04AE54 800A2C04 3C01800C */  lui   $at, %hi(gGameState) # $at, 0x800c
+/* 04AE58 800A2C08 AC38E4F0 */  sw    $t8, %lo(gGameState)($at)
 /* 04AE5C 800A2C0C 3C01800C */  lui   $at, %hi(D_800BE4F8) # $at, 0x800c
 /* 04AE60 800A2C10 AC20E4F8 */  sw    $zero, %lo(D_800BE4F8)($at)
 /* 04AE64 800A2C14 3C01800D */  lui   $at, %hi(D_800D6F3C) # $at, 0x800d

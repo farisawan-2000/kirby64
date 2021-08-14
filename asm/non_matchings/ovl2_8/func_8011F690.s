@@ -84,11 +84,11 @@ glabel func_8011F690
 /* 0A8240 8011F7D0 3C19800D */  lui   $t9, %hi(D_800D6FAC) # $t9, 0x800d
 /* 0A8244 8011F7D4 8F396FAC */  lw    $t9, %lo(D_800D6FAC)($t9)
 /* 0A8248 8011F7D8 8CE60000 */  lw    $a2, ($a3)
-/* 0A824C 8011F7DC 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 0A824C 8011F7DC 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 0A8250 8011F7E0 00063080 */  sll   $a2, $a2, 2
 /* 0A8254 8011F7E4 17200016 */  bnez  $t9, .L8011F840_ovl2
 /* 0A8258 8011F7E8 01261821 */   addu  $v1, $t1, $a2
-/* 0A825C 8011F7EC 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A825C 8011F7EC 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A8260 8011F7F0 3C0C800F */ lui $t4, %hi(D_800E8920)
 /* 0A8264 8011F7F4 240B0002 */  li    $t3, 2
 /* 0A8268 8011F7F8 304A0800 */  andi  $t2, $v0, 0x800
@@ -171,11 +171,11 @@ glabel func_8011F690
 .L8011F918_ovl2:
 /* 0A8388 8011F918 3C0B800D */  lui   $t3, %hi(D_800D6FAC) # $t3, 0x800d
 /* 0A838C 8011F91C 8D6B6FAC */  lw    $t3, %lo(D_800D6FAC)($t3)
-/* 0A8390 8011F920 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 0A8390 8011F920 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 0A8394 8011F924 240F0001 */  li    $t7, 1
 /* 0A8398 8011F928 5560003F */  bnezl $t3, .L8011FA28_ovl2
 /* 0A839C 8011F92C AC6F0000 */   sw    $t7, ($v1)
-/* 0A83A0 8011F930 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A83A0 8011F930 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A83A4 8011F934 3C0C800F */  lui   $t4, %hi(D_800E9720) # $t4, 0x800f
 /* 0A83A8 8011F938 258C9720 */  addiu $t4, %lo(D_800E9720) # addiu $t4, $t4, -0x68e0
 /* 0A83AC 8011F93C 30480800 */  andi  $t0, $v0, 0x800
@@ -248,10 +248,10 @@ glabel func_8011F690
 /* 0A84A8 8011FA38 8F050000 */   lw    $a1, ($t8)
 /* 0A84AC 8011FA3C 3C19800D */  lui   $t9, %hi(D_800D6FAC) # $t9, 0x800d
 /* 0A84B0 8011FA40 8F396FAC */  lw    $t9, %lo(D_800D6FAC)($t9)
-/* 0A84B4 8011FA44 3C0A800D */  lui   $t2, %hi(D_800D6FE8) # $t2, 0x800d
+/* 0A84B4 8011FA44 3C0A800D */  lui   $t2, %hi(gKirbyController) # $t2, 0x800d
 /* 0A84B8 8011FA48 5720000D */  bnezl $t9, .L8011FA80_ovl2
 /* 0A84BC 8011FA4C 240E0001 */   li    $t6, 1
-/* 0A84C0 8011FA50 954A6FE8 */  lhu   $t2, %lo(D_800D6FE8)($t2)
+/* 0A84C0 8011FA50 954A6FE8 */  lhu   $t2, %lo(gKirbyController)($t2)
 /* 0A84C4 8011FA54 3C0C800F */ lui $t4, %hi(D_800E8920)
 /* 0A84C8 8011FA58 01866021 */  addu  $t4, $t4, $a2
 /* 0A84CC 8011FA5C 314B0400 */  andi  $t3, $t2, 0x400
@@ -274,10 +274,10 @@ glabel func_8011F690
 /* 0A8504 8011FA94 8DE50000 */   lw    $a1, ($t7)
 /* 0A8508 8011FA98 3C18800D */  lui   $t8, %hi(D_800D6FAC) # $t8, 0x800d
 /* 0A850C 8011FA9C 8F186FAC */  lw    $t8, %lo(D_800D6FAC)($t8)
-/* 0A8510 8011FAA0 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 0A8510 8011FAA0 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 0A8514 8011FAA4 57000038 */  bnezl $t8, .L8011FB88_ovl2
 /* 0A8518 8011FAA8 8D1800E8 */   lw    $t8, 0xe8($t0)
-/* 0A851C 8011FAAC 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A851C 8011FAAC 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A8520 8011FAB0 3C0E800F */ lui $t6, %hi(D_800E8920)
 /* 0A8524 8011FAB4 3C01800F */ lui $at, %hi(D_800E9720)
 /* 0A8528 8011FAB8 30590800 */  andi  $t9, $v0, 0x800
@@ -398,8 +398,8 @@ glabel func_8011F690
 .L8011FC58_ovl2:
 /* 0A86C8 8011FC58 10A1005F */  beq   $a1, $at, .L8011FDD8_ovl2
 /* 0A86CC 8011FC5C 3C02800F */ lui $v0, %hi(D_800E8AE0)
-/* 0A86D0 8011FC60 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
-/* 0A86D4 8011FC64 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A86D0 8011FC60 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
+/* 0A86D4 8011FC64 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A86D8 8011FC68 3C01800E */  li    $at, 0x800E0000 # -0.000000
 /* 0A86DC 8011FC6C 00260821 */  addu  $at, $at, $a2
 /* 0A86E0 8011FC70 30580C00 */  andi  $t8, $v0, 0xc00

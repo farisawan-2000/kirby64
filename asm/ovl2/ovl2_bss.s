@@ -16704,7 +16704,7 @@ glabel D_8012E7B8
 glabel D_8012E7BC
 .word 0x00000000
 
-glabel D_8012E7C0
+glabel gKirbyState
 .word 0x00000000
 
 glabel D_8012E7C4

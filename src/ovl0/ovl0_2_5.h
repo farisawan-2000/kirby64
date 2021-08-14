@@ -62,7 +62,7 @@ struct GObjProcess {
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    struct UnkStruct8004A7C4 *unk18;
+    struct UnkStruct8004A7C4 *gobj;
     struct GObjThread *thread;
     void (*entryPoint)(struct UnkStruct8004A7C4 *);
     u32 *ptr;

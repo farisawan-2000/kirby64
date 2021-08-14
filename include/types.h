@@ -106,7 +106,7 @@ typedef struct Controller_800D6FE8 {
   /* 0x08 */ s8 stickX;
   /* 0x09 */ s8 stickY;
 } Controller_800D6FE8;
-extern Controller_800D6FE8 D_800D6FE8;
+extern Controller_800D6FE8 gKirbyController;
 
 struct KirbyState_114 {
     u32 unk0;
@@ -115,6 +115,19 @@ struct KirbyState_114 {
     u32 unkC;
     u16 unk10;
     u16 unk12;
+};
+
+struct KirbyState_184 {
+    f32 unk0;
+    f32 unk4;
+    f32 unk8;
+    f32 unkC;
+
+    f32 unk10;
+    f32 unk14;
+    f32 unk18;
+    f32 unk1C;
+    f32 unk20;
 };
 
 // 0x8012E7C0
@@ -261,18 +274,23 @@ struct KirbyState {
     u32 unk170;
 
     f32 forwardVel;
-    Vec3f vel;					// 0x78
+    Vec3f vel;					// 0x178
 
-    // f32 unk180;
-    u32 unk184;
-    u32 unk188;
-    u32 unk18C;
-    u32 unk190;
-    u32 unk194;
-    u32 unk198;
-    u32 unk19C;
-    u32 unk1A0;
-    u32 unk1A4;
+    // ---
+    // TODO: does KirbyState actually end here???
+    // ---
+
+
+    // u32 unk184;
+    // u32 unk188;
+    // u32 unk18C;
+    // u32 unk190;
+    // u32 unk194;
+    // u32 unk198;
+    // u32 unk19C;
+    // u32 unk1A0;
+    // u32 unk1A4;
+    struct KirbyState_184 _184;
 	
 	
     u32 unk1A8;					//PositionState goes from here until the end

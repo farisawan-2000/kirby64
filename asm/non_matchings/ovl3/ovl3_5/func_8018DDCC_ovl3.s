@@ -53,8 +53,8 @@ glabel func_8018DDCC_ovl3
 /* 0EE8D8 8018DE98 34840276 */  ori   $a0, (0x00020276 & 0xFFFF) # ori $a0, $a0, 0x276
 /* 0EE8DC 8018DE9C 0C048C3A */  jal   func_801230E8
 /* 0EE8E0 8018DEA0 00003025 */   move  $a2, $zero
-/* 0EE8E4 8018DEA4 3C10800D */  lui   $s0, %hi(D_800D6FE8) # $s0, 0x800d
-/* 0EE8E8 8018DEA8 26106FE8 */  addiu $s0, %lo(D_800D6FE8) # addiu $s0, $s0, 0x6fe8
+/* 0EE8E4 8018DEA4 3C10800D */  lui   $s0, %hi(gKirbyController) # $s0, 0x800d
+/* 0EE8E8 8018DEA8 26106FE8 */  addiu $s0, %lo(gKirbyController) # addiu $s0, $s0, 0x6fe8
 /* 0EE8EC 8018DEAC 960E0000 */  lhu   $t6, ($s0)
 /* 0EE8F0 8018DEB0 31D84000 */  andi  $t8, $t6, 0x4000
 /* 0EE8F4 8018DEB4 1300000A */  beqz  $t8, .L8018DEE0_ovl3

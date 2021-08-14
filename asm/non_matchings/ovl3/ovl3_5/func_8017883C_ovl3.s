@@ -52,14 +52,14 @@ glabel func_8017883C_ovl3
 /* 0D933C 801788FC 10610003 */  beq   $v1, $at, .L8017890C_ovl3
 /* 0D9340 80178900 24010003 */   li    $at, 3
 /* 0D9344 80178904 14610005 */  bne   $v1, $at, .L8017891C_ovl3
-/* 0D9348 80178908 3C0E800D */   lui   $t6, %hi(D_800D6FE8) # $t6, 0x800d
+/* 0D9348 80178908 3C0E800D */   lui   $t6, %hi(gKirbyController) # $t6, 0x800d
 .L8017890C_ovl3:
 /* 0D934C 8017890C 0C048BDB */  jal   set_kirby_action_1
 /* 0D9350 80178910 24050006 */   li    $a1, 6
 /* 0D9354 80178914 1000002D */  b     .L801789CC_ovl3
 /* 0D9358 80178918 8FBF0014 */   lw    $ra, 0x14($sp)
 .L8017891C_ovl3:
-/* 0D935C 8017891C 95CE6FE8 */  lhu   $t6, %lo(D_800D6FE8)($t6)
+/* 0D935C 8017891C 95CE6FE8 */  lhu   $t6, %lo(gKirbyController)($t6)
 /* 0D9360 80178920 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 0D9364 80178924 3C0A8005 */  lui   $t2, %hi(D_8004A7C4) # $t2, 0x8005
 /* 0D9368 80178928 31CF0300 */  andi  $t7, $t6, 0x300

@@ -78,10 +78,10 @@ glabel func_8017E284_ovl3
 /* 0DEDF4 8017E3B4 3C018019 */  lui   $at, %hi(D_801976A0) # $at, 0x8019
 /* 0DEDF8 8017E3B8 C43676A0 */  lwc1  $f22, %lo(D_801976A0)($at)
 /* 0DEDFC 8017E3BC 3C018019 */  lui   $at, %hi(D_801976A4) # $at, 0x8019
-/* 0DEE00 8017E3C0 3C12800D */  lui   $s2, %hi(D_800D6FE8) # $s2, 0x800d
+/* 0DEE00 8017E3C0 3C12800D */  lui   $s2, %hi(gKirbyController) # $s2, 0x800d
 /* 0DEE04 8017E3C4 3C11800E */  lui   $s1, %hi(gEntitiesAngleXArray) # $s1, 0x800e
 /* 0DEE08 8017E3C8 26314010 */  addiu $s1, %lo(gEntitiesAngleXArray) # addiu $s1, $s1, 0x4010
-/* 0DEE0C 8017E3CC 26526FE8 */  addiu $s2, %lo(D_800D6FE8) # addiu $s2, $s2, 0x6fe8
+/* 0DEE0C 8017E3CC 26526FE8 */  addiu $s2, %lo(gKirbyController) # addiu $s2, $s2, 0x6fe8
 /* 0DEE10 8017E3D0 C43476A4 */  lwc1  $f20, %lo(D_801976A4)($at)
 /* 0DEE14 8017E3D4 920E0017 */  lbu   $t6, 0x17($s0)
 .L8017E3D8_ovl3:

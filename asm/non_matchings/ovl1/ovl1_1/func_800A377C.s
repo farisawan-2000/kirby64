@@ -84,8 +84,8 @@ glabel game_tick
 /* 04BA34 800A37E4 3C16800D */  lui   $s6, %hi(gCurrentWorld) # $s6, 0x800d
 /* 04BA38 800A37E8 3C13800D */  lui   $s3, %hi(D_800D6B68) # $s3, 0x800d
 /* 04BA3C 800A37EC 3C11800D */  lui   $s1, %hi(D_800D6B88) # $s1, 0x800d
-/* 04BA40 800A37F0 3C10800C */  lui   $s0, %hi(D_800BE4F0) # $s0, 0x800c
-/* 04BA44 800A37F4 2610E4F0 */  addiu $s0, %lo(D_800BE4F0) # addiu $s0, $s0, -0x1b10
+/* 04BA40 800A37F0 3C10800C */  lui   $s0, %hi(gGameState) # $s0, 0x800c
+/* 04BA44 800A37F4 2610E4F0 */  addiu $s0, %lo(gGameState) # addiu $s0, $s0, -0x1b10
 /* 04BA48 800A37F8 26316B88 */  addiu $s1, %lo(D_800D6B88) # addiu $s1, $s1, 0x6b88
 /* 04BA4C 800A37FC 26736B68 */  addiu $s3, %lo(D_800D6B68) # addiu $s3, $s3, 0x6b68
 /* 04BA50 800A3800 26D66B90 */  addiu $s6, %lo(gCurrentWorld) # addiu $s6, $s6, 0x6b90

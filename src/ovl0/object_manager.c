@@ -273,7 +273,7 @@ void unlink_gobj_process(struct GObjProcess *arg0) {
 void func_80008210(struct GObjProcess *arg0) {
     struct UnkStruct8004A7C4 *sp1C;
 
-    sp1C = arg0->unk18;
+    sp1C = arg0->gobj;
     unlink_gobj_process(arg0);
     if (arg0->unk4 != 0) {
         arg0->unk4->unk0 = arg0->unk0;
@@ -605,7 +605,7 @@ struct GObjProcess *func_80008A18(struct UnkStruct8004A7C4 *arg0, void (*arg1)(v
     oProcess->pri = pri;
     oProcess->kind = kind;
     oProcess->unk15 = 0;
-    oProcess->unk18 = arg0;
+    oProcess->gobj = arg0;
     oProcess->entryPoint = arg1;
     switch (kind) {
         case 0:
@@ -647,7 +647,7 @@ struct GObjProcess *func_80008B94(struct UnkStruct8004A7C4 *arg0, struct GObjThr
     }
     oProcess->pri = pri;
     oProcess->unk15 = 0;
-    oProcess->unk18 = arg0;
+    oProcess->gobj = arg0;
     oProcess->entryPoint = entry;
     oThread = get_gobj_thread(); oProcess->thread = oThread;
     if (stackSize == 0) {
@@ -1743,7 +1743,7 @@ u32 func_8000ABAC(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void *func_8000AC3C(struct GObjProcess *proc) {
+void *func_8000AC3C(struct GObjProcess *arg0) {
     void *sp1C;
     s32 temp_v0_2;
     struct GObjProcess *temp_a3;
@@ -1758,54 +1758,46 @@ void *func_8000AC3C(struct GObjProcess *proc) {
     void *phi_v1_3;
 
     D_8003DE54 = 2;
-    temp_a3 = proc;
-    D_8004A7C4 = proc->unk18;
-    D_8004A7D0 = proc;
-    temp_v0 = proc->kind;
-    if (temp_v0 != 0) {
-        if (temp_v0 != 1) {
-            phi_a3 = temp_a3;
-            if (temp_v0 == 2) {
-block_3:
-                proc = temp_a3;
-                osStartThread(&temp_a3->thread->thread);
-                osRecvMesg(&D_8004A7E0, NULL, 1);
-block_5:
-            }
-        } else {
+    temp_a3 = arg0;
+    D_8004A7C4 = arg0->unk18;
+    D_8004A7D0 = arg0;
+    temp_v0 = arg0->kind;
+    phi_a3 = temp_a3;
+    switch (arg0->kind) {
+        case 0:
+            osStartThread(&arg0->thread->thread);
+            osRecvMesg(&D_8004A7E0, NULL, 1);
+            break;
+        case 1:
             temp_a0 = temp_a3->unk18;
-            proc = temp_a3;
-            temp_a3->thread(temp_a0);
-            goto block_5;
-        }
-    } else {
-        goto block_3;
+            arg0 = temp_a3;
+            temp_a3->thread(temp_a0, 2, temp_a3);
+            break;
+        case 2:
+            break;
     }
     temp_v1 = phi_a3->unk8;
     D_8004A7C4 = NULL;
     D_8004A7D0 = NULL;
     D_8003DE54 = 0;
     temp_v0_2 = D_8004A7D4;
+    phi_v1 = temp_v1;
+    phi_v1_2 = temp_v1;
     phi_v1_3 = temp_v1;
     if (temp_v0_2 != 0) {
         if (temp_v0_2 != 1) {
             if (temp_v0_2 != 2) {
                 D_8004A7D4 = 0;
-                phi_v1_3 = temp_v1;
             } else {
                 D_8004A7D4 = 0;
-                phi_v1_2 = temp_v1;
                 if (temp_v1 != 0) {
                     temp_v0_3 = phi_a3->unk18;
-                    phi_v1 = temp_v1;
-                    phi_v1_2 = temp_v1;
                     if (temp_v0_3 == temp_v1->unk18) {
 loop_12:
                         temp_v1_2 = phi_v1->unk8;
+                        phi_v1 = temp_v1_2;
                         phi_v1_2 = temp_v1_2;
                         if (temp_v1_2 != 0) {
-                            phi_v1 = temp_v1_2;
-                            phi_v1_2 = temp_v1_2;
                             if (temp_v0_3 == temp_v1_2->unk18) {
                                 goto loop_12;
                             }
@@ -1814,18 +1806,19 @@ loop_12:
                 }
                 sp1C = phi_v1_2;
                 func_8000A29C(phi_a3->unk18);
-block_16:
-                phi_v1_3 = sp1C;
+                goto block_16;
             }
         } else {
             D_8004A7D4 = 0;
             sp1C = temp_v1;
             func_80008DA8(phi_a3);
-            goto block_16;
+block_16:
+            phi_v1_3 = sp1C;
         }
     }
     return phi_v1_3;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AC3C.s")
 #endif
@@ -2376,7 +2369,7 @@ void func_8000B6B4(s32 arg0) {
 
 void func_8000B6BC(s32 arg) {
     if (D_8004A7D0->thread->objStack->stack[7] != STACK_TOP_MAGIC) {
-        fatal_printf(D_80040670, D_8004A7D0->unk18->objId); // "gobjthread stack over  gobjid = %d\n"
+        fatal_printf(D_80040670, D_8004A7D0->gobj->objId); // "gobjthread stack over  gobjid = %d\n"
     }
 
     while (arg != 0) {

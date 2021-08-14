@@ -36,8 +36,8 @@ glabel func_800A36C0
 /* 04B990 800A3740 1612FFF8 */  bne   $s0, $s2, .L800A3724_ovl1
 /* 04B994 800A3744 00000000 */   nop   
 .L800A3748_ovl1:
-/* 04B998 800A3748 3C02800C */  lui   $v0, %hi(D_800BE4F0) # $v0, 0x800c
-/* 04B99C 800A374C 2442E4F0 */  addiu $v0, %lo(D_800BE4F0) # addiu $v0, $v0, -0x1b10
+/* 04B998 800A3748 3C02800C */  lui   $v0, %hi(gGameState) # $v0, 0x800c
+/* 04B99C 800A374C 2442E4F0 */  addiu $v0, %lo(gGameState) # addiu $v0, $v0, -0x1b10
 /* 04B9A0 800A3750 8C490000 */  lw    $t1, ($v0)
 /* 04B9A4 800A3754 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 04B9A8 800A3758 3C01800D */  lui   $at, %hi(D_800D6B68) # $at, 0x800d

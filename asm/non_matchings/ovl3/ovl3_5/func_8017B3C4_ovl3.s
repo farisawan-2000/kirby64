@@ -219,8 +219,8 @@ glabel func_8017B3C4_ovl3
 /* 0DC14C 8017B70C 8FBF001C */   lw    $ra, 0x1c($sp)
 /* 0DC150 8017B710 0C047B5A */  jal   func_8011ED68
 /* 0DC154 8017B714 00000000 */   nop   
-/* 0DC158 8017B718 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
-/* 0DC15C 8017B71C 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0DC158 8017B718 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
+/* 0DC15C 8017B71C 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0DC160 8017B720 304D0100 */  andi  $t5, $v0, 0x100
 /* 0DC164 8017B724 11A0000A */  beqz  $t5, .L8017B750_ovl3
 /* 0DC168 8017B728 30590200 */   andi  $t9, $v0, 0x200

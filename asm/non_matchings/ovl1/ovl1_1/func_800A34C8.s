@@ -118,7 +118,7 @@ glabel func_800A34C8
 .L800A3688_ovl1:
 /* 04B8D8 800A3688 8FBF003C */  lw    $ra, 0x3c($sp)
 .L800A368C_ovl1:
-/* 04B8DC 800A368C 3C01800C */  lui   $at, %hi(D_800BE4F0) # $at, 0x800c
+/* 04B8DC 800A368C 3C01800C */  lui   $at, %hi(gGameState) # $at, 0x800c
 /* 04B8E0 800A3690 8FB00018 */  lw    $s0, 0x18($sp)
 /* 04B8E4 800A3694 8FB1001C */  lw    $s1, 0x1c($sp)
 /* 04B8E8 800A3698 8FB20020 */  lw    $s2, 0x20($sp)
@@ -128,6 +128,6 @@ glabel func_800A34C8
 /* 04B8F8 800A36A8 8FB60030 */  lw    $s6, 0x30($sp)
 /* 04B8FC 800A36AC 8FB70034 */  lw    $s7, 0x34($sp)
 /* 04B900 800A36B0 8FBE0038 */  lw    $fp, 0x38($sp)
-/* 04B904 800A36B4 AC38E4F0 */  sw    $t8, %lo(D_800BE4F0)($at)
+/* 04B904 800A36B4 AC38E4F0 */  sw    $t8, %lo(gGameState)($at)
 /* 04B908 800A36B8 03E00008 */  jr    $ra
 /* 04B90C 800A36BC 27BD0040 */   addiu $sp, $sp, 0x40

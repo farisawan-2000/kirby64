@@ -3,8 +3,8 @@ glabel func_8011ED68
 /* 0A77DC 8011ED6C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0A77E0 8011ED70 0C0482BE */  jal   func_80120AF8
 /* 0A77E4 8011ED74 27A4002C */   addiu $a0, $sp, 0x2c
-/* 0A77E8 8011ED78 3C07800D */  lui   $a3, %hi(D_800D6FE8) # $a3, 0x800d
-/* 0A77EC 8011ED7C 94E76FE8 */  lhu   $a3, %lo(D_800D6FE8)($a3)
+/* 0A77E8 8011ED78 3C07800D */  lui   $a3, %hi(gKirbyController) # $a3, 0x800d
+/* 0A77EC 8011ED7C 94E76FE8 */  lhu   $a3, %lo(gKirbyController)($a3)
 /* 0A77F0 8011ED80 3C048013 */  lui   $a0, %hi(gKirbyState) # $a0, 0x8013
 /* 0A77F4 8011ED84 2484E7C0 */  addiu $a0, %lo(gKirbyState) # addiu $a0, $a0, -0x1840
 /* 0A77F8 8011ED88 30EE0300 */  andi  $t6, $a3, 0x300

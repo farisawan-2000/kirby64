@@ -43,10 +43,10 @@ glabel func_80184B24_ovl3
 /* 0E5608 80184BC8 28010003 */  slti  $at, $zero, 3
 /* 0E560C 80184BCC 10200015 */  beqz  $at, .L80184C24_ovl3
 /* 0E5610 80184BD0 AE000044 */   sw    $zero, 0x44($s0)
-/* 0E5614 80184BD4 3C12800D */  lui   $s2, %hi(D_800D6FE8) # $s2, 0x800d
+/* 0E5614 80184BD4 3C12800D */  lui   $s2, %hi(gKirbyController) # $s2, 0x800d
 /* 0E5618 80184BD8 3C118019 */  lui   $s1, %hi(D_80196DA8) # $s1, 0x8019
 /* 0E561C 80184BDC 26316DA8 */  addiu $s1, %lo(D_80196DA8) # addiu $s1, $s1, 0x6da8
-/* 0E5620 80184BE0 26526FE8 */  addiu $s2, %lo(D_800D6FE8) # addiu $s2, $s2, 0x6fe8
+/* 0E5620 80184BE0 26526FE8 */  addiu $s2, %lo(gKirbyController) # addiu $s2, $s2, 0x6fe8
 .L80184BE4_ovl3:
 /* 0E5624 80184BE4 0C029D9E */  jal   play_sound
 /* 0E5628 80184BE8 240400BB */   li    $a0, 187

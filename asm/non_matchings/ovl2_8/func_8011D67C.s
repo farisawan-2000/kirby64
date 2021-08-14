@@ -78,13 +78,13 @@ glabel func_8011D67C
 /* 0A6210 8011D7A0 E42048D0 */ swc1 $f0, %lo(gEntitiesScaleZArray)($at)
 /* 0A6214 8011D7A4 8C4A0000 */  lw    $t2, ($v0)
 /* 0A6218 8011D7A8 24010001 */  li    $at, 1
-/* 0A621C 8011D7AC 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 0A621C 8011D7AC 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 0A6220 8011D7B0 000A6880 */  sll   $t5, $t2, 2
 /* 0A6224 8011D7B4 01CD7021 */  addu  $t6, $t6, $t5
 /* 0A6228 8011D7B8 8DCE8920 */ lw $t6, %lo(D_800E8920)($t6)
 /* 0A622C 8011D7BC 15C10020 */  bne   $t6, $at, .L8011D840_ovl2
 /* 0A6230 8011D7C0 00000000 */   nop   
-/* 0A6234 8011D7C4 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A6234 8011D7C4 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A6238 8011D7C8 24040009 */  li    $a0, 9
 /* 0A623C 8011D7CC 30580400 */  andi  $t8, $v0, 0x400
 /* 0A6240 8011D7D0 13000005 */  beqz  $t8, .L8011D7E8_ovl2

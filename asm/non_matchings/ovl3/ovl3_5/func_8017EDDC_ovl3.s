@@ -85,8 +85,8 @@ glabel func_8017EDDC_ovl3
 /* 0DF958 8017EF18 8C820000 */  lw    $v0, ($a0)
 /* 0DF95C 8017EF1C 00021080 */  sll   $v0, $v0, 2
 .L8017EF20_ovl3:
-/* 0DF960 8017EF20 3C03800D */  lui   $v1, %hi(D_800D6FE8) # $v1, 0x800d
-/* 0DF964 8017EF24 94636FE8 */  lhu   $v1, %lo(D_800D6FE8)($v1)
+/* 0DF960 8017EF20 3C03800D */  lui   $v1, %hi(gKirbyController) # $v1, 0x800d
+/* 0DF964 8017EF24 94636FE8 */  lhu   $v1, %lo(gKirbyController)($v1)
 /* 0DF968 8017EF28 3C05800F */  lui   $a1, %hi(D_800E8AE0) # $a1, 0x800f
 /* 0DF96C 8017EF2C 24A58AE0 */  addiu $a1, %lo(D_800E8AE0) # addiu $a1, $a1, -0x7520
 /* 0DF970 8017EF30 306D0300 */  andi  $t5, $v1, 0x300

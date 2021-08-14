@@ -1187,7 +1187,7 @@ glabel D_800D6FE0
 glabel D_800D6FE4
 .word 0x00000000
 
-glabel D_800D6FE8
+glabel gKirbyController
 .word 0x00000000
 
 glabel D_800D6FEC

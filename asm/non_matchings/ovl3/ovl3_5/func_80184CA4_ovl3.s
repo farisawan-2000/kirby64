@@ -73,8 +73,8 @@ glabel func_80184CA4_ovl3
 /* 0E5800 80184DC0 2981001E */  slti  $at, $t4, 0x1e
 /* 0E5804 80184DC4 1020001B */  beqz  $at, .L80184E34_ovl3
 .L80184DC8_ovl3:
-/* 0E5808 80184DC8 3C0D800D */   lui   $t5, %hi(D_800D6FE8) # $t5, 0x800d
-/* 0E580C 80184DCC 95AD6FE8 */  lhu   $t5, %lo(D_800D6FE8)($t5)
+/* 0E5808 80184DC8 3C0D800D */   lui   $t5, %hi(gKirbyController) # $t5, 0x800d
+/* 0E580C 80184DCC 95AD6FE8 */  lhu   $t5, %lo(gKirbyController)($t5)
 /* 0E5810 80184DD0 31AE4000 */  andi  $t6, $t5, 0x4000
 /* 0E5814 80184DD4 51C00004 */  beql  $t6, $zero, .L80184DE8_ovl3
 /* 0E5818 80184DD8 24190005 */   li    $t9, 5

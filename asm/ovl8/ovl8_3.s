@@ -19,8 +19,8 @@ glabel func_801D2B90_ovl8
 /* 176694 801D2BB4 8DEF1B50 */ lw $t7, %lo(D_800E1B50)($t7)
 /* 176698 801D2BB8 0307C021 */  addu  $t8, $t8, $a3
 /* 17669C 801D2BBC 8F18FBD0 */ lw $t8, %lo(D_800DFBD0)($t8)
-/* 1766A0 801D2BC0 3C08800C */  lui   $t0, %hi(D_800BE4F0) # $t0, 0x800c
-/* 1766A4 801D2BC4 8D08E4F0 */  lw    $t0, %lo(D_800BE4F0)($t0)
+/* 1766A0 801D2BC0 3C08800C */  lui   $t0, %hi(gGameState) # $t0, 0x800c
+/* 1766A4 801D2BC4 8D08E4F0 */  lw    $t0, %lo(gGameState)($t0)
 /* 1766A8 801D2BC8 AFAF001C */  sw    $t7, 0x1c($sp)
 /* 1766AC 801D2BCC 8F190004 */  lw    $t9, 4($t8)
 /* 1766B0 801D2BD0 24010021 */  li    $at, 33

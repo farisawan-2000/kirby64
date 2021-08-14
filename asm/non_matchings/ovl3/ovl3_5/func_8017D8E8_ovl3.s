@@ -76,11 +76,11 @@ glabel func_8017D8E8_ovl3
 /* 0DE450 8017DA10 3C01800E */ lui $at, %hi(D_800DF310)
 /* 0DE454 8017DA14 8F280000 */  lw    $t0, ($t9)
 /* 0DE458 8017DA18 25EFDAD8 */  addiu $t7, %lo(D_8017DAD8) # addiu $t7, $t7, -0x2528
-/* 0DE45C 8017DA1C 3C11800D */  lui   $s1, %hi(D_800D6FE8) # $s1, 0x800d
+/* 0DE45C 8017DA1C 3C11800D */  lui   $s1, %hi(gKirbyController) # $s1, 0x800d
 /* 0DE460 8017DA20 00084880 */  sll   $t1, $t0, 2
 /* 0DE464 8017DA24 00290821 */  addu  $at, $at, $t1
 /* 0DE468 8017DA28 AC2FF310 */ sw $t7, %lo(D_800DF310)($at)
-/* 0DE46C 8017DA2C 26316FE8 */  addiu $s1, %lo(D_800D6FE8) # addiu $s1, $s1, 0x6fe8
+/* 0DE46C 8017DA2C 26316FE8 */  addiu $s1, %lo(gKirbyController) # addiu $s1, $s1, 0x6fe8
 /* 0DE470 8017DA30 920A0017 */  lbu   $t2, 0x17($s0)
 .L8017DA34_ovl3:
 /* 0DE474 8017DA34 15400009 */  bnez  $t2, .L8017DA5C_ovl3

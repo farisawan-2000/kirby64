@@ -50,10 +50,10 @@ glabel func_800F62A4
 /* 07EDD0 800F6360 8FBF0014 */   lw    $ra, 0x14($sp)
 /* 07EDD4 800F6364 3C19800D */  lui   $t9, %hi(D_800D6B24) # $t9, 0x800d
 /* 07EDD8 800F6368 8F396B24 */  lw    $t9, %lo(D_800D6B24)($t9)
-/* 07EDDC 800F636C 3C08800C */  lui   $t0, %hi(D_800BE4F0) # $t0, 0x800c
+/* 07EDDC 800F636C 3C08800C */  lui   $t0, %hi(gGameState) # $t0, 0x800c
 /* 07EDE0 800F6370 5720004C */  bnezl $t9, .L800F64A4_ovl2
 /* 07EDE4 800F6374 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 07EDE8 800F6378 8D08E4F0 */  lw    $t0, %lo(D_800BE4F0)($t0)
+/* 07EDE8 800F6378 8D08E4F0 */  lw    $t0, %lo(gGameState)($t0)
 /* 07EDEC 800F637C 24010021 */  li    $at, 33
 /* 07EDF0 800F6380 240400FF */  li    $a0, 255
 /* 07EDF4 800F6384 1501000B */  bne   $t0, $at, .L800F63B4_ovl2

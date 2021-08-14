@@ -77,8 +77,8 @@ glabel func_8017BF34_ovl3
 /* 0DCA9C 8017C05C 34840077 */  ori   $a0, (0x00020077 & 0xFFFF) # ori $a0, $a0, 0x77
 /* 0DCAA0 8017C060 0C048C3A */  jal   func_801230E8
 /* 0DCAA4 8017C064 24060001 */   li    $a2, 1
-/* 0DCAA8 8017C068 3C0F800D */  lui   $t7, %hi(D_800D6FE8) # $t7, 0x800d
-/* 0DCAAC 8017C06C 95EF6FE8 */  lhu   $t7, %lo(D_800D6FE8)($t7)
+/* 0DCAA8 8017C068 3C0F800D */  lui   $t7, %hi(gKirbyController) # $t7, 0x800d
+/* 0DCAAC 8017C06C 95EF6FE8 */  lhu   $t7, %lo(gKirbyController)($t7)
 /* 0DCAB0 8017C070 24180002 */  li    $t8, 2
 /* 0DCAB4 8017C074 24090001 */  li    $t1, 1
 /* 0DCAB8 8017C078 31F90300 */  andi  $t9, $t7, 0x300

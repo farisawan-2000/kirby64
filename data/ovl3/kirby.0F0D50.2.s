@@ -100,39 +100,11 @@ glabel D_80196E8C
 glabel D_80196E90
 .word 0x2E0A0000
 
+.balign 4
 glabel D_80196E94
-.word 0x67656E65
+.asciiz "generate bg break line over. max line %d.\n"
 
-glabel D_80196E98
-.word 0x72617465
-
-glabel D_80196E9C
-.word 0x20626720
-
-glabel D_80196EA0
-.word 0x62726561
-
-glabel D_80196EA4
-.word 0x6B206C69
-
-glabel D_80196EA8
-.word 0x6E65206F
-
-glabel D_80196EAC
-.word 0x7665722E
-
-glabel D_80196EB0
-.word 0x206D6178
-
-glabel D_80196EB4
-.word 0x206C696E
-
-glabel D_80196EB8
-.word 0x65202564
-
-glabel D_80196EBC
-.word 0x2E0A0000
-
+.balign 4
 glabel D_80196EC0
 .word 0x3EC90FDB
 

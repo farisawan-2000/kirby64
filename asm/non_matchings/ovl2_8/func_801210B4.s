@@ -1,10 +1,10 @@
 glabel func_801210B4
 /* 0A9B24 801210B4 3C0E800D */  lui   $t6, %hi(D_800D6B54) # $t6, 0x800d
 /* 0A9B28 801210B8 8DCE6B54 */  lw    $t6, %lo(D_800D6B54)($t6)
-/* 0A9B2C 801210BC 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 0A9B2C 801210BC 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 0A9B30 801210C0 55C0000C */  bnezl $t6, .L801210F4_ovl2
 /* 0A9B34 801210C4 00001025 */   move  $v0, $zero
-/* 0A9B38 801210C8 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 0A9B38 801210C8 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 0A9B3C 801210CC 304F0300 */  andi  $t7, $v0, 0x300
 /* 0A9B40 801210D0 11E00007 */  beqz  $t7, .L801210F0_ovl2
 /* 0A9B44 801210D4 30580100 */   andi  $t8, $v0, 0x100

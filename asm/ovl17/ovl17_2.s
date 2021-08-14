@@ -1380,8 +1380,8 @@ glabel func_801DEA5C_ovl17
 /* 229F60 801DED70 10000015 */  b     .L801DEDC8_ovl17
 /* 229F64 801DED74 46001006 */   mov.s $f0, $f2
 .L801DED78_ovl17:
-/* 229F68 801DED78 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
-/* 229F6C 801DED7C 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 229F68 801DED78 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
+/* 229F6C 801DED7C 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 229F70 801DED80 3C01800D */ lui $at, %hi(D_800D7170)
 /* 229F74 801DED84 30480C00 */  andi  $t0, $v0, 0xc00
 /* 229F78 801DED88 11000009 */  beqz  $t0, .L801DEDB0_ovl17
@@ -1623,8 +1623,8 @@ glabel func_801DEA5C_ovl17
 /* 22A2D8 801DF0E8 10000015 */  b     .L801DF140_ovl17
 /* 22A2DC 801DF0EC 46001006 */   mov.s $f0, $f2
 .L801DF0F0_ovl17:
-/* 22A2E0 801DF0F0 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
-/* 22A2E4 801DF0F4 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 22A2E0 801DF0F0 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
+/* 22A2E4 801DF0F4 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 22A2E8 801DF0F8 3C01800D */ lui $at, %hi(D_800D7170)
 /* 22A2EC 801DF0FC 304D0C00 */  andi  $t5, $v0, 0xc00
 /* 22A2F0 801DF100 11A00009 */  beqz  $t5, .L801DF128_ovl17
@@ -1849,7 +1849,7 @@ glabel func_801DEA5C_ovl17
 /* 22A60C 801DF41C 46004281 */  sub.s $f10, $f8, $f0
 /* 22A610 801DF420 3C01801E */  lui   $at, %hi(D_801E5704) # $at, 0x801e
 /* 22A614 801DF424 C4225704 */  lwc1  $f2, %lo(D_801E5704)($at)
-/* 22A618 801DF428 3C02800D */  lui   $v0, %hi(D_800D6FE8) # $v0, 0x800d
+/* 22A618 801DF428 3C02800D */  lui   $v0, %hi(gKirbyController) # $v0, 0x800d
 /* 22A61C 801DF42C 460A103C */  c.lt.s $f2, $f10
 /* 22A620 801DF430 00000000 */  nop   
 /* 22A624 801DF434 45000003 */  bc1f  .L801DF444_ovl17
@@ -1857,7 +1857,7 @@ glabel func_801DEA5C_ovl17
 /* 22A62C 801DF43C 10000014 */  b     .L801DF490_ovl17
 /* 22A630 801DF440 46001006 */   mov.s $f0, $f2
 .L801DF444_ovl17:
-/* 22A634 801DF444 94426FE8 */  lhu   $v0, %lo(D_800D6FE8)($v0)
+/* 22A634 801DF444 94426FE8 */  lhu   $v0, %lo(gKirbyController)($v0)
 /* 22A638 801DF448 3C01800D */ lui $at, %hi(D_800D7170)
 /* 22A63C 801DF44C 30480C00 */  andi  $t0, $v0, 0xc00
 /* 22A640 801DF450 11000009 */  beqz  $t0, .L801DF478_ovl17

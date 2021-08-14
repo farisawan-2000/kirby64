@@ -11,3 +11,6 @@ D_800DF4D0 gSegment4StartArray
 D_800DE510 gEntityGObjProcessArray
 D_800DDC50 gEntityVtableIndexArray
 gEntitiesGObjThreadStackArray gEntityGObjProcessArray
+D_8012E7C0 gKirbyState
+D_800D6FE8 gKirbyController
+

@@ -10,7 +10,7 @@ extern u32 D_800D6FAC;
 extern void set_kirby_action_1(s16 a, s16 b);
  
 
-extern Controller_800D6FE8 D_800D6FE8;
+extern Controller_800D6FE8 gKirbyController;
 
 u32 func_80151100_ovl3(void) {
     if (!(gKirbyState.isTurning & 1)) {
@@ -25,8 +25,8 @@ u32 func_80151100_ovl3(void) {
 
 u32 func_80151160_ovl3(void) {
     if (D_800D6FAC == 0) {
-        if (((D_800D6FE8.buttonHeld & 0x400) == 0) && ((D_800D6FE8.buttonPressed & 0x8000) != 0)) {
-            if (((D_800E8AE0[D_8004A7C4->objId] & 6) == 6) && (D_800D6FE8.buttonHeld & 0xB00)) {
+        if (((gKirbyController.buttonHeld & 0x400) == 0) && ((gKirbyController.buttonPressed & 0x8000) != 0)) {
+            if (((D_800E8AE0[D_8004A7C4->objId] & 6) == 6) && (gKirbyController.buttonHeld & 0xB00)) {
                 gKirbyState.unk44 = 1;
                 set_kirby_action_1(0x17, 0x1B);
             }
@@ -35,7 +35,7 @@ u32 func_80151160_ovl3(void) {
             }
                 return 2;
         }
-        if (((D_800E8AE0[D_8004A7C4->objId] & 6) == 6) && ((D_800D6FE8.buttonHeld & 0x800) != 0)) {
+        if (((D_800E8AE0[D_8004A7C4->objId] & 6) == 6) && ((gKirbyController.buttonHeld & 0x800) != 0)) {
             if ((gKirbyState.action != 0xA) && (gKirbyState.action != 0xB)) {
                 gKirbyState.unk44 = 1;
                 set_kirby_action_1(0x17, 0x1B);
@@ -59,19 +59,19 @@ s32 func_80179130_ovl3(struct KirbyState *, Controller_800D6FE8 *); // extern
     if ((D_800E8AE0[temp_v0] & 6) != 0) {
         if (D_800D6FAC == 0) {
             if (gKirbyState.unk4 == 2) {
-                if (((D_800D6FE8.buttonPressed & 0x8000) != 0) || (phi_v1 = 0, phi_a3 = &D_800D6FE8, ((D_800D6FE8.buttonHeld & 0x300) != 0))) {
+                if (((gKirbyController.buttonPressed & 0x8000) != 0) || (phi_v1 = 0, phi_a3 = &gKirbyController, ((gKirbyController.buttonHeld & 0x300) != 0))) {
                     goto block_10;
                 }
             } else {
-                if ((D_800D6FE8.buttonPressed & 0x8000) != 0) {
+                if ((gKirbyController.buttonPressed & 0x8000) != 0) {
                     goto block_10;
                 }
-                temp_v0_2 = D_800D6FE8.buttonHeld;
+                temp_v0_2 = gKirbyController.buttonHeld;
                 phi_v1 = 0;
-                phi_a3 = &D_800D6FE8;
+                phi_a3 = &gKirbyController;
                 if ((temp_v0_2 & 0x3F) == 0) {
                     phi_v1 = 0;
-                    phi_a3 = &D_800D6FE8;
+                    phi_a3 = &gKirbyController;
                     if ((temp_v0_2 & 0xF00) != 0) {
 block_10:
                         phi_v1 = 1;
@@ -83,7 +83,7 @@ block_10:
                     return 0xA;
                 }
                 set_kirby_action_1(0x17, 0x1B);
-                if ((D_800D6FE8.buttonPressed & 0x8000) != 0) {
+                if ((gKirbyController.buttonPressed & 0x8000) != 0) {
                     gKirbyState.unk44 = 1;
                     return 0xA;
                 }
@@ -92,7 +92,7 @@ block_10:
             }
         }
     }
-    else if ((gKirbyState.abilityInUse != 0x13) && (D_800D6FAC == 0) && ((D_800D6FE8.buttonPressed & 0x8000) != 0) && (gKirbyState.floatTimer != 0) && (gKirbyState.unk4 == 0) && (D_800E8920[temp_v0] == 0)) {
+    else if ((gKirbyState.abilityInUse != 0x13) && (D_800D6FAC == 0) && ((gKirbyController.buttonPressed & 0x8000) != 0) && (gKirbyState.floatTimer != 0) && (gKirbyState.unk4 == 0) && (D_800E8920[temp_v0] == 0)) {
         gKirbyState.unk7 = 0;
         gKirbyState.unk44 = 0;
         set_kirby_action_1(0xC, 9);
@@ -255,7 +255,7 @@ u32 func_801517FC_ovl3(void) {
 
 u32 func_80151864_ovl3(void) {
     if (D_800D6FAC == 0) {
-        if ((D_800D6FE8.buttonHeld & 0x400) != 0) {
+        if ((gKirbyController.buttonHeld & 0x400) != 0) {
             if (gKirbyState.unk4 == 0) {
                 if ((gKirbyState.isTurning & 2) == 0) {
                     gKirbyState.unk30 = 0;
@@ -301,7 +301,7 @@ u32 func_80151938_ovl3(void) {
 
 u32 func_801519D4_ovl3(void) {
     if (gKirbyState.unk4 == 0) {
-        if ((D_800D6FE8.buttonPressed & 0x400) != 0) {
+        if ((gKirbyController.buttonPressed & 0x400) != 0) {
             gKirbyState.unk7 = 0;
             set_kirby_action_1(9, 0xE);
             return 0xB;
@@ -313,8 +313,8 @@ u32 func_801519D4_ovl3(void) {
                 gKirbyState.unk2C = 0xE;
                 gKirbyState.isTurning |= 1;
             } else {
-                if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
-                    if ((D_800D6FE8.buttonHeld & 0x400) == 0) {
+                if ((gKirbyController.buttonHeld & 0x300) != 0) {
+                    if ((gKirbyController.buttonHeld & 0x400) == 0) {
                         gKirbyState.unk38 = 0.0f;
                         set_kirby_action_1(1, 3);
                         return 0xB;
@@ -326,8 +326,8 @@ u32 func_801519D4_ovl3(void) {
         if (gKirbyState.unk2C != 0) {
             gKirbyState.unk2C = (s32) (gKirbyState.unk2C - 1);
         } else {
-            if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
-                if ((D_800D6FE8.buttonHeld & 0x400) == 0) {
+            if ((gKirbyController.buttonHeld & 0x300) != 0) {
+                if ((gKirbyController.buttonHeld & 0x400) == 0) {
                     gKirbyState.unk38 = 0.0f;
                     set_kirby_action_1(1, 3);
                     return 0xB;
@@ -343,7 +343,7 @@ extern u32 D_8012E7F4;
 
 u32 func_80151AF4_ovl3(void) {
     if ((D_8012E7F4 & 1) == 0) {
-        if ((D_800D6FE8.buttonHeld & (L_JPAD | R_JPAD)) == 0) {
+        if ((gKirbyController.buttonHeld & (L_JPAD | R_JPAD)) == 0) {
             if (0.0f == D_800E64D0[D_8004A7C4->objId]) {
                 set_kirby_action_1(0, 1);
                 return 0xC;
@@ -370,7 +370,7 @@ u32 func_80151B78_ovl3(void) {
                 case 0:
                     break;
                 case 1:
-                    if ((D_800D6FAC == 0) && (D_800D6FE8.buttonHeld & D_JPAD)) {
+                    if ((D_800D6FAC == 0) && (gKirbyController.buttonHeld & D_JPAD)) {
                         set_kirby_action_1(0xB, 0x10);
                         return 0xD;
                     }
@@ -395,7 +395,7 @@ u8 func_80151C78_ovl3(void) {
         if (D_800E8920[D_8004A7C4->objId] != 0) {
             switch (gKirbyState.unk4) {
                 case 0:
-                    if (D_800D6FE8.buttonHeld & D_JPAD) {
+                    if (gKirbyController.buttonHeld & D_JPAD) {
                         set_kirby_action_1(9, 14);
                     }
                     else {
@@ -403,7 +403,7 @@ u8 func_80151C78_ovl3(void) {
                     }
                     break;
                 case 1:
-                    if (D_800D6FE8.buttonHeld & D_JPAD) {
+                    if (gKirbyController.buttonHeld & D_JPAD) {
                         set_kirby_action_1(0xB, 0x10);
                     }
                     else {
@@ -411,7 +411,7 @@ u8 func_80151C78_ovl3(void) {
                     }
                     break;
                 case 2:
-                    if (D_800D6FE8.buttonHeld & D_JPAD) {
+                    if (gKirbyController.buttonHeld & D_JPAD) {
                         set_kirby_action_1(0x12, 0x12);
                     }
                     else {
@@ -424,7 +424,7 @@ u8 func_80151C78_ovl3(void) {
         if (func_80179130_ovl3() != 0) {
             return 0xE;
         }
-        if ((D_800D6FE8.buttonHeld & (L_JPAD | R_JPAD | D_JPAD)) == 0) {
+        if ((gKirbyController.buttonHeld & (L_JPAD | R_JPAD | D_JPAD)) == 0) {
             if ((D_800E9560[D_8004A7C4->objId] == 0) && (D_800E64D0[D_8004A7C4->objId] == 0.0f) && (D_800E3210[D_8004A7C4->objId] <= D_80196DD0)) {
                 set_kirby_action_1(6, 6);
                 return 0xE;

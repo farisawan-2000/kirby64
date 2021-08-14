@@ -4,8 +4,8 @@ glabel func_80151160_ovl3
 /* 0B1BA8 80151168 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0B1BAC 8015116C AFBF0014 */  sw    $ra, 0x14($sp)
 /* 0B1BB0 80151170 15C00040 */  bnez  $t6, .L80151274_ovl3
-/* 0B1BB4 80151174 3C03800D */   lui   $v1, %hi(D_800D6FE8) # $v1, 0x800d
-/* 0B1BB8 80151178 24636FE8 */  addiu $v1, %lo(D_800D6FE8) # addiu $v1, $v1, 0x6fe8
+/* 0B1BB4 80151174 3C03800D */   lui   $v1, %hi(gKirbyController) # $v1, 0x800d
+/* 0B1BB8 80151178 24636FE8 */  addiu $v1, %lo(gKirbyController) # addiu $v1, $v1, 0x6fe8
 /* 0B1BBC 8015117C 94620000 */  lhu   $v0, ($v1)
 /* 0B1BC0 80151180 304F0400 */  andi  $t7, $v0, 0x400
 /* 0B1BC4 80151184 15E00020 */  bnez  $t7, .L80151208_ovl3

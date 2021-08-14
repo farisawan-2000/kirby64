@@ -2,10 +2,10 @@ glabel func_8011EBD4
 /* 0A7644 8011EBD4 3C048013 */  lui   $a0, %hi(gKirbyState) # $a0, 0x8013
 /* 0A7648 8011EBD8 2484E7C0 */  addiu $a0, %lo(gKirbyState) # addiu $a0, $a0, -0x1840
 /* 0A764C 8011EBDC 948200D2 */  lhu   $v0, 0xd2($a0)
-/* 0A7650 8011EBE0 3C0E800D */  lui   $t6, %hi(D_800D6FE8) # $t6, 0x800d
+/* 0A7650 8011EBE0 3C0E800D */  lui   $t6, %hi(gKirbyController) # $t6, 0x800d
 /* 0A7654 8011EBE4 1440003B */  bnez  $v0, .L8011ECD4_ovl2
 /* 0A7658 8011EBE8 00000000 */   nop   
-/* 0A765C 8011EBEC 95CE6FE8 */  lhu   $t6, %lo(D_800D6FE8)($t6)
+/* 0A765C 8011EBEC 95CE6FE8 */  lhu   $t6, %lo(gKirbyController)($t6)
 /* 0A7660 8011EBF0 31CF8000 */  andi  $t7, $t6, 0x8000
 /* 0A7664 8011EBF4 51E00009 */  beql  $t7, $zero, .L8011EC1C_ovl2
 /* 0A7668 8011EBF8 848300D0 */   lh    $v1, 0xd0($a0)

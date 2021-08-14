@@ -6786,38 +6786,25 @@ GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010DDA4.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 func_8010DF9C(s32 arg0) {
-    s32 sp34;
-    s32 sp30;
-    u32 temp_s1;
-    u32 temp_v0;
-    void *phi_s0;
+s32 func_8010DF9C(Vector *v) {
+    s32 ret;
+    struct vCollisionHeader *sp30;
+    struct struct8011BA10_temp *phi_s0;
     u32 phi_s1;
-    u32 phi_v0;
 
-    sp34 = 0;
+    ret = 0;
     D_8012BD48 = &sp30;
     sp30 = D_80129410;
     func_8010DDA4(0x14);
-    temp_v0 = D_8012D940;
-    phi_s0 = &D_8012D948;
-    phi_s1 = 0;
-    phi_v0 = temp_v0;
-    if (temp_v0 != 0) {
-loop_1:
-        if ((phi_s0->unk2 & 1) == 0) {
+    phi_s0 = D_8012D948;
+    for (phi_s1 = 0; phi_s1 < D_8012D940; phi_s1++) {
+        if (!(phi_s0->unk2 & 1)) {
             sp30 = phi_s0->unk4;
-            func_8010DDA4(arg0, phi_s1);
-            phi_v0 = D_8012D940;
+            func_8010DDA4(v, phi_s1);
         }
-        temp_s1 = phi_s1 + 1;
-        phi_s0 = phi_s0 + 0xB8;
-        phi_s1 = temp_s1;
-        if (temp_s1 < phi_v0) {
-            goto loop_1;
-        }
+        phi_s0 += 0xB8;
     }
-    return sp34;
+    return ret;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_6/func_8010DF9C.s")

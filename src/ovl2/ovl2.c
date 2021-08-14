@@ -16,7 +16,7 @@ s32 func_800F61A0(void) {
 
     phi_return = func_801114E0();
     if (D_800BE544 <= 0) {
-        phi_return_2 = func_800A5268();
+        phi_return_2 = copy_controller_inputs_to_kirby_controller();
         if (D_800D7B68 != 0) {
             phi_return_2 = func_800F7578();
         }

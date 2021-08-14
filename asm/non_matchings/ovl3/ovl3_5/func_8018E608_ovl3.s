@@ -622,13 +622,13 @@ glabel func_8018E608_ovl3
 /* 0EF988 8018EF48 3C01800E */ lui $at, %hi(D_800DF310)
 /* 0EF98C 8018EF4C 8D2A0000 */  lw    $t2, ($t1)
 /* 0EF990 8018EF50 25082CA0 */  addiu $t0, %lo(D_80122CA0) # addiu $t0, $t0, 0x2ca0
-/* 0EF994 8018EF54 3C10800D */  lui   $s0, %hi(D_800D6FE8) # $s0, 0x800d
+/* 0EF994 8018EF54 3C10800D */  lui   $s0, %hi(gKirbyController) # $s0, 0x800d
 /* 0EF998 8018EF58 000A5880 */  sll   $t3, $t2, 2
 /* 0EF99C 8018EF5C 002B0821 */  addu  $at, $at, $t3
 /* 0EF9A0 8018EF60 AC28F310 */ sw $t0, %lo(D_800DF310)($at)
 /* 0EF9A4 8018EF64 3C014000 */  li    $at, 0x40000000 # 2.000000
 /* 0EF9A8 8018EF68 4481A000 */  mtc1  $at, $f20
-/* 0EF9AC 8018EF6C 26106FE8 */  addiu $s0, %lo(D_800D6FE8) # addiu $s0, $s0, 0x6fe8
+/* 0EF9AC 8018EF6C 26106FE8 */  addiu $s0, %lo(gKirbyController) # addiu $s0, $s0, 0x6fe8
 /* 0EF9B0 8018EF70 960E0002 */  lhu   $t6, 2($s0)
 .L8018EF74_ovl3:
 /* 0EF9B4 8018EF74 31CF8000 */  andi  $t7, $t6, 0x8000

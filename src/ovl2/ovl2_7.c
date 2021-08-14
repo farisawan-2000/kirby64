@@ -5029,7 +5029,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_7/func_8011ADFC.s")
 
 #ifdef MIPS_TO_C
 void func_8011AE6C(struct UnkStruct8004A7C4 *arg0) {
-    if (func_8012122C() == 1) {
+    if (kirby_in_inactionable_state() == 1) {
         func_800AA018(((D_800E77A0[*arg0] * 0x1C) + &D_80124E14)->unk8);
         D_800DEF90[D_8004A7C4->objId] = &D_8011ADFC;
     }

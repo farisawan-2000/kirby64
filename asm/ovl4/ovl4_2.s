@@ -4052,10 +4052,10 @@
 .L80155920_ovl4:
 /* 0FCE50 80155920 0C029D9E */  jal   play_sound
 /* 0FCE54 80155924 240400ED */   li    $a0, 237
-/* 0FCE58 80155928 3C02800C */  lui   $v0, %hi(D_800BE4F0) # $v0, 0x800c
+/* 0FCE58 80155928 3C02800C */  lui   $v0, %hi(gGameState) # $v0, 0x800c
 /* 0FCE5C 8015592C 24060001 */  li    $a2, 1
 /* 0FCE60 80155930 3C018016 */  lui   $at, %hi(D_8015C6D8) # $at, 0x8016
-/* 0FCE64 80155934 2442E4F0 */  addiu $v0, %lo(D_800BE4F0) # addiu $v0, $v0, -0x1b10
+/* 0FCE64 80155934 2442E4F0 */  addiu $v0, %lo(gGameState) # addiu $v0, $v0, -0x1b10
 /* 0FCE68 80155938 AC26C6D8 */  sw    $a2, %lo(D_8015C6D8)($at)
 /* 0FCE6C 8015593C 8C4A0000 */  lw    $t2, ($v0)
 /* 0FCE70 80155940 3C01800D */  lui   $at, %hi(D_800D6B68) # $at, 0x800d
@@ -4115,10 +4115,10 @@
 /* 0FCF38 80155A08 00000000 */   nop   
 /* 0FCF3C 80155A0C 0C029D9E */  jal   play_sound
 /* 0FCF40 80155A10 2404002B */   li    $a0, 43
-/* 0FCF44 80155A14 3C02800C */  lui   $v0, %hi(D_800BE4F0) # $v0, 0x800c
+/* 0FCF44 80155A14 3C02800C */  lui   $v0, %hi(gGameState) # $v0, 0x800c
 /* 0FCF48 80155A18 24060001 */  li    $a2, 1
 /* 0FCF4C 80155A1C 3C018016 */  lui   $at, %hi(D_8015C6D8) # $at, 0x8016
-/* 0FCF50 80155A20 2442E4F0 */  addiu $v0, %lo(D_800BE4F0) # addiu $v0, $v0, -0x1b10
+/* 0FCF50 80155A20 2442E4F0 */  addiu $v0, %lo(gGameState) # addiu $v0, $v0, -0x1b10
 /* 0FCF54 80155A24 AC26C6D8 */  sw    $a2, %lo(D_8015C6D8)($at)
 /* 0FCF58 80155A28 8C4B0000 */  lw    $t3, ($v0)
 /* 0FCF5C 80155A2C 3C0C800D */  lui   $t4, %hi(D_800D6B60) # $t4, 0x800d
@@ -4274,10 +4274,10 @@
 /* 0FD18C 80155C5C 30494000 */   andi  $t1, $v0, 0x4000
 /* 0FD190 80155C60 0C029D9E */  jal   play_sound
 /* 0FD194 80155C64 240400ED */   li    $a0, 237
-/* 0FD198 80155C68 3C02800C */  lui   $v0, %hi(D_800BE4F0) # $v0, 0x800c
+/* 0FD198 80155C68 3C02800C */  lui   $v0, %hi(gGameState) # $v0, 0x800c
 /* 0FD19C 80155C6C 240A0001 */  li    $t2, 1
 /* 0FD1A0 80155C70 3C018016 */  lui   $at, %hi(D_8015C6D8) # $at, 0x8016
-/* 0FD1A4 80155C74 2442E4F0 */  addiu $v0, %lo(D_800BE4F0) # addiu $v0, $v0, -0x1b10
+/* 0FD1A4 80155C74 2442E4F0 */  addiu $v0, %lo(gGameState) # addiu $v0, $v0, -0x1b10
 /* 0FD1A8 80155C78 AC2AC6D8 */  sw    $t2, %lo(D_8015C6D8)($at)
 /* 0FD1AC 80155C7C 8C4B0000 */  lw    $t3, ($v0)
 /* 0FD1B0 80155C80 3C108016 */  lui   $s0, %hi(D_8015C6E0) # $s0, 0x8016

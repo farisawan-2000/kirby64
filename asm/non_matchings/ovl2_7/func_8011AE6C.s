@@ -1,7 +1,7 @@
 glabel func_8011AE6C
 /* 0A38DC 8011AE6C 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 0A38E0 8011AE70 AFBF0014 */  sw    $ra, 0x14($sp)
-/* 0A38E4 8011AE74 0C04848B */  jal   func_8012122C
+/* 0A38E4 8011AE74 0C04848B */  jal   kirby_in_inactionable_state
 /* 0A38E8 8011AE78 AFA40018 */   sw    $a0, 0x18($sp)
 /* 0A38EC 8011AE7C 24010001 */  li    $at, 1
 /* 0A38F0 8011AE80 14410017 */  bne   $v0, $at, .L8011AEE0_ovl2

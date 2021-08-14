@@ -8,7 +8,7 @@
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800DE350.h"
 #include "ovl1/ovl1_6.h"
-extern Controller_800D6FE8 D_800D6FE8;
+extern Controller_800D6FE8 gKirbyController;
 
 
 
@@ -623,7 +623,7 @@ void func_8011C8F8(void) {
     gKirbyState.actionChange = -1;
     gKirbyState.action = 0;
     gKirbyState.previousAction = 0;
-    if (D_800BE4F0 == 0x21) {
+    if (gGameState == 0x21) {
         gKirbyState.abilityInUse = 0;
         gKirbyState.ability = 0;
     } else {
@@ -904,7 +904,7 @@ void func_8011D67C(void) {
     gEntitiesScaleYArray[phi_v0->objId] = temp_f0;
     gEntitiesScaleZArray[phi_v0->objId] = temp_f0;
     if (D_800E8920[phi_v0->objId] == 1) {
-        temp_v0_2 = D_800D6FE8.buttonHeld;
+        temp_v0_2 = gKirbyController.buttonHeld;
         if ((temp_v0_2 & 0x400) == 0) {
             if ((temp_v0_2 & 0x300) == 0) {
                 set_kirby_action_1(0, 1);
@@ -1112,7 +1112,7 @@ void func_8011DCD0(void) {
 }
 
 void func_8011DD18(s32 arg0) {
-    if (D_800BE4F0 != 0x21) {
+    if (gGameState != 0x21) {
         if (arg0 != gKirbyState.ability) {
             gKirbyState.ability = arg0;
             func_8012310C(arg0);
@@ -1311,7 +1311,7 @@ void func_8011E190(void) {
 	u32 temp_a0;
 	u32 temp_v0;
 	
-    if (D_800BE4F0 != 0x21) {
+    if (gGameState != 0x21) {
 		temp_a0 = gKirbyState.currentInhale;
 		temp_v0 = gKirbyState.currentInhale;
         if (temp_v0 != 0) {
@@ -1689,7 +1689,7 @@ u16 func_8011EBD4(void) {
 
     temp_v0 = gKirbyState.isFullJump;
     if (temp_v0 == 0) {
-        if (((D_800D6FE8.buttonHeld & 0x8000) != 0) && (gKirbyState.unk17 == 0)) {
+        if (((gKirbyController.buttonHeld & 0x8000) != 0) && (gKirbyState.unk17 == 0)) {
             gKirbyState.jumpHeight = gKirbyState.jumpHeight + 1;
             return temp_v0;
         }
@@ -1985,7 +1985,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80120E74.s")
     u16 temp_v0;
 
     if (D_800D6B54 == 0) {
-        temp_v0 = D_800D6FE8.buttonHeld;
+        temp_v0 = gKirbyController.buttonHeld;
         if ((temp_v0 & 0x300) != 0) {
             if ((temp_v0 & 0x100) != 0) {
                 return 1;
@@ -2007,7 +2007,7 @@ f32 func_801210FC(void) {
     phi_return = 0.0f;
     if (D_8012E7D7 == 0) {
         temp_f0 = ((D_8004A7C4->objId * 4) + 0x800E0000)->unk6A10;
-        if ((temp_f0 != 1.0f) || ((D_800D6FE8.buttonHeld & 0x100) == 0)) {
+        if ((temp_f0 != 1.0f) || ((gKirbyController.buttonHeld & 0x100) == 0)) {
 
         } else {
             return 1e-45.0f;
@@ -2015,7 +2015,7 @@ f32 func_801210FC(void) {
         phi_return = temp_f0;
         if (temp_f0 == -1.0f) {
             phi_return = temp_f0;
-            if ((D_800D6FE8.buttonHeld & 0x200) != 0) {
+            if ((gKirbyController.buttonHeld & 0x200) != 0) {
                 return 1e-45.0f;
             }
         }
@@ -2029,15 +2029,15 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801210FC.s")
 
 u32 func_80121194(void) {
     if (D_8012E7D7 == 0
-        && ((D_800E6A10[D_8004A7C4->objId] == 1.0f && D_800D6FE8.buttonHeld & L_JPAD)
-        ||  (D_800E6A10[D_8004A7C4->objId] == -1.0f && D_800D6FE8.buttonHeld & R_JPAD))
+        && ((D_800E6A10[D_8004A7C4->objId] == 1.0f && gKirbyController.buttonHeld & L_JPAD)
+        ||  (D_800E6A10[D_8004A7C4->objId] == -1.0f && gKirbyController.buttonHeld & R_JPAD))
         ) {
         return 1;
     }
     return 0;
 }
 
-u8 func_8012122C(void) {
+u8 kirby_in_inactionable_state(void) {
     if ((gKirbyState.unk17 != 0) && (gKirbyState.abilityState != 0)) {
         return 3;
     }
@@ -2135,7 +2135,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801212A4.s")
     phi_return = 0;
     if (gKirbyState.unk17 == 0) {
         phi_return = 0;
-        if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
+        if ((gKirbyController.buttonHeld & 0x300) != 0) {
             if (func_80121194() != 0) {
                 return 2;
             }
@@ -2350,14 +2350,14 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121BCC.s")
         if (func_80121194() != 0) {
             gKirbyState.unk2C = 0xE;
             gKirbyState.isTurning = gKirbyState.isTurning | 1;
-        } else if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
+        } else if ((gKirbyController.buttonHeld & 0x300) != 0) {
             return 1;
         }
     } else {
         temp_v0 = gKirbyState.unk2C;
         if (temp_v0 != 0) {
             gKirbyState.unk2C = temp_v0 - 1;
-        } else if ((D_800D6FE8.buttonHeld & 0x300) != 0) {
+        } else if ((gKirbyController.buttonHeld & 0x300) != 0) {
             return 1;
         }
     }

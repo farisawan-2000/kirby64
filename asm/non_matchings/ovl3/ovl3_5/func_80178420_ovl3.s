@@ -115,12 +115,12 @@ glabel func_80178420_ovl3
 /* 0D900C 801785CC E5000000 */  swc1  $f0, ($t0)
 /* 0D9010 801785D0 8C620000 */  lw    $v0, ($v1)
 /* 0D9014 801785D4 3C01800E */ lui $at, %hi(D_800E3210)
-/* 0D9018 801785D8 3C0C800D */  lui   $t4, %hi(D_800D6FE8) # $t4, 0x800d
+/* 0D9018 801785D8 3C0C800D */  lui   $t4, %hi(gKirbyController) # $t4, 0x800d
 /* 0D901C 801785DC 00021080 */  sll   $v0, $v0, 2
 /* 0D9020 801785E0 00A24821 */  addu  $t1, $a1, $v0
 /* 0D9024 801785E4 C5260000 */  lwc1  $f6, ($t1)
 /* 0D9028 801785E8 00220821 */  addu  $at, $at, $v0
-/* 0D902C 801785EC 958C6FE8 */  lhu   $t4, %lo(D_800D6FE8)($t4)
+/* 0D902C 801785EC 958C6FE8 */  lhu   $t4, %lo(gKirbyController)($t4)
 /* 0D9030 801785F0 E4263210 */ swc1 $f6, %lo(D_800E3210)($at)
 /* 0D9034 801785F4 8C6A0000 */  lw    $t2, ($v1)
 /* 0D9038 801785F8 3C01800E */ lui $at, %hi(D_800E3C90)

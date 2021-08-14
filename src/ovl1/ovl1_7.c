@@ -1418,7 +1418,7 @@ void assign_new_process_entry(struct GObjProcess *ts, void (*func)(struct UnkStr
     osCreateThread(&temp_v0->thread,
                    id,
                    func,
-                   ts->unk18,
+                   ts->gobj,
                    &temp_v0->objStack->stack[gNewEntityStackSize / 8],
                    0x33);
     temp_v0->objStack->stack[7] = STACK_TOP_MAGIC;

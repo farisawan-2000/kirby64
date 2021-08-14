@@ -372,7 +372,7 @@ void func_800BCA5C(void) {
     if (*temp_t9 != 0) {
         *(&D_800D55BC + (*temp_t9 * 4))();
     }
-    if (D_800BE4F0 == 0x21) {
+    if (gGameState == 0x21) {
         *(&D_800E9E20 + (D_8004A7C4->objId * 4)) = 2;
     } else {
         if (func_800F8560() == 9) {
@@ -437,7 +437,7 @@ loop_14:
     play_sound(0xED);
     temp_v0 = D_8004A7C4->objId * 4;
     if ((1 == *(&D_800E98E0 + temp_v0)) && (1 != *(&D_800E9E20 + temp_v0))) {
-        if (D_800BE4F0 == 0x21) {
+        if (gGameState == 0x21) {
             D_800D6B6C = 1;
         }
         D_800BE4F8 = 0;
