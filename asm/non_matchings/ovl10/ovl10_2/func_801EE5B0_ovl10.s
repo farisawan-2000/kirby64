@@ -160,7 +160,7 @@ glabel func_801EE5B0_ovl10
 /* 1DF588 801EE818 1720000A */  bnez  $t9, .L801EE844_ovl10
 /* 1DF58C 801EE81C 00000000 */   nop   
 .L801EE820_ovl10:
-/* 1DF590 801EE820 0C002DAF */  jal   func_8000B6BC
+/* 1DF590 801EE820 0C002DAF */  jal   finish_current_thread
 /* 1DF594 801EE824 24040001 */   li    $a0, 1
 /* 1DF598 801EE828 8E280000 */  lw    $t0, ($s1)
 /* 1DF59C 801EE82C 8D090000 */  lw    $t1, ($t0)
@@ -172,7 +172,7 @@ glabel func_801EE5B0_ovl10
 .L801EE844_ovl10:
 /* 1DF5B4 801EE844 0C06F1E5 */  jal   func_801BC794_ovl10
 /* 1DF5B8 801EE848 24040006 */   li    $a0, 6
-/* 1DF5BC 801EE84C 0C002DAF */  jal   func_8000B6BC
+/* 1DF5BC 801EE84C 0C002DAF */  jal   finish_current_thread
 /* 1DF5C0 801EE850 2404001E */   li    $a0, 30
 /* 1DF5C4 801EE854 8E230000 */  lw    $v1, ($s1)
 /* 1DF5C8 801EE858 3C06800E */  lui   $a2, %hi(D_800E6690) # $a2, 0x800e

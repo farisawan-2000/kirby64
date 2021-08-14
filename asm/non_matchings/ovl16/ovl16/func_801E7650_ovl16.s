@@ -50,7 +50,7 @@ glabel func_801E7650_ovl16
 /* 21D9C0 801E7710 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)
 /* 21D9C4 801E7714 00194080 */  sll   $t0, $t9, 2
 /* 21D9C8 801E7718 00280821 */  addu  $at, $at, $t0
-/* 21D9CC 801E771C 0C002DAF */  jal   func_8000B6BC
+/* 21D9CC 801E771C 0C002DAF */  jal   finish_current_thread
 /* 21D9D0 801E7720 E4262790 */ swc1 $f6, %lo(gEntitiesNextPosYArray)($at)
 /* 21D9D4 801E7724 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 21D9D8 801E7728 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)
@@ -117,7 +117,7 @@ glabel func_801E7650_ovl16
 /* 21DAC4 801E7814 C4440010 */  lwc1  $f4, 0x10($v0)
 /* 21DAC8 801E7818 46143202 */  mul.s $f8, $f6, $f20
 /* 21DACC 801E781C 46082280 */  add.s $f10, $f4, $f8
-/* 21DAD0 801E7820 0C002DAF */  jal   func_8000B6BC
+/* 21DAD0 801E7820 0C002DAF */  jal   finish_current_thread
 /* 21DAD4 801E7824 E44A0010 */   swc1  $f10, 0x10($v0)
 /* 21DAD8 801E7828 26100001 */  addiu $s0, $s0, 1
 /* 21DADC 801E782C 5612FFF4 */  bnel  $s0, $s2, .L801E7800_ovl16

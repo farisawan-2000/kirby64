@@ -139,7 +139,7 @@ glabel func_80184538_ovl3
 /* 0E5198 80184758 2468FFFF */  addiu $t0, $v1, -1
 /* 0E519C 8018475C 14800005 */  bnez  $a0, .L80184774_ovl3
 /* 0E51A0 80184760 AC480000 */   sw    $t0, ($v0)
-/* 0E51A4 80184764 0C002DAF */  jal   func_8000B6BC
+/* 0E51A4 80184764 0C002DAF */  jal   finish_current_thread
 /* 0E51A8 80184768 24040001 */   li    $a0, 1
 /* 0E51AC 8018476C 1000FFEA */  b     .L80184718_ovl3
 /* 0E51B0 80184770 926C0017 */   lbu   $t4, 0x17($s3)

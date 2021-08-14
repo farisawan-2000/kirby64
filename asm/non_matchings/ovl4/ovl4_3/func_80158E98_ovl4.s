@@ -132,7 +132,7 @@ glabel func_80158E98_ovl4
 .L80159078_ovl4:
 /* 1005A8 80159078 0C029C68 */  jal   func_800A71A0
 /* 1005AC 8015907C 24040010 */   li    $a0, 16
-/* 1005B0 80159080 0C002DAF */  jal   func_8000B6BC
+/* 1005B0 80159080 0C002DAF */  jal   finish_current_thread
 /* 1005B4 80159084 24040001 */   li    $a0, 1
 /* 1005B8 80159088 26100001 */  addiu $s0, $s0, 1
 /* 1005BC 8015908C 24010023 */  li    $at, 35
@@ -145,7 +145,7 @@ glabel func_80158E98_ovl4
 .L801590A4_ovl4:
 /* 1005D4 801590A4 0C029C68 */  jal   func_800A71A0
 /* 1005D8 801590A8 24040010 */   li    $a0, 16
-/* 1005DC 801590AC 0C002DAF */  jal   func_8000B6BC
+/* 1005DC 801590AC 0C002DAF */  jal   finish_current_thread
 /* 1005E0 801590B0 24040001 */   li    $a0, 1
 /* 1005E4 801590B4 26100001 */  addiu $s0, $s0, 1
 /* 1005E8 801590B8 24010019 */  li    $at, 25

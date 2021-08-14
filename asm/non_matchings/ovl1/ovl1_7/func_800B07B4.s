@@ -116,7 +116,7 @@ glabel func_800B07B4
 .L800B0954_ovl1:
 /* 058BA4 800B0954 50E00004 */  beql  $a3, $zero, .L800B0968_ovl1
 /* 058BA8 800B0958 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 058BAC 800B095C 0C002DAF */  jal   func_8000B6BC
+/* 058BAC 800B095C 0C002DAF */  jal   finish_current_thread
 /* 058BB0 800B0960 00E02025 */   move  $a0, $a3
 /* 058BB4 800B0964 8FBF0014 */  lw    $ra, 0x14($sp)
 .L800B0968_ovl1:

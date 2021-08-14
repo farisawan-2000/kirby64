@@ -306,7 +306,7 @@ glabel func_80181F64_ovl3
 /* 0E2E40 80182400 4502000F */  bc1fl .L80182440_ovl3
 /* 0E2E44 80182404 960D00D2 */   lhu   $t5, 0xd2($s0)
 .L80182408_ovl3:
-/* 0E2E48 80182408 0C002DAF */  jal   func_8000B6BC
+/* 0E2E48 80182408 0C002DAF */  jal   finish_current_thread
 /* 0E2E4C 8018240C 24040001 */   li    $a0, 1
 /* 0E2E50 80182410 8E390000 */  lw    $t9, ($s1)
 /* 0E2E54 80182414 3C01800E */ lui $at, %hi(D_800E3210)

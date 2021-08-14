@@ -152,7 +152,7 @@ glabel func_8016D3A8_ovl3
 /* 0CE018 8016D5D8 57200009 */  bnezl $t9, .L8016D600_ovl3
 /* 0CE01C 8016D5DC 3C014000 */   lui   $at, 0x4000
 .L8016D5E0_ovl3:
-/* 0CE020 8016D5E0 0C002DAF */  jal   func_8000B6BC
+/* 0CE020 8016D5E0 0C002DAF */  jal   finish_current_thread
 /* 0CE024 8016D5E4 02402025 */   move  $a0, $s2
 /* 0CE028 8016D5E8 3C08800D */  lui   $t0, %hi(gKirbyController) # $t0, 0x800d
 /* 0CE02C 8016D5EC 95086FE8 */  lhu   $t0, %lo(gKirbyController)($t0)
@@ -258,7 +258,7 @@ glabel func_8016D3A8_ovl3
 /* 0CE194 8016D754 24680001 */   addiu $t0, $v1, 1
 /* 0CE198 8016D758 AE120044 */  sw    $s2, 0x44($s0)
 .L8016D75C_ovl3:
-/* 0CE19C 8016D75C 0C002DAF */  jal   func_8000B6BC
+/* 0CE19C 8016D75C 0C002DAF */  jal   finish_current_thread
 /* 0CE1A0 8016D760 02402025 */   move  $a0, $s2
 /* 0CE1A4 8016D764 1000FFD4 */  b     .L8016D6B8_ovl3
 /* 0CE1A8 8016D768 8E030044 */   lw    $v1, 0x44($s0)

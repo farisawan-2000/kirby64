@@ -54,7 +54,7 @@ glabel func_801ED7D0_ovl10
 /* 1DE60C 801ED89C 4604A180 */  add.s $f6, $f20, $f4
 /* 1DE610 801ED8A0 46003207 */  neg.s $f8, $f6
 /* 1DE614 801ED8A4 46085402 */  mul.s $f16, $f10, $f8
-/* 1DE618 801ED8A8 0C002DAF */  jal   func_8000B6BC
+/* 1DE618 801ED8A8 0C002DAF */  jal   finish_current_thread
 /* 1DE61C 801ED8AC E5900000 */   swc1  $f16, ($t4)
 /* 1DE620 801ED8B0 8E630000 */  lw    $v1, ($s3)
 /* 1DE624 801ED8B4 8C6D0000 */  lw    $t5, ($v1)

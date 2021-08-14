@@ -54,7 +54,7 @@ glabel func_80158DB4_ovl3
 /* 0B98C4 80158E84 57000007 */  bnezl $t8, .L80158EA4_ovl3
 /* 0B98C8 80158E88 3C100002 */   lui   $s0, %hi(D_00020030) # $s0, 2
 .L80158E8C_ovl3:
-/* 0B98CC 80158E8C 0C002DAF */  jal   func_8000B6BC
+/* 0B98CC 80158E8C 0C002DAF */  jal   finish_current_thread
 /* 0B98D0 80158E90 24040001 */   li    $a0, 1
 /* 0B98D4 80158E94 8E080030 */  lw    $t0, %lo(D_00020030)($s0)
 /* 0B98D8 80158E98 1100FFFC */  beqz  $t0, .L80158E8C_ovl3

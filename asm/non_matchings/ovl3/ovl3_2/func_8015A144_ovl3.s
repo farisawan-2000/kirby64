@@ -52,7 +52,7 @@ glabel func_8015A144_ovl3
 /* 0BAC4C 8015A20C 160D0006 */  bne   $s0, $t5, .L8015A228_ovl3
 /* 0BAC50 8015A210 00000000 */   nop   
 .L8015A214_ovl3:
-/* 0BAC54 8015A214 0C002DAF */  jal   func_8000B6BC
+/* 0BAC54 8015A214 0C002DAF */  jal   finish_current_thread
 /* 0BAC58 8015A218 02002025 */   move  $a0, $s0
 /* 0BAC5C 8015A21C 8E2F0044 */  lw    $t7, 0x44($s1)
 /* 0BAC60 8015A220 120FFFFC */  beq   $s0, $t7, .L8015A214_ovl3
@@ -78,7 +78,7 @@ glabel func_8015A144_ovl3
 /* 0BACAC 8015A26C 8D290D50 */  lw    $t1, 0xd50($t1)
 /* 0BACB0 8015A270 00095080 */  sll   $t2, $t1, 2
 /* 0BACB4 8015A274 002A0821 */  addu  $at, $at, $t2
-/* 0BACB8 8015A278 0C002DAF */  jal   func_8000B6BC
+/* 0BACB8 8015A278 0C002DAF */  jal   finish_current_thread
 /* 0BACBC 8015A27C AC388060 */   sw    $t8, -0x7fa0($at)
 /* 0BACC0 8015A280 3C040002 */  lui   $a0, (0x0002009F >> 16) # lui $a0, 2
 /* 0BACC4 8015A284 3C050002 */  lui   $a1, (0x000200A0 >> 16) # lui $a1, 2
@@ -108,7 +108,7 @@ glabel func_8015A144_ovl3
 /* 0BAD24 8015A2E4 3C01800E */  lui   $at, 0x800e
 /* 0BAD28 8015A2E8 000EC880 */  sll   $t9, $t6, 2
 /* 0BAD2C 8015A2EC 00390821 */  addu  $at, $at, $t9
-/* 0BAD30 8015A2F0 0C002DAF */  jal   func_8000B6BC
+/* 0BAD30 8015A2F0 0C002DAF */  jal   finish_current_thread
 /* 0BAD34 8015A2F4 E4203C90 */   swc1  $f0, 0x3c90($at)
 /* 0BAD38 8015A2F8 8E280030 */  lw    $t0, 0x30($s1)
 /* 0BAD3C 8015A2FC 25090001 */  addiu $t1, $t0, 1

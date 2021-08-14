@@ -933,7 +933,7 @@ void func_800ACB7C(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_5/func_800ACB7C.s")
 #endif
 
-void func_800ACBDC(struct UnkStruct8004A7C4 *arg0) {
+void func_800ACBDC(struct GObj *arg0) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }

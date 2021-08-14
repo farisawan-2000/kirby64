@@ -259,7 +259,7 @@ glabel func_801E49B8_ovl17
 /* 22FF98 801E4DA8 002D0821 */  addu  $at, $at, $t5
 /* 22FF9C 801E4DAC E4203E50 */ swc1 $f0, %lo(D_800E3E50)($at)
 .L801E4DB0_ovl17:
-/* 22FFA0 801E4DB0 0C002DAF */  jal   func_8000B6BC
+/* 22FFA0 801E4DB0 0C002DAF */  jal   finish_current_thread
 /* 22FFA4 801E4DB4 2404003C */   li    $a0, 60
 /* 22FFA8 801E4DB8 0C0788C8 */  jal   D_801E2320_ovl17
 /* 22FFAC 801E4DBC 8FA40048 */   lw    $a0, 0x48($sp)

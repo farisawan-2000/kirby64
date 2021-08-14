@@ -101,7 +101,7 @@ glabel func_80227690_ovl19
 /* 247F20 80227810 0C02BEED */  jal   func_800AFBB4
 /* 247F24 80227814 00E02825 */   move  $a1, $a3
 .L80227818_ovl19:
-/* 247F28 80227818 0C002DAF */  jal   func_8000B6BC
+/* 247F28 80227818 0C002DAF */  jal   finish_current_thread
 /* 247F2C 8022781C 24040001 */   li    $a0, 1
 /* 247F30 80227820 1000FFDB */  b     .L80227790_ovl19
 /* 247F34 80227824 8E270000 */   lw    $a3, ($s1)

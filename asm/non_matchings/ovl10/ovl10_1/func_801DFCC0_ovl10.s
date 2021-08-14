@@ -83,7 +83,7 @@ glabel func_801DFCC0_ovl10
 /* 1D0B64 801DFDF4 020E7821 */  addu  $t7, $s0, $t6
 /* 1D0B68 801DFDF8 C5F60000 */  lwc1  $f22, ($t7)
 .L801DFDFC_ovl10:
-/* 1D0B6C 801DFDFC 0C002DAF */  jal   func_8000B6BC
+/* 1D0B6C 801DFDFC 0C002DAF */  jal   finish_current_thread
 /* 1D0B70 801DFE00 24040001 */   li    $a0, 1
 /* 1D0B74 801DFE04 0C02BC8C */  jal   func_800AF230
 /* 1D0B78 801DFE08 00000000 */   nop   

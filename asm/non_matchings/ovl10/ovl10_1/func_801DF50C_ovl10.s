@@ -356,7 +356,7 @@ glabel func_801DF50C_ovl10
 /* 1D07C4 801DFA54 C5260000 */  lwc1  $f6, ($t1)
 /* 1D07C8 801DFA58 E7060000 */  swc1  $f6, ($t8)
 .L801DFA5C_ovl10:
-/* 1D07CC 801DFA5C 0C002DAF */  jal   func_8000B6BC
+/* 1D07CC 801DFA5C 0C002DAF */  jal   finish_current_thread
 /* 1D07D0 801DFA60 24040001 */   li    $a0, 1
 /* 1D07D4 801DFA64 8EC50000 */  lw    $a1, ($s6)
 /* 1D07D8 801DFA68 8CA30000 */  lw    $v1, ($a1)

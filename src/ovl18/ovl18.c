@@ -17,7 +17,7 @@ void func_8001B784_ovl18(Mat4 *, f32, f32, f32);
 // awfully annoying regalloc meme
 #ifdef NON_MATCHING
 #define DYNAMIC_ALLOC_1(size) (gDynamicBuffer1.top += size)
-void func_8021DF20_ovl18(struct UnkStruct8004A7C4 *arg0) {
+void func_8021DF20_ovl18(struct GObj *arg0) {
     Mat4 *temp_a0;
     u32 n;
 
@@ -57,9 +57,9 @@ s32 func_8021E050_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     f32 sp50;
     f32 *temp_a1;
     s32 *temp_a0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
-    struct UnkStruct8004A7C4 *temp_v0_4;
+    struct GObj *temp_v0_2;
+    struct GObj *temp_v0_3;
+    struct GObj *temp_v0_4;
     u8 temp_v0;
     void *temp_s0;
     f32 phi_f8;
@@ -99,7 +99,7 @@ block_13:
             if ((temp_s0->unk0 & 0xF) != 7) {
                 play_sound(0x112);
                 func_800A7F74(3, 0, 0xCE, (bitwise s32) sp6C, sp70, sp74);
-                func_8000B6BC(0x12);
+                finish_current_thread(0x12);
             }
             sp7C = func_800FCD14(0xFF, sp83, (bitwise s32) sp50, temp_s0->unk1, temp_s0->unk2, temp_s0->unk3, temp_s0->unk4, 0, temp_s0->unk6, &sp6C, &sp60, &sp54);
         }
@@ -115,7 +115,7 @@ block_13:
         if ((temp_s0->unk0 & 0xF) != 7) {
             play_sound(0x112);
             func_800A7F74(3, 0, 0xCE, (bitwise s32) sp6C, sp70, sp74);
-            func_8000B6BC(0x12);
+            finish_current_thread(0x12);
         }
         sp7C = func_800FCD14(0xFF, sp83, (bitwise s32) sp50, temp_s0->unk1, temp_s0->unk2, temp_s0->unk3, temp_s0->unk4, 0, temp_s0->unk6, &sp6C, &sp60, &sp54);
     }
@@ -172,11 +172,11 @@ void func_8021E528_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     temp_v1 = arg2 * 0x24;
     sp2C = temp_v1;
     sp30 = temp_v0;
-    func_8000B6BC(((*(&D_8022959C + (D_8022BC90 * 0x1C)) + temp_v0)->unk4 + temp_v1)->unk8);
+    finish_current_thread(((*(&D_8022959C + (D_8022BC90 * 0x1C)) + temp_v0)->unk4 + temp_v1)->unk8);
     if (*(&D_8022BCD0 + arg1) != 1) {
 loop_1:
         if (func_8021E4CC_ovl18(arg1) == 0) {
-            func_8000B6BC(1);
+            finish_current_thread(1);
             goto loop_1;
         }
         phi_s0 = (arg1 * 4) + &D_8022BCD8;
@@ -206,7 +206,7 @@ loop_4:
 loop_7:
         temp_v0_3 = *phi_s0_2;
         if ((temp_v0_3 != 0) && (*(&D_800E7650 + temp_v0_3) == *temp_s1)) {
-            func_8000B6BC(1);
+            finish_current_thread(1);
             goto loop_7;
         }
     }
@@ -237,11 +237,11 @@ void func_8021E6E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     temp_v1 = arg2 * 0x24;
     sp24 = temp_v1;
     sp28 = temp_v0;
-    func_8000B6BC(((*(&D_8022959C + (D_8022BC90 * 0x1C)) + temp_v0)->unk4 + temp_v1)->unk8);
+    finish_current_thread(((*(&D_8022959C + (D_8022BC90 * 0x1C)) + temp_v0)->unk4 + temp_v1)->unk8);
     if (*(&D_8022BCD0 + arg1) != 1) {
 loop_1:
         if (func_8021E4CC_ovl18(arg1) == 0) {
-            func_8000B6BC(1);
+            finish_current_thread(1);
             goto loop_1;
         }
         phi_a3 = (arg1 * 4) + &D_8022BCD8;
@@ -354,10 +354,10 @@ void func_8021ED3C_ovl18(s32 arg0) {
     s32 *temp_a0_2;
     s32 *temp_a0_3;
     s32 temp_v0_4;
-    struct UnkStruct8004A7C4 *temp_s1;
-    struct UnkStruct8004A7C4 *temp_s1_2;
-    struct UnkStruct8004A7C4 *temp_s1_3;
-    struct UnkStruct8004A7C4 *temp_s1_4;
+    struct GObj *temp_s1;
+    struct GObj *temp_s1_2;
+    struct GObj *temp_s1_3;
+    struct GObj *temp_s1_4;
     u16 temp_t8;
     u32 *temp_a1;
     u32 temp_s0;
@@ -443,7 +443,7 @@ loop_1:
 //         goto loop_3;
 //     }
     if (*(&D_800D6E20 + D_800BE508) != 0) {
-        func_8000B6BC(0x2D);
+        finish_current_thread(0x2D);
         temp_v0_2 = (D_8022BC90 * 0x1C) + &D_80229594;
         D_800D6E14 = temp_v0_2->unk2;
         D_800D6E18 = temp_v0_2->unk3;
@@ -500,7 +500,7 @@ loop_12:
         }
     }
     if (phi_s1 != temp_v0_5) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
         phi_s0_2 = 0;
         goto loop_11;
     }
@@ -519,7 +519,7 @@ loop_12:
         temp_f6 = gEntitiesNextPosYArray[D_8004A7C4->objId] + temp_s0_3->unk14;
         sp90 = temp_f6;
         func_800FD754(0, sp8C, temp_f6, sp94);
-        func_8000B6BC(0xA);
+        finish_current_thread(0xA);
         sp7C = 1.0f;
         sp78 = 1.0f;
         sp74 = 1.0f;
@@ -620,7 +620,7 @@ void func_8021F4A0_ovl18(void) {
 void func_8021F4E8_ovl18(void) {
     s32 temp_v0;
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0_2;
     struct UnkStruct800E1B50 *temp_a0;
 
     temp_v0 = D_8004A7C4->objId;
@@ -839,7 +839,7 @@ f32 func_8021FC40_ovl18(void) {
     f32 temp_f2;
     s32 temp_a0;
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     s32 phi_a0;
 
     temp_v1 = D_8004A7C4;
@@ -897,7 +897,7 @@ s32 func_8021FDF4_ovl18(void) {
     s32 temp_a0_2;
     s32 temp_a1;
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     s32 phi_a0;
     s32 phi_a0_2;
 
@@ -939,7 +939,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18/func_8021FDF4_ovl18.s")
 s32 func_8021FEBC_ovl18(void) {
     s32 temp_a0;
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     s32 phi_a0;
 
     temp_v1 = D_8004A7C4;
@@ -968,7 +968,7 @@ GLOBAL_ASM("asm/non_matchings/ovl18/ovl18/func_8021FEBC_ovl18.s")
 s32 func_8021FF80_ovl18(void) {
     s32 temp_a0;
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     s32 phi_a0;
 
     temp_v1 = D_8004A7C4;

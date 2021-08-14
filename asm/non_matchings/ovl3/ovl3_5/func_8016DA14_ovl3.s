@@ -141,7 +141,7 @@ glabel func_8016DA14_ovl3
 /* 0CE65C 8016DC1C 00A02025 */   move  $a0, $a1
 /* 0CE660 8016DC20 AE120044 */  sw    $s2, 0x44($s0)
 .L8016DC24_ovl3:
-/* 0CE664 8016DC24 0C002DAF */  jal   func_8000B6BC
+/* 0CE664 8016DC24 0C002DAF */  jal   finish_current_thread
 /* 0CE668 8016DC28 02402025 */   move  $a0, $s2
 /* 0CE66C 8016DC2C 8E020034 */  lw    $v0, 0x34($s0)
 /* 0CE670 8016DC30 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005

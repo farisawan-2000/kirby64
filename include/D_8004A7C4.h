@@ -128,10 +128,10 @@ struct UnkStruct8004A7C4_3C_duplicate {
 };
 
 // GObj?
-struct UnkStruct8004A7C4 {
+struct GObj {
 	u32 objId;
-	struct UnkStruct8004A7C4* unk4;
-    struct UnkStruct8004A7C4* unk8;
+	struct GObj* unk4;
+    struct GObj* unk8;
     u8 link;
     // todo: find the array this indexes
     u8 dl_link;
@@ -143,11 +143,11 @@ struct UnkStruct8004A7C4 {
     void (*unk14)(void);
     struct GObjProcess *proc;
     u32 unk1C;
-    struct UnkStruct8004A7C4* unk20;
-    struct UnkStruct8004A7C4* unk24;
+    struct GObj* unk20;
+    struct GObj* unk24;
     u32 unk28;
     // user data removal function according to HSD
-    void (*unk2C)(struct UnkStruct8004A7C4 *);
+    void (*unk2C)(struct GObj *);
     u32 unk30;
     u32 unk34;
     u32 unk38;
@@ -161,9 +161,9 @@ struct UnkStruct8004A7C4 {
 	u32 unk4C;
 };
 // size: 0x50
-extern struct UnkStruct8004A7C4 *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
-extern struct UnkStruct8004A7C4 *D_800DE44C;
+extern struct GObj *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
+extern struct GObj *D_800DE44C;
 
-typedef void (*VTABLE[])(struct UnkStruct8004A7C4 *);
+typedef void (*VTABLE[])(struct GObj *);
 
 #endif

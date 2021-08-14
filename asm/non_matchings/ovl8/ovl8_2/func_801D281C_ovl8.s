@@ -91,7 +91,7 @@ glabel L801D292C_ovl8
 /* 17644C 801D296C 0C02C640 */  jal   func_800B1900
 /* 176450 801D2970 3044FFFF */   andi  $a0, $v0, 0xffff
 .L801D2974_ovl8:
-/* 176454 801D2974 0C002DAF */  jal   func_8000B6BC
+/* 176454 801D2974 0C002DAF */  jal   finish_current_thread
 /* 176458 801D2978 24040001 */   li    $a0, 1
 /* 17645C 801D297C 1000FFD5 */  b     .L801D28D4_ovl8
 /* 176460 801D2980 8E0A0000 */   lw    $t2, ($s0)

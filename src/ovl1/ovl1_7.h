@@ -16,7 +16,7 @@ struct UnkStruct800B1EC8 {
 	u32 *unk18;
 	GObjThread *unk1C;
 
-	void (*unk20)(struct UnkStruct8004A7C4 *);
+	void (*unk20)(struct GObj *);
 
 };
 80293D50

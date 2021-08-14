@@ -64,7 +64,7 @@ glabel func_801EBC60_ovl10
 /* 1DCAC8 801EBD58 5500000B */  bnezl $t0, .L801EBD88_ovl10
 /* 1DCACC 801EBD5C 3C01C000 */   lui   $at, 0xc000
 .L801EBD60_ovl10:
-/* 1DCAD0 801EBD60 0C002DAF */  jal   func_8000B6BC
+/* 1DCAD0 801EBD60 0C002DAF */  jal   finish_current_thread
 /* 1DCAD4 801EBD64 24040001 */   li    $a0, 1
 /* 1DCAD8 801EBD68 8E020000 */  lw    $v0, ($s0)
 /* 1DCADC 801EBD6C 8C430000 */  lw    $v1, ($v0)

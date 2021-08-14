@@ -78,7 +78,7 @@ glabel func_801EBA74_ovl10
 /* 1DC90C 801EBB9C 1700000A */  bnez  $t8, .L801EBBC8_ovl10
 /* 1DC910 801EBBA0 00000000 */   nop   
 .L801EBBA4_ovl10:
-/* 1DC914 801EBBA4 0C002DAF */  jal   func_8000B6BC
+/* 1DC914 801EBBA4 0C002DAF */  jal   finish_current_thread
 /* 1DC918 801EBBA8 24040001 */   li    $a0, 1
 /* 1DC91C 801EBBAC 8E2F0000 */  lw    $t7, ($s1)
 /* 1DC920 801EBBB0 8DE20000 */  lw    $v0, ($t7)

@@ -27,7 +27,7 @@ glabel func_80207794_ovl9
 /* 1B5848 802077F8 13200006 */  beqz  $t9, .L80207814_ovl9
 /* 1B584C 802077FC 00000000 */   nop   
 .L80207800_ovl9:
-/* 1B5850 80207800 0C002DAF */  jal   func_8000B6BC
+/* 1B5850 80207800 0C002DAF */  jal   finish_current_thread
 /* 1B5854 80207804 24040001 */   li    $a0, 1
 /* 1B5858 80207808 9208003C */  lbu   $t0, 0x3c($s0)
 /* 1B585C 8020780C 1500FFFC */  bnez  $t0, .L80207800_ovl9

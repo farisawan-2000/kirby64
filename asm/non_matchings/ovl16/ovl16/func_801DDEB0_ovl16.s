@@ -82,7 +82,7 @@ glabel func_801DDEB0_ovl16
 /* 214294 801DDFE4 0006000D */  break 6
 .L801DDFE8_ovl16:
 /* 214298 801DDFE8 02402025 */  move  $a0, $s2
-/* 21429C 801DDFEC 0C002DAF */  jal   func_8000B6BC
+/* 21429C 801DDFEC 0C002DAF */  jal   finish_current_thread
 /* 2142A0 801DDFF0 00000000 */   nop   
 /* 2142A4 801DDFF4 8E6F002C */  lw    $t7, 0x2c($s3)
 /* 2142A8 801DDFF8 524FFFE1 */  beql  $s2, $t7, .L801DDF80_ovl16

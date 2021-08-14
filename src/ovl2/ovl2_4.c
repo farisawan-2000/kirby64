@@ -23,7 +23,7 @@ extern s32 D_800B4D40;
 // has an easy way to bring the diff down to one instruction,
 // but the operands to that instructions are in the wrong order
 #ifdef NON_MATCHING
-void func_800FD418(struct UnkStruct8004A7C4 *arg0) {
+void func_800FD418(struct GObj *arg0) {
     s32 temp_v0 = D_800EC2E0[D_8004A7C4->objId];
     u32 tmp;
 

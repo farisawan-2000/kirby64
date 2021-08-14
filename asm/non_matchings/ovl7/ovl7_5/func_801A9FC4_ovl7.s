@@ -103,7 +103,7 @@ glabel func_801A9FC4_ovl7
 /* 1501A8 801AA138 0C06A980 */  jal   func_801AA600_ovl7
 /* 1501AC 801AA13C 02A02025 */   move  $a0, $s5
 .L801AA140_ovl7:
-/* 1501B0 801AA140 0C002DAF */  jal   func_8000B6BC
+/* 1501B0 801AA140 0C002DAF */  jal   finish_current_thread
 /* 1501B4 801AA144 24040001 */   li    $a0, 1
 /* 1501B8 801AA148 1000FFC9 */  b     .L801AA070_ovl7
 /* 1501BC 801AA14C 8E2B0000 */   lw    $t3, ($s1)

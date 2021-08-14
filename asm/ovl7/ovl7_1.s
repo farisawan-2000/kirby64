@@ -883,7 +883,7 @@ glabel func_80199384_ovl7
 /* 13F5B0 80199540 54400006 */  bnezl $v0, .L8019955C_ovl7
 /* 13F5B4 80199544 8FBF0014 */   lw    $ra, 0x14($sp)
 .L80199548_ovl7:
-/* 13F5B8 80199548 0C002DAF */  jal   func_8000B6BC
+/* 13F5B8 80199548 0C002DAF */  jal   finish_current_thread
 /* 13F5BC 8019954C 24040001 */   li    $a0, 1
 /* 13F5C0 80199550 1000FFE6 */  b     .L801994EC_ovl7
 /* 13F5C4 80199554 00000000 */   nop   

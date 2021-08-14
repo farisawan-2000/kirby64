@@ -339,7 +339,7 @@ glabel func_80176860_ovl3
 /* 0D77AC 80176D6C 020E4821 */  addu  $t1, $s0, $t6
 /* 0D77B0 80176D70 E5240000 */  swc1  $f4, ($t1)
 .L80176D74_ovl3:
-/* 0D77B4 80176D74 0C002DAF */  jal   func_8000B6BC
+/* 0D77B4 80176D74 0C002DAF */  jal   finish_current_thread
 /* 0D77B8 80176D78 24040001 */   li    $a0, 1
 /* 0D77BC 80176D7C 1000FF83 */  b     .L80176B8C_ovl3
 /* 0D77C0 80176D80 92C20017 */   lbu   $v0, 0x17($s6)

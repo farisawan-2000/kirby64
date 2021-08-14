@@ -195,7 +195,7 @@ glabel func_8017B068_ovl3
 /* 0DBD88 8017B348 8DF90000 */  lw    $t9, ($t7)
 /* 0DBD8C 8017B34C 02E02025 */  move  $a0, $s7
 /* 0DBD90 8017B350 8F280004 */  lw    $t0, 4($t9)
-/* 0DBD94 8017B354 0C002DAF */  jal   func_8000B6BC
+/* 0DBD94 8017B354 0C002DAF */  jal   finish_current_thread
 /* 0DBD98 8017B358 E5000034 */   swc1  $f0, 0x34($t0)
 /* 0DBD9C 8017B35C 1000FFB0 */  b     .L8017B220_ovl3
 /* 0DBDA0 8017B360 920B0017 */   lbu   $t3, 0x17($s0)

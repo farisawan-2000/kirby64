@@ -96,7 +96,7 @@ glabel func_801ECA34_ovl10
 .L801ECB9C_ovl10:
 /* 1DD90C 801ECB9C 0C066FA7 */  jal   func_8019BE9C_ovl10
 /* 1DD910 801ECBA0 24040001 */   li    $a0, 1
-/* 1DD914 801ECBA4 0C002DAF */  jal   func_8000B6BC
+/* 1DD914 801ECBA4 0C002DAF */  jal   finish_current_thread
 /* 1DD918 801ECBA8 24040001 */   li    $a0, 1
 /* 1DD91C 801ECBAC 920C003C */  lbu   $t4, 0x3c($s0)
 /* 1DD920 801ECBB0 1580FFFA */  bnez  $t4, .L801ECB9C_ovl10
@@ -145,7 +145,7 @@ glabel func_801ECA34_ovl10
 /* 1DD9C0 801ECC50 4604A181 */  sub.s $f6, $f20, $f4
 /* 1DD9C4 801ECC54 46003207 */  neg.s $f8, $f6
 /* 1DD9C8 801ECC58 46085402 */  mul.s $f16, $f10, $f8
-/* 1DD9CC 801ECC5C 0C002DAF */  jal   func_8000B6BC
+/* 1DD9CC 801ECC5C 0C002DAF */  jal   finish_current_thread
 /* 1DD9D0 801ECC60 E5700000 */   swc1  $f16, ($t3)
 /* 1DD9D4 801ECC64 8EA30000 */  lw    $v1, ($s5)
 /* 1DD9D8 801ECC68 8C6C0000 */  lw    $t4, ($v1)

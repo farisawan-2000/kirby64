@@ -188,7 +188,7 @@ glabel func_801E2E44_ovl16
 .L801E3104_ovl16:
 /* 2193B4 801E3104 E5740000 */  swc1  $f20, ($t3)
 .L801E3108_ovl16:
-/* 2193B8 801E3108 0C002DAF */  jal   func_8000B6BC
+/* 2193B8 801E3108 0C002DAF */  jal   finish_current_thread
 /* 2193BC 801E310C 24040001 */   li    $a0, 1
 /* 2193C0 801E3110 8E650000 */  lw    $a1, ($s3)
 /* 2193C4 801E3114 8CAC0000 */  lw    $t4, ($a1)

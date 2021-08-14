@@ -10,12 +10,12 @@ extern f32 D_801CB548;
 extern s32 D_801CB4DC;
 extern void func_801ACF5C_ovl7(void);
 
-void func_8021A118_ovl9(struct UnkStruct8004A7C4 *);
+void func_8021A118_ovl9(struct GObj *);
 
 // rodata
 extern const f32 D_8021DEB0;
 
-void func_802199D8_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_802199D8_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     D_800DF150[D_8004A7C4->objId] = func_801ACF5C_ovl7;
@@ -29,12 +29,12 @@ void func_802199D8_ovl9(struct UnkStruct8004A7C4 *this) {
         D_800E3750[D_8004A7C4->objId] = -1.0f;
         D_800E3C90[D_8004A7C4->objId] = 21.8f;
     }
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801ACF84_ovl7(this);
 }
 
 extern const f32 D_8021DEB4, D_8021DEB8, D_8021DEBC, D_8021DEC0;
-void func_80219B1C_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_80219B1C_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     D_800DF150[D_8004A7C4->objId] = func_801ACF5C_ovl7;
@@ -56,7 +56,7 @@ void func_80219B1C_ovl9(struct UnkStruct8004A7C4 *this) {
             D_800E3C90[D_8004A7C4->objId] = 21.8f;
             break;
     }
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801ACF84_ovl7(this);
 }
 
@@ -135,13 +135,13 @@ void func_80219F70_ovl9(s32 this) {
             break;
     }
     func_80219E0C_ovl9(D_800E9E20[D_8004A7C4->objId], D_800E8AE0[D_8004A7C4->objId] & 1);
-    func_8000B6BC(2);
+    finish_current_thread(2);
     D_800E9FE0[D_8004A7C4->objId] = 1;
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801ACF84_ovl7(this);
 }
 
-void func_8021A118_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_8021A118_ovl9(struct GObj *this) {
     func_801A0D74_ovl9(this);
     if (D_800E8AE0[D_8004A7C4->objId] & 0x10) {
         func_80219E0C_ovl9(D_800E9E20[D_8004A7C4->objId], D_800E8AE0[D_8004A7C4->objId] & 1);

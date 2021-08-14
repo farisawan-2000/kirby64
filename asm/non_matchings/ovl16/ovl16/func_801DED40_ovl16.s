@@ -317,7 +317,7 @@ glabel func_801DED40_ovl16
 /* 215498 801DF1E8 C5640000 */  lwc1  $f4, ($t3)
 /* 21549C 801DF1EC C4520010 */  lwc1  $f18, 0x10($v0)
 /* 2154A0 801DF1F0 46049181 */  sub.s $f6, $f18, $f4
-/* 2154A4 801DF1F4 0C002DAF */  jal   func_8000B6BC
+/* 2154A4 801DF1F4 0C002DAF */  jal   finish_current_thread
 /* 2154A8 801DF1F8 E4460010 */   swc1  $f6, 0x10($v0)
 /* 2154AC 801DF1FC 26100001 */  addiu $s0, $s0, 1
 /* 2154B0 801DF200 2A01000F */  slti  $at, $s0, 0xf
@@ -351,7 +351,7 @@ glabel func_801DED40_ovl16
 /* 215514 801DF264 C5EA0000 */  lwc1  $f10, ($t7)
 /* 215518 801DF268 C4480010 */  lwc1  $f8, 0x10($v0)
 /* 21551C 801DF26C 460A4401 */  sub.s $f16, $f8, $f10
-/* 215520 801DF270 0C002DAF */  jal   func_8000B6BC
+/* 215520 801DF270 0C002DAF */  jal   finish_current_thread
 /* 215524 801DF274 E4500010 */   swc1  $f16, 0x10($v0)
 /* 215528 801DF278 26100001 */  addiu $s0, $s0, 1
 /* 21552C 801DF27C 5611FFF5 */  bnel  $s0, $s1, .L801DF254_ovl16

@@ -129,7 +129,7 @@ glabel func_801ED2CC_ovl10
 /* 1DE238 801ED4C8 002E0821 */  addu  $at, $at, $t6
 /* 1DE23C 801ED4CC 0C029D9E */  jal   play_sound
 /* 1DE240 801ED4D0 AC208920 */ sw $zero, %lo(D_800E8920)($at)
-/* 1DE244 801ED4D4 0C002DAF */  jal   func_8000B6BC
+/* 1DE244 801ED4D4 0C002DAF */  jal   finish_current_thread
 /* 1DE248 801ED4D8 24040010 */   li    $a0, 16
 /* 1DE24C 801ED4DC 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1DE250 801ED4E0 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
@@ -221,7 +221,7 @@ glabel func_801ED2CC_ovl10
 /* 1DE3A0 801ED630 00390821 */  addu  $at, $at, $t9
 /* 1DE3A4 801ED634 0C029D9E */  jal   play_sound
 /* 1DE3A8 801ED638 AC208920 */ sw $zero, %lo(D_800E8920)($at)
-/* 1DE3AC 801ED63C 0C002DAF */  jal   func_8000B6BC
+/* 1DE3AC 801ED63C 0C002DAF */  jal   finish_current_thread
 /* 1DE3B0 801ED640 24040010 */   li    $a0, 16
 /* 1DE3B4 801ED644 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1DE3B8 801ED648 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

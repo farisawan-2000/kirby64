@@ -35,7 +35,7 @@ void func_800B1434(void);
 void func_800F6C98(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = NULL;
     func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
-    func_8000B6BC((u32) (120.0f * D_800D6B14));
+    finish_current_thread((u32) (120.0f * D_800D6B14));
     if (D_800E98E0[D_8004A7C4->objId] == 3) {
         func_800F6C68();
     }
@@ -62,8 +62,8 @@ void func_800F6E30(s32 arg0) {
     s32 temp_v1;
     s32 temp_v1_2;
     s32 temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v0_4;
-    struct UnkStruct8004A7C4 *temp_v0_5;
+    struct GObj *temp_v0_4;
+    struct GObj *temp_v0_5;
     u32 temp_s3;
     u32 temp_v0_3;
     void *temp_v0;
@@ -155,9 +155,9 @@ GLOBAL_ASM("asm/non_matchings/ovl2_2/func_800F6E30.s")
 #endif
 
 extern s32 D_800BE500, D_800BE504;
-extern void (*D_800D4F10[])(struct UnkStruct8004A7C4 *);
+extern void (*D_800D4F10[])(struct GObj *);
 
-void func_800F716C(struct UnkStruct8004A7C4 *arg0) {
+void func_800F716C(struct GObj *arg0) {
     if ((D_800BE500 == 1) && (D_800BE504 == 2)) {
         gSPFogPosition(gDisplayListHeads[0]++, 102, 1003);
         gSPFogPosition(gDisplayListHeads[1]++, 102, 1003);

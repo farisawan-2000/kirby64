@@ -91,7 +91,7 @@ glabel func_801E0F04_ovl16
 /* 217308 801E1058 00230821 */  addu  $at, $at, $v1
 /* 21730C 801E105C 46049181 */  sub.s $f6, $f18, $f4
 /* 217310 801E1060 46003203 */  div.s $f8, $f6, $f0
-/* 217314 801E1064 0C002DAF */  jal   func_8000B6BC
+/* 217314 801E1064 0C002DAF */  jal   finish_current_thread
 /* 217318 801E1068 E4283210 */ swc1 $f8, %lo(D_800E3210)($at)
 /* 21731C 801E106C 8E480000 */  lw    $t0, ($s2)
 /* 217320 801E1070 44805000 */  mtc1  $zero, $f10
@@ -142,7 +142,7 @@ glabel func_801E0F04_ovl16
 /* 2173D4 801E1124 8D6BFBD0 */ lw $t3, %lo(D_800DFBD0)($t3)
 /* 2173D8 801E1128 0C02A040 */  jal   func_800A8100
 /* 2173DC 801E112C 8D670028 */   lw    $a3, 0x28($t3)
-/* 2173E0 801E1130 0C002DAF */  jal   func_8000B6BC
+/* 2173E0 801E1130 0C002DAF */  jal   finish_current_thread
 /* 2173E4 801E1134 2404000D */   li    $a0, 13
 /* 2173E8 801E1138 8E480000 */  lw    $t0, ($s2)
 /* 2173EC 801E113C 3C11800F */  lui   $s1, %hi(D_800E9E20) # $s1, 0x800f
@@ -181,7 +181,7 @@ glabel func_801E0F04_ovl16
 /* 217470 801E11C0 120D000A */  beq   $s0, $t5, .L801E11EC_ovl16
 /* 217474 801E11C4 00000000 */   nop   
 .L801E11C8_ovl16:
-/* 217478 801E11C8 0C002DAF */  jal   func_8000B6BC
+/* 217478 801E11C8 0C002DAF */  jal   finish_current_thread
 /* 21747C 801E11CC 24040001 */   li    $a0, 1
 /* 217480 801E11D0 8E4F0000 */  lw    $t7, ($s2)
 /* 217484 801E11D4 8DF80000 */  lw    $t8, ($t7)
@@ -191,7 +191,7 @@ glabel func_801E0F04_ovl16
 /* 217494 801E11E4 160AFFF8 */  bne   $s0, $t2, .L801E11C8_ovl16
 /* 217498 801E11E8 00000000 */   nop   
 .L801E11EC_ovl16:
-/* 21749C 801E11EC 0C002DAF */  jal   func_8000B6BC
+/* 21749C 801E11EC 0C002DAF */  jal   finish_current_thread
 /* 2174A0 801E11F0 2404001E */   li    $a0, 30
 /* 2174A4 801E11F4 0C029D9E */  jal   play_sound
 /* 2174A8 801E11F8 240401AA */   li    $a0, 426
@@ -299,7 +299,7 @@ glabel func_801E0F04_ovl16
 /* 217640 801E1390 5160000B */  beql  $t3, $zero, .L801E13C0_ovl16
 /* 217644 801E1394 44804000 */   mtc1  $zero, $f8
 .L801E1398_ovl16:
-/* 217648 801E1398 0C002DAF */  jal   func_8000B6BC
+/* 217648 801E1398 0C002DAF */  jal   finish_current_thread
 /* 21764C 801E139C 24040001 */   li    $a0, 1
 /* 217650 801E13A0 8E4C0000 */  lw    $t4, ($s2)
 /* 217654 801E13A4 8D830000 */  lw    $v1, ($t4)

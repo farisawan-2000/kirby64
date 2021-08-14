@@ -31,7 +31,7 @@ glabel func_80118BC8
 /* 0A16A8 80118C38 17000006 */  bnez  $t8, .L80118C54_ovl2
 /* 0A16AC 80118C3C 00000000 */   nop   
 .L80118C40_ovl2:
-/* 0A16B0 80118C40 0C002DAF */  jal   func_8000B6BC
+/* 0A16B0 80118C40 0C002DAF */  jal   finish_current_thread
 /* 0A16B4 80118C44 24040001 */   li    $a0, 1
 /* 0A16B8 80118C48 8E190000 */  lw    $t9, ($s0)
 /* 0A16BC 80118C4C 1320FFFC */  beqz  $t9, .L80118C40_ovl2

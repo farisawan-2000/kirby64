@@ -21,7 +21,7 @@ glabel func_800B2F90
 /* 05B228 800B2FD8 00000000 */  nop   
 /* 05B22C 800B2FDC 45030006 */  bc1tl .L800B2FF8_ovl1
 /* 05B230 800B2FE0 8FBF0024 */   lw    $ra, 0x24($sp)
-/* 05B234 800B2FE4 0C002DAF */  jal   func_8000B6BC
+/* 05B234 800B2FE4 0C002DAF */  jal   finish_current_thread
 /* 05B238 800B2FE8 24040001 */   li    $a0, 1
 /* 05B23C 800B2FEC 1000FFF9 */  b     .L800B2FD4_ovl1
 /* 05B240 800B2FF0 C6040074 */   lwc1  $f4, 0x74($s0)

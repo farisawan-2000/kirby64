@@ -95,7 +95,7 @@ glabel func_80116508
 /* 09F0D8 80116668 024B6021 */  addu  $t4, $s2, $t3
 /* 09F0DC 8011666C E5960000 */  swc1  $f22, ($t4)
 .L80116670_ovl2:
-/* 09F0E0 80116670 0C002DAF */  jal   func_8000B6BC
+/* 09F0E0 80116670 0C002DAF */  jal   finish_current_thread
 /* 09F0E4 80116674 24040001 */   li    $a0, 1
 /* 09F0E8 80116678 1000FFE5 */  b     .L80116610_ovl2
 /* 09F0EC 8011667C 8E820000 */   lw    $v0, ($s4)
@@ -150,7 +150,7 @@ glabel func_80116508
 /* 09F1AC 8011673C 8E090000 */  lw    $t1, ($s0)
 /* 09F1B0 80116740 00095080 */  sll   $t2, $t1, 2
 /* 09F1B4 80116744 002A0821 */  addu  $at, $at, $t2
-/* 09F1B8 80116748 0C002DAF */  jal   func_8000B6BC
+/* 09F1B8 80116748 0C002DAF */  jal   finish_current_thread
 /* 09F1BC 8011674C E43E3E50 */ swc1 $f30, %lo(D_800E3E50)($at)
 /* 09F1C0 80116750 8E700000 */  lw    $s0, ($s3)
 /* 09F1C4 80116754 3C01800E */ lui $at, %hi(D_800E3750)
@@ -200,7 +200,7 @@ glabel func_80116508
 /* 09F274 80116804 3C01800E */ lui $at, %hi(D_800E3AD0)
 /* 09F278 80116808 00095080 */  sll   $t2, $t1, 2
 /* 09F27C 8011680C 002A0821 */  addu  $at, $at, $t2
-/* 09F280 80116810 0C002DAF */  jal   func_8000B6BC
+/* 09F280 80116810 0C002DAF */  jal   finish_current_thread
 /* 09F284 80116814 E4223AD0 */ swc1 $f2, %lo(D_800E3AD0)($at)
 /* 09F288 80116818 8E700000 */  lw    $s0, ($s3)
 /* 09F28C 8011681C 3C01800E */ lui $at, %hi(D_800E3050)
@@ -244,7 +244,7 @@ glabel func_80116508
 /* 09F324 801168B4 8E190000 */  lw    $t9, ($s0)
 /* 09F328 801168B8 00194080 */  sll   $t0, $t9, 2
 /* 09F32C 801168BC 00280821 */  addu  $at, $at, $t0
-/* 09F330 801168C0 0C002DAF */  jal   func_8000B6BC
+/* 09F330 801168C0 0C002DAF */  jal   finish_current_thread
 /* 09F334 801168C4 E43E3E50 */ swc1 $f30, %lo(D_800E3E50)($at)
 /* 09F338 801168C8 8E700000 */  lw    $s0, ($s3)
 /* 09F33C 801168CC 3C01800E */ lui $at, %hi(D_800E3750)
@@ -337,7 +337,7 @@ glabel func_80116508
 /* 09F494 80116A24 8E0B0000 */  lw    $t3, ($s0)
 /* 09F498 80116A28 000B6080 */  sll   $t4, $t3, 2
 /* 09F49C 80116A2C 002C0821 */  addu  $at, $at, $t4
-/* 09F4A0 80116A30 0C002DAF */  jal   func_8000B6BC
+/* 09F4A0 80116A30 0C002DAF */  jal   finish_current_thread
 /* 09F4A4 80116A34 E43E3E50 */ swc1 $f30, %lo(D_800E3E50)($at)
 /* 09F4A8 80116A38 8E700000 */  lw    $s0, ($s3)
 /* 09F4AC 80116A3C 3C01800E */ lui $at, %hi(D_800E3750)

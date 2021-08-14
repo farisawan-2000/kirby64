@@ -95,7 +95,7 @@ glabel func_801DCDC8_ovl16
 /* 2131E4 801DCF34 01C00008 */  jr    $t6
 /* 2131E8 801DCF38 00000000 */   nop   
 glabel L801DCF3C_ovl16
-/* 2131EC 801DCF3C 0C002DAF */  jal   func_8000B6BC
+/* 2131EC 801DCF3C 0C002DAF */  jal   finish_current_thread
 /* 2131F0 801DCF40 02A02025 */   move  $a0, $s5
 glabel L801DCF44_ovl16
 /* 2131F4 801DCF44 3C040001 */  lui   $a0, (0x0001046F >> 16) # lui $a0, 1
@@ -104,7 +104,7 @@ glabel L801DCF44_ovl16
 /* 213200 801DCF50 3C040001 */  lui   $a0, (0x0001046E >> 16) # lui $a0, 1
 /* 213204 801DCF54 0C02A7A9 */  jal   func_800A9EA4
 /* 213208 801DCF58 3484046E */   ori   $a0, (0x0001046E & 0xFFFF) # ori $a0, $a0, 0x46e
-/* 21320C 801DCF5C 0C002DAF */  jal   func_8000B6BC
+/* 21320C 801DCF5C 0C002DAF */  jal   finish_current_thread
 /* 213210 801DCF60 02A02025 */   move  $a0, $s5
 /* 213214 801DCF64 8E500000 */  lw    $s0, ($s2)
 /* 213218 801DCF68 8E0F0000 */  lw    $t7, ($s0)
@@ -180,7 +180,7 @@ glabel L801DD034_ovl16
 /* 213324 801DD074 3C040001 */  lui   $a0, (0x00010468 >> 16) # lui $a0, 1
 /* 213328 801DD078 0C02A7A9 */  jal   func_800A9EA4
 /* 21332C 801DD07C 34840468 */   ori   $a0, (0x00010468 & 0xFFFF) # ori $a0, $a0, 0x468
-/* 213330 801DD080 0C002DAF */  jal   func_8000B6BC
+/* 213330 801DD080 0C002DAF */  jal   finish_current_thread
 /* 213334 801DD084 2404003C */   li    $a0, 60
 /* 213338 801DD088 8E500000 */  lw    $s0, ($s2)
 /* 21333C 801DD08C 240F0005 */  li    $t7, 5

@@ -257,7 +257,7 @@ glabel func_801588F4_ovl4
 /* 1001F4 80158CC4 022D7021 */  addu  $t6, $s1, $t5
 /* 1001F8 80158CC8 ADC00000 */  sw    $zero, ($t6)
 .L80158CCC_ovl4:
-/* 1001FC 80158CCC 0C002DAF */  jal   func_8000B6BC
+/* 1001FC 80158CCC 0C002DAF */  jal   finish_current_thread
 /* 100200 80158CD0 24040001 */   li    $a0, 1
 /* 100204 80158CD4 1000FF9E */  b     .L80158B50_ovl4
 /* 100208 80158CD8 24010002 */   li    $at, 2

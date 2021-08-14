@@ -168,7 +168,7 @@ glabel func_80170AC4_ovl3
 /* 0D178C 80170D4C 0C02BB48 */  jal   func_800AED20
 /* 0D1790 80170D50 4600A306 */   mov.s $f12, $f20
 /* 0D1794 80170D54 4616A500 */  add.s $f20, $f20, $f22
-/* 0D1798 80170D58 0C002DAF */  jal   func_8000B6BC
+/* 0D1798 80170D58 0C002DAF */  jal   finish_current_thread
 /* 0D179C 80170D5C 24040001 */   li    $a0, 1
 /* 0D17A0 80170D60 1000FFF8 */  b     .L80170D44_ovl3
 /* 0D17A4 80170D64 00000000 */   nop   

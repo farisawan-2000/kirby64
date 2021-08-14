@@ -416,7 +416,7 @@ glabel func_801E0E24_ovl9
 /* 18F0F8 801E10A8 46005407 */  neg.s $f16, $f10
 /* 18F0FC 801E10AC E4700000 */  swc1  $f16, ($v1)
 .L801E10B0_ovl9:
-/* 18F100 801E10B0 0C002DAF */  jal   func_8000B6BC
+/* 18F100 801E10B0 0C002DAF */  jal   finish_current_thread
 /* 18F104 801E10B4 24040001 */   li    $a0, 1
 /* 18F108 801E10B8 8E450000 */  lw    $a1, ($s2)
 /* 18F10C 801E10BC 8CAF0000 */  lw    $t7, ($a1)
@@ -668,7 +668,7 @@ glabel func_801E1214_ovl9
 /* 18F4BC 801E146C 46008487 */  neg.s $f18, $f16
 /* 18F4C0 801E1470 E4720000 */  swc1  $f18, ($v1)
 .L801E1474_ovl9:
-/* 18F4C4 801E1474 0C002DAF */  jal   func_8000B6BC
+/* 18F4C4 801E1474 0C002DAF */  jal   finish_current_thread
 /* 18F4C8 801E1478 24040001 */   li    $a0, 1
 /* 18F4CC 801E147C 26100001 */  addiu $s0, $s0, 1
 /* 18F4D0 801E1480 5617FFDC */  bnel  $s0, $s7, .L801E13F4_ovl9
@@ -716,7 +716,7 @@ glabel func_801E1214_ovl9
 /* 18F570 801E1520 46008487 */  neg.s $f18, $f16
 /* 18F574 801E1524 E4720000 */  swc1  $f18, ($v1)
 .L801E1528_ovl9:
-/* 18F578 801E1528 0C002DAF */  jal   func_8000B6BC
+/* 18F578 801E1528 0C002DAF */  jal   finish_current_thread
 /* 18F57C 801E152C 24040001 */   li    $a0, 1
 /* 18F580 801E1530 2610FFFF */  addiu $s0, $s0, -1
 /* 18F584 801E1534 5600FFDC */  bnezl $s0, .L801E14A8_ovl9
@@ -983,7 +983,7 @@ glabel func_801E16A8_ovl9
 /* 18F974 801E1924 46004287 */  neg.s $f10, $f8
 /* 18F978 801E1928 E46A0000 */  swc1  $f10, ($v1)
 .L801E192C_ovl9:
-/* 18F97C 801E192C 0C002DAF */  jal   func_8000B6BC
+/* 18F97C 801E192C 0C002DAF */  jal   finish_current_thread
 /* 18F980 801E1930 24040001 */   li    $a0, 1
 /* 18F984 801E1934 8E450000 */  lw    $a1, ($s2)
 /* 18F988 801E1938 8CA90000 */  lw    $t1, ($a1)
@@ -1241,7 +1241,7 @@ glabel func_801E1AB0_ovl9
 /* 18FD50 801E1D00 46008487 */  neg.s $f18, $f16
 /* 18FD54 801E1D04 E4520000 */  swc1  $f18, ($v0)
 .L801E1D08_ovl9:
-/* 18FD58 801E1D08 0C002DAF */  jal   func_8000B6BC
+/* 18FD58 801E1D08 0C002DAF */  jal   finish_current_thread
 /* 18FD5C 801E1D0C 24040001 */   li    $a0, 1
 /* 18FD60 801E1D10 26100001 */  addiu $s0, $s0, 1
 /* 18FD64 801E1D14 5617FFDC */  bnel  $s0, $s7, .L801E1C88_ovl9
@@ -1289,7 +1289,7 @@ glabel func_801E1AB0_ovl9
 /* 18FE04 801E1DB4 46008487 */  neg.s $f18, $f16
 /* 18FE08 801E1DB8 E4520000 */  swc1  $f18, ($v0)
 .L801E1DBC_ovl9:
-/* 18FE0C 801E1DBC 0C002DAF */  jal   func_8000B6BC
+/* 18FE0C 801E1DBC 0C002DAF */  jal   finish_current_thread
 /* 18FE10 801E1DC0 24040001 */   li    $a0, 1
 /* 18FE14 801E1DC4 2610FFFF */  addiu $s0, $s0, -1
 /* 18FE18 801E1DC8 5600FFDC */  bnezl $s0, .L801E1D3C_ovl9
@@ -1607,7 +1607,7 @@ glabel func_801E1E24_ovl9
 /* 1902B4 801E2264 02C96821 */  addu  $t5, $s6, $t1
 /* 1902B8 801E2268 E5A80000 */  swc1  $f8, ($t5)
 .L801E226C_ovl9:
-/* 1902BC 801E226C 0C002DAF */  jal   func_8000B6BC
+/* 1902BC 801E226C 0C002DAF */  jal   finish_current_thread
 /* 1902C0 801E2270 24040001 */   li    $a0, 1
 /* 1902C4 801E2274 8E020000 */  lw    $v0, ($s0)
 /* 1902C8 801E2278 8C4F0000 */  lw    $t7, ($v0)
@@ -1760,7 +1760,7 @@ glabel func_801E236C_ovl9
 /* 1904F8 801E24A8 8C4F0000 */  lw    $t7, ($v0)
 /* 1904FC 801E24AC 000F7080 */  sll   $t6, $t7, 2
 /* 190500 801E24B0 024EC021 */  addu  $t8, $s2, $t6
-/* 190504 801E24B4 0C002DAF */  jal   func_8000B6BC
+/* 190504 801E24B4 0C002DAF */  jal   finish_current_thread
 /* 190508 801E24B8 E7120000 */   swc1  $f18, ($t8)
 /* 19050C 801E24BC 02001025 */  move  $v0, $s0
 /* 190510 801E24C0 1600FFEF */  bnez  $s0, .L801E2480_ovl9
@@ -2143,7 +2143,7 @@ glabel func_801E29B8_ovl9
 /* 190A84 801E2A34 3C040001 */  lui   $a0, (0x000101B7 >> 16) # lui $a0, 1
 /* 190A88 801E2A38 0C02A7A9 */  jal   func_800A9EA4
 /* 190A8C 801E2A3C 348401B7 */   ori   $a0, (0x000101B7 & 0xFFFF) # ori $a0, $a0, 0x1b7
-/* 190A90 801E2A40 0C002DAF */  jal   func_8000B6BC
+/* 190A90 801E2A40 0C002DAF */  jal   finish_current_thread
 /* 190A94 801E2A44 2404001E */   li    $a0, 30
 /* 190A98 801E2A48 3C0142F0 */  li    $at, 0x42F00000 # 120.000000
 /* 190A9C 801E2A4C 4481D000 */  mtc1  $at, $f26
@@ -2177,7 +2177,7 @@ glabel func_801E29B8_ovl9
 /* 190B08 801E2AB8 45030006 */  bc1tl .L801E2AD4_ovl9
 /* 190B0C 801E2ABC 8FBF003C */   lw    $ra, 0x3c($sp)
 .L801E2AC0_ovl9:
-/* 190B10 801E2AC0 0C002DAF */  jal   func_8000B6BC
+/* 190B10 801E2AC0 0C002DAF */  jal   finish_current_thread
 /* 190B14 801E2AC4 24040001 */   li    $a0, 1
 /* 190B18 801E2AC8 1000FFE9 */  b     .L801E2A70_ovl9
 /* 190B1C 801E2ACC 00000000 */   nop   
@@ -2272,7 +2272,7 @@ glabel func_801E2B2C_ovl9
 /* 190C6C 801E2C1C 5560000B */  bnezl $t3, .L801E2C4C_ovl9
 /* 190C70 801E2C20 8FBF001C */   lw    $ra, 0x1c($sp)
 .L801E2C24_ovl9:
-/* 190C74 801E2C24 0C002DAF */  jal   func_8000B6BC
+/* 190C74 801E2C24 0C002DAF */  jal   finish_current_thread
 /* 190C78 801E2C28 24040001 */   li    $a0, 1
 /* 190C7C 801E2C2C 8E0C0000 */  lw    $t4, ($s0)
 /* 190C80 801E2C30 8D820000 */  lw    $v0, ($t4)
@@ -2406,7 +2406,7 @@ glabel func_801E2D34_ovl9
 .L801E2E1C_ovl9:
 /* 190E6C 801E2E1C 0C02A806 */  jal   func_800AA018
 /* 190E70 801E2E20 00000000 */   nop   
-/* 190E74 801E2E24 0C002DAF */  jal   func_8000B6BC
+/* 190E74 801E2E24 0C002DAF */  jal   finish_current_thread
 /* 190E78 801E2E28 24040001 */   li    $a0, 1
 /* 190E7C 801E2E2C 8E4E0000 */  lw    $t6, ($s2)
 /* 190E80 801E2E30 3C014040 */  li    $at, 0x40400000 # 3.000000
@@ -2552,7 +2552,7 @@ glabel func_801E2F5C_ovl9
 /* 19109C 801E304C 5560000B */  bnezl $t3, .L801E307C_ovl9
 /* 1910A0 801E3050 8FBF001C */   lw    $ra, 0x1c($sp)
 .L801E3054_ovl9:
-/* 1910A4 801E3054 0C002DAF */  jal   func_8000B6BC
+/* 1910A4 801E3054 0C002DAF */  jal   finish_current_thread
 /* 1910A8 801E3058 24040001 */   li    $a0, 1
 /* 1910AC 801E305C 8E0C0000 */  lw    $t4, ($s0)
 /* 1910B0 801E3060 8D820000 */  lw    $v0, ($t4)
@@ -2715,7 +2715,7 @@ glabel func_801E3134_ovl9
 /* 191308 801E32B8 5720000B */  bnezl $t9, .L801E32E8_ovl9
 /* 19130C 801E32BC 02621821 */   addu  $v1, $s3, $v0
 .L801E32C0_ovl9:
-/* 191310 801E32C0 0C002DAF */  jal   func_8000B6BC
+/* 191310 801E32C0 0C002DAF */  jal   finish_current_thread
 /* 191314 801E32C4 24040001 */   li    $a0, 1
 /* 191318 801E32C8 8E500000 */  lw    $s0, ($s2)
 /* 19131C 801E32CC 8E020000 */  lw    $v0, ($s0)
@@ -3042,7 +3042,7 @@ glabel func_801E3578_ovl9
 /* 1917D8 801E3788 26D60D50 */ addiu $s6, 0xd50
 /* 1917DC 801E378C AF380000 */  sw    $t8, ($t9)
 .L801E3790_ovl9:
-/* 1917E0 801E3790 0C002DAF */  jal   func_8000B6BC
+/* 1917E0 801E3790 0C002DAF */  jal   finish_current_thread
 /* 1917E4 801E3794 02E02025 */   move  $a0, $s7
 /* 1917E8 801E3798 8E480000 */  lw    $t0, ($s2)
 /* 1917EC 801E379C 8D0A0000 */  lw    $t2, ($t0)
@@ -3518,7 +3518,7 @@ glabel func_801E3DF0_ovl9
 /* 191F00 801E3EB0 5560000B */  bnezl $t3, .L801E3EE0_ovl9
 /* 191F04 801E3EB4 3C014080 */   lui   $at, 0x4080
 .L801E3EB8_ovl9:
-/* 191F08 801E3EB8 0C002DAF */  jal   func_8000B6BC
+/* 191F08 801E3EB8 0C002DAF */  jal   finish_current_thread
 /* 191F0C 801E3EBC 24040001 */   li    $a0, 1
 /* 191F10 801E3EC0 8E300000 */  lw    $s0, ($s1)
 /* 191F14 801E3EC4 8E020000 */  lw    $v0, ($s0)
@@ -3562,7 +3562,7 @@ glabel func_801E3DF0_ovl9
 /* 191FA4 801E3F54 00000000 */  nop   
 /* 191FA8 801E3F58 4502000B */  bc1fl .L801E3F88_ovl9
 /* 191FAC 801E3F5C 8FBF002C */   lw    $ra, 0x2c($sp)
-/* 191FB0 801E3F60 0C002DAF */  jal   func_8000B6BC
+/* 191FB0 801E3F60 0C002DAF */  jal   finish_current_thread
 /* 191FB4 801E3F64 24040001 */   li    $a0, 1
 /* 191FB8 801E3F68 26100001 */  addiu $s0, $s0, 1
 /* 191FBC 801E3F6C 5614FFF2 */  bnel  $s0, $s4, .L801E3F38_ovl9
@@ -4774,7 +4774,7 @@ glabel func_801E4F88_ovl9
 /* 193104 801E50B4 45010016 */  bc1t  .L801E5110_ovl9
 /* 193108 801E50B8 00000000 */   nop   
 .L801E50BC_ovl9:
-/* 19310C 801E50BC 0C002DAF */  jal   func_8000B6BC
+/* 19310C 801E50BC 0C002DAF */  jal   finish_current_thread
 /* 193110 801E50C0 24040001 */   li    $a0, 1
 /* 193114 801E50C4 0C066A40 */  jal   func_8019A900_ovl9
 /* 193118 801E50C8 27A40038 */   addiu $a0, $sp, 0x38
@@ -4823,7 +4823,7 @@ glabel func_801E4F88_ovl9
 /* 1931B0 801E5160 45020015 */  bc1fl .L801E51B8_ovl9
 /* 1931B4 801E5164 8E380000 */   lw    $t8, ($s1)
 .L801E5168_ovl9:
-/* 1931B8 801E5168 0C002DAF */  jal   func_8000B6BC
+/* 1931B8 801E5168 0C002DAF */  jal   finish_current_thread
 /* 1931BC 801E516C 24040001 */   li    $a0, 1
 /* 1931C0 801E5170 0C067694 */  jal   func_8019DA50_ovl9
 /* 1931C4 801E5174 00000000 */   nop   

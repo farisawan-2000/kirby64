@@ -189,10 +189,10 @@ void *func_800A71E0(void) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A71E0.s")
 #endif
 
-extern struct UnkStruct8004A7C4 *D_800D79BC;
+extern struct GObj *D_800D79BC;
 
 #ifdef MIPS_TO_C
-void func_800A72AC(struct UnkStruct8004A7C4 *arg0) {
+void func_800A72AC(struct GObj *arg0) {
     void *temp_v0;
     void *temp_v1;
 
@@ -433,9 +433,9 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_2/func_800A7870.s")
 void *func_800A78D0(s32 arg0) {
     void (*)(void) sp2C;
     void (*)(void) sp28;
-    struct UnkStruct8004A7C4 *temp_s0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
+    struct GObj *temp_s0;
+    struct GObj *temp_v0_2;
+    struct GObj *temp_v0_3;
     u32 temp_v1;
     void *temp_v0;
     u32 phi_v1;

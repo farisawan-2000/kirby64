@@ -8,7 +8,7 @@ extern const char D_801DB080_ovl8[];
 extern f32 D_800D70D8;
 extern void func_800B1900(u16);
 
-void func_801D2040_ovl8(struct UnkStruct8004A7C4 *this, s32 arg1, f32 arg2) {
+void func_801D2040_ovl8(struct GObj *this, s32 arg1, f32 arg2) {
     s32 pad2[3];
     s32 newIdx;
 
@@ -38,7 +38,7 @@ void func_801D2040_ovl8(struct UnkStruct8004A7C4 *this, s32 arg1, f32 arg2) {
     }
 }
 
-void func_801D223C_ovl8(struct UnkStruct8004A7C4 *this) {
+void func_801D223C_ovl8(struct GObj *this) {
     func_800A9864(0x100DE, 0x1869F, 0x10, this);
     this->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
     this->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
@@ -83,7 +83,7 @@ void func_801D23EC_ovl8(s32 arg0) {
             default:
                 func_800B1900(D_8004A7C4->objId);
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 
@@ -107,7 +107,7 @@ void func_801D2590_ovl8(s32 arg0) {
                 func_800AF27C();
                 func_800AA018(0x10650);
                 while (D_800DFF50[D_800E0D50[D_8004A7C4->objId]] == 0x10457) {
-                    func_8000B6BC(1);
+                    finish_current_thread(1);
                 }
                 break;
             case 0:
@@ -142,7 +142,7 @@ void func_801D2590_ovl8(s32 arg0) {
             default:
                 break;
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 #else
@@ -179,14 +179,14 @@ void func_801D281C_ovl8(s32 arg0) {
         {
             func_800B1900(D_8004A7C4->objId);
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl8/ovl8_2/func_801D281C_ovl8.s")
 #endif
 
-void func_801D29C8_ovl8(struct UnkStruct8004A7C4 *arg0) {
+void func_801D29C8_ovl8(struct GObj *arg0) {
     switch (D_800EA520[D_8004A7C4->objId]) {
         case 1:
             func_800A9864(0x100ED, 0x1869F, 0x10);

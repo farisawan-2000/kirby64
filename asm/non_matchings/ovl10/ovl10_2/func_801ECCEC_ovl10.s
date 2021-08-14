@@ -82,13 +82,13 @@ glabel func_801ECCEC_ovl10
 /* 1DDB9C 801ECE2C 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 1DDBA0 801ECE30 00194080 */  sll   $t0, $t9, 2
 /* 1DDBA4 801ECE34 00280821 */  addu  $at, $at, $t0
-/* 1DDBA8 801ECE38 0C002DAF */  jal   func_8000B6BC
+/* 1DDBA8 801ECE38 0C002DAF */  jal   finish_current_thread
 /* 1DDBAC 801ECE3C E42A3C90 */ swc1 $f10, %lo(D_800E3C90)($at)
 /* 1DDBB0 801ECE40 9209003C */  lbu   $t1, 0x3c($s0)
 /* 1DDBB4 801ECE44 11200006 */  beqz  $t1, .L801ECE60_ovl10
 /* 1DDBB8 801ECE48 00000000 */   nop   
 .L801ECE4C_ovl10:
-/* 1DDBBC 801ECE4C 0C002DAF */  jal   func_8000B6BC
+/* 1DDBBC 801ECE4C 0C002DAF */  jal   finish_current_thread
 /* 1DDBC0 801ECE50 24040001 */   li    $a0, 1
 /* 1DDBC4 801ECE54 920A003C */  lbu   $t2, 0x3c($s0)
 /* 1DDBC8 801ECE58 1540FFFC */  bnez  $t2, .L801ECE4C_ovl10

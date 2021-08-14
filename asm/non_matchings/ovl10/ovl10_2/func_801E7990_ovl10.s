@@ -94,13 +94,13 @@ glabel func_801E7990_ovl10
 /* 1D8870 801E7B00 E7B00044 */  swc1  $f16, 0x44($sp)
 /* 1D8874 801E7B04 0C0796C2 */  jal   func_801E5B08_ovl10
 /* 1D8878 801E7B08 E7A4004C */   swc1  $f4, 0x4c($sp)
-/* 1D887C 801E7B0C 0C002DAF */  jal   func_8000B6BC
+/* 1D887C 801E7B0C 0C002DAF */  jal   finish_current_thread
 /* 1D8880 801E7B10 24040004 */   li    $a0, 4
 /* 1D8884 801E7B14 93A70053 */  lbu   $a3, 0x53($sp)
 /* 1D8888 801E7B18 8FB9005C */  lw    $t9, 0x5c($sp)
 /* 1D888C 801E7B1C 24E7FFFC */  addiu $a3, $a3, -4
 /* 1D8890 801E7B20 30E400FF */  andi  $a0, $a3, 0xff
-/* 1D8894 801E7B24 0C002DAF */  jal   func_8000B6BC
+/* 1D8894 801E7B24 0C002DAF */  jal   finish_current_thread
 /* 1D8898 801E7B28 A3200054 */   sb    $zero, 0x54($t9)
 /* 1D889C 801E7B2C 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D88A0 801E7B30 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

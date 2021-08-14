@@ -69,7 +69,7 @@ glabel func_801E83BC_ovl10
 /* 1D9238 801E84C8 E7AA0028 */  swc1  $f10, 0x28($sp)
 /* 1D923C 801E84CC 0C079713 */  jal   func_801E5C4C_ovl10
 /* 1D9240 801E84D0 E7A80020 */   swc1  $f8, 0x20($sp)
-/* 1D9244 801E84D4 0C002DAF */  jal   func_8000B6BC
+/* 1D9244 801E84D4 0C002DAF */  jal   finish_current_thread
 /* 1D9248 801E84D8 93A4002F */   lbu   $a0, 0x2f($sp)
 /* 1D924C 801E84DC 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D9250 801E84E0 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

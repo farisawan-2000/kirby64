@@ -106,7 +106,7 @@ glabel func_801DEAE0_ovl16
 /* 214F30 801DEC80 14CD000D */  bne   $a2, $t5, .L801DECB8_ovl16
 /* 214F34 801DEC84 00000000 */   nop   
 .L801DEC88_ovl16:
-/* 214F38 801DEC88 0C002DAF */  jal   func_8000B6BC
+/* 214F38 801DEC88 0C002DAF */  jal   finish_current_thread
 /* 214F3C 801DEC8C 2404001E */   li    $a0, 30
 /* 214F40 801DEC90 3C058005 */  lui   $a1, %hi(D_8004A7C4) # $a1, 0x8005
 /* 214F44 801DEC94 24A5A7C4 */  addiu $a1, %lo(D_8004A7C4) # addiu $a1, $a1, -0x583c
@@ -119,7 +119,7 @@ glabel func_801DEAE0_ovl16
 /* 214F60 801DECB0 1000000C */  b     .L801DECE4_ovl16
 /* 214F64 801DECB4 AC2ADC50 */ sw $t2, %lo(gEntityVtableIndexArray)($at)
 .L801DECB8_ovl16:
-/* 214F68 801DECB8 0C002DAF */  jal   func_8000B6BC
+/* 214F68 801DECB8 0C002DAF */  jal   finish_current_thread
 /* 214F6C 801DECBC 2404001E */   li    $a0, 30
 /* 214F70 801DECC0 3C058005 */  lui   $a1, %hi(D_8004A7C4) # $a1, 0x8005
 /* 214F74 801DECC4 24A5A7C4 */  addiu $a1, %lo(D_8004A7C4) # addiu $a1, $a1, -0x583c

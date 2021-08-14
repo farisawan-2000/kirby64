@@ -38,7 +38,7 @@ glabel func_801EC930_ovl10
 /* 1DD730 801EC9C0 11200006 */  beqz  $t1, .L801EC9DC_ovl10
 /* 1DD734 801EC9C4 00000000 */   nop   
 .L801EC9C8_ovl10:
-/* 1DD738 801EC9C8 0C002DAF */  jal   func_8000B6BC
+/* 1DD738 801EC9C8 0C002DAF */  jal   finish_current_thread
 /* 1DD73C 801EC9CC 24040001 */   li    $a0, 1
 /* 1DD740 801EC9D0 920A003C */  lbu   $t2, 0x3c($s0)
 /* 1DD744 801EC9D4 1540FFFC */  bnez  $t2, .L801EC9C8_ovl10

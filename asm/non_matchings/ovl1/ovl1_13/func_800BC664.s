@@ -94,7 +94,7 @@ glabel func_800BC664
 .L800BC7C4_ovl1:
 /* 064A14 800BC7C4 0C02BE48 */  jal   func_800AF920
 /* 064A18 800BC7C8 00E02025 */   move  $a0, $a3
-/* 064A1C 800BC7CC 0C002DAF */  jal   func_8000B6BC
+/* 064A1C 800BC7CC 0C002DAF */  jal   finish_current_thread
 /* 064A20 800BC7D0 24040001 */   li    $a0, 1
 /* 064A24 800BC7D4 1000FFE1 */  b     .L800BC75C_ovl1
 /* 064A28 800BC7D8 8E0C0000 */   lw    $t4, ($s0)

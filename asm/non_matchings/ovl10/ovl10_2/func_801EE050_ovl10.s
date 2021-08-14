@@ -68,11 +68,11 @@ glabel func_801EE050_ovl10
 /* 1DEEC8 801EE158 E4243C90 */ swc1 $f4, %lo(D_800E3C90)($at)
 /* 1DEECC 801EE15C 0C03EE45 */  jal   func_800FB914
 /* 1DEED0 801EE160 24040001 */   li    $a0, 1
-/* 1DEED4 801EE164 0C002DAF */  jal   func_8000B6BC
+/* 1DEED4 801EE164 0C002DAF */  jal   finish_current_thread
 /* 1DEED8 801EE168 24040005 */   li    $a0, 5
 /* 1DEEDC 801EE16C 0C07BC86 */  jal   func_801EF218_ovl10
 /* 1DEEE0 801EE170 24040002 */   li    $a0, 2
-/* 1DEEE4 801EE174 0C002DAF */  jal   func_8000B6BC
+/* 1DEEE4 801EE174 0C002DAF */  jal   finish_current_thread
 /* 1DEEE8 801EE178 24040019 */   li    $a0, 25
 /* 1DEEEC 801EE17C 0C02CD48 */  jal   func_800B3520
 /* 1DEEF0 801EE180 00000000 */   nop   

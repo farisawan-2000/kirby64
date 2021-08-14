@@ -230,7 +230,7 @@ glabel func_80179370_ovl3
 /* 0DA118 801796D8 246BFFFF */  addiu $t3, $v1, -1
 /* 0DA11C 801796DC 14800005 */  bnez  $a0, .L801796F4_ovl3
 /* 0DA120 801796E0 AC4B0000 */   sw    $t3, ($v0)
-/* 0DA124 801796E4 0C002DAF */  jal   func_8000B6BC
+/* 0DA124 801796E4 0C002DAF */  jal   finish_current_thread
 /* 0DA128 801796E8 24040001 */   li    $a0, 1
 /* 0DA12C 801796EC 1000FFD9 */  b     .L80179654_ovl3
 /* 0DA130 801796F0 920C0017 */   lbu   $t4, 0x17($s0)

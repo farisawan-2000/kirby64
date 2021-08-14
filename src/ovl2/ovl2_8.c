@@ -735,8 +735,8 @@ void func_8011CFE0(void) {
 
 #ifdef MIPS_TO_C
 void func_8011CFF4(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
     u32 *temp_a1;
     u32 temp_v1;
     u32 temp_v1_2;
@@ -878,9 +878,9 @@ void func_8011D614(void) {
 #ifdef MIPS_TO_C
 void func_8011D67C(void) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u16 temp_v0_2;
-    struct UnkStruct8004A7C4 *phi_v0;
+    struct GObj *phi_v0;
 
     if (D_800D6FB2 == 2) {
         func_8011CF58();
@@ -1394,7 +1394,7 @@ f32 func_8011E374(void) {
     f32 sp24;
     f32 sp20;
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     f32 phi_f2;
 
     temp_v0 = D_8004A7C4;
@@ -1468,13 +1468,13 @@ f32 func_8011E548(void) {
     f32 temp_f2;
     f32 temp_f2_2;
     s32 temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_t0;
-    struct UnkStruct8004A7C4 *temp_t0_2;
-    struct UnkStruct8004A7C4 *temp_t0_3;
+    struct GObj *temp_t0;
+    struct GObj *temp_t0_2;
+    struct GObj *temp_t0_3;
     u32 temp_v0;
     u32 temp_v1;
     f32 phi_f14;
-    struct UnkStruct8004A7C4 *phi_t0;
+    struct GObj *phi_t0;
     f32 phi_f2;
     f32 phi_f12;
     f32 phi_f18;
@@ -1596,10 +1596,10 @@ f32 func_8011E978(f32 arg0, f32 arg1) {
     f32 temp_f2_2;
     f32 temp_f2_3;
     s32 temp_a0_2;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
     u32 temp_v0;
-    struct UnkStruct8004A7C4 *phi_v1;
+    struct GObj *phi_v1;
     f32 phi_f12;
     f32 *phi_a3;
     f32 phi_f16;
@@ -1682,7 +1682,7 @@ u16 func_8011EBD4(void) {
     f32 temp_f0;
     f32 temp_f2;
     s16 temp_v1;
-    struct UnkStruct8004A7C4 *temp_v0_4;
+    struct GObj *temp_v0_4;
     u16 temp_v0;
     u32 temp_v1_2;
     u16 phi_return;
@@ -2150,7 +2150,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801215DC.s")
 
 #ifdef MIPS_TO_C
 ? func_80121658(void) {
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_a0;
     u32 temp_a0_2;
 
@@ -2197,7 +2197,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_801217B8.s")
 
 #ifdef MIPS_TO_C
 ? func_80121828(f32 arg0, f32 arg1, ? arg2, f32 arg3) {
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_a0;
     u32 temp_a0_2;
 
@@ -2248,10 +2248,10 @@ void func_80121A04(void) {
     s32 temp_v0_2;
     s32 temp_v0_3;
     s32 temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *temp_a0;
     u32 temp_v0;
     u32 temp_v1;
-    struct UnkStruct8004A7C4 *phi_a0;
+    struct GObj *phi_a0;
     void *phi_a0_2;
 
     temp_a0 = D_8004A7C4;
@@ -2488,7 +2488,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80121F50.s")
     f32 temp_f0;
     f32 temp_f0_2;
     s32 temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v0_2;
     u32 temp_v0_3;
     u32 temp_v0_4;
@@ -2682,8 +2682,8 @@ GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122558.s")
     ? *temp_t2;
     f32 *temp_a1;
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
     u32 temp_v0;
     u32 temp_v0_2;
     u32 temp_v0_3;
@@ -2986,7 +2986,7 @@ void set_kirby_action_2(s32 actionChange, u32 action) {
 
 #ifdef MIPS_TO_C
 void func_80122FB0(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800DDE10[temp_v0->objId] = arg0;

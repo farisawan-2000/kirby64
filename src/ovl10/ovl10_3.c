@@ -12,7 +12,7 @@ extern f32 D_801F4C30, D_801F4C34, D_801F4C38;
 
 void func_801EF760_ovl10(void);
 
-void func_801EF3F0_ovl10(struct UnkStruct8004A7C4 *this) {
+void func_801EF3F0_ovl10(struct GObj *this) {
     struct UnkStruct800E1B50 *temp_s0 = D_800E1B50[D_8004A7C4->objId];
 
     D_800DF150[D_8004A7C4->objId] = &func_801EF760_ovl10;
@@ -40,7 +40,7 @@ void func_801EF3F0_ovl10(struct UnkStruct8004A7C4 *this) {
     }
     D_800E8920[D_8004A7C4->objId] = 0;
     while (D_800E8920[D_8004A7C4->objId] == 0) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     D_800E64D0[D_8004A7C4->objId] *= 0.7f;
     D_800E3210[D_8004A7C4->objId] = 5.6f;
@@ -48,10 +48,10 @@ void func_801EF3F0_ovl10(struct UnkStruct8004A7C4 *this) {
     D_800E3C90[D_8004A7C4->objId] = 8.0f;
     D_800E8920[D_8004A7C4->objId] = 0;
     while (D_800E8920[D_8004A7C4->objId] == 0) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     func_800B3520();
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801ACF84_ovl7(this);
 }
 

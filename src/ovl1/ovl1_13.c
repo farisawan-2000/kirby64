@@ -177,7 +177,7 @@ loop_5:
         phi_a3 = 1;
     }
     func_800AF920(phi_a3, phi_a3);
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_5;
 }
 #else
@@ -230,7 +230,7 @@ loop_5:
         }
     }
     func_800AF920(phi_a3, phi_a3);
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_5;
 }
 #else
@@ -281,7 +281,7 @@ loop_5:
         phi_a3 = 1;
     }
     func_800AF920(phi_a3, phi_a3);
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_5;
 }
 #else
@@ -334,7 +334,7 @@ loop_5:
         }
     }
     func_800AF920(phi_a3, phi_a3);
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_5;
 }
 #else
@@ -404,7 +404,7 @@ loop_8:
     play_sound(0xED);
     if (D_800D6B24 != 0) {
 loop_10:
-        func_8000B6BC(1);
+        finish_current_thread(1);
         if (D_800D6B24 != 0) {
             goto loop_10;
         }
@@ -413,12 +413,12 @@ loop_10:
     func_800A5A14(0xFF, -0x10, 0);
     if (D_800D6B24 != 0) {
 loop_12:
-        func_8000B6BC(1);
+        finish_current_thread(1);
         if (D_800D6B24 != 0) {
             goto loop_12;
         }
     }
-    func_8000B6BC((s32) (3.0f * D_800D6B14));
+    finish_current_thread((s32) (3.0f * D_800D6B14));
 loop_14:
     if ((D_80048F22 & 0x9000) == 0) {
         phi_v0 = D_80048F22;
@@ -431,7 +431,7 @@ loop_14:
             play_sound(0x113);
             *(&D_800E98E0 + (D_8004A7C4->objId * 4)) = 1;
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
         goto loop_14;
     }
     play_sound(0xED);
@@ -446,7 +446,7 @@ loop_14:
         func_80020A20_ovl1(0, 0, 8);
         if (D_800D6B24 != 0) {
 loop_26:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if (D_800D6B24 != 0) {
                 goto loop_26;
             }
@@ -456,7 +456,7 @@ loop_26:
         func_800A5A14(0, 0x10, 0);
         if (D_800D6B24 != 0) {
 loop_29:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if (D_800D6B24 != 0) {
                 goto loop_29;
             }
@@ -468,7 +468,7 @@ loop_29:
         func_800A5A14(0xFF, -0x10, 0);
         if (D_800D6B24 != 0) {
 loop_31:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if (D_800D6B24 != 0) {
                 goto loop_31;
             }

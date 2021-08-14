@@ -14,7 +14,7 @@ glabel func_801AC2D8_ovl7
 /* 152378 801AC308 8C450000 */   lw    $a1, ($v0)
 /* 15237C 801AC30C 0C066ED6 */  jal   func_8019BB58_ovl7
 /* 152380 801AC310 00000000 */   nop   
-/* 152384 801AC314 0C002DAF */  jal   func_8000B6BC
+/* 152384 801AC314 0C002DAF */  jal   finish_current_thread
 /* 152388 801AC318 2404000F */   li    $a0, 15
 /* 15238C 801AC31C 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 152390 801AC320 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)

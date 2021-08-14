@@ -324,7 +324,7 @@ glabel func_80189914_ovl3
 /* 0EA840 80189E00 4502000E */  bc1fl .L80189E3C_ovl3
 /* 0EA844 80189E04 960A00D2 */   lhu   $t2, 0xd2($s0)
 .L80189E08_ovl3:
-/* 0EA848 80189E08 0C002DAF */  jal   func_8000B6BC
+/* 0EA848 80189E08 0C002DAF */  jal   finish_current_thread
 /* 0EA84C 80189E0C 24040001 */   li    $a0, 1
 /* 0EA850 80189E10 8E390000 */  lw    $t9, ($s1)
 /* 0EA854 80189E14 C60800CC */  lwc1  $f8, 0xcc($s0)
@@ -526,7 +526,7 @@ glabel func_80189914_ovl3
 /* 0EAB4C 8018A10C 4502000E */  bc1fl .L8018A148_ovl3
 /* 0EAB50 8018A110 960C00D2 */   lhu   $t4, 0xd2($s0)
 .L8018A114_ovl3:
-/* 0EAB54 8018A114 0C002DAF */  jal   func_8000B6BC
+/* 0EAB54 8018A114 0C002DAF */  jal   finish_current_thread
 /* 0EAB58 8018A118 24040001 */   li    $a0, 1
 /* 0EAB5C 8018A11C 8E2B0000 */  lw    $t3, ($s1)
 /* 0EAB60 8018A120 C60800CC */  lwc1  $f8, 0xcc($s0)
@@ -663,7 +663,7 @@ glabel func_80189914_ovl3
 /* 0EAD60 8018A320 3C01800F */ lui $at, %hi(D_800E8920)
 /* 0EAD64 8018A324 000A6080 */  sll   $t4, $t2, 2
 /* 0EAD68 8018A328 002C0821 */  addu  $at, $at, $t4
-/* 0EAD6C 8018A32C 0C002DAF */  jal   func_8000B6BC
+/* 0EAD6C 8018A32C 0C002DAF */  jal   finish_current_thread
 /* 0EAD70 8018A330 AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 0EAD74 8018A334 10000016 */  b     .L8018A390_ovl3
 /* 0EAD78 8018A338 8E0B0030 */   lw    $t3, 0x30($s0)
@@ -686,7 +686,7 @@ glabel func_80189914_ovl3
 /* 0EADB8 8018A378 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 0EADBC 8018A37C 00094080 */  sll   $t0, $t1, 2
 /* 0EADC0 8018A380 00280821 */  addu  $at, $at, $t0
-/* 0EADC4 8018A384 0C002DAF */  jal   func_8000B6BC
+/* 0EADC4 8018A384 0C002DAF */  jal   finish_current_thread
 /* 0EADC8 8018A388 E4283C90 */ swc1 $f8, %lo(D_800E3C90)($at)
 /* 0EADCC 8018A38C 8E0B0030 */  lw    $t3, 0x30($s0)
 .L8018A390_ovl3:
@@ -839,7 +839,7 @@ glabel func_80189914_ovl3
 /* 0EB008 8018A5C8 4502000E */  bc1fl .L8018A604_ovl3
 /* 0EB00C 8018A5CC 960900D2 */   lhu   $t1, 0xd2($s0)
 .L8018A5D0_ovl3:
-/* 0EB010 8018A5D0 0C002DAF */  jal   func_8000B6BC
+/* 0EB010 8018A5D0 0C002DAF */  jal   finish_current_thread
 /* 0EB014 8018A5D4 24040001 */   li    $a0, 1
 /* 0EB018 8018A5D8 8E220000 */  lw    $v0, ($s1)
 /* 0EB01C 8018A5DC C60A00CC */  lwc1  $f10, 0xcc($s0)
@@ -1203,7 +1203,7 @@ glabel func_80189914_ovl3
 /* 0EB578 8018AB38 4502000E */  bc1fl .L8018AB74_ovl3
 /* 0EB57C 8018AB3C 960E00D2 */   lhu   $t6, 0xd2($s0)
 .L8018AB40_ovl3:
-/* 0EB580 8018AB40 0C002DAF */  jal   func_8000B6BC
+/* 0EB580 8018AB40 0C002DAF */  jal   finish_current_thread
 /* 0EB584 8018AB44 24040001 */   li    $a0, 1
 /* 0EB588 8018AB48 8E2D0000 */  lw    $t5, ($s1)
 /* 0EB58C 8018AB4C C60A00CC */  lwc1  $f10, 0xcc($s0)
@@ -1430,7 +1430,7 @@ glabel func_80189914_ovl3
 /* 0EB8E0 8018AEA0 4502000E */  bc1fl .L8018AEDC_ovl3
 /* 0EB8E4 8018AEA4 960E00D2 */   lhu   $t6, 0xd2($s0)
 .L8018AEA8_ovl3:
-/* 0EB8E8 8018AEA8 0C002DAF */  jal   func_8000B6BC
+/* 0EB8E8 8018AEA8 0C002DAF */  jal   finish_current_thread
 /* 0EB8EC 8018AEAC 24040001 */   li    $a0, 1
 /* 0EB8F0 8018AEB0 8E2D0000 */  lw    $t5, ($s1)
 /* 0EB8F4 8018AEB4 C60400CC */  lwc1  $f4, 0xcc($s0)
@@ -1567,7 +1567,7 @@ glabel func_80189914_ovl3
 /* 0EBAF4 8018B0B4 3C01800F */ lui $at, %hi(D_800E8920)
 /* 0EBAF8 8018B0B8 000F7080 */  sll   $t6, $t7, 2
 /* 0EBAFC 8018B0BC 002E0821 */  addu  $at, $at, $t6
-/* 0EBB00 8018B0C0 0C002DAF */  jal   func_8000B6BC
+/* 0EBB00 8018B0C0 0C002DAF */  jal   finish_current_thread
 /* 0EBB04 8018B0C4 AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 0EBB08 8018B0C8 10000016 */  b     .L8018B124_ovl3
 /* 0EBB0C 8018B0CC 8E0D0030 */   lw    $t5, 0x30($s0)
@@ -1590,7 +1590,7 @@ glabel func_80189914_ovl3
 /* 0EBB4C 8018B10C 3C01800E */ lui $at, %hi(D_800E3C90)
 /* 0EBB50 8018B110 00085880 */  sll   $t3, $t0, 2
 /* 0EBB54 8018B114 002B0821 */  addu  $at, $at, $t3
-/* 0EBB58 8018B118 0C002DAF */  jal   func_8000B6BC
+/* 0EBB58 8018B118 0C002DAF */  jal   finish_current_thread
 /* 0EBB5C 8018B11C E4243C90 */ swc1 $f4, %lo(D_800E3C90)($at)
 /* 0EBB60 8018B120 8E0D0030 */  lw    $t5, 0x30($s0)
 .L8018B124_ovl3:

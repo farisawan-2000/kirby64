@@ -17,9 +17,9 @@ extern s32 D_801CB4DC;
 
 void func_80209698_ovl9(void);
 void func_802094DC_ovl9(void);
-void func_802091B4_ovl9(struct UnkStruct8004A7C4 *);
+void func_802091B4_ovl9(struct GObj *);
 
-void func_80209030_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_80209030_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     D_800E98E0[D_8004A7C4->objId] = 0x5A;
@@ -38,7 +38,7 @@ void func_80209030_ovl9(struct UnkStruct8004A7C4 *this) {
     func_800AFA14();
 }
 
-void func_802091B4_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_802091B4_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     if (D_800E9FE0[D_8004A7C4->objId] != 0) {
@@ -67,7 +67,7 @@ void func_802091B4_ovl9(struct UnkStruct8004A7C4 *this) {
     }
 }
 
-void func_8020933C_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_8020933C_ovl9(struct GObj *this) {
     if (D_800DE350[D_800E9C60[D_8004A7C4->objId]] != 0) {
         D_800E9FE0[D_800E9C60[D_8004A7C4->objId]] = 1;
     }
@@ -107,7 +107,7 @@ void func_802094DC_ovl9(void) {
 GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_10/func_802094DC_ovl9.s")
 #endif
 
-void func_8020954C_ovl9(struct UnkStruct8004A7C4 *this) {
+void func_8020954C_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     D_800DF150[D_8004A7C4->objId] = func_801ACF5C_ovl7;

@@ -143,7 +143,7 @@ glabel func_80180818_ovl3
 .L80180A34_ovl3:
 /* 0E1474 80180A34 15200007 */  bnez  $t1, .L80180A54_ovl3
 /* 0E1478 80180A38 00000000 */   nop   
-/* 0E147C 80180A3C 0C002DAF */  jal   func_8000B6BC
+/* 0E147C 80180A3C 0C002DAF */  jal   finish_current_thread
 /* 0E1480 80180A40 24040001 */   li    $a0, 1
 /* 0E1484 80180A44 962A0000 */  lhu   $t2, ($s1)
 /* 0E1488 80180A48 314B4000 */  andi  $t3, $t2, 0x4000

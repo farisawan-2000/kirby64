@@ -88,7 +88,7 @@ glabel func_800B0974
 .L800B0AB4_ovl1:
 /* 058D04 800B0AB4 50800004 */  beql  $a0, $zero, .L800B0AC8_ovl1
 /* 058D08 800B0AB8 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 058D0C 800B0ABC 0C002DAF */  jal   func_8000B6BC
+/* 058D0C 800B0ABC 0C002DAF */  jal   finish_current_thread
 /* 058D10 800B0AC0 00000000 */   nop   
 /* 058D14 800B0AC4 8FBF0014 */  lw    $ra, 0x14($sp)
 .L800B0AC8_ovl1:

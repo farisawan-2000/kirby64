@@ -125,7 +125,7 @@ glabel func_801DB1E0_ovl17
 /* 226598 801DB3A8 3C054000 */   lui   $a1, 0x4000
 /* 22659C 801DB3AC 0C06B9F8 */  jal   func_801AE7E0_ovl17
 /* 2265A0 801DB3B0 24040013 */   li    $a0, 19
-/* 2265A4 801DB3B4 0C002DAF */  jal   func_8000B6BC
+/* 2265A4 801DB3B4 0C002DAF */  jal   finish_current_thread
 /* 2265A8 801DB3B8 240400D1 */   li    $a0, 209
 /* 2265AC 801DB3BC 10000005 */  b     .L801DB3D4_ovl17
 /* 2265B0 801DB3C0 00000000 */   nop   
@@ -360,7 +360,7 @@ glabel func_801DB1E0_ovl17
 /* 226934 801DB744 8DEE0000 */  lw    $t6, ($t7)
 /* 226938 801DB748 000EC880 */  sll   $t9, $t6, 2
 /* 22693C 801DB74C 0219C021 */  addu  $t8, $s0, $t9
-/* 226940 801DB750 0C002DAF */  jal   func_8000B6BC
+/* 226940 801DB750 0C002DAF */  jal   finish_current_thread
 /* 226944 801DB754 AF140000 */   sw    $s4, ($t8)
 /* 226948 801DB758 0C02BC8C */  jal   func_800AF230
 /* 22694C 801DB75C 00000000 */   nop   
@@ -463,7 +463,7 @@ glabel func_801DB1E0_ovl17
 .L801DB8C8_ovl17:
 /* 226AB8 801DB8C8 1700005F */  bnez  $t8, .L801DBA48_ovl17
 /* 226ABC 801DB8CC 00000000 */   nop   
-/* 226AC0 801DB8D0 0C002DAF */  jal   func_8000B6BC
+/* 226AC0 801DB8D0 0C002DAF */  jal   finish_current_thread
 /* 226AC4 801DB8D4 02802025 */   move  $a0, $s4
 /* 226AC8 801DB8D8 8E2F0000 */  lw    $t7, ($s1)
 /* 226ACC 801DB8DC 8DEE0000 */  lw    $t6, ($t7)
@@ -516,7 +516,7 @@ glabel func_801DB1E0_ovl17
 /* 226B80 801DB990 8F0F0000 */  lw    $t7, ($t8)
 /* 226B84 801DB994 55E00012 */  bnezl $t7, .L801DB9E0_ovl17
 /* 226B88 801DB998 4405A000 */   mfc1  $a1, $f20
-/* 226B8C 801DB99C 0C002DAF */  jal   func_8000B6BC
+/* 226B8C 801DB99C 0C002DAF */  jal   finish_current_thread
 /* 226B90 801DB9A0 02802025 */   move  $a0, $s4
 /* 226B94 801DB9A4 8E270000 */  lw    $a3, ($s1)
 /* 226B98 801DB9A8 8CEE0000 */  lw    $t6, ($a3)
@@ -557,7 +557,7 @@ glabel func_801DB1E0_ovl17
 /* 226C14 801DBA24 8F0F0000 */  lw    $t7, ($t8)
 /* 226C18 801DBA28 15E00007 */  bnez  $t7, .L801DBA48_ovl17
 /* 226C1C 801DBA2C 00000000 */   nop   
-/* 226C20 801DBA30 0C002DAF */  jal   func_8000B6BC
+/* 226C20 801DBA30 0C002DAF */  jal   finish_current_thread
 /* 226C24 801DBA34 02802025 */   move  $a0, $s4
 /* 226C28 801DBA38 0C02BC8C */  jal   func_800AF230
 /* 226C2C 801DBA3C 00000000 */   nop   

@@ -63,13 +63,13 @@ glabel func_801DD704_ovl17
 /* 2289E8 801DD7F8 8D2A0000 */  lw    $t2, ($t1)
 /* 2289EC 801DD7FC 000A5880 */  sll   $t3, $t2, 2
 /* 2289F0 801DD800 002B0821 */  addu  $at, $at, $t3
-/* 2289F4 801DD804 0C002DAF */  jal   func_8000B6BC
+/* 2289F4 801DD804 0C002DAF */  jal   finish_current_thread
 /* 2289F8 801DD808 AC2298E0 */ sw $v0, %lo(D_800E98E0)($at)
 /* 2289FC 801DD80C 0C029D9E */  jal   play_sound
 /* 228A00 801DD810 24040264 */   li    $a0, 612
 /* 228A04 801DD814 0C02F03C */  jal   func_800BC0F0
 /* 228A08 801DD818 24040001 */   li    $a0, 1
-/* 228A0C 801DD81C 0C002DAF */  jal   func_8000B6BC
+/* 228A0C 801DD81C 0C002DAF */  jal   finish_current_thread
 /* 228A10 801DD820 24040020 */   li    $a0, 32
 /* 228A14 801DD824 0C029D9E */  jal   play_sound
 /* 228A18 801DD828 24040266 */   li    $a0, 614

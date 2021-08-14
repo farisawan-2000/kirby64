@@ -4,7 +4,7 @@ glabel func_800A57C8
 /* 04DA20 800A57D0 AFA40020 */  sw    $a0, 0x20($sp)
 /* 04DA24 800A57D4 AFB10018 */  sw    $s1, 0x18($sp)
 /* 04DA28 800A57D8 AFB00014 */  sw    $s0, 0x14($sp)
-/* 04DA2C 800A57DC 0C002DAF */  jal   func_8000B6BC
+/* 04DA2C 800A57DC 0C002DAF */  jal   finish_current_thread
 /* 04DA30 800A57E0 24040001 */   li    $a0, 1
 /* 04DA34 800A57E4 3C11800D */  lui   $s1, %hi(D_800D6B2C) # $s1, 0x800d
 /* 04DA38 800A57E8 3C10800D */  lui   $s0, %hi(D_800D6B2E) # $s0, 0x800d
@@ -26,7 +26,7 @@ glabel func_800A57C8
 /* 04DA70 800A5820 10000005 */  b     .L800A5838_ovl1
 /* 04DA74 800A5824 A6190000 */   sh    $t9, ($s0)
 .L800A5828_ovl1:
-/* 04DA78 800A5828 0C002DAF */  jal   func_8000B6BC
+/* 04DA78 800A5828 0C002DAF */  jal   finish_current_thread
 /* 04DA7C 800A582C 24040001 */   li    $a0, 1
 /* 04DA80 800A5830 1000FFF1 */  b     .L800A57F8_ovl1
 /* 04DA84 800A5834 860E0000 */   lh    $t6, ($s0)
@@ -49,26 +49,26 @@ glabel func_800A57C8
 .L800A5874_ovl1:
 /* 04DAC4 800A5874 3C01800D */  lui   $at, %hi(D_800D6B24) # $at, 0x800d
 /* 04DAC8 800A5878 AC206B24 */  sw    $zero, %lo(D_800D6B24)($at)
-/* 04DACC 800A587C 0C002DAF */  jal   func_8000B6BC
+/* 04DACC 800A587C 0C002DAF */  jal   finish_current_thread
 /* 04DAD0 800A5880 24040001 */   li    $a0, 1
 /* 04DAD4 800A5884 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 04DAD8 800A5888 0C0028A7 */  jal   func_8000A29C_ovl1
 /* 04DADC 800A588C 8C84A7C4 */   lw    $a0, %lo(D_8004A7C4)($a0)
-/* 04DAE0 800A5890 0C002DAF */  jal   func_8000B6BC
+/* 04DAE0 800A5890 0C002DAF */  jal   finish_current_thread
 /* 04DAE4 800A5894 24040001 */   li    $a0, 1
 /* 04DAE8 800A5898 1000000E */  b     .L800A58D4_ovl1
 /* 04DAEC 800A589C 8FBF001C */   lw    $ra, 0x1c($sp)
 .L800A58A0_ovl1:
-/* 04DAF0 800A58A0 0C002DAF */  jal   func_8000B6BC
+/* 04DAF0 800A58A0 0C002DAF */  jal   finish_current_thread
 /* 04DAF4 800A58A4 24040001 */   li    $a0, 1
 /* 04DAF8 800A58A8 1000000A */  b     .L800A58D4_ovl1
 /* 04DAFC 800A58AC 8FBF001C */   lw    $ra, 0x1c($sp)
 .L800A58B0_ovl1:
-/* 04DB00 800A58B0 0C002DAF */  jal   func_8000B6BC
+/* 04DB00 800A58B0 0C002DAF */  jal   finish_current_thread
 /* 04DB04 800A58B4 24040001 */   li    $a0, 1
 /* 04DB08 800A58B8 0C0019EE */  jal   func_800067B8_ovl1
 /* 04DB0C 800A58BC 00000000 */   nop   
-/* 04DB10 800A58C0 0C002DAF */  jal   func_8000B6BC
+/* 04DB10 800A58C0 0C002DAF */  jal   finish_current_thread
 /* 04DB14 800A58C4 24040001 */   li    $a0, 1
 /* 04DB18 800A58C8 3C01800D */  lui   $at, %hi(D_800D6B24) # $at, 0x800d
 /* 04DB1C 800A58CC AC206B24 */  sw    $zero, %lo(D_800D6B24)($at)

@@ -113,7 +113,7 @@ glabel func_801E6E0C_ovl16
 /* 21D268 801E6FB8 00000000 */   nop   
 /* 21D26C 801E6FBC E5B40000 */  swc1  $f20, ($t5)
 .L801E6FC0_ovl16:
-/* 21D270 801E6FC0 0C002DAF */  jal   func_8000B6BC
+/* 21D270 801E6FC0 0C002DAF */  jal   finish_current_thread
 /* 21D274 801E6FC4 24040001 */   li    $a0, 1
 /* 21D278 801E6FC8 8EA30000 */  lw    $v1, ($s5)
 /* 21D27C 801E6FCC 8C6F0000 */  lw    $t7, ($v1)

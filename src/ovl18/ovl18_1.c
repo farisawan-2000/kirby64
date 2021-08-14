@@ -78,7 +78,7 @@ void func_802205AC_ovl18(s32 arg0) {
     func_800AED20(0.0f);
     D_800EBBE0[D_8004A7C4->objId] = func_801ACC34_ovl18(0x2E, 0);
     play_sound(0xA6);
-    func_8000B6BC(4);
+    finish_current_thread(4);
     func_800AECC0(D_800D6B10);
     do {
         func_800AED20(D_800D6B10);
@@ -189,7 +189,7 @@ void func_80220B00_ovl18(s32 arg0) {
                     func_80199F1C_ovl18(arg0);
                 }
             }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     }
 }
@@ -219,8 +219,8 @@ u8 func_80220F68_ovl18(s32 arg0) {
     s32 temp_a3;
     s32 temp_t6;
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_a2;
-    struct UnkStruct8004A7C4 *temp_a2_2;
+    struct GObj *temp_a2;
+    struct GObj *temp_a2_2;
     struct UnkStruct800E1B50 **temp_t0;
     struct UnkStruct800E1B50 *temp_t0_2;
     u8 temp_v0;
@@ -235,7 +235,7 @@ u8 func_80220F68_ovl18(s32 arg0) {
     s32 phi_a1;
     s32 phi_a3;
     f32 phi_f0;
-    struct UnkStruct8004A7C4 *phi_a2;
+    struct GObj *phi_a2;
     f32 phi_f0_2;
     u8 phi_return;
 
@@ -379,7 +379,7 @@ void func_80221498_ovl18(s32 arg0) {
         D_800E3C90[D_8004A7C4->objId] = 4.5f;
         play_sound(0x167);
         while (D_800E8920[D_8004A7C4->objId] == 0) {
-            func_8000B6BC(1);
+            finish_current_thread(1);
         }
         D_800E6A10[D_8004A7C4->objId] = -D_800E6A10[D_8004A7C4->objId];
     }

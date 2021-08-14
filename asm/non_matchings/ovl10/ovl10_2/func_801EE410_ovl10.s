@@ -84,7 +84,7 @@ glabel func_801EE410_ovl10
 /* 1DF2C8 801EE558 24040003 */   li    $a0, 3
 /* 1DF2CC 801EE55C 0C07B5F4 */  jal   func_801ED7D0_ovl10
 /* 1DF2D0 801EE560 8FA40018 */   lw    $a0, 0x18($sp)
-/* 1DF2D4 801EE564 0C002DAF */  jal   func_8000B6BC
+/* 1DF2D4 801EE564 0C002DAF */  jal   finish_current_thread
 /* 1DF2D8 801EE568 2404004C */   li    $a0, 76
 /* 1DF2DC 801EE56C 0C02CD48 */  jal   func_800B3520
 /* 1DF2E0 801EE570 00000000 */   nop   

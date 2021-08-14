@@ -6,7 +6,7 @@ glabel func_800AFC54
 /* 057EB4 800AFC64 8FA4001C */  lw    $a0, 0x1c($sp)
 /* 057EB8 800AFC68 50800004 */  beql  $a0, $zero, .L800AFC7C_ovl1
 /* 057EBC 800AFC6C 8FBF0014 */   lw    $ra, 0x14($sp)
-/* 057EC0 800AFC70 0C002DAF */  jal   func_8000B6BC
+/* 057EC0 800AFC70 0C002DAF */  jal   finish_current_thread
 /* 057EC4 800AFC74 00000000 */   nop   
 /* 057EC8 800AFC78 8FBF0014 */  lw    $ra, 0x14($sp)
 .L800AFC7C_ovl1:

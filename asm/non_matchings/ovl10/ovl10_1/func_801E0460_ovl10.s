@@ -415,7 +415,7 @@ glabel func_801E0460_ovl10
 /* 1D17FC 801E0A8C C5240000 */  lwc1  $f4, ($t1)
 /* 1D1800 801E0A90 E4243750 */ swc1 $f4, %lo(D_800E3750)($at)
 .L801E0A94_ovl10:
-/* 1D1804 801E0A94 0C002DAF */  jal   func_8000B6BC
+/* 1D1804 801E0A94 0C002DAF */  jal   finish_current_thread
 /* 1D1808 801E0A98 24040001 */   li    $a0, 1
 /* 1D180C 801E0A9C 8E6A0000 */  lw    $t2, ($s3)
 /* 1D1810 801E0AA0 8D430000 */  lw    $v1, ($t2)

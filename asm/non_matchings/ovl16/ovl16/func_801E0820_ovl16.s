@@ -97,7 +97,7 @@ glabel func_801E0820_ovl16
 /* 216C40 801E0990 E5760000 */   swc1  $f22, ($t3)
 /* 216C44 801E0994 E5940000 */  swc1  $f20, ($t4)
 .L801E0998_ovl16:
-/* 216C48 801E0998 0C002DAF */  jal   func_8000B6BC
+/* 216C48 801E0998 0C002DAF */  jal   finish_current_thread
 /* 216C4C 801E099C 24040001 */   li    $a0, 1
 /* 216C50 801E09A0 8E230000 */  lw    $v1, ($s1)
 /* 216C54 801E09A4 8E8F0000 */  lw    $t7, ($s4)
@@ -149,7 +149,7 @@ glabel func_801E0820_ovl16
 /* 216D04 801E0A54 8DEFFBD0 */ lw $t7, %lo(D_800DFBD0)($t7)
 /* 216D08 801E0A58 0C02A040 */  jal   func_800A8100
 /* 216D0C 801E0A5C 8DE70028 */   lw    $a3, 0x28($t7)
-/* 216D10 801E0A60 0C002DAF */  jal   func_8000B6BC
+/* 216D10 801E0A60 0C002DAF */  jal   finish_current_thread
 /* 216D14 801E0A64 2404000D */   li    $a0, 13
 /* 216D18 801E0A68 8E230000 */  lw    $v1, ($s1)
 /* 216D1C 801E0A6C 3C014120 */  li    $at, 0x41200000 # 10.000000
@@ -185,7 +185,7 @@ glabel func_801E0820_ovl16
 /* 216D94 801E0AE4 13CF000A */  beq   $fp, $t7, .L801E0B10_ovl16
 /* 216D98 801E0AE8 00000000 */   nop   
 .L801E0AEC_ovl16:
-/* 216D9C 801E0AEC 0C002DAF */  jal   func_8000B6BC
+/* 216D9C 801E0AEC 0C002DAF */  jal   finish_current_thread
 /* 216DA0 801E0AF0 24040001 */   li    $a0, 1
 /* 216DA4 801E0AF4 8E380000 */  lw    $t8, ($s1)
 /* 216DA8 801E0AF8 8F0E0000 */  lw    $t6, ($t8)
@@ -195,7 +195,7 @@ glabel func_801E0820_ovl16
 /* 216DB8 801E0B08 17C9FFF8 */  bne   $fp, $t1, .L801E0AEC_ovl16
 /* 216DBC 801E0B0C 00000000 */   nop   
 .L801E0B10_ovl16:
-/* 216DC0 801E0B10 0C002DAF */  jal   func_8000B6BC
+/* 216DC0 801E0B10 0C002DAF */  jal   finish_current_thread
 /* 216DC4 801E0B14 2404001E */   li    $a0, 30
 /* 216DC8 801E0B18 0C029D9E */  jal   play_sound
 /* 216DCC 801E0B1C 240401AA */   li    $a0, 426
@@ -259,7 +259,7 @@ glabel func_801E0820_ovl16
 /* 216EB4 801E0C04 1300000A */  beqz  $t8, .L801E0C30_ovl16
 /* 216EB8 801E0C08 00000000 */   nop   
 .L801E0C0C_ovl16:
-/* 216EBC 801E0C0C 0C002DAF */  jal   func_8000B6BC
+/* 216EBC 801E0C0C 0C002DAF */  jal   finish_current_thread
 /* 216EC0 801E0C10 24040001 */   li    $a0, 1
 /* 216EC4 801E0C14 8E2E0000 */  lw    $t6, ($s1)
 /* 216EC8 801E0C18 8DD00000 */  lw    $s0, ($t6)

@@ -68,7 +68,7 @@ glabel func_801E980C_ovl10
 /* 1DA684 801E9914 4480A000 */  mtc1  $zero, $f20
 /* 1DA688 801E9918 E5680000 */  swc1  $f8, ($t3)
 .L801E991C_ovl10:
-/* 1DA68C 801E991C 0C002DAF */  jal   func_8000B6BC
+/* 1DA68C 801E991C 0C002DAF */  jal   finish_current_thread
 /* 1DA690 801E9920 24040001 */   li    $a0, 1
 /* 1DA694 801E9924 8E450000 */  lw    $a1, ($s2)
 /* 1DA698 801E9928 8CA30000 */  lw    $v1, ($a1)

@@ -18,7 +18,7 @@ glabel func_800AF27C
 /* 05750C 800AF2BC 5720000C */  bnezl $t9, .L800AF2F0_ovl1
 /* 057510 800AF2C0 8FBF0024 */   lw    $ra, 0x24($sp)
 .L800AF2C4_ovl1:
-/* 057514 800AF2C4 0C002DAF */  jal   func_8000B6BC
+/* 057514 800AF2C4 0C002DAF */  jal   finish_current_thread
 /* 057518 800AF2C8 24040001 */   li    $a0, 1
 /* 05751C 800AF2CC 8E280000 */  lw    $t0, ($s1)
 /* 057520 800AF2D0 8D090000 */  lw    $t1, ($t0)

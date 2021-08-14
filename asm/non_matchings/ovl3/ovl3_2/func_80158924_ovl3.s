@@ -64,7 +64,7 @@ glabel func_80158924_ovl3
 /* 0B945C 80158A1C 15600006 */  bnez  $t3, .L80158A38_ovl3
 /* 0B9460 80158A20 00000000 */   nop   
 .L80158A24_ovl3:
-/* 0B9464 80158A24 0C002DAF */  jal   func_8000B6BC
+/* 0B9464 80158A24 0C002DAF */  jal   finish_current_thread
 /* 0B9468 80158A28 24040001 */   li    $a0, 1
 /* 0B946C 80158A2C 8E0C0044 */  lw    $t4, 0x44($s0)
 /* 0B9470 80158A30 1180FFFC */  beqz  $t4, .L80158A24_ovl3

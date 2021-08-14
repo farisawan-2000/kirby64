@@ -49,11 +49,11 @@ glabel func_801162F4
 /* 09EE1C 801163AC 3C018013 */  lui   $at, %hi(D_80128D18) # $at, 0x8013
 /* 09EE20 801163B0 E446000C */  swc1  $f6, 0xc($v0)
 /* 09EE24 801163B4 C4288D18 */  lwc1  $f8, %lo(D_80128D18)($at)
-/* 09EE28 801163B8 0C002DAF */  jal   func_8000B6BC
+/* 09EE28 801163B8 0C002DAF */  jal   finish_current_thread
 /* 09EE2C 801163BC E4480014 */   swc1  $f8, 0x14($v0)
 /* 09EE30 801163C0 0C029D9E */  jal   play_sound
 /* 09EE34 801163C4 24040183 */   li    $a0, 387
-/* 09EE38 801163C8 0C002DAF */  jal   func_8000B6BC
+/* 09EE38 801163C8 0C002DAF */  jal   finish_current_thread
 /* 09EE3C 801163CC 24040028 */   li    $a0, 40
 /* 09EE40 801163D0 3C0D8005 */  lui   $t5, %hi(D_8004A7C4) # $t5, 0x8005
 /* 09EE44 801163D4 8DADA7C4 */  lw    $t5, %lo(D_8004A7C4)($t5)

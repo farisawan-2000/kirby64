@@ -153,7 +153,7 @@ glabel func_8022858C_ovl19
 /* 248EF4 802287E4 00003025 */  move  $a2, $zero
 /* 248EF8 802287E8 0C048C3A */  jal   func_801230E8
 /* 248EFC 802287EC E42641D0 */ swc1 $f6, %lo(gEntitiesAngleYArray)($at)
-/* 248F00 802287F0 0C002DAF */  jal   func_8000B6BC
+/* 248F00 802287F0 0C002DAF */  jal   finish_current_thread
 /* 248F04 802287F4 2404003E */   li    $a0, 62
 /* 248F08 802287F8 8E2B0000 */  lw    $t3, ($s1)
 /* 248F0C 802287FC 3C01800E */ lui $at, %hi(gEntitiesNextPosYArray)

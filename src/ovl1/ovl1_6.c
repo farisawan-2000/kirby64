@@ -185,7 +185,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")
 #endif
 
 struct GObjProcess *func_80008A18(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
-struct UnkStruct8004A7C4 *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
+struct GObj *func_8000A180(s32 arg0, s32 arg1, u8 arg2, u32 arg3);
 void func_800B0F28(void);
 extern u32 D_800DDA90[];
 s32 func_800B0D90(void *arg0);
@@ -205,7 +205,7 @@ extern struct UnkStruct800D4FD0 *D_800D4FD0[];
 // compiles and is decently close
 #ifdef NON_MATCHING
 s32 request_job(s32 id, s32 minIndex, u32 max_index, s32 arg3, void (*arg4)(void)) {
-    struct UnkStruct8004A7C4 *temp_v0_3;
+    struct GObj *temp_v0_3;
     s32 v1;
     s32 v0;
     u32 a2;

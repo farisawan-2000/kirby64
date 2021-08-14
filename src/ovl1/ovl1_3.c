@@ -1499,7 +1499,7 @@ void *func_800AA3F0(void *arg0) {
 
 loop_1:
     if (D_800D5DE0 != arg0->unk74) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
         goto loop_1;
     }
     temp_a0 = *D_8004A7C4 * 4;
@@ -1584,7 +1584,7 @@ void func_800AA608(void *arg0, s32 arg1, ? arg2, u32 arg3, f32 arg4) {
     func_800B1FD0(arg0, *(temp_v1 + 0x800E0000)->unk-970, arg2, (temp_v1 + 0x800E0000)->unk-5F0, arg4);
 loop_4:
     if (D_800D5DE4 != arg0->unk74) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
         goto loop_4;
     }
 }
@@ -1708,7 +1708,7 @@ void func_800AAB3C(void *arg0, ? arg3, f32 arg4) {
     func_800AA96C(arg3, arg3, arg4);
 loop_1:
     if (D_800D5DE8 != (*(((*D_8004A7C4 * 4) + 0x800E0000)->unk-430 + (*arg0 * 4)))->unk74) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
         goto loop_1;
     }
 }
@@ -1936,7 +1936,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AAF34.s")
 void func_800AAFC4(s32 arg0, s32 arg1, s32 arg2) {
     func_800AAF34(arg2, arg2);
     while (D_800D5DF4 != D_800D79D8[(arg0 - 10) / 2]->unk74) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 #else
@@ -1947,7 +1947,7 @@ extern f32 D_800D5DF8;
 #ifdef MIPS_TO_C
 void func_800AB040(s32 arg0) {
     while (D_800D5DF8 != D_800D79D8[(arg0 - 10) >> 1]->unk74) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 #else
@@ -1974,7 +1974,7 @@ void func_800AB0CC(s32 arg0) {
 }
 // GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AB0CC.s")
 
-s32 func_800AB0F4(struct UnkStruct8004A7C4 *arg0) {
+s32 func_800AB0F4(struct GObj *arg0) {
     u32* v1 = gSegment4StartArray[arg0->objId];
     return v1[2];
 }
@@ -1989,35 +1989,35 @@ void func_800AB118(s32 arg0) {
 
 extern Gfx* gDisplayListHeads[];
 
-void func_800AB120(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB120(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_800141D4();
 }
 
-void func_800AB174(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB174(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     gSPSegment(gDisplayListHeads[1]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_80014768();
 }
 
-void func_800AB1F0(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB1F0(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_80014B4C(arg0);
 }
 
-void func_800AB244(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB244(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     gSPSegment(gDisplayListHeads[1]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_80014FA4();
 }
 
-void func_800AB2C0(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB2C0(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId])
     func_800143A4();
 }
 
 
-void func_800AB314(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB314(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     gSPSegment(gDisplayListHeads[1]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_80014AD4(arg0);
@@ -2031,12 +2031,12 @@ void func_800AB398(s32 arg0) {
 
 }
 
-void func_800AB3A0(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB3A0(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_8001585C();
 }
 
-void func_800AB3F4(struct UnkStruct8004A7C4 *arg0) {
+void func_800AB3F4(struct GObj *arg0) {
     gSPSegment(gDisplayListHeads[0]++, 0x04, gSegment4StartArray[arg0->objId]);
     gSPSegment(gDisplayListHeads[1]++, 0x04, gSegment4StartArray[arg0->objId]);
     func_80015BCC();

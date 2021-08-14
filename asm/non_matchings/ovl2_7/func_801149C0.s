@@ -2,7 +2,7 @@ glabel func_801149C0
 /* 09D430 801149C0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 09D434 801149C4 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 09D438 801149C8 AFA40018 */  sw    $a0, 0x18($sp)
-/* 09D43C 801149CC 0C002DAF */  jal   func_8000B6BC
+/* 09D43C 801149CC 0C002DAF */  jal   finish_current_thread
 /* 09D440 801149D0 24040001 */   li    $a0, 1
 /* 09D444 801149D4 8FA40018 */  lw    $a0, 0x18($sp)
 /* 09D448 801149D8 3C18800E */ lui $t8, %hi(D_800E77A0)

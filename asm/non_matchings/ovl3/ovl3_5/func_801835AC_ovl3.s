@@ -202,7 +202,7 @@ glabel func_801835AC_ovl3
 /* 0E42E0 801838A0 8D280000 */  lw    $t0, ($t1)
 /* 0E42E4 801838A4 5500000B */  bnezl $t0, .L801838D4_ovl3
 /* 0E42E8 801838A8 8C6B0000 */   lw    $t3, ($v1)
-/* 0E42EC 801838AC 0C002DAF */  jal   func_8000B6BC
+/* 0E42EC 801838AC 0C002DAF */  jal   finish_current_thread
 /* 0E42F0 801838B0 24040001 */   li    $a0, 1
 /* 0E42F4 801838B4 3C0C800D */  lui   $t4, %hi(D_800D6FEA) # $t4, 0x800d
 /* 0E42F8 801838B8 958C6FEA */  lhu   $t4, %lo(D_800D6FEA)($t4)

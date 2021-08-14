@@ -184,7 +184,7 @@ glabel func_801BE79C_ovl7
 /* 164AC0 801BEA50 AC20F150 */ sw $zero, %lo(D_800DF150)($at)
 /* 164AC4 801BEA54 0C02C67D */  jal   func_800B19F4
 /* 164AC8 801BEA58 8C450000 */   lw    $a1, ($v0)
-/* 164ACC 801BEA5C 0C002DAF */  jal   func_8000B6BC
+/* 164ACC 801BEA5C 0C002DAF */  jal   finish_current_thread
 /* 164AD0 801BEA60 2404001E */   li    $a0, 30
 /* 164AD4 801BEA64 240D0002 */  li    $t5, 2
 /* 164AD8 801BEA68 3C018013 */  lui   $at, %hi(D_8012E7D4) # $at, 0x8013
@@ -326,7 +326,7 @@ glabel func_801BE79C_ovl7
 /* 164CE4 801BEC74 8C4A0000 */  lw    $t2, ($v0)
 /* 164CE8 801BEC78 506A0006 */  beql  $v1, $t2, .L801BEC94_ovl7
 /* 164CEC 801BEC7C 3C040001 */   lui   $a0, 1
-/* 164CF0 801BEC80 0C002DAF */  jal   func_8000B6BC
+/* 164CF0 801BEC80 0C002DAF */  jal   finish_current_thread
 /* 164CF4 801BEC84 24040001 */   li    $a0, 1
 /* 164CF8 801BEC88 1000FFF2 */  b     .L801BEC54_ovl7
 /* 164CFC 801BEC8C 00000000 */   nop   
@@ -378,7 +378,7 @@ glabel func_801BE79C_ovl7
 /* 164DAC 801BED3C 01064021 */  addu  $t0, $t0, $a2
 /* 164DB0 801BED40 54610008 */  bnel  $v1, $at, .L801BED64_ovl7
 /* 164DB4 801BED44 24010008 */   li    $at, 8
-/* 164DB8 801BED48 0C002DAF */  jal   func_8000B6BC
+/* 164DB8 801BED48 0C002DAF */  jal   finish_current_thread
 /* 164DBC 801BED4C 2404000F */   li    $a0, 15
 /* 164DC0 801BED50 3C0A8005 */  lui   $t2, %hi(D_8004A7C4) # $t2, 0x8005
 /* 164DC4 801BED54 8D4AA7C4 */  lw    $t2, %lo(D_8004A7C4)($t2)

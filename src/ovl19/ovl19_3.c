@@ -69,7 +69,7 @@ void func_80223200_ovl19(s32 arg0) {
             D_800EC2E0[2] = D_8022F260[0].player2Anim1;
             D_800EC4A0[2] = D_8022F260[0].player2Anim2;
             func_800AA018(D_8022F260[0].jointAnim1);
-            func_8000B6BC(0x25);
+            finish_current_thread(0x25);
             D_80129138 = 0;
             func_800FA414(2);
             D_800E6690[D_8004A7C4->objId] = 0.0425f;
@@ -118,7 +118,7 @@ void func_80223200_ovl19(s32 arg0) {
             D_800EC4A0[2] = temp_v0_4->player2Anim2;
             func_800AA018(temp_v0_4->jointAnim1);
             while (gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) {
-                func_8000B6BC(1);
+                finish_current_thread(1);
             }
             gKirbyState.isFullJump++;
             gKirbyState.unk3C = 1;
@@ -204,7 +204,7 @@ void func_80223200_ovl19(s32 arg0) {
             D_800EC4A0[2] = temp_v0_9->player2Anim2;
             func_800AA018(temp_v0_9->jointAnim1);
             while (D_800E8920[D_8004A7C4->objId] == 0) {
-                func_8000B6BC(1);
+                finish_current_thread(1);
             }
             *(D_800E6690 + phi_a0_3) = 0.0f;
             temp_a0_5 = D_8004A7C4->objId;
@@ -228,7 +228,7 @@ void func_80223200_ovl19(s32 arg0) {
             D_800EC4A0[2] = temp_v0_10.player2Anim2;
             func_800AA018(temp_v0_10->jointAnim1);
             while (gKirbyState.rightCollisionNext == 0) {
-                func_8000B6BC(1);
+                finish_current_thread(1);
             }
             func_800BB468(2, 0);
             D_800E64D0[D_8004A7C4->objId] = 16.0f;
@@ -253,7 +253,7 @@ void func_80223200_ovl19(s32 arg0) {
             D_800EC2E0[2] = temp_v0_11->player2Anim1;
             D_800EC4A0[2] = temp_v0_11->player2Anim2;
             func_800AA018(temp_v0_11->jointAnim1);
-            func_8000B6BC(0x2D);
+            finish_current_thread(0x2D);
             gKirbyState.unk30 = gKirbyState.unk30 + 1;
             break;
     }
@@ -281,8 +281,8 @@ s32 func_80223E68_ovl19(s32 arg0) {
     s32 temp_v1_5;
     s32 temp_v1_6;
     s32 temp_v1_7;
-    struct UnkStruct8004A7C4 *temp_a0;
-    struct UnkStruct8004A7C4 *temp_a0_3;
+    struct GObj *temp_a0;
+    struct GObj *temp_a0_3;
     u32 temp_t8;
     u32 temp_v0_2;
     u32 temp_v0_4;
@@ -294,8 +294,8 @@ s32 func_80223E68_ovl19(s32 arg0) {
     f32 phi_f2;
     struct KirbyState *phi_a3;
     struct KirbyState *phi_a3_2;
-    struct UnkStruct8004A7C4 **phi_t0;
-    struct UnkStruct8004A7C4 **phi_t0_2;
+    struct GObj **phi_t0;
+    struct GObj **phi_t0_2;
     struct KirbyState *phi_a3_3;
     s32 phi_v1;
     s32 phi_v1_2;
@@ -574,7 +574,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_802245A0_ovl19.s")
 f32 func_8022470C_ovl19(void) {
     f32 temp_f0;
     s32 temp_a0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v1;
     void *temp_v0_2;
     s32 phi_v1;
@@ -641,16 +641,16 @@ void func_802248C0_ovl19(s32 arg0) {
     s32 temp_v0_13;
     s32 temp_v0_4;
     s32 temp_v1_10;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_11;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v1_4;
-    struct UnkStruct8004A7C4 *temp_v1_5;
-    struct UnkStruct8004A7C4 *temp_v1_6;
-    struct UnkStruct8004A7C4 *temp_v1_7;
-    struct UnkStruct8004A7C4 *temp_v1_8;
-    struct UnkStruct8004A7C4 *temp_v1_9;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_11;
+    struct GObj *temp_v1_2;
+    struct GObj *temp_v1_3;
+    struct GObj *temp_v1_4;
+    struct GObj *temp_v1_5;
+    struct GObj *temp_v1_6;
+    struct GObj *temp_v1_7;
+    struct GObj *temp_v1_8;
+    struct GObj *temp_v1_9;
     u32 temp_a1_2;
     u32 temp_a1_4;
     u32 temp_a1_5;
@@ -665,7 +665,7 @@ void func_802248C0_ovl19(s32 arg0) {
     void *temp_v0_7;
     void *temp_v0_8;
     void *temp_v0_9;
-    struct UnkStruct8004A7C4 *phi_v1;
+    struct GObj *phi_v1;
     s32 phi_a1;
     s32 phi_v1_2;
     s32 phi_a1_2;
@@ -730,7 +730,7 @@ loop_5:
         temp_a1 = phi_v1->objId;
         if (D_800E5F90[temp_a1] != 5) {
 block_7:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             phi_v1 = D_8004A7C4;
             goto loop_5;
         }
@@ -801,7 +801,7 @@ loop_11:
         func_800AA018(temp_v0_6->unk0);
         if ((bitwise f32) gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) {
 loop_17:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if ((bitwise f32) gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) {
                 goto loop_17;
             }
@@ -897,7 +897,7 @@ loop_17:
         phi_a1_3 = temp_a1_4 * 4;
         if (D_800E8920[temp_a1_4] == 0) {
 loop_27:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             temp_a1_5 = D_8004A7C4->objId;
             phi_a1_3 = temp_a1_5 * 4;
             if (D_800E8920[temp_a1_5] == 0) {
@@ -927,7 +927,7 @@ loop_31:
             if ((D_800E8920[D_8004A7C4->objId] != 0) && (gKirbyState.unk58 == 0)) {
                 func_8011DC04(0x146);
             }
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if (gKirbyState.rightCollisionNext == 0) {
                 goto loop_31;
             }
@@ -962,7 +962,7 @@ loop_31:
         D_800EC2E0[2] = temp_v0_14->unk10;
         D_800EC4A0[2] = temp_v0_14->unk14;
         func_800AA018(temp_v0_14->unk0);
-        func_8000B6BC(0x28);
+        finish_current_thread(0x28);
         phi_t3 = gKirbyState.unk30 + 1;
 block_38:
         gKirbyState.unk30 = phi_t3;
@@ -988,8 +988,8 @@ u32 func_80225620_ovl19(s32 arg0) {
     f32 temp_f2;
     s32 temp_v1_4;
     s32 temp_v1_5;
-    struct UnkStruct8004A7C4 *temp_a0;
-    struct UnkStruct8004A7C4 *temp_a0_2;
+    struct GObj *temp_a0;
+    struct GObj *temp_a0_2;
     u32 temp_ret;
     u32 temp_ret_2;
     u32 temp_t6;
@@ -1333,15 +1333,15 @@ void func_802260FC_ovl19(s32 arg0) {
     s32 temp_v0_11;
     s32 temp_v0_12;
     s32 temp_v0_7;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v1_4;
-    struct UnkStruct8004A7C4 *temp_v1_5;
-    struct UnkStruct8004A7C4 *temp_v1_6;
-    struct UnkStruct8004A7C4 *temp_v1_7;
-    struct UnkStruct8004A7C4 *temp_v1_8;
-    struct UnkStruct8004A7C4 *temp_v1_9;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
+    struct GObj *temp_v1_3;
+    struct GObj *temp_v1_4;
+    struct GObj *temp_v1_5;
+    struct GObj *temp_v1_6;
+    struct GObj *temp_v1_7;
+    struct GObj *temp_v1_8;
+    struct GObj *temp_v1_9;
     u32 temp_a0;
     u32 temp_v0_10;
     u32 temp_v0_9;
@@ -1435,7 +1435,7 @@ loop_5:
         func_800AA018(temp_v0_3->unk0);
         if ((bitwise f32) gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) {
 loop_8:
-            func_8000B6BC(1);
+            finish_current_thread(1);
             if ((bitwise f32) gKirbyState.unkCC < D_800E3210[D_8004A7C4->objId]) {
                 goto loop_8;
             }
@@ -1529,7 +1529,7 @@ loop_8:
             phi_v0 = temp_v0_9 * 4;
             if (D_800E8920[temp_v0_9] == 0) {
 loop_18:
-                func_8000B6BC(1);
+                finish_current_thread(1);
                 temp_v0_10 = D_8004A7C4->objId;
                 phi_v0 = temp_v0_10 * 4;
                 if (D_800E8920[temp_v0_10] == 0) {
@@ -1554,7 +1554,7 @@ loop_18:
             D_800EC2E0[2] = temp_v0_13->unk10;
             D_800EC4A0[2] = temp_v0_13->unk14;
             func_800AA018(temp_v0_13->unk0);
-            func_8000B6BC(0x5A);
+            finish_current_thread(0x5A);
             gKirbyState.unk30 = gKirbyState.unk30 + 1;
         }
     }
@@ -1568,15 +1568,15 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_802260FC_ovl19.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
-struct UnkStruct8004A7C4 *func_80226AA8_ovl19(s32 arg0) {
+struct GObj *func_80226AA8_ovl19(s32 arg0) {
     f32 temp_ret;
     s32 temp_v1_4;
     s32 temp_v1_6;
-    struct UnkStruct8004A7C4 *temp_ret_2;
-    struct UnkStruct8004A7C4 *temp_ret_3;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
+    struct GObj *temp_ret_2;
+    struct GObj *temp_ret_3;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
+    struct GObj *temp_v0_3;
     u32 temp_a0;
     u32 temp_a0_2;
     u32 temp_a0_3;
@@ -1592,10 +1592,10 @@ struct UnkStruct8004A7C4 *func_80226AA8_ovl19(s32 arg0) {
     struct KirbyState *phi_a3;
     s32 phi_v1_3;
     u32 phi_a0_3;
-    struct UnkStruct8004A7C4 *phi_return;
+    struct GObj *phi_return;
     u32 phi_v1_4;
     u32 phi_v1_5;
-    struct UnkStruct8004A7C4 *phi_return_2;
+    struct GObj *phi_return_2;
 
     func_80153A18_ovl19();
     func_800FF200(D_8012E944);
@@ -1622,7 +1622,7 @@ struct UnkStruct8004A7C4 *func_80226AA8_ovl19(s32 arg0) {
         }
         temp_ret = func_800F8824(D_8012BCAC, *(D_800E17D0 + phi_v1));
         gEntitiesAngleXArray[D_8004A7C4->objId] = -temp_ret;
-        phi_return_2 = (bitwise struct UnkStruct8004A7C4 *) temp_ret;
+        phi_return_2 = (bitwise struct GObj *) temp_ret;
     } else {
         D_800E3750[temp_v1] = -0.980665f;
         D_800E3C90[temp_v0_2->objId] = 18.0f;
@@ -1851,8 +1851,8 @@ f32 func_802271A8_ovl19(void) {
     f32 *temp_a1;
     f32 temp_f0;
     f32 temp_f18;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
     u16 temp_t3;
     u32 temp_v1;
     u32 temp_v1_2;
@@ -1905,7 +1905,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_802271A8_ovl19.s")
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_802273A0_ovl19(s32 arg0) {
     s32 temp_a1;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v0_2;
     u32 temp_v1;
     u32 temp_v1_2;
@@ -1937,7 +1937,7 @@ loop_1:
         func_800AA018(phi_v0);
         D_800EC2E0[D_8004A7C4->objId] = -1;
     }
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_1;
 }
 #else
@@ -1946,12 +1946,12 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_802273A0_ovl19.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
-struct UnkStruct8004A7C4 *func_8022759C_ovl19(s32 arg0) {
+struct GObj *func_8022759C_ovl19(s32 arg0) {
     f32 sp24;
     f32 sp20;
     f32 sp1C;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *phi_return;
+    struct GObj *temp_v0;
+    struct GObj *phi_return;
 
     temp_v0 = D_8004A7C4;
     D_800E17D0[temp_v0->objId] = *D_800E17D0;
@@ -1978,8 +1978,8 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_8022759C_ovl19.s")
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_80227690_ovl19(s32 arg0) {
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_a3;
-    struct UnkStruct8004A7C4 *temp_a3_2;
+    struct GObj *temp_a3;
+    struct GObj *temp_a3_2;
     u32 temp_v0;
     u32 temp_v0_2;
     u32 temp_v0_3;
@@ -2013,7 +2013,7 @@ loop_1:
             func_800AFBB4(0, temp_a3_2);
         }
     }
-    func_8000B6BC(1);
+    finish_current_thread(1);
     goto loop_1;
 }
 #else
@@ -2023,7 +2023,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_80227690_ovl19.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_8022785C_ovl19(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
 
     gKirbyState.unk44 = -1;
     D_800DF150[D_8004A7C4->objId] = &D_80227938;
@@ -2173,8 +2173,8 @@ s32 func_80227D4C_ovl19(void) {
     f32 *temp_a1;
     s32 temp_ret;
     s32 temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
     u32 temp_v0;
     void *temp_t0;
     s32 phi_return;
@@ -2240,14 +2240,14 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_80227F38_ovl19.s")
 #include "ovl19_2.h"
 extern s8 D_8012E7D7;
 void func_800B4954(void);
-void func_802283A8_ovl19(struct UnkStruct8004A7C4 *);
+void func_802283A8_ovl19(struct GObj *);
 void func_800A9864(f32, u32, s32, s32);
 void func_800AECC0(f32);
 void func_800AED20(f32);
 
 #define MATHMA(x) (x * 0x18)
 #ifdef MIPS_TO_C
-void func_80227F90_ovl19(struct UnkStruct8004A7C4 *arg0) {
+void func_80227F90_ovl19(struct GObj *arg0) {
     int idx;
     int idx2;
     int i;
@@ -2304,9 +2304,9 @@ void func_80227F90_ovl19(struct UnkStruct8004A7C4 *arg0) {
     D_800EC4A0[idx] = tmp->player2Anim2;
     func_800AA018(tmp->jointAnim1);
     while (D_800E98E0[D_8004A7C4->objId] == 0) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
-    func_8000B6BC(1);
+    finish_current_thread(1);
     func_800B1900((u16) idx);
     func_800B1900((u16) idx2);
     func_800FF1CC(D_8022FAB0);
@@ -2316,7 +2316,7 @@ void func_80227F90_ovl19(struct UnkStruct8004A7C4 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_80227F90_ovl19.s")
 #endif
 
-void func_802283A8_ovl19(struct UnkStruct8004A7C4 *this) {
+void func_802283A8_ovl19(struct GObj *this) {
     gEntitiesAngleYArray[D_8004A7C4->objId] = D_800E17D0[D_8004A7C4->objId];
     if ((D_800E98E0[D_8004A7C4->objId] == 0) && (gEntitiesNextPosYArray[0] <= 35.0f)) {
         gKirbyState.abilityState = 0x4D;
@@ -2329,7 +2329,7 @@ void func_802283A8_ovl19(struct UnkStruct8004A7C4 *this) {
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_8022846C_ovl19(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800DEF90[temp_v0->objId] = NULL;
@@ -2345,7 +2345,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_8022846C_ovl19.s")
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_802284EC_ovl19(s32 arg0) {
     f32 temp_f0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     if (*D_800E5F90 == 5) {
@@ -2367,10 +2367,10 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_802284EC_ovl19.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_8022858C_ovl19(s32 arg0) {
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v1_4;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
+    struct GObj *temp_v1_3;
+    struct GObj *temp_v1_4;
     u32 temp_t0;
     u32 temp_t0_2;
     u32 temp_t0_3;
@@ -2412,7 +2412,7 @@ void func_8022858C_ovl19(s32 arg0) {
     gEntitiesNextPosYArray[temp_v1_4->objId] = *D_800EC660;
     gEntitiesAngleYArray[temp_v1_4->objId] = 1.5707964f;
     func_801230E8(0x200F3, 0x200F4, 0);
-    func_8000B6BC(0x3E);
+    finish_current_thread(0x3E);
     temp_t0_4 = D_8004A7C4->objId;
     func_800A7F74(2, 1, 0x62, (bitwise f32) (bitwise s32) gEntitiesNextPosXArray[temp_t0_4], gEntitiesNextPosYArray[temp_t0_4] + 20.0f, gEntitiesNextPosZArray[temp_t0_4]);
     func_800FF1CC(D_8022FAB0);
@@ -2443,8 +2443,8 @@ void func_8022889C_ovl19(s32 arg0, struct UnkStruct800E1B50 *arg1) {
     s32 temp_a3_2;
     s32 temp_v0;
     s32 temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
     u32 *temp_t1;
     u32 temp_a2;
     void *temp_a1;
@@ -2495,7 +2495,7 @@ void func_8022889C_ovl19(s32 arg0, struct UnkStruct800E1B50 *arg1) {
     func_800AA018(temp_a1->unk0);
     if (D_800E98E0[D_8004A7C4->objId] != 2) {
 loop_1:
-        func_8000B6BC(1);
+        finish_current_thread(1);
         if (D_800E98E0[D_8004A7C4->objId] != 2) {
             goto loop_1;
         }
@@ -2508,7 +2508,7 @@ loop_1:
     D_800EC4A0[sp30] = temp_a1_2->unk14;
     func_800AA154(temp_a1_2->unk0, temp_a1_2);
     D_8012E804 = 2;
-    func_8000B6BC(2);
+    finish_current_thread(2);
     func_800B1900(sp36);
     func_800B1900(sp32);
     func_800B1900(D_8004A7C4->unk2);
@@ -2524,7 +2524,7 @@ s32 func_80228C44_ovl19(s32 arg0) {
     f32 temp_f0;
     s32 temp_a0;
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_v0_2;
     u32 temp_v0_3;
     u32 temp_v0_4;
@@ -2594,7 +2594,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_3/func_80228C44_ovl19.s")
 extern void func_800B1434(s32);
 extern void func_800B4954(void);
 #ifdef MIPS_TO_C
-void func_80228EF4_ovl19(struct UnkStruct8004A7C4 *this) {
+void func_80228EF4_ovl19(struct GObj *this) {
     func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
     D_800DEF90[D_8004A7C4->objId] = func_800B4954;
     D_800E5F90[D_8004A7C4->objId] = D_800E5F90[D_800E0D50[D_8004A7C4->objId]];
@@ -2604,7 +2604,7 @@ void func_80228EF4_ovl19(struct UnkStruct8004A7C4 *this) {
     D_800E3210[D_8004A7C4->objId] = -3.0f;
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     D_800E3C90[D_8004A7C4->objId] = 3.0f;
-    func_8000B6BC(0x1E);
+    finish_current_thread(0x1E);
     D_800E6690[D_8004A7C4->objId] = 0.0f;
     D_800E64D0[D_8004A7C4->objId] = D_800E6690[D_8004A7C4->objId];
     D_800E6850[D_8004A7C4->objId] = 65535.0f;

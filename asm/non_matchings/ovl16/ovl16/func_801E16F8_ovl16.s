@@ -42,7 +42,7 @@ glabel func_801E16F8_ovl16
 /* 217A48 801E1798 00220821 */  addu  $at, $at, $v0
 /* 217A4C 801E179C 46105481 */  sub.s $f18, $f10, $f16
 /* 217A50 801E17A0 46009103 */  div.s $f4, $f18, $f0
-/* 217A54 801E17A4 0C002DAF */  jal   func_8000B6BC
+/* 217A54 801E17A4 0C002DAF */  jal   finish_current_thread
 /* 217A58 801E17A8 E4243210 */ swc1 $f4, %lo(D_800E3210)($at)
 /* 217A5C 801E17AC 3C098005 */  lui   $t1, %hi(D_8004A7C4) # $t1, 0x8005
 /* 217A60 801E17B0 8D29A7C4 */  lw    $t1, %lo(D_8004A7C4)($t1)

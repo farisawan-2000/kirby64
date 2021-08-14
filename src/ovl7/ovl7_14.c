@@ -67,7 +67,7 @@ void func_801BBA54_ovl7(s32 arg0) {
     D_800E3750[D_8004A7C4->objId] = 0.0f;
     D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId];
     D_800E3C90[D_8004A7C4->objId] = 65535.0f;
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801AC11C_ovl7(arg0);
 }
 
@@ -98,7 +98,7 @@ void func_801BBBF4_ovl7(s32 arg0) {
     D_800E3750[D_8004A7C4->objId] = 0;
     D_800E3210[D_8004A7C4->objId] = D_800E3750[D_8004A7C4->objId];
     D_800E3C90[D_8004A7C4->objId] = 65535.0f;
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801AC364_ovl7(arg0);
 }
 

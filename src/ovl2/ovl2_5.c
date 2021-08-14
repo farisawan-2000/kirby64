@@ -832,7 +832,7 @@ GLOBAL_ASM("asm/non_matchings/ovl2_5/func_800FF200.s")
 
 #ifdef MIPS_TO_C
 void *func_800FF2C8(void) {
-    struct UnkStruct8004A7C4 *sp5C;
+    struct GObj *sp5C;
     s32 sp54;
     ? sp30;
     s32 sp2C;

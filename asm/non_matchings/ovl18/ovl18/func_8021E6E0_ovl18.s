@@ -24,7 +24,7 @@ glabel func_8021E6E0_ovl18
 /* 2310D8 8021E738 95240008 */  lhu   $a0, 8($t1)
 /* 2310DC 8021E73C 00A08025 */  move  $s0, $a1
 /* 2310E0 8021E740 AFA30024 */  sw    $v1, 0x24($sp)
-/* 2310E4 8021E744 0C002DAF */  jal   func_8000B6BC
+/* 2310E4 8021E744 0C002DAF */  jal   finish_current_thread
 /* 2310E8 8021E748 AFA20028 */   sw    $v0, 0x28($sp)
 /* 2310EC 8021E74C 3C0A8023 */ lui $t2, %hi(D_8022BCD0)
 /* 2310F0 8021E750 01505021 */  addu  $t2, $t2, $s0
@@ -37,7 +37,7 @@ glabel func_8021E6E0_ovl18
 /* 231108 8021E768 02002025 */   move  $a0, $s0
 /* 23110C 8021E76C 14400005 */  bnez  $v0, .L8021E784_ovl18
 /* 231110 8021E770 00000000 */   nop   
-/* 231114 8021E774 0C002DAF */  jal   func_8000B6BC
+/* 231114 8021E774 0C002DAF */  jal   finish_current_thread
 /* 231118 8021E778 24040001 */   li    $a0, 1
 /* 23111C 8021E77C 1000FFF9 */  b     .L8021E764_ovl18
 /* 231120 8021E780 00000000 */   nop   

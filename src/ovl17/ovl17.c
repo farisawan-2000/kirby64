@@ -10,7 +10,7 @@ extern s32 func_800B1434;
 void func_800AECC0(f32);
 void func_800AED20(f32);
 
-void func_801DD440_ovl17(struct UnkStruct8004A7C4 *arg0) {
+void func_801DD440_ovl17(struct GObj *arg0) {
     func_800A9864(0x100EC, 0x23, 0x10);
     func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
     func_800AA018(0x1067C);
@@ -24,7 +24,7 @@ void func_801DD440_ovl17(struct UnkStruct8004A7C4 *arg0) {
     arg0->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
     arg0->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
     arg0->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
-    func_8000B6BC(0x126);
+    finish_current_thread(0x126);
     func_800AECC0(0.0f);
     func_800AED20(0.0f);
     func_800AFA14();
@@ -72,10 +72,10 @@ void func_801DD704_ovl17(s32 arg0) {
     func_800AA018(0x10690);
     func_800AA018(0x10692);
     D_800E98E0[D_8004A7C4->objId] = func_800A8234(0, 0, 0x42);
-    func_8000B6BC(0x82);
+    finish_current_thread(0x82);
     play_sound(0x264);
     func_800BC0F0(1);
-    func_8000B6BC(0x20);
+    finish_current_thread(0x20);
     play_sound(0x266);
     func_800BC0F0(2);
     func_800AF27C();

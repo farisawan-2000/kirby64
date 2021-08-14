@@ -162,7 +162,7 @@ void func_801E49B8_ovl17(s32 arg0) {
     D_800E33D0[D_8004A7C4->objId] = sp30.z * 15.0f;
     D_800E3910[D_8004A7C4->objId] = sp30.z * D_801E56CC;
     D_800E3E50[D_8004A7C4->objId] = ABSF(sp30.z * 25.0f);
-    func_8000B6BC(0x3C);
+    finish_current_thread(0x3C);
     func_801E2320_ovl17(arg0);
 }
 #else

@@ -8,7 +8,7 @@
 
 extern f32 D_800D6B14;
 s32 func_800AEC70(s32, s32, s32);
-void func_8000B6BC(s32);
+void finish_current_thread(s32);
 void func_802266E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     f32 temp_f0;
     s32 temp_v0;
@@ -17,7 +17,7 @@ void func_802266E0_ovl18(s32 arg0, s32 arg1, s32 arg2) {
     D_800E98E0[temp_v0] = arg0;
     D_800E9AA0[temp_v0] = arg1 * D_800D6B14;
     if (arg2 != 0) {
-        func_8000B6BC(arg2 * D_800D6B14);
+        finish_current_thread(arg2 * D_800D6B14);
     }
 }
 
@@ -40,10 +40,10 @@ void func_8022677C_ovl18(s32 arg0) {
         } else {
             func_800AF8C0(D_8022AD30[idx + 0], 0xA, 4);
         }
-        func_8000B6BC(D_800E9AA0[D_8004A7C4->objId]);
+        finish_current_thread(D_800E9AA0[D_8004A7C4->objId]);
         func_800B1900((u16) D_8004A7C4->objId);
     }
-    func_8000B6BC(30.0f * D_800D6B10);
+    finish_current_thread(30.0f * D_800D6B10);
     func_802266E0_ovl18(0xD, 0xB4, 0);
     func_802266E0_ovl18(1, 0xB4, 0xC8);
     func_802266E0_ovl18(0xD, 0xB4, 0);
@@ -151,7 +151,7 @@ void func_80226D2C_ovl18(s32 arg0) {
         if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] == 0) {
             func_800AF920(1);
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 
@@ -174,7 +174,7 @@ void func_80226E78_ovl18(s32 arg0) {
         if (D_800E98E0[D_800E0D50[D_8004A7C4->objId]] != 0) {
             func_800AF920(1);
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 
@@ -194,7 +194,7 @@ void func_80226FD8_ovl18(u32 arg0) {
     }
     D_800E98E0[D_8004A7C4->objId] = 1;
     D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
-    func_8000B6BC(15.0f * D_800D6B14);
+    finish_current_thread(15.0f * D_800D6B14);
     while (1) {
         temp_v0 = gPlayerControllers[1];
         if (temp_v0 & 0x9000 && D_800D6B24 == 0) {
@@ -210,12 +210,12 @@ void func_80226FD8_ovl18(u32 arg0) {
             D_800E98E0[D_8004A7C4->objId] = 1;
             D_800D6B74 = D_800E98E0[D_8004A7C4->objId];
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     func_800AFA14();
 }
 
-struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+struct GObj *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 void func_80007C00(u32, f32, f32, f32, f32);
 s32 func_800AEA64(u32, u32, u32);
 s32 func_800AEC70(s32, s32, s32);

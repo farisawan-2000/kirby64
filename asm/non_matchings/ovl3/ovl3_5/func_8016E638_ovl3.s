@@ -107,7 +107,7 @@ glabel func_8016E638_ovl3
 /* 0CF1FC 8016E7BC 4502000E */  bc1fl .L8016E7F8_ovl3
 /* 0CF200 8016E7C0 962F00D2 */   lhu   $t7, 0xd2($s1)
 .L8016E7C4_ovl3:
-/* 0CF204 8016E7C4 0C002DAF */  jal   func_8000B6BC
+/* 0CF204 8016E7C4 0C002DAF */  jal   finish_current_thread
 /* 0CF208 8016E7C8 24040001 */   li    $a0, 1
 /* 0CF20C 8016E7CC 8E4C0000 */  lw    $t4, ($s2)
 /* 0CF210 8016E7D0 C62800CC */  lwc1  $f8, 0xcc($s1)

@@ -29,7 +29,7 @@ glabel func_800AEFFC
 /* 0572B4 800AF064 12000005 */  beqz  $s0, .L800AF07C_ovl1
 /* 0572B8 800AF068 AC480000 */   sw    $t0, ($v0)
 .L800AF06C_ovl1:
-/* 0572BC 800AF06C 0C002DAF */  jal   func_8000B6BC
+/* 0572BC 800AF06C 0C002DAF */  jal   finish_current_thread
 /* 0572C0 800AF070 24040001 */   li    $a0, 1
 /* 0572C4 800AF074 1000FFF2 */  b     .L800AF040_ovl1
 /* 0572C8 800AF078 8E4E0000 */   lw    $t6, ($s2)

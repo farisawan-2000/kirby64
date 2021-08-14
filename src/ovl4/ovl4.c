@@ -29,7 +29,7 @@ extern Gfx D_8015A018_ovl4;
 
 extern s32 D_800D6B5C;
 extern s16 D_800D6B30;
-extern struct UnkStruct8004A7C4 *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
+extern struct GObj *func_8000BDF0(s32 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4);
 
 extern void func_80007C00(f32 *, f32, f32, f32, f32);
 
@@ -105,12 +105,12 @@ void func_80151338_ovl4(s32 arg0) {
             func_800A57A0(0, 0, 0);
             func_800A5A14(0xFF, -8, 0);
             func_8000A180(0, func_80151990_ovl4, 0x1A, 0x80000000);
-            func_8000B6BC(0x78);
+            finish_current_thread(0x78);
             if (D_800D6B24 == 0) {
                 func_800A57A0(0xFF, 0xFF, 0xFF);
                 func_800A5A14(0, 8, 0);
                 while (D_800D6B24 != 0) {
-                    func_8000B6BC(1);
+                    finish_current_thread(1);
                 }
                 D_800E98E0[func_800AEC70(0, 0x3C, 0x70)] = 1;
                 func_800B1900((u16) D_8004A7C4->objId);
@@ -122,7 +122,7 @@ void func_80151338_ovl4(s32 arg0) {
             func_800A57A0(0xFF, 0xFF, 0xFF);
             func_800A5A14(0xFF, -8, 0);
             D_800DF150[D_8004A7C4->objId] = check_save_file_completion_cheat_code;
-            func_8000B6BC(0x78);
+            finish_current_thread(0x78);
             func_800A57A0(0, 0, 0);
             func_800A5A14(0, 8, 2);
             break;
@@ -134,9 +134,9 @@ void func_80151338_ovl4(s32 arg0) {
             func_800A57A0(0, 0, 0);
             func_800A5A14(0xFF, -8, 0);
             while (D_800D6B24 != 0) {
-                func_8000B6BC(1);
+                finish_current_thread(1);
             }
-            func_8000B6BC(0x1E);
+            finish_current_thread(0x1E);
             D_8015C680 = 600.0f * D_800D6B14;
             func_8000A180(0, func_80151A0C_ovl4, 0x1A, 0x80000000);
             break;

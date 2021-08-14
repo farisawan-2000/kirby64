@@ -190,7 +190,7 @@ glabel func_801E7BD0_ovl16
 /* 21E160 801E7EB0 3C01800E */ lui $at, %hi(D_800E3210)
 /* 21E164 801E7EB4 00220821 */  addu  $at, $at, $v0
 /* 21E168 801E7EB8 46002182 */  mul.s $f6, $f4, $f0
-/* 21E16C 801E7EBC 0C002DAF */  jal   func_8000B6BC
+/* 21E16C 801E7EBC 0C002DAF */  jal   finish_current_thread
 /* 21E170 801E7EC0 E4263210 */ swc1 $f6, %lo(D_800E3210)($at)
 /* 21E174 801E7EC4 0C06B047 */  jal   func_801AC11C_ovl16
 /* 21E178 801E7EC8 8FA40050 */   lw    $a0, 0x50($sp)

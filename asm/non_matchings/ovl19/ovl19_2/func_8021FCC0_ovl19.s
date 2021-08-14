@@ -77,7 +77,7 @@ glabel func_8021FCC0_ovl19
 /* 2404FC 8021FDEC 15C0000A */  bnez  $t6, .L8021FE18_ovl19
 /* 240500 8021FDF0 00000000 */   nop   
 .L8021FDF4_ovl19:
-/* 240504 8021FDF4 0C002DAF */  jal   func_8000B6BC
+/* 240504 8021FDF4 0C002DAF */  jal   finish_current_thread
 /* 240508 8021FDF8 24040001 */   li    $a0, 1
 /* 24050C 8021FDFC 8E180000 */  lw    $t8, ($s0)
 /* 240510 8021FE00 8F020000 */  lw    $v0, ($t8)

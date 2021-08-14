@@ -19,7 +19,7 @@ extern void func_801D0D44_ovl8(void);
 
 extern VTABLE D_801E0B00; // 4 funcs
 
-void func_801DB1E0_ovl11(struct UnkStruct8004A7C4 *this) {
+void func_801DB1E0_ovl11(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     this->unk48 = func_800B113C;
@@ -30,7 +30,7 @@ void func_801DB1E0_ovl11(struct UnkStruct8004A7C4 *this) {
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 4, &D_801E0B00);
 }
 
-void func_801DB2BC_ovl11(struct UnkStruct8004A7C4 *this, f32 arg1) {
+void func_801DB2BC_ovl11(struct GObj *this, f32 arg1) {
     struct UnkStruct8004A7C4_3C_80 *tmp;
     struct UnkStruct8004A7C4_3C *tmp_0 = this->unk3C;
 
@@ -136,7 +136,7 @@ s32 func_801DB684_ovl11(f32 arg0) {
     f32 temp_f0;
     f32 temp_f0_2;
     f32 temp_f0_3;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_a0;
     u32 temp_a0_2;
     f32 phi_f2;
@@ -231,7 +231,7 @@ void func_801DB7D0_ovl11(void) {
 }
 
 extern VTABLE D_801E0B24;
-void func_801DB8A0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DB8A0_ovl11(struct GObj *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 5, &D_801E0B24);
 }
 
@@ -240,7 +240,7 @@ void func_801DB8E8_ovl11(void) {
     s32 *temp_a1;
     s32 temp_a2;
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *temp_a0;
     u32 temp_v0;
     u32 temp_v0_2;
     u32 temp_v0_3;
@@ -302,10 +302,10 @@ block_10:
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DB8E8_ovl11.s")
 #endif
 
-void func_801DBB4C_ovl11(struct UnkStruct8004A7C4 *arg0);
+void func_801DBB4C_ovl11(struct GObj *arg0);
 extern f32 D_801E0C1C;
 extern f32 D_800D70D8;
-void func_801DB9E0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DB9E0_ovl11(struct GObj *arg0) {
     D_800DF150[D_8004A7C4->objId] = &func_801DBB4C_ovl11;
     D_800E9FE0[D_8004A7C4->objId] = 0;
     D_800EA360[D_8004A7C4->objId] = 3;
@@ -327,7 +327,7 @@ extern VTABLE D_801E0B38;
 extern void func_800BC1FC(s32);
 extern void func_800BC11C(f32);
 
-void func_801DBB4C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBB4C_ovl11(struct GObj *arg0) {
     if (D_800EC2E0[D_8004A7C4->objId] > 0) {
         D_800EC2E0[D_8004A7C4->objId]--;
     }
@@ -349,7 +349,7 @@ void func_801DBB4C_ovl11(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-void func_801DBCCC_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBCCC_ovl11(struct GObj *arg0) {
     if (D_800EA360[D_8004A7C4->objId] == 0) {
         D_800EA360[D_8004A7C4->objId] = 1;
         D_800EA360[D_800EA520[D_8004A7C4->objId]]--;
@@ -357,7 +357,7 @@ void func_801DBCCC_ovl11(struct UnkStruct8004A7C4 *arg0) {
     }
 }
 
-void func_801DBD58_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBD58_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 0;
     D_800DDFD0[D_8004A7C4->objId] = 0;
@@ -367,14 +367,14 @@ void func_801DBD58_ovl11(struct UnkStruct8004A7C4 *arg0) {
     func_800AFA14();
 }
 
-void func_801DBDF8_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBDF8_ovl11(struct GObj *arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
         gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], &func_801DB8A0_ovl11);
     }
 }
 
-void func_801DBE64_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBE64_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 1;
     D_800DDFD0[D_8004A7C4->objId] = 1;
@@ -384,11 +384,11 @@ void func_801DBE64_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 // stub
-void func_801DBEE8_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBEE8_ovl11(struct GObj *arg0) {
 
 }
 
-void func_801DBEF0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBEF0_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 1;
     D_800DDFD0[D_8004A7C4->objId] = 2;
@@ -400,11 +400,11 @@ void func_801DBEF0_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 // stub
-void func_801DBF9C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DBF9C_ovl11(struct GObj *arg0) {
 
 }
 
-void func_801DBFA4_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
+void func_801DBFA4_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
     Vector sp1C;
     s32 temp_v0;
 
@@ -423,7 +423,7 @@ void func_801DBFA4_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     }
 }
 
-void func_801DC064_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DC064_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 0;
     D_800EA520[D_8004A7C4->objId] = 0;
@@ -437,7 +437,7 @@ void func_801DC064_ovl11(struct UnkStruct8004A7C4 *arg0) {
     func_800AFA14();
 }
 
-void func_801DC158_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DC158_ovl11(struct GObj *arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
         gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801DB8A0_ovl11);
@@ -445,7 +445,7 @@ void func_801DC158_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 extern VTABLE D_801E0B00;
-void func_801DC1C4_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DC1C4_ovl11(struct GObj *arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 4;
     func_800BB468(2, 0);
     D_800E7880[D_8004A7C4->objId] = 1;
@@ -454,12 +454,12 @@ void func_801DC1C4_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 // stub
-void func_801DC250_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DC250_ovl11(struct GObj *arg0) {
 
 }
 
 extern VTABLE D_801E0B4C;
-void func_801DC258_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DC258_ovl11(struct GObj *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 9, &D_801E0B4C);
 }
 
@@ -471,7 +471,7 @@ s32 func_801DC2A0_ovl11(f32 arg0) {
     s32 temp_a1;
     s32 temp_v0;
     s32 temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_a2;
+    struct GObj *temp_a2;
     u32 temp_v1;
     s32 phi_v0;
     s32 phi_v0_2;
@@ -528,9 +528,9 @@ void func_801DC388_ovl11(void) {
     ? temp_f12;
     s32 *temp_v1;
     s32 temp_a0;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *phi_v0;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
+    struct GObj *phi_v0;
 
     func_801DB5C8_ovl11();
     temp_f12 = ERROR(Read from unset register $f0);
@@ -564,7 +564,7 @@ void func_801DC45C_ovl11(void) {
     s32 temp_a2;
     s32 temp_v0;
     s32 temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *temp_a0;
     u32 temp_v1;
     u32 temp_v1_2;
     u32 temp_v1_3;
@@ -756,7 +756,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC7B8_ovl11.s")
 #ifdef MIPS_TO_C
 void func_801DC83C_ovl11(void) {
     s32 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0_2;
 
     temp_v0 = &D_800E98E0[D_8004A7C4->objId];
     if (*temp_v0 != 0) {
@@ -776,8 +776,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC83C_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DC8F8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DC8F8_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -800,7 +800,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DC8F8_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DCA48_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DCA48_ovl11(struct GObj *arg0) {
     u32 temp_v0;
     u32 phi_v0;
 
@@ -827,12 +827,12 @@ extern s32 D_800E9E20[];
 extern s32 D_800E9FE0[];
 extern s32 D_800DDFD0[]; 
 
-void func_801DCB04_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DCB04_ovl11(struct GObj *arg0) {
     D_800E4C50[D_8004A7C4->objId] = 0.0f;
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 0;
     D_800DDFD0[D_8004A7C4->objId] = 0;
-    func_8000B6BC(0x2D);
+    finish_current_thread(0x2D);
     func_800AA018(0x103E6);
     func_800AA864(0x103E5, 1);
     func_800AA018(0x10402);
@@ -842,8 +842,8 @@ void func_801DCB04_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_801DCBE0_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DCBE0_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -858,8 +858,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCBE0_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DCC4C_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DCC4C_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9E20[temp_v0->objId] = 0;
@@ -874,13 +874,13 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCC4C_ovl11.s")
 #endif
 
 // stub
-void func_801DCCD0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DCCD0_ovl11(struct GObj *arg0) {
 
 }
 
 #ifdef MIPS_TO_C
-void func_801DCCD8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DCCD8_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9E20[temp_v0->objId] = 0;
@@ -897,14 +897,14 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCCD8_ovl11.s")
 #endif
 
 // stub
-void func_801DCD84_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DCD84_ovl11(struct GObj *arg0) {
 
 }
 
 #ifdef MIPS_TO_C
 void func_801DCD8C_ovl11(void) {
     s32 temp_v0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_a1;
 
     temp_v0 = func_801AE7E0_ovl11(4);
@@ -921,7 +921,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCD8C_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DCE04_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
+void func_801DCE04_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
     if ((arg1 == 0) && (arg2 == 1)) {
         func_801DCD8C_ovl11(arg2);
     }
@@ -931,8 +931,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCE04_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DCE48_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DCE48_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9AA0[temp_v0->objId] = 0;
@@ -955,12 +955,12 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCE48_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DCF70_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DCF70_ovl11(struct GObj *arg0) {
     s32 *temp_v0_3;
     s32 *temp_v1_2;
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_a2;
-    struct UnkStruct8004A7C4 *temp_a2_2;
+    struct GObj *temp_a2;
+    struct GObj *temp_a2_2;
     u32 temp_v0;
     u32 temp_v0_2;
 
@@ -994,8 +994,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DCF70_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD0B4_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DD0B4_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9E20[temp_v0->objId] = 0;
@@ -1012,8 +1012,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD0B4_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD160_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DD160_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -1028,7 +1028,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD160_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD1CC_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DD1CC_ovl11(struct GObj *arg0) {
     f32 sp2C;
     f32 sp28;
     f32 sp24;
@@ -1056,7 +1056,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD1CC_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-u8 func_801DD270_ovl11(struct UnkStruct8004A7C4 *arg0) {
+u8 func_801DD270_ovl11(struct GObj *arg0) {
     ? sp88;
     ? sp68;
     f32 temp_f20;
@@ -1155,8 +1155,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD270_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD490_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DD490_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9C60[temp_v0->objId] = 1;
@@ -1177,21 +1177,21 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD490_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD588_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DD588_ovl11(struct GObj *arg0) {
     s32 *temp_a0_3;
     s32 temp_a0;
     s32 temp_v1_3;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
-    struct UnkStruct8004A7C4 *temp_v0_4;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
+    struct GObj *temp_v0_3;
+    struct GObj *temp_v0_4;
     u32 temp_v1;
     u32 temp_v1_2;
     u32 temp_v1_4;
     void *temp_a0_2;
     s32 phi_a0;
     u32 phi_v1;
-    struct UnkStruct8004A7C4 *phi_v0;
+    struct GObj *phi_v0;
 
     temp_v0 = D_8004A7C4;
     temp_v1 = temp_v0->objId;
@@ -1235,8 +1235,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD588_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD730_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DD730_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9E20[temp_v0->objId] = 0;
@@ -1252,8 +1252,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD730_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD7D4_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DD7D4_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -1268,7 +1268,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD7D4_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DD840_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
+void func_801DD840_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
     f32 sp24;
     f32 sp20;
     f32 sp1C;
@@ -1291,11 +1291,11 @@ void func_801DD840_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
     }
 }
 #else
-void func_801DD840_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2);
+void func_801DD840_ovl11(struct GObj *arg0, s32 arg1, f32 arg2);
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DD840_ovl11.s")
 #endif
 
-void func_801DD900_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DD900_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800E9FE0[D_8004A7C4->objId] = 0;
     D_800DDFD0[D_8004A7C4->objId] = 7;
@@ -1307,7 +1307,7 @@ void func_801DD900_ovl11(struct UnkStruct8004A7C4 *arg0) {
     func_800AFA14();
 }
 
-void func_801DD9C8_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DD9C8_ovl11(struct GObj *arg0) {
     if (D_800E9E20[D_8004A7C4->objId] != 0) {
         D_800E9720[D_8004A7C4->objId] = 0;
         gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
@@ -1316,15 +1316,15 @@ void func_801DD9C8_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_801DDA4C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DDA4C_ovl11(struct GObj *arg0) {
     struct CollisionState *sp24;
     s32 temp_a0;
     struct CollisionState *temp_a1;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v1;
     void *temp_t0;
     void *phi_t0;
-    struct UnkStruct8004A7C4 *phi_v0;
+    struct GObj *phi_v0;
 
     temp_v0 = D_8004A7C4;
     temp_v1 = temp_v0->objId;
@@ -1359,7 +1359,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDA4C_ovl11.s")
 #endif
 
 // stub
-void func_801DDB9C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DDB9C_ovl11(struct GObj *arg0) {
 
 }
 
@@ -1368,7 +1368,7 @@ void func_801DDB9C_ovl11(struct UnkStruct8004A7C4 *arg0) {
     ? sp38;
     s32 temp_v1_2;
     struct CollisionState *temp_s0;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     u32 temp_v0;
     u32 temp_v0_2;
 
@@ -1448,7 +1448,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDE08_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DDEC0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DDEC0_ovl11(struct GObj *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 5, &D_801E0B9C);
 }
 #else
@@ -1456,11 +1456,11 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DDEC0_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DDF08_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DDF08_ovl11(struct GObj *arg0) {
     struct CollisionState *sp1C;
     struct CollisionState *temp_t6;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -1514,8 +1514,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE038_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE0F8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DE0F8_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -1536,8 +1536,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE0F8_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE1EC_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DE1EC_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -1557,7 +1557,7 @@ s32 func_801DE258_ovl11(void) {
     s32 temp_ret;
     s32 temp_v0;
     s32 temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *temp_a0;
     u32 temp_v1;
     u32 temp_v1_2;
     s32 phi_a1;
@@ -1590,9 +1590,9 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE258_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE33C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DE33C_ovl11(struct GObj *arg0) {
     struct CollisionState *temp_s0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v1;
     u32 temp_v1_2;
 
@@ -1606,7 +1606,7 @@ void func_801DE33C_ovl11(struct UnkStruct8004A7C4 *arg0) {
     func_800B3520(1);
     if (temp_s0->unk3C != 0) {
 loop_1:
-        func_8000B6BC(1);
+        finish_current_thread(1);
         if (temp_s0->unk3C != 0) {
             goto loop_1;
         }
@@ -1622,10 +1622,10 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE33C_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE454_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DE454_ovl11(struct GObj *arg0) {
     s32 *temp_v1;
     s32 temp_a0;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1_2;
     u32 temp_v0;
     u32 temp_v0_2;
 
@@ -1655,9 +1655,9 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE454_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE548_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DE548_ovl11(struct GObj *arg0) {
     s32 temp_a0;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
     u32 temp_v1;
     u32 temp_v1_2;
     s32 phi_a0;
@@ -1691,7 +1691,7 @@ void func_801DE548_ovl11(struct UnkStruct8004A7C4 *arg0) {
     play_sound(0x1EC);
     if (D_800E9E20[D_8004A7C4->objId] == 0) {
 loop_6:
-        func_8000B6BC(1);
+        finish_current_thread(1);
         if (D_800E9E20[D_8004A7C4->objId] == 0) {
             goto loop_6;
         }
@@ -1705,7 +1705,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE548_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_801DE758_ovl11(struct UnkStruct8004A7C4 *arg0) {
+u32 func_801DE758_ovl11(struct GObj *arg0) {
     s32 *temp_v1;
     u32 temp_v0;
 
@@ -1721,10 +1721,10 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE758_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE7BC_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DE7BC_ovl11(struct GObj *arg0) {
     f32 temp_f0;
     f32 temp_f0_2;
-    struct UnkStruct8004A7C4 *temp_v0;
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9C60[temp_v0->objId] = 1;
@@ -1749,10 +1749,10 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE7BC_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE8D0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DE8D0_ovl11(struct GObj *arg0) {
     s32 *temp_a0;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
     u32 temp_v1;
     u32 temp_v1_2;
 
@@ -1778,7 +1778,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE8D0_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DE9C8_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
+void func_801DE9C8_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
     if ((arg1 == 0) && (arg2 == 1)) {
         func_801ACCA0_ovl11(arg2, 0x1E, 0, 0x41800000, 0x41A00000);
         play_sound(0x179);
@@ -1789,8 +1789,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DE9C8_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DEA1C_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DEA1C_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9C60[temp_v0->objId] = 1;
@@ -1808,8 +1808,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEA1C_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DEAE8_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0_2;
+void func_801DEAE8_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0_2;
     u32 temp_v0;
 
     temp_v0 = D_8004A7C4->objId;
@@ -1825,7 +1825,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEAE8_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DEB78_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DEB78_ovl11(struct GObj *arg0) {
     struct CollisionState *sp24;
     s32 temp_a1;
     struct CollisionState **temp_v0;
@@ -1852,12 +1852,12 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEB78_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-s32 func_801DEC08_ovl11(struct UnkStruct8004A7C4 *arg0) {
+s32 func_801DEC08_ovl11(struct GObj *arg0) {
     ? sp38;
     s32 temp_a0;
     struct CollisionState *temp_s0;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
+    struct GObj *temp_v1;
+    struct GObj *temp_v1_2;
     u32 temp_v0;
     u32 temp_v0_3;
     void *temp_v0_2;
@@ -1973,15 +1973,15 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEED0_ovl11.s")
 
 extern VTABLE D_801E0BC4;
 
-void func_801DEF9C_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DEF9C_ovl11(struct GObj *arg0) {
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 3, &D_801E0BC4);
 }
 
 #ifdef MIPS_TO_C
-void func_801DEFE4_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DEFE4_ovl11(struct GObj *arg0) {
     struct CollisionState *sp1C;
-    struct UnkStruct8004A7C4 *temp_v0;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0;
+    struct GObj *temp_v0_2;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -2001,7 +2001,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DEFE4_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-u32 func_801DF0B4_ovl11(struct UnkStruct8004A7C4 *arg0) {
+u32 func_801DF0B4_ovl11(struct GObj *arg0) {
     s32 sp1C;
     u32 temp_v0;
     u32 temp_v0_2;
@@ -2038,7 +2038,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF0B4_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DF198_ovl11(struct UnkStruct8004A7C4 *arg0, s32 arg1, f32 arg2) {
+void func_801DF198_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
     if ((arg1 == 0) && (arg2 == 1)) {
         D_800E9C60[D_8004A7C4->objId] = 0;
         func_800BB468(arg2, 0, 0);
@@ -2050,8 +2050,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF198_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DF204_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DF204_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
 
     temp_v0 = D_8004A7C4;
     D_800E9C60[temp_v0->objId] = 1;
@@ -2064,7 +2064,7 @@ void func_801DF204_ovl11(struct UnkStruct8004A7C4 *arg0) {
     func_800AF27C();
     func_800AECC0(0);
     func_800AED20(0);
-    func_8000B6BC(0x14);
+    finish_current_thread(0x14);
     func_800AECC0(D_800D6B10);
     func_800AED20(D_800D6B10);
     D_800E9E20[D_8004A7C4->objId] = 1;
@@ -2075,8 +2075,8 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF204_ovl11.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_801DF318_ovl11(struct UnkStruct8004A7C4 *arg0) {
-    struct UnkStruct8004A7C4 *temp_v0;
+void func_801DF318_ovl11(struct GObj *arg0) {
+    struct GObj *temp_v0;
     u32 temp_v1;
 
     temp_v0 = D_8004A7C4;
@@ -2090,14 +2090,14 @@ void func_801DF318_ovl11(struct UnkStruct8004A7C4 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF318_ovl11.s")
 #endif
 
-void func_801DF384_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DF384_ovl11(struct GObj *arg0) {
     D_800DDFD0[D_8004A7C4->objId] = 1;
     D_800E9720[D_8004A7C4->objId] = 0x2D;
     func_800AFA14();
 }
 
 #ifdef MIPS_TO_C
-void func_801DF3DC_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DF3DC_ovl11(struct GObj *arg0) {
     if (D_800E9720[D_8004A7C4->objId]-- == 0) {
         gEntityVtableIndexArray[D_8004A7C4->objId] = 2;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801DEF9C_ovl11);
@@ -2111,7 +2111,7 @@ void func_801DF3DC_ovl11(struct UnkStruct8004A7C4 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF3DC_ovl11.s")
 #endif
 
-void func_801DF4B0_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DF4B0_ovl11(struct GObj *arg0) {
     D_800E9E20[D_8004A7C4->objId] = 0;
     D_800DDFD0[D_8004A7C4->objId] = 2;
     play_sound(SOUND__BADO_ICEDASI);
@@ -2122,9 +2122,9 @@ void func_801DF4B0_ovl11(struct UnkStruct8004A7C4 *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_801DF548_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DF548_ovl11(struct GObj *arg0) {
     s32 *temp_v0;
-    struct UnkStruct8004A7C4 *D_8004A7C4->objId;
+    struct GObj *D_8004A7C4->objId;
     u32 temp_a1;
 
     temp_v1 = D_8004A7C4;
@@ -2141,7 +2141,7 @@ GLOBAL_ASM("asm/non_matchings/ovl11/ovl11/func_801DF548_ovl11.s")
 
 #ifdef MIPS_TO_C
 extern void func_800FD570(s32, u32, f32, u32, f32);
-void func_801DF5B8_ovl11(struct UnkStruct8004A7C4 *arg0) {
+void func_801DF5B8_ovl11(struct GObj *arg0) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
     tmp->unk40 = 1;

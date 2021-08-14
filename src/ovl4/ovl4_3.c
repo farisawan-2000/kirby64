@@ -77,18 +77,18 @@ void func_80158224_ovl4(s32 arg0) {
     if (D_800D6B7C != 0) {
         play_sound(0x115);
         D_800E9E20[D_8004A7C4->objId] = D_800D6B98 + 1;
-        func_8000B6BC(5);
+        finish_current_thread(5);
         D_800D6B7C = 0;
         D_800E9C60[D_8004A7C4->objId] = 2;
         D_800D6B9C = 0;
         while (D_800E9C60[D_8004A7C4->objId] != 0) {
-            func_8000B6BC(1);
+            finish_current_thread(1);
         }
-        func_8000B6BC(5);
+        finish_current_thread(5);
     }
     D_800DF150[D_8004A7C4->objId] = func_80158428_ovl4;
     while (D_8015C710 == 0) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     D_800DF150[D_8004A7C4->objId] = NULL;
     D_8015C710 = 2;
@@ -198,7 +198,7 @@ extern const f32 D_8015C664;
 // find structure of D_8015C300 and beyond
 // TODO: needed for rodata migration
 #ifdef NON_MATCHING
-void func_801588F4_ovl4(struct UnkStruct8004A7C4 *arg0, s32 arg1) {
+void func_801588F4_ovl4(struct GObj *arg0, s32 arg1) {
     Vector posVec;
     Vector angleVec;
     s32 pad[2];
@@ -259,7 +259,7 @@ void func_801588F4_ovl4(struct UnkStruct8004A7C4 *arg0, s32 arg1) {
                 D_800E9AA0[D_8004A7C4->objId] = 0;
             }
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
 }
 #else
@@ -336,7 +336,7 @@ block_19:
                         phi_s0_2 = 0;
 loop_20:
                         func_800A71A0(0x10);
-                        func_8000B6BC(1);
+                        finish_current_thread(1);
                         temp_s0_5 = phi_s0_2 + 1;
                         phi_s0_2 = temp_s0_5;
                         if (temp_s0_5 != 0x23) {
@@ -347,7 +347,7 @@ block_22:
                         phi_s0_3 = 0;
 loop_23:
                         func_800A71A0(0x10);
-                        func_8000B6BC(1);
+                        finish_current_thread(1);
                         temp_s0_6 = phi_s0_3 + 1;
                         phi_s0_3 = temp_s0_6;
                         if (temp_s0_6 != 0x19) {
@@ -417,7 +417,7 @@ void func_80159160_ovl4(s32 arg0) {
         if (D_800E9C60[D_8015C718] != 0) {
             func_80158E98_ovl4(D_800D6B98, D_800E9E20[D_8015C718], D_800E9C60[D_8015C718]);
         }
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     func_800AFA14();
 }
@@ -540,7 +540,7 @@ void func_80159B68_ovl4(s32 arg0) {
     D_800EA6E0[D_8004A7C4->objId] = D_8015C670;
     func_800A9864(0x300B7, 0x1869F, 0x10);
     D_8015C720 = 2;
-    func_8000B6BC(0x1E);
+    finish_current_thread(0x1E);
     play_music(0, 0x17);
     func_800AFA14();
 }

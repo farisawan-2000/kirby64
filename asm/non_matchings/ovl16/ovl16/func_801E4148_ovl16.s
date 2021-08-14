@@ -102,7 +102,7 @@ glabel func_801E4148_ovl16
 .L801E42D0_ovl16:
 /* 21A580 801E42D0 1492FFEA */  bne   $a0, $s2, .L801E427C_ovl16
 /* 21A584 801E42D4 24A50004 */   addiu $a1, $a1, 4
-/* 21A588 801E42D8 0C002DAF */  jal   func_8000B6BC
+/* 21A588 801E42D8 0C002DAF */  jal   finish_current_thread
 /* 21A58C 801E42DC 24040001 */   li    $a0, 1
 /* 21A590 801E42E0 26730001 */  addiu $s3, $s3, 1
 /* 21A594 801E42E4 44933000 */  mtc1  $s3, $f6

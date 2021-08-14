@@ -151,7 +151,7 @@ glabel func_801E18BC_ovl16
 /* 217DB0 801E1B00 11C0000A */  beqz  $t6, .L801E1B2C_ovl16
 /* 217DB4 801E1B04 00000000 */   nop   
 .L801E1B08_ovl16:
-/* 217DB8 801E1B08 0C002DAF */  jal   func_8000B6BC
+/* 217DB8 801E1B08 0C002DAF */  jal   finish_current_thread
 /* 217DBC 801E1B0C 24040001 */   li    $a0, 1
 /* 217DC0 801E1B10 8E230000 */  lw    $v1, ($s1)
 /* 217DC4 801E1B14 8C620000 */  lw    $v0, ($v1)

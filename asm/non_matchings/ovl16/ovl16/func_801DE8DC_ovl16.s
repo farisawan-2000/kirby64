@@ -83,7 +83,7 @@ glabel func_801DE8DC_ovl16
 /* 214CD0 801DEA20 24637098 */  addiu $v1, %lo(D_800D7098) # addiu $v1, $v1, 0x7098
 /* 214CD4 801DEA24 AC620024 */  sw    $v0, 0x24($v1)
 /* 214CD8 801DEA28 AC600028 */  sw    $zero, 0x28($v1)
-/* 214CDC 801DEA2C 0C002DAF */  jal   func_8000B6BC
+/* 214CDC 801DEA2C 0C002DAF */  jal   finish_current_thread
 /* 214CE0 801DEA30 2404001E */   li    $a0, 30
 /* 214CE4 801DEA34 3C188005 */  lui   $t8, %hi(D_8004A7C4) # $t8, 0x8005
 /* 214CE8 801DEA38 8F18A7C4 */  lw    $t8, %lo(D_8004A7C4)($t8)

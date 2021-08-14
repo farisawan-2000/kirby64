@@ -143,7 +143,7 @@ glabel func_801EDAA0_ovl10
 /* 1DEA3C 801EDCCC 45030007 */  bc1tl .L801EDCEC_ovl10
 /* 1DEA40 801EDCD0 8FBF003C */   lw    $ra, 0x3c($sp)
 .L801EDCD4_ovl10:
-/* 1DEA44 801EDCD4 0C002DAF */  jal   func_8000B6BC
+/* 1DEA44 801EDCD4 0C002DAF */  jal   finish_current_thread
 /* 1DEA48 801EDCD8 24040001 */   li    $a0, 1
 /* 1DEA4C 801EDCDC 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1DEA50 801EDCE0 1000FFE5 */  b     .L801EDC78_ovl10

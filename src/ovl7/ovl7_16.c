@@ -26,7 +26,7 @@ void func_8019B7D8_ovl7(void*);
 void func_8019BB58_ovl7();
 void func_800A2300(void*);
 void func_800B19F4(s32, s32);
-void func_8000B6BC(s32);
+void finish_current_thread(s32);
 void func_8019D958_ovl7(u16);
 void func_800AA018(s32);
 void func_800AFA14(void);
@@ -34,7 +34,7 @@ void func_801A0880_ovl7(void);
 void* func_800A8100(s32, s32, s32, s32);
 void func_801A3280_ovl7(void);
 void func_801A3E80(void);
-void func_800AFBB4(s32, struct UnkStruct8004A7C4*);
+void func_800AFBB4(s32, struct GObj*);
 s32 func_80104C24(Vector*, Vector*);
 
 void func_801BD510(void *arg0) {
@@ -94,7 +94,7 @@ block_10:
     sp1C->unk34 = 0;
     D_800DF150[D_8004A7C4->objId] = NULL;
     func_800B19F4(0x7D, D_8004A7C4->objId);
-    func_8000B6BC(0xF);
+    finish_current_thread(0xF);
     func_8019D958_ovl7((u16)D_8004A7C4->objId);
 }
 
@@ -207,7 +207,7 @@ void func_801BDBFC_ovl7(void) {
     v3.y += 60.0f;
     v4.z += 60.0f;
     while ((func_80104C24(&v1, &v3) != 0) || (func_80104C24(&v1, &v2) != 0) || (func_80104C24(&v1, &v4) != 0)) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     func_800AFBB4(1, D_8004A7C4);
     D_800DEF90[D_8004A7C4->objId] = &D_800B67A8;
@@ -234,7 +234,7 @@ void func_801BDEB0_ovl7(s32 arg0) {
     s32 temp_v0_3;
     s32 temp_v0_4;
     s32 temp_v0_5;
-    struct UnkStruct8004A7C4 *temp_v1;
+    struct GObj *temp_v1;
     f32 phi_at;
     f32 phi_f0;
     s32 phi_v0;
@@ -346,7 +346,7 @@ void func_801BE21C_ovl7(UNUSED s32 arg0) {
     v3.y += 60.0f;
     v4.z += 60.0f;
     while ((func_80104C24(&v1, &v3) != 0) || (func_80104C24(&v1, &v2) != 0) || (func_80104C24(&v1, &v4) != 0)) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
     }
     func_800AFBB4(1, D_8004A7C4);
     D_800E7880[D_8004A7C4->objId]--;
@@ -537,7 +537,7 @@ block_14:
         temp_v0_6 = D_8004A7C4;
         *(&D_800DF150 + (*temp_v0_6 * 4)) = 0;
         func_800B19F4(0x7D, *temp_v0_6);
-        func_8000B6BC(0x1E);
+        finish_current_thread(0x1E);
         D_8012E7D4 = (u8)2;
         func_800AFA14();
         temp_v0_7 = D_8004A7C4;
@@ -576,7 +576,7 @@ block_14:
 loop_25:
     temp_v0_9 = (*D_8004A7C4 * 4) + &D_800E98E0;
     if (2 != *temp_v0_9) {
-        func_8000B6BC(1);
+        finish_current_thread(1);
         goto loop_25;
     }
     *temp_v0_9 = 2;
@@ -597,7 +597,7 @@ loop_25:
     temp_a2_2 = *temp_v0_12;
     temp_v1_5 = *(&D_800E77A0 + (temp_a2_2 * 2));
     if (temp_v1_5 == 7) {
-        func_8000B6BC(0xF, temp_a2_2);
+        finish_current_thread(0xF, temp_a2_2);
         phi_a2_2 = *D_8004A7C4;
     } else {
         phi_a2_2 = temp_a2_2;

@@ -14,7 +14,7 @@ glabel func_801187A4
 /* 0A1244 801187D4 46062202 */  mul.s $f8, $f4, $f6
 /* 0A1248 801187D8 4600428D */  trunc.w.s $f10, $f8
 /* 0A124C 801187DC 44045000 */  mfc1  $a0, $f10
-/* 0A1250 801187E0 0C002DAF */  jal   func_8000B6BC
+/* 0A1250 801187E0 0C002DAF */  jal   finish_current_thread
 /* 0A1254 801187E4 00000000 */   nop   
 /* 0A1258 801187E8 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d
 /* 0A125C 801187EC 0C02BB30 */  jal   func_800AECC0
@@ -29,7 +29,7 @@ glabel func_801187A4
 /* 0A1280 80118810 46128102 */  mul.s $f4, $f16, $f18
 /* 0A1284 80118814 4600218D */  trunc.w.s $f6, $f4
 /* 0A1288 80118818 44043000 */  mfc1  $a0, $f6
-/* 0A128C 8011881C 0C002DAF */  jal   func_8000B6BC
+/* 0A128C 8011881C 0C002DAF */  jal   finish_current_thread
 /* 0A1290 80118820 00000000 */   nop   
 /* 0A1294 80118824 44806000 */  mtc1  $zero, $f12
 /* 0A1298 80118828 0C02BB30 */  jal   func_800AECC0

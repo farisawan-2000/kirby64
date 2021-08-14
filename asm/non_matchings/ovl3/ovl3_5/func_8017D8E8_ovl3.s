@@ -89,7 +89,7 @@ glabel func_8017D8E8_ovl3
 /* 0DE480 8017DA40 316C4000 */  andi  $t4, $t3, 0x4000
 /* 0DE484 8017DA44 11800005 */  beqz  $t4, .L8017DA5C_ovl3
 /* 0DE488 8017DA48 00000000 */   nop   
-/* 0DE48C 8017DA4C 0C002DAF */  jal   func_8000B6BC
+/* 0DE48C 8017DA4C 0C002DAF */  jal   finish_current_thread
 /* 0DE490 8017DA50 24040001 */   li    $a0, 1
 /* 0DE494 8017DA54 1000FFF7 */  b     .L8017DA34_ovl3
 /* 0DE498 8017DA58 920A0017 */   lbu   $t2, 0x17($s0)

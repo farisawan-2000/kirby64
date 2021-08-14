@@ -6,7 +6,7 @@ glabel func_800B1878
 /* 059AD8 800B1888 AFA40020 */  sw    $a0, 0x20($sp)
 /* 059ADC 800B188C 3610FFFF */  ori   $s0, (0x7FFFFFFF & 0xFFFF) # ori $s0, $s0, 0xffff
 .L800B1890_ovl1:
-/* 059AE0 800B1890 0C002DAF */  jal   func_8000B6BC
+/* 059AE0 800B1890 0C002DAF */  jal   finish_current_thread
 /* 059AE4 800B1894 02002025 */   move  $a0, $s0
 /* 059AE8 800B1898 1000FFFD */  b     .L800B1890_ovl1
 /* 059AEC 800B189C 00000000 */   nop   

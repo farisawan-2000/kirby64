@@ -2556,7 +2556,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_800147C8.s")
 
 
 extern f32 D_8004AA94;
-void func_80014AD4(struct UnkStruct8004A7C4 *arg0) {
+void func_80014AD4(struct GObj *arg0) {
     D_8004AA94 = 1.0f;
     func_800147C8(arg0->unk3C);
 }
@@ -4772,12 +4772,12 @@ void func_80017B40(struct unk80017B40 *arg0, s32 arg1) {
     }
 }
 
-extern struct UnkStruct8004A7C4 *D_8004A680[];
+extern struct GObj *D_8004A680[];
 extern u32 D_8003DE54;
 
 #ifdef MIPS_TO_C
-void func_80017B6C(struct UnkStruct8004A7C4 *arg0, s32 arg1, s32 arg2) {
-    struct UnkStruct8004A7C4 *temp_s0;
+void func_80017B6C(struct GObj *arg0, s32 arg1, s32 arg2) {
+    struct GObj *temp_s0;
 
     temp_s0 = D_8004A680[arg1];
     while (temp_s0 != 0) {
@@ -4910,10 +4910,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_4/func_80017DB0.s")
 #endif
 
 
-void func_80017E84(struct UnkStruct8004A7C4*, u32);
-void func_80017C7C(struct UnkStruct8004A7C4*, s32, u32);
+void func_80017E84(struct GObj*, u32);
+void func_80017C7C(struct GObj*, s32, u32);
 
-void func_80017E84(struct UnkStruct8004A7C4 *arg0, u32 arg1) {
+void func_80017E84(struct GObj *arg0, u32 arg1) {
     s32 temp_a1;
     u32 temp_s1;
     u32 phi_s1;
@@ -4964,7 +4964,7 @@ void func_80017F78(struct unk80017B40 *arg0) {
 void func_80016940(Gfx**, void *, s32);
 void func_800171E0(Gfx**, void *);
 
-void func_80017FEC(struct UnkStruct8004A7C4 *arg0, Gfx** arg1, s32 arg2) {
+void func_80017FEC(struct GObj *arg0, Gfx** arg1, s32 arg2) {
     struct unk80017B40 *temp_s0;
 
     temp_s0 = arg0->unk3C;
@@ -4977,19 +4977,19 @@ void func_80017FEC(struct UnkStruct8004A7C4 *arg0, Gfx** arg1, s32 arg2) {
 }
 
 // arg0 is the value at 8004A7C8
-void func_8001806C(struct UnkStruct8004A7C4 *arg0) {
+void func_8001806C(struct GObj *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[0], 0);
 }
 
-void func_80018094(struct UnkStruct8004A7C4 *arg0) {
+void func_80018094(struct GObj *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[1], 1);
 }
 
-void func_800180BC(struct UnkStruct8004A7C4 *arg0) {
+void func_800180BC(struct GObj *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[2], 2);
 }
 
-void func_800180E4(struct UnkStruct8004A7C4 *arg0) {
+void func_800180E4(struct GObj *arg0) {
     func_80017FEC(arg0, &gDisplayListHeads[3], 3);
 }
 
@@ -5009,7 +5009,7 @@ void func_8001810C(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_80018170(struct UnkStruct8004A7C4 *arg0) {
+void func_80018170(struct GObj *arg0) {
     Gfx **temp_s1_3;
     Gfx *temp_s1;
     Gfx *temp_s1_2;

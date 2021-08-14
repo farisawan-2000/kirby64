@@ -21,7 +21,7 @@ glabel func_801EA630_ovl10
 /* 1DB3EC 801EA67C 24040010 */  li    $a0, 16
 /* 1DB3F0 801EA680 000A5880 */  sll   $t3, $t2, 2
 /* 1DB3F4 801EA684 002B0821 */  addu  $at, $at, $t3
-/* 1DB3F8 801EA688 0C002DAF */  jal   func_8000B6BC
+/* 1DB3F8 801EA688 0C002DAF */  jal   finish_current_thread
 /* 1DB3FC 801EA68C AC29DFD0 */ sw $t1, %lo(D_800DDFD0)($at)
 /* 1DB400 801EA690 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1DB404 801EA694 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

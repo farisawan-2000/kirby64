@@ -59,7 +59,7 @@ glabel func_801DE124_ovl10
 /* 1CEF78 801DE208 020EC021 */  addu  $t8, $s0, $t6
 /* 1CEF7C 801DE20C AF000000 */  sw    $zero, ($t8)
 .L801DE210_ovl10:
-/* 1CEF80 801DE210 0C002DAF */  jal   func_8000B6BC
+/* 1CEF80 801DE210 0C002DAF */  jal   finish_current_thread
 /* 1CEF84 801DE214 2404000A */   li    $a0, 10
 /* 1CEF88 801DE218 8E6C0000 */  lw    $t4, ($s3)
 /* 1CEF8C 801DE21C 3C0A800F */ lui $t2, %hi(D_800EC120)
@@ -75,7 +75,7 @@ glabel func_801DE124_ovl10
 /* 1CEFB4 801DE244 15A0000E */  bnez  $t5, .L801DE280_ovl10
 /* 1CEFB8 801DE248 00000000 */   nop   
 .L801DE24C_ovl10:
-/* 1CEFBC 801DE24C 0C002DAF */  jal   func_8000B6BC
+/* 1CEFBC 801DE24C 0C002DAF */  jal   finish_current_thread
 /* 1CEFC0 801DE250 24040001 */   li    $a0, 1
 /* 1CEFC4 801DE254 8E6F0000 */  lw    $t7, ($s3)
 /* 1CEFC8 801DE258 3C0C800F */ lui $t4, %hi(D_800EC120)
@@ -187,7 +187,7 @@ glabel func_801DE124_ovl10
 /* 1CF158 801DE3E8 C4520000 */  lwc1  $f18, ($v0)
 /* 1CF15C 801DE3EC 24040001 */  li    $a0, 1
 /* 1CF160 801DE3F0 46009100 */  add.s $f4, $f18, $f0
-/* 1CF164 801DE3F4 0C002DAF */  jal   func_8000B6BC
+/* 1CF164 801DE3F4 0C002DAF */  jal   finish_current_thread
 /* 1CF168 801DE3F8 E4440000 */   swc1  $f4, ($v0)
 /* 1CF16C 801DE3FC 26100001 */  addiu $s0, $s0, 1
 /* 1CF170 801DE400 24010005 */  li    $at, 5
@@ -224,7 +224,7 @@ glabel func_801DE124_ovl10
 /* 1CF1E4 801DE474 C4440000 */  lwc1  $f4, ($v0)
 /* 1CF1E8 801DE478 24040001 */  li    $a0, 1
 /* 1CF1EC 801DE47C 46002180 */  add.s $f6, $f4, $f0
-/* 1CF1F0 801DE480 0C002DAF */  jal   func_8000B6BC
+/* 1CF1F0 801DE480 0C002DAF */  jal   finish_current_thread
 /* 1CF1F4 801DE484 E4460000 */   swc1  $f6, ($v0)
 /* 1CF1F8 801DE488 2610FFFF */  addiu $s0, $s0, -1
 /* 1CF1FC 801DE48C 5600FFED */  bnezl $s0, .L801DE444_ovl10
@@ -248,7 +248,7 @@ glabel func_801DE124_ovl10
 /* 1CF240 801DE4D0 3C040001 */  lui   $a0, (0x000102C4 >> 16) # lui $a0, 1
 /* 1CF244 801DE4D4 0C02A806 */  jal   func_800AA018
 /* 1CF248 801DE4D8 348402C4 */   ori   $a0, (0x000102C4 & 0xFFFF) # ori $a0, $a0, 0x2c4
-/* 1CF24C 801DE4DC 0C002DAF */  jal   func_8000B6BC
+/* 1CF24C 801DE4DC 0C002DAF */  jal   finish_current_thread
 /* 1CF250 801DE4E0 24040005 */   li    $a0, 5
 /* 1CF254 801DE4E4 8E680000 */  lw    $t0, ($s3)
 /* 1CF258 801DE4E8 3C07800E */ lui $a3, %hi(gEntitiesNextPosXArray)

@@ -62,9 +62,9 @@ struct GObjProcess {
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    struct UnkStruct8004A7C4 *gobj;
+    struct GObj *gobj;
     struct GObjThread *thread;
-    void (*entryPoint)(struct UnkStruct8004A7C4 *);
+    void (*entryPoint)(struct GObj *);
     u32 *ptr;
 };
 
@@ -329,7 +329,7 @@ extern OSMesgQueue gInterruptMesgQueue;
 
 #include "D_8004A7C4.h"
 
-struct Camera *func_80009F7C(struct UnkStruct8004A7C4*);
+struct Camera *func_80009F7C(struct GObj*);
 
 void func_80009B5C(struct UnkStruct8004A7C4_3C *);
 struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);

@@ -114,7 +114,7 @@ glabel L801A9774_ovl7
 /* 14F8D8 801A9868 020FC021 */  addu  $t8, $s0, $t7
 /* 14F8DC 801A986C AF0C0000 */  sw    $t4, ($t8)
 .L801A9870_ovl7:
-/* 14F8E0 801A9870 0C002DAF */  jal   func_8000B6BC
+/* 14F8E0 801A9870 0C002DAF */  jal   finish_current_thread
 /* 14F8E4 801A9874 24040001 */   li    $a0, 1
 /* 14F8E8 801A9878 8E390000 */  lw    $t9, ($s1)
 /* 14F8EC 801A987C 3C08800E */ lui $t0, %hi(D_800DD8D0)

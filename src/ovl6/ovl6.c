@@ -74,10 +74,10 @@ void func_80151204(s32 arg0) {
 
 #ifdef MIPS_TO_C
 void *func_801512F0(void) {
-    struct UnkStruct8004A7C4 *sp2C;
+    struct GObj *sp2C;
     void *sp24;
-    struct UnkStruct8004A7C4 *temp_v0_2;
-    struct UnkStruct8004A7C4 *temp_v0_3;
+    struct GObj *temp_v0_2;
+    struct GObj *temp_v0_3;
     void *temp_v0;
     void *phi_v0;
 
@@ -527,7 +527,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80152D00.s")
 
 #ifdef MIPS_TO_C
 void func_80152DB8(void) {
-    struct UnkStruct8004A7C4 *sp2C;
+    struct GObj *sp2C;
     s32 sp28;
     s32 sp24;
     s32 temp_v0;
@@ -805,7 +805,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801532F4.s")
 
 #ifdef MIPS_TO_C
 void func_801533C0(void) {
-    struct UnkStruct8004A7C4 *sp1C;
+    struct GObj *sp1C;
     struct UnkStruct8015A560 *temp_v0;
 
     temp_v0 = D_8015A560;
@@ -821,7 +821,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_801533C0.s")
 
 #ifdef MIPS_TO_C
 void func_80153424(void) {
-    struct UnkStruct8004A7C4 *sp1C;
+    struct GObj *sp1C;
     struct UnkStruct8015A560 *temp_v0;
 
     temp_v0 = D_8015A560;
@@ -965,7 +965,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015372C.s")
 
 // regalloc
 #ifdef NON_MATCHING
-void func_8015374C(struct UnkStruct8004A7C4 *this) {
+void func_8015374C(struct GObj *this) {
     struct UnkStruct8004A7C4_3C_80 *temp_v0;
 
     temp_v0 = &this->unk3C->unk80->unk8;
@@ -985,7 +985,7 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_8015374C.s")
 
 
 void func_80153868(void) {
-    struct UnkStruct8004A7C4 *sp1C;
+    struct GObj *sp1C;
 
     if ((D_8015A690 == 0) && (D_800DE44C == 0)) {
         sp1C = D_8004A7C4;
@@ -1126,8 +1126,8 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153B80.s")
 
 #ifdef MIPS_TO_C
 void func_80153C28(void) {
-    struct UnkStruct8004A7C4 *sp1C;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *sp1C;
+    struct GObj *temp_a0;
 
     temp_a0 = D_800DE44C;
     if ((D_8015A690 == 0) && (temp_a0 != 0)) {
@@ -1157,8 +1157,8 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153CBC.s")
 
 #ifdef MIPS_TO_C
 void func_80153D10(void) {
-    struct UnkStruct8004A7C4 *sp1C;
-    struct UnkStruct8004A7C4 *temp_t7;
+    struct GObj *sp1C;
+    struct GObj *temp_t7;
 
     if (D_8015A690 == 0) {
         temp_t7 = D_8004A7C4;
@@ -1174,8 +1174,8 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153D10.s")
 
 #ifdef MIPS_TO_C
 void func_80153D6C(void) {
-    struct UnkStruct8004A7C4 *sp1C;
-    struct UnkStruct8004A7C4 *temp_a0;
+    struct GObj *sp1C;
+    struct GObj *temp_a0;
 
     if (D_8015A690 == 0) {
         temp_a0 = D_800DE44C;
@@ -1203,10 +1203,10 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153DC8.s")
 
 #ifdef MIPS_TO_C
 void func_80153E1C(u32 arg0) {
-    struct UnkStruct8004A7C4 *sp1C;
+    struct GObj *sp1C;
     struct UnkStruct8015A560 *sp18;
-    struct UnkStruct8004A7C4 *temp_a0;
-    struct UnkStruct8004A7C4 *temp_a3;
+    struct GObj *temp_a0;
+    struct GObj *temp_a3;
     struct UnkStruct8015A560 *temp_t2;
     struct UnkStruct8015A560 *temp_t6;
 
@@ -1243,14 +1243,14 @@ GLOBAL_ASM("asm/non_matchings/ovl6/func_80153F00.s")
 
 #ifdef MIPS_TO_C
 void *func_80153F2C(void) {
-    struct UnkStruct8004A7C4 *sp34;
+    struct GObj *sp34;
     void *sp30;
     s32 sp2C;
     s32 sp24;
     s32 temp_v0_2;
     s32 temp_v0_3;
     s32 temp_v1;
-    struct UnkStruct8004A7C4 *temp_t8;
+    struct GObj *temp_t8;
     struct UnkStruct8015A560 *temp_v0_4;
     u8 temp_a1;
     void *temp_a0;

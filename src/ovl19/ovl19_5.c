@@ -8,7 +8,7 @@
 
 extern void func_800AECC0(f32 arg0);
 extern void func_800AED20(f32 arg0);
-extern void func_8000B6BC(u32 arg0);
+extern void finish_current_thread(u32 arg0);
 extern void play_sound(u32 arg0);
 extern void func_8019F000_ovl19(struct EntityThing800E9AA0 *arg0, f32 *arg1, u32 arg2, f32 arg3);
 
@@ -34,7 +34,7 @@ void func_8022E630_ovl19(s32 arg0) {
     func_800AED20(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
-    func_8000B6BC(0x60);
+    finish_current_thread(0x60);
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;
@@ -118,10 +118,10 @@ void func_8022E954_ovl19(struct CollisionState *arg0) {
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
     func_800AA018(0x105F0);
     func_800AA018(0x105F1);
-    func_8000B6BC(1);
+    finish_current_thread(1);
     func_800AECC0(0);
     func_800AED20(0);
-    func_8000B6BC(0x5F);
+    finish_current_thread(0x5F);
     func_800AECC0(D_800D6B10);
     func_800AED20(D_800D6B10);
     sp24.z = 0.0f;
@@ -147,7 +147,7 @@ void func_8022EB54_ovl19(s32 arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0_2;
     u32 temp_v0;
     u32 temp_v1;
     u32 temp_v1_2;
@@ -200,7 +200,7 @@ void func_8022ED10_ovl19(s32 arg0) {
     func_800AED20(D_800D6B10);
     D_800DEF90[D_8004A7C4->objId] = &D_800B4924;
     D_800E6A10[D_8004A7C4->objId] = 1.0f;
-    func_8000B6BC(0x60);
+    finish_current_thread(0x60);
     sp1C.z = 0.0f;
     sp1C.y = 50.0f;
     sp1C.x = 0.0f;
@@ -225,7 +225,7 @@ void func_8022EE78_ovl19(s32 arg0) {
     f32 temp_f0;
     f32 temp_f12;
     f32 temp_f2;
-    struct UnkStruct8004A7C4 *temp_v0_2;
+    struct GObj *temp_v0_2;
     u32 temp_v0;
     u32 temp_v1;
     u32 temp_v1_2;
