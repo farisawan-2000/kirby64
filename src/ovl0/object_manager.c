@@ -81,7 +81,7 @@ u32 gNewEntityStackSize; // 0x8004A54C
 void (*D_8004A550)(struct ObjStack *);
 struct GObjThreadStack* gGObjThreadStackHead; // 0x8004A554
 s32 D_8004A558;
-struct GObjProcess *gObjectProcessMaybe; // 0x8004A55C
+struct GObjProcess *gGObjProcessHead; // 0x8004A55C
 struct GObjProcess *D_8004A560[4]; // probably length 4
 u32 D_8004A570;
 // 0x8004A574?
@@ -160,12 +160,12 @@ void push_gobj_thread_stack(struct GObjThreadStack *arg0) {
 struct GObjProcess *get_gobj_process(void) {
     struct GObjProcess *temp_v0;
 
-    if (gObjectProcessMaybe == NULL) {
+    if (gGObjProcessHead == NULL) {
         fatal_printf("om : couldn't get GObjProcess\n");
         while (TRUE);
     }
-    temp_v0 = gObjectProcessMaybe;
-    gObjectProcessMaybe = gObjectProcessMaybe->unk0;
+    temp_v0 = gGObjProcessHead;
+    gGObjProcessHead = gGObjProcessHead->unk0;
     D_8004A570++;
     return temp_v0;
 }
@@ -252,8 +252,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800080C0.s")
 #endif
 
 void push_gobj_process(struct GObjProcess *arg0) {
-    arg0->unk0 = gObjectProcessMaybe;
-    gObjectProcessMaybe = arg0;
+    arg0->unk0 = gGObjProcessHead;
+    gGObjProcessHead = arg0;
     D_8004A570--;
 }
 
@@ -1952,7 +1952,7 @@ loop_10:
     }
     if (arg0->unk1C != 0) {
         temp_v1_2 = arg0->unk18;
-        gObjectProcessMaybe = temp_v1_2;
+        gGObjProcessHead = temp_v1_2;
         phi_v1_3 = temp_v1_2;
         phi_v1_4 = temp_v1_2;
         if ((arg0->unk1C - 1) > 0) {
@@ -1969,7 +1969,7 @@ loop_16:
         }
         phi_v1_4->unk0 = 0;
     } else {
-        gObjectProcessMaybe = NULL;
+        gGObjProcessHead = NULL;
     }
     phi_v0_3 = D_8004A560;
 loop_20:

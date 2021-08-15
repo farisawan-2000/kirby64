@@ -76,8 +76,8 @@ glabel func_8000AE84
 /* 00BB8C 8000AF8C 11E00012 */  beqz  $t7, .L8000AFD8_ovl0
 /* 00BB90 8000AF90 00000000 */   nop   
 /* 00BB94 8000AF94 8CA30018 */  lw    $v1, 0x18($a1)
-/* 00BB98 8000AF98 3C018005 */  lui   $at, %hi(gObjectProcessMaybe) # $at, 0x8005
-/* 00BB9C 8000AF9C AC23A55C */  sw    $v1, %lo(gObjectProcessMaybe)($at)
+/* 00BB98 8000AF98 3C018005 */  lui   $at, %hi(gGObjProcessHead) # $at, 0x8005
+/* 00BB9C 8000AF9C AC23A55C */  sw    $v1, %lo(gGObjProcessHead)($at)
 /* 00BBA0 8000AFA0 8CB8001C */  lw    $t8, 0x1c($a1)
 /* 00BBA4 8000AFA4 2719FFFF */  addiu $t9, $t8, -1
 /* 00BBA8 8000AFA8 1B200009 */  blez  $t9, .L8000AFD0_ovl0
@@ -95,8 +95,8 @@ glabel func_8000AE84
 /* 00BBD0 8000AFD0 10000003 */  b     .L8000AFE0_ovl0
 /* 00BBD4 8000AFD4 AC600000 */   sw    $zero, ($v1)
 .L8000AFD8_ovl0:
-/* 00BBD8 8000AFD8 3C018005 */  lui   $at, %hi(gObjectProcessMaybe) # $at, 0x8005
-/* 00BBDC 8000AFDC AC20A55C */  sw    $zero, %lo(gObjectProcessMaybe)($at)
+/* 00BBD8 8000AFD8 3C018005 */  lui   $at, %hi(gGObjProcessHead) # $at, 0x8005
+/* 00BBDC 8000AFDC AC20A55C */  sw    $zero, %lo(gGObjProcessHead)($at)
 .L8000AFE0_ovl0:
 /* 00BBE0 8000AFE0 3C028005 */  lui   $v0, %hi(D_8004A560) # $v0, 0x8005
 /* 00BBE4 8000AFE4 3C038005 */  lui   $v1, %hi(D_8004A570) # $v1, 0x8005

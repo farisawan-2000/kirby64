@@ -144,47 +144,61 @@ Vector *vec3_negate(Vector *arg0) {
 
 #ifdef MIPS_TO_C
 void func_800191F8(Vector *arg0, LookAt *arg1, f32 arg2) {
-    f32 yz_dist;
+    f32 sp3C;
     f32 sp38;
     f32 sp34;
     f32 sp2C;
     f32 temp_f0_2;
-    f32 temp_f12_2;
-    f32 temp_f12_3;
-    f32 temp_f16_2;
-    f32 temp_f16_3;
+    f32 temp_f10;
     f32 temp_f20;
-    f32 temp_f22;
-    f32 temp_f2_2;
+    f32 temp_f8;
+    f32 temp_f0;
     f32 phi_f18;
     f32 phi_f20;
+    f32 f16;
+    f32 f12;
+    f32 f22;
+    f32 f2;
 
-    yz_dist = sqrtf((arg1->y * arg1->y) + (arg1->z * arg1->z));
-    sp2C = sinf(arg2);
-    temp_f0_2 = cosf(arg2);
-    if (yz_dist != 0.0f) {
-        temp_f22 = arg1->z / yz_dist;
-        sp34 = arg1->y / yz_dist;
-        phi_f18 = (arg0->y * sp34) + (arg0->z * temp_f22);
-        phi_f20 = (arg0->y * temp_f22) - (arg0->z * sp34);
+    temp_f0 = arg1->l[0].l.colc;
+    f2 = arg1->l[0].l.dir;
+    f12 = (temp_f0 * temp_f0) + (f2 * f2);
+    f12 = arg2;
+    sp3C = sqrtf(f12);
+    sp2C = sinf(f12);
+    f12 = arg2;
+    temp_f0_2 = cosf(f12);
+    if (sp3C != 0.0f) {
+        f22 = arg1->l[0].l.dir / sp3C;
+        sp34 = arg1->l[0].l.colc / sp3C;
+        f2 = arg0->x;
+        sp38 = f22;
+        phi_f18 = (arg0->y * sp34) + (arg0->z * f22);
+        phi_f20 = (arg0->y * f22) - (arg0->z * sp34);
     } else {
+        f2 = arg0->x;
         phi_f18 = arg0->z;
         phi_f20 = arg0->y;
     }
-    temp_f16_2 = (arg0->x * yz_dist) - (phi_f18 * arg1->x);
-    temp_f12_2 = (arg1->x * arg0->x) + (phi_f18 * yz_dist);
-    temp_f2_2 = (temp_f16_2 * temp_f0_2) - (phi_f20 * sp2C);
-    temp_f20 = (temp_f16_2 * sp2C) + (phi_f20 * temp_f0_2);
-    temp_f16_3 = (temp_f2_2 * yz_dist) + (temp_f12_2 * arg1->x);
-    temp_f12_3 = (-temp_f2_2 * arg1->x) + (temp_f12_2 * yz_dist);
-    if (yz_dist != 0.0f) {
-        arg0->x = temp_f16_3;
-        arg0->y = (temp_f20 * temp_f22) + (temp_f12_3 * sp34);
-        arg0->z = (-temp_f20 * sp34) + (temp_f12_3 * temp_f22);
+    f22 = arg1->l[0];
+    f16 = (f2 * sp3C) - (phi_f18 * f22);
+    f12 = (f22 * f2) + (phi_f18 * sp3C);
+    f2 = (f16 * temp_f0_2) - (phi_f20 * sp2C);
+    temp_f20 = (f16 * sp2C) + (phi_f20 * temp_f0_2);
+    f16 = (f2 * sp3C) + (f12 * f22);
+    f2 = sp34;
+    f12 = (-f2 * f22) + (f12 * sp3C);
+    if (sp3C != 0.0f) {
+        temp_f8 = temp_f20 * sp38;
+        temp_f10 = -temp_f20;
+        arg0->x = f16;
+        arg0->y = temp_f8 + (f12 * f2);
+        arg0->z = (temp_f10 * f2) + (f12 * sp38);
+        return;
     }
-    arg0->x = temp_f16_3;
+    arg0->x = f16;
     arg0->y = temp_f20;
-    arg0->z = temp_f12_3;
+    arg0->z = f12;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
