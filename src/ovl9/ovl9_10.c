@@ -93,12 +93,10 @@ void func_8020938C_ovl9(s32 arg0) {
 // control flow
 #ifdef NON_MATCHING
 void func_802094DC_ovl9(void) {
-    u32 tmp = D_800E98E0[D_8004A7C4->objId];
-
-    if (tmp == 0) {
+    if (D_800E98E0[D_8004A7C4->objId] == 0) {
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801ACF84_ovl7);
     } else {
-        D_800E98E0[D_8004A7C4->objId] = --tmp;
+        D_800E98E0[D_8004A7C4->objId]--;
         func_801A0D74_ovl9();
         func_801A03B4_ovl9();
     }

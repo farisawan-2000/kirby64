@@ -2233,8 +2233,6 @@ s32 func_80155ED8_ovl3(struct CollisionTriangle *arg0, u32 arg1) {
 
 extern s32 D_8012E804;
 
-// a nop jump???
-#ifdef NON_MATCHING
 s32 func_80155F0C_ovl3(struct CollisionTriangle *arg0, u32 arg1) {
     struct LayoutNode *tmp;
     Vector sp38;
@@ -2248,9 +2246,9 @@ s32 func_80155F0C_ovl3(struct CollisionTriangle *arg0, u32 arg1) {
         func_800A4DB8(&sp2C, tmp);
         func_800A802C(6, 3, arg0->breakParticle * 2, &sp38, &sp2C);
         func_800BB468(0, 0);
-        return 0;
     } else {
         func_800A4794(&sp38, func_8011BD30(arg0));
+        if (1) {}
         func_800A7F74(6, 3, (arg0->breakParticle * 2) + 1,
             D_800EA6E0[D_8004A7C4->objId],
             D_800EA8A0[D_8004A7C4->objId],
@@ -2259,7 +2257,5 @@ s32 func_80155F0C_ovl3(struct CollisionTriangle *arg0, u32 arg1) {
         D_800E8220[D_8004A7C4->objId] = 1;
         return 1;
     }
+    return 0;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_1/func_80155F0C_ovl3.s")
-#endif
