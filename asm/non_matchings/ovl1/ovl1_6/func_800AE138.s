@@ -7,18 +7,18 @@ glabel func_800AE138
 /* 05639C 800AE14C 2403FFFF */  li    $v1, -1
 /* 0563A0 800AE150 00220821 */  addu  $at, $at, $v0
 /* 0563A4 800AE154 AC23D710 */ sw $v1, %lo(D_800DD710)($at)
-/* 0563A8 800AE158 3C01800E */ lui $at, %hi(D_800DEC10)
+/* 0563A8 800AE158 3C01800E */ lui $at, %hi(gEntityGObjProcessArray5)
 /* 0563AC 800AE15C 00220821 */  addu  $at, $at, $v0
-/* 0563B0 800AE160 AC20EC10 */ sw $zero, %lo(D_800DEC10)($at)
-/* 0563B4 800AE164 3C01800E */ lui $at, %hi(D_800DEA50)
+/* 0563B0 800AE160 AC20EC10 */ sw $zero, %lo(gEntityGObjProcessArray5)($at)
+/* 0563B4 800AE164 3C01800E */ lui $at, %hi(gEntityGObjProcessArray4)
 /* 0563B8 800AE168 00220821 */  addu  $at, $at, $v0
-/* 0563BC 800AE16C AC20EA50 */ sw $zero, %lo(D_800DEA50)($at)
-/* 0563C0 800AE170 3C01800E */ lui $at, %hi(D_800DE890)
+/* 0563BC 800AE16C AC20EA50 */ sw $zero, %lo(gEntityGObjProcessArray4)($at)
+/* 0563C0 800AE170 3C01800E */ lui $at, %hi(gEntityGObjProcessArray3)
 /* 0563C4 800AE174 00220821 */  addu  $at, $at, $v0
-/* 0563C8 800AE178 AC20E890 */ sw $zero, %lo(D_800DE890)($at)
-/* 0563CC 800AE17C 3C01800E */ lui $at, %hi(D_800DE6D0)
+/* 0563C8 800AE178 AC20E890 */ sw $zero, %lo(gEntityGObjProcessArray3)($at)
+/* 0563CC 800AE17C 3C01800E */ lui $at, %hi(gEntityGObjProcessArray2)
 /* 0563D0 800AE180 00220821 */  addu  $at, $at, $v0
-/* 0563D4 800AE184 AC20E6D0 */ sw $zero, %lo(D_800DE6D0)($at)
+/* 0563D4 800AE184 AC20E6D0 */ sw $zero, %lo(gEntityGObjProcessArray2)($at)
 /* 0563D8 800AE188 3C01800E */ lui $at, %hi(gEntityGObjProcessArray)
 /* 0563DC 800AE18C 00220821 */  addu  $at, $at, $v0
 /* 0563E0 800AE190 AC20E510 */ sw $zero, %lo(gEntityGObjProcessArray)($at)

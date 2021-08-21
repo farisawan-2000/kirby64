@@ -992,8 +992,8 @@ void func_80153868(void) {
         request_track_general(0x11, 0x3F, 0x40);
         D_8004A7C4 = D_800DE44C;
         func_80008DA8(gEntityGObjProcessArray[0x3F]);
-        func_80008DA8(D_800DE6D0[0x3F]);
-        func_80008DA8(D_800DEC10[0x3F]);
+        func_80008DA8(gEntityGObjProcessArray2[0x3F]);
+        func_80008DA8(gEntityGObjProcessArray5[0x3F]);
         func_80008A18(D_8004A7C4, &func_8000E324, 1, 3);
         func_800A9864(D_8015A560->listIndex, 0x1869F, 0xC);
         D_8004A7C4 = sp1C;

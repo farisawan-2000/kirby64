@@ -34,7 +34,7 @@ void func_800B1434(void);
 
 void func_800F6C98(s32 arg0) {
     D_800DEF90[D_8004A7C4->objId] = NULL;
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
+    func_800B1F68(gEntityGObjProcessArray5[D_8004A7C4->objId], func_800B1434);
     finish_current_thread((u32) (120.0f * D_800D6B14));
     if (D_800E98E0[D_8004A7C4->objId] == 3) {
         func_800F6C68();
@@ -76,7 +76,7 @@ void func_800F6E30(s32 arg0) {
     u32 phi_s3;
     s32 phi_v1;
 
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B1434);
+    func_800B1F68(gEntityGObjProcessArray5[D_8004A7C4->objId], func_800B1434);
     D_800DEF90[D_8004A7C4->objId] = &D_800F6E04;
     func_800AF980(0x18);
     D_800DF150[D_8004A7C4->objId] = &D_800F7258;

@@ -2990,7 +2990,7 @@ void func_80122FB0(s32 arg0) {
 
     temp_v0 = D_8004A7C4;
     D_800DDE10[temp_v0->objId] = arg0;
-    assign_new_process_entry(D_800DE890[temp_v0->objId], &D_80177098);
+    assign_new_process_entry(gEntityGObjProcessArray3[temp_v0->objId], &D_80177098);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl2_8/func_80122FB0.s")

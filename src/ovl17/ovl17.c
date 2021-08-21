@@ -12,7 +12,7 @@ void func_800AED20(f32);
 
 void func_801DD440_ovl17(struct GObj *arg0) {
     func_800A9864(0x100EC, 0x23, 0x10);
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], &func_800B1434);
+    func_800B1F68(gEntityGObjProcessArray5[D_8004A7C4->objId], &func_800B1434);
     func_800AA018(0x1067C);
     func_800AA018(0x1067D);
     arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];

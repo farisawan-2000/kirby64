@@ -59,13 +59,13 @@ glabel func_801593A4_ovl4
 /* 1009B8 80159488 AC20EF90 */ sw $zero, %lo(D_800DEF90)($at)
 /* 1009BC 8015948C 8C590000 */  lw    $t9, ($v0)
 /* 1009C0 80159490 00809025 */  move  $s2, $a0
-/* 1009C4 80159494 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 1009C4 80159494 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 1009C8 80159498 00194080 */  sll   $t0, $t9, 2
 /* 1009CC 8015949C 00882021 */  addu  $a0, $a0, $t0
 /* 1009D0 801594A0 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
 /* 1009D4 801594A4 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 1009D8 801594A8 0C02C7DA */  jal   func_800B1F68
-/* 1009DC 801594AC 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 1009DC 801594AC 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 1009E0 801594B0 3C05800B */  lui   $a1, %hi(D_800AD1A0) # $a1, 0x800b
 /* 1009E4 801594B4 2409000A */  li    $t1, 10
 /* 1009E8 801594B8 AFA90010 */  sw    $t1, 0x10($sp)

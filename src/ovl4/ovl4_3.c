@@ -394,7 +394,7 @@ extern void func_800AECC0(f32);
 extern void func_800AED20(f32);
 
 void func_80159160_ovl4(s32 arg0) {
-    func_800B1F68(D_800DEC10[D_8004A7C4->objId], func_800B143C);
+    func_800B1F68(gEntityGObjProcessArray5[D_8004A7C4->objId], func_800B143C);
     D_800DEF90[D_8004A7C4->objId] = &func_800B4924;
     D_800DF150[D_8004A7C4->objId] = NULL;
     D_800E3750[D_8004A7C4->objId] = 0.0f;

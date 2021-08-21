@@ -140,8 +140,8 @@ void func_800BB98C(s32 arg0, s32 arg1) {
         sp2C = temp_v0_3;
         sp28 = temp_t7;
         func_80008DA8(*temp_a0);
-        func_80008DA8(D_800DE6D0[sp2C]);
-        func_80008DA8(D_800DEC10[sp2C]);
+        func_80008DA8(gEntityGObjProcessArray2[sp2C]);
+        func_80008DA8(gEntityGObjProcessArray5[sp2C]);
         func_80008A18(D_8004A7C4, &D_800BB588, 0, 3);
         temp_s0_2 = (arg0 * 0x10) + &D_800D5290;
         func_800A9864(temp_s0_2->unk0, 0x1869F, 8);

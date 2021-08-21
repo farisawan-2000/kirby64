@@ -1676,7 +1676,7 @@ glabel func_801E97AC_ovl16
 /* 21FA9C 801E97EC 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 21FAA0 801E97F0 8C580000 */  lw    $t8, ($v0)
 /* 21FAA4 801E97F4 25EF4924 */  addiu $t7, %lo(D_800B4924) # addiu $t7, $t7, 0x4924
-/* 21FAA8 801E97F8 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 21FAA8 801E97F8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 21FAAC 801E97FC 0018C880 */  sll   $t9, $t8, 2
 /* 21FAB0 801E9800 00390821 */  addu  $at, $at, $t9
 /* 21FAB4 801E9804 AC2FEF90 */ sw $t7, %lo(D_800DEF90)($at)
@@ -1686,7 +1686,7 @@ glabel func_801E97AC_ovl16
 /* 21FAC4 801E9814 00084880 */  sll   $t1, $t0, 2
 /* 21FAC8 801E9818 00892021 */  addu  $a0, $a0, $t1
 /* 21FACC 801E981C 0C02C7DA */  jal   func_800B1F68
-/* 21FAD0 801E9820 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 21FAD0 801E9820 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 21FAD4 801E9824 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 21FAD8 801E9828 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
 /* 21FADC 801E982C 3C01800E */ lui $at, %hi(D_800DF150)
@@ -5755,7 +5755,7 @@ glabel func_801ED444_ovl16
 /* 223740 801ED490 3C01800E */ lui $at, %hi(D_800DEF90)
 /* 223744 801ED494 8C590000 */  lw    $t9, ($v0)
 /* 223748 801ED498 27184924 */  addiu $t8, %lo(D_800B4924) # addiu $t8, $t8, 0x4924
-/* 22374C 801ED49C 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 22374C 801ED49C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 223750 801ED4A0 00194080 */  sll   $t0, $t9, 2
 /* 223754 801ED4A4 00280821 */  addu  $at, $at, $t0
 /* 223758 801ED4A8 AC38EF90 */ sw $t8, %lo(D_800DEF90)($at)
@@ -5765,7 +5765,7 @@ glabel func_801ED444_ovl16
 /* 223768 801ED4B8 00095080 */  sll   $t2, $t1, 2
 /* 22376C 801ED4BC 008A2021 */  addu  $a0, $a0, $t2
 /* 223770 801ED4C0 0C02C7DA */  jal   func_800B1F68
-/* 223774 801ED4C4 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 223774 801ED4C4 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 223778 801ED4C8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 22377C 801ED4CC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
 /* 223780 801ED4D0 8FA6002C */  lw    $a2, 0x2c($sp)

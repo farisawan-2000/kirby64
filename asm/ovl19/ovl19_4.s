@@ -4179,11 +4179,11 @@ glabel func_8022CE18_ovl19
 /* 24D55C 8022CE4C 25EFD13C */  addiu $t7, %lo(func_8022D13C_ovl19) # addiu $t7, $t7, -0x2ec4
 /* 24D560 8022CE50 AC2FF150 */ sw $t7, %lo(D_800DF150)($at)
 /* 24D564 8022CE54 8CC80000 */  lw    $t0, ($a2)
-/* 24D568 8022CE58 3C04800E */ lui $a0, %hi(D_800DEA50)
+/* 24D568 8022CE58 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray4)
 /* 24D56C 8022CE5C 3C05800B */  lui   $a1, %hi(D_800B1870) # $a1, 0x800b
 /* 24D570 8022CE60 00084880 */  sll   $t1, $t0, 2
 /* 24D574 8022CE64 00892021 */  addu  $a0, $a0, $t1
-/* 24D578 8022CE68 8C84EA50 */ lw $a0, %lo(D_800DEA50)($a0)
+/* 24D578 8022CE68 8C84EA50 */ lw $a0, %lo(gEntityGObjProcessArray4)($a0)
 /* 24D57C 8022CE6C 0C02C7DA */  jal   func_800B1F68
 /* 24D580 8022CE70 24A51870 */   addiu $a1, %lo(D_800B1870) # addiu $a1, $a1, 0x1870
 /* 24D584 8022CE74 3C01800D */  lui   $at, %hi(D_800D6B10) # $at, 0x800d

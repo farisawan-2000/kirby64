@@ -117,7 +117,7 @@ void func_8016BF60_ovl3(struct GObj *arg0) {
         func_800AFA14();
     }
     D_800DF150[D_8004A7C4->objId] = func_8016C558_ovl3;
-    assign_new_process_entry(D_800DE890[D_8004A7C4->objId], func_80177000_ovl3);
+    assign_new_process_entry(gEntityGObjProcessArray3[D_8004A7C4->objId], func_80177000_ovl3);
     func_8011C8F8();
     func_800A9864(D_80196D48[gKirbyState.unk4], 0x20, 0x10);
     gKirbyState.unk154 = 2;
@@ -3898,7 +3898,7 @@ void func_80176490_ovl3(struct GObj *arg0) {
     func_800AED20(D_800D6B10);
     D_800DF150[D_8004A7C4->objId] = func_80176814_ovl3;
     func_80122FB0(0);
-    func_800B1F68(D_800DEA50[D_8004A7C4->objId], func_800B1870);
+    func_800B1F68(gEntityGObjProcessArray4[D_8004A7C4->objId], func_800B1870);
     func_80122F08(0x20007);
     temp_f12 = D_801974BC;
     gEntitiesScaleXArray[D_8004A7C4->objId] = D_801974B8;
@@ -4155,7 +4155,7 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_80176DE0_ovl3.s")
 void func_80177000_ovl3(struct GObj *arg0) {
     struct GObj *temp_v0;
 
-    func_800B1F68(D_800DEA50[D_8004A7C4->objId], &D_801770E0);
+    func_800B1F68(gEntityGObjProcessArray4[D_8004A7C4->objId], &D_801770E0);
     temp_v0 = D_8004A7C4;
     D_800DE190[temp_v0->objId] = 0;
     D_800DDE10[temp_v0->objId] = 0;

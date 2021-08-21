@@ -29,10 +29,10 @@ void func_800AE138(s32 arg0) {
     D_800DD710[arg0] = -1;
 
     // GObjProcess buffers
-    D_800DEC10[arg0] = NULL;
-    D_800DEA50[arg0] = NULL;
-    D_800DE890[arg0] = NULL;
-    D_800DE6D0[arg0] = NULL;
+    gEntityGObjProcessArray5[arg0] = NULL;
+    gEntityGObjProcessArray4[arg0] = NULL;
+    gEntityGObjProcessArray3[arg0] = NULL;
+    gEntityGObjProcessArray2[arg0] = NULL;
     // this one in particular is one that entities use for thread function changes.
     // Should be an GObjThreadStack array
     gEntityGObjProcessArray[arg0] = NULL;
@@ -270,14 +270,14 @@ block_13:
     temp_v0_3 = func_8000A180(minIndex, func_800B0D24, D_800D4FD0[id * 2] + v0, 0);
     D_800DE350[minIndex] = temp_v0_3;
     gEntityGObjProcessArray[minIndex] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
-    D_800DE6D0[minIndex] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
+    gEntityGObjProcessArray2[minIndex] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
     if (sp24->unk0[1] & 1) {
-        D_800DE890[minIndex] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
+        gEntityGObjProcessArray3[minIndex] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
     }
     if (sp24->unk0[1] & 2) {
-        D_800DEA50[minIndex] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
+        gEntityGObjProcessArray4[minIndex] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
     }
-    D_800DEC10[minIndex] = func_80008A18(temp_v0_3, arg4, 1, 0);
+    gEntityGObjProcessArray5[minIndex] = func_80008A18(temp_v0_3, arg4, 1, 0);
     D_800DD8D0[minIndex] = 0;
     D_800DDA90[minIndex] = temp_v0_3->link;
     D_800DF150[minIndex] = NULL;

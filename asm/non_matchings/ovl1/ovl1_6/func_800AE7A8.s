@@ -107,9 +107,9 @@ glabel request_job
 /* 056B70 800AE920 24070003 */   li    $a3, 3
 /* 056B74 800AE924 8FA30028 */  lw    $v1, 0x28($sp)
 /* 056B78 800AE928 8FAE0024 */  lw    $t6, 0x24($sp)
-/* 056B7C 800AE92C 3C01800E */ lui $at, %hi(D_800DE6D0)
+/* 056B7C 800AE92C 3C01800E */ lui $at, %hi(gEntityGObjProcessArray2)
 /* 056B80 800AE930 00230821 */  addu  $at, $at, $v1
-/* 056B84 800AE934 AC22E6D0 */ sw $v0, %lo(D_800DE6D0)($at)
+/* 056B84 800AE934 AC22E6D0 */ sw $v0, %lo(gEntityGObjProcessArray2)($at)
 /* 056B88 800AE938 91C40001 */  lbu   $a0, 1($t6)
 /* 056B8C 800AE93C 3C05800B */  lui   $a1, %hi(D_800B1878) # $a1, 0x800b
 /* 056B90 800AE940 24A51878 */  addiu $a1, %lo(D_800B1878) # addiu $a1, $a1, 0x1878
@@ -122,9 +122,9 @@ glabel request_job
 /* 056BAC 800AE95C AFA30028 */   sw    $v1, 0x28($sp)
 /* 056BB0 800AE960 8FA30028 */  lw    $v1, 0x28($sp)
 /* 056BB4 800AE964 8FB80024 */  lw    $t8, 0x24($sp)
-/* 056BB8 800AE968 3C01800E */ lui $at, %hi(D_800DE890)
+/* 056BB8 800AE968 3C01800E */ lui $at, %hi(gEntityGObjProcessArray3)
 /* 056BBC 800AE96C 00230821 */  addu  $at, $at, $v1
-/* 056BC0 800AE970 AC22E890 */ sw $v0, %lo(D_800DE890)($at)
+/* 056BC0 800AE970 AC22E890 */ sw $v0, %lo(gEntityGObjProcessArray3)($at)
 /* 056BC4 800AE974 93040001 */  lbu   $a0, 1($t8)
 .L800AE978_ovl1:
 /* 056BC8 800AE978 30990002 */  andi  $t9, $a0, 2
@@ -137,9 +137,9 @@ glabel request_job
 /* 056BE4 800AE994 0C002286 */  jal   func_80008A18
 /* 056BE8 800AE998 AFA30028 */   sw    $v1, 0x28($sp)
 /* 056BEC 800AE99C 8FA30028 */  lw    $v1, 0x28($sp)
-/* 056BF0 800AE9A0 3C01800E */ lui $at, %hi(D_800DEA50)
+/* 056BF0 800AE9A0 3C01800E */ lui $at, %hi(gEntityGObjProcessArray4)
 /* 056BF4 800AE9A4 00230821 */  addu  $at, $at, $v1
-/* 056BF8 800AE9A8 AC22EA50 */ sw $v0, %lo(D_800DEA50)($at)
+/* 056BF8 800AE9A8 AC22EA50 */ sw $v0, %lo(gEntityGObjProcessArray4)($at)
 .L800AE9AC_ovl1:
 /* 056BFC 800AE9AC 8FA40034 */  lw    $a0, 0x34($sp)
 /* 056C00 800AE9B0 8FA50048 */  lw    $a1, 0x48($sp)
@@ -148,10 +148,10 @@ glabel request_job
 /* 056C0C 800AE9BC 0C002286 */  jal   func_80008A18
 /* 056C10 800AE9C0 AFA30028 */   sw    $v1, 0x28($sp)
 /* 056C14 800AE9C4 8FA30028 */  lw    $v1, 0x28($sp)
-/* 056C18 800AE9C8 3C01800E */ lui $at, %hi(D_800DEC10)
+/* 056C18 800AE9C8 3C01800E */ lui $at, %hi(gEntityGObjProcessArray5)
 /* 056C1C 800AE9CC 8FA90034 */  lw    $t1, 0x34($sp)
 /* 056C20 800AE9D0 00230821 */  addu  $at, $at, $v1
-/* 056C24 800AE9D4 AC22EC10 */ sw $v0, %lo(D_800DEC10)($at)
+/* 056C24 800AE9D4 AC22EC10 */ sw $v0, %lo(gEntityGObjProcessArray5)($at)
 /* 056C28 800AE9D8 3C01800E */ lui $at, %hi(D_800DD8D0)
 /* 056C2C 800AE9DC 00230821 */  addu  $at, $at, $v1
 /* 056C30 800AE9E0 AC20D8D0 */ sw $zero, %lo(D_800DD8D0)($at)

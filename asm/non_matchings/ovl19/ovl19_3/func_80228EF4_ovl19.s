@@ -5,11 +5,11 @@ glabel func_80228EF4_ovl19
 /* 249610 80228F00 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 249614 80228F04 AFA40018 */  sw    $a0, 0x18($sp)
 /* 249618 80228F08 8DCF0000 */  lw    $t7, ($t6)
-/* 24961C 80228F0C 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 24961C 80228F0C 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 249620 80228F10 3C05800B */  lui   $a1, %hi(D_800B1434) # $a1, 0x800b
 /* 249624 80228F14 000FC080 */  sll   $t8, $t7, 2
 /* 249628 80228F18 00982021 */  addu  $a0, $a0, $t8
-/* 24962C 80228F1C 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 24962C 80228F1C 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 249630 80228F20 0C02C7DA */  jal   func_800B1F68
 /* 249634 80228F24 24A51434 */   addiu $a1, %lo(D_800B1434) # addiu $a1, $a1, 0x1434
 /* 249638 80228F28 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005

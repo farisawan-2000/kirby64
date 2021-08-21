@@ -565,7 +565,7 @@ void func_8022054C_ovl19(struct GObj *arg0) {
         temp_v1 = D_8004A7C4;
         D_800D6F18->unk1C = 1;
         D_800DEF90[temp_v1->objId] = NULL;
-        func_800B1F68(D_800DEC10[temp_v1->objId], &func_800B1434);
+        func_800B1F68(gEntityGObjProcessArray5[temp_v1->objId], &func_800B1434);
         D_800E98E0[D_8004A7C4->objId] = 3;
         D_800D6F18->unk10 = 0;
         D_800D6F18->unkC = -1;
@@ -715,7 +715,7 @@ void func_80220B40_ovl19(struct GObj *arg0) {
 
     temp_s0 = D_8004A7C4;
     D_800DEF90[temp_s0->objId] = NULL;
-    func_800B1F68(D_800DEC10[temp_s0->objId], &func_800B1434);
+    func_800B1F68(gEntityGObjProcessArray5[temp_s0->objId], &func_800B1434);
     temp_s0_2 = D_8004A7C4;
     gEntitiesNextPosYArray[temp_s0_2->objId] = 200.0f;
     D_800E6BD0[temp_s0_2->objId] = 0.5f;
@@ -868,7 +868,7 @@ void func_802211A0_ovl19(struct GObj *arg0) {
 
     temp_a2 = D_8004A7C4;
     D_800DEF90[temp_a2->objId] = NULL;
-    func_800B1F68(D_800DEC10[temp_a2->objId], &func_800B1434, temp_a2);
+    func_800B1F68(gEntityGObjProcessArray5[temp_a2->objId], &func_800B1434, temp_a2);
     D_800E98E0[D_8004A7C4->objId] = 3;
     D_800D6F18->unk10 = 0;
     D_800D6F18->unkC = -1;

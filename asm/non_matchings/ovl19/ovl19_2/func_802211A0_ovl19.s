@@ -16,11 +16,11 @@ glabel func_802211A0_ovl19
 /* 2418E8 802211D8 002F0821 */  addu  $at, $at, $t7
 /* 2418EC 802211DC AC20EF90 */ sw $zero, %lo(D_800DEF90)($at)
 /* 2418F0 802211E0 8CD80000 */  lw    $t8, ($a2)
-/* 2418F4 802211E4 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 2418F4 802211E4 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 2418F8 802211E8 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
 /* 2418FC 802211EC 0018C880 */  sll   $t9, $t8, 2
 /* 241900 802211F0 00992021 */  addu  $a0, $a0, $t9
-/* 241904 802211F4 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 241904 802211F4 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 241908 802211F8 0C02C7DA */  jal   func_800B1F68
 /* 24190C 802211FC 24A51434 */   addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 241910 80221200 8E690000 */  lw    $t1, ($s3)

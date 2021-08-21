@@ -2,9 +2,9 @@
 #define BUFFERS_H
 
 extern struct GObjProcess *gEntityGObjProcessArray[0x70];
-extern struct GObjProcess *D_800DE6D0[0x70];
-extern struct GObjProcess *D_800DE890[0x70];
-extern struct GObjProcess *D_800DEA50[0x70];
-extern struct GObjProcess *D_800DEC10[0x70];
+extern struct GObjProcess *gEntityGObjProcessArray2[0x70];
+extern struct GObjProcess *gEntityGObjProcessArray3[0x70];
+extern struct GObjProcess *gEntityGObjProcessArray4[0x70];
+extern struct GObjProcess *gEntityGObjProcessArray5[0x70];
 
 #endif

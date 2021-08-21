@@ -15,13 +15,13 @@ glabel func_8021E978_ovl18
 /* 23134C 8021E9AC AFB00018 */  sw    $s0, 0x18($sp)
 /* 231350 8021E9B0 8DCF0000 */  lw    $t7, ($t6)
 /* 231354 8021E9B4 0080B825 */  move  $s7, $a0
-/* 231358 8021E9B8 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 231358 8021E9B8 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 23135C 8021E9BC 000FC080 */  sll   $t8, $t7, 2
 /* 231360 8021E9C0 00982021 */  addu  $a0, $a0, $t8
 /* 231364 8021E9C4 3C05800B */  lui   $a1, %hi(func_800B1434) # $a1, 0x800b
 /* 231368 8021E9C8 24A51434 */  addiu $a1, %lo(func_800B1434) # addiu $a1, $a1, 0x1434
 /* 23136C 8021E9CC 0C02C7DA */  jal   func_800B1F68
-/* 231370 8021E9D0 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 231370 8021E9D0 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 231374 8021E9D4 8E880000 */  lw    $t0, ($s4)
 /* 231378 8021E9D8 3C19800B */  lui   $t9, %hi(D_800B491C) # $t9, 0x800b
 /* 23137C 8021E9DC 3C01800E */ lui $at, %hi(D_800DEF90)

@@ -5951,7 +5951,7 @@ glabel func_8020ED74_ovl9
 /* 1BCE18 8020EDC8 AC38EF90 */ sw $t8, %lo(D_800DEF90)($at)
 /* 1BCE1C 8020EDCC 8C490000 */  lw    $t1, ($v0)
 /* 1BCE20 8020EDD0 3C01800E */ lui $at, %hi(D_800DF150)
-/* 1BCE24 8020EDD4 3C04800E */ lui $a0, %hi(D_800DEC10)
+/* 1BCE24 8020EDD4 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray5)
 /* 1BCE28 8020EDD8 00095080 */  sll   $t2, $t1, 2
 /* 1BCE2C 8020EDDC 002A0821 */  addu  $at, $at, $t2
 /* 1BCE30 8020EDE0 AC20F150 */ sw $zero, %lo(D_800DF150)($at)
@@ -5961,7 +5961,7 @@ glabel func_8020ED74_ovl9
 /* 1BCE40 8020EDF0 000B6080 */  sll   $t4, $t3, 2
 /* 1BCE44 8020EDF4 008C2021 */  addu  $a0, $a0, $t4
 /* 1BCE48 8020EDF8 0C02C7DA */  jal   func_800B1F68
-/* 1BCE4C 8020EDFC 8C84EC10 */ lw $a0, %lo(D_800DEC10)($a0)
+/* 1BCE4C 8020EDFC 8C84EC10 */ lw $a0, %lo(gEntityGObjProcessArray5)($a0)
 /* 1BCE50 8020EE00 00002025 */  move  $a0, $zero
 /* 1BCE54 8020EE04 0C02BEED */  jal   func_800AFBB4
 /* 1BCE58 8020EE08 8E050000 */   lw    $a1, ($s0)
