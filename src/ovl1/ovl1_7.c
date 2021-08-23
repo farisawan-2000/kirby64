@@ -525,16 +525,16 @@ void func_800AFA54(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800AFA54.s")
 #endif
 
-void func_800AFA88(struct GObj *arg0) {
-    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
+void func_800AFA88(struct GObj *this) {
+    this->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    this->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    this->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.z = gEntitiesScaleZArray[D_8004A7C4->objId];
 }
 
 #ifdef MIPS_TO_C
@@ -1022,15 +1022,15 @@ void func_800B1434(s32 arg0) {
 void func_800B143C(struct GObj *this) {
     if ((D_800DD8D0[D_8004A7C4->objId] & 0x40) == 0) {
         if (this->unk3C != NULL) {
-            this->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-            this->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-            this->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
-            this->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-            this->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-            this->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-            this->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
-            this->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
-            this->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
+            this->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+            this->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+            this->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+            this->unk3C->angleVec.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+            this->unk3C->angleVec.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+            this->unk3C->angleVec.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+            this->unk3C->scaleVec.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+            this->unk3C->scaleVec.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+            this->unk3C->scaleVec.z = gEntitiesScaleZArray[D_8004A7C4->objId];
         }
     }
 }

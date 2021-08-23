@@ -40,15 +40,15 @@ void func_801D2040_ovl8(struct GObj *this, s32 arg1, f32 arg2) {
 
 void func_801D223C_ovl8(struct GObj *this) {
     func_800A9864(0x100DE, 0x1869F, 0x10, this);
-    this->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    this->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    this->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
-    this->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-    this->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-    this->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
-    this->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
-    this->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
-    this->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
+    this->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    this->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    this->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    this->unk3C->angleVec.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    this->unk3C->scaleVec.z = gEntitiesScaleZArray[D_8004A7C4->objId];
     func_800AA018(0x10621);
     D_800DF310[D_8004A7C4->objId] = func_801D2040_ovl8;
     func_800AF27C();
@@ -201,12 +201,12 @@ void func_801D29C8_ovl8(struct GObj *arg0) {
             func_800AA018(0x10680);
             break;
     }
-    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->angleVec.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    arg0->unk3C->angleVec.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    arg0->unk3C->angleVec.z = gEntitiesAngleZArray[D_8004A7C4->objId];
     func_800AF27C();
     func_800B1900(D_8004A7C4->objId);
 }

@@ -48,7 +48,7 @@ extern f32 D_801CE578;
 
 s32 request_track_general(s32, s32, s32);
 
-void func_800A4794(Vector*,s32,s32);
+void func_800A4794(Vector*,s32);
 void func_800A4DB8(Vector*,s32);
 
 // this file
@@ -58,8 +58,8 @@ void func_801BC72C_ovl7(s32 arg0);
 
 s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
     s32 idx;
-    Vector sp28;
-    Vector sp1C;
+    Vector posVec;
+    Vector angleVec;
 
     idx = request_track_general(0x1F, 0x1E, 0x3C);
     if (idx == -1) {
@@ -74,14 +74,14 @@ s32 func_801BBE50(s32 arg0, s32 arg1, u32 arg2) {
 
     D_800E8E60[idx] = 1;
     D_800E1D10[idx] = arg1;
-    func_800A4794(&sp28, arg0, idx);
-    gEntitiesNextPosXArray[idx] = sp28.x;
-    gEntitiesNextPosYArray[idx] = sp28.y;
-    gEntitiesNextPosZArray[idx] = sp28.z;
-    func_800A4DB8(&sp1C, arg0);
-    gEntitiesAngleXArray[idx] = sp1C.x;
-    gEntitiesAngleYArray[idx] = sp1C.y + D_801CE578;
-    gEntitiesAngleZArray[idx] = sp1C.z;
+    func_800A4794(&posVec, arg0);
+    gEntitiesNextPosXArray[idx] = posVec.x;
+    gEntitiesNextPosYArray[idx] = posVec.y;
+    gEntitiesNextPosZArray[idx] = posVec.z;
+    func_800A4DB8(&angleVec, arg0);
+    gEntitiesAngleXArray[idx] = angleVec.x;
+    gEntitiesAngleYArray[idx] = angleVec.y + D_801CE578;
+    gEntitiesAngleZArray[idx] = angleVec.z;
     D_800E17D0[idx] = D_800E17D0[arg2];
     D_800E6A10[idx] = D_800E6A10[arg2];
     return idx;

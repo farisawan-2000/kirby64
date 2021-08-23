@@ -37,9 +37,9 @@ void func_800FD418(struct GObj *arg0) {
     func_800A9864(tmp = D_801245C4[temp_v0][0], 0x0001869F, 0x10);
     func_800AA018(D_801245C4[temp_v0][1]);
     func_800AA018(D_801245C4[temp_v0][2]);
-    arg0->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    arg0->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    arg0->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
     func_800AF27C();
     func_800B1900((u16) D_8004A7C4->objId);
 }

@@ -1435,17 +1435,17 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800AA154.s")
 #endif
 
 void func_800AA174(void) {
-    D_8004A7C4->unk3C->unk1C.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk1C.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->posVec.x = gEntitiesNextPosXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->posVec.y = gEntitiesNextPosYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->posVec.z = gEntitiesNextPosZArray[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk30.x = gEntitiesAngleXArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk30.y = gEntitiesAngleYArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk30.z = gEntitiesAngleZArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->angleVec.x = gEntitiesAngleXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->angleVec.y = gEntitiesAngleYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->angleVec.z = gEntitiesAngleZArray[D_8004A7C4->objId];
 
-    D_8004A7C4->unk3C->unk40.x = gEntitiesScaleXArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk40.y = gEntitiesScaleYArray[D_8004A7C4->objId];
-    D_8004A7C4->unk3C->unk40.z = gEntitiesScaleZArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->scaleVec.x = gEntitiesScaleXArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->scaleVec.y = gEntitiesScaleYArray[D_8004A7C4->objId];
+    D_8004A7C4->unk3C->scaleVec.z = gEntitiesScaleZArray[D_8004A7C4->objId];
 }
 
 void func_800AA2A0(void) {

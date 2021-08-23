@@ -2567,7 +2567,7 @@ f32 func_80014B04(struct UnkStruct8004A7C4_3C *arg0) {
     Vector tmp;
 
     // extremely hacky cast because unk3C meme
-    VEC_SUB(tmp, arg0->unk1C, ((struct UnkStruct8004A7C4_3C_duplicate *)(D_8004A7C8->unk3C))->unk3C);
+    VEC_SUB(tmp, arg0->posVec, ((struct UnkStruct8004A7C4_3C_duplicate *)(D_8004A7C8->unk3C))->unk3C);
     return VEC_MAG_SQUARE(tmp);
 } 
 
