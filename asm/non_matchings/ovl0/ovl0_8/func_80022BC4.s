@@ -61,8 +61,8 @@ glabel func_80022BC4
 /* 0238AC 80022CAC 02402025 */  move  $a0, $s2
 /* 0238B0 80022CB0 0C0088B1 */  jal   func_800222C4
 /* 0238B4 80022CB4 24050001 */   li    $a1, 1
-/* 0238B8 80022CB8 3C118009 */  lui   $s1, %hi(D_80096EF8) # $s1, 0x8009
-/* 0238BC 80022CBC 26316EF8 */  addiu $s1, %lo(D_80096EF8) # addiu $s1, $s1, 0x6ef8
+/* 0238B8 80022CB8 3C118009 */  lui   $s1, %hi(gCrashScreenFramebuffer) # $s1, 0x8009
+/* 0238BC 80022CBC 26316EF8 */  addiu $s1, %lo(gCrashScreenFramebuffer) # addiu $s1, $s1, 0x6ef8
 /* 0238C0 80022CC0 8E2F0000 */  lw    $t7, ($s1)
 /* 0238C4 80022CC4 11E00027 */  beqz  $t7, .L80022D64_ovl0
 /* 0238C8 80022CC8 00002025 */   move  $a0, $zero

@@ -2,7 +2,7 @@
 #include <ultra64.h>
 #include <macros.h>
 #include "ovl0_3.h"
-
+#include "D_8004A7C4.h"
 
 #ifdef MIPS_TO_C
 struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *arg0) {
@@ -47,8 +47,8 @@ struct unk8000BEF4Func {
     f32 unk40;
 };
 
-void func_8000BEF4(struct unk8000BEF4Func *arg0, f32 arg1) {
-    struct unk8000BE90Func *phi_s0;
+void func_8000BEF4(struct GObj *arg0, f32 arg1) {
+    struct UnkStruct8004A7C4_3C *phi_s0;
 
     phi_s0 = arg0->unk3C;
     while (phi_s0 != 0) {

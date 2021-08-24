@@ -234319,7 +234319,7 @@ glabel D_80096EF0
 glabel D_80096EF4
 .word 0x00000000
 
-glabel D_80096EF8
+glabel gCrashScreenFramebuffer
 .word 0x00000000
 
 glabel D_80096EFC

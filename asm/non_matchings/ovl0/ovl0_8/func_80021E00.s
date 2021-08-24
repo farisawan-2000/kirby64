@@ -5,8 +5,8 @@ glabel crash_screen_draw_glyph
 /* 022A0C 80021E0C 240B0007 */  li    $t3, 7
 /* 022A10 80021E10 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 022A14 80021E14 01EB0019 */  multu $t7, $t3
-/* 022A18 80021E18 3C0D8004 */  lui   $t5, %hi(D_8003F70C) # $t5, 0x8004
-/* 022A1C 80021E1C 25ADF70C */  addiu $t5, %lo(D_8003F70C) # addiu $t5, $t5, -0x8f4
+/* 022A18 80021E18 3C0D8004 */  lui   $t5, %hi(gCrashScreenFont) # $t5, 0x8004
+/* 022A1C 80021E1C 25ADF70C */  addiu $t5, %lo(gCrashScreenFont) # addiu $t5, $t5, -0x8f4
 /* 022A20 80021E20 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 022A24 80021E24 AFA40030 */  sw    $a0, 0x30($sp)
 /* 022A28 80021E28 AFA50034 */  sw    $a1, 0x34($sp)

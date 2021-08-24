@@ -36,22 +36,22 @@ void *func_800B2340(void *arg0, struct UnkStruct8004A7C4_3C *arg1, u32 arg2) {
         phi_s0 = D_8004A7C4->unk3C;
     }
     arg2 = phi_a2;
-    guMtxIdentF_ovl1(&spB8, phi_a2);
+    guMtxIdentF(&spB8, phi_a2);
 loop_5:
     if (phi_s0->unk14 != 1) {
         temp_f0 = phi_s0->unk40.x;
         if ((temp_f0 != 1.0f) || (phi_s0->unk40.y != 1.0f) || (phi_s0->unk40.z != 1.0f)) {
-            func_8001B4AC_ovl1(&sp78, temp_f0, (bitwise s32) phi_s0->unk40.y, (bitwise s32) phi_s0->unk40.z);
+            HS64_MkScaleMtxF(&sp78, temp_f0, (bitwise s32) phi_s0->unk40.y, (bitwise s32) phi_s0->unk40.z);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
         temp_f0_2 = phi_s0->unk30.x;
         if ((temp_f0_2 != 0.0f) || (phi_s0->unk30.y != 0.0f) || (phi_s0->unk30.z != 0.0f)) {
-            _guRotateRPYF(&sp78, temp_f0_2, (bitwise f32) (bitwise s32) phi_s0->unk30.y, (bitwise f32) (bitwise s32) phi_s0->unk30.z);
+            HS64_MkRotationMtxF(&sp78, temp_f0_2, (bitwise f32) (bitwise s32) phi_s0->unk30.y, (bitwise f32) (bitwise s32) phi_s0->unk30.z);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
         temp_f0_3 = phi_s0->unk1C.x;
         if ((temp_f0_3 != 0.0f) || (phi_s0->unk1C.y != 0.0f) || (phi_s0->unk1C.z != 0.0f)) {
-            func_8001B6E4_ovl1(&sp78, temp_f0_3, (bitwise s32) phi_s0->unk1C.y, (bitwise s32) phi_s0->unk1C.z);
+            HS64_MkTranslateMtxF(&sp78, temp_f0_3, (bitwise s32) phi_s0->unk1C.y, (bitwise s32) phi_s0->unk1C.z);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
     } else {
@@ -59,21 +59,21 @@ loop_5:
         temp_f2 = gEntitiesScaleYArray[arg2];
         temp_f12 = gEntitiesScaleZArray[arg2];
         if ((temp_f0_4 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
-            func_8001B4AC_ovl1(temp_f12, &sp78, temp_f0_4, temp_f2, temp_f12);
+            HS64_MkScaleMtxF(temp_f12, &sp78, temp_f0_4, temp_f2, temp_f12);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
         temp_f0_5 = gEntitiesAngleXArray[arg2];
         temp_f2_2 = gEntitiesAngleYArray[arg2];
         temp_f12_2 = gEntitiesAngleZArray[arg2];
         if ((temp_f0_5 != 0.0f) || (temp_f2_2 != 0.0f) || (temp_f12_2 != 0.0f)) {
-            _guRotateRPYF(&sp78, temp_f0_5, temp_f2_2, temp_f12_2);
+            HS64_MkRotationMtxF(&sp78, temp_f0_5, temp_f2_2, temp_f12_2);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
         temp_f0_6 = gEntitiesNextPosXArray[arg2];
         temp_f2_3 = gEntitiesNextPosYArray[arg2];
         temp_f12_3 = gEntitiesNextPosZArray[arg2];
         if ((temp_f0_6 != 0.0f) || (temp_f2_3 != 0.0f) || (temp_f12_3 != 0.0f)) {
-            func_8001B6E4_ovl1(temp_f12_3, &sp78, temp_f0_6, temp_f2_3, temp_f12_3);
+            HS64_MkTranslateMtxF(temp_f12_3, &sp78, temp_f0_6, temp_f2_3, temp_f12_3);
             guMtxCatF(&spB8, &sp78, &spB8);
         }
     }
@@ -114,12 +114,12 @@ void func_800B26D8(void *arg0, struct UnkStruct8004A7C4_3C *arg1, u32 arg2) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4->unk3C;
     }
-    guMtxIdentF_ovl1(&sp90);
+    guMtxIdentF(&sp90);
 loop_5:
     if (phi_s0->unk14 != 1) {
         temp_f0 = phi_s0->unk30.x;
         if ((temp_f0 != 0.0f) || (phi_s0->unk30.y != 0.0f) || (phi_s0->unk30.z != 0.0f)) {
-            _guRotateRPYF(&sp50, temp_f0, (bitwise f32) (bitwise s32) phi_s0->unk30.y, (bitwise f32) (bitwise s32) phi_s0->unk30.z);
+            HS64_MkRotationMtxF(&sp50, temp_f0, (bitwise f32) (bitwise s32) phi_s0->unk30.y, (bitwise f32) (bitwise s32) phi_s0->unk30.z);
             guMtxCatF(&sp90, &sp50, &sp90);
 block_14:
         }
@@ -128,7 +128,7 @@ block_14:
         temp_f2 = gEntitiesAngleYArray[phi_s5];
         temp_f12 = gEntitiesAngleZArray[phi_s5];
         if ((temp_f0_2 != 0.0f) || (temp_f2 != 0.0f) || (temp_f12 != 0.0f)) {
-            _guRotateRPYF(&sp50, temp_f0_2, temp_f2, temp_f12);
+            HS64_MkRotationMtxF(&sp50, temp_f0_2, temp_f2, temp_f12);
             guMtxCatF(&sp90, &sp50, &sp90);
             goto block_14;
         }
@@ -178,12 +178,12 @@ void *func_800B2928(void *arg0, struct UnkStruct8004A7C4_3C *arg1, u32 arg2) {
     if (arg1 == 0) {
         phi_s0 = D_8004A7C4->unk3C;
     }
-    guMtxIdentF_ovl1(&sp90);
+    guMtxIdentF(&sp90);
 loop_5:
     if (phi_s0->unk14 != 1) {
         temp_f0 = phi_s0->unk40.x;
         if ((temp_f0 != 1.0f) || (phi_s0->unk40.y != 1.0f) || (phi_s0->unk40.z != 1.0f)) {
-            func_8001B4AC_ovl1(&sp50, temp_f0, (bitwise s32) phi_s0->unk40.y, (bitwise s32) phi_s0->unk40.z);
+            HS64_MkScaleMtxF(&sp50, temp_f0, (bitwise s32) phi_s0->unk40.y, (bitwise s32) phi_s0->unk40.z);
             guMtxCatF(&sp90, &sp50, &sp90);
 block_14:
         }
@@ -192,7 +192,7 @@ block_14:
         temp_f2 = gEntitiesScaleYArray[phi_s5];
         temp_f12 = gEntitiesScaleZArray[phi_s5];
         if ((temp_f0_2 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
-            func_8001B4AC_ovl1(temp_f12, &sp50, temp_f0_2, temp_f2, temp_f12);
+            HS64_MkScaleMtxF(temp_f12, &sp50, temp_f0_2, temp_f2, temp_f12);
             guMtxCatF(&sp90, &sp50, &sp90);
             goto block_14;
         }
@@ -243,12 +243,12 @@ f32 func_800B2AD4(void *arg0, struct UnkStruct8004A7C4_3C *arg1, u32 arg2) {
         phi_s0 = D_8004A7C4->unk3C;
     }
     arg2 = phi_a2;
-    guMtxIdentF_ovl1(&spBC, phi_a2);
+    guMtxIdentF(&spBC, phi_a2);
 loop_5:
     if (phi_s0->unk14 != 1) {
         temp_f0_2 = phi_s0->unk40.x;
         if ((temp_f0_2 != 1.0f) || (phi_s0->unk40.y != 1.0f) || (phi_s0->unk40.z != 1.0f)) {
-            func_8001B4AC_ovl1(&sp7C, 1.0f / temp_f0_2, 1.0f / phi_s0->unk40.y, 1.0f / phi_s0->unk40.z);
+            HS64_MkScaleMtxF(&sp7C, 1.0f / temp_f0_2, 1.0f / phi_s0->unk40.y, 1.0f / phi_s0->unk40.z);
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
         temp_f0_3 = phi_s0->unk30.x;
@@ -258,7 +258,7 @@ loop_5:
         }
         temp_f0_4 = phi_s0->unk1C.x;
         if ((temp_f0_4 != 0.0f) || (phi_s0->unk1C.y != 0.0f) || (phi_s0->unk1C.z != 0.0f)) {
-            func_8001B6E4_ovl1(&sp7C, -temp_f0_4, -phi_s0->unk1C.y, -phi_s0->unk1C.z);
+            HS64_MkTranslateMtxF(&sp7C, -temp_f0_4, -phi_s0->unk1C.y, -phi_s0->unk1C.z);
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
     } else {
@@ -266,7 +266,7 @@ loop_5:
         temp_f2 = gEntitiesScaleYArray[arg2];
         temp_f12 = gEntitiesScaleZArray[arg2];
         if ((temp_f0_5 != 1.0f) || (temp_f2 != 1.0f) || (temp_f12 != 1.0f)) {
-            func_8001B4AC_ovl1(temp_f12, &sp7C, 1.0f / temp_f0_5, 1.0f / temp_f2, 1.0f / temp_f12);
+            HS64_MkScaleMtxF(temp_f12, &sp7C, 1.0f / temp_f0_5, 1.0f / temp_f2, 1.0f / temp_f12);
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
         temp_f0_6 = gEntitiesAngleXArray[arg2];
@@ -280,7 +280,7 @@ loop_5:
         temp_f2_3 = gEntitiesNextPosYArray[arg2];
         temp_f12_3 = gEntitiesNextPosZArray[arg2];
         if ((temp_f0_7 != 0.0f) || (temp_f2_3 != 0.0f) || (temp_f12_3 != 0.0f)) {
-            func_8001B6E4_ovl1(temp_f12_3, &sp7C, -temp_f0_7, -temp_f2_3, -temp_f12_3);
+            HS64_MkTranslateMtxF(temp_f12_3, &sp7C, -temp_f0_7, -temp_f2_3, -temp_f12_3);
             guMtxCatF(&sp7C, &spBC, &spBC);
         }
     }

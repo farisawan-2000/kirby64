@@ -11,7 +11,7 @@ s16 D_8003E330[0x800] = {
 
 // Seems to be a version of MtxF2L that uses unsigned values only
 void func_80019A30(float mf[4][4], Mtx *m) {
-	u32	e1,e2;
+    u32 e1,e2;
 
     // This macro should match, but doesn't (some instructions are reordered)
     // This is because the two `mtx->m[...][...] = ...` lines in the macro end up on the same line of code
@@ -70,7 +70,7 @@ void func_80019A30(float mf[4][4], Mtx *m) {
 
 // Same as above, but assumes column 3 is (0, 0, 0, 1)
 void func_80019C60(float mf[4][4], Mtx *m) {
-	u32	e1,e2;
+    u32 e1,e2;
     
     e1=FTOFIX32(mf[0][0]);
     e2=FTOFIX32(mf[0][1]);
@@ -144,71 +144,71 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_80019E5C.s")
 // This should be part of libultra, but it's slightly modified (1.0f instead of 1.0)
 // This applies to most of the following functions
 void guLookAtF(float mf[4][4], float xEye, float yEye, float zEye,
-	       float xAt,  float yAt,  float zAt,
-	       float xUp,  float yUp,  float zUp)
+           float xAt,  float yAt,  float zAt,
+           float xUp,  float yUp,  float zUp)
 {
-	float	len, xLook, yLook, zLook, xRight, yRight, zRight;
+    float   len, xLook, yLook, zLook, xRight, yRight, zRight;
 
-	xLook = xAt - xEye;
-	yLook = yAt - yEye;
-	zLook = zAt - zEye;
+    xLook = xAt - xEye;
+    yLook = yAt - yEye;
+    zLook = zAt - zEye;
 
-	/* Negate because positive Z is behind us: */
-	len = -1.0f / sqrtf (xLook*xLook + yLook*yLook + zLook*zLook);
-	xLook *= len;
-	yLook *= len;
-	zLook *= len;
+    /* Negate because positive Z is behind us: */
+    len = -1.0f / sqrtf (xLook*xLook + yLook*yLook + zLook*zLook);
+    xLook *= len;
+    yLook *= len;
+    zLook *= len;
 
-	/* Right = Up x Look */
+    /* Right = Up x Look */
 
-	xRight = yUp * zLook - zUp * yLook;
-	yRight = zUp * xLook - xUp * zLook;
-	zRight = xUp * yLook - yUp * xLook;
-	len = 1.0f / sqrtf (xRight*xRight + yRight*yRight + zRight*zRight);
-	xRight *= len;
-	yRight *= len;
-	zRight *= len;
+    xRight = yUp * zLook - zUp * yLook;
+    yRight = zUp * xLook - xUp * zLook;
+    zRight = xUp * yLook - yUp * xLook;
+    len = 1.0f / sqrtf (xRight*xRight + yRight*yRight + zRight*zRight);
+    xRight *= len;
+    yRight *= len;
+    zRight *= len;
 
-	/* Up = Look x Right */
+    /* Up = Look x Right */
 
-	xUp = yLook * zRight - zLook * yRight;
-	yUp = zLook * xRight - xLook * zRight;
-	zUp = xLook * yRight - yLook * xRight;
-	len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
-	xUp *= len;
-	yUp *= len;
-	zUp *= len;
+    xUp = yLook * zRight - zLook * yRight;
+    yUp = zLook * xRight - xLook * zRight;
+    zUp = xLook * yRight - yLook * xRight;
+    len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
+    xUp *= len;
+    yUp *= len;
+    zUp *= len;
 
-	mf[0][0] = xRight;
-	mf[1][0] = yRight;
-	mf[2][0] = zRight;
-	mf[3][0] = -(xEye * xRight + yEye * yRight + zEye * zRight);
+    mf[0][0] = xRight;
+    mf[1][0] = yRight;
+    mf[2][0] = zRight;
+    mf[3][0] = -(xEye * xRight + yEye * yRight + zEye * zRight);
 
-	mf[0][1] = xUp;
-	mf[1][1] = yUp;
-	mf[2][1] = zUp;
-	mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
+    mf[0][1] = xUp;
+    mf[1][1] = yUp;
+    mf[2][1] = zUp;
+    mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
 
-	mf[0][2] = xLook;
-	mf[1][2] = yLook;
-	mf[2][2] = zLook;
-	mf[3][2] = -(xEye * xLook + yEye * yLook + zEye * zLook);
+    mf[0][2] = xLook;
+    mf[1][2] = yLook;
+    mf[2][2] = zLook;
+    mf[3][2] = -(xEye * xLook + yEye * yLook + zEye * zLook);
 
-	mf[0][3] = 0;
-	mf[1][3] = 0;
-	mf[2][3] = 0;
-	mf[3][3] = 1;
+    mf[0][3] = 0;
+    mf[1][3] = 0;
+    mf[2][3] = 0;
+    mf[3][3] = 1;
 }
 
 void guLookAt (Mtx *m, float xEye, float yEye, float zEye,
-	       float xAt,  float yAt,  float zAt,
-	       float xUp,  float yUp,  float zUp)
+           float xAt,  float yAt,  float zAt,
+           float xUp,  float yUp,  float zUp)
 {
-	Mat4	mf;
+    Mat4    mf;
 
-	guLookAtF(mf, xEye, yEye, zEye, xAt, yAt, zAt, xUp, yUp, zUp);
+    guLookAtF(mf, xEye, yEye, zEye, xAt, yAt, zAt, xUp, yUp, zUp);
 
-	func_80019A30(mf, m);
+    func_80019A30(mf, m);
 }
 
 // Modified version of guLookAtF that takes an extra Vector* argument and calls func_800191F8
@@ -217,25 +217,25 @@ void guLookAtF_2(float mf[4][4], float xEye, float yEye, float zEye, float xAt, 
     Vector look;
     Vector right;
 
-	look.x = xAt - xEye;
-	look.y = yAt - yEye;
-	look.z = zAt - zEye;
+    look.x = xAt - xEye;
+    look.y = yAt - yEye;
+    look.z = zAt - zEye;
 
-	/* Negate because positive Z is behind us: */
-	len = -1.0f / sqrtf (look.x*look.x + look.y*look.y + look.z*look.z);
-	look.x *= len;
-	look.y *= len;
-	look.z *= len;
+    /* Negate because positive Z is behind us: */
+    len = -1.0f / sqrtf (look.x*look.x + look.y*look.y + look.z*look.z);
+    look.x *= len;
+    look.y *= len;
+    look.z *= len;
 
-	/* Right = Up x Look */
+    /* Right = Up x Look */
 
-	right.x = yUp * look.z - zUp * look.y;
-	right.y = zUp * look.x - xUp * look.z;
-	right.z = xUp * look.y - yUp * look.x;
-	len = 1.0f / sqrtf (right.x*right.x + right.y*right.y + right.z*right.z);
-	right.x *= len;
-	right.y *= len;
-	right.z *= len;
+    right.x = yUp * look.z - zUp * look.y;
+    right.y = zUp * look.x - xUp * look.z;
+    right.z = xUp * look.y - yUp * look.x;
+    len = 1.0f / sqrtf (right.x*right.x + right.y*right.y + right.z*right.z);
+    right.x *= len;
+    right.y *= len;
+    right.z *= len;
 
     func_800191F8(&right, &look, arg7);
     xUp = (look.y * right.z) - (look.z * right.y);
@@ -250,35 +250,35 @@ void guLookAtF_2(float mf[4][4], float xEye, float yEye, float zEye, float xAt, 
     mf[0][0] = right.x;
     mf[1][0] = right.y;
     mf[2][0] = right.z;
-	mf[3][0] = -(xEye * right.x + yEye * right.y + zEye * right.z);
+    mf[3][0] = -(xEye * right.x + yEye * right.y + zEye * right.z);
 
     mf[0][1] = xUp;
     mf[1][1] = yUp;
     mf[2][1] = zUp;
-	mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
+    mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
 
     mf[0][2] = look.x;
     mf[1][2] = look.y;
     mf[2][2] = look.z;
-	mf[3][2] = -(xEye * look.x + yEye * look.y + zEye * look.z);
+    mf[3][2] = -(xEye * look.x + yEye * look.y + zEye * look.z);
 
-	mf[0][3] = 0;
-	mf[1][3] = 0;
-	mf[2][3] = 0;
-	mf[3][3] = 1;
+    mf[0][3] = 0;
+    mf[1][3] = 0;
+    mf[2][3] = 0;
+    mf[3][3] = 1;
 }
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
 void func_8001A488 (Mtx *m, float xEye, float yEye, float zEye,
-	       float xAt,  float yAt,  float zAt, Vector* arg7,
-	       float xUp,  float yUp,  float zUp)
+           float xAt,  float yAt,  float zAt, Vector* arg7,
+           float xUp,  float yUp,  float zUp)
 {
-	Mat4	mf;
+    Mat4    mf;
 
-	guLookAtF_2(mf, xEye, yEye, zEye, xAt, yAt, zAt, arg7, xUp, yUp, zUp);
+    guLookAtF_2(mf, xEye, yEye, zEye, xAt, yAt, zAt, arg7, xUp, yUp, zUp);
 
-	func_80019A30(mf, m);
+    func_80019A30(mf, m);
 }
 // void func_8001A488(s32 arg0, ? arg1, ? arg2, ? arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, f32 arg9, f32 argA) {
 //     ? sp38;
@@ -292,181 +292,181 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001A488.s")
 
 // Modified in the same way that guLookAtF was
 void guLookAtReflectF(float mf[4][4], LookAt *l, 
-		      float xEye, float yEye, float zEye,
-		      float xAt,  float yAt,  float zAt,
-		      float xUp,  float yUp,  float zUp)
+              float xEye, float yEye, float zEye,
+              float xAt,  float yAt,  float zAt,
+              float xUp,  float yUp,  float zUp)
 {
-	float	len, xLook, yLook, zLook, xRight, yRight, zRight;
+    float   len, xLook, yLook, zLook, xRight, yRight, zRight;
 
-	xLook = xAt - xEye;
-	yLook = yAt - yEye;
-	zLook = zAt - zEye;
+    xLook = xAt - xEye;
+    yLook = yAt - yEye;
+    zLook = zAt - zEye;
 
-	/* Negate because positive Z is behind us: */
-	len = -1.0f / sqrtf (xLook*xLook + yLook*yLook + zLook*zLook);
-	xLook *= len;
-	yLook *= len;
-	zLook *= len;
+    /* Negate because positive Z is behind us: */
+    len = -1.0f / sqrtf (xLook*xLook + yLook*yLook + zLook*zLook);
+    xLook *= len;
+    yLook *= len;
+    zLook *= len;
 
-	/* Right = Up x Look */
+    /* Right = Up x Look */
 
-	xRight = yUp * zLook - zUp * yLook;
-	yRight = zUp * xLook - xUp * zLook;
-	zRight = xUp * yLook - yUp * xLook;
-	len = 1.0f / sqrtf (xRight*xRight + yRight*yRight + zRight*zRight);
-	xRight *= len;
-	yRight *= len;
-	zRight *= len;
+    xRight = yUp * zLook - zUp * yLook;
+    yRight = zUp * xLook - xUp * zLook;
+    zRight = xUp * yLook - yUp * xLook;
+    len = 1.0f / sqrtf (xRight*xRight + yRight*yRight + zRight*zRight);
+    xRight *= len;
+    yRight *= len;
+    zRight *= len;
 
-	/* Up = Look x Right */
+    /* Up = Look x Right */
 
-	xUp = yLook * zRight - zLook * yRight;
-	yUp = zLook * xRight - xLook * zRight;
-	zUp = xLook * yRight - yLook * xRight;
-	len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
-	xUp *= len;
-	yUp *= len;
-	zUp *= len;
+    xUp = yLook * zRight - zLook * yRight;
+    yUp = zLook * xRight - xLook * zRight;
+    zUp = xLook * yRight - yLook * xRight;
+    len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
+    xUp *= len;
+    yUp *= len;
+    zUp *= len;
 
-	/* reflectance vectors = Up and Right */
+    /* reflectance vectors = Up and Right */
 
-	l->l[0].l.dir[0] = FTOFRAC8(xRight);
-	l->l[0].l.dir[1] = FTOFRAC8(yRight);
-	l->l[0].l.dir[2] = FTOFRAC8(zRight);
-	l->l[1].l.dir[0] = FTOFRAC8(xUp);
-	l->l[1].l.dir[1] = FTOFRAC8(yUp);
-	l->l[1].l.dir[2] = FTOFRAC8(zUp);
-	l->l[0].l.col[0] = 0x00;
-	l->l[0].l.col[1] = 0x00;
-	l->l[0].l.col[2] = 0x00;
-	l->l[0].l.pad1 = 0x00;
-	l->l[0].l.colc[0] = 0x00;
-	l->l[0].l.colc[1] = 0x00;
-	l->l[0].l.colc[2] = 0x00;
-	l->l[0].l.pad2 = 0x00;
-	l->l[1].l.col[0] = 0x00;
-	l->l[1].l.col[1] = 0x80;
-	l->l[1].l.col[2] = 0x00;
-	l->l[1].l.pad1 = 0x00;
-	l->l[1].l.colc[0] = 0x00;
-	l->l[1].l.colc[1] = 0x80;
-	l->l[1].l.colc[2] = 0x00;
-	l->l[1].l.pad2 = 0x00;
+    l->l[0].l.dir[0] = FTOFRAC8(xRight);
+    l->l[0].l.dir[1] = FTOFRAC8(yRight);
+    l->l[0].l.dir[2] = FTOFRAC8(zRight);
+    l->l[1].l.dir[0] = FTOFRAC8(xUp);
+    l->l[1].l.dir[1] = FTOFRAC8(yUp);
+    l->l[1].l.dir[2] = FTOFRAC8(zUp);
+    l->l[0].l.col[0] = 0x00;
+    l->l[0].l.col[1] = 0x00;
+    l->l[0].l.col[2] = 0x00;
+    l->l[0].l.pad1 = 0x00;
+    l->l[0].l.colc[0] = 0x00;
+    l->l[0].l.colc[1] = 0x00;
+    l->l[0].l.colc[2] = 0x00;
+    l->l[0].l.pad2 = 0x00;
+    l->l[1].l.col[0] = 0x00;
+    l->l[1].l.col[1] = 0x80;
+    l->l[1].l.col[2] = 0x00;
+    l->l[1].l.pad1 = 0x00;
+    l->l[1].l.colc[0] = 0x00;
+    l->l[1].l.colc[1] = 0x80;
+    l->l[1].l.colc[2] = 0x00;
+    l->l[1].l.pad2 = 0x00;
 
-	mf[0][0] = xRight;
-	mf[1][0] = yRight;
-	mf[2][0] = zRight;
-	mf[3][0] = -(xEye * xRight + yEye * yRight + zEye * zRight);
+    mf[0][0] = xRight;
+    mf[1][0] = yRight;
+    mf[2][0] = zRight;
+    mf[3][0] = -(xEye * xRight + yEye * yRight + zEye * zRight);
 
-	mf[0][1] = xUp;
-	mf[1][1] = yUp;
-	mf[2][1] = zUp;
-	mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
+    mf[0][1] = xUp;
+    mf[1][1] = yUp;
+    mf[2][1] = zUp;
+    mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
 
-	mf[0][2] = xLook;
-	mf[1][2] = yLook;
-	mf[2][2] = zLook;
-	mf[3][2] = -(xEye * xLook + yEye * yLook + zEye * zLook);
+    mf[0][2] = xLook;
+    mf[1][2] = yLook;
+    mf[2][2] = zLook;
+    mf[3][2] = -(xEye * xLook + yEye * yLook + zEye * zLook);
 
-	mf[0][3] = 0;
-	mf[1][3] = 0;
-	mf[2][3] = 0;
-	mf[3][3] = 1;
+    mf[0][3] = 0;
+    mf[1][3] = 0;
+    mf[2][3] = 0;
+    mf[3][3] = 1;
 }
 
 void guLookAtReflect (Mtx *m, LookAt *l, float xEye, float yEye, float zEye,
-	       float xAt,  float yAt,  float zAt,
-	       float xUp,  float yUp,  float zUp)
+           float xAt,  float yAt,  float zAt,
+           float xUp,  float yUp,  float zUp)
 {
-	float	mf[4][4];
+    float   mf[4][4];
 
-	guLookAtReflectF(mf, l, xEye, yEye, zEye, xAt, yAt, zAt,
-			 xUp, yUp, zUp);
+    guLookAtReflectF(mf, l, xEye, yEye, zEye, xAt, yAt, zAt,
+             xUp, yUp, zUp);
 
-	func_80019A30(mf, m);
+    func_80019A30(mf, m);
 }
 
 // Lookat counterpart for guLookAtF_2
 f32 guLookAtReflectF_2(float mf[4][4], LookAt *l, float xEye, float yEye, float zEye, float xAt,  float yAt,  float zAt, Vector* arg8, float xUp,  float yUp,  float zUp) {
-	float	len;
+    float   len;
     Vector look;
     Vector right;
 
-	look.x = xAt - xEye;
-	look.y = yAt - yEye;
-	look.z = zAt - zEye;
+    look.x = xAt - xEye;
+    look.y = yAt - yEye;
+    look.z = zAt - zEye;
 
-	/* Negate because positive Z is behind us: */
-	len = -1.0f / sqrtf (look.x*look.x + look.y*look.y + look.z*look.z);
-	look.x *= len;
-	look.y *= len;
-	look.z *= len;
+    /* Negate because positive Z is behind us: */
+    len = -1.0f / sqrtf (look.x*look.x + look.y*look.y + look.z*look.z);
+    look.x *= len;
+    look.y *= len;
+    look.z *= len;
 
-	/* Right = Up x Look */
+    /* Right = Up x Look */
 
-	right.x = yUp * look.z - zUp * look.y;
-	right.y = zUp * look.x - xUp * look.z;
-	right.z = xUp * look.y - yUp * look.x;
-	len = 1.0f / sqrtf (right.x*right.x + right.y*right.y + right.z*right.z);
-	right.x *= len;
-	right.y *= len;
-	right.z *= len;
+    right.x = yUp * look.z - zUp * look.y;
+    right.y = zUp * look.x - xUp * look.z;
+    right.z = xUp * look.y - yUp * look.x;
+    len = 1.0f / sqrtf (right.x*right.x + right.y*right.y + right.z*right.z);
+    right.x *= len;
+    right.y *= len;
+    right.z *= len;
 
-	/* Up = Look x Right */
+    /* Up = Look x Right */
 
     func_800191F8(&right, &look, arg8);
-	xUp = look.y * right.z - look.z * right.y;
-	yUp = look.z * right.x - look.x * right.z;
-	zUp = look.x * right.y - look.y * right.x;
-	len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
-	xUp *= len;
-	yUp *= len;
-	zUp *= len;
+    xUp = look.y * right.z - look.z * right.y;
+    yUp = look.z * right.x - look.x * right.z;
+    zUp = look.x * right.y - look.y * right.x;
+    len = 1.0f / sqrtf (xUp*xUp + yUp*yUp + zUp*zUp);
+    xUp *= len;
+    yUp *= len;
+    zUp *= len;
 
-	/* reflectance vectors = Up and Right */
+    /* reflectance vectors = Up and Right */
 
-	l->l[0].l.dir[0] = FTOFRAC8(right.x);
-	l->l[0].l.dir[1] = FTOFRAC8(right.y);
-	l->l[0].l.dir[2] = FTOFRAC8(right.z);
-	l->l[1].l.dir[0] = FTOFRAC8(xUp);
-	l->l[1].l.dir[1] = FTOFRAC8(yUp);
-	l->l[1].l.dir[2] = FTOFRAC8(zUp);
-	l->l[0].l.col[0] = 0x00;
-	l->l[0].l.col[1] = 0x00;
-	l->l[0].l.col[2] = 0x00;
-	l->l[0].l.pad1 = 0x00;
-	l->l[0].l.colc[0] = 0x00;
-	l->l[0].l.colc[1] = 0x00;
-	l->l[0].l.colc[2] = 0x00;
-	l->l[0].l.pad2 = 0x00;
-	l->l[1].l.col[0] = 0x00;
-	l->l[1].l.col[1] = 0x80;
-	l->l[1].l.col[2] = 0x00;
-	l->l[1].l.pad1 = 0x00;
-	l->l[1].l.colc[0] = 0x00;
-	l->l[1].l.colc[1] = 0x80;
-	l->l[1].l.colc[2] = 0x00;
-	l->l[1].l.pad2 = 0x00;
+    l->l[0].l.dir[0] = FTOFRAC8(right.x);
+    l->l[0].l.dir[1] = FTOFRAC8(right.y);
+    l->l[0].l.dir[2] = FTOFRAC8(right.z);
+    l->l[1].l.dir[0] = FTOFRAC8(xUp);
+    l->l[1].l.dir[1] = FTOFRAC8(yUp);
+    l->l[1].l.dir[2] = FTOFRAC8(zUp);
+    l->l[0].l.col[0] = 0x00;
+    l->l[0].l.col[1] = 0x00;
+    l->l[0].l.col[2] = 0x00;
+    l->l[0].l.pad1 = 0x00;
+    l->l[0].l.colc[0] = 0x00;
+    l->l[0].l.colc[1] = 0x00;
+    l->l[0].l.colc[2] = 0x00;
+    l->l[0].l.pad2 = 0x00;
+    l->l[1].l.col[0] = 0x00;
+    l->l[1].l.col[1] = 0x80;
+    l->l[1].l.col[2] = 0x00;
+    l->l[1].l.pad1 = 0x00;
+    l->l[1].l.colc[0] = 0x00;
+    l->l[1].l.colc[1] = 0x80;
+    l->l[1].l.colc[2] = 0x00;
+    l->l[1].l.pad2 = 0x00;
 
-	mf[0][0] = right.x;
-	mf[1][0] = right.y;
-	mf[2][0] = right.z;
-	mf[3][0] = -(xEye * right.x + yEye * right.y + zEye * right.z);
+    mf[0][0] = right.x;
+    mf[1][0] = right.y;
+    mf[2][0] = right.z;
+    mf[3][0] = -(xEye * right.x + yEye * right.y + zEye * right.z);
 
-	mf[0][1] = xUp;
-	mf[1][1] = yUp;
-	mf[2][1] = zUp;
-	mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
+    mf[0][1] = xUp;
+    mf[1][1] = yUp;
+    mf[2][1] = zUp;
+    mf[3][1] = -(xEye * xUp + yEye * yUp + zEye * zUp);
 
-	mf[0][2] = look.x;
-	mf[1][2] = look.y;
-	mf[2][2] = look.z;
-	mf[3][2] = -(xEye * look.x + yEye * look.y + zEye * look.z);
+    mf[0][2] = look.x;
+    mf[1][2] = look.y;
+    mf[2][2] = look.z;
+    mf[3][2] = -(xEye * look.x + yEye * look.y + zEye * look.z);
 
-	mf[0][3] = 0;
-	mf[1][3] = 0;
-	mf[2][3] = 0;
-	mf[3][3] = 1;
+    mf[0][3] = 0;
+    mf[1][3] = 0;
+    mf[2][3] = 0;
+    mf[3][3] = 1;
 }
 
 #ifdef MIPS_TO_C
@@ -482,15 +482,15 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001AD90.s")
 #endif
 
 void guOrthoF(float mf[4][4], float l, float r, float b, float t, float n, float f, float scale){
-	int	i, j;
+    int i, j;
 
-	mf[0][0] = 2/(r-l);
-	mf[1][1] = 2/(t-b);
-	mf[2][2] = -2/(f-n);
-	mf[3][0] = -(r+l)/(r-l);
-	mf[3][1] = -(t+b)/(t-b);
-	mf[3][2] = -(f+n)/(f-n);
-	mf[3][3] = 1;
+    mf[0][0] = 2/(r-l);
+    mf[1][1] = 2/(t-b);
+    mf[2][2] = -2/(f-n);
+    mf[3][0] = -(r+l)/(r-l);
+    mf[3][1] = -(t+b)/(t-b);
+    mf[3][2] = -(f+n)/(f-n);
+    mf[3][3] = 1;
 
     for (i=0; i<3; i++) {
         if (i != 0)
@@ -503,18 +503,18 @@ void guOrthoF(float mf[4][4], float l, float r, float b, float t, float n, float
             mf[i][3] = 0;
     }
 
-	for (i=0; i<4; i++)
-	    for (j=0; j<4; j++)
-			mf[i][j] *= scale;
+    for (i=0; i<4; i++)
+        for (j=0; j<4; j++)
+            mf[i][j] *= scale;
 }
 
 void guOrtho(Mtx *m, float l, float r, float b, float t, float n, float f, float scale)
 {
-	Mat4 mf;
+    Mat4 mf;
 
-	guOrthoF(mf, l, r, b, t, n, f, scale);
+    guOrthoF(mf, l, r, b, t, n, f, scale);
 
-	func_80019A30(mf, m);
+    func_80019A30(mf, m);
 }
 
 #ifdef MIPS_TO_C
@@ -660,30 +660,22 @@ void func_8001B454(s32 arg0, ? arg2, ? arg3, f32 arg4, f32 arg5, f32 arg6) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001B454.s")
 #endif
 
-// condition seems to be i < 4 but that hella doesnt match lol
-#ifdef NON_MATCHING
-void func_8001B4AC(Mat4 mf, f32 x, f32 y, f32 z) {
-    int i;
+void HS64_MkScaleMtxF(Mat4 mf, f32 x, f32 y, f32 z) {
+    int i, j;
 
     mf[0][0] = x;
     mf[1][1] = y;
-    mf[2][3] = z;
+    mf[2][2] = z;
     mf[3][3] = 1.0f;
 
-	for (i = 0; i < 3; i++) {
-		if (i != 0)
-		    mf[i][0] = 0;
-		if (i != 1)
-		    mf[i][1] = 0;
-		if (i != 2)
-		    mf[i][2] = 0;
-		if (i != 3)
-		    mf[i][3] = 0;
-	}
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            if (i != j) {
+                mf[i][j] = 0;
+            }
+        }
+    }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001B4AC.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8001B540(Mtx *arg0, f32 arg1, f32 arg2, f32 arg3) {
@@ -772,52 +764,24 @@ loop_5:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001B5E4.s")
 #endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-s32 func_8001B6E4(void *arg0, f32 arg1, f32 arg2, f32 arg3) {
-    s32 temp_v0;
-    s32 phi_v0;
-    void *phi_v1;
+void HS64_MkTranslateMtxF(Mat4 mf, f32 x, f32 y, f32 z) {
+    int i, j;
 
-    arg0->unk30 = arg1;
-    arg0->unk34 = arg2;
-    arg0->unk38 = arg3;
-    phi_v0 = 0;
-    phi_v1 = arg0;
-loop_1:
-    if (phi_v0 == 0) {
-        phi_v1->unk0 = 1.0f;
-    } else {
-        phi_v1->unk0 = 0.0f;
+    mf[3][0] = x;
+    mf[3][1] = y;
+    mf[3][2] = z;
+
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 4; j++) {
+            if (i == j) {
+                mf[i][j] = 1.0f;
+            } else {
+                mf[i][j] = 0.0f;
+            }
+        }
     }
-    if (phi_v0 == 1) {
-        phi_v1->unk4 = 1.0f;
-    } else {
-        phi_v1->unk4 = 0.0f;
-    }
-    if (phi_v0 == 2) {
-        phi_v1->unk8 = 1.0f;
-    } else {
-        phi_v1->unk8 = 0.0f;
-    }
-    if (phi_v0 == 3) {
-        phi_v1->unkC = 1.0f;
-    } else {
-        phi_v1->unkC = 0.0f;
-    }
-    temp_v0 = phi_v0 + 1;
-    phi_v0 = temp_v0;
-    phi_v1 = phi_v1 + 0x10;
-    if (temp_v0 != 3) {
-        goto loop_1;
-    }
-    arg0->unk3C = 1.0f;
-    return temp_v0;
+    mf[3][3] = 1.0f;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001B6E4.s")
-#endif
-
 
 void func_8001B784(s32 arg0[4][4], f32 arg1, f32 arg2, f32 arg3) {
     s32 temp_f6;
@@ -961,7 +925,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001BB30.s")
 
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
-void _guRotateRPYF(void *arg0, ? arg1, f32 arg2, f32 arg3) {
+void HS64_MkRotationMtxF(void *arg0, ? arg1, f32 arg2, f32 arg3) {
     f32 sp40;
     f32 sp3C;
     f32 sp34;
@@ -1111,7 +1075,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001BCE0.s")
 #ifdef MIPS_TO_C
 //generated by mips_to_c commit e0e006e8858ba357d1dcb4dc64f038b7df278aa6
 void func_8001BF88(void *arg0, f32 arg1, f32 arg2, f32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    _guRotateRPYF(arg4, arg5, arg6);
+    HS64_MkRotationMtxF(arg4, arg5, arg6);
     arg0->unk30 = arg1;
     arg0->unk34 = arg2;
     arg0->unk38 = arg3;
@@ -1234,10 +1198,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001BFDC.s")
 
 
 extern void func_8001B5E4(Mat4, f32, f32, f32);
-void _guRotateRPYF(Mat4, f32, f32, f32);
+void HS64_MkRotationMtxF(Mat4, f32, f32, f32);
 
 void func_8001C2E4(Mat4 arg0, Vector arg1, Vector arg4, Vector arg7) {
-    _guRotateRPYF(arg0, arg4.x, arg4.y, arg4.z);
+    HS64_MkRotationMtxF(arg0, arg4.x, arg4.y, arg4.z);
     arg0[3][0] = arg1.x;
     arg0[3][1] = arg1.y;
     arg0[3][2] = arg1.z;
@@ -1832,7 +1796,7 @@ void func_8001D200(f32 arg1, f32 arg2, f32 arg3) {
     f32 temp_f0;
 
     temp_f0 = D_80040CA4;
-    _guRotateRPYF(arg1, arg2, (arg1 * temp_f0) / 180.0f, (arg2 * temp_f0) / 180.0f, (arg3 * temp_f0) / 180.0f);
+    HS64_MkRotationMtxF(arg1, arg2, (arg1 * temp_f0) / 180.0f, (arg2 * temp_f0) / 180.0f, (arg3 * temp_f0) / 180.0f);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_6/func_8001D200.s")
@@ -1845,7 +1809,7 @@ void func_8001D264(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
     f32 temp_f0;
 
     temp_f0 = D_80040CA8;
-    _guRotateRPYF(arg1, arg2, &sp18, (arg1 * temp_f0) / 180.0f, (arg2 * temp_f0) / 180.0f, (arg3 * temp_f0) / 180.0f);
+    HS64_MkRotationMtxF(arg1, arg2, &sp18, (arg1 * temp_f0) / 180.0f, (arg2 * temp_f0) / 180.0f, (arg3 * temp_f0) / 180.0f);
     func_80019C60(&sp18, arg0);
 }
 #else

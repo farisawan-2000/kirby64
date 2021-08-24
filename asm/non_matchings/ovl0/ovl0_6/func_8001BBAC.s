@@ -1,4 +1,4 @@
-glabel _guRotateRPYF
+glabel HS64_MkRotationMtxF
 /* 01C7AC 8001BBAC 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 01C7B0 8001BBB0 F7B60020 */  sdc1  $f22, 0x20($sp)
 /* 01C7B4 8001BBB4 4485B000 */  mtc1  $a1, $f22

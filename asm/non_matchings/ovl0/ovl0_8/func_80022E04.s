@@ -19,10 +19,10 @@ glabel func_80022E04
 /* 023A48 80022E48 0C00027A */  jal   func_800009E8
 /* 023A4C 80022E4C 24070001 */   li    $a3, 1
 /* 023A50 80022E50 3C158004 */  lui   $s5, %hi(D_8003DCA4) # $s5, 0x8004
-/* 023A54 80022E54 3C138009 */  lui   $s3, %hi(D_80096EF8) # $s3, 0x8009
+/* 023A54 80022E54 3C138009 */  lui   $s3, %hi(gCrashScreenFramebuffer) # $s3, 0x8009
 /* 023A58 80022E58 3C118004 */  lui   $s1, %hi(D_8003F688) # $s1, 0x8004
 /* 023A5C 80022E5C 2631F688 */  addiu $s1, %lo(D_8003F688) # addiu $s1, $s1, -0x978
-/* 023A60 80022E60 26736EF8 */  addiu $s3, %lo(D_80096EF8) # addiu $s3, $s3, 0x6ef8
+/* 023A60 80022E60 26736EF8 */  addiu $s3, %lo(gCrashScreenFramebuffer) # addiu $s3, $s3, 0x6ef8
 /* 023A64 80022E64 26B5DCA4 */  addiu $s5, %lo(D_8003DCA4) # addiu $s5, $s5, -0x235c
 /* 023A68 80022E68 24160001 */  li    $s6, 1
 /* 023A6C 80022E6C 8FB40048 */  lw    $s4, 0x48($sp)

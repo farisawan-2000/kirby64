@@ -15,7 +15,7 @@ glabel func_800A0558
 /* 0487DC 800A058C F7B60018 */  sdc1  $f22, 0x18($sp)
 /* 0487E0 800A0590 F7B40010 */  sdc1  $f20, 0x10($sp)
 /* 0487E4 800A0594 AFA500FC */  sw    $a1, 0xfc($sp)
-/* 0487E8 800A0598 0C00C304 */  jal   guMtxIdentF_ovl1
+/* 0487E8 800A0598 0C00C304 */  jal   guMtxIdentF
 /* 0487EC 800A059C 02A02025 */   move  $a0, $s5
 /* 0487F0 800A05A0 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 0487F4 800A05A4 4481B000 */  mtc1  $at, $f22
@@ -44,7 +44,7 @@ glabel func_800A0558
 /* 04884C 800A05FC 44050000 */  mfc1  $a1, $f0
 .L800A0600_ovl1:
 /* 048850 800A0600 8E660044 */  lw    $a2, 0x44($s3)
-/* 048854 800A0604 0C006D2B */  jal   func_8001B4AC_ovl1
+/* 048854 800A0604 0C006D2B */  jal   HS64_MkScaleMtxF
 /* 048858 800A0608 8E670048 */   lw    $a3, 0x48($s3)
 /* 04885C 800A060C 02A02025 */  move  $a0, $s5
 /* 048860 800A0610 02802825 */  move  $a1, $s4
@@ -70,7 +70,7 @@ glabel func_800A0558
 /* 0488AC 800A065C 44050000 */  mfc1  $a1, $f0
 .L800A0660_ovl1:
 /* 0488B0 800A0660 8E660034 */  lw    $a2, 0x34($s3)
-/* 0488B4 800A0664 0C006EEB */  jal   _guRotateRPYF
+/* 0488B4 800A0664 0C006EEB */  jal   HS64_MkRotationMtxF
 /* 0488B8 800A0668 8E670038 */   lw    $a3, 0x38($s3)
 /* 0488BC 800A066C 02A02025 */  move  $a0, $s5
 /* 0488C0 800A0670 02802825 */  move  $a1, $s4
@@ -96,7 +96,7 @@ glabel func_800A0558
 /* 04890C 800A06BC 44050000 */  mfc1  $a1, $f0
 .L800A06C0_ovl1:
 /* 048910 800A06C0 8E660020 */  lw    $a2, 0x20($s3)
-/* 048914 800A06C4 0C006DB9 */  jal   func_8001B6E4_ovl1
+/* 048914 800A06C4 0C006DB9 */  jal   HS64_MkTranslateMtxF
 /* 048918 800A06C8 8E670024 */   lw    $a3, 0x24($s3)
 /* 04891C 800A06CC 02A02025 */  move  $a0, $s5
 /* 048920 800A06D0 02802825 */  move  $a1, $s4
@@ -159,7 +159,7 @@ glabel func_800A0558
 /* 0489EC 800A079C 44050000 */  mfc1  $a1, $f0
 .L800A07A0_ovl1:
 /* 0489F0 800A07A0 8D060008 */  lw    $a2, 8($t0)
-/* 0489F4 800A07A4 0C006D2B */  jal   func_8001B4AC_ovl1
+/* 0489F4 800A07A4 0C006D2B */  jal   HS64_MkScaleMtxF
 /* 0489F8 800A07A8 8D07000C */   lw    $a3, 0xc($t0)
 /* 0489FC 800A07AC 02A02025 */  move  $a0, $s5
 /* 048A00 800A07B0 02802825 */  move  $a1, $s4
@@ -187,7 +187,7 @@ glabel func_800A0558
 /* 048A54 800A0804 44050000 */  mfc1  $a1, $f0
 .L800A0808_ovl1:
 /* 048A58 800A0808 8E06000C */  lw    $a2, 0xc($s0)
-/* 048A5C 800A080C 0C006EEB */  jal   _guRotateRPYF
+/* 048A5C 800A080C 0C006EEB */  jal   HS64_MkRotationMtxF
 /* 048A60 800A0810 8E070010 */   lw    $a3, 0x10($s0)
 /* 048A64 800A0814 02A02025 */  move  $a0, $s5
 /* 048A68 800A0818 02802825 */  move  $a1, $s4
@@ -215,7 +215,7 @@ glabel func_800A0558
 /* 048ABC 800A086C 44050000 */  mfc1  $a1, $f0
 .L800A0870_ovl1:
 /* 048AC0 800A0870 8E260008 */  lw    $a2, 8($s1)
-/* 048AC4 800A0874 0C006DB9 */  jal   func_8001B6E4_ovl1
+/* 048AC4 800A0874 0C006DB9 */  jal   HS64_MkTranslateMtxF
 /* 048AC8 800A0878 8E27000C */   lw    $a3, 0xc($s1)
 /* 048ACC 800A087C 02A02025 */  move  $a0, $s5
 /* 048AD0 800A0880 02802825 */  move  $a1, $s4

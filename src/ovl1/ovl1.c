@@ -952,26 +952,26 @@ void *func_800A0558(void *arg0, void *arg1, void *arg2) {
     void *phi_v1;
     void *phi_s1_2;
 
-    guMtxIdentF_ovl1(&spB8);
+    guMtxIdentF(&spB8);
     phi_s3 = arg2;
 loop_1:
     temp_f0 = phi_s3->unk40;
     if (((1.0f != temp_f0) || (1.0f != phi_s3->unk44)) || (1.0f != phi_s3->unk48)) {
-        func_8001B4AC_ovl1(&sp78, temp_f0, (bitwise s32) phi_s3->unk44, (bitwise s32) phi_s3->unk48);
+        HS64_MkScaleMtxF(&sp78, temp_f0, (bitwise s32) phi_s3->unk44, (bitwise s32) phi_s3->unk48);
         guMtxCatF(&spB8, &sp78, &spB8);
     } else {
 
     }
     temp_f0_2 = phi_s3->unk30;
     if (((0.0f != temp_f0_2) || (0.0f != phi_s3->unk34)) || (0.0f != phi_s3->unk38)) {
-        _guRotateRPYF(&sp78, temp_f0_2, (bitwise s32) phi_s3->unk34, (bitwise s32) phi_s3->unk38);
+        HS64_MkRotationMtxF(&sp78, temp_f0_2, (bitwise s32) phi_s3->unk34, (bitwise s32) phi_s3->unk38);
         guMtxCatF(&spB8, &sp78, &spB8);
     } else {
 
     }
     temp_f0_3 = phi_s3->unk1C;
     if (((0.0f != temp_f0_3) || (0.0f != phi_s3->unk20)) || (0.0f != phi_s3->unk24)) {
-        func_8001B6E4_ovl1(&sp78, temp_f0_3, (bitwise s32) phi_s3->unk20, (bitwise s32) phi_s3->unk24);
+        HS64_MkTranslateMtxF(&sp78, temp_f0_3, (bitwise s32) phi_s3->unk20, (bitwise s32) phi_s3->unk24);
         guMtxCatF(&spB8, &sp78, &spB8);
     } else {
 
@@ -1027,7 +1027,7 @@ block_23:
         if (phi_t0 != 0) {
             temp_f0_4 = phi_t0->unk4;
             if (((1.0f != temp_f0_4) || (1.0f != phi_t0->unk8)) || (1.0f != phi_t0->unkC)) {
-                func_8001B4AC_ovl1(&sp78, temp_f0_4, (bitwise s32) phi_t0->unk8, (bitwise s32) phi_t0->unkC);
+                HS64_MkScaleMtxF(&sp78, temp_f0_4, (bitwise s32) phi_t0->unk8, (bitwise s32) phi_t0->unkC);
                 guMtxCatF(&spB8, &sp78, &spB8);
             } else {
 
@@ -1036,7 +1036,7 @@ block_23:
         if (phi_s0 != 0) {
             temp_f0_5 = phi_s0->unk8;
             if (((0.0f != temp_f0_5) || (0.0f != phi_s0->unkC)) || (0.0f != phi_s0->unk10)) {
-                _guRotateRPYF(&sp78, temp_f0_5, (bitwise s32) phi_s0->unkC, (bitwise s32) phi_s0->unk10);
+                HS64_MkRotationMtxF(&sp78, temp_f0_5, (bitwise s32) phi_s0->unkC, (bitwise s32) phi_s0->unk10);
                 guMtxCatF(&spB8, &sp78, &spB8);
             } else {
 
@@ -1045,7 +1045,7 @@ block_23:
         if (phi_s1 != 0) {
             temp_f0_6 = phi_s1->unk4;
             if (((0.0f != temp_f0_6) || (0.0f != phi_s1->unk8)) || (0.0f != phi_s1->unkC)) {
-                func_8001B6E4_ovl1(&sp78, temp_f0_6, (bitwise s32) phi_s1->unk8, (bitwise s32) phi_s1->unkC);
+                HS64_MkTranslateMtxF(&sp78, temp_f0_6, (bitwise s32) phi_s1->unk8, (bitwise s32) phi_s1->unkC);
                 guMtxCatF(&spB8, &sp78, &spB8);
             } else {
 

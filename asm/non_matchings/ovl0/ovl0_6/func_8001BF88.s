@@ -7,7 +7,7 @@ glabel func_8001BF88
 /* 01CB9C 8001BF9C 8FA70030 */  lw    $a3, 0x30($sp)
 /* 01CBA0 8001BFA0 8FA6002C */  lw    $a2, 0x2c($sp)
 /* 01CBA4 8001BFA4 8FA50028 */  lw    $a1, 0x28($sp)
-/* 01CBA8 8001BFA8 0C006EEB */  jal   _guRotateRPYF
+/* 01CBA8 8001BFA8 0C006EEB */  jal   HS64_MkRotationMtxF
 /* 01CBAC 8001BFAC AFA40018 */   sw    $a0, 0x18($sp)
 /* 01CBB0 8001BFB0 8FA40018 */  lw    $a0, 0x18($sp)
 /* 01CBB4 8001BFB4 C7A4001C */  lwc1  $f4, 0x1c($sp)

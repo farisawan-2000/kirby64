@@ -15,7 +15,7 @@ glabel func_800A4B34
 /* 04CDB8 800A4B68 8DD0003C */  lw    $s0, 0x3c($t6)
 .L800A4B6C_ovl1:
 /* 04CDBC 800A4B6C 27B1007C */  addiu $s1, $sp, 0x7c
-/* 04CDC0 800A4B70 0C00C304 */  jal   guMtxIdentF_ovl1
+/* 04CDC0 800A4B70 0C00C304 */  jal   guMtxIdentF
 /* 04CDC4 800A4B74 02202025 */   move  $a0, $s1
 /* 04CDC8 800A4B78 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 04CDCC 800A4B7C 4481A000 */  mtc1  $at, $f20
@@ -48,7 +48,7 @@ glabel func_800A4B34
 /* 04CE30 800A4BE0 4612A103 */  div.s $f4, $f20, $f18
 /* 04CE34 800A4BE4 44068000 */  mfc1  $a2, $f16
 /* 04CE38 800A4BE8 44072000 */  mfc1  $a3, $f4
-/* 04CE3C 800A4BEC 0C006D2B */  jal   func_8001B4AC_ovl1
+/* 04CE3C 800A4BEC 0C006D2B */  jal   HS64_MkScaleMtxF
 /* 04CE40 800A4BF0 00000000 */   nop   
 /* 04CE44 800A4BF4 02402025 */  move  $a0, $s2
 /* 04CE48 800A4BF8 02202825 */  move  $a1, $s1
@@ -110,7 +110,7 @@ glabel func_800A4B34
 /* 04CF18 800A4CC8 44062000 */  mfc1  $a2, $f4
 /* 04CF1C 800A4CCC 44074000 */  mfc1  $a3, $f8
 /* 04CF20 800A4CD0 44058000 */  mfc1  $a1, $f16
-/* 04CF24 800A4CD4 0C006DB9 */  jal   func_8001B6E4_ovl1
+/* 04CF24 800A4CD4 0C006DB9 */  jal   HS64_MkTranslateMtxF
 /* 04CF28 800A4CD8 02402025 */   move  $a0, $s2
 /* 04CF2C 800A4CDC 02402025 */  move  $a0, $s2
 /* 04CF30 800A4CE0 02202825 */  move  $a1, $s1

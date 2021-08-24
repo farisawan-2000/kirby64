@@ -23,7 +23,7 @@ glabel func_800B2928
 /* 05ABC8 800B2978 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)
 /* 05ABCC 800B297C 8DF0003C */  lw    $s0, 0x3c($t7)
 .L800B2980_ovl1:
-/* 05ABD0 800B2980 0C00C304 */  jal   guMtxIdentF_ovl1
+/* 05ABD0 800B2980 0C00C304 */  jal   guMtxIdentF
 /* 05ABD4 800B2984 02402025 */   move  $a0, $s2
 /* 05ABD8 800B2988 3C013F80 */  li    $at, 0x3F800000 # 1.000000
 /* 05ABDC 800B298C 3C14800E */  lui   $s4, %hi(gEntitiesScaleXArray) # $s4, 0x800e
@@ -56,7 +56,7 @@ glabel func_800B2928
 /* 05AC44 800B29F4 44050000 */  mfc1  $a1, $f0
 .L800B29F8_ovl1:
 /* 05AC48 800B29F8 8E060044 */  lw    $a2, 0x44($s0)
-/* 05AC4C 800B29FC 0C006D2B */  jal   func_8001B4AC_ovl1
+/* 05AC4C 800B29FC 0C006D2B */  jal   HS64_MkScaleMtxF
 /* 05AC50 800B2A00 8E070048 */   lw    $a3, 0x48($s0)
 /* 05AC54 800B2A04 02402025 */  move  $a0, $s2
 /* 05AC58 800B2A08 02202825 */  move  $a1, $s1
@@ -87,7 +87,7 @@ glabel func_800B2928
 .L800B2A64_ovl1:
 /* 05ACB4 800B2A64 44061000 */  mfc1  $a2, $f2
 /* 05ACB8 800B2A68 44076000 */  mfc1  $a3, $f12
-/* 05ACBC 800B2A6C 0C006D2B */  jal   func_8001B4AC_ovl1
+/* 05ACBC 800B2A6C 0C006D2B */  jal   HS64_MkScaleMtxF
 /* 05ACC0 800B2A70 02202025 */   move  $a0, $s1
 /* 05ACC4 800B2A74 02402025 */  move  $a0, $s2
 /* 05ACC8 800B2A78 02202825 */  move  $a1, $s1

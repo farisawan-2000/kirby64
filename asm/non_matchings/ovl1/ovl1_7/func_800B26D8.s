@@ -23,7 +23,7 @@ glabel func_800B26D8
 /* 05A978 800B2728 8DEFA7C4 */  lw    $t7, %lo(D_8004A7C4)($t7)
 /* 05A97C 800B272C 8DF0003C */  lw    $s0, 0x3c($t7)
 .L800B2730_ovl1:
-/* 05A980 800B2730 0C00C304 */  jal   guMtxIdentF_ovl1
+/* 05A980 800B2730 0C00C304 */  jal   guMtxIdentF
 /* 05A984 800B2734 02402025 */   move  $a0, $s2
 /* 05A988 800B2738 3C14800E */  lui   $s4, %hi(gEntitiesAngleXArray) # $s4, 0x800e
 /* 05A98C 800B273C 4480A000 */  mtc1  $zero, $f20
@@ -55,7 +55,7 @@ glabel func_800B26D8
 /* 05A9F0 800B27A0 44050000 */  mfc1  $a1, $f0
 .L800B27A4_ovl1:
 /* 05A9F4 800B27A4 8E060034 */  lw    $a2, 0x34($s0)
-/* 05A9F8 800B27A8 0C006EEB */  jal   _guRotateRPYF
+/* 05A9F8 800B27A8 0C006EEB */  jal   HS64_MkRotationMtxF
 /* 05A9FC 800B27AC 8E070038 */   lw    $a3, 0x38($s0)
 /* 05AA00 800B27B0 02402025 */  move  $a0, $s2
 /* 05AA04 800B27B4 02202825 */  move  $a1, $s1
@@ -86,7 +86,7 @@ glabel func_800B26D8
 .L800B2810_ovl1:
 /* 05AA60 800B2810 44061000 */  mfc1  $a2, $f2
 /* 05AA64 800B2814 44076000 */  mfc1  $a3, $f12
-/* 05AA68 800B2818 0C006EEB */  jal   _guRotateRPYF
+/* 05AA68 800B2818 0C006EEB */  jal   HS64_MkRotationMtxF
 /* 05AA6C 800B281C 02202025 */   move  $a0, $s1
 /* 05AA70 800B2820 02402025 */  move  $a0, $s2
 /* 05AA74 800B2824 02202825 */  move  $a1, $s1
