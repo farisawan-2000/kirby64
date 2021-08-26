@@ -183,15 +183,15 @@ void func_800053B4(u16 arg0, u16 arg1) {
 
 
 
-void init_dynamic_buffer(struct DynamicBuffer *arg0, s32 arg1, s32 arg2, s32 arg3);
-void* alloc_from_dynamic_buffer(struct DynamicBuffer *, u32, u32);
+void mlSetup(struct DynamicBuffer *arg0, s32 arg1, s32 arg2, s32 arg3);
+void* mlAlloc(struct DynamicBuffer *, u32, u32);
 
 void alloc_region(s32 start, s32 size) {
-    init_dynamic_buffer(&gDynamicBuffer2, 0x10000, start, size);
+    mlSetup(&gDynamicBuffer2, 0x10000, start, size);
 }
 
 void *alloc_with_alignment(s32 size, s32 alignment) {
-    return alloc_from_dynamic_buffer(&gDynamicBuffer2, size, alignment);
+    return mlAlloc(&gDynamicBuffer2, size, alignment);
 }
 
 void func_80005430(void) {
@@ -1089,7 +1089,7 @@ loop_1:
     if (D_8004A460 > 0) {
         phi_s0_2 = &D_8004A468;
 loop_5:
-        init_dynamic_buffer(&gDynamicBuffer1, 0x10002, alloc_with_alignment(arg0->unk2C, 8), arg0->unk2C);
+        mlSetup(&gDynamicBuffer1, 0x10002, alloc_with_alignment(arg0->unk2C, 8), arg0->unk2C);
         temp_s3_2 = phi_s3_2 + 1;
         temp_s0_3 = phi_s0_2 + 0x10;
         temp_s0_3->unk-10 = (s32) gDynamicBuffer1.unk0;

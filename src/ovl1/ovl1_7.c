@@ -487,7 +487,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800AF96C.s")
 
 struct GObj *func_800AF980(s32 arg0) {
     D_800E0810[D_8004A7C4->objId] = arg0;
-    D_8004A7C4->unk28 = D_800E0810[D_8004A7C4->objId];
+    D_8004A7C4->renderPriority = D_800E0810[D_8004A7C4->objId];
 }
  
 #ifdef MIPS_TO_C

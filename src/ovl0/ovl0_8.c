@@ -696,7 +696,7 @@ void crash_screen_vprint(const char *fmt, va_list args) {
     osWritebackDCacheAll();
 }
 
-void func_80022B88(const char *fmt, ...) {
+void crash_screen_printf(const char *fmt, ...) {
     va_list args;
     va_start(args, fmt);
 

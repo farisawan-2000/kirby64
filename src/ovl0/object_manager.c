@@ -89,8 +89,8 @@ struct GObj *D_8004A578[32]; // probably length 32 based on loop asm
 void* D_8004A5F8[32]; // also length 32? lines up with next symbol
 struct GObj *gGObjHead;
 // 0x8004A67C? file boundary?
-struct GObj* D_8004A680[33]; // length 33?
-struct GObj* D_8004A708[33]; // length 33?
+struct GObj* gHighestPrioDLLinkProcs[33]; // length 33?
+struct GObj* gDLLinkProcs[33]; // length 33?
 u32 D_8004A78C;
 struct OMMtx *gOMMtxHead;
 u32 D_8004A794;
@@ -410,58 +410,56 @@ void func_80008528(struct GObj *arg0) {
     D_8004A5F8[arg0->link] = arg0->unk8;
 }
 
-void func_80008590(struct GObj *arg0, struct GObj *arg1) {
-    arg0->unk24 = arg1;
-    if (arg1 != 0) {
-        arg0->unk20 = arg1->unk20;
-        arg1->unk20 = arg0;
+void omGInsertDLLink(struct GObj *o, struct GObj *highprio_o) {
+    o->prevDL = highprio_o;
+    if (highprio_o != NULL) {
+        o->nextDL = highprio_o->nextDL;
+        highprio_o->nextDL = o;
     } else {
-        arg0->unk20 = D_8004A680[arg0->dl_link];
-        D_8004A680[arg0->dl_link] = arg0;
+        o->nextDL = gHighestPrioDLLinkProcs[o->dl_link];
+        gHighestPrioDLLinkProcs[o->dl_link] = o;
     }
-    if (arg0->unk20 != 0) {
-        arg0->unk20->unk24 = arg0;
+    if (o->nextDL != NULL) {
+        o->nextDL->prevDL = o;
         return;
     }
-    D_8004A708[arg0->dl_link] = arg0;
+    gDLLinkProcs[o->dl_link] = o;
 }
 
-void func_800085F8(struct GObj *arg0) {
-    struct GObj *phi_a1;
+void omGSetupCameraDLLink(struct GObj *arg0) {
+    struct GObj *i = NULL;
     
-    phi_a1 = D_8004A708[arg0->dl_link];
-    while (phi_a1 != 0 && phi_a1->unk28 < arg0->unk28) {
-        phi_a1 = phi_a1->unk24;
-    }
-    func_80008590(arg0, phi_a1);
+    for (i = gDLLinkProcs[arg0->dl_link]; i != 0 && i->renderPriority < arg0->renderPriority; i = i->prevDL);
+    
+    omGInsertDLLink(arg0, i);
 }
 
-void func_80008664(struct GObj *arg0) {
+void omGSetupDLLink_HighestPrioMax(struct GObj *arg0) {
     struct GObj *phi_v0;
     struct GObj *phi_a1;
 
-    phi_v0 = D_8004A680[arg0->dl_link];
-    while (phi_v0 != 0 && arg0->unk28 < phi_v0->unk28) {
-        phi_v0 = phi_v0->unk20;
+    phi_v0 = gHighestPrioDLLinkProcs[arg0->dl_link];
+    while (phi_v0 != 0 && arg0->renderPriority < phi_v0->renderPriority) {
+        phi_v0 = phi_v0->nextDL;
     }
     if (phi_v0 != 0) {
-        phi_a1 = phi_v0->unk24;
+        phi_a1 = phi_v0->prevDL;
     } else {
-        phi_a1 = D_8004A708[arg0->dl_link];
+        phi_a1 = gDLLinkProcs[arg0->dl_link];
     }
-    func_80008590(arg0, phi_a1);
+    omGInsertDLLink(arg0, phi_a1);
 }
 
-void func_800086EC(struct GObj *arg0) {
-    if (arg0->unk24 != 0) {
-        arg0->unk24->unk20 = arg0->unk20;
+void omGDLLinkDestructor(struct GObj *arg0) {
+    if (arg0->prevDL != 0) {
+        arg0->prevDL->nextDL = arg0->nextDL;
     } else {
-        D_8004A680[arg0->dl_link] = arg0->unk20;
+        gHighestPrioDLLinkProcs[arg0->dl_link] = arg0->nextDL;
     }
-    if (arg0->unk20 != 0) {
-        arg0->unk20->unk24 = arg0->unk24;
+    if (arg0->nextDL != 0) {
+        arg0->nextDL->prevDL = arg0->prevDL;
     } else {
-        D_8004A708[arg0->dl_link] = arg0->unk24;
+        gDLLinkProcs[arg0->dl_link] = arg0->prevDL;
     }
 }
 
@@ -1324,7 +1322,7 @@ loop_5:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
 #endif
 
-struct GObj *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
+struct GObj *omGAddCommon(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
     struct GObj *toReturn;
 
     if (link >= 32) {
@@ -1354,7 +1352,7 @@ struct GObj *object_manager_g_add_common(u32 id, void (*arg1)(void), u8 link, u3
 struct GObj *func_8000A180(s32 id, void (*func)(void), u8 link, u32 arg3) {
     struct GObj *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(id, func, link, arg3);
+    temp_v0 = omGAddCommon(id, func, link, arg3);
     if (temp_v0 == NULL) {
         return NULL;
     } else {
@@ -1366,7 +1364,7 @@ struct GObj *func_8000A180(s32 id, void (*func)(void), u8 link, u32 arg3) {
 struct GObj *func_8000A1C0(s32 arg0, s32 arg1, u8 arg2, s32 arg3) {
     struct GObj *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2, arg3);
+    temp_v0 = omGAddCommon(arg0, arg1, arg2, arg3);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1377,7 +1375,7 @@ struct GObj *func_8000A1C0(s32 arg0, s32 arg1, u8 arg2, s32 arg3) {
 struct GObj *func_8000A200(s32 arg0, s32 arg1, struct GObj *arg2) {
     struct GObj *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->link, arg2->unk10);
+    temp_v0 = omGAddCommon(arg0, arg1, arg2->link, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1388,7 +1386,7 @@ struct GObj *func_8000A200(s32 arg0, s32 arg1, struct GObj *arg2) {
 struct GObj *func_8000A24C(s32 arg0, s32 arg1, struct GObj *arg2) {
     struct GObj *temp_v0;
 
-    temp_v0 = object_manager_g_add_common(arg0, arg1, arg2->link, arg2->unk10);
+    temp_v0 = omGAddCommon(arg0, arg1, arg2->link, arg2->unk10);
     if (temp_v0 == 0) {
         return NULL;
     }
@@ -1414,7 +1412,7 @@ void func_8000A29C(struct GObj *arg0) {
             func_8000A02C(arg0->unk3C);
     }
     if (arg0->dl_link != 0x21) {
-        func_800086EC(arg0);
+        omGDLLinkDestructor(arg0);
     }
     func_80008528(arg0);
     push_gobj(arg0);
@@ -1504,14 +1502,14 @@ void func_8000A544(struct GObj *arg0, struct GObj *arg1) {
 
 extern u32 D_8003DCA8;
 
-void func_8000A580(struct GObj *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
+void omGLinkObjDLCommon(struct GObj *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
     if (link >= 0x20) {
         // "omGLinkObjDLCommon() : dl_link num over : dl_link = %d : id = %d\n"
         fatal_printf(&D_8004044C, link, arg0->objId);
         while (1);
     }
     arg0->dl_link = link;
-    arg0->unk28 = arg3;
+    arg0->renderPriority = arg3;
     arg0->unk2C = arg1;
     arg0->unk34 = arg4;
     arg0->unkE = D_8003DCA8 - 1;
@@ -1521,37 +1519,37 @@ void func_8000A5FC(struct GObj *arg0, s32 arg1, u8 arg2, s32 arg3, s32 arg4) {
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
     }
-    func_8000A580(arg0, arg1, arg2, arg3, arg4);
-    func_800085F8(arg0);
+    omGLinkObjDLCommon(arg0, arg1, arg2, arg3, arg4);
+    omGSetupCameraDLLink(arg0);
 }
 
 void func_8000A640(struct GObj *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    func_8000A580(arg0, arg1, link, arg3, arg4);
-    func_80008664(arg0);
+    omGLinkObjDLCommon(arg0, arg1, link, arg3, arg4);
+    omGSetupDLLink_HighestPrioMax(arg0);
 }
 
 void func_8000A684(struct GObj *arg0, s32 arg1, s32 arg2, struct GObj *arg3) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    func_8000A580(arg0, arg1, arg3->dl_link, arg3->unk28, arg2);
-    func_80008590(arg0, arg3);
+    omGLinkObjDLCommon(arg0, arg1, arg3->dl_link, arg3->renderPriority, arg2);
+    omGInsertDLLink(arg0, arg3);
 }
 
 void func_8000A6D8(struct GObj *arg0, s32 arg1, s32 arg2, struct GObj *arg3) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    func_8000A580(arg0, arg1, arg3->dl_link, arg3->unk28, arg2);
-    func_80008590(arg0, arg3->unk8);
+    omGLinkObjDLCommon(arg0, arg1, arg3->dl_link, arg3->renderPriority, arg2);
+    omGInsertDLLink(arg0, arg3->unk8);
 }
 
 void func_8000A730(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     arg0->dl_link = 0x20;
-    arg0->unk28 = arg2;
+    arg0->renderPriority = arg2;
     arg0->unk2C = arg1;
     arg0->unk30 = arg3;
     arg0->unk34 = arg4;
@@ -1564,7 +1562,7 @@ void func_8000A764(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         arg0 = D_8004A7C4;
     }
     func_8000A730(arg0, arg1, arg2, arg3, arg4);
-    func_800085F8(arg0);
+    omGSetupCameraDLLink(arg0);
 }
 
 void func_8000A7A0(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
@@ -1572,7 +1570,7 @@ void func_8000A7A0(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
         arg0 = D_8004A7C4;
     }
     func_8000A730(arg0, arg1, arg2, arg3, arg4);
-    func_80008664(arg0);
+    omGSetupDLLink_HighestPrioMax(arg0);
 }
 
 // arg memes on both these functions
@@ -1586,7 +1584,7 @@ void func_8000A7DC(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, struct GObj 
     }
     arg0 = phi_a0;
     func_8000A730(phi_a0, arg1, arg4->unk28, arg2, arg3);
-    func_80008590(arg0, arg4);
+    omGInsertDLLink(arg0, arg4);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A7DC.s")
@@ -1602,71 +1600,71 @@ void func_8000A830(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, void *arg4) 
     }
     arg0 = phi_a0;
     func_8000A730(phi_a0, arg1, arg4->unk28, arg2, arg3);
-    func_80008590(arg0, arg4->unk8);
+    omGInsertDLLink(arg0, arg4->unk8);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A830.s")
 #endif
 
 
-void func_8000A888(struct GObj *arg0, u8 link, struct GObj *arg2) {
+void omGMoveObjDL(struct GObj *arg0, u8 link, s32 arg2) {
     if (link >= 0x20) {
         fatal_printf(&D_80040490, link, arg0->objId); // "omGMoveObjDL() : dl_link num over : dl_link = %d : id = %d\n"
         while (1);
     }
-    func_800086EC(arg0);
+    omGDLLinkDestructor(arg0);
     arg0->dl_link = link;
-    arg0->unk28 = arg2;
-    func_800085F8(arg0);
+    arg0->renderPriority = arg2;
+    omGSetupCameraDLLink(arg0);
 }
 
-void func_8000A904(struct GObj *arg0, u8 link, s32 arg2) {
+void omGMoveObjDLHead(struct GObj *arg0, u8 link, s32 arg2) {
     if (link >= 0x20) {
         fatal_printf(D_800404CC, link, arg0->objId); // "omGMoveObjDLHead() : dl_link num over : dl_link = %d : id = %d\n"
         while (1);
     }
-    func_800086EC(arg0);
+    omGDLLinkDestructor(arg0);
     arg0->dl_link = link;
-    arg0->unk28 = arg2;
-    func_80008664(arg0);
+    arg0->renderPriority = arg2;
+    omGSetupDLLink_HighestPrioMax(arg0);
 }
 
 void func_8000A980(struct GObj *arg0, struct GObj *arg1) {
-    func_800086EC(arg0);
+    omGDLLinkDestructor(arg0);
     arg0->dl_link = arg1->dl_link;
-    arg0->unk28 = arg1->unk28;
-    func_80008590(arg0, arg1);
+    arg0->renderPriority = arg1->renderPriority;
+    omGInsertDLLink(arg0, arg1);
 }
 
 void func_8000A9C0(struct GObj *arg0, struct GObj *arg1) {
-    func_800086EC(arg0);
+    omGDLLinkDestructor(arg0);
     arg0->dl_link = arg1->dl_link;
-    arg0->unk28 = arg1->unk28;
-    func_80008590(arg0, arg1->unk24);
+    arg0->renderPriority = arg1->renderPriority;
+    omGInsertDLLink(arg0, arg1->prevDL);
 }
 
 void func_8000AA04(struct GObj *arg0, s32 arg1) {
-    func_800086EC(arg0);
-    arg0->unk28 = arg1;
-    func_800085F8(arg0);
+    omGDLLinkDestructor(arg0);
+    arg0->renderPriority = arg1;
+    omGSetupCameraDLLink(arg0);
 }
 
 void func_8000AA38(struct GObj *arg0, s32 arg1) {
-    func_800086EC(arg0);
-    arg0->unk28 = arg1;
-    func_80008664(arg0);
+    omGDLLinkDestructor(arg0);
+    arg0->renderPriority = arg1;
+    omGSetupDLLink_HighestPrioMax(arg0);
 }
 
 void func_8000AA6C(struct GObj *arg0, struct GObj *arg1) {
-    func_800086EC(arg0);
-    arg0->unk28 = arg1->unk28;
-    func_80008590(arg0, arg1);
+    omGDLLinkDestructor(arg0);
+    arg0->renderPriority = arg1->renderPriority;
+    omGInsertDLLink(arg0, arg1);
 }
 
 void func_8000AAA4(struct GObj *arg0, struct GObj *arg1) {
-    func_800086EC(arg0);
-    arg0->unk28 = arg1->unk28;
-    func_80008590(arg0, arg1->unk8);
+    omGDLLinkDestructor(arg0);
+    arg0->renderPriority = arg1->renderPriority;
+    omGInsertDLLink(arg0, arg1->unk8);
 }
 
 #ifdef MIPS_TO_C
@@ -2161,8 +2159,8 @@ loop_63:
     if (temp_v0_13 < D_8004A5F8) {
         goto loop_63;
     }
-    *D_8004A708 = NULL;
-    *D_8004A680 = NULL;
+    *gDLLinkProcs = NULL;
+    *gHighestPrioDLLinkProcs = NULL;
     phi_v1_12 = &D_8004A70C;
     phi_v0_13 = &D_8004A684;
 loop_65:

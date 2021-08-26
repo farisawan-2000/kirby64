@@ -4772,14 +4772,14 @@ void func_80017B40(struct unk80017B40 *arg0, s32 arg1) {
     }
 }
 
-extern struct GObj *D_8004A680[];
+extern struct GObj *gHighestPrioDLLinkProcs[];
 extern u32 D_8003DE54;
 
 #ifdef MIPS_TO_C
 void func_80017B6C(struct GObj *arg0, s32 arg1, s32 arg2) {
     struct GObj *temp_s0;
 
-    temp_s0 = D_8004A680[arg1];
+    temp_s0 = gHighestPrioDLLinkProcs[arg1];
     while (temp_s0 != 0) {
         temp_s0 = temp_s0;
         if ((temp_s0->unk44 & 1) == 0) {

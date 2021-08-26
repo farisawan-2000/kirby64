@@ -143,9 +143,9 @@ struct GObj {
     void (*unk14)(void);
     struct GObjProcess *proc;
     u32 unk1C;
-    struct GObj* unk20;
-    struct GObj* unk24;
-    u32 unk28;
+    struct GObj* nextDL;
+    struct GObj* prevDL;
+    u32 renderPriority;
     // user data removal function according to HSD
     void (*unk2C)(struct GObj *);
     u32 unk30;

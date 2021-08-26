@@ -10,6 +10,7 @@ struct AnimationUnk6C {
   f32 unk14;
 };
 
+// AObj
 struct AnimStack { // TODO: Same as Unk6C?
   struct AnimStack *next; // it's a list but is it really the next one?
   u8 unk4; // index

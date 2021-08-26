@@ -320,16 +320,16 @@ glabel func_8000AE84
 /* 00BED4 8000B2D4 AC60FFFC */  sw    $zero, -4($v1)
 /* 00BED8 8000B2D8 1420FFFB */  bnez  $at, .L8000B2C8_ovl0
 /* 00BEDC 8000B2DC AC40FFFC */   sw    $zero, -4($v0)
-/* 00BEE0 8000B2E0 3C018005 */  lui   $at, %hi(D_8004A708) # $at, 0x8005
-/* 00BEE4 8000B2E4 AC20A708 */  sw    $zero, %lo(D_8004A708)($at)
-/* 00BEE8 8000B2E8 3C018005 */  lui   $at, %hi(D_8004A680) # $at, 0x8005
+/* 00BEE0 8000B2E0 3C018005 */  lui   $at, %hi(gDLLinkProcs) # $at, 0x8005
+/* 00BEE4 8000B2E4 AC20A708 */  sw    $zero, %lo(gDLLinkProcs)($at)
+/* 00BEE8 8000B2E8 3C018005 */  lui   $at, %hi(gHighestPrioDLLinkProcs) # $at, 0x8005
 /* 00BEEC 8000B2EC 3C038005 */  lui   $v1, %hi(D_8004A70C) # $v1, 0x8005
 /* 00BEF0 8000B2F0 3C028005 */  lui   $v0, %hi(D_8004A684) # $v0, 0x8005
 /* 00BEF4 8000B2F4 3C048005 */  lui   $a0, %hi(D_8004A704) # $a0, 0x8005
 /* 00BEF8 8000B2F8 2484A704 */  addiu $a0, %lo(D_8004A704) # addiu $a0, $a0, -0x58fc
 /* 00BEFC 8000B2FC 2442A684 */  addiu $v0, %lo(D_8004A684) # addiu $v0, $v0, -0x597c
 /* 00BF00 8000B300 2463A70C */  addiu $v1, %lo(D_8004A70C) # addiu $v1, $v1, -0x58f4
-/* 00BF04 8000B304 AC20A680 */  sw    $zero, %lo(D_8004A680)($at)
+/* 00BF04 8000B304 AC20A680 */  sw    $zero, %lo(gHighestPrioDLLinkProcs)($at)
 .L8000B308_ovl0:
 /* 00BF08 8000B308 24420010 */  addiu $v0, $v0, 0x10
 /* 00BF0C 8000B30C AC600004 */  sw    $zero, 4($v1)

@@ -7,11 +7,11 @@
 void fatal_printf(const char*, ...);
 
 // unused?
-void func_80007824(struct DynamicBuffer *arg0) {
+void mlReset(struct DynamicBuffer *arg0) {
     arg0->top = arg0->poolStart;
 }
 
-void *alloc_from_dynamic_buffer(struct DynamicBuffer *arg0, u32 size, u32 alignment) {
+void *mlAlloc(struct DynamicBuffer *arg0, u32 size, u32 alignment) {
     void *ret;
     u32 tmp;
 
@@ -30,7 +30,7 @@ void *alloc_from_dynamic_buffer(struct DynamicBuffer *arg0, u32 size, u32 alignm
     return ret;
 }
 
-void init_dynamic_buffer(struct DynamicBuffer *tracker, u32 id, void *start, u32 size) {
+void mlSetup(struct DynamicBuffer *tracker, u32 id, void *start, u32 size) {
     tracker->id = id;
     tracker->top = start;
     tracker->poolStart = start;

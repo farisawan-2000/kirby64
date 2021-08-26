@@ -15,7 +15,7 @@ glabel func_8000A7DC
 /* 00B40C 8000A80C 0C0029CC */  jal   func_8000A730
 /* 00B410 8000A810 AFAF0010 */   sw    $t7, 0x10($sp)
 /* 00B414 8000A814 8FA40020 */  lw    $a0, 0x20($sp)
-/* 00B418 8000A818 0C002164 */  jal   func_80008590
+/* 00B418 8000A818 0C002164 */  jal   omGInsertDLLink
 /* 00B41C 8000A81C 8FA50030 */   lw    $a1, 0x30($sp)
 /* 00B420 8000A820 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 00B424 8000A824 27BD0020 */  addiu $sp, $sp, 0x20

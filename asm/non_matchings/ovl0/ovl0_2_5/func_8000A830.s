@@ -16,7 +16,7 @@ glabel func_8000A830
 /* 00B464 8000A864 AFAF0010 */   sw    $t7, 0x10($sp)
 /* 00B468 8000A868 8FB80030 */  lw    $t8, 0x30($sp)
 /* 00B46C 8000A86C 8FA40020 */  lw    $a0, 0x20($sp)
-/* 00B470 8000A870 0C002164 */  jal   func_80008590
+/* 00B470 8000A870 0C002164 */  jal   omGInsertDLLink
 /* 00B474 8000A874 8F050008 */   lw    $a1, 8($t8)
 /* 00B478 8000A878 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 00B47C 8000A87C 27BD0020 */  addiu $sp, $sp, 0x20
