@@ -82,7 +82,7 @@ OSMesg D_80048E50;
 OSMesgQueue D_80048E58;
 OSContStatus sControllerStatuses[MAXCONTROLLERS]; // 0x80048E70
 OSContPad sContPads[MAXCONTROLLERS]; // 0x80048E80
-s32 D_80048E98; // num controllers? // 0x80048E98
+s32 gValidControllerCount; // num controllers? // 0x80048E98
 s8 D_80048E9C[MAXCONTROLLERS]; // 0x80048E9C
 struct Controller gControllers[MAXCONTROLLERS]; // 0x80048EA0
 Controller_800D6FE8 gPlayerControllers[MAXCONTROLLERS]; // 0x80048F20
@@ -102,7 +102,7 @@ OSPfs sPakDevices[MAXCONTROLLERS]; // 0x800490F0
 void func_80003DC0(void) {
     s32 port;
 
-    for (port = 0; port < D_80048E98; port++)
+    for (port = 0; port < gValidControllerCount; port++)
     {
         if (gControllers[D_80048E9C[port]].errno == 0) {
             gPlayerControllers[port] = gPlayerControllers[D_80048E9C[port]];
@@ -279,26 +279,26 @@ s32 *func_80004250(void) {
         gPlayerControllers[i].stickX = gPlayerControllers[i].stickY;
     }
 
-    D_80048E98 = 0;
+    gValidControllerCount = 0;
     D_80048E9C[0] = -1;
     if (gControllers[0].errno == 0) {
-        D_80048E9C[D_80048E98] = 0;
-        D_80048E98++;
+        D_80048E9C[gValidControllerCount] = 0;
+        gValidControllerCount++;
     }
     D_80048E9C[1] = -1;
     if (gControllers[1].errno == 0) {
-        D_80048E9C[D_80048E98] = 1;
-        D_80048E98++;
+        D_80048E9C[gValidControllerCount] = 1;
+        gValidControllerCount++;
     }
     D_80048E9C[2] = -1;
     if (gControllers[2].errno == 0) {
-        D_80048E9C[D_80048E98] = 2;
-        D_80048E98++;
+        D_80048E9C[gValidControllerCount] = 2;
+        gValidControllerCount++;
     }
     D_80048E9C[3] = -1;
     if (gControllers[3].errno == 0) {
-        D_80048E9C[D_80048E98] = 3;
-        D_80048E98++;
+        D_80048E9C[gValidControllerCount] = 3;
+        gValidControllerCount++;
     }
     D_80048F48 = 0;
     D_80048F4C = NULL;
@@ -626,33 +626,41 @@ struct Unk_Func8004DC8 {
     s32 unk0;
     s32 unk4;
     s32 unk8;
-    u8 unkC;
-    u8 unkD;
+    u8 goal;
+    u8 addr;
     u8 unkE;
     u8 unkF;
-    s32 unk10;
-    s32 unk14;
-    s32 unk18;
+    u8 *buffer;
+    s32 nbytes;
+    s32 result;
+};
+
+enum EEPROMGoals {
+    EEP_PROBE = 0,
+    EEP_READ,
+    EEP_WRITE,
+    EEP_LONGREAD,
+    EEP_LONGWRITE,
 };
 
 #ifdef NEEDS_RODATA
 void func_80004DC8(struct Unk_Func8004DC8 *arg0) {
-    switch (arg0->unkC)
+    switch (arg0->goal)
     {
-        case 0:
-            arg0->unk18 = func_80032060(&sSIMesgQueue); // osEepromProbe
+        case EEP_PROBE:
+            arg0->result = func_80032060(&sSIMesgQueue); // osEepromProbe
             break;
-        case 1:
-            arg0->unk18 = osEepromRead(&sSIMesgQueue, arg0->unkD, arg0->unk10);
+        case EEP_READ:
+            arg0->result = osEepromRead(&sSIMesgQueue, arg0->addr, arg0->buffer);
             break;
-        case 2:
-            arg0->unk18 = osEepromWrite(&sSIMesgQueue, arg0->unkD, arg0->unk10);
+        case EEP_WRITE:
+            arg0->result = osEepromWrite(&sSIMesgQueue, arg0->addr, arg0->buffer);
             break;
-        case 3:
-            arg0->unk18 = osEepromLongRead(&sSIMesgQueue, arg0->unkD, arg0->unk10, arg0->unk14);
+        case EEP_LONGREAD:
+            arg0->result = osEepromLongRead(&sSIMesgQueue, arg0->addr, arg0->buffer, arg0->nbytes);
             break;
-        case 4:
-            arg0->unk18 = osEepromLongWrite(&sSIMesgQueue, arg0->unkD, arg0->unk10, arg0->unk14);
+        case EEP_LONGWRITE:
+            arg0->result = osEepromLongWrite(&sSIMesgQueue, arg0->addr, arg0->buffer, arg0->nbytes);
             break;
     }
 }

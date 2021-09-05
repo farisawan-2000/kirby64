@@ -34912,8 +34912,8 @@ glabel func_8017C4CC_ovl5
 /* 123A88 8017C618 27BD0058 */   addiu $sp, $sp, 0x58
 
 glabel func_8017C61C_ovl5
-/* 123A8C 8017C61C 3C028005 */  lui   $v0, %hi(D_80048E98) # $v0, 0x8005
-/* 123A90 8017C620 8C428E98 */  lw    $v0, %lo(D_80048E98)($v0)
+/* 123A8C 8017C61C 3C028005 */  lui   $v0, %hi(gValidControllerCount) # $v0, 0x8005
+/* 123A90 8017C620 8C428E98 */  lw    $v0, %lo(gValidControllerCount)($v0)
 /* 123A94 8017C624 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 123A98 8017C628 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 123A9C 8017C62C 18400005 */  blez  $v0, .L8017C644_ovl5

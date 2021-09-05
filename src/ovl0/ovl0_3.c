@@ -1,3 +1,5 @@
+// omanim.c
+
 // if i had to guess, it's the animation processor
 #include <ultra64.h>
 #include <macros.h>

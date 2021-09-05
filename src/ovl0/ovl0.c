@@ -53,14 +53,14 @@ struct unk_func_80000C54
 // bss
 
 struct UnkStruct800009E8 *D_80048B80;
-struct unk_func_80000C54 *D_80048B84;
-struct unk_func_80000C54 *D_80048B88;
+struct Unk80005A98_2 *D_80048B84;
+struct Unk80005A98_2 *D_80048B88;
 struct Unk80005A98_2 *D_80048B8C;
 struct Unk80005A98_2 *D_80048B90;
-struct unk_func_80000C54 *D_80048B94;
-struct unk_func_80000C54 *D_80048B98;
+struct Unk80005A98_2 *D_80048B94;
+struct Unk80005A98_2 *D_80048B98;
 u32 D_80048B9C;
-struct unk_func_80000C54 *D_80048BA0;
+struct Unk80005A98_2 *D_80048BA0;
 struct Unk80005A98_2 *D_80048BA4;
 OSViMode D_80048BA8;
 OSViMode gCurrentViMode; // 0x80048BAC
@@ -99,7 +99,7 @@ u32 *D_80048CDC;
 // rsp done after pre-nmi?
 u32 D_80048CE0;
 
-u32 D_80048CE4;
+void (*fptr_80048CE4)();
 // 0x80048CE8 and 0x80048CEC? bss file boundary?
 
 // end bss, followed by ovl0_1
@@ -1043,21 +1043,15 @@ loop_8:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_80001E20.s")
 #endif
 
-#ifdef MIPS_TO_C
+// u64 memes
+#ifdef NON_MATCHING
 void func_80001FAC(void) {
-    s32 temp_a3;
-    u32 temp_a0;
-    u32 temp_v0;
-
     if (D_80048BA4 == 0) {
-        temp_a0 = D_80048B9C;
-        if (temp_a0 != 0) {
-            D_80048BA4 = temp_a0;
-            func_80000E4C(temp_a0);
+        if (D_80048B9C != 0) {
+            D_80048BA4 = D_80048B9C;
+            func_80000E4C(D_80048B9C);
             D_80048BA4->unk8 = 2;
-            temp_v0 = D_80048BA4;
-            temp_a3 = temp_v0->unk78;
-            osDpSetNextBuffer(temp_v0->unk50, temp_a3 >> 0x1F, temp_a3);
+            osDpSetNextBuffer(D_80048BA4->task.t.output_buff, (u64) D_80048BA4->unk78);
         }
     }
 }
@@ -1084,56 +1078,33 @@ void func_80002014(void) {
 }
 
 #ifdef MIPS_TO_C
-u32 func_8000206C(void) {
+void func_8000206C(void) {
     u32 sp1C;
     u32 sp18;
-    s32 temp_t2;
-    s32 temp_t6;
-    s32 temp_t8;
-    struct Unk80005A98_2 *temp_v0;
-    struct Unk80005A98_2 *temp_v0_2;
-    struct Unk80005A98_2 *temp_v0_3;
-    struct Unk80005A98_2 *temp_v0_4;
-    u32 temp_ret;
-    u32 temp_t7;
-    u32 temp_v1;
-    struct Unk80005A98_2 *phi_v0;
-    u32 phi_return;
 
-    temp_v0 = D_80048B90;
-    if ((temp_v0 != 0) && (temp_v0->unk8 == 2)) {
-        osSendMesg(temp_v0->unk20, NULL, 0);
+    if ((D_80048B90 != 0) && (D_80048B90->unk8 == 2)) {
+        osSendMesg(D_80048B90->unk20, NULL, 0);
         D_80048B90 = NULL;
         func_80001E20();
-        temp_ret = osGetCount();
-        D_80048C78 = (temp_ret - D_80048C70) / 0xB9B;
-        return temp_ret;
+        D_80048C78 = (osGetCount() - D_80048C70) / 0xB9B;
     }
-    temp_v0_2 = D_80048B8C;
-    phi_v0 = temp_v0_2;
-    phi_return = temp_v0_2;
-    if (temp_v0_2 != 0) {
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
-        if (temp_v0_2->unk8 == 4) {
-            if (osSpTaskYielded(&temp_v0_2->task) == 1) {
-                D_80048B8C->unk8 = 5;
-                func_80000D34(D_80048B8C);
-                D_80048B8C = NULL;
-            } else {
-                D_80048B8C->unk8 = 6;
-            }
-            osSpTaskLoad(&D_80048B90->task);
-            osSpTaskStartGo(&D_80048B90->task);
-            D_80048B90->unk8 = 2;
-            temp_v0_3 = D_80048B8C;
-            phi_v0 = temp_v0_3;
-            phi_return = temp_v0_3;
+    else if ((D_80048B8C != 0) && (D_80048B8C->unk8 == 4)) {
+        if (osSpTaskYielded(D_80048B8C + 0x28) == 1) {
+            D_80048B8C->unk8 = 5;
+            func_80000D34(D_80048B8C);
+            D_80048B8C = NULL;
+        } else {
+            D_80048B8C->unk8 = 6;
         }
+        osSpTaskLoad(&D_80048B90->task);
+        osSpTaskStartGo(&D_80048B90->task);
+        D_80048B90->unk8 = 2;
+        D_80048B8C = D_80048B8C;
     }
-    if ((phi_v0 != 0) && (phi_v0->unk18 == 1) && (phi_v0->unk8 != 5)) {
-        if ((phi_v0->unk0 == 1) && (phi_v0->unk74 == 1)) {
+    if ((D_80048B8C != 0) && (D_80048B8C->unk18 == 1) && (D_80048B8C->unk8 != 5)) {
+        if ((D_80048B8C->unk0 == 1) && (D_80048B8C->unk74 == 1)) {
             osInvalDCache(&D_80048C80, 8);
+            // i do not want
             D_80048B8C->unk78 = D_80048C80.unk4;
             temp_t7 = D_80048C80.unk4;
             temp_t2 = D_80048C88 + temp_t7;
@@ -1143,160 +1114,92 @@ u32 func_8000206C(void) {
             D_80048C88 = temp_t2;
             D_80048C88 = temp_t6;
             sp1C = temp_t7;
-            if (sp18 >= temp_t8) {
-                if (temp_t8 < sp18) {
-block_17:
-                    fatal_printf(D_8003FEA0, temp_t6, 1, &D_80048B8C);
-loop_18:
-                    goto loop_18;
-                }
-                if (temp_t6 < temp_t7) {
-                    goto block_17;
-                }
+
+            if ((sp18 >= temp_t8) && ((temp_t8 < sp18) || (temp_t6 < temp_t7))) {
+                fatal_printf(&D_8003FEA0, temp_t6);
+                while (1);
             }
             D_80048B8C->unk8 = 1;
-            func_80000E14(D_80048B8C);
+            func_80000E14(D_80048B8C, temp_t6, 1, &D_80048B8C);
             func_80001FAC();
         }
         D_80048B8C = NULL;
-        return func_80001E20();
+        func_80001E20();
     }
-    if ((phi_v0 != 0) && (phi_v0->unk18 == 2) && (phi_v0->unk0 == 1)) {
-        phi_v0->unk8 = 6;
-        temp_v0_4 = D_80048B8C;
-        temp_v1 = temp_v0_4->unk7C;
-        phi_return = temp_v0_4;
-        if ((temp_v1 & 2) == 0) {
-            temp_v0_4->unk7C = temp_v1 | 1;
-            phi_return = temp_v0_4;
+    else if ((D_80048B8C != 0) && (D_80048B8C->unk18 == 2) && (D_80048B8C->unk0 == 1)) {
+        D_80048B8C->unk8 = 6;
+        if ((D_80048B8C->unk7C & 2) == 0) {
+            D_80048B8C->unk7C |= 1;
         }
     }
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_8000206C.s")
 #endif
 
-#ifdef MIPS_TO_C
-u32 func_800022DC(void) {
-    OSMesgQueue *temp_a0_2;
-    OSMesgQueue *temp_a0_4;
-    OSMesgQueue *temp_a0_6;
-    struct Unk80005A98_2 *temp_v0;
-    struct unk_func_80000C54 *temp_a3;
-    u32 temp_a0;
-    u32 temp_v0_2;
-    u32 temp_v0_3;
-    u32 temp_v0_4;
-    u32 temp_v0_5;
-    void *temp_a0_3;
-    void *temp_a0_5;
-    void *phi_a0;
-    struct Unk80005A98_2 *phi_v0;
-    struct Unk80005A98_2 *phi_v0_2;
-    void *phi_a0_2;
-    void *phi_v0_3;
-    void *phi_a0_3;
-    struct unk_func_80000C54 *phi_a3;
-    struct unk_func_80000C54 *phi_a3_2;
-    u32 phi_return;
-
-    temp_v0 = D_80048B8C;
-    if ((temp_v0 != 0) && (temp_v0->unk18 == 2)) {
-        if (temp_v0->unk0 == 1) {
-            temp_a0 = temp_v0->unk6C;
-            phi_v0 = temp_v0;
-            if (temp_a0 != 0) {
-                temp_v0_2 = D_80048CE4;
-                phi_a0 = temp_a0;
-                if (temp_v0_2 != 0) {
-                    if (temp_a0 == -1) {
-                        temp_v0_2(D_80048C5C);
-                        phi_a0 = D_80048B8C->unk6C;
+// meme with the function pointer
+#ifdef NON_MATCHING
+void func_800022DC(void) {
+    if ((D_80048B8C != 0) && (D_80048B8C->unk18 == 2)) {
+        if (D_80048B8C->unk0 == 1) {
+            if (D_80048B8C->unk6C != 0) {
+                if (fptr_80048CE4 != 0) {
+                    if (D_80048B8C->unk6C == -1) {
+                        fptr_80048CE4(D_80048C5C);
                     } else {
-                        temp_v0_2(temp_a0);
-                        phi_a0 = D_80048B8C->unk6C;
+                        fptr_80048CE4(D_80048B8C->unk6C);
                     }
                 }
-                func_80001774(phi_a0);
-                phi_v0 = D_80048B8C;
+                func_80001774(D_80048B8C->unk6C);
             }
-            temp_a0_2 = phi_v0->unk20;
-            phi_v0_2 = phi_v0;
-            if (temp_a0_2 != 0) {
-                osSendMesg(temp_a0_2, phi_v0->unk1C, 0);
-                phi_v0_2 = D_80048B8C;
+            if (D_80048B8C->unk20 != 0) {
+                osSendMesg(D_80048B8C->unk20, D_80048B8C->unk1C, 0);
             }
-            if (phi_v0_2->unk8 == 4) {
+            if (D_80048B8C->unk8 == 4) {
                 osSpTaskLoad(&D_80048B90->task);
                 osSpTaskStartGo(&D_80048B90->task);
                 D_80048B90->unk8 = 2;
             }
         }
         D_80048B8C = NULL;
-        return func_80001E20();
+        func_80001E20();
     }
-    temp_v0_3 = D_80048BA4;
-    if (temp_v0_3 != 0) {
-        temp_a0_3 = temp_v0_3->unk6C;
-        phi_v0_3 = temp_v0_3;
-        if (temp_a0_3 != 0) {
-            temp_v0_4 = D_80048CE4;
-            phi_a0_2 = temp_a0_3;
-            if (temp_v0_4 != 0) {
-                if (temp_a0_3 == -1) {
-                    temp_v0_4(D_80048C5C, &D_80048B94);
-                    phi_a0_2 = D_80048BA4->unk6C;
+    else if (D_80048BA4 != 0) {
+        if (D_80048BA4->unk6C != 0) {
+            if (fptr_80048CE4 != 0) {
+                if (D_80048BA4->unk6C == -1) {
+                    fptr_80048CE4(D_80048C5C);
                 } else {
-                    temp_v0_4(temp_a0_3, &D_80048B94);
-                    phi_a0_2 = D_80048BA4->unk6C;
+                    fptr_80048CE4(D_80048BA4->unk6C);
                 }
             }
-            func_80001774(phi_a0_2);
-            phi_v0_3 = D_80048BA4;
+            func_80001774(D_80048BA4->unk6C);
         }
-        temp_a0_4 = phi_v0_3->unk20;
-        if (temp_a0_4 != 0) {
-            osSendMesg(temp_a0_4, phi_v0_3->unk1C, 0);
+        if (D_80048BA4->unk20 != 0) {
+            osSendMesg(D_80048BA4->unk20, D_80048BA4->unk1C, 0);
         }
-        D_80048BA4 = 0;
-        return func_80001FAC();
+        D_80048BA4 = NULL;
+        func_80001FAC();
     }
-    temp_a3 = D_80048B94;
-    phi_return = temp_v0_3;
-    if (temp_a3 != 0) {
-        phi_return = temp_v0_3;
-        if (temp_a3->unk18 == 2) {
-            if (temp_a3->unk0 == 1) {
-                temp_a0_5 = temp_a3->unk6C;
-                phi_a3 = temp_a3;
-                if (temp_a0_5 != 0) {
-                    temp_v0_5 = D_80048CE4;
-                    phi_a0_3 = temp_a0_5;
-                    if (temp_v0_5 != 0) {
-                        if (temp_a0_5 == -1) {
-                            temp_v0_5(D_80048C5C, temp_a3);
-                            phi_a0_3 = D_80048B94->unk6C;
-                        } else {
-                            temp_v0_5(temp_a0_5, temp_a3);
-                            phi_a0_3 = D_80048B94->unk6C;
-                        }
+    else if ((D_80048B94 != 0) && (D_80048B94->unk18 == 2)) {
+        if (D_80048B94->unk0 == 1) {
+            if (D_80048B94->unk6C != 0) {
+                if (fptr_80048CE4 != 0) {
+                    if (D_80048B94->unk6C == -1) {
+                        fptr_80048CE4(D_80048C5C);
+                    } else {
+                        fptr_80048CE4(D_80048B94->unk6C);
                     }
-                    func_80001774(phi_a0_3);
-                    phi_a3 = D_80048B94;
                 }
-                temp_a0_6 = phi_a3->unk20;
-                phi_a3_2 = phi_a3;
-                if (temp_a0_6 != 0) {
-                    osSendMesg(temp_a0_6, phi_a3->unk1C, 0);
-                    phi_a3_2 = D_80048B94;
-                }
-                func_80000DC4(phi_a3_2);
+                func_80001774(D_80048B94->unk6C);
             }
-            phi_return = func_80001E20();
+            if (D_80048B94->unk20 != 0) {
+                osSendMesg(D_80048B94->unk20, D_80048B94->unk1C, 0);
+            }
+            func_80000DC4(D_80048B94);
         }
+        func_80001E20();
     }
-    return phi_return;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0/func_800022DC.s")
@@ -1605,10 +1508,10 @@ void func_80002B70(s32 arg0) {
     D_80048CD8 = arg0;
 }
 
-void func_80002B7C(s32 arg0) {
-    D_80048CE4 = arg0;
+void func_80002B7C(void (*arg0)()) {
+    fptr_80048CE4 = arg0;
 }
 
 void func_80002B88(void) {
-    D_80048CE4 = 0;
+    fptr_80048CE4 = 0;
 }

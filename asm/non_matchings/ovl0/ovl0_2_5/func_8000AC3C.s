@@ -1,4 +1,4 @@
-glabel func_8000AC3C
+glabel omGDispatchProc
 /* 00B83C 8000AC3C 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* 00B840 8000AC40 24060002 */  li    $a2, 2
 /* 00B844 8000AC44 3C018004 */  lui   $at, %hi(D_8003DE54) # $at, 0x8004

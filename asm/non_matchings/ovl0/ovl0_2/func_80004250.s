@@ -137,8 +137,8 @@ glabel func_80004250
 /* 005058 80004458 A04AFFFD */  sb    $t2, -3($v0)
 /* 00505C 8000445C 1420FFE7 */  bnez  $at, .L800043FC_ovl0
 /* 005060 80004460 A06BFFFE */   sb    $t3, -2($v1)
-/* 005064 80004464 3C038005 */  lui   $v1, %hi(D_80048E98) # $v1, 0x8005
-/* 005068 80004468 24638E98 */  addiu $v1, %lo(D_80048E98) # addiu $v1, $v1, -0x7168
+/* 005064 80004464 3C038005 */  lui   $v1, %hi(gValidControllerCount) # $v1, 0x8005
+/* 005068 80004468 24638E98 */  addiu $v1, %lo(gValidControllerCount) # addiu $v1, $v1, -0x7168
 /* 00506C 8000446C AC600000 */  sw    $zero, ($v1)
 /* 005070 80004470 3C0D8005 */  lui   $t5, %hi(D_80048EBC) # $t5, 0x8005
 /* 005074 80004474 91AD8EBC */  lbu   $t5, %lo(D_80048EBC)($t5)

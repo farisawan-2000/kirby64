@@ -838,7 +838,6 @@ void func_80006740(void) {
     osCreateMesgQueue(&sp18, &sp30, 1);
     sp48 = &D_80000B64;
     sp50 = 1;
-    sp54 = &sp18;
     osSendMesg(&gInterruptMesgQueue, &sp34, 0);
     osRecvMesg(&sp18, 0, 1);
 }
@@ -1128,18 +1127,10 @@ loop_5:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000708C.s")
 #endif
 
-struct unk_func80007328 {
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    u32 unk10;
-};
-
 extern u32 D_80006DF8;
 extern u32 D_80006E30;
 
-void func_80007328(struct unk_func80007328 *arg0) {
+void func_80007328(struct UnkStructFunc80007380 *arg0) {
     alloc_region(arg0->unkC, arg0->unk10);
     gDynamicBuffer3.buffer.poolEnd = &D_80006DF8;
     gDynamicBuffer3.unk10 = &D_80006E30;

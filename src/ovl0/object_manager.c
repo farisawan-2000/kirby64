@@ -170,6 +170,7 @@ struct GObjProcess *get_gobj_process(void) {
     return temp_v0;
 }
 
+// LinkProc?
 #ifdef MIPS_TO_C
 void func_800080C0(struct GObjProcess *arg0) {
     struct GObjProcess **temp_v1_3;
@@ -186,7 +187,7 @@ void func_800080C0(struct GObjProcess *arg0) {
     struct GObjProcess *phi_v1;
     u8 phi_a1;
 
-    temp_a2 = arg0->unk18;
+    temp_a2 = arg0->gobj;
     temp_a3 = arg0->pri;
     phi_a2 = temp_a2;
     phi_a1 = temp_a2->link;
@@ -227,18 +228,15 @@ block_7:
             phi_a1 = temp_t0;
             goto loop_1;
         }
-        temp_v1_3 = &D_8004A560[temp_a3];
-        arg0->unk8 = *temp_v1_3;
-        *temp_v1_3 = arg0;
+        arg0->unk8 = D_8004A560[temp_a3];
+        D_8004A560[temp_a3] = arg0;
         arg0->unkC = NULL;
     }
-    temp_v1_4 = arg0->unk8;
-    if (temp_v1_4 != 0) {
-        temp_v1_4->unkC = arg0;
+    if (arg0->unk8 != 0) {
+        arg0->unk8->unkC = arg0;
     }
-    temp_v1_5 = temp_a2->unk1C;
-    if (temp_v1_5 != 0) {
-        *temp_v1_5 = arg0;
+    if (temp_a2->unk1C != 0) {
+        *temp_a2->unk1C = arg0;
     } else {
         temp_a2->proc = arg0;
     }
@@ -429,7 +427,10 @@ void omGInsertDLLink(struct GObj *o, struct GObj *highprio_o) {
 void omGSetupCameraDLLink(struct GObj *arg0) {
     struct GObj *i = NULL;
     
-    for (i = gDLLinkProcs[arg0->dl_link]; i != 0 && i->renderPriority < arg0->renderPriority; i = i->prevDL);
+    for (i = gDLLinkProcs[arg0->dl_link];
+         i != 0 && i->renderPriority < arg0->renderPriority;
+         i = i->prevDL
+    );
     
     omGInsertDLLink(arg0, i);
 }
@@ -1742,7 +1743,7 @@ u32 func_8000ABAC(struct GObj *arg0) {
 
 // potentially the thread dispatcher
 #ifdef NON_MATCHING
-struct GObjProcess *func_8000AC3C(struct GObjProcess *arg0) {
+struct GObjProcess *omGDispatchProc(struct GObjProcess *arg0) {
     struct GObjProcess *tmpProc;
     void (*entry)(struct GObj *);
 
@@ -1811,7 +1812,7 @@ void func_8000AD88(void) {
 
         while (tmp != NULL) {
             if (tmp->unk15 == 0) {
-                tmp = func_8000AC3C(tmp);
+                tmp = omGDispatchProc(tmp);
             } else {
                 tmp = tmp->unk8;
             }
@@ -1821,6 +1822,11 @@ void func_8000AD88(void) {
 
 #ifdef MIPS_TO_C
 void func_8000AE84(void *arg0) {
+    ? *temp_t4_2;
+    ? *temp_v0_14;
+    ? *temp_v0_4;
+    ? *temp_v1_2;
+    ? *temp_v1_7;
     s32 temp_a0;
     s32 temp_a0_10;
     s32 temp_a0_3;
@@ -1836,42 +1842,37 @@ void func_8000AE84(void *arg0) {
     struct Camera *temp_v0_12;
     struct DObj *temp_t4;
     struct DObj *temp_v0_10;
-    struct GObjProcess *temp_v0_4;
-    struct GObjProcess *temp_v1_2;
     struct GObjThreadStack *temp_v0_2;
     struct GObjThreadStack *temp_v0_3;
     struct MObj *temp_v0_9;
     struct MObj *temp_v1_5;
-    struct GObj *temp_t9;
-    struct GObj *temp_v0_6;
+    struct OMMtx *temp_v0_7;
+    struct OMMtx *temp_v1_3;
+    struct UnkStruct8004A7C4 *temp_t9;
+    struct UnkStruct8004A7C4 *temp_v0_6;
     u32 *temp_v0;
     u32 *temp_v1;
     u32 temp_a0_2;
     u32 temp_v0_11;
     u32 temp_v0_13;
     u32 temp_v0_5;
-    void **temp_v0_7;
-    void **temp_v1_3;
     void **temp_v1_6;
-    void *temp_t4_2;
-    void *temp_v0_14;
-    void *temp_v1_7;
     u32 *phi_v1;
     s32 phi_a0;
     u32 *phi_v1_2;
     struct GObjThreadStack *phi_v0;
     u32 phi_a0_2;
     struct GObjThreadStack *phi_v0_2;
-    struct GObjProcess *phi_v1_3;
+    ? *phi_v1_3;
     s32 phi_a0_3;
-    struct GObjProcess *phi_v1_4;
-    u32 phi_v0_3;
-    struct GObj *phi_v0_4;
+    ? *phi_v1_4;
+    struct GObjProcess **phi_v0_3;
+    struct UnkStruct8004A7C4 *phi_v0_4;
     s32 phi_a0_4;
-    struct GObj *phi_v0_5;
-    void **phi_v1_5;
+    struct UnkStruct8004A7C4 *phi_v0_5;
+    struct OMMtx *phi_v1_5;
     s32 phi_a0_5;
-    void **phi_v1_6;
+    struct OMMtx *phi_v1_6;
     struct AnimStack *phi_v1_7;
     s32 phi_a0_6;
     struct AnimStack *phi_v1_8;
@@ -1881,16 +1882,16 @@ void func_8000AE84(void *arg0) {
     struct DObj *phi_v0_6;
     s32 phi_a0_8;
     struct DObj *phi_v0_7;
-    void *phi_v0_8;
+    ? *phi_v0_8;
     s32 phi_a0_9;
-    void *phi_v0_9;
+    ? *phi_v0_9;
     struct Camera *phi_v0_10;
     s32 phi_a0_10;
     struct Camera *phi_v0_11;
     void **phi_v1_11;
-    u32 phi_v0_12;
-    void *phi_v1_12;
-    void *phi_v0_13;
+    struct UnkStruct8004A7C4 **phi_v0_12;
+    ? *phi_v1_12;
+    ? *phi_v0_13;
     u32 phi_a0_11;
     s32 phi_a0_12;
     s32 phi_a0_13;
@@ -1907,46 +1908,42 @@ void func_8000AE84(void *arg0) {
         phi_a0 = 0;
         phi_v1_2 = temp_v1;
         if ((arg0->unk4 - 1) > 0) {
-loop_2:
-            temp_v0 = phi_v1 + 0x1C0;
-            *phi_v1 = temp_v0;
-            temp_a0 = phi_a0 + 1;
-            phi_v1 = temp_v0;
-            phi_a0 = temp_a0;
-            if (temp_a0 < (arg0->unk4 - 1)) {
-                goto loop_2;
-            }
-            phi_v1_2 = temp_v0;
+            do {
+                temp_v0 = phi_v1 + 0x1C0;
+                *phi_v1 = temp_v0;
+                temp_a0 = phi_a0 + 1;
+                phi_v1 = temp_v0;
+                phi_a0 = temp_a0;
+                phi_v1_2 = temp_v0;
+            } while (temp_a0 < (arg0->unk4 - 1));
         }
-        *phi_v1_2 = 0;
+        *phi_v1_2 = 0U;
     } else {
         gGObjThreadHead = NULL;
-        phi_a0_11 = 0;
+        phi_a0_11 = 0U;
     }
+    phi_a0_2 = phi_a0_11;
+    phi_a0_3 = (s32) phi_a0_11;
+    phi_a0_3 = (s32) phi_a0_11;
     if ((arg0->unk10 != 0) && (arg0->unk8 != 0)) {
         temp_v0_2 = arg0->unkC;
         gGObjThreadStackHead = temp_v0_2;
+        phi_v0 = temp_v0_2;
         phi_v0_2 = temp_v0_2;
-        phi_a0_3 = phi_a0_11;
         if ((arg0->unk10 - 1) != 0) {
-            phi_v0 = temp_v0_2;
-            phi_a0_2 = phi_a0_11;
-loop_10:
-            phi_v0->unk0 = phi_v0 + gNewEntityStackSize + 8;
-            temp_a0_2 = phi_a0_2 + 1;
-            temp_v0_3 = phi_v0 + gNewEntityStackSize + 8;
-            phi_v0 = temp_v0_3;
-            phi_a0_2 = temp_a0_2;
-            if (temp_a0_2 < (arg0->unk10 - 1)) {
-                goto loop_10;
-            }
-            phi_v0_2 = temp_v0_3;
+            do {
+                phi_v0->unk0 = phi_v0 + gNewEntityStackSize + 8;
+                temp_a0_2 = phi_a0_2 + 1;
+                temp_v0_3 = phi_v0 + gNewEntityStackSize + 8;
+                phi_v0 = temp_v0_3;
+                phi_a0_2 = temp_a0_2;
+                phi_v0_2 = temp_v0_3;
+            } while (temp_a0_2 < (u32) (arg0->unk10 - 1));
             phi_a0_3 = 0;
         }
         phi_v0_2->unk0 = 0;
     } else {
         gGObjThreadStackHead = NULL;
-        phi_a0_3 = phi_a0_11;
     }
     if (arg0->unk1C != 0) {
         temp_v1_2 = arg0->unk18;
@@ -1954,29 +1951,25 @@ loop_10:
         phi_v1_3 = temp_v1_2;
         phi_v1_4 = temp_v1_2;
         if ((arg0->unk1C - 1) > 0) {
-loop_16:
-            temp_v0_4 = phi_v1_3 + 0x24;
-            phi_v1_3->unk0 = temp_v0_4;
-            temp_a0_3 = phi_a0_3 + 1;
-            phi_v1_3 = temp_v0_4;
-            phi_a0_3 = temp_a0_3;
-            phi_v1_4 = temp_v0_4;
-            if (temp_a0_3 < (arg0->unk1C - 1)) {
-                goto loop_16;
-            }
+            do {
+                temp_v0_4 = phi_v1_3 + 0x24;
+                *phi_v1_3 = temp_v0_4;
+                temp_a0_3 = phi_a0_3 + 1;
+                phi_v1_3 = temp_v0_4;
+                phi_a0_3 = temp_a0_3;
+                phi_v1_4 = temp_v0_4;
+            } while (temp_a0_3 < (arg0->unk1C - 1));
         }
-        phi_v1_4->unk0 = 0;
+        *phi_v1_4 = 0;
     } else {
         gGObjProcessHead = NULL;
     }
     phi_v0_3 = D_8004A560;
-loop_20:
-    temp_v0_5 = phi_v0_3 + 4;
-    temp_v0_5->unk-4 = 0;
-    phi_v0_3 = temp_v0_5;
-    if (temp_v0_5 < &D_8004A570) {
-        goto loop_20;
-    }
+    do {
+        temp_v0_5 = phi_v0_3 + 4;
+        temp_v0_5->unk-4 = 0;
+        phi_v0_3 = (struct GObjProcess **) temp_v0_5;
+    } while (temp_v0_5 < (u32) &D_8004A570);
     if (arg0->unk24 != 0) {
         temp_v0_6 = arg0->unk20;
         gGObjHead = temp_v0_6;
@@ -1984,16 +1977,14 @@ loop_20:
         phi_a0_4 = 0;
         phi_v0_5 = temp_v0_6;
         if ((arg0->unk24 - 1) > 0) {
-loop_23:
-            temp_a0_4 = phi_a0_4 + 1;
-            temp_t9 = phi_v0_4 + arg0->unk28;
-            phi_v0_4->unk4 = temp_t9;
-            phi_v0_4 = temp_t9;
-            phi_a0_4 = temp_a0_4;
-            if (temp_a0_4 < (arg0->unk24 - 1)) {
-                goto loop_23;
-            }
-            phi_v0_5 = temp_t9;
+            do {
+                temp_a0_4 = phi_a0_4 + 1;
+                temp_t9 = phi_v0_4 + arg0->unk28;
+                phi_v0_4->unk4 = temp_t9;
+                phi_v0_4 = temp_t9;
+                phi_a0_4 = temp_a0_4;
+                phi_v0_5 = temp_t9;
+            } while (temp_a0_4 < (arg0->unk24 - 1));
         }
         phi_v0_5->unk4 = 0;
     } else {
@@ -2001,130 +1992,121 @@ loop_23:
         phi_a0_12 = 0;
     }
     D_8004A798 = arg0->unk34;
+    phi_a0_5 = phi_a0_12;
+    phi_a0_13 = phi_a0_12;
+    phi_a0_13 = phi_a0_12;
     if (arg0->unk30 != 0) {
         temp_v1_3 = arg0->unk2C;
         gOMMtxHead = temp_v1_3;
         phi_v1_5 = temp_v1_3;
-        phi_a0_5 = phi_a0_12;
         phi_v1_6 = temp_v1_3;
-        phi_a0_13 = phi_a0_12;
         if ((arg0->unk30 - 1) > 0) {
-loop_29:
-            temp_v0_7 = phi_v1_5 + 0x48;
-            *phi_v1_5 = temp_v0_7;
-            temp_a0_5 = phi_a0_5 + 1;
-            phi_v1_5 = temp_v0_7;
-            phi_a0_5 = temp_a0_5;
-            if (temp_a0_5 < (arg0->unk30 - 1)) {
-                goto loop_29;
-            }
-            phi_v1_6 = temp_v0_7;
+            do {
+                temp_v0_7 = phi_v1_5 + 0x48;
+                phi_v1_5->next = temp_v0_7;
+                temp_a0_5 = phi_a0_5 + 1;
+                phi_v1_5 = temp_v0_7;
+                phi_a0_5 = temp_a0_5;
+                phi_v1_6 = temp_v0_7;
+            } while (temp_a0_5 < (arg0->unk30 - 1));
             phi_a0_13 = 0;
         }
-        *phi_v1_6 = 0;
+        phi_v1_6->next = 0;
     } else {
         gOMMtxHead = NULL;
-        phi_a0_13 = phi_a0_12;
     }
+    phi_a0_6 = phi_a0_13;
+    phi_a0_14 = phi_a0_13;
+    phi_a0_14 = phi_a0_13;
     if (arg0->unk3C != 0) {
         temp_v1_4 = arg0->unk38;
         D_8004A79C = temp_v1_4;
         phi_v1_7 = temp_v1_4;
-        phi_a0_6 = phi_a0_13;
         phi_v1_8 = temp_v1_4;
-        phi_a0_14 = phi_a0_13;
         if ((arg0->unk3C - 1) > 0) {
-loop_35:
-            temp_v0_8 = phi_v1_7 + 0x24;
-            phi_v1_7->next = temp_v0_8;
-            temp_a0_6 = phi_a0_6 + 1;
-            phi_v1_7 = temp_v0_8;
-            phi_a0_6 = temp_a0_6;
-            if (temp_a0_6 < (arg0->unk3C - 1)) {
-                goto loop_35;
-            }
-            phi_v1_8 = temp_v0_8;
+            do {
+                temp_v0_8 = phi_v1_7 + 0x24;
+                phi_v1_7->next = temp_v0_8;
+                temp_a0_6 = phi_a0_6 + 1;
+                phi_v1_7 = temp_v0_8;
+                phi_a0_6 = temp_a0_6;
+                phi_v1_8 = temp_v0_8;
+            } while (temp_a0_6 < (arg0->unk3C - 1));
             phi_a0_14 = 0;
         }
         phi_v1_8->next = 0;
     } else {
-        *0x80050000 = 0;
-        phi_a0_14 = phi_a0_13;
+        *(s32 *)0x80050000 = 0;
     }
+    phi_a0_7 = phi_a0_14;
+    phi_a0_15 = phi_a0_14;
+    phi_a0_15 = phi_a0_14;
     if (arg0->unk44 != 0) {
         temp_v1_5 = arg0->unk40;
         D_8004A7A4 = temp_v1_5;
         phi_v1_9 = temp_v1_5;
-        phi_a0_7 = phi_a0_14;
         phi_v1_10 = temp_v1_5;
-        phi_a0_15 = phi_a0_14;
         if ((arg0->unk44 - 1) > 0) {
-loop_41:
-            temp_v0_9 = phi_v1_9 + 0xA8;
-            phi_v1_9->next = temp_v0_9;
-            temp_a0_7 = phi_a0_7 + 1;
-            phi_v1_9 = temp_v0_9;
-            phi_a0_7 = temp_a0_7;
-            if (temp_a0_7 < (arg0->unk44 - 1)) {
-                goto loop_41;
-            }
-            phi_v1_10 = temp_v0_9;
+            do {
+                temp_v0_9 = phi_v1_9 + 0xA8;
+                phi_v1_9->next = temp_v0_9;
+                temp_a0_7 = phi_a0_7 + 1;
+                phi_v1_9 = temp_v0_9;
+                phi_a0_7 = temp_a0_7;
+                phi_v1_10 = temp_v0_9;
+            } while (temp_a0_7 < (arg0->unk44 - 1));
             phi_a0_15 = 0;
         }
         phi_v1_10->next = 0;
     } else {
-        *0x80050000 = 0;
-        phi_a0_15 = phi_a0_14;
+        *(void *)0x80050000 = 0;
     }
+    phi_a0_8 = phi_a0_15;
+    phi_v1_11 = D_8004A5F8;
+    phi_a0_16 = phi_a0_15;
+    phi_a0_16 = phi_a0_15;
     if (arg0->unk4C != 0) {
         temp_v0_10 = arg0->unk48;
         D_8004A7AC = temp_v0_10;
         phi_v0_6 = temp_v0_10;
-        phi_a0_8 = phi_a0_15;
         phi_v0_7 = temp_v0_10;
-        phi_a0_16 = phi_a0_15;
         if ((arg0->unk4C - 1) > 0) {
-loop_47:
-            temp_a0_8 = phi_a0_8 + 1;
-            temp_t4 = phi_v0_6 + arg0->unk50;
-            phi_v0_6->unk0 = temp_t4;
-            phi_v0_6 = temp_t4;
-            phi_a0_8 = temp_a0_8;
-            if (temp_a0_8 < (arg0->unk4C - 1)) {
-                goto loop_47;
-            }
-            phi_v0_7 = temp_t4;
+            do {
+                temp_a0_8 = phi_a0_8 + 1;
+                temp_t4 = phi_v0_6 + arg0->unk50;
+                phi_v0_6->unk0 = temp_t4;
+                phi_v0_6 = temp_t4;
+                phi_a0_8 = temp_a0_8;
+                phi_v0_7 = temp_t4;
+            } while (temp_a0_8 < (arg0->unk4C - 1));
             phi_a0_16 = 0;
         }
         phi_v0_7->unk0 = 0;
     } else {
-        *0x80050000 = 0;
-        phi_a0_16 = phi_a0_15;
+        *(void *)0x80050000 = 0;
     }
+    phi_a0_9 = phi_a0_16;
+    phi_a0_10 = phi_a0_16;
+    phi_a0_10 = phi_a0_16;
     if (arg0->unk58 != 0) {
         temp_v0_11 = arg0->unk54;
         D_8004A7B4 = temp_v0_11;
-        phi_v0_8 = temp_v0_11;
-        phi_a0_9 = phi_a0_16;
-        phi_v0_9 = temp_v0_11;
-        phi_a0_10 = phi_a0_16;
+        phi_v0_8 = (? *) temp_v0_11;
+        phi_v0_9 = (? *) temp_v0_11;
         if ((arg0->unk58 - 1) > 0) {
-loop_53:
-            temp_a0_9 = phi_a0_9 + 1;
-            temp_t4_2 = phi_v0_8 + arg0->unk5C;
-            *phi_v0_8 = temp_t4_2;
-            phi_v0_8 = temp_t4_2;
-            phi_a0_9 = temp_a0_9;
-            if (temp_a0_9 < (arg0->unk58 - 1)) {
-                goto loop_53;
-            }
-            phi_v0_9 = temp_t4_2;
+            do {
+                temp_a0_9 = phi_a0_9 + 1;
+                temp_t4_2 = phi_v0_8 + arg0->unk5C;
+                *phi_v0_8 = temp_t4_2;
+                phi_v0_8 = temp_t4_2;
+                phi_a0_9 = temp_a0_9;
+                phi_v0_9 = temp_t4_2;
+            } while (temp_a0_9 < (arg0->unk58 - 1));
             phi_a0_10 = 0;
         }
         *phi_v0_9 = 0;
     } else {
-        *0x80050000 = 0;
-        phi_a0_10 = phi_a0_16;
+        *(void *)0x80050000 = 0;
     }
     if (arg0->unk64 != 0) {
         temp_v0_12 = arg0->unk60;
@@ -2132,53 +2114,46 @@ loop_53:
         phi_v0_10 = temp_v0_12;
         phi_v0_11 = temp_v0_12;
         if ((arg0->unk64 - 1) > 0) {
-loop_59:
-            temp_a0_10 = phi_a0_10 + 1;
-            temp_t4_3 = phi_v0_10 + arg0->unk68;
-            phi_v0_10->unk0 = temp_t4_3;
-            phi_v0_10 = temp_t4_3;
-            phi_a0_10 = temp_a0_10;
-            phi_v0_11 = temp_t4_3;
-            if (temp_a0_10 < (arg0->unk64 - 1)) {
-                goto loop_59;
-            }
+            do {
+                temp_a0_10 = phi_a0_10 + 1;
+                temp_t4_3 = phi_v0_10 + arg0->unk68;
+                phi_v0_10->unk0 = temp_t4_3;
+                phi_v0_10 = temp_t4_3;
+                phi_a0_10 = temp_a0_10;
+                phi_v0_11 = temp_t4_3;
+            } while (temp_a0_10 < (arg0->unk64 - 1));
         }
         phi_v0_11->unk0 = 0;
     } else {
-        *0x80050000 = 0;
+        *(void *)0x80050000 = 0;
     }
-    phi_v1_11 = D_8004A5F8;
     phi_v0_12 = D_8004A578;
-loop_63:
-    temp_v0_13 = phi_v0_12 + 4;
-    temp_v1_6 = phi_v1_11 + 4;
-    temp_v1_6->unk-4 = 0;
-    temp_v0_13->unk-4 = 0;
-    phi_v1_11 = temp_v1_6;
-    phi_v0_12 = temp_v0_13;
-    if (temp_v0_13 < D_8004A5F8) {
-        goto loop_63;
-    }
-    *gDLLinkProcs = NULL;
-    *gHighestPrioDLLinkProcs = NULL;
+    do {
+        temp_v0_13 = phi_v0_12 + 4;
+        temp_v1_6 = phi_v1_11 + 4;
+        temp_v1_6->unk-4 = 0;
+        temp_v0_13->unk-4 = 0;
+        phi_v1_11 = temp_v1_6;
+        phi_v0_12 = (struct UnkStruct8004A7C4 **) temp_v0_13;
+    } while (temp_v0_13 < (u32) D_8004A5F8);
+    gDLLinkProcs[0] = 0;
+    gHighestPrioDLLinkProcs[0] = 0;
     phi_v1_12 = &D_8004A70C;
     phi_v0_13 = &D_8004A684;
-loop_65:
-    temp_v0_14 = phi_v0_13 + 0x10;
-    phi_v1_12->unk4 = 0;
-    temp_v0_14->unk-C = 0;
-    phi_v1_12->unk8 = 0;
-    temp_v0_14->unk-8 = 0;
-    phi_v1_12->unkC = 0;
-    temp_v0_14->unk-4 = 0;
-    temp_v1_7 = phi_v1_12 + 0x10;
-    temp_v1_7->unk-10 = 0;
-    temp_v0_14->unk-10 = 0;
-    phi_v1_12 = temp_v1_7;
-    phi_v0_13 = temp_v0_14;
-    if (temp_v0_14 != &D_8004A704) {
-        goto loop_65;
-    }
+    do {
+        temp_v0_14 = phi_v0_13 + 0x10;
+        phi_v1_12->unk4 = 0;
+        temp_v0_14->unk-C = 0;
+        phi_v1_12->unk8 = 0;
+        temp_v0_14->unk-8 = 0;
+        phi_v1_12->unkC = 0;
+        temp_v0_14->unk-4 = 0;
+        temp_v1_7 = phi_v1_12 + 0x10;
+        temp_v1_7->unk-10 = 0;
+        temp_v0_14->unk-10 = 0;
+        phi_v1_12 = temp_v1_7;
+        phi_v0_13 = temp_v0_14;
+    } while (temp_v0_14 != &D_8004A704);
     func_8001479C(&D_8004A704, arg0, &gNewEntityStackSize);
     osCreateMesgQueue(&D_8004A7E0, &D_8004A7D8, 1);
     D_8004A7C0 = 0;
@@ -2191,9 +2166,10 @@ loop_65:
     D_8004A544 = 0;
     D_8004A548 = 0;
     D_8004A558 = 0;
-    func_80017B34(0);
+    func_80017B34(0U);
     D_8003DE54 = 0;
 }
+
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AE84.s")
 #endif

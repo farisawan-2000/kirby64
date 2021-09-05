@@ -206,7 +206,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
 
 
 // granularly negates components of a vector
-Vector *func_80019380(Vector *arg0, s32 flag) {
+Vector *vec3_negate_by_axis(Vector *arg0, s32 flag) {
     if (flag & AXIS_X) {
         arg0->x = -arg0->x;
     }
