@@ -5955,958 +5955,958 @@ glabel bank_7_index_150_anim # 0x1D2842C
 
 .balign 2
 glabel bank_7_index_1_misc # 0x1D28720
-.incbin "assets/misc/bank_7/1/block.bin"
+.incbin "assets/misc/bank_7/1/misc.bin"
 
 .balign 2
 glabel bank_7_index_2_misc # 0x1D2881C
-.incbin "assets/misc/bank_7/2/block.bin"
+.incbin "assets/misc/bank_7/2/misc.bin"
 
 .balign 2
 glabel bank_7_index_3_misc # 0x1D28944
-.incbin "assets/misc/bank_7/3/block.bin"
+.incbin "assets/misc/bank_7/3/misc.bin"
 
 .balign 2
 glabel bank_7_index_4_misc # 0x1D289C0
-.incbin "assets/misc/bank_7/4/block.bin"
+.incbin "assets/misc/bank_7/4/misc.bin"
 
 .balign 2
 glabel bank_7_index_5_misc # 0x1D28BE8
-.incbin "assets/misc/bank_7/5/block.bin"
+.incbin "assets/misc/bank_7/5/misc.bin"
 
 .balign 2
 glabel bank_7_index_6_misc # 0x1D29048
-.incbin "assets/misc/bank_7/6/block.bin"
+.incbin "assets/misc/bank_7/6/misc.bin"
 
 .balign 2
 glabel bank_7_index_7_misc # 0x1D29DE8
-.incbin "assets/misc/bank_7/7/block.bin"
+.incbin "assets/misc/bank_7/7/misc.bin"
 
 .balign 2
 glabel bank_7_index_8_misc # 0x1D2A4E4
-.incbin "assets/misc/bank_7/8/block.bin"
+.incbin "assets/misc/bank_7/8/misc.bin"
 
 .balign 2
 glabel bank_7_index_9_misc # 0x1D2B92C
-.incbin "assets/misc/bank_7/9/block.bin"
+.incbin "assets/misc/bank_7/9/misc.bin"
 
 .balign 2
 glabel bank_7_index_10_misc # 0x1D2BB2C
-.incbin "assets/misc/bank_7/10/block.bin"
+.incbin "assets/misc/bank_7/10/misc.bin"
 
 .balign 2
 glabel bank_7_index_11_misc # 0x1D2BC54
-.incbin "assets/misc/bank_7/11/block.bin"
+.incbin "assets/misc/bank_7/11/misc.bin"
 
 .balign 2
 glabel bank_7_index_12_misc # 0x1D2C000
-.incbin "assets/misc/bank_7/12/block.bin"
+.incbin "assets/misc/bank_7/12/misc.bin"
 
 .balign 2
 glabel bank_7_index_13_misc # 0x1D2CC60
-.incbin "assets/misc/bank_7/13/block.bin"
+.incbin "assets/misc/bank_7/13/misc.bin"
 
 .balign 2
 glabel bank_7_index_14_misc # 0x1D2D07C
-.incbin "assets/misc/bank_7/14/block.bin"
+.incbin "assets/misc/bank_7/14/misc.bin"
 
 .balign 2
 glabel bank_7_index_15_misc # 0x1D2D36C
-.incbin "assets/misc/bank_7/15/block.bin"
+.incbin "assets/misc/bank_7/15/misc.bin"
 
 .balign 2
 glabel bank_7_index_16_misc # 0x1D2D5C8
-.incbin "assets/misc/bank_7/16/block.bin"
+.incbin "assets/misc/bank_7/16/misc.bin"
 
 .balign 2
 glabel bank_7_index_17_misc # 0x1D2DC18
-.incbin "assets/misc/bank_7/17/block.bin"
+.incbin "assets/misc/bank_7/17/misc.bin"
 
 .balign 2
 glabel bank_7_index_18_misc # 0x1D2DCA8
-.incbin "assets/misc/bank_7/18/block.bin"
+.incbin "assets/misc/bank_7/18/misc.bin"
 
 .balign 2
 glabel bank_7_index_19_misc # 0x1D2DDD0
-.incbin "assets/misc/bank_7/19/block.bin"
+.incbin "assets/misc/bank_7/19/misc.bin"
 
 .balign 2
 glabel bank_7_index_20_misc # 0x1D2E3A8
-.incbin "assets/misc/bank_7/20/block.bin"
+.incbin "assets/misc/bank_7/20/misc.bin"
 
 .balign 2
 glabel bank_7_index_21_misc # 0x1D2F328
-.incbin "assets/misc/bank_7/21/block.bin"
+.incbin "assets/misc/bank_7/21/misc.bin"
 
 .balign 2
 glabel bank_7_index_22_misc # 0x1D2F518
-.incbin "assets/misc/bank_7/22/block.bin"
+.incbin "assets/misc/bank_7/22/misc.bin"
 
 .balign 2
 glabel bank_7_index_23_misc # 0x1D2FC10
-.incbin "assets/misc/bank_7/23/block.bin"
+.incbin "assets/misc/bank_7/23/misc.bin"
 
 .balign 2
 glabel bank_7_index_24_misc # 0x1D30114
-.incbin "assets/misc/bank_7/24/block.bin"
+.incbin "assets/misc/bank_7/24/misc.bin"
 
 .balign 2
 glabel bank_7_index_25_misc # 0x1D311FC
-.incbin "assets/misc/bank_7/25/block.bin"
+.incbin "assets/misc/bank_7/25/misc.bin"
 
 .balign 2
 glabel bank_7_index_26_misc # 0x1D31614
-.incbin "assets/misc/bank_7/26/block.bin"
+.incbin "assets/misc/bank_7/26/misc.bin"
 
 .balign 2
 glabel bank_7_index_27_misc # 0x1D324C4
-.incbin "assets/misc/bank_7/27/block.bin"
+.incbin "assets/misc/bank_7/27/misc.bin"
 
 .balign 2
 glabel bank_7_index_28_misc # 0x1D3311C
-.incbin "assets/misc/bank_7/28/block.bin"
+.incbin "assets/misc/bank_7/28/misc.bin"
 
 .balign 2
 glabel bank_7_index_29_misc # 0x1D34D94
-.incbin "assets/misc/bank_7/29/block.bin"
+.incbin "assets/misc/bank_7/29/misc.bin"
 
 .balign 2
 glabel bank_7_index_30_misc # 0x1D351C4
-.incbin "assets/misc/bank_7/30/block.bin"
+.incbin "assets/misc/bank_7/30/misc.bin"
 
 .balign 2
 glabel bank_7_index_31_misc # 0x1D3565C
-.incbin "assets/misc/bank_7/31/block.bin"
+.incbin "assets/misc/bank_7/31/misc.bin"
 
 .balign 2
 glabel bank_7_index_32_misc # 0x1D35754
-.incbin "assets/misc/bank_7/32/block.bin"
+.incbin "assets/misc/bank_7/32/misc.bin"
 
 .balign 2
 glabel bank_7_index_33_misc # 0x1D3677C
-.incbin "assets/misc/bank_7/33/block.bin"
+.incbin "assets/misc/bank_7/33/misc.bin"
 
 .balign 2
 glabel bank_7_index_34_misc # 0x1D36CC8
-.incbin "assets/misc/bank_7/34/block.bin"
+.incbin "assets/misc/bank_7/34/misc.bin"
 
 .balign 2
 glabel bank_7_index_35_misc # 0x1D37300
-.incbin "assets/misc/bank_7/35/block.bin"
+.incbin "assets/misc/bank_7/35/misc.bin"
 
 .balign 2
 glabel bank_7_index_36_misc # 0x1D37588
-.incbin "assets/misc/bank_7/36/block.bin"
+.incbin "assets/misc/bank_7/36/misc.bin"
 
 .balign 2
 glabel bank_7_index_37_misc # 0x1D37BF8
-.incbin "assets/misc/bank_7/37/block.bin"
+.incbin "assets/misc/bank_7/37/misc.bin"
 
 .balign 2
 glabel bank_7_index_38_misc # 0x1D380D0
-.incbin "assets/misc/bank_7/38/block.bin"
+.incbin "assets/misc/bank_7/38/misc.bin"
 
 .balign 2
 glabel bank_7_index_39_misc # 0x1D39560
-.incbin "assets/misc/bank_7/39/block.bin"
+.incbin "assets/misc/bank_7/39/misc.bin"
 
 .balign 2
 glabel bank_7_index_40_misc # 0x1D39CF0
-.incbin "assets/misc/bank_7/40/block.bin"
+.incbin "assets/misc/bank_7/40/misc.bin"
 
 .balign 2
 glabel bank_7_index_41_misc # 0x1D3B360
-.incbin "assets/misc/bank_7/41/block.bin"
+.incbin "assets/misc/bank_7/41/misc.bin"
 
 .balign 2
 glabel bank_7_index_42_misc # 0x1D3B5B8
-.incbin "assets/misc/bank_7/42/block.bin"
+.incbin "assets/misc/bank_7/42/misc.bin"
 
 .balign 2
 glabel bank_7_index_43_misc # 0x1D3B9E0
-.incbin "assets/misc/bank_7/43/block.bin"
+.incbin "assets/misc/bank_7/43/misc.bin"
 
 .balign 2
 glabel bank_7_index_44_misc # 0x1D3BAE4
-.incbin "assets/misc/bank_7/44/block.bin"
+.incbin "assets/misc/bank_7/44/misc.bin"
 
 .balign 2
 glabel bank_7_index_45_misc # 0x1D3C714
-.incbin "assets/misc/bank_7/45/block.bin"
+.incbin "assets/misc/bank_7/45/misc.bin"
 
 .balign 2
 glabel bank_7_index_46_misc # 0x1D3C89C
-.incbin "assets/misc/bank_7/46/block.bin"
+.incbin "assets/misc/bank_7/46/misc.bin"
 
 .balign 2
 glabel bank_7_index_47_misc # 0x1D3D0C4
-.incbin "assets/misc/bank_7/47/block.bin"
+.incbin "assets/misc/bank_7/47/misc.bin"
 
 .balign 2
 glabel bank_7_index_48_misc # 0x1D3D538
-.incbin "assets/misc/bank_7/48/block.bin"
+.incbin "assets/misc/bank_7/48/misc.bin"
 
 .balign 2
 glabel bank_7_index_49_misc # 0x1D3DD78
-.incbin "assets/misc/bank_7/49/block.bin"
+.incbin "assets/misc/bank_7/49/misc.bin"
 
 .balign 2
 glabel bank_7_index_50_misc # 0x1D3E718
-.incbin "assets/misc/bank_7/50/block.bin"
+.incbin "assets/misc/bank_7/50/misc.bin"
 
 .balign 2
 glabel bank_7_index_51_misc # 0x1D3F1E0
-.incbin "assets/misc/bank_7/51/block.bin"
+.incbin "assets/misc/bank_7/51/misc.bin"
 
 .balign 2
 glabel bank_7_index_52_misc # 0x1D3F82C
-.incbin "assets/misc/bank_7/52/block.bin"
+.incbin "assets/misc/bank_7/52/misc.bin"
 
 .balign 2
 glabel bank_7_index_53_misc # 0x1D3FE7C
-.incbin "assets/misc/bank_7/53/block.bin"
+.incbin "assets/misc/bank_7/53/misc.bin"
 
 .balign 2
 glabel bank_7_index_54_misc # 0x1D4020C
-.incbin "assets/misc/bank_7/54/block.bin"
+.incbin "assets/misc/bank_7/54/misc.bin"
 
 .balign 2
 glabel bank_7_index_55_misc # 0x1D40EEC
-.incbin "assets/misc/bank_7/55/block.bin"
+.incbin "assets/misc/bank_7/55/misc.bin"
 
 .balign 2
 glabel bank_7_index_56_misc # 0x1D41264
-.incbin "assets/misc/bank_7/56/block.bin"
+.incbin "assets/misc/bank_7/56/misc.bin"
 
 .balign 2
 glabel bank_7_index_57_misc # 0x1D4168C
-.incbin "assets/misc/bank_7/57/block.bin"
+.incbin "assets/misc/bank_7/57/misc.bin"
 
 .balign 2
 glabel bank_7_index_58_misc # 0x1D41B78
-.incbin "assets/misc/bank_7/58/block.bin"
+.incbin "assets/misc/bank_7/58/misc.bin"
 
 
 # .balign 2
 # glabel bank_7_index_59_misc # 0x1D43468
-# .incbin "assets/misc/bank_7/59/block.bin"
-# # .include "assets/misc/bank_7/59/block.s"
+# .incbin "assets/misc/bank_7/59/misc.bin"
+# # .include "assets/misc/bank_7/59/misc.s"
 
 # .balign 2
 # glabel bank_7_index_60_misc # 0x1D454C0
-# .incbin "assets/misc/bank_7/60/block.bin"
+# .incbin "assets/misc/bank_7/60/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_61_misc # 0x1D45BFC
-# .incbin "assets/misc/bank_7/61/block.bin"
+# .incbin "assets/misc/bank_7/61/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_62_misc # 0x1D47F58
-# .incbin "assets/misc/bank_7/62/block.bin"
+# .incbin "assets/misc/bank_7/62/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_63_misc # 0x1D48490
-# .incbin "assets/misc/bank_7/63/block.bin"
+# .incbin "assets/misc/bank_7/63/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_64_misc # 0x1D48814
-# .incbin "assets/misc/bank_7/64/block.bin"
+# .incbin "assets/misc/bank_7/64/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_65_misc # 0x1D4ADC4
-# .incbin "assets/misc/bank_7/65/block.bin"
+# .incbin "assets/misc/bank_7/65/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_66_misc # 0x1D4D8E4
-# .incbin "assets/misc/bank_7/66/block.bin"
+# .incbin "assets/misc/bank_7/66/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_67_misc # 0x1D4E8F4
-# .incbin "assets/misc/bank_7/67/block.bin"
+# .incbin "assets/misc/bank_7/67/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_68_misc # 0x1D4F788
-# .incbin "assets/misc/bank_7/68/block.bin"
+# .incbin "assets/misc/bank_7/68/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_69_misc # 0x1D4FFB0
-# .incbin "assets/misc/bank_7/69/block.bin"
+# .incbin "assets/misc/bank_7/69/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_70_misc # 0x1D507B0
-# .incbin "assets/misc/bank_7/70/block.bin"
+# .incbin "assets/misc/bank_7/70/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_71_misc # 0x1D50A3C
-# .incbin "assets/misc/bank_7/71/block.bin"
+# .incbin "assets/misc/bank_7/71/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_72_misc # 0x1D537C4
-# .incbin "assets/misc/bank_7/72/block.bin"
+# .incbin "assets/misc/bank_7/72/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_73_misc # 0x1D546FC
-# .incbin "assets/misc/bank_7/73/block.bin"
+# .incbin "assets/misc/bank_7/73/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_74_misc # 0x1D55B08
-# .incbin "assets/misc/bank_7/74/block.bin"
+# .incbin "assets/misc/bank_7/74/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_75_misc # 0x1D56B38
-# .incbin "assets/misc/bank_7/75/block.bin"
+# .incbin "assets/misc/bank_7/75/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_76_misc # 0x1D58A8C
-# .incbin "assets/misc/bank_7/76/block.bin"
+# .incbin "assets/misc/bank_7/76/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_77_misc # 0x1D59560
-# .incbin "assets/misc/bank_7/77/block.bin"
+# .incbin "assets/misc/bank_7/77/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_78_misc # 0x1D59D04
-# .incbin "assets/misc/bank_7/78/block.bin"
+# .incbin "assets/misc/bank_7/78/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_79_misc # 0x1D5C714
-# .incbin "assets/misc/bank_7/79/block.bin"
+# .incbin "assets/misc/bank_7/79/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_80_misc # 0x1D5D6C0
-# .incbin "assets/misc/bank_7/80/block.bin"
+# .incbin "assets/misc/bank_7/80/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_81_misc # 0x1D5D91C
-# .incbin "assets/misc/bank_7/81/block.bin"
+# .incbin "assets/misc/bank_7/81/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_82_misc # 0x1D5E480
-# .incbin "assets/misc/bank_7/82/block.bin"
+# .incbin "assets/misc/bank_7/82/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_83_misc # 0x1D61848
-# .incbin "assets/misc/bank_7/83/block.bin"
+# .incbin "assets/misc/bank_7/83/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_84_misc # 0x1D63EFC
-# .incbin "assets/misc/bank_7/84/block.bin"
+# .incbin "assets/misc/bank_7/84/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_85_misc # 0x1D64930
-# .incbin "assets/misc/bank_7/85/block.bin"
+# .incbin "assets/misc/bank_7/85/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_86_misc # 0x1D67164
-# .incbin "assets/misc/bank_7/86/block.bin"
+# .incbin "assets/misc/bank_7/86/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_87_misc # 0x1D694BC
-# .incbin "assets/misc/bank_7/87/block.bin"
+# .incbin "assets/misc/bank_7/87/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_88_misc # 0x1D69860
-# .incbin "assets/misc/bank_7/88/block.bin"
+# .incbin "assets/misc/bank_7/88/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_89_misc # 0x1D6C788
-# .incbin "assets/misc/bank_7/89/block.bin"
+# .incbin "assets/misc/bank_7/89/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_90_misc # 0x1D6F23C
-# .incbin "assets/misc/bank_7/90/block.bin"
+# .incbin "assets/misc/bank_7/90/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_91_misc # 0x1D70BD8
-# .incbin "assets/misc/bank_7/91/block.bin"
+# .incbin "assets/misc/bank_7/91/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_92_misc # 0x1D73970
-# .incbin "assets/misc/bank_7/92/block.bin"
+# .incbin "assets/misc/bank_7/92/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_93_misc # 0x1D7637C
-# .incbin "assets/misc/bank_7/93/block.bin"
+# .incbin "assets/misc/bank_7/93/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_94_misc # 0x1D795B4
-# .incbin "assets/misc/bank_7/94/block.bin"
+# .incbin "assets/misc/bank_7/94/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_95_misc # 0x1D79958
-# .incbin "assets/misc/bank_7/95/block.bin"
+# .incbin "assets/misc/bank_7/95/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_96_misc # 0x1D7D828
-# .incbin "assets/misc/bank_7/96/block.bin"
+# .incbin "assets/misc/bank_7/96/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_97_misc # 0x1D7F634
-# .incbin "assets/misc/bank_7/97/block.bin"
+# .incbin "assets/misc/bank_7/97/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_98_misc # 0x1D801F0
-# .incbin "assets/misc/bank_7/98/block.bin"
+# .incbin "assets/misc/bank_7/98/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_99_misc # 0x1D824C4
-# .incbin "assets/misc/bank_7/99/block.bin"
+# .incbin "assets/misc/bank_7/99/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_100_misc # 0x1D85088
-# .incbin "assets/misc/bank_7/100/block.bin"
+# .incbin "assets/misc/bank_7/100/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_101_misc # 0x1D86BA8
-# .incbin "assets/misc/bank_7/101/block.bin"
+# .incbin "assets/misc/bank_7/101/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_102_misc # 0x1D889A0
-# .incbin "assets/misc/bank_7/102/block.bin"
+# .incbin "assets/misc/bank_7/102/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_103_misc # 0x1D8A874
-# .incbin "assets/misc/bank_7/103/block.bin"
+# .incbin "assets/misc/bank_7/103/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_104_misc # 0x1D8AC18
-# .incbin "assets/misc/bank_7/104/block.bin"
+# .incbin "assets/misc/bank_7/104/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_105_misc # 0x1D8C860
-# .incbin "assets/misc/bank_7/105/block.bin"
+# .incbin "assets/misc/bank_7/105/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_106_misc # 0x1D8CFCC
-# .incbin "assets/misc/bank_7/106/block.bin"
+# .incbin "assets/misc/bank_7/106/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_107_misc # 0x1D8DC14
-# .incbin "assets/misc/bank_7/107/block.bin"
+# .incbin "assets/misc/bank_7/107/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_108_misc # 0x1D8E364
-# .incbin "assets/misc/bank_7/108/block.bin"
+# .incbin "assets/misc/bank_7/108/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_109_misc # 0x1D8EF94
-# .incbin "assets/misc/bank_7/109/block.bin"
+# .incbin "assets/misc/bank_7/109/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_110_misc # 0x1D91014
-# .incbin "assets/misc/bank_7/110/block.bin"
+# .incbin "assets/misc/bank_7/110/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_111_misc # 0x1D91888
-# .incbin "assets/misc/bank_7/111/block.bin"
+# .incbin "assets/misc/bank_7/111/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_112_misc # 0x1D92AFC
-# .incbin "assets/misc/bank_7/112/block.bin"
+# .incbin "assets/misc/bank_7/112/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_113_misc # 0x1D92E80
-# .incbin "assets/misc/bank_7/113/block.bin"
+# .incbin "assets/misc/bank_7/113/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_114_misc # 0x1D9389C
-# .incbin "assets/misc/bank_7/114/block.bin"
+# .incbin "assets/misc/bank_7/114/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_115_misc # 0x1D9670C
-# .incbin "assets/misc/bank_7/115/block.bin"
+# .incbin "assets/misc/bank_7/115/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_116_misc # 0x1D993BC
-# .incbin "assets/misc/bank_7/116/block.bin"
+# .incbin "assets/misc/bank_7/116/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_117_misc # 0x1D9ACFC
-# .incbin "assets/misc/bank_7/117/block.bin"
+# .incbin "assets/misc/bank_7/117/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_118_misc # 0x1D9D1B4
-# .incbin "assets/misc/bank_7/118/block.bin"
+# .incbin "assets/misc/bank_7/118/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_119_misc # 0x1D9DD00
-# .incbin "assets/misc/bank_7/119/block.bin"
+# .incbin "assets/misc/bank_7/119/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_120_misc # 0x1DA1530
-# .incbin "assets/misc/bank_7/120/block.bin"
+# .incbin "assets/misc/bank_7/120/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_121_misc # 0x1DA18D4
-# .incbin "assets/misc/bank_7/121/block.bin"
+# .incbin "assets/misc/bank_7/121/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_122_misc # 0x1DA3E54
-# .incbin "assets/misc/bank_7/122/block.bin"
+# .incbin "assets/misc/bank_7/122/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_123_misc # 0x1DA5068
-# .incbin "assets/misc/bank_7/123/block.bin"
+# .incbin "assets/misc/bank_7/123/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_124_misc # 0x1DA6B30
-# .incbin "assets/misc/bank_7/124/block.bin"
+# .incbin "assets/misc/bank_7/124/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_125_misc # 0x1DAB558
-# .incbin "assets/misc/bank_7/125/block.bin"
+# .incbin "assets/misc/bank_7/125/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_126_misc # 0x1DAF2F8
-# .incbin "assets/misc/bank_7/126/block.bin"
+# .incbin "assets/misc/bank_7/126/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_127_misc # 0x1DB32DC
-# .incbin "assets/misc/bank_7/127/block.bin"
+# .incbin "assets/misc/bank_7/127/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_128_misc # 0x1DB3680
-# .incbin "assets/misc/bank_7/128/block.bin"
+# .incbin "assets/misc/bank_7/128/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_129_misc # 0x1DB5A98
-# .incbin "assets/misc/bank_7/129/block.bin"
+# .incbin "assets/misc/bank_7/129/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_130_misc # 0x1DB8728
-# .incbin "assets/misc/bank_7/130/block.bin"
+# .incbin "assets/misc/bank_7/130/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_131_misc # 0x1DB978C
-# .incbin "assets/misc/bank_7/131/block.bin"
+# .incbin "assets/misc/bank_7/131/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_132_misc # 0x1DBC5F8
-# .incbin "assets/misc/bank_7/132/block.bin"
+# .incbin "assets/misc/bank_7/132/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_133_misc # 0x1DBDB44
-# .incbin "assets/misc/bank_7/133/block.bin"
+# .incbin "assets/misc/bank_7/133/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_134_misc # 0x1DBE614
-# .incbin "assets/misc/bank_7/134/block.bin"
+# .incbin "assets/misc/bank_7/134/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_135_misc # 0x1DC038C
-# .incbin "assets/misc/bank_7/135/block.bin"
+# .incbin "assets/misc/bank_7/135/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_136_misc # 0x1DC05E8
-# .incbin "assets/misc/bank_7/136/block.bin"
+# .incbin "assets/misc/bank_7/136/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_137_misc # 0x1DC2420
-# .incbin "assets/misc/bank_7/137/block.bin"
+# .incbin "assets/misc/bank_7/137/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_138_misc # 0x1DC484C
-# .incbin "assets/misc/bank_7/138/block.bin"
+# .incbin "assets/misc/bank_7/138/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_139_misc # 0x1DC9648
-# .incbin "assets/misc/bank_7/139/block.bin"
+# .incbin "assets/misc/bank_7/139/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_140_misc # 0x1DCFAF8
-# .incbin "assets/misc/bank_7/140/block.bin"
+# .incbin "assets/misc/bank_7/140/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_141_misc # 0x1DD1314
-# .incbin "assets/misc/bank_7/141/block.bin"
+# .incbin "assets/misc/bank_7/141/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_142_misc # 0x1DD3D60
-# .incbin "assets/misc/bank_7/142/block.bin"
+# .incbin "assets/misc/bank_7/142/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_143_misc # 0x1DD4104
-# .incbin "assets/misc/bank_7/143/block.bin"
+# .incbin "assets/misc/bank_7/143/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_144_misc # 0x1DD4D34
-# .incbin "assets/misc/bank_7/144/block.bin"
+# .incbin "assets/misc/bank_7/144/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_145_misc # 0x1DD7DB8
-# .incbin "assets/misc/bank_7/145/block.bin"
+# .incbin "assets/misc/bank_7/145/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_146_misc # 0x1DD9888
-# .incbin "assets/misc/bank_7/146/block.bin"
+# .incbin "assets/misc/bank_7/146/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_147_misc # 0x1DDBA04
-# .incbin "assets/misc/bank_7/147/block.bin"
+# .incbin "assets/misc/bank_7/147/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_148_misc # 0x1DDC5C8
-# .incbin "assets/misc/bank_7/148/block.bin"
+# .incbin "assets/misc/bank_7/148/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_149_misc # 0x1DDE108
-# .incbin "assets/misc/bank_7/149/block.bin"
+# .incbin "assets/misc/bank_7/149/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_150_misc # 0x1DE0898
-# .incbin "assets/misc/bank_7/150/block.bin"
+# .incbin "assets/misc/bank_7/150/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_151_misc # 0x1DE0C3C
-# .incbin "assets/misc/bank_7/151/block.bin"
+# .incbin "assets/misc/bank_7/151/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_152_misc # 0x1DE12A0
-# .incbin "assets/misc/bank_7/152/block.bin"
+# .incbin "assets/misc/bank_7/152/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_153_misc # 0x1DE82FC
-# .incbin "assets/misc/bank_7/153/block.bin"
+# .incbin "assets/misc/bank_7/153/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_154_misc # 0x1DEBE2C
-# .incbin "assets/misc/bank_7/154/block.bin"
+# .incbin "assets/misc/bank_7/154/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_155_misc # 0x1DEFB70
-# .incbin "assets/misc/bank_7/155/block.bin"
+# .incbin "assets/misc/bank_7/155/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_156_misc # 0x1DF2B9C
-# .incbin "assets/misc/bank_7/156/block.bin"
+# .incbin "assets/misc/bank_7/156/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_157_misc # 0x1DF3480
-# .incbin "assets/misc/bank_7/157/block.bin"
+# .incbin "assets/misc/bank_7/157/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_158_misc # 0x1DF52B0
-# .incbin "assets/misc/bank_7/158/block.bin"
+# .incbin "assets/misc/bank_7/158/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_159_misc # 0x1DF5654
-# .incbin "assets/misc/bank_7/159/block.bin"
+# .incbin "assets/misc/bank_7/159/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_160_misc # 0x1DF9094
-# .incbin "assets/misc/bank_7/160/block.bin"
+# .incbin "assets/misc/bank_7/160/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_161_misc # 0x1DFD41C
-# .incbin "assets/misc/bank_7/161/block.bin"
+# .incbin "assets/misc/bank_7/161/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_162_misc # 0x1DFDA6C
-# .incbin "assets/misc/bank_7/162/block.bin"
+# .incbin "assets/misc/bank_7/162/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_163_misc # 0x1E00B14
-# .incbin "assets/misc/bank_7/163/block.bin"
+# .incbin "assets/misc/bank_7/163/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_164_misc # 0x1E05980
-# .incbin "assets/misc/bank_7/164/block.bin"
+# .incbin "assets/misc/bank_7/164/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_165_misc # 0x1E05D24
-# .incbin "assets/misc/bank_7/165/block.bin"
+# .incbin "assets/misc/bank_7/165/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_166_misc # 0x1E06F5C
-# .incbin "assets/misc/bank_7/166/block.bin"
+# .incbin "assets/misc/bank_7/166/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_167_misc # 0x1E091BC
-# .incbin "assets/misc/bank_7/167/block.bin"
+# .incbin "assets/misc/bank_7/167/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_168_misc # 0x1E0D9B0
-# .incbin "assets/misc/bank_7/168/block.bin"
+# .incbin "assets/misc/bank_7/168/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_169_misc # 0x1E139EC
-# .incbin "assets/misc/bank_7/169/block.bin"
+# .incbin "assets/misc/bank_7/169/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_170_misc # 0x1E149BC
-# .incbin "assets/misc/bank_7/170/block.bin"
+# .incbin "assets/misc/bank_7/170/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_171_misc # 0x1E19B94
-# .incbin "assets/misc/bank_7/171/block.bin"
+# .incbin "assets/misc/bank_7/171/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_172_misc # 0x1E1F540
-# .incbin "assets/misc/bank_7/172/block.bin"
+# .incbin "assets/misc/bank_7/172/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_173_misc # 0x1E1F8E4
-# .incbin "assets/misc/bank_7/173/block.bin"
+# .incbin "assets/misc/bank_7/173/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_174_misc # 0x1E1FFE4
-# .incbin "assets/misc/bank_7/174/block.bin"
+# .incbin "assets/misc/bank_7/174/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_175_misc # 0x1E226D4
-# .incbin "assets/misc/bank_7/175/block.bin"
+# .incbin "assets/misc/bank_7/175/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_176_misc # 0x1E237D8
-# .incbin "assets/misc/bank_7/176/block.bin"
+# .incbin "assets/misc/bank_7/176/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_177_misc # 0x1E29C64
-# .incbin "assets/misc/bank_7/177/block.bin"
+# .incbin "assets/misc/bank_7/177/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_178_misc # 0x1E2AE08
-# .incbin "assets/misc/bank_7/178/block.bin"
+# .incbin "assets/misc/bank_7/178/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_179_misc # 0x1E2E6D8
-# .incbin "assets/misc/bank_7/179/block.bin"
+# .incbin "assets/misc/bank_7/179/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_180_misc # 0x1E32C7C
-# .incbin "assets/misc/bank_7/180/block.bin"
+# .incbin "assets/misc/bank_7/180/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_181_misc # 0x1E33020
-# .incbin "assets/misc/bank_7/181/block.bin"
+# .incbin "assets/misc/bank_7/181/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_182_misc # 0x1E33F74
-# .incbin "assets/misc/bank_7/182/block.bin"
+# .incbin "assets/misc/bank_7/182/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_183_misc # 0x1E375C0
-# .incbin "assets/misc/bank_7/183/block.bin"
+# .incbin "assets/misc/bank_7/183/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_184_misc # 0x1E38A2C
-# .incbin "assets/misc/bank_7/184/block.bin"
+# .incbin "assets/misc/bank_7/184/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_185_misc # 0x1E3C548
-# .incbin "assets/misc/bank_7/185/block.bin"
+# .incbin "assets/misc/bank_7/185/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_186_misc # 0x1E3F670
-# .incbin "assets/misc/bank_7/186/block.bin"
+# .incbin "assets/misc/bank_7/186/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_187_misc # 0x1E400DC
-# .incbin "assets/misc/bank_7/187/block.bin"
+# .incbin "assets/misc/bank_7/187/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_188_misc # 0x1E40480
-# .incbin "assets/misc/bank_7/188/block.bin"
+# .incbin "assets/misc/bank_7/188/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_189_misc # 0x1E411A0
-# .incbin "assets/misc/bank_7/189/block.bin"
+# .incbin "assets/misc/bank_7/189/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_190_misc # 0x1E434CC
-# .incbin "assets/misc/bank_7/190/block.bin"
+# .incbin "assets/misc/bank_7/190/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_191_misc # 0x1E46988
-# .incbin "assets/misc/bank_7/191/block.bin"
+# .incbin "assets/misc/bank_7/191/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_192_misc # 0x1E474A0
-# .incbin "assets/misc/bank_7/192/block.bin"
+# .incbin "assets/misc/bank_7/192/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_193_misc # 0x1E47C94
-# .incbin "assets/misc/bank_7/193/block.bin"
+# .incbin "assets/misc/bank_7/193/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_194_misc # 0x1E486E4
-# .incbin "assets/misc/bank_7/194/block.bin"
+# .incbin "assets/misc/bank_7/194/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_195_misc # 0x1E4CCD4
-# .incbin "assets/misc/bank_7/195/block.bin"
+# .incbin "assets/misc/bank_7/195/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_196_misc # 0x1E50DEC
-# .incbin "assets/misc/bank_7/196/block.bin"
+# .incbin "assets/misc/bank_7/196/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_197_misc # 0x1E51190
-# .incbin "assets/misc/bank_7/197/block.bin"
+# .incbin "assets/misc/bank_7/197/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_198_misc # 0x1E51F38
-# .incbin "assets/misc/bank_7/198/block.bin"
+# .incbin "assets/misc/bank_7/198/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_199_misc # 0x1E5449C
-# .incbin "assets/misc/bank_7/199/block.bin"
+# .incbin "assets/misc/bank_7/199/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_200_misc # 0x1E59208
-# .incbin "assets/misc/bank_7/200/block.bin"
+# .incbin "assets/misc/bank_7/200/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_201_misc # 0x1E5CEE4
-# .incbin "assets/misc/bank_7/201/block.bin"
+# .incbin "assets/misc/bank_7/201/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_202_misc # 0x1E5E6CC
-# .incbin "assets/misc/bank_7/202/block.bin"
+# .incbin "assets/misc/bank_7/202/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_203_misc # 0x1E60D04
-# .incbin "assets/misc/bank_7/203/block.bin"
+# .incbin "assets/misc/bank_7/203/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_204_misc # 0x1E62D58
-# .incbin "assets/misc/bank_7/204/block.bin"
+# .incbin "assets/misc/bank_7/204/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_205_misc # 0x1E630FC
-# .incbin "assets/misc/bank_7/205/block.bin"
+# .incbin "assets/misc/bank_7/205/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_206_misc # 0x1E64414
-# .incbin "assets/misc/bank_7/206/block.bin"
+# .incbin "assets/misc/bank_7/206/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_207_misc # 0x1E66200
-# .incbin "assets/misc/bank_7/207/block.bin"
+# .incbin "assets/misc/bank_7/207/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_208_misc # 0x1E6693C
-# .incbin "assets/misc/bank_7/208/block.bin"
+# .incbin "assets/misc/bank_7/208/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_209_misc # 0x1E68C6C
-# .incbin "assets/misc/bank_7/209/block.bin"
+# .incbin "assets/misc/bank_7/209/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_210_misc # 0x1E69010
-# .incbin "assets/misc/bank_7/210/block.bin"
+# .incbin "assets/misc/bank_7/210/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_211_misc # 0x1E69CD8
-# .incbin "assets/misc/bank_7/211/block.bin"
+# .incbin "assets/misc/bank_7/211/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_212_misc # 0x1E6ABBC
-# .incbin "assets/misc/bank_7/212/block.bin"
+# .incbin "assets/misc/bank_7/212/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_213_misc # 0x1E6DE94
-# .incbin "assets/misc/bank_7/213/block.bin"
+# .incbin "assets/misc/bank_7/213/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_214_misc # 0x1E72C34
-# .incbin "assets/misc/bank_7/214/block.bin"
+# .incbin "assets/misc/bank_7/214/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_215_misc # 0x1E77D84
-# .incbin "assets/misc/bank_7/215/block.bin"
+# .incbin "assets/misc/bank_7/215/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_216_misc # 0x1E788DC
-# .incbin "assets/misc/bank_7/216/block.bin"
+# .incbin "assets/misc/bank_7/216/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_217_misc # 0x1E78C80
-# .incbin "assets/misc/bank_7/217/block.bin"
+# .incbin "assets/misc/bank_7/217/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_218_misc # 0x1E797AC
-# .incbin "assets/misc/bank_7/218/block.bin"
+# .incbin "assets/misc/bank_7/218/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_219_misc # 0x1E79E74
-# .incbin "assets/misc/bank_7/219/block.bin"
+# .incbin "assets/misc/bank_7/219/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_220_misc # 0x1E7BB04
-# .incbin "assets/misc/bank_7/220/block.bin"
+# .incbin "assets/misc/bank_7/220/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_221_misc # 0x1E7C1CC
-# .incbin "assets/misc/bank_7/221/block.bin"
+# .incbin "assets/misc/bank_7/221/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_222_misc # 0x1E7DE5C
-# .incbin "assets/misc/bank_7/222/block.bin"
+# .incbin "assets/misc/bank_7/222/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_223_misc # 0x1E7E6B4
-# .incbin "assets/misc/bank_7/223/block.bin"
+# .incbin "assets/misc/bank_7/223/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_224_misc # 0x1E8033C
-# .incbin "assets/misc/bank_7/224/block.bin"
+# .incbin "assets/misc/bank_7/224/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_225_misc # 0x1E80A04
-# .incbin "assets/misc/bank_7/225/block.bin"
+# .incbin "assets/misc/bank_7/225/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_226_misc # 0x1E82668
-# .incbin "assets/misc/bank_7/226/block.bin"
+# .incbin "assets/misc/bank_7/226/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_227_misc # 0x1E82D30
-# .incbin "assets/misc/bank_7/227/block.bin"
+# .incbin "assets/misc/bank_7/227/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_228_misc # 0x1E841B0
-# .incbin "assets/misc/bank_7/228/block.bin"
+# .incbin "assets/misc/bank_7/228/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_229_misc # 0x1E84554
-# .incbin "assets/misc/bank_7/229/block.bin"
+# .incbin "assets/misc/bank_7/229/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_230_misc # 0x1E84950
-# .incbin "assets/misc/bank_7/230/block.bin"
+# .incbin "assets/misc/bank_7/230/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_231_misc # 0x1E86920
-# .incbin "assets/misc/bank_7/231/block.bin"
+# .incbin "assets/misc/bank_7/231/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_232_misc # 0x1E8740C
-# .incbin "assets/misc/bank_7/232/block.bin"
+# .incbin "assets/misc/bank_7/232/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_233_misc # 0x1E879FC
-# .incbin "assets/misc/bank_7/233/block.bin"
+# .incbin "assets/misc/bank_7/233/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_234_misc # 0x1E87E24
-# .incbin "assets/misc/bank_7/234/block.bin"
+# .incbin "assets/misc/bank_7/234/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_235_misc # 0x1E88C68
-# .incbin "assets/misc/bank_7/235/block.bin"
+# .incbin "assets/misc/bank_7/235/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_236_misc # 0x1E89478
-# .incbin "assets/misc/bank_7/236/block.bin"
+# .incbin "assets/misc/bank_7/236/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_237_misc # 0x1E89924
-# .incbin "assets/misc/bank_7/237/block.bin"
+# .incbin "assets/misc/bank_7/237/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_238_misc # 0x1E89ECC
-# .incbin "assets/misc/bank_7/238/block.bin"
+# .incbin "assets/misc/bank_7/238/misc.bin"
 
 # .balign 2
 # glabel bank_7_index_239_misc # 0x1E8AA1C
-# .incbin "assets/misc/bank_7/239/block.bin"
+# .incbin "assets/misc/bank_7/239/misc.bin"

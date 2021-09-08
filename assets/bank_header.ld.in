@@ -2,6 +2,10 @@
     bank_##bank##_index_##index##_geo = __romPos; \
     .bank_##bank##_index_##index 0x04000000 : AT(__romPos)
 
+#define START_IMG(bank, index) \
+    bank_##bank##_index_##index##_img = __romPos; \
+    .bank_##bank##_index_##index##_img 0x04000000 : AT(__romPos)
+
 #define END_GEO(bank, index) \
     bank_##bank##_index_##index##_geo_end = __romPos + SIZEOF(.bank_##bank##_index_##index); \
     __romPos += SIZEOF(.bank_##bank##_index_##index);
@@ -12,9 +16,16 @@
 
 #define END_MISC(bank, index) \
     bank_##bank##_index_##index##_misc_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_misc); \
-    __romPos += SIZEOF(.bank_##bank##_index_##index##_misc);
+    __romPos += SIZEOF(.bank_##bank##_index_##index##_misc); \
+    _bank_##bank##_misc_size += SIZEOF(.bank_##bank##_index_##index##_misc); \
+    _bank_##bank##_index_##index##_misc_start = _bank_##bank##_misc_size + SIZEOF(.bank_##bank##_index_##index##_misc);
 
 
+#define IMAGES_INIT(bank) \
+    _bank_##bank##_image_start = 0;
+    
+#define MISC_INIT(bank) \
+    _bank_##bank##_misc_size = 0;
 
 #define GEO(bank, index) \
     START_GEO(bank, index) {\
@@ -36,8 +47,14 @@
     }\
     END_GEO(bank, index)
 
-#define LEVEL(bank, index) \
+#define MODEL(bank, index) \
+    START_GEO(bank, index) {\
+        BUILD_DIR/assets/geo/bank_##bank/index/geo.o(.data*);\
+    }\
+    END_GEO(bank, index)
+
+#define LEVEL(bank, index, filename) \
     START_MISC(bank, index) {\
-        BUILD_DIR/assets/misc/bank_##bank/index/level.o(.data*);\
+        BUILD_DIR/filename(.data*);\
     }\
     END_MISC(bank, index)
