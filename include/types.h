@@ -87,7 +87,7 @@ struct UnkStruct8015C740 {
 };
 
 // technically everything in this struct is a void *, but it's so much easier this way
-struct BankHeader {
+struct BankFooter {
     /* 0x0  */ u32 *geoBlockTable;
     /* 0x4  */ u32 *geoROMOffset;
     /* 0x8  */ u32 *imageBlockTable;
