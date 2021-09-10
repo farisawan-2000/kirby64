@@ -1,7 +1,7 @@
 def printList(fname, l, typ, nam):
-	print("%s %s = {" % (typ, nam), file = fname)
-	print("    0,", file = fname)
-	print("    0,", file = fname)
+	fname.write("%s %s = {" % (typ, nam))
+	fname.write("    0,")
+	fname.write("    0,")
 	for i in l:
-		print("    %s," % i, file = fname)
-	print("};", file = fname)
+		fname.write("    %s," % i)
+	fname.write("};")

@@ -29,7 +29,7 @@ def checkNull(l):
 
 
 def makeBank(fname, bank, geoList, imageList, animList, miscList):
-	print(bankheader, file = fname)
+	fname.write(bankheader)
 
 	printList(fname, geoList  , "u32 *", "gBank%dGeoTable"   % bank)
 	printList(fname, imageList, "u32  ", "gBank%dImageTable" % bank)
@@ -38,14 +38,14 @@ def makeBank(fname, bank, geoList, imageList, animList, miscList):
 
 	# make the footer here
 
-	print(bankfooter % (
-		"gBank%dDescriptor" % bank,
-		"gBank%dGeoTable"   % bank,
-		"gBank%dImageTable" % bank,
+	fname.write(bankfooter % (
+		"&gBank%dDescriptor" % bank,
+		"&gBank%dGeoTable"   % bank,
+		"&gBank%dImageTable" % bank,
 		checkNull(imageList),
-		"gBank%dAnimTable"  % bank,
+		"&gBank%dAnimTable"  % bank,
 		checkNull(animList),
-		"gBank%dMiscTable"  % bank,
+		"&gBank%dMiscTable"  % bank,
 		checkNull(miscList)
-		), file = fname)
+	))
 
