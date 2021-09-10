@@ -95,15 +95,15 @@ u32 D_800D017C = 0x00000115;
 
 u32 D_800D0180 = 0x000000F0;
 
-u32 *D_800D0184[8] = {
-    &D_800C47D4,
-    &D_800C7824,
-    &D_800C9090,
-    &D_800CAED0,
-    &D_800CC794,
-    &D_800CCCB4,
-    &D_800CE220,
-    &D_800D00A4,
+u32 *gBankDescriptorTable[8] = {
+    &gBank0Descriptor,
+    &gBank1Descriptor,
+    &gBank2Descriptor,
+    &gBank3Descriptor,
+    &gBank4Descriptor,
+    &gBank5Descriptor,
+    &gBank6Descriptor,
+    &gBank7Descriptor,
 };
 
 extern char D_800D5E00[];

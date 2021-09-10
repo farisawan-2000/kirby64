@@ -2,7 +2,7 @@
 #include "segments.h"
 #include "banks.h"
 
-u32 *D_800CE240[] = {
+u32 *gBank7GeoTable[] = {
 	0,
 	0,
 	bank_7_index_1_geo,
@@ -428,7 +428,7 @@ u32 *D_800CE240[] = {
 };
 
 
-u32 D_800CE8D8 = 0x00000000;
+u32 gBank7ImageTable = 0x00000000;
 
 u32 D_800CE8DC = 0x00000000;
 
@@ -2688,7 +2688,7 @@ u32 D_800CFA78 = 0x0010F5AA;
 
 u32 D_800CFA7C = 0x0010FDAA;
 
-u32 D_800CFA80 = 0x00000000;
+u32 gBank7AnimTable = 0x00000000;
 
 u32 D_800CFA84 = 0x00000000;
 
@@ -2992,7 +2992,7 @@ u32 D_800CFCD8 = 0x000429FC;
 
 u32 D_800CFCDC = 0x00042CEC;
 
-u32 D_800CFCE0 = 0x00000000;
+u32 gBank7MiscTable = 0x00000000;
 
 u32 D_800CFCE4 = 0x00000000;
 
@@ -3476,19 +3476,19 @@ u32 D_800D00A0 = 0x00163420;
 
 
 
-u32 D_800D00A4 = &D_800CE240;
+u32 gBank7Descriptor = &gBank7GeoTable;
 
 s32 D_800D00A8 = -1;
 
-u32 D_800D00AC = &D_800CE8D8;
+u32 D_800D00AC = &gBank7ImageTable;
 
 u32 *D_800D00B0 = &bank_7_index_1_image;
 
-u32 D_800D00B4 = &D_800CFA80;
+u32 D_800D00B4 = &gBank7AnimTable;
 
 u32 *D_800D00B8 = &bank_7_index_1_anim;
 
-u32 D_800D00BC = &D_800CFCE0;
+u32 D_800D00BC = &gBank7MiscTable;
 
 u32 *D_800D00C0 = &bank_7_index_1_misc;
 

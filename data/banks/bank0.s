@@ -1,7 +1,7 @@
 .include "include/macros.inc"
 .section .data
 
-glabel D_800C46A0
+glabel gBank0GeoTable
 .word NULL
 .word NULL
 .word bank_0_index_1_geo_start
@@ -34,7 +34,7 @@ glabel D_800C46A0
 .word bank_0_index_10_geo_start
 .word bank_0_index_10_geo_end
 
-glabel D_800C46F8
+glabel gBank0ImageTable
 .word 0x00000000
 
 glabel D_800C46FC
@@ -121,7 +121,7 @@ glabel D_800C4764
 glabel D_800C4768
 .word 0x0003CF40
 
-glabel D_800C476C
+glabel gBank0AnimTable
 .word 0x00000000
 
 glabel D_800C4770
@@ -181,7 +181,7 @@ glabel D_800C47B4
 glabel D_800C47B8
 .word 0x000030DC
 
-glabel D_800C47BC
+glabel gBank0MiscTable
 .word 0x00000000
 
 glabel D_800C47C0
@@ -201,26 +201,26 @@ glabel D_800C47D0
 
 
 
-glabel *D_800C47D4
-.word D_800C46A0
+glabel *gBank0Descriptor
+.word gBank0GeoTable
 
 glabel D_800C47D8
 .word -1
 
 glabel *D_800C47DC
-.word D_800C46F8
+.word gBank0ImageTable
 
 glabel *D_800C47E0
 .word bank_0_index_1_image
 
 glabel *D_800C47E4
-.word D_800C476C
+.word gBank0AnimTable
 
 glabel *D_800C47E8
 .word bank_0_index_1_anim
 
 glabel *D_800C47EC
-.word D_800C47BC
+.word gBank0MiscTable
 
 glabel *D_800C47F0
 .word bank_0_index_1_misc

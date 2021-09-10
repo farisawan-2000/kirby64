@@ -4860,5 +4860,7 @@ u32 D_800C469C = 0x00000000;
 
 
 
-#include "data/banks/banks.c"
+#include "assets/filetable.c"
+
+
 #include "data/misc/kirby.066630.2.c"

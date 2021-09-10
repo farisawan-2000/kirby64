@@ -1137,7 +1137,7 @@ GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A9A2C.s")
 #endif
 
 #include "banks.h"
-extern struct BankHeader *D_800D0184[];
+extern struct BankHeader *gBankDescriptorTable[];
 #ifdef NON_MATCHING
 // regalloc moment
 s32 func_800A8358(u32);
@@ -1147,8 +1147,8 @@ s32 func_800A9AA8(u32 bankIndex, u32 arg1) {
     s32 temp_v0;
     u32 *miscTable;
 
-    miscTable = &D_800D0184[bankIndex >> 0x10]->miscBlockTable[bankIndex & 0xFFFF];
-    sp18 = D_800D0184[bankIndex >> 0x10]->miscROMOffset;
+    miscTable = &gBankDescriptorTable[bankIndex >> 0x10]->miscBlockTable[bankIndex & 0xFFFF];
+    sp18 = gBankDescriptorTable[bankIndex >> 0x10]->miscROMOffset;
     temp_a3 = ((miscTable[1] - miscTable[0]) + 3) & 0xFFFFFC;
     temp_v0 = func_800A8358(temp_a3 | arg1);
     dma_read(miscTable[0] + sp18, temp_v0, temp_a3 & 0xFFFFFC);

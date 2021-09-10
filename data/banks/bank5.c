@@ -2,11 +2,11 @@
 #include "segments.h"
 #include "banks.h"
 
-u32 D_800CC7B4 = 0x00000000;
+u32 gBank5GeoTable = 0x00000000;
 
 u32 D_800CC7B8 = 0x00000000;
 
-u32 D_800CC7BC = 0x00000000;
+u32 gBank5ImageTable = 0x00000000;
 
 u32 D_800CC7C0 = 0x00000000;
 
@@ -634,28 +634,28 @@ u32 D_800CCC9C = 0x0006CB30;
 
 u32 D_800CCCA0 = 0x0006CC80;
 
-u32 D_800CCCA4 = 0x00000000;
+u32 gBank5AnimTable = 0x00000000;
 
 u32 D_800CCCA8 = 0x00000000;
 
-u32 D_800CCCAC = 0x00000000;
+u32 gBank5MiscTable = 0x00000000;
 
 u32 D_800CCCB0 = 0x00000000;
 
 
-u32 D_800CCCB4 = &D_800CC7B4;
+u32 gBank5Descriptor = &gBank5GeoTable;
 
 u32 D_800CCCB8 = 0xFFFFFFFF;
 
-u32 D_800CCCBC = &D_800CC7BC;
+u32 D_800CCCBC = &gBank5ImageTable;
 
 u32 *D_800CCCC0 = bank_5_index_1_image;
 
-u32 D_800CCCC4 = &D_800CCCA4;
+u32 D_800CCCC4 = &gBank5AnimTable;
 
 u32 *D_800CCCC8 = bank_6_index_1_geo - 8;
 
-u32 D_800CCCCC = &D_800CCCAC;
+u32 D_800CCCCC = &gBank5MiscTable;
 
 u32 *D_800CCCD0 = bank_6_index_1_geo - 4;
 

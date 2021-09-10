@@ -3,7 +3,7 @@
 #include "banks/bank0.h"
 
 extern u32 bank_0_index_1_geo_block_header[];
-u32 *D_800C46A0[] = {
+u32 *gBank0GeoTable[] = {
 	NULL,
 	NULL,
 	bank_0_index_1_geo,
@@ -28,7 +28,7 @@ u32 *D_800C46A0[] = {
 	bank_0_index_1_image_start,
 };
 
-u32 D_800C46F8 = 0x00000000;
+u32 gBank0ImageTable = 0x00000000;
 
 u32 D_800C46FC = 0x00000000;
 
@@ -86,7 +86,7 @@ u32 D_800C4764 = 0x0003BE90;
 
 u32 D_800C4768 = 0x0003CF40;
 
-u32 D_800C476C = 0x00000000;
+u32 gBank0AnimTable = 0x00000000;
 
 u32 D_800C4770 = 0x00000000;
 
@@ -126,7 +126,7 @@ u32 D_800C47B4 = 0x00003044;
 
 u32 D_800C47B8 = 0x000030DC;
 
-u32 D_800C47BC = 0x00000000;
+u32 gBank0MiscTable = 0x00000000;
 
 u32 D_800C47C0 = 0x00000000;
 
@@ -140,19 +140,19 @@ u32 D_800C47D0 = 0x0000970C;
 
 
 
-u32 *D_800C47D4 = &D_800C46A0;
+u32 *gBank0Descriptor = &gBank0GeoTable;
 
 u32 D_800C47D8 = 0xFFFFFFFF;
 
-u32 *D_800C47DC = &D_800C46F8;
+u32 *D_800C47DC = &gBank0ImageTable;
 
 u32 *D_800C47E0 = bank_0_index_1_image_start;
 
-u32 *D_800C47E4 = &D_800C476C;
+u32 *D_800C47E4 = &gBank0AnimTable;
 
 u32 *D_800C47E8 = bank_0_index_1_anim_start;
 
-u32 *D_800C47EC = &D_800C47BC;
+u32 *D_800C47EC = &gBank0MiscTable;
 
 u32 *D_800C47F0 = bank_0_index_1_misc_start;
 

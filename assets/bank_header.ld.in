@@ -37,7 +37,7 @@
     END_GEO(bank, index)
 
 #define LEVEL(bank, index) \
-    START_MISC(bank, index) {\
+    START_MISC(bank, index) ALIGN(2) {\
         BUILD_DIR/assets/misc/bank_##bank/index/level.o(.data*);\
     }\
     END_MISC(bank, index)
