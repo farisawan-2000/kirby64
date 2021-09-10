@@ -5,6 +5,7 @@ tools/GeoFromBin*
 tools/level_settings/convert
 tools/filesystem_build/__pycache__/*
 assets/**/*
+!assets/*.txt
 *.z64
 textures/*
 bin/*
