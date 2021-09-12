@@ -1,6 +1,6 @@
 import sys
 from bank_generator import makeBank, makeHeader
-from asset_table_generator import makeGeoTable, makeImageTable, makeAnimTable, makeMiscTable, makeLevelTable
+from asset_table_generator import makeTable
 
 BANK_COUNT = 8
 
@@ -86,15 +86,12 @@ for i in range(BANK_COUNT):
 	with open("build/us/assets/bank%d.h" % i, "w+") as f:
 		makeHeader(f, i, geoTable[i], imageTable[i], animTable[i], miscTable[i])
 	with open("build/us/assets/bank%d_geo.s" % i, "w+") as f:
-		makeGeoTable(f, i, geoTable[i], geoFiles[i], "GEO")
+		makeTable(f, i, geoTable[i], geoFiles[i], "GEO")
 	with open("build/us/assets/bank%d_image.s" % i, "w+") as f:
-		makeImageTable(f, i, imageTable[i], imageFiles[i], "IMAGE")
+		makeTable(f, i, imageTable[i], imageFiles[i], "IMAGE")
 	with open("build/us/assets/bank%d_anim.s" % i, "w+") as f:
-		makeAnimTable(f, i, animTable[i], animFiles[i], "ANIM")
+		makeTable(f, i, animTable[i], animFiles[i], "ANIM")
 	with open("build/us/assets/bank%d_misc.s" % i, "w+") as f:
-		makeMiscTable(f, i, miscTable[i], miscFiles[i], "MISC")
-	if i == 7:
-		with open("build/us/assets/bank%d_levels.s" % i, "w+") as f:
-			makeLevelTable(f, i, miscTable[i], miscFiles[i], "LEVEL")
+		makeTable(f, i, miscTable[i], miscFiles[i], "MISC")
 
 # print(geoTable[1])

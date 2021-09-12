@@ -21,64 +21,37 @@ glabel %s
 
 """
 
+asm_padder = """\
+.ascii "999\\n"
+.balign 16
+"""
 
-printThings = {
-	"GEO"  : bin_block,
-	"IMAGE": bin_block,
-	"LEVEL": bin_block,
-	"MISC" : bin_block,
-	"ANIM" : bin_block,
-	"MODEL": bin_block,
-}
-
-def makeGeoTable(f, bank, nmlist, filelist, tp):
+def makeTable(f, bank, nmlist, filelist, tp):
 	f.write(asm_header)
 
 	nm_i = 0
 	for i, x in enumerate(filelist):
-		f.write(printThings[tp] % (nmlist[nm_i],
-			                       filelist[i],
-			                       nmlist[nm_i + 1]))
-		nm_i += 2
-
-def makeImageTable(f, bank, nmlist, filelist, tp):
-	f.write(asm_header)
-
-	nm_i = 0
-	for i, x in enumerate(filelist):
-		f.write(printThings[tp] % (nmlist[nm_i],
-			                       filelist[i],
-			                       nmlist[nm_i + 1]))
-		nm_i += 2
-
-def makeAnimTable(f, bank, nmlist, filelist, tp):
-	f.write(asm_header)
-
-	nm_i = 0
-	for i, x in enumerate(filelist):
-		f.write(printThings[tp] % (nmlist[nm_i],
-			                       filelist[i],
-			                       nmlist[nm_i + 1]))
-		nm_i += 2
-
-def makeMiscTable(f, bank, nmlist, filelist, tp):
-	f.write(asm_header)
-
-	nm_i = 0
-	for i, x in enumerate(filelist):
-		if "misc" in nmlist[nm_i]:
-			f.write(printThings[tp] % (nmlist[nm_i],
-			                       	   filelist[i],
+		if "geo" in x:
+			f.write(bin_block % (nmlist[nm_i],
+			                           x,
+			                           nmlist[nm_i + 1]))
+		elif "image" in x:
+			f.write(bin_block % (nmlist[nm_i],
+			                           x,
+			                           nmlist[nm_i + 1]))
+		elif "anim" in x:
+			f.write(bin_block % (nmlist[nm_i],
+			                           x,
+			                           nmlist[nm_i + 1]))
+		elif "misc" in x:
+			f.write(bin_block % (nmlist[nm_i],
+			                           x,
+			                           nmlist[nm_i + 1]))
+		elif "level" in x:
+			f.write(bin_block % (nmlist[nm_i],
+			                           x,
 			                           nmlist[nm_i + 1]))
 		nm_i += 2
 
-def makeLevelTable(f, bank, nmlist, filelist, tp):
-	f.write(asm_header)
-
-	nm_i = 0
-	for i, x in enumerate(filelist):
-		if "level" in nmlist[nm_i]:
-			f.write(printThings[tp] % (nmlist[nm_i],
-			                       	   filelist[i],
-			                           nmlist[nm_i + 1]))
-		nm_i += 2
+	if tp != "GEO":
+		f.write(asm_padder)

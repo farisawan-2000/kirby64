@@ -39,5 +39,5 @@ FILELIST(bank7_geo, BUILD_DIR/assets/bank7_geo.o,    __romPos)
 FILELIST(bank7_image, BUILD_DIR/assets/bank7_image.o,       0)
 FILELIST(bank7_anim, BUILD_DIR/assets/bank7_anim.o,         0)
 FILELIST(bank7_misc, BUILD_DIR/assets/bank7_misc.o,         0)
-FILELIST(bank7_levels, BUILD_DIR/assets/bank7_levels.o,     0)
+/*FILELIST(bank7_levels, BUILD_DIR/assets/bank7_levels.o,     .)*/
 
