@@ -20,9 +20,9 @@ index = -1
 def my_tokenize(s):
 	return s.replace("(", " ").replace(")", " ").split()
 
-with open("assets/filetable_models.txt") as f:
+with open("assets/filetable_models.mk") as f:
 	for line in f:
-		if ":" in line:
+		if ":=" in line:
 			bank = int(line[-3])
 			index = 1
 		elif "GEO" in line or "MODEL" in line:
@@ -35,9 +35,9 @@ with open("assets/filetable_models.txt") as f:
 bank = -1
 index = -1
 
-with open("assets/filetable_image.txt") as f:
+with open("assets/filetable_image.mk") as f:
 	for line in f:
-		if ":" in line:
+		if ":=" in line:
 			bank = int(line[-3])
 			index = 1
 		elif "IMAGE" in line:
@@ -49,9 +49,9 @@ with open("assets/filetable_image.txt") as f:
 bank = -1
 index = -1
 
-with open("assets/filetable_anim.txt") as f:
+with open("assets/filetable_anim.mk") as f:
 	for line in f:
-		if ":" in line:
+		if ":=" in line:
 			bank = int(line[-3])
 			index = 1
 		elif "ANIMATION" in line:
@@ -63,9 +63,9 @@ with open("assets/filetable_anim.txt") as f:
 bank = -1
 index = -1
 
-with open("assets/filetable_misc.txt") as f:
+with open("assets/filetable_misc.mk") as f:
 	for line in f:
-		if ":" in line:
+		if ":=" in line:
 			bank = int(line[-3])
 			index = 1
 		elif "MISC" in line:
