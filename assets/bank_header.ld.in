@@ -14,30 +14,35 @@
     bank_##bank##_index_##index##_misc_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_misc); \
     __romPos += SIZEOF(.bank_##bank##_index_##index##_misc);
 
-
-
-#define GEO(bank, index) \
+#define GEO(bank, index, file) \
     START_GEO(bank, index) {\
-        BUILD_DIR/assets/geo/bank_##bank/index/block.o(.data);\
+        file(.data);\
     }\
     END_GEO(bank, index)
 
-#define MISC(bank, index) \
+#define MISC(bank, index, file) \
     START_MISC(bank, index) {\
-        BUILD_DIR/assets/misc/bank_##bank/index/block.o(.data*);\
+        file(.data*);\
     }\
     END_MISC(bank, index)
 
 /* custom types */
 
-#define MODEL(bank, index) \
+#define MODEL(bank, index, file) \
     START_GEO(bank, index) {\
-        BUILD_DIR/assets/geo/bank_##bank/index/geo.o(.data*);\
+        file(.data*);\
     }\
     END_GEO(bank, index)
 
-#define LEVEL(bank, index) \
+#define LEVEL(bank, index, file) \
     START_MISC(bank, index) ALIGN(2) {\
-        BUILD_DIR/assets/misc/bank_##bank/index/level.o(.data*);\
+        file(.data*);\
     }\
     END_MISC(bank, index)
+
+#define FILELIST(nm, file, off) \
+    BEGIN_SEG(nm, off) {\
+        file(.data*);\
+    }\
+    END_SEG(nm)
+

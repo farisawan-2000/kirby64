@@ -69,12 +69,6 @@ LOADER = loader64
 LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
 
-ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
-              $(wildcard assets/geo/bank_1/**) \
-              $(wildcard assets/geo/bank_2/**) \
-              $(wildcard assets/geo/bank_7/**) \
-              $(wildcard assets/geo/bank_3/**)
-
 ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib \
             asm/data asm/banks $(wildcard data/ovl*)
             
@@ -85,10 +79,6 @@ BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 DATA_DIRS := actors
 DATA_FILES := $(foreach dir,$(DATA_DIRS),$(wildcard $(dir)/*.c))
 
-LEVEL_DIRS = $(wildcard assets/misc/bank_7/*)
-LEVEL_FILES = $(foreach dir, $(LEVEL_DIRS), $(wildcard $(dir)/level.bin))
-LEVEL_S_FILES = $(foreach file, $(LEVEL_FILES), $(file:.bin=.s))
-LEVEL_O_FILES = $(foreach file, $(LEVEL_S_FILES), $(BUILD_DIR)/$(file:.s=.o))
 
 TEXTURES_DIR = textures
 
@@ -101,8 +91,6 @@ S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
 S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
-MODEL_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/geo.bin))
-MODEL_C_FILES := $(foreach file,$(MODEL_FILES),$(file:.bin=.c))
 
 
 UCODE_BASE_DIR := ucode
@@ -234,19 +222,11 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-assets/geo/%.c: assets/geo/%.bin
-	python3 tools/decompile_geos.py $<
+-include assets.mk
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
-	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
+$(BUILD_DIR)/data/kirby.066630.o: $(ASSET_HEADERS)
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
-	$(AS) -c $(ASFLAGS) -o $@ $<
-
-$(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
-	$(AS) $(ASFLAGS) -o $@ $<
-
-$(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
+$(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c $(LEVEL_S_FILES) $(ASSET_HEADERS)
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
@@ -257,7 +237,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(MODEL_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(ASSET_TABLE_OFILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
@@ -283,12 +263,13 @@ test-pj64: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-setup: $(MODEL_C_FILES)
+setup: $(LEVEL_S_FILES)
 	make -C libreultra -j4
 	make -C libreultra naudio -j4
 	make -C tools -j4
 	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 	tools/extract_assets $(VERSION)
+	python3 tools/filesystem_build/descriptor_parser.py
 
 .PHONY: all clean default diff test distclean
 

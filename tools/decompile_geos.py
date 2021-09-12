@@ -4,13 +4,10 @@ import sys, os, subprocess, glob
 # 	exit(0)
 
 if "--clean" in ''.join(sys.argv):
-	subprocess.run("rm assets/geo/bank_0/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_1/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_2/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_3/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_4/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_6/**/block.c", shell=True)
-	subprocess.run("rm assets/geo/bank_7/**/block.c", shell=True)
+	subprocess.run("rm assets/geo/ -r", shell=True)
+	subprocess.run("rm assets/image/ -r", shell=True)
+	subprocess.run("rm assets/anim/ -r", shell=True)
+	subprocess.run("rm assets/misc/ -r", shell=True)
 	exit(0)
 
 # for i in sorted(glob.glob("assets/geo/bank_*/**/block.bin")):
