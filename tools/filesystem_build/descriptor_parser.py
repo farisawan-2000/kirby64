@@ -20,15 +20,20 @@ index = -1
 def my_tokenize(s):
 	return s.replace("(", " ").replace(")", " ").split()
 
+def getBank(ln):
+	bnum = ''.join([i for i in ln if i in "1234567890"])
+	return int(bnum)
+
+
 with open("assets/filetable_models.mk") as f:
 	for line in f:
 		if ":=" in line:
-			bank = int(line[-3])
+			bank = getBank(line)
 			index = 1
-		elif "GEO" in line or "MODEL" in line:
+		elif "." in line:
 			geoTable[bank].append("bank_%d_index_%d_geo" % (bank, index))
 			geoTable[bank].append("bank_%d_index_%d_geo_end" % (bank, index))
-			geoFiles[bank].append(my_tokenize(line)[1])
+			geoFiles[bank].append(line.split()[0])
 			index += 1
 
 
@@ -38,26 +43,26 @@ index = -1
 with open("assets/filetable_image.mk") as f:
 	for line in f:
 		if ":=" in line:
-			bank = int(line[-3])
+			bank = getBank(line)
 			index = 1
-		elif "IMAGE" in line:
+		elif "." in line:
 			imageTable[bank].append("bank_%d_index_%d_image" % (bank, index))
 			imageTable[bank].append("bank_%d_index_%d_image_end" % (bank, index))
-			imageFiles[bank].append(my_tokenize(line)[1])
+			imageFiles[bank].append(line.split()[0])
 			index += 1
 
 bank = -1
 index = -1
 
-with open("assets/filetable_anim.mk") as f:
+with open("assets/filetable_animations.mk") as f:
 	for line in f:
 		if ":=" in line:
-			bank = int(line[-3])
+			bank = getBank(line)
 			index = 1
-		elif "ANIMATION" in line:
+		elif "." in line:
 			animTable[bank].append("bank_%d_index_%d_anim" % (bank, index))
 			animTable[bank].append("bank_%d_index_%d_anim_end" % (bank, index))
-			animFiles[bank].append(my_tokenize(line)[1])
+			animFiles[bank].append(line.split()[0])
 			index += 1
 
 bank = -1
@@ -66,17 +71,17 @@ index = -1
 with open("assets/filetable_misc.mk") as f:
 	for line in f:
 		if ":=" in line:
-			bank = int(line[-3])
+			bank = getBank(line)
 			index = 1
-		elif "MISC" in line:
+		elif "misc" in line:
 			miscTable[bank].append("bank_%d_index_%d_misc" % (bank, index))
 			miscTable[bank].append("bank_%d_index_%d_misc_end" % (bank, index))
-			miscFiles[bank].append(my_tokenize(line)[1])
+			miscFiles[bank].append(line.split()[0])
 			index += 1
-		elif "LEVEL" in line:
+		elif "level" in line:
 			miscTable[bank].append("bank_%d_index_%d_level" % (bank, index))
 			miscTable[bank].append("bank_%d_index_%d_level_end" % (bank, index))
-			miscFiles[bank].append(my_tokenize(line)[1])
+			miscFiles[bank].append(line.split()[0])
 			index += 1
 
 
