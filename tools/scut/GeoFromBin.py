@@ -891,20 +891,20 @@ def GeometryBlock(stage,Kirb,start,end):
 
 
 import sys
-def SingleGeo(Bank,Index):
+def SingleGeo(Bank,Index, offset, length):
     global globBank, globIndex
     globBank = Bank
     globIndex = Index
     #[start,end] = GetPointers(Bank,Index,"Geo_Block",Kirb)
     name = ("Bank_%d_Index_%d_Geo"%(Bank,Index))
-    stage = open(sys.argv[1].split("bin")[0]+"c",'w')
-    Kirb=open(sys.argv[1],'rb')
+    stage = open(sys.argv[1],'w+')
+    Kirb=open("baserom.us.z64",'rb')
     Kirb=Kirb.read()
     stage.write("// Bank " + str(Bank) + " ID " + str(Index) + "\n")
-    GeometryBlock(stage,Kirb,0,len(Kirb))
+    GeometryBlock(stage, Kirb, offset, length)
 
 if __name__=='__main__':
     toks = sys.argv[1].split("/")
     b = int(toks[2].split("_")[1])
     i = int(toks[3])
-    SingleGeo(b,i)
+    SingleGeo(b,i, sys.argv[2], sys.argv[3])

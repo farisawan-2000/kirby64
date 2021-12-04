@@ -142,63 +142,52 @@ Vector *vec3_negate(Vector *arg0) {
     return arg0;
 }
 
+// Function from melee
 #ifdef MIPS_TO_C
-void func_800191F8(Vector *arg0, LookAt *arg1, f32 arg2) {
-    f32 sp3C;
-    f32 sp38;
-    f32 sp34;
-    f32 sp2C;
-    f32 temp_f0_2;
-    f32 temp_f10;
-    f32 temp_f20;
-    f32 temp_f8;
-    f32 temp_f0;
-    f32 phi_f18;
-    f32 phi_f20;
-    f32 f16;
-    f32 f12;
-    f32 f22;
-    f32 f2;
+void func_800191F8(Vector *a, Vector *b, f32 angle) {
+    f32 sqrtVal = sqrtf((b->y * b->y) + (b->z * b->z));
+    f32 sinVal  = sinf(angle);
+    f32 cosVal  = cosf(angle);
+    f32 var5;
+    f32 var6;
+    Vector result;
+    f32 var1;
+    f32 var2;
+    f32 var3;
+    f32 var4;
 
-    temp_f0 = arg1->l[0].l.colc;
-    f2 = arg1->l[0].l.dir;
-    f12 = (temp_f0 * temp_f0) + (f2 * f2);
-    f12 = arg2;
-    sp3C = sqrtf(f12);
-    sp2C = sinf(f12);
-    f12 = arg2;
-    temp_f0_2 = cosf(f12);
-    if (sp3C != 0.0f) {
-        f22 = arg1->l[0].l.dir / sp3C;
-        sp34 = arg1->l[0].l.colc / sp3C;
-        f2 = arg0->x;
-        sp38 = f22;
-        phi_f18 = (arg0->y * sp34) + (arg0->z * f22);
-        phi_f20 = (arg0->y * f22) - (arg0->z * sp34);
+    if (sqrtVal != 0.0f) {
+        var5 = b->z / sqrtVal;
+        var6 = b->y / sqrtVal;
+
+        result.x = a->x;
+        result.y = (a->y * var5) - (a->z * var6);
+        result.z = (a->y * var6) + (a->z * var5);
     } else {
-        f2 = arg0->x;
-        phi_f18 = arg0->z;
-        phi_f20 = arg0->y;
+        result.x = a->x;
+        result.y = a->y;
+        result.z = a->z;
     }
-    f22 = arg1->l[0];
-    f16 = (f2 * sp3C) - (phi_f18 * f22);
-    f12 = (f22 * f2) + (phi_f18 * sp3C);
-    f2 = (f16 * temp_f0_2) - (phi_f20 * sp2C);
-    temp_f20 = (f16 * sp2C) + (phi_f20 * temp_f0_2);
-    f16 = (f2 * sp3C) + (f12 * f22);
-    f2 = sp34;
-    f12 = (-f2 * f22) + (f12 * sp3C);
-    if (sp3C != 0.0f) {
-        temp_f8 = temp_f20 * sp38;
-        temp_f10 = -temp_f20;
-        arg0->x = f16;
-        arg0->y = temp_f8 + (f12 * f2);
-        arg0->z = (temp_f10 * f2) + (f12 * sp38);
-        return;
+
+    var1 = (result.x * sqrtVal) - (result.z * b->x);
+    var2 = (result.x * b->x)    + (result.z * sqrtVal);
+
+    var3 = (var1 * cosVal) - (result.y * sinVal);
+    var4 = (var1 * sinVal) + (result.y * cosVal);
+
+    result.x = var3 * sqrtVal  +  var2 * b->x;
+    result.y = var4;
+    result.z = -var3 * b->x  +  var2 * sqrtVal;
+
+    if (sqrtVal != 0.0f) {
+        a->x = result.x;
+        a->y = result.y * var5 + result.z * var6;
+        a->z = -result.y * var6 + result.z * var5;
+    } else {
+        a->x = result.x;
+        a->y = result.y;
+        a->z = result.z;
     }
-    arg0->x = f16;
-    arg0->y = temp_f20;
-    arg0->z = f12;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")

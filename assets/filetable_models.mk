@@ -1,14 +1,14 @@
 GEO_BANK_0_FILES := \
-    assets/geo/bank_0/1/geo.bin \
-    assets/geo/bank_0/2/geo.bin \
-    assets/geo/bank_0/3/geo.bin \
-    assets/geo/bank_0/4/geo.bin \
-    assets/geo/bank_0/5/geo.bin \
-    assets/geo/bank_0/6/geo.bin \
-    assets/geo/bank_0/7/geo.bin \
-    assets/geo/bank_0/8/geo.bin \
-    assets/geo/bank_0/9/geo.bin \
-    assets/geo/bank_0/10/geo.bin
+    assets/geo/bank_0/1/geo.c \
+    assets/geo/bank_0/2/geo.c \
+    assets/geo/bank_0/3/geo.c \
+    assets/geo/bank_0/4/geo.c \
+    assets/geo/bank_0/5/geo.c \
+    assets/geo/bank_0/6/geo.c \
+    assets/geo/bank_0/7/geo.c \
+    assets/geo/bank_0/8/geo.c \
+    assets/geo/bank_0/9/geo.c \
+    assets/geo/bank_0/10/geo.c
 
 GEO_BANK_1_FILES := \
     assets/geo/bank_1/1/geo.bin \

@@ -1,11 +1,14 @@
 # Makefile to rebuild Kirby 64 split image
 
+
 ################ Target Executable and Sources ###############
 
 # BUILD_DIR is location where all build artifacts are placed
 BUILD_DIR_BASE = build
 VERSION = us
 BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
+
+-include assets.mk
 
 GRUCODE := F3DEX2_2.04H
 
@@ -133,8 +136,14 @@ CC_TEST := gcc -Wall
 NOEXTRACT ?= 0
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(LEVEL_DIRS) \
+                                                  $(ASSET_DIRS) \
+                                                  $(SRC_DIRS) \
+                                                  $(INCLUDE_DIRS) \
+                                                  $(ASM_DIRS) \
+                                                  $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
+DUMMY != python3 tools/filesystem_build/descriptor_parser.py
 
 # Checking if submodules exist
 DUMMY != ls libreultra >/dev/null || echo FAIL
@@ -193,9 +202,8 @@ $(BUILD_DIR)/src/ovl3/ovl3_1.o: OPT_FLAGS = -O2 -Wo,-loopunroll
 
 # $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 
-
 $(BUILD_DIR):
-	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+	mkdir -p $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
 assets/misc/%.s: assets/misc/%.bin
 	python3 tools/level_settings/helper.py $<
@@ -221,8 +229,6 @@ $(BUILD_DIR)/%.o: %.c
 $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
-
--include assets.mk
 
 $(BUILD_DIR)/data/kirby.066630.o: $(ASSET_HEADERS)
 
@@ -263,13 +269,13 @@ test-pj64: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-setup: $(LEVEL_S_FILES)
+setup:
 	make -C libreultra -j4
 	make -C libreultra naudio -j4
 	make -C tools -j4
 	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 	tools/extract_assets $(VERSION)
-	python3 tools/filesystem_build/descriptor_parser.py
+	mkdir -p $(ALL_DIRS)
 
 .PHONY: all clean default diff test distclean
 

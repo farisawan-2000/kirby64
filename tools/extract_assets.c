@@ -21,6 +21,7 @@
 enum AssetType {
     ASSET_BIN,
     ASSET_IMG,
+    ASSET_GEO,
 };
 
 enum ImageFormat {
@@ -429,9 +430,14 @@ int readAssetToken(AssetDef *assetDef, int curAssetToken, const char *fileConten
         assetDef->type = ASSET_IMG;
         assetDef->format = format;
     }
+    else if (strcmp(curAssetDotPtr, ".c") == 0) {
+        // if (strcmp(assetDef->path, "geo.c") == 0) {
+            assetDef->type = ASSET_GEO;
+        // }
+    }
     else
     {
-        fprintf(stderr, "Invalid file extension for asset (should be in [bin,png]): %s\n", assetDef->path);
+        fprintf(stderr, "Invalid file extension for asset (should be in [bin,png,c,s]): %s\n", assetDef->path);
         return 1;
     }    
 
@@ -443,6 +449,8 @@ int readAssetToken(AssetDef *assetDef, int curAssetToken, const char *fileConten
         {
             switch (assetDef->type)
             {
+                case ASSET_GEO:
+                    printf("found geo\n");
                 case ASSET_BIN:
                     length = processAssetMetaBin(curAssetToken, curChildToken, fileContents, tokens);
                     break;
@@ -595,25 +603,6 @@ int extractAssets(AssetDef *assetDefs, int numAssets, const char *version)
                 }
                 fwrite(&rom[assetDefs[i].offset], 1, assetDefs[i].length, f);
                 fclose(f);
-                if (strstr(assetDefs[i].path, "geo") != NULL && (
-                    strstr(assetDefs[i].path, "bank_0") != NULL ||
-                    strstr(assetDefs[i].path, "bank_1") != NULL ||
-                    strstr(assetDefs[i].path, "bank_2") != NULL ||
-                    strstr(assetDefs[i].path, "bank_7") != NULL))
-                {
-                    char *cmd = malloc(MAX_PATH_LEN * 2 + 64);
-                    char *cPath = strdup(assetDefs[i].path);
-
-                    cPath[strlen(cPath) - 3] = 'c';
-                    cPath[strlen(cPath) - 2] = '\0';
-                    sprintf(cmd, "python3 tools/scut/GeoFromBin.py %s %s", assetDefs[i].path, cPath);
-
-                    printf("Converting %s to C...\n", assetDefs[i].path);
-                    system(cmd);
-                    
-                    free(cmd);
-                    free(cPath);
-                }
             }
             else if (assetDefs[i].type == ASSET_IMG)
             {
@@ -676,6 +665,23 @@ int extractAssets(AssetDef *assetDefs, int numAssets, const char *version)
                 }
                 if (image != NULL)
                     free(image);
+            }
+            else if (assetDefs[i].type == ASSET_GEO) {
+                if (strstr(assetDefs[i].path, "geo.c") != NULL)
+                {
+                    char *cmd = malloc(MAX_PATH_LEN * 2 + 64);
+                    // char *cPath = strdup(assetDefs[i].path);
+
+                    // cPath[strlen(cPath) - 3] = 'c';
+                    // cPath[strlen(cPath) - 2] = '\0';
+                    sprintf(cmd, "python3 tools/scut/GeoFromBin.py %s %d %d", assetDefs[i].path, assetDefs[i].offset, assetDefs[i].length);
+
+                    printf("Generating %s...\n", assetDefs[i].path);
+                    system(cmd);
+                    
+                    free(cmd);
+                    // free(cPath);
+                }
             }
             
             #pragma omp atomic
