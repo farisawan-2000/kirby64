@@ -1,6 +1,6 @@
 #define START_GEO(bank, index) \
     bank_##bank##_index_##index##_geo = __romPos; \
-    .bank_##bank##_index_##index 0x04000000 : AT(__romPos)
+    .bank_##bank##_index_##index 0x04000000 : AT(__romPos) SUBALIGN(16)
 
 #define START_IMG(bank, index) \
     bank_##bank##_index_##index##_img = __romPos; \
@@ -44,12 +44,14 @@
 #define MODEL(bank, index) \
     START_GEO(bank, index) {\
         BUILD_DIR/assets/geo/bank_##bank/index/geo.o(.data*);\
+        . = ALIGN(16);\
     }\
     END_GEO(bank, index)
 
 #define MODEL(bank, index) \
     START_GEO(bank, index) {\
         BUILD_DIR/assets/geo/bank_##bank/index/geo.o(.data*);\
+        . = ALIGN(16);\
     }\
     END_GEO(bank, index)
 
