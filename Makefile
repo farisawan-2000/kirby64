@@ -245,7 +245,7 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(AS) -c $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/assets/assets.marker:
-	make -C assets
+	$(MAKE) -C assets
 
 $(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
 	$(AS) $(ASFLAGS) -o $@ $<

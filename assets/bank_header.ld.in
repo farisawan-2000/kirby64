@@ -7,14 +7,14 @@
     __romPos += SIZEOF(.bank_##bank##_index_##index);
 
 #define START_MISC(bank, index) \
-    bank_##bank##_index_##index##_misc = __romPos; \
+    bank_##bank##_index_##index##_misc_start = __romPos; \
     .bank_##bank##_index_##index##_misc 0 : AT(__romPos)
 
 #define END_MISC(bank, index) \
     bank_##bank##_index_##index##_misc_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_misc); \
     __romPos += SIZEOF(.bank_##bank##_index_##index##_misc); \
     _bank_##bank##_misc_size += SIZEOF(.bank_##bank##_index_##index##_misc); \
-    _bank_##bank##_index_##index##_misc_start = _bank_##bank##_misc_size + SIZEOF(.bank_##bank##_index_##index##_misc);
+    _bank_##bank##_index_##index##_misc = _bank_##bank##_misc_size + SIZEOF(.bank_##bank##_index_##index##_misc);
 
 #define START_IMG(bank, index) \
     bank_##bank##_index_##index##_image_start = __romPos; \
@@ -26,11 +26,23 @@
     _bank_##bank##_image_size += SIZEOF(.bank_##bank##_index_##index##_image); \
     _bank_##bank##_index_##index##_image = _bank_##bank##_image_size + SIZEOF(.bank_##bank##_index_##index##_image);
 
+#define START_ANIM(bank, index) \
+    bank_##bank##_index_##index##_anim_start = __romPos; \
+    .bank_##bank##_index_##index##_anim 0 : AT(__romPos)
+
+#define END_ANIM(bank, index) \
+    bank_##bank##_index_##index##_anim_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_anim); \
+    __romPos += SIZEOF(.bank_##bank##_index_##index##_anim); \
+    _bank_##bank##_anim_size += SIZEOF(.bank_##bank##_index_##index##_anim); \
+    _bank_##bank##_index_##index##_anim = _bank_##bank##_anim_size + SIZEOF(.bank_##bank##_index_##index##_anim);
 
 
 #define IMAGES_INIT(bank) \
     _bank_##bank##_image_size = 0;
-    
+
+#define ANIMS_INIT(bank) \
+    _bank_##bank##_anim_size = 0;
+
 #define MISC_INIT(bank) \
     _bank_##bank##_misc_size = 0;
 
@@ -60,6 +72,12 @@
         BUILD_DIR/assets/image/bank_##bank/index/block.o(.data*);\
     }\
     END_IMG(bank, index)
+
+#define ANIMATION(bank, index) \
+    START_ANIM(bank, index) {\
+        BUILD_DIR/assets/anim/bank_##bank/index/block.o(.data*);\
+    }\
+    END_ANIM(bank, index)
 
 #define MODEL(bank, index) \
     START_GEO(bank, index) {\
