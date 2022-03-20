@@ -29,7 +29,7 @@ if "--clean" in ''.join(sys.argv):
 # 			subprocess.run("python3 tools/scut/GeoFromBin.py %s %s" % (i, cfile), shell=True, check = True)
 # 		except subprocess.CalledProcessError:
 # 			break
-
+exit(1)
 cfile = sys.argv[1].split("bin")[0] + "c"
 
 if not os.path.isfile(cfile):

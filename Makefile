@@ -180,8 +180,6 @@ libreultra/build/2.0I/libn_audio.a:
 all: $(BUILD_DIR)/$(TARGET).z64
 	@sha1sum -c $(TARGET).sha1
 
-hexdump: $(BUILD_DIR)/$(TARGET).hex
-
 clean:
 	rm -rf build/
 
@@ -191,7 +189,10 @@ distclean:
 	make -C tools clean
 	make -C libreultra clean
 	make -C f3dex2 clean
-	python3 tools/decompile_geos.py --clean
+	rm -rf assets/geo
+	rm -rf assets/image
+	rm -rf assets/anim
+	rm -rf assets/misc
 
 softclean:
 	rm -rf build/us/src/
@@ -234,14 +235,17 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-assets/geo/%.c: assets/geo/%.bin
-	python3 tools/decompile_geos.py $<
+# assets/geo/%.c: assets/geo/%.bin
+# 	python3 tools/decompile_geos.py $<
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
-	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
+# $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
+# 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
-	$(AS) -c $(ASFLAGS) -o $@ $<
+# $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
+# 	$(AS) -c $(ASFLAGS) -o $@ $<
+
+$(BUILD_DIR)/assets/assets.marker:
+	make -C assets
 
 $(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
 	$(AS) $(ASFLAGS) -o $@ $<
@@ -257,7 +261,7 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt
 	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(MODEL_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(BUILD_DIR)/assets/assets.marker $(LEVEL_S_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
@@ -266,11 +270,6 @@ $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 	$(N64CRC) $@
 	@python3 tools/progress2.py -m
 
-$(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
-	xxd $< > $@
-
-$(BUILD_DIR)/$(TARGET).objdump: $(BUILD_DIR)/$(TARGET).elf
-	$(OBJDUMP) -D $< > $@
 
 $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
@@ -283,7 +282,7 @@ test-pj64: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-setup: $(MODEL_C_FILES)
+setup:
 	make -C libreultra -j4
 	make -C libreultra naudio -j4
 	make -C tools -j4
@@ -296,6 +295,7 @@ setup: $(MODEL_C_FILES)
 MAKEFLAGS += --no-builtin-rules
 
 -include $(D_FILES)
+-include $(BUILD_DIR)/$(LD_SCRIPT).d
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 
