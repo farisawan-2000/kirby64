@@ -210,8 +210,8 @@ $(BUILD_DIR)/src/ovl3/ovl3_1.o: OPT_FLAGS = -O2 -Wo,-loopunroll
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
-assets/misc/%.s: assets/misc/%.bin
-	python3 tools/level_settings/helper.py $<
+# assets/misc/%.s: assets/misc/%.bin
+# 	python3 tools/level_settings/helper.py $<
 
 $(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
 	cp $< $@
