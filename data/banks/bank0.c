@@ -1,7 +1,7 @@
 #include "types.h"
 #include "segments.h"
 #include "banks/bank0.h"
-
+extern u32 bank_0_index_10_geo_end[];
 extern u32 bank_0_index_1_geo_block_header[];
 u32 *D_800C46A0[] = {
 	NULL,
@@ -25,7 +25,7 @@ u32 *D_800C46A0[] = {
 	bank_0_index_9_geo,
 	bank_0_index_10_geo,
 	bank_0_index_10_geo,
-	bank_0_index_1_image_start,
+	bank_0_index_10_geo_end,
 };
 
 u32 D_800C46F8 = 0x00000000;

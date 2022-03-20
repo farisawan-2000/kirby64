@@ -2,4600 +2,3628 @@
 .section .data
 
 # .balign 2
-# glabel bank_1_index_1_geo # 0x4FC9A0
-# .incbin "assets/geo/bank_1/1/block.bin"
+# glabel bank_1_index_1_image # 0x5B5360
+# .incbin "assets/image/bank_1/1/block.bin"
 
 # .balign 2
-# glabel bank_1_index_2_geo # 0x4FD550
-# .incbin "assets/geo/bank_1/2/block.bin"
+# glabel bank_1_index_2_image # 0x5B5460
+# .incbin "assets/image/bank_1/2/block.bin"
 
 # .balign 2
-# glabel bank_1_index_3_geo # 0x4FE100
-# .incbin "assets/geo/bank_1/3/block.bin"
+# glabel bank_1_index_3_image # 0x5B54E0
+# .incbin "assets/image/bank_1/3/block.bin"
 
 # .balign 2
-# glabel bank_1_index_4_geo # 0x4FEC10
-# .incbin "assets/geo/bank_1/4/block.bin"
+# glabel bank_1_index_4_image # 0x5B5560
+# .incbin "assets/image/bank_1/4/block.bin"
 
 # .balign 2
-# glabel bank_1_index_5_geo # 0x4FFA30
-# .incbin "assets/geo/bank_1/5/block.bin"
+# glabel bank_1_index_5_image # 0x5B5760
+# .incbin "assets/image/bank_1/5/block.bin"
 
 # .balign 2
-# glabel bank_1_index_6_geo # 0x500410
-# .incbin "assets/geo/bank_1/6/block.bin"
+# glabel bank_1_index_6_image # 0x5B5770
+# .incbin "assets/image/bank_1/6/block.bin"
 
 # .balign 2
-# glabel bank_1_index_7_geo # 0x501040
-# .incbin "assets/geo/bank_1/7/block.bin"
+# glabel bank_1_index_7_image # 0x5B5970
+# .incbin "assets/image/bank_1/7/block.bin"
 
 # .balign 2
-# glabel bank_1_index_8_geo # 0x5024E0
-# .incbin "assets/geo/bank_1/8/block.bin"
+# glabel bank_1_index_8_image # 0x5B5990
+# .incbin "assets/image/bank_1/8/block.bin"
 
 # .balign 2
-# glabel bank_1_index_9_geo # 0x503300
-# .incbin "assets/geo/bank_1/9/block.bin"
+# glabel bank_1_index_9_image # 0x5B5A90
+# .incbin "assets/image/bank_1/9/block.bin"
 
 # .balign 2
-# glabel bank_1_index_10_geo # 0x504150
-# .incbin "assets/geo/bank_1/10/block.bin"
+# glabel bank_1_index_10_image # 0x5B5C90
+# .incbin "assets/image/bank_1/10/block.bin"
 
 # .balign 2
-# glabel bank_1_index_11_geo # 0x505B20
-# .incbin "assets/geo/bank_1/11/block.bin"
+# glabel bank_1_index_11_image # 0x5B5D10
+# .incbin "assets/image/bank_1/11/block.bin"
 
 # .balign 2
-# glabel bank_1_index_12_geo # 0x506270
-# .incbin "assets/geo/bank_1/12/block.bin"
+# glabel bank_1_index_12_image # 0x5B5E10
+# .incbin "assets/image/bank_1/12/block.bin"
 
 # .balign 2
-# glabel bank_1_index_13_geo # 0x507570
-# .incbin "assets/geo/bank_1/13/block.bin"
+# glabel bank_1_index_13_image # 0x5B5F10
+# .incbin "assets/image/bank_1/13/block.bin"
 
 # .balign 2
-# glabel bank_1_index_14_geo # 0x507A60
-# .incbin "assets/geo/bank_1/14/block.bin"
+# glabel bank_1_index_14_image # 0x5B5F90
+# .incbin "assets/image/bank_1/14/block.bin"
 
 # .balign 2
-# glabel bank_1_index_15_geo # 0x507CB0
-# .incbin "assets/geo/bank_1/15/block.bin"
+# glabel bank_1_index_15_image # 0x5B5FB0
+# .incbin "assets/image/bank_1/15/block.bin"
 
 # .balign 2
-# glabel bank_1_index_16_geo # 0x508CB0
-# .incbin "assets/geo/bank_1/16/block.bin"
+# glabel bank_1_index_16_image # 0x5B6030
+# .incbin "assets/image/bank_1/16/block.bin"
 
 # .balign 2
-# glabel bank_1_index_17_geo # 0x50A4B0
-# .incbin "assets/geo/bank_1/17/block.bin"
+# glabel bank_1_index_17_image # 0x5B6050
+# .incbin "assets/image/bank_1/17/block.bin"
 
 # .balign 2
-# glabel bank_1_index_18_geo # 0x50AA60
-# .incbin "assets/geo/bank_1/18/block.bin"
+# glabel bank_1_index_18_image # 0x5B60D0
+# .incbin "assets/image/bank_1/18/block.bin"
 
 # .balign 2
-# glabel bank_1_index_19_geo # 0x50B030
-# .incbin "assets/geo/bank_1/19/block.bin"
+# glabel bank_1_index_19_image # 0x5B6150
+# .incbin "assets/image/bank_1/19/block.bin"
 
 # .balign 2
-# glabel bank_1_index_20_geo # 0x50BA50
-# .incbin "assets/geo/bank_1/20/block.bin"
+# glabel bank_1_index_20_image # 0x5B61D0
+# .incbin "assets/image/bank_1/20/block.bin"
 
 # .balign 2
-# glabel bank_1_index_21_geo # 0x50C0D0
-# .incbin "assets/geo/bank_1/21/block.bin"
+# glabel bank_1_index_21_image # 0x5B63D0
+# .incbin "assets/image/bank_1/21/block.bin"
 
 # .balign 2
-# glabel bank_1_index_22_geo # 0x50D660
-# .incbin "assets/geo/bank_1/22/block.bin"
+# glabel bank_1_index_22_image # 0x5B63F0
+# .incbin "assets/image/bank_1/22/block.bin"
 
 # .balign 2
-# glabel bank_1_index_23_geo # 0x50E890
-# .incbin "assets/geo/bank_1/23/block.bin"
+# glabel bank_1_index_23_image # 0x5B65F0
+# .incbin "assets/image/bank_1/23/block.bin"
 
 # .balign 2
-# glabel bank_1_index_24_geo # 0x50F870
-# .incbin "assets/geo/bank_1/24/block.bin"
+# glabel bank_1_index_24_image # 0x5B6670
+# .incbin "assets/image/bank_1/24/block.bin"
 
 # .balign 2
-# glabel bank_1_index_25_geo # 0x5104C0
-# .incbin "assets/geo/bank_1/25/block.bin"
+# glabel bank_1_index_25_image # 0x5B6770
+# .incbin "assets/image/bank_1/25/block.bin"
 
 # .balign 2
-# glabel bank_1_index_26_geo # 0x510970
-# .incbin "assets/geo/bank_1/26/block.bin"
+# glabel bank_1_index_26_image # 0x5B6970
+# .incbin "assets/image/bank_1/26/block.bin"
 
 # .balign 2
-# glabel bank_1_index_27_geo # 0x511210
-# .incbin "assets/geo/bank_1/27/block.bin"
+# glabel bank_1_index_27_image # 0x5B69F0
+# .incbin "assets/image/bank_1/27/block.bin"
 
 # .balign 2
-# glabel bank_1_index_28_geo # 0x511780
-# .incbin "assets/geo/bank_1/28/block.bin"
+# glabel bank_1_index_28_image # 0x5B6A10
+# .incbin "assets/image/bank_1/28/block.bin"
 
 # .balign 2
-# glabel bank_1_index_29_geo # 0x5121B0
-# .incbin "assets/geo/bank_1/29/block.bin"
+# glabel bank_1_index_29_image # 0x5B6A90
+# .incbin "assets/image/bank_1/29/block.bin"
 
 # .balign 2
-# glabel bank_1_index_30_geo # 0x5135A0
-# .incbin "assets/geo/bank_1/30/block.bin"
+# glabel bank_1_index_30_image # 0x5B6B10
+# .incbin "assets/image/bank_1/30/block.bin"
 
 # .balign 2
-# glabel bank_1_index_31_geo # 0x5140C0
-# .incbin "assets/geo/bank_1/31/block.bin"
+# glabel bank_1_index_31_image # 0x5B6B90
+# .incbin "assets/image/bank_1/31/block.bin"
 
 # .balign 2
-# glabel bank_1_index_32_geo # 0x514F30
-# .incbin "assets/geo/bank_1/32/block.bin"
+# glabel bank_1_index_32_image # 0x5B6C10
+# .incbin "assets/image/bank_1/32/block.bin"
 
 # .balign 2
-# glabel bank_1_index_33_geo # 0x515330
-# .incbin "assets/geo/bank_1/33/block.bin"
+# glabel bank_1_index_33_image # 0x5B6D10
+# .incbin "assets/image/bank_1/33/block.bin"
 
 # .balign 2
-# glabel bank_1_index_34_geo # 0x516200
-# .incbin "assets/geo/bank_1/34/block.bin"
+# glabel bank_1_index_34_image # 0x5B6D90
+# .incbin "assets/image/bank_1/34/block.bin"
 
 # .balign 2
-# glabel bank_1_index_35_geo # 0x516E80
-# .incbin "assets/geo/bank_1/35/block.bin"
+# glabel bank_1_index_35_image # 0x5B6F90
+# .incbin "assets/image/bank_1/35/block.bin"
 
 # .balign 2
-# glabel bank_1_index_36_geo # 0x517600
-# .incbin "assets/geo/bank_1/36/block.bin"
+# glabel bank_1_index_36_image # 0x5B7010
+# .incbin "assets/image/bank_1/36/block.bin"
 
 # .balign 2
-# glabel bank_1_index_37_geo # 0x517FF0
-# .incbin "assets/geo/bank_1/37/block.bin"
+# glabel bank_1_index_37_image # 0x5B7110
+# .incbin "assets/image/bank_1/37/block.bin"
 
 # .balign 2
-# glabel bank_1_index_38_geo # 0x518B70
-# .incbin "assets/geo/bank_1/38/block.bin"
+# glabel bank_1_index_38_image # 0x5B7210
+# .incbin "assets/image/bank_1/38/block.bin"
 
 # .balign 2
-# glabel bank_1_index_39_geo # 0x5198E0
-# .incbin "assets/geo/bank_1/39/block.bin"
+# glabel bank_1_index_39_image # 0x5B7310
+# .incbin "assets/image/bank_1/39/block.bin"
 
 # .balign 2
-# glabel bank_1_index_40_geo # 0x51A8D0
-# .incbin "assets/geo/bank_1/40/block.bin"
+# glabel bank_1_index_40_image # 0x5B7410
+# .incbin "assets/image/bank_1/40/block.bin"
 
 # .balign 2
-# glabel bank_1_index_41_geo # 0x51AFB0
-# .incbin "assets/geo/bank_1/41/block.bin"
+# glabel bank_1_index_41_image # 0x5B7510
+# .incbin "assets/image/bank_1/41/block.bin"
 
 # .balign 2
-# glabel bank_1_index_42_geo # 0x51BA30
-# .incbin "assets/geo/bank_1/42/block.bin"
+# glabel bank_1_index_42_image # 0x5B7710
+# .incbin "assets/image/bank_1/42/block.bin"
 
 # .balign 2
-# glabel bank_1_index_43_geo # 0x51CA50
-# .incbin "assets/geo/bank_1/43/block.bin"
+# glabel bank_1_index_43_image # 0x5B7790
+# .incbin "assets/image/bank_1/43/block.bin"
 
 # .balign 2
-# glabel bank_1_index_44_geo # 0x51D940
-# .incbin "assets/geo/bank_1/44/block.bin"
+# glabel bank_1_index_44_image # 0x5B7810
+# .incbin "assets/image/bank_1/44/block.bin"
 
 # .balign 2
-# glabel bank_1_index_45_geo # 0x51E350
-# .incbin "assets/geo/bank_1/45/block.bin"
+# glabel bank_1_index_45_image # 0x5B7A10
+# .incbin "assets/image/bank_1/45/block.bin"
 
 # .balign 2
-# glabel bank_1_index_46_geo # 0x51F1B0
-# .incbin "assets/geo/bank_1/46/block.bin"
+# glabel bank_1_index_46_image # 0x5B7C10
+# .incbin "assets/image/bank_1/46/block.bin"
 
 # .balign 2
-# glabel bank_1_index_47_geo # 0x51FB30
-# .incbin "assets/geo/bank_1/47/block.bin"
+# glabel bank_1_index_47_image # 0x5B7C90
+# .incbin "assets/image/bank_1/47/block.bin"
 
 # .balign 2
-# glabel bank_1_index_48_geo # 0x51FDD0
-# .incbin "assets/geo/bank_1/48/block.bin"
+# glabel bank_1_index_48_image # 0x5B7E90
+# .incbin "assets/image/bank_1/48/block.bin"
 
 # .balign 2
-# glabel bank_1_index_49_geo # 0x520070
-# .incbin "assets/geo/bank_1/49/block.bin"
+# glabel bank_1_index_49_image # 0x5B7F90
+# .incbin "assets/image/bank_1/49/block.bin"
 
 # .balign 2
-# glabel bank_1_index_50_geo # 0x520A10
-# .incbin "assets/geo/bank_1/50/block.bin"
+# glabel bank_1_index_50_image # 0x5B8090
+# .incbin "assets/image/bank_1/50/block.bin"
 
 # .balign 2
-# glabel bank_1_index_51_geo # 0x521290
-# .incbin "assets/geo/bank_1/51/block.bin"
+# glabel bank_1_index_51_image # 0x5B8110
+# .incbin "assets/image/bank_1/51/block.bin"
 
 # .balign 2
-# glabel bank_1_index_52_geo # 0x522360
-# .incbin "assets/geo/bank_1/52/block.bin"
+# glabel bank_1_index_52_image # 0x5B8190
+# .incbin "assets/image/bank_1/52/block.bin"
 
 # .balign 2
-# glabel bank_1_index_53_geo # 0x522C90
-# .incbin "assets/geo/bank_1/53/block.bin"
+# glabel bank_1_index_53_image # 0x5B81B0
+# .incbin "assets/image/bank_1/53/block.bin"
 
 # .balign 2
-# glabel bank_1_index_54_geo # 0x5237A0
-# .incbin "assets/geo/bank_1/54/block.bin"
+# glabel bank_1_index_54_image # 0x5B81F0
+# .incbin "assets/image/bank_1/54/block.bin"
 
 # .balign 2
-# glabel bank_1_index_55_geo # 0x523FA0
-# .incbin "assets/geo/bank_1/55/block.bin"
+# glabel bank_1_index_55_image # 0x5B8270
+# .incbin "assets/image/bank_1/55/block.bin"
 
 # .balign 2
-# glabel bank_1_index_56_geo # 0x5249C0
-# .incbin "assets/geo/bank_1/56/block.bin"
+# glabel bank_1_index_56_image # 0x5B8470
+# .incbin "assets/image/bank_1/56/block.bin"
 
 # .balign 2
-# glabel bank_1_index_57_geo # 0x5251B0
-# .incbin "assets/geo/bank_1/57/block.bin"
+# glabel bank_1_index_57_image # 0x5B84F0
+# .incbin "assets/image/bank_1/57/block.bin"
 
 # .balign 2
-# glabel bank_1_index_58_geo # 0x525ED0
-# .incbin "assets/geo/bank_1/58/block.bin"
+# glabel bank_1_index_58_image # 0x5B8570
+# .incbin "assets/image/bank_1/58/block.bin"
 
 # .balign 2
-# glabel bank_1_index_59_geo # 0x526A50
-# .incbin "assets/geo/bank_1/59/block.bin"
+# glabel bank_1_index_59_image # 0x5B8590
+# .incbin "assets/image/bank_1/59/block.bin"
 
 # .balign 2
-# glabel bank_1_index_60_geo # 0x5276C0
-# .incbin "assets/geo/bank_1/60/block.bin"
+# glabel bank_1_index_60_image # 0x5B8790
+# .incbin "assets/image/bank_1/60/block.bin"
 
 # .balign 2
-# glabel bank_1_index_61_geo # 0x528540
-# .incbin "assets/geo/bank_1/61/block.bin"
+# glabel bank_1_index_61_image # 0x5B87B0
+# .incbin "assets/image/bank_1/61/block.bin"
 
 # .balign 2
-# glabel bank_1_index_62_geo # 0x528790
-# .incbin "assets/geo/bank_1/62/block.bin"
+# glabel bank_1_index_62_image # 0x5B88B0
+# .incbin "assets/image/bank_1/62/block.bin"
 
 # .balign 2
-# glabel bank_1_index_63_geo # 0x5293C0
-# .incbin "assets/geo/bank_1/63/block.bin"
+# glabel bank_1_index_63_image # 0x5B8930
+# .incbin "assets/image/bank_1/63/block.bin"
 
 # .balign 2
-# glabel bank_1_index_64_geo # 0x52A310
-# .incbin "assets/geo/bank_1/64/block.bin"
+# glabel bank_1_index_64_image # 0x5B8B30
+# .incbin "assets/image/bank_1/64/block.bin"
 
 # .balign 2
-# glabel bank_1_index_65_geo # 0x52AC60
-# .incbin "assets/geo/bank_1/65/block.bin"
+# glabel bank_1_index_65_image # 0x5B8B50
+# .incbin "assets/image/bank_1/65/block.bin"
 
 # .balign 2
-# glabel bank_1_index_66_geo # 0x52B3B0
-# .incbin "assets/geo/bank_1/66/block.bin"
+# glabel bank_1_index_66_image # 0x5B8C50
+# .incbin "assets/image/bank_1/66/block.bin"
 
 # .balign 2
-# glabel bank_1_index_67_geo # 0x52C560
-# .incbin "assets/geo/bank_1/67/block.bin"
+# glabel bank_1_index_67_image # 0x5B8E50
+# .incbin "assets/image/bank_1/67/block.bin"
 
 # .balign 2
-# glabel bank_1_index_68_geo # 0x52D660
-# .incbin "assets/geo/bank_1/68/block.bin"
+# glabel bank_1_index_68_image # 0x5B8ED0
+# .incbin "assets/image/bank_1/68/block.bin"
 
 # .balign 2
-# glabel bank_1_index_69_geo # 0x52E410
-# .incbin "assets/geo/bank_1/69/block.bin"
+# glabel bank_1_index_69_image # 0x5B8F50
+# .incbin "assets/image/bank_1/69/block.bin"
 
 # .balign 2
-# glabel bank_1_index_70_geo # 0x52EDC0
-# .incbin "assets/geo/bank_1/70/block.bin"
+# glabel bank_1_index_70_image # 0x5B9150
+# .incbin "assets/image/bank_1/70/block.bin"
 
 # .balign 2
-# glabel bank_1_index_71_geo # 0x5307F0
-# .incbin "assets/geo/bank_1/71/block.bin"
+# glabel bank_1_index_71_image # 0x5B91D0
+# .incbin "assets/image/bank_1/71/block.bin"
 
 # .balign 2
-# glabel bank_1_index_72_geo # 0x531880
-# .incbin "assets/geo/bank_1/72/block.bin"
+# glabel bank_1_index_72_image # 0x5B93D0
+# .incbin "assets/image/bank_1/72/block.bin"
 
 # .balign 2
-# glabel bank_1_index_73_geo # 0x532C00
-# .incbin "assets/geo/bank_1/73/block.bin"
+# glabel bank_1_index_73_image # 0x5B93F0
+# .incbin "assets/image/bank_1/73/block.bin"
 
 # .balign 2
-# glabel bank_1_index_74_geo # 0x533E00
-# .incbin "assets/geo/bank_1/74/block.bin"
+# glabel bank_1_index_74_image # 0x5B95F0
+# .incbin "assets/image/bank_1/74/block.bin"
 
 # .balign 2
-# glabel bank_1_index_75_geo # 0x534500
-# .incbin "assets/geo/bank_1/75/block.bin"
+# glabel bank_1_index_75_image # 0x5B96F0
+# .incbin "assets/image/bank_1/75/block.bin"
 
 # .balign 2
-# glabel bank_1_index_76_geo # 0x535B70
-# .incbin "assets/geo/bank_1/76/block.bin"
+# glabel bank_1_index_76_image # 0x5B9710
+# .incbin "assets/image/bank_1/76/block.bin"
 
 # .balign 2
-# glabel bank_1_index_77_geo # 0x536760
-# .incbin "assets/geo/bank_1/77/block.bin"
+# glabel bank_1_index_77_image # 0x5B9810
+# .incbin "assets/image/bank_1/77/block.bin"
 
 # .balign 2
-# glabel bank_1_index_78_geo # 0x5376C0
-# .incbin "assets/geo/bank_1/78/block.bin"
+# glabel bank_1_index_78_image # 0x5B9910
+# .incbin "assets/image/bank_1/78/block.bin"
 
 # .balign 2
-# glabel bank_1_index_79_geo # 0x538540
-# .incbin "assets/geo/bank_1/79/block.bin"
+# glabel bank_1_index_79_image # 0x5B9990
+# .incbin "assets/image/bank_1/79/block.bin"
 
 # .balign 2
-# glabel bank_1_index_80_geo # 0x538B00
-# .incbin "assets/geo/bank_1/80/block.bin"
+# glabel bank_1_index_80_image # 0x5B9A10
+# .incbin "assets/image/bank_1/80/block.bin"
 
 # .balign 2
-# glabel bank_1_index_81_geo # 0x538FD0
-# .incbin "assets/geo/bank_1/81/block.bin"
+# glabel bank_1_index_81_image # 0x5B9A90
+# .incbin "assets/image/bank_1/81/block.bin"
 
 # .balign 2
-# glabel bank_1_index_82_geo # 0x539280
-# .incbin "assets/geo/bank_1/82/block.bin"
+# glabel bank_1_index_82_image # 0x5B9AD0
+# .incbin "assets/image/bank_1/82/block.bin"
 
 # .balign 2
-# glabel bank_1_index_83_geo # 0x53A460
-# .incbin "assets/geo/bank_1/83/block.bin"
+# glabel bank_1_index_83_image # 0x5B9B50
+# .incbin "assets/image/bank_1/83/block.bin"
 
 # .balign 2
-# glabel bank_1_index_84_geo # 0x53B030
-# .incbin "assets/geo/bank_1/84/block.bin"
+# glabel bank_1_index_84_image # 0x5B9BD0
+# .incbin "assets/image/bank_1/84/block.bin"
 
 # .balign 2
-# glabel bank_1_index_85_geo # 0x53B810
-# .incbin "assets/geo/bank_1/85/block.bin"
+# glabel bank_1_index_85_image # 0x5B9C10
+# .incbin "assets/image/bank_1/85/block.bin"
 
 # .balign 2
-# glabel bank_1_index_86_geo # 0x53BFA0
-# .incbin "assets/geo/bank_1/86/block.bin"
+# glabel bank_1_index_86_image # 0x5B9C50
+# .incbin "assets/image/bank_1/86/block.bin"
 
 # .balign 2
-# glabel bank_1_index_87_geo # 0x53C720
-# .incbin "assets/geo/bank_1/87/block.bin"
+# glabel bank_1_index_87_image # 0x5B9D50
+# .incbin "assets/image/bank_1/87/block.bin"
 
 # .balign 2
-# glabel bank_1_index_88_geo # 0x53CE50
-# .incbin "assets/geo/bank_1/88/block.bin"
+# glabel bank_1_index_88_image # 0x5B9F50
+# .incbin "assets/image/bank_1/88/block.bin"
 
 # .balign 2
-# glabel bank_1_index_89_geo # 0x53D330
-# .incbin "assets/geo/bank_1/89/block.bin"
+# glabel bank_1_index_89_image # 0x5BA150
+# .incbin "assets/image/bank_1/89/block.bin"
 
 # .balign 2
-# glabel bank_1_index_90_geo # 0x53D9F0
-# .incbin "assets/geo/bank_1/90/block.bin"
+# glabel bank_1_index_90_image # 0x5BA1D0
+# .incbin "assets/image/bank_1/90/block.bin"
 
 # .balign 2
-# glabel bank_1_index_91_geo # 0x53E0B0
-# .incbin "assets/geo/bank_1/91/block.bin"
+# glabel bank_1_index_91_image # 0x5BA250
+# .incbin "assets/image/bank_1/91/block.bin"
 
 # .balign 2
-# glabel bank_1_index_92_geo # 0x546FE0
-# .incbin "assets/geo/bank_1/92/block.bin"
+# glabel bank_1_index_92_image # 0x5BA2D0
+# .incbin "assets/image/bank_1/92/block.bin"
 
 # .balign 2
-# glabel bank_1_index_93_geo # 0x54B8B0
-# .incbin "assets/geo/bank_1/93/block.bin"
+# glabel bank_1_index_93_image # 0x5BA350
+# .incbin "assets/image/bank_1/93/block.bin"
 
 # .balign 2
-# glabel bank_1_index_94_geo # 0x550900
-# .incbin "assets/geo/bank_1/94/block.bin"
+# glabel bank_1_index_94_image # 0x5BA3D0
+# .incbin "assets/image/bank_1/94/block.bin"
 
 # .balign 2
-# glabel bank_1_index_95_geo # 0x554650
-# .incbin "assets/geo/bank_1/95/block.bin"
+# glabel bank_1_index_95_image # 0x5BA4D0
+# .incbin "assets/image/bank_1/95/block.bin"
 
 # .balign 2
-# glabel bank_1_index_96_geo # 0x554A70
-# .incbin "assets/geo/bank_1/96/block.bin"
+# glabel bank_1_index_96_image # 0x5BA550
+# .incbin "assets/image/bank_1/96/block.bin"
 
 # .balign 2
-# glabel bank_1_index_97_geo # 0x554DF0
-# .incbin "assets/geo/bank_1/97/block.bin"
+# glabel bank_1_index_97_image # 0x5BA5D0
+# .incbin "assets/image/bank_1/97/block.bin"
 
 # .balign 2
-# glabel bank_1_index_98_geo # 0x555100
-# .incbin "assets/geo/bank_1/98/block.bin"
+# glabel bank_1_index_98_image # 0x5BB5D0
+# .incbin "assets/image/bank_1/98/block.bin"
 
 # .balign 2
-# glabel bank_1_index_99_geo # 0x555470
-# .incbin "assets/geo/bank_1/99/block.bin"
+# glabel bank_1_index_99_image # 0x5BB650
+# .incbin "assets/image/bank_1/99/block.bin"
 
 # .balign 2
-# glabel bank_1_index_100_geo # 0x555890
-# .incbin "assets/geo/bank_1/100/block.bin"
+# glabel bank_1_index_100_image # 0x5BBA50
+# .incbin "assets/image/bank_1/100/block.bin"
 
 # .balign 2
-# glabel bank_1_index_101_geo # 0x555ED0
-# .incbin "assets/geo/bank_1/101/block.bin"
+# glabel bank_1_index_101_image # 0x5BBA90
+# .incbin "assets/image/bank_1/101/block.bin"
 
 # .balign 2
-# glabel bank_1_index_102_geo # 0x558600
-# .incbin "assets/geo/bank_1/102/block.bin"
+# glabel bank_1_index_102_image # 0x5BBAD0
+# .incbin "assets/image/bank_1/102/block.bin"
 
 # .balign 2
-# glabel bank_1_index_103_geo # 0x55EA70
-# .incbin "assets/geo/bank_1/103/block.bin"
+# glabel bank_1_index_103_image # 0x5BCAD0
+# .incbin "assets/image/bank_1/103/block.bin"
 
 # .balign 2
-# glabel bank_1_index_104_geo # 0x562720
-# .incbin "assets/geo/bank_1/104/block.bin"
+# glabel bank_1_index_104_image # 0x5BCBD0
+# .incbin "assets/image/bank_1/104/block.bin"
 
 # .balign 2
-# glabel bank_1_index_105_geo # 0x565250
-# .incbin "assets/geo/bank_1/105/block.bin"
+# glabel bank_1_index_105_image # 0x5BCDD0
+# .incbin "assets/image/bank_1/105/block.bin"
 
 # .balign 2
-# glabel bank_1_index_106_geo # 0x568070
-# .incbin "assets/geo/bank_1/106/block.bin"
+# glabel bank_1_index_106_image # 0x5BCFD0
+# .incbin "assets/image/bank_1/106/block.bin"
 
 # .balign 2
-# glabel bank_1_index_107_geo # 0x56AE60
-# .incbin "assets/geo/bank_1/107/block.bin"
+# glabel bank_1_index_107_image # 0x5BD050
+# .incbin "assets/image/bank_1/107/block.bin"
 
 # .balign 2
-# glabel bank_1_index_108_geo # 0x56C660
-# .incbin "assets/geo/bank_1/108/block.bin"
+# glabel bank_1_index_108_image # 0x5BD0D0
+# .incbin "assets/image/bank_1/108/block.bin"
 
 # .balign 2
-# glabel bank_1_index_109_geo # 0x56EB40
-# .incbin "assets/geo/bank_1/109/block.bin"
+# glabel bank_1_index_109_image # 0x5BD110
+# .incbin "assets/image/bank_1/109/block.bin"
 
 # .balign 2
-# glabel bank_1_index_110_geo # 0x570650
-# .incbin "assets/geo/bank_1/110/block.bin"
+# glabel bank_1_index_110_image # 0x5BD210
+# .incbin "assets/image/bank_1/110/block.bin"
 
 # .balign 2
-# glabel bank_1_index_111_geo # 0x571630
-# .incbin "assets/geo/bank_1/111/block.bin"
+# glabel bank_1_index_111_image # 0x5BD290
+# .incbin "assets/image/bank_1/111/block.bin"
 
 # .balign 2
-# glabel bank_1_index_112_geo # 0x572070
-# .incbin "assets/geo/bank_1/112/block.bin"
+# glabel bank_1_index_112_image # 0x5BD310
+# .incbin "assets/image/bank_1/112/block.bin"
 
 # .balign 2
-# glabel bank_1_index_113_geo # 0x572220
-# .incbin "assets/geo/bank_1/113/block.bin"
+# glabel bank_1_index_113_image # 0x5BD390
+# .incbin "assets/image/bank_1/113/block.bin"
 
 # .balign 2
-# glabel bank_1_index_114_geo # 0x5725F0
-# .incbin "assets/geo/bank_1/114/block.bin"
+# glabel bank_1_index_114_image # 0x5BD410
+# .incbin "assets/image/bank_1/114/block.bin"
 
 # .balign 2
-# glabel bank_1_index_115_geo # 0x5729C0
-# .incbin "assets/geo/bank_1/115/block.bin"
+# glabel bank_1_index_115_image # 0x5BD490
+# .incbin "assets/image/bank_1/115/block.bin"
 
 # .balign 2
-# glabel bank_1_index_116_geo # 0x572D90
-# .incbin "assets/geo/bank_1/116/block.bin"
+# glabel bank_1_index_116_image # 0x5BD510
+# .incbin "assets/image/bank_1/116/block.bin"
 
 # .balign 2
-# glabel bank_1_index_117_geo # 0x573130
-# .incbin "assets/geo/bank_1/117/block.bin"
+# glabel bank_1_index_117_image # 0x5BD590
+# .incbin "assets/image/bank_1/117/block.bin"
 
 # .balign 2
-# glabel bank_1_index_118_geo # 0x5734D0
-# .incbin "assets/geo/bank_1/118/block.bin"
+# glabel bank_1_index_118_image # 0x5BD610
+# .incbin "assets/image/bank_1/118/block.bin"
 
 # .balign 2
-# glabel bank_1_index_119_geo # 0x573870
-# .incbin "assets/geo/bank_1/119/block.bin"
+# glabel bank_1_index_119_image # 0x5BD810
+# .incbin "assets/image/bank_1/119/block.bin"
 
 # .balign 2
-# glabel bank_1_index_120_geo # 0x576700
-# .incbin "assets/geo/bank_1/120/block.bin"
+# glabel bank_1_index_120_image # 0x5BD830
+# .incbin "assets/image/bank_1/120/block.bin"
 
 # .balign 2
-# glabel bank_1_index_121_geo # 0x5779A0
-# .incbin "assets/geo/bank_1/121/block.bin"
+# glabel bank_1_index_121_image # 0x5BD8B0
+# .incbin "assets/image/bank_1/121/block.bin"
 
 # .balign 2
-# glabel bank_1_index_122_geo # 0x578430
-# .incbin "assets/geo/bank_1/122/block.bin"
+# glabel bank_1_index_122_image # 0x5BD9B0
+# .incbin "assets/image/bank_1/122/block.bin"
 
 # .balign 2
-# glabel bank_1_index_123_geo # 0x578EC0
-# .incbin "assets/geo/bank_1/123/block.bin"
+# glabel bank_1_index_123_image # 0x5BD9D0
+# .incbin "assets/image/bank_1/123/block.bin"
 
 # .balign 2
-# glabel bank_1_index_124_geo # 0x579800
-# .incbin "assets/geo/bank_1/124/block.bin"
+# glabel bank_1_index_124_image # 0x5BDA50
+# .incbin "assets/image/bank_1/124/block.bin"
 
 # .balign 2
-# glabel bank_1_index_125_geo # 0x579C60
-# .incbin "assets/geo/bank_1/125/block.bin"
+# glabel bank_1_index_125_image # 0x5BDAD0
+# .incbin "assets/image/bank_1/125/block.bin"
 
 # .balign 2
-# glabel bank_1_index_126_geo # 0x57A130
-# .incbin "assets/geo/bank_1/126/block.bin"
+# glabel bank_1_index_126_image # 0x5BDB50
+# .incbin "assets/image/bank_1/126/block.bin"
 
 # .balign 2
-# glabel bank_1_index_127_geo # 0x57A7C0
-# .incbin "assets/geo/bank_1/127/block.bin"
+# glabel bank_1_index_127_image # 0x5BDD50
+# .incbin "assets/image/bank_1/127/block.bin"
 
 # .balign 2
-# glabel bank_1_index_128_geo # 0x57B350
-# .incbin "assets/geo/bank_1/128/block.bin"
+# glabel bank_1_index_128_image # 0x5BDDD0
+# .incbin "assets/image/bank_1/128/block.bin"
 
 # .balign 2
-# glabel bank_1_index_129_geo # 0x57BAB0
-# .incbin "assets/geo/bank_1/129/block.bin"
+# glabel bank_1_index_129_image # 0x5BDED0
+# .incbin "assets/image/bank_1/129/block.bin"
 
 # .balign 2
-# glabel bank_1_index_130_geo # 0x57C410
-# .incbin "assets/geo/bank_1/130/block.bin"
+# glabel bank_1_index_130_image # 0x5BDEE0
+# .incbin "assets/image/bank_1/130/block.bin"
 
 # .balign 2
-# glabel bank_1_index_131_geo # 0x57DBC0
-# .incbin "assets/geo/bank_1/131/block.bin"
+# glabel bank_1_index_131_image # 0x5BE0E0
+# .incbin "assets/image/bank_1/131/block.bin"
 
 # .balign 2
-# glabel bank_1_index_132_geo # 0x582690
-# .incbin "assets/geo/bank_1/132/block.bin"
+# glabel bank_1_index_132_image # 0x5BE100
+# .incbin "assets/image/bank_1/132/block.bin"
 
 # .balign 2
-# glabel bank_1_index_133_geo # 0x582B60
-# .incbin "assets/geo/bank_1/133/block.bin"
+# glabel bank_1_index_133_image # 0x5BE300
+# .incbin "assets/image/bank_1/133/block.bin"
 
 # .balign 2
-# glabel bank_1_index_134_geo # 0x583A40
-# .incbin "assets/geo/bank_1/134/block.bin"
+# glabel bank_1_index_134_image # 0x5BE400
+# .incbin "assets/image/bank_1/134/block.bin"
 
 # .balign 2
-# glabel bank_1_index_135_geo # 0x583C90
-# .incbin "assets/geo/bank_1/135/block.bin"
+# glabel bank_1_index_135_image # 0x5BE420
+# .incbin "assets/image/bank_1/135/block.bin"
 
 # .balign 2
-# glabel bank_1_index_136_geo # 0x5841C0
-# .incbin "assets/geo/bank_1/136/block.bin"
+# glabel bank_1_index_136_image # 0x5BE4A0
+# .incbin "assets/image/bank_1/136/block.bin"
 
 # .balign 2
-# glabel bank_1_index_137_geo # 0x584410
-# .incbin "assets/geo/bank_1/137/block.bin"
+# glabel bank_1_index_137_image # 0x5BE4C0
+# .incbin "assets/image/bank_1/137/block.bin"
 
 # .balign 2
-# glabel bank_1_index_138_geo # 0x584660
-# .incbin "assets/geo/bank_1/138/block.bin"
+# glabel bank_1_index_138_image # 0x5BE5C0
+# .incbin "assets/image/bank_1/138/block.bin"
 
 # .balign 2
-# glabel bank_1_index_139_geo # 0x584B70
-# .incbin "assets/geo/bank_1/139/block.bin"
+# glabel bank_1_index_139_image # 0x5BE5E0
+# .incbin "assets/image/bank_1/139/block.bin"
 
 # .balign 2
-# glabel bank_1_index_140_geo # 0x584E20
-# .incbin "assets/geo/bank_1/140/block.bin"
+# glabel bank_1_index_140_image # 0x5BE660
+# .incbin "assets/image/bank_1/140/block.bin"
 
 # .balign 2
-# glabel bank_1_index_141_geo # 0x585070
-# .incbin "assets/geo/bank_1/141/block.bin"
+# glabel bank_1_index_141_image # 0x5BE6E0
+# .incbin "assets/image/bank_1/141/block.bin"
 
 # .balign 2
-# glabel bank_1_index_142_geo # 0x585590
-# .incbin "assets/geo/bank_1/142/block.bin"
+# glabel bank_1_index_142_image # 0x5BE8E0
+# .incbin "assets/image/bank_1/142/block.bin"
 
 # .balign 2
-# glabel bank_1_index_143_geo # 0x585780
-# .incbin "assets/geo/bank_1/143/block.bin"
+# glabel bank_1_index_143_image # 0x5BEAE0
+# .incbin "assets/image/bank_1/143/block.bin"
 
 # .balign 2
-# glabel bank_1_index_144_geo # 0x585D90
-# .incbin "assets/geo/bank_1/144/block.bin"
+# glabel bank_1_index_144_image # 0x5BEB60
+# .incbin "assets/image/bank_1/144/block.bin"
 
 # .balign 2
-# glabel bank_1_index_145_geo # 0x586660
-# .incbin "assets/geo/bank_1/145/block.bin"
+# glabel bank_1_index_145_image # 0x5BED60
+# .incbin "assets/image/bank_1/145/block.bin"
 
 # .balign 2
-# glabel bank_1_index_146_geo # 0x587090
-# .incbin "assets/geo/bank_1/146/block.bin"
+# glabel bank_1_index_146_image # 0x5BEF60
+# .incbin "assets/image/bank_1/146/block.bin"
 
 # .balign 2
-# glabel bank_1_index_147_geo # 0x587DF0
-# .incbin "assets/geo/bank_1/147/block.bin"
+# glabel bank_1_index_147_image # 0x5BEFE0
+# .incbin "assets/image/bank_1/147/block.bin"
 
 # .balign 2
-# glabel bank_1_index_148_geo # 0x588420
-# .incbin "assets/geo/bank_1/148/block.bin"
+# glabel bank_1_index_148_image # 0x5BF060
+# .incbin "assets/image/bank_1/148/block.bin"
 
 # .balign 2
-# glabel bank_1_index_149_geo # 0x588750
-# .incbin "assets/geo/bank_1/149/block.bin"
+# glabel bank_1_index_149_image # 0x5BF080
+# .incbin "assets/image/bank_1/149/block.bin"
 
 # .balign 2
-# glabel bank_1_index_150_geo # 0x588A40
-# .incbin "assets/geo/bank_1/150/block.bin"
+# glabel bank_1_index_150_image # 0x5BF200
+# .incbin "assets/image/bank_1/150/block.bin"
 
 # .balign 2
-# glabel bank_1_index_151_geo # 0x588C80
-# .incbin "assets/geo/bank_1/151/block.bin"
+# glabel bank_1_index_151_image # 0x5BF220
+# .incbin "assets/image/bank_1/151/block.bin"
 
 # .balign 2
-# glabel bank_1_index_152_geo # 0x589250
-# .incbin "assets/geo/bank_1/152/block.bin"
+# glabel bank_1_index_152_image # 0x5BF2A0
+# .incbin "assets/image/bank_1/152/block.bin"
 
 # .balign 2
-# glabel bank_1_index_153_geo # 0x589590
-# .incbin "assets/geo/bank_1/153/block.bin"
+# glabel bank_1_index_153_image # 0x5BF2C0
+# .incbin "assets/image/bank_1/153/block.bin"
 
 # .balign 2
-# glabel bank_1_index_154_geo # 0x589830
-# .incbin "assets/geo/bank_1/154/block.bin"
+# glabel bank_1_index_154_image # 0x5BF340
+# .incbin "assets/image/bank_1/154/block.bin"
 
 # .balign 2
-# glabel bank_1_index_155_geo # 0x589CE0
-# .incbin "assets/geo/bank_1/155/block.bin"
+# glabel bank_1_index_155_image # 0x5BF360
+# .incbin "assets/image/bank_1/155/block.bin"
 
 # .balign 2
-# glabel bank_1_index_156_geo # 0x58A2C0
-# .incbin "assets/geo/bank_1/156/block.bin"
+# glabel bank_1_index_156_image # 0x5BF3E0
+# .incbin "assets/image/bank_1/156/block.bin"
 
 # .balign 2
-# glabel bank_1_index_157_geo # 0x58A850
-# .incbin "assets/geo/bank_1/157/block.bin"
+# glabel bank_1_index_157_image # 0x5BF400
+# .incbin "assets/image/bank_1/157/block.bin"
 
 # .balign 2
-# glabel bank_1_index_158_geo # 0x58AC30
-# .incbin "assets/geo/bank_1/158/block.bin"
+# glabel bank_1_index_158_image # 0x5BF580
+# .incbin "assets/image/bank_1/158/block.bin"
 
 # .balign 2
-# glabel bank_1_index_159_geo # 0x58B0E0
-# .incbin "assets/geo/bank_1/159/block.bin"
+# glabel bank_1_index_159_image # 0x5BF5A0
+# .incbin "assets/image/bank_1/159/block.bin"
 
 # .balign 2
-# glabel bank_1_index_160_geo # 0x58B7B0
-# .incbin "assets/geo/bank_1/160/block.bin"
+# glabel bank_1_index_160_image # 0x5BF620
+# .incbin "assets/image/bank_1/160/block.bin"
 
 # .balign 2
-# glabel bank_1_index_161_geo # 0x58BCF0
-# .incbin "assets/geo/bank_1/161/block.bin"
+# glabel bank_1_index_161_image # 0x5BF640
+# .incbin "assets/image/bank_1/161/block.bin"
 
 # .balign 2
-# glabel bank_1_index_162_geo # 0x58C3E0
-# .incbin "assets/geo/bank_1/162/block.bin"
+# glabel bank_1_index_162_image # 0x5BF6C0
+# .incbin "assets/image/bank_1/162/block.bin"
 
 # .balign 2
-# glabel bank_1_index_163_geo # 0x58C630
-# .incbin "assets/geo/bank_1/163/block.bin"
+# glabel bank_1_index_163_image # 0x5BF6E0
+# .incbin "assets/image/bank_1/163/block.bin"
 
 # .balign 2
-# glabel bank_1_index_164_geo # 0x58CFA0
-# .incbin "assets/geo/bank_1/164/block.bin"
+# glabel bank_1_index_164_image # 0x5BF8E0
+# .incbin "assets/image/bank_1/164/block.bin"
 
 # .balign 2
-# glabel bank_1_index_165_geo # 0x58D2B0
-# .incbin "assets/geo/bank_1/165/block.bin"
+# glabel bank_1_index_165_image # 0x5BFAE0
+# .incbin "assets/image/bank_1/165/block.bin"
 
 # .balign 2
-# glabel bank_1_index_166_geo # 0x58D500
-# .incbin "assets/geo/bank_1/166/block.bin"
+# glabel bank_1_index_166_image # 0x5BFCE0
+# .incbin "assets/image/bank_1/166/block.bin"
 
 # .balign 2
-# glabel bank_1_index_167_geo # 0x58D9E0
-# .incbin "assets/geo/bank_1/167/block.bin"
+# glabel bank_1_index_167_image # 0x5BFD60
+# .incbin "assets/image/bank_1/167/block.bin"
 
 # .balign 2
-# glabel bank_1_index_168_geo # 0x58DDA0
-# .incbin "assets/geo/bank_1/168/block.bin"
+# glabel bank_1_index_168_image # 0x5BFDE0
+# .incbin "assets/image/bank_1/168/block.bin"
 
 # .balign 2
-# glabel bank_1_index_169_geo # 0x58E3B0
-# .incbin "assets/geo/bank_1/169/block.bin"
+# glabel bank_1_index_169_image # 0x5BFE60
+# .incbin "assets/image/bank_1/169/block.bin"
 
 # .balign 2
-# glabel bank_1_index_170_geo # 0x58F030
-# .incbin "assets/geo/bank_1/170/block.bin"
+# glabel bank_1_index_170_image # 0x5BFE80
+# .incbin "assets/image/bank_1/170/block.bin"
 
 # .balign 2
-# glabel bank_1_index_171_geo # 0x58FD20
-# .incbin "assets/geo/bank_1/171/block.bin"
+# glabel bank_1_index_171_image # 0x5BFF00
+# .incbin "assets/image/bank_1/171/block.bin"
 
 # .balign 2
-# glabel bank_1_index_172_geo # 0x590A10
-# .incbin "assets/geo/bank_1/172/block.bin"
+# glabel bank_1_index_172_image # 0x5C0100
+# .incbin "assets/image/bank_1/172/block.bin"
 
 # .balign 2
-# glabel bank_1_index_173_geo # 0x591270
-# .incbin "assets/geo/bank_1/173/block.bin"
+# glabel bank_1_index_173_image # 0x5C0300
+# .incbin "assets/image/bank_1/173/block.bin"
 
 # .balign 2
-# glabel bank_1_index_174_geo # 0x591AD0
-# .incbin "assets/geo/bank_1/174/block.bin"
+# glabel bank_1_index_174_image # 0x5C0380
+# .incbin "assets/image/bank_1/174/block.bin"
 
 # .balign 2
-# glabel bank_1_index_175_geo # 0x592330
-# .incbin "assets/geo/bank_1/175/block.bin"
+# glabel bank_1_index_175_image # 0x5C0400
+# .incbin "assets/image/bank_1/175/block.bin"
 
 # .balign 2
-# glabel bank_1_index_176_geo # 0x592A70
-# .incbin "assets/geo/bank_1/176/block.bin"
+# glabel bank_1_index_176_image # 0x5C0500
+# .incbin "assets/image/bank_1/176/block.bin"
 
 # .balign 2
-# glabel bank_1_index_177_geo # 0x5931B0
-# .incbin "assets/geo/bank_1/177/block.bin"
+# glabel bank_1_index_177_image # 0x5C0700
+# .incbin "assets/image/bank_1/177/block.bin"
 
 # .balign 2
-# glabel bank_1_index_178_geo # 0x5938F0
-# .incbin "assets/geo/bank_1/178/block.bin"
+# glabel bank_1_index_178_image # 0x5C0720
+# .incbin "assets/image/bank_1/178/block.bin"
 
 # .balign 2
-# glabel bank_1_index_179_geo # 0x593C30
-# .incbin "assets/geo/bank_1/179/block.bin"
+# glabel bank_1_index_179_image # 0x5C0920
+# .incbin "assets/image/bank_1/179/block.bin"
 
 # .balign 2
-# glabel bank_1_index_180_geo # 0x594400
-# .incbin "assets/geo/bank_1/180/block.bin"
+# glabel bank_1_index_180_image # 0x5C0940
+# .incbin "assets/image/bank_1/180/block.bin"
 
 # .balign 2
-# glabel bank_1_index_181_geo # 0x5947A0
-# .incbin "assets/geo/bank_1/181/block.bin"
+# glabel bank_1_index_181_image # 0x5C0D40
+# .incbin "assets/image/bank_1/181/block.bin"
 
 # .balign 2
-# glabel bank_1_index_182_geo # 0x594A30
-# .incbin "assets/geo/bank_1/182/block.bin"
+# glabel bank_1_index_182_image # 0x5C0F40
+# .incbin "assets/image/bank_1/182/block.bin"
 
 # .balign 2
-# glabel bank_1_index_183_geo # 0x594CC0
-# .incbin "assets/geo/bank_1/183/block.bin"
+# glabel bank_1_index_183_image # 0x5C1040
+# .incbin "assets/image/bank_1/183/block.bin"
 
 # .balign 2
-# glabel bank_1_index_184_geo # 0x595750
-# .incbin "assets/geo/bank_1/184/block.bin"
+# glabel bank_1_index_184_image # 0x5C1240
+# .incbin "assets/image/bank_1/184/block.bin"
 
 # .balign 2
-# glabel bank_1_index_185_geo # 0x596020
-# .incbin "assets/geo/bank_1/185/block.bin"
+# glabel bank_1_index_185_image # 0x5C12C0
+# .incbin "assets/image/bank_1/185/block.bin"
 
 # .balign 2
-# glabel bank_1_index_186_geo # 0x596400
-# .incbin "assets/geo/bank_1/186/block.bin"
+# glabel bank_1_index_186_image # 0x5C16C0
+# .incbin "assets/image/bank_1/186/block.bin"
 
 # .balign 2
-# glabel bank_1_index_187_geo # 0x5966D0
-# .incbin "assets/geo/bank_1/187/block.bin"
+# glabel bank_1_index_187_image # 0x5C1AC0
+# .incbin "assets/image/bank_1/187/block.bin"
 
 # .balign 2
-# glabel bank_1_index_188_geo # 0x596940
-# .incbin "assets/geo/bank_1/188/block.bin"
+# glabel bank_1_index_188_image # 0x5C1EC0
+# .incbin "assets/image/bank_1/188/block.bin"
 
 # .balign 2
-# glabel bank_1_index_189_geo # 0x596BB0
-# .incbin "assets/geo/bank_1/189/block.bin"
+# glabel bank_1_index_189_image # 0x5C22C0
+# .incbin "assets/image/bank_1/189/block.bin"
 
 # .balign 2
-# glabel bank_1_index_190_geo # 0x598CF0
-# .incbin "assets/geo/bank_1/190/block.bin"
+# glabel bank_1_index_190_image # 0x5C26C0
+# .incbin "assets/image/bank_1/190/block.bin"
 
 # .balign 2
-# glabel bank_1_index_191_geo # 0x599080
-# .incbin "assets/geo/bank_1/191/block.bin"
+# glabel bank_1_index_191_image # 0x5C2AC0
+# .incbin "assets/image/bank_1/191/block.bin"
 
 # .balign 2
-# glabel bank_1_index_192_geo # 0x599540
-# .incbin "assets/geo/bank_1/192/block.bin"
+# glabel bank_1_index_192_image # 0x5C2EC0
+# .incbin "assets/image/bank_1/192/block.bin"
 
 # .balign 2
-# glabel bank_1_index_193_geo # 0x59A020
-# .incbin "assets/geo/bank_1/193/block.bin"
+# glabel bank_1_index_193_image # 0x5C32C0
+# .incbin "assets/image/bank_1/193/block.bin"
 
 # .balign 2
-# glabel bank_1_index_194_geo # 0x59A460
-# .incbin "assets/geo/bank_1/194/block.bin"
+# glabel bank_1_index_194_image # 0x5C36C0
+# .incbin "assets/image/bank_1/194/block.bin"
 
 # .balign 2
-# glabel bank_1_index_195_geo # 0x59B6B0
-# .incbin "assets/geo/bank_1/195/block.bin"
+# glabel bank_1_index_195_image # 0x5C3AC0
+# .incbin "assets/image/bank_1/195/block.bin"
 
 # .balign 2
-# glabel bank_1_index_196_geo # 0x59BB10
-# .incbin "assets/geo/bank_1/196/block.bin"
+# glabel bank_1_index_196_image # 0x5C3EC0
+# .incbin "assets/image/bank_1/196/block.bin"
 
 # .balign 2
-# glabel bank_1_index_197_geo # 0x59CF30
-# .incbin "assets/geo/bank_1/197/block.bin"
+# glabel bank_1_index_197_image # 0x5C40C0
+# .incbin "assets/image/bank_1/197/block.bin"
 
 # .balign 2
-# glabel bank_1_index_198_geo # 0x59D6B0
-# .incbin "assets/geo/bank_1/198/block.bin"
+# glabel bank_1_index_198_image # 0x5C44C0
+# .incbin "assets/image/bank_1/198/block.bin"
 
 # .balign 2
-# glabel bank_1_index_199_geo # 0x59DEC0
-# .incbin "assets/geo/bank_1/199/block.bin"
+# glabel bank_1_index_199_image # 0x5C46C0
+# .incbin "assets/image/bank_1/199/block.bin"
 
 # .balign 2
-# glabel bank_1_index_200_geo # 0x59E440
-# .incbin "assets/geo/bank_1/200/block.bin"
+# glabel bank_1_index_200_image # 0x5C46E0
+# .incbin "assets/image/bank_1/200/block.bin"
 
 # .balign 2
-# glabel bank_1_index_201_geo # 0x59EAC0
-# .incbin "assets/geo/bank_1/201/block.bin"
+# glabel bank_1_index_201_image # 0x5C4760
+# .incbin "assets/image/bank_1/201/block.bin"
 
 # .balign 2
-# glabel bank_1_index_202_geo # 0x59F2A0
-# .incbin "assets/geo/bank_1/202/block.bin"
+# glabel bank_1_index_202_image # 0x5C4780
+# .incbin "assets/image/bank_1/202/block.bin"
 
 # .balign 2
-# glabel bank_1_index_203_geo # 0x59F850
-# .incbin "assets/geo/bank_1/203/block.bin"
+# glabel bank_1_index_203_image # 0x5C4800
+# .incbin "assets/image/bank_1/203/block.bin"
 
 # .balign 2
-# glabel bank_1_index_204_geo # 0x59FDB0
-# .incbin "assets/geo/bank_1/204/block.bin"
+# glabel bank_1_index_204_image # 0x5C4880
+# .incbin "assets/image/bank_1/204/block.bin"
 
 # .balign 2
-# glabel bank_1_index_205_geo # 0x5A0690
-# .incbin "assets/geo/bank_1/205/block.bin"
+# glabel bank_1_index_205_image # 0x5C48A0
+# .incbin "assets/image/bank_1/205/block.bin"
 
 # .balign 2
-# glabel bank_1_index_206_geo # 0x5A0C90
-# .incbin "assets/geo/bank_1/206/block.bin"
+# glabel bank_1_index_206_image # 0x5C4AE0
+# .incbin "assets/image/bank_1/206/block.bin"
 
 # .balign 2
-# glabel bank_1_index_207_geo # 0x5A15C0
-# .incbin "assets/geo/bank_1/207/block.bin"
+# glabel bank_1_index_207_image # 0x5C4B00
+# .incbin "assets/image/bank_1/207/block.bin"
 
 # .balign 2
-# glabel bank_1_index_208_geo # 0x5A1B20
-# .incbin "assets/geo/bank_1/208/block.bin"
+# glabel bank_1_index_208_image # 0x5C4B80
+# .incbin "assets/image/bank_1/208/block.bin"
 
 # .balign 2
-# glabel bank_1_index_209_geo # 0x5A2080
-# .incbin "assets/geo/bank_1/209/block.bin"
+# glabel bank_1_index_209_image # 0x5C4BC0
+# .incbin "assets/image/bank_1/209/block.bin"
 
 # .balign 2
-# glabel bank_1_index_210_geo # 0x5A28F0
-# .incbin "assets/geo/bank_1/210/block.bin"
+# glabel bank_1_index_210_image # 0x5C4DC0
+# .incbin "assets/image/bank_1/210/block.bin"
 
 # .balign 2
-# glabel bank_1_index_211_geo # 0x5A2E50
-# .incbin "assets/geo/bank_1/211/block.bin"
+# glabel bank_1_index_211_image # 0x5C51C0
+# .incbin "assets/image/bank_1/211/block.bin"
 
 # .balign 2
-# glabel bank_1_index_212_geo # 0x5A31C0
-# .incbin "assets/geo/bank_1/212/block.bin"
+# glabel bank_1_index_212_image # 0x5C5200
+# .incbin "assets/image/bank_1/212/block.bin"
 
 # .balign 2
-# glabel bank_1_index_213_geo # 0x5A39F0
-# .incbin "assets/geo/bank_1/213/block.bin"
+# glabel bank_1_index_213_image # 0x5C5240
+# .incbin "assets/image/bank_1/213/block.bin"
 
 # .balign 2
-# glabel bank_1_index_214_geo # 0x5A4850
-# .incbin "assets/geo/bank_1/214/block.bin"
+# glabel bank_1_index_214_image # 0x5C5640
+# .incbin "assets/image/bank_1/214/block.bin"
 
 # .balign 2
-# glabel bank_1_index_215_geo # 0x5A4BC0
-# .incbin "assets/geo/bank_1/215/block.bin"
+# glabel bank_1_index_215_image # 0x5C5A40
+# .incbin "assets/image/bank_1/215/block.bin"
 
 # .balign 2
-# glabel bank_1_index_216_geo # 0x5A52D0
-# .incbin "assets/geo/bank_1/216/block.bin"
+# glabel bank_1_index_216_image # 0x5C6240
+# .incbin "assets/image/bank_1/216/block.bin"
 
 # .balign 2
-# glabel bank_1_index_217_geo # 0x5A5B90
-# .incbin "assets/geo/bank_1/217/block.bin"
+# glabel bank_1_index_217_image # 0x5C6260
+# .incbin "assets/image/bank_1/217/block.bin"
 
 # .balign 2
-# glabel bank_1_index_218_geo # 0x5A6210
-# .incbin "assets/geo/bank_1/218/block.bin"
+# glabel bank_1_index_218_image # 0x5C6A60
+# .incbin "assets/image/bank_1/218/block.bin"
 
 # .balign 2
-# glabel bank_1_index_219_geo # 0x5A64A0
-# .incbin "assets/geo/bank_1/219/block.bin"
+# glabel bank_1_index_219_image # 0x5C6C60
+# .incbin "assets/image/bank_1/219/block.bin"
 
 # .balign 2
-# glabel bank_1_index_220_geo # 0x5A6780
-# .incbin "assets/geo/bank_1/220/block.bin"
+# glabel bank_1_index_220_image # 0x5C6C80
+# .incbin "assets/image/bank_1/220/block.bin"
 
 # .balign 2
-# glabel bank_1_index_221_geo # 0x5A69E0
-# .incbin "assets/geo/bank_1/221/block.bin"
+# glabel bank_1_index_221_image # 0x5C6E80
+# .incbin "assets/image/bank_1/221/block.bin"
 
 # .balign 2
-# glabel bank_1_index_222_geo # 0x5A6C30
-# .incbin "assets/geo/bank_1/222/block.bin"
+# glabel bank_1_index_222_image # 0x5C6F00
+# .incbin "assets/image/bank_1/222/block.bin"
 
 # .balign 2
-# glabel bank_1_index_223_geo # 0x5A7010
-# .incbin "assets/geo/bank_1/223/block.bin"
+# glabel bank_1_index_223_image # 0x5C6F80
+# .incbin "assets/image/bank_1/223/block.bin"
 
 # .balign 2
-# glabel bank_1_index_224_geo # 0x5A7680
-# .incbin "assets/geo/bank_1/224/block.bin"
+# glabel bank_1_index_224_image # 0x5C6FC0
+# .incbin "assets/image/bank_1/224/block.bin"
 
 # .balign 2
-# glabel bank_1_index_225_geo # 0x5A7960
-# .incbin "assets/geo/bank_1/225/block.bin"
+# glabel bank_1_index_225_image # 0x5C7040
+# .incbin "assets/image/bank_1/225/block.bin"
 
 # .balign 2
-# glabel bank_1_index_226_geo # 0x5A8180
-# .incbin "assets/geo/bank_1/226/block.bin"
+# glabel bank_1_index_226_image # 0x5C7080
+# .incbin "assets/image/bank_1/226/block.bin"
 
 # .balign 2
-# glabel bank_1_index_227_geo # 0x5A8900
-# .incbin "assets/geo/bank_1/227/block.bin"
+# glabel bank_1_index_227_image # 0x5C7100
+# .incbin "assets/image/bank_1/227/block.bin"
 
 # .balign 2
-# glabel bank_1_index_228_geo # 0x5A8D70
-# .incbin "assets/geo/bank_1/228/block.bin"
+# glabel bank_1_index_228_image # 0x5C7120
+# .incbin "assets/image/bank_1/228/block.bin"
 
 # .balign 2
-# glabel bank_1_index_229_geo # 0x5A90D0
-# .incbin "assets/geo/bank_1/229/block.bin"
+# glabel bank_1_index_229_image # 0x5C71A0
+# .incbin "assets/image/bank_1/229/block.bin"
 
 # .balign 2
-# glabel bank_1_index_230_geo # 0x5A9470
-# .incbin "assets/geo/bank_1/230/block.bin"
+# glabel bank_1_index_230_image # 0x5C72A0
+# .incbin "assets/image/bank_1/230/block.bin"
 
 # .balign 2
-# glabel bank_1_index_231_geo # 0x5A98E0
-# .incbin "assets/geo/bank_1/231/block.bin"
+# glabel bank_1_index_231_image # 0x5C73A0
+# .incbin "assets/image/bank_1/231/block.bin"
 
 # .balign 2
-# glabel bank_1_index_232_geo # 0x5A9D50
-# .incbin "assets/geo/bank_1/232/block.bin"
+# glabel bank_1_index_232_image # 0x5C7420
+# .incbin "assets/image/bank_1/232/block.bin"
 
 # .balign 2
-# glabel bank_1_index_233_geo # 0x5AA2F0
-# .incbin "assets/geo/bank_1/233/block.bin"
+# glabel bank_1_index_233_image # 0x5C74A0
+# .incbin "assets/image/bank_1/233/block.bin"
 
 # .balign 2
-# glabel bank_1_index_234_geo # 0x5AA790
-# .incbin "assets/geo/bank_1/234/block.bin"
+# glabel bank_1_index_234_image # 0x5C76A0
+# .incbin "assets/image/bank_1/234/block.bin"
 
 # .balign 2
-# glabel bank_1_index_235_geo # 0x5AAE40
-# .incbin "assets/geo/bank_1/235/block.bin"
+# glabel bank_1_index_235_image # 0x5C7720
+# .incbin "assets/image/bank_1/235/block.bin"
 
 # .balign 2
-# glabel bank_1_index_236_geo # 0x5AB7C0
-# .incbin "assets/geo/bank_1/236/block.bin"
+# glabel bank_1_index_236_image # 0x5C7760
+# .incbin "assets/image/bank_1/236/block.bin"
 
 # .balign 2
-# glabel bank_1_index_237_geo # 0x5ACA50
-# .incbin "assets/geo/bank_1/237/block.bin"
+# glabel bank_1_index_237_image # 0x5C77E0
+# .incbin "assets/image/bank_1/237/block.bin"
 
 # .balign 2
-# glabel bank_1_index_238_geo # 0x5ACCB0
-# .incbin "assets/geo/bank_1/238/block.bin"
+# glabel bank_1_index_238_image # 0x5C78E0
+# .incbin "assets/image/bank_1/238/block.bin"
 
 # .balign 2
-# glabel bank_1_index_239_geo # 0x5ACF10
-# .incbin "assets/geo/bank_1/239/block.bin"
+# glabel bank_1_index_239_image # 0x5C7960
+# .incbin "assets/image/bank_1/239/block.bin"
 
 # .balign 2
-# glabel bank_1_index_240_geo # 0x5AD170
-# .incbin "assets/geo/bank_1/240/block.bin"
+# glabel bank_1_index_240_image # 0x5C79E0
+# .incbin "assets/image/bank_1/240/block.bin"
 
 # .balign 2
-# glabel bank_1_index_241_geo # 0x5B0870
-# .incbin "assets/geo/bank_1/241/block.bin"
+# glabel bank_1_index_241_image # 0x5C7A60
+# .incbin "assets/image/bank_1/241/block.bin"
 
 # .balign 2
-# glabel bank_1_index_242_geo # 0x5B0B70
-# .incbin "assets/geo/bank_1/242/block.bin"
+# glabel bank_1_index_242_image # 0x5C7B60
+# .incbin "assets/image/bank_1/242/block.bin"
 
 # .balign 2
-# glabel bank_1_index_243_geo # 0x5B0E70
-# .incbin "assets/geo/bank_1/243/block.bin"
+# glabel bank_1_index_243_image # 0x5C7BE0
+# .incbin "assets/image/bank_1/243/block.bin"
 
-.balign 2
-glabel bank_1_index_1_image # 0x5B5360
-.incbin "assets/image/bank_1/1/block.bin"
-
-.balign 2
-glabel bank_1_index_2_image # 0x5B5460
-.incbin "assets/image/bank_1/2/block.bin"
-
-.balign 2
-glabel bank_1_index_3_image # 0x5B54E0
-.incbin "assets/image/bank_1/3/block.bin"
-
-.balign 2
-glabel bank_1_index_4_image # 0x5B5560
-.incbin "assets/image/bank_1/4/block.bin"
-
-.balign 2
-glabel bank_1_index_5_image # 0x5B5760
-.incbin "assets/image/bank_1/5/block.bin"
-
-.balign 2
-glabel bank_1_index_6_image # 0x5B5770
-.incbin "assets/image/bank_1/6/block.bin"
-
-.balign 2
-glabel bank_1_index_7_image # 0x5B5970
-.incbin "assets/image/bank_1/7/block.bin"
-
-.balign 2
-glabel bank_1_index_8_image # 0x5B5990
-.incbin "assets/image/bank_1/8/block.bin"
-
-.balign 2
-glabel bank_1_index_9_image # 0x5B5A90
-.incbin "assets/image/bank_1/9/block.bin"
-
-.balign 2
-glabel bank_1_index_10_image # 0x5B5C90
-.incbin "assets/image/bank_1/10/block.bin"
-
-.balign 2
-glabel bank_1_index_11_image # 0x5B5D10
-.incbin "assets/image/bank_1/11/block.bin"
-
-.balign 2
-glabel bank_1_index_12_image # 0x5B5E10
-.incbin "assets/image/bank_1/12/block.bin"
-
-.balign 2
-glabel bank_1_index_13_image # 0x5B5F10
-.incbin "assets/image/bank_1/13/block.bin"
-
-.balign 2
-glabel bank_1_index_14_image # 0x5B5F90
-.incbin "assets/image/bank_1/14/block.bin"
-
-.balign 2
-glabel bank_1_index_15_image # 0x5B5FB0
-.incbin "assets/image/bank_1/15/block.bin"
-
-.balign 2
-glabel bank_1_index_16_image # 0x5B6030
-.incbin "assets/image/bank_1/16/block.bin"
-
-.balign 2
-glabel bank_1_index_17_image # 0x5B6050
-.incbin "assets/image/bank_1/17/block.bin"
-
-.balign 2
-glabel bank_1_index_18_image # 0x5B60D0
-.incbin "assets/image/bank_1/18/block.bin"
-
-.balign 2
-glabel bank_1_index_19_image # 0x5B6150
-.incbin "assets/image/bank_1/19/block.bin"
-
-.balign 2
-glabel bank_1_index_20_image # 0x5B61D0
-.incbin "assets/image/bank_1/20/block.bin"
-
-.balign 2
-glabel bank_1_index_21_image # 0x5B63D0
-.incbin "assets/image/bank_1/21/block.bin"
-
-.balign 2
-glabel bank_1_index_22_image # 0x5B63F0
-.incbin "assets/image/bank_1/22/block.bin"
-
-.balign 2
-glabel bank_1_index_23_image # 0x5B65F0
-.incbin "assets/image/bank_1/23/block.bin"
-
-.balign 2
-glabel bank_1_index_24_image # 0x5B6670
-.incbin "assets/image/bank_1/24/block.bin"
-
-.balign 2
-glabel bank_1_index_25_image # 0x5B6770
-.incbin "assets/image/bank_1/25/block.bin"
-
-.balign 2
-glabel bank_1_index_26_image # 0x5B6970
-.incbin "assets/image/bank_1/26/block.bin"
-
-.balign 2
-glabel bank_1_index_27_image # 0x5B69F0
-.incbin "assets/image/bank_1/27/block.bin"
-
-.balign 2
-glabel bank_1_index_28_image # 0x5B6A10
-.incbin "assets/image/bank_1/28/block.bin"
-
-.balign 2
-glabel bank_1_index_29_image # 0x5B6A90
-.incbin "assets/image/bank_1/29/block.bin"
-
-.balign 2
-glabel bank_1_index_30_image # 0x5B6B10
-.incbin "assets/image/bank_1/30/block.bin"
-
-.balign 2
-glabel bank_1_index_31_image # 0x5B6B90
-.incbin "assets/image/bank_1/31/block.bin"
-
-.balign 2
-glabel bank_1_index_32_image # 0x5B6C10
-.incbin "assets/image/bank_1/32/block.bin"
-
-.balign 2
-glabel bank_1_index_33_image # 0x5B6D10
-.incbin "assets/image/bank_1/33/block.bin"
-
-.balign 2
-glabel bank_1_index_34_image # 0x5B6D90
-.incbin "assets/image/bank_1/34/block.bin"
-
-.balign 2
-glabel bank_1_index_35_image # 0x5B6F90
-.incbin "assets/image/bank_1/35/block.bin"
-
-.balign 2
-glabel bank_1_index_36_image # 0x5B7010
-.incbin "assets/image/bank_1/36/block.bin"
-
-.balign 2
-glabel bank_1_index_37_image # 0x5B7110
-.incbin "assets/image/bank_1/37/block.bin"
-
-.balign 2
-glabel bank_1_index_38_image # 0x5B7210
-.incbin "assets/image/bank_1/38/block.bin"
-
-.balign 2
-glabel bank_1_index_39_image # 0x5B7310
-.incbin "assets/image/bank_1/39/block.bin"
-
-.balign 2
-glabel bank_1_index_40_image # 0x5B7410
-.incbin "assets/image/bank_1/40/block.bin"
-
-.balign 2
-glabel bank_1_index_41_image # 0x5B7510
-.incbin "assets/image/bank_1/41/block.bin"
-
-.balign 2
-glabel bank_1_index_42_image # 0x5B7710
-.incbin "assets/image/bank_1/42/block.bin"
-
-.balign 2
-glabel bank_1_index_43_image # 0x5B7790
-.incbin "assets/image/bank_1/43/block.bin"
-
-.balign 2
-glabel bank_1_index_44_image # 0x5B7810
-.incbin "assets/image/bank_1/44/block.bin"
-
-.balign 2
-glabel bank_1_index_45_image # 0x5B7A10
-.incbin "assets/image/bank_1/45/block.bin"
-
-.balign 2
-glabel bank_1_index_46_image # 0x5B7C10
-.incbin "assets/image/bank_1/46/block.bin"
-
-.balign 2
-glabel bank_1_index_47_image # 0x5B7C90
-.incbin "assets/image/bank_1/47/block.bin"
-
-.balign 2
-glabel bank_1_index_48_image # 0x5B7E90
-.incbin "assets/image/bank_1/48/block.bin"
-
-.balign 2
-glabel bank_1_index_49_image # 0x5B7F90
-.incbin "assets/image/bank_1/49/block.bin"
-
-.balign 2
-glabel bank_1_index_50_image # 0x5B8090
-.incbin "assets/image/bank_1/50/block.bin"
-
-.balign 2
-glabel bank_1_index_51_image # 0x5B8110
-.incbin "assets/image/bank_1/51/block.bin"
-
-.balign 2
-glabel bank_1_index_52_image # 0x5B8190
-.incbin "assets/image/bank_1/52/block.bin"
-
-.balign 2
-glabel bank_1_index_53_image # 0x5B81B0
-.incbin "assets/image/bank_1/53/block.bin"
-
-.balign 2
-glabel bank_1_index_54_image # 0x5B81F0
-.incbin "assets/image/bank_1/54/block.bin"
-
-.balign 2
-glabel bank_1_index_55_image # 0x5B8270
-.incbin "assets/image/bank_1/55/block.bin"
-
-.balign 2
-glabel bank_1_index_56_image # 0x5B8470
-.incbin "assets/image/bank_1/56/block.bin"
-
-.balign 2
-glabel bank_1_index_57_image # 0x5B84F0
-.incbin "assets/image/bank_1/57/block.bin"
-
-.balign 2
-glabel bank_1_index_58_image # 0x5B8570
-.incbin "assets/image/bank_1/58/block.bin"
-
-.balign 2
-glabel bank_1_index_59_image # 0x5B8590
-.incbin "assets/image/bank_1/59/block.bin"
-
-.balign 2
-glabel bank_1_index_60_image # 0x5B8790
-.incbin "assets/image/bank_1/60/block.bin"
-
-.balign 2
-glabel bank_1_index_61_image # 0x5B87B0
-.incbin "assets/image/bank_1/61/block.bin"
-
-.balign 2
-glabel bank_1_index_62_image # 0x5B88B0
-.incbin "assets/image/bank_1/62/block.bin"
-
-.balign 2
-glabel bank_1_index_63_image # 0x5B8930
-.incbin "assets/image/bank_1/63/block.bin"
-
-.balign 2
-glabel bank_1_index_64_image # 0x5B8B30
-.incbin "assets/image/bank_1/64/block.bin"
-
-.balign 2
-glabel bank_1_index_65_image # 0x5B8B50
-.incbin "assets/image/bank_1/65/block.bin"
-
-.balign 2
-glabel bank_1_index_66_image # 0x5B8C50
-.incbin "assets/image/bank_1/66/block.bin"
-
-.balign 2
-glabel bank_1_index_67_image # 0x5B8E50
-.incbin "assets/image/bank_1/67/block.bin"
-
-.balign 2
-glabel bank_1_index_68_image # 0x5B8ED0
-.incbin "assets/image/bank_1/68/block.bin"
-
-.balign 2
-glabel bank_1_index_69_image # 0x5B8F50
-.incbin "assets/image/bank_1/69/block.bin"
-
-.balign 2
-glabel bank_1_index_70_image # 0x5B9150
-.incbin "assets/image/bank_1/70/block.bin"
-
-.balign 2
-glabel bank_1_index_71_image # 0x5B91D0
-.incbin "assets/image/bank_1/71/block.bin"
-
-.balign 2
-glabel bank_1_index_72_image # 0x5B93D0
-.incbin "assets/image/bank_1/72/block.bin"
-
-.balign 2
-glabel bank_1_index_73_image # 0x5B93F0
-.incbin "assets/image/bank_1/73/block.bin"
-
-.balign 2
-glabel bank_1_index_74_image # 0x5B95F0
-.incbin "assets/image/bank_1/74/block.bin"
-
-.balign 2
-glabel bank_1_index_75_image # 0x5B96F0
-.incbin "assets/image/bank_1/75/block.bin"
-
-.balign 2
-glabel bank_1_index_76_image # 0x5B9710
-.incbin "assets/image/bank_1/76/block.bin"
-
-.balign 2
-glabel bank_1_index_77_image # 0x5B9810
-.incbin "assets/image/bank_1/77/block.bin"
-
-.balign 2
-glabel bank_1_index_78_image # 0x5B9910
-.incbin "assets/image/bank_1/78/block.bin"
-
-.balign 2
-glabel bank_1_index_79_image # 0x5B9990
-.incbin "assets/image/bank_1/79/block.bin"
-
-.balign 2
-glabel bank_1_index_80_image # 0x5B9A10
-.incbin "assets/image/bank_1/80/block.bin"
-
-.balign 2
-glabel bank_1_index_81_image # 0x5B9A90
-.incbin "assets/image/bank_1/81/block.bin"
-
-.balign 2
-glabel bank_1_index_82_image # 0x5B9AD0
-.incbin "assets/image/bank_1/82/block.bin"
-
-.balign 2
-glabel bank_1_index_83_image # 0x5B9B50
-.incbin "assets/image/bank_1/83/block.bin"
-
-.balign 2
-glabel bank_1_index_84_image # 0x5B9BD0
-.incbin "assets/image/bank_1/84/block.bin"
-
-.balign 2
-glabel bank_1_index_85_image # 0x5B9C10
-.incbin "assets/image/bank_1/85/block.bin"
-
-.balign 2
-glabel bank_1_index_86_image # 0x5B9C50
-.incbin "assets/image/bank_1/86/block.bin"
-
-.balign 2
-glabel bank_1_index_87_image # 0x5B9D50
-.incbin "assets/image/bank_1/87/block.bin"
-
-.balign 2
-glabel bank_1_index_88_image # 0x5B9F50
-.incbin "assets/image/bank_1/88/block.bin"
-
-.balign 2
-glabel bank_1_index_89_image # 0x5BA150
-.incbin "assets/image/bank_1/89/block.bin"
-
-.balign 2
-glabel bank_1_index_90_image # 0x5BA1D0
-.incbin "assets/image/bank_1/90/block.bin"
-
-.balign 2
-glabel bank_1_index_91_image # 0x5BA250
-.incbin "assets/image/bank_1/91/block.bin"
-
-.balign 2
-glabel bank_1_index_92_image # 0x5BA2D0
-.incbin "assets/image/bank_1/92/block.bin"
-
-.balign 2
-glabel bank_1_index_93_image # 0x5BA350
-.incbin "assets/image/bank_1/93/block.bin"
-
-.balign 2
-glabel bank_1_index_94_image # 0x5BA3D0
-.incbin "assets/image/bank_1/94/block.bin"
-
-.balign 2
-glabel bank_1_index_95_image # 0x5BA4D0
-.incbin "assets/image/bank_1/95/block.bin"
-
-.balign 2
-glabel bank_1_index_96_image # 0x5BA550
-.incbin "assets/image/bank_1/96/block.bin"
-
-.balign 2
-glabel bank_1_index_97_image # 0x5BA5D0
-.incbin "assets/image/bank_1/97/block.bin"
-
-.balign 2
-glabel bank_1_index_98_image # 0x5BB5D0
-.incbin "assets/image/bank_1/98/block.bin"
-
-.balign 2
-glabel bank_1_index_99_image # 0x5BB650
-.incbin "assets/image/bank_1/99/block.bin"
-
-.balign 2
-glabel bank_1_index_100_image # 0x5BBA50
-.incbin "assets/image/bank_1/100/block.bin"
-
-.balign 2
-glabel bank_1_index_101_image # 0x5BBA90
-.incbin "assets/image/bank_1/101/block.bin"
-
-.balign 2
-glabel bank_1_index_102_image # 0x5BBAD0
-.incbin "assets/image/bank_1/102/block.bin"
-
-.balign 2
-glabel bank_1_index_103_image # 0x5BCAD0
-.incbin "assets/image/bank_1/103/block.bin"
-
-.balign 2
-glabel bank_1_index_104_image # 0x5BCBD0
-.incbin "assets/image/bank_1/104/block.bin"
-
-.balign 2
-glabel bank_1_index_105_image # 0x5BCDD0
-.incbin "assets/image/bank_1/105/block.bin"
-
-.balign 2
-glabel bank_1_index_106_image # 0x5BCFD0
-.incbin "assets/image/bank_1/106/block.bin"
-
-.balign 2
-glabel bank_1_index_107_image # 0x5BD050
-.incbin "assets/image/bank_1/107/block.bin"
-
-.balign 2
-glabel bank_1_index_108_image # 0x5BD0D0
-.incbin "assets/image/bank_1/108/block.bin"
-
-.balign 2
-glabel bank_1_index_109_image # 0x5BD110
-.incbin "assets/image/bank_1/109/block.bin"
-
-.balign 2
-glabel bank_1_index_110_image # 0x5BD210
-.incbin "assets/image/bank_1/110/block.bin"
-
-.balign 2
-glabel bank_1_index_111_image # 0x5BD290
-.incbin "assets/image/bank_1/111/block.bin"
-
-.balign 2
-glabel bank_1_index_112_image # 0x5BD310
-.incbin "assets/image/bank_1/112/block.bin"
-
-.balign 2
-glabel bank_1_index_113_image # 0x5BD390
-.incbin "assets/image/bank_1/113/block.bin"
-
-.balign 2
-glabel bank_1_index_114_image # 0x5BD410
-.incbin "assets/image/bank_1/114/block.bin"
-
-.balign 2
-glabel bank_1_index_115_image # 0x5BD490
-.incbin "assets/image/bank_1/115/block.bin"
-
-.balign 2
-glabel bank_1_index_116_image # 0x5BD510
-.incbin "assets/image/bank_1/116/block.bin"
-
-.balign 2
-glabel bank_1_index_117_image # 0x5BD590
-.incbin "assets/image/bank_1/117/block.bin"
-
-.balign 2
-glabel bank_1_index_118_image # 0x5BD610
-.incbin "assets/image/bank_1/118/block.bin"
-
-.balign 2
-glabel bank_1_index_119_image # 0x5BD810
-.incbin "assets/image/bank_1/119/block.bin"
-
-.balign 2
-glabel bank_1_index_120_image # 0x5BD830
-.incbin "assets/image/bank_1/120/block.bin"
-
-.balign 2
-glabel bank_1_index_121_image # 0x5BD8B0
-.incbin "assets/image/bank_1/121/block.bin"
-
-.balign 2
-glabel bank_1_index_122_image # 0x5BD9B0
-.incbin "assets/image/bank_1/122/block.bin"
-
-.balign 2
-glabel bank_1_index_123_image # 0x5BD9D0
-.incbin "assets/image/bank_1/123/block.bin"
-
-.balign 2
-glabel bank_1_index_124_image # 0x5BDA50
-.incbin "assets/image/bank_1/124/block.bin"
-
-.balign 2
-glabel bank_1_index_125_image # 0x5BDAD0
-.incbin "assets/image/bank_1/125/block.bin"
-
-.balign 2
-glabel bank_1_index_126_image # 0x5BDB50
-.incbin "assets/image/bank_1/126/block.bin"
-
-.balign 2
-glabel bank_1_index_127_image # 0x5BDD50
-.incbin "assets/image/bank_1/127/block.bin"
-
-.balign 2
-glabel bank_1_index_128_image # 0x5BDDD0
-.incbin "assets/image/bank_1/128/block.bin"
-
-.balign 2
-glabel bank_1_index_129_image # 0x5BDED0
-.incbin "assets/image/bank_1/129/block.bin"
-
-.balign 2
-glabel bank_1_index_130_image # 0x5BDEE0
-.incbin "assets/image/bank_1/130/block.bin"
-
-.balign 2
-glabel bank_1_index_131_image # 0x5BE0E0
-.incbin "assets/image/bank_1/131/block.bin"
-
-.balign 2
-glabel bank_1_index_132_image # 0x5BE100
-.incbin "assets/image/bank_1/132/block.bin"
-
-.balign 2
-glabel bank_1_index_133_image # 0x5BE300
-.incbin "assets/image/bank_1/133/block.bin"
-
-.balign 2
-glabel bank_1_index_134_image # 0x5BE400
-.incbin "assets/image/bank_1/134/block.bin"
-
-.balign 2
-glabel bank_1_index_135_image # 0x5BE420
-.incbin "assets/image/bank_1/135/block.bin"
-
-.balign 2
-glabel bank_1_index_136_image # 0x5BE4A0
-.incbin "assets/image/bank_1/136/block.bin"
-
-.balign 2
-glabel bank_1_index_137_image # 0x5BE4C0
-.incbin "assets/image/bank_1/137/block.bin"
-
-.balign 2
-glabel bank_1_index_138_image # 0x5BE5C0
-.incbin "assets/image/bank_1/138/block.bin"
-
-.balign 2
-glabel bank_1_index_139_image # 0x5BE5E0
-.incbin "assets/image/bank_1/139/block.bin"
-
-.balign 2
-glabel bank_1_index_140_image # 0x5BE660
-.incbin "assets/image/bank_1/140/block.bin"
-
-.balign 2
-glabel bank_1_index_141_image # 0x5BE6E0
-.incbin "assets/image/bank_1/141/block.bin"
-
-.balign 2
-glabel bank_1_index_142_image # 0x5BE8E0
-.incbin "assets/image/bank_1/142/block.bin"
-
-.balign 2
-glabel bank_1_index_143_image # 0x5BEAE0
-.incbin "assets/image/bank_1/143/block.bin"
-
-.balign 2
-glabel bank_1_index_144_image # 0x5BEB60
-.incbin "assets/image/bank_1/144/block.bin"
-
-.balign 2
-glabel bank_1_index_145_image # 0x5BED60
-.incbin "assets/image/bank_1/145/block.bin"
-
-.balign 2
-glabel bank_1_index_146_image # 0x5BEF60
-.incbin "assets/image/bank_1/146/block.bin"
-
-.balign 2
-glabel bank_1_index_147_image # 0x5BEFE0
-.incbin "assets/image/bank_1/147/block.bin"
-
-.balign 2
-glabel bank_1_index_148_image # 0x5BF060
-.incbin "assets/image/bank_1/148/block.bin"
-
-.balign 2
-glabel bank_1_index_149_image # 0x5BF080
-.incbin "assets/image/bank_1/149/block.bin"
-
-.balign 2
-glabel bank_1_index_150_image # 0x5BF200
-.incbin "assets/image/bank_1/150/block.bin"
-
-.balign 2
-glabel bank_1_index_151_image # 0x5BF220
-.incbin "assets/image/bank_1/151/block.bin"
-
-.balign 2
-glabel bank_1_index_152_image # 0x5BF2A0
-.incbin "assets/image/bank_1/152/block.bin"
-
-.balign 2
-glabel bank_1_index_153_image # 0x5BF2C0
-.incbin "assets/image/bank_1/153/block.bin"
-
-.balign 2
-glabel bank_1_index_154_image # 0x5BF340
-.incbin "assets/image/bank_1/154/block.bin"
-
-.balign 2
-glabel bank_1_index_155_image # 0x5BF360
-.incbin "assets/image/bank_1/155/block.bin"
-
-.balign 2
-glabel bank_1_index_156_image # 0x5BF3E0
-.incbin "assets/image/bank_1/156/block.bin"
-
-.balign 2
-glabel bank_1_index_157_image # 0x5BF400
-.incbin "assets/image/bank_1/157/block.bin"
-
-.balign 2
-glabel bank_1_index_158_image # 0x5BF580
-.incbin "assets/image/bank_1/158/block.bin"
-
-.balign 2
-glabel bank_1_index_159_image # 0x5BF5A0
-.incbin "assets/image/bank_1/159/block.bin"
-
-.balign 2
-glabel bank_1_index_160_image # 0x5BF620
-.incbin "assets/image/bank_1/160/block.bin"
-
-.balign 2
-glabel bank_1_index_161_image # 0x5BF640
-.incbin "assets/image/bank_1/161/block.bin"
-
-.balign 2
-glabel bank_1_index_162_image # 0x5BF6C0
-.incbin "assets/image/bank_1/162/block.bin"
-
-.balign 2
-glabel bank_1_index_163_image # 0x5BF6E0
-.incbin "assets/image/bank_1/163/block.bin"
-
-.balign 2
-glabel bank_1_index_164_image # 0x5BF8E0
-.incbin "assets/image/bank_1/164/block.bin"
-
-.balign 2
-glabel bank_1_index_165_image # 0x5BFAE0
-.incbin "assets/image/bank_1/165/block.bin"
-
-.balign 2
-glabel bank_1_index_166_image # 0x5BFCE0
-.incbin "assets/image/bank_1/166/block.bin"
-
-.balign 2
-glabel bank_1_index_167_image # 0x5BFD60
-.incbin "assets/image/bank_1/167/block.bin"
-
-.balign 2
-glabel bank_1_index_168_image # 0x5BFDE0
-.incbin "assets/image/bank_1/168/block.bin"
-
-.balign 2
-glabel bank_1_index_169_image # 0x5BFE60
-.incbin "assets/image/bank_1/169/block.bin"
-
-.balign 2
-glabel bank_1_index_170_image # 0x5BFE80
-.incbin "assets/image/bank_1/170/block.bin"
-
-.balign 2
-glabel bank_1_index_171_image # 0x5BFF00
-.incbin "assets/image/bank_1/171/block.bin"
-
-.balign 2
-glabel bank_1_index_172_image # 0x5C0100
-.incbin "assets/image/bank_1/172/block.bin"
-
-.balign 2
-glabel bank_1_index_173_image # 0x5C0300
-.incbin "assets/image/bank_1/173/block.bin"
-
-.balign 2
-glabel bank_1_index_174_image # 0x5C0380
-.incbin "assets/image/bank_1/174/block.bin"
-
-.balign 2
-glabel bank_1_index_175_image # 0x5C0400
-.incbin "assets/image/bank_1/175/block.bin"
-
-.balign 2
-glabel bank_1_index_176_image # 0x5C0500
-.incbin "assets/image/bank_1/176/block.bin"
-
-.balign 2
-glabel bank_1_index_177_image # 0x5C0700
-.incbin "assets/image/bank_1/177/block.bin"
-
-.balign 2
-glabel bank_1_index_178_image # 0x5C0720
-.incbin "assets/image/bank_1/178/block.bin"
-
-.balign 2
-glabel bank_1_index_179_image # 0x5C0920
-.incbin "assets/image/bank_1/179/block.bin"
-
-.balign 2
-glabel bank_1_index_180_image # 0x5C0940
-.incbin "assets/image/bank_1/180/block.bin"
-
-.balign 2
-glabel bank_1_index_181_image # 0x5C0D40
-.incbin "assets/image/bank_1/181/block.bin"
-
-.balign 2
-glabel bank_1_index_182_image # 0x5C0F40
-.incbin "assets/image/bank_1/182/block.bin"
-
-.balign 2
-glabel bank_1_index_183_image # 0x5C1040
-.incbin "assets/image/bank_1/183/block.bin"
-
-.balign 2
-glabel bank_1_index_184_image # 0x5C1240
-.incbin "assets/image/bank_1/184/block.bin"
-
-.balign 2
-glabel bank_1_index_185_image # 0x5C12C0
-.incbin "assets/image/bank_1/185/block.bin"
-
-.balign 2
-glabel bank_1_index_186_image # 0x5C16C0
-.incbin "assets/image/bank_1/186/block.bin"
-
-.balign 2
-glabel bank_1_index_187_image # 0x5C1AC0
-.incbin "assets/image/bank_1/187/block.bin"
-
-.balign 2
-glabel bank_1_index_188_image # 0x5C1EC0
-.incbin "assets/image/bank_1/188/block.bin"
-
-.balign 2
-glabel bank_1_index_189_image # 0x5C22C0
-.incbin "assets/image/bank_1/189/block.bin"
-
-.balign 2
-glabel bank_1_index_190_image # 0x5C26C0
-.incbin "assets/image/bank_1/190/block.bin"
-
-.balign 2
-glabel bank_1_index_191_image # 0x5C2AC0
-.incbin "assets/image/bank_1/191/block.bin"
-
-.balign 2
-glabel bank_1_index_192_image # 0x5C2EC0
-.incbin "assets/image/bank_1/192/block.bin"
-
-.balign 2
-glabel bank_1_index_193_image # 0x5C32C0
-.incbin "assets/image/bank_1/193/block.bin"
-
-.balign 2
-glabel bank_1_index_194_image # 0x5C36C0
-.incbin "assets/image/bank_1/194/block.bin"
-
-.balign 2
-glabel bank_1_index_195_image # 0x5C3AC0
-.incbin "assets/image/bank_1/195/block.bin"
-
-.balign 2
-glabel bank_1_index_196_image # 0x5C3EC0
-.incbin "assets/image/bank_1/196/block.bin"
-
-.balign 2
-glabel bank_1_index_197_image # 0x5C40C0
-.incbin "assets/image/bank_1/197/block.bin"
-
-.balign 2
-glabel bank_1_index_198_image # 0x5C44C0
-.incbin "assets/image/bank_1/198/block.bin"
-
-.balign 2
-glabel bank_1_index_199_image # 0x5C46C0
-.incbin "assets/image/bank_1/199/block.bin"
-
-.balign 2
-glabel bank_1_index_200_image # 0x5C46E0
-.incbin "assets/image/bank_1/200/block.bin"
-
-.balign 2
-glabel bank_1_index_201_image # 0x5C4760
-.incbin "assets/image/bank_1/201/block.bin"
-
-.balign 2
-glabel bank_1_index_202_image # 0x5C4780
-.incbin "assets/image/bank_1/202/block.bin"
-
-.balign 2
-glabel bank_1_index_203_image # 0x5C4800
-.incbin "assets/image/bank_1/203/block.bin"
-
-.balign 2
-glabel bank_1_index_204_image # 0x5C4880
-.incbin "assets/image/bank_1/204/block.bin"
-
-.balign 2
-glabel bank_1_index_205_image # 0x5C48A0
-.incbin "assets/image/bank_1/205/block.bin"
-
-.balign 2
-glabel bank_1_index_206_image # 0x5C4AE0
-.incbin "assets/image/bank_1/206/block.bin"
-
-.balign 2
-glabel bank_1_index_207_image # 0x5C4B00
-.incbin "assets/image/bank_1/207/block.bin"
-
-.balign 2
-glabel bank_1_index_208_image # 0x5C4B80
-.incbin "assets/image/bank_1/208/block.bin"
-
-.balign 2
-glabel bank_1_index_209_image # 0x5C4BC0
-.incbin "assets/image/bank_1/209/block.bin"
-
-.balign 2
-glabel bank_1_index_210_image # 0x5C4DC0
-.incbin "assets/image/bank_1/210/block.bin"
-
-.balign 2
-glabel bank_1_index_211_image # 0x5C51C0
-.incbin "assets/image/bank_1/211/block.bin"
-
-.balign 2
-glabel bank_1_index_212_image # 0x5C5200
-.incbin "assets/image/bank_1/212/block.bin"
-
-.balign 2
-glabel bank_1_index_213_image # 0x5C5240
-.incbin "assets/image/bank_1/213/block.bin"
-
-.balign 2
-glabel bank_1_index_214_image # 0x5C5640
-.incbin "assets/image/bank_1/214/block.bin"
-
-.balign 2
-glabel bank_1_index_215_image # 0x5C5A40
-.incbin "assets/image/bank_1/215/block.bin"
-
-.balign 2
-glabel bank_1_index_216_image # 0x5C6240
-.incbin "assets/image/bank_1/216/block.bin"
-
-.balign 2
-glabel bank_1_index_217_image # 0x5C6260
-.incbin "assets/image/bank_1/217/block.bin"
-
-.balign 2
-glabel bank_1_index_218_image # 0x5C6A60
-.incbin "assets/image/bank_1/218/block.bin"
-
-.balign 2
-glabel bank_1_index_219_image # 0x5C6C60
-.incbin "assets/image/bank_1/219/block.bin"
-
-.balign 2
-glabel bank_1_index_220_image # 0x5C6C80
-.incbin "assets/image/bank_1/220/block.bin"
-
-.balign 2
-glabel bank_1_index_221_image # 0x5C6E80
-.incbin "assets/image/bank_1/221/block.bin"
-
-.balign 2
-glabel bank_1_index_222_image # 0x5C6F00
-.incbin "assets/image/bank_1/222/block.bin"
-
-.balign 2
-glabel bank_1_index_223_image # 0x5C6F80
-.incbin "assets/image/bank_1/223/block.bin"
-
-.balign 2
-glabel bank_1_index_224_image # 0x5C6FC0
-.incbin "assets/image/bank_1/224/block.bin"
-
-.balign 2
-glabel bank_1_index_225_image # 0x5C7040
-.incbin "assets/image/bank_1/225/block.bin"
-
-.balign 2
-glabel bank_1_index_226_image # 0x5C7080
-.incbin "assets/image/bank_1/226/block.bin"
-
-.balign 2
-glabel bank_1_index_227_image # 0x5C7100
-.incbin "assets/image/bank_1/227/block.bin"
-
-.balign 2
-glabel bank_1_index_228_image # 0x5C7120
-.incbin "assets/image/bank_1/228/block.bin"
-
-.balign 2
-glabel bank_1_index_229_image # 0x5C71A0
-.incbin "assets/image/bank_1/229/block.bin"
-
-.balign 2
-glabel bank_1_index_230_image # 0x5C72A0
-.incbin "assets/image/bank_1/230/block.bin"
-
-.balign 2
-glabel bank_1_index_231_image # 0x5C73A0
-.incbin "assets/image/bank_1/231/block.bin"
-
-.balign 2
-glabel bank_1_index_232_image # 0x5C7420
-.incbin "assets/image/bank_1/232/block.bin"
-
-.balign 2
-glabel bank_1_index_233_image # 0x5C74A0
-.incbin "assets/image/bank_1/233/block.bin"
-
-.balign 2
-glabel bank_1_index_234_image # 0x5C76A0
-.incbin "assets/image/bank_1/234/block.bin"
-
-.balign 2
-glabel bank_1_index_235_image # 0x5C7720
-.incbin "assets/image/bank_1/235/block.bin"
-
-.balign 2
-glabel bank_1_index_236_image # 0x5C7760
-.incbin "assets/image/bank_1/236/block.bin"
-
-.balign 2
-glabel bank_1_index_237_image # 0x5C77E0
-.incbin "assets/image/bank_1/237/block.bin"
-
-.balign 2
-glabel bank_1_index_238_image # 0x5C78E0
-.incbin "assets/image/bank_1/238/block.bin"
-
-.balign 2
-glabel bank_1_index_239_image # 0x5C7960
-.incbin "assets/image/bank_1/239/block.bin"
-
-.balign 2
-glabel bank_1_index_240_image # 0x5C79E0
-.incbin "assets/image/bank_1/240/block.bin"
-
-.balign 2
-glabel bank_1_index_241_image # 0x5C7A60
-.incbin "assets/image/bank_1/241/block.bin"
-
-.balign 2
-glabel bank_1_index_242_image # 0x5C7B60
-.incbin "assets/image/bank_1/242/block.bin"
-
-.balign 2
-glabel bank_1_index_243_image # 0x5C7BE0
-.incbin "assets/image/bank_1/243/block.bin"
-
-.balign 2
-glabel bank_1_index_244_image # 0x5C7C60
-.incbin "assets/image/bank_1/244/block.bin"
+# .balign 2
+# glabel bank_1_index_244_image # 0x5C7C60
+# .incbin "assets/image/bank_1/244/block.bin"
 
-.balign 2
-glabel bank_1_index_245_image # 0x5C7CE0
-.incbin "assets/image/bank_1/245/block.bin"
+# .balign 2
+# glabel bank_1_index_245_image # 0x5C7CE0
+# .incbin "assets/image/bank_1/245/block.bin"
 
-.balign 2
-glabel bank_1_index_246_image # 0x5C7D60
-.incbin "assets/image/bank_1/246/block.bin"
+# .balign 2
+# glabel bank_1_index_246_image # 0x5C7D60
+# .incbin "assets/image/bank_1/246/block.bin"
 
-.balign 2
-glabel bank_1_index_247_image # 0x5C7E60
-.incbin "assets/image/bank_1/247/block.bin"
+# .balign 2
+# glabel bank_1_index_247_image # 0x5C7E60
+# .incbin "assets/image/bank_1/247/block.bin"
 
-.balign 2
-glabel bank_1_index_248_image # 0x5C7EE0
-.incbin "assets/image/bank_1/248/block.bin"
+# .balign 2
+# glabel bank_1_index_248_image # 0x5C7EE0
+# .incbin "assets/image/bank_1/248/block.bin"
 
-.balign 2
-glabel bank_1_index_249_image # 0x5C80E0
-.incbin "assets/image/bank_1/249/block.bin"
+# .balign 2
+# glabel bank_1_index_249_image # 0x5C80E0
+# .incbin "assets/image/bank_1/249/block.bin"
 
-.balign 2
-glabel bank_1_index_250_image # 0x5C8160
-.incbin "assets/image/bank_1/250/block.bin"
+# .balign 2
+# glabel bank_1_index_250_image # 0x5C8160
+# .incbin "assets/image/bank_1/250/block.bin"
 
-.balign 2
-glabel bank_1_index_251_image # 0x5C8560
-.incbin "assets/image/bank_1/251/block.bin"
+# .balign 2
+# glabel bank_1_index_251_image # 0x5C8560
+# .incbin "assets/image/bank_1/251/block.bin"
 
-.balign 2
-glabel bank_1_index_252_image # 0x5C85E0
-.incbin "assets/image/bank_1/252/block.bin"
+# .balign 2
+# glabel bank_1_index_252_image # 0x5C85E0
+# .incbin "assets/image/bank_1/252/block.bin"
 
-.balign 2
-glabel bank_1_index_253_image # 0x5C87E0
-.incbin "assets/image/bank_1/253/block.bin"
+# .balign 2
+# glabel bank_1_index_253_image # 0x5C87E0
+# .incbin "assets/image/bank_1/253/block.bin"
 
-.balign 2
-glabel bank_1_index_254_image # 0x5C88E0
-.incbin "assets/image/bank_1/254/block.bin"
+# .balign 2
+# glabel bank_1_index_254_image # 0x5C88E0
+# .incbin "assets/image/bank_1/254/block.bin"
 
-.balign 2
-glabel bank_1_index_255_image # 0x5C8960
-.incbin "assets/image/bank_1/255/block.bin"
+# .balign 2
+# glabel bank_1_index_255_image # 0x5C8960
+# .incbin "assets/image/bank_1/255/block.bin"
 
-.balign 2
-glabel bank_1_index_256_image # 0x5C8A60
-.incbin "assets/image/bank_1/256/block.bin"
+# .balign 2
+# glabel bank_1_index_256_image # 0x5C8A60
+# .incbin "assets/image/bank_1/256/block.bin"
 
-.balign 2
-glabel bank_1_index_257_image # 0x5C8B60
-.incbin "assets/image/bank_1/257/block.bin"
+# .balign 2
+# glabel bank_1_index_257_image # 0x5C8B60
+# .incbin "assets/image/bank_1/257/block.bin"
 
-.balign 2
-glabel bank_1_index_258_image # 0x5C8C60
-.incbin "assets/image/bank_1/258/block.bin"
+# .balign 2
+# glabel bank_1_index_258_image # 0x5C8C60
+# .incbin "assets/image/bank_1/258/block.bin"
 
-.balign 2
-glabel bank_1_index_259_image # 0x5C8D60
-.incbin "assets/image/bank_1/259/block.bin"
+# .balign 2
+# glabel bank_1_index_259_image # 0x5C8D60
+# .incbin "assets/image/bank_1/259/block.bin"
 
-.balign 2
-glabel bank_1_index_260_image # 0x5C8E60
-.incbin "assets/image/bank_1/260/block.bin"
+# .balign 2
+# glabel bank_1_index_260_image # 0x5C8E60
+# .incbin "assets/image/bank_1/260/block.bin"
 
-.balign 2
-glabel bank_1_index_261_image # 0x5C8F60
-.incbin "assets/image/bank_1/261/block.bin"
+# .balign 2
+# glabel bank_1_index_261_image # 0x5C8F60
+# .incbin "assets/image/bank_1/261/block.bin"
 
-.balign 2
-glabel bank_1_index_262_image # 0x5C9160
-.incbin "assets/image/bank_1/262/block.bin"
+# .balign 2
+# glabel bank_1_index_262_image # 0x5C9160
+# .incbin "assets/image/bank_1/262/block.bin"
 
-.balign 2
-glabel bank_1_index_263_image # 0x5C9178
-.incbin "assets/image/bank_1/263/block.bin"
+# .balign 2
+# glabel bank_1_index_263_image # 0x5C9178
+# .incbin "assets/image/bank_1/263/block.bin"
 
-.balign 2
-glabel bank_1_index_264_image # 0x5C9578
-.incbin "assets/image/bank_1/264/block.bin"
+# .balign 2
+# glabel bank_1_index_264_image # 0x5C9578
+# .incbin "assets/image/bank_1/264/block.bin"
 
-.balign 2
-glabel bank_1_index_265_image # 0x5C95F8
-.incbin "assets/image/bank_1/265/block.bin"
+# .balign 2
+# glabel bank_1_index_265_image # 0x5C95F8
+# .incbin "assets/image/bank_1/265/block.bin"
 
-.balign 2
-glabel bank_1_index_266_image # 0x5C97F8
-.incbin "assets/image/bank_1/266/block.bin"
+# .balign 2
+# glabel bank_1_index_266_image # 0x5C97F8
+# .incbin "assets/image/bank_1/266/block.bin"
 
-.balign 2
-glabel bank_1_index_267_image # 0x5C98F8
-.incbin "assets/image/bank_1/267/block.bin"
+# .balign 2
+# glabel bank_1_index_267_image # 0x5C98F8
+# .incbin "assets/image/bank_1/267/block.bin"
 
-.balign 2
-glabel bank_1_index_268_image # 0x5C9918
-.incbin "assets/image/bank_1/268/block.bin"
+# .balign 2
+# glabel bank_1_index_268_image # 0x5C9918
+# .incbin "assets/image/bank_1/268/block.bin"
 
-.balign 2
-glabel bank_1_index_269_image # 0x5C9998
-.incbin "assets/image/bank_1/269/block.bin"
+# .balign 2
+# glabel bank_1_index_269_image # 0x5C9998
+# .incbin "assets/image/bank_1/269/block.bin"
 
-.balign 2
-glabel bank_1_index_270_image # 0x5C99B8
-.incbin "assets/image/bank_1/270/block.bin"
+# .balign 2
+# glabel bank_1_index_270_image # 0x5C99B8
+# .incbin "assets/image/bank_1/270/block.bin"
 
-.balign 2
-glabel bank_1_index_271_image # 0x5C9AB8
-.incbin "assets/image/bank_1/271/block.bin"
+# .balign 2
+# glabel bank_1_index_271_image # 0x5C9AB8
+# .incbin "assets/image/bank_1/271/block.bin"
 
-.balign 2
-glabel bank_1_index_272_image # 0x5C9BB8
-.incbin "assets/image/bank_1/272/block.bin"
+# .balign 2
+# glabel bank_1_index_272_image # 0x5C9BB8
+# .incbin "assets/image/bank_1/272/block.bin"
 
-.balign 2
-glabel bank_1_index_273_image # 0x5C9DB8
-.incbin "assets/image/bank_1/273/block.bin"
+# .balign 2
+# glabel bank_1_index_273_image # 0x5C9DB8
+# .incbin "assets/image/bank_1/273/block.bin"
 
-.balign 2
-glabel bank_1_index_274_image # 0x5C9DD8
-.incbin "assets/image/bank_1/274/block.bin"
+# .balign 2
+# glabel bank_1_index_274_image # 0x5C9DD8
+# .incbin "assets/image/bank_1/274/block.bin"
 
-.balign 2
-glabel bank_1_index_275_image # 0x5C9FD8
-.incbin "assets/image/bank_1/275/block.bin"
+# .balign 2
+# glabel bank_1_index_275_image # 0x5C9FD8
+# .incbin "assets/image/bank_1/275/block.bin"
 
-.balign 2
-glabel bank_1_index_276_image # 0x5CA0D8
-.incbin "assets/image/bank_1/276/block.bin"
+# .balign 2
+# glabel bank_1_index_276_image # 0x5CA0D8
+# .incbin "assets/image/bank_1/276/block.bin"
 
-.balign 2
-glabel bank_1_index_277_image # 0x5CA0F8
-.incbin "assets/image/bank_1/277/block.bin"
+# .balign 2
+# glabel bank_1_index_277_image # 0x5CA0F8
+# .incbin "assets/image/bank_1/277/block.bin"
 
-.balign 2
-glabel bank_1_index_278_image # 0x5CA138
-.incbin "assets/image/bank_1/278/block.bin"
+# .balign 2
+# glabel bank_1_index_278_image # 0x5CA138
+# .incbin "assets/image/bank_1/278/block.bin"
 
-.balign 2
-glabel bank_1_index_279_image # 0x5CA158
-.incbin "assets/image/bank_1/279/block.bin"
+# .balign 2
+# glabel bank_1_index_279_image # 0x5CA158
+# .incbin "assets/image/bank_1/279/block.bin"
 
-.balign 2
-glabel bank_1_index_280_image # 0x5CA198
-.incbin "assets/image/bank_1/280/block.bin"
+# .balign 2
+# glabel bank_1_index_280_image # 0x5CA198
+# .incbin "assets/image/bank_1/280/block.bin"
 
-.balign 2
-glabel bank_1_index_281_image # 0x5CA1B8
-.incbin "assets/image/bank_1/281/block.bin"
+# .balign 2
+# glabel bank_1_index_281_image # 0x5CA1B8
+# .incbin "assets/image/bank_1/281/block.bin"
 
-.balign 2
-glabel bank_1_index_282_image # 0x5CA3B8
-.incbin "assets/image/bank_1/282/block.bin"
+# .balign 2
+# glabel bank_1_index_282_image # 0x5CA3B8
+# .incbin "assets/image/bank_1/282/block.bin"
 
-.balign 2
-glabel bank_1_index_283_image # 0x5CA3D8
-.incbin "assets/image/bank_1/283/block.bin"
+# .balign 2
+# glabel bank_1_index_283_image # 0x5CA3D8
+# .incbin "assets/image/bank_1/283/block.bin"
 
-.balign 2
-glabel bank_1_index_284_image # 0x5CA418
-.incbin "assets/image/bank_1/284/block.bin"
+# .balign 2
+# glabel bank_1_index_284_image # 0x5CA418
+# .incbin "assets/image/bank_1/284/block.bin"
 
-.balign 2
-glabel bank_1_index_285_image # 0x5CA438
-.incbin "assets/image/bank_1/285/block.bin"
+# .balign 2
+# glabel bank_1_index_285_image # 0x5CA438
+# .incbin "assets/image/bank_1/285/block.bin"
 
-.balign 2
-glabel bank_1_index_286_image # 0x5CA4B8
-.incbin "assets/image/bank_1/286/block.bin"
+# .balign 2
+# glabel bank_1_index_286_image # 0x5CA4B8
+# .incbin "assets/image/bank_1/286/block.bin"
 
-.balign 2
-glabel bank_1_index_287_image # 0x5CA4D8
-.incbin "assets/image/bank_1/287/block.bin"
+# .balign 2
+# glabel bank_1_index_287_image # 0x5CA4D8
+# .incbin "assets/image/bank_1/287/block.bin"
 
-.balign 2
-glabel bank_1_index_288_image # 0x5CA558
-.incbin "assets/image/bank_1/288/block.bin"
+# .balign 2
+# glabel bank_1_index_288_image # 0x5CA558
+# .incbin "assets/image/bank_1/288/block.bin"
 
-.balign 2
-glabel bank_1_index_289_image # 0x5CA578
-.incbin "assets/image/bank_1/289/block.bin"
+# .balign 2
+# glabel bank_1_index_289_image # 0x5CA578
+# .incbin "assets/image/bank_1/289/block.bin"
 
-.balign 2
-glabel bank_1_index_290_image # 0x5CA638
-.incbin "assets/image/bank_1/290/block.bin"
+# .balign 2
+# glabel bank_1_index_290_image # 0x5CA638
+# .incbin "assets/image/bank_1/290/block.bin"
 
-.balign 2
-glabel bank_1_index_291_image # 0x5CA658
-.incbin "assets/image/bank_1/291/block.bin"
+# .balign 2
+# glabel bank_1_index_291_image # 0x5CA658
+# .incbin "assets/image/bank_1/291/block.bin"
 
-.balign 2
-glabel bank_1_index_292_image # 0x5CAA58
-.incbin "assets/image/bank_1/292/block.bin"
+# .balign 2
+# glabel bank_1_index_292_image # 0x5CAA58
+# .incbin "assets/image/bank_1/292/block.bin"
 
-.balign 2
-glabel bank_1_index_293_image # 0x5CAA78
-.incbin "assets/image/bank_1/293/block.bin"
+# .balign 2
+# glabel bank_1_index_293_image # 0x5CAA78
+# .incbin "assets/image/bank_1/293/block.bin"
 
-.balign 2
-glabel bank_1_index_294_image # 0x5CAC78
-.incbin "assets/image/bank_1/294/block.bin"
+# .balign 2
+# glabel bank_1_index_294_image # 0x5CAC78
+# .incbin "assets/image/bank_1/294/block.bin"
 
-.balign 2
-glabel bank_1_index_295_image # 0x5CAC98
-.incbin "assets/image/bank_1/295/block.bin"
+# .balign 2
+# glabel bank_1_index_295_image # 0x5CAC98
+# .incbin "assets/image/bank_1/295/block.bin"
 
-.balign 2
-glabel bank_1_index_296_image # 0x5CAD98
-.incbin "assets/image/bank_1/296/block.bin"
+# .balign 2
+# glabel bank_1_index_296_image # 0x5CAD98
+# .incbin "assets/image/bank_1/296/block.bin"
 
-.balign 2
-glabel bank_1_index_297_image # 0x5CADB8
-.incbin "assets/image/bank_1/297/block.bin"
+# .balign 2
+# glabel bank_1_index_297_image # 0x5CADB8
+# .incbin "assets/image/bank_1/297/block.bin"
 
-.balign 2
-glabel bank_1_index_298_image # 0x5CAEB8
-.incbin "assets/image/bank_1/298/block.bin"
+# .balign 2
+# glabel bank_1_index_298_image # 0x5CAEB8
+# .incbin "assets/image/bank_1/298/block.bin"
 
-.balign 2
-glabel bank_1_index_299_image # 0x5CAED8
-.incbin "assets/image/bank_1/299/block.bin"
+# .balign 2
+# glabel bank_1_index_299_image # 0x5CAED8
+# .incbin "assets/image/bank_1/299/block.bin"
 
-.balign 2
-glabel bank_1_index_300_image # 0x5CAF58
-.incbin "assets/image/bank_1/300/block.bin"
+# .balign 2
+# glabel bank_1_index_300_image # 0x5CAF58
+# .incbin "assets/image/bank_1/300/block.bin"
 
-.balign 2
-glabel bank_1_index_301_image # 0x5CAF78
-.incbin "assets/image/bank_1/301/block.bin"
+# .balign 2
+# glabel bank_1_index_301_image # 0x5CAF78
+# .incbin "assets/image/bank_1/301/block.bin"
 
-.balign 2
-glabel bank_1_index_302_image # 0x5CAFB8
-.incbin "assets/image/bank_1/302/block.bin"
+# .balign 2
+# glabel bank_1_index_302_image # 0x5CAFB8
+# .incbin "assets/image/bank_1/302/block.bin"
 
-.balign 2
-glabel bank_1_index_303_image # 0x5CB1B8
-.incbin "assets/image/bank_1/303/block.bin"
+# .balign 2
+# glabel bank_1_index_303_image # 0x5CB1B8
+# .incbin "assets/image/bank_1/303/block.bin"
 
-.balign 2
-glabel bank_1_index_304_image # 0x5CB1C8
-.incbin "assets/image/bank_1/304/block.bin"
+# .balign 2
+# glabel bank_1_index_304_image # 0x5CB1C8
+# .incbin "assets/image/bank_1/304/block.bin"
 
-.balign 2
-glabel bank_1_index_305_image # 0x5CB2C8
-.incbin "assets/image/bank_1/305/block.bin"
+# .balign 2
+# glabel bank_1_index_305_image # 0x5CB2C8
+# .incbin "assets/image/bank_1/305/block.bin"
 
-.balign 2
-glabel bank_1_index_306_image # 0x5CB4C8
-.incbin "assets/image/bank_1/306/block.bin"
+# .balign 2
+# glabel bank_1_index_306_image # 0x5CB4C8
+# .incbin "assets/image/bank_1/306/block.bin"
 
-.balign 2
-glabel bank_1_index_307_image # 0x5CB4E8
-.incbin "assets/image/bank_1/307/block.bin"
+# .balign 2
+# glabel bank_1_index_307_image # 0x5CB4E8
+# .incbin "assets/image/bank_1/307/block.bin"
 
-.balign 2
-glabel bank_1_index_308_image # 0x5CB568
-.incbin "assets/image/bank_1/308/block.bin"
+# .balign 2
+# glabel bank_1_index_308_image # 0x5CB568
+# .incbin "assets/image/bank_1/308/block.bin"
 
-.balign 2
-glabel bank_1_index_309_image # 0x5CB5E8
-.incbin "assets/image/bank_1/309/block.bin"
+# .balign 2
+# glabel bank_1_index_309_image # 0x5CB5E8
+# .incbin "assets/image/bank_1/309/block.bin"
 
-.balign 2
-glabel bank_1_index_310_image # 0x5CB6E8
-.incbin "assets/image/bank_1/310/block.bin"
+# .balign 2
+# glabel bank_1_index_310_image # 0x5CB6E8
+# .incbin "assets/image/bank_1/310/block.bin"
 
-.balign 2
-glabel bank_1_index_311_image # 0x5CB768
-.incbin "assets/image/bank_1/311/block.bin"
+# .balign 2
+# glabel bank_1_index_311_image # 0x5CB768
+# .incbin "assets/image/bank_1/311/block.bin"
 
-.balign 2
-glabel bank_1_index_312_image # 0x5CB868
-.incbin "assets/image/bank_1/312/block.bin"
+# .balign 2
+# glabel bank_1_index_312_image # 0x5CB868
+# .incbin "assets/image/bank_1/312/block.bin"
 
-.balign 2
-glabel bank_1_index_313_image # 0x5CB8E8
-.incbin "assets/image/bank_1/313/block.bin"
+# .balign 2
+# glabel bank_1_index_313_image # 0x5CB8E8
+# .incbin "assets/image/bank_1/313/block.bin"
 
-.balign 2
-glabel bank_1_index_314_image # 0x5CB968
-.incbin "assets/image/bank_1/314/block.bin"
+# .balign 2
+# glabel bank_1_index_314_image # 0x5CB968
+# .incbin "assets/image/bank_1/314/block.bin"
 
-.balign 2
-glabel bank_1_index_315_image # 0x5CBA68
-.incbin "assets/image/bank_1/315/block.bin"
+# .balign 2
+# glabel bank_1_index_315_image # 0x5CBA68
+# .incbin "assets/image/bank_1/315/block.bin"
 
-.balign 2
-glabel bank_1_index_316_image # 0x5CBAE8
-.incbin "assets/image/bank_1/316/block.bin"
+# .balign 2
+# glabel bank_1_index_316_image # 0x5CBAE8
+# .incbin "assets/image/bank_1/316/block.bin"
 
-.balign 2
-glabel bank_1_index_317_image # 0x5CBB68
-.incbin "assets/image/bank_1/317/block.bin"
+# .balign 2
+# glabel bank_1_index_317_image # 0x5CBB68
+# .incbin "assets/image/bank_1/317/block.bin"
 
-.balign 2
-glabel bank_1_index_318_image # 0x5CBBE8
-.incbin "assets/image/bank_1/318/block.bin"
+# .balign 2
+# glabel bank_1_index_318_image # 0x5CBBE8
+# .incbin "assets/image/bank_1/318/block.bin"
 
-.balign 2
-glabel bank_1_index_319_image # 0x5CBC68
-.incbin "assets/image/bank_1/319/block.bin"
+# .balign 2
+# glabel bank_1_index_319_image # 0x5CBC68
+# .incbin "assets/image/bank_1/319/block.bin"
 
-.balign 2
-glabel bank_1_index_320_image # 0x5CBCE8
-.incbin "assets/image/bank_1/320/block.bin"
+# .balign 2
+# glabel bank_1_index_320_image # 0x5CBCE8
+# .incbin "assets/image/bank_1/320/block.bin"
 
-.balign 2
-glabel bank_1_index_321_image # 0x5CBDE8
-.incbin "assets/image/bank_1/321/block.bin"
+# .balign 2
+# glabel bank_1_index_321_image # 0x5CBDE8
+# .incbin "assets/image/bank_1/321/block.bin"
 
-.balign 2
-glabel bank_1_index_322_image # 0x5CBE68
-.incbin "assets/image/bank_1/322/block.bin"
+# .balign 2
+# glabel bank_1_index_322_image # 0x5CBE68
+# .incbin "assets/image/bank_1/322/block.bin"
 
-.balign 2
-glabel bank_1_index_323_image # 0x5CBE88
-.incbin "assets/image/bank_1/323/block.bin"
+# .balign 2
+# glabel bank_1_index_323_image # 0x5CBE88
+# .incbin "assets/image/bank_1/323/block.bin"
 
-.balign 2
-glabel bank_1_index_324_image # 0x5CBF88
-.incbin "assets/image/bank_1/324/block.bin"
+# .balign 2
+# glabel bank_1_index_324_image # 0x5CBF88
+# .incbin "assets/image/bank_1/324/block.bin"
 
-.balign 2
-glabel bank_1_index_325_image # 0x5CBFA8
-.incbin "assets/image/bank_1/325/block.bin"
+# .balign 2
+# glabel bank_1_index_325_image # 0x5CBFA8
+# .incbin "assets/image/bank_1/325/block.bin"
 
-.balign 2
-glabel bank_1_index_326_image # 0x5CC0A8
-.incbin "assets/image/bank_1/326/block.bin"
+# .balign 2
+# glabel bank_1_index_326_image # 0x5CC0A8
+# .incbin "assets/image/bank_1/326/block.bin"
 
-.balign 2
-glabel bank_1_index_327_image # 0x5CC0C8
-.incbin "assets/image/bank_1/327/block.bin"
+# .balign 2
+# glabel bank_1_index_327_image # 0x5CC0C8
+# .incbin "assets/image/bank_1/327/block.bin"
 
-.balign 2
-glabel bank_1_index_328_image # 0x5CC148
-.incbin "assets/image/bank_1/328/block.bin"
+# .balign 2
+# glabel bank_1_index_328_image # 0x5CC148
+# .incbin "assets/image/bank_1/328/block.bin"
 
-.balign 2
-glabel bank_1_index_329_image # 0x5CC168
-.incbin "assets/image/bank_1/329/block.bin"
+# .balign 2
+# glabel bank_1_index_329_image # 0x5CC168
+# .incbin "assets/image/bank_1/329/block.bin"
 
-.balign 2
-glabel bank_1_index_330_image # 0x5CC568
-.incbin "assets/image/bank_1/330/block.bin"
+# .balign 2
+# glabel bank_1_index_330_image # 0x5CC568
+# .incbin "assets/image/bank_1/330/block.bin"
 
-.balign 2
-glabel bank_1_index_331_image # 0x5CC588
-.incbin "assets/image/bank_1/331/block.bin"
+# .balign 2
+# glabel bank_1_index_331_image # 0x5CC588
+# .incbin "assets/image/bank_1/331/block.bin"
 
-.balign 2
-glabel bank_1_index_332_image # 0x5CC988
-.incbin "assets/image/bank_1/332/block.bin"
+# .balign 2
+# glabel bank_1_index_332_image # 0x5CC988
+# .incbin "assets/image/bank_1/332/block.bin"
 
-.balign 2
-glabel bank_1_index_333_image # 0x5CC9A8
-.incbin "assets/image/bank_1/333/block.bin"
+# .balign 2
+# glabel bank_1_index_333_image # 0x5CC9A8
+# .incbin "assets/image/bank_1/333/block.bin"
 
-.balign 2
-glabel bank_1_index_334_image # 0x5CD1A8
-.incbin "assets/image/bank_1/334/block.bin"
+# .balign 2
+# glabel bank_1_index_334_image # 0x5CD1A8
+# .incbin "assets/image/bank_1/334/block.bin"
 
-.balign 2
-glabel bank_1_index_335_image # 0x5CD1C8
-.incbin "assets/image/bank_1/335/block.bin"
+# .balign 2
+# glabel bank_1_index_335_image # 0x5CD1C8
+# .incbin "assets/image/bank_1/335/block.bin"
 
-.balign 2
-glabel bank_1_index_336_image # 0x5CD248
-.incbin "assets/image/bank_1/336/block.bin"
+# .balign 2
+# glabel bank_1_index_336_image # 0x5CD248
+# .incbin "assets/image/bank_1/336/block.bin"
 
-.balign 2
-glabel bank_1_index_337_image # 0x5CD268
-.incbin "assets/image/bank_1/337/block.bin"
+# .balign 2
+# glabel bank_1_index_337_image # 0x5CD268
+# .incbin "assets/image/bank_1/337/block.bin"
 
-.balign 2
-glabel bank_1_index_338_image # 0x5CD468
-.incbin "assets/image/bank_1/338/block.bin"
+# .balign 2
+# glabel bank_1_index_338_image # 0x5CD468
+# .incbin "assets/image/bank_1/338/block.bin"
 
-.balign 2
-glabel bank_1_index_339_image # 0x5CD488
-.incbin "assets/image/bank_1/339/block.bin"
+# .balign 2
+# glabel bank_1_index_339_image # 0x5CD488
+# .incbin "assets/image/bank_1/339/block.bin"
 
-.balign 2
-glabel bank_1_index_340_image # 0x5CD508
-.incbin "assets/image/bank_1/340/block.bin"
+# .balign 2
+# glabel bank_1_index_340_image # 0x5CD508
+# .incbin "assets/image/bank_1/340/block.bin"
 
-.balign 2
-glabel bank_1_index_341_image # 0x5CD528
-.incbin "assets/image/bank_1/341/block.bin"
+# .balign 2
+# glabel bank_1_index_341_image # 0x5CD528
+# .incbin "assets/image/bank_1/341/block.bin"
 
-.balign 2
-glabel bank_1_index_342_image # 0x5CD5A8
-.incbin "assets/image/bank_1/342/block.bin"
+# .balign 2
+# glabel bank_1_index_342_image # 0x5CD5A8
+# .incbin "assets/image/bank_1/342/block.bin"
 
-.balign 2
-glabel bank_1_index_343_image # 0x5CD5C8
-.incbin "assets/image/bank_1/343/block.bin"
+# .balign 2
+# glabel bank_1_index_343_image # 0x5CD5C8
+# .incbin "assets/image/bank_1/343/block.bin"
 
-.balign 2
-glabel bank_1_index_344_image # 0x5CD5E8
-.incbin "assets/image/bank_1/344/block.bin"
+# .balign 2
+# glabel bank_1_index_344_image # 0x5CD5E8
+# .incbin "assets/image/bank_1/344/block.bin"
 
-.balign 2
-glabel bank_1_index_345_image # 0x5CD608
-.incbin "assets/image/bank_1/345/block.bin"
+# .balign 2
+# glabel bank_1_index_345_image # 0x5CD608
+# .incbin "assets/image/bank_1/345/block.bin"
 
-.balign 2
-glabel bank_1_index_346_image # 0x5CD628
-.incbin "assets/image/bank_1/346/block.bin"
+# .balign 2
+# glabel bank_1_index_346_image # 0x5CD628
+# .incbin "assets/image/bank_1/346/block.bin"
 
-.balign 2
-glabel bank_1_index_347_image # 0x5CD6A8
-.incbin "assets/image/bank_1/347/block.bin"
+# .balign 2
+# glabel bank_1_index_347_image # 0x5CD6A8
+# .incbin "assets/image/bank_1/347/block.bin"
 
-.balign 2
-glabel bank_1_index_348_image # 0x5CD6C8
-.incbin "assets/image/bank_1/348/block.bin"
+# .balign 2
+# glabel bank_1_index_348_image # 0x5CD6C8
+# .incbin "assets/image/bank_1/348/block.bin"
 
-.balign 2
-glabel bank_1_index_349_image # 0x5CD748
-.incbin "assets/image/bank_1/349/block.bin"
+# .balign 2
+# glabel bank_1_index_349_image # 0x5CD748
+# .incbin "assets/image/bank_1/349/block.bin"
 
-.balign 2
-glabel bank_1_index_350_image # 0x5CD7C8
-.incbin "assets/image/bank_1/350/block.bin"
+# .balign 2
+# glabel bank_1_index_350_image # 0x5CD7C8
+# .incbin "assets/image/bank_1/350/block.bin"
 
-.balign 2
-glabel bank_1_index_351_image # 0x5CD848
-.incbin "assets/image/bank_1/351/block.bin"
+# .balign 2
+# glabel bank_1_index_351_image # 0x5CD848
+# .incbin "assets/image/bank_1/351/block.bin"
 
-.balign 2
-glabel bank_1_index_352_image # 0x5CD948
-.incbin "assets/image/bank_1/352/block.bin"
+# .balign 2
+# glabel bank_1_index_352_image # 0x5CD948
+# .incbin "assets/image/bank_1/352/block.bin"
 
-.balign 2
-glabel bank_1_index_353_image # 0x5CD968
-.incbin "assets/image/bank_1/353/block.bin"
+# .balign 2
+# glabel bank_1_index_353_image # 0x5CD968
+# .incbin "assets/image/bank_1/353/block.bin"
 
-.balign 2
-glabel bank_1_index_354_image # 0x5CD988
-.incbin "assets/image/bank_1/354/block.bin"
+# .balign 2
+# glabel bank_1_index_354_image # 0x5CD988
+# .incbin "assets/image/bank_1/354/block.bin"
 
-.balign 2
-glabel bank_1_index_355_image # 0x5CD9A8
-.incbin "assets/image/bank_1/355/block.bin"
+# .balign 2
+# glabel bank_1_index_355_image # 0x5CD9A8
+# .incbin "assets/image/bank_1/355/block.bin"
 
-.balign 2
-glabel bank_1_index_356_image # 0x5CD9C8
-.incbin "assets/image/bank_1/356/block.bin"
+# .balign 2
+# glabel bank_1_index_356_image # 0x5CD9C8
+# .incbin "assets/image/bank_1/356/block.bin"
 
-.balign 2
-glabel bank_1_index_357_image # 0x5CDA08
-.incbin "assets/image/bank_1/357/block.bin"
+# .balign 2
+# glabel bank_1_index_357_image # 0x5CDA08
+# .incbin "assets/image/bank_1/357/block.bin"
 
-.balign 2
-glabel bank_1_index_358_image # 0x5CDA28
-.incbin "assets/image/bank_1/358/block.bin"
+# .balign 2
+# glabel bank_1_index_358_image # 0x5CDA28
+# .incbin "assets/image/bank_1/358/block.bin"
 
-.balign 2
-glabel bank_1_index_359_image # 0x5CDA48
-.incbin "assets/image/bank_1/359/block.bin"
+# .balign 2
+# glabel bank_1_index_359_image # 0x5CDA48
+# .incbin "assets/image/bank_1/359/block.bin"
 
-.balign 2
-glabel bank_1_index_360_image # 0x5CDA68
-.incbin "assets/image/bank_1/360/block.bin"
+# .balign 2
+# glabel bank_1_index_360_image # 0x5CDA68
+# .incbin "assets/image/bank_1/360/block.bin"
 
-.balign 2
-glabel bank_1_index_361_image # 0x5CDA88
-.incbin "assets/image/bank_1/361/block.bin"
+# .balign 2
+# glabel bank_1_index_361_image # 0x5CDA88
+# .incbin "assets/image/bank_1/361/block.bin"
 
-.balign 2
-glabel bank_1_index_362_image # 0x5CDB08
-.incbin "assets/image/bank_1/362/block.bin"
+# .balign 2
+# glabel bank_1_index_362_image # 0x5CDB08
+# .incbin "assets/image/bank_1/362/block.bin"
 
-.balign 2
-glabel bank_1_index_363_image # 0x5CDC08
-.incbin "assets/image/bank_1/363/block.bin"
+# .balign 2
+# glabel bank_1_index_363_image # 0x5CDC08
+# .incbin "assets/image/bank_1/363/block.bin"
 
-.balign 2
-glabel bank_1_index_364_image # 0x5CDC88
-.incbin "assets/image/bank_1/364/block.bin"
+# .balign 2
+# glabel bank_1_index_364_image # 0x5CDC88
+# .incbin "assets/image/bank_1/364/block.bin"
 
-.balign 2
-glabel bank_1_index_365_image # 0x5CDD88
-.incbin "assets/image/bank_1/365/block.bin"
+# .balign 2
+# glabel bank_1_index_365_image # 0x5CDD88
+# .incbin "assets/image/bank_1/365/block.bin"
 
-.balign 2
-glabel bank_1_index_366_image # 0x5CDE08
-.incbin "assets/image/bank_1/366/block.bin"
+# .balign 2
+# glabel bank_1_index_366_image # 0x5CDE08
+# .incbin "assets/image/bank_1/366/block.bin"
 
-.balign 2
-glabel bank_1_index_367_image # 0x5CE008
-.incbin "assets/image/bank_1/367/block.bin"
+# .balign 2
+# glabel bank_1_index_367_image # 0x5CE008
+# .incbin "assets/image/bank_1/367/block.bin"
 
-.balign 2
-glabel bank_1_index_368_image # 0x5CE108
-.incbin "assets/image/bank_1/368/block.bin"
+# .balign 2
+# glabel bank_1_index_368_image # 0x5CE108
+# .incbin "assets/image/bank_1/368/block.bin"
 
-.balign 2
-glabel bank_1_index_369_image # 0x5CE148
-.incbin "assets/image/bank_1/369/block.bin"
+# .balign 2
+# glabel bank_1_index_369_image # 0x5CE148
+# .incbin "assets/image/bank_1/369/block.bin"
 
-.balign 2
-glabel bank_1_index_370_image # 0x5CE188
-.incbin "assets/image/bank_1/370/block.bin"
+# .balign 2
+# glabel bank_1_index_370_image # 0x5CE188
+# .incbin "assets/image/bank_1/370/block.bin"
 
-.balign 2
-glabel bank_1_index_371_image # 0x5CE388
-.incbin "assets/image/bank_1/371/block.bin"
+# .balign 2
+# glabel bank_1_index_371_image # 0x5CE388
+# .incbin "assets/image/bank_1/371/block.bin"
 
-.balign 2
-glabel bank_1_index_372_image # 0x5CE408
-.incbin "assets/image/bank_1/372/block.bin"
+# .balign 2
+# glabel bank_1_index_372_image # 0x5CE408
+# .incbin "assets/image/bank_1/372/block.bin"
 
-.balign 2
-glabel bank_1_index_373_image # 0x5CE410
-.incbin "assets/image/bank_1/373/block.bin"
+# .balign 2
+# glabel bank_1_index_373_image # 0x5CE410
+# .incbin "assets/image/bank_1/373/block.bin"
 
-.balign 2
-glabel bank_1_index_374_image # 0x5CE610
-.incbin "assets/image/bank_1/374/block.bin"
+# .balign 2
+# glabel bank_1_index_374_image # 0x5CE610
+# .incbin "assets/image/bank_1/374/block.bin"
 
-.balign 2
-glabel bank_1_index_375_image # 0x5CE810
-.incbin "assets/image/bank_1/375/block.bin"
+# .balign 2
+# glabel bank_1_index_375_image # 0x5CE810
+# .incbin "assets/image/bank_1/375/block.bin"
 
-.balign 2
-glabel bank_1_index_376_image # 0x5CF010
-.incbin "assets/image/bank_1/376/block.bin"
+# .balign 2
+# glabel bank_1_index_376_image # 0x5CF010
+# .incbin "assets/image/bank_1/376/block.bin"
 
-.balign 2
-glabel bank_1_index_377_image # 0x5CF030
-.incbin "assets/image/bank_1/377/block.bin"
+# .balign 2
+# glabel bank_1_index_377_image # 0x5CF030
+# .incbin "assets/image/bank_1/377/block.bin"
 
-.balign 2
-glabel bank_1_index_378_image # 0x5CF830
-.incbin "assets/image/bank_1/378/block.bin"
+# .balign 2
+# glabel bank_1_index_378_image # 0x5CF830
+# .incbin "assets/image/bank_1/378/block.bin"
 
-.balign 2
-glabel bank_1_index_379_image # 0x5D0030
-.incbin "assets/image/bank_1/379/block.bin"
+# .balign 2
+# glabel bank_1_index_379_image # 0x5D0030
+# .incbin "assets/image/bank_1/379/block.bin"
 
-.balign 2
-glabel bank_1_index_380_image # 0x5D0830
-.incbin "assets/image/bank_1/380/block.bin"
+# .balign 2
+# glabel bank_1_index_380_image # 0x5D0830
+# .incbin "assets/image/bank_1/380/block.bin"
 
-.balign 2
-glabel bank_1_index_381_image # 0x5D0A30
-.incbin "assets/image/bank_1/381/block.bin"
+# .balign 2
+# glabel bank_1_index_381_image # 0x5D0A30
+# .incbin "assets/image/bank_1/381/block.bin"
 
-.balign 2
-glabel bank_1_index_382_image # 0x5D0A50
-.incbin "assets/image/bank_1/382/block.bin"
+# .balign 2
+# glabel bank_1_index_382_image # 0x5D0A50
+# .incbin "assets/image/bank_1/382/block.bin"
 
-.balign 2
-glabel bank_1_index_383_image # 0x5D0C50
-.incbin "assets/image/bank_1/383/block.bin"
+# .balign 2
+# glabel bank_1_index_383_image # 0x5D0C50
+# .incbin "assets/image/bank_1/383/block.bin"
 
-.balign 2
-glabel bank_1_index_384_image # 0x5D0E50
-.incbin "assets/image/bank_1/384/block.bin"
+# .balign 2
+# glabel bank_1_index_384_image # 0x5D0E50
+# .incbin "assets/image/bank_1/384/block.bin"
 
-.balign 2
-glabel bank_1_index_385_image # 0x5D1050
-.incbin "assets/image/bank_1/385/block.bin"
+# .balign 2
+# glabel bank_1_index_385_image # 0x5D1050
+# .incbin "assets/image/bank_1/385/block.bin"
 
-.balign 2
-glabel bank_1_index_386_image # 0x5D1250
-.incbin "assets/image/bank_1/386/block.bin"
+# .balign 2
+# glabel bank_1_index_386_image # 0x5D1250
+# .incbin "assets/image/bank_1/386/block.bin"
 
-.balign 2
-glabel bank_1_index_387_image # 0x5D1650
-.incbin "assets/image/bank_1/387/block.bin"
+# .balign 2
+# glabel bank_1_index_387_image # 0x5D1650
+# .incbin "assets/image/bank_1/387/block.bin"
 
-.balign 2
-glabel bank_1_index_388_image # 0x5D1670
-.incbin "assets/image/bank_1/388/block.bin"
+# .balign 2
+# glabel bank_1_index_388_image # 0x5D1670
+# .incbin "assets/image/bank_1/388/block.bin"
 
-.balign 2
-glabel bank_1_index_389_image # 0x5D1A70
-.incbin "assets/image/bank_1/389/block.bin"
+# .balign 2
+# glabel bank_1_index_389_image # 0x5D1A70
+# .incbin "assets/image/bank_1/389/block.bin"
 
-.balign 2
-glabel bank_1_index_390_image # 0x5D1E70
-.incbin "assets/image/bank_1/390/block.bin"
+# .balign 2
+# glabel bank_1_index_390_image # 0x5D1E70
+# .incbin "assets/image/bank_1/390/block.bin"
 
-.balign 2
-glabel bank_1_index_391_image # 0x5D2270
-.incbin "assets/image/bank_1/391/block.bin"
+# .balign 2
+# glabel bank_1_index_391_image # 0x5D2270
+# .incbin "assets/image/bank_1/391/block.bin"
 
-.balign 2
-glabel bank_1_index_392_image # 0x5D2670
-.incbin "assets/image/bank_1/392/block.bin"
+# .balign 2
+# glabel bank_1_index_392_image # 0x5D2670
+# .incbin "assets/image/bank_1/392/block.bin"
 
-.balign 2
-glabel bank_1_index_393_image # 0x5D26F0
-.incbin "assets/image/bank_1/393/block.bin"
+# .balign 2
+# glabel bank_1_index_393_image # 0x5D26F0
+# .incbin "assets/image/bank_1/393/block.bin"
 
-.balign 2
-glabel bank_1_index_394_image # 0x5D2710
-.incbin "assets/image/bank_1/394/block.bin"
+# .balign 2
+# glabel bank_1_index_394_image # 0x5D2710
+# .incbin "assets/image/bank_1/394/block.bin"
 
-.balign 2
-glabel bank_1_index_395_image # 0x5D2790
-.incbin "assets/image/bank_1/395/block.bin"
+# .balign 2
+# glabel bank_1_index_395_image # 0x5D2790
+# .incbin "assets/image/bank_1/395/block.bin"
 
-.balign 2
-glabel bank_1_index_396_image # 0x5D27B0
-.incbin "assets/image/bank_1/396/block.bin"
+# .balign 2
+# glabel bank_1_index_396_image # 0x5D27B0
+# .incbin "assets/image/bank_1/396/block.bin"
 
-.balign 2
-glabel bank_1_index_397_image # 0x5D27F0
-.incbin "assets/image/bank_1/397/block.bin"
+# .balign 2
+# glabel bank_1_index_397_image # 0x5D27F0
+# .incbin "assets/image/bank_1/397/block.bin"
 
-.balign 2
-glabel bank_1_index_398_image # 0x5D2870
-.incbin "assets/image/bank_1/398/block.bin"
+# .balign 2
+# glabel bank_1_index_398_image # 0x5D2870
+# .incbin "assets/image/bank_1/398/block.bin"
 
-.balign 2
-glabel bank_1_index_399_image # 0x5D2A70
-.incbin "assets/image/bank_1/399/block.bin"
+# .balign 2
+# glabel bank_1_index_399_image # 0x5D2A70
+# .incbin "assets/image/bank_1/399/block.bin"
 
-.balign 2
-glabel bank_1_index_400_image # 0x5D2AF0
-.incbin "assets/image/bank_1/400/block.bin"
+# .balign 2
+# glabel bank_1_index_400_image # 0x5D2AF0
+# .incbin "assets/image/bank_1/400/block.bin"
 
-.balign 2
-glabel bank_1_index_401_image # 0x5D2EF0
-.incbin "assets/image/bank_1/401/block.bin"
+# .balign 2
+# glabel bank_1_index_401_image # 0x5D2EF0
+# .incbin "assets/image/bank_1/401/block.bin"
 
-.balign 2
-glabel bank_1_index_402_image # 0x5D2F70
-.incbin "assets/image/bank_1/402/block.bin"
+# .balign 2
+# glabel bank_1_index_402_image # 0x5D2F70
+# .incbin "assets/image/bank_1/402/block.bin"
 
-.balign 2
-glabel bank_1_index_403_image # 0x5D3770
-.incbin "assets/image/bank_1/403/block.bin"
+# .balign 2
+# glabel bank_1_index_403_image # 0x5D3770
+# .incbin "assets/image/bank_1/403/block.bin"
 
-.balign 2
-glabel bank_1_index_404_image # 0x5D3970
-.incbin "assets/image/bank_1/404/block.bin"
+# .balign 2
+# glabel bank_1_index_404_image # 0x5D3970
+# .incbin "assets/image/bank_1/404/block.bin"
 
-.balign 2
-glabel bank_1_index_405_image # 0x5D3D70
-.incbin "assets/image/bank_1/405/block.bin"
+# .balign 2
+# glabel bank_1_index_405_image # 0x5D3D70
+# .incbin "assets/image/bank_1/405/block.bin"
 
-.balign 2
-glabel bank_1_index_406_image # 0x5D4170
-.incbin "assets/image/bank_1/406/block.bin"
+# .balign 2
+# glabel bank_1_index_406_image # 0x5D4170
+# .incbin "assets/image/bank_1/406/block.bin"
 
-.balign 2
-glabel bank_1_index_407_image # 0x5D4270
-.incbin "assets/image/bank_1/407/block.bin"
+# .balign 2
+# glabel bank_1_index_407_image # 0x5D4270
+# .incbin "assets/image/bank_1/407/block.bin"
 
-.balign 2
-glabel bank_1_index_408_image # 0x5D4470
-.incbin "assets/image/bank_1/408/block.bin"
+# .balign 2
+# glabel bank_1_index_408_image # 0x5D4470
+# .incbin "assets/image/bank_1/408/block.bin"
 
-.balign 2
-glabel bank_1_index_409_image # 0x5D4490
-.incbin "assets/image/bank_1/409/block.bin"
+# .balign 2
+# glabel bank_1_index_409_image # 0x5D4490
+# .incbin "assets/image/bank_1/409/block.bin"
 
-.balign 2
-glabel bank_1_index_410_image # 0x5D4690
-.incbin "assets/image/bank_1/410/block.bin"
+# .balign 2
+# glabel bank_1_index_410_image # 0x5D4690
+# .incbin "assets/image/bank_1/410/block.bin"
 
-.balign 2
-glabel bank_1_index_411_image # 0x5D4890
-.incbin "assets/image/bank_1/411/block.bin"
+# .balign 2
+# glabel bank_1_index_411_image # 0x5D4890
+# .incbin "assets/image/bank_1/411/block.bin"
 
-.balign 2
-glabel bank_1_index_412_image # 0x5D4A90
-.incbin "assets/image/bank_1/412/block.bin"
+# .balign 2
+# glabel bank_1_index_412_image # 0x5D4A90
+# .incbin "assets/image/bank_1/412/block.bin"
 
-.balign 2
-glabel bank_1_index_413_image # 0x5D4C90
-.incbin "assets/image/bank_1/413/block.bin"
+# .balign 2
+# glabel bank_1_index_413_image # 0x5D4C90
+# .incbin "assets/image/bank_1/413/block.bin"
 
-.balign 2
-glabel bank_1_index_414_image # 0x5D4D90
-.incbin "assets/image/bank_1/414/block.bin"
+# .balign 2
+# glabel bank_1_index_414_image # 0x5D4D90
+# .incbin "assets/image/bank_1/414/block.bin"
 
-.balign 2
-glabel bank_1_index_415_image # 0x5D4DA0
-.incbin "assets/image/bank_1/415/block.bin"
+# .balign 2
+# glabel bank_1_index_415_image # 0x5D4DA0
+# .incbin "assets/image/bank_1/415/block.bin"
 
-.balign 2
-glabel bank_1_index_416_image # 0x5D4FA0
-.incbin "assets/image/bank_1/416/block.bin"
+# .balign 2
+# glabel bank_1_index_416_image # 0x5D4FA0
+# .incbin "assets/image/bank_1/416/block.bin"
 
-.balign 2
-glabel bank_1_index_417_image # 0x5D51A0
-.incbin "assets/image/bank_1/417/block.bin"
+# .balign 2
+# glabel bank_1_index_417_image # 0x5D51A0
+# .incbin "assets/image/bank_1/417/block.bin"
 
-.balign 2
-glabel bank_1_index_418_image # 0x5D53A0
-.incbin "assets/image/bank_1/418/block.bin"
+# .balign 2
+# glabel bank_1_index_418_image # 0x5D53A0
+# .incbin "assets/image/bank_1/418/block.bin"
 
-.balign 2
-glabel bank_1_index_419_image # 0x5D53C0
-.incbin "assets/image/bank_1/419/block.bin"
+# .balign 2
+# glabel bank_1_index_419_image # 0x5D53C0
+# .incbin "assets/image/bank_1/419/block.bin"
 
-.balign 2
-glabel bank_1_index_420_image # 0x5D55C0
-.incbin "assets/image/bank_1/420/block.bin"
+# .balign 2
+# glabel bank_1_index_420_image # 0x5D55C0
+# .incbin "assets/image/bank_1/420/block.bin"
 
-.balign 2
-glabel bank_1_index_421_image # 0x5D55E0
-.incbin "assets/image/bank_1/421/block.bin"
+# .balign 2
+# glabel bank_1_index_421_image # 0x5D55E0
+# .incbin "assets/image/bank_1/421/block.bin"
 
-.balign 2
-glabel bank_1_index_422_image # 0x5D57E0
-.incbin "assets/image/bank_1/422/block.bin"
+# .balign 2
+# glabel bank_1_index_422_image # 0x5D57E0
+# .incbin "assets/image/bank_1/422/block.bin"
 
-.balign 2
-glabel bank_1_index_423_image # 0x5D5800
-.incbin "assets/image/bank_1/423/block.bin"
+# .balign 2
+# glabel bank_1_index_423_image # 0x5D5800
+# .incbin "assets/image/bank_1/423/block.bin"
 
-.balign 2
-glabel bank_1_index_424_image # 0x5D5880
-.incbin "assets/image/bank_1/424/block.bin"
+# .balign 2
+# glabel bank_1_index_424_image # 0x5D5880
+# .incbin "assets/image/bank_1/424/block.bin"
 
-.balign 2
-glabel bank_1_index_425_image # 0x5D58A0
-.incbin "assets/image/bank_1/425/block.bin"
+# .balign 2
+# glabel bank_1_index_425_image # 0x5D58A0
+# .incbin "assets/image/bank_1/425/block.bin"
 
-.balign 2
-glabel bank_1_index_426_image # 0x5D5920
-.incbin "assets/image/bank_1/426/block.bin"
+# .balign 2
+# glabel bank_1_index_426_image # 0x5D5920
+# .incbin "assets/image/bank_1/426/block.bin"
 
-.balign 2
-glabel bank_1_index_427_image # 0x5D59A0
-.incbin "assets/image/bank_1/427/block.bin"
+# .balign 2
+# glabel bank_1_index_427_image # 0x5D59A0
+# .incbin "assets/image/bank_1/427/block.bin"
 
-.balign 2
-glabel bank_1_index_428_image # 0x5D5A20
-.incbin "assets/image/bank_1/428/block.bin"
+# .balign 2
+# glabel bank_1_index_428_image # 0x5D5A20
+# .incbin "assets/image/bank_1/428/block.bin"
 
-.balign 2
-glabel bank_1_index_429_image # 0x5D5AA0
-.incbin "assets/image/bank_1/429/block.bin"
+# .balign 2
+# glabel bank_1_index_429_image # 0x5D5AA0
+# .incbin "assets/image/bank_1/429/block.bin"
 
-.balign 2
-glabel bank_1_index_430_image # 0x5D5B20
-.incbin "assets/image/bank_1/430/block.bin"
+# .balign 2
+# glabel bank_1_index_430_image # 0x5D5B20
+# .incbin "assets/image/bank_1/430/block.bin"
 
-.balign 2
-glabel bank_1_index_431_image # 0x5D5C20
-.incbin "assets/image/bank_1/431/block.bin"
+# .balign 2
+# glabel bank_1_index_431_image # 0x5D5C20
+# .incbin "assets/image/bank_1/431/block.bin"
 
-.balign 2
-glabel bank_1_index_432_image # 0x5D5C40
-.incbin "assets/image/bank_1/432/block.bin"
+# .balign 2
+# glabel bank_1_index_432_image # 0x5D5C40
+# .incbin "assets/image/bank_1/432/block.bin"
 
-.balign 2
-glabel bank_1_index_433_image # 0x5D5D40
-.incbin "assets/image/bank_1/433/block.bin"
+# .balign 2
+# glabel bank_1_index_433_image # 0x5D5D40
+# .incbin "assets/image/bank_1/433/block.bin"
 
-.balign 2
-glabel bank_1_index_434_image # 0x5D5E40
-.incbin "assets/image/bank_1/434/block.bin"
+# .balign 2
+# glabel bank_1_index_434_image # 0x5D5E40
+# .incbin "assets/image/bank_1/434/block.bin"
 
-.balign 2
-glabel bank_1_index_435_image # 0x5D5F40
-.incbin "assets/image/bank_1/435/block.bin"
+# .balign 2
+# glabel bank_1_index_435_image # 0x5D5F40
+# .incbin "assets/image/bank_1/435/block.bin"
 
-.balign 2
-glabel bank_1_index_436_image # 0x5D6040
-.incbin "assets/image/bank_1/436/block.bin"
+# .balign 2
+# glabel bank_1_index_436_image # 0x5D6040
+# .incbin "assets/image/bank_1/436/block.bin"
 
-.balign 2
-glabel bank_1_index_437_image # 0x5D6140
-.incbin "assets/image/bank_1/437/block.bin"
+# .balign 2
+# glabel bank_1_index_437_image # 0x5D6140
+# .incbin "assets/image/bank_1/437/block.bin"
 
-.balign 2
-glabel bank_1_index_438_image # 0x5D6240
-.incbin "assets/image/bank_1/438/block.bin"
+# .balign 2
+# glabel bank_1_index_438_image # 0x5D6240
+# .incbin "assets/image/bank_1/438/block.bin"
 
-.balign 2
-glabel bank_1_index_439_image # 0x5D62C0
-.incbin "assets/image/bank_1/439/block.bin"
+# .balign 2
+# glabel bank_1_index_439_image # 0x5D62C0
+# .incbin "assets/image/bank_1/439/block.bin"
 
-.balign 2
-glabel bank_1_index_440_image # 0x5D62E0
-.incbin "assets/image/bank_1/440/block.bin"
+# .balign 2
+# glabel bank_1_index_440_image # 0x5D62E0
+# .incbin "assets/image/bank_1/440/block.bin"
 
-.balign 2
-glabel bank_1_index_441_image # 0x5D6360
-.incbin "assets/image/bank_1/441/block.bin"
+# .balign 2
+# glabel bank_1_index_441_image # 0x5D6360
+# .incbin "assets/image/bank_1/441/block.bin"
 
-.balign 2
-glabel bank_1_index_442_image # 0x5D63E0
-.incbin "assets/image/bank_1/442/block.bin"
+# .balign 2
+# glabel bank_1_index_442_image # 0x5D63E0
+# .incbin "assets/image/bank_1/442/block.bin"
 
-.balign 2
-glabel bank_1_index_443_image # 0x5D6460
-.incbin "assets/image/bank_1/443/block.bin"
+# .balign 2
+# glabel bank_1_index_443_image # 0x5D6460
+# .incbin "assets/image/bank_1/443/block.bin"
 
-.balign 2
-glabel bank_1_index_444_image # 0x5D64E0
-.incbin "assets/image/bank_1/444/block.bin"
+# .balign 2
+# glabel bank_1_index_444_image # 0x5D64E0
+# .incbin "assets/image/bank_1/444/block.bin"
 
-.balign 2
-glabel bank_1_index_445_image # 0x5D6560
-.incbin "assets/image/bank_1/445/block.bin"
+# .balign 2
+# glabel bank_1_index_445_image # 0x5D6560
+# .incbin "assets/image/bank_1/445/block.bin"
 
-.balign 2
-glabel bank_1_index_446_image # 0x5D65E0
-.incbin "assets/image/bank_1/446/block.bin"
+# .balign 2
+# glabel bank_1_index_446_image # 0x5D65E0
+# .incbin "assets/image/bank_1/446/block.bin"
 
-.balign 2
-glabel bank_1_index_447_image # 0x5D6600
-.incbin "assets/image/bank_1/447/block.bin"
+# .balign 2
+# glabel bank_1_index_447_image # 0x5D6600
+# .incbin "assets/image/bank_1/447/block.bin"
 
-.balign 2
-glabel bank_1_index_448_image # 0x5D6800
-.incbin "assets/image/bank_1/448/block.bin"
+# .balign 2
+# glabel bank_1_index_448_image # 0x5D6800
+# .incbin "assets/image/bank_1/448/block.bin"
 
-.balign 2
-glabel bank_1_index_449_image # 0x5D6820
-.incbin "assets/image/bank_1/449/block.bin"
+# .balign 2
+# glabel bank_1_index_449_image # 0x5D6820
+# .incbin "assets/image/bank_1/449/block.bin"
 
-.balign 2
-glabel bank_1_index_450_image # 0x5D68A0
-.incbin "assets/image/bank_1/450/block.bin"
+# .balign 2
+# glabel bank_1_index_450_image # 0x5D68A0
+# .incbin "assets/image/bank_1/450/block.bin"
 
-.balign 2
-glabel bank_1_index_451_image # 0x5D68C0
-.incbin "assets/image/bank_1/451/block.bin"
+# .balign 2
+# glabel bank_1_index_451_image # 0x5D68C0
+# .incbin "assets/image/bank_1/451/block.bin"
 
-.balign 2
-glabel bank_1_index_452_image # 0x5D6AC0
-.incbin "assets/image/bank_1/452/block.bin"
+# .balign 2
+# glabel bank_1_index_452_image # 0x5D6AC0
+# .incbin "assets/image/bank_1/452/block.bin"
 
-.balign 2
-glabel bank_1_index_453_image # 0x5D6AE0
-.incbin "assets/image/bank_1/453/block.bin"
+# .balign 2
+# glabel bank_1_index_453_image # 0x5D6AE0
+# .incbin "assets/image/bank_1/453/block.bin"
 
-.balign 2
-glabel bank_1_index_454_image # 0x5D6CE0
-.incbin "assets/image/bank_1/454/block.bin"
+# .balign 2
+# glabel bank_1_index_454_image # 0x5D6CE0
+# .incbin "assets/image/bank_1/454/block.bin"
 
-.balign 2
-glabel bank_1_index_455_image # 0x5D6D00
-.incbin "assets/image/bank_1/455/block.bin"
+# .balign 2
+# glabel bank_1_index_455_image # 0x5D6D00
+# .incbin "assets/image/bank_1/455/block.bin"
 
-.balign 2
-glabel bank_1_index_456_image # 0x5D6D40
-.incbin "assets/image/bank_1/456/block.bin"
+# .balign 2
+# glabel bank_1_index_456_image # 0x5D6D40
+# .incbin "assets/image/bank_1/456/block.bin"
 
-.balign 2
-glabel bank_1_index_457_image # 0x5D6D60
-.incbin "assets/image/bank_1/457/block.bin"
+# .balign 2
+# glabel bank_1_index_457_image # 0x5D6D60
+# .incbin "assets/image/bank_1/457/block.bin"
 
-.balign 2
-glabel bank_1_index_458_image # 0x5D6E60
-.incbin "assets/image/bank_1/458/block.bin"
+# .balign 2
+# glabel bank_1_index_458_image # 0x5D6E60
+# .incbin "assets/image/bank_1/458/block.bin"
 
-.balign 2
-glabel bank_1_index_459_image # 0x5D6E80
-.incbin "assets/image/bank_1/459/block.bin"
+# .balign 2
+# glabel bank_1_index_459_image # 0x5D6E80
+# .incbin "assets/image/bank_1/459/block.bin"
 
-.balign 2
-glabel bank_1_index_460_image # 0x5D6F00
-.incbin "assets/image/bank_1/460/block.bin"
+# .balign 2
+# glabel bank_1_index_460_image # 0x5D6F00
+# .incbin "assets/image/bank_1/460/block.bin"
 
-.balign 2
-glabel bank_1_index_461_image # 0x5D6F20
-.incbin "assets/image/bank_1/461/block.bin"
+# .balign 2
+# glabel bank_1_index_461_image # 0x5D6F20
+# .incbin "assets/image/bank_1/461/block.bin"
 
-.balign 2
-glabel bank_1_index_462_image # 0x5D7120
-.incbin "assets/image/bank_1/462/block.bin"
+# .balign 2
+# glabel bank_1_index_462_image # 0x5D7120
+# .incbin "assets/image/bank_1/462/block.bin"
 
-.balign 2
-glabel bank_1_index_463_image # 0x5D7140
-.incbin "assets/image/bank_1/463/block.bin"
+# .balign 2
+# glabel bank_1_index_463_image # 0x5D7140
+# .incbin "assets/image/bank_1/463/block.bin"
 
-.balign 2
-glabel bank_1_index_464_image # 0x5D7340
-.incbin "assets/image/bank_1/464/block.bin"
+# .balign 2
+# glabel bank_1_index_464_image # 0x5D7340
+# .incbin "assets/image/bank_1/464/block.bin"
 
-.balign 2
-glabel bank_1_index_465_image # 0x5D7540
-.incbin "assets/image/bank_1/465/block.bin"
+# .balign 2
+# glabel bank_1_index_465_image # 0x5D7540
+# .incbin "assets/image/bank_1/465/block.bin"
 
-.balign 2
-glabel bank_1_index_466_image # 0x5D7740
-.incbin "assets/image/bank_1/466/block.bin"
+# .balign 2
+# glabel bank_1_index_466_image # 0x5D7740
+# .incbin "assets/image/bank_1/466/block.bin"
 
-.balign 2
-glabel bank_1_index_467_image # 0x5D7940
-.incbin "assets/image/bank_1/467/block.bin"
+# .balign 2
+# glabel bank_1_index_467_image # 0x5D7940
+# .incbin "assets/image/bank_1/467/block.bin"
 
-.balign 2
-glabel bank_1_index_468_image # 0x5D7B40
-.incbin "assets/image/bank_1/468/block.bin"
+# .balign 2
+# glabel bank_1_index_468_image # 0x5D7B40
+# .incbin "assets/image/bank_1/468/block.bin"
 
-.balign 2
-glabel bank_1_index_469_image # 0x5D7D40
-.incbin "assets/image/bank_1/469/block.bin"
+# .balign 2
+# glabel bank_1_index_469_image # 0x5D7D40
+# .incbin "assets/image/bank_1/469/block.bin"
 
-.balign 2
-glabel bank_1_index_470_image # 0x5D7F40
-.incbin "assets/image/bank_1/470/block.bin"
+# .balign 2
+# glabel bank_1_index_470_image # 0x5D7F40
+# .incbin "assets/image/bank_1/470/block.bin"
 
-.balign 2
-glabel bank_1_index_471_image # 0x5D8140
-.incbin "assets/image/bank_1/471/block.bin"
+# .balign 2
+# glabel bank_1_index_471_image # 0x5D8140
+# .incbin "assets/image/bank_1/471/block.bin"
 
-.balign 2
-glabel bank_1_index_472_image # 0x5D8340
-.incbin "assets/image/bank_1/472/block.bin"
+# .balign 2
+# glabel bank_1_index_472_image # 0x5D8340
+# .incbin "assets/image/bank_1/472/block.bin"
 
-.balign 2
-glabel bank_1_index_473_image # 0x5D8540
-.incbin "assets/image/bank_1/473/block.bin"
+# .balign 2
+# glabel bank_1_index_473_image # 0x5D8540
+# .incbin "assets/image/bank_1/473/block.bin"
 
-.balign 2
-glabel bank_1_index_474_image # 0x5D8740
-.incbin "assets/image/bank_1/474/block.bin"
+# .balign 2
+# glabel bank_1_index_474_image # 0x5D8740
+# .incbin "assets/image/bank_1/474/block.bin"
 
-.balign 2
-glabel bank_1_index_475_image # 0x5D8940
-.incbin "assets/image/bank_1/475/block.bin"
+# .balign 2
+# glabel bank_1_index_475_image # 0x5D8940
+# .incbin "assets/image/bank_1/475/block.bin"
 
-.balign 2
-glabel bank_1_index_476_image # 0x5D8B40
-.incbin "assets/image/bank_1/476/block.bin"
+# .balign 2
+# glabel bank_1_index_476_image # 0x5D8B40
+# .incbin "assets/image/bank_1/476/block.bin"
 
-.balign 2
-glabel bank_1_index_477_image # 0x5D8D40
-.incbin "assets/image/bank_1/477/block.bin"
+# .balign 2
+# glabel bank_1_index_477_image # 0x5D8D40
+# .incbin "assets/image/bank_1/477/block.bin"
 
-.balign 2
-glabel bank_1_index_478_image # 0x5D8F40
-.incbin "assets/image/bank_1/478/block.bin"
+# .balign 2
+# glabel bank_1_index_478_image # 0x5D8F40
+# .incbin "assets/image/bank_1/478/block.bin"
 
-.balign 2
-glabel bank_1_index_479_image # 0x5D9140
-.incbin "assets/image/bank_1/479/block.bin"
+# .balign 2
+# glabel bank_1_index_479_image # 0x5D9140
+# .incbin "assets/image/bank_1/479/block.bin"
 
-.balign 2
-glabel bank_1_index_480_image # 0x5D9340
-.incbin "assets/image/bank_1/480/block.bin"
+# .balign 2
+# glabel bank_1_index_480_image # 0x5D9340
+# .incbin "assets/image/bank_1/480/block.bin"
 
-.balign 2
-glabel bank_1_index_481_image # 0x5D9360
-.incbin "assets/image/bank_1/481/block.bin"
+# .balign 2
+# glabel bank_1_index_481_image # 0x5D9360
+# .incbin "assets/image/bank_1/481/block.bin"
 
-.balign 2
-glabel bank_1_index_482_image # 0x5D9560
-.incbin "assets/image/bank_1/482/block.bin"
+# .balign 2
+# glabel bank_1_index_482_image # 0x5D9560
+# .incbin "assets/image/bank_1/482/block.bin"
 
-.balign 2
-glabel bank_1_index_483_image # 0x5D9580
-.incbin "assets/image/bank_1/483/block.bin"
+# .balign 2
+# glabel bank_1_index_483_image # 0x5D9580
+# .incbin "assets/image/bank_1/483/block.bin"
 
-.balign 2
-glabel bank_1_index_484_image # 0x5D9780
-.incbin "assets/image/bank_1/484/block.bin"
+# .balign 2
+# glabel bank_1_index_484_image # 0x5D9780
+# .incbin "assets/image/bank_1/484/block.bin"
 
-.balign 2
-glabel bank_1_index_485_image # 0x5D97A0
-.incbin "assets/image/bank_1/485/block.bin"
+# .balign 2
+# glabel bank_1_index_485_image # 0x5D97A0
+# .incbin "assets/image/bank_1/485/block.bin"
 
-.balign 2
-glabel bank_1_index_486_image # 0x5D99A0
-.incbin "assets/image/bank_1/486/block.bin"
+# .balign 2
+# glabel bank_1_index_486_image # 0x5D99A0
+# .incbin "assets/image/bank_1/486/block.bin"
 
-.balign 2
-glabel bank_1_index_487_image # 0x5D99C0
-.incbin "assets/image/bank_1/487/block.bin"
+# .balign 2
+# glabel bank_1_index_487_image # 0x5D99C0
+# .incbin "assets/image/bank_1/487/block.bin"
 
-.balign 2
-glabel bank_1_index_488_image # 0x5D9BC0
-.incbin "assets/image/bank_1/488/block.bin"
+# .balign 2
+# glabel bank_1_index_488_image # 0x5D9BC0
+# .incbin "assets/image/bank_1/488/block.bin"
 
-.balign 2
-glabel bank_1_index_489_image # 0x5D9BE0
-.incbin "assets/image/bank_1/489/block.bin"
+# .balign 2
+# glabel bank_1_index_489_image # 0x5D9BE0
+# .incbin "assets/image/bank_1/489/block.bin"
 
-.balign 2
-glabel bank_1_index_490_image # 0x5D9DE0
-.incbin "assets/image/bank_1/490/block.bin"
+# .balign 2
+# glabel bank_1_index_490_image # 0x5D9DE0
+# .incbin "assets/image/bank_1/490/block.bin"
 
-.balign 2
-glabel bank_1_index_491_image # 0x5DA0E0
-.incbin "assets/image/bank_1/491/block.bin"
+# .balign 2
+# glabel bank_1_index_491_image # 0x5DA0E0
+# .incbin "assets/image/bank_1/491/block.bin"
 
-.balign 2
-glabel bank_1_index_492_image # 0x5DA100
-.incbin "assets/image/bank_1/492/block.bin"
+# .balign 2
+# glabel bank_1_index_492_image # 0x5DA100
+# .incbin "assets/image/bank_1/492/block.bin"
 
-.balign 2
-glabel bank_1_index_493_image # 0x5DA400
-.incbin "assets/image/bank_1/493/block.bin"
+# .balign 2
+# glabel bank_1_index_493_image # 0x5DA400
+# .incbin "assets/image/bank_1/493/block.bin"
 
-.balign 2
-glabel bank_1_index_494_image # 0x5DA700
-.incbin "assets/image/bank_1/494/block.bin"
+# .balign 2
+# glabel bank_1_index_494_image # 0x5DA700
+# .incbin "assets/image/bank_1/494/block.bin"
 
-.balign 2
-glabel bank_1_index_495_image # 0x5DAA00
-.incbin "assets/image/bank_1/495/block.bin"
+# .balign 2
+# glabel bank_1_index_495_image # 0x5DAA00
+# .incbin "assets/image/bank_1/495/block.bin"
 
-.balign 2
-glabel bank_1_index_496_image # 0x5DAD00
-.incbin "assets/image/bank_1/496/block.bin"
+# .balign 2
+# glabel bank_1_index_496_image # 0x5DAD00
+# .incbin "assets/image/bank_1/496/block.bin"
 
-.balign 2
-glabel bank_1_index_497_image # 0x5DB000
-.incbin "assets/image/bank_1/497/block.bin"
+# .balign 2
+# glabel bank_1_index_497_image # 0x5DB000
+# .incbin "assets/image/bank_1/497/block.bin"
 
-.balign 2
-glabel bank_1_index_498_image # 0x5DB300
-.incbin "assets/image/bank_1/498/block.bin"
+# .balign 2
+# glabel bank_1_index_498_image # 0x5DB300
+# .incbin "assets/image/bank_1/498/block.bin"
 
-.balign 2
-glabel bank_1_index_499_image # 0x5DB600
-.incbin "assets/image/bank_1/499/block.bin"
+# .balign 2
+# glabel bank_1_index_499_image # 0x5DB600
+# .incbin "assets/image/bank_1/499/block.bin"
 
-.balign 2
-glabel bank_1_index_500_image # 0x5DB900
-.incbin "assets/image/bank_1/500/block.bin"
+# .balign 2
+# glabel bank_1_index_500_image # 0x5DB900
+# .incbin "assets/image/bank_1/500/block.bin"
 
-.balign 2
-glabel bank_1_index_501_image # 0x5DBC00
-.incbin "assets/image/bank_1/501/block.bin"
+# .balign 2
+# glabel bank_1_index_501_image # 0x5DBC00
+# .incbin "assets/image/bank_1/501/block.bin"
 
-.balign 2
-glabel bank_1_index_502_image # 0x5DBF00
-.incbin "assets/image/bank_1/502/block.bin"
+# .balign 2
+# glabel bank_1_index_502_image # 0x5DBF00
+# .incbin "assets/image/bank_1/502/block.bin"
 
-.balign 2
-glabel bank_1_index_503_image # 0x5DC200
-.incbin "assets/image/bank_1/503/block.bin"
+# .balign 2
+# glabel bank_1_index_503_image # 0x5DC200
+# .incbin "assets/image/bank_1/503/block.bin"
 
-.balign 2
-glabel bank_1_index_504_image # 0x5DD200
-.incbin "assets/image/bank_1/504/block.bin"
+# .balign 2
+# glabel bank_1_index_504_image # 0x5DD200
+# .incbin "assets/image/bank_1/504/block.bin"
 
-.balign 2
-glabel bank_1_index_505_image # 0x5DE200
-.incbin "assets/image/bank_1/505/block.bin"
+# .balign 2
+# glabel bank_1_index_505_image # 0x5DE200
+# .incbin "assets/image/bank_1/505/block.bin"
 
-.balign 2
-glabel bank_1_index_506_image # 0x5DF200
-.incbin "assets/image/bank_1/506/block.bin"
+# .balign 2
+# glabel bank_1_index_506_image # 0x5DF200
+# .incbin "assets/image/bank_1/506/block.bin"
 
-.balign 2
-glabel bank_1_index_507_image # 0x5E0200
-.incbin "assets/image/bank_1/507/block.bin"
+# .balign 2
+# glabel bank_1_index_507_image # 0x5E0200
+# .incbin "assets/image/bank_1/507/block.bin"
 
-.balign 2
-glabel bank_1_index_508_image # 0x5E1200
-.incbin "assets/image/bank_1/508/block.bin"
+# .balign 2
+# glabel bank_1_index_508_image # 0x5E1200
+# .incbin "assets/image/bank_1/508/block.bin"
 
-.balign 2
-glabel bank_1_index_509_image # 0x5E2200
-.incbin "assets/image/bank_1/509/block.bin"
+# .balign 2
+# glabel bank_1_index_509_image # 0x5E2200
+# .incbin "assets/image/bank_1/509/block.bin"
 
-.balign 2
-glabel bank_1_index_510_image # 0x5E3200
-.incbin "assets/image/bank_1/510/block.bin"
+# .balign 2
+# glabel bank_1_index_510_image # 0x5E3200
+# .incbin "assets/image/bank_1/510/block.bin"
 
-.balign 2
-glabel bank_1_index_511_image # 0x5E4200
-.incbin "assets/image/bank_1/511/block.bin"
+# .balign 2
+# glabel bank_1_index_511_image # 0x5E4200
+# .incbin "assets/image/bank_1/511/block.bin"
 
-.balign 2
-glabel bank_1_index_512_image # 0x5E5200
-.incbin "assets/image/bank_1/512/block.bin"
+# .balign 2
+# glabel bank_1_index_512_image # 0x5E5200
+# .incbin "assets/image/bank_1/512/block.bin"
 
-.balign 2
-glabel bank_1_index_513_image # 0x5E5680
-.incbin "assets/image/bank_1/513/block.bin"
+# .balign 2
+# glabel bank_1_index_513_image # 0x5E5680
+# .incbin "assets/image/bank_1/513/block.bin"
 
-.balign 2
-glabel bank_1_index_514_image # 0x5E56A0
-.incbin "assets/image/bank_1/514/block.bin"
+# .balign 2
+# glabel bank_1_index_514_image # 0x5E56A0
+# .incbin "assets/image/bank_1/514/block.bin"
 
-.balign 2
-glabel bank_1_index_515_image # 0x5E5B20
-.incbin "assets/image/bank_1/515/block.bin"
+# .balign 2
+# glabel bank_1_index_515_image # 0x5E5B20
+# .incbin "assets/image/bank_1/515/block.bin"
 
-.balign 2
-glabel bank_1_index_516_image # 0x5E5FA0
-.incbin "assets/image/bank_1/516/block.bin"
+# .balign 2
+# glabel bank_1_index_516_image # 0x5E5FA0
+# .incbin "assets/image/bank_1/516/block.bin"
 
-.balign 2
-glabel bank_1_index_517_image # 0x5E6420
-.incbin "assets/image/bank_1/517/block.bin"
+# .balign 2
+# glabel bank_1_index_517_image # 0x5E6420
+# .incbin "assets/image/bank_1/517/block.bin"
 
-.balign 2
-glabel bank_1_index_518_image # 0x5E68A0
-.incbin "assets/image/bank_1/518/block.bin"
+# .balign 2
+# glabel bank_1_index_518_image # 0x5E68A0
+# .incbin "assets/image/bank_1/518/block.bin"
 
-.balign 2
-glabel bank_1_index_519_image # 0x5E6D20
-.incbin "assets/image/bank_1/519/block.bin"
+# .balign 2
+# glabel bank_1_index_519_image # 0x5E6D20
+# .incbin "assets/image/bank_1/519/block.bin"
 
-.balign 2
-glabel bank_1_index_520_image # 0x5E71A0
-.incbin "assets/image/bank_1/520/block.bin"
+# .balign 2
+# glabel bank_1_index_520_image # 0x5E71A0
+# .incbin "assets/image/bank_1/520/block.bin"
 
-.balign 2
-glabel bank_1_index_521_image # 0x5E7620
-.incbin "assets/image/bank_1/521/block.bin"
+# .balign 2
+# glabel bank_1_index_521_image # 0x5E7620
+# .incbin "assets/image/bank_1/521/block.bin"
 
-.balign 2
-glabel bank_1_index_522_image # 0x5E7AA0
-.incbin "assets/image/bank_1/522/block.bin"
+# .balign 2
+# glabel bank_1_index_522_image # 0x5E7AA0
+# .incbin "assets/image/bank_1/522/block.bin"
 
-.balign 2
-glabel bank_1_index_523_image # 0x5E7F20
-.incbin "assets/image/bank_1/523/block.bin"
+# .balign 2
+# glabel bank_1_index_523_image # 0x5E7F20
+# .incbin "assets/image/bank_1/523/block.bin"
 
-.balign 2
-glabel bank_1_index_524_image # 0x5E83A0
-.incbin "assets/image/bank_1/524/block.bin"
+# .balign 2
+# glabel bank_1_index_524_image # 0x5E83A0
+# .incbin "assets/image/bank_1/524/block.bin"
 
-.balign 2
-glabel bank_1_index_525_image # 0x5E83C0
-.incbin "assets/image/bank_1/525/block.bin"
+# .balign 2
+# glabel bank_1_index_525_image # 0x5E83C0
+# .incbin "assets/image/bank_1/525/block.bin"
 
-.balign 2
-glabel bank_1_index_526_image # 0x5E8840
-.incbin "assets/image/bank_1/526/block.bin"
+# .balign 2
+# glabel bank_1_index_526_image # 0x5E8840
+# .incbin "assets/image/bank_1/526/block.bin"
 
-.balign 2
-glabel bank_1_index_527_image # 0x5E8CC0
-.incbin "assets/image/bank_1/527/block.bin"
+# .balign 2
+# glabel bank_1_index_527_image # 0x5E8CC0
+# .incbin "assets/image/bank_1/527/block.bin"
 
-.balign 2
-glabel bank_1_index_528_image # 0x5E9140
-.incbin "assets/image/bank_1/528/block.bin"
+# .balign 2
+# glabel bank_1_index_528_image # 0x5E9140
+# .incbin "assets/image/bank_1/528/block.bin"
 
-.balign 2
-glabel bank_1_index_529_image # 0x5E95C0
-.incbin "assets/image/bank_1/529/block.bin"
+# .balign 2
+# glabel bank_1_index_529_image # 0x5E95C0
+# .incbin "assets/image/bank_1/529/block.bin"
 
-.balign 2
-glabel bank_1_index_530_image # 0x5E9A40
-.incbin "assets/image/bank_1/530/block.bin"
+# .balign 2
+# glabel bank_1_index_530_image # 0x5E9A40
+# .incbin "assets/image/bank_1/530/block.bin"
 
-.balign 2
-glabel bank_1_index_531_image # 0x5E9EC0
-.incbin "assets/image/bank_1/531/block.bin"
+# .balign 2
+# glabel bank_1_index_531_image # 0x5E9EC0
+# .incbin "assets/image/bank_1/531/block.bin"
 
-.balign 2
-glabel bank_1_index_532_image # 0x5EA340
-.incbin "assets/image/bank_1/532/block.bin"
+# .balign 2
+# glabel bank_1_index_532_image # 0x5EA340
+# .incbin "assets/image/bank_1/532/block.bin"
 
-.balign 2
-glabel bank_1_index_533_image # 0x5EA7C0
-.incbin "assets/image/bank_1/533/block.bin"
+# .balign 2
+# glabel bank_1_index_533_image # 0x5EA7C0
+# .incbin "assets/image/bank_1/533/block.bin"
 
-.balign 2
-glabel bank_1_index_534_image # 0x5EAC40
-.incbin "assets/image/bank_1/534/block.bin"
+# .balign 2
+# glabel bank_1_index_534_image # 0x5EAC40
+# .incbin "assets/image/bank_1/534/block.bin"
 
-.balign 2
-glabel bank_1_index_535_image # 0x5EB0C0
-.incbin "assets/image/bank_1/535/block.bin"
+# .balign 2
+# glabel bank_1_index_535_image # 0x5EB0C0
+# .incbin "assets/image/bank_1/535/block.bin"
 
-.balign 2
-glabel bank_1_index_536_image # 0x5EB540
-.incbin "assets/image/bank_1/536/block.bin"
+# .balign 2
+# glabel bank_1_index_536_image # 0x5EB540
+# .incbin "assets/image/bank_1/536/block.bin"
 
-.balign 2
-glabel bank_1_index_537_image # 0x5EB9C0
-.incbin "assets/image/bank_1/537/block.bin"
+# .balign 2
+# glabel bank_1_index_537_image # 0x5EB9C0
+# .incbin "assets/image/bank_1/537/block.bin"
 
-.balign 2
-glabel bank_1_index_538_image # 0x5EBE40
-.incbin "assets/image/bank_1/538/block.bin"
+# .balign 2
+# glabel bank_1_index_538_image # 0x5EBE40
+# .incbin "assets/image/bank_1/538/block.bin"
 
-.balign 2
-glabel bank_1_index_539_image # 0x5EC2C0
-.incbin "assets/image/bank_1/539/block.bin"
+# .balign 2
+# glabel bank_1_index_539_image # 0x5EC2C0
+# .incbin "assets/image/bank_1/539/block.bin"
 
-.balign 2
-glabel bank_1_index_540_image # 0x5EC740
-.incbin "assets/image/bank_1/540/block.bin"
+# .balign 2
+# glabel bank_1_index_540_image # 0x5EC740
+# .incbin "assets/image/bank_1/540/block.bin"
 
-.balign 2
-glabel bank_1_index_541_image # 0x5ECBC0
-.incbin "assets/image/bank_1/541/block.bin"
+# .balign 2
+# glabel bank_1_index_541_image # 0x5ECBC0
+# .incbin "assets/image/bank_1/541/block.bin"
 
-.balign 2
-glabel bank_1_index_542_image # 0x5ED040
-.incbin "assets/image/bank_1/542/block.bin"
+# .balign 2
+# glabel bank_1_index_542_image # 0x5ED040
+# .incbin "assets/image/bank_1/542/block.bin"
 
-.balign 2
-glabel bank_1_index_543_image # 0x5ED4C0
-.incbin "assets/image/bank_1/543/block.bin"
+# .balign 2
+# glabel bank_1_index_543_image # 0x5ED4C0
+# .incbin "assets/image/bank_1/543/block.bin"
 
-.balign 2
-glabel bank_1_index_544_image # 0x5ED940
-.incbin "assets/image/bank_1/544/block.bin"
+# .balign 2
+# glabel bank_1_index_544_image # 0x5ED940
+# .incbin "assets/image/bank_1/544/block.bin"
 
-.balign 2
-glabel bank_1_index_545_image # 0x5EDDC0
-.incbin "assets/image/bank_1/545/block.bin"
+# .balign 2
+# glabel bank_1_index_545_image # 0x5EDDC0
+# .incbin "assets/image/bank_1/545/block.bin"
 
-.balign 2
-glabel bank_1_index_546_image # 0x5EE240
-.incbin "assets/image/bank_1/546/block.bin"
+# .balign 2
+# glabel bank_1_index_546_image # 0x5EE240
+# .incbin "assets/image/bank_1/546/block.bin"
 
-.balign 2
-glabel bank_1_index_547_image # 0x5EE6C0
-.incbin "assets/image/bank_1/547/block.bin"
+# .balign 2
+# glabel bank_1_index_547_image # 0x5EE6C0
+# .incbin "assets/image/bank_1/547/block.bin"
 
-.balign 2
-glabel bank_1_index_548_image # 0x5EEB40
-.incbin "assets/image/bank_1/548/block.bin"
+# .balign 2
+# glabel bank_1_index_548_image # 0x5EEB40
+# .incbin "assets/image/bank_1/548/block.bin"
 
-.balign 2
-glabel bank_1_index_549_image # 0x5EEB60
-.incbin "assets/image/bank_1/549/block.bin"
+# .balign 2
+# glabel bank_1_index_549_image # 0x5EEB60
+# .incbin "assets/image/bank_1/549/block.bin"
 
-.balign 2
-glabel bank_1_index_550_image # 0x5EEFE0
-.incbin "assets/image/bank_1/550/block.bin"
+# .balign 2
+# glabel bank_1_index_550_image # 0x5EEFE0
+# .incbin "assets/image/bank_1/550/block.bin"
 
-.balign 2
-glabel bank_1_index_551_image # 0x5EF460
-.incbin "assets/image/bank_1/551/block.bin"
+# .balign 2
+# glabel bank_1_index_551_image # 0x5EF460
+# .incbin "assets/image/bank_1/551/block.bin"
 
-.balign 2
-glabel bank_1_index_552_image # 0x5EF8E0
-.incbin "assets/image/bank_1/552/block.bin"
+# .balign 2
+# glabel bank_1_index_552_image # 0x5EF8E0
+# .incbin "assets/image/bank_1/552/block.bin"
 
-.balign 2
-glabel bank_1_index_553_image # 0x5EFD60
-.incbin "assets/image/bank_1/553/block.bin"
+# .balign 2
+# glabel bank_1_index_553_image # 0x5EFD60
+# .incbin "assets/image/bank_1/553/block.bin"
 
-.balign 2
-glabel bank_1_index_554_image # 0x5F01E0
-.incbin "assets/image/bank_1/554/block.bin"
+# .balign 2
+# glabel bank_1_index_554_image # 0x5F01E0
+# .incbin "assets/image/bank_1/554/block.bin"
 
-.balign 2
-glabel bank_1_index_555_image # 0x5F0660
-.incbin "assets/image/bank_1/555/block.bin"
+# .balign 2
+# glabel bank_1_index_555_image # 0x5F0660
+# .incbin "assets/image/bank_1/555/block.bin"
 
-.balign 2
-glabel bank_1_index_556_image # 0x5F0AE0
-.incbin "assets/image/bank_1/556/block.bin"
+# .balign 2
+# glabel bank_1_index_556_image # 0x5F0AE0
+# .incbin "assets/image/bank_1/556/block.bin"
 
-.balign 2
-glabel bank_1_index_557_image # 0x5F0CE0
-.incbin "assets/image/bank_1/557/block.bin"
+# .balign 2
+# glabel bank_1_index_557_image # 0x5F0CE0
+# .incbin "assets/image/bank_1/557/block.bin"
 
-.balign 2
-glabel bank_1_index_558_image # 0x5F0D00
-.incbin "assets/image/bank_1/558/block.bin"
+# .balign 2
+# glabel bank_1_index_558_image # 0x5F0D00
+# .incbin "assets/image/bank_1/558/block.bin"
 
-.balign 2
-glabel bank_1_index_559_image # 0x5F0F00
-.incbin "assets/image/bank_1/559/block.bin"
+# .balign 2
+# glabel bank_1_index_559_image # 0x5F0F00
+# .incbin "assets/image/bank_1/559/block.bin"
 
-.balign 2
-glabel bank_1_index_560_image # 0x5F1100
-.incbin "assets/image/bank_1/560/block.bin"
+# .balign 2
+# glabel bank_1_index_560_image # 0x5F1100
+# .incbin "assets/image/bank_1/560/block.bin"
 
-.balign 2
-glabel bank_1_index_561_image # 0x5F1280
-.incbin "assets/image/bank_1/561/block.bin"
+# .balign 2
+# glabel bank_1_index_561_image # 0x5F1280
+# .incbin "assets/image/bank_1/561/block.bin"
 
-.balign 2
-glabel bank_1_index_562_image # 0x5F12A0
-.incbin "assets/image/bank_1/562/block.bin"
+# .balign 2
+# glabel bank_1_index_562_image # 0x5F12A0
+# .incbin "assets/image/bank_1/562/block.bin"
 
-.balign 2
-glabel bank_1_index_563_image # 0x5F1420
-.incbin "assets/image/bank_1/563/block.bin"
+# .balign 2
+# glabel bank_1_index_563_image # 0x5F1420
+# .incbin "assets/image/bank_1/563/block.bin"
 
-.balign 2
-glabel bank_1_index_564_image # 0x5F18A0
-.incbin "assets/image/bank_1/564/block.bin"
+# .balign 2
+# glabel bank_1_index_564_image # 0x5F18A0
+# .incbin "assets/image/bank_1/564/block.bin"
 
-.balign 2
-glabel bank_1_index_565_image # 0x5F18C0
-.incbin "assets/image/bank_1/565/block.bin"
+# .balign 2
+# glabel bank_1_index_565_image # 0x5F18C0
+# .incbin "assets/image/bank_1/565/block.bin"
 
-.balign 2
-glabel bank_1_index_566_image # 0x5F1D40
-.incbin "assets/image/bank_1/566/block.bin"
+# .balign 2
+# glabel bank_1_index_566_image # 0x5F1D40
+# .incbin "assets/image/bank_1/566/block.bin"
 
-.balign 2
-glabel bank_1_index_567_image # 0x5F21C0
-.incbin "assets/image/bank_1/567/block.bin"
+# .balign 2
+# glabel bank_1_index_567_image # 0x5F21C0
+# .incbin "assets/image/bank_1/567/block.bin"
 
-.balign 2
-glabel bank_1_index_568_image # 0x5F2640
-.incbin "assets/image/bank_1/568/block.bin"
+# .balign 2
+# glabel bank_1_index_568_image # 0x5F2640
+# .incbin "assets/image/bank_1/568/block.bin"
 
-.balign 2
-glabel bank_1_index_569_image # 0x5F2AC0
-.incbin "assets/image/bank_1/569/block.bin"
+# .balign 2
+# glabel bank_1_index_569_image # 0x5F2AC0
+# .incbin "assets/image/bank_1/569/block.bin"
 
-.balign 2
-glabel bank_1_index_570_image # 0x5F2F40
-.incbin "assets/image/bank_1/570/block.bin"
+# .balign 2
+# glabel bank_1_index_570_image # 0x5F2F40
+# .incbin "assets/image/bank_1/570/block.bin"
 
-.balign 2
-glabel bank_1_index_571_image # 0x5F33C0
-.incbin "assets/image/bank_1/571/block.bin"
+# .balign 2
+# glabel bank_1_index_571_image # 0x5F33C0
+# .incbin "assets/image/bank_1/571/block.bin"
 
-.balign 2
-glabel bank_1_index_572_image # 0x5F34C0
-.incbin "assets/image/bank_1/572/block.bin"
+# .balign 2
+# glabel bank_1_index_572_image # 0x5F34C0
+# .incbin "assets/image/bank_1/572/block.bin"
 
-.balign 2
-glabel bank_1_index_573_image # 0x5F34E0
-.incbin "assets/image/bank_1/573/block.bin"
+# .balign 2
+# glabel bank_1_index_573_image # 0x5F34E0
+# .incbin "assets/image/bank_1/573/block.bin"
 
-.balign 2
-glabel bank_1_index_574_image # 0x5F35E0
-.incbin "assets/image/bank_1/574/block.bin"
+# .balign 2
+# glabel bank_1_index_574_image # 0x5F35E0
+# .incbin "assets/image/bank_1/574/block.bin"
 
-.balign 2
-glabel bank_1_index_575_image # 0x5F39E0
-.incbin "assets/image/bank_1/575/block.bin"
+# .balign 2
+# glabel bank_1_index_575_image # 0x5F39E0
+# .incbin "assets/image/bank_1/575/block.bin"
 
-.balign 2
-glabel bank_1_index_576_image # 0x5F3A00
-.incbin "assets/image/bank_1/576/block.bin"
+# .balign 2
+# glabel bank_1_index_576_image # 0x5F3A00
+# .incbin "assets/image/bank_1/576/block.bin"
 
-.balign 2
-glabel bank_1_index_577_image # 0x5F3C00
-.incbin "assets/image/bank_1/577/block.bin"
+# .balign 2
+# glabel bank_1_index_577_image # 0x5F3C00
+# .incbin "assets/image/bank_1/577/block.bin"
 
-.balign 2
-glabel bank_1_index_578_image # 0x5F3C20
-.incbin "assets/image/bank_1/578/block.bin"
+# .balign 2
+# glabel bank_1_index_578_image # 0x5F3C20
+# .incbin "assets/image/bank_1/578/block.bin"
 
-.balign 2
-glabel bank_1_index_579_image # 0x5F3CA0
-.incbin "assets/image/bank_1/579/block.bin"
+# .balign 2
+# glabel bank_1_index_579_image # 0x5F3CA0
+# .incbin "assets/image/bank_1/579/block.bin"
 
-.balign 2
-glabel bank_1_index_580_image # 0x5F3DE0
-.incbin "assets/image/bank_1/580/block.bin"
+# .balign 2
+# glabel bank_1_index_580_image # 0x5F3DE0
+# .incbin "assets/image/bank_1/580/block.bin"
 
-.balign 2
-glabel bank_1_index_581_image # 0x5F3E00
-.incbin "assets/image/bank_1/581/block.bin"
+# .balign 2
+# glabel bank_1_index_581_image # 0x5F3E00
+# .incbin "assets/image/bank_1/581/block.bin"
 
-.balign 2
-glabel bank_1_index_582_image # 0x5F3E40
-.incbin "assets/image/bank_1/582/block.bin"
+# .balign 2
+# glabel bank_1_index_582_image # 0x5F3E40
+# .incbin "assets/image/bank_1/582/block.bin"
 
-.balign 2
-glabel bank_1_index_583_image # 0x5F3E60
-.incbin "assets/image/bank_1/583/block.bin"
+# .balign 2
+# glabel bank_1_index_583_image # 0x5F3E60
+# .incbin "assets/image/bank_1/583/block.bin"
 
-.balign 2
-glabel bank_1_index_584_image # 0x5F3EE0
-.incbin "assets/image/bank_1/584/block.bin"
+# .balign 2
+# glabel bank_1_index_584_image # 0x5F3EE0
+# .incbin "assets/image/bank_1/584/block.bin"
 
-.balign 2
-glabel bank_1_index_585_image # 0x5F3F00
-.incbin "assets/image/bank_1/585/block.bin"
+# .balign 2
+# glabel bank_1_index_585_image # 0x5F3F00
+# .incbin "assets/image/bank_1/585/block.bin"
 
-.balign 2
-glabel bank_1_index_586_image # 0x5F3F08
-.incbin "assets/image/bank_1/586/block.bin"
+# .balign 2
+# glabel bank_1_index_586_image # 0x5F3F08
+# .incbin "assets/image/bank_1/586/block.bin"
 
-.balign 2
-glabel bank_1_index_587_image # 0x5F3F10
-.incbin "assets/image/bank_1/587/block.bin"
+# .balign 2
+# glabel bank_1_index_587_image # 0x5F3F10
+# .incbin "assets/image/bank_1/587/block.bin"
 
-.balign 2
-glabel bank_1_index_588_image # 0x5F3F18
-.incbin "assets/image/bank_1/588/block.bin"
+# .balign 2
+# glabel bank_1_index_588_image # 0x5F3F18
+# .incbin "assets/image/bank_1/588/block.bin"
 
-.balign 2
-glabel bank_1_index_589_image # 0x5F3F20
-.incbin "assets/image/bank_1/589/block.bin"
+# .balign 2
+# glabel bank_1_index_589_image # 0x5F3F20
+# .incbin "assets/image/bank_1/589/block.bin"
 
-.balign 2
-glabel bank_1_index_590_image # 0x5F3F28
-.incbin "assets/image/bank_1/590/block.bin"
+# .balign 2
+# glabel bank_1_index_590_image # 0x5F3F28
+# .incbin "assets/image/bank_1/590/block.bin"
 
-.balign 2
-glabel bank_1_index_591_image # 0x5F4128
-.incbin "assets/image/bank_1/591/block.bin"
+# .balign 2
+# glabel bank_1_index_591_image # 0x5F4128
+# .incbin "assets/image/bank_1/591/block.bin"
 
-.balign 2
-glabel bank_1_index_592_image # 0x5F4148
-.incbin "assets/image/bank_1/592/block.bin"
+# .balign 2
+# glabel bank_1_index_592_image # 0x5F4148
+# .incbin "assets/image/bank_1/592/block.bin"
 
-.balign 2
-glabel bank_1_index_593_image # 0x5F4168
-.incbin "assets/image/bank_1/593/block.bin"
+# .balign 2
+# glabel bank_1_index_593_image # 0x5F4168
+# .incbin "assets/image/bank_1/593/block.bin"
 
-.balign 2
-glabel bank_1_index_594_image # 0x5F41E8
-.incbin "assets/image/bank_1/594/block.bin"
+# .balign 2
+# glabel bank_1_index_594_image # 0x5F41E8
+# .incbin "assets/image/bank_1/594/block.bin"
 
-.balign 2
-glabel bank_1_index_595_image # 0x5F41F8
-.incbin "assets/image/bank_1/595/block.bin"
+# .balign 2
+# glabel bank_1_index_595_image # 0x5F41F8
+# .incbin "assets/image/bank_1/595/block.bin"
 
-.balign 2
-glabel bank_1_index_596_image # 0x5F4208
-.incbin "assets/image/bank_1/596/block.bin"
+# .balign 2
+# glabel bank_1_index_596_image # 0x5F4208
+# .incbin "assets/image/bank_1/596/block.bin"
 
-.balign 2
-glabel bank_1_index_597_image # 0x5F4218
-.incbin "assets/image/bank_1/597/block.bin"
+# .balign 2
+# glabel bank_1_index_597_image # 0x5F4218
+# .incbin "assets/image/bank_1/597/block.bin"
 
-.balign 2
-glabel bank_1_index_598_image # 0x5F4228
-.incbin "assets/image/bank_1/598/block.bin"
+# .balign 2
+# glabel bank_1_index_598_image # 0x5F4228
+# .incbin "assets/image/bank_1/598/block.bin"
 
-.balign 2
-glabel bank_1_index_599_image # 0x5F4238
-.incbin "assets/image/bank_1/599/block.bin"
+# .balign 2
+# glabel bank_1_index_599_image # 0x5F4238
+# .incbin "assets/image/bank_1/599/block.bin"
 
-.balign 2
-glabel bank_1_index_600_image # 0x5F4248
-.incbin "assets/image/bank_1/600/block.bin"
+# .balign 2
+# glabel bank_1_index_600_image # 0x5F4248
+# .incbin "assets/image/bank_1/600/block.bin"
 
-.balign 2
-glabel bank_1_index_601_image # 0x5F4348
-.incbin "assets/image/bank_1/601/block.bin"
+# .balign 2
+# glabel bank_1_index_601_image # 0x5F4348
+# .incbin "assets/image/bank_1/601/block.bin"
 
-.balign 2
-glabel bank_1_index_602_image # 0x5F4448
-.incbin "assets/image/bank_1/602/block.bin"
+# .balign 2
+# glabel bank_1_index_602_image # 0x5F4448
+# .incbin "assets/image/bank_1/602/block.bin"
 
-.balign 2
-glabel bank_1_index_603_image # 0x5F4548
-.incbin "assets/image/bank_1/603/block.bin"
+# .balign 2
+# glabel bank_1_index_603_image # 0x5F4548
+# .incbin "assets/image/bank_1/603/block.bin"
 
-.balign 2
-glabel bank_1_index_604_image # 0x5F4648
-.incbin "assets/image/bank_1/604/block.bin"
+# .balign 2
+# glabel bank_1_index_604_image # 0x5F4648
+# .incbin "assets/image/bank_1/604/block.bin"
 
-.balign 2
-glabel bank_1_index_605_image # 0x5F4848
-.incbin "assets/image/bank_1/605/block.bin"
+# .balign 2
+# glabel bank_1_index_605_image # 0x5F4848
+# .incbin "assets/image/bank_1/605/block.bin"
 
-.balign 2
-glabel bank_1_index_606_image # 0x5F4A48
-.incbin "assets/image/bank_1/606/block.bin"
+# .balign 2
+# glabel bank_1_index_606_image # 0x5F4A48
+# .incbin "assets/image/bank_1/606/block.bin"
 
-.balign 2
-glabel bank_1_index_607_image # 0x5F4C48
-.incbin "assets/image/bank_1/607/block.bin"
+# .balign 2
+# glabel bank_1_index_607_image # 0x5F4C48
+# .incbin "assets/image/bank_1/607/block.bin"
 
-.balign 2
-glabel bank_1_index_608_image # 0x5F5048
-.incbin "assets/image/bank_1/608/block.bin"
+# .balign 2
+# glabel bank_1_index_608_image # 0x5F5048
+# .incbin "assets/image/bank_1/608/block.bin"
 
-.balign 2
-glabel bank_1_index_609_image # 0x5F5068
-.incbin "assets/image/bank_1/609/block.bin"
+# .balign 2
+# glabel bank_1_index_609_image # 0x5F5068
+# .incbin "assets/image/bank_1/609/block.bin"
 
-.balign 2
-glabel bank_1_index_610_image # 0x5F5088
-.incbin "assets/image/bank_1/610/block.bin"
+# .balign 2
+# glabel bank_1_index_610_image # 0x5F5088
+# .incbin "assets/image/bank_1/610/block.bin"
 
-.balign 2
-glabel bank_1_index_611_image # 0x5F5688
-.incbin "assets/image/bank_1/611/block.bin"
+# .balign 2
+# glabel bank_1_index_611_image # 0x5F5688
+# .incbin "assets/image/bank_1/611/block.bin"
 
-.balign 2
-glabel bank_1_index_612_image # 0x5F56C8
-.incbin "assets/image/bank_1/612/block.bin"
+# .balign 2
+# glabel bank_1_index_612_image # 0x5F56C8
+# .incbin "assets/image/bank_1/612/block.bin"
 
-.balign 2
-glabel bank_1_index_613_image # 0x5F56E8
-.incbin "assets/image/bank_1/613/block.bin"
+# .balign 2
+# glabel bank_1_index_613_image # 0x5F56E8
+# .incbin "assets/image/bank_1/613/block.bin"
 
-.balign 2
-glabel bank_1_index_614_image # 0x5F5708
-.incbin "assets/image/bank_1/614/block.bin"
+# .balign 2
+# glabel bank_1_index_614_image # 0x5F5708
+# .incbin "assets/image/bank_1/614/block.bin"
 
-.balign 2
-glabel bank_1_index_615_image # 0x5F5748
-.incbin "assets/image/bank_1/615/block.bin"
+# .balign 2
+# glabel bank_1_index_615_image # 0x5F5748
+# .incbin "assets/image/bank_1/615/block.bin"
 
-.balign 2
-glabel bank_1_index_616_image # 0x5F5768
-.incbin "assets/image/bank_1/616/block.bin"
+# .balign 2
+# glabel bank_1_index_616_image # 0x5F5768
+# .incbin "assets/image/bank_1/616/block.bin"
 
-.balign 2
-glabel bank_1_index_617_image # 0x5F5788
-.incbin "assets/image/bank_1/617/block.bin"
+# .balign 2
+# glabel bank_1_index_617_image # 0x5F5788
+# .incbin "assets/image/bank_1/617/block.bin"
 
-.balign 2
-glabel bank_1_index_618_image # 0x5F5808
-.incbin "assets/image/bank_1/618/block.bin"
+# .balign 2
+# glabel bank_1_index_618_image # 0x5F5808
+# .incbin "assets/image/bank_1/618/block.bin"
 
-.balign 2
-glabel bank_1_index_619_image # 0x5F5828
-.incbin "assets/image/bank_1/619/block.bin"
+# .balign 2
+# glabel bank_1_index_619_image # 0x5F5828
+# .incbin "assets/image/bank_1/619/block.bin"
 
-.balign 2
-glabel bank_1_index_620_image # 0x5F5848
-.incbin "assets/image/bank_1/620/block.bin"
+# .balign 2
+# glabel bank_1_index_620_image # 0x5F5848
+# .incbin "assets/image/bank_1/620/block.bin"
 
-.balign 2
-glabel bank_1_index_621_image # 0x5F5948
-.incbin "assets/image/bank_1/621/block.bin"
+# .balign 2
+# glabel bank_1_index_621_image # 0x5F5948
+# .incbin "assets/image/bank_1/621/block.bin"
 
-.balign 2
-glabel bank_1_index_622_image # 0x5F5968
-.incbin "assets/image/bank_1/622/block.bin"
+# .balign 2
+# glabel bank_1_index_622_image # 0x5F5968
+# .incbin "assets/image/bank_1/622/block.bin"
 
-.balign 2
-glabel bank_1_index_623_image # 0x5F5988
-.incbin "assets/image/bank_1/623/block.bin"
+# .balign 2
+# glabel bank_1_index_623_image # 0x5F5988
+# .incbin "assets/image/bank_1/623/block.bin"
 
-.balign 2
-glabel bank_1_index_624_image # 0x5F5A88
-.incbin "assets/image/bank_1/624/block.bin"
+# .balign 2
+# glabel bank_1_index_624_image # 0x5F5A88
+# .incbin "assets/image/bank_1/624/block.bin"
 
-.balign 2
-glabel bank_1_index_625_image # 0x5F5B08
-.incbin "assets/image/bank_1/625/block.bin"
+# .balign 2
+# glabel bank_1_index_625_image # 0x5F5B08
+# .incbin "assets/image/bank_1/625/block.bin"
 
-.balign 2
-glabel bank_1_index_626_image # 0x5F5D08
-.incbin "assets/image/bank_1/626/block.bin"
+# .balign 2
+# glabel bank_1_index_626_image # 0x5F5D08
+# .incbin "assets/image/bank_1/626/block.bin"
 
-.balign 2
-glabel bank_1_index_627_image # 0x5F5F08
-.incbin "assets/image/bank_1/627/block.bin"
+# .balign 2
+# glabel bank_1_index_627_image # 0x5F5F08
+# .incbin "assets/image/bank_1/627/block.bin"
 
-.balign 2
-glabel bank_1_index_628_image # 0x5F6108
-.incbin "assets/image/bank_1/628/block.bin"
+# .balign 2
+# glabel bank_1_index_628_image # 0x5F6108
+# .incbin "assets/image/bank_1/628/block.bin"
 
-.balign 2
-glabel bank_1_index_629_image # 0x5F6208
-.incbin "assets/image/bank_1/629/block.bin"
+# .balign 2
+# glabel bank_1_index_629_image # 0x5F6208
+# .incbin "assets/image/bank_1/629/block.bin"
 
-.balign 2
-glabel bank_1_index_630_image # 0x5F6408
-.incbin "assets/image/bank_1/630/block.bin"
+# .balign 2
+# glabel bank_1_index_630_image # 0x5F6408
+# .incbin "assets/image/bank_1/630/block.bin"
 
-.balign 2
-glabel bank_1_index_631_image # 0x5F6508
-.incbin "assets/image/bank_1/631/block.bin"
+# .balign 2
+# glabel bank_1_index_631_image # 0x5F6508
+# .incbin "assets/image/bank_1/631/block.bin"
 
-.balign 2
-glabel bank_1_index_632_image # 0x5F6908
-.incbin "assets/image/bank_1/632/block.bin"
+# .balign 2
+# glabel bank_1_index_632_image # 0x5F6908
+# .incbin "assets/image/bank_1/632/block.bin"
 
-.balign 2
-glabel bank_1_index_633_image # 0x5F6A08
-.incbin "assets/image/bank_1/633/block.bin"
+# .balign 2
+# glabel bank_1_index_633_image # 0x5F6A08
+# .incbin "assets/image/bank_1/633/block.bin"
 
-.balign 2
-glabel bank_1_index_634_image # 0x5F6C08
-.incbin "assets/image/bank_1/634/block.bin"
+# .balign 2
+# glabel bank_1_index_634_image # 0x5F6C08
+# .incbin "assets/image/bank_1/634/block.bin"
 
-.balign 2
-glabel bank_1_index_635_image # 0x5F6C28
-.incbin "assets/image/bank_1/635/block.bin"
+# .balign 2
+# glabel bank_1_index_635_image # 0x5F6C28
+# .incbin "assets/image/bank_1/635/block.bin"
 
-.balign 2
-glabel bank_1_index_636_image # 0x5F6E28
-.incbin "assets/image/bank_1/636/block.bin"
+# .balign 2
+# glabel bank_1_index_636_image # 0x5F6E28
+# .incbin "assets/image/bank_1/636/block.bin"
 
-.balign 2
-glabel bank_1_index_637_image # 0x5F6E48
-.incbin "assets/image/bank_1/637/block.bin"
+# .balign 2
+# glabel bank_1_index_637_image # 0x5F6E48
+# .incbin "assets/image/bank_1/637/block.bin"
 
-.balign 2
-glabel bank_1_index_638_image # 0x5F7048
-.incbin "assets/image/bank_1/638/block.bin"
+# .balign 2
+# glabel bank_1_index_638_image # 0x5F7048
+# .incbin "assets/image/bank_1/638/block.bin"
 
-.balign 2
-glabel bank_1_index_639_image # 0x5F7248
-.incbin "assets/image/bank_1/639/block.bin"
+# .balign 2
+# glabel bank_1_index_639_image # 0x5F7248
+# .incbin "assets/image/bank_1/639/block.bin"
 
-.balign 2
-glabel bank_1_index_640_image # 0x5F7448
-.incbin "assets/image/bank_1/640/block.bin"
+# .balign 2
+# glabel bank_1_index_640_image # 0x5F7448
+# .incbin "assets/image/bank_1/640/block.bin"
 
-.balign 2
-glabel bank_1_index_641_image # 0x5F7648
-.incbin "assets/image/bank_1/641/block.bin"
+# .balign 2
+# glabel bank_1_index_641_image # 0x5F7648
+# .incbin "assets/image/bank_1/641/block.bin"
 
-.balign 2
-glabel bank_1_index_642_image # 0x5F7848
-.incbin "assets/image/bank_1/642/block.bin"
+# .balign 2
+# glabel bank_1_index_642_image # 0x5F7848
+# .incbin "assets/image/bank_1/642/block.bin"
 
-.balign 2
-glabel bank_1_index_643_image # 0x5F7A48
-.incbin "assets/image/bank_1/643/block.bin"
+# .balign 2
+# glabel bank_1_index_643_image # 0x5F7A48
+# .incbin "assets/image/bank_1/643/block.bin"
 
-.balign 2
-glabel bank_1_index_644_image # 0x5F7C48
-.incbin "assets/image/bank_1/644/block.bin"
+# .balign 2
+# glabel bank_1_index_644_image # 0x5F7C48
+# .incbin "assets/image/bank_1/644/block.bin"
 
-.balign 2
-glabel bank_1_index_645_image # 0x5F7E48
-.incbin "assets/image/bank_1/645/block.bin"
+# .balign 2
+# glabel bank_1_index_645_image # 0x5F7E48
+# .incbin "assets/image/bank_1/645/block.bin"
 
-.balign 2
-glabel bank_1_index_646_image # 0x5F8048
-.incbin "assets/image/bank_1/646/block.bin"
+# .balign 2
+# glabel bank_1_index_646_image # 0x5F8048
+# .incbin "assets/image/bank_1/646/block.bin"
 
-.balign 2
-glabel bank_1_index_647_image # 0x5F8248
-.incbin "assets/image/bank_1/647/block.bin"
+# .balign 2
+# glabel bank_1_index_647_image # 0x5F8248
+# .incbin "assets/image/bank_1/647/block.bin"
 
-.balign 2
-glabel bank_1_index_648_image # 0x5F8448
-.incbin "assets/image/bank_1/648/block.bin"
+# .balign 2
+# glabel bank_1_index_648_image # 0x5F8448
+# .incbin "assets/image/bank_1/648/block.bin"
 
-.balign 2
-glabel bank_1_index_649_image # 0x5F8648
-.incbin "assets/image/bank_1/649/block.bin"
+# .balign 2
+# glabel bank_1_index_649_image # 0x5F8648
+# .incbin "assets/image/bank_1/649/block.bin"
 
-.balign 2
-glabel bank_1_index_650_image # 0x5F8848
-.incbin "assets/image/bank_1/650/block.bin"
+# .balign 2
+# glabel bank_1_index_650_image # 0x5F8848
+# .incbin "assets/image/bank_1/650/block.bin"
 
-.balign 2
-glabel bank_1_index_651_image # 0x5F8A48
-.incbin "assets/image/bank_1/651/block.bin"
+# .balign 2
+# glabel bank_1_index_651_image # 0x5F8A48
+# .incbin "assets/image/bank_1/651/block.bin"
 
-.balign 2
-glabel bank_1_index_652_image # 0x5F8AC8
-.incbin "assets/image/bank_1/652/block.bin"
+# .balign 2
+# glabel bank_1_index_652_image # 0x5F8AC8
+# .incbin "assets/image/bank_1/652/block.bin"
 
-.balign 2
-glabel bank_1_index_653_image # 0x5F8AD0
-.incbin "assets/image/bank_1/653/block.bin"
+# .balign 2
+# glabel bank_1_index_653_image # 0x5F8AD0
+# .incbin "assets/image/bank_1/653/block.bin"
 
-.balign 2
-glabel bank_1_index_654_image # 0x5F8BD0
-.incbin "assets/image/bank_1/654/block.bin"
+# .balign 2
+# glabel bank_1_index_654_image # 0x5F8BD0
+# .incbin "assets/image/bank_1/654/block.bin"
 
-.balign 2
-glabel bank_1_index_655_image # 0x5F8BD8
-.incbin "assets/image/bank_1/655/block.bin"
+# .balign 2
+# glabel bank_1_index_655_image # 0x5F8BD8
+# .incbin "assets/image/bank_1/655/block.bin"
 
-.balign 2
-glabel bank_1_index_656_image # 0x5F8CD8
-.incbin "assets/image/bank_1/656/block.bin"
+# .balign 2
+# glabel bank_1_index_656_image # 0x5F8CD8
+# .incbin "assets/image/bank_1/656/block.bin"
 
-.balign 2
-glabel bank_1_index_657_image # 0x5F8CF8
-.incbin "assets/image/bank_1/657/block.bin"
+# .balign 2
+# glabel bank_1_index_657_image # 0x5F8CF8
+# .incbin "assets/image/bank_1/657/block.bin"
 
-.balign 2
-glabel bank_1_index_658_image # 0x5F8DF8
-.incbin "assets/image/bank_1/658/block.bin"
+# .balign 2
+# glabel bank_1_index_658_image # 0x5F8DF8
+# .incbin "assets/image/bank_1/658/block.bin"
 
-.balign 2
-glabel bank_1_index_659_image # 0x5F8E18
-.incbin "assets/image/bank_1/659/block.bin"
+# .balign 2
+# glabel bank_1_index_659_image # 0x5F8E18
+# .incbin "assets/image/bank_1/659/block.bin"
 
-.balign 2
-glabel bank_1_index_660_image # 0x5F8F18
-.incbin "assets/image/bank_1/660/block.bin"
+# .balign 2
+# glabel bank_1_index_660_image # 0x5F8F18
+# .incbin "assets/image/bank_1/660/block.bin"
 
-.balign 2
-glabel bank_1_index_661_image # 0x5F8F38
-.incbin "assets/image/bank_1/661/block.bin"
+# .balign 2
+# glabel bank_1_index_661_image # 0x5F8F38
+# .incbin "assets/image/bank_1/661/block.bin"
 
-.balign 2
-glabel bank_1_index_662_image # 0x5F9038
-.incbin "assets/image/bank_1/662/block.bin"
+# .balign 2
+# glabel bank_1_index_662_image # 0x5F9038
+# .incbin "assets/image/bank_1/662/block.bin"
 
-.balign 2
-glabel bank_1_index_663_image # 0x5F9058
-.incbin "assets/image/bank_1/663/block.bin"
+# .balign 2
+# glabel bank_1_index_663_image # 0x5F9058
+# .incbin "assets/image/bank_1/663/block.bin"
 
-.balign 2
-glabel bank_1_index_664_image # 0x5F9158
-.incbin "assets/image/bank_1/664/block.bin"
+# .balign 2
+# glabel bank_1_index_664_image # 0x5F9158
+# .incbin "assets/image/bank_1/664/block.bin"
 
-.balign 2
-glabel bank_1_index_665_image # 0x5F9178
-.incbin "assets/image/bank_1/665/block.bin"
+# .balign 2
+# glabel bank_1_index_665_image # 0x5F9178
+# .incbin "assets/image/bank_1/665/block.bin"
 
-.balign 2
-glabel bank_1_index_666_image # 0x5F9278
-.incbin "assets/image/bank_1/666/block.bin"
+# .balign 2
+# glabel bank_1_index_666_image # 0x5F9278
+# .incbin "assets/image/bank_1/666/block.bin"
 
-.balign 2
-glabel bank_1_index_667_image # 0x5F9298
-.incbin "assets/image/bank_1/667/block.bin"
+# .balign 2
+# glabel bank_1_index_667_image # 0x5F9298
+# .incbin "assets/image/bank_1/667/block.bin"
 
-.balign 2
-glabel bank_1_index_668_image # 0x5F9398
-.incbin "assets/image/bank_1/668/block.bin"
+# .balign 2
+# glabel bank_1_index_668_image # 0x5F9398
+# .incbin "assets/image/bank_1/668/block.bin"
 
-.balign 2
-glabel bank_1_index_669_image # 0x5F93B8
-.incbin "assets/image/bank_1/669/block.bin"
+# .balign 2
+# glabel bank_1_index_669_image # 0x5F93B8
+# .incbin "assets/image/bank_1/669/block.bin"
 
-.balign 2
-glabel bank_1_index_670_image # 0x5F94B8
-.incbin "assets/image/bank_1/670/block.bin"
+# .balign 2
+# glabel bank_1_index_670_image # 0x5F94B8
+# .incbin "assets/image/bank_1/670/block.bin"
 
-.balign 2
-glabel bank_1_index_671_image # 0x5F94D8
-.incbin "assets/image/bank_1/671/block.bin"
+# .balign 2
+# glabel bank_1_index_671_image # 0x5F94D8
+# .incbin "assets/image/bank_1/671/block.bin"
 
-.balign 2
-glabel bank_1_index_672_image # 0x5F95D8
-.incbin "assets/image/bank_1/672/block.bin"
+# .balign 2
+# glabel bank_1_index_672_image # 0x5F95D8
+# .incbin "assets/image/bank_1/672/block.bin"
 
-.balign 2
-glabel bank_1_index_673_image # 0x5F96D8
-.incbin "assets/image/bank_1/673/block.bin"
+# .balign 2
+# glabel bank_1_index_673_image # 0x5F96D8
+# .incbin "assets/image/bank_1/673/block.bin"
 
-.balign 2
-glabel bank_1_index_674_image # 0x5F97D8
-.incbin "assets/image/bank_1/674/block.bin"
+# .balign 2
+# glabel bank_1_index_674_image # 0x5F97D8
+# .incbin "assets/image/bank_1/674/block.bin"
 
-.balign 2
-glabel bank_1_index_675_image # 0x5F98D8
-.incbin "assets/image/bank_1/675/block.bin"
+# .balign 2
+# glabel bank_1_index_675_image # 0x5F98D8
+# .incbin "assets/image/bank_1/675/block.bin"
 
-.balign 2
-glabel bank_1_index_676_image # 0x5F99D8
-.incbin "assets/image/bank_1/676/block.bin"
+# .balign 2
+# glabel bank_1_index_676_image # 0x5F99D8
+# .incbin "assets/image/bank_1/676/block.bin"
 
-.balign 2
-glabel bank_1_index_677_image # 0x5F9AD8
-.incbin "assets/image/bank_1/677/block.bin"
+# .balign 2
+# glabel bank_1_index_677_image # 0x5F9AD8
+# .incbin "assets/image/bank_1/677/block.bin"
 
-.balign 2
-glabel bank_1_index_678_image # 0x5F9BD8
-.incbin "assets/image/bank_1/678/block.bin"
+# .balign 2
+# glabel bank_1_index_678_image # 0x5F9BD8
+# .incbin "assets/image/bank_1/678/block.bin"
 
-.balign 2
-glabel bank_1_index_679_image # 0x5F9CD8
-.incbin "assets/image/bank_1/679/block.bin"
+# .balign 2
+# glabel bank_1_index_679_image # 0x5F9CD8
+# .incbin "assets/image/bank_1/679/block.bin"
 
-.balign 2
-glabel bank_1_index_680_image # 0x5F9CF0
-.incbin "assets/image/bank_1/680/block.bin"
+# .balign 2
+# glabel bank_1_index_680_image # 0x5F9CF0
+# .incbin "assets/image/bank_1/680/block.bin"
 
-.balign 2
-glabel bank_1_index_681_image # 0x5F9DF0
-.incbin "assets/image/bank_1/681/block.bin"
+# .balign 2
+# glabel bank_1_index_681_image # 0x5F9DF0
+# .incbin "assets/image/bank_1/681/block.bin"
 
-.balign 2
-glabel bank_1_index_682_image # 0x5F9EF0
-.incbin "assets/image/bank_1/682/block.bin"
+# .balign 2
+# glabel bank_1_index_682_image # 0x5F9EF0
+# .incbin "assets/image/bank_1/682/block.bin"
 
-.balign 2
-glabel bank_1_index_683_image # 0x5F9FF0
-.incbin "assets/image/bank_1/683/block.bin"
+# .balign 2
+# glabel bank_1_index_683_image # 0x5F9FF0
+# .incbin "assets/image/bank_1/683/block.bin"
 
-.balign 2
-glabel bank_1_index_684_image # 0x5FA1F0
-.incbin "assets/image/bank_1/684/block.bin"
+# .balign 2
+# glabel bank_1_index_684_image # 0x5FA1F0
+# .incbin "assets/image/bank_1/684/block.bin"
 
-.balign 2
-glabel bank_1_index_685_image # 0x5FA270
-.incbin "assets/image/bank_1/685/block.bin"
+# .balign 2
+# glabel bank_1_index_685_image # 0x5FA270
+# .incbin "assets/image/bank_1/685/block.bin"
 
-.balign 2
-glabel bank_1_index_686_image # 0x5FA290
-.incbin "assets/image/bank_1/686/block.bin"
+# .balign 2
+# glabel bank_1_index_686_image # 0x5FA290
+# .incbin "assets/image/bank_1/686/block.bin"
 
-.balign 2
-glabel bank_1_index_687_image # 0x5FA2B0
-.incbin "assets/image/bank_1/687/block.bin"
+# .balign 2
+# glabel bank_1_index_687_image # 0x5FA2B0
+# .incbin "assets/image/bank_1/687/block.bin"
 
-.balign 2
-glabel bank_1_index_688_image # 0x5FA6B0
-.incbin "assets/image/bank_1/688/block.bin"
+# .balign 2
+# glabel bank_1_index_688_image # 0x5FA6B0
+# .incbin "assets/image/bank_1/688/block.bin"
 
-.balign 2
-glabel bank_1_index_689_image # 0x5FAAB0
-.incbin "assets/image/bank_1/689/block.bin"
+# .balign 2
+# glabel bank_1_index_689_image # 0x5FAAB0
+# .incbin "assets/image/bank_1/689/block.bin"
 
-.balign 2
-glabel bank_1_index_690_image # 0x5FAEB0
-.incbin "assets/image/bank_1/690/block.bin"
+# .balign 2
+# glabel bank_1_index_690_image # 0x5FAEB0
+# .incbin "assets/image/bank_1/690/block.bin"
 
-.balign 2
-glabel bank_1_index_691_image # 0x5FB2B0
-.incbin "assets/image/bank_1/691/block.bin"
+# .balign 2
+# glabel bank_1_index_691_image # 0x5FB2B0
+# .incbin "assets/image/bank_1/691/block.bin"
 
-.balign 2
-glabel bank_1_index_692_image # 0x5FB6B0
-.incbin "assets/image/bank_1/692/block.bin"
+# .balign 2
+# glabel bank_1_index_692_image # 0x5FB6B0
+# .incbin "assets/image/bank_1/692/block.bin"
 
-.balign 2
-glabel bank_1_index_693_image # 0x5FBAB0
-.incbin "assets/image/bank_1/693/block.bin"
+# .balign 2
+# glabel bank_1_index_693_image # 0x5FBAB0
+# .incbin "assets/image/bank_1/693/block.bin"
 
-.balign 2
-glabel bank_1_index_694_image # 0x5FBEB0
-.incbin "assets/image/bank_1/694/block.bin"
+# .balign 2
+# glabel bank_1_index_694_image # 0x5FBEB0
+# .incbin "assets/image/bank_1/694/block.bin"
 
-.balign 2
-glabel bank_1_index_695_image # 0x5FC2B0
-.incbin "assets/image/bank_1/695/block.bin"
+# .balign 2
+# glabel bank_1_index_695_image # 0x5FC2B0
+# .incbin "assets/image/bank_1/695/block.bin"
 
-.balign 2
-glabel bank_1_index_696_image # 0x5FCAB0
-.incbin "assets/image/bank_1/696/block.bin"
+# .balign 2
+# glabel bank_1_index_696_image # 0x5FCAB0
+# .incbin "assets/image/bank_1/696/block.bin"
 
-.balign 2
-glabel bank_1_index_697_image # 0x5FD2B0
-.incbin "assets/image/bank_1/697/block.bin"
+# .balign 2
+# glabel bank_1_index_697_image # 0x5FD2B0
+# .incbin "assets/image/bank_1/697/block.bin"
 
-.balign 2
-glabel bank_1_index_698_image # 0x5FDAB0
-.incbin "assets/image/bank_1/698/block.bin"
+# .balign 2
+# glabel bank_1_index_698_image # 0x5FDAB0
+# .incbin "assets/image/bank_1/698/block.bin"
 
-.balign 2
-glabel bank_1_index_699_image # 0x5FE2B0
-.incbin "assets/image/bank_1/699/block.bin"
+# .balign 2
+# glabel bank_1_index_699_image # 0x5FE2B0
+# .incbin "assets/image/bank_1/699/block.bin"
 
-.balign 2
-glabel bank_1_index_700_image # 0x5FE4B0
-.incbin "assets/image/bank_1/700/block.bin"
+# .balign 2
+# glabel bank_1_index_700_image # 0x5FE4B0
+# .incbin "assets/image/bank_1/700/block.bin"
 
-.balign 2
-glabel bank_1_index_701_image # 0x5FE4D0
-.incbin "assets/image/bank_1/701/block.bin"
+# .balign 2
+# glabel bank_1_index_701_image # 0x5FE4D0
+# .incbin "assets/image/bank_1/701/block.bin"
 
-.balign 2
-glabel bank_1_index_702_image # 0x5FE6D0
-.incbin "assets/image/bank_1/702/block.bin"
+# .balign 2
+# glabel bank_1_index_702_image # 0x5FE6D0
+# .incbin "assets/image/bank_1/702/block.bin"
 
-.balign 2
-glabel bank_1_index_703_image # 0x5FE6F0
-.incbin "assets/image/bank_1/703/block.bin"
+# .balign 2
+# glabel bank_1_index_703_image # 0x5FE6F0
+# .incbin "assets/image/bank_1/703/block.bin"
 
-.balign 2
-glabel bank_1_index_704_image # 0x5FE8F0
-.incbin "assets/image/bank_1/704/block.bin"
+# .balign 2
+# glabel bank_1_index_704_image # 0x5FE8F0
+# .incbin "assets/image/bank_1/704/block.bin"
 
-.balign 2
-glabel bank_1_index_705_image # 0x5FE910
-.incbin "assets/image/bank_1/705/block.bin"
+# .balign 2
+# glabel bank_1_index_705_image # 0x5FE910
+# .incbin "assets/image/bank_1/705/block.bin"
 
-.balign 2
-glabel bank_1_index_706_image # 0x5FEB10
-.incbin "assets/image/bank_1/706/block.bin"
+# .balign 2
+# glabel bank_1_index_706_image # 0x5FEB10
+# .incbin "assets/image/bank_1/706/block.bin"
 
-.balign 2
-glabel bank_1_index_707_image # 0x5FEB30
-.incbin "assets/image/bank_1/707/block.bin"
+# .balign 2
+# glabel bank_1_index_707_image # 0x5FEB30
+# .incbin "assets/image/bank_1/707/block.bin"
 
-.balign 2
-glabel bank_1_index_708_image # 0x5FED30
-.incbin "assets/image/bank_1/708/block.bin"
+# .balign 2
+# glabel bank_1_index_708_image # 0x5FED30
+# .incbin "assets/image/bank_1/708/block.bin"
 
-.balign 2
-glabel bank_1_index_709_image # 0x5FED50
-.incbin "assets/image/bank_1/709/block.bin"
+# .balign 2
+# glabel bank_1_index_709_image # 0x5FED50
+# .incbin "assets/image/bank_1/709/block.bin"
 
-.balign 2
-glabel bank_1_index_710_image # 0x5FED70
-.incbin "assets/image/bank_1/710/block.bin"
+# .balign 2
+# glabel bank_1_index_710_image # 0x5FED70
+# .incbin "assets/image/bank_1/710/block.bin"
 
-.balign 2
-glabel bank_1_index_711_image # 0x5FF170
-.incbin "assets/image/bank_1/711/block.bin"
+# .balign 2
+# glabel bank_1_index_711_image # 0x5FF170
+# .incbin "assets/image/bank_1/711/block.bin"
 
-.balign 2
-glabel bank_1_index_712_image # 0x5FF570
-.incbin "assets/image/bank_1/712/block.bin"
+# .balign 2
+# glabel bank_1_index_712_image # 0x5FF570
+# .incbin "assets/image/bank_1/712/block.bin"
 
-.balign 2
-glabel bank_1_index_713_image # 0x5FF770
-.incbin "assets/image/bank_1/713/block.bin"
+# .balign 2
+# glabel bank_1_index_713_image # 0x5FF770
+# .incbin "assets/image/bank_1/713/block.bin"
 
-.balign 2
-glabel bank_1_index_714_image # 0x5FF970
-.incbin "assets/image/bank_1/714/block.bin"
+# .balign 2
+# glabel bank_1_index_714_image # 0x5FF970
+# .incbin "assets/image/bank_1/714/block.bin"
 
-.balign 2
-glabel bank_1_index_715_image # 0x5FFD70
-.incbin "assets/image/bank_1/715/block.bin"
+# .balign 2
+# glabel bank_1_index_715_image # 0x5FFD70
+# .incbin "assets/image/bank_1/715/block.bin"
 
-.balign 2
-glabel bank_1_index_716_image # 0x600170
-.incbin "assets/image/bank_1/716/block.bin"
+# .balign 2
+# glabel bank_1_index_716_image # 0x600170
+# .incbin "assets/image/bank_1/716/block.bin"
 
-.balign 2
-glabel bank_1_index_717_image # 0x600570
-.incbin "assets/image/bank_1/717/block.bin"
+# .balign 2
+# glabel bank_1_index_717_image # 0x600570
+# .incbin "assets/image/bank_1/717/block.bin"
 
-.balign 2
-glabel bank_1_index_718_image # 0x600970
-.incbin "assets/image/bank_1/718/block.bin"
+# .balign 2
+# glabel bank_1_index_718_image # 0x600970
+# .incbin "assets/image/bank_1/718/block.bin"
 
-.balign 2
-glabel bank_1_index_719_image # 0x600D70
-.incbin "assets/image/bank_1/719/block.bin"
+# .balign 2
+# glabel bank_1_index_719_image # 0x600D70
+# .incbin "assets/image/bank_1/719/block.bin"
 
-.balign 2
-glabel bank_1_index_720_image # 0x600F70
-.incbin "assets/image/bank_1/720/block.bin"
+# .balign 2
+# glabel bank_1_index_720_image # 0x600F70
+# .incbin "assets/image/bank_1/720/block.bin"
 
-.balign 2
-glabel bank_1_index_721_image # 0x601770
-.incbin "assets/image/bank_1/721/block.bin"
+# .balign 2
+# glabel bank_1_index_721_image # 0x601770
+# .incbin "assets/image/bank_1/721/block.bin"
 
-.balign 2
-glabel bank_1_index_722_image # 0x601970
-.incbin "assets/image/bank_1/722/block.bin"
+# .balign 2
+# glabel bank_1_index_722_image # 0x601970
+# .incbin "assets/image/bank_1/722/block.bin"
 
-.balign 2
-glabel bank_1_index_723_image # 0x601990
-.incbin "assets/image/bank_1/723/block.bin"
+# .balign 2
+# glabel bank_1_index_723_image # 0x601990
+# .incbin "assets/image/bank_1/723/block.bin"
 
-.balign 2
-glabel bank_1_index_724_image # 0x601D90
-.incbin "assets/image/bank_1/724/block.bin"
+# .balign 2
+# glabel bank_1_index_724_image # 0x601D90
+# .incbin "assets/image/bank_1/724/block.bin"
 
-.balign 2
-glabel bank_1_index_725_image # 0x601DB0
-.incbin "assets/image/bank_1/725/block.bin"
+# .balign 2
+# glabel bank_1_index_725_image # 0x601DB0
+# .incbin "assets/image/bank_1/725/block.bin"
 
-.balign 2
-glabel bank_1_index_726_image # 0x601F30
-.incbin "assets/image/bank_1/726/block.bin"
+# .balign 2
+# glabel bank_1_index_726_image # 0x601F30
+# .incbin "assets/image/bank_1/726/block.bin"
 
-.balign 2
-glabel bank_1_index_727_image # 0x601F50
-.incbin "assets/image/bank_1/727/block.bin"
+# .balign 2
+# glabel bank_1_index_727_image # 0x601F50
+# .incbin "assets/image/bank_1/727/block.bin"
 
-.balign 2
-glabel bank_1_index_728_image # 0x602150
-.incbin "assets/image/bank_1/728/block.bin"
+# .balign 2
+# glabel bank_1_index_728_image # 0x602150
+# .incbin "assets/image/bank_1/728/block.bin"
 
-.balign 2
-glabel bank_1_index_729_image # 0x602170
-.incbin "assets/image/bank_1/729/block.bin"
+# .balign 2
+# glabel bank_1_index_729_image # 0x602170
+# .incbin "assets/image/bank_1/729/block.bin"
 
-.balign 2
-glabel bank_1_index_730_image # 0x602370
-.incbin "assets/image/bank_1/730/block.bin"
+# .balign 2
+# glabel bank_1_index_730_image # 0x602370
+# .incbin "assets/image/bank_1/730/block.bin"
 
-.balign 2
-glabel bank_1_index_731_image # 0x602570
-.incbin "assets/image/bank_1/731/block.bin"
+# .balign 2
+# glabel bank_1_index_731_image # 0x602570
+# .incbin "assets/image/bank_1/731/block.bin"
 
-.balign 2
-glabel bank_1_index_732_image # 0x6025F0
-.incbin "assets/image/bank_1/732/block.bin"
+# .balign 2
+# glabel bank_1_index_732_image # 0x6025F0
+# .incbin "assets/image/bank_1/732/block.bin"
 
-.balign 2
-glabel bank_1_index_733_image # 0x602670
-.incbin "assets/image/bank_1/733/block.bin"
+# .balign 2
+# glabel bank_1_index_733_image # 0x602670
+# .incbin "assets/image/bank_1/733/block.bin"
 
-.balign 2
-glabel bank_1_index_734_image # 0x602870
-.incbin "assets/image/bank_1/734/block.bin"
+# .balign 2
+# glabel bank_1_index_734_image # 0x602870
+# .incbin "assets/image/bank_1/734/block.bin"
 
-.balign 2
-glabel bank_1_index_735_image # 0x602A70
-.incbin "assets/image/bank_1/735/block.bin"
+# .balign 2
+# glabel bank_1_index_735_image # 0x602A70
+# .incbin "assets/image/bank_1/735/block.bin"
 
-.balign 2
-glabel bank_1_index_736_image # 0x602C70
-.incbin "assets/image/bank_1/736/block.bin"
+# .balign 2
+# glabel bank_1_index_736_image # 0x602C70
+# .incbin "assets/image/bank_1/736/block.bin"
 
-.balign 2
-glabel bank_1_index_737_image # 0x602E70
-.incbin "assets/image/bank_1/737/block.bin"
+# .balign 2
+# glabel bank_1_index_737_image # 0x602E70
+# .incbin "assets/image/bank_1/737/block.bin"
 
-.balign 2
-glabel bank_1_index_738_image # 0x602E80
-.incbin "assets/image/bank_1/738/block.bin"
+# .balign 2
+# glabel bank_1_index_738_image # 0x602E80
+# .incbin "assets/image/bank_1/738/block.bin"
 
-.balign 2
-glabel bank_1_index_739_image # 0x602EA0
-.incbin "assets/image/bank_1/739/block.bin"
+# .balign 2
+# glabel bank_1_index_739_image # 0x602EA0
+# .incbin "assets/image/bank_1/739/block.bin"
 
-.balign 2
-glabel bank_1_index_740_image # 0x602EE0
-.incbin "assets/image/bank_1/740/block.bin"
+# .balign 2
+# glabel bank_1_index_740_image # 0x602EE0
+# .incbin "assets/image/bank_1/740/block.bin"
 
-.balign 2
-glabel bank_1_index_741_image # 0x6030E0
-.incbin "assets/image/bank_1/741/block.bin"
+# .balign 2
+# glabel bank_1_index_741_image # 0x6030E0
+# .incbin "assets/image/bank_1/741/block.bin"
 
-.balign 2
-glabel bank_1_index_742_image # 0x6032E0
-.incbin "assets/image/bank_1/742/block.bin"
+# .balign 2
+# glabel bank_1_index_742_image # 0x6032E0
+# .incbin "assets/image/bank_1/742/block.bin"
 
-.balign 2
-glabel bank_1_index_743_image # 0x6034E0
-.incbin "assets/image/bank_1/743/block.bin"
+# .balign 2
+# glabel bank_1_index_743_image # 0x6034E0
+# .incbin "assets/image/bank_1/743/block.bin"
 
-.balign 2
-glabel bank_1_index_744_image # 0x6035E0
-.incbin "assets/image/bank_1/744/block.bin"
+# .balign 2
+# glabel bank_1_index_744_image # 0x6035E0
+# .incbin "assets/image/bank_1/744/block.bin"
 
-.balign 2
-glabel bank_1_index_745_image # 0x603600
-.incbin "assets/image/bank_1/745/block.bin"
+# .balign 2
+# glabel bank_1_index_745_image # 0x603600
+# .incbin "assets/image/bank_1/745/block.bin"
 
-.balign 2
-glabel bank_1_index_746_image # 0x603700
-.incbin "assets/image/bank_1/746/block.bin"
+# .balign 2
+# glabel bank_1_index_746_image # 0x603700
+# .incbin "assets/image/bank_1/746/block.bin"
 
-.balign 2
-glabel bank_1_index_747_image # 0x603720
-.incbin "assets/image/bank_1/747/block.bin"
+# .balign 2
+# glabel bank_1_index_747_image # 0x603720
+# .incbin "assets/image/bank_1/747/block.bin"
 
-.balign 2
-glabel bank_1_index_748_image # 0x603820
-.incbin "assets/image/bank_1/748/block.bin"
+# .balign 2
+# glabel bank_1_index_748_image # 0x603820
+# .incbin "assets/image/bank_1/748/block.bin"
 
-.balign 2
-glabel bank_1_index_749_image # 0x603840
-.incbin "assets/image/bank_1/749/block.bin"
+# .balign 2
+# glabel bank_1_index_749_image # 0x603840
+# .incbin "assets/image/bank_1/749/block.bin"
 
-.balign 2
-glabel bank_1_index_750_image # 0x603940
-.incbin "assets/image/bank_1/750/block.bin"
+# .balign 2
+# glabel bank_1_index_750_image # 0x603940
+# .incbin "assets/image/bank_1/750/block.bin"
 
-.balign 2
-glabel bank_1_index_751_image # 0x603A40
-.incbin "assets/image/bank_1/751/block.bin"
+# .balign 2
+# glabel bank_1_index_751_image # 0x603A40
+# .incbin "assets/image/bank_1/751/block.bin"
 
-.balign 2
-glabel bank_1_index_752_image # 0x603B40
-.incbin "assets/image/bank_1/752/block.bin"
+# .balign 2
+# glabel bank_1_index_752_image # 0x603B40
+# .incbin "assets/image/bank_1/752/block.bin"
 
-.balign 2
-glabel bank_1_index_753_image # 0x603D40
-.incbin "assets/image/bank_1/753/block.bin"
+# .balign 2
+# glabel bank_1_index_753_image # 0x603D40
+# .incbin "assets/image/bank_1/753/block.bin"
 
-.balign 2
-glabel bank_1_index_754_image # 0x603DC0
-.incbin "assets/image/bank_1/754/block.bin"
+# .balign 2
+# glabel bank_1_index_754_image # 0x603DC0
+# .incbin "assets/image/bank_1/754/block.bin"
 
-.balign 2
-glabel bank_1_index_755_image # 0x603FC0
-.incbin "assets/image/bank_1/755/block.bin"
+# .balign 2
+# glabel bank_1_index_755_image # 0x603FC0
+# .incbin "assets/image/bank_1/755/block.bin"
 
-.balign 2
-glabel bank_1_index_756_image # 0x603FE0
-.incbin "assets/image/bank_1/756/block.bin"
+# .balign 2
+# glabel bank_1_index_756_image # 0x603FE0
+# .incbin "assets/image/bank_1/756/block.bin"
 
-.balign 2
-glabel bank_1_index_757_image # 0x6041E0
-.incbin "assets/image/bank_1/757/block.bin"
+# .balign 2
+# glabel bank_1_index_757_image # 0x6041E0
+# .incbin "assets/image/bank_1/757/block.bin"
 
-.balign 2
-glabel bank_1_index_758_image # 0x604360
-.incbin "assets/image/bank_1/758/block.bin"
+# .balign 2
+# glabel bank_1_index_758_image # 0x604360
+# .incbin "assets/image/bank_1/758/block.bin"
 
-.balign 2
-glabel bank_1_index_759_image # 0x604380
-.incbin "assets/image/bank_1/759/block.bin"
+# .balign 2
+# glabel bank_1_index_759_image # 0x604380
+# .incbin "assets/image/bank_1/759/block.bin"
 
-.balign 2
-glabel bank_1_index_760_image # 0x604400
-.incbin "assets/image/bank_1/760/block.bin"
+# .balign 2
+# glabel bank_1_index_760_image # 0x604400
+# .incbin "assets/image/bank_1/760/block.bin"
 
-.balign 2
-glabel bank_1_index_761_image # 0x604500
-.incbin "assets/image/bank_1/761/block.bin"
+# .balign 2
+# glabel bank_1_index_761_image # 0x604500
+# .incbin "assets/image/bank_1/761/block.bin"
 
-.balign 2
-glabel bank_1_index_762_image # 0x604580
-.incbin "assets/image/bank_1/762/block.bin"
+# .balign 2
+# glabel bank_1_index_762_image # 0x604580
+# .incbin "assets/image/bank_1/762/block.bin"
 
-.balign 2
-glabel bank_1_index_763_image # 0x604600
-.incbin "assets/image/bank_1/763/block.bin"
+# .balign 2
+# glabel bank_1_index_763_image # 0x604600
+# .incbin "assets/image/bank_1/763/block.bin"
 
-.balign 2
-glabel bank_1_index_764_image # 0x604800
-.incbin "assets/image/bank_1/764/block.bin"
+# .balign 2
+# glabel bank_1_index_764_image # 0x604800
+# .incbin "assets/image/bank_1/764/block.bin"
 
-.balign 2
-glabel bank_1_index_765_image # 0x604880
-.incbin "assets/image/bank_1/765/block.bin"
+# .balign 2
+# glabel bank_1_index_765_image # 0x604880
+# .incbin "assets/image/bank_1/765/block.bin"
 
-.balign 2
-glabel bank_1_index_766_image # 0x604980
-.incbin "assets/image/bank_1/766/block.bin"
+# .balign 2
+# glabel bank_1_index_766_image # 0x604980
+# .incbin "assets/image/bank_1/766/block.bin"
 
-.balign 2
-glabel bank_1_index_767_image # 0x604B80
-.incbin "assets/image/bank_1/767/block.bin"
+# .balign 2
+# glabel bank_1_index_767_image # 0x604B80
+# .incbin "assets/image/bank_1/767/block.bin"
 
-.balign 2
-glabel bank_1_index_768_image # 0x604D80
-.incbin "assets/image/bank_1/768/block.bin"
+# .balign 2
+# glabel bank_1_index_768_image # 0x604D80
+# .incbin "assets/image/bank_1/768/block.bin"
 
-.balign 2
-glabel bank_1_index_769_image # 0x604DA0
-.incbin "assets/image/bank_1/769/block.bin"
+# .balign 2
+# glabel bank_1_index_769_image # 0x604DA0
+# .incbin "assets/image/bank_1/769/block.bin"
 
-.balign 2
-glabel bank_1_index_770_image # 0x604FA0
-.incbin "assets/image/bank_1/770/block.bin"
+# .balign 2
+# glabel bank_1_index_770_image # 0x604FA0
+# .incbin "assets/image/bank_1/770/block.bin"
 
-.balign 2
-glabel bank_1_index_771_image # 0x6051A0
-.incbin "assets/image/bank_1/771/block.bin"
+# .balign 2
+# glabel bank_1_index_771_image # 0x6051A0
+# .incbin "assets/image/bank_1/771/block.bin"
 
-.balign 2
-glabel bank_1_index_772_image # 0x605220
-.incbin "assets/image/bank_1/772/block.bin"
+# .balign 2
+# glabel bank_1_index_772_image # 0x605220
+# .incbin "assets/image/bank_1/772/block.bin"
 
-.balign 2
-glabel bank_1_index_773_image # 0x605420
-.incbin "assets/image/bank_1/773/block.bin"
+# .balign 2
+# glabel bank_1_index_773_image # 0x605420
+# .incbin "assets/image/bank_1/773/block.bin"
 
-.balign 2
-glabel bank_1_index_774_image # 0x605620
-.incbin "assets/image/bank_1/774/block.bin"
+# .balign 2
+# glabel bank_1_index_774_image # 0x605620
+# .incbin "assets/image/bank_1/774/block.bin"
 
-.balign 2
-glabel bank_1_index_775_image # 0x605660
-.incbin "assets/image/bank_1/775/block.bin"
+# .balign 2
+# glabel bank_1_index_775_image # 0x605660
+# .incbin "assets/image/bank_1/775/block.bin"
 
-.balign 2
-glabel bank_1_index_776_image # 0x6056E0
-.incbin "assets/image/bank_1/776/block.bin"
+# .balign 2
+# glabel bank_1_index_776_image # 0x6056E0
+# .incbin "assets/image/bank_1/776/block.bin"
 
-.balign 2
-glabel bank_1_index_777_image # 0x6058E0
-.incbin "assets/image/bank_1/777/block.bin"
+# .balign 2
+# glabel bank_1_index_777_image # 0x6058E0
+# .incbin "assets/image/bank_1/777/block.bin"
 
-.balign 2
-glabel bank_1_index_778_image # 0x605AE0
-.incbin "assets/image/bank_1/778/block.bin"
+# .balign 2
+# glabel bank_1_index_778_image # 0x605AE0
+# .incbin "assets/image/bank_1/778/block.bin"
 
-.balign 2
-glabel bank_1_index_779_image # 0x605CE0
-.incbin "assets/image/bank_1/779/block.bin"
+# .balign 2
+# glabel bank_1_index_779_image # 0x605CE0
+# .incbin "assets/image/bank_1/779/block.bin"
 
-.balign 2
-glabel bank_1_index_780_image # 0x605EE0
-.incbin "assets/image/bank_1/780/block.bin"
+# .balign 2
+# glabel bank_1_index_780_image # 0x605EE0
+# .incbin "assets/image/bank_1/780/block.bin"
 
-.balign 2
-glabel bank_1_index_781_image # 0x605F00
-.incbin "assets/image/bank_1/781/block.bin"
+# .balign 2
+# glabel bank_1_index_781_image # 0x605F00
+# .incbin "assets/image/bank_1/781/block.bin"
 
-.balign 2
-glabel bank_1_index_782_image # 0x605F1E
-.incbin "assets/image/bank_1/782/block.bin"
+# .balign 2
+# glabel bank_1_index_782_image # 0x605F1E
+# .incbin "assets/image/bank_1/782/block.bin"
 
-.balign 2
-glabel bank_1_index_783_image # 0x605F3E
-.incbin "assets/image/bank_1/783/block.bin"
+# .balign 2
+# glabel bank_1_index_783_image # 0x605F3E
+# .incbin "assets/image/bank_1/783/block.bin"
 
-.balign 2
-glabel bank_1_index_784_image # 0x605F5E
-.incbin "assets/image/bank_1/784/block.bin"
+# .balign 2
+# glabel bank_1_index_784_image # 0x605F5E
+# .incbin "assets/image/bank_1/784/block.bin"
 
-.balign 2
-glabel bank_1_index_785_image # 0x605F7E
-.incbin "assets/image/bank_1/785/block.bin"
+# .balign 2
+# glabel bank_1_index_785_image # 0x605F7E
+# .incbin "assets/image/bank_1/785/block.bin"
 
-.balign 2
-glabel bank_1_index_786_image # 0x605F9E
-.incbin "assets/image/bank_1/786/block.bin"
+# .balign 2
+# glabel bank_1_index_786_image # 0x605F9E
+# .incbin "assets/image/bank_1/786/block.bin"
 
-.balign 2
-glabel bank_1_index_787_image # 0x605FDE
-.incbin "assets/image/bank_1/787/block.bin"
+# .balign 2
+# glabel bank_1_index_787_image # 0x605FDE
+# .incbin "assets/image/bank_1/787/block.bin"
 
-.balign 2
-glabel bank_1_index_788_image # 0x6063DE
-.incbin "assets/image/bank_1/788/block.bin"
+# .balign 2
+# glabel bank_1_index_788_image # 0x6063DE
+# .incbin "assets/image/bank_1/788/block.bin"
 
-.balign 2
-glabel bank_1_index_789_image # 0x606BDE
-.incbin "assets/image/bank_1/789/block.bin"
+# .balign 2
+# glabel bank_1_index_789_image # 0x606BDE
+# .incbin "assets/image/bank_1/789/block.bin"
 
-.balign 2
-glabel bank_1_index_790_image # 0x6073DE
-.incbin "assets/image/bank_1/790/block.bin"
+# .balign 2
+# glabel bank_1_index_790_image # 0x6073DE
+# .incbin "assets/image/bank_1/790/block.bin"
 
-.balign 2
-glabel bank_1_index_791_image # 0x60745E
-.incbin "assets/image/bank_1/791/block.bin"
+# .balign 2
+# glabel bank_1_index_791_image # 0x60745E
+# .incbin "assets/image/bank_1/791/block.bin"
 
-.balign 2
-glabel bank_1_index_792_image # 0x60755E
-.incbin "assets/image/bank_1/792/block.bin"
+# .balign 2
+# glabel bank_1_index_792_image # 0x60755E
+# .incbin "assets/image/bank_1/792/block.bin"
 
-.balign 2
-glabel bank_1_index_793_image # 0x60765E
-.incbin "assets/image/bank_1/793/block.bin"
+# .balign 2
+# glabel bank_1_index_793_image # 0x60765E
+# .incbin "assets/image/bank_1/793/block.bin"
 
-.balign 2
-glabel bank_1_index_794_image # 0x60767E
-.incbin "assets/image/bank_1/794/block.bin"
+# .balign 2
+# glabel bank_1_index_794_image # 0x60767E
+# .incbin "assets/image/bank_1/794/block.bin"
 
-.balign 2
-glabel bank_1_index_795_image # 0x60787E
-.incbin "assets/image/bank_1/795/block.bin"
+# .balign 2
+# glabel bank_1_index_795_image # 0x60787E
+# .incbin "assets/image/bank_1/795/block.bin"
 
-.balign 2
-glabel bank_1_index_796_image # 0x6078FE
-.incbin "assets/image/bank_1/796/block.bin"
+# .balign 2
+# glabel bank_1_index_796_image # 0x6078FE
+# .incbin "assets/image/bank_1/796/block.bin"
 
-.balign 2
-glabel bank_1_index_797_image # 0x6079FE
-.incbin "assets/image/bank_1/797/block.bin"
+# .balign 2
+# glabel bank_1_index_797_image # 0x6079FE
+# .incbin "assets/image/bank_1/797/block.bin"
 
-.balign 2
-glabel bank_1_index_798_image # 0x607A0E
-.incbin "assets/image/bank_1/798/block.bin"
+# .balign 2
+# glabel bank_1_index_798_image # 0x607A0E
+# .incbin "assets/image/bank_1/798/block.bin"
 
-.balign 2
-glabel bank_1_index_799_image # 0x607A1E
-.incbin "assets/image/bank_1/799/block.bin"
+# .balign 2
+# glabel bank_1_index_799_image # 0x607A1E
+# .incbin "assets/image/bank_1/799/block.bin"
 
-.balign 2
-glabel bank_1_index_800_image # 0x607A2E
-.incbin "assets/image/bank_1/800/block.bin"
+# .balign 2
+# glabel bank_1_index_800_image # 0x607A2E
+# .incbin "assets/image/bank_1/800/block.bin"
 
-.balign 2
-glabel bank_1_index_801_image # 0x607A3E
-.incbin "assets/image/bank_1/801/block.bin"
+# .balign 2
+# glabel bank_1_index_801_image # 0x607A3E
+# .incbin "assets/image/bank_1/801/block.bin"
 
-.balign 2
-glabel bank_1_index_802_image # 0x607C3E
-.incbin "assets/image/bank_1/802/block.bin"
+# .balign 2
+# glabel bank_1_index_802_image # 0x607C3E
+# .incbin "assets/image/bank_1/802/block.bin"
 
-.balign 2
-glabel bank_1_index_803_image # 0x607CBE
-.incbin "assets/image/bank_1/803/block.bin"
+# .balign 2
+# glabel bank_1_index_803_image # 0x607CBE
+# .incbin "assets/image/bank_1/803/block.bin"
 
-.balign 2
-glabel bank_1_index_804_image # 0x607CFE
-.incbin "assets/image/bank_1/804/block.bin"
+# .balign 2
+# glabel bank_1_index_804_image # 0x607CFE
+# .incbin "assets/image/bank_1/804/block.bin"
 
-.balign 2
-glabel bank_1_index_805_image # 0x607DFE
-.incbin "assets/image/bank_1/805/block.bin"
+# .balign 2
+# glabel bank_1_index_805_image # 0x607DFE
+# .incbin "assets/image/bank_1/805/block.bin"
 
-.balign 2
-glabel bank_1_index_806_image # 0x607E7E
-.incbin "assets/image/bank_1/806/block.bin"
+# .balign 2
+# glabel bank_1_index_806_image # 0x607E7E
+# .incbin "assets/image/bank_1/806/block.bin"
 
-.balign 2
-glabel bank_1_index_807_image # 0x607EFE
-.incbin "assets/image/bank_1/807/block.bin"
+# .balign 2
+# glabel bank_1_index_807_image # 0x607EFE
+# .incbin "assets/image/bank_1/807/block.bin"
 
-.balign 2
-glabel bank_1_index_808_image # 0x6080FE
-.incbin "assets/image/bank_1/808/block.bin"
+# .balign 2
+# glabel bank_1_index_808_image # 0x6080FE
+# .incbin "assets/image/bank_1/808/block.bin"
 
-.balign 2
-glabel bank_1_index_809_image # 0x6082FE
-.incbin "assets/image/bank_1/809/block.bin"
+# .balign 2
+# glabel bank_1_index_809_image # 0x6082FE
+# .incbin "assets/image/bank_1/809/block.bin"
 
-.balign 2
-glabel bank_1_index_810_image # 0x60837E
-.incbin "assets/image/bank_1/810/block.bin"
+# .balign 2
+# glabel bank_1_index_810_image # 0x60837E
+# .incbin "assets/image/bank_1/810/block.bin"
 
-.balign 2
-glabel bank_1_index_811_image # 0x6083FE
-.incbin "assets/image/bank_1/811/block.bin"
+# .balign 2
+# glabel bank_1_index_811_image # 0x6083FE
+# .incbin "assets/image/bank_1/811/block.bin"
 
-.balign 2
-glabel bank_1_index_812_image # 0x60847E
-.incbin "assets/image/bank_1/812/block.bin"
+# .balign 2
+# glabel bank_1_index_812_image # 0x60847E
+# .incbin "assets/image/bank_1/812/block.bin"
 
-.balign 2
-glabel bank_1_index_813_image # 0x6085BE
-.incbin "assets/image/bank_1/813/block.bin"
+# .balign 2
+# glabel bank_1_index_813_image # 0x6085BE
+# .incbin "assets/image/bank_1/813/block.bin"
 
-.balign 2
-glabel bank_1_index_814_image # 0x60863E
-.incbin "assets/image/bank_1/814/block.bin"
+# .balign 2
+# glabel bank_1_index_814_image # 0x60863E
+# .incbin "assets/image/bank_1/814/block.bin"
 
-.balign 2
-glabel bank_1_index_815_image # 0x60883E
-.incbin "assets/image/bank_1/815/block.bin"
+# .balign 2
+# glabel bank_1_index_815_image # 0x60883E
+# .incbin "assets/image/bank_1/815/block.bin"
 
-.balign 2
-glabel bank_1_index_816_image # 0x60893E
-.incbin "assets/image/bank_1/816/block.bin"
+# .balign 2
+# glabel bank_1_index_816_image # 0x60893E
+# .incbin "assets/image/bank_1/816/block.bin"
 
-.balign 2
-glabel bank_1_index_817_image # 0x6089BE
-.incbin "assets/image/bank_1/817/block.bin"
+# .balign 2
+# glabel bank_1_index_817_image # 0x6089BE
+# .incbin "assets/image/bank_1/817/block.bin"
 
-.balign 2
-glabel bank_1_index_818_image # 0x6089DE
-.incbin "assets/image/bank_1/818/block.bin"
+# .balign 2
+# glabel bank_1_index_818_image # 0x6089DE
+# .incbin "assets/image/bank_1/818/block.bin"
 
-.balign 2
-glabel bank_1_index_819_image # 0x608A5E
-.incbin "assets/image/bank_1/819/block.bin"
+# .balign 2
+# glabel bank_1_index_819_image # 0x608A5E
+# .incbin "assets/image/bank_1/819/block.bin"
 
-.balign 2
-glabel bank_1_index_820_image # 0x608ADE
-.incbin "assets/image/bank_1/820/block.bin"
+# .balign 2
+# glabel bank_1_index_820_image # 0x608ADE
+# .incbin "assets/image/bank_1/820/block.bin"
 
-.balign 2
-glabel bank_1_index_821_image # 0x608B1E
-.incbin "assets/image/bank_1/821/block.bin"
+# .balign 2
+# glabel bank_1_index_821_image # 0x608B1E
+# .incbin "assets/image/bank_1/821/block.bin"
 
-.balign 2
-glabel bank_1_index_822_image # 0x608B3E
-.incbin "assets/image/bank_1/822/block.bin"
+# .balign 2
+# glabel bank_1_index_822_image # 0x608B3E
+# .incbin "assets/image/bank_1/822/block.bin"
 
-.balign 2
-glabel bank_1_index_823_image # 0x608B7E
-.incbin "assets/image/bank_1/823/block.bin"
+# .balign 2
+# glabel bank_1_index_823_image # 0x608B7E
+# .incbin "assets/image/bank_1/823/block.bin"
 
-.balign 2
-glabel bank_1_index_824_image # 0x608D7E
-.incbin "assets/image/bank_1/824/block.bin"
+# .balign 2
+# glabel bank_1_index_824_image # 0x608D7E
+# .incbin "assets/image/bank_1/824/block.bin"
 
-.balign 2
-glabel bank_1_index_825_image # 0x608F7E
-.incbin "assets/image/bank_1/825/block.bin"
+# .balign 2
+# glabel bank_1_index_825_image # 0x608F7E
+# .incbin "assets/image/bank_1/825/block.bin"
 
-.balign 2
-glabel bank_1_index_826_image # 0x608F9E
-.incbin "assets/image/bank_1/826/block.bin"
+# .balign 2
+# glabel bank_1_index_826_image # 0x608F9E
+# .incbin "assets/image/bank_1/826/block.bin"
 
-.balign 2
-glabel bank_1_index_827_image # 0x60901E
-.incbin "assets/image/bank_1/827/block.bin"
+# .balign 2
+# glabel bank_1_index_827_image # 0x60901E
+# .incbin "assets/image/bank_1/827/block.bin"
 
-.balign 2
-glabel bank_1_index_828_image # 0x609036
-.incbin "assets/image/bank_1/828/block.bin"
+# .balign 2
+# glabel bank_1_index_828_image # 0x609036
+# .incbin "assets/image/bank_1/828/block.bin"
 
-.balign 2
-glabel bank_1_index_829_image # 0x6090B6
-.incbin "assets/image/bank_1/829/block.bin"
+# .balign 2
+# glabel bank_1_index_829_image # 0x6090B6
+# .incbin "assets/image/bank_1/829/block.bin"
 
-.balign 2
-glabel bank_1_index_830_image # 0x609136
-.incbin "assets/image/bank_1/830/block.bin"
+# .balign 2
+# glabel bank_1_index_830_image # 0x609136
+# .incbin "assets/image/bank_1/830/block.bin"
 
-.balign 2
-glabel bank_1_index_831_image # 0x6091B6
-.incbin "assets/image/bank_1/831/block.bin"
+# .balign 2
+# glabel bank_1_index_831_image # 0x6091B6
+# .incbin "assets/image/bank_1/831/block.bin"
 
-.balign 2
-glabel bank_1_index_832_image # 0x6091D6
-.incbin "assets/image/bank_1/832/block.bin"
+# .balign 2
+# glabel bank_1_index_832_image # 0x6091D6
+# .incbin "assets/image/bank_1/832/block.bin"
 
-.balign 2
-glabel bank_1_index_833_image # 0x609256
-.incbin "assets/image/bank_1/833/block.bin"
+# .balign 2
+# glabel bank_1_index_833_image # 0x609256
+# .incbin "assets/image/bank_1/833/block.bin"
 
-.balign 2
-glabel bank_1_index_834_image # 0x6092D6
-.incbin "assets/image/bank_1/834/block.bin"
+# .balign 2
+# glabel bank_1_index_834_image # 0x6092D6
+# .incbin "assets/image/bank_1/834/block.bin"
 
-.balign 2
-glabel bank_1_index_835_image # 0x609666
-.incbin "assets/image/bank_1/835/block.bin"
+# .balign 2
+# glabel bank_1_index_835_image # 0x609666
+# .incbin "assets/image/bank_1/835/block.bin"
 
-.balign 2
-glabel bank_1_index_836_image # 0x6096E6
-.incbin "assets/image/bank_1/836/block.bin"
+# .balign 2
+# glabel bank_1_index_836_image # 0x6096E6
+# .incbin "assets/image/bank_1/836/block.bin"
 
-.balign 2
-glabel bank_1_index_837_image # 0x6096F6
-.incbin "assets/image/bank_1/837/block.bin"
+# .balign 2
+# glabel bank_1_index_837_image # 0x6096F6
+# .incbin "assets/image/bank_1/837/block.bin"
 
-.balign 2
-glabel bank_1_index_838_image # 0x609776
-.incbin "assets/image/bank_1/838/block.bin"
+# .balign 2
+# glabel bank_1_index_838_image # 0x609776
+# .incbin "assets/image/bank_1/838/block.bin"
 
-.balign 2
-glabel bank_1_index_839_image # 0x6097F6
-.incbin "assets/image/bank_1/839/block.bin"
+# .balign 2
+# glabel bank_1_index_839_image # 0x6097F6
+# .incbin "assets/image/bank_1/839/block.bin"
 
-.balign 2
-glabel bank_1_index_840_image # 0x609A76
-.incbin "assets/image/bank_1/840/block.bin"
+# .balign 2
+# glabel bank_1_index_840_image # 0x609A76
+# .incbin "assets/image/bank_1/840/block.bin"
 
-.balign 2
-glabel bank_1_index_841_image # 0x609AF6
-.incbin "assets/image/bank_1/841/block.bin"
+# .balign 2
+# glabel bank_1_index_841_image # 0x609AF6
+# .incbin "assets/image/bank_1/841/block.bin"
 
-.balign 2
-glabel bank_1_index_842_image # 0x609CF6
-.incbin "assets/image/bank_1/842/block.bin"
+# .balign 2
+# glabel bank_1_index_842_image # 0x609CF6
+# .incbin "assets/image/bank_1/842/block.bin"
 
-.balign 2
-glabel bank_1_index_843_image # 0x609EF6
-.incbin "assets/image/bank_1/843/block.bin"
+# .balign 2
+# glabel bank_1_index_843_image # 0x609EF6
+# .incbin "assets/image/bank_1/843/block.bin"
 
-.balign 2
-glabel bank_1_index_844_image # 0x60A0F6
-.incbin "assets/image/bank_1/844/block.bin"
+# .balign 2
+# glabel bank_1_index_844_image # 0x60A0F6
+# .incbin "assets/image/bank_1/844/block.bin"
 
-.balign 2
-glabel bank_1_index_845_image # 0x60A2F6
-.incbin "assets/image/bank_1/845/block.bin"
+# .balign 2
+# glabel bank_1_index_845_image # 0x60A2F6
+# .incbin "assets/image/bank_1/845/block.bin"
 
-.balign 2
-glabel bank_1_index_846_image # 0x60A4F6
-.incbin "assets/image/bank_1/846/block.bin"
+# .balign 2
+# glabel bank_1_index_846_image # 0x60A4F6
+# .incbin "assets/image/bank_1/846/block.bin"
 
-.balign 2
-glabel bank_1_index_847_image # 0x60A6F6
-.incbin "assets/image/bank_1/847/block.bin"
+# .balign 2
+# glabel bank_1_index_847_image # 0x60A6F6
+# .incbin "assets/image/bank_1/847/block.bin"
 
-.balign 2
-glabel bank_1_index_848_image # 0x60A8F6
-.incbin "assets/image/bank_1/848/block.bin"
+# .balign 2
+# glabel bank_1_index_848_image # 0x60A8F6
+# .incbin "assets/image/bank_1/848/block.bin"
 
-.balign 2
-glabel bank_1_index_849_image # 0x60AAF6
-.incbin "assets/image/bank_1/849/block.bin"
+# .balign 2
+# glabel bank_1_index_849_image # 0x60AAF6
+# .incbin "assets/image/bank_1/849/block.bin"
 
-.balign 2
-glabel bank_1_index_850_image # 0x60ACF6
-.incbin "assets/image/bank_1/850/block.bin"
+# .balign 2
+# glabel bank_1_index_850_image # 0x60ACF6
+# .incbin "assets/image/bank_1/850/block.bin"
 
-.balign 2
-glabel bank_1_index_851_image # 0x60AEF6
-.incbin "assets/image/bank_1/851/block.bin"
+# .balign 2
+# glabel bank_1_index_851_image # 0x60AEF6
+# .incbin "assets/image/bank_1/851/block.bin"
 
-.balign 2
-glabel bank_1_index_852_image # 0x60B0F6
-.incbin "assets/image/bank_1/852/block.bin"
+# .balign 2
+# glabel bank_1_index_852_image # 0x60B0F6
+# .incbin "assets/image/bank_1/852/block.bin"
 
-.balign 2
-glabel bank_1_index_853_image # 0x60B2F6
-.incbin "assets/image/bank_1/853/block.bin"
+# .balign 2
+# glabel bank_1_index_853_image # 0x60B2F6
+# .incbin "assets/image/bank_1/853/block.bin"
 
-.balign 2
-glabel bank_1_index_854_image # 0x60B3F6
-.incbin "assets/image/bank_1/854/block.bin"
+# .balign 2
+# glabel bank_1_index_854_image # 0x60B3F6
+# .incbin "assets/image/bank_1/854/block.bin"
 
-.balign 2
-glabel bank_1_index_855_image # 0x60B4F6
-.incbin "assets/image/bank_1/855/block.bin"
+# .balign 2
+# glabel bank_1_index_855_image # 0x60B4F6
+# .incbin "assets/image/bank_1/855/block.bin"
 
-.balign 2
-glabel bank_1_index_856_image # 0x60B5F6
-.incbin "assets/image/bank_1/856/block.bin"
+# .balign 2
+# glabel bank_1_index_856_image # 0x60B5F6
+# .incbin "assets/image/bank_1/856/block.bin"
 
-.balign 2
-glabel bank_1_index_857_image # 0x60B9F6
-.incbin "assets/image/bank_1/857/block.bin"
+# .balign 2
+# glabel bank_1_index_857_image # 0x60B9F6
+# .incbin "assets/image/bank_1/857/block.bin"
 
-.balign 2
-glabel bank_1_index_858_image # 0x60BBF6
-.incbin "assets/image/bank_1/858/block.bin"
+# .balign 2
+# glabel bank_1_index_858_image # 0x60BBF6
+# .incbin "assets/image/bank_1/858/block.bin"
 
-.balign 2
-glabel bank_1_index_859_image # 0x60BDF6
-.incbin "assets/image/bank_1/859/block.bin"
+# .balign 2
+# glabel bank_1_index_859_image # 0x60BDF6
+# .incbin "assets/image/bank_1/859/block.bin"
 
-.balign 2
-glabel bank_1_index_860_image # 0x60BFF6
-.incbin "assets/image/bank_1/860/block.bin"
+# .balign 2
+# glabel bank_1_index_860_image # 0x60BFF6
+# .incbin "assets/image/bank_1/860/block.bin"
 
-.balign 2
-glabel bank_1_index_861_image # 0x60C0F6
-.incbin "assets/image/bank_1/861/block.bin"
+# .balign 2
+# glabel bank_1_index_861_image # 0x60C0F6
+# .incbin "assets/image/bank_1/861/block.bin"
 
-.balign 2
-glabel bank_1_index_862_image # 0x60C136
-.incbin "assets/image/bank_1/862/block.bin"
+# .balign 2
+# glabel bank_1_index_862_image # 0x60C136
+# .incbin "assets/image/bank_1/862/block.bin"
 
-.balign 2
-glabel bank_1_index_863_image # 0x60C336
-.incbin "assets/image/bank_1/863/block.bin"
+# .balign 2
+# glabel bank_1_index_863_image # 0x60C336
+# .incbin "assets/image/bank_1/863/block.bin"
 
-.balign 2
-glabel bank_1_index_864_image # 0x60C536
-.incbin "assets/image/bank_1/864/block.bin"
+# .balign 2
+# glabel bank_1_index_864_image # 0x60C536
+# .incbin "assets/image/bank_1/864/block.bin"
 
-.balign 2
-glabel bank_1_index_865_image # 0x60C556
-.incbin "assets/image/bank_1/865/block.bin"
+# .balign 2
+# glabel bank_1_index_865_image # 0x60C556
+# .incbin "assets/image/bank_1/865/block.bin"
 
-.balign 2
-glabel bank_1_index_866_image # 0x60C756
-.incbin "assets/image/bank_1/866/block.bin"
+# .balign 2
+# glabel bank_1_index_866_image # 0x60C756
+# .incbin "assets/image/bank_1/866/block.bin"
 
-.balign 2
-glabel bank_1_index_867_image # 0x60C956
-.incbin "assets/image/bank_1/867/block.bin"
+# .balign 2
+# glabel bank_1_index_867_image # 0x60C956
+# .incbin "assets/image/bank_1/867/block.bin"
 
-.balign 2
-glabel bank_1_index_868_image # 0x60C9D6
-.incbin "assets/image/bank_1/868/block.bin"
+# .balign 2
+# glabel bank_1_index_868_image # 0x60C9D6
+# .incbin "assets/image/bank_1/868/block.bin"
 
-.balign 2
-glabel bank_1_index_869_image # 0x60CA56
-.incbin "assets/image/bank_1/869/block.bin"
+# .balign 2
+# glabel bank_1_index_869_image # 0x60CA56
+# .incbin "assets/image/bank_1/869/block.bin"
 
-.balign 2
-glabel bank_1_index_870_image # 0x60CAD6
-.incbin "assets/image/bank_1/870/block.bin"
+# .balign 2
+# glabel bank_1_index_870_image # 0x60CAD6
+# .incbin "assets/image/bank_1/870/block.bin"
 
-.balign 2
-glabel bank_1_index_871_image # 0x60CB56
-.incbin "assets/image/bank_1/871/block.bin"
+# .balign 2
+# glabel bank_1_index_871_image # 0x60CB56
+# .incbin "assets/image/bank_1/871/block.bin"
 
-.balign 2
-glabel bank_1_index_872_image # 0x60DB56
-.incbin "assets/image/bank_1/872/block.bin"
+# .balign 2
+# glabel bank_1_index_872_image # 0x60DB56
+# .incbin "assets/image/bank_1/872/block.bin"
 
-.balign 2
-glabel bank_1_index_873_image # 0x60EB56
-.incbin "assets/image/bank_1/873/block.bin"
+# .balign 2
+# glabel bank_1_index_873_image # 0x60EB56
+# .incbin "assets/image/bank_1/873/block.bin"
 
-.balign 2
-glabel bank_1_index_874_image # 0x60FB56
-.incbin "assets/image/bank_1/874/block.bin"
+# .balign 2
+# glabel bank_1_index_874_image # 0x60FB56
+# .incbin "assets/image/bank_1/874/block.bin"
 
-.balign 2
-glabel bank_1_index_875_image # 0x610B56
-.incbin "assets/image/bank_1/875/block.bin"
+# .balign 2
+# glabel bank_1_index_875_image # 0x610B56
+# .incbin "assets/image/bank_1/875/block.bin"
 
-.balign 2
-glabel bank_1_index_876_image # 0x610F56
-.incbin "assets/image/bank_1/876/block.bin"
+# .balign 2
+# glabel bank_1_index_876_image # 0x610F56
+# .incbin "assets/image/bank_1/876/block.bin"
 
-.balign 2
-glabel bank_1_index_877_image # 0x611356
-.incbin "assets/image/bank_1/877/block.bin"
+# .balign 2
+# glabel bank_1_index_877_image # 0x611356
+# .incbin "assets/image/bank_1/877/block.bin"
 
-.balign 2
-glabel bank_1_index_878_image # 0x611756
-.incbin "assets/image/bank_1/878/block.bin"
+# .balign 2
+# glabel bank_1_index_878_image # 0x611756
+# .incbin "assets/image/bank_1/878/block.bin"
 
-.balign 2
-glabel bank_1_index_879_image # 0x611B56
-.incbin "assets/image/bank_1/879/block.bin"
+# .balign 2
+# glabel bank_1_index_879_image # 0x611B56
+# .incbin "assets/image/bank_1/879/block.bin"
 
-.balign 2
-glabel bank_1_index_880_image # 0x611F56
-.incbin "assets/image/bank_1/880/block.bin"
+# .balign 2
+# glabel bank_1_index_880_image # 0x611F56
+# .incbin "assets/image/bank_1/880/block.bin"
 
-.balign 2
-glabel bank_1_index_881_image # 0x612356
-.incbin "assets/image/bank_1/881/block.bin"
+# .balign 2
+# glabel bank_1_index_881_image # 0x612356
+# .incbin "assets/image/bank_1/881/block.bin"
 
-.balign 2
-glabel bank_1_index_882_image # 0x612756
-.incbin "assets/image/bank_1/882/block.bin"
+# .balign 2
+# glabel bank_1_index_882_image # 0x612756
+# .incbin "assets/image/bank_1/882/block.bin"
 
-.balign 2
-glabel bank_1_index_883_image # 0x612B56
-.incbin "assets/image/bank_1/883/block.bin"
+# .balign 2
+# glabel bank_1_index_883_image # 0x612B56
+# .incbin "assets/image/bank_1/883/block.bin"
 
-.balign 2
-glabel bank_1_index_884_image # 0x612F56
-.incbin "assets/image/bank_1/884/block.bin"
+# .balign 2
+# glabel bank_1_index_884_image # 0x612F56
+# .incbin "assets/image/bank_1/884/block.bin"
 
-.balign 2
-glabel bank_1_index_885_image # 0x613356
-.incbin "assets/image/bank_1/885/block.bin"
+# .balign 2
+# glabel bank_1_index_885_image # 0x613356
+# .incbin "assets/image/bank_1/885/block.bin"
 
-.balign 2
-glabel bank_1_index_886_image # 0x613756
-.incbin "assets/image/bank_1/886/block.bin"
+# .balign 2
+# glabel bank_1_index_886_image # 0x613756
+# .incbin "assets/image/bank_1/886/block.bin"
 
-.balign 2
-glabel bank_1_index_887_image # 0x613B56
-.incbin "assets/image/bank_1/887/block.bin"
+# .balign 2
+# glabel bank_1_index_887_image # 0x613B56
+# .incbin "assets/image/bank_1/887/block.bin"
 
-.balign 2
-glabel bank_1_index_888_image # 0x613D56
-.incbin "assets/image/bank_1/888/block.bin"
+# .balign 2
+# glabel bank_1_index_888_image # 0x613D56
+# .incbin "assets/image/bank_1/888/block.bin"
 
-.balign 2
-glabel bank_1_index_889_image # 0x613F56
-.incbin "assets/image/bank_1/889/block.bin"
+# .balign 2
+# glabel bank_1_index_889_image # 0x613F56
+# .incbin "assets/image/bank_1/889/block.bin"
 
-.balign 2
-glabel bank_1_index_890_image # 0x613FD6
-.incbin "assets/image/bank_1/890/block.bin"
+# .balign 2
+# glabel bank_1_index_890_image # 0x613FD6
+# .incbin "assets/image/bank_1/890/block.bin"
 
-.balign 2
-glabel bank_1_index_891_image # 0x6140D6
-.incbin "assets/image/bank_1/891/block.bin"
+# .balign 2
+# glabel bank_1_index_891_image # 0x6140D6
+# .incbin "assets/image/bank_1/891/block.bin"
 
-.balign 2
-glabel bank_1_index_892_image # 0x6144D6
-.incbin "assets/image/bank_1/892/block.bin"
+# .balign 2
+# glabel bank_1_index_892_image # 0x6144D6
+# .incbin "assets/image/bank_1/892/block.bin"
 
-.balign 2
-glabel bank_1_index_893_image # 0x614516
-.incbin "assets/image/bank_1/893/block.bin"
+# .balign 2
+# glabel bank_1_index_893_image # 0x614516
+# .incbin "assets/image/bank_1/893/block.bin"
 
-.balign 2
-glabel bank_1_index_894_image # 0x614596
-.incbin "assets/image/bank_1/894/block.bin"
+# .balign 2
+# glabel bank_1_index_894_image # 0x614596
+# .incbin "assets/image/bank_1/894/block.bin"
 
-.balign 2
-glabel bank_1_index_895_image # 0x614616
-.incbin "assets/image/bank_1/895/block.bin"
+# .balign 2
+# glabel bank_1_index_895_image # 0x614616
+# .incbin "assets/image/bank_1/895/block.bin"
 
-.balign 2
-glabel bank_1_index_896_image # 0x614816
-.incbin "assets/image/bank_1/896/block.bin"
+# .balign 2
+# glabel bank_1_index_896_image # 0x614816
+# .incbin "assets/image/bank_1/896/block.bin"
 
-.balign 2
-glabel bank_1_index_897_image # 0x614836
-.incbin "assets/image/bank_1/897/block.bin"
+# .balign 2
+# glabel bank_1_index_897_image # 0x614836
+# .incbin "assets/image/bank_1/897/block.bin"
 
-.balign 2
-glabel bank_1_index_898_image # 0x614A36
-.incbin "assets/image/bank_1/898/block.bin"
+# .balign 2
+# glabel bank_1_index_898_image # 0x614A36
+# .incbin "assets/image/bank_1/898/block.bin"
 
-.balign 2
-glabel bank_1_index_899_image # 0x614C36
-.incbin "assets/image/bank_1/899/block.bin"
+# .balign 2
+# glabel bank_1_index_899_image # 0x614C36
+# .incbin "assets/image/bank_1/899/block.bin"
 
-.balign 2
-glabel bank_1_index_900_image # 0x614E36
-.incbin "assets/image/bank_1/900/block.bin"
+# .balign 2
+# glabel bank_1_index_900_image # 0x614E36
+# .incbin "assets/image/bank_1/900/block.bin"
 
-.balign 2
-glabel bank_1_index_901_image # 0x615036
-.incbin "assets/image/bank_1/901/block.bin"
+# .balign 2
+# glabel bank_1_index_901_image # 0x615036
+# .incbin "assets/image/bank_1/901/block.bin"
 
-.balign 2
-glabel bank_1_index_902_image # 0x615236
-.incbin "assets/image/bank_1/902/block.bin"
+# .balign 2
+# glabel bank_1_index_902_image # 0x615236
+# .incbin "assets/image/bank_1/902/block.bin"
 
-.balign 2
-glabel bank_1_index_903_image # 0x615436
-.incbin "assets/image/bank_1/903/block.bin"
+# .balign 2
+# glabel bank_1_index_903_image # 0x615436
+# .incbin "assets/image/bank_1/903/block.bin"
 
-.balign 2
-glabel bank_1_index_904_image # 0x615636
-.incbin "assets/image/bank_1/904/block.bin"
+# .balign 2
+# glabel bank_1_index_904_image # 0x615636
+# .incbin "assets/image/bank_1/904/block.bin"
 
-.balign 2
-glabel bank_1_index_905_image # 0x615836
-.incbin "assets/image/bank_1/905/block.bin"
+# .balign 2
+# glabel bank_1_index_905_image # 0x615836
+# .incbin "assets/image/bank_1/905/block.bin"
 
-.balign 2
-glabel bank_1_index_906_image # 0x615A36
-.incbin "assets/image/bank_1/906/block.bin"
+# .balign 2
+# glabel bank_1_index_906_image # 0x615A36
+# .incbin "assets/image/bank_1/906/block.bin"
 
 .balign 2
 glabel bank_1_index_1_anim # 0x615C40
