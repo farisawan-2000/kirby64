@@ -4,6 +4,9 @@ build/*
 tools/GeoFromBin*
 tools/level_settings/convert
 assets/**/*
+!assets/Makefile
+!assets/*.mk
+!assets/*.ld
 *.z64
 textures/*
 bin/*
