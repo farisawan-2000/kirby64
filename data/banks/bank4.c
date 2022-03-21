@@ -2,6 +2,8 @@
 #include "segments.h"
 #include "banks.h"
 
+extern u32 bank_4_index_153_geo_end[];
+
 u32 *D_800CAEF0[] = { 
 	0,
 	0,
@@ -310,7 +312,7 @@ u32 *D_800CAEF0[] = {
 	bank_4_index_152_geo,
 	bank_4_index_153_geo,
 	bank_4_index_153_geo,
-	bank_4_index_1_image,
+	bank_4_index_153_geo_end,
 };
 
 
@@ -2853,21 +2855,23 @@ u32 D_800CC78C = 0x000021AC;
 u32 D_800CC790 = 0x0001319C;
 
 
-
+extern u32 bank_4_index_1_image_start[];
+extern u32 bank_4_index_1_anim_start[];
+extern u32 bank_4_index_1_misc_start[];
 u32 D_800CC794 = &D_800CAEF0;
 
 u32 D_800CC798 = 0xFFFFFFFF;
 
 u32 D_800CC79C = &D_800CB3C0;
 
-u32 *D_800CC7A0 = bank_4_index_1_image;
+u32 *D_800CC7A0 = bank_4_index_1_image_start;
 
 u32 D_800CC7A4 = &D_800CBEC8;
 
-u32 *D_800CC7A8 = bank_4_index_1_anim;
+u32 *D_800CC7A8 = bank_4_index_1_anim_start;
 
 u32 D_800CC7AC = &D_800CC784;
 
-u32 *D_800CC7B0 = bank_4_index_1_misc;
+u32 *D_800CC7B0 = bank_4_index_1_misc_start;
 
 

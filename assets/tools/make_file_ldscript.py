@@ -2,9 +2,20 @@ import sys
 
 
 filetype = sys.argv[1]
-if filetype == "geo":
-	print("""#include "bank_header.ld.in"\n""")
 bank = sys.argv[2]
+match filetype:
+	case "geo":
+		print("""#include "bank_header.ld.in"\n""")
+	case "image":
+		print("IMAGES_INIT(%s)"%bank)
+	case "anim":
+		print("ANIMS_INIT(%s)"%bank)
+	case "misc":
+		print("MISC_INIT(%s)"%bank)
+	case _:
+		print("what")
+		exit(1)
+
 
 filename_d = {
 	"geo": "filetable_models.mk",
@@ -17,8 +28,11 @@ ldscript_d = {
 	"geo_b": "GEO(%s, %s)",
 	"geo": "MODEL(%s, %s)",
 	"anim": "ANIMATION(%s, %s)",
+	"anim_b": "ANIMATION(%s, %s)",
 	"image": "IMAGE(%s, %s)",
+	"image_b": "IMAGE(%s, %s)",
 	"misc": "MISC(%s, %s)",
+	"misc_b": "MISC(%s, %s)",
 }
 
 fl = []
