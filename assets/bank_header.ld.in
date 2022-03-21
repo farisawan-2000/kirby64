@@ -58,6 +58,12 @@
     }\
     END_MISC(bank, index)
 
+#define MISC2(bank, index) \
+    START_MISC(bank, index) {\
+        BUILD_DIR/assets/misc/bank_##bank/index/misc.o(.data*);\
+    }\
+    END_MISC(bank, index)
+
 /* custom types */
 
 #define MODEL(bank, index) \

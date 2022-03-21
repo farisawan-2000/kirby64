@@ -32,7 +32,8 @@ ldscript_d = {
 	"image": "IMAGE(%s, %s)",
 	"image_b": "IMAGE(%s, %s)",
 	"misc": "MISC(%s, %s)",
-	"misc_b": "MISC(%s, %s)",
+	"misc_b": "MISC2(%s, %s)",
+	"misc_l": "LEVEL(%s, %s, %s)",
 }
 
 fl = []
@@ -55,6 +56,10 @@ for line in fl:
 		index = ls[ls.index("bank_%s"%bank) + 1]
 		if "block" in line:
 			print(ldscript_d[filetype+"_b"] % (bank, index))
+		elif "misc.bin" in line:
+			print(ldscript_d[filetype+"_b"] % (bank, index))
+		elif "level" in line:
+			print(ldscript_d[filetype+"_l"] % (bank, index, "assets/"+line.split()[0].replace(".bin",".o")))
 		else:
 			print(ldscript_d[filetype] % (bank, index))
 

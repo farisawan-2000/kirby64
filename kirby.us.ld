@@ -728,14 +728,6 @@ SECTIONS
     #include "assets/bank6.ld"
 
     #include "assets/bank7.ld"
-    BEGIN_SEG(bank7_other, __romPos) ALIGN(4) {
-        BUILD_DIR/asm/banks/bank7.o(.data*); 
-    }
-    END_SEG(bank7_other)
-
-
-    #include "assets/levels.ld"
-
 
     /DISCARD/ :
     {
