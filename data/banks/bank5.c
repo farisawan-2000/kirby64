@@ -649,7 +649,8 @@ u32 D_800CCCB8 = 0xFFFFFFFF;
 
 u32 D_800CCCBC = &D_800CC7BC;
 
-u32 *D_800CCCC0 = bank_5_index_1_image;
+extern u32 bank_5_index_1_image_start[];
+u32 *D_800CCCC0 = bank_5_index_1_image_start;
 
 u32 D_800CCCC4 = &D_800CCCA4;
 

@@ -720,21 +720,15 @@ SECTIONS
     #include "assets/bank2.ld"
     
     #include "assets/bank3.ld"
-/*    BEGIN_SEG(bank3_other, __romPos) {
-        BUILD_DIR/asm/banks/bank3.o(.data*); 
-    }
-    END_SEG(bank3_other)*/
 
     #include "assets/bank4.ld"
-    /*BEGIN_SEG(bank4_other, __romPos) {
-        BUILD_DIR/asm/banks/bank4.o(.data*); 
-    }
-    END_SEG(bank4_other)*/
 
-    BEGIN_SEG(bank5, __romPos) {
+    #include "assets/bank5.ld"
+
+    /*BEGIN_SEG(bank5, __romPos) {
         BUILD_DIR/asm/banks/bank5.o(.data*); 
     }
-    END_SEG(bank5)
+    END_SEG(bank5)*/
 
     #include "assets/bank6.ld"
     BEGIN_SEG(bank6_other, __romPos) {
