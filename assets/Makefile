@@ -6,6 +6,16 @@ TARGET = $(BUILD_DIR)/assets.marker
 -include filetable_image.mk
 -include filetable_animations.mk
 -include filetable_misc.mk
+
+BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
+					$(BUILD_DIR)/bank1.ld \
+					$(BUILD_DIR)/bank2.ld \
+					$(BUILD_DIR)/bank3.ld \
+					$(BUILD_DIR)/bank4.ld \
+					$(BUILD_DIR)/bank5.ld \
+					$(BUILD_DIR)/bank6.ld \
+					$(BUILD_DIR)/bank7.ld
+
 default: all
 all: $(TARGET)
 
@@ -57,7 +67,11 @@ $(BUILD_DIR)/%.o: %.bin
 	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
 	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
 
-$(TARGET): $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
+$(BUILD_DIR)/%.ld: $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
+	python3 tools/make_file_ldscript.py $@
+
+$(TARGET): $(BANK_LINKSCRIPTS)
+	cp bank_header.ld.in $(BUILD_DIR)
 	touch $@
 
 .PHONY: all clean default diff test distclean
