@@ -263,7 +263,7 @@ extern u32 D_800D7B7C;
 extern u32 D_800D7B78;
 extern u32 D_800D6B70;
 extern u32 D_8012EB00;
-extern u32 D_8022FB50;
+extern u32 _ovl19SegNoloadEnd;
 extern u8 D_80123F68[];
 struct Unk80123EC0{
     u32 unk0;
@@ -307,7 +307,7 @@ loop_1:
     if (temp_v1 != &D_803FC100) {
         goto loop_1;
     }
-    temp_t0 = &gFrameBuffer - &D_8022FB50;
+    temp_t0 = &gFrameBuffer - &_ovl19SegNoloadEnd;
     D_80123F68.unk10 = temp_t0;
     D_80123EEC = temp_t0;
     D_800D6FA8 = 0;
