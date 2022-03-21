@@ -21,7 +21,11 @@ jobs:
     - name: Install Qemu Irix
       run: sudo dpkg -i qemu-irix-2.11.0-2169-g32ab296eef_amd64.deb
     - name: Install Dependencies
-      run: sudo apt update && sudo apt install -y binutils-mips-linux-gnu gcc git python3 python3-pip gcc-mips-linux-gnu
+      run: sudo apt update && sudo apt install -y binutils-mips-linux-gnu gcc git gcc-mips-linux-gnu
+    - name: Install Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.10'
     - name: Install Python Dependencies
       run: pip3 install gitpython
     - name: More Dependencies
