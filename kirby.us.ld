@@ -653,6 +653,7 @@ SECTIONS
         BUILD_DIR/src/ovl19/ovl19_5.o(.text);
     }
     END_SEG(ovl19)
+
     BEGIN_SEG(ovl19Data, _ovl19SegmentEnd) SUBALIGN(16) {
         BUILD_DIR/data/kirby.ovl19.data.o(.data*);
         BUILD_DIR/data/kirby.ovl19.rodata.o(.rodata*);
