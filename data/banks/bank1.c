@@ -5698,9 +5698,11 @@ u32 *D_800C7830 = bank_1_index_1_image_start;
 
 u32 *D_800C7834 = &D_800C5DC4;
 
-u32 *D_800C7838 = bank_1_index_1_anim;
+extern u32 bank_1_index_1_anim_start[];
+u32 *D_800C7838 = bank_1_index_1_anim_start;
 
 u32 *D_800C783C = &D_800C7814;
 
-u32 *D_800C7840 = bank_1_index_1_misc;
+extern u32 bank_1_index_1_misc_start[];
+u32 *D_800C7840 = bank_1_index_1_misc_start;
 
