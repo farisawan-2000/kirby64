@@ -725,16 +725,7 @@ SECTIONS
 
     #include "assets/bank5.ld"
 
-    /*BEGIN_SEG(bank5, __romPos) {
-        BUILD_DIR/asm/banks/bank5.o(.data*); 
-    }
-    END_SEG(bank5)*/
-
     #include "assets/bank6.ld"
-    BEGIN_SEG(bank6_other, __romPos) {
-        BUILD_DIR/asm/banks/bank6.o(.data*); 
-    }
-    END_SEG(bank6_other)
 
     #include "assets/bank7.ld"
     BEGIN_SEG(bank7_other, __romPos) ALIGN(4) {
