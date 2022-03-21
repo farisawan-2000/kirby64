@@ -718,10 +718,6 @@ SECTIONS
     #include "assets/bank1.ld"
 
     #include "assets/bank2.ld"
-    BEGIN_SEG(bank2_other, __romPos) {
-        BUILD_DIR/asm/banks/bank2.o(.data*); 
-    }
-    END_SEG(bank2_other)
     
     #include "assets/bank3.ld"
     BEGIN_SEG(bank3_other, __romPos) {
