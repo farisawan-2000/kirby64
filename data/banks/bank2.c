@@ -2872,7 +2872,8 @@ u32 D_800C909C = &bank_2_index_1_image_start;
 
 u32 D_800C90A0 = &D_800C8074;
 
-u32 D_800C90A4 = &bank_2_index_1_anim;
+extern u32 bank_2_index_1_anim_start[];
+u32 D_800C90A4 = &bank_2_index_1_anim_start;
 
 u32 D_800C90A8 = &D_800C9080;
 
