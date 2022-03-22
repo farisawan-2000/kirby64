@@ -36,8 +36,9 @@ def write_section(filetype, fil, bank):
 		if inRange:
 			ls = line.split("/")
 			index = ls[ls.index("bank_%s"%bank) + 1]
-
-			if "block" in line:
+			if "png" in line:
+				fil.write(ldscript_d["texture"] % (bank, index, "assets/"+line.split()[0].replace(".png",".o")))
+			elif "block" in line:
 				fil.write(ldscript_d[filetype+"_b"] % (bank, index))
 			elif "misc.bin" in line:
 				fil.write(ldscript_d[filetype+"_bb"] % (bank, index))

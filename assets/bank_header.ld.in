@@ -71,9 +71,15 @@
     }\
     END_GEO(bank, index)
 
-#define IMAGE(bank, index) \
+#define IMAGEBIN(bank, index) \
     START_IMG(bank, index) {\
         BUILD_DIR/assets/image/bank_##bank/index/block.o(.data*);\
+    }\
+    END_IMG(bank, index)
+
+#define TEXTURE(bank, index, filename) \
+    START_IMG(bank, index) {\
+        filename(.data*);\
     }\
     END_IMG(bank, index)
 

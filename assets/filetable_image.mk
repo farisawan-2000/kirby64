@@ -1,7 +1,7 @@
 IMAGE_BANK_0_FILES := \
     image/bank_0/1/block.bin \
     image/bank_0/2/block.bin \
-    image/bank_0/3/block.bin \
+    image/bank_0/3/image.i4.png \
     image/bank_0/4/block.bin \
     image/bank_0/5/block.bin \
     image/bank_0/6/block.bin \

@@ -4,7 +4,7 @@ build/*
 tools/GeoFromBin*
 tools/level_settings/convert
 assets/*.bin
-assets/*.png
+assets/**/*.png
 assets/tools/__pycache__/*
 *.z64
 textures/*

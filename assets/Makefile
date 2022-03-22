@@ -44,7 +44,8 @@ __MODEL_C_O_FILES := $(foreach file,$(_MF), $(file:.c=.o))
 MODEL_O_FILES := $(foreach file,$(__MODEL_C_O_FILES), $(BUILD_DIR)/$(file))
 
 _IF := $(foreach file,$(IMAGE_FILES), $(file:.bin=.c))
-__IMAGE_C_O_FILES := $(foreach file,$(_IF), $(file:.c=.o))
+_IF2 += $(foreach file,$(_IF), $(file:.png=.c))
+__IMAGE_C_O_FILES := $(foreach file,$(_IF2), $(file:.c=.o))
 IMAGE_O_FILES := $(foreach file,$(__IMAGE_C_O_FILES), $(BUILD_DIR)/$(file))
 
 _AF := $(foreach file,$(ANIM_FILES), $(file:.bin=.c))
@@ -59,6 +60,18 @@ O_FILES := $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
 
 clean:
 	rm -f -r $(BUILD_DIR)
+
+clean-tables:
+	rm -f $(BUILD_DIR)/*.{c,h,ld}
+	rm -f $(TARGET)
+
+$(BUILD_DIR)/%.i4.bin: %.i4.png
+	mkdir -p $(@D)
+	../tools/n64graphics -i $@ -g $< -f i4
+
+$(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
+	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
+	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
 
 $(BUILD_DIR)/%.o: %.c
 	mkdir -p $(@D)
