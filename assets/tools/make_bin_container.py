@@ -24,15 +24,25 @@ incbin = """\
 
 """
 
+incbin_raw = """\
+.section .data
+
+.balign 2
+.incbin "%s"
+
+"""
 
 def symname(bank, index, sf):
     return "bank_%d_index_%d_%s%s" % (bank, index, bintype, sf)
 
-print(incbin % (
-    symname(globBank, globIndex, "_start"),
-    symname(globBank, globIndex, "_start"),
-    fname,
-    symname(globBank, globIndex, "_end"),
-    symname(globBank, globIndex, "_end")
+if bintype != "geo":
+    print(incbin % (
+        symname(globBank, globIndex, "_start"),
+        symname(globBank, globIndex, "_start"),
+        fname,
+        symname(globBank, globIndex, "_end"),
+        symname(globBank, globIndex, "_end")
+        )
     )
-)
+else:
+    print(incbin_raw % fname);

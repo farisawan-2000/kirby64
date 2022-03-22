@@ -4774,7 +4774,7 @@ glabel func_801EC4B4_ovl16
 /* 2228BC 801EC60C 1000000F */  b     .L801EC64C_ovl16
 /* 2228C0 801EC610 00000000 */   nop   
 .L801EC614_ovl16:
-/* 2228C4 801EC614 8E080010 */  lw    $t0, %lo(D_800D0010)($s0)
+/* 2228C4 801EC614 8E080010 */  lw    $t0, 0x10($s0)
 .L801EC618_ovl16:
 /* 2228C8 801EC618 29010002 */  slti  $at, $t0, 2
 /* 2228CC 801EC61C 5020001A */  beql  $at, $zero, .L801EC688_ovl16
@@ -4782,7 +4782,7 @@ glabel func_801EC4B4_ovl16
 .L801EC624_ovl16:
 /* 2228D4 801EC624 0C002DAF */  jal   finish_current_thread
 /* 2228D8 801EC628 24040001 */   li    $a0, 1
-/* 2228DC 801EC62C 8E090010 */  lw    $t1, %lo(D_800D0010)($s0)
+/* 2228DC 801EC62C 8E090010 */  lw    $t1, 0x10($s0)
 /* 2228E0 801EC630 29210002 */  slti  $at, $t1, 2
 /* 2228E4 801EC634 1420FFFB */  bnez  $at, .L801EC624_ovl16
 /* 2228E8 801EC638 00000000 */   nop   

@@ -96,15 +96,25 @@ u32 D_800D017C = 0x00000115;
 u32 D_800D0180 = 0x000000F0;
 
 u32 *D_800D0184[8] = {
-    &D_800C47D4,
-    &D_800C7824,
-    &D_800C9090,
-    &D_800CAED0,
-    &D_800CC794,
-    &D_800CCCB4,
-    &D_800CE220,
-    &D_800D00A4,
+    &bank_0_filetable,
+    &bank_1_filetable,
+    &bank_2_filetable,
+    &bank_3_filetable,
+    &bank_4_filetable,
+    &bank_5_filetable,
+    &bank_6_filetable,
+    &bank_7_filetable,
 };
+// u32 *D_800D0184[8] = {
+//     &D_800C47D4,
+//     &D_800C7824,
+//     &D_800C9090,
+//     &D_800CAED0,
+//     &D_800CC794,
+//     &D_800CCCB4,
+//     &D_800CE220,
+//     &D_800D00A4,
+// };
 
 extern char D_800D5E00[];
 struct StageArea D_800D01A4[0xD5] = {

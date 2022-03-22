@@ -1,6 +1,8 @@
 #define START_GEO(bank, index) \
+    __romPos = ALIGN(__romPos, 16);\
     bank_##bank##_index_##index##_geo = __romPos; \
-    .bank_##bank##_index_##index 0x04000000 : AT(__romPos) SUBALIGN(16)
+    bank_##bank##_index_##index##_geo_start = __romPos; \
+    .bank_##bank##_index_##index 0x04000000 : AT(__romPos) ALIGN(16) SUBALIGN(16)
 
 #define END_GEO(bank, index) \
     bank_##bank##_index_##index##_geo_end = __romPos + SIZEOF(.bank_##bank##_index_##index); \
@@ -8,7 +10,7 @@
 
 #define START_MISC(bank, index) \
     bank_##bank##_index_##index##_misc_start = __romPos; \
-    .bank_##bank##_index_##index##_misc 0 : AT(__romPos)
+    .bank_##bank##_index_##index##_misc 0 : AT(__romPos) ALIGN(4)
 
 #define END_MISC(bank, index) \
     bank_##bank##_index_##index##_misc_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_misc); \
@@ -18,7 +20,7 @@
 
 #define START_IMG(bank, index) \
     bank_##bank##_index_##index##_image_start = __romPos; \
-    .bank_##bank##_index_##index##_image 0 : AT(__romPos)
+    .bank_##bank##_index_##index##_image 0 : AT(__romPos) ALIGN(4)
 
 #define END_IMG(bank, index) \
     bank_##bank##_index_##index##_image_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_image); \
@@ -28,7 +30,7 @@
 
 #define START_ANIM(bank, index) \
     bank_##bank##_index_##index##_anim_start = __romPos; \
-    .bank_##bank##_index_##index##_anim 0 : AT(__romPos)
+    .bank_##bank##_index_##index##_anim 0 : AT(__romPos) ALIGN(4)
 
 #define END_ANIM(bank, index) \
     bank_##bank##_index_##index##_anim_end = __romPos + SIZEOF(.bank_##bank##_index_##index##_anim); \
@@ -38,13 +40,18 @@
 
 
 #define IMAGES_INIT(bank) \
-    _bank_##bank##_image_size = 0;
+    _bank_##bank##_image_size = 0;\
+    bank_##bank##_index_1_image_start = __romPos;
 
 #define ANIMS_INIT(bank) \
-    _bank_##bank##_anim_size = 0;
+    __romPos = ALIGN(__romPos, 16);\
+    _bank_##bank##_anim_size = 0;\
+    bank_##bank##_index_1_anim_start = __romPos;
 
 #define MISC_INIT(bank) \
-    _bank_##bank##_misc_size = 0;
+    __romPos = ALIGN(__romPos, 16);\
+    _bank_##bank##_misc_size = 0;\
+    bank_##bank##_index_1_misc_start = __romPos;
 
 #define GEO(bank, index) \
     START_GEO(bank, index) {\
@@ -52,17 +59,6 @@
     }\
     END_GEO(bank, index)
 
-#define MISC(bank, index) \
-    START_MISC(bank, index) {\
-        BUILD_DIR/assets/misc/bank_##bank/index/block.o(.data*);\
-    }\
-    END_MISC(bank, index)
-
-#define MISC2(bank, index) \
-    START_MISC(bank, index) {\
-        BUILD_DIR/assets/misc/bank_##bank/index/misc.o(.data*);\
-    }\
-    END_MISC(bank, index)
 
 /* custom types */
 
@@ -85,6 +81,18 @@
     }\
     END_ANIM(bank, index)
 
+#define MISC(bank, index) \
+    START_MISC(bank, index) {\
+        BUILD_DIR/assets/misc/bank_##bank/index/block.o(.data*);\
+    }\
+    END_MISC(bank, index)
+
+#define MISC2(bank, index) \
+    START_MISC(bank, index) {\
+        BUILD_DIR/assets/misc/bank_##bank/index/misc.o(.data*);\
+    }\
+    END_MISC(bank, index)
+
 #define MODEL(bank, index) \
     START_GEO(bank, index) {\
         BUILD_DIR/assets/geo/bank_##bank/index/geo.o(.data*);\
@@ -97,3 +105,24 @@
         BUILD_DIR/filename(.data*);\
     }\
     END_MISC(bank, index)
+
+#define FILLER(filetype, bank) \
+    BEGIN_SEG(bank_ ## bank ##_## filetype ## _filler, 0) {\
+        BYTE(0x39);\
+        BYTE(0x39);\
+        BYTE(0x39);\
+        BYTE(0x0A);\
+    }\
+    END_SEG(bank_ ## bank ##_## filetype ## _filler)
+
+
+/*#define FILLER(filetype, bank) \
+    ._bank##bank##_##filetype##_patch 0 : AT(__romPos) \
+    { \
+        BYTE(0x39);\
+        BYTE(0x39);\
+        BYTE(0x39);\
+        BYTE(0x0A);\
+        . = ALIGN(16);\
+    }
+*/

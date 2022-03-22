@@ -2,10 +2,12 @@ BUILD_DIR := ../build/us/assets
 DUMMY != mkdir -p $(BUILD_DIR)
 TARGET = $(BUILD_DIR)/assets.marker
 
--include filetable_models.mk
--include filetable_image.mk
--include filetable_animations.mk
--include filetable_misc.mk
+FILETABLES := filetable_models.mk \
+			  filetable_image.mk \
+			  filetable_animations.mk \
+			  filetable_misc.mk
+
+-include $(FILETABLES)
 
 BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 					$(BUILD_DIR)/bank1.ld \
@@ -15,6 +17,8 @@ BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 					$(BUILD_DIR)/bank5.ld \
 					$(BUILD_DIR)/bank6.ld \
 					$(BUILD_DIR)/bank7.ld
+BANK_FILETABLES := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.filetable.c))
+BANK_HEADERS := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.h))
 
 default: all
 all: $(TARGET)
@@ -51,6 +55,9 @@ _LF := $(foreach file,$(MISC_FILES), $(file:.bin=.c))
 __MISC_C_O_FILES := $(foreach file,$(_LF), $(file:.c=.o))
 MISC_O_FILES := $(foreach file,$(__MISC_C_O_FILES), $(BUILD_DIR)/$(file))
 
+O_FILES := $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
+O_FILES += $(BUILD_DIR)/filler.o
+
 clean:
 	rm -f -r $(BUILD_DIR)
 
@@ -67,10 +74,16 @@ $(BUILD_DIR)/%.o: %.bin
 	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
 	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
 
-$(BUILD_DIR)/%.ld: $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
+$(BUILD_DIR)/%.ld: $(FILETABLES) $(O_FILES)
 	python3 tools/make_file_ldscript.py $@
 
-$(TARGET): $(BANK_LINKSCRIPTS)
+$(BUILD_DIR)/%.filetable.c: $(BUILD_DIR)/%.ld
+	python3 tools/make_bank_filetable.py $(CROSS) $(BUILD_DIR)/ $@
+
+$(BUILD_DIR)/%.h: $(BUILD_DIR)/%.filetable.c
+	python3 tools/make_bank_header.py $(BUILD_DIR)/ $@
+
+$(TARGET): $(BANK_HEADERS) bank_header.ld.in
 	cp bank_header.ld.in $(BUILD_DIR)
 	touch $@
 
