@@ -29,6 +29,35 @@ typedef enum
    IMG_FORMAT_CI,
 } img_format;
 
+#define TMEM_LIMIT 4096
+
+// bank 3 index 4 image
+// 02 (CI)
+// 00 (4b)
+// 10 FF
+// 00 40 (64px)
+// 00 3A (58px)
+// 00 00 00 10
+// 00 00 07 50 (palette at 0x750)
+typedef union {
+   uint8_t b[2];
+   uint16_t s;
+} _8_16;
+typedef union {
+   uint8_t b[4];
+   uint16_t s[2];
+   uint32_t w;
+} _8_16_32;
+typedef struct BGImageHeader {
+   uint8_t fmt;
+   uint8_t siz;
+   uint8_t pal_offset; // idk; 7C on I4
+   uint8_t filler;
+   uint16_t wd;
+   uint16_t ht;
+   _8_16_32 img_offset;
+   _8_16_32 pal_rom; // 03 01 on I4
+} BGImageHeader;
 
 //---------------------------------------------------------
 // N64 RGBA/IA/I/CI -> internal RGBA/IA
@@ -297,6 +326,22 @@ int ia2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
    }
 
    return size;
+}
+
+int i2bg(uint8_t *raw, const ia *img, int width, int height, int depth) {
+   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
+   hd->fmt = 0x04; // G_IM_FMT_I
+   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix
+   hd->pal_offset = 0x7C;
+   hd->filler = 0xFF;
+   hd->wd = __builtin_bswap16(width);
+   hd->ht = __builtin_bswap16(height);
+   hd->img_offset.w = 0;
+   hd->img_offset.b[3] = 0x10;
+   hd->pal_rom.w = 0;
+   hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
+   int sz2 = i2raw(&raw[0x10], img, width, height, depth);
+   return sizeof(BGImageHeader) + sz2;
 }
 
 int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
@@ -576,6 +621,7 @@ static const format_entry format_table[] =
    {"ia8",    IMG_FORMAT_IA,    8},
    {"ia16",   IMG_FORMAT_IA,   16},
    {"i4",     IMG_FORMAT_I,     4},
+   {"i4.bg",   IMG_FORMAT_I,    4},
    {"i8",     IMG_FORMAT_I,     8},
    {"ci8",    IMG_FORMAT_CI,    8},
    {"ci16",   IMG_FORMAT_CI,   16},
@@ -690,25 +736,6 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
    return 1;
 }
 
-// bank 3 index 4 image
-// 02 (CI)
-// 00 (4b)
-// 10 FF
-// 00 40 (64px)
-// 00 3A (58px)
-// 00 00 00 10
-// 00 00 07 50 (palette at 0x750)
-struct BGImageHeader {
-   uint8_t fmt;
-   uint8_t siz;
-   uint8_t pal_offset; // idk
-   uint8_t filler;
-   uint16_t wd;
-   uint16_t ht;
-   uint32_t img_offset;
-   uint32_t pal_rom;
-};
-
 int main(int argc, char *argv[])
 {
    graphics_config config = default_config;
@@ -762,15 +789,19 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_I:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            // if (raw_size > TMEM_LIMIT) {
-            //    raw = 
-            // } else {
+            if (config.width > 128) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
                raw = malloc(raw_size);
-            // }
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = i2raw(raw, imgi, config.width, config.height, config.depth);
+            if (config.width > 128) {
+               length = i2bg(raw, imgi, config.width, config.height, config.depth);
+            } else {
+               length = i2raw(raw, imgi, config.width, config.height, config.depth);
+            }
             break;
          default:
             return EXIT_FAILURE;

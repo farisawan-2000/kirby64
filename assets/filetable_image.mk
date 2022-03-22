@@ -1412,7 +1412,7 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/208/block.bin \
     image/bank_3/209/block.bin \
     image/bank_3/210/block.bin \
-    image/bank_3/211/block.bin \
+    image/bank_3/211/image.i4.png \
     image/bank_3/212/block.bin \
     image/bank_3/213/block.bin \
     image/bank_3/214/block.bin \
