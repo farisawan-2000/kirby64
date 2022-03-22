@@ -240,6 +240,23 @@ rgba *rawci2rgba(const uint8_t *rawci, const uint8_t *palette, int width, int he
    return img;
 }
 
+typedef int (*fptr)(uint8_t *raw, const ia *img, int width, int height, int depth);
+
+int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int depth) {
+   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
+   hd->fmt = 0x04; // G_IM_FMT_I
+   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix
+   hd->pal_offset = 0x7C;
+   hd->filler = 0xFF;
+   hd->wd = __builtin_bswap16(width);
+   hd->ht = __builtin_bswap16(height);
+   hd->img_offset.w = 0;
+   hd->img_offset.b[3] = 0x10;
+   hd->pal_rom.w = 0;
+   hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
+   int sz2 = fn(&raw[0x10], img, width, height, depth);
+   return sizeof(BGImageHeader) + sz2;
+}
 
 //---------------------------------------------------------
 // internal RGBA/IA -> N64 RGBA/IA/I/CI
@@ -326,22 +343,6 @@ int ia2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
    }
 
    return size;
-}
-
-int i2bg(uint8_t *raw, const ia *img, int width, int height, int depth) {
-   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
-   hd->fmt = 0x04; // G_IM_FMT_I
-   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix
-   hd->pal_offset = 0x7C;
-   hd->filler = 0xFF;
-   hd->wd = __builtin_bswap16(width);
-   hd->ht = __builtin_bswap16(height);
-   hd->img_offset.w = 0;
-   hd->img_offset.b[3] = 0x10;
-   hd->pal_rom.w = 0;
-   hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
-   int sz2 = i2raw(&raw[0x10], img, width, height, depth);
-   return sizeof(BGImageHeader) + sz2;
 }
 
 int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
@@ -771,20 +772,37 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_RGBA:
             imgr = png2rgba(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            if (config.width > 64) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
+               raw = malloc(raw_size);
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = rgba2raw(raw, imgr, config.width, config.height, config.depth);
+            if (config.width > 64) {
+               length = img2bg(rgba2raw, raw, imgr, config.width, config.height, config.depth);
+            } else {
+               length = rgba2raw(raw, imgr, config.width, config.height, config.depth);
+            }
+
             break;
          case IMG_FORMAT_IA:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            if (config.width > 128) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
+               raw = malloc(raw_size);
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = ia2raw(raw, imgi, config.width, config.height, config.depth);
+            if (config.width > 128) {
+               length = img2bg(ia2raw, raw, imgi, config.width, config.height, config.depth);
+            } else {
+               length = ia2raw(raw, imgi, config.width, config.height, config.depth);
+            }
             break;
          case IMG_FORMAT_I:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
@@ -798,7 +816,7 @@ int main(int argc, char *argv[])
                ERROR("Error allocating %u bytes\n", raw_size);
             }
             if (config.width > 128) {
-               length = i2bg(raw, imgi, config.width, config.height, config.depth);
+               length = img2bg(i2raw, raw, imgi, config.width, config.height, config.depth);
             } else {
                length = i2raw(raw, imgi, config.width, config.height, config.depth);
             }
