@@ -3,12 +3,9 @@
 build/*
 tools/GeoFromBin*
 tools/level_settings/convert
-assets/**/*
-!assets/tools/*.py
-!assets/tools/scut/*.py
-!assets/Makefile
-!assets/*.mk
-!assets/*.ld
+assets/*.bin
+assets/*.png
+assets/tools/__pycache__/*
 *.z64
 textures/*
 bin/*
