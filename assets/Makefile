@@ -65,17 +65,9 @@ clean-tables:
 	rm -f $(BUILD_DIR)/*.{c,h,ld}
 	rm -f $(TARGET)
 
-$(BUILD_DIR)/%.i4.bin: %.i4.png
+$(BUILD_DIR)/%.bin: %.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f i4
-
-$(BUILD_DIR)/%background.i4.bin: %background.i4.png
-	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f i4.bg
-
-$(BUILD_DIR)/%.rgba32.bin: %.rgba32.png
-	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f rgba32
+	../tools/n64graphics -i $@ -g $< -f $(lastword $(subst ., ,$*))
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
 	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
