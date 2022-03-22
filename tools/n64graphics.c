@@ -815,10 +815,10 @@ int main(int argc, char *argv[])
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            if (config.width > 128) {
-               length = img2bg(i2raw, raw, imgi, config.width, config.height, config.depth);
-            } else {
+            if (config.width == 351 || config.width <= 128) {
                length = i2raw(raw, imgi, config.width, config.height, config.depth);
+            } else {
+               length = img2bg(i2raw, raw, imgi, config.width, config.height, config.depth);
             }
             break;
          default:
