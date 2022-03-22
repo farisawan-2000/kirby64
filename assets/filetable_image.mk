@@ -24,8 +24,8 @@ IMAGE_BANK_0_FILES := \
     image/bank_0/23/block.bin \
     image/bank_0/24/block.bin \
     image/bank_0/25/block.bin \
-    image/bank_0/26/block.bin \
-    image/bank_0/27/block.bin
+    image/bank_0/26/background.i4.png \
+    image/bank_0/27/background.i4.png
 
 IMAGE_BANK_1_FILES := \
     image/bank_1/1/block.bin \
