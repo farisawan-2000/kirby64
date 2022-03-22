@@ -6,6 +6,7 @@ def write_section(filetype, fil, bank):
 	match filetype:
 		case "geo":
 			fil.write("""#include "bank_header.ld.in"\n\n""")
+			fil.write("GEO_INIT(%s)\n"%bank)
 		case "image":
 			fil.write("IMAGES_INIT(%s)\n"%bank)
 		case "anim":

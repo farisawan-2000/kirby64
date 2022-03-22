@@ -5,8 +5,8 @@
     .bank_##bank##_index_##index 0x04000000 : AT(__romPos) ALIGN(16) SUBALIGN(16)
 
 #define END_GEO(bank, index) \
-    bank_##bank##_index_##index##_geo_end = __romPos + SIZEOF(.bank_##bank##_index_##index); \
-    __romPos += SIZEOF(.bank_##bank##_index_##index);
+    bank_##bank##_index_##index##_geo_end = ALIGN(__romPos + SIZEOF(.bank_##bank##_index_##index), 16); \
+    __romPos += ALIGN(SIZEOF(.bank_##bank##_index_##index), 16);
 
 #define START_MISC(bank, index) \
     bank_##bank##_index_##index##_misc_start = __romPos; \
@@ -38,6 +38,8 @@
     _bank_##bank##_anim_size += SIZEOF(.bank_##bank##_index_##index##_anim); \
     _bank_##bank##_index_##index##_anim = _bank_##bank##_anim_size + SIZEOF(.bank_##bank##_index_##index##_anim);
 
+#define GEO_INIT(bank) \
+    __romPos = ALIGN(__romPos, 16);\
 
 #define IMAGES_INIT(bank) \
     _bank_##bank##_image_size = 0;\
