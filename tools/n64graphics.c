@@ -690,6 +690,25 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
    return 1;
 }
 
+// bank 3 index 4 image
+// 02 (CI)
+// 00 (4b)
+// 10 FF
+// 00 40 (64px)
+// 00 3A (58px)
+// 00 00 00 10
+// 00 00 07 50 (palette at 0x750)
+struct BGImageHeader {
+   uint8_t fmt;
+   uint8_t siz;
+   uint8_t pal_offset; // idk
+   uint8_t filler;
+   uint16_t wd;
+   uint16_t ht;
+   uint32_t img_offset;
+   uint32_t pal_rom;
+};
+
 int main(int argc, char *argv[])
 {
    graphics_config config = default_config;
@@ -743,7 +762,11 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_I:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            // if (raw_size > TMEM_LIMIT) {
+            //    raw = 
+            // } else {
+               raw = malloc(raw_size);
+            // }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }

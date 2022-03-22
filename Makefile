@@ -280,6 +280,9 @@ $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(A
 test: $(BUILD_DIR)/$(TARGET).z64
 	$(EMULATOR) $(EMU_FLAGS) $<
 
+test2: $(BUILD_DIR)/$(TARGET).z64
+	flatpak run --file-forwarding io.github.m64p.m64p @@ $< @@
+
 test-pj64: $(BUILD_DIR)/$(TARGET).z64
 	wine ~/Desktop/new64/Project64.exe $<
 
