@@ -114,6 +114,7 @@
         BYTE(0x39);\
         BYTE(0x39);\
         BYTE(0x0A);\
+        FILL(0x00);\
     }\
     END_SEG(bank_ ## bank ##_## filetype ## _filler)
 

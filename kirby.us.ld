@@ -730,6 +730,13 @@ SECTIONS
 
     #include "assets/bank7.ld"
 
+#ifndef NON_MATCHING
+    BEGIN_SEG(epic_pad, 0) {
+        QUAD(0);
+        LONG(0);
+    }
+    END_SEG(epic_pad)
+#endif
     /DISCARD/ :
     {
         *(*);

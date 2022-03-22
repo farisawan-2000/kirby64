@@ -55,6 +55,7 @@ INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --accept-unknown-input-arch -T libultra_unused.txt --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
+PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
 ####################### Other Tools #########################
@@ -173,10 +174,10 @@ LD_SCRIPT = $(TARGET).ld
 $(BUILD_DIR)/data/kirby.066630.o: $(BUILD_DIR)/assets/assets.marker
 
 libreultra/build/2.0I/libultra_rom.a:
-	make -C libreultra -j4
+	$(MAKE) -C libreultra -j4
 
 libreultra/build/2.0I/libn_audio.a:
-	make -C libreultra naudio -j4
+	$(MAKE) -C libreultra naudio -j4
 
 all: $(BUILD_DIR)/$(TARGET).z64
 	@sha1sum -c $(TARGET).sha1
@@ -187,9 +188,9 @@ clean:
 distclean:
 	rm -rf build/
 	tools/extract_assets --clean
-	make -C tools clean
-	make -C libreultra clean
-	make -C f3dex2 clean
+	$(MAKE) -C tools clean
+	$(MAKE) -C libreultra clean
+	$(MAKE) -C f3dex2 clean
 	rm -rf assets/geo
 	rm -rf assets/image
 	rm -rf assets/anim
@@ -267,7 +268,9 @@ $(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/li
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
-	$(OBJCOPY) $< $@ -O binary $(OBJCOPY_FLAGS)
+	$(OBJCOPY) $< $(BUILD_DIR)/$(@F).bin -O binary $(PRELIM_OBJCOPY_FLAGS)
+	$(LD) -r -b binary -o $(BUILD_DIR)/$(@F).elf.1 $(BUILD_DIR)/$(@F).bin
+	$(OBJCOPY) $(BUILD_DIR)/$(@F).elf.1 $@ -O binary $(OBJCOPY_FLAGS)
 	$(N64CRC) $@
 	@python3 tools/progress2.py -m
 
@@ -284,10 +287,10 @@ load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
 setup:
-	make -C libreultra -j4
-	make -C libreultra naudio -j4
-	make -C tools -j4
-	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	$(MAKE) -C libreultra -j4
+	$(MAKE) -C libreultra naudio -j4
+	$(MAKE) -C tools -j4
+	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 	tools/extract_assets $(VERSION)
 
 .PHONY: all clean default diff test distclean
