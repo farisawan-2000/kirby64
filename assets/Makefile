@@ -56,7 +56,6 @@ __MISC_C_O_FILES := $(foreach file,$(_LF), $(file:.c=.o))
 MISC_O_FILES := $(foreach file,$(__MISC_C_O_FILES), $(BUILD_DIR)/$(file))
 
 O_FILES := $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
-O_FILES += $(BUILD_DIR)/filler.o
 
 clean:
 	rm -f -r $(BUILD_DIR)
