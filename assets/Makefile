@@ -69,6 +69,10 @@ $(BUILD_DIR)/%.i4.bin: %.i4.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $@ -g $< -f i4
 
+$(BUILD_DIR)/%background.i4.bin: %background.i4.png
+	mkdir -p $(@D)
+	../tools/n64graphics -i $@ -g $< -f i4.bg
+
 $(BUILD_DIR)/%.rgba32.bin: %.rgba32.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $@ -g $< -f rgba32

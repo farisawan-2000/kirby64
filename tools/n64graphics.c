@@ -621,10 +621,10 @@ static const format_entry format_table[] =
    {"ia8",    IMG_FORMAT_IA,    8},
    {"ia16",   IMG_FORMAT_IA,   16},
    {"i4",     IMG_FORMAT_I,     4},
-   {"i4.bg",   IMG_FORMAT_I,    4},
    {"i8",     IMG_FORMAT_I,     8},
    {"ci8",    IMG_FORMAT_CI,    8},
    {"ci16",   IMG_FORMAT_CI,   16},
+   {"i4.bg",  IMG_FORMAT_I,     4},
 };
 
 static const char *format2str(img_format format, int depth)
