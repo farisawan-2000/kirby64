@@ -2,23 +2,23 @@ IMAGE_BANK_0_FILES := \
     image/bank_0/1/block.bin \
     image/bank_0/2/block.bin \
     image/bank_0/3/image.i4.png \
-    image/bank_0/4/block.bin \
-    image/bank_0/5/block.bin \
-    image/bank_0/6/block.bin \
-    image/bank_0/7/block.bin \
-    image/bank_0/8/block.bin \
-    image/bank_0/9/block.bin \
-    image/bank_0/10/block.bin \
-    image/bank_0/11/block.bin \
-    image/bank_0/12/block.bin \
-    image/bank_0/13/block.bin \
-    image/bank_0/14/block.bin \
-    image/bank_0/15/block.bin \
-    image/bank_0/16/block.bin \
-    image/bank_0/17/block.bin \
-    image/bank_0/18/block.bin \
-    image/bank_0/19/block.bin \
-    image/bank_0/20/block.bin \
+    image/bank_0/4/image.i4.png \
+    image/bank_0/5/image.i4.png \
+    image/bank_0/6/image.i4.png \
+    image/bank_0/7/image.i4.png \
+    image/bank_0/8/image.i4.png \
+    image/bank_0/9/image.i4.png \
+    image/bank_0/10/image.i4.png \
+    image/bank_0/11/image.i4.png \
+    image/bank_0/12/image.i4.png \
+    image/bank_0/13/image.rgba32.png \
+    image/bank_0/14/image.i4.png \
+    image/bank_0/15/image.i4.png \
+    image/bank_0/16/image.i4.png \
+    image/bank_0/17/image.i4.png \
+    image/bank_0/18/image.i4.png \
+    image/bank_0/19/image.i4.png \
+    image/bank_0/20/image.i4.png \
     image/bank_0/21/block.bin \
     image/bank_0/22/block.bin \
     image/bank_0/23/block.bin \

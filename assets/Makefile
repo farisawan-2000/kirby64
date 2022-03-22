@@ -69,6 +69,10 @@ $(BUILD_DIR)/%.i4.bin: %.i4.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $@ -g $< -f i4
 
+$(BUILD_DIR)/%.rgba32.bin: %.rgba32.png
+	mkdir -p $(@D)
+	../tools/n64graphics -i $@ -g $< -f rgba32
+
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
 	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
 	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
