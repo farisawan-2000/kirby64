@@ -74,7 +74,6 @@ $(BUILD_DIR)/%/background.i4.o: %/background.i4.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $(@:.o=.bin) -g $< -f i4.bg
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
-
 $(BUILD_DIR)/%/background.ia4.o: %/background.ia4.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $(@:.o=.bin) -g $< -f ia4.bg

@@ -19,8 +19,8 @@ for i,x in enumerate(jb):
 		if mysize != realsize:
 			if realsize-mysize == 16 and "image." in x:
 				print("%s is a background!" % x)
-			else:
-				print(x, mysize, realsize, wh)
+			# else:
+			# 	print(x, mysize, realsize, wh)
 		# print(i, x)
 	elif ".bin" in x and ".png" in ds[i+1]:
 		sx = jb[x]["offsets"]["us"][0]
