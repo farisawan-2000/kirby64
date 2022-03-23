@@ -17,5 +17,8 @@ for i,x in enumerate(jb):
 		mysize = wh[0] * wh[1] / 2
 
 		if mysize != realsize:
-			print(x, mysize, realsize, wh)
+			if realsize-mysize == 16 and "image." in x:
+				print("%s is a background!" % x)
+			# else:
+			# 	print(x, mysize, realsize, wh)
 		# print(i, x)

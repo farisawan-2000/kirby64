@@ -65,9 +65,18 @@ clean-tables:
 	rm -f $(BUILD_DIR)/*.{c,h,ld}
 	rm -f $(TARGET)
 
+# normal images
 $(BUILD_DIR)/%.bin: %.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $@ -g $< -f $(lastword $(subst ., ,$*))
+# background I4 images specifically
+$(BUILD_DIR)/%/background.i4.bin: %/background.i4.png
+	mkdir -p $(@D)
+	../tools/n64graphics -i $@ -g $< -f i4.bg
+
+$(BUILD_DIR)/%/background.ia4.bin: %/background.ia4.png
+	mkdir -p $(@D)
+	../tools/n64graphics -i $@ -g $< -f ia4.bg
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
 	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s

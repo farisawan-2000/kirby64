@@ -241,22 +241,11 @@ rgba *rawci2rgba(const uint8_t *rawci, const uint8_t *palette, int width, int he
 }
 
 typedef int (*fptr)(uint8_t *raw, const ia *img, int width, int height, int depth);
+// #define IS_NOT_BACKGROUND() (config.height != 77)\
+//                && (config.width == 351 || config.width <= 128)
 
-int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int depth) {
-   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
-   hd->fmt = 0x04; // G_IM_FMT_I
-   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix
-   hd->pal_offset = 0x7C;
-   hd->filler = 0xFF;
-   hd->wd = __builtin_bswap16(width);
-   hd->ht = __builtin_bswap16(height);
-   hd->img_offset.w = 0;
-   hd->img_offset.b[3] = 0x10;
-   hd->pal_rom.w = 0;
-   hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
-   int sz2 = fn(&raw[0x10], img, width, height, depth);
-   return sizeof(BGImageHeader) + sz2;
-}
+// #define IS_BACKGROUND() !(IS_NOT_BACKGROUND())
+
 
 //---------------------------------------------------------
 // internal RGBA/IA -> N64 RGBA/IA/I/CI
@@ -376,6 +365,26 @@ int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
    return size;
 }
 
+
+int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int depth) {
+   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
+   if (fn == ia2raw) {
+      hd->fmt = 0x03; // G_IM_FMT_IA
+   } else if (fn == i2raw) {
+      hd->fmt = 0x04; // G_IM_FMT_I
+   }
+   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix based on size
+   hd->pal_offset = 0x7C;
+   hd->filler = 0xFF;
+   hd->wd = __builtin_bswap16(width);
+   hd->ht = __builtin_bswap16(height);
+   hd->img_offset.w = 0;
+   hd->img_offset.b[3] = 0x10;
+   hd->pal_rom.w = 0;
+   hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
+   int sz2 = fn(&raw[0x10], img, width, height, depth);
+   return sizeof(BGImageHeader) + sz2;
+}
 
 //---------------------------------------------------------
 // internal RGBA/IA -> PNG
@@ -626,6 +635,7 @@ static const format_entry format_table[] =
    {"ci8",    IMG_FORMAT_CI,    8},
    {"ci16",   IMG_FORMAT_CI,   16},
    {"i4.bg",  IMG_FORMAT_I,     4},
+   {"ia4.bg",  IMG_FORMAT_IA,     4},
 };
 
 static const char *format2str(img_format format, int depth)
@@ -637,9 +647,14 @@ static const char *format2str(img_format format, int depth)
    }
    return "unknown";
 }
-
+int isBackground = 0;
 static int parse_format(graphics_config *config, const char *str)
 {
+   if (strcmp(str, "i4.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "ia4.bg") == 0) {
+      isBackground = 1;
+   }
    for (unsigned i = 0; i < DIM(format_table); i++) {
       if (!strcasecmp(str, format_table[i].name)) {
          config->format = format_table[i].format;
@@ -790,7 +805,7 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_IA:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            if (config.width > 128) {
+            if (isBackground) {
                raw = malloc(raw_size + sizeof(BGImageHeader));
             } else {
                raw = malloc(raw_size);
@@ -798,7 +813,7 @@ int main(int argc, char *argv[])
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            if (config.width > 128) {
+            if (isBackground) {
                length = img2bg(ia2raw, raw, imgi, config.width, config.height, config.depth);
             } else {
                length = ia2raw(raw, imgi, config.width, config.height, config.depth);
@@ -807,7 +822,7 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_I:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            if (config.width > 128) {
+            if (isBackground) {
                raw = malloc(raw_size + sizeof(BGImageHeader));
             } else {
                raw = malloc(raw_size);
@@ -815,10 +830,10 @@ int main(int argc, char *argv[])
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            if (config.width == 351 || config.width <= 128) {
-               length = i2raw(raw, imgi, config.width, config.height, config.depth);
-            } else {
+            if (isBackground) {
                length = img2bg(i2raw, raw, imgi, config.width, config.height, config.depth);
+            } else {
+               length = i2raw(raw, imgi, config.width, config.height, config.depth);
             }
             break;
          default:
