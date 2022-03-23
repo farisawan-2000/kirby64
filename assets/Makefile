@@ -70,17 +70,19 @@ $(BUILD_DIR)/%.bin: %.png
 	mkdir -p $(@D)
 	../tools/n64graphics -i $@ -g $< -f $(lastword $(subst ., ,$*))
 # background I4 images specifically
-$(BUILD_DIR)/%/background.i4.bin: %/background.i4.png
+$(BUILD_DIR)/%/background.i4.o: %/background.i4.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f i4.bg
+	../tools/n64graphics -i $(@:.o=.bin) -g $< -f i4.bg
+	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
-$(BUILD_DIR)/%/background.ia4.bin: %/background.ia4.png
+$(BUILD_DIR)/%/background.ia4.o: %/background.ia4.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f ia4.bg
+	../tools/n64graphics -i $(@:.o=.bin) -g $< -f ia4.bg
+	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
-	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
-	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
+	mkdir -p $(@D)
+	$(CROSS)ld -r -b binary -o $@ $<
 
 $(BUILD_DIR)/%.o: %.c
 	mkdir -p $(@D)
@@ -92,8 +94,7 @@ $(BUILD_DIR)/%.o: %.s
 
 $(BUILD_DIR)/%.o: %.bin
 	mkdir -p $(@D)
-	python3 tools/make_bin_container.py $< > $(BUILD_DIR)/$*.s
-	$(CROSS)as $(ASFLAGS) -o $@ $(BUILD_DIR)/$*.s
+	$(CROSS)ld -r -b binary -o $@ $<
 
 $(BUILD_DIR)/%.ld: $(FILETABLES) $(O_FILES)
 	python3 tools/make_file_ldscript.py $@
