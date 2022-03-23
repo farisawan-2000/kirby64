@@ -3213,45 +3213,45 @@ IMAGE_BANK_5_FILES := \
     image/bank_5/268/block.bin \
     image/bank_5/269/block.bin \
     image/bank_5/270/block.bin \
-    image/bank_5/271/image.i4.png \
-    image/bank_5/272/image.i4.png \
+    image/bank_5/271/background.i4.png \
+    image/bank_5/272/background.i4.png \
     image/bank_5/273/block.bin \
     image/bank_5/274/block.bin \
-    image/bank_5/275/image.i4.png \
-    image/bank_5/276/image.i4.png \
+    image/bank_5/275/background.i4.png \
+    image/bank_5/276/background.i4.png \
     image/bank_5/277/block.bin \
     image/bank_5/278/block.bin \
-    image/bank_5/279/image.i4.png \
-    image/bank_5/280/image.i4.png \
+    image/bank_5/279/background.i4.png \
+    image/bank_5/280/background.i4.png \
     image/bank_5/281/block.bin \
     image/bank_5/282/block.bin \
-    image/bank_5/283/image.i4.png \
-    image/bank_5/284/image.i4.png \
-    image/bank_5/285/image.i4.png \
-    image/bank_5/286/image.i4.png \
-    image/bank_5/287/image.i4.png \
-    image/bank_5/288/image.i4.png \
-    image/bank_5/289/image.i4.png \
-    image/bank_5/290/image.i4.png \
-    image/bank_5/291/image.i4.png \
-    image/bank_5/292/image.i4.png \
-    image/bank_5/293/image.i4.png \
+    image/bank_5/283/background.i4.png \
+    image/bank_5/284/background.i4.png \
+    image/bank_5/285/background.i4.png \
+    image/bank_5/286/background.i4.png \
+    image/bank_5/287/background.i4.png \
+    image/bank_5/288/background.i4.png \
+    image/bank_5/289/background.i4.png \
+    image/bank_5/290/background.i4.png \
+    image/bank_5/291/background.i4.png \
+    image/bank_5/292/background.i4.png \
+    image/bank_5/293/background.i4.png \
     image/bank_5/294/block.bin \
     image/bank_5/295/block.bin \
     image/bank_5/296/block.bin \
     image/bank_5/297/block.bin \
-    image/bank_5/298/image.i4.png \
-    image/bank_5/299/image.i4.png \
-    image/bank_5/300/image.i4.png \
+    image/bank_5/298/background.i4.png \
+    image/bank_5/299/background.i4.png \
+    image/bank_5/300/background.i4.png \
     image/bank_5/301/block.bin \
-    image/bank_5/302/image.i4.png \
-    image/bank_5/303/image.i4.png \
-    image/bank_5/304/image.i4.png \
+    image/bank_5/302/background.i4.png \
+    image/bank_5/303/background.i4.png \
+    image/bank_5/304/background.i4.png \
     image/bank_5/305/block.bin \
     image/bank_5/306/block.bin \
     image/bank_5/307/block.bin \
-    image/bank_5/308/image.i4.png \
-    image/bank_5/309/image.i4.png \
+    image/bank_5/308/background.i4.png \
+    image/bank_5/309/background.i4.png \
     image/bank_5/310/block.bin \
     image/bank_5/311/block.bin \
     image/bank_5/312/block.bin
