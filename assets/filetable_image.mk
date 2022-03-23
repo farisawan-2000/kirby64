@@ -1216,16 +1216,16 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/12/block.bin \
     image/bank_3/13/block.bin \
     image/bank_3/14/block.bin \
-    image/bank_3/15/background.i4.png \
-    image/bank_3/16/background.i4.png \
-    image/bank_3/17/background.i4.png \
-    image/bank_3/18/background.i4.png \
-    image/bank_3/19/background.i4.png \
-    image/bank_3/20/background.i4.png \
-    image/bank_3/21/background.i4.png \
-    image/bank_3/22/background.i4.png \
-    image/bank_3/23/background.i4.png \
-    image/bank_3/24/background.i4.png \
+    image/bank_3/15/block.bin \
+    image/bank_3/16/block.bin \
+    image/bank_3/17/block.bin \
+    image/bank_3/18/block.bin \
+    image/bank_3/19/block.bin \
+    image/bank_3/20/block.bin \
+    image/bank_3/21/block.bin \
+    image/bank_3/22/block.bin \
+    image/bank_3/23/block.bin \
+    image/bank_3/24/block.bin \
     image/bank_3/25/block.bin \
     image/bank_3/26/background.i4.png \
     image/bank_3/27/background.i4.png \
@@ -1251,14 +1251,14 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/47/block.bin \
     image/bank_3/48/block.bin \
     image/bank_3/49/block.bin \
-    image/bank_3/50/background.i4.png \
-    image/bank_3/51/background.i4.png \
-    image/bank_3/52/background.i4.png \
-    image/bank_3/53/background.i4.png \
-    image/bank_3/54/background.i4.png \
-    image/bank_3/55/background.i4.png \
-    image/bank_3/56/background.i4.png \
-    image/bank_3/57/background.i4.png \
+    image/bank_3/50/block.bin \
+    image/bank_3/51/block.bin \
+    image/bank_3/52/block.bin \
+    image/bank_3/53/block.bin \
+    image/bank_3/54/block.bin \
+    image/bank_3/55/block.bin \
+    image/bank_3/56/block.bin \
+    image/bank_3/57/block.bin \
     image/bank_3/58/background.i4.png \
     image/bank_3/59/background.i4.png \
     image/bank_3/60/block.bin \
@@ -1269,7 +1269,7 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/65/block.bin \
     image/bank_3/66/block.bin \
     image/bank_3/67/block.bin \
-    image/bank_3/68/background.i4.png \
+    image/bank_3/68/block.bin \
     image/bank_3/69/block.bin \
     image/bank_3/70/block.bin \
     image/bank_3/71/block.bin \
@@ -1301,7 +1301,7 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/97/block.bin \
     image/bank_3/98/block.bin \
     image/bank_3/99/block.bin \
-    image/bank_3/100/background.i4.png \
+    image/bank_3/100/block.bin \
     image/bank_3/101/block.bin \
     image/bank_3/102/block.bin \
     image/bank_3/103/block.bin \
@@ -1343,7 +1343,7 @@ IMAGE_BANK_3_FILES := \
     image/bank_3/139/background.i4.png \
     image/bank_3/140/background.i4.png \
     image/bank_3/141/background.i4.png \
-    image/bank_3/142/background.i4.png \
+    image/bank_3/142/block.bin \
     image/bank_3/143/background.i4.png \
     image/bank_3/144/background.i4.png \
     image/bank_3/145/background.i4.png \
@@ -3428,18 +3428,18 @@ IMAGE_BANK_7_FILES := \
     image/bank_7/6/block.bin \
     image/bank_7/7/block.bin \
     image/bank_7/8/block.bin \
-    image/bank_7/9/image.i4.png \
+    image/bank_7/9/background.i4.png \
     image/bank_7/10/block.bin \
-    image/bank_7/11/image.i4.png \
+    image/bank_7/11/background.i4.png \
     image/bank_7/12/block.bin \
     image/bank_7/13/block.bin \
-    image/bank_7/14/image.i4.png \
+    image/bank_7/14/background.i4.png \
     image/bank_7/15/block.bin \
     image/bank_7/16/block.bin \
     image/bank_7/17/block.bin \
     image/bank_7/18/block.bin \
     image/bank_7/19/block.bin \
-    image/bank_7/20/image.i4.png \
+    image/bank_7/20/background.i4.png \
     image/bank_7/21/block.bin \
     image/bank_7/22/block.bin \
     image/bank_7/23/block.bin \
@@ -3458,7 +3458,7 @@ IMAGE_BANK_7_FILES := \
     image/bank_7/36/block.bin \
     image/bank_7/37/block.bin \
     image/bank_7/38/block.bin \
-    image/bank_7/39/image.i4.png \
+    image/bank_7/39/background.i4.png \
     image/bank_7/40/block.bin \
     image/bank_7/41/image.i4.png \
     image/bank_7/42/block.bin \
