@@ -35,28 +35,11 @@ else
 	CROSS := mips64-elf-
 endif
 
+ALL_FILES := $(MODEL_FILES) $(IMAGE_FILES) $(ANIM_FILES) $(MISC_FILES)
 
-
-# _MF := $(filter-out %.bin, $(MODEL_FILES))
-# hack
-_MF := $(foreach file,$(MODEL_FILES), $(file:.bin=.c))
-__MODEL_C_O_FILES := $(foreach file,$(_MF), $(file:.c=.o))
-MODEL_O_FILES := $(foreach file,$(__MODEL_C_O_FILES), $(BUILD_DIR)/$(file))
-
-_IF := $(foreach file,$(IMAGE_FILES), $(file:.bin=.c))
-_IF2 += $(foreach file,$(_IF), $(file:.png=.c))
-__IMAGE_C_O_FILES := $(foreach file,$(_IF2), $(file:.c=.o))
-IMAGE_O_FILES := $(foreach file,$(__IMAGE_C_O_FILES), $(BUILD_DIR)/$(file))
-
-_AF := $(foreach file,$(ANIM_FILES), $(file:.bin=.c))
-__ANIM_C_O_FILES := $(foreach file,$(_AF), $(file:.c=.o))
-ANIM_O_FILES := $(foreach file,$(__ANIM_C_O_FILES), $(BUILD_DIR)/$(file))
-
-_LF := $(foreach file,$(MISC_FILES), $(file:.bin=.c))
-__MISC_C_O_FILES := $(foreach file,$(_LF), $(file:.c=.o))
-MISC_O_FILES := $(foreach file,$(__MISC_C_O_FILES), $(BUILD_DIR)/$(file))
-
-O_FILES := $(MODEL_O_FILES) $(IMAGE_O_FILES) $(ANIM_O_FILES) $(MISC_O_FILES)
+_BIN2C := $(foreach file,$(ALL_FILES), $(file:.bin=.o))
+_PNG2C := $(foreach file,$(_BIN2C), $(file:.png=.o))
+O_FILES := $(foreach file, $(_PNG2C), $(BUILD_DIR)/$(file))
 
 clean:
 	rm -f -r $(BUILD_DIR)
