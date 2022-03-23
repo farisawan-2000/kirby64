@@ -65,26 +65,16 @@ clean-tables:
 	rm -f $(BUILD_DIR)/*.{c,h,ld}
 	rm -f $(TARGET)
 
-# normal images
-$(BUILD_DIR)/%.bin: %.png
+_BG_IMGS := $(wildcard image/**/**/background*.png)
+BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
+$(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $@ -g $< -f $(lastword $(subst ., ,$*))
-# background I4 images specifically
-$(BUILD_DIR)/%/background.i4.o: %/background.i4.png
-	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f i4.bg
+	../tools/n64graphics -i $(@:.o=.bin) -g $< -f $(lastword $(subst ., ,$*)).bg
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
-$(BUILD_DIR)/%/background.ia4.o: %/background.ia4.png
+
+$(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f ia4.bg
-	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
-$(BUILD_DIR)/%/background.i8.o: %/background.i8.png
-	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f i8.bg
-	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
-$(BUILD_DIR)/%/background.ia8.o: %/background.ia8.png
-	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f ia8.bg
+	../tools/n64graphics -i $(@:.o=.bin) -g $< -f $(lastword $(subst ., ,$*))
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
