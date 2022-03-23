@@ -11,7 +11,7 @@ with open(sys.argv[2]) as f:
 
 for i, x in enumerate(fl):
 	jj = x.split("/")
-	jjj ="/".join(jj[:-1]).strip()+"/image.ia4.png"
+	jjj ="/".join(jj[:-1]).strip()+"/image.ia8.png"
 	# print("DBG: %s" % jjj)
 	if  "assets/" + jjj in re_j:
 		print("    %s \\" % jjj)

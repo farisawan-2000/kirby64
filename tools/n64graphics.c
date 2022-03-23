@@ -373,7 +373,11 @@ int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int dept
    } else if (fn == i2raw) {
       hd->fmt = 0x04; // G_IM_FMT_I
    }
-   hd->siz = 0x00; // G_IM_SIZ_4b TODO: fix based on size
+   if (depth == 4) {
+      hd->siz = 0x00; // G_IM_SIZ_4b
+   } else if (depth == 8) {
+      hd->siz = 0x01; // G_IM_SIZ_8b
+   }
    hd->pal_offset = 0x7C;
    hd->filler = 0xFF;
    hd->wd = __builtin_bswap16(width);
@@ -635,7 +639,9 @@ static const format_entry format_table[] =
    {"ci8",    IMG_FORMAT_CI,    8},
    {"ci16",   IMG_FORMAT_CI,   16},
    {"i4.bg",  IMG_FORMAT_I,     4},
+   {"i8.bg",  IMG_FORMAT_I,     8},
    {"ia4.bg",  IMG_FORMAT_IA,     4},
+   {"ia8.bg",  IMG_FORMAT_IA,     8},
 };
 
 static const char *format2str(img_format format, int depth)
@@ -653,6 +659,10 @@ static int parse_format(graphics_config *config, const char *str)
    if (strcmp(str, "i4.bg") == 0) {
       isBackground = 1;
    } else if (strcmp(str, "ia4.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "ia8.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "i8.bg") == 0) {
       isBackground = 1;
    }
    for (unsigned i = 0; i < DIM(format_table); i++) {
