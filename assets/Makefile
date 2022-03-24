@@ -48,7 +48,7 @@ clean-tables:
 	rm -f $(BUILD_DIR)/*.{c,h,ld}
 	rm -f $(TARGET)
 
-_BG_IMGS := $(wildcard image/**/**/background*.png)
+_BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*background*.png)
 BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
 $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)

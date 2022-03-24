@@ -23,6 +23,7 @@ def write_section(filetype, fil, bank):
 		fl = f.readlines()
 
 	inRange = False
+	fileCount = 1
 
 	for i, line in enumerate(fl):
 		if filetype.upper() in line:
@@ -35,17 +36,17 @@ def write_section(filetype, fil, bank):
 			continue
 		if inRange:
 			ls = line.split("/")
-			index = ls[ls.index("bank_%s"%bank) + 1]
 			if "png" in line:
-				fil.write(ldscript_d["texture"] % (bank, index, "assets/"+line.split()[0].replace(".png",".o")))
+				fil.write(ldscript_d["texture"] % (bank, fileCount, "assets/"+line.split()[0].replace(".png",".o")))
 			elif "block" in line:
-				fil.write(ldscript_d[filetype+"_b"] % (bank, index))
+				fil.write(ldscript_d[filetype+"_b"] % (bank, fileCount))
 			elif "misc.bin" in line:
-				fil.write(ldscript_d[filetype+"_bb"] % (bank, index))
+				fil.write(ldscript_d[filetype+"_bb"] % (bank, fileCount))
 			elif "level" in line:
-				fil.write(ldscript_d[filetype+"_l"] % (bank, index, "assets/"+line.split()[0].replace(".bin",".o")))
+				fil.write(ldscript_d[filetype+"_l"] % (bank, fileCount, "assets/"+line.split()[0].replace(".bin",".o")))
 			else:
-				fil.write(ldscript_d[filetype] % (bank, index))
+				fil.write(ldscript_d[filetype] % (bank, fileCount))
+			fileCount += 1
 	if filetype != "geo":
 		fil.write("FILLER(%s, %s)\n" % (filetype, bank))
 

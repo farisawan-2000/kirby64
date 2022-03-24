@@ -1,31 +1,31 @@
 IMAGE_BANK_0_FILES := \
     image/bank_0/1/block.bin \
     image/bank_0/2/block.bin \
-    image/bank_0/3/image.i4.png \
-    image/bank_0/4/image.i4.png \
-    image/bank_0/5/image.i4.png \
-    image/bank_0/6/image.i4.png \
-    image/bank_0/7/image.i4.png \
-    image/bank_0/8/image.i4.png \
-    image/bank_0/9/image.i4.png \
-    image/bank_0/10/image.i4.png \
-    image/bank_0/11/image.i4.png \
-    image/bank_0/12/image.i4.png \
-    image/bank_0/13/image.rgba32.png \
-    image/bank_0/14/image.i4.png \
-    image/bank_0/15/image.i4.png \
-    image/bank_0/16/image.i4.png \
-    image/bank_0/17/image.i4.png \
-    image/bank_0/18/image.i4.png \
-    image/bank_0/19/image.i4.png \
-    image/bank_0/20/image.i4.png \
-    image/bank_0/21/image.i4.png \
-    image/bank_0/22/image.i4.png \
+    image/bank_0/3.i4.png \
+    image/bank_0/4.i4.png \
+    image/bank_0/5.i4.png \
+    image/bank_0/6.i4.png \
+    image/bank_0/7.i4.png \
+    image/bank_0/8.i4.png \
+    image/bank_0/9.i4.png \
+    image/bank_0/10.i4.png \
+    image/bank_0/11.i4.png \
+    image/bank_0/12.i4.png \
+    image/bank_0/13.rgba32.png \
+    image/bank_0/14.i4.png \
+    image/bank_0/15.i4.png \
+    image/bank_0/16.i4.png \
+    image/bank_0/17.i4.png \
+    image/bank_0/18.i4.png \
+    image/bank_0/19.i4.png \
+    image/bank_0/20.i4.png \
+    image/bank_0/21.i4.png \
+    image/bank_0/22.i4.png \
     image/bank_0/23/block.bin \
     image/bank_0/24/block.bin \
     image/bank_0/25/block.bin \
-    image/bank_0/26/background.i4.png \
-    image/bank_0/27/background.i4.png \
+    image/bank_0/26_background.i4.png \
+    image/bank_0/27_background.i4.png \
 
 IMAGE_BANK_1_FILES := \
     image/bank_1/1/image.ia4.png \
