@@ -372,11 +372,15 @@ int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int dept
       hd->fmt = 0x03; // G_IM_FMT_IA
    } else if (fn == i2raw) {
       hd->fmt = 0x04; // G_IM_FMT_I
+   } else if (fn == rgba2raw) {
+      hd->fmt = 0x00; // G_IM_FMT_RGBA
    }
    if (depth == 4) {
       hd->siz = 0x00; // G_IM_SIZ_4b
    } else if (depth == 8) {
       hd->siz = 0x01; // G_IM_SIZ_8b
+   } else if (depth == 16) {
+      hd->siz = 0x02; // G_IM_SIZ_16b
    }
    hd->pal_offset = 0x7C;
    hd->filler = 0xFF;
@@ -642,6 +646,8 @@ static const format_entry format_table[] =
    {"i8.bg",  IMG_FORMAT_I,     8},
    {"ia4.bg",  IMG_FORMAT_IA,     4},
    {"ia8.bg",  IMG_FORMAT_IA,     8},
+
+   {"rgba16.bg",IMG_FORMAT_RGBA,     16},
 };
 
 static const char *format2str(img_format format, int depth)
@@ -663,6 +669,8 @@ static int parse_format(graphics_config *config, const char *str)
    } else if (strcmp(str, "ia8.bg") == 0) {
       isBackground = 1;
    } else if (strcmp(str, "i8.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "rgba16.bg") == 0) {
       isBackground = 1;
    }
    for (unsigned i = 0; i < DIM(format_table); i++) {
@@ -797,7 +805,7 @@ int main(int argc, char *argv[])
          case IMG_FORMAT_RGBA:
             imgr = png2rgba(config.img_filename, &config.width, &config.height);
             raw_size = config.width * config.height * config.depth / 8;
-            if (config.width > 64) {
+            if (isBackground) {
                raw = malloc(raw_size + sizeof(BGImageHeader));
             } else {
                raw = malloc(raw_size);
@@ -805,7 +813,7 @@ int main(int argc, char *argv[])
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            if (config.width > 64) {
+            if (isBackground) {
                length = img2bg(rgba2raw, raw, imgr, config.width, config.height, config.depth);
             } else {
                length = rgba2raw(raw, imgr, config.width, config.height, config.depth);

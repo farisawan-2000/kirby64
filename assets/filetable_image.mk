@@ -3432,7 +3432,7 @@ IMAGE_BANK_7_FILES := \
     image/bank_7/10/block.bin \
     image/bank_7/11/background.i4.png \
     image/bank_7/12/block.bin \
-    image/bank_7/13/block.bin \
+    image/bank_7/13/background.rgba16.png \
     image/bank_7/14/background.i4.png \
     image/bank_7/15/background.i8.png \
     image/bank_7/16/block.bin \
@@ -3805,7 +3805,7 @@ IMAGE_BANK_7_FILES := \
     image/bank_7/383/image.i4.png \
     image/bank_7/384/image.i4.png \
     image/bank_7/385/image.ia4.png \
-    image/bank_7/386/block.bin \
+    image/bank_7/386/image.rgba16.png \
     image/bank_7/387/block.bin \
     image/bank_7/388/block.bin \
     image/bank_7/389/block.bin \
