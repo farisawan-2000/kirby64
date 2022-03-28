@@ -41,12 +41,16 @@ totSize = 0
     248     128     192     568     238 build/us/%.o
 """
 def get_data_size(filname):
-	ofile = BUILD_DIR+filname.replace(".c",".o").replace(".bin",".o").replace(".s",".o").replace(".png", ".o")
+	ofile = BUILD_DIR+filname.replace(".ci",".XX").replace(".c",".o").replace(".bin",".o").replace(".s",".o").replace(".png", ".o")
 	# print(ofile)
+	ofile = ofile.replace(".XX", ".ci")
 	proc = subprocess.Popen([CROSS+"size", ofile], stdout=PIPE, stderr=PIPE)
 	stdout, stderr = proc.communicate()
 	stdout = stdout.decode("ascii")
+	# print(filname)
+	# print(ofile)
 	# print(stdout)
+
 	siz = stdout.split("\n")[1].split()[1]
 	return int(siz)
 

@@ -294,7 +294,7 @@ setup:
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
 	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-	tools/extract_assets $(VERSION)
+	tools/extract_assets assets.json baserom.$(VERSION).z64
 
 .PHONY: all clean default diff test distclean
 

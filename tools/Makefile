@@ -1,6 +1,6 @@
 CC := gcc
-CFLAGS := -I . -Wall -Wextra -Wno-unused-parameter -pedantic -O3 -s
-PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2 extract_assets
+CFLAGS := -I . -Wall -Wextra -Wno-unused-parameter -pedantic
+PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2
 
 iplfontutil_SOURCES := iplfontutil.c
 iplfontutil_CFLAGS := -O2 # faster compile time
@@ -12,15 +12,14 @@ n64crc_SOURCES := n64crc.c
 n64crc_CFLAGS := -O2 # faster compile time
 
 n64graphics_SOURCES := n64graphics.c utils.c
-n64graphics_CFLAGS  := -DN64GRAPHICS_STANDALONE
+n64graphics_CFLAGS  := -g -ggdb3 -DN64GRAPHICS_STANDALONE
 
-extract_assets_SOURCES := extract_assets.c n64graphics.c utils.c
-extract_assets_CFLAGS  := -fopenmp -O2
 
 patch_libultra_math_SOURCES := patch_libultra_math.c
 
 # who cares if you have armips, just use our version
-CXX_PROGRAMS := armips
+CXX_PROGRAMS := armips extract_assets
+	
 
 
 default: all
@@ -34,8 +33,13 @@ all: $(PROGRAMS) $(CXX_PROGRAMS) level_settings/convert
 armips: armips.cpp
 	$(CXX) $(CXXFLAGS) -fno-exceptions -fno-rtti -pipe $^ -o $@ -lpthread $(ARMIPS_FLAGS)
 
+extract_assets: new_asset_extractor/extract_assets.cpp new_asset_extractor/src/format.cc
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic n64graphics.c -lm -o _0.o -lm
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic utils.c -lm -o _1.o -lm
+	c++ -I new_asset_extractor/ -Wall -Wextra -pedantic -g -ggdb3 -std=c++17 -fopenmp -o $@ _0.o _1.o $^
+
 clean:
-	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert
+	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert _0.o _1.o
 
 define COMPILE
 $(1): $($1_SOURCES)

@@ -23,7 +23,7 @@ IMAGE_BANK_0_FILES := \
     image/bank_0/22.i4.png \
     image/bank_0/23/block.bin \
     image/bank_0/24/block.bin \
-    image/bank_0/25/block.bin \
+    image/bank_0/25_background.ci8.png \
     image/bank_0/26_background.i4.png \
     image/bank_0/27_background.i4.png \
 
@@ -943,30 +943,30 @@ IMAGE_BANK_2_FILES := \
     image/bank_2/5/image.i4.png \
     image/bank_2/6/image.i4.png \
     image/bank_2/7/image.i4.png \
-    image/bank_2/8/block.bin \
-    image/bank_2/9/block.bin \
-    image/bank_2/10/block.bin \
-    image/bank_2/11/block.bin \
-    image/bank_2/12/block.bin \
-    image/bank_2/13/block.bin \
-    image/bank_2/14/block.bin \
-    image/bank_2/15/block.bin \
-    image/bank_2/16/block.bin \
-    image/bank_2/17/block.bin \
-    image/bank_2/18/block.bin \
-    image/bank_2/19/block.bin \
-    image/bank_2/20/block.bin \
-    image/bank_2/21/block.bin \
-    image/bank_2/22/block.bin \
-    image/bank_2/23/block.bin \
-    image/bank_2/24/block.bin \
-    image/bank_2/25/block.bin \
-    image/bank_2/26/block.bin \
-    image/bank_2/27/block.bin \
-    image/bank_2/28/block.bin \
-    image/bank_2/29/block.bin \
-    image/bank_2/30/block.bin \
-    image/bank_2/31/block.bin \
+    image/bank_2/8/image.ci4.png \
+    image/bank_2/9/palette.rgba16.png \
+    image/bank_2/10/image.ci4.png \
+    image/bank_2/11/image.ci4.png \
+    image/bank_2/12/image.ci4.png \
+    image/bank_2/13/image.ci4.png \
+    image/bank_2/14/image.ci4.png \
+    image/bank_2/15/image.ci4.png \
+    image/bank_2/16/image.ci4.png \
+    image/bank_2/17/image.ci4.png \
+    image/bank_2/18/image.ci4.png \
+    image/bank_2/19/image.ci4.png \
+    image/bank_2/20/image.ci4.png \
+    image/bank_2/21/image.ci4.png \
+    image/bank_2/22/image.ci4.png \
+    image/bank_2/23/image.ci4.png \
+    image/bank_2/24/image.ci4.png \
+    image/bank_2/25/image.ci4.png \
+    image/bank_2/26/image.ci4.png \
+    image/bank_2/27/image.ci4.png \
+    image/bank_2/28/image.ci4.png \
+    image/bank_2/29/image.ci4.png \
+    image/bank_2/30/image.ci4.png \
+    image/bank_2/31/image.ci4.png \
     image/bank_2/32/image.i4.png \
     image/bank_2/33/block.bin \
     image/bank_2/34/block.bin \
