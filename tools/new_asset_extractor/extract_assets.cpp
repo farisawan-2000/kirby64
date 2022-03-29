@@ -54,15 +54,16 @@ void init_baserom(char *s) {
 }
 
 void extract_bin(string k, json &v) {
+#ifdef RELEASE
+    fmt::print("Extracting {}...\n", k);
+#endif
+    
     String off = v["offsets"]["us"][0];
     int offset = strtoul(off.c_str(), nullptr, 16);
     String _ = v["meta"]["size"];
 
     int size = strtoul(_.c_str(), nullptr, 16);
 
-#ifdef RELEASE
-    fmt::print("Extracting {}...\n", k);
-#endif
 
     FILE *f = fopen_mkdir((char *)k.c_str(), (char *)"wb+");
 
@@ -210,25 +211,19 @@ int main(int argc, char **argv) {
 
             #pragma omp task
             for (auto& [key, value] : j.items()) {
-                if (key != "@comment") {
-                    fs::path p = key;
+                fs::path p = key;
 
-                    fs::remove(p);
-                }
+                fs::remove(p);
             }
 
             return 0;
-        } else {
-            fmt::print("usage: {} (json path) (baserom path)\n", argv[0]);
-            fmt::print("OR:    {} --clean\n", argv[0]);
-            return 1;
         }
-    } else if (argc != 3) {
-        fmt::print("usage: {} (json path) (baserom path)\n", argv[0]);
+    } else if (argc != 2) {
+        fmt::print("usage: {} (baserom path)\n", argv[0]);
         fmt::print("OR:    {} --clean\n", argv[0]);
         return 1;
     }
-    init_baserom(argv[2]);
+    init_baserom(argv[1]);
     fmt::print("baserom opened: {:X}{:X}{:X}{:X}\n",
         baserom_u8[0],
         baserom_u8[1],
@@ -237,23 +232,42 @@ int main(int argc, char **argv) {
     );
 
 
-    ifstream i(argv[1]);
-    json j;
-    i >> j;
+    ifstream i("assets_geo.json");
+    json geo;
+    i >> geo;
     i.close();
+
+    ifstream i2("assets_image.json");
+    json pics;
+    i2 >> pics;
+    i2.close();
+
+    ifstream i3("assets.json");
+    json rest;
+    i3 >> rest;
+    i3.close();
+
 
 
 
     #pragma omp task
-    for (auto& [key, value] : j.items()) {
-        if (key != "@comment") {
-            fs::path p = key;
+    for (auto& [key, value] : geo.items()) {
+        extract_bin(key, value);
+    }
 
-            String s = p.extension();
+    #pragma omp task
+    for (auto& [key, value] : pics.items()) {
+        fs::path p = key;
 
-                 if (s == ".bin") extract_bin(key, value);
-            else if (s == ".png") extract_img(j, key, value);
-        }
+        String s = p.extension();
+
+             if (s == ".bin") extract_bin(key, value);
+        else if (s == ".png") extract_img(pics, key, value);
+    }
+
+    #pragma omp task
+    for (auto& [key, value] : rest.items()) {
+        extract_bin(key, value);
     }
 
     fclose(baserom);

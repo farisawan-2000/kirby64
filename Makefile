@@ -191,6 +191,7 @@ distclean:
 	$(MAKE) -C tools clean
 	$(MAKE) -C libreultra clean
 	$(MAKE) -C f3dex2 clean
+	# TODO: remove these
 	rm -rf assets/geo
 	rm -rf assets/image
 	rm -rf assets/anim
@@ -294,7 +295,7 @@ setup:
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
 	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-	tools/extract_assets assets.json baserom.$(VERSION).z64
+	tools/extract_assets baserom.$(VERSION).z64
 
 .PHONY: all clean default diff test distclean
 
