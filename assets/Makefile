@@ -52,12 +52,12 @@ _BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*backgr
 BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
 $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f $(lastword $(subst ., ,$*)).bg
+	../tools/rgb2c -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)
-	../tools/rgb2c $< > $(@:.o=.bin)
+	../tools/rgb2c $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin

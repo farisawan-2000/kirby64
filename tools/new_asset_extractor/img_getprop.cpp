@@ -40,8 +40,26 @@ void img_getprop(json &j, String &input) {
 		int rw = m["realdims"][0];
 		int rh = m["realdims"][1];
 
-		fmt::print("-W {} -H {}", rw, rh);
+		fmt::print("-W {} -H {} ", rw, rh);
 	}
+
+	int format = 0;
+
+	for (int i = 0; i < (int) NUM_FORMATS; i++) {
+		if (Str_contains(input, (char *)imgFormatStrings[i])) {
+			format = i;
+			break;
+		}
+	}
+
+	switch ((enum ImageFormat) format) {
+		case RGBA32: case RGBA16: fmt::print("-f RGBA "); break;
+		case CI4: case CI8: fmt::print("-f CI "); break;
+		case IA4: case IA8: case IA16: fmt::print("-f IA "); break;
+		case I4: case I8: fmt::print("-f I "); break;
+		default: fmt::print(stderr, "Invalid fmt image\n"); exit(1); break;
+	}
+	fmt::print("-s {} ", imgFormatDepths[format]);
 }
 
 int main(int argc, char **argv) {

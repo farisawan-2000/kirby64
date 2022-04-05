@@ -4,7 +4,6 @@ build/*
 tools/GeoFromBin*
 tools/level_settings/convert
 tools/img_getprop
-tools/rgb2c
 assets/*.bin
 assets/**/*.png
 assets/tools/__pycache__/*
