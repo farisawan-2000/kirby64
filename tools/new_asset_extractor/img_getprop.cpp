@@ -4,7 +4,7 @@
 #include "json.hpp"
 #include "extract_assets.hpp"
 #include "../n64graphics.h"
-#include "../rgb2c/readtex.h"
+#include "fmt/core.h"
 
 bool Str_contains(String &s, char *value) {
     return s.find(value) != String::npos;
@@ -33,33 +33,16 @@ FILE* fopen_mkdir(char* path, char* mode)
 }
 
 
-void img2bin(json &j, String &input, String &output) {
-	FILE *of = fopen_mkdir(output.c_str(), "wb+");
-	if (of == NULL) {
-		fmt::print(stderr, "Couldn't open {}....\n", output);
-		exit(1);
+void img_getprop(json &j, String &input) {
+	json &v = j[input];
+	json &m = v["meta"];
+	if (m.contains("realdims")) {
+		int rw = m["realdims"][0];
+		int rh = m["realdims"][1];
+
+		fmt::print("-W {} -H {}", rw, rh);
 	}
-
-	int width, height;
-	uint8_t *raw;
-
-	int format;
-
-	for (int i = 0; i < NUM_FORMATS; i++) {
-		if (Str_contains(input, imgFormatStrings[i])) {
-			format = i;
-			break;
-		}
-	}
-
-	
 }
-
-
-// n64graphics driver
-// if argv[1] is a ci4 image, then read assets_image.json
-//   and send that palette to n64graphics
-//   instead of forcing it to use its own palette
 
 int main(int argc, char **argv) {
 	ifstream i("assets_image.json");
@@ -73,9 +56,9 @@ int main(int argc, char **argv) {
 	}
 
 	String inpf(argv[1]);
-	String outf(argv[2]);
+	// String outf(argv[2]);
 
-	img2bin(j, inpf, outf);
+	img_getprop(j, inpf);
 
 	return 0;
 }

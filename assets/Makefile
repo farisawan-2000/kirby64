@@ -57,7 +57,7 @@ $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 
 $(BUILD_DIR)/%.o: %.png
 	mkdir -p $(@D)
-	../tools/n64graphics -i $(@:.o=.bin) -g $< -f $(lastword $(subst ., ,$*))
+	../tools/rgb2c $< > $(@:.o=.bin)
 	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin

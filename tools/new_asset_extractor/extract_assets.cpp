@@ -11,6 +11,8 @@ extern "C" {
 #include "../n64graphics.h"
 }
 
+#include "png_wrapper.h"
+
 FILE *baserom;
 uint8_t *baserom_u8;
 
@@ -57,7 +59,7 @@ void extract_bin(string k, json &v) {
 #ifdef RELEASE
     fmt::print("Extracting {}...\n", k);
 #endif
-    
+
     String off = v["offsets"]["us"][0];
     int offset = strtoul(off.c_str(), nullptr, 16);
     String _ = v["meta"]["size"];
@@ -144,14 +146,27 @@ void extract_img(json &j, String k, json &v) {
                 }
                 // fmt::print("palette relocation to {:X} based on {}\n", tmp, p);
             } else {
+                // assume Background wih header; so we need to manually extract palette
+                String pname = v["meta"]["pal"][1];
                 tmp = strtoul(pal_str, NULL, 16);
+
+                fs::path pt(k);
+                String pd(pt.parent_path());
+                // fmt::print("parent path is {}\n", pd);
+                String fullpal_path = pd + "/" + pname;
+
+                image = raw2rgba(&baserom_u8[tmp], 16, 16, 16);
+                rgba2png(fullpal_path.c_str(), (rgba *) image, 16, 16);
+                free(image);
+                image = nullptr;
             }
             pal_rom = tmp;
             // fmt::print("palette at {:X} for {}\n", pal_rom, k);
         }
     }
 
-    switch (getFormatFromFilename(k.c_str(), curAssetDotPtr)) {
+    enum ImageFormat fmt = getFormatFromFilename(k.c_str(), curAssetDotPtr);
+    switch (fmt) {
         case RGBA32:
             image = raw2rgba(&baserom_u8[offset], width, height, 32);
             rgba2png(path, (rgba *) image, width, height);
@@ -167,10 +182,6 @@ void extract_img(json &j, String k, json &v) {
             image = raw2ia(&baserom_u8[offset], width, height, 16);
             ia2png(path, (const ia *) image, width, height);
             break;
-        case CI8:
-            image = rawci2rgba(&baserom_u8[offset], &baserom_u8[pal_rom], width, height, 8);
-            rgba2png(path, (rgba *) image, width, height);
-            break;
         case I8:
             image = raw2i(&baserom_u8[offset], width, height, 8);
             ia2png(path, (const ia *) image, width, height);
@@ -178,10 +189,6 @@ void extract_img(json &j, String k, json &v) {
         case IA8:
             image = raw2ia(&baserom_u8[offset], width, height, 8);
             ia2png(path, (const ia *) image, width, height);
-            break;
-        case CI4:
-            image = rawci2rgba(&baserom_u8[offset], &baserom_u8[pal_rom], width, height, 4);
-            rgba2png(path, (rgba *) image, width, height);
             break;
         case I4:
             image = raw2i(&baserom_u8[offset], width, height, 4);
@@ -191,6 +198,10 @@ void extract_img(json &j, String k, json &v) {
             image = raw2ia(&baserom_u8[offset], width, height, 4);
             ia2png(path, (const ia *) image, width, height);
             break;
+        case CI8:
+        case CI4:
+                ci_raw2png((char *)path, &baserom_u8[offset], width, height, fmt, &baserom_u8[pal_rom]);
+                break;
         default:
             fmt::print(stderr, "Unknown format for asset: {}\n", k);
             break;

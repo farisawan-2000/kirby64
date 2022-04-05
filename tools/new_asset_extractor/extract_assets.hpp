@@ -1,9 +1,11 @@
 #pragma once
 
+#ifdef __cplusplus
 using namespace std;
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 using String = std::string;
+#endif
 
 enum ImageFormat {
     RGBA32,

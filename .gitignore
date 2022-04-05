@@ -3,6 +3,7 @@
 build/*
 tools/GeoFromBin*
 tools/level_settings/convert
+tools/img_getprop
 assets/*.bin
 assets/**/*.png
 assets/tools/__pycache__/*

@@ -18,7 +18,7 @@ n64graphics_CFLAGS  := -g -ggdb3 -DN64GRAPHICS_STANDALONE
 patch_libultra_math_SOURCES := patch_libultra_math.c
 
 # who cares if you have armips, just use our version
-CXX_PROGRAMS := armips extract_assets
+CXX_PROGRAMS := armips extract_assets img_getprop
 	
 
 
@@ -36,10 +36,17 @@ armips: armips.cpp
 extract_assets: new_asset_extractor/extract_assets.cpp new_asset_extractor/src/format.cc
 	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic n64graphics.c -lm -o _0.o -lm
 	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic utils.c -lm -o _1.o -lm
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic new_asset_extractor/png_wrapper.c -lm -o _2.o -lm
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic new_asset_extractor/lodepng.c -lm -o _3.o -lm
+	c++ -I new_asset_extractor/ -Wall -Wextra -pedantic -g -ggdb3 -std=c++17 -fopenmp -o $@ _0.o _1.o _2.o _3.o $^
+
+img_getprop: new_asset_extractor/img_getprop.cpp new_asset_extractor/src/format.cc
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic n64graphics.c -lm -o _0.o -lm
+	cc -c -I . -Wall -Wextra -Wno-unused-parameter -pedantic utils.c -lm -o _1.o -lm
 	c++ -I new_asset_extractor/ -Wall -Wextra -pedantic -g -ggdb3 -std=c++17 -fopenmp -o $@ _0.o _1.o $^
 
 clean:
-	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert _0.o _1.o
+	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert _0.o _1.o _2.o _3.o
 
 define COMPILE
 $(1): $($1_SOURCES)
