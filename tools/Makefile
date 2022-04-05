@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS := -I . -Wall -Wextra -Wno-unused-parameter -pedantic
+CFLAGS := -O2 -I . -Wall -Wextra -Wno-unused-parameter -pedantic
 PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2 rgb2c
 
 iplfontutil_SOURCES := iplfontutil.c
@@ -12,11 +12,11 @@ n64crc_SOURCES := n64crc.c
 n64crc_CFLAGS := -O2 # faster compile time
 
 n64graphics_SOURCES := n64graphics.c utils.c
-n64graphics_CFLAGS  := -g -ggdb3 -DN64GRAPHICS_STANDALONE
+n64graphics_CFLAGS  := -DN64GRAPHICS_STANDALONE
 
 
-rgb2c_SOURCES := rgb2c/rgb2c.c rgb2c/readtex2.c rgb2c/ci_texconv.c rgb2c/lodepng.c
-rgb2c_CFLAGS  := -g -ggdb3 -Irgb2c/
+rgb2c_SOURCES := modern_rgb2c/rgb2c.c modern_rgb2c/readtex2.c modern_rgb2c/ci_texconv.c modern_rgb2c/lodepng.c
+rgb2c_CFLAGS  := -Imodern_rgb2c/
 
 patch_libultra_math_SOURCES := patch_libultra_math.c
 

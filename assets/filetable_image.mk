@@ -1,6 +1,6 @@
 IMAGE_BANK_0_FILES := \
-    image/bank_0/1/block.bin \
-    image/bank_0/2/block.bin \
+    image/bank_0/1_palette.rgba16.png \
+    image/bank_0/2.ci4.png \
     image/bank_0/3.i4.png \
     image/bank_0/4.i4.png \
     image/bank_0/5.i4.png \
@@ -21,8 +21,8 @@ IMAGE_BANK_0_FILES := \
     image/bank_0/20.i4.png \
     image/bank_0/21.i4.png \
     image/bank_0/22.i4.png \
-    image/bank_0/23/block.bin \
-    image/bank_0/24/block.bin \
+    image/bank_0/23_background.ci8.png \
+    image/bank_0/24_background.ci8.png \
     image/bank_0/25_background.ci8.png \
     image/bank_0/26_background.i4.png \
     image/bank_0/27_background.i4.png \
