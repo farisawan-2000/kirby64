@@ -9,6 +9,8 @@ FILETABLES := filetable_models.mk \
 
 -include $(FILETABLES)
 
+V := @
+
 BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 					$(BUILD_DIR)/bank1.ld \
 					$(BUILD_DIR)/bank2.ld \
@@ -51,43 +53,43 @@ clean-tables:
 _BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*background*.png)
 BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
 $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
-	mkdir -p $(@D)
-	../tools/rgb2c -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
-	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
+	$(V)mkdir -p $(@D)
+	$(V)../tools/rgb2c -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
+	$(V)$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: %.png
-	mkdir -p $(@D)
-	../tools/rgb2c $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
-	$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
+	$(V)mkdir -p $(@D)
+	$(V)../tools/rgb2c -G $(lastword $(subst ., ,$*)) -o RAW $< > $(@:.o=.bin)
+	$(V)$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.bin
-	mkdir -p $(@D)
-	$(CROSS)ld -r -b binary -o $@ $<
+	$(V)mkdir -p $(@D)
+	$(V)$(CROSS)ld -r -b binary -o $@ $<
 
 $(BUILD_DIR)/%.o: %.c
-	mkdir -p $(@D)
-	$(CROSS)gcc -c $(GCC_CFLAGS) -D__sgi -o $@ $<
+	$(V)mkdir -p $(@D)
+	$(V)$(CROSS)gcc -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
 $(BUILD_DIR)/%.o: %.s
-	mkdir -p $(@D)
-	$(CROSS)as $(ASFLAGS) -o $@ $<
+	$(V)mkdir -p $(@D)
+	$(V)$(CROSS)as $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: %.bin
-	mkdir -p $(@D)
-	$(CROSS)ld -r -b binary -o $@ $<
+	$(V)mkdir -p $(@D)
+	$(V)$(CROSS)ld -r -b binary -o $@ $<
 
 $(BUILD_DIR)/%.ld: $(FILETABLES) $(O_FILES)
-	python3 tools/make_file_ldscript.py $@
+	$(V)python3 tools/make_file_ldscript.py $@
 
 $(BUILD_DIR)/%.filetable.c: $(BUILD_DIR)/%.ld
-	python3 tools/make_bank_filetable.py $(CROSS) $(BUILD_DIR)/ $@
+	$(V)python3 tools/make_bank_filetable.py $(CROSS) $(BUILD_DIR)/ $@
 
 $(BUILD_DIR)/%.h: $(BUILD_DIR)/%.filetable.c
-	python3 tools/make_bank_header.py $(BUILD_DIR)/ $@
+	$(V)python3 tools/make_bank_header.py $(BUILD_DIR)/ $@
 
 $(TARGET): $(BANK_HEADERS) bank_header.ld.in
-	cp bank_header.ld.in $(BUILD_DIR)
-	touch $@
+	$(V)cp bank_header.ld.in $(BUILD_DIR)
+	$(V)touch $@
 
 .PHONY: all clean default diff test distclean
 .SECONDARY:

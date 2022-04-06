@@ -33,14 +33,11 @@ FILE* fopen_mkdir(char* path, char* mode)
 }
 
 
-void img_getprop(json &j, String &input) {
-	String realinput = "assets/" + input;
+void img_getprop(json &j, String &input, json &v) {
 
-	json &v = j[realinput];
-	json &m = v["meta"];
-	if (m.contains("realdims")) {
-		int rw = m["realdims"][0];
-		int rh = m["realdims"][1];
+	if (v["meta"].contains("realdims")) {
+		int rw = v["meta"]["realdims"][0];
+		int rh = v["meta"]["realdims"][1];
 
 		fmt::print("-W {} -H {} ", rw, rh);
 	}
@@ -70,15 +67,17 @@ int main(int argc, char **argv) {
 		exit(1);
 	}
 
-	ifstream i("../assets.json");
+	ifstream i("../assets_image.json");
 	json j;
 	i >> j;
 	i.close();
 
 	String inpf(argv[1]);
+	String k = "assets/" + inpf;
 	// String outf(argv[2]);
 
-	img_getprop(j, inpf);
+	img_getprop(j, inpf, j[k]);
 
 	return 0;
 }
+
