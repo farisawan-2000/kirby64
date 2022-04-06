@@ -150,14 +150,14 @@ void extract_img(json &j, String k, json &v) {
                 String pname = v["meta"]["pal"][1];
                 tmp = strtoul(pal_str, NULL, 16);
 
-                fs::path pt(k);
-                String pd(pt.parent_path());
-                // fmt::print("parent path is {}\n", pd);
-                String fullpal_path = pd + "/" + pname;
+                // fs::path pt(k);
+                // String pd(pt.parent_path());
+                // // fmt::print("parent path is {}\n", pd);
+                // String fullpal_path = pd + "/" + pname;
 
-                image = raw2rgba(&baserom_u8[tmp], 16, 16, 16);
-                rgba2png(fullpal_path.c_str(), (rgba *) image, 16, 16);
-                free(image);
+                // image = raw2rgba(&baserom_u8[tmp], 16, 16, 16);
+                // rgba2png(fullpal_path.c_str(), (rgba *) image, 16, 16);
+                // free(image);
                 image = nullptr;
             }
             pal_rom = tmp;

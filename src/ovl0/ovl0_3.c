@@ -6,38 +6,35 @@
 #include "ovl0_3.h"
 #include "D_8004A7C4.h"
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *arg0) {
-    struct UnkStruct8004A7C4_3C *temp_v0_2;
-    struct UnkStruct8004A7C4_3C *temp_v0_3;
-    struct UnkStruct8004A7C4_3C *temp_v1;
-    u32 temp_v0;
-    struct UnkStruct8004A7C4_3C *phi_a0;
 
-    temp_v0 = arg0->unk10;
-    if (temp_v0 != 0) {
-        return temp_v0;
+// #ifdef MIPS_TO_C
+UserData8000BE90 *func_8000BE90(UserData8000BE90* data) {
+    UserData8000BE90 *ret;
+    
+    UserData8000BE90 *tmp;
+
+    if (data->unk10 != 0) {
+        tmp = data->unk10;
+        ret = tmp;
+    } else if (data->unk8 != 0) {
+        ret = data->unk8;
+    } else {
+        while (1) {
+            if ((u32) data->unk14 == 1) {
+                ret = 0; break;
+            }
+            if (data->unk14->unk8 != 0) {
+                ret = data->unk14->unk8; break;
+            }
+            data = data->unk14;
+        }
     }
-    temp_v0_2 = (bitwise struct UnkStruct8004A7C4_3C *) arg0->unk0.z;
-    phi_a0 = arg0;
-    if (temp_v0_2 != 0) {
-        return temp_v0_2;
-    }
-loop_4:
-    temp_v0_3 = phi_a0->unk14;
-    if (temp_v0_3 == 1) {
-        return NULL;
-    }
-    temp_v1 = temp_v0_3->unk0.z;
-    if (temp_v1 == 0) {
-        phi_a0 = temp_v0_3;
-        goto loop_4;
-    }
-    return temp_v1;
+    
+    return ret;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
-#endif
+// #else
+// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
+// #endif
 
 
 // u32 func_8000BE90(struct unk8000BE90Func*);

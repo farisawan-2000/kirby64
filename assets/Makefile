@@ -9,7 +9,7 @@ FILETABLES := filetable_models.mk \
 
 -include $(FILETABLES)
 
-V := @
+# V := @
 
 BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 					$(BUILD_DIR)/bank1.ld \

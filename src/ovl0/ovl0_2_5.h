@@ -332,7 +332,17 @@ extern OSMesgQueue gInterruptMesgQueue;
 struct Camera *func_80009F7C(struct GObj*);
 
 void func_80009B5C(struct UnkStruct8004A7C4_3C *);
-struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);
+
+typedef struct UserData8000BE90 {
+    s32 unk0;
+    s32 unk4;
+    struct UserData8000BE90 *unk8;
+    s32 unkC;
+    struct UserData8000BE90 *unk10;
+    struct UserData8000BE90 *unk14;
+} UserData8000BE90;
+
+UserData8000BE90 *func_8000BE90(struct UserData8000BE90 *data);
 
 struct UnkStructFunc80007380 {
     u32 unk0;
