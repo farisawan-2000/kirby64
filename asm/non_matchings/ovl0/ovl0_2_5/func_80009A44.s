@@ -2,7 +2,7 @@ glabel func_80009A44
 /* 00A644 80009A44 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* 00A648 80009A48 AFBF0014 */  sw    $ra, 0x14($sp)
 /* 00A64C 80009A4C AFA40018 */  sw    $a0, 0x18($sp)
-/* 00A650 80009A50 0C002223 */  jal   object_manager_get_m_obj
+/* 00A650 80009A50 0C002223 */  jal   HS64_MObjPop
 /* 00A654 80009A54 AFA5001C */   sw    $a1, 0x1c($sp)
 /* 00A658 80009A58 8FA30018 */  lw    $v1, 0x18($sp)
 /* 00A65C 80009A5C 8FA7001C */  lw    $a3, 0x1c($sp)

@@ -499,7 +499,7 @@ loop_14:
                             if (phi_s2 != 0 && (phi_s2 & 1) != 0) {
                                 // temp_s0_2 = &(&sp80)[phi_s1];
                                 if (sp80[phi_s1] == 0) {
-                                    temp_v0_4 = func_800097E0(anim, (phi_s1 + 1) & 0xFF);
+                                    temp_v0_4 = HS64_AObjNew(anim, (phi_s1 + 1) & 0xFF);
                                     sp80[phi_s1] = temp_v0_4;
                                 }
                                 phi_v1->unk10 = phi_v1->unk14;
@@ -531,7 +531,7 @@ loop_14:
                                 temp_s0_3 = &(&sp80)[phi_s1_2];
                                 phi_v1_2 = *temp_s0_3;
                                 if (*temp_s0_3 == 0) {
-                                    temp_v0_5 = func_800097E0(anim, (phi_s1_2 + 1) & 0xFF);
+                                    temp_v0_5 = HS64_AObjNew(anim, (phi_s1_2 + 1) & 0xFF);
                                     *temp_s0_3 = temp_v0_5;
                                     phi_v1_2 = temp_v0_5;
                                 }
@@ -569,7 +569,7 @@ loop_14:
                                 temp_s0_4 = &(&sp80)[phi_s1_3];
                                 phi_v1_3 = *temp_s0_4;
                                 if (*temp_s0_4 == 0) {
-                                    temp_v0_6 = func_800097E0(anim, (phi_s1_3 + 1) & 0xFF);
+                                    temp_v0_6 = HS64_AObjNew(anim, (phi_s1_3 + 1) & 0xFF);
                                     *temp_s0_4 = temp_v0_6;
                                     phi_v1_3 = temp_v0_6;
                                 }
@@ -607,7 +607,7 @@ loop_14:
                                 temp_s0_5 = &(&sp80)[phi_s1_4];
                                 phi_v1_4 = *temp_s0_5;
                                 if (*temp_s0_5 == 0) {
-                                    temp_v0_7 = func_800097E0(anim, (phi_s1_4 + 1) & 0xFF);
+                                    temp_v0_7 = HS64_AObjNew(anim, (phi_s1_4 + 1) & 0xFF);
                                     *temp_s0_5 = temp_v0_7;
                                     phi_v1_4 = temp_v0_7;
                                 }
@@ -640,7 +640,7 @@ loop_14:
                                 temp_s0_6 = &(&sp80)[phi_s1_5];
                                 phi_v1_5 = *temp_s0_6;
                                 if (*temp_s0_6 == 0) {
-                                    temp_v0_8 = func_800097E0(anim, (phi_s1_5 + 1) & 0xFF);
+                                    temp_v0_8 = HS64_AObjNew(anim, (phi_s1_5 + 1) & 0xFF);
                                     *temp_s0_6 = temp_v0_8;
                                     phi_v1_5 = temp_v0_8;
                                 }
@@ -693,7 +693,7 @@ loop_14:
                                 temp_s0_7 = &(&sp80)[phi_s1_6];
                                 phi_v1_6 = *temp_s0_7;
                                 if (*temp_s0_7 == 0) {
-                                    temp_v0_9 = func_800097E0(anim, (phi_s1_6 + 1) & 0xFF);
+                                    temp_v0_9 = HS64_AObjNew(anim, (phi_s1_6 + 1) & 0xFF);
                                     *temp_s0_7 = temp_v0_9;
                                     phi_v1_6 = temp_v0_9;
                                 }
@@ -710,7 +710,7 @@ loop_14:
                     case 13:
                         anim->command++;
                         if (sp8C == 0) {
-                            sp8C = func_800097E0(anim, (u8)4U);
+                            sp8C = HS64_AObjNew(anim, (u8)4U);
                         }
                         sp8C->unk20 = (s32) *anim->command;
                         anim->command++;
@@ -1243,7 +1243,7 @@ loop_11:
         if (func_8000E554(0, arg0, &spB0, &spA8, spC0, arg3, phi_s0, arg4, &sp80, &sp98) == 0) {
             func_8000E554(1, arg0, &spB4, &spAC, spC4, arg3, phi_s0, arg4, &sp8C, &sp9C);
             if ((spB0 != spB4) || (spA8 != spAC)) {
-                temp_v0_2 = func_800097E0(arg0, phi_s0 & 0xFF);
+                temp_v0_2 = HS64_AObjNew(arg0, phi_s0 & 0xFF);
                 temp_v1 = temp_v0_2;
                 if ((phi_s0 == 1) || (phi_s0 == 2) || (phi_s0 == 3)) {
                     temp_f0 = spB4 + temp_f24;

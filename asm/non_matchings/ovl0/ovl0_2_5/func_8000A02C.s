@@ -15,7 +15,7 @@ glabel func_8000A02C
 /* 00AC5C 8000A05C 8E240064 */  lw    $a0, 0x64($s1)
 /* 00AC60 8000A060 50800004 */  beql  $a0, $zero, .L8000A074_ovl0
 /* 00AC64 8000A064 26100004 */   addiu $s0, $s0, 4
-/* 00AC68 8000A068 0C0021EB */  jal   push_om_mtx
+/* 00AC68 8000A068 0C0021EB */  jal   HS64_OMMtxPush
 /* 00AC6C 8000A06C 00000000 */   nop   
 /* 00AC70 8000A070 26100004 */  addiu $s0, $s0, 4
 .L8000A074_ovl0:
@@ -27,12 +27,12 @@ glabel func_8000A02C
 /* 00AC88 8000A088 00000000 */   nop   
 .L8000A08C_ovl0:
 /* 00AC8C 8000A08C 8E110000 */  lw    $s1, ($s0)
-/* 00AC90 8000A090 0C002218 */  jal   func_80008860
+/* 00AC90 8000A090 0C002218 */  jal   HS64_AObjPush
 /* 00AC94 8000A094 02002025 */   move  $a0, $s0
 /* 00AC98 8000A098 1620FFFC */  bnez  $s1, .L8000A08C_ovl0
 /* 00AC9C 8000A09C 02208025 */   move  $s0, $s1
 .L8000A0A0_ovl0:
-/* 00ACA0 8000A0A0 0C00227B */  jal   func_800089EC
+/* 00ACA0 8000A0A0 0C00227B */  jal   HS64_CameraPush
 /* 00ACA4 8000A0A4 8FA40028 */   lw    $a0, 0x28($sp)
 /* 00ACA8 8000A0A8 8FBF0024 */  lw    $ra, 0x24($sp)
 /* 00ACAC 8000A0AC 8FB00018 */  lw    $s0, 0x18($sp)

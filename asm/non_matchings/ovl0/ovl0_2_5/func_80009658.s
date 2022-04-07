@@ -16,7 +16,7 @@ glabel func_80009658
 /* 00A28C 8000968C 00000000 */   nop   
 /* 00A290 80009690 AFA40018 */  sw    $a0, 0x18($sp)
 .L80009694_ovl0:
-/* 00A294 80009694 0C0021D5 */  jal   object_manager_get_om_mtx
+/* 00A294 80009694 0C0021D5 */  jal   HS64_OMMtxPop
 /* 00A298 80009698 A3A5001F */   sb    $a1, 0x1f($sp)
 /* 00A29C 8000969C 8FA40018 */  lw    $a0, 0x18($sp)
 /* 00A2A0 800096A0 93A5001F */  lbu   $a1, 0x1f($sp)

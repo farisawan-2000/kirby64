@@ -62,12 +62,12 @@ typedef struct GObjProcess {
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    struct GObj *gobj;
+    /* 0x18 */ struct GObj *gobj;
     union {
         struct GObjThread *thread;
         void (*callback)(struct GObj *);
-    } payload;
-    void (*entryPoint)(struct GObj *);
+    } payload; // 0x1C
+    /* 0x20 */ void (*entryPoint)(struct GObj *);
     u32 *ptr;
 } GObjProcess;
 

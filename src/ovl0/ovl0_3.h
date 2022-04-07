@@ -50,7 +50,7 @@ struct Animation {
   u32 unk60;
   u32 unk64;
   u32 unk68;
-  struct AObj *unk6C;
+  struct AObj *aobj;
   u32 *command;
   f32 scale; // unk74
   u32 unk78;
@@ -63,7 +63,7 @@ struct Animation {
 };
 
 void func_8000C3D8(struct Animation *anim);
-struct AObj *func_800097E0(struct Animation *anim, u8 something);
+struct AObj *HS64_AObjNew(struct Animation *anim, u8 something);
 
 
 // struct UnkStruct8004A7C4_3C

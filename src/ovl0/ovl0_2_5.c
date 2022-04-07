@@ -1172,7 +1172,7 @@ void func_80007380(struct UnkStructFunc80007380 *arg0) {
     D_8004A490.unk60 = alloc_with_alignment(arg0->unk84 * arg0->unk80, 8);
     D_8004A490.unk64 = arg0->unk80;
     D_8004A490.unk68 = arg0->unk84;
-    func_8000AE84(&D_8004A490);
+    HS64_omInit(&D_8004A490);
     gDynamicBuffer3.buffer.poolEnd = &D_80006E94;
     gDynamicBuffer3.unk10 = &D_80006EE4;
     func_8000708C(arg0, arg0->unk88);
