@@ -52,7 +52,7 @@ struct GObjThreadStack {
     u64 stack[8];
 };
 
-struct GObjProcess {
+typedef struct GObjProcess {
     struct GObjProcess *unk0;
     struct GObjProcess *unk4;
     struct GObjProcess *unk8;
@@ -69,7 +69,7 @@ struct GObjProcess {
     } payload;
     void (*entryPoint)(struct GObj *);
     u32 *ptr;
-};
+} GObjProcess;
 
 struct OMMtx {
     struct OMMtx *next;
@@ -78,7 +78,7 @@ struct OMMtx {
 // TODO: is this an existing struct instead of a brand new one?
 struct unk80008840 {
     u8 padding[0x90];
-    struct AnimStack *unk90;
+    struct AObj *unk90;
     u32 unk94;
     f32 unk98;
 };
@@ -193,7 +193,7 @@ struct Camera {
     u32 unk5C;
 
     u32 unk60;
-    u32 unk64[2];
+    struct OMMtx *unk64[2];
     u32 unk6C;
     u32 unk70;
 
