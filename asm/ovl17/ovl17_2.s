@@ -1239,7 +1239,7 @@ glabel func_801DEA5C_ovl17
 /* 229D5C 801DEB6C E7A60044 */  swc1  $f6, 0x44($sp)
 /* 229D60 801DEB70 E7A80048 */  swc1  $f8, 0x48($sp)
 /* 229D64 801DEB74 E7AA004C */  swc1  $f10, 0x4c($sp)
-/* 229D68 801DEB78 0C0063EF */  jal   vec3_angle_diff
+/* 229D68 801DEB78 0C0063EF */  jal   lbvector_Angle
 /* 229D6C 801DEB7C E7A40050 */   swc1  $f4, 0x50($sp)
 /* 229D70 801DEB80 3C01801E */  lui   $at, %hi(D_801E55FC) # $at, 0x801e
 /* 229D74 801DEB84 C42655FC */  lwc1  $f6, %lo(D_801E55FC)($at)
@@ -1271,7 +1271,7 @@ glabel func_801DEA5C_ovl17
 /* 229DDC 801DEBEC 45010010 */  bc1t  .L801DEC30_ovl17
 /* 229DE0 801DEBF0 00000000 */   nop   
 .L801DEBF4_ovl17:
-/* 229DE4 801DEBF4 0C0063EF */  jal   vec3_angle_diff
+/* 229DE4 801DEBF4 0C0063EF */  jal   lbvector_Angle
 /* 229DE8 801DEBF8 27A50030 */   addiu $a1, $sp, 0x30
 /* 229DEC 801DEBFC 3C01801E */  lui   $at, %hi(D_801E5600) # $at, 0x801e
 /* 229DF0 801DEC00 C4265600 */  lwc1  $f6, %lo(D_801E5600)($at)
@@ -1505,7 +1505,7 @@ glabel func_801DEA5C_ovl17
 /* 22A128 801DEF38 E7A6005C */  swc1  $f6, 0x5c($sp)
 /* 22A12C 801DEF3C E7A8003C */  swc1  $f8, 0x3c($sp)
 /* 22A130 801DEF40 E7AA0040 */  swc1  $f10, 0x40($sp)
-/* 22A134 801DEF44 0C0063EF */  jal   vec3_angle_diff
+/* 22A134 801DEF44 0C0063EF */  jal   lbvector_Angle
 /* 22A138 801DEF48 E7A40044 */   swc1  $f4, 0x44($sp)
 /* 22A13C 801DEF4C 3C01801E */  lui   $at, %hi(D_801E5614) # $at, 0x801e
 /* 22A140 801DEF50 C4265614 */  lwc1  $f6, %lo(D_801E5614)($at)
@@ -1538,7 +1538,7 @@ glabel func_801DEA5C_ovl17
 /* 22A1AC 801DEFBC 45010010 */  bc1t  .L801DF000_ovl17
 /* 22A1B0 801DEFC0 00000000 */   nop   
 .L801DEFC4_ovl17:
-/* 22A1B4 801DEFC4 0C0063EF */  jal   vec3_angle_diff
+/* 22A1B4 801DEFC4 0C0063EF */  jal   lbvector_Angle
 /* 22A1B8 801DEFC8 27A50030 */   addiu $a1, $sp, 0x30
 /* 22A1BC 801DEFCC 3C01801E */  lui   $at, %hi(D_801E5618) # $at, 0x801e
 /* 22A1C0 801DEFD0 C4265618 */  lwc1  $f6, %lo(D_801E5618)($at)
@@ -1729,7 +1729,7 @@ glabel func_801DEA5C_ovl17
 /* 22A454 801DF264 E7A80044 */  swc1  $f8, 0x44($sp)
 /* 22A458 801DF268 E7AA0048 */  swc1  $f10, 0x48($sp)
 /* 22A45C 801DF26C E7A4004C */  swc1  $f4, 0x4c($sp)
-/* 22A460 801DF270 0C0063EF */  jal   vec3_angle_diff
+/* 22A460 801DF270 0C0063EF */  jal   lbvector_Angle
 /* 22A464 801DF274 E7A60050 */   swc1  $f6, 0x50($sp)
 /* 22A468 801DF278 3C01801E */  lui   $at, %hi(D_801E562C) # $at, 0x801e
 /* 22A46C 801DF27C C428562C */  lwc1  $f8, %lo(D_801E562C)($at)
@@ -1762,7 +1762,7 @@ glabel func_801DEA5C_ovl17
 /* 22A4D8 801DF2E8 45010019 */  bc1t  .L801DF350_ovl17
 /* 22A4DC 801DF2EC 00000000 */   nop   
 .L801DF2F0_ovl17:
-/* 22A4E0 801DF2F0 0C0063EF */  jal   vec3_angle_diff
+/* 22A4E0 801DF2F0 0C0063EF */  jal   lbvector_Angle
 /* 22A4E4 801DF2F4 27A50030 */   addiu $a1, $sp, 0x30
 /* 22A4E8 801DF2F8 3C01801E */  lui   $at, %hi(D_801E5630) # $at, 0x801e
 /* 22A4EC 801DF2FC C4285630 */  lwc1  $f8, %lo(D_801E5630)($at)

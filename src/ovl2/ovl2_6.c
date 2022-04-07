@@ -343,7 +343,7 @@ void *func_80100AC8(void *arg0) {
     temp_s7 = arg0->unk0;
     temp_s6 = ((temp_s7 * 4) + 0x80120000)->unk4740;
     sp10 = temp_s6;
-    func_8000A5FC_ovl2(&D_80100790, temp_s6 & 0xFF, 0x80000000);
+    func_8000A5FC(&D_80100790, temp_s6 & 0xFF, 0x80000000);
     temp_v0 = ((((temp_s6 - 0xA) >> 1) * 4) + 0x800D0000)->unk79D8;
     temp_f0 = temp_v0->unk10 * 0.25f;
     temp_s4 = (temp_s7 * 0x18) + &D_8012BB98;

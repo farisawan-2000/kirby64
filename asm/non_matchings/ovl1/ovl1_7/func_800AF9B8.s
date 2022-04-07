@@ -16,7 +16,7 @@ glabel func_800AF9B8
 /* 057C40 800AF9F0 00AF2821 */  addu  $a1, $a1, $t7
 /* 057C44 800AF9F4 8CA54F10 */ lw $a1, %lo(D_800D4F10)($a1)
 /* 057C48 800AF9F8 8CE70810 */ lw $a3, %lo(D_800E0810)($a3)
-/* 057C4C 800AF9FC 0C00297F */  jal   func_8000A5FC_ovl1
+/* 057C4C 800AF9FC 0C00297F */  jal   func_8000A5FC
 /* 057C50 800AFA00 AFA60010 */   sw    $a2, 0x10($sp)
 /* 057C54 800AFA04 8FBF001C */  lw    $ra, 0x1c($sp)
 /* 057C58 800AFA08 27BD0020 */  addiu $sp, $sp, 0x20

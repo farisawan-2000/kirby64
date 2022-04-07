@@ -55,6 +55,7 @@ INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = -T $(BUILD_DIR)/$(LD_SCRIPT) -mips3 --accept-unknown-input-arch -T libultra_unused.txt --no-check-sections -T undefined_syms.txt -Map $(BUILD_DIR)/$(TARGET).map
+PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
 ####################### Other Tools #########################
@@ -98,7 +99,7 @@ GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(wildcard src/*/*.c)
 GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-S_FILES += $(LEVEL_S_FILES)
+# S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
 
 MODEL_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/geo.bin))
@@ -130,7 +131,7 @@ ACTOR_FILES := $(foreach file,$(DATA_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 # FLAGS
 OPT_FLAGS := -O2
-INCLUDE_CFLAGS := -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I src -I .
+INCLUDE_CFLAGS := -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I $(BUILD_DIR)/assets -I src -I .
 TARGET_CFLAGS := -nostdinc -I include/libc -DTARGET_N64 -DF3DEX_GBI_2
 CFLAGS = -Wab,-r4300_mul -non_shared -G0 -Xcpluscomm -Xfullwarn -signed $(OPT_FLAGS) $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) $(MIPSISET)
 GCC_CFLAGS = -Wall $(TARGET_CFLAGS) $(INCLUDE_CFLAGS) -march=vr4300 -mtune=vr4300 -mfix4300 -mabi=32 -mno-shared -G 0 -fno-PIC -mno-abicalls -fno-zero-initialized-in-bss -fno-toplevel-reorder -Wno-missing-braces
@@ -170,17 +171,16 @@ LD_SCRIPT = $(TARGET).ld
 # TEXTURE_DIR = textures
 # RAW_TEXTURE_FILES := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(wildcard $(TEXTURES_DIR)/raw/*.png)))
 
+$(BUILD_DIR)/data/kirby.066630.o: $(BUILD_DIR)/assets/assets.marker
 
 libreultra/build/2.0I/libultra_rom.a:
-	make -C libreultra -j4
+	$(MAKE) -C libreultra -j4
 
 libreultra/build/2.0I/libn_audio.a:
-	make -C libreultra naudio -j4
+	$(MAKE) -C libreultra naudio -j4
 
 all: $(BUILD_DIR)/$(TARGET).z64
 	@sha1sum -c $(TARGET).sha1
-
-hexdump: $(BUILD_DIR)/$(TARGET).hex
 
 clean:
 	rm -rf build/
@@ -188,10 +188,14 @@ clean:
 distclean:
 	rm -rf build/
 	tools/extract_assets --clean
-	make -C tools clean
-	make -C libreultra clean
-	make -C f3dex2 clean
-	python3 tools/decompile_geos.py --clean
+	$(MAKE) -C tools clean
+	$(MAKE) -C libreultra clean
+	$(MAKE) -C f3dex2 clean
+	# TODO: remove these
+	rm -rf assets/geo
+	rm -rf assets/image
+	rm -rf assets/anim
+	rm -rf assets/misc
 
 softclean:
 	rm -rf build/us/src/
@@ -209,8 +213,8 @@ $(BUILD_DIR)/src/ovl3/ovl3_1.o: OPT_FLAGS = -O2 -Wo,-loopunroll
 $(BUILD_DIR):
 	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
 
-assets/misc/%.s: assets/misc/%.bin
-	python3 tools/level_settings/helper.py $<
+# assets/misc/%.s: assets/misc/%.bin
+# 	python3 tools/level_settings/helper.py $<
 
 $(BUILD_DIR)/libultra.a: libreultra/build/2.0I/libultra_rom.a
 	cp $< $@
@@ -234,17 +238,20 @@ $(BUILD_DIR)/data/%.o: data/%.c
 # 	$(CC_TEST) -c $(INCLUDE_CFLAGS) -o $@ $<
 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-assets/geo/%.c: assets/geo/%.bin
-	python3 tools/decompile_geos.py $<
+# assets/geo/%.c: assets/geo/%.bin
+# 	python3 tools/decompile_geos.py $<
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
-	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
+# $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.c
+# 	$(GCC) -c $(GCC_CFLAGS) -D__sgi -o $@ $<
 
-$(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
-	$(AS) -c $(ASFLAGS) -o $@ $<
+# $(BUILD_DIR)/assets/geo/%.o: assets/geo/%.s
+# 	$(AS) -c $(ASFLAGS) -o $@ $<
 
-$(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
-	$(AS) $(ASFLAGS) -o $@ $<
+$(BUILD_DIR)/assets/assets.marker:
+	$(MAKE) -C assets
+
+# $(BUILD_DIR)/assets/misc/%.o: assets/misc/%.s
+# 	$(AS) $(ASFLAGS) -o $@ $<
 
 $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
@@ -253,29 +260,29 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 $(BUILD_DIR)/$(UCODE_BASE_DIR)/%.o : $(UCODE_BASE_DIR)/%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt
-	$(CPP) $(VERSION_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt $(BUILD_DIR)/assets/assets.marker
+	$(CPP) $(VERSION_CFLAGS) $(INCLUDE_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR)
 
-$(BUILD_DIR)/$(TARGET).elf: $(LEVEL_S_FILES) $(ASSET_O_FILES) $(MODEL_C_FILES) $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
-	$(OBJCOPY) $< $@ -O binary $(OBJCOPY_FLAGS)
+	$(OBJCOPY) $< $(BUILD_DIR)/$(@F).bin -O binary $(PRELIM_OBJCOPY_FLAGS)
+	$(LD) -r -b binary -o $(BUILD_DIR)/$(@F).elf.1 $(BUILD_DIR)/$(@F).bin
+	$(OBJCOPY) $(BUILD_DIR)/$(@F).elf.1 $@ -O binary $(OBJCOPY_FLAGS)
 	$(N64CRC) $@
 	@python3 tools/progress2.py -m
 
-$(BUILD_DIR)/$(TARGET).hex: $(BUILD_DIR)/$(TARGET).z64
-	xxd $< > $@
-
-$(BUILD_DIR)/$(TARGET).objdump: $(BUILD_DIR)/$(TARGET).elf
-	$(OBJDUMP) -D $< > $@
 
 $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
 test: $(BUILD_DIR)/$(TARGET).z64
 	$(EMULATOR) $(EMU_FLAGS) $<
+
+test2: $(BUILD_DIR)/$(TARGET).z64
+	flatpak run --file-forwarding io.github.m64p.m64p @@ $< @@
 
 test-pj64: $(BUILD_DIR)/$(TARGET).z64
 	wine ~/Desktop/new64/Project64.exe $<
@@ -283,12 +290,12 @@ test-pj64: $(BUILD_DIR)/$(TARGET).z64
 load: $(BUILD_DIR)/$(TARGET).z64
 	$(LOADER) $(LOADER_FLAGS) $<
 
-setup: $(MODEL_C_FILES)
-	make -C libreultra -j4
-	make -C libreultra naudio -j4
-	make -C tools -j4
-	make -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
-	tools/extract_assets $(VERSION)
+setup:
+	$(MAKE) -C libreultra -j4
+	$(MAKE) -C libreultra naudio -j4
+	$(MAKE) -C tools -j4
+	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	tools/extract_assets baserom.$(VERSION).z64
 
 .PHONY: all clean default diff test distclean
 
@@ -296,6 +303,7 @@ setup: $(MODEL_C_FILES)
 MAKEFLAGS += --no-builtin-rules
 
 -include $(D_FILES)
+-include $(BUILD_DIR)/$(LD_SCRIPT).d
 
 print-% : ; $(info $* is a $(flavor $*) variable set to [$($*)]) @true
 

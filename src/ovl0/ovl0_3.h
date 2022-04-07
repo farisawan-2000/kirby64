@@ -11,8 +11,8 @@ struct AnimationUnk6C {
 };
 
 // AObj
-struct AnimStack { // TODO: Same as Unk6C?
-  struct AnimStack *next; // it's a list but is it really the next one?
+struct AObj { // TODO: Same as Unk6C?
+  struct AObj *next; // it's a list but is it really the next one?
   u8 unk4; // index
   u8 unk5;
   u8 unk6;
@@ -50,7 +50,7 @@ struct Animation {
   u32 unk60;
   u32 unk64;
   u32 unk68;
-  struct AnimStack *unk6C;
+  struct AObj *aobj;
   u32 *command;
   f32 scale; // unk74
   u32 unk78;
@@ -63,7 +63,7 @@ struct Animation {
 };
 
 void func_8000C3D8(struct Animation *anim);
-struct AnimStack *func_800097E0(struct Animation *anim, u8 something);
+struct AObj *HS64_AObjNew(struct Animation *anim, u8 something);
 
 
 // struct UnkStruct8004A7C4_3C
@@ -79,7 +79,7 @@ struct unk8000BE90Func {
     u8 filler[0x55 - 0x14 - 0x04];
     s8 unk55;
     u8 filler2[0x6C - 0x55 - 0x01];
-    struct AnimStack* unk6C;
+    struct AObj* unk6C;
     u8 filler3[0x74 - 0x6C - 0x04];
     f32 unk74;
     f32 unk78;

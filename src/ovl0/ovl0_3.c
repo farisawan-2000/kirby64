@@ -6,38 +6,30 @@
 #include "ovl0_3.h"
 #include "D_8004A7C4.h"
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *arg0) {
-    struct UnkStruct8004A7C4_3C *temp_v0_2;
-    struct UnkStruct8004A7C4_3C *temp_v0_3;
-    struct UnkStruct8004A7C4_3C *temp_v1;
-    u32 temp_v0;
-    struct UnkStruct8004A7C4_3C *phi_a0;
+UserData8000BE90 *func_8000BE90(UserData8000BE90* data) {
+    UserData8000BE90 *ret;
+    
+    UserData8000BE90 *tmp;
 
-    temp_v0 = arg0->unk10;
-    if (temp_v0 != 0) {
-        return temp_v0;
+    if (data->unk10 != 0) {
+        tmp = data->unk10;
+        ret = tmp;
+    } else if (data->unk8 != 0) {
+        ret = data->unk8;
+    } else {
+        while (1) {
+            if ((u32) data->unk14 == 1) {
+                ret = 0; break;
+            }
+            if (data->unk14->unk8 != 0) {
+                ret = data->unk14->unk8; break;
+            }
+            data = data->unk14;
+        }
     }
-    temp_v0_2 = (bitwise struct UnkStruct8004A7C4_3C *) arg0->unk0.z;
-    phi_a0 = arg0;
-    if (temp_v0_2 != 0) {
-        return temp_v0_2;
-    }
-loop_4:
-    temp_v0_3 = phi_a0->unk14;
-    if (temp_v0_3 == 1) {
-        return NULL;
-    }
-    temp_v1 = temp_v0_3->unk0.z;
-    if (temp_v1 == 0) {
-        phi_a0 = temp_v0_3;
-        goto loop_4;
-    }
-    return temp_v1;
+    
+    return ret;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
-#endif
 
 
 // u32 func_8000BE90(struct unk8000BE90Func*);
@@ -359,10 +351,10 @@ extern f32 D_800406B0, D_800406B4, D_800406B8, D_80040704;
 // Animation command processor
 #ifdef RESEARCHING
 void func_8000C3D8(struct Animation *anim) {
-    struct AnimStack *sp8C;
+    struct AObj *sp8C;
     u32 *sp88;
     s32 sp84;
-    struct AnimStack *sp80[10];
+    struct AObj *sp80[10];
     u32 *temp_s0;
     f32 temp_f0;
     f32 temp_f10;
@@ -382,22 +374,22 @@ void func_8000C3D8(struct Animation *anim) {
     s32 temp_s1_6;
     s32 temp_s1_7;
     s32 temp_t1;
-    struct AnimStack **temp_s0_2;
-    struct AnimStack **temp_s0_3;
-    struct AnimStack **temp_s0_4;
-    struct AnimStack **temp_s0_5;
-    struct AnimStack **temp_s0_6;
-    struct AnimStack **temp_s0_7;
-    struct AnimStack **temp_s5;
-    struct AnimStack *temp_v0;
-    struct AnimStack *temp_v0_4;
-    struct AnimStack *temp_v0_5;
-    struct AnimStack *temp_v0_6;
-    struct AnimStack *temp_v0_7;
-    struct AnimStack *temp_v0_8;
-    struct AnimStack *temp_v0_9;
-    struct AnimStack *temp_v0_10;
-    struct AnimStack *temp_v0_2;
+    struct AObj **temp_s0_2;
+    struct AObj **temp_s0_3;
+    struct AObj **temp_s0_4;
+    struct AObj **temp_s0_5;
+    struct AObj **temp_s0_6;
+    struct AObj **temp_s0_7;
+    struct AObj **temp_s5;
+    struct AObj *temp_v0;
+    struct AObj *temp_v0_4;
+    struct AObj *temp_v0_5;
+    struct AObj *temp_v0_6;
+    struct AObj *temp_v0_7;
+    struct AObj *temp_v0_8;
+    struct AObj *temp_v0_9;
+    struct AObj *temp_v0_10;
+    struct AObj *temp_v0_2;
     u32 temp_s2;
     u32 temp_s2_2;
     u32 temp_s2_3;
@@ -411,29 +403,29 @@ void func_8000C3D8(struct Animation *anim) {
     u32 *temp_t2;
     u32 *temp_t8;
     u32 *phi_s0;
-    struct AnimStack *phi_v0;
-    struct AnimStack *phi_v0_2;
+    struct AObj *phi_v0;
+    struct AObj *phi_v0_2;
     f32 phi_f0;
     f32 phi_f0_2;
     u32 phi_s2;
     s32 phi_s1;
-    struct AnimStack *phi_v1;
+    struct AObj *phi_v1;
     u32 phi_s2_2;
     s32 phi_s1_2;
-    struct AnimStack *phi_v1_2;
+    struct AObj *phi_v1_2;
     u32 phi_s2_3;
     s32 phi_s1_3;
-    struct AnimStack *phi_v1_3;
+    struct AObj *phi_v1_3;
     u32 phi_s2_4;
     s32 phi_s1_4;
-    struct AnimStack *phi_v1_4;
+    struct AObj *phi_v1_4;
     u32 phi_s2_5;
     s32 phi_s1_5;
-    struct AnimStack *phi_v1_5;
+    struct AObj *phi_v1_5;
     u32 phi_s2_6;
     s32 phi_s1_6;
-    struct AnimStack *phi_v1_6;
-    struct AnimStack *phi_v0_3;
+    struct AObj *phi_v1_6;
+    struct AObj *phi_v0_3;
     f32 phi_f0_3;
     f32 phi_f0_4;
     f32 phi_f16;
@@ -507,7 +499,7 @@ loop_14:
                             if (phi_s2 != 0 && (phi_s2 & 1) != 0) {
                                 // temp_s0_2 = &(&sp80)[phi_s1];
                                 if (sp80[phi_s1] == 0) {
-                                    temp_v0_4 = func_800097E0(anim, (phi_s1 + 1) & 0xFF);
+                                    temp_v0_4 = HS64_AObjNew(anim, (phi_s1 + 1) & 0xFF);
                                     sp80[phi_s1] = temp_v0_4;
                                 }
                                 phi_v1->unk10 = phi_v1->unk14;
@@ -539,7 +531,7 @@ loop_14:
                                 temp_s0_3 = &(&sp80)[phi_s1_2];
                                 phi_v1_2 = *temp_s0_3;
                                 if (*temp_s0_3 == 0) {
-                                    temp_v0_5 = func_800097E0(anim, (phi_s1_2 + 1) & 0xFF);
+                                    temp_v0_5 = HS64_AObjNew(anim, (phi_s1_2 + 1) & 0xFF);
                                     *temp_s0_3 = temp_v0_5;
                                     phi_v1_2 = temp_v0_5;
                                 }
@@ -577,7 +569,7 @@ loop_14:
                                 temp_s0_4 = &(&sp80)[phi_s1_3];
                                 phi_v1_3 = *temp_s0_4;
                                 if (*temp_s0_4 == 0) {
-                                    temp_v0_6 = func_800097E0(anim, (phi_s1_3 + 1) & 0xFF);
+                                    temp_v0_6 = HS64_AObjNew(anim, (phi_s1_3 + 1) & 0xFF);
                                     *temp_s0_4 = temp_v0_6;
                                     phi_v1_3 = temp_v0_6;
                                 }
@@ -615,7 +607,7 @@ loop_14:
                                 temp_s0_5 = &(&sp80)[phi_s1_4];
                                 phi_v1_4 = *temp_s0_5;
                                 if (*temp_s0_5 == 0) {
-                                    temp_v0_7 = func_800097E0(anim, (phi_s1_4 + 1) & 0xFF);
+                                    temp_v0_7 = HS64_AObjNew(anim, (phi_s1_4 + 1) & 0xFF);
                                     *temp_s0_5 = temp_v0_7;
                                     phi_v1_4 = temp_v0_7;
                                 }
@@ -648,7 +640,7 @@ loop_14:
                                 temp_s0_6 = &(&sp80)[phi_s1_5];
                                 phi_v1_5 = *temp_s0_6;
                                 if (*temp_s0_6 == 0) {
-                                    temp_v0_8 = func_800097E0(anim, (phi_s1_5 + 1) & 0xFF);
+                                    temp_v0_8 = HS64_AObjNew(anim, (phi_s1_5 + 1) & 0xFF);
                                     *temp_s0_6 = temp_v0_8;
                                     phi_v1_5 = temp_v0_8;
                                 }
@@ -701,7 +693,7 @@ loop_14:
                                 temp_s0_7 = &(&sp80)[phi_s1_6];
                                 phi_v1_6 = *temp_s0_7;
                                 if (*temp_s0_7 == 0) {
-                                    temp_v0_9 = func_800097E0(anim, (phi_s1_6 + 1) & 0xFF);
+                                    temp_v0_9 = HS64_AObjNew(anim, (phi_s1_6 + 1) & 0xFF);
                                     *temp_s0_7 = temp_v0_9;
                                     phi_v1_6 = temp_v0_9;
                                 }
@@ -718,7 +710,7 @@ loop_14:
                     case 13:
                         anim->command++;
                         if (sp8C == 0) {
-                            sp8C = func_800097E0(anim, (u8)4U);
+                            sp8C = HS64_AObjNew(anim, (u8)4U);
                         }
                         sp8C->unk20 = (s32) *anim->command;
                         anim->command++;
@@ -1180,8 +1172,8 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000E818.s")
 
 #ifdef MIPS_TO_C
 f32 func_8000EC98(struct unk8000BE90Func *arg0, void *arg1, f32 arg2, s32 arg3, s32 arg4, f32 arg5, s32 arg6, s32 arg7, s32 arg8) {
-    struct AnimStack *spC4;
-    struct AnimStack *spC0;
+    struct AObj *spC4;
+    struct AObj *spC0;
     f32 spB4;
     f32 spB0;
     f32 spAC;
@@ -1199,9 +1191,9 @@ f32 func_8000EC98(struct unk8000BE90Func *arg0, void *arg1, f32 arg2, s32 arg3, 
     f32 temp_f26;
     f32 temp_f2;
     s32 temp_s0;
-    struct AnimStack *temp_s0_2;
-    struct AnimStack *temp_v0_2;
-    struct AnimStack *temp_v1;
+    struct AObj *temp_s0_2;
+    struct AObj *temp_v0_2;
+    struct AObj *temp_v1;
     u8 *temp_v0;
     s32 phi_s0;
     f32 phi_f12;
@@ -1251,7 +1243,7 @@ loop_11:
         if (func_8000E554(0, arg0, &spB0, &spA8, spC0, arg3, phi_s0, arg4, &sp80, &sp98) == 0) {
             func_8000E554(1, arg0, &spB4, &spAC, spC4, arg3, phi_s0, arg4, &sp8C, &sp9C);
             if ((spB0 != spB4) || (spA8 != spAC)) {
-                temp_v0_2 = func_800097E0(arg0, phi_s0 & 0xFF);
+                temp_v0_2 = HS64_AObjNew(arg0, phi_s0 & 0xFF);
                 temp_v1 = temp_v0_2;
                 if ((phi_s0 == 1) || (phi_s0 == 2) || (phi_s0 == 3)) {
                     temp_f0 = spB4 + temp_f24;

@@ -2,6 +2,7 @@
 
 #include <ultra64.h>
 #include <macros.h>
+#include <PR/os_message.h>
 
 #include "ovl0_2_5.h"
 #include "ovl0_3.h"
@@ -91,34 +92,32 @@ struct GObj *gGObjHead;
 // 0x8004A67C? file boundary?
 struct GObj* gHighestPrioDLLinkProcs[33]; // length 33?
 struct GObj* gDLLinkProcs[33]; // length 33?
-u32 D_8004A78C;
+u32 gGObjCount;
 struct OMMtx *gOMMtxHead;
-u32 D_8004A794;
+u32 gOMMtxCount;
 void (*D_8004A798)();
-struct AnimStack *D_8004A79C;
-u32 D_8004A7A0;
-struct MObj* D_8004A7A4;
-u32 D_8004A7A8;
-struct DObj* D_8004A7AC;
-u32 D_8004A7B0;
+struct AObj *gAObjHead;
+u32 gAObjCount;
+struct MObj* gMObjHead;
+u32 gMObjCount;
+struct DObj* gDObjHead;
+u32 gDObjCount;
 u32 D_8004A7B4;
 u32 D_8004A7B8;
-struct Camera* D_8004A7BC;
-u32 D_8004A7C0;
+struct Camera* gCameraHead;
+u32 gCameraCount;
 struct GObj *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
 struct GObjProcess *D_8004A7D0;
 s32 D_8004A7D4;
 OSMesg D_8004A7D8;
 // 0x8004A7DC?
-OSMesgQueue D_8004A7E0;
+OSMesgQueue HS64_GObjProcMesgQ;
 struct UnkStruct8004A7F8 D_8004A7F8[32]; // length 32 based on loop asm in func_8000AAE0 (unrolled)
 static u32 pad1, pad2, pad3, pad4, pad5, pad6; // 0x8004AA78 - 0x8004AA8F?
 
 // end bss
 
 extern struct GObj *D_800DE44C;
-
-
 
 struct GObjThread *get_gobj_thread(void) {
     struct GObjThread *ret;
@@ -295,7 +294,7 @@ struct ObjStack *func_8000828C(struct GObjProcess *arg0) {
         arg0 = D_8004A7D0;
     }
     if (arg0 != NULL && (arg0->kind == 0 || arg0->kind == 2)) {
-        return arg0->thread->objStack;
+        return arg0->payload.thread->objStack;
     }
     return NULL;
 }
@@ -307,7 +306,7 @@ s32 func_800082D4(struct GObjProcess *arg0) {
     }
     if (arg0 != NULL) {
         if (arg0->kind == 0 || arg0->kind == 2) {
-            return arg0->thread->objStackSize;
+            return arg0->payload.thread->objStackSize;
         }
     }
     return 0;
@@ -320,21 +319,19 @@ void func_8000831C(void (*arg0)(struct GObjThreadStack *)) {
 
 // Unused?
 s32 func_80008328(void) {
-    struct GObj *phi_v0;
-    s32 phi_v1;
+    struct GObj *gobj;
+    s32 listCount;
 
-    phi_v0 = gGObjHead;
-    phi_v1 = 0;
-    while (phi_v0 != 0) {
-        phi_v0 = phi_v0->unk4;
-        phi_v1 = phi_v1 + 1;
+    gobj = gGObjHead;
+    listCount = 0;
+    while (gobj != NULL) {
+        gobj = gobj->unk4;
+        listCount = listCount + 1;
     }
-    return phi_v1 + D_8004A78C;
+    return listCount + gGObjCount;
 }
 
-// Another potential pop
-// TODO: gGObjHead might be 8004A7C4 struct
-struct GObj *get_gobj(void) {
+struct GObj *HS64_GObjPop(void) {
     struct GObj *head;
 
     if (gGObjHead == NULL) {
@@ -342,15 +339,14 @@ struct GObj *get_gobj(void) {
     }
     head = gGObjHead;
     gGObjHead = gGObjHead->unk4;
-    D_8004A78C++;
+    gGObjCount++;
     return head;
 }
 
-// Another potential push
-void push_gobj(struct GObj *arg0) {
+void HS64_GObjPush(struct GObj *arg0) {
     arg0->unk4 = gGObjHead;
     gGObjHead = arg0;
-    D_8004A78C--;
+    gGObjCount--;
 }
 
 void func_800083CC(struct GObj *arg0, struct GObj *arg1) {
@@ -464,8 +460,7 @@ void omGDLLinkDestructor(struct GObj *arg0) {
     }
 }
 
-// Another potential pop
-struct OMMtx *object_manager_get_om_mtx(void) {
+struct OMMtx *HS64_OMMtxPop(void) {
     struct OMMtx *tmp;
 
     if (gOMMtxHead == 0) {
@@ -474,115 +469,106 @@ struct OMMtx *object_manager_get_om_mtx(void) {
     }
     tmp = gOMMtxHead;
     gOMMtxHead = gOMMtxHead->next;
-    D_8004A794++;
+    gOMMtxCount++;
     return tmp;
 }
 
-// Another potential push
-void push_om_mtx(struct OMMtx *arg0) {
+void HS64_OMMtxPush(struct OMMtx *arg0) {
     arg0->next = gOMMtxHead;
     gOMMtxHead = arg0;
-    D_8004A794--;
+    gOMMtxCount--;
 }
 
-// pops the top of D_8004A79C?
-struct AnimStack *object_manager_get_animstack(void) {
-    struct AnimStack *toReturn;
+struct AObj *HS64_AObjPop(void) {
+    struct AObj *toReturn;
 
-    if (D_8004A79C == 0) {
+    if (gAObjHead == 0) {
         fatal_printf("om : couldn't get AObj\n");
         while (TRUE);
     }
-    toReturn = D_8004A79C;
-    D_8004A79C = D_8004A79C->next;
-    D_8004A7A0++;
+    toReturn = gAObjHead;
+    gAObjHead = gAObjHead->next;
+    gAObjCount++;
     return toReturn;
 }
 
-// Sets a new head of the unk6C list in anim
-void func_80008830(struct Animation *anim, struct AnimStack *element) {
-    element->next = anim->unk6C;
-    anim->unk6C = element;
+void func_80008830(struct Animation *anim, struct AObj *aobj) {
+    aobj->next = anim->aobj;
+    anim->aobj = aobj;
 }
 
-void func_80008840(struct Animation *arg0, struct AnimStack *element) {
-    element->next = arg0->unk90;
-    arg0->unk90 = element;
+void func_80008840(struct Animation *arg0, struct AObj *aobj) {
+    aobj->next = arg0->unk90;
+    arg0->unk90 = aobj;
 }
 
 // TODO: is this _really_ for Animations?
-void func_80008850(struct Animation *anim, struct AnimStack *element) {
-    element->next = anim->unk6C;
-    anim->unk6C = element;
+void func_80008850(struct Animation *anim, struct AObj *aobj) {
+    aobj->next = anim->aobj;
+    anim->aobj = aobj;
 }
 
-void func_80008860(struct AnimStack *arg0) {
-    arg0->next = D_8004A79C;
-    D_8004A7A0--;
-    D_8004A79C = arg0;
+void HS64_AObjPush(struct AObj *arg0) {
+    arg0->next = gAObjHead;
+    gAObjCount--;
+    gAObjHead = arg0;
 }
 
-// Another potential pop
-struct MObj* object_manager_get_m_obj(void) {
+struct MObj* HS64_MObjPop(void) {
     struct MObj *temp_v0;
 
-    if (D_8004A7A4 == 0) {
+    if (gMObjHead == 0) {
         fatal_printf("om : couldn't get MObj\n");
         while (TRUE);
     }
-    temp_v0 = D_8004A7A4;
-    D_8004A7A4 = D_8004A7A4->next;
-    D_8004A7A8++;
+    temp_v0 = gMObjHead;
+    gMObjHead = gMObjHead->next;
+    gMObjCount++;
     return temp_v0;
 }
 
-// Another potential push
-void func_800088E4(struct MObj *arg0) {
-    arg0->next = D_8004A7A4;
-    D_8004A7A4 = arg0;
-    D_8004A7A8--;
+void HS64_MObjPush(struct MObj *arg0) {
+    arg0->next = gMObjHead;
+    gMObjHead = arg0;
+    gMObjCount--;
 }
 
-// Another potential pop
-struct DObj *object_manager_get_d_obj(void) {
+struct DObj *HS64_DObjPop(void) {
     struct DObj *temp_v0;
 
-    if (D_8004A7AC == 0) {
+    if (gDObjHead == 0) {
         fatal_printf("om : couldn't get DObj\n");
         while (TRUE);
     }
-    temp_v0 = D_8004A7AC;
-    D_8004A7AC = D_8004A7AC->unk0;
-    D_8004A7B0++;
+    temp_v0 = gDObjHead;
+    gDObjHead = gDObjHead->unk0;
+    gDObjCount++;
     return temp_v0;
 }
 
-// Another potential push
-void func_80008968(struct DObj *arg0) {
-    arg0->unk0 = D_8004A7AC;
-    D_8004A7AC = arg0;
-    D_8004A7B0--;
+void HS64_DObjPush(struct DObj *arg0) {
+    arg0->unk0 = gDObjHead;
+    gDObjHead = arg0;
+    gDObjCount--;
 }
 
-// Another potential pop
-struct Camera *object_manager_get_camera(void) {
+struct Camera *HS64_CameraPop(void) {
     struct Camera *temp_v0;
 
-    if (D_8004A7BC == 0) {
+    if (gCameraHead == 0) {
         fatal_printf("om : couldn't get Camera\n");
         while (TRUE);
     }
-    temp_v0 = D_8004A7BC;
-    D_8004A7BC = D_8004A7BC->unk0;
-    D_8004A7C0++;
+    temp_v0 = gCameraHead;
+    gCameraHead = gCameraHead->unk0;
+    gCameraCount++;
     return temp_v0;
 }
 
-// Another potential push
-void func_800089EC(struct Camera *arg0) {
-    arg0->unk0 = D_8004A7BC;
-    D_8004A7BC = arg0;
-    D_8004A7C0--;
+void HS64_CameraPush(struct Camera *arg0) {
+    arg0->unk0 = gCameraHead;
+    gCameraHead = arg0;
+    gCameraCount--;
 }
 
 struct GObjThread *get_gobj_thread();
@@ -609,7 +595,7 @@ struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind
     switch (kind) {
         case 0:
             oThread = get_gobj_thread();
-            oProcess->thread = oThread;
+            oProcess->payload.thread = oThread;
             oThread->objStack = &get_gobj_thread_stack()->stack;
             oThread->objStackSize = gNewEntityStackSize;
             osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
@@ -619,7 +605,7 @@ struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind
             }
             break;
         case 1:
-            oProcess->thread = arg1;
+            oProcess->payload.thread = arg1;
             break;
         default:
             fatal_printf(D_80040340);
@@ -648,7 +634,7 @@ struct GObjProcess *func_80008B94(struct GObj *arg0, struct GObjThread *entry, u
     oProcess->unk15 = 0;
     oProcess->gobj = arg0;
     oProcess->entryPoint = entry;
-    oThread = get_gobj_thread(); oProcess->thread = oThread;
+    oThread = get_gobj_thread(); oProcess->payload.thread = oThread;
     if (stackSize == 0) {
         oProcess->kind = 0;
         oThread->objStack = &get_gobj_thread_stack()->stack;
@@ -696,19 +682,19 @@ void func_80008DA8(struct GObjProcess *arg0) {
         }
         switch (arg0->kind) {
             case 0:
-                osDestroyThread(&arg0->thread->thread);
-                push_gobj_thread_stack(&arg0->thread->objStack->stack[0] - 1); // why???
-                push_gobj_thread(arg0->thread);
+                osDestroyThread(&arg0->payload.thread->thread);
+                push_gobj_thread_stack(&arg0->payload.thread->objStack->stack[0] - 1); // why???
+                push_gobj_thread(arg0->payload.thread);
                 break;
             case 1:
                 break;
             case 2:
-                osDestroyThread(&arg0->thread->thread);
+                osDestroyThread(&arg0->payload.thread->thread);
                 temp_v0_3 = D_8004A550;
                 if (temp_v0_3 != 0) {
-                    temp_v0_3(arg0->thread->objStack);
+                    temp_v0_3(arg0->payload.thread->objStack);
                 }
-                push_gobj_thread(arg0->thread);
+                push_gobj_thread(arg0->payload.thread);
         }
         func_80008210(arg0);
         push_gobj_process(arg0);
@@ -747,13 +733,13 @@ It needs to be within ".section .rodata" or ".section .late_rodata".
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009658.s")
 #endif
 
-extern void func_80008830(struct Animation *anim, struct AnimStack *stack);
+extern void func_80008830(struct Animation *anim, struct AObj *stack);
 
-// Initializes a new AnimStack with an index
-struct AnimStack *func_800097E0(struct Animation *anim, u8 index) {
-    struct AnimStack *toReturn;
+// Initializes a new AObj with an index
+struct AObj *HS64_AObjNew(struct Animation *anim, u8 index) {
+    struct AObj *toReturn;
 
-    toReturn = object_manager_get_animstack();
+    toReturn = HS64_AObjPop();
     toReturn->unk4 = index;
     toReturn->unk5 = 0;
     toReturn->unk20 = 0;
@@ -770,23 +756,23 @@ struct AnimStack *func_800097E0(struct Animation *anim, u8 index) {
 extern f32 D_8004064C;
 
 void func_8000984C(struct unk8000BE90Func *arg0) {
-    struct AnimStack *temp_s1;
-    struct AnimStack *phi_s0;
+    struct AObj *temp_s1;
+    struct AObj *phi_s0;
 
     phi_s0 = arg0->unk6C;
     while (phi_s0 != 0) {
         temp_s1 = phi_s0->next;
-        func_80008860(phi_s0);
+        HS64_AObjPush(phi_s0);
         phi_s0 = temp_s1;
     }
     arg0->unk6C = 0;
     arg0->unk74 = D_8004064C;
 }
 
-struct AnimStack *func_800098AC(s32 arg0, u8 index) {
-    struct AnimStack *toReturn;
+struct AObj *func_800098AC(s32 arg0, u8 index) {
+    struct AObj *toReturn;
 
-    toReturn = object_manager_get_animstack();
+    toReturn = HS64_AObjPop();
     toReturn->unk4 = index;
     toReturn->unk5 = 0;
     toReturn->unk20 = 0;
@@ -803,23 +789,23 @@ struct AnimStack *func_800098AC(s32 arg0, u8 index) {
 extern f32 D_80040650;
 
 void func_80009918(struct unk80008840 *arg0) {
-    struct AnimStack *temp_s1;
-    struct AnimStack *phi_s0;
+    struct AObj *temp_s1;
+    struct AObj *phi_s0;
 
     phi_s0 = arg0->unk90;
     while (phi_s0 != 0) {
         temp_s1 = phi_s0->next;
-        func_80008860(phi_s0);
+        HS64_AObjPush(phi_s0);
         phi_s0 = temp_s1;
     }
     arg0->unk90 = 0;
     arg0->unk98 = D_80040650;
 }
 
-struct AnimStack *func_80009978(struct Animation* arg0, u8 arg1) {
-    struct AnimStack *temp_v0;
+struct AObj *func_80009978(struct Animation* arg0, u8 arg1) {
+    struct AObj *temp_v0;
 
-    temp_v0 = object_manager_get_animstack();
+    temp_v0 = HS64_AObjPop();
     temp_v0->unk4 = arg1;
     temp_v0->unk5 = (u8)0;
     temp_v0->unk20 = 0;
@@ -836,18 +822,18 @@ struct AnimStack *func_80009978(struct Animation* arg0, u8 arg1) {
 extern f32 D_80040654;
 
 // Unused?
-void func_800099E4(struct Animation *arg0) {
-    struct AnimStack *temp_s1;
-    struct AnimStack *phi_s0;
+void func_800099E4(struct Animation *anim) {
+    struct AObj *temp_s1;
+    struct AObj *phi_s0;
 
-    phi_s0 = arg0->unk6C;
+    phi_s0 = anim->aobj;
     while (phi_s0 != 0) {
         temp_s1 = phi_s0->next;
-        func_80008860(phi_s0);
+        HS64_AObjPush(phi_s0);
         phi_s0 = temp_s1;
     }
-    arg0->unk6C = 0;
-    arg0->scale = D_80040654;
+    anim->aobj = 0;
+    anim->scale = D_80040654;
 }
 
 #ifdef MIPS_TO_C
@@ -866,7 +852,7 @@ struct MObj *func_80009A44(void *arg0, void *arg1) {
     void *phi_t9;
     struct MObj *phi_t0;
 
-    temp_v0 = object_manager_get_m_obj();
+    temp_v0 = HS64_MObjPop();
     temp_a2 = arg0->unk80;
     if (temp_a2 != 0) {
         temp_v1 = temp_a2->next;
@@ -924,12 +910,12 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009A44.s")
 
 #ifdef MIPS_TO_C
 void func_80009B5C(struct UnkStruct8004A7C4_3C *arg0) {
-    struct AnimStack *temp_s0;
-    struct AnimStack *temp_s1;
+    struct AObj *temp_s0;
+    struct AObj *temp_s1;
     struct MObj *temp_s0_2;
     struct UnkStruct8004A7C4_3C_80 *temp_s2;
     struct MObj *phi_s2;
-    struct AnimStack *phi_s0;
+    struct AObj *phi_s0;
 
     temp_s2 = arg0->unk80;
     phi_s2 = temp_s2;
@@ -940,14 +926,14 @@ loop_1:
         if (temp_s0 != 0) {
 loop_2:
             temp_s1 = phi_s0->next;
-            func_80008860(phi_s0);
+            HS64_AObjPush(phi_s0);
             phi_s0 = temp_s1;
             if (temp_s1 != 0) {
                 goto loop_2;
             }
         }
         temp_s0_2 = phi_s2->next;
-        func_800088E4(phi_s2);
+        HS64_MObjPush(phi_s2);
         phi_s2 = temp_s0_2;
         if (temp_s0_2 != 0) {
             goto loop_1;
@@ -1005,7 +991,7 @@ struct DObj *func_80009C38(struct GObj *arg0, u8 *arg1) {
         phi_a2 = D_8004A7C4;
     }
     arg0 = phi_a2;
-    temp_v0 = object_manager_get_d_obj();
+    temp_v0 = HS64_DObjPop();
     temp_a3 = arg0->unk3C;
     if (temp_a3 != 0) {
         temp_v1 = temp_a3->unk8;
@@ -1046,7 +1032,7 @@ struct DObj *func_80009CE8(void *arg0, u8 *arg1) {
     struct DObj *temp_v0;
     struct DObj *temp_v1;
 
-    temp_v0 = object_manager_get_d_obj();
+    temp_v0 = HS64_DObjPop();
     temp_v1 = arg0->unk8;
     if (temp_v1 != 0) {
         temp_v1->unkC = temp_v0;
@@ -1076,7 +1062,7 @@ struct DObj *func_80009D5C(void *arg0, u8 *arg1) {
     struct DObj *phi_v1;
     struct DObj *phi_a0;
 
-    temp_v0 = object_manager_get_d_obj();
+    temp_v0 = HS64_DObjPop();
     temp_a2 = arg0->unk10;
     if (temp_a2 != 0) {
         temp_v1 = temp_a2->unk8;
@@ -1116,10 +1102,10 @@ void func_80009DF4(struct DObj *arg0) {
     s32 temp_s0;
     s32 temp_s0_2;
     s32 temp_s0_3;
-    struct AnimStack *temp_s0_4;
-    struct AnimStack *temp_s0_5;
-    struct AnimStack *temp_s1;
-    struct AnimStack *temp_s1_2;
+    struct AObj *temp_s0_4;
+    struct AObj *temp_s0_5;
+    struct AObj *temp_s1;
+    struct AObj *temp_s1_2;
     struct MObj *temp_s0_6;
     struct MObj *temp_s2;
     void (*)() temp_v0_6;
@@ -1132,9 +1118,9 @@ void func_80009DF4(struct DObj *arg0) {
     s32 phi_s0;
     struct DObj *phi_s1;
     s32 phi_s0_2;
-    struct AnimStack *phi_s1_2;
+    struct AObj *phi_s1_2;
     struct MObj *phi_s2;
-    struct AnimStack *phi_s1_3;
+    struct AObj *phi_s1_3;
 
     temp_s0 = arg0->unk10;
     phi_s0 = temp_s0;
@@ -1175,7 +1161,7 @@ loop_1:
 loop_12:
     temp_a0 = phi_s1->unk58;
     if (temp_a0 != 0) {
-        push_om_mtx(temp_a0);
+        HS64_OMMtxPush(temp_a0);
     }
     temp_s0_3 = phi_s0_2 + 4;
     phi_s1 = phi_s1 + 4;
@@ -1195,7 +1181,7 @@ loop_12:
     if (temp_s1 != 0) {
 loop_19:
         temp_s0_4 = phi_s1_2->next;
-        func_80008860(phi_s1_2);
+        HS64_AObjPush(phi_s1_2);
         phi_s1_2 = temp_s0_4;
         if (temp_s0_4 != 0) {
             goto loop_19;
@@ -1210,85 +1196,74 @@ loop_21:
         if (temp_s1_2 != 0) {
 loop_22:
             temp_s0_5 = phi_s1_3->next;
-            func_80008860(phi_s1_3);
+            HS64_AObjPush(phi_s1_3);
             phi_s1_3 = temp_s0_5;
             if (temp_s0_5 != 0) {
                 goto loop_22;
             }
         }
         temp_s0_6 = phi_s2->next;
-        func_800088E4(phi_s2);
+        HS64_MObjPush(phi_s2);
         phi_s2 = temp_s0_6;
         if (temp_s0_6 != 0) {
             goto loop_21;
         }
     }
-    func_80008968(arg0);
+    HS64_DObjPush(arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009DF4.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct Camera *func_80009F7C(struct GObj *arg0) {
-    struct UnkStruct8004A7C4_3C *sp18;
-    Vp *temp_a0;
-    s32 temp_v0_2;
-    struct UnkStruct8004A7C4_3C *temp_v0;
-    struct UnkStruct8004A7C4_3C *temp_v1;
-    struct GObj *phi_a2;
-    struct UnkStruct8004A7C4_3C *phi_v1;
-    s32 phi_v0;
+extern const f32 D_80040660;
 
-    phi_a2 = arg0;
-    if (arg0 == 0) {
-        phi_a2 = D_8004A7C4;
+struct Camera *func_80009F7C(struct GObj *gobj) {
+    int i;
+    struct Camera *cam;
+
+    if (gobj == 0) {
+        gobj = D_8004A7C4;
     }
-    phi_a2->unkF = 3;
-    arg0 = phi_a2;
-    temp_v0 = object_manager_get_camera();
-    temp_a0 = temp_v0 + 8;
-    arg0->unk3C = temp_v0;
-    temp_v0->unk0.y = (bitwise f32) arg0;
-    sp18 = temp_v0;
-    setup_viewport(temp_a0);
-    sp18->unk60[0] = 0;
-    phi_v1 = sp18;
-    phi_v0 = 0;
-loop_3:
-    temp_v0_2 = phi_v0 + 1;
-    temp_v1 = phi_v1 + 4;
-    temp_v1->unk60[0] = 0;
-    phi_v1 = temp_v1;
-    phi_v0 = temp_v0_2;
-    if (temp_v0_2 != 2) {
-        goto loop_3;
+    gobj->unkF = 3;
+    cam = HS64_CameraPop();
+
+    gobj->unk3C = cam;
+
+    cam->gobj = gobj;
+
+    setup_viewport(&cam->viewport);
+    if (1) {
+        // stub
     }
-    sp18->unk80 = NULL;
-    sp18->unk84 = 0;
-    sp18->unk88 = 0;
-    sp18->unk8C = 0;
-    sp18->unk60[3] = 0;
-    sp18->unk70 = 0;
-    sp18->unk74 = D_80040660;
-    sp18->unk78 = 1.0f;
-    sp18->unk7C = 0.0f;
-    return sp18;
+
+    cam->unk60 = 0;
+
+    for (i = 0; i < 2; i++) {
+        cam->unk64[i] = 0;
+    }
+
+    cam->unk80 = 0;
+    cam->unk84 = 0;
+    cam->unk88 = 0;
+    cam->unk8C = 0;
+    cam->unk6C = 0;
+    cam->unk70 = 0;
+    cam->unk74 = D_80040660;
+    cam->unk78 = 1.0f;
+    cam->unk7C = 0.0f;
+    return cam;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009F7C.s")
-#endif
 
 #ifdef MIPS_TO_C
 void func_8000A02C(struct Camera *arg0) {
     s32 temp_s0;
-    struct AnimStack *temp_s0_2;
-    struct AnimStack *temp_s1;
+    struct AObj *temp_s0_2;
+    struct AObj *temp_s1;
     void **temp_a0;
     void *temp_v0;
     struct Camera *phi_s1;
     s32 phi_s0;
-    struct AnimStack *phi_s0_2;
+    struct AObj *phi_s0_2;
 
     temp_v0 = arg0->filler;
     temp_v0->unkF = 0;
@@ -1298,7 +1273,7 @@ void func_8000A02C(struct Camera *arg0) {
 loop_1:
     temp_a0 = phi_s1->unk64;
     if (temp_a0 != 0) {
-        push_om_mtx(temp_a0);
+        HS64_OMMtxPush(temp_a0);
     }
     temp_s0 = phi_s0 + 4;
     phi_s1 = phi_s1 + 4;
@@ -1311,13 +1286,13 @@ loop_1:
     if (temp_s0_2 != 0) {
 loop_5:
         temp_s1 = phi_s0_2->next;
-        func_80008860(phi_s0_2);
+        HS64_AObjPush(phi_s0_2);
         phi_s0_2 = temp_s1;
         if (temp_s1 != 0) {
             goto loop_5;
         }
     }
-    func_800089EC(arg0);
+    HS64_CameraPush(arg0);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
@@ -1330,7 +1305,7 @@ struct GObj *omGAddCommon(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
         fatal_printf(D_800403DC, link, id); // "omGAddCommon() : link num over : link = %d : id = %d\n"
         while (1);
     }
-    toReturn = get_gobj();
+    toReturn = HS64_GObjPop();
     if (toReturn == NULL) {
         return NULL;
     }
@@ -1410,75 +1385,56 @@ void func_8000A29C(struct GObj *arg0) {
         case 2:
             break;
         case 3:
-            func_8000A02C(arg0->unk3C);
+            func_8000A02C((struct Camera *)arg0->unk3C);
     }
     if (arg0->dl_link != 0x21) {
         omGDLLinkDestructor(arg0);
     }
     func_80008528(arg0);
-    push_gobj(arg0);
+    HS64_GObjPush(arg0);
 }
 
 // i genuinely don't know what's going on here
-#ifdef MIPS_TO_C
-void func_8000A350(s32 arg0, struct GObj *arg1, u8 arg2, u32 arg3, struct GObj *arg4) {
-    struct GObjProcess *sp20;
-    struct GObjProcess *temp_s0;
-    struct GObjProcess *temp_s1;
-    struct GObj *phi_s0;
-    struct GObjProcess *phi_s1;
-    struct GObjProcess *phi_s1_2;
+#ifdef NON_MATCHING
+void omGMoveCommon(s32 arg0, struct GObj *gobj, u8 link, u32 arg3, struct GObj *arg4) {
+    GObjProcess *proc;
 
-    if (arg2 >= 0x20) {
-        fatal_printf(D_80040414, arg2, arg1->objId);
-loop_2:
-        goto loop_2;
+    if (link >= 0x20) {
+        fatal_printf(&D_80040414, link, gobj->objId);
+        while (1);
     }
-    phi_s0 = arg1;
-    if (arg1 == 0) {
-        phi_s0 = D_8004A7C4;
+    if (gobj == NULL) {
+        gobj = D_8004A7C4;
     }
-    sp20 = phi_s0->unk18;
-    phi_s0->unk18 = NULL;
-    phi_s0->unk1C = 0;
-    phi_s1 = sp20;
-    if (sp20 != 0) {
-loop_6:
-        unlink_gobj_process(phi_s1);
-        temp_s1 = phi_s1->unk0;
-        phi_s1 = temp_s1;
-        if (temp_s1 != 0) {
-            goto loop_6;
-        }
-    }
-    func_80008528(phi_s0);
-    phi_s0->link = arg2;
-    phi_s0->unk10 = arg3;
-    if (arg0 != 0) {
-        if (arg0 != 1) {
-            if (arg0 != 2) {
-                if (arg0 != 3) {
+    proc = gobj->proc;
+    gobj->proc = NULL;
+    gobj->unk1C = 0;
 
-                } else {
-                    func_800083CC(phi_s0, arg4->unk8);
-                }
-            } else {
-                func_800083CC(phi_s0, arg4);
-            }
-        } else {
-            func_800084A0(phi_s0);
-        }
-    } else {
-        func_80008434(phi_s0);
+    while (proc != NULL) {
+        unlink_gobj_process(proc);
+        proc = proc->unk0;
     }
-    if (sp20 != 0) {
-loop_18:
-        temp_s0 = phi_s1_2->unk0;
-        func_800080C0(phi_s1_2);
-        phi_s1_2 = temp_s0;
-        if (temp_s0 != 0) {
-            goto loop_18;
-        }
+
+    func_80008528(gobj);
+    gobj->link = link;
+    gobj->unk10 = arg3;
+    switch (arg0) { /* irregular */
+        case 0:
+            func_80008434(gobj);
+            break;
+        case 1:
+            func_800084A0(gobj);
+            break;
+        case 2:
+            func_800083CC(gobj, arg4);
+            break;
+        case 3:
+            func_800083CC(gobj, arg4->unk8);
+            break;
+    }
+    while (proc != NULL) {
+        func_800080C0(proc);
+        proc = proc->unk0;
     }
 }
 #else
@@ -1486,49 +1442,49 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A350.s")
 #endif
 
 void func_8000A498(struct GObj *arg0, u8 arg1, s32 arg2) {
-    func_8000A350(0, arg0, arg1, arg2, NULL);
+    omGMoveCommon(0, arg0, arg1, arg2, NULL);
 }
 
 void func_8000A4D0(struct GObj *arg0, u8 arg1, s32 arg2) {
-    func_8000A350(1, arg0, arg1, arg2, NULL);
+    omGMoveCommon(1, arg0, arg1, arg2, NULL);
 }
 
 void func_8000A508(struct GObj *arg0, struct GObj *arg1) {
-    func_8000A350(2, arg0, arg1->link, arg1->unk10, arg1);
+    omGMoveCommon(2, arg0, arg1->link, arg1->unk10, arg1);
 }
 
 void func_8000A544(struct GObj *arg0, struct GObj *arg1) {
-    func_8000A350(3, arg0, arg1->link, arg1->unk10, arg1);
+    omGMoveCommon(3, arg0, arg1->link, arg1->unk10, arg1);
 }
 
 extern u32 D_8003DCA8;
 
-void omGLinkObjDLCommon(struct GObj *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
+void omGLinkObjDLCommon(struct GObj *arg0, s32 arg1, u8 link, s32 prio, s32 arg4) {
     if (link >= 0x20) {
         // "omGLinkObjDLCommon() : dl_link num over : dl_link = %d : id = %d\n"
         fatal_printf(&D_8004044C, link, arg0->objId);
         while (1);
     }
     arg0->dl_link = link;
-    arg0->renderPriority = arg3;
+    arg0->renderPriority = prio;
     arg0->unk2C = arg1;
     arg0->unk34 = arg4;
     arg0->unkE = D_8003DCA8 - 1;
 }
 
-void func_8000A5FC(struct GObj *arg0, s32 arg1, u8 arg2, s32 arg3, s32 arg4) {
-    if (arg0 == NULL) {
-        arg0 = D_8004A7C4;
+void func_8000A5FC(struct GObj *gobj, s32 arg1, u8 link, s32 prio, s32 arg4) {
+    if (gobj == NULL) {
+        gobj = D_8004A7C4;
     }
-    omGLinkObjDLCommon(arg0, arg1, arg2, arg3, arg4);
-    omGSetupCameraDLLink(arg0);
+    omGLinkObjDLCommon(gobj, arg1, link, prio, arg4);
+    omGSetupCameraDLLink(gobj);
 }
 
-void func_8000A640(struct GObj *arg0, s32 arg1, u8 link, s32 arg3, s32 arg4) {
+void func_8000A640(struct GObj *arg0, s32 arg1, u8 link, s32 prio, s32 arg4) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    omGLinkObjDLCommon(arg0, arg1, link, arg3, arg4);
+    omGLinkObjDLCommon(arg0, arg1, link, prio, arg4);
     omGSetupDLLink_HighestPrioMax(arg0);
 }
 
@@ -1566,47 +1522,31 @@ void func_8000A764(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
     omGSetupCameraDLLink(arg0);
 }
 
-void func_8000A7A0(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4) {
+void func_8000A7A0(struct GObj *arg0, s32 arg1, s32 prio, s32 arg3, s32 arg4) {
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    func_8000A730(arg0, arg1, arg2, arg3, arg4);
+    func_8000A730(arg0, arg1, prio, arg3, arg4);
     omGSetupDLLink_HighestPrioMax(arg0);
 }
 
-// arg memes on both these functions
-#ifdef MIPS_TO_C
 void func_8000A7DC(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, struct GObj *arg4) {
-    struct GObj *phi_a0;
-
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+    if (arg0 == NULL) {
+        arg0 = D_8004A7C4;
     }
-    arg0 = phi_a0;
-    func_8000A730(phi_a0, arg1, arg4->unk28, arg2, arg3);
+
+    func_8000A730(arg0, arg1, arg4->renderPriority, arg2, arg3);
     omGInsertDLLink(arg0, arg4);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A7DC.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_8000A830(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, void *arg4) {
-    struct GObj *phi_a0;
-
-    phi_a0 = arg0;
+void func_8000A830(struct GObj *arg0, s32 arg1, s32 arg2, s32 arg3, struct GObj *arg4) {
     if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+        arg0 = D_8004A7C4;
     }
-    arg0 = phi_a0;
-    func_8000A730(phi_a0, arg1, arg4->unk28, arg2, arg3);
+
+    func_8000A730(arg0, arg1, arg4->renderPriority, arg2, arg3);
     omGInsertDLLink(arg0, arg4->unk8);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A830.s")
-#endif
-
 
 void omGMoveObjDL(struct GObj *arg0, u8 link, s32 arg2) {
     if (link >= 0x20) {
@@ -1668,57 +1608,30 @@ void func_8000AAA4(struct GObj *arg0, struct GObj *arg1) {
     omGInsertDLLink(arg0, arg1->unk8);
 }
 
-#ifdef MIPS_TO_C
-struct UnkStruct8004A7F8 *func_8000AAE0(void) {
-    s8 temp_v1;
-    struct GObj *temp_s0;
-    struct GObj *temp_s0_2;
-    struct UnkStruct8004A7F8 *temp_ret;
-    struct UnkStruct8004A7F8 *temp_v0;
-    struct UnkStruct8004A7F8 *phi_v0;
-    struct GObj *phi_s0;
-    struct UnkStruct8004A7F8 *phi_return;
-    struct UnkStruct8004A7F8 *phi_return_2;
+extern struct GObj *D_8004A700;
+
+void func_8000AAE0(void) {
+    int i;
+    struct GObj *obj;
 
     D_8004A7C8 = NULL;
     D_8004A7CC = NULL;
-    temp_v1 = D_8003DCA8 - 1;
-    phi_v0 = D_8004A7F8;
-loop_1:
-    temp_v0 = phi_v0 + 0x50;
-    temp_v0->unk-3C = temp_v1;
-    temp_v0->unk-28 = temp_v1;
-    temp_v0->unk-14 = temp_v1;
-    temp_v0->unk-50 = temp_v1;
-    phi_v0 = temp_v0;
-    if (temp_v0 != &D_8004AA78) {
-        goto loop_1;
+
+    for (i = 0; i < 32; i++) {
+        D_8004A7F8[i].unk0 = D_8003DCA8 - 1;
     }
-    temp_s0 = D_8004A700;
-    phi_s0 = temp_s0;
-    phi_return = temp_v0;
-    phi_return_2 = temp_v0;
-    if (temp_s0 != 0) {
-loop_3:
-        if ((phi_s0->unk44 & 1) == 0) {
+
+    obj = D_8004A700;
+    while (obj) {
+        if ((obj->unk44 & 1) == 0) {
             D_8003DE54 = 3;
-            D_8004A7C8 = phi_s0;
-            temp_ret = phi_s0->unk2C(phi_s0);
+            D_8004A7C8 = obj;
+            obj->unk2C(obj);
             D_8003DE54 = 0;
-            phi_return_2 = temp_ret;
         }
-        temp_s0_2 = phi_s0->unk20;
-        phi_s0 = temp_s0_2;
-        phi_return = phi_return_2;
-        if (temp_s0_2 != 0) {
-            goto loop_3;
-        }
+        obj = obj->nextDL;
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AAE0.s")
-#endif
 
 extern s32 D_8004A7D4;
 u32 func_8000ABAC(struct GObj *arg0) {
@@ -1741,49 +1654,51 @@ u32 func_8000ABAC(struct GObj *arg0) {
     return temp_a1;
 }
 
-// potentially the thread dispatcher
+// Matches on decomp.me but not locally??????
 #ifdef NON_MATCHING
-struct GObjProcess *omGDispatchProc(struct GObjProcess *arg0) {
-    struct GObjProcess *tmpProc;
+struct GObjProcess *omGDispatchProc(struct GObjProcess *proc) {
+    struct GObjProcess *ret;
     void (*entry)(struct GObj *);
 
     D_8003DE54 = 2;
-    D_8004A7C4 = arg0->gobj;
-    D_8004A7D0 = arg0;
-    switch (arg0->kind) {
-        case 0: default:
-            osStartThread(&arg0->thread->thread);
-            osRecvMesg(&D_8004A7E0, NULL, OS_MESG_BLOCK);
+    D_8004A7C4 = proc->gobj;
+    D_8004A7D0 = proc;
+
+    switch (proc->kind) {
+        case 0: case 2:
+            osStartThread(&proc->payload.thread->thread);
+            osRecvMesg(&HS64_GObjProcMesgQ, NULL, 1);
             break;
         case 1:
-            entry = arg0->thread;
-            (entry)(arg0->gobj);
+            proc->payload.callback(proc->gobj);
             break;
-        case 2:
-            break;
+        // case 2: default: break;
     }
-    tmpProc = arg0->unk8;
+
+    ret = proc->unk8;
+
     D_8004A7C4 = NULL;
     D_8004A7D0 = NULL;
     D_8003DE54 = 0;
+
     switch (D_8004A7D4) {
-        case 0:
-            D_8004A7D4 = 0;
-            break;
-        case 1:
-            // D_8004A7D4 = 0;
-            while (tmpProc->unk8 != NULL && arg0->gobj == tmpProc->gobj) {
-                tmpProc = tmpProc->unk8;
-            }
-            func_8000A29C(arg0->gobj);
-            break;
         case 2:
             D_8004A7D4 = 0;
-            func_80008DA8(arg0);
+            while (ret != NULL && ret->gobj == proc->gobj) {
+                ret = ret->unk8;
+            }
+
+            func_8000A29C(proc->gobj);
             break;
-        // default:
+        case 1:
+            D_8004A7D4 = 0;
+            func_80008DA8(proc);
+            break;
+        case 0: break;
+        default: D_8004A7D4 = 0; break;
     }
-    return tmpProc;
+
+    return ret;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AC3C.s")
@@ -1821,7 +1736,7 @@ void func_8000AD88(void) {
 }
 
 #ifdef MIPS_TO_C
-void func_8000AE84(void *arg0) {
+void HS64_omInit(void *arg0) {
     ? *temp_t4_2;
     ? *temp_v0_14;
     ? *temp_v0_4;
@@ -1836,8 +1751,8 @@ void func_8000AE84(void *arg0) {
     s32 temp_a0_7;
     s32 temp_a0_8;
     s32 temp_a0_9;
-    struct AnimStack *temp_v0_8;
-    struct AnimStack *temp_v1_4;
+    struct AObj *temp_v0_8;
+    struct AObj *temp_v1_4;
     struct Camera *temp_t4_3;
     struct Camera *temp_v0_12;
     struct DObj *temp_t4;
@@ -1873,9 +1788,9 @@ void func_8000AE84(void *arg0) {
     struct OMMtx *phi_v1_5;
     s32 phi_a0_5;
     struct OMMtx *phi_v1_6;
-    struct AnimStack *phi_v1_7;
+    struct AObj *phi_v1_7;
     s32 phi_a0_6;
-    struct AnimStack *phi_v1_8;
+    struct AObj *phi_v1_8;
     struct MObj *phi_v1_9;
     s32 phi_a0_7;
     struct MObj *phi_v1_10;
@@ -2020,7 +1935,7 @@ void func_8000AE84(void *arg0) {
     phi_a0_14 = phi_a0_13;
     if (arg0->unk3C != 0) {
         temp_v1_4 = arg0->unk38;
-        D_8004A79C = temp_v1_4;
+        gAObjHead = temp_v1_4;
         phi_v1_7 = temp_v1_4;
         phi_v1_8 = temp_v1_4;
         if ((arg0->unk3C - 1) > 0) {
@@ -2043,7 +1958,7 @@ void func_8000AE84(void *arg0) {
     phi_a0_15 = phi_a0_14;
     if (arg0->unk44 != 0) {
         temp_v1_5 = arg0->unk40;
-        D_8004A7A4 = temp_v1_5;
+        gMObjHead = temp_v1_5;
         phi_v1_9 = temp_v1_5;
         phi_v1_10 = temp_v1_5;
         if ((arg0->unk44 - 1) > 0) {
@@ -2067,7 +1982,7 @@ void func_8000AE84(void *arg0) {
     phi_a0_16 = phi_a0_15;
     if (arg0->unk4C != 0) {
         temp_v0_10 = arg0->unk48;
-        D_8004A7AC = temp_v0_10;
+        gDObjHead = temp_v0_10;
         phi_v0_6 = temp_v0_10;
         phi_v0_7 = temp_v0_10;
         if ((arg0->unk4C - 1) > 0) {
@@ -2110,7 +2025,7 @@ void func_8000AE84(void *arg0) {
     }
     if (arg0->unk64 != 0) {
         temp_v0_12 = arg0->unk60;
-        D_8004A7BC = temp_v0_12;
+        gCameraHead = temp_v0_12;
         phi_v0_10 = temp_v0_12;
         phi_v0_11 = temp_v0_12;
         if ((arg0->unk64 - 1) > 0) {
@@ -2155,13 +2070,13 @@ void func_8000AE84(void *arg0) {
         phi_v0_13 = temp_v0_14;
     } while (temp_v0_14 != &D_8004A704);
     func_8001479C(&D_8004A704, arg0, &gNewEntityStackSize);
-    osCreateMesgQueue(&D_8004A7E0, &D_8004A7D8, 1);
-    D_8004A7C0 = 0;
+    osCreateMesgQueue(&HS64_GObjProcMesgQ, &D_8004A7D8, 1);
+    gCameraCount = 0;
     D_8004A7B8 = 0;
-    D_8004A7B0 = 0;
-    D_8004A7A0 = 0;
-    D_8004A794 = 0;
-    D_8004A78C = 0;
+    gDObjCount = 0;
+    gAObjCount = 0;
+    gOMMtxCount = 0;
+    gGObjCount = 0;
     D_8004A570 = 0;
     D_8004A544 = 0;
     D_8004A548 = 0;
@@ -2175,21 +2090,10 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000AE84.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8000B3E0(s32 arg0, void *arg1, ? arg2) {
-    void *temp_s0;
-    void *temp_s1;
-    void *phi_s0;
-
-    temp_s0 = ((arg0 * 4) + 0x80050000)->unk-5A88;
-    phi_s0 = temp_s0;
-    if (temp_s0 != 0) {
-loop_1:
-        temp_s1 = phi_s0->unk4;
-        arg1(phi_s0, arg2);
-        phi_s0 = temp_s1;
-        if (temp_s1 != 0) {
-            goto loop_1;
-        }
+void func_8000B3E0(s32 arg0, void (*arg1)(struct GObj *, s32), s32 arg2) {
+    while (D_8004A578[arg0] != 0) {
+        arg1(D_8004A578[arg0], arg2);
+        D_8004A578[arg0] = D_8004A578[arg0]->unk4;
     }
 }
 #else
@@ -2306,61 +2210,42 @@ void func_8000B6B4(s32 arg0) {
 
 }
 
-#include <PR/os_message.h>
-
 void finish_current_thread(s32 arg) {
-    if (D_8004A7D0->thread->objStack->stack[7] != STACK_TOP_MAGIC) {
+    if (D_8004A7D0->payload.thread->objStack->stack[7] != STACK_TOP_MAGIC) {
         fatal_printf(D_80040670, D_8004A7D0->gobj->objId); // "gobjthread stack over  gobjid = %d\n"
     }
 
     while (arg != 0) {
-        osSendMesg(&D_8004A7E0, (OSMesg)1, OS_MESG_NOBLOCK);
+        osSendMesg(&HS64_GObjProcMesgQ, (OSMesg)1, OS_MESG_NOBLOCK);
         osStopThread(NULL);
         arg--;
     }
 }
 
-#ifdef MIPS_TO_C
-void *func_8000B758(struct GObj *arg0) {
-    void *temp_v0;
-    void *temp_v0_2;
-    struct GObj *phi_a0;
-    void *phi_v0;
-    void *phi_return;
-
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
-    }
-    temp_v0 = phi_a0->unk18;
-    phi_v0 = temp_v0;
-    phi_return = temp_v0;
-    if (temp_v0 != 0) {
-loop_3:
-        phi_v0->unk15 = 1;
-        temp_v0_2 = phi_v0->unk0;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
-        if (temp_v0_2 != 0) {
-            goto loop_3;
-        }
-    }
-    return phi_return;
-}
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B758.s")
-#endif
-
-void func_8000B78C(struct GObj *arg0) {
-    struct GObjProcess *phi_v0;
+void func_8000B758(struct GObj *arg0) {
+    struct GObjProcess *proc;
 
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
     }
-    phi_v0 = arg0->proc;
-    while (phi_v0 != NULL) {
-        phi_v0->unk15 = 0;
-        phi_v0 = phi_v0->unk0;
+    proc = arg0->proc;
+    while (proc != NULL) {
+        proc->unk15 = 1;
+        proc = proc->unk0;
+
+    }
+}
+
+void func_8000B78C(struct GObj *arg0) {
+    struct GObjProcess *proc;
+
+    if (arg0 == NULL) {
+        arg0 = D_8004A7C4;
+    }
+    proc = arg0->proc;
+    while (proc != NULL) {
+        proc->unk15 = 0;
+        proc = proc->unk0;
 
     }
 }
@@ -2379,58 +2264,35 @@ void func_8000B7D8(struct GObjProcess *arg0) {
     arg0->unk15 = 0;
 }
 
-#ifdef MIPS_TO_C
-void *func_8000B7F0(struct GObj *arg0, s32 arg1) {
-    if (arg0 == 0) {
-        arg0 = D_8004A7C4;
+void func_8000B7F0(struct GObj *gobj, void (*entryPoint)(struct GObj *)) {
+    GObjProcess *proc;
+
+    if (gobj == 0) {
+        gobj = D_8004A7C4;
     }
-    temp_v0 = arg0->unk18;
-    phi_v0 = arg0->unk18;
-    while (arg0->unk18 != 0) {
-        if (arg1 == phi_v0->unk20) {
-            phi_v0->unk15 = 1;
+    proc = gobj->proc;
+    while (proc != 0) {
+        if (entryPoint == proc->entryPoint) {
+            proc->unk15 = 1;
         }
-        temp_v0_2 = phi_v0->unk0;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
+        proc = proc->unk0;
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B7F0.s")
-#endif
 
-#ifdef MIPS_TO_C
-void *func_8000B830(struct GObj *arg0, s32 arg1) {
-    void *temp_v0;
-    void *temp_v0_2;
-    struct GObj *phi_a0;
-    void *phi_v0;
-    void *phi_return;
+void func_8000B830(struct GObj *gobj, void (*entryPoint)(struct GObj *)) {
+    GObjProcess *proc;
 
-    phi_a0 = arg0;
-    if (arg0 == 0) {
-        phi_a0 = D_8004A7C4;
+    if (gobj == 0) {
+        gobj = D_8004A7C4;
     }
-    temp_v0 = phi_a0->unk18;
-    phi_v0 = temp_v0;
-    phi_return = temp_v0;
-    if (temp_v0 != 0) {
-loop_3:
-        if (arg1 == phi_v0->unk20) {
-            phi_v0->unk15 = 0;
+    proc = gobj->proc;
+    while (proc != 0) {
+        if (entryPoint == proc->entryPoint) {
+            proc->unk15 = 0;
         }
-        temp_v0_2 = phi_v0->unk0;
-        phi_v0 = temp_v0_2;
-        phi_return = temp_v0_2;
-        if (temp_v0_2 != 0) {
-            goto loop_3;
-        }
+        proc = proc->unk0;
     }
-    return phi_return;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000B830.s")
-#endif
 
 void func_8000B870(struct GObj *arg0) {
     struct GObjProcess *temp_s1;

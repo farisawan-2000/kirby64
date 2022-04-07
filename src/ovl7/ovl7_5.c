@@ -690,7 +690,7 @@ block_93:
                             sp60 = temp_f4_2 - sp78;
                             sp64 = sp70 - temp_f8;
                             sp68 = temp_f6 - temp_f4;
-                            vec3_normalize(temp_a0_6);
+                            lbvector_Normalize(temp_a0_6);
                             temp_f4_3 = gEntitiesNextPosYArray[D_8004A7C4->objId] + sp84->unk14;
                             sp70 = temp_f4_3;
                             sp7C = temp_f4_3;

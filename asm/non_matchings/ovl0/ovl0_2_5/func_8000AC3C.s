@@ -23,8 +23,8 @@ glabel omGDispatchProc
 /* 00B88C 8000AC8C AFA70020 */  sw    $a3, 0x20($sp)
 /* 00B890 8000AC90 0C00E334 */  jal   osStartThread
 /* 00B894 8000AC94 24840008 */   addiu $a0, $a0, 8
-/* 00B898 8000AC98 3C048005 */  lui   $a0, %hi(D_8004A7E0) # $a0, 0x8005
-/* 00B89C 8000AC9C 2484A7E0 */  addiu $a0, %lo(D_8004A7E0) # addiu $a0, $a0, -0x5820
+/* 00B898 8000AC98 3C048005 */  lui   $a0, %hi(HS64_GObjProcMesgQ) # $a0, 0x8005
+/* 00B89C 8000AC9C 2484A7E0 */  addiu $a0, %lo(HS64_GObjProcMesgQ) # addiu $a0, $a0, -0x5820
 /* 00B8A0 8000ACA0 00002825 */  move  $a1, $zero
 /* 00B8A4 8000ACA4 0C00B540 */  jal   osRecvMesg
 /* 00B8A8 8000ACA8 24060001 */   li    $a2, 1

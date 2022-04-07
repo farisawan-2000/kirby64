@@ -5161,7 +5161,7 @@ glabel func_8020059C_ovl9
 /* 1AE65C 8020060C 46000007 */  neg.s $f0, $f0
 /* 1AE660 80200610 44060000 */  mfc1  $a2, $f0
 .L80200614_ovl9:
-/* 1AE664 80200614 0C006424 */  jal   vec3_get_euler_rotation
+/* 1AE664 80200614 0C006424 */  jal   lbvector_Rotate
 /* 1AE668 80200618 24050004 */   li    $a1, 4
 /* 1AE66C 8020061C 3C0141C0 */  li    $at, 0x41C00000 # 24.000000
 /* 1AE670 80200620 44810000 */  mtc1  $at, $f0
@@ -6363,7 +6363,7 @@ glabel func_802016A8_ovl9
 /* 1AF7CC 8020177C 24050004 */  li    $a1, 4
 /* 1AF7D0 80201780 46083002 */  mul.s $f0, $f6, $f8
 /* 1AF7D4 80201784 44060000 */  mfc1  $a2, $f0
-/* 1AF7D8 80201788 0C006424 */  jal   vec3_get_euler_rotation
+/* 1AF7D8 80201788 0C006424 */  jal   lbvector_Rotate
 /* 1AF7DC 8020178C 00000000 */   nop   
 /* 1AF7E0 80201790 3C014120 */  li    $at, 0x41200000 # 10.000000
 /* 1AF7E4 80201794 44811000 */  mtc1  $at, $f2
@@ -8234,7 +8234,7 @@ glabel func_802031D4_ovl9
 /* 1B1318 802032C8 24050004 */  li    $a1, 4
 /* 1B131C 802032CC E7A20034 */  swc1  $f2, 0x34($sp)
 /* 1B1320 802032D0 E7A20030 */  swc1  $f2, 0x30($sp)
-/* 1B1324 802032D4 0C006424 */  jal   vec3_get_euler_rotation
+/* 1B1324 802032D4 0C006424 */  jal   lbvector_Rotate
 /* 1B1328 802032D8 E7A8002C */   swc1  $f8, 0x2c($sp)
 /* 1B132C 802032DC 3C038005 */ lui $v1, 0x8005
 /* 1B1330 802032E0 8C63A7C4 */ lw $v1, -0x583c($v1)
@@ -8899,7 +8899,7 @@ glabel func_80203BA8_ovl9
 /* 1B1CEC 80203C9C 24050004 */  li    $a1, 4
 /* 1B1CF0 80203CA0 E7A20034 */  swc1  $f2, 0x34($sp)
 /* 1B1CF4 80203CA4 E7A20030 */  swc1  $f2, 0x30($sp)
-/* 1B1CF8 80203CA8 0C006424 */  jal   vec3_get_euler_rotation
+/* 1B1CF8 80203CA8 0C006424 */  jal   lbvector_Rotate
 /* 1B1CFC 80203CAC E7A8002C */   swc1  $f8, 0x2c($sp)
 /* 1B1D00 80203CB0 3C038005 */ lui $v1, 0x8005
 /* 1B1D04 80203CB4 8C63A7C4 */ lw $v1, -0x583c($v1)
@@ -10133,7 +10133,7 @@ glabel func_80204D5C_ovl9
 /* 1B2EE8 80204E98 24050004 */  li    $a1, 4
 /* 1B2EEC 80204E9C E7A20034 */  swc1  $f2, 0x34($sp)
 /* 1B2EF0 80204EA0 E7A20030 */  swc1  $f2, 0x30($sp)
-/* 1B2EF4 80204EA4 0C006424 */  jal   vec3_get_euler_rotation
+/* 1B2EF4 80204EA4 0C006424 */  jal   lbvector_Rotate
 /* 1B2EF8 80204EA8 E7B0002C */   swc1  $f16, 0x2c($sp)
 /* 1B2EFC 80204EAC 3C038005 */ lui $v1, 0x8005
 /* 1B2F00 80204EB0 8C63A7C4 */ lw $v1, -0x583c($v1)

@@ -149,7 +149,7 @@ glabel func_801E49B8_ovl17
 /* 22FDF4 801E4C04 00AB6821 */  addu  $t5, $a1, $t3
 /* 22FDF8 801E4C08 C5A40000 */  lwc1  $f4, ($t5)
 /* 22FDFC 801E4C0C 46002187 */  neg.s $f6, $f4
-/* 22FE00 801E4C10 0C006328 */  jal   vec3_normalize
+/* 22FE00 801E4C10 0C006328 */  jal   lbvector_Normalize
 /* 22FE04 801E4C14 E7A60038 */   swc1  $f6, 0x38($sp)
 /* 22FE08 801E4C18 3C014170 */  li    $at, 0x41700000 # 15.000000
 /* 22FE0C 801E4C1C 44811000 */  mtc1  $at, $f2

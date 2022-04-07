@@ -32,8 +32,8 @@ void* D_80123EE0 = func_800F6830;
 
 void* D_80123EE4 = func_800A73B0;
 
-extern u32 D_8022FB50;
-void* D_80123EE8 = &D_8022FB50;
+extern u32 _ovl19SegNoloadEnd;
+void* D_80123EE8 = &_ovl19SegNoloadEnd;
 
 u32 D_80123EEC = 0x00000000;
 
@@ -103,8 +103,8 @@ void* D_80123F6C = func_800F6830;
 
 void* D_80123F70 = func_800A73B0;
 
-extern u32 D_8022FB50;
-void* D_80123F74 = &D_8022FB50;
+extern u32 _ovl19SegNoloadEnd;
+void* D_80123F74 = &_ovl19SegNoloadEnd;
 
 u32 D_80123F78 = 0x00000000;
 

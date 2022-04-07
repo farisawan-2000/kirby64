@@ -52,7 +52,7 @@ struct GObjThreadStack {
     u64 stack[8];
 };
 
-struct GObjProcess {
+typedef struct GObjProcess {
     struct GObjProcess *unk0;
     struct GObjProcess *unk4;
     struct GObjProcess *unk8;
@@ -62,11 +62,14 @@ struct GObjProcess {
     u8 unk15;
     u8 unk16;
     u8 unk17;
-    struct GObj *gobj;
-    struct GObjThread *thread;
-    void (*entryPoint)(struct GObj *);
+    /* 0x18 */ struct GObj *gobj;
+    union {
+        struct GObjThread *thread;
+        void (*callback)(struct GObj *);
+    } payload; // 0x1C
+    /* 0x20 */ void (*entryPoint)(struct GObj *);
     u32 *ptr;
-};
+} GObjProcess;
 
 struct OMMtx {
     struct OMMtx *next;
@@ -75,7 +78,7 @@ struct OMMtx {
 // TODO: is this an existing struct instead of a brand new one?
 struct unk80008840 {
     u8 padding[0x90];
-    struct AnimStack *unk90;
+    struct AObj *unk90;
     u32 unk94;
     f32 unk98;
 };
@@ -164,9 +167,45 @@ struct DObj {
 
 struct Camera {
     struct Camera *unk0;
-    u8 filler[0x80 - 0x4];
+    struct GObj *gobj;
+    /* 0x08 */ Vp viewport;
+    u32 unk18;
+    u32 unk1C;
+
+    u32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+
+    u32 unk30;
+    u32 unk34;
+    u32 unk38;
+    u32 unk3C;
+
+    u32 unk40;
+    u32 unk44;
+    u32 unk48;
+    u32 unk4C;
+
+    u32 unk50;
+    u32 unk54;
+    u32 unk58;
+    u32 unk5C;
+
+    u32 unk60;
+    struct OMMtx *unk64[2];
+    u32 unk6C;
+    u32 unk70;
+
+    // vec?
+    f32 unk74;
+    f32 unk78;
+    f32 unk7C;
+
     u32 unk80;
     u32 unk84;
+    u32 unk88;
+    u32 unk8C;
 };
 
 struct Unk80005A98_2 {
@@ -332,7 +371,17 @@ extern OSMesgQueue gInterruptMesgQueue;
 struct Camera *func_80009F7C(struct GObj*);
 
 void func_80009B5C(struct UnkStruct8004A7C4_3C *);
-struct UnkStruct8004A7C4_3C *func_8000BE90(struct UnkStruct8004A7C4_3C *);
+
+typedef struct UserData8000BE90 {
+    s32 unk0;
+    s32 unk4;
+    struct UserData8000BE90 *unk8;
+    s32 unkC;
+    struct UserData8000BE90 *unk10;
+    struct UserData8000BE90 *unk14;
+} UserData8000BE90;
+
+UserData8000BE90 *func_8000BE90(struct UserData8000BE90 *data);
 
 struct UnkStructFunc80007380 {
     u32 unk0;

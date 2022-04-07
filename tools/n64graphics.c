@@ -10,25 +10,43 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include <stb/stb_image_write.h>
 
+#define static
+
 #include "n64graphics.h"
 #include "utils.h"
 
-// SCALE_M_N: upscale/downscale M-bit integer to N-bit
-#define SCALE_5_8(VAL_) (((VAL_) * 0xFF) / 0x1F)
-#define SCALE_8_5(VAL_) ((((VAL_) + 4) * 0x1F) / 0xFF)
-#define SCALE_4_8(VAL_) ((VAL_) * 0x11)
-#define SCALE_8_4(VAL_) ((VAL_) / 0x11)
-#define SCALE_3_8(VAL_) ((VAL_) * 0x24)
-#define SCALE_8_3(VAL_) ((VAL_) / 0x24)
+int isBackground = 0;
 
-typedef enum
-{
-   IMG_FORMAT_RGBA,
-   IMG_FORMAT_IA,
-   IMG_FORMAT_I,
-   IMG_FORMAT_CI,
-} img_format;
 
+#define TMEM_LIMIT 4096
+
+// bank 3 index 4 image
+// 02 (CI)
+// 00 (4b)
+// 10 FF
+// 00 40 (64px)
+// 00 3A (58px)
+// 00 00 00 10
+// 00 00 07 50 (palette at 0x750)
+typedef union {
+   uint8_t b[2];
+   uint16_t s;
+} _8_16;
+typedef union {
+   uint8_t b[4];
+   uint16_t s[2];
+   uint32_t w;
+} _8_16_32;
+typedef struct BGImageHeader {
+   uint8_t fmt;
+   uint8_t siz;
+   uint8_t pal_offset; // idk; 7C on I4
+   uint8_t filler;
+   uint16_t wd;
+   uint16_t ht;
+   _8_16_32 img_offset;
+   _8_16_32 pal_rom; // 03 01 on I4
+} BGImageHeader;
 
 //---------------------------------------------------------
 // N64 RGBA/IA/I/CI -> internal RGBA/IA
@@ -122,48 +140,39 @@ ia *raw2ia(const uint8_t *raw, int width, int height, int depth)
    return img;
 }
 
-ia *raw2i(const uint8_t *raw, int width, int height, int depth)
+// extract RGBA from CI raw data and palette
+// TODO: different palette depths
+rgba *raw2rgba_old(const uint8_t *raw, int width, int height, int depth)
 {
-   ia *img = NULL;
+   rgba *img;
    int img_size;
 
    img_size = width * height * sizeof(*img);
    img = malloc(img_size);
    if (!img) {
-      ERROR("Error allocating %u bytes\n", img_size);
+      ERROR("Error allocating %d bytes\n", img_size);
       return NULL;
    }
 
-   switch (depth) {
-      case 8:
-         for (int i = 0; i < width * height; i++) {
-            img[i].intensity = raw[i];
-            img[i].alpha     = 0xFF;
-         }
-         break;
-      case 4:
-         for (int i = 0; i < width * height; i++) {
-            uint8_t bits;
-            bits = raw[i/2];
-            if (i % 2) {
-               bits &= 0xF;
-            } else {
-               bits >>= 4;
-            }
-            img[i].intensity = SCALE_4_8(bits);
-            img[i].alpha     = 0xFF;
-         }
-         break;
-      default:
-         ERROR("Error invalid depth %d\n", depth);
-         break;
+   if (depth == 16) {
+      for (int i = 0; i < width * height; i++) {
+         img[i].red   = SCALE_5_8((raw[i*2] & 0xF8) >> 3);
+         img[i].green = SCALE_5_8(((raw[i*2] & 0x07) << 2) | ((raw[i*2+1] & 0xC0) >> 6));
+         img[i].blue  = SCALE_5_8((raw[i*2+1] & 0x3E) >> 1);
+         img[i].alpha = (raw[i*2+1] & 0x01) ? 0xFF : 0x00;
+      }
+   } else if (depth == 32) {
+      for (int i = 0; i < width * height; i++) {
+         img[i].red   = raw[i*4];
+         img[i].green = raw[i*4+1];
+         img[i].blue  = raw[i*4+2];
+         img[i].alpha = raw[i*4+3];
+      }
    }
 
    return img;
 }
 
-// extract RGBA from CI raw data and palette
-// TODO: different palette depths
 rgba *rawci2rgba(const uint8_t *rawci, const uint8_t *palette, int width, int height, int depth)
 {
    uint8_t *raw_rgba;
@@ -204,14 +213,83 @@ rgba *rawci2rgba(const uint8_t *rawci, const uint8_t *palette, int width, int he
    }
 
    // then convert to RGBA image data
-   img = raw2rgba(raw_rgba, width, height, 16);
+   img = raw2rgba_old(raw_rgba, width, height, 16);
 
    free(raw_rgba);
 
    return img;
 }
 
+ia *raw2i(const uint8_t *raw, int width, int height, int depth)
+{
+   ia *img = NULL;
+   int img_size;
 
+   img_size = width * height * sizeof(*img);
+   img = malloc(img_size);
+   if (!img) {
+      ERROR("Error allocating %u bytes\n", img_size);
+      return NULL;
+   }
+
+   switch (depth) {
+      case 8:
+         for (int i = 0; i < width * height; i++) {
+            img[i].intensity = raw[i];
+            img[i].alpha     = 0xFF;
+         }
+         break;
+      case 4:
+         for (int i = 0; i < width * height; i++) {
+            uint8_t bits;
+            bits = raw[i/2];
+            if (i % 2) {
+               bits &= 0xF;
+            } else {
+               bits >>= 4;
+            }
+            img[i].intensity = SCALE_4_8(bits);
+            img[i].alpha     = 0xFF;
+         }
+         break;
+      default:
+         ERROR("Error invalid depth %d\n", depth);
+         break;
+   }
+
+   return img;
+}
+
+// convert CI raw data and palette to raw data (either RGBA16 or IA16)
+uint8_t *ci2raw(const uint8_t *rawci, const uint8_t *palette, int width, int height, int ci_depth)
+{
+   uint8_t *raw;
+   int raw_size;
+
+   // first convert to raw RGBA
+   raw_size = sizeof(uint16_t) * width * height;
+   raw = malloc(raw_size);
+   if (!raw) {
+      ERROR("Error allocating %u bytes\n", raw_size);
+      return NULL;
+   }
+
+   for (int i = 0; i < width * height; i++) {
+      int pal_idx = rawci[i];
+      if (ci_depth == 4) {
+         int byte_idx = i / 2;
+         int nibble = 1 - (i % 2);
+         int shift = 4 * nibble;
+         pal_idx = (rawci[byte_idx] >> shift) & 0xF;
+      }
+      raw[2*i]   = palette[2*pal_idx];
+      raw[2*i+1] = palette[2*pal_idx+1];
+   }
+
+   return raw;
+}
+
+typedef int (*fptr)(uint8_t *raw, const ia *img, int width, int height, int depth);
 //---------------------------------------------------------
 // internal RGBA/IA -> N64 RGBA/IA/I/CI
 // returns length written to 'raw' used or -1 on error
@@ -330,12 +408,207 @@ int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
    return size;
 }
 
+void ciFun(void) {
+
+}
+
+int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int depth) {
+   struct BGImageHeader *hd = (struct BGImageHeader *)raw;
+   if (fn == ia2raw) {
+      hd->fmt = 0x03; // G_IM_FMT_IA
+   } else if (fn == i2raw) {
+      hd->fmt = 0x04; // G_IM_FMT_I
+   } else if (fn == rgba2raw) {
+      hd->fmt = 0x00; // G_IM_FMT_RGBA
+   } else { // Assume null fptr means CI
+      hd->fmt = 0x02; // G_IM_FMT_CI
+   }
+   if (depth == 4) {
+      hd->siz = 0x00; // G_IM_SIZ_4b
+   } else if (depth == 8) {
+      hd->siz = 0x01; // G_IM_SIZ_8b
+   } else if (depth == 16) {
+      hd->siz = 0x02; // G_IM_SIZ_16b
+   }
+   if (fn == NULL) {
+      hd->pal_offset = 0;
+   } else {
+      hd->pal_offset = 0x7C;
+   }
+   hd->filler = 0xFF;
+   hd->wd = __builtin_bswap16(width);
+   hd->ht = __builtin_bswap16(height);
+   hd->img_offset.w = 0;
+   hd->img_offset.b[3] = 0x10;
+   hd->pal_rom.w = 0;
+   if (fn != i2raw && fn != ia2raw && fn != rgba2raw) {
+      hd->pal_rom.b[2] = 0x03; hd->pal_rom.b[3] = 0x01;
+   }
+
+   int sz2 = sizeof(BGImageHeader);
+   if (fn != NULL) {
+      sz2 += fn(&raw[0x10], img, width, height, depth);
+   }
+   return sz2;
+}
+
+int write_ci_background(graphics_config *config, rgba *imgr, uint8_t *raw, size_t size) {
+   palette_t pal;
+   int base;
+
+   printf("Converting RGBA%d %dx%d to raw\n",
+      config->pal_format.depth,
+      config->width,
+      config->height
+   );
+
+   int area = config->width * config->height;
+
+   int written_bytes = 0;
+
+   written_bytes += img2bg(NULL, raw, NULL, config->width, config->height, config->format.depth);
+
+   uint8_t *raw16 = malloc(area * 2);
+
+   // if (depth == 16) {
+   int raw16_length = 0;
+   for (int i = 0; i < area; i++, raw16_length++) {
+      uint8_t r, g, b, a;
+      r = SCALE_8_5(imgr[i].red);
+      g = SCALE_8_5(imgr[i].green);
+      b = SCALE_8_5(imgr[i].blue);
+      a = imgr[i].alpha ? 0x1 : 0x0;
+      raw16[i*2]   = (r << 3) | (g >> 2);
+      raw16[i*2+1] = ((g & 0x3) << 6) | (b << 1) | a;
+   }
+
+
+   pal.max = (1 << config->format.depth);
+   int ci_length = config->width * config->height * config->format.depth / 8;
+   uint8_t *ci = calloc(ci_length, sizeof(char));
+   int ci_status = raw2ci(&raw[0x10], &pal, raw16,
+                        raw16_length *= 2,
+                        config->format.depth
+                     );
+
+   printf("raw16_length is %d bytes\n", raw16_length);
+
+   written_bytes += ALIGN16(raw16_length/2);
+
+   BGImageHeader *hd = (BGImageHeader *)raw;
+   hd->pal_rom.b[0] = (written_bytes >> 24) & 0xFF;
+   hd->pal_rom.b[1] = (written_bytes >> 16) & 0xFF;
+   hd->pal_rom.b[2] = (written_bytes >> 8) & 0xFF;
+   hd->pal_rom.b[3] = (written_bytes) & 0xFF;
+
+   base = written_bytes;
+   for (int i = 0; i < pal.used; i++, written_bytes += 2) {
+      raw[base + i*2] = pal.data[i] >> 16;
+      raw[base + i*2 + 1] = pal.data[i] & 0xFF;
+   }
+
+
+   printf("Wrote %d bytes; expect %d bytes...\n", written_bytes,
+
+      size - ((256 - pal.used) * 2)
+   );
+
+   // printf("Allocating %d bytes after %d bytes...\n", ci_length, raw16_length);
+
+
+   return written_bytes;
+
+}
+
+
+int write_ci_background_old(graphics_config *config, rgba *imgr, uint8_t *raw) {
+   palette_t pal;
+   FILE *pal_fp;
+   uint8_t *raw16;
+   int raw16_size;
+   int raw16_length;
+   uint8_t *ci;
+   int ci_length;
+   int pal_success;
+   int pal_length;
+
+   raw16_size = config->width * config->height * config->pal_format.depth / 8;
+   ci_length = config->width * config->height * config->format.depth / 8;
+   raw16_size += sizeof(BGImageHeader) + ci_length;
+
+   printf("%d\n", (raw16_size + sizeof(BGImageHeader) + ci_length));
+
+   raw16 = calloc(raw16_size, sizeof(char));
+
+   int _ = img2bg(NULL, raw16, imgr, config->width, config->height, config->format.depth);
+   if (!raw16) {
+      ERROR("Error allocating %d bytes\n", raw16_size);
+      return EXIT_FAILURE;
+   }
+   switch (config->pal_format.format) {
+      case IMG_FORMAT_RGBA:
+         imgr = png2rgba(config->img_filename, &config->width, &config->height);
+         raw16_length = rgba2raw(&raw16[0x10], imgr, config->width, config->height, config->pal_format.depth);
+         if (raw16_length > raw16_size) {
+            ERROR("Image wrote out of bounds...\n");
+         }
+         break;
+      default:
+         ERROR("Unsupported palette format pls use RGBA16\n");
+         exit(EXIT_FAILURE);
+   }
+
+   // convert raw to palette
+   // printf("Allocating %d bytes after %d bytes...\n", ci_length, raw16_length);
+   // pal.max = (1 << config->format.depth);
+   // ci = calloc(ci_length * 2, sizeof(char));
+   // pal_success = raw2ci(ci, &pal, &raw16[0x10], raw16_length, config->format.depth);
+   // if (!pal_success) {
+   //    ERROR("Error converting palette\n");
+   //    exit(EXIT_FAILURE);
+   // }
+
+   // pal_length = pal.max * sizeof(pal.data[0]);
+
+   // int y = 0;
+   // for (int i = raw16_length + sizeof(BGImageHeader); i < pal_length; i++) {
+   //    raw[i] = pal.data[y++];
+   // }
+   // INFO("Writing 0x%X bytes to offset 0x%X of \"%s\"\n", pal_length, config->pal_offset, config->pal_filename);
+   // int flength = 0;
+   // for (int i = 0; i < pal.max; i++) {
+   //    uint8_t entry[2];
+   //    write_u16_be(entry, pal.data[i]);
+   //    flength += fwrite(entry, 1, sizeof(entry), pal_fp);
+   // }
+   // if (flength != pal_length) {
+   //    ERROR("Error writing %d bytes to \"%s\"\n", pal_length, config->pal_filename);
+   // }
+
+   int tot_length = raw16_size + sizeof(BGImageHeader) + ci_length;
+
+   // printf("Attempting to write 0x%X bytes to %s...\n", tot_length, config->bin_filename);
+
+   // FILE *f = fopen(config->bin_filename, "wb");
+   // fwrite(raw, 1, tot_length, f);
+   // fclose(f);
+
+   // for (int i = 0; i < tot_length; i++) {
+   // }
+
+   // raw = ci;
+   free(ci);
+   free(raw16);
+   // fclose(pal_fp);
+   return tot_length;
+}
+
 
 //---------------------------------------------------------
 // internal RGBA/IA -> PNG
 //---------------------------------------------------------
 
-int rgba2png(const char *png_filename, const rgba *img, int width, int height)
+int rgba2png(const char *png_filename, rgba *img, int width, int height)
 {
    int ret = 0;
    INFO("Saving RGBA %dx%d to \"%s\"\n", width, height, png_filename);
@@ -514,6 +787,70 @@ ia *png2ia(const char *png_filename, int *width, int *height)
    return img;
 }
 
+// find index of palette color
+// return -1 if not found
+int pal_find_color(const palette_t *pal, uint16_t val)
+{
+   for (int i = 0; i < pal->used; i++) {
+      if (pal->data[i] == val) {
+         return i;
+      }
+   }
+   return -1;
+}
+
+// find value in palette, or add if not there
+// returns palette index entered or -1 if palette full
+int pal_add_color(palette_t *pal, uint16_t val)
+{
+   int idx;
+   idx = pal_find_color(pal, val);
+   if (idx < 0) {
+      if (pal->used == pal->max) {
+         ERROR("Error: trying to use more than %d\n", pal->max);
+      } else {
+         idx = pal->used;
+         pal->data[pal->used] = val;
+         pal->used++;
+      }
+   }
+   return idx;
+}
+
+// convert from raw (RGBA16 or IA16) format to CI + palette
+// returns 1 on success
+int raw2ci(uint8_t *rawci, palette_t *pal, const uint8_t *raw, int raw_len, int ci_depth)
+{
+   // assign colors to palette
+   pal->used = 0;
+   memset(pal->data, 0, sizeof(pal->data));
+   int ci_idx = 0;
+   for (int i = 0; i < raw_len; i += sizeof(uint16_t)) {
+      uint16_t val = read_u16_be(&raw[i]);
+      int pal_idx = pal_add_color(pal, val);
+      if (pal_idx < 0) {
+         ERROR("Error adding color @ (%d): %d (used: %d/%d)\n", i, pal_idx, pal->used, pal->max);
+         return 0;
+      } else {
+         switch (ci_depth) {
+            case 8:
+               rawci[ci_idx] = (uint8_t)pal_idx;
+               break;
+            case 4:
+            {
+               int byte_idx = ci_idx / 2;
+               int nibble = 1 - (ci_idx % 2);
+               uint8_t mask = 0xF << (4 * (1 - nibble));
+               rawci[byte_idx] = (rawci[byte_idx] & mask) | (pal_idx << (4 * nibble));
+               break;
+            }
+         }
+         ci_idx++;
+      }
+   }
+   return 1;
+}
+
 const char *n64graphics_get_read_version(void)
 {
    return "stb_image 2.19";
@@ -525,78 +862,82 @@ const char *n64graphics_get_write_version(void)
 }
 
 #ifdef N64GRAPHICS_STANDALONE
-#define N64GRAPHICS_VERSION "0.3"
+#define N64GRAPHICS_VERSION "0.4"
 #include <string.h>
-
-typedef enum
-{
-   MODE_EXPORT,
-   MODE_IMPORT,
-} tool_mode;
-
-typedef struct
-{
-   char *img_filename;
-   char *bin_filename;
-   tool_mode mode;
-   unsigned int offset;
-   img_format format;
-   int depth;
-   int width;
-   int height;
-   int truncate;
-} graphics_config;
 
 static const graphics_config default_config =
 {
    .img_filename = NULL,
    .bin_filename = NULL,
+   .pal_filename = NULL,
    .mode = MODE_EXPORT,
-   .offset = 0,
-   .format = IMG_FORMAT_RGBA,
-   .depth = 16,
+   .bin_offset = 0,
+   .pal_offset = 0,
+   .format = {IMG_FORMAT_RGBA, 16},
+   .pal_format = {IMG_FORMAT_RGBA, 16},
    .width = 32,
    .height = 32,
-   .truncate = 1,
+   .bin_truncate = 1,
+   .pal_truncate = 1,
 };
 
 typedef struct
 {
    const char *name;
    img_format format;
-   int depth;
 } format_entry;
 
 static const format_entry format_table[] =
 {
-   {"rgba16", IMG_FORMAT_RGBA, 16},
-   {"rgba32", IMG_FORMAT_RGBA, 32},
-   {"ia1",    IMG_FORMAT_IA,    1},
-   {"ia4",    IMG_FORMAT_IA,    4},
-   {"ia8",    IMG_FORMAT_IA,    8},
-   {"ia16",   IMG_FORMAT_IA,   16},
-   {"i4",     IMG_FORMAT_I,     4},
-   {"i8",     IMG_FORMAT_I,     8},
-   {"ci8",    IMG_FORMAT_CI,    8},
-   {"ci16",   IMG_FORMAT_CI,   16},
+   {"rgba16", {IMG_FORMAT_RGBA, 16}},
+   {"rgba32", {IMG_FORMAT_RGBA, 32}},
+   {"ia1",    {IMG_FORMAT_IA,    1}},
+   {"ia4",    {IMG_FORMAT_IA,    4}},
+   {"ia8",    {IMG_FORMAT_IA,    8}},
+   {"ia16",   {IMG_FORMAT_IA,   16}},
+   {"i4",     {IMG_FORMAT_I,     4}},
+   {"i8",     {IMG_FORMAT_I,     8}},
+   {"ci8",    {IMG_FORMAT_CI,    8}},
+   {"ci4",    {IMG_FORMAT_CI,    4}},
+   {"i4.bg",  {IMG_FORMAT_I,     4}},
+   {"i8.bg",  {IMG_FORMAT_I,     8}},
+   {"ia4.bg",  {IMG_FORMAT_IA,     4}},
+   {"ia8.bg",  {IMG_FORMAT_IA,     8}},
+
+   {"ci8.bg",  {IMG_FORMAT_CI,     8}},
+
+   {"rgba16.bg",{IMG_FORMAT_RGBA,     16}},
 };
 
-static const char *format2str(img_format format, int depth)
+__attribute__((noinline)) const char *format2str(const img_format *format)
 {
    for (unsigned i = 0; i < DIM(format_table); i++) {
-      if (format == format_table[i].format && depth == format_table[i].depth) {
+      if (format->format == format_table[i].format.format && format->depth == format_table[i].format.depth) {
          return format_table[i].name;
       }
    }
    return "unknown";
 }
 
-static int parse_format(graphics_config *config, const char *str)
+static int parse_format(img_format *format, const char *str)
 {
+   if (strcmp(str, "i4.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "ia4.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "ia8.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "i8.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "rgba16.bg") == 0) {
+      isBackground = 1;
+   } else if (strcmp(str, "ci8.bg") == 0) {
+      isBackground = 1;
+   }
    for (unsigned i = 0; i < DIM(format_table); i++) {
-      if (!strcasecmp(str, format_table[i].name)) {
-         config->format = format_table[i].format;
-         config->depth = format_table[i].depth;
+      if (strcasecmp(str, format_table[i].name) == 0) {
+         format->format = format_table[i].format.format;
+         format->depth = format_table[i].format.depth;
          return 1;
       }
    }
@@ -605,24 +946,30 @@ static int parse_format(graphics_config *config, const char *str)
 
 static void print_usage(void)
 {
-   ERROR("Usage: n64graphics -e/-i BIN_FILE -g PNG_FILE [-o offset] [-f FORMAT] [-w WIDTH] [-h HEIGHT] [-V]\n"
+   ERROR("Usage: n64graphics -e/-i BIN_FILE -g IMG_FILE [-p PAL_FILE] [-o BIN_OFFSET] [-P PAL_OFFSET] [-f FORMAT] [-c CI_FORMAT] [-w WIDTH] [-h HEIGHT] [-V]\n"
          "\n"
          "n64graphics v" N64GRAPHICS_VERSION ": N64 graphics manipulator\n"
          "\n"
          "Required arguments:\n"
-         " -e BIN_FILE  export from BIN_FILE to PNG_FILE\n"
-         " -i BIN_FILE  import from PNG_FILE to BIN_FILE\n"
-         " -g PNG_FILE  graphics file to import/export (.png)\n"
+         " -e BIN_FILE   export from BIN_FILE to PNG_FILE\n"
+         " -i BIN_FILE   import from PNG_FILE to BIN_FILE\n"
+         " -g IMG_FILE   graphics file to import/export (.png)\n"
          "Optional arguments:\n"
-         " -o OFFSET    starting offset in BIN_FILE (prevents truncation during import)\n"
-         " -f FORMAT    texture format: rgba16, rgba32, ia1, ia4, ia8, ia16, i4, i8, ci8, ci16 (default: %s)\n"
-         " -w WIDTH     export texture width (default: %d)\n"
-         " -h HEIGHT    export texture height (default: %d)\n"
-         " -v           verbose logging\n"
-         " -V           print version information\n",
-         format2str(default_config.format, default_config.depth),
+         " -o BIN_OFFSET starting offset in BIN_FILE (prevents truncation during import)\n"
+         " -f FORMAT     texture format: rgba16, rgba32, ia1, ia4, ia8, ia16, i4, i8, ci4, ci8 (default: %s)\n"
+         " -w WIDTH      export texture width (default: %d)\n"
+         " -h HEIGHT     export texture height (default: %d)\n"
+         "CI arguments:\n"
+         " -c CI_FORMAT  CI palette format: rgba16, ia16 (default: %s)\n"
+         " -p PAL_FILE   palette binary file to import/export from/to\n"
+         " -P PAL_OFFSET starting offset in PAL_FILE (prevents truncation during import)\n"
+         "Other arguments:\n"
+         " -v            verbose logging\n"
+         " -V            print version information\n",
+         format2str(&default_config.format),
          default_config.width,
-         default_config.height);
+         default_config.height,
+         format2str(&default_config.pal_format));
 }
 
 static void print_version(void)
@@ -639,6 +986,12 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
    for (int i = 1; i < argc; i++) {
       if (argv[i][0] == '-') {
          switch (argv[i][1]) {
+            case 'c':
+               if (++i >= argc) return 0;
+               if (!parse_format(&config->pal_format, argv[i])) {
+                  return 0;
+               }
+               break;
             case 'e':
                if (++i >= argc) return 0;
                config->bin_filename = argv[i];
@@ -646,14 +999,9 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
                break;
             case 'f':
                if (++i >= argc) return 0;
-               if (!parse_format(config, argv[i])) {
+               if (!parse_format(&config->format, argv[i])) {
                   return 0;
                }
-               break;
-            case 'i':
-               if (++i >= argc) return 0;
-               config->bin_filename = argv[i];
-               config->mode = MODE_IMPORT;
                break;
             case 'g':
                if (++i >= argc) return 0;
@@ -663,14 +1011,24 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
                if (++i >= argc) return 0;
                config->height = strtoul(argv[i], NULL, 0);
                break;
+            case 'i':
+               if (++i >= argc) return 0;
+               config->bin_filename = argv[i];
+               config->mode = MODE_IMPORT;
+               break;
             case 'o':
                if (++i >= argc) return 0;
-               config->offset = strtoul(argv[i], NULL, 0);
-               config->truncate = 0;
+               config->bin_offset = strtoul(argv[i], NULL, 0);
+               config->bin_truncate = 0;
                break;
-            case 'w':
+            case 'p':
                if (++i >= argc) return 0;
-               config->width = strtoul(argv[i], NULL, 0);
+               config->pal_filename = argv[i];
+               break;
+            case 'P':
+               if (++i >= argc) return 0;
+               config->pal_offset = strtoul(argv[i], NULL, 0);
+               config->pal_truncate = 0;
                break;
             case 'v':
                g_verbosity = 1;
@@ -678,6 +1036,10 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
             case 'V':
                print_version();
                exit(0);
+               break;
+            case 'w':
+               if (++i >= argc) return 0;
+               config->width = strtoul(argv[i], NULL, 0);
                break;
             default:
                return 0;
@@ -690,12 +1052,27 @@ static int parse_arguments(int argc, char *argv[], graphics_config *config)
    return 1;
 }
 
+// returns 1 if config is valid
+static int valid_config(const graphics_config *config)
+{
+   if (!config->bin_filename || !config->img_filename) {
+      return 0;
+   }
+   if (config->format.format == IMG_FORMAT_CI) {
+      // if (!config->pal_filename || (config->pal_format.depth != 16) ||
+      //    (config->pal_format.format != IMG_FORMAT_RGBA && config->pal_format.format != IMG_FORMAT_IA)) {
+      //    return 0;
+      // }
+   }
+   return 1;
+}
+
 int main(int argc, char *argv[])
 {
    graphics_config config = default_config;
    rgba *imgr;
    ia   *imgi;
-   FILE *fp;
+   FILE *bin_fp;
    uint8_t *raw;
    int raw_size;
    int length = 0;
@@ -703,52 +1080,161 @@ int main(int argc, char *argv[])
    int res;
 
    int valid = parse_arguments(argc, argv, &config);
-   if (!valid || !config.bin_filename || !config.bin_filename) {
+   if (!valid || !valid_config(&config)) {
+      ERROR("Invalid argument passed\n\n");
       print_usage();
       exit(EXIT_FAILURE);
    }
 
    if (config.mode == MODE_IMPORT) {
-      if (config.truncate) {
-         fp = fopen(config.bin_filename, "wb");
+      if (config.bin_truncate) {
+         bin_fp = fopen(config.bin_filename, "w");
       } else {
-         fp = fopen(config.bin_filename, "r+b");
+         bin_fp = fopen(config.bin_filename, "r+");
       }
-      if (!fp) {
+      if (!bin_fp) {
          ERROR("Error opening \"%s\"\n", config.bin_filename);
          return -1;
       }
-      if (!config.truncate) {
-         fseek(fp, config.offset, SEEK_SET);
+      if (!config.bin_truncate) {
+         fseek(bin_fp, config.bin_offset, SEEK_SET);
       }
-      switch (config.format) {
+      switch (config.format.format) {
          case IMG_FORMAT_RGBA:
             imgr = png2rgba(config.img_filename, &config.width, &config.height);
-            raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            raw_size = config.width * config.height * config.format.depth / 8;
+            if (isBackground) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
+               raw = malloc(raw_size);
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = rgba2raw(raw, imgr, config.width, config.height, config.depth);
+            if (isBackground) {
+               length = img2bg(rgba2raw, raw, imgr, config.width, config.height, config.format.depth);
+            } else {
+               length = rgba2raw(raw, imgr, config.width, config.height, config.format.depth);
+            }
             break;
          case IMG_FORMAT_IA:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
-            raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            raw_size = config.width * config.height * config.format.depth / 8;
+            if (isBackground) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
+               raw = malloc(raw_size);
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = ia2raw(raw, imgi, config.width, config.height, config.depth);
+            if (isBackground) {
+               length = img2bg(ia2raw, raw, imgi, config.width, config.height, config.format.depth);
+            } else {
+               length = ia2raw(raw, imgi, config.width, config.height, config.format.depth);
+            }
             break;
          case IMG_FORMAT_I:
             imgi = png2ia(config.img_filename, &config.width, &config.height);
-            raw_size = config.width * config.height * config.depth / 8;
-            raw = malloc(raw_size);
+            raw_size = config.width * config.height * config.format.depth / 8;
+            if (isBackground) {
+               raw = malloc(raw_size + sizeof(BGImageHeader));
+            } else {
+               raw = malloc(raw_size);
+            }
             if (!raw) {
                ERROR("Error allocating %u bytes\n", raw_size);
             }
-            length = i2raw(raw, imgi, config.width, config.height, config.depth);
+            if (isBackground) {
+               length = img2bg(i2raw, raw, imgi, config.width, config.height, config.format.depth);
+            } else {
+               length = i2raw(raw, imgi, config.width, config.height, config.format.depth);
+            }
             break;
+         case IMG_FORMAT_CI:
+         {
+            if (isBackground) {
+               printf("Writing Background...\n");
+               imgr = png2rgba(config.img_filename, &config.width, &config.height);
+               // always malloc max size
+               size_t size = config.width * config.height * config.pal_format.depth / 8;
+               raw = malloc(size + sizeof(BGImageHeader) + (256 * 2));
+
+               length = write_ci_background(&config, imgr, raw, size);
+            } else {
+               palette_t pal;
+               FILE *pal_fp;
+               uint8_t *raw16;
+               int raw16_size;
+               int raw16_length;
+               uint8_t *ci;
+               int ci_length;
+               int pal_success;
+               int pal_length;
+
+               if (config.pal_truncate) {
+                  pal_fp = fopen(config.pal_filename, "w");
+               } else {
+                  pal_fp = fopen(config.pal_filename, "r+");
+               }
+               if (!pal_fp) {
+                  ERROR("Error opening \"%s\"\n", config.pal_filename);
+                  return EXIT_FAILURE;
+               }
+               if (!config.pal_truncate) {
+                  fseek(pal_fp, config.bin_offset, SEEK_SET);
+               }
+
+               raw16_size = config.width * config.height * config.pal_format.depth / 8;
+               raw16 = malloc(raw16_size);
+               if (!raw16) {
+                  ERROR("Error allocating %d bytes\n", raw16_size);
+                  return EXIT_FAILURE;
+               }
+               switch (config.pal_format.format) {
+                  case IMG_FORMAT_RGBA:
+                     imgr = png2rgba(config.img_filename, &config.width, &config.height);
+                     raw16_length = rgba2raw(raw16, imgr, config.width, config.height, config.pal_format.depth);
+                     break;
+                  case IMG_FORMAT_IA:
+                     imgi = png2ia(config.img_filename, &config.width, &config.height);
+                     raw16_length = ia2raw(raw16, imgi, config.width, config.height, config.pal_format.depth);
+                     break;
+                  default:
+                     ERROR("Unsupported palette format: %s\n", format2str(&config.pal_format));
+                     exit(EXIT_FAILURE);
+               }
+
+               // convert raw to palette
+               pal.max = (1 << config.format.depth);
+               ci_length = config.width * config.height * config.format.depth / 8;
+               ci = malloc(ci_length);
+               pal_success = raw2ci(ci, &pal, raw16, raw16_length, config.format.depth);
+               if (!pal_success) {
+                  ERROR("Error converting palette\n");
+                  exit(EXIT_FAILURE);
+               }
+
+               pal_length = pal.max * sizeof(pal.data[0]);
+               INFO("Writing 0x%X bytes to offset 0x%X of \"%s\"\n", pal_length, config.pal_offset, config.pal_filename);
+               flength = 0;
+               for (int i = 0; i < pal.max; i++) {
+                  uint8_t entry[2];
+                  write_u16_be(entry, pal.data[i]);
+                  flength += fwrite(entry, 1, sizeof(entry), pal_fp);
+               }
+               if (flength != pal_length) {
+                  ERROR("Error writing %d bytes to \"%s\"\n", pal_length, config.pal_filename);
+               }
+
+               raw = ci;
+               length = ci_length;
+
+               free(raw16);
+               fclose(pal_fp);
+            }
+            break;
+         }
          default:
             return EXIT_FAILURE;
       }
@@ -756,50 +1242,97 @@ int main(int argc, char *argv[])
          ERROR("Error converting to raw format\n");
          return EXIT_FAILURE;
       }
-      INFO("Writing 0x%X bytes to offset 0x%X of \"%s\"\n", length, config.offset, config.bin_filename);
-      flength = fwrite(raw, 1, length, fp);
+      INFO("Writing 0x%X bytes to offset 0x%X of \"%s\"\n", length, config.bin_offset, config.bin_filename);
+      flength = fwrite(raw, 1, length, bin_fp);
       if (flength != length) {
          ERROR("Error writing %d bytes to \"%s\"\n", length, config.bin_filename);
       }
-      fclose(fp);
+      fclose(bin_fp);
 
    } else {
-      if (config.width <= 0 || config.height <= 0 || config.depth <= 0) {
+      if (config.width <= 0 || config.height <= 0 || config.format.depth <= 0) {
          ERROR("Error: must set position width and height for export\n");
          return EXIT_FAILURE;
       }
-      fp = fopen(config.bin_filename, "rb");
-      if (!fp) {
+      bin_fp = fopen(config.bin_filename, "r");
+      if (!bin_fp) {
          ERROR("Error opening \"%s\"\n", config.bin_filename);
          return -1;
       }
-      raw_size = config.width * config.height * config.depth / 8;
+      raw_size = config.width * config.height * config.format.depth / 8;
       raw = malloc(raw_size);
-      if (config.offset > 0) {
-         fseek(fp, config.offset, SEEK_SET);
+      if (config.bin_offset > 0) {
+         fseek(bin_fp, config.bin_offset, SEEK_SET);
       }
-      flength = fread(raw, 1, raw_size, fp);
+      flength = fread(raw, 1, raw_size, bin_fp);
       if (flength != raw_size) {
          ERROR("Error reading %d bytes from \"%s\"\n", raw_size, config.bin_filename);
       }
-      switch (config.format) {
+      switch (config.format.format) {
          case IMG_FORMAT_RGBA:
-            imgr = raw2rgba(raw, config.width, config.height, config.depth);
+            imgr = raw2rgba(raw, config.width, config.height, config.format.depth);
             res = rgba2png(config.img_filename, imgr, config.width, config.height);
             break;
          case IMG_FORMAT_IA:
-            imgi = raw2ia(raw, config.width, config.height, config.depth);
+            imgi = raw2ia(raw, config.width, config.height, config.format.depth);
             res = ia2png(config.img_filename, imgi, config.width, config.height);
             break;
          case IMG_FORMAT_I:
-            imgi = raw2i(raw, config.width, config.height, config.depth);
+            imgi = raw2i(raw, config.width, config.height, config.format.depth);
             res = ia2png(config.img_filename, imgi, config.width, config.height);
             break;
+         case IMG_FORMAT_CI:
+         {
+            FILE *pal_fp;
+            uint8_t *pal;
+            uint8_t *raw_fmt;
+            int pal_size;
+
+            INFO("Extracting %s offset 0x%X, pal.offset 0x%0X, pal.format %s\n", format2str(&config.format),
+                 config.bin_offset, config.pal_offset, format2str(&config.pal_format));
+
+            pal_fp = fopen(config.pal_filename, "r");
+            if (!pal_fp) {
+               ERROR("Error opening \"%s\"\n", config.bin_filename);
+               return EXIT_FAILURE;
+            }
+            if (config.pal_offset > 0) {
+               fseek(pal_fp, config.pal_offset, SEEK_SET);
+            }
+
+            pal_size = sizeof(uint16_t) * (1 << config.format.depth);
+            INFO("Palette size: %d\n", pal_size);
+            pal = malloc(pal_size);
+            flength = fread(pal, 1, pal_size, pal_fp);
+            if (flength != pal_size) {
+               ERROR("Error reading %d bytes from \"%s\"\n", pal_size, config.pal_filename);
+            }
+            raw_fmt = ci2raw(raw, pal, config.width, config.height, config.format.depth);
+            switch (config.pal_format.format) {
+               case IMG_FORMAT_RGBA:
+                  INFO("Converting raw to RGBA16\n");
+                  imgr = raw2rgba(raw_fmt, config.width, config.height, config.pal_format.depth);
+                  res = rgba2png(config.img_filename, imgr, config.width, config.height);
+                  break;
+               case IMG_FORMAT_IA:
+                  INFO("Converting raw to IA16\n");
+                  imgi = raw2ia(raw_fmt, config.width, config.height, config.pal_format.depth);
+                  res = ia2png(config.img_filename, imgi, config.width, config.height);
+                  break;
+               default:
+                  ERROR("Unsupported palette format: %s\n", format2str(&config.pal_format));
+                  return EXIT_FAILURE;
+            }
+            free(raw_fmt);
+            free(pal);
+            break;
+         }
          default:
             return EXIT_FAILURE;
       }
       if (!res) {
          ERROR("Error writing to \"%s\"\n", config.img_filename);
+         return EXIT_FAILURE;
       }
    }
 

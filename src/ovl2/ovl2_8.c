@@ -407,7 +407,7 @@ void vec3_cross_product(Vector *v1, Vector *v2, Vector *dst) {
     sp44 = arg2->unk0 - arg1->unk0;
     sp48 = arg2->unk4 - arg1->unk4;
     sp4C = arg2->unk8 - arg1->unk8;
-    temp_f0 = vec3_mag(temp_a0);
+    temp_f0 = lbvector_Len(temp_a0);
     sp90 = temp_f0;
     if (temp_f0 < 1.0f) {
         return 0;
@@ -421,7 +421,7 @@ void vec3_cross_product(Vector *v1, Vector *v2, Vector *dst) {
         sp30 = 1.0f;
         sp34 = 0.0f;
     }
-    vec3_normalize(&sp44);
+    lbvector_Normalize(&sp44);
     vec3_cross_product(&sp2C, &sp44, &sp38);
     vec3_cross_product(&sp44, &sp38, &sp2C);
     sp50 = sp38;

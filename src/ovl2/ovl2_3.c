@@ -68,9 +68,9 @@ f32 vec3_abs_angle_diff(Vector *arg0, Vector *arg1) {
 
     vec3_normalized_cross_product(arg0, arg1, &sp1C);
     if (0.0f < sp1C.y) {
-        return vec3_angle_diff(arg1, arg0);
+        return lbvector_Angle(arg1, arg0);
     }
-    return -vec3_angle_diff(arg1, arg0);
+    return -lbvector_Angle(arg1, arg0);
 }
 
 #ifdef MIPS_TO_C
@@ -1014,8 +1014,8 @@ f32 func_800F9F80(Vector *arg0, Vector *arg1, Vector *arg2) {
     Vector sp2C;
     Vector sp20;
 
-    vec3_sub(&sp2C, arg2, arg1);
-    vec3_sub(&sp20, arg0, arg1);
+    lbvector_Diff(&sp2C, arg2, arg1);
+    lbvector_Diff(&sp20, arg0, arg1);
     return (vec3_dot_product(&sp2C, &sp20) / vec3_mag_square(&sp2C));
 }
 
@@ -1117,7 +1117,7 @@ loop_2:
         sp44.unk0 = temp_t7->unk0;
         sp44.unk4 = temp_t7->unk4;
         sp44.unk8 = temp_t7->unk8;
-        temp_f0 = vec3_diff_mag(arg1, &sp44);
+        temp_f0 = lbvector_DiffLen(arg1, &sp44);
         if (temp_f0 < phi_f20) {
             phi_f20 = temp_f0;
             phi_s3_2 = phi_s1;
@@ -1281,17 +1281,17 @@ void func_800FA608(s32 arg0, void *arg1, Vector *arg2) {
             temp_v0_2 = arg0 * 4;
             func_8001E344_ovl2(&sp44, ((bitwise s32) (*D_80129114)->y + ((temp_v0_2 + 0x800E0000)->unk5F90 * 0x10))->unk4, (temp_v0_2 + 0x800E0000)->unk6BD0, arg0);
             sp48 = 0.0f;
-            vec3_normalize(&sp44);
-            vec3_get_euler_rotation(&sp44, 2, (arg1->unk8 * D_801287F8) / 180.0f);
+            lbvector_Normalize(&sp44);
+            lbvector_Rotate(&sp44, 2, (arg1->unk8 * D_801287F8) / 180.0f);
         }
     } else {
         sp44 = cosf((arg1->unk8 * D_801287F0) / 180.0f);
         sp4C = -sinf((arg1->unk8 * D_801287F4) / 180.0f);
         sp48 = 0.0f;
     }
-    vec3_mul_scale(&sp44, -arg1->unkC);
-    vec3_add(&sp44, arg2);
-    vec3_sub(&sp2C, arg2, &sp44);
+    lbvector_Scale(&sp44, -arg1->unkC);
+    lbvector_Add(&sp44, arg2);
+    lbvector_Diff(&sp2C, arg2, &sp44);
     vec3_normalized_cross_product(sp54 + 0x54, &sp2C, &sp38);
     func_800191F8_ovl2(&sp2C, &sp38, ((arg1->unk4 - 90.0f) * D_801287FC) / 180.0f);
     arg2->unkC = arg2->x - sp2C;
@@ -1421,7 +1421,7 @@ f32 func_800FA92C(s32 arg0, void *arg1, Vector *arg2) {
             sp68 = 0;
             sp28 = temp_a2;
             arg1 = arg1;
-            vec3_sub(&sp4C, arg2, temp_a2);
+            lbvector_Diff(&sp4C, arg2, temp_a2);
             temp_f12 = (atan2f(sp54, -sp4C) / D_80128804) * 180.0f;
             phi_f2 = temp_f12;
             if (temp_f12 < 0.0f) {
@@ -1451,7 +1451,7 @@ f32 func_800FA92C(s32 arg0, void *arg1, Vector *arg2) {
                 sp50 = 0.0f;
                 sp54 = 0.0f;
                 func_800191F8_ovl2(0.0f, temp_a0, sp6C + 0x54, (phi_f2_3 * D_80128808) / 180.0f);
-                temp_ret = vec3_add(&sp4C, sp28);
+                temp_ret = lbvector_Add(&sp4C, sp28);
                 arg2->unk18 = temp_f8;
                 arg2->unk20 = sp54;
                 phi_return = (bitwise f32) temp_ret;
@@ -1460,7 +1460,7 @@ f32 func_800FA92C(s32 arg0, void *arg1, Vector *arg2) {
     }
     if ((arg1->unk1C != 0) && (arg2->unk34 != 0)) {
         arg1 = arg1;
-        vec3_sub(&sp4C, arg2 + 0x18, arg2 + 0x24);
+        lbvector_Diff(&sp4C, arg2 + 0x18, arg2 + 0x24);
         temp_f14 = arg1->unk38;
         temp_f12_2 = 180.0f - ((atan2f(sqrtf((sp54 * sp54) + (sp4C * sp4C)), sp50) / D_8012880C) * 180.0f);
         phi_f12 = temp_f12_2;
@@ -1630,7 +1630,7 @@ block_32:
         D_801293AC = temp_f12_3;
     }
     arg0 = arg0;
-    vec3_sub(&sp38, arg2 + 0x18, arg2 + 0x24);
+    lbvector_Diff(&sp38, arg2 + 0x18, arg2 + 0x24);
     temp_f14 = D_80128818;
     temp_a3 = arg0;
     temp_f12_4 = (atan2f(sp40, -sp38) / temp_f14) * 180.0f;
@@ -1933,7 +1933,7 @@ block_65:
     if (phi_f2_8 <= temp_f12_7) {
         D_801293B0 = temp_f12_7;
     }
-    vec3_sub(&sp28, arg2 + 0x18, arg2 + 0x24);
+    lbvector_Diff(&sp28, arg2 + 0x18, arg2 + 0x24);
     temp_f14_2 = D_80128824;
     temp_f12_8 = (atan2f(sp30, -sp28) / temp_f14_2) * 180.0f;
     phi_f2_9 = temp_f12_8;
@@ -2203,9 +2203,9 @@ loop_3:
     sp40 = cosf((D_80129210.unk8 * D_80128830) / 180.0f);
     sp48 = -sinf((D_80129210.unk8 * D_80128834) / 180.0f);
     sp44 = 0.0f;
-    vec3_mul_scale(&sp40, -D_80129210.unkC);
-    vec3_add(&sp40, &D_80129330);
-    vec3_sub(&sp28, &D_80129330, &sp40);
+    lbvector_Scale(&sp40, -D_80129210.unkC);
+    lbvector_Add(&sp40, &D_80129330);
+    lbvector_Diff(&sp28, &D_80129330, &sp40);
     vec3_normalized_cross_product(sp4C + 0x54, &sp28, &sp34);
     func_800191F8_ovl2(&sp28, &sp34, ((D_80129210.unk4 - 90.0f) * D_80128838) / 180.0f);
     D_80129330.unkC = D_80129330.x - sp28;

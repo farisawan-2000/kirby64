@@ -978,7 +978,7 @@ glabel func_801A7524_ovl7
 /* 14E400 801A8390 C7A40080 */  lwc1  $f4, 0x80($sp)
 /* 14E404 801A8394 46043201 */  sub.s $f8, $f6, $f4
 /* 14E408 801A8398 E7AA0064 */  swc1  $f10, 0x64($sp)
-/* 14E40C 801A839C 0C006328 */  jal   vec3_normalize
+/* 14E40C 801A839C 0C006328 */  jal   lbvector_Normalize
 /* 14E410 801A83A0 E7A80068 */   swc1  $f8, 0x68($sp)
 /* 14E414 801A83A4 3C0D8005 */  lui   $t5, %hi(D_8004A7C4) # $t5, 0x8005
 /* 14E418 801A83A8 8DADA7C4 */  lw    $t5, %lo(D_8004A7C4)($t5)

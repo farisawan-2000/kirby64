@@ -1512,7 +1512,7 @@ glabel func_801AE5D4_ovl7
 /* 154704 801AE694 C5840000 */  lwc1  $f4, ($t4)
 /* 154708 801AE698 46040002 */  mul.s $f0, $f0, $f4
 /* 15470C 801AE69C 44060000 */  mfc1  $a2, $f0
-/* 154710 801AE6A0 0C006424 */  jal   vec3_get_euler_rotation
+/* 154710 801AE6A0 0C006424 */  jal   lbvector_Rotate
 /* 154714 801AE6A4 00000000 */   nop   
 /* 154718 801AE6A8 3C0141A0 */  li    $at, 0x41A00000 # 20.000000
 /* 15471C 801AE6AC 44810000 */  mtc1  $at, $f0

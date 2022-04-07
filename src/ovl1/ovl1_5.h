@@ -66,4 +66,7 @@ struct UnkStruct800AC954 {
     uObjMtx *unk88;
 };
 
+void func_800AD1A0(void *);
+
+
 #endif

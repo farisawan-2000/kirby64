@@ -346,7 +346,7 @@ extern f32 D_8022BC54;
 // TODO: If this function gets matched, then we can incorporate ovl18_5's rodata completely
 #ifdef NON_MATCHING
 s32 random_soft_s32_range(s32);
-void vec3_get_euler_rotation(Vector *, u32, f32);
+void lbvector_Rotate(Vector *, u32, f32);
 void func_80225958_ovl18(void) {
     struct UnkStruct800E1B50 *sp3C = D_800E1B50[D_8004A7C4->objId];
     s32 temp_v0;
@@ -364,7 +364,7 @@ void func_80225958_ovl18(void) {
     sp2C.z = 0.0f;
     sp2C.y = 0.0f;
     sp2C.x = -6.0f;
-    vec3_get_euler_rotation(&sp2C, 4, temp_a3 * D_8022BC54);
+    lbvector_Rotate(&sp2C, 4, temp_a3 * D_8022BC54);
     D_800E3050[D_8004A7C4->objId] = sp2C.x;
     D_800E3210[D_8004A7C4->objId] = sp2C.y;
     D_800E8920[D_8004A7C4->objId] = 0;

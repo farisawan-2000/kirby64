@@ -562,10 +562,10 @@ void func_8016D1E8_ovl3(struct GObj *arg0) {
     func_80153984_ovl3();
     func_8011CF58();
     if (ovl3_process_command_string(&cmd) != 0 || gKirbyState.unk17 != 0) {
-        gKirbyState.isTurning = gKirbyState.isTurning & ~2;
+        gKirbyState.isTurning &= ~2;
         return;
     }
-    if (gKirbyState.unk150 != 0) {
+    else if (gKirbyState.unk150 != 0) {
         phi_a0 = gKirbyState.turnDirection;
         if (phi_a0 == 0) {
             if (gKirbyState.unk150 != D_800E98E0[D_8004A7C4->objId]) {
@@ -580,9 +580,8 @@ void func_8016D1E8_ovl3(struct GObj *arg0) {
             }
         }
         D_800E9AA0[D_8004A7C4->objId] = phi_a0;
-        return;
     }
-    if (gKirbyState.unk150 != D_800E98E0[D_8004A7C4->objId]) {
+    else if (gKirbyState.unk150 != D_800E98E0[D_8004A7C4->objId]) {
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8016C510_ovl3);
     }
 }
@@ -3839,7 +3838,7 @@ void *func_80176398_ovl3(void) {
 
     temp_v0_2 = func_8000A180(2, 0, 0x19, 0x80000000);
     if (temp_v0_2 != 0) {
-        func_8000A5FC_ovl3(temp_v0_2, &D_801762E0, 0xC, 0x80000000, -1);
+        func_8000A5FC(temp_v0_2, &D_801762E0, 0xC, 0x80000000, -1);
     }
     D_80198824 = 1;
     func_8000A888_ovl3(D_800DE350[D_8004A7C4->objId], 0xC, 0x80000000);
@@ -6141,7 +6140,7 @@ void func_8017C1FC_ovl3(struct GObj *arg0) {
     }
     func_80120CCC(D_80197608, D_8019760C);
     if (gKirbyState.unk3C != gKirbyState.unk44) {
-        assign_new_process_entry(*(&gEntityGObjProcessArray + (D_8004A7C4->objId * 4)), &D_8016C510);
+        assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_8016C510_ovl3);
         gKirbyState.unk3C = gKirbyState.unk44;
     }
 }
@@ -6479,9 +6478,10 @@ GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_5/func_8017D430_ovl3.s")
 #endif
 
 #ifdef MIPS_TO_C
-void func_8017D8E8_ovl3(struct GObj *arg0) {
-    struct GObj *temp_v0;
+void func_8017DAD8_ovl3(s32 arg0, s32 arg1, f32 arg2);
 
+
+void func_8017D8E8_ovl3(struct GObj *arg0) {
     gKirbyState.unk7C = 0.0f;
     gKirbyState.unk3C = -1;
     gKirbyState.unk30 = 0;
@@ -6489,12 +6489,11 @@ void func_8017D8E8_ovl3(struct GObj *arg0) {
     gKirbyState.unk4C = 0;
     gKirbyState.unk80 = gKirbyState.unk7C;
     func_8011CF58();
-    temp_v0 = D_8004A7C4;
-    D_800DDFD0[temp_v0->objId] = 0x29;
-    D_800EA8A0[temp_v0->objId] = 1.0f;
+    D_800DDFD0[D_8004A7C4->objId] = 0x29;
+    D_800EA8A0[D_8004A7C4->objId] = 1.0f;
     gKirbyState.unk44 = 0;
-    gKirbyState.unk78 = -D_800E6A10[temp_v0->objId];
-    D_800EA6E0[temp_v0->objId] = 0.0f;
+    gKirbyState.unk78 = -D_800E6A10[D_8004A7C4->objId];
+    D_800EA6E0[D_8004A7C4->objId] = 0.0f;
     func_80120A28();
     func_801230E8(0x201A7, 0x201A8, 1);
     gKirbyState.abilityInUse = gKirbyState.ability;
@@ -6502,19 +6501,17 @@ void func_8017D8E8_ovl3(struct GObj *arg0) {
     gKirbyState.unk154 = 7;
     gKirbyState.unk4C = func_800A8234(2, 1, 0x2C);
     func_801230E8(0x201A5, 0x201A6, 0);
-    D_800DF310[D_8004A7C4->objId] = &D_8017DAD8;
-loop_1:
-    if ((gKirbyState.unk17 == 0) && ((gKirbyController.buttonHeld & 0x4000) != 0)) {
+    D_800DF310[D_8004A7C4->objId] = func_8017DAD8_ovl3;
+    while ((gKirbyState.unk17 == 0) && (gKirbyController.buttonHeld & 0x4000)) {
         finish_current_thread(1);
-        goto loop_1;
     }
     func_8011E0E8();
-    gKirbyState.abilityInUse = 0;
     func_80122F08(0x20007);
     gKirbyState.unk154 = 2;
     gKirbyState.unk78 = D_800E6A10[D_8004A7C4->objId];
+    gKirbyState.abilityInUse = 0;
     func_801230E8(0x201A9, 0x201AA, 1);
-    gKirbyState.unk30 = gKirbyState.unk30 + 1;
+    gKirbyState.unk30++;
     func_800AFA14();
 }
 #else

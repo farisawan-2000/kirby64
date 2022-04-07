@@ -58,7 +58,7 @@ glabel func_800FA608
 /* 083150 800FA6E0 27A40044 */   addiu $a0, $sp, 0x44
 /* 083154 800FA6E4 44808000 */  mtc1  $zero, $f16
 /* 083158 800FA6E8 27A40044 */  addiu $a0, $sp, 0x44
-/* 08315C 800FA6EC 0C006328 */  jal   vec3_normalize
+/* 08315C 800FA6EC 0C006328 */  jal   lbvector_Normalize
 /* 083160 800FA6F0 E7B00048 */   swc1  $f16, 0x48($sp)
 /* 083164 800FA6F4 3C018013 */  lui   $at, %hi(D_801287F8) # $at, 0x8013
 /* 083168 800FA6F8 C42487F8 */  lwc1  $f4, %lo(D_801287F8)($at)
@@ -70,7 +70,7 @@ glabel func_800FA608
 /* 083180 800FA710 24050002 */  li    $a1, 2
 /* 083184 800FA714 46083283 */  div.s $f10, $f6, $f8
 /* 083188 800FA718 44065000 */  mfc1  $a2, $f10
-/* 08318C 800FA71C 0C006424 */  jal   vec3_get_euler_rotation
+/* 08318C 800FA71C 0C006424 */  jal   lbvector_Rotate
 /* 083190 800FA720 00000000 */   nop   
 .L800FA724_ovl2:
 /* 083194 800FA724 C630000C */  lwc1  $f16, 0xc($s1)
@@ -78,14 +78,14 @@ glabel func_800FA608
 /* 083198 800FA728 27A40044 */  addiu $a0, $sp, 0x44
 /* 08319C 800FA72C 46008487 */  neg.s $f18, $f16
 /* 0831A0 800FA730 44059000 */  mfc1  $a1, $f18
-/* 0831A4 800FA734 0C00639C */  jal   vec3_mul_scale
+/* 0831A4 800FA734 0C00639C */  jal   lbvector_Scale
 /* 0831A8 800FA738 00000000 */   nop   
 /* 0831AC 800FA73C 27A40044 */  addiu $a0, $sp, 0x44
-/* 0831B0 800FA740 0C00635F */  jal   vec3_add
+/* 0831B0 800FA740 0C00635F */  jal   lbvector_Add
 /* 0831B4 800FA744 02002825 */   move  $a1, $s0
 /* 0831B8 800FA748 27A4002C */  addiu $a0, $sp, 0x2c
 /* 0831BC 800FA74C 02002825 */  move  $a1, $s0
-/* 0831C0 800FA750 0C00637B */  jal   vec3_sub
+/* 0831C0 800FA750 0C00637B */  jal   lbvector_Diff
 /* 0831C4 800FA754 27A60044 */   addiu $a2, $sp, 0x44
 /* 0831C8 800FA758 8FA40054 */  lw    $a0, 0x54($sp)
 /* 0831CC 800FA75C 27A5002C */  addiu $a1, $sp, 0x2c

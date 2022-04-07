@@ -1136,7 +1136,6 @@ void func_800A9A2C(s32 arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A9A2C.s")
 #endif
 
-#include "banks.h"
 extern struct BankHeader *D_800D0184[];
 #ifdef NON_MATCHING
 // regalloc moment

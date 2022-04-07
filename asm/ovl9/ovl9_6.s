@@ -9964,7 +9964,7 @@ glabel func_801F3E60_ovl9
 /* 1A2030 801F3FE0 24050004 */  li    $a1, 4
 /* 1A2034 801F3FE4 E7A20034 */  swc1  $f2, 0x34($sp)
 /* 1A2038 801F3FE8 E7A20030 */  swc1  $f2, 0x30($sp)
-/* 1A203C 801F3FEC 0C006424 */  jal   vec3_get_euler_rotation
+/* 1A203C 801F3FEC 0C006424 */  jal   lbvector_Rotate
 /* 1A2040 801F3FF0 E7A8002C */   swc1  $f8, 0x2c($sp)
 /* 1A2044 801F3FF4 3C038005 */ lui $v1, 0x8005
 /* 1A2048 801F3FF8 8C63A7C4 */ lw $v1, -0x583c($v1)

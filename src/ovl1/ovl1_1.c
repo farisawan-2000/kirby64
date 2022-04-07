@@ -112,15 +112,15 @@ OSThread *crash_screen_print_page_3(void) {
                     crash_screen_printf("gp:%x\n", D_8004A7D0);
                     switch (D_8004A7D0->kind) {
                         case 0:
-                            crash_screen_printf("gobjthread:%x\n", D_8004A7D0->thread);
-                            crash_screen_printf("stack:%x\n", D_8004A7D0->thread->objStack);
-                            crash_screen_printf("thread pc:%x\n", D_8004A7D0->thread->thread.context.pc);
-                            crash_screen_printf("id:%d\n", D_8004A7D0->thread->thread.id);
+                            crash_screen_printf("gobjthread:%x\n", D_8004A7D0->payload.thread);
+                            crash_screen_printf("stack:%x\n", D_8004A7D0->payload.thread->objStack);
+                            crash_screen_printf("thread pc:%x\n", D_8004A7D0->payload.thread->thread.context.pc);
+                            crash_screen_printf("id:%d\n", D_8004A7D0->payload.thread->thread.id);
                             crash_screen_printf("ptr:%x\n", D_8004A7D0->ptr);
-                            sp1C = &D_8004A7D0->thread->thread;
+                            sp1C = &D_8004A7D0->payload.thread->thread;
                             break;
                         case 1:
-                            crash_screen_printf("func:%x\n", D_8004A7D0->thread);
+                            crash_screen_printf("func:%x\n", D_8004A7D0->payload.callback);
                             break;
                     }
                 }
@@ -883,7 +883,7 @@ void game_tick(s32 arg0) {
                                 }
                             case 5: // switch 3
                                 func_800A74D8();
-                                if (func_800A6B64() == 0) {
+                                if (ovl1_TamperCheck() == 0) {
                                     gGameState = 0xB;
                                 } else {
                                     if ((gCurrentWorld == (D_800D6B98 + 1)) && (gCurrentWorld < 7)) {
@@ -2536,13 +2536,13 @@ void load_overlay(u32 arg0) {
 }
 
 // some sort of integrity check
-u8 func_800A6B64(void) {
-    s32 sp18[4];
+u8 ovl1_TamperCheck(void) {
+    s32 buf[4];
 
-    dma_read(0x00000F10, &sp18, 0x10);
-    if (sp18[0] != 0x04080040) {
+    dma_read(0x00000F10, &buf, 0x10);
+    if (buf[0] != 0x04080040) {
         return 0;
-    } else if (sp18[1] != 0x02081040) {
+    } else if (buf[1] != 0x02081040) {
         return 0;
     }
     else return 1;

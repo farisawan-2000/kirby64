@@ -19,7 +19,7 @@ glabel omGAddCommon
 /* 00AD00 8000A100 1000FFFF */  b     .L8000A100_ovl0
 /* 00AD04 8000A104 00000000 */   nop   
 .L8000A108_ovl0:
-/* 00AD08 8000A108 0C0020D7 */  jal   get_gobj
+/* 00AD08 8000A108 0C0020D7 */  jal   HS64_GObjPop
 /* 00AD0C 8000A10C A3A6002B */   sb    $a2, 0x2b($sp)
 /* 00AD10 8000A110 93A6002B */  lbu   $a2, 0x2b($sp)
 /* 00AD14 8000A114 14400003 */  bnez  $v0, .L8000A124_ovl0

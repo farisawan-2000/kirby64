@@ -209,7 +209,7 @@ glabel func_800FAC74
 /* 0839DC 800FAF6C 00000000 */   nop   
 /* 0839E0 800FAF70 E46C0000 */  swc1  $f12, ($v1)
 .L800FAF74_ovl2:
-/* 0839E4 800FAF74 0C00637B */  jal   vec3_sub
+/* 0839E4 800FAF74 0C00637B */  jal   lbvector_Diff
 /* 0839E8 800FAF78 AFA70060 */   sw    $a3, 0x60($sp)
 /* 0839EC 800FAF7C C7AE0038 */  lwc1  $f14, 0x38($sp)
 /* 0839F0 800FAF80 C7AC0040 */  lwc1  $f12, 0x40($sp)

@@ -357,7 +357,7 @@ void func_8021B424_ovl9(void) {
     v.y = 0.0f;
     v.x = 0.0f;
     v.z = 1.0f;
-    vec3_get_euler_rotation(&v, AXIS_Y, gEntitiesAngleYArray[D_8004A7C4->objId]);
+    lbvector_Rotate(&v, AXIS_Y, gEntitiesAngleYArray[D_8004A7C4->objId]);
     D_800EA6E0[D_8004A7C4->objId] = 2.0f * v.x;
     D_800EA8A0[D_8004A7C4->objId] = 2.0f * v.z;
     D_800E6A10[D_8004A7C4->objId] =
@@ -465,7 +465,7 @@ block_10:
     v.y = -2.0f;
     v.z = 0.0f;
     v.x = 0.0f;
-    vec3_get_euler_rotation(temp_a0, 4, phi_a3 * D_8021DEF0_ovl9);
+    lbvector_Rotate(temp_a0, 4, phi_a3 * D_8021DEF0_ovl9);
     temp_v1 = D_8004A7C4;
     temp_a3 = phi_a3;
     D_800E64D0[temp_v1->objId] = v.x;
