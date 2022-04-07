@@ -1,8 +1,8 @@
 glabel func_8021F35C_ovl18
-/* 231CFC 8021F35C 3C05800A */ lui $a1, %hi(func_800A6B64)
-/* 231D00 8021F360 3C078022 */ lui $a3, %hi(func_8021F304_ovl18)
-/* 231D04 8021F364 24A46B64 */  addiu $a0, $a1, %lo(func_800A6B64)
-/* 231D08 8021F368 24E6F304 */  addiu $a2, $a3, %lo(func_8021F304_ovl18)
+/* 231CFC 8021F35C 3C05800A */ lui $a1, %hi(ovl1_TamperCheck)
+/* 231D00 8021F360 3C078022 */ lui $a3, %hi(ovl18_TamperCheck)
+/* 231D04 8021F364 24A46B64 */  addiu $a0, $a1, %lo(ovl1_TamperCheck)
+/* 231D08 8021F368 24E6F304 */  addiu $a2, $a3, %lo(ovl18_TamperCheck)
 /* 231D0C 8021F36C 8CC20000 */  lw    $v0, ($a2)
 /* 231D10 8021F370 8CCF0004 */  lw    $t7, 4($a2)
 /* 231D14 8021F374 8C830000 */  lw    $v1, ($a0)

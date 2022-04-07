@@ -129,24 +129,25 @@ struct UnkStruct8004A7C4_3C_duplicate {
 
 // GObj?
 struct GObj {
-	u32 objId;
-	struct GObj* unk4;
-    struct GObj* unk8;
-    u8 link;
+	/* 0x00 */ u32 objId;
+	/* 0x04 */ struct GObj* unk4;
+    /* 0x08 */ struct GObj* unk8;
+    /* 0x0C */ u8 link;
     // todo: find the array this indexes
-    u8 dl_link;
+    /* 0x0D */ u8 dl_link;
     // seems to be similar to other GObj's in proximity
     u8 unkE;
     u8 unkF;
     u32 unk10;
-    // render callback according to HSD? Can we even trust HSD here?
+    // location of render callback according to HSD
     void (*unk14)(void);
     struct GObjProcess *proc;
     u32 unk1C;
     struct GObj* nextDL;
     struct GObj* prevDL;
     u32 renderPriority;
-    // user data removal function according to HSD
+    // location of user data removal function according to HSD
+    // based on usage this might actually be the render callback
     void (*unk2C)(struct GObj *);
     u32 unk30;
     u32 unk34;

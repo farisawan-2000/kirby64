@@ -344,10 +344,10 @@ glabel func_8000AE84
 /* 00BF30 8000B330 AC40FFF0 */   sw    $zero, -0x10($v0)
 /* 00BF34 8000B334 0C0051E7 */  jal   func_8001479C
 /* 00BF38 8000B338 00000000 */   nop   
-/* 00BF3C 8000B33C 3C048005 */  lui   $a0, %hi(D_8004A7E0) # $a0, 0x8005
+/* 00BF3C 8000B33C 3C048005 */  lui   $a0, %hi(HS64_GObjProcMesgQ) # $a0, 0x8005
 /* 00BF40 8000B340 3C058005 */  lui   $a1, %hi(D_8004A7D8) # $a1, 0x8005
 /* 00BF44 8000B344 24A5A7D8 */  addiu $a1, %lo(D_8004A7D8) # addiu $a1, $a1, -0x5828
-/* 00BF48 8000B348 2484A7E0 */  addiu $a0, %lo(D_8004A7E0) # addiu $a0, $a0, -0x5820
+/* 00BF48 8000B348 2484A7E0 */  addiu $a0, %lo(HS64_GObjProcMesgQ) # addiu $a0, $a0, -0x5820
 /* 00BF4C 8000B34C 0C00CEB8 */  jal   osCreateMesgQueue
 /* 00BF50 8000B350 24060001 */   li    $a2, 1
 /* 00BF54 8000B354 3C028005 */  lui   $v0, %hi(D_8004A7C0) # $v0, 0x8005

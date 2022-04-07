@@ -61,7 +61,7 @@ glabel func_800A78D0
 /* 04FC0C 800A79BC 24A57ABC */  addiu $a1, %lo(D_800A7ABC) # addiu $a1, $a1, 0x7abc
 /* 04FC10 800A79C0 00402025 */  move  $a0, $v0
 /* 04FC14 800A79C4 24060010 */  li    $a2, 16
-/* 04FC18 800A79C8 0C00297F */  jal   func_8000A5FC_ovl1
+/* 04FC18 800A79C8 0C00297F */  jal   func_8000A5FC
 /* 04FC1C 800A79CC 2407000C */   li    $a3, 12
 /* 04FC20 800A79D0 240F000F */  li    $t7, 15
 /* 04FC24 800A79D4 AE0F0030 */  sw    $t7, 0x30($s0)

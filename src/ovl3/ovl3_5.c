@@ -3838,7 +3838,7 @@ void *func_80176398_ovl3(void) {
 
     temp_v0_2 = func_8000A180(2, 0, 0x19, 0x80000000);
     if (temp_v0_2 != 0) {
-        func_8000A5FC_ovl3(temp_v0_2, &D_801762E0, 0xC, 0x80000000, -1);
+        func_8000A5FC(temp_v0_2, &D_801762E0, 0xC, 0x80000000, -1);
     }
     D_80198824 = 1;
     func_8000A888_ovl3(D_800DE350[D_8004A7C4->objId], 0xC, 0x80000000);
