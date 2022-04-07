@@ -1,15 +1,15 @@
 #ifndef VEC_UTILS_H
 #define VEC_UTILS_H
 
-Vector *vec3_sub(Vector *, Vector *, Vector *);
-Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle);
+Vector *lbvector_Diff(Vector *, Vector *, Vector *);
+Vector *lbvector_Rotate(Vector *arg0, s32 axis, f32 angle);
 
 #define AXIS_X	1
 #define AXIS_Y	2
 #define AXIS_Z	4
 
 f32 vec3_dot_product(Vector *, Vector *);
-f32 vec3_angle_diff(Vector *, Vector *);
+f32 lbvector_Angle(Vector *, Vector *);
 
 extern f32 vec3_mag_square(Vector *);
 

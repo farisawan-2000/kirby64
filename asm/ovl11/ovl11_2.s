@@ -225,7 +225,7 @@ glabel func_801DF89C_ovl11
 /* 1EA240 801DF980 24050002 */  li    $a1, 2
 /* 1EA244 801DF984 000FC880 */  sll   $t9, $t7, 2
 /* 1EA248 801DF988 00D93021 */  addu  $a2, $a2, $t9
-/* 1EA24C 801DF98C 0C006424 */  jal   vec3_get_euler_rotation
+/* 1EA24C 801DF98C 0C006424 */  jal   lbvector_Rotate
 /* 1EA250 801DF990 8CC641D0 */   lw    $a2, 0x41d0($a2)
 /* 1EA254 801DF994 3C014120 */  li    $at, 0x41200000 # 10.000000
 /* 1EA258 801DF998 44810000 */  mtc1  $at, $f0
@@ -401,7 +401,7 @@ glabel func_801DFB44_ovl11
 /* 1EA4D8 801DFC18 000E7880 */  sll   $t7, $t6, 2
 /* 1EA4DC 801DFC1C 00CF3021 */  addu  $a2, $a2, $t7
 /* 1EA4E0 801DFC20 8CC641D0 */  lw    $a2, 0x41d0($a2)
-/* 1EA4E4 801DFC24 0C006424 */  jal   vec3_get_euler_rotation
+/* 1EA4E4 801DFC24 0C006424 */  jal   lbvector_Rotate
 /* 1EA4E8 801DFC28 24050002 */   li    $a1, 2
 /* 1EA4EC 801DFC2C 3C0143A0 */  li    $at, 0x43A00000 # 320.000000
 /* 1EA4F0 801DFC30 44810000 */  mtc1  $at, $f0
@@ -1016,7 +1016,7 @@ glabel func_801E03A4_ovl11
 /* 1EADE8 801E0528 000B6080 */  sll   $t4, $t3, 2
 /* 1EADEC 801E052C 00CC3021 */  addu  $a2, $a2, $t4
 /* 1EADF0 801E0530 8CC641D0 */  lw    $a2, 0x41d0($a2)
-/* 1EADF4 801E0534 0C006424 */  jal   vec3_get_euler_rotation
+/* 1EADF4 801E0534 0C006424 */  jal   lbvector_Rotate
 /* 1EADF8 801E0538 24050002 */   li    $a1, 2
 /* 1EADFC 801E053C 3C0143A0 */  li    $at, 0x43A00000 # 320.000000
 /* 1EAE00 801E0540 44810000 */  mtc1  $at, $f0

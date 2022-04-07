@@ -148,7 +148,7 @@ void func_801E49B8_ovl17(s32 arg0) {
     sp30.x = -gEntitiesNextPosXArray[D_8004A7C4->objId];
     sp30.y = -gEntitiesNextPosYArray[D_8004A7C4->objId];
     sp30.z = -gEntitiesNextPosZArray[D_8004A7C4->objId];
-    vec3_normalize(&sp30);
+    lbvector_Normalize(&sp30);
     // tmp2 = D_801E56CC;
     // source of memes
     D_800E3050[D_8004A7C4->objId] = sp30.x * 15.0f;

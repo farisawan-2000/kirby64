@@ -56,7 +56,7 @@ struct UnkStruct8004A7C4_3C_80 {
 
 
 
-// is this a matrix?
+// SOME chunk of the beginning of the struct is a union
 struct UnkStruct8004A7C4_3C {
 	// u32 unk0;
 	// u32 unk4;
@@ -151,7 +151,7 @@ struct GObj {
     u32 unk30;
     u32 unk34;
     u32 unk38;
-    // either a DObj or a Camera according to context, but why?
+    // user_data???
 	struct UnkStruct8004A7C4_3C *unk3C;
 	// goes up by 2.0f per frame until it hits 40.0f, then resets to 0.0f
 	f32 unk40;

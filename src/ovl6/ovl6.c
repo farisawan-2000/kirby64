@@ -295,7 +295,7 @@ u32 func_80151CD0(s32 arg0, Vector *arg1) {
     f32 temp_ret;
     u32 temp_v0;
 
-    vec3_sub(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1);
+    lbvector_Diff(&sp24, ((arg0 * 4) + 0x80160000)->unk-5A90->unk3C + 0x1C, arg1);
     temp_ret = sqrtf((sp24 * sp24) + (sp28 * sp28) + (sp2C * sp2C));
     temp_f0 = temp_ret;
     if (temp_f0 == 0.0f) {

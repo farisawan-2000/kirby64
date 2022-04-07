@@ -6,8 +6,6 @@
 #include "ovl0_3.h"
 #include "D_8004A7C4.h"
 
-
-// #ifdef MIPS_TO_C
 UserData8000BE90 *func_8000BE90(UserData8000BE90* data) {
     UserData8000BE90 *ret;
     
@@ -32,9 +30,6 @@ UserData8000BE90 *func_8000BE90(UserData8000BE90* data) {
     
     return ret;
 }
-// #else
-// GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000BE90.s")
-// #endif
 
 
 // u32 func_8000BE90(struct unk8000BE90Func*);

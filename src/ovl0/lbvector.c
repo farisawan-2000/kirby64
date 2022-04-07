@@ -10,7 +10,7 @@ extern f32 cosf(f32);
 extern f32 tanf(f32);
 extern f32 acosf(f32);
 
-f32 vec3_normalize(Vector *arg0) {
+f32 lbvector_Normalize(Vector *arg0) {
     f32 vecMag = sqrtf((arg0->x * arg0->x) + (arg0->y * arg0->y) + (arg0->z * arg0->z));
     if (vecMag == 0.0f) {
         return 0.0f;
@@ -21,27 +21,25 @@ f32 vec3_normalize(Vector *arg0) {
     return vecMag;
 }
 
-f32 vec3_mag(Vector *arg0) {
+f32 lbvector_Len(Vector *arg0) {
     return sqrtf((arg0->x * arg0->x) + (arg0->y * arg0->y) + (arg0->z * arg0->z));
 }
 
-Vector *vec3_add(Vector *arg0, Vector *arg1) {
+Vector *lbvector_Add(Vector *arg0, Vector *arg1) {
     arg0->x = arg0->x + arg1->x;
     arg0->y = arg0->y + arg1->y;
     arg0->z = arg0->z + arg1->z;
     return arg0;
 }
 
-// this func and the next one are kind of similar, but idk how to differentiate
-// them by name lol
-Vector *vec3_sub_vec(Vector *arg0, Vector *arg1) {
+Vector *lbvector_Sub(Vector *arg0, Vector *arg1) {
     arg0->x = arg0->x - arg1->x;
     arg0->y = arg0->y - arg1->y;
     arg0->z = arg0->z - arg1->z;
     return arg0;
 }
 
-Vector *vec3_sub(Vector *arg0, Vector *arg1, Vector *arg2) {
+Vector *lbvector_Diff(Vector *arg0, Vector *arg1, Vector *arg2) {
     arg0->x = arg1->x - arg2->x;
     arg0->y = arg1->y - arg2->y;
     arg0->z = arg1->z - arg2->z;
@@ -52,17 +50,17 @@ void vec3_sub_normalize(Vector *arg0, Vector *arg1, Vector *arg2) {
     arg0->x = arg1->x - arg2->x;
     arg0->y = arg1->y - arg2->y;
     arg0->z = arg1->z - arg2->z;
-    vec3_normalize(arg0);
+    lbvector_Normalize(arg0);
 }
 
-Vector *vec3_mul_scale(Vector *arg0, f32 arg1) {
+Vector *lbvector_Scale(Vector *arg0, f32 arg1) {
     arg0->x = arg0->x * arg1;
     arg0->y = arg0->y * arg1;
     arg0->z = arg0->z * arg1;
     return arg0;
 }
 
-Vector *vec3_div_scale(Vector *arg0, f32 arg1) {
+Vector *lbvector_Shrink(Vector *arg0, f32 arg1) {
     if (arg1 != 0.0f) {
         arg0->x = arg0->x / arg1;
         arg0->y = arg0->y / arg1;
@@ -85,11 +83,11 @@ void func_80018F34(Vector *arg0, f32 arg1, Vector *arg2, f32 arg3) {
     arg0->x += (arg2->x * arg3);
     arg0->y += (arg2->y * arg3);
     arg0->z += (arg2->z * arg3);
-    vec3_normalize(arg0);
+    lbvector_Normalize(arg0);
 }
 
-f32 vec3_angle_diff(Vector *arg0, Vector *arg1) {
-    f32 vecMagProduct = vec3_mag(arg0) * vec3_mag(arg1);
+f32 lbvector_Angle(Vector *arg0, Vector *arg1) {
+    f32 vecMagProduct = lbvector_Len(arg0) * lbvector_Len(arg1);
 
     if (vecMagProduct != 0.0f) {
         f32 vecCosDiff = VEC_DOT(arg0, arg1) / vecMagProduct;
@@ -107,7 +105,7 @@ f32 vec3_angle_diff(Vector *arg0, Vector *arg1) {
 }
 
 // I'm sorry, this function is too beautiful to not align like this
-Vector *vec3_get_euler_rotation(Vector *arg0, s32 axis, f32 angle) {
+Vector *lbvector_Rotate(Vector *arg0, s32 axis, f32 angle) {
     f32 xResult, yResult, zResult;
     f32 sinAngle    = sinf(angle);
     f32 cosAngle    = cosf(angle);
@@ -143,62 +141,52 @@ Vector *vec3_negate(Vector *arg0) {
 }
 
 #ifdef MIPS_TO_C
-void func_800191F8(Vector *arg0, LookAt *arg1, f32 arg2) {
-    f32 sp3C;
-    f32 sp38;
-    f32 sp34;
-    f32 sp2C;
-    f32 temp_f0_2;
-    f32 temp_f10;
-    f32 temp_f20;
-    f32 temp_f8;
-    f32 temp_f0;
-    f32 phi_f18;
-    f32 phi_f20;
-    f32 f16;
-    f32 f12;
-    f32 f22;
-    f32 f2;
+// lbvector_RotateAboutUnitAxis
+void func_800191F8(Vector *v, Vector *axis, f32 angle) {
+    f32 len_axis_yz;
+    f32 sinangle;
+    f32 cosangle;
+    f32 z2;
+    f32 x2;
+    f32 x;
+    f32 z3;
+    f32 x3;
+    f32 z;
+    f32 y;
+    f32 unit_axis_yz_y, unit_axis_yz_z;
 
-    temp_f0 = arg1->l[0].l.colc;
-    f2 = arg1->l[0].l.dir;
-    f12 = (temp_f0 * temp_f0) + (f2 * f2);
-    f12 = arg2;
-    sp3C = sqrtf(f12);
-    sp2C = sinf(f12);
-    f12 = arg2;
-    temp_f0_2 = cosf(f12);
-    if (sp3C != 0.0f) {
-        f22 = arg1->l[0].l.dir / sp3C;
-        sp34 = arg1->l[0].l.colc / sp3C;
-        f2 = arg0->x;
-        sp38 = f22;
-        phi_f18 = (arg0->y * sp34) + (arg0->z * f22);
-        phi_f20 = (arg0->y * f22) - (arg0->z * sp34);
+    len_axis_yz = sqrtf((axis->y * axis->y) + (axis->z * axis->z));
+    sinangle = sinf(angle);
+    cosangle = cosf(angle);
+    if (len_axis_yz != 0.0f) {
+        unit_axis_yz_y = axis->z / len_axis_yz;
+        unit_axis_yz_z = axis->y / len_axis_yz;
+
+        z = (v->y * unit_axis_yz_z) + (v->z * unit_axis_yz_y);
+        y = (v->y * unit_axis_yz_y) - (v->z * unit_axis_yz_z);
     } else {
-        f2 = arg0->x;
-        phi_f18 = arg0->z;
-        phi_f20 = arg0->y;
+        z = v->z;
+        y = v->y;
     }
-    f22 = arg1->l[0];
-    f16 = (f2 * sp3C) - (phi_f18 * f22);
-    f12 = (f22 * f2) + (phi_f18 * sp3C);
-    f2 = (f16 * temp_f0_2) - (phi_f20 * sp2C);
-    temp_f20 = (f16 * sp2C) + (phi_f20 * temp_f0_2);
-    f16 = (f2 * sp3C) + (f12 * f22);
-    f2 = sp34;
-    f12 = (-f2 * f22) + (f12 * sp3C);
-    if (sp3C != 0.0f) {
-        temp_f8 = temp_f20 * sp38;
-        temp_f10 = -temp_f20;
-        arg0->x = f16;
-        arg0->y = temp_f8 + (f12 * f2);
-        arg0->z = (temp_f10 * f2) + (f12 * sp38);
-        return;
+    
+    x2 = (v->x * len_axis_yz) - (z * axis->x);
+    z2 = (axis->x * v->x) + (z * len_axis_yz);
+
+    x3 = (x2 * cosangle) - (y * sinangle);
+    z3 = (x2 * sinangle) + (y * cosangle);
+
+    x = (x3 * len_axis_yz) + (z2 * axis->x);
+    z = (-x3 * axis->x) + (z2 * len_axis_yz);
+
+    if (len_axis_yz != 0.0f) {
+        v->x = x;
+        v->y = (z3 * unit_axis_yz_y) + (z * unit_axis_yz_z);
+        v->z = (-z3 * unit_axis_yz_z) + (z * unit_axis_yz_y);
+    } else {
+        v->x = x;
+        v->y = z3;
+        v->z = z;
     }
-    arg0->x = f16;
-    arg0->y = temp_f20;
-    arg0->z = f12;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
@@ -206,7 +194,7 @@ GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
 
 
 // granularly negates components of a vector
-Vector *vec3_negate_by_axis(Vector *arg0, s32 flag) {
+Vector *lbvector_Negate(Vector *arg0, s32 flag) {
     if (flag & AXIS_X) {
         arg0->x = -arg0->x;
     }
@@ -316,7 +304,7 @@ Vector *vec3_normalized_cross_product(Vector *v0, Vector *v1, Vector *result) {
     result->x = (v0->y * v1->z) - (v0->z * v1->y);
     result->y = (v0->z * v1->x) - (v0->x * v1->z);
     result->z = (v0->x * v1->y) - (v0->y * v1->x);
-    return (vec3_normalize(result) != 0.0f) ? result : NULL;
+    return (lbvector_Normalize(result) != 0.0f) ? result : NULL;
 }
 
 // Subtracts arg0 from arg2, and runs the same check as vec3_compare_directions on the result and arg1
@@ -333,13 +321,13 @@ s32 vec3_subtract_compare_directions(Vector *arg0, Vector *arg1, Vector *arg2) {
 }
 
 // gets the magnitude of the difference of 2 vectors
-f32 vec3_diff_mag(Vector *v0, Vector *v1) {
+f32 lbvector_DiffLen(Vector *v0, Vector *v1) {
     Vector result;
 
     result.x = v1->x - v0->x;
     result.y = v1->y - v0->y;
     result.z = v1->z - v0->z;
-    return vec3_mag(&result);
+    return lbvector_Len(&result);
 }
 
 // Takes the cross product of (arg1 - arg0) and (arg2 - arg0), then

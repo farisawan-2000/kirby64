@@ -123,7 +123,7 @@ f32 func_801DB5C8_ovl11(void) {
 
     sp2C.x = sp2C.y = 0.0f;
     sp2C.z = 2.0f;
-    vec3_get_euler_rotation(&sp2C, AXIS_Y, gEntitiesAngleYArray[D_8004A7C4->objId]);
+    lbvector_Rotate(&sp2C, AXIS_Y, gEntitiesAngleYArray[D_8004A7C4->objId]);
     sp20.x = gEntitiesNextPosXArray[0] - gEntitiesNextPosXArray[D_8004A7C4->objId];
     sp20.y = 0.0f;
     sp20.z = gEntitiesNextPosZArray[0] - gEntitiesNextPosZArray[D_8004A7C4->objId];
@@ -413,7 +413,7 @@ void func_801DBFA4_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
             sp1C.y = 60.0f;
             sp1C.z = 60.0f;
             sp1C.x = 0.0f;
-            vec3_get_euler_rotation(&sp1C, 2, gEntitiesAngleYArray[D_8004A7C4->objId]);
+            lbvector_Rotate(&sp1C, 2, gEntitiesAngleYArray[D_8004A7C4->objId]);
             temp_v0 = func_801ACD90_ovl11(0x20, 0, &sp1C);
             if (temp_v0 != 0) {
                 gEntitiesAngleYArray[temp_v0] = gEntitiesAngleYArray[D_8004A7C4->objId];
@@ -1045,7 +1045,7 @@ void func_801DD1CC_ovl11(struct GObj *arg0) {
     sp24 = 0.0f;
     sp28 = 200.0f;
     sp2C = 160.0f;
-    vec3_get_euler_rotation(temp_a0, 2, temp_f0);
+    lbvector_Rotate(temp_a0, 2, temp_f0);
     temp_v0_2 = func_801ACD90_ovl11(0x21, 0, &sp24);
     if (temp_v0_2 != 0) {
         gEntitiesAngleYArray[temp_v0_2] = sp20;
@@ -1281,7 +1281,7 @@ void func_801DD840_ovl11(struct GObj *arg0, s32 arg1, f32 arg2) {
             sp20 = 60.0f;
             sp24 = 60.0f;
             sp1C = 0.0f;
-            vec3_get_euler_rotation(temp_a0, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[D_8004A7C4->objId]);
+            lbvector_Rotate(temp_a0, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[D_8004A7C4->objId]);
             temp_v0 = func_801ACD90_ovl11(0x1F, 0, &sp1C);
             if (temp_v0 != 0) {
                 gEntitiesAngleYArray[temp_v0] = gEntitiesAngleYArray[D_8004A7C4->objId];

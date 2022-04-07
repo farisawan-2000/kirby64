@@ -15,7 +15,7 @@ glabel func_80221A74_ovl19
 /* 2421B8 80221AA8 000FC080 */  sll   $t8, $t7, 2
 /* 2421BC 80221AAC 00D83021 */  addu  $a2, $a2, $t8
 /* 2421C0 80221AB0 8CC641D0 */ lw $a2, %lo(gEntitiesAngleYArray)($a2)
-/* 2421C4 80221AB4 0C006424 */  jal   vec3_get_euler_rotation
+/* 2421C4 80221AB4 0C006424 */  jal   lbvector_Rotate
 /* 2421C8 80221AB8 24050002 */   li    $a1, 2
 /* 2421CC 80221ABC 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 2421D0 80221AC0 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)

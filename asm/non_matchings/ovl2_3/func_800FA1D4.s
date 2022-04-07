@@ -30,7 +30,7 @@ glabel func_800FA1D4
 /* 082CB0 800FA240 8DF80004 */  lw    $t8, 4($t7)
 /* 082CB4 800FA244 AE580004 */  sw    $t8, 4($s2)
 /* 082CB8 800FA248 8DF90008 */  lw    $t9, 8($t7)
-/* 082CBC 800FA24C 0C00661C */  jal   vec3_diff_mag
+/* 082CBC 800FA24C 0C00661C */  jal   lbvector_DiffLen
 /* 082CC0 800FA250 AE590008 */   sw    $t9, 8($s2)
 /* 082CC4 800FA254 4614003C */  c.lt.s $f0, $f20
 /* 082CC8 800FA258 00000000 */  nop   

@@ -64,7 +64,7 @@ SECTIONS
         BUILD_DIR/src/ovl0/object_manager.o(.text);
         BUILD_DIR/src/ovl0/ovl0_3.o(.text);
         BUILD_DIR/src/ovl0/ovl0_4.o(.text);
-        BUILD_DIR/src/ovl0/ovl0_5.o(.text);
+        BUILD_DIR/src/ovl0/lbvector.o(.text);
         BUILD_DIR/src/ovl0/ovl0_6.o(.text);
         BUILD_DIR/src/ovl0/ovl0_7.o(.text);
         BUILD_DIR/src/ovl0/ovl0_8.o(.text);

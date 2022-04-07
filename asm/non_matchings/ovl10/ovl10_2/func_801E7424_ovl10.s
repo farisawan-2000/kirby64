@@ -34,7 +34,7 @@ glabel func_801E7424_ovl10
 /* 1D8214 801E74A4 24050004 */  li    $a1, 4
 /* 1D8218 801E74A8 E7A20044 */  swc1  $f2, 0x44($sp)
 /* 1D821C 801E74AC E7A20040 */  swc1  $f2, 0x40($sp)
-/* 1D8220 801E74B0 0C006424 */  jal   vec3_get_euler_rotation
+/* 1D8220 801E74B0 0C006424 */  jal   lbvector_Rotate
 /* 1D8224 801E74B4 E7A8003C */   swc1  $f8, 0x3c($sp)
 /* 1D8228 801E74B8 3C048005 */  lui   $a0, %hi(D_8004A7C4) # $a0, 0x8005
 /* 1D822C 801E74BC 8C84A7C4 */  lw    $a0, %lo(D_8004A7C4)($a0)

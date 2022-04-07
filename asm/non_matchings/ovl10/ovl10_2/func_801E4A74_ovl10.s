@@ -22,7 +22,7 @@ glabel func_801E4A74_ovl10
 /* 1D5834 801E4AC4 00C83021 */  addu  $a2, $a2, $t0
 /* 1D5838 801E4AC8 8CC641D0 */ lw $a2, %lo(gEntitiesAngleYArray)($a2)
 /* 1D583C 801E4ACC 24050002 */  li    $a1, 2
-/* 1D5840 801E4AD0 0C006424 */  jal   vec3_get_euler_rotation
+/* 1D5840 801E4AD0 0C006424 */  jal   lbvector_Rotate
 /* 1D5844 801E4AD4 AFA30044 */   sw    $v1, 0x44($sp)
 /* 1D5848 801E4AD8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 1D584C 801E4ADC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
