@@ -8,8 +8,8 @@ glabel func_8001BCE0
 /* 01C8F8 8001BCF8 AFA70044 */  sw    $a3, 0x44($sp)
 /* 01C8FC 8001BCFC C7B00044 */  lwc1  $f16, 0x44($sp)
 /* 01C900 8001BD00 46007202 */  mul.s $f8, $f14, $f0
-/* 01C904 8001BD04 3C0C8004 */  lui   $t4, %hi(D_8003E330) # $t4, 0x8004
-/* 01C908 8001BD08 258CE330 */  addiu $t4, %lo(D_8003E330) # addiu $t4, $t4, -0x1cd0
+/* 01C904 8001BD04 3C0C8004 */  lui   $t4, %hi(lbreflect_Int16SinTable) # $t4, 0x8004
+/* 01C908 8001BD08 258CE330 */  addiu $t4, %lo(lbreflect_Int16SinTable) # addiu $t4, $t4, -0x1cd0
 /* 01C90C 8001BD0C 46008482 */  mul.s $f18, $f16, $f0
 /* 01C910 8001BD10 AFB00004 */  sw    $s0, 4($sp)
 /* 01C914 8001BD14 4600218D */  trunc.w.s $f6, $f4
