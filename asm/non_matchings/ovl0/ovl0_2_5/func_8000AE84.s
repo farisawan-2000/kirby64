@@ -99,8 +99,8 @@ glabel HS64_omInit
 /* 00BBDC 8000AFDC AC20A55C */  sw    $zero, %lo(gGObjProcessHead)($at)
 .L8000AFE0_ovl0:
 /* 00BBE0 8000AFE0 3C028005 */  lui   $v0, %hi(D_8004A560) # $v0, 0x8005
-/* 00BBE4 8000AFE4 3C038005 */  lui   $v1, %hi(D_8004A570) # $v1, 0x8005
-/* 00BBE8 8000AFE8 2463A570 */  addiu $v1, %lo(D_8004A570) # addiu $v1, $v1, -0x5a90
+/* 00BBE4 8000AFE4 3C038005 */  lui   $v1, %hi(gGObjProcessCount) # $v1, 0x8005
+/* 00BBE8 8000AFE8 2463A570 */  addiu $v1, %lo(gGObjProcessCount) # addiu $v1, $v1, -0x5a90
 /* 00BBEC 8000AFEC 2442A560 */  addiu $v0, %lo(D_8004A560) # addiu $v0, $v0, -0x5aa0
 .L8000AFF0_ovl0:
 /* 00BBF0 8000AFF0 24420004 */  addiu $v0, $v0, 4
@@ -356,10 +356,10 @@ glabel HS64_omInit
 /* 00BF60 8000B360 3C068005 */  lui   $a2, %hi(gAObjCount) # $a2, 0x8005
 /* 00BF64 8000B364 3C078005 */  lui   $a3, %hi(gOMMtxCount) # $a3, 0x8005
 /* 00BF68 8000B368 3C088005 */  lui   $t0, %hi(gGObjCount) # $t0, 0x8005
-/* 00BF6C 8000B36C 3C098005 */  lui   $t1, %hi(D_8004A570) # $t1, 0x8005
-/* 00BF70 8000B370 3C0A8005 */  lui   $t2, %hi(D_8004A544) # $t2, 0x8005
-/* 00BF74 8000B374 254AA544 */  addiu $t2, %lo(D_8004A544) # addiu $t2, $t2, -0x5abc
-/* 00BF78 8000B378 2529A570 */  addiu $t1, %lo(D_8004A570) # addiu $t1, $t1, -0x5a90
+/* 00BF6C 8000B36C 3C098005 */  lui   $t1, %hi(gGObjProcessCount) # $t1, 0x8005
+/* 00BF70 8000B370 3C0A8005 */  lui   $t2, %hi(gGObjThreadCount) # $t2, 0x8005
+/* 00BF74 8000B374 254AA544 */  addiu $t2, %lo(gGObjThreadCount) # addiu $t2, $t2, -0x5abc
+/* 00BF78 8000B378 2529A570 */  addiu $t1, %lo(gGObjProcessCount) # addiu $t1, $t1, -0x5a90
 /* 00BF7C 8000B37C 2508A78C */  addiu $t0, %lo(gGObjCount) # addiu $t0, $t0, -0x5874
 /* 00BF80 8000B380 24E7A794 */  addiu $a3, %lo(gOMMtxCount) # addiu $a3, $a3, -0x586c
 /* 00BF84 8000B384 24C6A7A0 */  addiu $a2, %lo(gAObjCount) # addiu $a2, $a2, -0x5860

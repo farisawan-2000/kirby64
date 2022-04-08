@@ -76,7 +76,7 @@ extern const char D_80040670[];
 // bss
 
 struct GObjThread *gGObjThreadHead; // 0x8004A540
-u32 D_8004A544;
+u32 gGObjThreadCount;
 u32 D_8004A548;
 u32 gNewEntityStackSize; // 0x8004A54C
 void (*D_8004A550)(struct ObjStack *);
@@ -84,7 +84,7 @@ struct GObjThreadStack* gGObjThreadStackHead; // 0x8004A554
 s32 D_8004A558;
 struct GObjProcess *gGObjProcessHead; // 0x8004A55C
 struct GObjProcess *D_8004A560[4]; // probably length 4
-u32 D_8004A570;
+u32 gGObjProcessCount;
 // 0x8004A574?
 struct GObj *D_8004A578[32]; // probably length 32 based on loop asm
 void* D_8004A5F8[32]; // also length 32? lines up with next symbol
@@ -119,7 +119,7 @@ static u32 pad1, pad2, pad3, pad4, pad5, pad6; // 0x8004AA78 - 0x8004AA8F?
 
 extern struct GObj *D_800DE44C;
 
-struct GObjThread *get_gobj_thread(void) {
+struct GObjThread *HS64_GObjThreadPop(void) {
     struct GObjThread *ret;
     if (gGObjThreadHead == NULL) {
         fatal_printf("om : couldn't get GObjThread\n");
@@ -127,17 +127,17 @@ struct GObjThread *get_gobj_thread(void) {
     }
     ret = gGObjThreadHead;
     gGObjThreadHead = gGObjThreadHead->unk0;
-    D_8004A544++;
+    gGObjThreadCount++;
     return ret;
 }
 
-void push_gobj_thread(struct GObjThread *arg0) {
+void HS64_GObjThreadPush(struct GObjThread *arg0) {
     arg0->unk0 = gGObjThreadHead;
     gGObjThreadHead = arg0;
-    D_8004A544--;
+    gGObjThreadCount--;
 }
 
-struct GObjThreadStack *get_gobj_thread_stack(void) {
+struct GObjThreadStack *HS64_GObjThreadStackPop(void) {
     struct GObjThreadStack *temp_v0;
 
     if (gGObjThreadStackHead == NULL) {
@@ -150,13 +150,13 @@ struct GObjThreadStack *get_gobj_thread_stack(void) {
     return temp_v0;
 }
 
-void push_gobj_thread_stack(struct GObjThreadStack *arg0) {
+void HS64_GObjThreadStackPush(struct GObjThreadStack *arg0) {
     arg0->unk0 = gGObjThreadStackHead;
     gGObjThreadStackHead = arg0;
     D_8004A548--;
 }
 
-struct GObjProcess *get_gobj_process(void) {
+struct GObjProcess *HS64_GObjProcessPop(void) {
     struct GObjProcess *temp_v0;
 
     if (gGObjProcessHead == NULL) {
@@ -165,7 +165,7 @@ struct GObjProcess *get_gobj_process(void) {
     }
     temp_v0 = gGObjProcessHead;
     gGObjProcessHead = gGObjProcessHead->unk0;
-    D_8004A570++;
+    gGObjProcessCount++;
     return temp_v0;
 }
 
@@ -248,39 +248,39 @@ block_7:
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_800080C0.s")
 #endif
 
-void push_gobj_process(struct GObjProcess *arg0) {
-    arg0->unk0 = gGObjProcessHead;
-    gGObjProcessHead = arg0;
-    D_8004A570--;
+void HS64_GObjProcessPush(struct GObjProcess *proc) {
+    proc->unk0 = gGObjProcessHead;
+    gGObjProcessHead = proc;
+    gGObjProcessCount--;
 }
 
-// either removes arg0 from the next/prev linked list,
+// either removes proc from the next/prev linked list,
 // or from the parent/child linked list
-void unlink_gobj_process(struct GObjProcess *arg0) {
-    if (arg0->unkC != 0) {
-        arg0->unkC->unk8 = arg0->unk8;
+void unlink_gobj_process(struct GObjProcess *proc) {
+    if (proc->unkC != 0) {
+        proc->unkC->unk8 = proc->unk8;
     } else {
-        D_8004A560[arg0->pri] = arg0->unk8;
+        D_8004A560[proc->pri] = proc->unk8;
     }
-    if (arg0->unk8 != 0) {
-        arg0->unk8->unkC = arg0->unkC;
+    if (proc->unk8 != 0) {
+        proc->unk8->unkC = proc->unkC;
     }
 }
 
-void func_80008210(struct GObjProcess *arg0) {
+void func_80008210(struct GObjProcess *proc) {
     struct GObj *sp1C;
 
-    sp1C = arg0->gobj;
-    unlink_gobj_process(arg0);
-    if (arg0->unk4 != 0) {
-        arg0->unk4->unk0 = arg0->unk0;
+    sp1C = proc->gobj;
+    unlink_gobj_process(proc);
+    if (proc->unk4 != 0) {
+        proc->unk4->unk0 = proc->unk0;
     } else {
-        sp1C->proc = arg0->unk0;
+        sp1C->proc = proc->unk0;
     }
-    if (arg0->unk0 != 0) {
-        arg0->unk0->unk4 = arg0->unk4;
+    if (proc->unk0 != 0) {
+        proc->unk0->unk4 = proc->unk4;
     } else {
-        sp1C->unk1C = arg0->unk4;
+        sp1C->unk1C = proc->unk4;
     }
 }
 
@@ -289,7 +289,7 @@ struct GObjProcess *func_80008280(void) {
 }
 
 // Unused?
-struct ObjStack *func_8000828C(struct GObjProcess *arg0) {
+struct ObjStack *HS64_GetGObjProcessStack(struct GObjProcess *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
@@ -300,7 +300,7 @@ struct ObjStack *func_8000828C(struct GObjProcess *arg0) {
 }
 
 // Unused?
-s32 func_800082D4(struct GObjProcess *arg0) {
+s32 HS64_GetGObjProcessStackSize(struct GObjProcess *arg0) {
     if (arg0 == NULL) {
         arg0 = D_8004A7D0;
     }
@@ -492,7 +492,7 @@ struct AObj *HS64_AObjPop(void) {
     return toReturn;
 }
 
-void func_80008830(struct Animation *anim, struct AObj *aobj) {
+void HS64_AObjLinkToAnimation(struct Animation *anim, struct AObj *aobj) {
     aobj->next = anim->aobj;
     anim->aobj = aobj;
 }
@@ -571,7 +571,7 @@ void HS64_CameraPush(struct Camera *arg0) {
     gCameraCount--;
 }
 
-struct GObjThread *get_gobj_thread();
+struct GObjThread *HS64_GObjThreadPop();
 void func_800080C0(struct GObjProcess *);
 
 struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind, u32 pri) {
@@ -582,7 +582,7 @@ struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind
     if (arg0 == NULL) {
         arg0 = D_8004A7C4;
     }
-    oProcess = get_gobj_process();
+    oProcess = HS64_GObjProcessPop();
     if (pri >= 4) {
         fatal_printf("om : GObjProcess's priority is bad value\n");
         while (1);
@@ -593,10 +593,10 @@ struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind
     oProcess->gobj = arg0;
     oProcess->entryPoint = arg1;
     switch (kind) {
-        case 0:
-            oThread = get_gobj_thread();
+        case HS64_GOBJPROC_KIND_GOBJTHREAD:
+            oThread = HS64_GObjThreadPop();
             oProcess->payload.thread = oThread;
-            oThread->objStack = &get_gobj_thread_stack()->stack;
+            oThread->objStack = &HS64_GObjThreadStackPop()->stack;
             oThread->objStackSize = gNewEntityStackSize;
             osCreateThread(&oThread->thread, D_8003DE50++, arg1, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
             oThread->objStack->stack[7] = STACK_TOP_MAGIC;
@@ -604,7 +604,7 @@ struct GObjProcess *func_80008A18(struct GObj *arg0, void (*arg1)(void), u8 kind
                 D_8003DE50 = 10000000;
             }
             break;
-        case 1:
+        case HS64_GOBJPROC_KIND_CALLBACK:
             oProcess->payload.thread = arg1;
             break;
         default:
@@ -625,7 +625,7 @@ struct GObjProcess *func_80008B94(struct GObj *arg0, struct GObjThread *entry, u
     if (arg0 == 0) {
         arg0 = D_8004A7C4;
     }
-    oProcess = get_gobj_process();
+    oProcess = HS64_GObjProcessPop();
     if (pri >= 4) {
         fatal_printf(D_80040368); //"om : GObjProcess's priority is bad value\n"
         while (1);
@@ -634,10 +634,10 @@ struct GObjProcess *func_80008B94(struct GObj *arg0, struct GObjThread *entry, u
     oProcess->unk15 = 0;
     oProcess->gobj = arg0;
     oProcess->entryPoint = entry;
-    oThread = get_gobj_thread(); oProcess->payload.thread = oThread;
+    oThread = HS64_GObjThreadPop(); oProcess->payload.thread = oThread;
     if (stackSize == 0) {
-        oProcess->kind = 0;
-        oThread->objStack = &get_gobj_thread_stack()->stack;
+        oProcess->kind = HS64_GOBJPROC_KIND_GOBJTHREAD;
+        oThread->objStack = &HS64_GObjThreadStackPop()->stack;
         oThread->objStackSize = gNewEntityStackSize;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
         osCreateThread(&oThread->thread, phi_a1, entry, arg0, &(oThread->objStack->stack[gNewEntityStackSize / 8]), 0x33);
@@ -646,7 +646,7 @@ struct GObjProcess *func_80008B94(struct GObj *arg0, struct GObjThread *entry, u
             D_8003DE50 = 10000000;
         }
     } else {
-        oProcess->kind = 2;
+        oProcess->kind = HS64_GOBJPROC_KIND_OSTHREAD;
         oThread->objStackSize = stackSize;
         oThread->objStack = arg4;
         phi_a1 = (arg3 != -1) ? arg3 : D_8003DE50++;
@@ -683,8 +683,8 @@ void func_80008DA8(struct GObjProcess *arg0) {
         switch (arg0->kind) {
             case 0:
                 osDestroyThread(&arg0->payload.thread->thread);
-                push_gobj_thread_stack(&arg0->payload.thread->objStack->stack[0] - 1); // why???
-                push_gobj_thread(arg0->payload.thread);
+                HS64_GObjThreadStackPush(&arg0->payload.thread->objStack->stack[0] - 1); // why???
+                HS64_GObjThreadPush(arg0->payload.thread);
                 break;
             case 1:
                 break;
@@ -694,10 +694,10 @@ void func_80008DA8(struct GObjProcess *arg0) {
                 if (temp_v0_3 != 0) {
                     temp_v0_3(arg0->payload.thread->objStack);
                 }
-                push_gobj_thread(arg0->payload.thread);
+                HS64_GObjThreadPush(arg0->payload.thread);
         }
         func_80008210(arg0);
-        push_gobj_process(arg0);
+        HS64_GObjProcessPush(arg0);
     }
 }
 
@@ -733,7 +733,7 @@ It needs to be within ".section .rodata" or ".section .late_rodata".
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009658.s")
 #endif
 
-extern void func_80008830(struct Animation *anim, struct AObj *stack);
+extern void HS64_AObjLinkToAnimation(struct Animation *anim, struct AObj *stack);
 
 // Initializes a new AObj with an index
 struct AObj *HS64_AObjNew(struct Animation *anim, u8 index) {
@@ -749,7 +749,7 @@ struct AObj *HS64_AObjNew(struct Animation *anim, u8 index) {
     toReturn->unk10 = 0.0f;
     toReturn->unkC = 0.0f;
     toReturn->unk8 = 1.0f;
-    func_80008830(anim, toReturn);
+    HS64_AObjLinkToAnimation(anim, toReturn);
     return toReturn;
 }
 
@@ -1187,27 +1187,14 @@ loop_19:
             goto loop_19;
         }
     }
-    temp_s2 = arg0->unk80;
-    phi_s2 = temp_s2;
-    if (temp_s2 != 0) {
-loop_21:
-        temp_s1_2 = phi_s2->ops;
-        phi_s1_3 = temp_s1_2;
-        if (temp_s1_2 != 0) {
-loop_22:
-            temp_s0_5 = phi_s1_3->next;
-            HS64_AObjPush(phi_s1_3);
-            phi_s1_3 = temp_s0_5;
-            if (temp_s0_5 != 0) {
-                goto loop_22;
-            }
+    anim = arg0->unk80;
+    while (anim != 0) {
+        while (anim->unk90 != 0) {
+            HS64_AObjPush(anim->unk90);
+            anim->unk90 = anim->unk90->next;
         }
-        temp_s0_6 = phi_s2->next;
-        HS64_MObjPush(phi_s2);
-        phi_s2 = temp_s0_6;
-        if (temp_s0_6 != 0) {
-            goto loop_21;
-        }
+        HS64_MObjPush(anim);
+        anim = anim->next;
     }
     HS64_DObjPush(arg0);
 }
@@ -1246,7 +1233,7 @@ struct Camera *func_80009F7C(struct GObj *gobj) {
     cam->unk84 = 0;
     cam->unk88 = 0;
     cam->unk8C = 0;
-    cam->unk6C = 0;
+    cam->aobj = NULL;
     cam->unk70 = 0;
     cam->unk74 = D_80040660;
     cam->unk78 = 1.0f;
@@ -1254,49 +1241,35 @@ struct Camera *func_80009F7C(struct GObj *gobj) {
     return cam;
 }
 
-#ifdef MIPS_TO_C
-void func_8000A02C(struct Camera *arg0) {
-    s32 temp_s0;
-    struct AObj *temp_s0_2;
-    struct AObj *temp_s1;
-    void **temp_a0;
-    void *temp_v0;
-    struct Camera *phi_s1;
-    s32 phi_s0;
-    struct AObj *phi_s0_2;
+void func_8000A02C(struct Camera *cam) {
+    struct AObj *aobj;
+    struct GObj *gobj;
+    struct OMMtx *mtx;
+    int i;
 
-    temp_v0 = arg0->filler;
-    temp_v0->unkF = 0;
-    temp_v0->unk3C = 0;
-    phi_s1 = arg0;
-    phi_s0 = 0;
-loop_1:
-    temp_a0 = phi_s1->unk64;
-    if (temp_a0 != 0) {
-        HS64_OMMtxPush(temp_a0);
-    }
-    temp_s0 = phi_s0 + 4;
-    phi_s1 = phi_s1 + 4;
-    phi_s0 = temp_s0;
-    if (temp_s0 != 8) {
-        goto loop_1;
-    }
-    temp_s0_2 = arg0->unk6C;
-    phi_s0_2 = temp_s0_2;
-    if (temp_s0_2 != 0) {
-loop_5:
-        temp_s1 = phi_s0_2->next;
-        HS64_AObjPush(phi_s0_2);
-        phi_s0_2 = temp_s1;
-        if (temp_s1 != 0) {
-            goto loop_5;
+    gobj = cam->gobj;
+    gobj->unkF = 0;
+    gobj->unk3C = NULL;
+
+    for (i = 0; i < 2; i++) {
+        mtx = cam->unk64[i];
+
+        if (mtx != NULL) {
+            HS64_OMMtxPush(mtx);
         }
     }
-    HS64_CameraPush(arg0);
+
+    // not an easy loop
+    aobj = cam->aobj;
+    while (aobj != NULL) {
+        struct AObj *anext = aobj->next;
+
+        HS64_AObjPush(aobj);
+        aobj = anext;
+    }
+
+    HS64_CameraPush(cam);
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_8000A02C.s")
-#endif
 
 struct GObj *omGAddCommon(u32 id, void (*arg1)(void), u8 link, u32 arg3) {
     struct GObj *toReturn;
@@ -1634,13 +1607,13 @@ void func_8000AAE0(void) {
 }
 
 extern s32 D_8004A7D4;
-u32 func_8000ABAC(struct GObj *arg0) {
+u32 func_8000ABAC(struct GObj *gobj) {
     u32 temp_a1;
 
     D_8003DE54 = 1;
-    D_8004A7C4 = arg0;
-    arg0->unk14();
-    temp_a1 = arg0->unk4;
+    D_8004A7C4 = gobj;
+    gobj->unk14();
+    temp_a1 = gobj->unk4;
     D_8004A7C4 = NULL;
     D_8003DE54 = 0;
     if (D_8004A7D4 != 0) {
@@ -1648,7 +1621,7 @@ u32 func_8000ABAC(struct GObj *arg0) {
             D_8004A7D4 = 0;
         } else {
             D_8004A7D4 = 0;
-            func_8000A29C(arg0);
+            func_8000A29C(gobj);
         }
     }
     return temp_a1;
@@ -1665,14 +1638,14 @@ struct GObjProcess *omGDispatchProc(struct GObjProcess *proc) {
     D_8004A7D0 = proc;
 
     switch (proc->kind) {
-        case 0: case 2:
+        case 0:
             osStartThread(&proc->payload.thread->thread);
             osRecvMesg(&HS64_GObjProcMesgQ, NULL, 1);
             break;
         case 1:
             proc->payload.callback(proc->gobj);
             break;
-        // case 2: default: break;
+        case 2: default: break;
     }
 
     ret = proc->unk8;
@@ -1884,7 +1857,7 @@ void HS64_omInit(void *arg0) {
         temp_v0_5 = phi_v0_3 + 4;
         temp_v0_5->unk-4 = 0;
         phi_v0_3 = (struct GObjProcess **) temp_v0_5;
-    } while (temp_v0_5 < (u32) &D_8004A570);
+    } while (temp_v0_5 < (u32) &gGObjProcessCount);
     if (arg0->unk24 != 0) {
         temp_v0_6 = arg0->unk20;
         gGObjHead = temp_v0_6;
@@ -2077,8 +2050,8 @@ void HS64_omInit(void *arg0) {
     gAObjCount = 0;
     gOMMtxCount = 0;
     gGObjCount = 0;
-    D_8004A570 = 0;
-    D_8004A544 = 0;
+    gGObjProcessCount = 0;
+    gGObjThreadCount = 0;
     D_8004A548 = 0;
     D_8004A558 = 0;
     func_80017B34(0U);

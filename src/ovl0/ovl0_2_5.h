@@ -8,6 +8,14 @@
 
 #define STACK_TOP_MAGIC 0x00000000FEDCBA98
 
+// todo: keep naming scheme but rename regardless
+// uses GObjThreadStack
+#define HS64_GOBJPROC_KIND_GOBJTHREAD 0
+// just uses a callback
+#define HS64_GOBJPROC_KIND_CALLBACK 1
+// classic stack
+#define HS64_GOBJPROC_KIND_OSTHREAD 2
+
 struct ObjStack {
     // what looks like an mini thread stack, based on the last value in here being set to STACK_TOP_MAGIC
     u64 stack[0x20];
@@ -161,7 +169,7 @@ struct DObj {
     f32 unk74;
     f32 unk78;
     f32 unk7C;
-    u32 unk80;
+    struct MObj *unk80;
     u32 unk84;
 };
 
@@ -194,7 +202,7 @@ struct Camera {
 
     u32 unk60;
     struct OMMtx *unk64[2];
-    u32 unk6C;
+    struct AObj *aobj;
     u32 unk70;
 
     // vec?
