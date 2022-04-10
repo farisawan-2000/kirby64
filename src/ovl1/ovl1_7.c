@@ -348,7 +348,7 @@ f32 func_800AF618(s32 arg0, void *arg1, void *arg2) {
         func_8000BBE0_ovl1(0);
         phi_s0 = D_8004A7C4;
     }
-    temp_v0 = func_80009C38_ovl1(phi_s0, arg0);
+    temp_v0 = func_80009C38(phi_s0, arg0);
     *arg2 = temp_v0;
     func_8000F448_ovl1(temp_v0);
     temp_s0_2 = D_8004A7C4;

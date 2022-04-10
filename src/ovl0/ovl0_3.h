@@ -28,6 +28,7 @@ struct AObj { // TODO: Same as Unk6C?
 
 struct Animation {
   u32 unk0;
+  // Is this a GObj????????????
   struct {
       u8 pad[0x40];
       f32 unk40;

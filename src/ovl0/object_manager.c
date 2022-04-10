@@ -975,56 +975,37 @@ s32 func_80009BD4(void *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009BD4.s")
 #endif
 
-#ifdef MIPS_TO_C
-struct DObj *func_80009C38(struct GObj *arg0, u8 *arg1) {
-    struct DObj *sp1C;
-    struct DObj *temp_a3;
-    struct DObj *temp_v0;
+struct DObj *func_80009C38(struct GObj *gobj, u8 *arg1) {
+    struct DObj *dobj;
     struct DObj *temp_v1;
-    struct DObj *temp_v1_2;
-    struct GObj *phi_a2;
-    struct DObj *phi_v1;
-    struct DObj *phi_a0;
 
-    phi_a2 = arg0;
-    if (arg0 == 0) {
-        phi_a2 = D_8004A7C4;
+    if (gobj == NULL) {
+        gobj = D_8004A7C4;
     }
-    arg0 = phi_a2;
-    temp_v0 = HS64_DObjPop();
-    temp_a3 = arg0->unk3C;
-    if (temp_a3 != 0) {
-        temp_v1 = temp_a3->unk8;
-        phi_v1 = temp_v1;
-        phi_a0 = temp_a3;
-        if (temp_v1 != 0) {
-loop_4:
-            temp_v1_2 = phi_v1->unk8;
-            phi_v1 = temp_v1_2;
-            phi_a0 = phi_v1;
-            if (temp_v1_2 != 0) {
-                goto loop_4;
-            }
+    dobj = HS64_DObjPop();
+    
+    if (gobj->unk3C != NULL) {
+        temp_v1 = gobj->unk3C;
+        
+        while (temp_v1->unk8 != 0) {
+            temp_v1 = temp_v1->unk8;
         }
-        phi_a0->unk8 = temp_v0;
-        temp_v0->unkC = phi_a0;
+
+        temp_v1->unk8 = dobj;
+        dobj->unkC = temp_v1;
     } else {
-        arg0->unkF = 1;
-        arg0->unk3C = temp_v0;
-        temp_v0->unkC = 0;
+        gobj->unkF = 1;
+        gobj->unk3C = dobj;
+        dobj->unkC = 0;
     }
-    temp_v0->unk4 = arg0;
-    temp_v0->unk14 = 1;
-    temp_v0->unk8 = NULL;
-    temp_v0->unk10 = NULL;
-    temp_v0->filler2 = arg1;
-    sp1C = temp_v0;
-    func_80009BD4(temp_v0, temp_v0, arg0, temp_a3);
-    return sp1C;
+    dobj->gobj = gobj;
+    dobj->unk14 = 1;
+    dobj->unk8 = NULL;
+    dobj->unk10 = NULL;
+    dobj->unk50 = arg1;
+    func_80009BD4(dobj);
+    return dobj;
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2_5/func_80009C38.s")
-#endif
 
 #ifdef MIPS_TO_C
 struct DObj *func_80009CE8(void *arg0, u8 *arg1) {
