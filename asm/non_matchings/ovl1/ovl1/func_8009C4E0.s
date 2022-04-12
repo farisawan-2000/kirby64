@@ -2051,8 +2051,8 @@ glabel func_8009C4E0
 /* 046568 8009E318 3C01800D */   lui   $at, %hi(D_800D5868) # $at, 0x800d
 /* 04656C 8009E31C C4245868 */  lwc1  $f4, %lo(D_800D5868)($at)
 /* 046570 8009E320 C648003C */  lwc1  $f8, 0x3c($s2)
-/* 046574 8009E324 3C058004 */  lui   $a1, %hi(D_8003E330) # $a1, 0x8004
-/* 046578 8009E328 24A5E330 */  addiu $a1, %lo(D_8003E330) # addiu $a1, $a1, -0x1cd0
+/* 046574 8009E324 3C058004 */  lui   $a1, %hi(lbreflect_Int16SinTable) # $a1, 0x8004
+/* 046578 8009E328 24A5E330 */  addiu $a1, %lo(lbreflect_Int16SinTable) # addiu $a1, $a1, -0x1cd0
 /* 04657C 8009E32C 46044182 */  mul.s $f6, $f8, $f4
 /* 046580 8009E330 8E46005C */  lw    $a2, 0x5c($s2)
 /* 046584 8009E334 4600328D */  trunc.w.s $f10, $f6

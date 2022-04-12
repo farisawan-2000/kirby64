@@ -64,7 +64,7 @@ SECTIONS
         BUILD_DIR/src/ovl0/object_manager.o(.text);
         BUILD_DIR/src/ovl0/ovl0_3.o(.text);
         BUILD_DIR/src/ovl0/ovl0_4.o(.text);
-        BUILD_DIR/src/ovl0/ovl0_5.o(.text);
+        BUILD_DIR/src/ovl0/lbvector.o(.text);
         BUILD_DIR/src/ovl0/ovl0_6.o(.text);
         BUILD_DIR/src/ovl0/ovl0_7.o(.text);
         BUILD_DIR/src/ovl0/ovl0_8.o(.text);
@@ -653,6 +653,7 @@ SECTIONS
         BUILD_DIR/src/ovl19/ovl19_5.o(.text);
     }
     END_SEG(ovl19)
+
     BEGIN_SEG(ovl19Data, _ovl19SegmentEnd) SUBALIGN(16) {
         BUILD_DIR/data/kirby.ovl19.data.o(.data*);
         BUILD_DIR/data/kirby.ovl19.rodata.o(.rodata*);
@@ -714,56 +715,28 @@ SECTIONS
     END_SEG(data_4A3B60)
 
     #include "assets/bank0.ld"
-    BEGIN_SEG(bank0_other, __romPos) {
-        BUILD_DIR/asm/banks/bank0.o(.data*); 
-    }
-    END_SEG(bank0_other)
 
     #include "assets/bank1.ld"
-    BEGIN_SEG(bank1_other, __romPos) {
-        BUILD_DIR/asm/banks/bank1.o(.data*); 
-    }
-    END_SEG(bank1_other)
 
     #include "assets/bank2.ld"
-    BEGIN_SEG(bank2_other, __romPos) {
-        BUILD_DIR/asm/banks/bank2.o(.data*); 
-    }
-    END_SEG(bank2_other)
     
     #include "assets/bank3.ld"
-    BEGIN_SEG(bank3_other, __romPos) {
-        BUILD_DIR/asm/banks/bank3.o(.data*); 
-    }
-    END_SEG(bank3_other)
 
     #include "assets/bank4.ld"
-    BEGIN_SEG(bank4_other, __romPos) {
-        BUILD_DIR/asm/banks/bank4.o(.data*); 
-    }
-    END_SEG(bank4_other)
 
-    BEGIN_SEG(bank5, __romPos) {
-        BUILD_DIR/asm/banks/bank5.o(.data*); 
-    }
-    END_SEG(bank5)
+    #include "assets/bank5.ld"
 
     #include "assets/bank6.ld"
-    BEGIN_SEG(bank6_other, __romPos) {
-        BUILD_DIR/asm/banks/bank6.o(.data*); 
-    }
-    END_SEG(bank6_other)
 
     #include "assets/bank7.ld"
-    BEGIN_SEG(bank7_other, __romPos) ALIGN(4) {
-        BUILD_DIR/asm/banks/bank7.o(.data*); 
+
+#ifndef NON_MATCHING
+    BEGIN_SEG(epic_pad, 0) {
+        QUAD(0);
+        LONG(0);
     }
-    END_SEG(bank7_other)
-
-
-    #include "assets/levels.ld"
-
-
+    END_SEG(epic_pad)
+#endif
     /DISCARD/ :
     {
         *(*);

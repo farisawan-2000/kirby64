@@ -19,9 +19,9 @@ glabel func_80227308_ovl18
 /* 239CEC 8022734C 0C001EE9 */  jal   func_80007BA4_ovl18
 /* 239CF0 80227350 AC8F000C */   sw    $t7, 0xc($a0)
 /* 239CF4 80227354 3C18803B */  lui   $t8, %hi(gFrameBuffer) # $t8, 0x803b
-/* 239CF8 80227358 3C198023 */  lui   $t9, %hi(D_8022FB50) # $t9, 0x8023
+/* 239CF8 80227358 3C198023 */  lui   $t9, %hi(_ovl19SegNoloadEnd) # $t9, 0x8023
 /* 239CFC 8022735C 3C068023 */  lui   $a2, %hi(D_8022AE4C) # $a2, 0x8023
-/* 239D00 80227360 2739FB50 */  addiu $t9, %lo(D_8022FB50) # addiu $t9, $t9, -0x4b0
+/* 239D00 80227360 2739FB50 */  addiu $t9, %lo(_ovl19SegNoloadEnd) # addiu $t9, $t9, -0x4b0
 /* 239D04 80227364 27186900 */  addiu $t8, %lo(gFrameBuffer) # addiu $t8, $t8, 0x6900
 /* 239D08 80227368 24C6AE4C */  addiu $a2, %lo(D_8022AE4C) # addiu $a2, $a2, -0x51b4
 /* 239D0C 8022736C 03194023 */  subu  $t0, $t8, $t9

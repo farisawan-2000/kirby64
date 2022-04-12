@@ -691,7 +691,7 @@ f32 func_801E4A74_ovl10(void) {
     sp3C = 0.0f;
     sp40 = 2.0f;
     sp44 = temp_v1;
-    vec3_get_euler_rotation(&sp38, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[temp_v0->objId]);
+    lbvector_Rotate(&sp38, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[temp_v0->objId]);
     temp_v0_2 = D_8004A7C4;
     sp30 = 0.0f;
     sp2C = *gEntitiesNextPosXArray - gEntitiesNextPosXArray[temp_v0_2->objId];
@@ -1936,7 +1936,7 @@ void func_801E7424_ovl10(s32 arg0) {
         sp44 = 0.0f;
         sp40 = 0.0f;
         sp3C = D_801F4B38_ovl10;
-        vec3_get_euler_rotation(temp_a0, 4, temp_a2);
+        lbvector_Rotate(temp_a0, 4, temp_a2);
         temp_a0_2 = D_8004A7C4;
         D_800E6690[temp_a0_2->objId] = sp3C;
         D_800E3750[temp_a0_2->objId] = sp40;
@@ -2461,7 +2461,7 @@ void func_801E871C_ovl10(s32 arg0) {
         sp44 = 0.0f;
         sp40 = 0.0f;
         sp3C = D_801F4B40_ovl10;
-        vec3_get_euler_rotation(temp_a0, 4, temp_a2);
+        lbvector_Rotate(temp_a0, 4, temp_a2);
         temp_a0_2 = D_8004A7C4;
         D_800E6690[temp_a0_2->objId] = sp3C;
         D_800E3750[temp_a0_2->objId] = sp40;

@@ -3,16 +3,11 @@
 #include "ovl18_1.h"
 #include "D_8004A7C4.h"
 
-
-struct UnkStruct80222168_ovl18 {
-    u8 pad[0x3C];
-    u32 unk3C;
-};
 extern f32 D_800E64D0[];
 extern s32 D_800DD710[];
 extern u32 D_801CB4DC;
 extern s32 D_800E0D50[];
-void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0);
+void func_80222168_ovl18(struct GObj *arg0);
 
 void func_8019D958_ovl18(u16);
 
@@ -49,7 +44,7 @@ void func_80221E90_ovl18(s32 arg0) {
 extern u32 D_800BE4EC;
 extern void func_800A8100(u32, u32, u32, u32);
 
-void func_80222168_ovl18(struct UnkStruct80222168_ovl18 *arg0) {
+void func_80222168_ovl18(struct GObj *arg0) {
     switch(D_800BE4EC % 6) {
         case 0: func_800A8100(3, 2, 0x4D, arg0->unk3C); break;
         case 2: func_800A8100(3, 2, 0x4E, arg0->unk3C); break;

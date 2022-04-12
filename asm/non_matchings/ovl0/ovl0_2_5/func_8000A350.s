@@ -1,4 +1,4 @@
-glabel func_8000A350
+glabel omGMoveCommon
 /* 00AF50 8000A350 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* 00AF54 8000A354 AFB10018 */  sw    $s1, 0x18($sp)
 /* 00AF58 8000A358 AFA60030 */  sw    $a2, 0x30($sp)

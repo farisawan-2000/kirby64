@@ -5498,7 +5498,7 @@ void func_801E7BD0_ovl16(s32 arg0) {
     sp44 = gEntitiesNextPosXArray[temp_v1_2->objId] - gEntitiesNextPosXArray[temp_a1];
     sp4C = 0.0f;
     sp48 = gEntitiesNextPosYArray[temp_v1_2->objId] - gEntitiesNextPosYArray[temp_a1];
-    vec3_normalize(temp_a0);
+    lbvector_Normalize(temp_a0);
     temp_v1_3 = D_8004A7C4;
     temp_v0_2 = temp_v1_3->objId;
     temp_a0_2 = &sp38;
@@ -5510,7 +5510,7 @@ void func_801E7BD0_ovl16(s32 arg0) {
     temp_f12 = gEntitiesNextPosYArray[temp_v0_3] - gEntitiesPosYArray[temp_v0_3];
     sp3C = temp_f12;
     sp30 = temp_f12;
-    vec3_normalize(temp_a0_2);
+    lbvector_Normalize(temp_a0_2);
     func_800195D8_ovl16(&sp38, &sp44);
     D_800EA6E0[D_8004A7C4->objId] = atan2f(-sp38, sp3C);
     temp_v1_4 = D_8004A7C4;

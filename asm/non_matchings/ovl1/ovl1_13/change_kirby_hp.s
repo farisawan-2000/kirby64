@@ -7,8 +7,8 @@ glabel change_kirby_hp
 /* 064244 800BBFF4 24010003 */  li    $at, 3
 /* 064248 800BBFF8 15C10011 */  bne   $t6, $at, .L800BC040_ovl1
 /* 06424C 800BBFFC C7AC0018 */   lwc1  $f12, 0x18($sp)
-/* 064250 800BC000 3C0F800A */  lui   $t7, %hi(func_800A6B64) # $t7, 0x800a
-/* 064254 800BC004 25EF6B64 */  addiu $t7, %lo(func_800A6B64) # addiu $t7, $t7, 0x6b64
+/* 064250 800BC000 3C0F800A */  lui   $t7, %hi(ovl1_TamperCheck) # $t7, 0x800a
+/* 064254 800BC004 25EF6B64 */  addiu $t7, %lo(ovl1_TamperCheck) # addiu $t7, $t7, 0x6b64
 /* 064258 800BC008 15E0000D */  bnez  $t7, .L800BC040_ovl1
 /* 06425C 800BC00C 00000000 */   nop   
 /* 064260 800BC010 44800000 */  mtc1  $zero, $f0

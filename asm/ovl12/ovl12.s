@@ -8024,9 +8024,9 @@ glabel func_801E2530_ovl12
 /* 1F2950 801E2610 002C0821 */  addu  $at, $at, $t4
 /* 1F2954 801E2614 C4282410 */  lwc1  $f8, 0x2410($at)
 /* 1F2958 801E2618 46083281 */  sub.s $f10, $f6, $f8
-/* 1F295C 801E261C 0C00637B */  jal   vec3_sub
+/* 1F295C 801E261C 0C00637B */  jal   lbvector_Diff
 /* 1F2960 801E2620 E7AA002C */   swc1  $f10, 0x2c($sp)
-/* 1F2964 801E2624 0C006328 */  jal   vec3_normalize
+/* 1F2964 801E2624 0C006328 */  jal   lbvector_Normalize
 /* 1F2968 801E2628 27A4003C */   addiu $a0, $sp, 0x3c
 /* 1F296C 801E262C 3C0140C0 */  li    $at, 0x40C00000 # 6.000000
 /* 1F2970 801E2630 44810000 */  mtc1  $at, $f0

@@ -7,9 +7,9 @@ glabel func_8001BFDC
 /* 01CBF0 8001BFF0 44866000 */  mtc1  $a2, $f12
 /* 01CBF4 8001BFF4 46002182 */  mul.s $f6, $f4, $f0
 /* 01CBF8 8001BFF8 C7A40050 */  lwc1  $f4, 0x50($sp)
-/* 01CBFC 8001BFFC 3C0C8004 */  lui   $t4, %hi(D_8003E330) # $t4, 0x8004
+/* 01CBFC 8001BFFC 3C0C8004 */  lui   $t4, %hi(lbreflect_Int16SinTable) # $t4, 0x8004
 /* 01CC00 8001C000 46005402 */  mul.s $f16, $f10, $f0
-/* 01CC04 8001C004 258CE330 */  addiu $t4, %lo(D_8003E330) # addiu $t4, $t4, -0x1cd0
+/* 01CC04 8001C004 258CE330 */  addiu $t4, %lo(lbreflect_Int16SinTable) # addiu $t4, $t4, -0x1cd0
 /* 01CC08 8001C008 AFA70044 */  sw    $a3, 0x44($sp)
 /* 01CC0C 8001C00C 44857000 */  mtc1  $a1, $f14
 /* 01CC10 8001C010 AFB00004 */  sw    $s0, 4($sp)

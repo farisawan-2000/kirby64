@@ -16,7 +16,7 @@ glabel func_801DF3DC_ovl11
 /* 1E9CD4 801DF414 24A8FFFF */   addiu $t0, $a1, -1
 /* 1E9CD8 801DF418 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)
 /* 1E9CDC 801DF41C 00230821 */  addu  $at, $at, $v1
-/* 1E9CE0 801DF420 AC2FDC50 */ sw $t7, %lo(D_800CDC50)($at)
+/* 1E9CE0 801DF420 AC2FDC50 */ sw $t7, %lo(gEntityVtableIndexArray)($at)
 /* 1E9CE4 801DF424 8C580000 */  lw    $t8, ($v0)
 /* 1E9CE8 801DF428 3C04800E */ lui $a0, %hi(gEntityGObjProcessArray)
 /* 1E9CEC 801DF42C 3C05801E */  lui   $a1, %hi(D_801DEF9C) # $a1, 0x801e

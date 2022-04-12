@@ -762,7 +762,7 @@ void *func_800FF144(void) {
         return NULL;
     }
     sp1C = temp_v0;
-    temp_v0_2 = func_80009C38_ovl2(D_8012B998, 0, temp_v0);
+    temp_v0_2 = func_80009C38(D_8012B998, 0, temp_v0);
     if (temp_v0_2 == 0) {
         func_800FF12C(temp_v0, temp_v0);
         return NULL;

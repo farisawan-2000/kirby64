@@ -3,7 +3,11 @@
 build/*
 tools/GeoFromBin*
 tools/level_settings/convert
-assets/**/*
+tools/img_getprop
+tools/rgb2c
+assets/*.bin
+assets/**/*.png
+assets/tools/__pycache__/*
 *.z64
 textures/*
 bin/*

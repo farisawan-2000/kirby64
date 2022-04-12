@@ -63,7 +63,7 @@ glabel func_801E7BD0_ovl16
 /* 21DF74 801E7CC4 C5AA0000 */  lwc1  $f10, ($t5)
 /* 21DF78 801E7CC8 E7A2004C */  swc1  $f2, 0x4c($sp)
 /* 21DF7C 801E7CCC 46105481 */  sub.s $f18, $f10, $f16
-/* 21DF80 801E7CD0 0C006328 */  jal   vec3_normalize
+/* 21DF80 801E7CD0 0C006328 */  jal   lbvector_Normalize
 /* 21DF84 801E7CD4 E7B20048 */   swc1  $f18, 0x48($sp)
 /* 21DF88 801E7CD8 8E030000 */  lw    $v1, ($s0)
 /* 21DF8C 801E7CDC 3C01800E */ lui $at, %hi(gEntitiesNextPosXArray)
@@ -90,7 +90,7 @@ glabel func_801E7BD0_ovl16
 /* 21DFE0 801E7D30 C42A2CD0 */ lwc1 $f10, %lo(gEntitiesPosYArray)($at)
 /* 21DFE4 801E7D34 460A4301 */  sub.s $f12, $f8, $f10
 /* 21DFE8 801E7D38 E7AC003C */  swc1  $f12, 0x3c($sp)
-/* 21DFEC 801E7D3C 0C006328 */  jal   vec3_normalize
+/* 21DFEC 801E7D3C 0C006328 */  jal   lbvector_Normalize
 /* 21DFF0 801E7D40 E7AC0030 */   swc1  $f12, 0x30($sp)
 /* 21DFF4 801E7D44 27A40038 */  addiu $a0, $sp, 0x38
 /* 21DFF8 801E7D48 0C006576 */  jal   func_800195D8_ovl16

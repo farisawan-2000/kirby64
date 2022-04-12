@@ -66,7 +66,7 @@ glabel func_8021B8B0_ovl9
 /* 1C99E8 8021B998 E7A0002C */  swc1  $f0, 0x2c($sp)
 /* 1C99EC 8021B99C E7A00024 */  swc1  $f0, 0x24($sp)
 /* 1C99F0 8021B9A0 44068000 */  mfc1  $a2, $f16
-/* 1C99F4 8021B9A4 0C006424 */  jal   vec3_get_euler_rotation
+/* 1C99F4 8021B9A4 0C006424 */  jal   lbvector_Rotate
 /* 1C99F8 8021B9A8 00000000 */   nop   
 /* 1C99FC 8021B9AC 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
 /* 1C9A00 8021B9B0 8C63A7C4 */  lw    $v1, %lo(D_8004A7C4)($v1)

@@ -1105,7 +1105,7 @@ f32 func_80221A74_ovl19(void) {
     sp38 = 0.0f;
     sp34 = 0.0f;
     sp3C = 2.0f;
-    vec3_get_euler_rotation(&sp34, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[D_8004A7C4->objId]);
+    lbvector_Rotate(&sp34, 2, (bitwise f32) (bitwise s32) gEntitiesAngleYArray[D_8004A7C4->objId]);
     temp_v0 = D_8004A7C4;
     sp2C = 0.0f;
     sp28 = *gEntitiesNextPosXArray - gEntitiesNextPosXArray[temp_v0->objId];

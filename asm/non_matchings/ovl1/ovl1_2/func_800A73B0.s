@@ -12,7 +12,7 @@ glabel func_800A73B0
 /* 04F628 800A73D8 8C580004 */  lw    $t8, 4($v0)
 /* 04F62C 800A73DC AFBF0014 */  sw    $ra, 0x14($sp)
 /* 04F630 800A73E0 3C01800D */  lui   $at, %hi(D_800D7B74) # $at, 0x800d
-/* 04F634 800A73E4 0C002AB8 */  jal   func_8000AAE0_ovl1
+/* 04F634 800A73E4 0C002AB8 */  jal   func_8000AAE0
 /* 04F638 800A73E8 AC387B74 */   sw    $t8, %lo(D_800D7B74)($at)
 /* 04F63C 800A73EC 0C02B184 */  jal   func_800AC610
 /* 04F640 800A73F0 00000000 */   nop   

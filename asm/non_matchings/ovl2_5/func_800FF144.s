@@ -11,7 +11,7 @@ glabel func_800FF144
 /* 087BD4 800FF164 3C048013 */  lui   $a0, %hi(D_8012B998) # $a0, 0x8013
 /* 087BD8 800FF168 8C84B998 */  lw    $a0, %lo(D_8012B998)($a0)
 /* 087BDC 800FF16C 00002825 */  move  $a1, $zero
-/* 087BE0 800FF170 0C00270E */  jal   func_80009C38_ovl2
+/* 087BE0 800FF170 0C00270E */  jal   func_80009C38
 /* 087BE4 800FF174 AFA7001C */   sw    $a3, 0x1c($sp)
 /* 087BE8 800FF178 8FA7001C */  lw    $a3, 0x1c($sp)
 /* 087BEC 800FF17C 14400005 */  bnez  $v0, .L800FF194_ovl2

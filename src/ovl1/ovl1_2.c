@@ -250,7 +250,7 @@ u32 func_800A73B0(void) {
     D_800D7B6C = D_8004A404;
     D_800D7B70 = gDisplayListHeads->unk0;
     D_800D7B74 = gDisplayListHeads[1];
-    func_8000AAE0_ovl1();
+    func_8000AAE0();
     func_800AC610();
     temp_t1 = D_8004A404 - D_800D7B6C;
     temp_at = D_800D7B78 < temp_t1;
@@ -456,7 +456,7 @@ void *func_800A78D0(s32 arg0) {
     func_80008A18(D_800D6FB8, &D_800A09AC, 1, 0);
     temp_v0_3 = func_8000A180(0, 0, 0x18, 0x80000000);
     temp_s0 = temp_v0_3;
-    func_8000A5FC_ovl1(temp_v0_3, &D_800A7ABC, 0x10, 0xC, -1);
+    func_8000A5FC(temp_v0_3, &D_800A7ABC, 0x10, 0xC, -1);
     temp_s0[0xC] = 0xF;
     func_8009B550(0x10, 0xBC);
     phi_v1 = &D_800D6AB8;

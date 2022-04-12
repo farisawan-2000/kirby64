@@ -33,9 +33,9 @@ glabel func_800F6AD4
 /* 07F5BC 800F6B4C 1465FFF6 */  bne   $v1, $a1, .L800F6B28_ovl2
 /* 07F5C0 800F6B50 24840008 */   addiu $a0, $a0, 8
 /* 07F5C4 800F6B54 3C18803B */  lui   $t8, %hi(gFrameBuffer) # $t8, 0x803b
-/* 07F5C8 800F6B58 3C198023 */  lui   $t9, %hi(D_8022FB50) # $t9, 0x8023
+/* 07F5C8 800F6B58 3C198023 */  lui   $t9, %hi(_ovl19SegNoloadEnd) # $t9, 0x8023
 /* 07F5CC 800F6B5C 3C028012 */  lui   $v0, %hi(D_80123F68) # $v0, 0x8012
-/* 07F5D0 800F6B60 2739FB50 */  addiu $t9, %lo(D_8022FB50) # addiu $t9, $t9, -0x4b0
+/* 07F5D0 800F6B60 2739FB50 */  addiu $t9, %lo(_ovl19SegNoloadEnd) # addiu $t9, $t9, -0x4b0
 /* 07F5D4 800F6B64 27186900 */  addiu $t8, %lo(gFrameBuffer) # addiu $t8, $t8, 0x6900
 /* 07F5D8 800F6B68 24423F68 */  addiu $v0, %lo(D_80123F68) # addiu $v0, $v0, 0x3f68
 /* 07F5DC 800F6B6C 03194023 */  subu  $t0, $t8, $t9
