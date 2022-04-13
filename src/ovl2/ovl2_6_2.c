@@ -401,8 +401,6 @@ void func_80101E14(struct CollisionTriangle *arg0, struct Normal *arg1, Vector *
 // these two functions seem to handle non-solid triangles
 
 // TODO: check the prototypes to get the correct types and returns.
-// Kirby used C++, so it's likely that these return actual bools/u8's, but
-// it can potentially affect codegen
 u8 func_80101E5C(struct CollisionTriangle *arg0, struct Normal *arg1,
     struct Normal *arg2, u32 arg3) {
 

@@ -264,7 +264,7 @@ enum KirbySounds {
     /* 251 */ SOUND_MYMIZUOTIS, // Kirby land in water
     /* 252 */ SOUND_MYMIZUOTIS2, // 100-Yard Hop - land in puddle
     /* 253 */ SOUND_MYNOBORI1,
-    /* 254 */ SOUND_MYNOBORI2,5
+    /* 254 */ SOUND_MYNOBORI2,
     /* 255 */ SOUND_MYNOBORI3, // Kirby go through semi-solid platform
     /* 256 */ SOUND_MYORI1,
     /* 257 */ SOUND_MYORI2,

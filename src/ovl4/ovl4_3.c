@@ -4,6 +4,7 @@
 #include "ovl1/ovl1_6.h"
 #include "D_8004A7C4.h"
 #include "buffers.h"
+#include "sounds.h"
 #include "ovl0/ovl0_2.h"
 
 extern void func_800B4924(void);
