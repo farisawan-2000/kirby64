@@ -6,7 +6,7 @@
 // Comments beside sounds are from
 // playing the game and observing which
 // sounds are played in which situations
-// by logging calls to function 800a7678
+// by logging calls to function play_sound()
 // and comparing with what's visually
 // happening in-game
 
