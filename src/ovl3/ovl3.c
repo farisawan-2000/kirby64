@@ -33,7 +33,7 @@ u32 func_80151160_ovl3(void) {
             else {
                 set_kirby_action_1(3, 5);
             }
-                return 2;
+            return 2;
         }
         if (((D_800E8AE0[D_8004A7C4->objId] & 6) == 6) && ((gKirbyController.buttonHeld & 0x800) != 0)) {
             if ((gKirbyState.action != 0xA) && (gKirbyState.action != 0xB)) {

@@ -75,7 +75,7 @@ void func_80158224_ovl4(s32 arg0) {
     func_800B2F54(0x10, D_8015C360[D_8015C71C], func_80159124_ovl4(D_800D6B98));
     func_800A71A0(0x10);
     if (D_800D6B7C != 0) {
-        play_sound(0x115);
+        play_sound(SOUND_SELECTJET1);
         D_800E9E20[D_8004A7C4->objId] = D_800D6B98 + 1;
         finish_current_thread(5);
         D_800D6B7C = 0;
