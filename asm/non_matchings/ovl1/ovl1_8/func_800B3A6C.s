@@ -1,3 +1,8 @@
+.section .rodata
+glabel D_800D6808
+.float 6.28318530717958623200
+
+.section .text
 glabel func_800B3A6C
 /* 05BCBC 800B3A6C 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
 /* 05BCC0 800B3A70 8DCEA7C4 */  lw    $t6, %lo(D_8004A7C4)($t6)

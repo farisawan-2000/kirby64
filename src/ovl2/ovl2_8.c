@@ -5,6 +5,7 @@
 #include "types.h"
 #include "ovl2_8.h"
 #include "ovl2_6.h"
+#include "sounds.h"
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800DE350.h"
 #include "ovl1/ovl1_6.h"
@@ -120,7 +121,7 @@ struct LayoutNode *func_8011BB98(struct CollisionTriangle *tri, u32 arg1) {
 
 void func_8011BD08(struct CollisionTriangle *tri, u32 arg1) {
     func_8011BB98(tri, arg1);
-    play_sound(10);
+    play_sound(SOUND_BGBRAKE1);
 }
 
 // start is the same as the above functions
