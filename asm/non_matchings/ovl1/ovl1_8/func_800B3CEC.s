@@ -1,4 +1,4 @@
-.section .rodata
+.section .late_rodata
 glabel D_800D680C
 .float 6.28318530717958623200
 
