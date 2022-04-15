@@ -1,3 +1,8 @@
+.section .late_rodata
+glabel D_800D681C
+.float 65535.0
+
+.section .text
 glabel func_800B46F8
 /* 05C948 800B46F8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
 /* 05C94C 800B46FC 8C42A7C4 */  lw    $v0, %lo(D_8004A7C4)($v0)
