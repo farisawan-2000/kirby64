@@ -1,3 +1,14 @@
+.section .rodata
+
+.balign 4
+glabel D_800D66C0
+.asciiz "Can't request job !!!\n"
+.section .rodata
+.balign 4
+glabel D_800D66D8
+.asciiz "Job Request Deep OverFlow!!\n"
+
+.section .text
 glabel request_job
 /* 0569F8 800AE7A8 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* 0569FC 800AE7AC 2402FFFF */  li    $v0, -1

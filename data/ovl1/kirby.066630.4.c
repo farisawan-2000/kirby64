@@ -5,13 +5,13 @@
 
 // ovl1_6 rodata?
 
-u8 D_800D66C0[] = "Can't request job !!!\n";
+// u8 D_800D66C0[] = "Can't request job !!!\n";
 
-u8 D_800D66D8[] = "Job Request Deep OverFlow!!\n";
+// u8 D_800D66D8[] = "Job Request Deep OverFlow!!\n";
 
-f32 D_800D66F8 = 65535.0f;
+// f32 D_800D66F8 = 65535.0f;
 
-f32 D_800D66FC = 9999.0f;
+// f32 D_800D66FC = 9999.0f;
 
 
 // ovl1_7 rodata

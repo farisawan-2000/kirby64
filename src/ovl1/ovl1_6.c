@@ -7,6 +7,7 @@
 #include "unk_structs/D_800DE350.h"
 #include "unk_structs/D_800E1B50.h"
 
+void func_800AE138(s32);
 extern s32 D_800EC9E0; 
 void func_800AE0F0(void) {
     s32 i;
@@ -17,37 +18,28 @@ void func_800AE0F0(void) {
     D_800EC9E0 = 0;
 }
 
-// good luck finding the line order for this one
+// small diffs left that permuter can't find
 #ifdef NON_MATCHING
 void func_800AE138(s32 arg0) {
-    f32 temp_f0;
-    f32 temp_f0_2;
-    f32 temp_f12;
+    f32 lifeline, l2;
+    
     struct Normal *temp_v1;
 
     D_800DE350[arg0] = 0;
     D_800DD710[arg0] = -1;
 
-    // GObjProcess buffers
+    gEntityGObjProcessArray[arg0] = gEntityGObjProcessArray2[arg0] =
+    gEntityGObjProcessArray3[arg0] = gEntityGObjProcessArray4[arg0] =
     gEntityGObjProcessArray5[arg0] = NULL;
-    gEntityGObjProcessArray4[arg0] = NULL;
-    gEntityGObjProcessArray3[arg0] = NULL;
-    gEntityGObjProcessArray2[arg0] = NULL;
-    // this one in particular is one that entities use for thread function changes.
-    // Should be an GObjThreadStack array
-    gEntityGObjProcessArray[arg0] = NULL;
 
-    D_800DE190[arg0] = 0;
-    D_800DDFD0[arg0] = 0;
-    D_800DDE10[arg0] = 0;
+    D_800DDE10[arg0] = D_800DDFD0[arg0] = D_800DE190[arg0] = 0;
     gEntityVtableIndexArray[arg0] = 0;
     D_800DD8D0[arg0] = 0;
     D_800E0810[arg0] = 0x10;
-    temp_f0 = D_800D6B10;
-    D_800E0B90[arg0] = temp_f0;
-    D_800E09D0[arg0] = temp_f0;
-    D_800E0F10[arg0] = -1;
-    D_800E0D50[arg0] = -1;
+    
+    D_800E09D0[arg0] = D_800E0B90[arg0] = D_800D6B10;
+    
+    D_800E0D50[arg0] = D_800E0F10[arg0] = -1;
     D_800E0490[arg0] = 0;
     D_800E0650[arg0] = NULL;
     D_800E1B50[arg0] = NULL;
@@ -56,61 +48,50 @@ void func_800AE138(s32 arg0) {
     D_800DEF90[arg0] = NULL;
     D_800DF150[arg0] = NULL;
 
-    D_800DF850[arg0] = -1;
-    D_800DF690[arg0] = -1;
-    gSegment4StartArray[arg0] = -1;
+    gSegment4StartArray[arg0] = (void *) (D_800DF690[arg0] = D_800DF850[arg0] = -1);
 
-    D_800E0110[arg0] = 0xFFFFFFFF;
-    D_800DFF50[arg0] = 0xFFFFFFFF;
-    D_800E02D0[arg0] = 0xFFFFFFFF;
+    D_800E02D0[arg0] = D_800DFF50[arg0] = D_800E0110[arg0] = -1 + 1 - 1;
 
-    D_800DFBD0[arg0] = -1;
-    D_800E2410[arg0] = 0.0f;
-    D_800E2250[arg0] = 0.0f;
+    D_800DFBD0[arg0] = (void *)-1;
 
-    D_800E2090[arg0] = 0.0f;
-    temp_f12 = D_800D66F8;
-    gEntitiesPosZArray[arg0] = 0.0f;
-    gEntitiesPosYArray[arg0] = 0.0f;
-    gEntitiesPosXArray[arg0] = 0.0f;
-    gEntitiesNextPosZArray[arg0] = 0.0f;
-    gEntitiesNextPosYArray[arg0] = 0.0f;
-    gEntitiesNextPosXArray[arg0] = 0.0f;
-    D_800E3910[arg0] = 0.0f;
-    D_800E3750[arg0] = 0.0f;
-    D_800E3590[arg0] = 0.0f;
-    D_800E33D0[arg0] = 0.0f;
-    D_800E3210[arg0] = 0.0f;
-    D_800E3050[arg0] = 0.0f;
-    D_800E3E50[arg0] = temp_f12;
-    D_800E3C90[arg0] = temp_f12;
-    D_800E3AD0[arg0] = temp_f12;
-    gEntitiesAngleZArray[arg0] = 0.0f;
+    
+
+    l2 = 0.0f;
+    // monster block        
+    D_800E3050[arg0] = D_800E3210[arg0] = D_800E33D0[arg0] =
+    D_800E3590[arg0] = D_800E3750[arg0] = D_800E3910[arg0] =
+    gEntitiesNextPosXArray[arg0] = gEntitiesNextPosYArray[arg0] = gEntitiesNextPosZArray[arg0] =
+    gEntitiesPosXArray[arg0] = gEntitiesPosYArray[arg0] = gEntitiesPosZArray[arg0] =
+    D_800E2090[arg0] = D_800E2250[arg0] = D_800E2410[arg0] =
+        0.0f;
+    
+    D_800E3AD0[arg0] = D_800E3C90[arg0] = D_800E3E50[arg0] = 65535.0f;
 
 
-    gEntitiesAngleYArray[arg0] = //0.0f;
-    gEntitiesAngleXArray[arg0] = //0.0f;
-    D_800E1450[arg0] = //0.0f;
-    D_800E1290[arg0] = //0.0f;
-    D_800E10D0[arg0] = 0.0f;
+    lifeline = 1.0f;
+    // D_800E10D0[arg0] = D_800E1290[arg0] = D_800E1450[arg0] =
+    // gEntitiesAngleXArray[arg0] = gEntitiesAngleYArray[arg0] = gEntitiesAngleZArray[arg0] = 0.0f;
+    gEntitiesAngleZArray[arg0] = l2;
+    gEntitiesAngleYArray[arg0] = l2;
+    gEntitiesAngleXArray[arg0] = l2;
 
-    if (1){
-        gEntitiesScaleZArray[arg0] = //1.0f;
-        gEntitiesScaleYArray[arg0] = //1.0f;
-        gEntitiesScaleXArray[arg0] = 1.0f;
+    D_800E10D0[arg0] = D_800E1290[arg0] = D_800E1450[arg0] = 0.0f;
+        
+    gEntitiesScaleZArray[arg0] = lifeline;
+    gEntitiesScaleYArray[arg0] = lifeline;
+    gEntitiesScaleXArray[arg0] = lifeline;
+
+    // gEntitiesScaleXArray[arg0] = gEntitiesScaleYArray[arg0] = gEntitiesScaleZArray[arg0] = lifeline;
+    
+
+    D_800E4A90[arg0] = D_800E4C50[arg0] = D_800E4E10[arg0] =
+    D_800E5A50[arg0] = D_800E5C10[arg0] = D_800E5DD0[arg0] = 0.0f;
+
+    // float array
+    D_800E5350[arg0] = 1;
+    if (1) {
+        D_800E4FD0[arg0] = D_800E5190[arg0] = D_800E5350[arg0];
     }
-
-    D_800E5DD0[arg0] = 0.0f;
-    D_800E5C10[arg0] = 0.0f;
-    D_800E5A50[arg0] = 0.0f;
-    D_800E4E10[arg0] = 0.0f;
-    D_800E4C50[arg0] = 0.0f;
-    D_800E4A90[arg0] = 0.0f;
-    D_800E5350[arg0] = 1.0f;
-
-    temp_f0_2 = D_800E5350[arg0];
-    D_800E5190[arg0] = temp_f0_2;
-    D_800E4FD0[arg0] = temp_f0_2;
 
     D_800E7650[arg0] = 0;
     D_800E8AE0[arg0] = 0.0f;
@@ -165,20 +146,15 @@ void func_800AE138(s32 arg0) {
     D_800E64D0[arg0] = 0.0f;
 
     temp_v1 = &D_800E6F50[arg0];
-    temp_v1->z = 0.0f;
-    temp_v1->y = 0.0f;
-    temp_v1->x = 0.0f;
-    temp_v1->originOffset = D_800D66FC;
+    temp_v1->x = temp_v1->y = temp_v1->z = 0.0f;
+    temp_v1->originOffset = 9999.0f;
 
-    D_800E6850[arg0] = temp_f12;
+    D_800E6850[arg0] = 65535.0f;
     D_800E8CA0[arg0] = 0;
     D_800E6310[arg0] = 0;
-    D_800E56D0[arg0] = 0.0f;
-    D_800E5510[arg0] = 0.0f;
-    D_800E5890[arg0] = 0.0f;
-    D_800E9720[arg0] = 0;
-    D_800E9560[arg0] = 0;
-    D_800E93A0[arg0] = 0;
+    
+    D_800E5890[arg0] = D_800E5510[arg0] = D_800E56D0[arg0] = 0.0f;
+    D_800E93A0[arg0] = D_800E9560[arg0] = D_800E9720[arg0] = 0;
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_6/func_800AE138.s")

@@ -1,3 +1,23 @@
+.section .late_rodata
+glabel D_800D6830
+.float 0.1
+.section .late_rodata
+glabel D_800D6834
+.float 1.28
+.section .late_rodata
+glabel D_800D6838
+.float 1.14
+.section .late_rodata
+glabel D_800D683C
+.float -10000.0
+.section .late_rodata
+glabel D_800D6840
+.float 65535.0
+.section .late_rodata
+glabel D_800D6844
+.float -10000.0
+
+.section .text
 glabel func_800B531C
 /* 05D56C 800B531C 27BDFF90 */  addiu $sp, $sp, -0x70
 /* 05D570 800B5320 AFBF0014 */  sw    $ra, 0x14($sp)
