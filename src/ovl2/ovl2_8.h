@@ -46,6 +46,15 @@ struct LayoutNode {
 
 	// goes up to at least 0x80?
 	u32 unk58;
+    u32 unk5C;
+    u32 unk60;
+    u32 unk64;
+    u32 unk68;
+    u32 unk6C;
+    u32 unk70;
+    u32 unk74;
+    u32 unk78;
+    u32 unk7C;
 };
 
 struct struct8011BA10_temp {

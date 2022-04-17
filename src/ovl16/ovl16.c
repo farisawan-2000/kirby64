@@ -3,7 +3,6 @@
 #include "D_8004A7C4.h"
 #include "buffers.h"
 #include "unk_structs/D_800E1B50.h"
-
 #include "ovl1/ovl1_6.h"
 #include "ovl2/ovl2_8.h"
 
