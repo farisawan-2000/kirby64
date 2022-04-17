@@ -55,10 +55,10 @@ void func_800AEE20(s32 arg0, f32 arg1) {
     }
 }
 
-void func_8000C218_ovl1(struct GObj *, s32, f32);
+void func_8000C218(struct GObj *, s32, f32);
 
 void func_800AEEB4(s32 arg0, f32 arg1) {
-    func_8000C218_ovl1(D_8004A7C4, arg0, arg1);
+    func_8000C218(D_8004A7C4, arg0, arg1);
     if (arg1 != 0.0f) {
         func_8000E324_ovl1(D_8004A7C4);
     }
@@ -74,7 +74,7 @@ void func_800AEF0C(s32 arg0, f32 arg1, struct GObj *arg2) {
 }
 
 void func_800AEFA4(s32 arg0, f32 arg1, struct GObj *arg2) {
-    func_8000C218_ovl1(arg2, arg0, arg1);
+    func_8000C218(arg2, arg0, arg1);
     if (arg1 != 0.0f) {
         func_8000E324_ovl1(arg2);
     }

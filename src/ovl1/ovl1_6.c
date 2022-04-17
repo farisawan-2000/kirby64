@@ -18,7 +18,7 @@ void func_800AE0F0(void) {
     D_800EC9E0 = 0;
 }
 
-// small diffs left that permuter can't find
+// https://decomp.me/scratch/0l2Df
 #ifdef NON_MATCHING
 void func_800AE138(s32 arg0) {
     f32 lifeline, l2;
@@ -176,93 +176,69 @@ struct UnkStruct800D4FD0 {
         void (*unk4)(void);
     };
 
-extern struct UnkStruct800D4FD0 *D_800D4FD0[];
+extern struct UnkStruct800D4FD0 D_800D4FD0[];
 
-// compiles and is decently close
+// https://decomp.me/scratch/zbl2m
 #ifdef NON_MATCHING
-s32 request_job(s32 id, s32 minIndex, u32 max_index, s32 arg3, void (*arg4)(void)) {
-    struct GObj *temp_v0_3;
-    s32 v1;
+s32 request_job(s32 id, s32 minIndex, u32 max_index, s32 *arg3, void (*arg4)()) {
+    struct GObj *gobj;
     s32 v0;
-    u32 a2;
-    struct UnkStruct800D4FD0 *sp24;
 
-    if (minIndex == -1) {
+    s32 why_do_i_need_to_make_this_constant_folding_explicit = -1;
+    // clamp to bounds if not provided
+    if (minIndex == why_do_i_need_to_make_this_constant_folding_explicit) {
         minIndex = 0;
     }
-    if (max_index == -1) {
+    if (max_index == why_do_i_need_to_make_this_constant_folding_explicit) {
         max_index = 0x70;
     }
-    // tries to find a valid index?
-    while (minIndex < max_index) {
-        if (D_800DD710[minIndex] != -1) {
-            minIndex++;
-        }
+    if (minIndex < max_index) {
+        do {
+            if (D_800DD710[minIndex] == -1) break;
+        } while (++minIndex != max_index);
     }
+
     if (minIndex >= max_index) {
-        print_error_stub(&D_800D66C0);
+        print_error_stub("Can't request job !!!\n");
         return -1;
     }
-    // good luck with this
-    if (D_8004A7C4 != NULL) {
-        switch (D_8004A7C4->link) {
-            case 0x1A:
-            default:
-                v0 = v1 + 8;
-                if (v1 == 0) {
-                    v0 = 8;
-                } else {
-                    if (v0 >= 0x20) {
-                        print_error_stub(&D_800D66D8);
-                        return -1;
-                    }
-                }
-                break;
-        }
-        if (D_8004A7C4->link != 0x1A) {
-            v1 = D_8004A7C4->link & 0x18;
-            if (D_8004A7C4->link == 0x19) {
-block_13:
-                v0 = 0;
-            } else {
-                v0 = v1 + 8;
-                if (v1 == 0) {
-                    v0 = 8;
-                } else {
-                    if (v0 >= 0x20) {
-                        print_error_stub(&D_800D66D8);
-                        return -1;
-                    }
-                }
-            }
-        } else {
-            goto block_13;
-        }
-    } else {
-        goto block_13;
+    if ((D_8004A7C4 == NULL) || (D_8004A7C4->link == 0x1A) || (D_8004A7C4->link == 0x19)) {
+        v0 = 0;
     }
+    else if ((D_8004A7C4->link & 0x18) == 0) {
+        v0 = 8;
+    }
+    else {
+        v0 = (D_8004A7C4->link & 0x18);
+        if (v0 + 8 >= 32) {
+            print_error_stub("Job Request Deep OverFlow!!\n");
+            return -1;
+        }
+    }
+
     D_800DD710[minIndex] = id;
-    sp24 = D_800D4FD0[id];
-    temp_v0_3 = func_8000A180(minIndex, func_800B0D24, D_800D4FD0[id * 2] + v0, 0);
-    D_800DE350[minIndex] = temp_v0_3;
-    gEntityGObjProcessArray[minIndex] = func_80008A18(temp_v0_3, sp24->unk4, 0, 3);
-    gEntityGObjProcessArray2[minIndex] = func_80008A18(temp_v0_3, func_800B0D90, 1, 3);
-    if (sp24->unk0[1] & 1) {
-        gEntityGObjProcessArray3[minIndex] = func_80008A18(temp_v0_3, func_800B1878, 0, 2);
+    D_800DE350[minIndex] =
+    gobj = func_8000A180(minIndex, func_800B0D24, D_800D4FD0[id].unk0[0] + v0, 0);
+    // D_800DE350[minIndex] = gobj;
+    gEntityGObjProcessArray[minIndex]= func_80008A18(gobj, D_800D4FD0[id].unk4, 0, 3);
+    gEntityGObjProcessArray2[minIndex]= func_80008A18(gobj, func_800B0D90, 1, 3);
+
+    if (D_800D4FD0[id].unk0[1] & 1) {
+        gEntityGObjProcessArray3[minIndex]= func_80008A18(gobj, func_800B1878, 0, 2);
     }
-    if (sp24->unk0[1] & 2) {
-        gEntityGObjProcessArray4[minIndex] = func_80008A18(temp_v0_3, func_800B1870, 1, 1);
+    if (D_800D4FD0[id].unk0[1] & 2) {
+        gEntityGObjProcessArray4[minIndex] = func_80008A18(gobj, func_800B1870, 1, 1);
     }
-    gEntityGObjProcessArray5[minIndex] = func_80008A18(temp_v0_3, arg4, 1, 0);
+    gEntityGObjProcessArray5[minIndex] = func_80008A18(gobj, arg4, 1, 0);
     D_800DD8D0[minIndex] = 0;
-    D_800DDA90[minIndex] = temp_v0_3->link;
-    D_800DF150[minIndex] = NULL;
+    D_800DDA90[minIndex] = gobj->link;
+    D_800DF150[minIndex] = 0;
     if (arg3 != 0) {
         D_800DEF90[minIndex] = arg3;
     } else {
         D_800DEF90[minIndex] = 0;
     }
-    temp_v0_3->unk48 = func_800B0F28;
+    gobj->unk48 = func_800B0F28;
     D_800DEDD0[minIndex] = 0;
     D_800DF310[minIndex] = 0;
     return minIndex;

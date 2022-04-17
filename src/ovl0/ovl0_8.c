@@ -701,6 +701,8 @@ void crash_screen_printf(const char *fmt, ...) {
     va_start(args, fmt);
 
     crash_screen_vprint(fmt, (va_list)ALIGN8(args));
+
+    va_end(args);
 }
 
 

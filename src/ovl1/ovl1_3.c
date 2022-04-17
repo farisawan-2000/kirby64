@@ -1373,11 +1373,11 @@ extern void func_800AEE20(s32 arg0, f32 arg1);
 s32 func_800A9B48(); // extern
 
 void func_800A9F98(s32 arg0, f32 arg1) {
-    if (func_800A9B48() != 0) {
-        func_800AEEB4(*((D_8004A7C4->objId * 4) + 0x800E0000)->unk-7B0, arg1);
-        return;
+    if (func_800A9B48(arg0) != 0) {
+        func_800AEEB4(*D_800DF850[D_8004A7C4->objId], arg1);
+    } else {
+        func_800AEE20(*D_800DF690[D_8004A7C4->objId], arg1);
     }
-    func_800AEE20(*((D_8004A7C4->objId * 4) + 0x800E0000)->unk-970, arg1);
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_3/func_800A9F98.s")
