@@ -12,7 +12,7 @@ f32 vec3_dot_product(Vector *, Vector *);
 f32 lbvector_Angle(Vector *, Vector *);
 
 extern f32 vec3_mag_square(Vector *);
-
+#define LBVECTOR_MAG(x, y, z) sqrtf(((x)*(x))+((y)*(y))+((z)*(z)))
 #define VEC_MAG_2(v) ((v->x * v->x) + (v->y * v->y) + (v->z * v->z))
 #define VEC_DOT(v, w) ((v->x * w->x) + (v->y * w->y) + (v->z * w->z))
 

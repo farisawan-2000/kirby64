@@ -3,6 +3,7 @@
 #include "ovl1_6.h"
 #include "D_8004A7C4.h"
 #include "unk_structs/D_800DE350.h"
+#include "ovl0/ovl0_5.h"
 
 // all of these functions are easy i think if you start incorporating MtxF's
 
@@ -36,7 +37,7 @@ void *func_800B2340(void *arg0, struct UnkStruct8004A7C4_3C *arg1, u32 arg2) {
         phi_s0 = D_8004A7C4->unk3C;
     }
     arg2 = phi_a2;
-    guMtxIdentF(&spB8, phi_a2);
+    guMtxIdentF(&spB8);
 loop_5:
     if (phi_s0->unk14 != 1) {
         temp_f0 = phi_s0->unk40.x;
@@ -443,54 +444,46 @@ void func_800B31B4(void) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B31B4.s")
 #endif
 
-#ifdef MIPS_TO_C
-s32 func_800B3234(f32 arg0, f32 arg1, f32 arg2) {
-    f32 sp38;
-    f32 sp34;
-    f32 sp30;
-    s32 sp2C;
-    f32 *temp_a1;
-    f32 temp_f0;
-    f32 temp_f14;
-    f32 temp_f2;
-    struct Normal *temp_a0_2;
-    struct UnkStruct8004A7C4 *temp_v1;
-    struct UnkStruct8004A7C4 *temp_v1_2;
-    struct UnkStruct8004A7C4 *temp_v1_3;
-    u32 temp_a0;
+// Basically matches on decomp.me but not locally????
+// https://decomp.me/scratch/DsIpj
+#ifdef NON_MATCHING
+extern const f32 D_800D67E8;
+extern struct GObj *D_800D799C;
+f32 func_800A4F48(void *, Vector *, f32, f32);
 
-    temp_v1 = D_8004A7C4;
-    D_800E6F50[temp_v1->objId].z = 0.0f;
-    temp_a0 = temp_v1->objId;
-    temp_a1 = &sp30;
-    if (gEntitiesNextPosYArray[temp_a0] < D_800D67E8) {
-        D_800E6F50[temp_a0].z = 1.0f;
+s32 func_800B3234(f32 inputX, f32 inputY, f32 inputZ) {
+    s32 sp2C;
+    Vector inVec;
+    Vector delVec;
+
+    D_800E6F50[D_8004A7C4->objId].z = 0.0f;
+    if (gEntitiesNextPosYArray[D_8004A7C4->objId] < D_800D67E8) {
+        D_800E6F50[D_8004A7C4->objId].z = 1.0f;
         return 1;
     }
-    sp30 = arg0;
-    sp34 = arg1;
-    sp38 = arg2;
-    temp_v1_2 = D_8004A7C4;
-    sp2C = func_800A4F48(D_800D799C->unk3C, temp_a1, 1.7f, 2.4f);
-    D_800E6F50[temp_v1_2->objId].x = sp30;
-    D_800E6F50[temp_v1_2->objId].y = sp34;
-    // distance to kirby
-    temp_f0 = arg0 - gEntitiesNextPosXArray[0];
-    temp_f2 = arg1 - gEntitiesNextPosYArray[0] + 20.0f);
-    temp_f14 = arg2 - gEntitiesNextPosZArray[0];
-    temp_v1_3 = D_8004A7C4;
-    D_800E6F50[temp_v1_3->objId].originOffset = sqrtf((temp_f0 * temp_f0) + (temp_f2 * temp_f2) + (temp_f14 * temp_f14));
-    if ((sp2C == 0) && (temp_a0_2 = &D_800E6F50[temp_v1_3->objId], (temp_a0_2->originOffset > 500.0f))) {
-        temp_a0_2->z = 1.0f;
-        return 1;
+    inVec.x = inputX;
+    inVec.y = inputY;
+    inVec.z = inputZ;
+    sp2C = func_800A4F48(D_800D799C->unk3C, &inVec, 1.7f, 2.4f);
+    D_800E6F50[D_8004A7C4->objId].x = inVec.x;
+    D_800E6F50[D_8004A7C4->objId].y = inVec.y;
+
+    delVec.x = inputX - gEntitiesNextPosXArray[0];
+    delVec.y = inputY - (gEntitiesNextPosYArray[0] + 20.0f);
+    delVec.z = inputZ - gEntitiesNextPosZArray[0];
+    
+    D_800E6F50[D_8004A7C4->objId].originOffset = sqrtf(VEC_MAG_SQUARE(delVec));
+    if (sp2C == 0) {
+        if (D_800E6F50[D_8004A7C4->objId].originOffset > 500.0f) {
+            D_800E6F50[D_8004A7C4->objId].z = 1.0f;
+            return 1;
+        }
     }
     return 0;
 }
-
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B3234.s")
 #endif
-
 
 extern f32 D_800D67EC;
 void func_800B33F4(void) {
