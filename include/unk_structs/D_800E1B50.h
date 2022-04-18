@@ -67,6 +67,10 @@ struct Sub800E1B50_Unk34 {
 	u8 pad[0x4C];
 	struct Sub800E1B50_34_4C *unk4C;
 };
+struct Sub800E1B50_Unk84 {
+	u8 fill[0x50];
+	u8 unk50;
+};
 
 struct UnkStruct800E1B50 {
 	f32 unk0;
@@ -98,7 +102,7 @@ struct UnkStruct800E1B50 {
 	u32 unk78;
 	u32 unk7C;
 	struct Sub800E1B50 *unk80;
-	s32 unk84;
+	struct Sub800E1B50_Unk84 *unk84;
 	struct Sub800E1B50_Unk88 *unk88;
 	s32 *unk8C;
 	u32 unk90;
