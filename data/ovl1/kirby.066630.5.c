@@ -3,52 +3,6 @@
 #include "stages.h"
 #include <PR/gs2dex.h>
 
-// ovl1_8 rodata
-
-
-#ifdef ASM
-.late_rodata
-glabel D_800D68C0
-.float 6.28318530717958623200
-.text
-
-.late_rodata
-glabel D_800D68C4
-.float 6.28318530717958623200
-.text
-
-.late_rodata
-glabel D_800D68C8
-.float 6.28318530717958623200
-.text
-
-.late_rodata
-glabel D_800D68CC
-.float 6.28318530717958623200
-.text
-
-.late_rodata
-glabel D_800D68D0
-.float 6.28318530717958623200
-.text
-
-.late_rodata
-glabel D_800D68D4
-.float 6.28318530717958623200
-.text
-#else
-f32 D_800D68C0= 6.28318530717958623200;
-f32 D_800D68C4= 6.28318530717958623200;
-f32 D_800D68C8= 6.28318530717958623200;
-f32 D_800D68CC= 6.28318530717958623200;
-f32 D_800D68D0= 6.28318530717958623200;
-f32 D_800D68D4= 6.28318530717958623200;
-#endif
-
-u32 D_800D68D8 = 0x00000000;
-
-u32 D_800D68DC = 0x00000000;
-
 // ovl1_10
 u32 D_800D68E0 = 0x800BA808;
 
