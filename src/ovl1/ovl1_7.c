@@ -665,17 +665,16 @@ void func_800B0100(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     }
 }
 
-extern f32 D_800D6720;
 void func_800B01DC(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
-    if (arg0 != D_800D6720) {
+    if (arg0 != 65535.0f) {
         D_800E4FD0[D_8004A7C4->objId] += arg0;
         gEntitiesScaleXArray[D_8004A7C4->objId] = D_800E4FD0[D_8004A7C4->objId];
     }
-    if (arg1 != D_800D6720) {
+    if (arg1 != 65535.0f) {
         D_800E5190[D_8004A7C4->objId] += arg1;
         gEntitiesScaleYArray[D_8004A7C4->objId] = D_800E5190[D_8004A7C4->objId];
     }
-    if (arg2 != D_800D6720) {
+    if (arg2 != 65535.0f) {
         D_800E5350[D_8004A7C4->objId] += arg2;
         gEntitiesScaleZArray[D_8004A7C4->objId] = D_800E5350[D_8004A7C4->objId];
     }
@@ -684,36 +683,32 @@ void func_800B01DC(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     }
 }
 
-extern f32 D_800D6724;
 void func_800B030C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, s32 arg9) {
-    f32 temp_f0;
-
-    temp_f0 = D_800D6724;
-    if (arg0 != temp_f0) {
+    if (arg0 != 65535.0f) {
         D_800E2090[D_8004A7C4->objId] = arg0;
     }
-    if (arg3 != temp_f0) {
+    if (arg3 != 65535.0f) {
         D_800E2250[D_8004A7C4->objId] = arg3;
     }
-    if (arg6 != temp_f0) {
+    if (arg6 != 65535.0f) {
         D_800E2410[D_8004A7C4->objId] = arg6;
     }
-    if (arg1 != temp_f0) {
+    if (arg1 != 65535.0f) {
         D_800E4A90[D_8004A7C4->objId] = arg1;
     }
-    if (arg4 != temp_f0) {
+    if (arg4 != 65535.0f) {
         D_800E4C50[D_8004A7C4->objId] = arg4;
     }
-    if (arg7 != temp_f0) {
+    if (arg7 != 65535.0f) {
         D_800E4E10[D_8004A7C4->objId] = arg7;
     }
-    if (arg2 != temp_f0) {
+    if (arg2 != 65535.0f) {
         D_800E4FD0[D_8004A7C4->objId] = arg2;
     }
-    if (arg5 != temp_f0) {
+    if (arg5 != 65535.0f) {
         D_800E5190[D_8004A7C4->objId] = arg5;
     }
-    if (arg8 != temp_f0) {
+    if (arg8 != 65535.0f) {
         D_800E5350[D_8004A7C4->objId] = arg8;
     }
     if (arg9 != 0) {
@@ -721,39 +716,38 @@ void func_800B030C(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f
     }
 }
 
-extern f32 D_800D6728;
 void func_800B04D4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f32 arg6, f32 arg7, f32 arg8, s32 arg9) {
-    if (arg0 != D_800D6728) {
+    if (arg0 != 65535.0f) {
         D_800E3050[D_8004A7C4->objId] = arg0;
     }
-    if (arg1 != D_800D6728) {
+    if (arg1 != 65535.0f) {
         D_800E3590[D_8004A7C4->objId] = arg1;
     }
     if (arg2 == 65536.0f) {
-        D_800E3AD0[D_8004A7C4->objId] = D_800D6728;
-    } else if (arg2 != D_800D6728) {
+        D_800E3AD0[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg2 != 65535.0f) {
         D_800E3AD0[D_8004A7C4->objId] = ABSF(arg2);
     }
-    if (arg3 != D_800D6728) {
+    if (arg3 != 65535.0f) {
         D_800E3210[D_8004A7C4->objId] = arg3;
     }
-    if (arg4 != D_800D6728) {
+    if (arg4 != 65535.0f) {
         D_800E3750[D_8004A7C4->objId] = arg4;
     }
     if (arg5 == 65536.0f) {
-        D_800E3C90[D_8004A7C4->objId] = D_800D6728;
-    } else if (arg5 != D_800D6728) {
+        D_800E3C90[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg5 != 65535.0f) {
         D_800E3C90[D_8004A7C4->objId] = ABSF(arg5);
     }
-    if (arg6 != D_800D6728) {
+    if (arg6 != 65535.0f) {
         D_800E33D0[D_8004A7C4->objId] = arg6;
     }
-    if (arg7 != D_800D6728) {
+    if (arg7 != 65535.0f) {
         D_800E3910[D_8004A7C4->objId] = arg7;
     }
     if (arg8 == 65536.0f) {
-        D_800E3E50[D_8004A7C4->objId] = D_800D6728;
-    } else if (arg8 != D_800D6728) {
+        D_800E3E50[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg8 != 65535.0f) {
         D_800E3E50[D_8004A7C4->objId] = ABSF(arg8);
     }
     if (arg9 != 0) {
@@ -761,9 +755,8 @@ void func_800B04D4(f32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f
     }
 }
 
-// regalloc and reordering around the third leg
+// regalloc
 #ifdef NON_MATCHING
-extern f32 D_800D672C, D_800D6730;
 void func_800B07B4(u8 arg0, u8 arg1, u8 arg2, s32 arg3) {
     if (((arg0 & 1) | (2 | 4)) != 0) {
         if (arg0 & 1) {
@@ -789,13 +782,13 @@ void func_800B07B4(u8 arg0, u8 arg1, u8 arg2, s32 arg3) {
     }
     if (((arg2 & 1) | (2 | 4)) != 0) {
         if ((arg2 & 1) != 0) {
-            D_800E3AD0[D_8004A7C4->objId] = D_800D672C;
+            D_800E3AD0[D_8004A7C4->objId] = 65535.0f;
         }
         if ((arg2 & 2) != 0) {
-            D_800E3C90[D_8004A7C4->objId] = D_800D6730;
+            D_800E3C90[D_8004A7C4->objId] = 65535.0f;
         }
         if ((arg2 & 4) != 0) {
-            D_800E3E50[D_8004A7C4->objId] = D_800D6730;
+            D_800E3E50[D_8004A7C4->objId] = 65535.0f;
         }
     }
     if (arg3 != 0) {
@@ -806,130 +799,91 @@ void func_800B07B4(u8 arg0, u8 arg1, u8 arg2, s32 arg3) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B07B4.s")
 #endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_800B0974(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
     f32 temp_f0;
     u32 temp_v0;
     u32 temp_v0_2;
 
-    temp_f0 = D_800D6734;
-    if (arg0 != temp_f0) {
-        temp_v0 = D_8004A7C4->objId;
-        if (D_800E10D0[temp_v0] == 1.0f) {
-            D_800E3050[temp_v0] = arg0;
+    if (arg0 != 65535.0f) {
+        if (D_800E10D0[D_8004A7C4->objId] == 1.0f) {
+            D_800E3050[D_8004A7C4->objId] = arg0;
         } else {
-            (&D_800E3050[temp_v0])[0xC14] = -arg0;
+            D_800E3050[D_8004A7C4->objId] = -arg0;
         }
     }
-    if (arg1 != temp_f0) {
-        temp_v0_2 = D_8004A7C4->objId;
-        if (D_800E10D0[temp_v0_2] == 1.0f) {
-            D_800E3590[temp_v0_2] = arg1;
+    if (arg1 != 65535.0f) {
+        if (D_800E10D0[D_8004A7C4->objId] == 1.0f) {
+            D_800E3590[D_8004A7C4->objId] = arg1;
         } else {
-            (&D_800E3590[temp_v0_2])[0xD64] = -arg1;
+            D_800E3590[D_8004A7C4->objId] = -arg1;
         }
     }
     if (arg2 == 65536.0f) {
-        D_800E3AD0[D_8004A7C4->objId] = temp_f0;
-    } else if (arg2 != temp_f0) {
+        D_800E3AD0[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg2 != 65535.0f) {
         D_800E3AD0[D_8004A7C4->objId] = arg2;
     }
+
     if (arg3 != 0) {
         finish_current_thread(arg3);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0974.s")
-#endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_800B0AD4(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
-    f32 temp_f0;
-
-    temp_f0 = D_800D6738;
-    if (arg0 != temp_f0) {
+    if (arg0 != 65535.0f) {
         D_800E64D0[D_8004A7C4->objId] = arg0;
     }
-    if (arg1 != temp_f0) {
+    if (arg1 != 65535.0f) {
         D_800E6690[D_8004A7C4->objId] = arg1;
     }
     if (arg2 == 65536.0f) {
-        D_800E6850[D_8004A7C4->objId] = temp_f0;
-    } else if (arg2 != temp_f0) {
+        D_800E6850[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg2 != 65535.0f) {
         D_800E6850[D_8004A7C4->objId] = arg2;
     }
+
     if (arg3 != 0) {
         finish_current_thread(arg3);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0AD4.s")
-#endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
 void func_800B0BC4(f32 arg0, f32 arg1, f32 arg2, s32 arg3) {
-    f32 temp_f0;
-    u32 temp_v0;
-    u32 temp_v0_2;
-
-    temp_f0 = D_800D673C;
-    if (arg0 != temp_f0) {
-        temp_v0 = D_8004A7C4->objId;
-        if (D_800E6A10[temp_v0] == 1.0f) {
-            D_800E64D0[temp_v0] = arg0;
+    if (arg0 != 65535.0f) {
+        if (D_800E6A10[D_8004A7C4->objId] == 1.0f) {
+            D_800E64D0[D_8004A7C4->objId] = arg0;
         } else {
-            (&D_800E64D0[temp_v0])[0x1934] = -arg0;
+            D_800E64D0[D_8004A7C4->objId] = -arg0;
         }
     }
-    if (arg1 != temp_f0) {
-        temp_v0_2 = D_8004A7C4->objId;
-        if (D_800E6A10[temp_v0_2] == 1.0f) {
-            D_800E6690[temp_v0_2] = arg1;
+    if (arg1 != 65535.0f) {
+        if (D_800E6A10[D_8004A7C4->objId] == 1.0f) {
+            D_800E6690[D_8004A7C4->objId] = arg1;
         } else {
-            (&D_800E6690[temp_v0_2])[0x19A4] = -arg1;
+            D_800E6690[D_8004A7C4->objId] = -arg1;
         }
     }
     if (arg2 == 65536.0f) {
-        D_800E6850[D_8004A7C4->objId] = temp_f0;
-    } else if (arg2 != temp_f0) {
+        D_800E6850[D_8004A7C4->objId] = 65535.0f;
+    } else if (arg2 != 65535.0f) {
         D_800E6850[D_8004A7C4->objId] = arg2;
     }
+
     if (arg3 != 0) {
         finish_current_thread(arg3);
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0BC4.s")
-#endif
 
-#ifdef MIPS_TO_C
-//generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
-void func_800B0D24(s32 arg0) {
-    void (*temp_v1)(s32);
-    s32 temp_v0_2;
-    u32 temp_a0;
-    u32 temp_v0;
-    s32 phi_return;
+void func_800B0D24(struct GObj *arg0) {
+    func_800B1C7C(arg0);
 
-    func_800B1C7C();
-    temp_v0 = D_8004A7C4->objId;
-    temp_v0_2 = temp_v0 * 4;
-    temp_v1 = D_800DEDD0[D_8004A7C4->objId];
-    if (temp_v1 != NULL) {
-        temp_a0 = D_800DD8D0[D_8004A7C4->objId];
-        if ((temp_a0 & 1) == 0) {
-            if ((temp_a0 & 0x80) == 0) {
-                temp_v1(arg0);
+    if (D_800DEDD0[D_8004A7C4->objId] != NULL) {
+        if ((D_800DD8D0[D_8004A7C4->objId] & 1) == 0) {
+            if ((D_800DD8D0[D_8004A7C4->objId] & 0x80) == 0) {
+                D_800DEDD0[D_8004A7C4->objId](arg0);
             }
         }
     }
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0D24.s")
-#endif
 
 // this function calls D_800DF150 and D_800DEF90
 s32 func_800B0D90(struct GObj *arg0) {
@@ -961,13 +915,7 @@ s32 func_800B0D90(struct GObj *arg0) {
 }
 
 #ifdef MIPS_TO_C
-//generated by mips_to_c commit 3ec45aadfc2cb619035fb802d88c52eacfab0326
-Failed to decompile function func_800B0F28:
 
-Unable to determine jump table for jr instruction.
-
-There must be a read of a variable in the same block as
-the instruction, which has a name starting with "jtbl"/"jpt_".
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0F28.s")
 #endif

@@ -1,3 +1,23 @@
+.late_rodata
+glabel jtbl_800D6740
+.word .L800B10CC_ovl1;
+.word .L800B109C_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B0F5C_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B10FC_ovl1;
+.word .L800B0FEC_ovl1;
+.word .L800B100C_ovl1;
+
+.text
 glabel func_800B0F28
 /* 059178 800B0F28 24AE0002 */  addiu $t6, $a1, 2
 /* 05917C 800B0F2C 27BDFFB8 */  addiu $sp, $sp, -0x48
@@ -7,11 +27,12 @@ glabel func_800B0F28
 /* 05918C 800B0F3C 1020006F */  beqz  $at, .L800B10FC_ovl1
 /* 059190 800B0F40 00803825 */   move  $a3, $a0
 /* 059194 800B0F44 000E7080 */  sll   $t6, $t6, 2
-/* 059198 800B0F48 3C01800D */ lui $at, %hi(D_800D6740)
+/* 059198 800B0F48 3C01800D */ lui $at, %hi(jtbl_800D6740)
 /* 05919C 800B0F4C 002E0821 */  addu  $at, $at, $t6
-/* 0591A0 800B0F50 8C2E6740 */ lw $t6, %lo(D_800D6740)($at)
+/* 0591A0 800B0F50 8C2E6740 */ lw $t6, %lo(jtbl_800D6740)($at)
 /* 0591A4 800B0F54 01C00008 */  jr    $t6
 /* 0591A8 800B0F58 00000000 */   nop   
+.L800B0F5C_ovl1:
 /* 0591AC 800B0F5C 444FF800 */  cfc1  $t7, $31
 /* 0591B0 800B0F60 24040001 */  li    $a0, 1
 /* 0591B4 800B0F64 44C4F800 */  ctc1  $a0, $31
@@ -51,6 +72,7 @@ glabel func_800B0F28
 /* 059230 800B0FE0 00002825 */   move  $a1, $zero
 /* 059234 800B0FE4 10000052 */  b     .L800B1130_ovl1
 /* 059238 800B0FE8 8FBF0014 */   lw    $ra, 0x14($sp)
+.L800B0FEC_ovl1:
 /* 05923C 800B0FEC E7AC0044 */  swc1  $f12, 0x44($sp)
 /* 059240 800B0FF0 8FA40044 */  lw    $a0, 0x44($sp)
 /* 059244 800B0FF4 0482004E */  bltzl $a0, .L800B1130_ovl1
@@ -59,6 +81,7 @@ glabel func_800B0F28
 /* 059250 800B1000 00000000 */   nop   
 /* 059254 800B1004 1000004A */  b     .L800B1130_ovl1
 /* 059258 800B1008 8FBF0014 */   lw    $ra, 0x14($sp)
+.L800B100C_ovl1:
 /* 05925C 800B100C E7AC0038 */  swc1  $f12, 0x38($sp)
 /* 059260 800B1010 8FA20038 */  lw    $v0, 0x38($sp)
 /* 059264 800B1014 3C19800D */ lui $t9, %hi(D_800D6A38)
@@ -96,6 +119,7 @@ glabel func_800B0F28
 .L800B1094_ovl1:
 /* 0592E4 800B1094 10000025 */  b     .L800B112C_ovl1
 /* 0592E8 800B1098 AC470048 */   sw    $a3, 0x48($v0)
+.L800B109C_ovl1:
 /* 0592EC 800B109C 3C0C8005 */  lui   $t4, %hi(D_8004A7C4) # $t4, 0x8005
 /* 0592F0 800B10A0 8D8CA7C4 */  lw    $t4, %lo(D_8004A7C4)($t4)
 /* 0592F4 800B10A4 3C0F800E */  lui   $t7, %hi(D_800DD8D0) # $t7, 0x800e
@@ -108,6 +132,7 @@ glabel func_800B0F28
 /* 059310 800B10C0 0301C825 */  or    $t9, $t8, $at
 /* 059314 800B10C4 10000019 */  b     .L800B112C_ovl1
 /* 059318 800B10C8 AC590000 */   sw    $t9, ($v0)
+.L800B10CC_ovl1:
 /* 05931C 800B10CC 3C088005 */  lui   $t0, %hi(D_8004A7C4) # $t0, 0x8005
 /* 059320 800B10D0 8D08A7C4 */  lw    $t0, %lo(D_8004A7C4)($t0)
 /* 059324 800B10D4 3C0B800E */  lui   $t3, %hi(D_800DD8D0) # $t3, 0x800e

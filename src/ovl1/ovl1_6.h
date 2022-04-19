@@ -21,7 +21,7 @@ extern s32 D_800E0D50[];
 extern f32 **D_800E0490[];
 extern s32 *D_800E0650[];
 extern s32 D_800E1ED0[];
-extern s32 *D_800DEDD0[];
+extern void (*D_800DEDD0[])(struct GObj *);
 extern void (*D_800DEF90[])(s32);
 extern void (*D_800DF150[])(s32);
 extern void (*D_800DF310[])(s32, s32, f32);
