@@ -356,6 +356,8 @@ SECTIONS
     END_SEG(ovl1)
     BEGIN_SEG(ovl1Data, _ovl1SegmentEnd) SUBALIGN(16) {
         BUILD_DIR/data/kirby.066630.o(.data*);
+        BUILD_DIR/data/ovl1/ovl1_1_rodata.o(.data*);
+        BUILD_DIR/src/ovl1/ovl1.o(.rodata*);
         BUILD_DIR/src/ovl1/ovl1_1.o(.rodata*);
         BUILD_DIR/data/ovl1/kirby.066630.3.o(.data*);
         BUILD_DIR/data/kirby.066630.o(.rodata*);

@@ -914,8 +914,71 @@ s32 func_800B0D90(struct GObj *arg0) {
     }
 }
 
-#ifdef MIPS_TO_C
+typedef union {
+    u32 i;
+    f32 f;
+} _IF;
 
+#ifdef MIPS_TO_C
+void func_800B0F28(struct UnkStruct8004A7C4_3C *arg0, s32 arg1, f32 arg2) {
+    _IF sp44;
+    void *sp3C;
+    f32 sp38;
+    f32 sp20;
+    s32 *temp_v0_2;
+    s32 *temp_v0_3;
+    s32 temp_a0;
+    s32 temp_a1;
+    struct UnkStruct8004A7C4_3C *temp_a3;
+    void (*temp_v0_4)(s32, s32, f32);
+    void *temp_v0;
+
+    temp_a3 = arg0;
+    switch (arg1) {
+        case 9:
+            func_800BB468(arg2, arg2, 0, temp_a3);
+            break
+        case 12:
+            sp44 = arg2;
+            if ((bitwise s32) sp44 >= 0) {
+                play_sound((bitwise s32) sp44);
+            }
+            break;
+        case 13:
+            sp38 = arg2;
+            temp_a1 = (bitwise s32) sp38 & 0xFFFF;
+            temp_a0 = (bitwise s32) sp38 >> 0x10;
+            if ((temp_a1 >= 0) && (*(&D_800D6A38 + (temp_a0 * 4)) != 0)) {
+                arg0 = temp_a3;
+                temp_v0 = func_800A19EC(arg2, temp_a0, temp_a1, temp_a3);
+                if (temp_v0 != 0) {
+                    if (temp_v0->unk4C != 0) {
+                        sp3C = temp_v0;
+                        func_800B2340(&sp20, arg0, 0xFFFF);
+                        sp3C->unk4C->unk4 = sp20;
+                        sp3C->unk4C->unk8 = sp24;
+                        sp3C->unk4C->unkC = sp28;
+                        break;
+                    }
+                    temp_v0->unk48 = arg0;
+                    break;
+                }
+            }
+            break;
+        case -1:
+            D_800DD8D0[D_8004A7C4->objId] |= 0x40000000;
+            break;
+        case -2:
+            D_800DD8D0[D_8004A7C4->objId] |= 0x80000000;
+            break;
+        default:
+            temp_v0_4 = D_800DF310[D_8004A7C4->objId];
+            if (temp_v0_4 != 0) {
+                temp_v0_4(temp_a3, arg1, arg2);
+            }
+            break;
+    }
+}
 #else
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_7/func_800B0F28.s")
 #endif
