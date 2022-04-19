@@ -44,8 +44,11 @@
 #define COMBINE_INTEGRAL(a, b) ((a & 0xffff0000 ) | ((b >> 16)))
 #define COMBINE_FRACTIONAL(a, b) ((a << 16)) | (b & 0xffff)
 
+s32 lbreflect_Int16Sin(f32 arg0);
+s32 lbreflect_Int16Cos(f32 arg0);
 
 void HS64_MkScaleMtxF(Mat4 mf, f32 x, f32 y, f32 z);
+void HS64_MkRotationMtxF(Mat4 mf, f32 x, f32 y, f32 z);
 void func_800A465C(Mat4 mf, f32 x, f32 y, f32 z);
 void HS64_MkTranslateMtxF(Mat4 mf, f32 x, f32 y, f32 z);
 

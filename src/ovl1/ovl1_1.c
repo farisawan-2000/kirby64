@@ -1244,12 +1244,6 @@ void func_800A465C(void *arg0, ? arg1, f32 arg2, f32 arg3) {
 GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A465C.s")
 #endif
 
-
-
-void HS64_MkScaleMtxF(Mat4, f32, f32, f32);
-void HS64_MkRotationMtxF(Mat4, f32, f32, f32);
-void HS64_MkTranslateMtxF(Mat4, f32, f32, f32);
-
 void func_800A4794(Vector *arg0, struct UnkStruct8004A7C4_3C *arg1) {
     Mat4 finalMtx;
     Mat4 intermediateMtx;

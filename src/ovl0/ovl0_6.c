@@ -109,7 +109,7 @@ void func_80019C60(float mf[4][4], Mtx *m) {
 
 extern const f32 D_80040C70;
 
-u32 func_80019E14(f32 arg0) {
+s32 lbreflect_Int16Sin(f32 arg0) {
     s32 idx = arg0 * D_80040C70;
 
     u16 ret = INT16_SIN(idx);
@@ -122,9 +122,10 @@ u32 func_80019E14(f32 arg0) {
 }
 
 extern const f32 D_80040C74, D_80040C78;
-s32 func_80019E5C(f32 arg0) {
+s32 lbreflect_Int16Cos(f32 arg0) {
     s32 idx = (arg0 + D_80040C74) * D_80040C78;
-    u16 ret = lbreflect_Int16SinTable[idx & 0x7FF];
+
+    u16 ret = INT16_SIN(idx);
 
     if (idx & 0x800) {
         return -ret;
@@ -530,19 +531,19 @@ f32 func_8001B008(Mat4 arg0, s32 *arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, 
     // temp_a2 = ((u32)(arg2 * (M_PI / 360.0f) * (2048.0f / M_PI))) & 0xFFF
     temp_a2 = ((u32)(arg2 * D_80040C7C * D_80040C80)) & 0xFFF;
     // temp_t0 = lbreflect_Int16SinTable[temp_a2 & 0x7FF];
-    temp_t0 = *(&lbreflect_Int16SinTable + ((temp_a2 & 0x7FF) * 2));
-    temp_v1 = (temp_a2 + 0x400) & 0xFFFF;
-    phi_f2 = temp_t0;
+
+    sinval = lbreflect_Int16SinTable[temp_a2 & 0x7FF];
     if ((temp_a2 & 0x800) != 0) {
-        phi_f2 = -phi_f2_2;
+        sinval = -sinval;
     }
-    phi_f12 = lbreflect_Int16SinTable[temp_v1 & 0x7FF];
-    if ((temp_v1 & 0x800) != 0) {
-        phi_f12 = -phi_f12_2;
+    cosval = lbreflect_Int16SinTable[(temp_a2 + 0x400) & 0x7FF];
+    if (((temp_a2 + 0x400) & 0x800) != 0) {
+        cosval = -cosval;
     }
-    temp_f14 = phi_f12 / phi_f2;
-    arg0->unk0 = (temp_f14 / arg3) * arg6; // [0][0]
-    arg0->unk14 = temp_f14 * arg6; // [1][1]
+
+    tanval = cosval / sinval;
+    arg0[0][0] = (tanval / arg3) * arg6; // [0][0]
+    arg0[1][1] = tanval * arg6; // [1][1]
     temp_f0 = arg4 + arg5;
     sp0 = arg4 - arg5;
     arg0[2][3] = -arg6; // [2][3]
