@@ -6,6 +6,7 @@
 #include "ovl0/ovl0_4.h"
 #include "ovl0/ovl0_2.h"
 #include "ovl0/ovl0_2_5.h"
+#include "ovl0/ovl0_6.h"
 #include "save_file.h"
 u8 ovl1_TamperCheck(void);
 
@@ -1311,14 +1312,8 @@ void func_800A4958(Vector *dst, struct UnkStruct8004A7C4_3C *arg1, Vector *src) 
     );
 }
 
-// we have you surrounded! come decompile this matrix function!
-// i hate matrix math! i hate matrix math!!!
-#ifdef NON_MATCHING
-void HS64_MkScaleMtxF(Mat4, f32, f32, f32);
-void func_800A465C(Mat4, f32, f32, f32);
-void HS64_MkTranslateMtxF(Mat4, f32, f32, f32);
-
 void func_800A4B34(Vector *dst, struct UnkStruct8004A7C4_3C *arg1) {
+    Vector tmp;
     Mat4 sp7C;
     Mat4 sp3C;
 
@@ -1341,13 +1336,18 @@ void func_800A4B34(Vector *dst, struct UnkStruct8004A7C4_3C *arg1) {
         }
         arg1 = arg1->unk14;
     } while ((u32) arg1 != 1);
-    dst->x = sp7C[3][0] + ((sp7C[0][0] * dst->x) + (sp7C[1][0] * dst->y) + (sp7C[2][0] * dst->z));
-    dst->y = sp7C[3][1] + ((sp7C[0][1] * dst->x) + (sp7C[1][1] * dst->y) + (sp7C[2][1] * dst->z));
-    dst->z = sp7C[3][2] + ((sp7C[0][2] * dst->x) + (sp7C[1][2] * dst->y) + (sp7C[2][2] * dst->z));
+
+    tmp.x = dst->x;
+    tmp.y = dst->y;
+    tmp.z = dst->z;
+
+    dst->x = ((sp7C[0][0] * tmp.x) + (sp7C[1][0] * tmp.y) + (sp7C[2][0] * tmp.z))
+             + sp7C[3][0];
+    dst->y = ((sp7C[0][1] * tmp.x) + (sp7C[1][1] * tmp.y) + (sp7C[2][1] * tmp.z))
+             + sp7C[3][1];
+    dst->z = ((sp7C[0][2] * tmp.x) + (sp7C[1][2] * tmp.y) + (sp7C[2][2] * tmp.z))
+             + sp7C[3][2];
 }
-#else
-GLOBAL_ASM("asm/non_matchings/ovl1/ovl1_1/func_800A4B34.s")
-#endif
 
 // rodata floats
 #ifdef NON_MATCHING
