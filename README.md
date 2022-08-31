@@ -26,7 +26,3 @@ You will need an original copy of the ROM to proceed.
 
 ## TODO (Want to contribute? 😳)
  - Document all 631 of Kirby's sounds into `include/sounds.h` using Sound Check
- - Document Kirby's action states (Might require PJ64 Debugger)
-
-## TODO (non-essential)
- - Convert C code to C++ when the time comes (For this, we need knowledge on how `cfront` on IRIX works)
