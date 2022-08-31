@@ -25,4 +25,4 @@ You will need an original copy of the ROM to proceed.
  - Clean up `undefined_syms.txt`
 
 ## TODO (Want to contribute? 😳)
- - Document all 631 of Kirby's sounds into `include/sounds.h` using Sound Check
+ - Document Kirby's action states (Might require PJ64 Debugger)
