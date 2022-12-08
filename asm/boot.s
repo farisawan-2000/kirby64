@@ -1,20 +1,13 @@
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
+.set noat
+.set noreorder
 .set gp=64
 
+#include <PR/R4300.h>
+#include <PR/rcp.h>
 .include "macros.inc"
-
-# 0xA0000000-0xBFFFFFFF: KSEG1 direct map non-cache mirror of 0x00000000
-# 0xA4000000-0xA4000FFF: RSP DMEM
-
-# 0xA4000000-0xA400003F: ROM header
 
 .section .text, "ax"
 
-# 0xA4000040-0xA4000B6F: IPL3
-
-# IPL3 entry point jumped to from IPL2
 glabel ipl3_entry # 0xA4000040
 /* 000000 A4000040 40806800 */  mtc0  $zero, $13
 /* 000004 A4000044 40804800 */  mtc0  $zero, $9
@@ -66,7 +59,7 @@ glabel ipl3_entry # 0xA4000040
 /* 0000B0 A40000F0 35292838 */  ori   $t1, $t1, 0x2838
 /* 0000B4 A40000F4 AD490008 */  sw    $t1, 8($t2)
 /* 0000B8 A40000F8 AD400014 */  sw    $zero, 0x14($t2)
-/* 0000BC A40000FC 3C098000 */  lui   $t1, 0x8000
+/* 0000BC A40000FC 3C098000 */  li   $t1, UT_VEC
 /* 0000C0 A4000100 AD490004 */  sw    $t1, 4($t2)
 /* 0000C4 A4000104 00006825 */  move  $t5, $zero
 /* 0000C8 A4000108 00007025 */  move  $t6, $zero
@@ -163,7 +156,7 @@ glabel ipl3_entry # 0xA4000040
 .LA400025C:
 /* 00021C A400025C 3C08C400 */  lui   $t0, 0xc400
 /* 000220 A4000260 AD48000C */  sw    $t0, 0xc($t2)
-/* 000224 A4000264 3C088000 */  lui   $t0, 0x8000
+/* 000224 A4000264 3C088000 */  li   $t0, UT_VEC
 /* 000228 A4000268 AD480004 */  sw    $t0, 4($t2)
 /* 00022C A400026C 03C0E825 */  move  $sp, $fp
 /* 000230 A4000270 00001825 */  move  $v1, $zero
@@ -253,7 +246,7 @@ glabel ipl3_entry # 0xA4000040
 /* 000374 A40003B4 8FB6000C */  lw    $s6, 0xc($sp)
 /* 000378 A40003B8 8FB70010 */  lw    $s7, 0x10($sp)
 /* 00037C A40003BC 27BD0018 */  addiu $sp, $sp, 0x18
-/* 000380 A40003C0 3C088000 */  lui   $t0, 0x8000
+/* 000380 A40003C0 3C088000 */  li   $t0, UT_VEC
 /* 000384 A40003C4 25080000 */  addiu $t0, $t0, 0
 /* 000388 A40003C8 25094000 */  addiu $t1, $t0, 0x4000
 /* 00038C A40003CC 2529FFE0 */  addiu $t1, $t1, -0x20
@@ -264,7 +257,7 @@ glabel ipl3_entry # 0xA4000040
 /* 00039C A40003DC 0109082B */  sltu  $at, $t0, $t1
 /* 0003A0 A40003E0 1420FFFD */  bnez  $at, .LA40003D8
 /* 0003A4 A40003E4 25080020 */   addiu $t0, $t0, 0x20
-/* 0003A8 A40003E8 3C088000 */  lui   $t0, 0x8000
+/* 0003A8 A40003E8 3C088000 */  li   $t0, UT_VEC
 /* 0003AC A40003EC 25080000 */  addiu $t0, $t0, 0
 /* 0003B0 A40003F0 25092000 */  addiu $t1, $t0, 0x2000
 /* 0003B4 A40003F4 2529FFF0 */  addiu $t1, $t1, -0x10
@@ -276,7 +269,7 @@ glabel ipl3_entry # 0xA4000040
 /* 0003C8 A4000408 10000013 */  b     .LA4000458
 /* 0003CC A400040C 00000000 */   nop   
 .LA4000410:
-/* 0003D0 A4000410 3C088000 */  lui   $t0, 0x8000
+/* 0003D0 A4000410 3C088000 */  li   $t0, UT_VEC
 /* 0003D4 A4000414 25080000 */  addiu $t0, $t0, 0
 /* 0003D8 A4000418 25094000 */  addiu $t1, $t0, 0x4000
 /* 0003DC A400041C 2529FFE0 */  addiu $t1, $t1, -0x20
@@ -287,7 +280,7 @@ glabel ipl3_entry # 0xA4000040
 /* 0003EC A400042C 0109082B */  sltu  $at, $t0, $t1
 /* 0003F0 A4000430 1420FFFD */  bnez  $at, .LA4000428
 /* 0003F4 A4000434 25080020 */   addiu $t0, $t0, 0x20
-/* 0003F8 A4000438 3C088000 */  lui   $t0, 0x8000
+/* 0003F8 A4000438 3C088000 */  li   $t0, UT_VEC
 /* 0003FC A400043C 25080000 */  addiu $t0, $t0, 0
 /* 000400 A4000440 25092000 */  addiu $t1, $t0, 0x2000
 /* 000404 A4000444 2529FFF0 */  addiu $t1, $t1, -0x10
@@ -320,7 +313,7 @@ glabel ipl3_entry # 0xA4000040
 /* 000464 A40004A4 25290004 */  addiu $t1, $t1, 4
 /* 000468 A40004A8 1420FFFB */  bnez  $at, .LA4000498
 /* 00046C A40004AC AD2DFFFC */   sw    $t5, -4($t1)
-/* 000470 A40004B0 3C0C8000 */  lui   $t4, 0x8000
+/* 000470 A40004B0 3C0C8000 */  li   $t4, UT_VEC
 /* 000474 A40004B4 258C0000 */  addiu $t4, $t4, 0
 /* 000478 A40004B8 01800008 */  jr    $t4
 /* 00047C A40004BC 00000000 */   nop   
@@ -717,7 +710,7 @@ func_A4000A34:
 /* 000A04 A4000A44 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 000A08 A4000A48 14BB0003 */  bne   $a1, $k1, .LA4000A58
 /* 000A0C A4000A4C 3C0F4600 */   lui   $t7, 0x4600
-/* 000A10 A4000A50 3C1A8000 */  lui   $k0, 0x8000
+/* 000A10 A4000A50 3C1A8000 */  li   $k0, K0BASE
 /* 000A14 A4000A54 01FA7825 */  or    $t7, $t7, $k0
 .LA4000A58:
 /* 000A18 A4000A58 309A0001 */  andi  $k0, $a0, 1

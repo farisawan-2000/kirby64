@@ -8,6 +8,8 @@
 #define TRUE 1
 #define FALSE 0
 
+
+#ifndef _LANGUAGE_ASSEMBLY
 typedef signed char            s8;
 typedef unsigned char          u8;
 typedef signed short int       s16;
@@ -38,5 +40,7 @@ typedef s32 ptrdiff_t;
 #else
 #include <stddef.h>
 #endif
+
+#endif // _LANGUAGE_ASSEMBLY
 
 #endif

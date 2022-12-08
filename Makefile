@@ -43,7 +43,7 @@ GCC := $(CROSS)gcc
 
 AS = $(CROSS)as
 # CC = $(CROSS)gcc
-CPP     := cpp -P -Wno-trigraphs
+CPP     := $(CROSS)cpp -P -Wno-trigraphs
 LD = $(CROSS)ld
 OBJDUMP = $(CROSS)objdump
 OBJCOPY = $(CROSS)objcopy
@@ -228,7 +228,8 @@ $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GR
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
 $(BUILD_DIR)/%.o: %.s
-	$(AS) $(ASFLAGS) -o $@ $<
+	$(CPP) $(GCC_CFLAGS) -o $(@:.o=.i) $<
+	$(AS) $(ASFLAGS) -o $@ $(@:.o=.i)
 
 $(BUILD_DIR)/%.o: %.c
 	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
@@ -262,7 +263,7 @@ $(BUILD_DIR)/$(UCODE_BASE_DIR)/%.o : $(UCODE_BASE_DIR)/%
 
 $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt $(BUILD_DIR)/assets/assets.marker
 	$(CPP) $(VERSION_CFLAGS) $(INCLUDE_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
-	-DBUILD_DIR=$(BUILD_DIR)
+	-DBUILD_DIR=$(BUILD_DIR) -Umips
 
 $(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
 	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio

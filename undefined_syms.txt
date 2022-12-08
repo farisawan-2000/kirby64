@@ -1,53 +1,3 @@
-/* libultra OS symbols */
-
-/* boot and osException symbols */
-/* most of these should be in hardware.h */
-
-/* exceptions */
-EXCEPTION_TLB_MISS = 0x80000000;
-
-/* SP */
-SP_DMEM       = 0xA4000000;
-SP_DMEM_UNK0  = 0xA40004C0;
-SP_DMEM_UNK1  = 0xA4000774;
-SP_IMEM       = 0xA4001000;
-SP_STATUS_REG = 0xA4040010;
-SP_PC         = 0xA4080000;
-
-/* MI */
-MI_MODE_REG      = 0xA4300000;
-MI_VERSION_REG   = 0xA4300004;
-MI_INTR_REG      = 0xA4300008;
-MI_INTR_MASK_REG = 0xA430000C;
-
-/* VI */
-VI_CURRENT_REG = 0xA4400010;
-
-/* AI */
-AI_STATUS_REG = 0xA450000C;
-
-/* PI */
-PI_DRAM_ADDR_REG = 0xA4600000;
-PI_CART_ADDR_REG = 0xA4600004;
-PI_WR_LEN_REG    = 0xA460000C;
-PI_STATUS_REG    = 0xA4600010;
-
-/* RI */
-RI_MODE_REG    = 0xA4700000;
-RI_REFRESH_REG = 0xA4700010;
-
-/* SI */
-SI_STATUS_REG = 0xA4800018;
-
-/* Unknown */
-D_B0000008 = 0xB0000008;
-D_B0000010 = 0xB0000010;
-D_B0000014 = 0xB0000014;
-D_C0000000 = 0xC0000000;
-D_C0000008 = 0xC0000008;
-D_C000000C = 0xC000000C;
-D_A4001000 = 0xA4001000;
-
 gEntryStack = 0x80042B90;
 D_80000870 = 0x80000870;
 fatal_printf = 0x8002309C;
@@ -136,8 +86,6 @@ func_8002F040 = 0x8002F040;
 func_80004250 = 0x80004250;
 func_800009E8 = 0x800009E8;
 func_80004E98 = 0x80004E98;
-init_dynamic_buffer = 0x800078A4;
-alloc_from_dynamic_buffer = 0x8000783C;
 gDynamicBuffer1 = 0x8004A3F8;
 func_80007830 = 0x80007830;
 gDisplayListHeads = 0x8004A3D0;
