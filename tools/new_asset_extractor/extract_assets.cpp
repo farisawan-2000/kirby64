@@ -2,6 +2,9 @@
 #include <fstream>
 #include <sys/stat.h>
 #include "json.hpp"
+#include <stdio.h>
+#include <linux/limits.h>
+#include <unistd.h>
 #include "extract_assets.hpp"
 #define RELEASE
 
@@ -222,9 +225,16 @@ int main(int argc, char **argv) {
 
             #pragma omp task
             for (auto& [key, value] : j.items()) {
-                fs::path p = key;
+                char *curr_dirname = get_current_dir_name();
 
-                fs::remove(p);
+                char toDelete[PATH_MAX];
+                sprintf(toDelete, "%s/%s", curr_dirname, key.c_str());
+
+                fmt::print("Removing {}...\n", toDelete);
+                if (remove(toDelete) != 0) {
+                    fmt::print(stderr, "ERROR removing {} !\n", toDelete);
+                    exit(1);
+                }
             }
 
             return 0;
