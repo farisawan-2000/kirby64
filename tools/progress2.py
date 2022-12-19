@@ -2,7 +2,10 @@
 
 import argparse
 import csv
-import git
+try:
+    import git
+except Exception as e:
+    pass
 import os
 import re
 
@@ -132,28 +135,20 @@ asmPct2 = 100 * asm / total2
 compiled_bytes = total
 bytesPerShard = compiled_bytes / 74
 
-if args.csv:
-    version = 1
-    git_object = git.Repo().head.object
-    timestamp = str(git_object.committed_date)
-    git_hash = git_object.hexsha
-    csv_list = [str(version), timestamp, git_hash, str(codeSize), str(src), str(asm), str(len(nonMatchingFunctions))]
-    print(",".join(csv_list))
+adjective = "decompiled" if not args.matching else "matched"
+
+print("------------------------------------")
+print(str(total) + " total bytes of decompilable code.")
+print(str(src) + " bytes " + adjective + " in src.\n")
+print("         OoT Approach (src + asm): " + str(srcPct) + "%")
+print("Kirby64 Approach (pre-calculated): " + str(srcPct2) + "%\n")
+print("------------------------------------")
+
+heartPieces = int(src / bytesPerShard)
+rupees = int(((src % bytesPerShard) * 100) / bytesPerShard)
+
+if (rupees > 0):
+    print("You have " + str(heartPieces) + "/74 Crystal Shards and " + str(rupees) + " rupee(s).")
 else:
-    adjective = "decompiled" if not args.matching else "matched"
-
-    print("------------------------------------")
-    print(str(total) + " total bytes of decompilable code.")
-    print(str(src) + " bytes " + adjective + " in src.\n")
-    print("         OoT Approach (src + asm): " + str(srcPct) + "%")
-    print("Kirby64 Approach (pre-calculated): " + str(srcPct2) + "%\n")
-    print("------------------------------------")
-
-    heartPieces = int(src / bytesPerShard)
-    rupees = int(((src % bytesPerShard) * 100) / bytesPerShard)
-
-    if (rupees > 0):
-        print("You have " + str(heartPieces) + "/74 Crystal Shards and " + str(rupees) + " rupee(s).")
-    else:
-        print("You have " + str(heartPieces) + "/74 Crystal Shards.")
-    print("------------------------------------")
+    print("You have " + str(heartPieces) + "/74 Crystal Shards.")
+print("------------------------------------")
