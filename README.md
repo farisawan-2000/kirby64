@@ -4,11 +4,16 @@ This repository contains a work-in-progress decompilation effort for Kirby 64.
 
 You will need an original copy of the ROM to proceed.
 
-## Installing
+## Exclusive Dependencies
+ - Works best on the latest version of Ubuntu, Fedora, or Arch. PR's to support other Linux versions are welcome, but as of current those three are the only ones we can reliably test.
+ - Python 3.10 with `pip`
+ - `jq`
+
+## Installation
  - First, get Linux, or [Windows Subsystem for Linux](https://aka.ms/wslinstall) if you use Windows
  - Next, clone the repo by running `sudo apt update && sudo apt install git gcc-mips-linux-gnu && git clone https://github.com/farisawan-2000/kirby64 --recursive`
  - Get the GitPython submodule by doing `pip3 install gitpython`
- - Grab the qemu-irix deb from [here](https://github.com/n64decomp/qemu-irix/releases) and install it with `sudo dpkg -i path/to/qemu(press tab here to autocomplete the name)`
+ - Grab the qemu-irix deb from [here](https://github.com/n64decomp/qemu-irix/releases) and install it with `sudo dpkg -i path/to/qemu(press tab here to autocomplete the name)` (Use `alien` on Fedora or `debtap` on Arch to convert)
  - Now just follow the instructions for SM64 decomp [here](https://github.com/n64decomp/sm64/tree/master/README.md), but before you go, keep reading.
  - Once dependencies are installed, run `make setup` to get assets extracted, then `make` to build!
 
