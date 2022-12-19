@@ -276,14 +276,24 @@ int main(int argc, char **argv) {
         extract_bin(key, value);
     }
 
+    inline const char* get_file_extension(const char* file_path) {
+      // Find the last occurrence of '.' in the file path
+      const char* dot = strrchr(file_path, '.');
+      // If '.' was not found, return null
+      if (!dot || dot == file_path) return nullptr;
+      // Return a pointer to the character after the '.'
+      return dot + 1;
+    }
+
     #pragma omp task
     for (auto& [key, value] : pics.items()) {
-        fs::path p = key;
+        const char* extension = get_file_extension(path);
 
-        String s = p.extension();
-
-             if (s == ".bin") extract_bin(key, value);
-        else if (s == ".png") extract_img(pics, key, value);
+        if (extension && strcmp(extension, "bin") == 0) {
+          extract_bin(key, value);
+        } else if (extension && strcmp(extension, "png") == 0) {
+          extract_img(pics, key, value);
+        }
     }
 
     #pragma omp task

@@ -205,8 +205,8 @@ SECTIONS
         BUILD_DIR/libultra.a:visetyscale.o(.text);
         BUILD_DIR/libultra.a:aisetnextbuf.o(.text);
         BUILD_DIR/libultra.a:ai.o(.text);
-        BUILD_DIR/libultra.a:conteepread.o(.text);
-        /*BUILD_DIR/asm/ovl0/func_80038F60.o(.text);*/
+        /*BUILD_DIR/libultra.a:conteepread.o(.text);*/
+        BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
         BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
         BUILD_DIR/libultra.a:spsetpc.o(.text);
     }
