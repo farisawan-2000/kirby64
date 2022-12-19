@@ -58,22 +58,21 @@ def get_data_size(filname):
 
 def write_table(filetype, fil, bank):
 	global totSize
-	match filetype:
-		case "geo":
-			fil.write(fheader % bank)
-			fil.write("u32 *bank_%s_geo_table[] = {\n" % bank)
-		case "image":
-			totSize = 0
-			fil.write("u32 bank_%s_image_table[] = {\n" % bank)
-		case "anim":
-			totSize = 0
-			fil.write("u32 bank_%s_anim_table[] = {\n" % bank)
-		case "misc":
-			totSize = 0
-			fil.write("u32 bank_%s_misc_table[] = {\n" % bank)
-		case _:
-			print("what")
-			exit(1)
+	if filetype == "geo":
+		fil.write(fheader % bank)
+		fil.write("u32 *bank_%s_geo_table[] = {\n" % bank)
+	elif filetype == "image":
+		totSize = 0
+		fil.write("u32 bank_%s_image_table[] = {\n" % bank)
+	elif filetype == "anim":
+		totSize = 0
+		fil.write("u32 bank_%s_anim_table[] = {\n" % bank)
+	elif filetype == "misc":
+		totSize = 0
+		fil.write("u32 bank_%s_misc_table[] = {\n" % bank)
+	else:
+		print("what")
+		exit(1)
 
 	if filetype == "geo":
 		fil.write("    NULL,\n    NULL,\n")

@@ -3,19 +3,18 @@ import sys
 from khelpers import filename_d, ldscript_d
 
 def write_section(filetype, fil, bank):
-	match filetype:
-		case "geo":
-			fil.write("""#include "bank_header.ld.in"\n\n""")
-			fil.write("GEO_INIT(%s)\n"%bank)
-		case "image":
-			fil.write("IMAGES_INIT(%s)\n"%bank)
-		case "anim":
-			fil.write("ANIMS_INIT(%s)\n"%bank)
-		case "misc":
-			fil.write("MISC_INIT(%s)\n"%bank)
-		case _:
-			print("what")
-			exit(1)
+	if filetype == "geo":
+		fil.write("""#include "bank_header.ld.in"\n\n""")
+		fil.write("GEO_INIT(%s)\n"%bank)
+	elif filetype == "image":
+		fil.write("IMAGES_INIT(%s)\n"%bank)
+	elif filetype == "anim":
+		fil.write("ANIMS_INIT(%s)\n"%bank)
+	elif filetype == "misc":
+		fil.write("MISC_INIT(%s)\n"%bank)
+	else:
+		print("what")
+		exit(1)
 
 
 	fl = []
