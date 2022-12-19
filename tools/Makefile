@@ -1,6 +1,6 @@
 CC := gcc
 CFLAGS := -O2 -I . -Wall -Wextra -Wno-unused-parameter -pedantic
-PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2 rgb2c img_getprop
+PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2 rgb2c
 
 iplfontutil_SOURCES := iplfontutil.c
 iplfontutil_CFLAGS := -O2 # faster compile time
@@ -21,7 +21,7 @@ rgb2c_CFLAGS  := -Imodern_rgb2c/
 patch_libultra_math_SOURCES := patch_libultra_math.c
 
 # who cares if you have armips, just use our version
-CXX_PROGRAMS := armips extract_assets
+CXX_PROGRAMS := armips extract_assets img_getprop
 	
 
 
