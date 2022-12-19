@@ -50,11 +50,8 @@ clean-tables:
 	rm -f $(BUILD_DIR)/*.{c,h,ld}
 	rm -f $(TARGET)
 
-_BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*background*.png)
-BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
-$(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
-	$(V)mkdir -p $(@D)
-	$(V)../tools/rgb2c -B $(shell \
+## in memoriam:
+#$(shell \
 		echo $(shell \
 				jq -c ".[\"assets/$<\"].meta.realdims" ../assets_image.json \
 		  		| tr "[]," " " \
@@ -73,7 +70,14 @@ $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 				print $$2,$$3,$$4,$$5\
 			}\
 		}'\
-	) -o RAW $< > $(@:.o=.bin)
+	)
+# Destroyed for being too incompatible despite being almost entirely POSIX commands
+
+_BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*background*.png)
+BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
+$(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
+	$(V)mkdir -p $(@D)
+	$(V)../tools/rgb2c -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
 	$(V)$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: %.png
