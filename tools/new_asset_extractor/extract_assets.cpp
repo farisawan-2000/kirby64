@@ -215,6 +215,15 @@ void extract_img(json &j, String k, json &v) {
     }
 }
 
+inline const char* get_file_extension(const char* file_path) {
+    // Find the last occurrence of '.' in the file path
+    const char* dot = strrchr(file_path, '.');
+    // If '.' was not found, return null
+    if (!dot || dot == file_path) return nullptr;
+    // Return a pointer to the character after the '.'
+    return dot + 1;
+}
+
 int main(int argc, char **argv) {
     if (argc == 2) {
         if (strcmp(argv[1], "--clean") == 0) {
@@ -276,18 +285,9 @@ int main(int argc, char **argv) {
         extract_bin(key, value);
     }
 
-    inline const char* get_file_extension(const char* file_path) {
-      // Find the last occurrence of '.' in the file path
-      const char* dot = strrchr(file_path, '.');
-      // If '.' was not found, return null
-      if (!dot || dot == file_path) return nullptr;
-      // Return a pointer to the character after the '.'
-      return dot + 1;
-    }
-
     #pragma omp task
     for (auto& [key, value] : pics.items()) {
-        const char* extension = get_file_extension(path);
+        const char* extension = get_file_extension(key.c_str());
 
         if (extension && strcmp(extension, "bin") == 0) {
           extract_bin(key, value);
