@@ -94,8 +94,8 @@ SECTIONS
         /* TODO: match this */
         /* leointerrupt.o has all 3 functions commented out, so be sure to
             fix that if you're attempting to match */
-        BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);
-        /*BUILD_DIR/libultra.a:leointerrupt.o(.text);*/
+        /*BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);*/
+        BUILD_DIR/libultra.a:leointerrupt.o(.text);
 
         BUILD_DIR/asm/ovl0/ovl0_beforeSiacs.o(.text);
         BUILD_DIR/libultra.a:siacs.o(.text);
@@ -308,8 +308,8 @@ SECTIONS
         BUILD_DIR/src/ovl0/object_manager.o(.bss);
         BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
         BUILD_DIR/libultra.a:sptask.o(.bss);
-        BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);
-        /*BUILD_DIR/libultra.a:leointerrupt.o(.bss);*/
+        /*BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);*/
+        BUILD_DIR/libultra.a:leointerrupt.o(.bss);
         BUILD_DIR/asm/ovl0/bss_after_leointerrupt.o(.bss);
         BUILD_DIR/libultra.a:pimgr.o(.bss);
         BUILD_DIR/libultra.a:piacs.o(.bss);

@@ -1,50 +1,27 @@
-gEntryStack = 0x80042B90;
-fatal_printf = 0x8002309C;
-osCreatePiManager = 0x80032280;
-check_sp_imem = 0x80000480;
-check_sp_dmem = 0x800004B0;
-crash_screen_start_thread = 0x80022D98;
-/*osViGetCurrentFramebuffer = 0x800391B0;*/
-osTvType = 0x80000300;
-osSpTaskStartGo = 0x8002DB4C;
 sPakDevices = 0x800490F0;
 osMotorInit = 0x8002F2B4;
 __osPackRequestData = 0x8002F4D0;
-osEepromRead = 0x80038F60;
 osEepromWrite = 0x8002F810;
 gDynamicBuffer1 = 0x8004A3F8;
 gDisplayListHeads = 0x8004A3D0;
 gDisplayListHead3 = 0x8004A3D8;
 gDisplayListHead2 = 0x8004A3D4;
 gDisplayListHead4 = 0x8004A3DC;
-alloc_with_alignment = 0x80005400;
-alloc_region = 0x800053D0;
-atanf = 0x800185E4;
-tanf = 0x800185B0;
-random_u16 = 0x80018AAC;
-vec3_normalize = 0x80018CA0;
-vec3_mag = 0x80018D3C;
 _guRotateRPYF = 0x8001BBAC;
-create_yz_rotation_matrix = 0x8001CA40;
-create_xy_rotation_matrix = 0x8001CBF0;
-create_z_rotation_matrix = 0x8001CDA0;
-create_y_rotation_matrix = 0x8001CF00;
-/*osAiSetNextBuffer = 0x80038E80;*/
-crash_screen_sleep = 0x8002206C;
-crash_screen_print_fpcsr = 0x800221BC;
-crash_screen_print_float_reg = 0x80022134;
-crash_screen_vprint = 0x80022A58;
+
 alUnlink = 0x80025F74;
 alLink = 0x80025F50;
 _allocatePVoice = 0x8002AAE0;
 _n_timeToSamples = 0x8002983C;
 __osEnqueueAndYield = 0x8002E58C;
 __osThreadSave = 0x80098B50;
+
+/*
 __osEnqueueThread = 0x8002E68C;
 __osEventStateTab = 0x8009A0E0;
 __osDiskHandle = 0x8009A1D4;
-__osEventStateTab_later_in_array = 0x8009A120;
 __osContLastCmd = 0x80098AF0;
+*/
 siAccessBuf = 0x80098A90;
 __osMaxControllers = 0x80098AF1;
 __osPackRequestData = 0x8002F710;
@@ -60,7 +37,6 @@ osEPiRawReadIo = 0x80036E30;
 osYieldThread = 0x80037030;
 _Putfld = 0x80032C00;
 retrace = 0x8009B4F0;
-__osPackEepReadData = 0x80039124;
 atan2f = 0x8001870C;
 random_f32 = 0x80018AFC;
 gKirbyState = 0x8012E7C0;
@@ -84,8 +60,6 @@ gPositionState = 0x8012E968;
 set_kirby_action_1 = 0x80122F6C;
 random_soft_u16 = 0x800189B4;
 random_soft_f32 = 0x800189E4;
-/*osViGetCurrentFramebuffer = 0x80030410;
-osViGetCurrentFramebuffer = 0x800391B0;*/
 gFrameBuffers = 0x8015A678;
 
 
@@ -94,8 +68,9 @@ gCrashScreen = 0x800966D8;
 __osPiTable = 0x8003FBDC;
 __osCurrentHandle = 0x8003FBE0;
 __osPfsSelectBank = 0x80035CA0;
-__osContRamRead = 0x80037320;
-__osContRamWrite = 0x800370D0;
+send_mesg = 0x8002E4A4;
 
 /* Reserved section for symbols that wont need to be removed */
 gDisplayListHead = gDisplayListHeads;
+func_80300170 = D_80300170;
+__D_800E9AA0 = D_800E9AA0;

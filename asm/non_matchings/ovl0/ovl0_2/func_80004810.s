@@ -12,7 +12,7 @@ glabel func_80004810
 /* 005438 80004838 24848DA0 */  addiu $a0, %lo(sSIMesgQueue) # addiu $a0, $a0, -0x7260
 /* 00543C 8000483C 00007012 */  mflo  $t6
 /* 005440 80004840 006E2821 */  addu  $a1, $v1, $t6
-/* 005444 80004844 0C00D74C */  jal   func_80035D30
+/* 005444 80004844 0C00D74C */  jal   osPfsInitPak
 /* 005448 80004848 00000000 */   nop   
 /* 00544C 8000484C 3C038005 */  lui   $v1, %hi(sPakDevices) # $v1, 0x8005
 /* 005450 80004850 246390F0 */  addiu $v1, %lo(sPakDevices) # addiu $v1, $v1, -0x6f10

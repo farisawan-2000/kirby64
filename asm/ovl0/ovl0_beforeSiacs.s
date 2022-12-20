@@ -209,7 +209,7 @@ glabel func_8002F2B4
 .L8002F31C_ovl0:
 /* 02FF1C 8002F31C 8FA50050 */  lw    $a1, 0x50($sp)
 /* 02FF20 8002F320 24060400 */  li    $a2, 1024
-/* 02FF24 8002F324 0C00DCC8 */  jal   func_80037320
+/* 02FF24 8002F324 0C00DCC8 */  jal   __osContRamRead
 /* 02FF28 8002F328 27A70024 */   addiu $a3, $sp, 0x24
 /* 02FF2C 8002F32C 24010002 */  li    $at, 2
 /* 02FF30 8002F330 14410002 */  bne   $v0, $at, .L8002F33C_ovl0
@@ -241,7 +241,7 @@ glabel func_8002F2B4
 .L8002F388_ovl0:
 /* 02FF88 8002F388 8FA50050 */  lw    $a1, 0x50($sp)
 /* 02FF8C 8002F38C 24060400 */  li    $a2, 1024
-/* 02FF90 8002F390 0C00DCC8 */  jal   func_80037320
+/* 02FF90 8002F390 0C00DCC8 */  jal   __osContRamRead
 /* 02FF94 8002F394 27A70024 */   addiu $a3, $sp, 0x24
 /* 02FF98 8002F398 24010002 */  li    $at, 2
 /* 02FF9C 8002F39C 14410002 */  bne   $v0, $at, .L8002F3A8_ovl0

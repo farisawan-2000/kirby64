@@ -221,7 +221,7 @@ glabel func_80030DF0
 /* 031CE4 800310E4 03193021 */  addu  $a2, $t8, $t9
 /* 031CE8 800310E8 30C8FFFF */  andi  $t0, $a2, 0xffff
 /* 031CEC 800310EC 01003025 */  move  $a2, $t0
-/* 031CF0 800310F0 0C00DC34 */  jal   func_800370D0
+/* 031CF0 800310F0 0C00DC34 */  jal   __osContRamWrite
 /* 031CF4 800310F4 27A70060 */   addiu $a3, $sp, 0x60
 .L800310F8_ovl0:
 /* 031CF8 800310F8 8FBF0044 */  lw    $ra, 0x44($sp)

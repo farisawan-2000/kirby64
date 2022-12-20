@@ -452,7 +452,7 @@ struct Unk_Func8004810 {
 
 #ifdef NEEDS_RODATA
 void func_80004810(struct Unk_Func8004810 *arg0) {
-    arg0->unk3C = func_80035D30(&sSIMesgQueue, &sPakDevices[arg0->unkC][0], arg0->unkC);
+    arg0->unk3C = osPfsInitPak(&sSIMesgQueue, &sPakDevices[arg0->unkC][0], arg0->unkC);
     if (arg0->unk3C == 0) {
         switch (arg0->unk10) {
         // temp_t7 = arg0->unk10;
