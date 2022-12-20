@@ -55,7 +55,7 @@ INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
-					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt -T unnamed_syms.txt -T undefined_syms.txt \
+					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt -T unnamed_syms.txt -T undefined_syms.txt -T rcp_syms.txt \
 					-Map $(BUILD_DIR)/$(TARGET).map
 PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
@@ -263,7 +263,7 @@ $(BUILD_DIR)/%.o: $(BUILD_DIR)/%.c
 $(BUILD_DIR)/$(UCODE_BASE_DIR)/%.o : $(UCODE_BASE_DIR)/%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
-$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) undefined_syms.txt unnamed_syms.txt $(BUILD_DIR)/assets/assets.marker
+$(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) rcp_syms.txt undefined_syms.txt unnamed_syms.txt $(BUILD_DIR)/assets/assets.marker
 	$(CPP) $(VERSION_CFLAGS) $(INCLUDE_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR) -Umips
 
