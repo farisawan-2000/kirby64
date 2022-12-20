@@ -462,7 +462,7 @@ void func_80004810(struct Unk_Func8004810 *arg0) {
                 arg0->unk3C = osPfsFindFile(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk28);
                 break;
             case 1:
-                arg0->unk3C = func_800350F0(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20);
+                arg0->unk3C = osPfsDeleteFile(&sPakDevices[arg0->unkC], arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20);
                 break;
             case 2:
                 arg0->unk3C = func_80030DF0(&sPakDevices[arg0->unkC] arg0->unk14, arg0->unk18, arg0->unk1C, arg0->unk20, arg0->unk24, arg0->unk28);

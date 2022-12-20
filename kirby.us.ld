@@ -91,10 +91,6 @@ SECTIONS
         BUILD_DIR/libultra.a:thread.o(.text);
         BUILD_DIR/libultra.a:bzero.o(.text);
 
-        /* TODO: match this */
-        /* leointerrupt.o has all 3 functions commented out, so be sure to
-            fix that if you're attempting to match */
-        /*BUILD_DIR/asm/ovl0/leo_interrupt.o(.text);*/
         BUILD_DIR/libultra.a:leointerrupt.o(.text);
 
         BUILD_DIR/asm/ovl0/ovl0_beforeSiacs.o(.text);
@@ -146,7 +142,6 @@ SECTIONS
         BUILD_DIR/libultra.a:epidma.o(.text);
 
         BUILD_DIR/libultra.a:leodiskinit.o(.text);
-        /*BUILD_DIR/src/ovl0/potential_leo _function.o(.text);*/
 
         BUILD_DIR/libultra.a:string.o(.text); 
         BUILD_DIR/libultra.a:createmesgqueue.o(.text);
@@ -174,7 +169,7 @@ SECTIONS
         BUILD_DIR/libultra.a:copy.o(.text);
         BUILD_DIR/libultra.a:resetglobalintmask.o(.text);
 
-        BUILD_DIR/asm/ovl0/1_func_after_bcopy.o(.text);
+        BUILD_DIR/libultra.a:pfsdeletefile.o(.text);
 
         BUILD_DIR/libultra.a:interrupt.o(.text);
         BUILD_DIR/libultra.a:vi.o(.text);

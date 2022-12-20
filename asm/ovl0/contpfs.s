@@ -139,7 +139,7 @@ glabel func_80031650
 /* 0322B8 800316B8 924F0065 */  lbu   $t7, 0x65($s2)
 /* 0322BC 800316BC 51E00008 */  beql  $t7, $zero, .L800316E0_ovl0
 /* 0322C0 800316C0 27B1007C */   addiu $s1, $sp, 0x7c
-/* 0322C4 800316C4 0C00D728 */  jal   func_80035CA0
+/* 0322C4 800316C4 0C00D728 */  jal   __osPfsSelectBank
 /* 0322C8 800316C8 00002825 */   move  $a1, $zero
 /* 0322CC 800316CC 50400004 */  beql  $v0, $zero, .L800316E0_ovl0
 /* 0322D0 800316D0 27B1007C */   addiu $s1, $sp, 0x7c
@@ -151,7 +151,7 @@ glabel func_80031650
 /* 0322E4 800316E4 27B0009C */  addiu $s0, $sp, 0x9c
 /* 0322E8 800316E8 02402025 */  move  $a0, $s2
 .L800316EC_ovl0:
-/* 0322EC 800316EC 0C00D728 */  jal   func_80035CA0
+/* 0322EC 800316EC 0C00D728 */  jal   __osPfsSelectBank
 /* 0322F0 800316F0 326500FF */   andi  $a1, $s3, 0xff
 /* 0322F4 800316F4 10400003 */  beqz  $v0, .L80031704_ovl0
 /* 0322F8 800316F8 00003025 */   move  $a2, $zero
@@ -212,7 +212,7 @@ glabel func_80031650
 /* 0323B8 800317B8 02402025 */   move  $a0, $s2
 /* 0323BC 800317BC 5A600013 */  blezl $s3, .L8003180C_ovl0
 /* 0323C0 800317C0 26730001 */   addiu $s3, $s3, 1
-/* 0323C4 800317C4 0C00D728 */  jal   func_80035CA0
+/* 0323C4 800317C4 0C00D728 */  jal   __osPfsSelectBank
 /* 0323C8 800317C8 00002825 */   move  $a1, $zero
 /* 0323CC 800317CC 10400003 */  beqz  $v0, .L800317DC_ovl0
 /* 0323D0 800317D0 00003025 */   move  $a2, $zero
@@ -242,7 +242,7 @@ glabel func_80031650
 /* 03241C 8003181C 02402025 */  move  $a0, $s2
 /* 032420 80031820 11200007 */  beqz  $t1, .L80031840_ovl0
 /* 032424 80031824 00000000 */   nop   
-/* 032428 80031828 0C00D728 */  jal   func_80035CA0
+/* 032428 80031828 0C00D728 */  jal   __osPfsSelectBank
 /* 03242C 8003182C 00002825 */   move  $a1, $zero
 /* 032430 80031830 10400003 */  beqz  $v0, .L80031840_ovl0
 /* 032434 80031834 00000000 */   nop   
@@ -366,7 +366,7 @@ glabel func_800319A0
 /* 0325CC 800319CC 00809825 */  move  $s3, $a0
 /* 0325D0 800319D0 51C00008 */  beql  $t6, $zero, .L800319F4_ovl0
 /* 0325D4 800319D4 240F0001 */   li    $t7, 1
-/* 0325D8 800319D8 0C00D728 */  jal   func_80035CA0
+/* 0325D8 800319D8 0C00D728 */  jal   __osPfsSelectBank
 /* 0325DC 800319DC 00002825 */   move  $a1, $zero
 /* 0325E0 800319E0 50400004 */  beql  $v0, $zero, .L800319F4_ovl0
 /* 0325E4 800319E4 240F0001 */   li    $t7, 1
@@ -463,7 +463,7 @@ glabel func_80031B04
 /* 032718 80031B18 00808025 */  move  $s0, $a0
 /* 03271C 80031B1C 51C00008 */  beql  $t6, $zero, .L80031B40_ovl0
 /* 032720 80031B20 8E040004 */   lw    $a0, 4($s0)
-/* 032724 80031B24 0C00D728 */  jal   func_80035CA0
+/* 032724 80031B24 0C00D728 */  jal   __osPfsSelectBank
 /* 032728 80031B28 00002825 */   move  $a1, $zero
 /* 03272C 80031B2C 50400004 */  beql  $v0, $zero, .L80031B40_ovl0
 /* 032730 80031B30 8E040004 */   lw    $a0, 4($s0)
@@ -584,13 +584,13 @@ glabel func_80031CB0
 /* 0328C0 80031CC0 00808025 */  move  $s0, $a0
 /* 0328C4 80031CC4 51C0000F */  beql  $t6, $zero, .L80031D04_ovl0
 /* 0328C8 80031CC8 8E040004 */   lw    $a0, 4($s0)
-/* 0328CC 80031CCC 0C00D728 */  jal   func_80035CA0
+/* 0328CC 80031CCC 0C00D728 */  jal   __osPfsSelectBank
 /* 0328D0 80031CD0 00002825 */   move  $a1, $zero
 /* 0328D4 80031CD4 24010002 */  li    $at, 2
 /* 0328D8 80031CD8 14410005 */  bne   $v0, $at, .L80031CF0_ovl0
 /* 0328DC 80031CDC 00401825 */   move  $v1, $v0
 /* 0328E0 80031CE0 02002025 */  move  $a0, $s0
-/* 0328E4 80031CE4 0C00D728 */  jal   func_80035CA0
+/* 0328E4 80031CE4 0C00D728 */  jal   __osPfsSelectBank
 /* 0328E8 80031CE8 00002825 */   move  $a1, $zero
 /* 0328EC 80031CEC 00401825 */  move  $v1, $v0
 .L80031CF0_ovl0:
@@ -639,7 +639,7 @@ glabel func_80031CB0
 /* 032980 80031D80 00000000 */   nop   
 
 /* contpfs:__osPfsRWInode */
-glabel func_80031D84
+glabel __osPfsRWInode
 /* 032984 80031D84 27BDFFA8 */  addiu $sp, $sp, -0x58
 /* 032988 80031D88 AFB40030 */  sw    $s4, 0x30($sp)
 /* 03298C 80031D8C 30D400FF */  andi  $s4, $a2, 0xff
@@ -675,7 +675,7 @@ glabel func_80031D84
 /* 0329FC 80031DFC 02402025 */  move  $a0, $s2
 /* 032A00 80031E00 51200008 */  beql  $t1, $zero, .L80031E24_ovl0
 /* 032A04 80031E04 93A30067 */   lbu   $v1, 0x67($sp)
-/* 032A08 80031E08 0C00D728 */  jal   func_80035CA0
+/* 032A08 80031E08 0C00D728 */  jal   __osPfsSelectBank
 /* 032A0C 80031E0C 00002825 */   move  $a1, $zero
 /* 032A10 80031E10 50400004 */  beql  $v0, $zero, .L80031E24_ovl0
 /* 032A14 80031E14 93A30067 */   lbu   $v1, 0x67($sp)
