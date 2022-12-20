@@ -181,6 +181,10 @@ SECTIONS
         BUILD_DIR/libultra.a:cartrominit.o(.text);
 
         BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
+        BUILD_DIR/libultra.a:pfsselectbank.o(.text);
+        BUILD_DIR/libultra.a:setfpccsr.o(.text);
+        BUILD_DIR/asm/ovl0/libultra_after_bcopy.o(.text);
+
 
         BUILD_DIR/libultra.a:epirawwrite.o(.text);
         BUILD_DIR/libultra.a:settimer.o(.text);

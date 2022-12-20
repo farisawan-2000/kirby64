@@ -23,11 +23,9 @@ __osContPifRam = 0x80098AB0;
 __osContGetInitData = 0x8002F640;
 __osEepPifRam = 0x8009B500;
 __osFinalrom = 0x80098B40;
-__osSetFpcCsr = 0x80035D20;
 osMapTLBRdb = 0x80036FD0;
 __osCheckId = 0x80031CB0;
 osEPiRawReadIo = 0x80036E30;
-osYieldThread = 0x80037030;
 _Putfld = 0x80032C00;
 retrace = 0x8009B4F0;
 
@@ -41,7 +39,6 @@ gFrameBuffers = 0x8015A678;
 gCrashScreen = 0x800966D8;
 __osPiTable = 0x8003FBDC;
 __osCurrentHandle = 0x8003FBE0;
-__osPfsSelectBank = 0x80035CA0;
 send_mesg = 0x8002E4A4;
 
 /* Reserved section for symbols that wont need to be removed */
