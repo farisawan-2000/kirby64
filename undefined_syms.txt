@@ -25,7 +25,7 @@ __osEepPifRam = 0x8009B500;
 __osFinalrom = 0x80098B40;
 osMapTLBRdb = 0x80036FD0;
 __osCheckId = 0x80031CB0;
-osEPiRawReadIo = 0x80036E30;
+/*osEPiRawReadIo = 0x80036E30;*/
 _Putfld = 0x80032C00;
 retrace = 0x8009B4F0;
 

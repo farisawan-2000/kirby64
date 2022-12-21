@@ -187,6 +187,7 @@ SECTIONS
         BUILD_DIR/libultra.a:pfsgetstatus.o(.text);
         BUILD_DIR/libultra.a:pfschecker.o(.text);
         BUILD_DIR/libultra.a:pfsisplug.o(.text);
+        BUILD_DIR/libultra.a:epirawread.o(.text);
         BUILD_DIR/asm/ovl0/libultra_after_bcopy.o(.text);
 
 
