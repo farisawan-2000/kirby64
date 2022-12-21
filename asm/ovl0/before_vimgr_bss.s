@@ -1,7 +1,7 @@
 .include "macros.inc"
 .section .bss
 
-glabel D_8009A2A0
+glabel __osPfsPifRam
 .word 0x00000000
 
 glabel D_8009A2A4

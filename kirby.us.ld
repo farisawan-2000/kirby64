@@ -183,6 +183,10 @@ SECTIONS
         BUILD_DIR/asm/ovl0/ovl0_after_bcopy.o(.text);
         BUILD_DIR/libultra.a:pfsselectbank.o(.text);
         BUILD_DIR/libultra.a:setfpccsr.o(.text);
+        BUILD_DIR/libultra.a:pfsinitpak.o(.text);
+        BUILD_DIR/libultra.a:pfsgetstatus.o(.text);
+        BUILD_DIR/libultra.a:pfschecker.o(.text);
+        BUILD_DIR/asm/ovl0/pfsisplug.o(.text);
         BUILD_DIR/asm/ovl0/libultra_after_bcopy.o(.text);
 
 
@@ -307,19 +311,16 @@ SECTIONS
         BUILD_DIR/src/ovl0/object_manager.o(.bss);
         BUILD_DIR/asm/ovl0/ovl0_bss.o(.bss);
         BUILD_DIR/libultra.a:sptask.o(.bss);
-        /*BUILD_DIR/asm/ovl0/leo_interrupt.o(.bss);*/
         BUILD_DIR/libultra.a:leointerrupt.o(.bss);
         BUILD_DIR/asm/ovl0/bss_after_leointerrupt.o(.bss);
         BUILD_DIR/libultra.a:pimgr.o(.bss);
         BUILD_DIR/libultra.a:piacs.o(.bss);
         BUILD_DIR/libultra.a:seteventmesg.o(.bss);
         BUILD_DIR/libultra.a:leodiskinit.o(.bss);
-        /*BUILD_DIR/src/ovl0/potential_leo_function.o(.bss);*/
         BUILD_DIR/libultra.a:timerintr.o(.bss);
         BUILD_DIR/libultra.a:cartrominit.o(.bss);
         BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
         BUILD_DIR/libultra.a:vimgr.o(.bss);
-        /*BUILD_DIR/asm/ovl0/vi_manager.o(.bss);*/
         BUILD_DIR/libultra.a:conteepread.o(.bss);
     }
     END_NOLOAD(ovl0)
