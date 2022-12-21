@@ -97,7 +97,7 @@ SECTIONS
         BUILD_DIR/libultra.a:siacs.o(.text);
         BUILD_DIR/libultra.a:controller.o(.text);
 
-        BUILD_DIR/asm/ovl0/ovl0_beforeCreateThread.o(.text);
+        BUILD_DIR/asm/ovl0/conteepwrite.o(.text);
         /*BUILD_DIR/libultra.a:conteepwrite.o(.text);*/
 
         BUILD_DIR/libultra.a:createthread.o(.text);
@@ -188,6 +188,9 @@ SECTIONS
         BUILD_DIR/libultra.a:pfschecker.o(.text);
         BUILD_DIR/libultra.a:pfsisplug.o(.text);
         BUILD_DIR/libultra.a:epirawread.o(.text);
+        BUILD_DIR/libultra.a:maptlbrdb.o(.text);
+        BUILD_DIR/libultra.a:yieldthread.o(.text);
+        BUILD_DIR/libultra.a:cents2ratio.o(.text);
         BUILD_DIR/asm/ovl0/libultra_after_bcopy.o(.text);
 
 
@@ -210,7 +213,7 @@ SECTIONS
         BUILD_DIR/libultra.a:aisetnextbuf.o(.text);
         BUILD_DIR/libultra.a:ai.o(.text);
         /*BUILD_DIR/libultra.a:conteepread.o(.text);*/
-        BUILD_DIR/asm/ovl0/func_80038F60.o(.text);
+        BUILD_DIR/asm/ovl0/conteepread.o(.text);
         BUILD_DIR/libultra.a:vigetcurrframebuf.o(.text);
         BUILD_DIR/libultra.a:spsetpc.o(.text);
     }
@@ -282,7 +285,7 @@ SECTIONS
         BUILD_DIR/libultra.a:xprintf.o(.rodata);
         BUILD_DIR/libultra.a:cosf.o(.rodata);
         BUILD_DIR/libultra.a:libm_vals.o(.rodata);
-        BUILD_DIR/data/kirby.039DF0.2.5.o(.data*);
+        BUILD_DIR/libultra.a:cents2ratio.o(.rodata);
         BUILD_DIR/libultra.a:xldtob.o(.rodata);
         BUILD_DIR/data/kirby.039DF0.3.o(.data*);
     }

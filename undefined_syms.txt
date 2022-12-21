@@ -1,7 +1,6 @@
 sPakDevices = 0x800490F0;
 osMotorInit = 0x8002F2B4;
 __osPackRequestData = 0x8002F4D0;
-osEepromWrite = 0x8002F810;
 gDynamicBuffer1 = 0x8004A3F8;
 gDisplayListHeads = 0x8004A3D0;
 gDisplayListHead3 = 0x8004A3D8;
@@ -23,9 +22,7 @@ __osContPifRam = 0x80098AB0;
 __osContGetInitData = 0x8002F640;
 __osEepPifRam = 0x8009B500;
 __osFinalrom = 0x80098B40;
-osMapTLBRdb = 0x80036FD0;
 __osCheckId = 0x80031CB0;
-/*osEPiRawReadIo = 0x80036E30;*/
 _Putfld = 0x80032C00;
 retrace = 0x8009B4F0;
 

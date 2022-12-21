@@ -265,7 +265,7 @@ glabel func_8001ECC0
 /* 01FC70 8001F070 46120082 */  mul.s $f2, $f0, $f18
 /* 01FC74 8001F074 4600118D */  trunc.w.s $f6, $f2
 /* 01FC78 8001F078 44043000 */  mfc1  $a0, $f6
-/* 01FC7C 8001F07C 0C00DC20 */  jal   func_80037080
+/* 01FC7C 8001F07C 0C00DC20 */  jal   alCents2Ratio
 /* 01FC80 8001F080 00000000 */   nop   
 /* 01FC84 8001F084 8FA5002C */  lw    $a1, 0x2c($sp)
 /* 01FC88 8001F088 10000065 */  b     .L8001F220_ovl0
@@ -332,7 +332,7 @@ glabel func_8001ECC0
 /* 01FD60 8001F160 46028081 */  sub.s $f2, $f16, $f2
 /* 01FD64 8001F164 4600120D */  trunc.w.s $f8, $f2
 /* 01FD68 8001F168 44044000 */  mfc1  $a0, $f8
-/* 01FD6C 8001F16C 0C00DC20 */  jal   func_80037080
+/* 01FD6C 8001F16C 0C00DC20 */  jal   alCents2Ratio
 /* 01FD70 8001F170 00000000 */   nop   
 /* 01FD74 8001F174 8FA5002C */  lw    $a1, 0x2c($sp)
 /* 01FD78 8001F178 10000029 */  b     .L8001F220_ovl0
@@ -377,7 +377,7 @@ glabel func_8001ECC0
 /* 01FE04 8001F204 46081080 */  add.s $f2, $f2, $f8
 /* 01FE08 8001F208 4600128D */  trunc.w.s $f10, $f2
 /* 01FE0C 8001F20C 44045000 */  mfc1  $a0, $f10
-/* 01FE10 8001F210 0C00DC20 */  jal   func_80037080
+/* 01FE10 8001F210 0C00DC20 */  jal   alCents2Ratio
 /* 01FE14 8001F214 00000000 */   nop   
 /* 01FE18 8001F218 8FA5002C */  lw    $a1, 0x2c($sp)
 /* 01FE1C 8001F21C E4A00000 */  swc1  $f0, ($a1)

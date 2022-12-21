@@ -458,7 +458,7 @@ s32 func_8001E9EC(void *arg0, void *arg1, s32 arg2, u8 arg3, u8 arg4, u8 arg5) {
                                         temp_t8 = temp_a1 * 2;
                                         temp_v1->unkC = temp_a0;
                                         temp_v1->unk10 = temp_t8;
-                                        phi_f0 = func_80037080(temp_a0, temp_a1);
+                                        phi_f0 = alCents2Ratio(temp_a0, temp_a1);
 block_18:
                                         *arg1 = phi_f0;
                                     }
@@ -469,7 +469,7 @@ block_18:
                                     temp_a0_2 = func_8001E9A0(arg4, temp_a2, temp_a3);
                                     temp_v1->unk10 = temp_a0_2 * 2;
                                     temp_v1->unkC = temp_a0_2;
-                                    phi_f0 = func_80037080(temp_a0_2);
+                                    phi_f0 = alCents2Ratio(temp_a0_2);
                                     goto block_18;
                                 }
                             } else {
@@ -479,8 +479,8 @@ block_18:
                                 temp_v1->unk5 = 0;
                                 temp_a1_2 = func_8001E9A0(arg4, temp_a2, temp_a3);
                                 sp24 = temp_a1_2;
-                                temp_v1->unkC = func_80037080(-temp_a1_2, temp_a1_2);
-                                temp_f0 = func_80037080(sp24);
+                                temp_v1->unkC = alCents2Ratio(-temp_a1_2, temp_a1_2);
+                                temp_f0 = alCents2Ratio(sp24);
                                 temp_v1->unk10 = temp_f0;
                                 phi_f0 = temp_f0;
                                 goto block_18;
@@ -604,7 +604,7 @@ s32 func_8001ECC0(void *arg0, void *arg1) {
                                         temp_a2->unk8 = 0;
                                         phi_v0 = 0 & 0xFFFF;
                                     }
-                                    phi_f0 = func_80037080(((phi_v0 / temp_a2->unk6) * temp_a2->unk10) + temp_a2->unkC, temp_a2);
+                                    phi_f0 = alCents2Ratio(((phi_v0 / temp_a2->unk6) * temp_a2->unk10) + temp_a2->unkC, temp_a2);
 block_51:
                                     *arg1 = phi_f0;
                                 }
@@ -617,7 +617,7 @@ block_51:
                                     temp_a2->unk8 = 0;
                                     phi_v0_2 = 0 & 0xFFFF;
                                 }
-                                phi_f0 = func_80037080(temp_a2->unkC - ((phi_v0_2 / temp_a2->unk6) * temp_a2->unk10), temp_a2);
+                                phi_f0 = alCents2Ratio(temp_a2->unkC - ((phi_v0_2 / temp_a2->unk6) * temp_a2->unk10), temp_a2);
                                 goto block_51;
                             }
                         } else {
@@ -640,7 +640,7 @@ block_51:
                             phi_v0_3 = 0 & 0xFFFF;
                         }
                         arg0 = temp_a2;
-                        phi_f0 = func_80037080(sinf((phi_v0_3 / temp_a2->unk6) * D_80040D00, temp_a2) * arg0->unkC, arg0);
+                        phi_f0 = alCents2Ratio(sinf((phi_v0_3 / temp_a2->unk6) * D_80040D00, temp_a2) * arg0->unkC, arg0);
                         goto block_51;
                     }
                 } else {

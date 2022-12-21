@@ -1,29 +1,3 @@
-#define C0_INX      $0
-#define C0_RAND     $1
-#define C0_ENTRYLO0 $2
-#define C0_ENTRYLO1 $3
-#define C0_CONTEXT  $4
-#define C0_PAGEMASK $5      /* page mask */
-#define C0_WIRED    $6      /* # wired entries in tlb */
-#define C0_BADVADDR $8
-#define C0_COUNT    $9      /* free-running counter */
-#define C0_ENTRYHI  $10
-#define C0_SR       $12
-#define C0_CAUSE    $13
-#define C0_EPC      $14
-#define C0_PRID     $15     /* revision identifier */
-#define C0_COMPARE  $11     /* counter comparison reg. */
-#define C0_CONFIG   $16     /* hardware configuration */
-#define C0_LLADDR   $17     /* load linked address */
-#define C0_WATCHLO  $18     /* watchpoint */
-#define C0_WATCHHI  $19     /* watchpoint */
-#define C0_ECC      $26     /* S-cache ECC and primary parity */
-#define C0_CACHE_ERR    $27     /* cache error status */
-#define C0_TAGLO    $28     /* cache operations */
-#define C0_TAGHI    $29     /* cache operations */
-#define C0_ERROR_EPC    $30     /* ECC error prg. counter */
-
-
 .set noat
 .set noreorder
 .set gp=64
@@ -33,82 +7,7 @@
 
 .section .text, "ax" 
 
-glabel osMapTLBRdb
-/* 037BD0 80036FD0 40085000 */  mfc0  $t0, C0_ENTRYHI
-/* 037BD4 80036FD4 2409001F */  li    $t1, 31
-/* 037BD8 80036FD8 40890000 */  mtc0  $t1, C0_INX
-/* 037BDC 80036FDC 40802800 */  mtc0  $zero, C0_PAGEMASK
-/* 037BE0 80036FE0 240A0017 */  li    $t2, 23
-/* 037BE4 80036FE4 3C09C000 */  lui   $t1, 0xc000
-/* 037BE8 80036FE8 40895000 */  mtc0  $t1, C0_ENTRYHI
-/* 037BEC 80036FEC 3C098000 */  lui   $t1, 0x8000
-/* 037BF0 80036FF0 00095982 */  srl   $t3, $t1, 6
-/* 037BF4 80036FF4 016A5825 */  or    $t3, $t3, $t2
-/* 037BF8 80036FF8 408B1000 */  mtc0  $t3, C0_ENTRYLO0
-/* 037BFC 80036FFC 24090001 */  li    $t1, 1
-/* 037C00 80037000 40891800 */  mtc0  $t1, C0_ENTRYLO1
-/* 037C04 80037004 00000000 */  nop   
-/* 037C08 80037008 42000002 */  tlbwi 
-/* 037C0C 8003700C 00000000 */  nop   
-/* 037C10 80037010 00000000 */  nop   
-/* 037C14 80037014 00000000 */  nop   
-/* 037C18 80037018 00000000 */  nop   
-/* 037C1C 8003701C 40885000 */  mtc0  $t0, $10
-/* 037C20 80037020 03E00008 */  jr    $ra
-/* 037C24 80037024 00000000 */   nop   
-/* 037C28 80037028 00000000 */  nop   
-/* 037C2C 8003702C 00000000 */  nop   
-
-glabel osYieldThread
-/* 037C30 80037030 27BDFFD8 */  addiu $sp, $sp, -0x28
-/* 037C34 80037034 AFBF001C */  sw    $ra, 0x1c($sp)
-/* 037C38 80037038 0C00D4D8 */  jal   __osDisableInt
-/* 037C3C 8003703C AFB00018 */   sw    $s0, 0x18($sp)
-/* 037C40 80037040 3C0F8004 */  lui   $t7, %hi(__osRunningThread) # $t7, 0x8004
-/* 037C44 80037044 8DEFFB60 */  lw    $t7, %lo(__osRunningThread)($t7)
-/* 037C48 80037048 240E0002 */  li    $t6, 2
-/* 037C4C 8003704C 3C048004 */  lui   $a0, %hi(__osRunQueue) # $a0, 0x8004
-/* 037C50 80037050 00408025 */  move  $s0, $v0
-/* 037C54 80037054 2484FB58 */  addiu $a0, %lo(__osRunQueue) # addiu $a0, $a0, -0x4a8
-/* 037C58 80037058 0C00B963 */  jal   __osEnqueueAndYield
-/* 037C5C 8003705C A5EE0010 */   sh    $t6, 0x10($t7)
-/* 037C60 80037060 0C00D4E0 */  jal   __osRestoreInt
-/* 037C64 80037064 02002025 */   move  $a0, $s0
-/* 037C68 80037068 8FBF001C */  lw    $ra, 0x1c($sp)
-/* 037C6C 8003706C 8FB00018 */  lw    $s0, 0x18($sp)
-/* 037C70 80037070 27BD0028 */  addiu $sp, $sp, 0x28
-/* 037C74 80037074 03E00008 */  jr    $ra
-/* 037C78 80037078 00000000 */   nop   
-
-/* 037C7C 8003707C 00000000 */  nop   
-
-
-glabel func_80037080
-/* 037C80 80037080 3C013F80 */  li    $at, 0x3F800000 # 1.000000
-/* 037C84 80037084 44811000 */  mtc1  $at, $f2
-/* 037C88 80037088 04800004 */  bltz  $a0, .L8003709C_ovl0
-/* 037C8C 8003708C 3C018004 */   lui   $at, 0x8004
-/* 037C90 80037090 3C018004 */  lui   $at, %hi(D_80041CD4) # $at, 0x8004
-/* 037C94 80037094 10000003 */  b     .L800370A4_ovl0
-/* 037C98 80037098 C4201CD0 */   lwc1  $f0, %lo(D_80041CD0)($at)
-.L8003709C_ovl0:
-/* 037C9C 8003709C C4201CD4 */  lwc1  $f0, %lo(D_80041CD4)($at)
-/* 037CA0 800370A0 00042023 */  negu  $a0, $a0
-.L800370A4_ovl0:
-/* 037CA4 800370A4 10800008 */  beqz  $a0, .L800370C8_ovl0
-.L800370A8_ovl0:
-/* 037CA8 800370A8 308E0001 */   andi  $t6, $a0, 1
-/* 037CAC 800370AC 11C00003 */  beqz  $t6, .L800370BC_ovl0
-/* 037CB0 800370B0 00047843 */   sra   $t7, $a0, 1
-/* 037CB4 800370B4 46001082 */  mul.s $f2, $f2, $f0
-/* 037CB8 800370B8 00000000 */  nop   
-.L800370BC_ovl0:
-/* 037CBC 800370BC 46000002 */  mul.s $f0, $f0, $f0
-/* 037CC0 800370C0 15E0FFF9 */  bnez  $t7, .L800370A8_ovl0
-/* 037CC4 800370C4 01E02025 */   move  $a0, $t7
-.L800370C8_ovl0:
-/* 037CC8 800370C8 03E00008 */  jr    $ra
-/* 037CCC 800370CC 46001006 */   mov.s $f0, $f2
+// contramwrite, contramread, and their helper functions, as 4 separate files?
 
 glabel __osContRamWrite
 /* 037CD0 800370D0 27BDFF98 */  addiu $sp, $sp, -0x68
@@ -490,6 +389,8 @@ glabel func_80037550
 /* 038218 80037618 03E00008 */  jr    $ra
 /* 03821C 8003761C 03201025 */   move  $v0, $t9
 
+
+glabel func_80037620
 /* 038220 80037620 00802825 */  move  $a1, $a0
 /* 038224 80037624 00001825 */  move  $v1, $zero
 /* 038228 80037628 24020020 */  li    $v0, 32

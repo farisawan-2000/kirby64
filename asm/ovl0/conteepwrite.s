@@ -5,7 +5,9 @@
 
 .section .text, "ax"
 
-glabel func_8002F804
+// conteepwrite
+
+glabel osEepromWrite
 /* 030410 8002F810 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* 030414 8002F814 AFBF001C */  sw    $ra, 0x1c($sp)
 /* 030418 8002F818 AFB10018 */  sw    $s1, 0x18($sp)
