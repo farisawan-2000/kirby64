@@ -27,3 +27,5 @@ EXTERN(__osPiGetAccess);
 EXTERN(__osPiRelAccess);
 
 EXTERN(osLeoDiskInit);
+
+EXTERN(osPfsIsPlug);

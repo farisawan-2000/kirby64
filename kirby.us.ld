@@ -186,7 +186,7 @@ SECTIONS
         BUILD_DIR/libultra.a:pfsinitpak.o(.text);
         BUILD_DIR/libultra.a:pfsgetstatus.o(.text);
         BUILD_DIR/libultra.a:pfschecker.o(.text);
-        BUILD_DIR/asm/ovl0/pfsisplug.o(.text);
+        BUILD_DIR/libultra.a:pfsisplug.o(.text);
         BUILD_DIR/asm/ovl0/libultra_after_bcopy.o(.text);
 
 
@@ -319,7 +319,7 @@ SECTIONS
         BUILD_DIR/libultra.a:leodiskinit.o(.bss);
         BUILD_DIR/libultra.a:timerintr.o(.bss);
         BUILD_DIR/libultra.a:cartrominit.o(.bss);
-        BUILD_DIR/asm/ovl0/before_vimgr_bss.o(.bss);
+        BUILD_DIR/libultra.a:pfsisplug.o(.bss);
         BUILD_DIR/libultra.a:vimgr.o(.bss);
         BUILD_DIR/libultra.a:conteepread.o(.bss);
     }
