@@ -1910,7 +1910,7 @@ void func_800B31B4(void) {
     }
 }
 
-// Basically matches on decomp.me but not locally????
+// stack diffs
 // https://decomp.me/scratch/DsIpj
 #ifdef NON_MATCHING
 extern const f32 D_800D67E8;
