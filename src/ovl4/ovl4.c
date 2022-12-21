@@ -300,32 +300,4 @@ extern UNK_TYPE D_8015A064[];
 extern UNK_TYPE D_803FC100;
 
 // the LOOP
-#ifdef MIPS_TO_C
-s32 func_80151CEC_ovl4(s32 arg0) {
-    void *temp_v0;
-    int i;
-    void *phi_a0;
-    UNK_TYPE temp_a1;
-
-    D_800D6B5C = arg0;
-    D_800D6B74 = 1;
-    func_80002B88_ovl4();
-    func_800A74D8();
-    func_80020998_ovl4(0, 0x7800);
-    func_800A41B0(2.0f);
-    D_8015A048[3] =(u32)&D_8012EB00 - 0x1900;
-    func_80007BA4_ovl4(&D_8015A048);
-    D_8015A064[4] = (u32)&gFrameBuffer - (u32)&D_8018EE60;
-
-    for (i = 0; i < 320 * 240; i++) {
-        gFrameBuffer[0x1F80 + i] = 0x0001;
-        gFrameBuffer[i] = 0x0001;
-    }
-    
-    func_80007380(&D_8015A064, &D_803FC100, &D_8015A064);
-    func_800BB3F0();
-    return D_800D6B74;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl4/ovl4/func_80151CEC_ovl4.s")
-#endif

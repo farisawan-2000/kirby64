@@ -140,57 +140,7 @@ Vector *vec3_negate(Vector *arg0) {
     return arg0;
 }
 
-#ifdef MIPS_TO_C
-// lbvector_RotateAboutUnitAxis
-void func_800191F8(Vector *v, Vector *axis, f32 angle) {
-    f32 len_axis_yz;
-    f32 sinangle;
-    f32 cosangle;
-    f32 z2;
-    f32 x2;
-    f32 x;
-    f32 z3;
-    f32 x3;
-    f32 z;
-    f32 y;
-    f32 unit_axis_yz_y, unit_axis_yz_z;
-
-    len_axis_yz = sqrtf((axis->y * axis->y) + (axis->z * axis->z));
-    sinangle = sinf(angle);
-    cosangle = cosf(angle);
-    if (len_axis_yz != 0.0f) {
-        unit_axis_yz_y = axis->z / len_axis_yz;
-        unit_axis_yz_z = axis->y / len_axis_yz;
-
-        z = (v->y * unit_axis_yz_z) + (v->z * unit_axis_yz_y);
-        y = (v->y * unit_axis_yz_y) - (v->z * unit_axis_yz_z);
-    } else {
-        z = v->z;
-        y = v->y;
-    }
-    
-    x2 = (v->x * len_axis_yz) - (z * axis->x);
-    z2 = (axis->x * v->x) + (z * len_axis_yz);
-
-    x3 = (x2 * cosangle) - (y * sinangle);
-    z3 = (x2 * sinangle) + (y * cosangle);
-
-    x = (x3 * len_axis_yz) + (z2 * axis->x);
-    z = (-x3 * axis->x) + (z2 * len_axis_yz);
-
-    if (len_axis_yz != 0.0f) {
-        v->x = x;
-        v->y = (z3 * unit_axis_yz_y) + (z * unit_axis_yz_z);
-        v->z = (-z3 * unit_axis_yz_z) + (z * unit_axis_yz_y);
-    } else {
-        v->x = x;
-        v->y = z3;
-        v->z = z;
-    }
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_5/func_800191F8.s")
-#endif
 
 
 // granularly negates components of a vector

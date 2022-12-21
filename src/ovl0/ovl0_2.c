@@ -317,21 +317,7 @@ s32 *func_80004250(void) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004250.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_800045C0(void *arg0) {
-    ? sp34;
-    ? sp1C;
-
-    arg0 = arg0;
-    osCreateMesgQueue(&sp1C, &sp34, 1);
-    arg0->unk4 = 1;
-    arg0->unk8 = &sp1C;
-    osSendMesg(&D_80048DE8, arg0, 1);
-    osRecvMesg(&sp1C, NULL, 1);
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800045C0.s")
-#endif
 
 void func_80004624(void) {
     struct Ovl0_2_MessageType1 msg;
@@ -375,48 +361,7 @@ void func_800046D0(s32 arg0) {
     func_800045C0(&msg);
 }
 
-#ifdef MIPS_TO_C
-void func_800046FC(s32 arg0, s32 arg1) {
-    s32 sp1C;
-    s32 temp_v1;
-    void *temp_v0;
-    void *phi_v0;
-    s32 phi_v1;
-    s32 phi_v1_2;
-    void *phi_v0_2;
-    void *phi_v0_3;
-
-    phi_v0 = &D_80048F60;
-    phi_v1 = 0;
-loop_1:
-    phi_v1_2 = phi_v1;
-    phi_v0_2 = phi_v0;
-    if (*phi_v0 != 0) {
-        temp_v1 = phi_v1 + 1;
-        temp_v0 = phi_v0 + 0x18;
-        phi_v0 = temp_v0;
-        phi_v1 = temp_v1;
-        phi_v1_2 = temp_v1;
-        phi_v0_2 = temp_v0;
-        if (temp_v1 < 4) {
-            goto loop_1;
-        }
-    }
-    sp1C = phi_v1_2;
-    if (phi_v1_2 == 4) {
-        osRecvMesg(&D_80048E10, &sp1C, 1);
-        phi_v0_3 = (sp1C * 0x18) + &D_80048F60;
-    } else {
-        *phi_v0_2 = 1;
-        phi_v0_3 = phi_v0_2;
-    }
-    phi_v0_3->unk10 = arg0;
-    phi_v0_3->unk14 = arg1;
-    osSendMesg(&D_80048DE8, phi_v0_3 + 4, 0);
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800046FC.s")
-#endif
 
 void func_800047B0(s32 arg0) {
     func_800046FC(arg0, 1);
@@ -480,142 +425,27 @@ void func_80004810(struct Unk_Func8004810 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004810.s")
 #endif
 
-#ifdef MIPS_TO_C
-s32 func_800049BC(s32 arg0, ?32 arg1, ?32 arg2, ?32 arg3, s32 arg4) {
-    ? sp1C;
-
-    D_80048FC0.unk10 = arg0;
-    D_80048FC0.unk30 = arg1;
-    D_80048FC0.unk34 = arg2;
-    D_80048FC0.unk14 = 4;
-    D_80048FC0.unk38 = arg3;
-    D_80048FC0.unk3C = arg4;
-    osSendMesg(&D_80048DE8, &D_80048FC4, 0);
-    osRecvMesg(&D_80048E38, &sp1C, 1);
-    return D_80048FC0.unk40;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_800049BC.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_80004A3C(s32 arg0, ?32 arg1, ?32 arg2, ?32 arg3, s32 arg4) {
-    ? sp1C;
-
-    D_80048FC0.unk10 = arg0;
-    D_80048FC0.unk30 = arg1;
-    D_80048FC0.unk34 = arg2;
-    D_80048FC0.unk14 = 3;
-    D_80048FC0.unk38 = arg3;
-    D_80048FC0.unk3C = arg4;
-    osSendMesg(&D_80048DE8, &D_80048FC4, 0);
-    osRecvMesg(&D_80048E38, &sp1C, 1);
-    return D_80048FC0.unk40;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004A3C.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_80004ABC(s32 arg0, u16 arg1, ?32 arg2, ?32 arg3, s32 arg4, s32 arg5, s32 arg6) {
-    ? sp1C;
-
-    D_80048FC0.unk10 = arg0;
-    D_80048FC0.unk1C = arg2;
-    D_80048FC0.unk14 = 2;
-    D_80048FC0.unk20 = arg3;
-    D_80048FC0.unk18 = arg1;
-    D_80048FC0.unk24 = arg4;
-    D_80048FC0.unk28 = arg5;
-    D_80048FC0.unk2C = arg6;
-    osSendMesg(&D_80048DE8, &D_80048FC4, 0);
-    osRecvMesg(&D_80048E38, &sp1C, 1);
-    return D_80048FC0.unk40;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004ABC.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_80004B50(s32 arg0, u16 arg1, ?32 arg2, ?32 arg3, s32 arg4) {
-    ? sp1C;
-
-    D_80048FC0.unk10 = arg0;
-    D_80048FC0.unk1C = arg2;
-    D_80048FC0.unk14 = 1;
-    D_80048FC0.unk20 = arg3;
-    D_80048FC0.unk18 = arg1;
-    D_80048FC0.unk24 = arg4;
-    osSendMesg(&D_80048DE8, &D_80048FC4, 0);
-    osRecvMesg(&D_80048E38, &sp1C, 1);
-    return D_80048FC0.unk40;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004B50.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_80004BD4(s32 arg0, u16 arg1, ?32 arg2, ?32 arg3, s32 arg4, s32 arg5) {
-    ? sp1C;
-
-    D_80048FC0.unk10 = arg0;
-    D_80048FC0.unk1C = arg2;
-    D_80048FC0.unk14 = 0;
-    D_80048FC0.unk20 = arg3;
-    D_80048FC0.unk18 = arg1;
-    D_80048FC0.unk24 = arg4;
-    D_80048FC0.unk2C = arg5;
-    osSendMesg(&D_80048DE8, &D_80048FC4, 0);
-    osRecvMesg(&D_80048E38, &sp1C, 1);
-    return D_80048FC0.unk40;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004BD4.s")
-#endif
 
-#ifdef MIPS_TO_C
-s32 func_80004C5C(u8 arg0, u8 arg1, ?32 arg2, ?32 arg3) {
-    ? sp1C;
-
-    D_800490D0.unk14 = arg2;
-    D_800490D0.unk18 = arg3;
-    D_800490D0.unk10 = arg0;
-    D_800490D0.unk11 = arg1;
-    osSendMesg(&D_80048DE8, &D_800490D4, 1);
-    osRecvMesg(&D_80048E58, &sp1C, 1);
-    return D_800490D0.unk1C;
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004C5C.s")
-#endif
 
 void func_80004CD4(void) {
     func_80004C5C(0, 0, 0, 0);
 }
 
-#ifdef MIPS_TO_C
-void func_80004D00(u8 arg0, s32 arg1, ? arg2) {
-    func_80004C5C(3, arg0, arg1, arg2);
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004D00.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_80004D34(u8 arg0, s32 arg1, ? arg2) {
-    func_80004C5C(4, arg0, arg1, arg2);
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004D34.s")
-#endif
 
-#ifdef MIPS_TO_C
-void func_80004D68(u8 arg0, ? arg1) {
-    func_80004C5C(1, arg0, arg1, 0);
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004D68.s")
-#endif
 
 void func_80004D98(u8 arg0, s32 arg1) {
     func_80004C5C(2, arg0, arg1, 0);
@@ -668,175 +498,7 @@ void func_80004DC8(struct Unk_Func8004DC8 *arg0) {
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004DC8.s")
 #endif
 
-#ifdef MIPS_TO_C
-void func_80004E98(void *arg0) {
-    void *sp18;
-    OSMesgQueue *temp_a0;
-    OSMesgQueue *temp_a0_2;
-    OSMesgQueue *temp_a0_3;
-    OSMesgQueue *temp_a0_4;
-    OSMesgQueue *temp_a0_5;
-    OSMesgQueue *temp_a0_7;
-    OSMesgQueue *temp_a0_8;
-    OSMesgQueue *temp_a0_9;
-    s32 temp_v0_2;
-    s32 temp_v1;
-    u32 temp_t7;
-    void *temp_a0_6;
-    void *temp_a3;
-    void *temp_v0;
-    void *temp_v0_3;
-    void *phi_a3;
-    void *phi_a3_2;
-
-    temp_a3 = arg0;
-    temp_t7 = arg0->unk0 - 1;
-    if (temp_t7 < 0xB) {
-        goto **(&jtbl_8003FF58 + (temp_t7 * 4));
-    case 0:
-        arg0 = temp_a3;
-        read_controller_input();
-        func_800041A0();
-        temp_a0 = arg0->unk8;
-        if (temp_a0 != 0) {
-            osSendMesg(temp_a0, arg0->unk4, 0);
-            return;
-        case 1:
-            if (D_80048F48 == 0) {
-                D_80048F4C = temp_a3;
-                return;
-            case 2:
-                D_80048EB4 = temp_a3->unkC;
-                D_80048EB4 = temp_a3->unk10;
-                D_80048ED4 = temp_a3->unkC;
-                D_80048ED4 = temp_a3->unk10;
-                D_80048EF4 = temp_a3->unkC;
-                D_80048EF4 = temp_a3->unk10;
-                D_80048F14 = temp_a3->unkC;
-                D_80048F14 = temp_a3->unk10;
-                temp_a0_3 = temp_a3->unk8;
-                if (temp_a0_3 == 0) {
-                default:
-                    return;
-                    return;
-                }
-                osSendMesg(temp_a0_3, temp_a3->unk4, 0);
-                return;
-            case 3:
-                D_80048F50 = temp_a3->unkC;
-                temp_a0_4 = temp_a3->unk8;
-                if (temp_a0_4 == 0) {
-                default:
-                    return;
-                    return;
-                }
-                osSendMesg(temp_a0_4, temp_a3->unk4, 0);
-                return;
-            case 5:
-                D_80048F54 = temp_a3->unkC;
-                temp_a0_5 = temp_a3->unk8;
-                if (temp_a0_5 == 0) {
-                default:
-                    return;
-                    return;
-                }
-                osSendMesg(temp_a0_5, temp_a3->unk4, 0);
-                return;
-            case 4:
-                temp_v1 = temp_a3->unkC;
-                temp_v0 = (temp_v1 << 5) + &gControllers;
-                phi_a3 = temp_a3;
-                if (temp_v0->unk1C == 0) {
-                    phi_a3 = temp_a3;
-                    if ((temp_v0->unk1D & 1) != 0) {
-                        temp_v0_2 = temp_a3->unk10;
-                        if (temp_v0_2 != 0) {
-                            if (temp_v0_2 != 1) {
-                                if (temp_v0_2 != 2) {
-                                    phi_a3 = temp_a3;
-                                } else {
-                                    temp_a0_6 = (temp_v1 * 0x68) + &sPakDevices;
-                                    sp18 = temp_a0_6;
-                                    arg0 = temp_a3;
-                                    func_8002F040(temp_a0_6, 0, temp_v1, temp_a3);
-                                    func_8002F040(temp_a0_6, 0);
-                                    func_8002F040(temp_a0_6, 0);
-block_24:
-                                    phi_a3 = arg0;
-                                }
-                            } else {
-                                phi_a3 = temp_a3;
-                                if (D_80048CDC == 0) {
-                                    arg0 = temp_a3;
-                                    func_8002F040((temp_v1 * 0x68) + &sPakDevices, 1, temp_v1, temp_a3);
-                                    goto block_24;
-                                }
-                            }
-                        } else {
-                            arg0 = temp_a3;
-                            osMotorInit(&sSIMesgQueue, (temp_v1 * 0x68) + &sPakDevices, temp_v1, temp_a3);
-                            goto block_24;
-                        }
-                    }
-                }
-                temp_a0_7 = phi_a3->unk8;
-                if (temp_a0_7 == 0) {
-                default:
-                    return;
-                    return;
-                }
-                osSendMesg(temp_a0_7, phi_a3->unk4, 0);
-                return;
-            case 9:
-                temp_v0_3 = (temp_a3->unkC << 5) + &gControllers;
-                phi_a3_2 = temp_a3;
-                if (temp_v0_3->unk1C == 0) {
-                    phi_a3_2 = temp_a3;
-                    if ((temp_v0_3->unk1D & 1) != 0) {
-                        arg0 = temp_a3;
-                        func_80004810(temp_a3, temp_a3);
-                        phi_a3_2 = arg0;
-                    }
-                }
-                temp_a0_8 = phi_a3_2->unk8;
-                if (temp_a0_8 == 0) {
-                default:
-                    return;
-                    return;
-                }
-                osSendMesg(temp_a0_8, phi_a3_2->unk4, 0);
-                return;
-            case 10:
-                arg0 = temp_a3;
-                func_80004DC8(temp_a3, temp_a3);
-                temp_a0_9 = arg0->unk8;
-                if (temp_a0_9 != 0) {
-                    osSendMesg(temp_a0_9, arg0->unk4, 0);
-                }
-            default:
-                return;
-                return;
-            }
-            arg0 = temp_a3;
-            func_800041A0(temp_a3);
-            temp_a0_2 = arg0->unk8;
-            if (temp_a0_2 != 0) {
-                osSendMesg(temp_a0_2, arg0->unk4, 0);
-                return;
-                return;
-                return;
-                return;
-                return;
-                return;
-                return;
-            }
-        }
-    }
-default:
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_2/func_80004E98.s")
-#endif
 
 extern struct {
     u32 unk0;
