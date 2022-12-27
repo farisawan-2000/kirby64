@@ -1,3 +1,456 @@
+.include "macros.inc"
+
 .section .data
-# Unknown region 1F2DE0-1F3160 [380]
-.incbin "bin/kirby.u.1F2DE0.bin"
+glabel D_801E2AA0_ovl12
+/* 0078A0 801E2AA0 */ .word 0
+
+glabel D_801E2AA4_ovl12 # 152
+/* 0078A4 801E2AA4 */ .word 0x3E567750
+/* 0078A8 801E2AA8 */ .word 0x3E0EFA35
+/* 0078AC 801E2AAC */ .word 0x3D567750
+
+glabel D_801E2AB0_ovl12
+/* 0078B0 801E2AB0 */ .word 0x442F0000
+/* 0078B4 801E2AB4 */ .word 0x40C00000
+/* 0078B8 801E2AB8 */ .word 0x40A00000
+/* 0078BC 801E2ABC */ .word 0x40800000
+
+glabel D_801E2AC0_ovl12
+/* 0078C0 801E2AC0 */ .word func_801DB2DC_ovl12
+/* 0078C4 801E2AC4 */ .word func_801DD02C_ovl12
+/* 0078C8 801E2AC8 */ .word func_801DD96C_ovl12
+/* 0078CC 801E2ACC */ .word func_801DE41C_ovl12
+/* 0078D0 801E2AD0 */ .word func_801DFFF0_ovl12
+
+glabel D_801E2AD4_ovl12
+/* 0078D4 801E2AD4 */ .word func_801DB494_ovl12
+/* 0078D8 801E2AD8 */ .word func_801DB544_ovl12
+/* 0078DC 801E2ADC */ .word func_801DB6D8_ovl12
+/* 0078E0 801E2AE0 */ .word func_801DBA88_ovl12
+/* 0078E4 801E2AE4 */ .word func_801DC4A8_ovl12
+/* 0078E8 801E2AE8 */ .word func_801DC750_ovl12
+
+glabel D_801E2AEC_ovl12
+/* 0078EC 801E2AEC */ .word func_801DB4D0_ovl12
+/* 0078F0 801E2AF0 */ .word func_801DB66C_ovl12
+/* 0078F4 801E2AF4 */ .word func_801DB910_ovl12
+/* 0078F8 801E2AF8 */ .word func_801DBC2C_ovl12
+/* 0078FC 801E2AFC */ .word func_801DC5F4_ovl12
+/* 007900 801E2B00 */ .word func_801DC804_ovl12
+
+glabel D_801E2B04_ovl12
+/* 007904 801E2B04 */ .word func_801DD158_ovl12
+/* 007908 801E2B08 */ .word func_801DD290_ovl12
+/* 00790C 801E2B0C */ .word func_801DD3A8_ovl12
+/* 007910 801E2B10 */ .word func_801DD508_ovl12
+/* 007914 801E2B14 */ .word func_801DD5E4_ovl12
+/* 007918 801E2B18 */ .word func_801DD6BC_ovl12
+/* 00791C 801E2B1C */ .word func_801DD7CC_ovl12
+
+glabel D_801E2B20_ovl12
+/* 007920 801E2B20 */ .word func_801DD1C8_ovl12
+/* 007924 801E2B24 */ .word func_801DD33C_ovl12
+/* 007928 801E2B28 */ .word func_801DD400_ovl12
+/* 00792C 801E2B2C */ .word func_801DD56C_ovl12
+/* 007930 801E2B30 */ .word func_801DD63C_ovl12
+/* 007934 801E2B34 */ .word func_801DD74C_ovl12
+/* 007938 801E2B38 */ .word func_801DD8FC_ovl12
+
+glabel D_801E2B3C_ovl12
+/* 00793C 801E2B3C */ .word func_801DDA78_ovl12
+/* 007940 801E2B40 */ .word func_801DDBC4_ovl12
+/* 007944 801E2B44 */ .word func_801DDCDC_ovl12
+/* 007948 801E2B48 */ .word func_801DDF38_ovl12
+/* 00794C 801E2B4C */ .word func_801DE16C_ovl12
+/* 007950 801E2B50 */ .word func_801DE27C_ovl12
+
+glabel D_801E2B54_ovl12
+/* 007954 801E2B54 */ .word func_801DDAE8_ovl12
+/* 007958 801E2B58 */ .word func_801DDC70_ovl12
+/* 00795C 801E2B5C */ .word func_801DDDA8_ovl12
+/* 007960 801E2B60 */ .word func_801DE0E4_ovl12
+/* 007964 801E2B64 */ .word func_801DE1FC_ovl12
+/* 007968 801E2B68 */ .word func_801DE3AC_ovl12
+
+glabel D_801E2B6C_ovl12
+/* 00796C 801E2B6C */ .word func_801DE528_ovl12
+/* 007970 801E2B70 */ .word func_801DE678_ovl12
+/* 007974 801E2B74 */ .word func_801DE790_ovl12
+/* 007978 801E2B78 */ .word func_801DE8A8_ovl12
+/* 00797C 801E2B7C */ .word func_801DE9C4_ovl12
+
+glabel D_801E2B80_ovl12
+/* 007980 801E2B80 */ .word func_801DE598_ovl12
+/* 007984 801E2B84 */ .word func_801DE724_ovl12
+/* 007988 801E2B88 */ .word func_801DE7E8_ovl12
+/* 00798C 801E2B8C */ .word func_801DE944_ovl12
+/* 007990 801E2B90 */ .word func_801DEAF4_ovl12
+
+glabel D_801E2B94_ovl12
+/* 007994 801E2B94 */ .word 0x99000000
+
+glabel D_801E2B98_ovl12
+/* 007998 801E2B98 */ .word 0x66000000
+
+glabel D_801E2B9C_ovl12
+/* 00799C 801E2B9C */ .word 0xFF666600
+
+glabel D_801E2BA0_ovl12
+/* 0079A0 801E2BA0 */ .word 0x7F191900
+
+glabel D_801E2BA4_ovl12
+/* 0079A4 801E2BA4 */ .word 0xFF000000
+
+glabel D_801E2BA8_ovl12
+/* 0079A8 801E2BA8 */ .word 0x7F000000
+
+glabel D_801E2BAC_ovl12
+/* 0079AC 801E2BAC */ .word 0x00990000
+
+glabel D_801E2BB0_ovl12
+/* 0079B0 801E2BB0 */ .word 0x00660000
+
+glabel D_801E2BB4_ovl12
+/* 0079B4 801E2BB4 */ .word 0x66FF6600
+
+glabel D_801E2BB8_ovl12
+/* 0079B8 801E2BB8 */ .word 0x197F1900
+
+glabel D_801E2BBC_ovl12
+/* 0079BC 801E2BBC */ .word 0x00FF0000
+
+glabel D_801E2BC0_ovl12
+/* 0079C0 801E2BC0 */ .word 0x007F0000
+
+glabel D_801E2BC4_ovl12
+/* 0079C4 801E2BC4 */ .word 0x00009900
+
+glabel D_801E2BC8_ovl12
+/* 0079C8 801E2BC8 */ .word 0x00006600
+
+glabel D_801E2BCC_ovl12
+/* 0079CC 801E2BCC */ .word 0x6666FF00
+
+glabel D_801E2BD0_ovl12
+/* 0079D0 801E2BD0 */ .word 0x19197F00
+
+glabel D_801E2BD4_ovl12
+/* 0079D4 801E2BD4 */ .word 0x0000FF00
+
+glabel D_801E2BD8_ovl12
+/* 0079D8 801E2BD8 */ .word 0x00007F00
+
+glabel D_801E2BDC_ovl12
+/* 0079DC 801E2BDC */ .word D_801E2BA4_ovl12
+/* 0079E0 801E2BE0 */ .word D_801E2B94_ovl12
+/* 0079E4 801E2BE4 */ .word D_801E2B9C_ovl12
+/* 0079E8 801E2BE8 */ .word D_801E2BBC_ovl12
+/* 0079EC 801E2BEC */ .word D_801E2BAC_ovl12
+/* 0079F0 801E2BF0 */ .word D_801E2BB4_ovl12
+/* 0079F4 801E2BF4 */ .word D_801E2BD4_ovl12
+/* 0079F8 801E2BF8 */ .word D_801E2BC4_ovl12
+/* 0079FC 801E2BFC */ .word D_801E2BCC_ovl12
+
+glabel D_801E2C00_ovl12
+/* 007A00 801E2C00 */ .word D_801E2BA8_ovl12
+/* 007A04 801E2C04 */ .word D_801E2B98_ovl12
+/* 007A08 801E2C08 */ .word D_801E2BA0_ovl12
+/* 007A0C 801E2C0C */ .word D_801E2BC0_ovl12
+/* 007A10 801E2C10 */ .word D_801E2BB0_ovl12
+/* 007A14 801E2C14 */ .word D_801E2BB8_ovl12
+/* 007A18 801E2C18 */ .word D_801E2BD8_ovl12
+/* 007A1C 801E2C1C */ .word D_801E2BC8_ovl12
+/* 007A20 801E2C20 */ .word D_801E2BD0_ovl12
+
+glabel D_801E2C24_ovl12
+/* 007A24 801E2C24 */ .word 0x00000000
+glabel D_801E2C28_ovl12
+/* 007A28 801E2C28 */ .word 0x00000000
+glabel D_801E2C2C_ovl12
+/* 007A2C 801E2C2C */ .word 0xFFFFFF00
+glabel D_801E2C30_ovl12
+/* 007A30 801E2C30 */ .word 0x7F7F7F00
+glabel D_801E2C34_ovl12
+/* 007A34 801E2C34 */ .word 0x00000000
+glabel D_801E2C38_ovl12
+/* 007A38 801E2C38 */ .word 0x00000000
+glabel D_801E2C3C_ovl12
+/* 007A3C 801E2C3C */ .word 0xFFFFFF00
+glabel D_801E2C40_ovl12
+/* 007A40 801E2C40 */ .word 0x7F7F7F00
+glabel D_801E2C44_ovl12
+/* 007A44 801E2C44 */ .word 0x00000000
+glabel D_801E2C48_ovl12
+/* 007A48 801E2C48 */ .word 0x00000000
+glabel D_801E2C4C_ovl12
+/* 007A4C 801E2C4C */ .word 0xFFFFFF00
+glabel D_801E2C50_ovl12
+/* 007A50 801E2C50 */ .word 0x7F7F7F00
+
+
+// VTABLE
+glabel D_801E2C54_ovl12
+/* 007A54 801E2C54 */ .word D_801E2BA4_ovl12
+/* 007A58 801E2C58 */ .word D_801E2C24_ovl12
+/* 007A5C 801E2C5C */ .word D_801E2C2C_ovl12
+/* 007A60 801E2C60 */ .word D_801E2BBC_ovl12
+/* 007A64 801E2C64 */ .word D_801E2C34_ovl12
+/* 007A68 801E2C68 */ .word D_801E2C3C_ovl12
+/* 007A6C 801E2C6C */ .word D_801E2BD4_ovl12
+/* 007A70 801E2C70 */ .word D_801E2C44_ovl12
+/* 007A74 801E2C74 */ .word D_801E2C4C_ovl12
+
+glabel D_801E2C78_ovl12
+/* 007A78 801E2C78 */ .word D_801E2BA8_ovl12
+/* 007A7C 801E2C7C */ .word D_801E2C28_ovl12
+/* 007A80 801E2C80 */ .word D_801E2C30_ovl12
+/* 007A84 801E2C84 */ .word D_801E2BC0_ovl12
+/* 007A88 801E2C88 */ .word D_801E2C38_ovl12
+/* 007A8C 801E2C8C */ .word D_801E2C40_ovl12
+/* 007A90 801E2C90 */ .word D_801E2BD8_ovl12
+/* 007A94 801E2C94 */ .word D_801E2C48_ovl12
+/* 007A98 801E2C98 */ .word D_801E2C50_ovl12
+
+glabel D_801E2C9C_ovl12
+/* 007A9C 801E2C9C */ .word func_801E016C_ovl12
+/* 007AA0 801E2CA0 */ .word func_801E03B0_ovl12
+/* 007AA4 801E2CA4 */ .word func_801E0714_ovl12
+/* 007AA8 801E2CA8 */ .word func_801E0D24_ovl12
+/* 007AAC 801E2CAC */ .word func_801E11CC_ovl12
+/* 007AB0 801E2CB0 */ .word func_801E0938_ovl12
+/* 007AB4 801E2CB4 */ .word func_801E0B58_ovl12
+/* 007AB8 801E2CB8 */ .word func_801E0DF8_ovl12
+/* 007ABC 801E2CBC */ .word func_801E10C4_ovl12
+/* 007AC0 801E2CC0 */ .word func_801E12D0_ovl12
+
+glabel D_801E2CC4_ovl12
+/* 007AC4 801E2CC4 */ .word func_801E0298_ovl12
+/* 007AC8 801E2CC8 */ .word func_801E05E8_ovl12
+/* 007ACC 801E2CCC */ .word func_801E0824_ovl12
+/* 007AD0 801E2CD0 */ .word func_801E0D64_ovl12
+/* 007AD4 801E2CD4 */ .word func_801E123C_ovl12
+/* 007AD8 801E2CD8 */ .word func_801E0A70_ovl12
+/* 007ADC 801E2CDC */ .word func_801E0C54_ovl12
+/* 007AE0 801E2CE0 */ .word func_801E0FC8_ovl12
+/* 007AE4 801E2CE4 */ .word func_801E1124_ovl12
+/* 007AE8 801E2CE8 */ .word func_801E1500_ovl12
+/* 007AEC 801E2CEC */ .word 0x00000000
+
+
+
+// VTABLE
+glabel D_801E2CF0_ovl12
+/* 007AF0 801E2CF0 */ .word func_801E1B90_ovl12
+/* 007AF4 801E2CF4 */ .word func_801E1890_ovl12
+
+glabel D_801E2CF8_ovl12
+/* 007AF8 801E2CF8 */ .word func_801E1CD4_ovl12
+/* 007AFC 801E2CFC */ .word func_801E1A60_ovl12
+
+glabel D_801E2D00_ovl12
+/* 007B00 801E2D00 */ .word func_801E23A0_ovl12
+/* 007B04 801E2D04 */ .word func_801E2298_ovl12
+/* 007B08 801E2D08 */ .word func_801E2494_ovl12
+
+glabel D_801E2D0C_ovl12
+/* 007B0C 801E2D0C */ .word func_801E23F8_ovl12
+/* 007B10 801E2D10 */ .word func_801E22D8_ovl12
+/* 007B14 801E2D14 */ .word func_801E2528_ovl12
+/* 007B18 801E2D18 */ .word 0x00000000
+/* 007B1C 801E2D1C */ .word 0x00000000
+
+
+
+.section .rodata
+glabel D_801E2D20_ovl12
+/* 007B20 801E2D20 */ .word 0x407B53F8
+
+glabel D_801E2D24_ovl12
+/* 007B24 801E2D24 */ .word 0x40FB53F8
+
+glabel D_801E2D28_ovl12
+/* 007B28 801E2D28 */ .word 0x477FFF00
+
+glabel D_801E2D2C_ovl12
+/* 007B2C 801E2D2C */ .word 0x3C4CCCCD
+
+glabel D_801E2D30_ovl12
+/* 007B30 801E2D30 */ .word 0x40C90FDB
+
+glabel D_801E2D34_ovl12
+/* 007B34 801E2D34 */ .word 0xBFC90FDB
+
+glabel D_801E2D38_ovl12
+/* 007B38 801E2D38 */ .word 0x3FC90FDB
+
+glabel D_801E2D3C_ovl12
+/* 007B3C 801E2D3C */ .word 0x4096CBE4
+
+glabel D_801E2D40_ovl12
+/* 007B40 801E2D40 */ .word 0x3DD67750
+
+glabel D_801E2D44_ovl12
+/* 007B44 801E2D44 */ .word 0x40C90FDB
+
+glabel D_801E2D48_ovl12
+/* 007B48 801E2D48 */ .word 0x3DD67750
+
+glabel D_801E2D4C_ovl12
+/* 007B4C 801E2D4C */ .word 0x40C5B5FD
+
+glabel D_801E2D50_ovl12
+/* 007B50 801E2D50 */ .word 0x40C90FDB
+
+glabel D_801E2D54_ovl12
+/* 007B54 801E2D54 */ .word 0x3DD67750
+
+glabel D_801E2D58_ovl12
+/* 007B58 801E2D58 */ .word 0x40C90FDB
+
+glabel D_801E2D5C_ovl12
+/* 007B5C 801E2D5C */ .word 0x477FFF00
+
+glabel D_801E2D60_ovl12
+/* 007B60 801E2D60 */ .word 0x3CCCCCCD
+
+glabel D_801E2D64_ovl12
+/* 007B64 801E2D64 */ .word 0x3CCCCCCD
+
+glabel D_801E2D68_ovl12
+/* 007B68 801E2D68 */ .word 0x3F0CCCCD
+
+glabel D_801E2D6C_ovl12
+/* 007B6C 801E2D6C */ .word 0x3CCCCCCD
+
+glabel D_801E2D70_ovl12
+/* 007B70 801E2D70 */ .word 0x3E0EFA35
+
+glabel D_801E2D74_ovl12
+/* 007B74 801E2D74 */ .word 0x40C90FDB
+
+glabel D_801E2D78_ovl12
+/* 007B78 801E2D78 */ .word 0x3C23D70A
+
+glabel D_801E2D7C_ovl12
+/* 007B7C 801E2D7C */ .word 0x3CCCCCCD
+
+glabel D_801E2D80_ovl12
+/* 007B80 801E2D80 */ .word 0x43FB3334
+
+glabel D_801E2D84_ovl12
+/* 007B84 801E2D84 */ .word 0x3CCCCCCD
+
+glabel D_801E2D88_ovl12
+/* 007B88 801E2D88 */ .word 0x41851EB8
+
+glabel D_801E2D8C_ovl12
+/* 007B8C 801E2D8C */ .word 0x477FFF00
+
+glabel D_801E2D90_ovl12
+/* 007B90 801E2D90 */ .word 0x3CCCCCCD
+
+glabel D_801E2D94_ovl12
+/* 007B94 801E2D94 */ .word 0x3C4CCCCD
+
+glabel D_801E2D98_ovl12
+/* 007B98 801E2D98 */ .word 0x3CCCCCCD
+
+glabel D_801E2D9C_ovl12
+/* 007B9C 801E2D9C */ .word 0x40C90FDB
+
+glabel D_801E2DA0_ovl12
+/* 007BA0 801E2DA0 */ .word 0x3E567750
+
+glabel D_801E2DA4_ovl12
+/* 007BA4 801E2DA4 */ .word 0x40C25C21
+
+glabel D_801E2DA8_ovl12
+/* 007BA8 801E2DA8 */ .word 0x40C25C21
+
+glabel D_801E2DAC_ovl12
+/* 007BAC 801E2DAC */ .word 0x477FFF00
+
+glabel D_801E2DB0_ovl12
+/* 007BB0 801E2DB0 */ .word 0x3BA3D70A
+
+glabel D_801E2DB4_ovl12
+/* 007BB4 801E2DB4 */ .word 0x477FFF00
+
+glabel D_801E2DB8_ovl12
+/* 007BB8 801E2DB8 */ .word 0x477FFF00
+
+glabel D_801E2DBC_ovl12
+/* 007BBC 801E2DBC */ .word 0x3C4CCCCD
+
+glabel D_801E2DC0_ovl12
+/* 007BC0 801E2DC0 */ .word 0x3C4CCCCD
+
+glabel D_801E2DC4_ovl12
+/* 007BC4 801E2DC4 */ .word 0x477FFF00
+
+glabel D_801E2DC8_ovl12
+/* 007BC8 801E2DC8 */ .word 0x477FFF00
+
+glabel D_801E2DCC_ovl12
+/* 007BCC 801E2DCC */ .word 0x477FFF00
+
+glabel D_801E2DD0_ovl12
+/* 007BD0 801E2DD0 */ .word 0x3B23D70A
+/* 007BD4 801E2DD4 */ .word 0x00000000
+/* 007BD8 801E2DD8 */ .word 0x00000000
+/* 007BDC 801E2DDC */ .word 0x00000000
+
+glabel D_801E2DE0_ovl12
+/* 007BE0 801E2DE0 */ .word 0x3FC90FDB
+
+glabel D_801E2DE4_ovl12
+/* 007BE4 801E2DE4 */ .word 0x40C90FDB
+
+glabel D_801E2DE8_ovl12
+/* 007BE8 801E2DE8 */ .word 0x3E0EFA35
+
+glabel D_801E2DEC_ovl12
+/* 007BEC 801E2DEC */ .word 0x40C90FDB
+
+glabel D_801E2DF0_ovl12
+/* 007BF0 801E2DF0 */ .word 0x3E0EFA35
+
+glabel D_801E2DF4_ovl12
+/* 007BF4 801E2DF4 */ .word 0x40C90FDB
+
+glabel D_801E2DF8_ovl12
+/* 007BF8 801E2DF8 */ .word 0x3E0EFA35
+
+glabel D_801E2DFC_ovl12
+/* 007BFC 801E2DFC */ .word 0x3CCCCCCD
+
+glabel D_801E2E00_ovl12
+/* 007C00 801E2E00 */ .word 0x40C90FDB
+
+glabel D_801E2E04_ovl12
+/* 007C04 801E2E04 */ .word 0x3E0EFA35
+
+glabel D_801E2E08_ovl12
+/* 007C08 801E2E08 */ .word 0x40C90FDB
+
+glabel D_801E2E0C_ovl12
+/* 007C0C 801E2E0C */ .word 0x3E0EFA35
+
+glabel D_801E2E10_ovl12
+/* 007C10 801E2E10 */ .word 0x40C90FDB
+
+glabel D_801E2E14_ovl12
+/* 007C14 801E2E14 */ .word 0x3E0EFA35
+/* 007C18 801E2E18 */ .word 0x00000000
+/* 007C1C 801E2E1C */ .word 0x00000000
+
+.section .bss
+glabel D_801E2E20_ovl12
+.skip 4
+glabel D_801E2E24_ovl12
+.skip 4
+glabel D_801E2E28_ovl12
+.skip 4
+glabel D_801E2E2C_ovl12
+.skip 4
+

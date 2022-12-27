@@ -30,6 +30,7 @@ tools/asm-processor/__pycache__/*
 asm-differ/__pycache__/*
 .vscode/*
 ctx.c
+*.m2c
 # Use these for scratch work
 *.x
 strings/*
