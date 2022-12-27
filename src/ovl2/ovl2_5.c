@@ -2,6 +2,8 @@
 #include <macros.h>
 #include <PR/gbi.h>
 
+#include "unk_structs/D_800E1B50.h"
+
 extern Gfx *gDisplayListHeads[4];
 
 void func_800FDA40(Vtx *curVtx, f32 arg1, f32 arg2) {
@@ -708,24 +710,19 @@ void func_800FEF44(struct UNK_FUNC_800FEF44 *arg0) {
     }
 }
 
-struct UNK_OVL2_5 {
-    u8 filler[0x20];
-    u8 unk20;
-};
-
-void func_800FF0A8(struct UNK_OVL2_5 *arg0) {
+void func_800FF0A8(struct Sub800E1B50 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 | 2;
     }
 }
 
-void func_800FF0C4(struct UNK_OVL2_5 *arg0) {
+void func_800FF0C4(struct Sub800E1B50 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 & ~2;
     }
 }
 
-void func_800FF0E0(struct UNK_OVL2_5 *arg0) {
+void func_800FF0E0(struct Sub800E1B50 *arg0) {
     if (arg0 != 0) {
         arg0->unk20 = arg0->unk20 | 8;
     }
