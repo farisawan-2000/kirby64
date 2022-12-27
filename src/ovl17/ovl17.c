@@ -89,17 +89,4 @@ GLOBAL_ASM("asm/non_matchings/ovl17/ovl17/func.s")
 #endif
 
 // how
-#ifdef MIPS_TO_C
-void func_801DD88C_ovl17(s32 arg0) {
-    s32 temp_v1;
-
-    temp_v1 = D_800E98E0[D_8004A7C4->objId];
-    if (temp_v1 != 0) {
-        if (temp_v1->unk4C != 0) {
-            func_800B2340(temp_v1->unk4C + 4, D_800DFBD0[D_8004A7C4->objId][5], 0xFFFF);
-        }
-    }
-}
-#else
 GLOBAL_ASM("asm/non_matchings/ovl17/ovl17/func_801DD88C_ovl17.s")
-#endif
