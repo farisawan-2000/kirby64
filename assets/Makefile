@@ -22,6 +22,9 @@ BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 BANK_FILETABLES := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.filetable.c))
 BANK_HEADERS := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.h))
 
+default: all
+all: $(TARGET)
+
 FIXDIR := $(shell pwd)/..
 INCLUDE_CFLAGS := -I $(FIXDIR)/include -I $(FIXDIR)/include/libc -I $(FIXDIR)/src -I .
 TARGET_CFLAGS := -nostdinc -I include/libc -DTARGET_N64 -DF3DEX_GBI_2
