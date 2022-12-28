@@ -11,7 +11,7 @@ FILETABLES := filetable_models.mk \
 
 # V := @
 
-BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld
+BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
 					$(BUILD_DIR)/bank1.ld \
 					$(BUILD_DIR)/bank2.ld \
 					$(BUILD_DIR)/bank3.ld \
@@ -21,9 +21,6 @@ BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld
 					$(BUILD_DIR)/bank7.ld
 BANK_FILETABLES := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.filetable.c))
 BANK_HEADERS := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.h))
-
-default: all
-all: $(TARGET)
 
 FIXDIR := $(shell pwd)/..
 INCLUDE_CFLAGS := -I $(FIXDIR)/include -I $(FIXDIR)/include/libc -I $(FIXDIR)/src -I .
