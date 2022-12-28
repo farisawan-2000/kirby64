@@ -11,14 +11,14 @@ FILETABLES := filetable_models.mk \
 
 # V := @
 
-BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld \
-					$(BUILD_DIR)/bank1.ld \
-					$(BUILD_DIR)/bank2.ld \
-					$(BUILD_DIR)/bank3.ld \
-					$(BUILD_DIR)/bank4.ld \
-					$(BUILD_DIR)/bank5.ld \
-					$(BUILD_DIR)/bank6.ld \
-					$(BUILD_DIR)/bank7.ld
+BANK_LINKSCRIPTS := $(BUILD_DIR)/bank0.ld
+# 					$(BUILD_DIR)/bank1.ld \
+# 					$(BUILD_DIR)/bank2.ld \
+# 					$(BUILD_DIR)/bank3.ld \
+# 					$(BUILD_DIR)/bank4.ld \
+# 					$(BUILD_DIR)/bank5.ld \
+# 					$(BUILD_DIR)/bank6.ld \
+# 					$(BUILD_DIR)/bank7.ld
 BANK_FILETABLES := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.filetable.c))
 BANK_HEADERS := $(foreach file, $(BANK_LINKSCRIPTS), $(file:.ld=.h))
 
@@ -41,7 +41,8 @@ ALL_FILES := $(MODEL_FILES) $(IMAGE_FILES) $(ANIM_FILES) $(MISC_FILES)
 
 _BIN2C := $(foreach file,$(ALL_FILES), $(file:.bin=.o))
 _PNG2C := $(foreach file,$(_BIN2C), $(file:.png=.o))
-O_FILES := $(foreach file, $(_PNG2C), $(BUILD_DIR)/$(file))
+_C2C := $(foreach file,$(_PNG2C), $(file:.c=.o))
+O_FILES := $(foreach file, $(_C2C), $(BUILD_DIR)/$(file))
 
 clean:
 	rm -f -r $(BUILD_DIR)
