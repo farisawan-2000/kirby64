@@ -80,3 +80,11 @@ glabel func_801DC378_ovl12 # 20
 .L801DC4A0:
 /* 0012A0 801DC4A0 03E00008 */  jr          $ra
 /* 0012A4 801DC4A4 00000000 */   nop
+
+.section .late_rodata
+
+
+glabel D_801E2D54_ovl12
+/* 007B54 801E2D54 */ .word 0x3DD67750
+glabel D_801E2D58_ovl12
+/* 007B58 801E2D58 */ .word 0x40C90FDB

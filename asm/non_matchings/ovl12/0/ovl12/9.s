@@ -125,3 +125,10 @@ glabel func_801DB72C_ovl12 # 9
 /* 000704 801DB904 8FBE0068 */  lw          $fp, 0x68($sp)
 /* 000708 801DB908 03E00008 */  jr          $ra
 /* 00070C 801DB90C 27BD0070 */   addiu      $sp, $sp, 0x70
+
+.section .rodata
+glabel D_801E2D20_ovl12
+/* 007B20 801E2D20 */ .word 0x407B53F8
+glabel D_801E2D24_ovl12
+/* 007B24 801E2D24 */ .word 0x40FB53F8
+

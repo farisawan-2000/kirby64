@@ -8,7 +8,10 @@ struct UnkStruct800D7098 {
     u32 unk18;
     u32 unk1C;
     u32 unk20;
-};
+    u32 unk24;
+    u32 unk28;
+    u32 unk2C;
+}; // 0x40 bytes? an array?
 
 struct UnkStruct800D70D8 {
     f32 unk0;

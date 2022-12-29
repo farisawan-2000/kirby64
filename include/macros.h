@@ -13,6 +13,7 @@
 #endif
 
 #define ARRAY_COUNT(arr) (s32)(sizeof(arr) / sizeof(arr[0]))
+#define ARRAYLEN(arr) (s32)(sizeof(arr) / sizeof(arr[0]))
 
 #define GLUE(a, b) a ## b
 #define GLUE2(a, b) GLUE(a, b)

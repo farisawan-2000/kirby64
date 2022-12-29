@@ -55,6 +55,10 @@ struct UnkStruct8004A7C4_3C_80 {
 };
 
 
+struct UnkStruct8004A7C4_3C_10 {
+    u8 pad[0x38];
+    f32 unk38;
+};
 
 // SOME chunk of the beginning of the struct is a union
 struct UnkStruct8004A7C4_3C {
@@ -65,7 +69,7 @@ struct UnkStruct8004A7C4_3C {
 
 	u32 unkC;
 
-	u32 unk10;
+	struct UnkStruct8004A7C4_3C_10 *unk10;
 	u32 unk14;
 	u32 unk18;
 
@@ -105,7 +109,7 @@ struct UnkStruct8004A7C4_3C_duplicate {
 	
 	u32 unkC;
 
-	u32 unk10;
+	struct UnkStruct8004A7C4_3C_10 *unk10;
 	u32 unk14;
 	u32 unk18;
 
@@ -128,7 +132,7 @@ struct UnkStruct8004A7C4_3C_duplicate {
 };
 
 // GObj?
-struct GObj {
+typedef struct GObj {
 	/* 0x00 */ u32 objId;
 	/* 0x04 */ struct GObj* unk4;
     /* 0x08 */ struct GObj* unk8;
@@ -160,7 +164,7 @@ struct GObj {
 	// grab arguments
 	void (*unk48)(void);
 	u32 unk4C;
-};
+} GObj;
 // size: 0x50
 extern struct GObj *D_8004A7C4, *D_8004A7C8, *D_8004A7CC;
 extern struct GObj *D_800DE44C;

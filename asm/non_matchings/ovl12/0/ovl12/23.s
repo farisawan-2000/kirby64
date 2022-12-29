@@ -44,3 +44,9 @@ glabel func_801DC750_ovl12 # 23
 /* 0015F8 801DC7F8 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 0015FC 801DC7FC 03E00008 */  jr          $ra
 /* 001600 801DC800 00000000 */   nop
+
+.section .late_rodata
+
+
+glabel D_801E2D5C_ovl12
+/* 007B5C 801E2D5C */ .word 0x477FFF00
