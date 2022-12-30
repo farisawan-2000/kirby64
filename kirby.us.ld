@@ -570,11 +570,13 @@ SECTIONS
     BEGIN_SEG(ovl12, 0x801DB1E0) SUBALIGN(16) {
         . += 0x20;
         BUILD_DIR/src/ovl12/ovl12.o(.text);
+        BUILD_DIR/src/ovl12/ovl12_2.o(.text);
         BUILD_DIR/asm/ovl12/ovl12_2.o(.text);
     }
     END_SEG(ovl12)
     BEGIN_SEG(ovl12Data, _ovl12SegmentEnd) SUBALIGN(16) {
         BUILD_DIR/src/ovl12/ovl12.o(.data);
+        BUILD_DIR/src/ovl12/ovl12_2.o(.data);
         BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.data);
 
         BUILD_DIR/src/ovl12/ovl12.o(.rodata);
@@ -582,8 +584,7 @@ SECTIONS
     }
     END_SEG(ovl12Data)
     BEGIN_NOLOAD(ovl12) {
-        /*BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.bss);*/
-        BUILD_DIR/src/ovl12/ovl12.o(.bss);
+        BUILD_DIR/src/ovl12/ovl12_2.o(.bss);
     }
     END_NOLOAD(ovl12)
 

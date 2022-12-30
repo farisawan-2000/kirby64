@@ -186,21 +186,5 @@ void (*D_801E2CC4_ovl12[])(struct GObj *) = {
     func_801E1500_ovl12,
 };
 
-u32 file_splitter = 0;
+// u32 file_splitter = 0;
 
-// new file???
-void (*D_801E2CF0_ovl12[2])(struct GObj *) = {
-    func_801E1B90_ovl12,
-    func_801E1890_ovl12
-};
-
-void (*D_801E2CF8_ovl12[2])(struct GObj *) = {
-    func_801E1CD4_ovl12,
-    func_801E1A60_ovl12
-};
-
-// BSS
-u32 D_801E2E20_ovl12;
-u32 D_801E2E24_ovl12;
-u32 D_801E2E28_ovl12;
-u32 D_801E2E2C_ovl12;
