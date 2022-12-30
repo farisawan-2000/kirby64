@@ -25,10 +25,6 @@ VTABLE D_801E2CF8_ovl12 = {
     func_801E1A60_ovl12
 };
 
-struct Work801E2E20 {
-    u32 unk0;
-    u16 unk4;
-}; // cant be more than 0x10 bytes; isnt referenced past 0x8 bytes
 
 struct Work801E2E20 D_801E2E20_ovl12;
 

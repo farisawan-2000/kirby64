@@ -1,7 +1,7 @@
 struct UnkStruct800D7098 {
     u32 unk0;
     u32 unk4;
-    u32 unk8;
+    s32 unk8; // MUST be a different 32bit type than gEntityVtableIndexArray
     u32 unkC;
     u32 unk10;
     u32 unk14;

@@ -112,3 +112,21 @@ extern f32 func_800FA1D4(struct Unk80129114_4_4 *, Vector *, s16);
 extern void func_801D152C_ovl8(s32);
 extern void func_801D184C_ovl8(s32);
 extern void func_801D17F4_ovl8(s32);
+extern void func_801D1BB0_ovl8(s32);
+extern void func_801D19B8_ovl8(s32);
+extern void func_800B78AC(s32);
+
+extern void func_801ACF84_ovl7(GObj *);
+
+
+extern f32 D_801D80CC;
+extern f32 D_801D80F0;
+extern f32 D_801D8114;
+extern s32 D_801CB4DC;
+
+// bss
+struct Work801E2E20 {
+    u32 unk0;
+    u16 unk4;
+}; // cant be more than 0x10 bytes; isnt referenced past 0x8 bytes
+extern struct Work801E2E20 D_801E2E20_ovl12;
