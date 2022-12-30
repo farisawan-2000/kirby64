@@ -1,64 +1,34 @@
-extern u8 _ovl1SegmentRomStart[];
-extern u8 _ovl1SegmentRomEnd[];
-extern u8 _ovl1SegmentStart[];
-extern u8 _ovl1SegmentEnd[];
-extern u8 _ovl1DataSegmentEnd[];
-extern u8 _ovl1DataSegmentRomEnd[];
-extern u8 _ovl1SegNoloadStart[];
-extern u8 _ovl1SegNoloadEnd[];
+#define EXTERN_OVERLAY(nm) \
+    extern u8 _ ## nm ## SegmentRomStart[];\
+    extern u8 _ ## nm ## SegmentRomEnd[];\
+    extern u8 _ ## nm ## SegmentStart[];\
+    extern u8 _ ## nm ## SegmentEnd[];\
+    extern u8 _ ## nm ## DataSegmentStart[];\
+    extern u8 _ ## nm ## DataSegmentEnd[];\
+    extern u8 _ ## nm ## DataSegmentRomEnd[];\
+    extern u8 _ ## nm ## SegNoloadStart[];\
+    extern u8 _ ## nm ## SegNoloadEnd[];\
 
-extern u8 _ovl3SegmentRomStart[];
-extern u8 _ovl3SegmentRomEnd[];
-extern u8 _ovl3SegmentStart[];
-extern u8 _ovl3SegmentEnd[];
-extern u8 _ovl3DataSegmentStart[];
-extern u8 _ovl3DataSegmentEnd[];
-extern u8 _ovl3DataSegmentRomEnd[];
-extern u8 _ovl3SegNoloadStart[];
-extern u8 _ovl3SegNoloadEnd[];
-
-
-extern u8 _ovl20SegmentRomStart[];
-extern u8 _ovl20DataSegmentRomEnd[];
-extern u8 _ovl20SegmentStart[];
-extern u8 _ovl20SegmentStart[];
-extern u8 _ovl20SegmentEnd[];
-extern u8 _ovl20SegmentEnd[];
-extern u8 _ovl20DataSegmentEnd[];
-extern u8 _ovl20SegNoloadStart[];
-extern u8 _ovl20SegNoloadEnd[];
-
-extern u8 _ovl19SegmentRomStart[];
-extern u8 _ovl19DataSegmentRomEnd[];
-extern u8 _ovl19SegmentStart[];
-extern u8 _ovl19SegmentStart[];
-extern u8 _ovl19SegmentEnd[];
-extern u8 _ovl19SegmentEnd[];
-extern u8 _ovl19DataSegmentEnd[];
-extern u8 _ovl19SegNoloadStart[];
-extern u8 _ovl19SegNoloadEnd[];
-
-extern u8 _ovl18SegmentRomStart[];
-extern u8 _ovl18DataSegmentRomEnd[];
-extern u8 _ovl18SegmentStart[];
-extern u8 _ovl18SegmentStart[];
-extern u8 _ovl18SegmentEnd[];
-extern u8 _ovl18SegmentEnd[];
-extern u8 _ovl18DataSegmentEnd[];
-extern u8 _ovl18SegNoloadStart[];
-extern u8 _ovl18SegNoloadEnd[];
-
-extern u8 _ovl12SegmentRomStart[];
-extern u8 _ovl12DataSegmentRomEnd[];
-extern u8 _ovl12SegmentStart[];
-extern u8 _ovl12SegmentStart[];
-extern u8 _ovl12SegmentEnd[];
-extern u8 _ovl12SegmentEnd[];
-extern u8 _ovl12DataSegmentStart[];
-extern u8 _ovl12DataSegmentEnd[];
-extern u8 _ovl12SegNoloadStart[];
-extern u8 _ovl12SegNoloadEnd[];
-
+EXTERN_OVERLAY(ovl1);
+EXTERN_OVERLAY(ovl2);
+EXTERN_OVERLAY(ovl3);
+EXTERN_OVERLAY(ovl4);
+EXTERN_OVERLAY(ovl5);
+EXTERN_OVERLAY(ovl6);
+EXTERN_OVERLAY(ovl7);
+EXTERN_OVERLAY(ovl8);
+EXTERN_OVERLAY(ovl9);
+EXTERN_OVERLAY(ovl10);
+EXTERN_OVERLAY(ovl11);
+EXTERN_OVERLAY(ovl12);
+EXTERN_OVERLAY(ovl13);
+EXTERN_OVERLAY(ovl14);
+EXTERN_OVERLAY(ovl15);
+EXTERN_OVERLAY(ovl16);
+EXTERN_OVERLAY(ovl17);
+EXTERN_OVERLAY(ovl18);
+EXTERN_OVERLAY(ovl19);
+EXTERN_OVERLAY(ovl20);
 
 extern u8 _data_250320SegmentRomStart[];
 extern u8 _data_2A8CB0SegmentRomStart[];

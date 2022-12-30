@@ -594,6 +594,15 @@ SECTIONS
         BUILD_DIR/asm/ovl13/ovl13.o(.text);
     }
     END_SEG(ovl13)
+    BEGIN_SEG(ovl13Data, _ovl13SegmentEnd) {
+        BUILD_DIR/asm/ovl13/ovl13.o(.data);
+        BUILD_DIR/asm/ovl13/ovl13.o(.rodata);
+    }
+    END_SEG(ovl13Data)
+    BEGIN_NOLOAD(ovl13) {
+        BUILD_DIR/asm/ovl13/ovl13.o(.bss);
+    }
+    END_NOLOAD(ovl13)
 
     /* 0x801DB1E0 1FDDD0-205A90 [7CC0] */
     BEGIN_SEG(ovl14, 0x801DB1E0) {
