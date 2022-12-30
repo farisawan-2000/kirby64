@@ -26,3 +26,7 @@ glabel func_801E1528_ovl12 # 125
 /* 006384 801E1584 03E00008 */  jr          $ra
 /* 006388 801E1588 00000000 */   nop
 /* 00638C 801E158C 00000000 */  nop
+
+.section .late_rodata
+glabel D_801E2DD0_ovl12
+/* 007BD0 801E2DD0 */ .word 0x3B23D70A

@@ -173,7 +173,7 @@ void (*D_801E2C9C_ovl12[0xA])(struct GObj *) = {
     func_801E12D0_ovl12,
 };
 
-void (*D_801E2CC4_ovl12[0xB])(struct GObj *) = {
+void (*D_801E2CC4_ovl12[])(struct GObj *) = {
     func_801E0298_ovl12,
     func_801E05E8_ovl12,
     func_801E0824_ovl12,
@@ -184,8 +184,11 @@ void (*D_801E2CC4_ovl12[0xB])(struct GObj *) = {
     func_801E0FC8_ovl12,
     func_801E1124_ovl12,
     func_801E1500_ovl12,
-    NULL,
 };
+
+u32 file_splitter = 0;
+
+// new file???
 void (*D_801E2CF0_ovl12[2])(struct GObj *) = {
     func_801E1B90_ovl12,
     func_801E1890_ovl12

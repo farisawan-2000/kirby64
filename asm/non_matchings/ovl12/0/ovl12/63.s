@@ -75,3 +75,12 @@ glabel func_801DDFB4_ovl12 # 63
 /* 002ED8 801DE0D8 002C0821 */  addu        $at, $at, $t4
 /* 002EDC 801DE0DC 03E00008 */  jr          $ra
 /* 002EE0 801DE0E0 E42A6850 */   swc1       $f10, %lo(D_800E6850)($at)
+
+.section .late_rodata
+
+glabel D_801E2D88_ovl12
+/* 007B88 801E2D88 */ .word 0x41851EB8
+
+glabel D_801E2D8C_ovl12
+/* 007B8C 801E2D8C */ .word 0x477FFF00
+

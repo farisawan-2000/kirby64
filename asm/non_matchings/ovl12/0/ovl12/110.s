@@ -72,3 +72,7 @@ glabel func_801E0824_ovl12 # 110
 /* 00572C 801E092C 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 005730 801E0930 03E00008 */  jr          $ra
 /* 005734 801E0934 00000000 */   nop
+
+.section .late_rodata
+glabel D_801E2DBC_ovl12
+/* 007BBC 801E2DBC */ .word 0x3C4CCCCD

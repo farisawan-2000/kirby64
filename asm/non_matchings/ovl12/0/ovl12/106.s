@@ -70,3 +70,7 @@ glabel func_801E0298_ovl12 # 106
 /* 0051A4 801E03A4 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 0051A8 801E03A8 03E00008 */  jr          $ra
 /* 0051AC 801E03AC 00000000 */   nop
+.section .late_rodata
+glabel D_801E2DB4_ovl12
+/* 007BB4 801E2DB4 */ .word 0x477FFF00
+

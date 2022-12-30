@@ -5,7 +5,7 @@ struct UnkStruct800D7098 {
     u32 unkC;
     u32 unk10;
     u32 unk14;
-    u32 unk18;
+    s32 unk18;
     u32 unk1C;
     u32 unk20;
     u32 unk24;

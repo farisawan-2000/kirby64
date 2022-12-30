@@ -25,3 +25,8 @@ glabel func_801DED38_ovl12 # 84
 .L801DED94:
 /* 003B94 801DED94 03E00008 */  jr          $ra
 /* 003B98 801DED98 00000000 */   nop
+
+.section .late_rodata
+
+glabel D_801E2D98_ovl12
+/* 007B98 801E2D98 */ .word 0x3CCCCCCD

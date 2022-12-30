@@ -58,3 +58,13 @@ glabel func_801DEF88_ovl12 # 86
 .L801DF05C:
 /* 003E5C 801DF05C 03E00008 */  jr          $ra
 /* 003E60 801DF060 00000000 */   nop
+
+.section .late_rodata
+glabel D_801E2DA0_ovl12
+/* 007BA0 801E2DA0 */ .word 0x3E567750
+
+glabel D_801E2DA4_ovl12
+/* 007BA4 801E2DA4 */ .word 0x40C25C21
+
+glabel D_801E2DA8_ovl12
+/* 007BA8 801E2DA8 */ .word 0x40C25C21

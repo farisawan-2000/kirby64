@@ -52,3 +52,7 @@ glabel func_801DFED8_ovl12 # 101
 /* 004D9C 801DFF9C E5A00000 */  swc1        $f0, 0x0($t5)
 /* 004DA0 801DFFA0 03E00008 */  jr          $ra
 /* 004DA4 801DFFA4 00000000 */   nop
+
+.section .late_rodata
+glabel D_801E2DB0_ovl12
+/* 007BB0 801E2DB0 */ .word 0x3BA3D70A

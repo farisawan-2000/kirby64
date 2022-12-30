@@ -578,7 +578,6 @@ SECTIONS
         BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.data);
 
         BUILD_DIR/src/ovl12/ovl12.o(.rodata);
-        BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.rodata);
         BUILD_DIR/data/ovl12/kirby.u.1F2DE0.o(.rodata2);
     }
     END_SEG(ovl12Data)

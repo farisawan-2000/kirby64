@@ -56,8 +56,9 @@ struct UnkStruct8004A7C4_3C_80 {
 
 
 struct UnkStruct8004A7C4_3C_10 {
-    u8 pad[0x38];
-    f32 unk38;
+    u8 pad[0x30];
+    // vec?
+    Vector unk30;
 };
 
 // SOME chunk of the beginning of the struct is a union
