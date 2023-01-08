@@ -190,10 +190,10 @@ struct vCollisionHeader {
 
 struct Node_Connectors
 {
-/*0x00*/    u16     Go_Backwards;
-/*0x02*/    u16     Current_Node;
-/*0x04*/    u16     Connected_Node; //Not sure
-/*0x06*/    u16     Go_Foward;
+/*0x00*/    u8     Go_Backwards;
+/*0x01*/    u8     Current_Node;
+/*0x02*/    u8     Connected_Node; //Not sure
+/*0x03*/    u8     Go_Foward;
 };
 // Basically if a node is connected on both ends to the same node, there is only one node connector. In this case Go_Forward is used to determine if kirby should be allowed to pass or not. On the other hand Go_Backwards only allows movement through when 0. If there are two connections than backand front connect to different nodes. In that case the first determines backwards connection while the second determines forwards. Go_Backwards now determines all movement, with the same effect as the single node.
 

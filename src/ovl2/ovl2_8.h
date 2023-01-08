@@ -25,16 +25,16 @@ struct ModelNode{
 
 struct LayoutNode {
 	struct LayoutNode *next;
-	u32 *unk4;
+	struct LayoutNode *unk4;
 	struct LayoutNode *sibling;
 	struct LayoutNode *unkC;
 	struct LayoutNode *parent; //usually same as Unk0_Node
 	struct LayoutNode *child; //is 1 when at end of models layout
 	struct ModelNode *unk18;
-	Vec3f /*0x1c*/ pos;
+	Vector /*0x1c*/ pos;
 	struct ModelNode *unk28;
 	u32 *unk2C;
-	Vec3f angle; /* 0x30 0x34 0x38 */
+	Vector angle; /* 0x30 0x34 0x38 */
 	struct ModelNode *unk3C;
 	Vector scale; /* 0x40 0x44 0x48 */
 	u32 *unk4C;

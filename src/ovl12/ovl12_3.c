@@ -31,7 +31,7 @@ void func_801E22F8_ovl12();
 void func_801E1D7C_ovl12(GObj *);
 void func_801E1D7C_ovl12(GObj *);
 void func_801E2530_ovl12();
-void func_801E28C8_ovl12(void);
+void func_801E28C8_ovl12(GObj *);
 
 
 VTABLE D_801E2D00_ovl12 = {
@@ -332,8 +332,8 @@ void func_801E26A8_ovl12(GObj *arg0) {
     func_800AFA14();
 }
 
-void func_801E28C8_ovl12(void) {
-    func_801A0D74_ovl7();
+void func_801E28C8_ovl12(GObj *arg0) {
+    func_801A0D74_ovl7(arg0);
     func_801A03B4_ovl7();
 }
 

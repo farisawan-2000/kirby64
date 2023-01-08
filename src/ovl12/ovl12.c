@@ -294,12 +294,12 @@ void func_801DC094_ovl12(void) {
     lo1 = lo_array[3];
     lo2 = lo_array[4];
     gEntitiesNextPosYArray[D_8004A7C4->objId] = gEntitiesNextPosYArray[D_800D7098.unk0] + 100.0f;
-    lo0->pos[0] = gEntitiesNextPosXArray[D_800D7098.unk1C];
-    lo0->pos[2] = gEntitiesNextPosZArray[D_800D7098.unk1C];
-    lo1->pos[0] = gEntitiesNextPosXArray[D_800D7098.unk20];
-    lo1->pos[2] = gEntitiesNextPosZArray[D_800D7098.unk20];
-    lo2->pos[0] = gEntitiesNextPosXArray[D_800D7098.unk24];
-    lo2->pos[2] = gEntitiesNextPosZArray[D_800D7098.unk24];
+    lo0->pos.x = gEntitiesNextPosXArray[D_800D7098.unk1C];
+    lo0->pos.z = gEntitiesNextPosZArray[D_800D7098.unk1C];
+    lo1->pos.x = gEntitiesNextPosXArray[D_800D7098.unk20];
+    lo1->pos.z = gEntitiesNextPosZArray[D_800D7098.unk20];
+    lo2->pos.x = gEntitiesNextPosXArray[D_800D7098.unk24];
+    lo2->pos.z = gEntitiesNextPosZArray[D_800D7098.unk24];
 }
 #else
 GLOBAL_ASM("asm/non_matchings/ovl12/0/ovl12/17.s")
@@ -883,8 +883,8 @@ void func_801DE27C_ovl12(GObj *arg0) {
     finish_current_thread(0x3C);
 
     // this pattern again
+    D_800EA6E0[D_8004A7C4->objId] =
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
-    D_800EA6E0[D_8004A7C4->objId] = D_800EA8A0[D_8004A7C4->objId];
     D_800E7880[D_8004A7C4->objId] = 4;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], ARRAYLEN(D_801E2AC0_ovl12), D_801E2AC0_ovl12);
     func_800AFA14();
@@ -1005,8 +1005,8 @@ void func_801DE9C4_ovl12(GObj *arg0) {
     }
     finish_current_thread(0x3C);
     // that pattern
+    D_800EA6E0[D_8004A7C4->objId] =
     D_800EA8A0[D_8004A7C4->objId] = 0.0f;
-    D_800EA6E0[D_8004A7C4->objId] = D_800EA8A0[D_8004A7C4->objId];
     D_800E7880[D_8004A7C4->objId] = 4;
     call_virtual_function(D_800E7880[D_8004A7C4->objId], 5, D_801E2AC0_ovl12);
     func_800AFA14();

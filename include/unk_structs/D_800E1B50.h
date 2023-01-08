@@ -53,7 +53,7 @@ struct Sub800E1B50 {
 	u32 unkC;
 	f32 unk10;
 	u32 unk14;
-	u32 unk18;
+	f32 unk18;
 	u32 unk1C;
 	u8 unk20;
 };
@@ -83,7 +83,7 @@ struct UnkStruct800E1B50 {
 	u8 pad[0x28];
     struct Sub800E1B50_Unk34 *unk34;
     u8 unk38;
-    u8 unk39;
+    s8 unk39;
     u8 unk3A;
     u8 unk3B;
 	u8 unk3C;

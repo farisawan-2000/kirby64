@@ -591,17 +591,19 @@ SECTIONS
 
     /* 0x801DB1E0 1F3160-1FDA00 [A8A0] */
     BEGIN_SEG(ovl13, 0x801DB1E0) {
-        BUILD_DIR/asm/ovl13/ovl13.o(.text);
+        BUILD_DIR/src/ovl13/ovl13.o(.text);
         BUILD_DIR/asm/ovl13/ovl13_2.o(.text);
         BUILD_DIR/asm/ovl13/ovl13_3.o(.text);
     }
     END_SEG(ovl13)
     BEGIN_SEG(ovl13Data, _ovl13SegmentEnd) {
-        BUILD_DIR/data/ovl13/ovl13_data.o(.data);
+        /*BUILD_DIR/data/ovl13/ovl13_data.o(.data);*/
+        BUILD_DIR/src/ovl13/ovl13.o(.data);
         BUILD_DIR/data/ovl13/ovl13_2_data.o(.data);
         BUILD_DIR/data/ovl13/ovl13_3_data.o(.data);
 
-        BUILD_DIR/data/ovl13/ovl13_data.o(.rodata);
+        /*BUILD_DIR/data/ovl13/ovl13_data.o(.rodata);*/
+        BUILD_DIR/src/ovl13/ovl13.o(.rodata);
         BUILD_DIR/data/ovl13/ovl13_2_data.o(.rodata);
         BUILD_DIR/data/ovl13/ovl13_3_data.o(.rodata);
     }
