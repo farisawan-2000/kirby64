@@ -15,7 +15,7 @@ n64graphics_SOURCES := n64graphics.c utils.c
 n64graphics_CFLAGS  := -DN64GRAPHICS_STANDALONE
 
 
-rgb2c_SOURCES := modern_rgb2c/rgb2c.c modern_rgb2c/readtex2.c modern_rgb2c/ci_texconv.c modern_rgb2c/lodepng.c
+rgb2c_SOURCES := modern_rgb2c/rgb2c.c modern_rgb2c/readtex2.c modern_rgb2c/ci_texconv.c modern_rgb2c/loadblock_widthpad.c modern_rgb2c/lodepng.c
 rgb2c_CFLAGS  := -Imodern_rgb2c/
 
 patch_libultra_math_SOURCES := patch_libultra_math.c

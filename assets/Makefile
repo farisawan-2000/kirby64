@@ -78,7 +78,7 @@ _BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*backgr
 BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
 $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 	$(V)mkdir -p $(@D)
-	$(V)../tools/rgb2c -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
+	$(V)../tools/rgb2c -G $(lastword $(subst ., ,$*)) -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
 	$(V)$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: %.png
