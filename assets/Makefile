@@ -1,3 +1,5 @@
+MATCHING ?= 1
+
 BUILD_DIR := ../build/us/assets
 DUMMY != mkdir -p $(BUILD_DIR)
 TARGET = $(BUILD_DIR)/assets.marker
@@ -78,7 +80,11 @@ _BG_IMGS := $(wildcard image/**/**/*background*.png) $(wildcard image/**/*backgr
 BG_OBJECTS := $(foreach file, $(_BG_IMGS), $(BUILD_DIR)/$(file:.png=.o))
 $(BG_OBJECTS): $(BUILD_DIR)/%.o: %.png
 	$(V)mkdir -p $(@D)
+ifeq ($(MATCHING), 1)
 	$(V)../tools/rgb2c -G $(lastword $(subst ., ,$*)) -B $(shell ../tools/img_getprop $<) -o RAW $< > $(@:.o=.bin)
+else
+	$(V)../tools/rgb2c -G $(lastword $(subst ., ,$*)) -B -o RAW $< > $(@:.o=.bin)
+endif
 	$(V)$(CROSS)ld -r -b binary -o $@ $(@:.o=.bin)
 
 $(BUILD_DIR)/%.o: %.png
