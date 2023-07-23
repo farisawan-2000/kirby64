@@ -22,7 +22,7 @@ patch_libultra_math_SOURCES := patch_libultra_math.c
 
 # who cares if you have armips, just use our version
 CXX_PROGRAMS := armips extract_assets img_getprop
-	
+
 
 
 default: all
@@ -50,7 +50,7 @@ img_getprop: new_asset_extractor/img_getprop.cpp new_asset_extractor/src/format.
 	c++ -I ./new_asset_extractor/ -I ./new_asset_extractor/include -Wall -Wextra -pedantic -g -ggdb3 -std=c++17 -fopenmp -o $@ _0.o _1.o $^
 
 clean:
-	$(RM) $(PROGRAMS) $(CXXPROGRAMS) level_settings/convert _0.o _1.o _2.o _3.o
+	$(RM) $(PROGRAMS) $(CXX_PROGRAMS) level_settings/convert _0.o _1.o _2.o _3.o
 
 define COMPILE
 $(1): $($1_SOURCES)
