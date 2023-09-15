@@ -362,7 +362,7 @@ GLOBAL_ASM("asm/non_matchings/ovl19/ovl19_2/func_80221DDC_ovl19.s")
 extern f32 D_8022F7A4;
 void func_80222038_ovl19(struct GObj *arg0);
 void func_80221FC8_ovl19(s32 arg0, s32 arg1, f32 arg2);
-extern struct KirbyState gKirbyState;
+extern struct Player gKirbyState;
 
 void func_80221E20_ovl19(UNUSED struct GObj *arg0) {
     f32 temp_f0;

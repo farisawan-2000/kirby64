@@ -12,7 +12,7 @@
 extern void func_800AA78C(s32, s32, f32);
 extern void play_sound(s32 a);
 
-extern struct KirbyState gKirbyState;
+extern struct Player gKirbyState;
 
 VTABLE vtbl_80196990 = {
     0x8016CA8C,    0x8016D3A8,    0x8016DA14,    0x8016DDE8,

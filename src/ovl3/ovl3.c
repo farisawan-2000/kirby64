@@ -4,7 +4,7 @@
 #include "D_8004A7C4.h"
 #include "ovl1/ovl1_6.h"
 
-extern struct KirbyState gKirbyState;
+extern struct Player gKirbyState;
 extern u32 func_80121194(void);
 extern u32 D_800D6FAC;
 extern void set_kirby_action_1(s16 a, s16 b);
@@ -155,7 +155,7 @@ extern u32 D_8012E7F4;
 u32 func_80151AF4_ovl3(void) {
     if ((D_8012E7F4 & 1) == 0) {
         if ((gKirbyController.buttonHeld & (L_JPAD | R_JPAD)) == 0) {
-            if (0.0f == D_800E64D0[D_8004A7C4->objId]) {
+            if (D_800E64D0[D_8004A7C4->objId] == 0.0f) {
                 set_kirby_action_1(0, 1);
                 return 0xC;
             }

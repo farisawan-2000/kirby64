@@ -6,7 +6,7 @@
 #include "stages.h"
 #include "buffers.h"
 #include "ovl1/ovl1_6.h"
-extern struct KirbyState gKirbyState;
+extern struct Player gKirbyState;
 
 extern f32 gKirbyHp;
 s32 change_kirby_hp(f32);

@@ -143,7 +143,7 @@ struct KirbyState_184 {
 
 // 0x8012E7C0
 // TODO: populate with actual values
-struct KirbyState {
+struct Player {
     u32 actionChange;			// 0x0
     u8 unk4;
     u8 action;					// 0x5
@@ -288,7 +288,7 @@ struct KirbyState {
     Vec3f vel;					// 0x178
 
     // ---
-    // TODO: does KirbyState actually end here???
+    // TODO: does Player actually end here???
     // ---
 
 

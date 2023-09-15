@@ -3,7 +3,7 @@
 #include "types.h"
 #include "ovl1/ovl1_6.h"
 #include "D_8004A7C4.h"
-extern struct KirbyState gKirbyState;
+extern struct Player gKirbyState;
 
 GLOBAL_ASM("asm/non_matchings/ovl3/ovl3_2/func_80156050_ovl3.s")
 

@@ -321,12 +321,12 @@ void crash_screen_start_thread(void) {
 void func_80022E04(s32 arg0);
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_8/func_80022E04.s")
 
-extern OSThread *D_80096F28;
+extern OSThread *gCrashScreenThread;
 extern u64 D_800978D8[];
 
 void crash_screen_init(void) {
-    osCreateThread(&D_80096F28, 8, func_80022E04, 0, &D_800978D8, 0x69);
-    osStartThread(&D_80096F28);
+    osCreateThread(&gCrashScreenThread, 8, func_80022E04, 0, &D_800978D8, 0x69);
+    osStartThread(&gCrashScreenThread);
 }
 
 

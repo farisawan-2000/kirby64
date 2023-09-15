@@ -234355,7 +234355,7 @@ glabel D_80096F20
 glabel D_80096F24
 .word 0x00000000
 
-glabel D_80096F28
+glabel gCrashScreenThread
 .word 0x00000000
 
 glabel D_80096F2C
