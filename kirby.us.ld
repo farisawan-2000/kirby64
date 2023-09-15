@@ -615,12 +615,14 @@ SECTIONS
 
     /* 0x801DB1E0 1FDDD0-205A90 [7CC0] */
     BEGIN_SEG(ovl14, 0x801DB1E0) {
-        BUILD_DIR/asm/ovl14/ovl14.o(.text);
+        BUILD_DIR/src/ovl14/ovl14.o(.text);
         BUILD_DIR/asm/ovl14/ovl14_2.o(.text);
     }
     END_SEG(ovl14)
     BEGIN_SEG(ovl14Data, _ovl14SegmentEnd) {
+        BUILD_DIR/src/ovl14/ovl14.o(.data);
         BUILD_DIR/asm/ovl14/ovl14_data.o(.data);
+        BUILD_DIR/asm/ovl14/ovl14_data2.o(.data);
     }
     END_SEG(ovl14Data)
     BEGIN_NOLOAD(ovl14) {
