@@ -24,7 +24,7 @@ extern s32 D_800B4D40;
 // but the operands to that instructions are in the wrong order
 #ifdef NON_MATCHING
 void func_800FD418(struct GObj *arg0) {
-    s32 temp_v0 = D_800EC2E0[D_8004A7C4->objId];
+    s32 temp_v0 = D_800EC2E0[D_8004A7C4->objId].as_s32;
     u32 tmp;
 
     // temp_v0 = D_800EC2E0[D_8004A7C4->objId];
@@ -70,7 +70,7 @@ u32 func_800FD570(s32 arg0, u32 arg1, f32 arg2, f32 arg3, f32 arg4) {
             print_error_stub(D_801288E0);
             return 0;
         }
-        D_800EC2E0[temp_v0_3] = arg1;
+        D_800EC2E0[temp_v0_3].as_u32 = arg1;
         gEntitiesNextPosXArray[temp_v0_3] = sp28.x + arg2;
         gEntitiesNextPosYArray[temp_v0_3] = sp28.y + arg3;
         gEntitiesNextPosZArray[temp_v0_3] = sp28.z + arg4;
@@ -100,7 +100,7 @@ s32 func_800FD754(s32 arg0, f32 arg1, f32 arg2, f32 arg3) {
             print_error_stub(&D_8012890C);
         }
         else {
-            D_800EC2E0[temp_v0_2] = arg0;
+            D_800EC2E0[temp_v0_2].as_s32 = arg0;
             gEntitiesNextPosXArray[temp_v0_2] = arg1;
             gEntitiesNextPosYArray[temp_v0_2] = arg2;
             gEntitiesNextPosZArray[temp_v0_2] = arg3;
@@ -129,7 +129,7 @@ u32 func_800FD874(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32 arg4, f32 arg5, f3
         if (temp_v0 == -1) {
             print_error_stub(&D_8012893C);
         } else {
-            D_800EC2E0[temp_v0] = arg0;
+            D_800EC2E0[temp_v0].as_s32 = arg0;
             gEntitiesNextPosXArray[temp_v0] = arg1;
             gEntitiesNextPosYArray[temp_v0] = arg2;
             gEntitiesNextPosZArray[temp_v0] = arg3;

@@ -110,7 +110,7 @@ void func_800AE138(s32 arg0) {
     D_800EA520[arg0] = 0;
     D_800EA360[arg0] = 0;
     D_800EA1A0[arg0] = 0;
-    D_800E9FE0[arg0] = 0;
+    D_800E9FE0[arg0].as_s32 = 0;
     D_800E9E20[arg0] = 0;
     D_800E9C60[arg0] = 0;
     D_800E9AA0[arg0] = NULL;
@@ -132,7 +132,7 @@ void func_800AE138(s32 arg0) {
     D_800EBDA0[arg0] = -1;
     D_800EBBE0[arg0] = -1;
     D_800EC4A0[arg0] = 0;
-    D_800EC2E0[arg0] = 0;
+    D_800EC2E0[arg0].as_s32 = 0;
     D_800EC820[arg0] = 0.0f;
     D_800EC660[arg0] = 0.0f;
     D_800E6150[arg0] = -1;

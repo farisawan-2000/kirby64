@@ -117,7 +117,7 @@ GLOBAL_ASM("asm/non_matchings/ovl9/ovl9_13/func_80219E0C_ovl9.s")
 void func_80219F70_ovl9(s32 this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
     
-    D_800E9FE0[D_8004A7C4->objId] = 0;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 0;
     D_800DF150[D_8004A7C4->objId] = func_8021A118_ovl9;
     tmp->unk98 = &D_801CB4DC;
     D_800E8920[D_8004A7C4->objId] = 0;
@@ -136,7 +136,7 @@ void func_80219F70_ovl9(s32 this) {
     }
     func_80219E0C_ovl9(D_800E9E20[D_8004A7C4->objId], D_800E8AE0[D_8004A7C4->objId] & 1);
     finish_current_thread(2);
-    D_800E9FE0[D_8004A7C4->objId] = 1;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 1;
     finish_current_thread(0x3C);
     func_801ACF84_ovl7(this);
 }
@@ -146,7 +146,7 @@ void func_8021A118_ovl9(struct GObj *this) {
     if (D_800E8AE0[D_8004A7C4->objId] & 0x10) {
         func_80219E0C_ovl9(D_800E9E20[D_8004A7C4->objId], D_800E8AE0[D_8004A7C4->objId] & 1);
     }
-    if (D_800E9FE0[D_8004A7C4->objId] != 0) {
+    if (D_800E9FE0[D_8004A7C4->objId].as_s32 != 0) {
         func_801A03B4_ovl9();
     }
 }

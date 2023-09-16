@@ -24,7 +24,7 @@ void func_80209030_ovl9(struct GObj *this) {
 
     D_800E98E0[D_8004A7C4->objId] = 0x5A;
     D_800E9C60[D_8004A7C4->objId] = D_800E0D50[D_8004A7C4->objId];
-    D_800E9FE0[D_8004A7C4->objId] = 0;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 0;
     D_800EA520[D_8004A7C4->objId] = 0;
     D_800E0D50[D_8004A7C4->objId] = -1;
     D_800DF150[D_8004A7C4->objId] = func_802091B4_ovl9;
@@ -41,7 +41,7 @@ void func_80209030_ovl9(struct GObj *this) {
 void func_802091B4_ovl9(struct GObj *this) {
     struct UnkStruct800E1B50 *tmp = D_800E1B50[D_8004A7C4->objId];
 
-    if (D_800E9FE0[D_8004A7C4->objId] != 0) {
+    if (D_800E9FE0[D_8004A7C4->objId].as_s32 != 0) {
         tmp->unk40 = 1;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801A3E80);
         return;
@@ -52,16 +52,16 @@ void func_802091B4_ovl9(struct GObj *this) {
         D_800E98E0[D_8004A7C4->objId]--;
     }
     if (func_801A0D74_ovl9(this) != 0) {
-        if (D_800E9FE0[D_8004A7C4->objId] == 0) {
+        if (D_800E9FE0[D_8004A7C4->objId].as_s32 == 0) {
             if (D_800DE350[D_800E9C60[D_8004A7C4->objId]] != 0) {
-                D_800E9FE0[D_800E9C60[D_8004A7C4->objId]] = 1;
+                D_800E9FE0[D_800E9C60[D_8004A7C4->objId]].as_s32 = 1;
             }
         }
     }
     if (func_801A03B4_ovl9() != 0) {
-        if (D_800E9FE0[D_8004A7C4->objId] == 0) {
+        if (D_800E9FE0[D_8004A7C4->objId].as_s32 == 0) {
             if (D_800DE350[D_800E9C60[D_8004A7C4->objId]] != 0) {
-                D_800E9FE0[D_800E9C60[D_8004A7C4->objId]] = 1;
+                D_800E9FE0[D_800E9C60[D_8004A7C4->objId]].as_s32 = 1;
             }
         }
     }
@@ -69,7 +69,7 @@ void func_802091B4_ovl9(struct GObj *this) {
 
 void func_8020933C_ovl9(struct GObj *this) {
     if (D_800DE350[D_800E9C60[D_8004A7C4->objId]] != 0) {
-        D_800E9FE0[D_800E9C60[D_8004A7C4->objId]] = 1;
+        D_800E9FE0[D_800E9C60[D_8004A7C4->objId]].as_s32 = 1;
     }
 }
 

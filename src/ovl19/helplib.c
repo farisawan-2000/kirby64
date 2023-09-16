@@ -252,13 +252,13 @@ void func_8021EB6C_ovl19(struct GObj *arg0) {
     func_800A9864(0x20062, 0x1869F, 0x10);
     func_800AA154(0x20324);
     temp_v0_2 = D_8004A7C4;
-    D_800E9FE0[D_800EBBE0[D_8004A7C4->objId]] = 0;
+    D_800E9FE0[D_800EBBE0[D_8004A7C4->objId]].as_s32 = 0;
     func_800B1900((u16) D_8004A7C4->objId);
 }
 
 void func_8021EC64_ovl19(struct GObj *arg0) {
     if (D_800E8060[0] == -1) {
-        D_800E9FE0[D_800EBBE0[D_8004A7C4->objId]] = 0;
+        D_800E9FE0[D_800EBBE0[D_8004A7C4->objId]].as_s32 = 0;
         func_800B1900((u16) D_8004A7C4->objId);
     }
 }

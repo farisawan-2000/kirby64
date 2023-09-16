@@ -229,7 +229,7 @@ void func_801AC364_ovl7(s32 arg0) {
         gEntitiesNextPosYArray[idx] = gEntitiesNextPosYArray[D_8004A7C4->objId];
         gEntitiesNextPosZArray[idx] = gEntitiesNextPosZArray[D_8004A7C4->objId];
         D_800EA6E0[idx] = D_800E17D0[D_8004A7C4->objId];
-        D_800EC2E0[idx] = 0;
+        D_800EC2E0[idx].as_s32 = 0;
         D_800E0D50[idx] = -1;
     }
     play_sound(0xE);

@@ -95,7 +95,7 @@ void func_801E1A60_ovl12(GObj *arg0) {
         }
         gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
         assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801E1590_ovl12);
-    } else if (D_800E9FE0[D_800E0D50[D_8004A7C4->objId]] != 0) {
+    } else if (D_800E9FE0[D_800E0D50[D_8004A7C4->objId]].as_s32 != 0) {
         if ((D_800D7098.unk18 <= 0) && (D_801E2E20_ovl12.unk0 != 0)) {
             func_800A7870(&D_801E2E20_ovl12.unk0, &D_801E2E20_ovl12.unk4);
         }
@@ -135,7 +135,7 @@ GLOBAL_ASM("asm/non_matchings/ovl12/1/ovl12_3/132.s")
 
 void func_801E1CD4_ovl12(GObj *arg0) {
     if (D_800D7098.unk8 == 1) {
-        if ((D_800E9FE0[D_800E0D50[D_8004A7C4->objId]] == 0)) {
+        if ((D_800E9FE0[D_800E0D50[D_8004A7C4->objId]].as_s32 == 0)) {
             if (D_800E7B20[D_800E0D50[D_8004A7C4->objId]] != 0.0f) {
                 gEntityVtableIndexArray[D_8004A7C4->objId] = 1;
                 assign_new_process_entry(gEntityGObjProcessArray[D_8004A7C4->objId], func_801E1590_ovl12);

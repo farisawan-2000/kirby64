@@ -409,7 +409,7 @@ void func_801E4754_ovl16(s32 arg0) {
     D_800EA6E0[D_8004A7C4->objId] = 0.0f;
     D_800E98E0[D_8004A7C4->objId] = 0;
     D_800E9E20[D_8004A7C4->objId] = 1;
-    D_800E9FE0[D_8004A7C4->objId] = 0;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 0;
     D_800E3AD0[D_8004A7C4->objId] = 4.0f;
     for (phi_s0 = 0; phi_s0 < 60; phi_s0++) {
         if (gEntitiesNextPosXArray[0] < gEntitiesNextPosXArray[D_8004A7C4->objId]) {
@@ -468,7 +468,7 @@ void func_801E4754_ovl16(s32 arg0) {
     func_800FB914(temp_f12);//, 2, D_800E3C90);
     func_800AA018(0x104C6);
     finish_current_thread(0x1E);
-    D_800E9FE0[D_8004A7C4->objId] = 1;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 1;
     play_sound(0x1B4);
     // ternary?
     if (gEntitiesNextPosXArray[D_8004A7C4->objId] < 0.0f) {
@@ -559,7 +559,7 @@ void func_801E4754_ovl16(s32 arg0) {
     D_800E3050[D_8004A7C4->objId] = D_800E3590[D_8004A7C4->objId];
     D_800E3AD0[D_8004A7C4->objId] = D_801EFFAC_ovl16;
     D_800EA6E0[D_8004A7C4->objId] = 0.0f;
-    D_800E9FE0[D_8004A7C4->objId] = 0;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 0;
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0x17;
 }
 #else

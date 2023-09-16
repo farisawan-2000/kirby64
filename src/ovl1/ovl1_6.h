@@ -5,6 +5,9 @@
 #include "ovl19/ovl19_5.h"
 
 
+#define MultiType union {u32 as_u32; u32 *as_u32p; s32 as_s32; s32 *as_s32p; void *asPtr;}
+#define _MultiType(CustomType) union {u32 as_u32; s32 as_s32; void *asPtr; CustomType *asType;}
+
 extern s32 D_800DD710[];
 extern s32 D_800DE190[];
 extern s32 D_800DDFD0[];
@@ -96,9 +99,14 @@ extern u32 D_800E7CE0[];
 extern s32 D_800EA520[];
 extern s32 D_800EA360[];
 extern s32 D_800EA1A0[];
-extern s32 D_800E9FE0[];
+
+// this is a union or void*
+extern MultiType D_800E9FE0[];
+
 extern s32 D_800E9E20[];
 extern s32 D_800E9C60[];
+
+// this is also a union or void*
 extern struct EntityThing800E9AA0 *D_800E9AA0[];
 extern s32 D_800E98E0[];
 extern f32 D_800EB320[];
@@ -118,7 +126,10 @@ extern s32 D_800EBF60[];
 extern s32 D_800EBDA0[];
 extern s32 D_800EBBE0[];
 extern s32 D_800EC4A0[];
-extern s32 D_800EC2E0[];
+
+// this is also a union or void*
+extern MultiType D_800EC2E0[];
+
 extern f32 D_800EC820[];
 extern f32 D_800EC660[];
 extern s32 D_800E6150[];

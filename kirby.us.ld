@@ -621,8 +621,10 @@ SECTIONS
     END_SEG(ovl14)
     BEGIN_SEG(ovl14Data, _ovl14SegmentEnd) {
         BUILD_DIR/src/ovl14/ovl14.o(.data);
-        BUILD_DIR/asm/ovl14/ovl14_data.o(.data);
+        /*BUILD_DIR/asm/ovl14/ovl14_data.o(.data);*/
         BUILD_DIR/asm/ovl14/ovl14_data2.o(.data);
+        BUILD_DIR/src/ovl14/ovl14.o(.rodata);
+        BUILD_DIR/asm/ovl14/ovl14_rodata.o(.rodata);
     }
     END_SEG(ovl14Data)
     BEGIN_NOLOAD(ovl14) {

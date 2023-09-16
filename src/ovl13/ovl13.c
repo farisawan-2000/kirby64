@@ -1107,7 +1107,7 @@ void func_801DE148_ovl13(GObj *arg0) {
     while (D_800E8920[D_8004A7C4->objId] == 0) {
         finish_current_thread(1);
     }
-    D_800E9FE0[D_8004A7C4->objId] = 1;
+    D_800E9FE0[D_8004A7C4->objId].as_s32 = 1;
     func_800A9F98(0x1041A, 4.0f);
     D_800DF310[D_8004A7C4->objId] = func_801DF588_ovl13;
     func_800B33F4();
@@ -1116,7 +1116,7 @@ void func_801DE148_ovl13(GObj *arg0) {
     func_800BB468(0, 0);
     func_801ACC34_ovl7(0x1C, 0);
     func_801ACC34_ovl7(0x1C, 1);
-    while (D_800E9FE0[D_8004A7C4->objId] != 0) {
+    while (D_800E9FE0[D_8004A7C4->objId].as_s32 != 0) {
         finish_current_thread(1);
     }
     D_800E8920[D_8004A7C4->objId] = 0;
@@ -1267,7 +1267,7 @@ GLOBAL_ASM("asm/non_matchings/ovl13/0/ovl13/26.s")
 
 void func_801DF588_ovl13(s32 arg0, s32 arg1, f32 arg2) {
     if ((arg1 == 0) && ((s32)arg2 == 1)) {
-        D_800E9FE0[D_8004A7C4->objId] = 0;
+        D_800E9FE0[D_8004A7C4->objId].as_s32 = 0;
     }
 }
 
