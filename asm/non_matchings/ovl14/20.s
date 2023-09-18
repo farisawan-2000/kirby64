@@ -1,3 +1,12 @@
+.late_rodata
+ glabel jtbl_801E308C
+ /* 205C7C 801E308C */ .word L801DC738_ovl14
+ /* 205C80 801E3090 */ .word L801DC760_ovl14
+ /* 205C84 801E3094 */ .word L801DC788_ovl14
+ /* 205C88 801E3098 */ .word L801DC7AC_ovl14
+ /* 205C8C 801E309C */ .word L801DC7D4_ovl14
+
+.text
 glabel func_801DC674_ovl14 # 20
 /* 1FF264 801DC674 27BDFFE0 */  addiu       $sp, $sp, -0x20
 /* 1FF268 801DC678 AFBF0014 */  sw          $ra, 0x14($sp)

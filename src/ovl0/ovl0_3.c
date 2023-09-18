@@ -137,6 +137,22 @@ void func_8000C0AC(struct unk8000BEF4Func *arg0) {
 
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000C10C.s")
 
+extern f32 D_800406A4;
+
+// void func_8000C144(void *arg0, s32 arg1, f32 arg2) {
+//     void *var_v0;
+
+//     var_v0 = arg0->unk90;
+//     if (var_v0 != NULL) {
+//         do {
+//             var_v0->unk5 = 0;
+//             var_v0 = var_v0->unk0;
+//         } while (var_v0 != NULL);
+//     }
+//     arg0->unk94 = arg1;
+//     arg0->unkA0 = arg2;
+//     arg0->unk98 = D_800406A4;
+// }
 GLOBAL_ASM("asm/non_matchings/ovl0/ovl0_3/func_8000C144.s")
 
 extern f32 D_800406A8;

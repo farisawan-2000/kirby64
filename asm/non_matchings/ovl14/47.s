@@ -1,3 +1,4 @@
+.text
 glabel func_801DEDE8_ovl14 # 47
 /* 2019D8 801DEDE8 27BDFFC0 */  addiu       $sp, $sp, -0x40
 /* 2019DC 801DEDEC AFBF001C */  sw          $ra, 0x1C($sp)

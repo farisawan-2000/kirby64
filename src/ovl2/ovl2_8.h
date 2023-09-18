@@ -55,6 +55,8 @@ struct LayoutNode {
     u32 unk74;
     u32 unk78;
     u32 unk7C;
+    // TODO: analyze/fill out struct
+    void *unk80;
 };
 
 struct struct8011BA10_temp {
