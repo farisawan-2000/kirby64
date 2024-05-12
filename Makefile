@@ -53,11 +53,13 @@ PYTHON := python3
 
 TEXTURES_DIR := textures
 
+# UNNAMED_SYMS := -T unnamed_syms.txt
+
 INCLUDE_FLAGS := -I$(BUILD_DIR)
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
-					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt -T unnamed_syms.txt -T undefined_syms.txt -T rcp_syms.txt \
+					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt $(UNNAMED_SYMS) -T undefined_syms.txt -T rcp_syms.txt \
 					-Map $(BUILD_DIR)/$(TARGET).map
 PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF

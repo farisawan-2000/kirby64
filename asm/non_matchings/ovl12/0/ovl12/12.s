@@ -106,7 +106,9 @@ glabel func_801DBA88_ovl12 # 12
 /* 000A20 801DBC20 8FB20020 */  lw          $s2, 0x20($sp)
 /* 000A24 801DBC24 03E00008 */  jr          $ra
 /* 000A28 801DBC28 27BD0028 */   addiu      $sp, $sp, 0x28
+.type func_801DBA88_ovl12, @function
 
 .section .rodata
 glabel D_801E2D28_ovl12
 /* 007B28 801E2D28 */ .word 0x477FFF00
+.type func_801DBA88_ovl12, @function

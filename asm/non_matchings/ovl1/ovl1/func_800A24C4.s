@@ -40,3 +40,4 @@ glabel func_800A24C4
 .L800A2548_ovl1:
 /* 04A798 800A2548 03E00008 */  jr    $ra
 /* 04A79C 800A254C 00000000 */   nop   
+.type func_800A24C4, @function

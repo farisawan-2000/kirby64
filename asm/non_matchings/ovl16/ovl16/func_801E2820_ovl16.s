@@ -84,3 +84,4 @@ glabel func_801E2820_ovl16
 /* 218C04 801E2954 27BD0018 */  addiu $sp, $sp, 0x18
 /* 218C08 801E2958 03E00008 */  jr    $ra
 /* 218C0C 801E295C 00000000 */   nop   
+.type func_801E2820_ovl16, @function

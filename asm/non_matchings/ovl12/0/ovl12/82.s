@@ -109,3 +109,4 @@ glabel func_801DEB1C_ovl12 # 82
 /* 003AC8 801DECC8 27BD0038 */  addiu       $sp, $sp, 0x38
 /* 003ACC 801DECCC 03E00008 */  jr          $ra
 /* 003AD0 801DECD0 00000000 */   nop
+.type func_801DEB1C_ovl12, @function

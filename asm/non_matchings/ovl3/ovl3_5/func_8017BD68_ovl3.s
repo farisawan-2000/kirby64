@@ -101,3 +101,4 @@ glabel func_8017BD68_ovl3
 /* 0DC928 8017BEE8 8FB30020 */  lw    $s3, 0x20($sp)
 /* 0DC92C 8017BEEC 03E00008 */  jr    $ra
 /* 0DC930 8017BEF0 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_8017BD68_ovl3, @function

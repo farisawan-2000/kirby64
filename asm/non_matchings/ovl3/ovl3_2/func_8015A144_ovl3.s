@@ -119,3 +119,4 @@ glabel func_8015A144_ovl3
 /* 0BAD50 8015A310 8FB10018 */  lw    $s1, 0x18($sp)
 /* 0BAD54 8015A314 03E00008 */  jr    $ra
 /* 0BAD58 8015A318 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_8015A144_ovl3, @function

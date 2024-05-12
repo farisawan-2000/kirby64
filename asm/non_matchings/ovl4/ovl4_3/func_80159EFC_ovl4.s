@@ -48,7 +48,9 @@ glabel func_80159EFC_ovl4
 /* 1014E0 80159FB0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1014E4 80159FB4 03E00008 */  jr    $ra
 /* 1014E8 80159FB8 00000000 */   nop   
+.type func_80159EFC_ovl4, @function
 
 /* 1014EC 80159FBC 00000000 */  nop   
 # Unknown region 1014F0-103BB0 [26C0]
 # .incbin "bin/kirby.u.1014F0.bin"
+.type func_80159EFC_ovl4, @function

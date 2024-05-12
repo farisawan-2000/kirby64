@@ -201,3 +201,4 @@ glabel func_8010D138
 /* 095E90 8010D420 27BD0070 */  addiu $sp, $sp, 0x70
 /* 095E94 8010D424 03E00008 */  jr    $ra
 /* 095E98 8010D428 00000000 */   nop   
+.type func_8010D138, @function

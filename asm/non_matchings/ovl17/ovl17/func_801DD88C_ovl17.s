@@ -24,6 +24,7 @@ glabel func_801DD88C_ovl17
 /* 228AD0 801DD8E0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 228AD4 801DD8E4 03E00008 */  jr    $ra
 /* 228AD8 801DD8E8 00000000 */   nop   
+.type func_801DD88C_ovl17, @function
 
 /* 228ADC 801DD8EC 00000000 */  nop   
 /* 228AE0 801DD8F0 00000000 */  nop   
@@ -38,5 +39,7 @@ glabel func_801DD88C_ovl17
 /* 228B04 801DD914 00000000 */  nop   
 /* 228B08 801DD918 00000000 */  nop   
 /* 228B0C 801DD91C 00000000 */  nop   
+.type func_801DD88C_ovl17, @function
 
+.type func_801DD88C_ovl17, @function
 

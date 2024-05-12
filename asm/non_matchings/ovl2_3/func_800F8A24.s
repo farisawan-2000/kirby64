@@ -40,6 +40,7 @@ glabel func_800F8A24
 /* 081528 800F8AB8 46020180 */  add.s $f6, $f0, $f2
 /* 08152C 800F8ABC 03E00008 */  jr    $ra
 /* 081530 800F8AC0 E4860000 */   swc1  $f6, ($a0)
+.type func_800F8A24, @function
 
 .L800F8AC4_ovl2:
 /* 081534 800F8AC4 44811000 */  mtc1  $at, $f2
@@ -66,3 +67,4 @@ glabel func_800F8A24
 .L800F8B14_ovl2:
 /* 081584 800F8B14 03E00008 */  jr    $ra
 /* 081588 800F8B18 00000000 */   nop   
+.type func_800F8A24, @function

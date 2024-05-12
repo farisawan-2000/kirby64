@@ -48,3 +48,4 @@ glabel func_801DFA7C_ovl12 # 96
 /* 004928 801DFB28 27BD0020 */  addiu       $sp, $sp, 0x20
 /* 00492C 801DFB2C 03E00008 */  jr          $ra
 /* 004930 801DFB30 00000000 */   nop
+.type func_801DFA7C_ovl12, @function

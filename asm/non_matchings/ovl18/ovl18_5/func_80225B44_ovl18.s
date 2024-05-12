@@ -59,5 +59,7 @@ glabel L80225BD0_ovl18
 /* 238590 80225BF0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 238594 80225BF4 03E00008 */  jr    $ra
 /* 238598 80225BF8 00000000 */   nop   
+.type func_80225B44_ovl18, @function
 
 /* 23859C 80225BFC 00000000 */  nop   
+.type func_80225B44_ovl18, @function

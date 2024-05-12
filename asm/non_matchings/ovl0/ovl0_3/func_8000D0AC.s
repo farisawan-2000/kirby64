@@ -185,3 +185,4 @@ glabel func_8000D0AC
 /* 00DF50 8000D350 8FB00048 */  lw    $s0, 0x48($sp)
 /* 00DF54 8000D354 03E00008 */  jr    $ra
 /* 00DF58 8000D358 27BD0058 */   addiu $sp, $sp, 0x58
+.type func_8000D0AC, @function

@@ -18,4 +18,5 @@ glabel func_801DF588_ovl13 # 27
 glabel L801DF5C8_ovl13
 /* 1F7548 801DF5C8 03E00008 */  jr          $ra
 /* 1F754C 801DF5CC 00000000 */   nop
+.type func_801DF588_ovl13, @function
 

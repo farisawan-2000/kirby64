@@ -161,3 +161,4 @@ glabel func_8015170C
 /* 135D10 80151980 27BD0018 */  addiu $sp, $sp, 0x18
 /* 135D14 80151984 03E00008 */  jr    $ra
 /* 135D18 80151988 00000000 */   nop   
+.type func_8015170C, @function

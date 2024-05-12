@@ -22,3 +22,4 @@ glabel func_801DDE54_ovl16
 /* 214154 801DDEA4 00290821 */  addu  $at, $at, $t1
 /* 214158 801DDEA8 03E00008 */  jr    $ra
 /* 21415C 801DDEAC E4262950 */ swc1 $f6, %lo(gEntitiesNextPosZArray)($at)
+.type func_801DDE54_ovl16, @function

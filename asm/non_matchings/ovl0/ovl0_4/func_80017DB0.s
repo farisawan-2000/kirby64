@@ -56,3 +56,4 @@ glabel func_80017DB0
 .L80017E7C_ovl0:
 /* 018A7C 80017E7C 03E00008 */  jr    $ra
 /* 018A80 80017E80 00000000 */   nop   
+.type func_80017DB0, @function

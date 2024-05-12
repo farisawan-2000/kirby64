@@ -20,3 +20,4 @@ glabel func_8001CD4C
 /* 01D994 8001CD94 27BD0060 */  addiu $sp, $sp, 0x60
 /* 01D998 8001CD98 03E00008 */  jr    $ra
 /* 01D99C 8001CD9C 00000000 */   nop   
+.type func_8001CD4C, @function

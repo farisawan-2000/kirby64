@@ -40,6 +40,7 @@ glabel func_80121828
 /* 0AA330 801218C0 00EA5821 */  addu  $t3, $a3, $t2
 /* 0AA334 801218C4 03E00008 */  jr    $ra
 /* 0AA338 801218C8 E5700000 */   swc1  $f16, ($t3)
+.type func_80121828, @function
 
 .L801218CC_ovl2:
 /* 0AA33C 801218CC 3C0C800F */ lui $t4, %hi(D_800E8AE0)
@@ -110,3 +111,4 @@ glabel func_80121828
 .L801219C0_ovl2:
 /* 0AA430 801219C0 03E00008 */  jr    $ra
 /* 0AA434 801219C4 00000000 */   nop   
+.type func_80121828, @function

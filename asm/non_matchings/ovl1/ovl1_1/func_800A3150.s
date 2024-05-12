@@ -55,3 +55,4 @@ glabel func_800A3150
 /* 04B46C 800A321C 27BD0020 */  addiu $sp, $sp, 0x20
 /* 04B470 800A3220 03E00008 */  jr    $ra
 /* 04B474 800A3224 AC286B88 */ sw $t0, %lo(D_800D6B88)($at)
+.type func_800A3150, @function

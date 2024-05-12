@@ -59,3 +59,4 @@ glabel func_801E69A8_ovl16
 /* 21CD28 801E6A78 27BD0018 */  addiu $sp, $sp, 0x18
 /* 21CD2C 801E6A7C 03E00008 */  jr    $ra
 /* 21CD30 801E6A80 00000000 */   nop   
+.type func_801E69A8_ovl16, @function

@@ -67,3 +67,4 @@ glabel func_80153F2C
 /* 1383C0 80154030 27BD0038 */  addiu $sp, $sp, 0x38
 /* 1383C4 80154034 03E00008 */  jr    $ra
 /* 1383C8 80154038 AC2DA7C4 */   sw    $t5, -0x583c($at)
+.type func_80153F2C, @function

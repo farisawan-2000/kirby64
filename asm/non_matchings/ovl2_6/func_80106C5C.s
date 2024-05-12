@@ -270,3 +270,4 @@ glabel func_80106C5C
 /* 08FAD8 80107068 8FB10028 */  lw    $s1, 0x28($sp)
 /* 08FADC 8010706C 03E00008 */  jr    $ra
 /* 08FAE0 80107070 27BD0090 */   addiu $sp, $sp, 0x90
+.type func_80106C5C, @function

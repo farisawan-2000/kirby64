@@ -114,3 +114,4 @@ glabel func_800A2E98
 /* 04B29C 800A304C AC206E74 */  sw    $zero, %lo(D_800D6E74)($at)
 /* 04B2A0 800A3050 03E00008 */  jr    $ra
 /* 04B2A4 800A3054 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800A2E98, @function

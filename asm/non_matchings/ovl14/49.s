@@ -165,3 +165,4 @@ glabel func_801DF290_ovl14 # 49
 /* 2020F8 801DF508 27BD0040 */  addiu       $sp, $sp, 0x40
 /* 2020FC 801DF50C 03E00008 */  jr          $ra
 /* 202100 801DF510 00000000 */   nop
+.type func_801DF290_ovl14, @function

@@ -21,17 +21,17 @@ for fn in flist:
             inFunc = True
             func = l[:-1].split()[1]
             flout.append(l)
-            flout.append(f".ent {func}\n")
+            # flout.append(f".ent {func}\n")
         elif inFunc:
             if l == "\n":
-                flout.append(f".end {func}\n")
-                flout.append(f".type {func}, @function\n")
+                # flout.append(f".end {func}\n")
+                flout.append(f"\n.type {func}, @function\n")
                 flout.append(f".size {func}, . - {func}\n")
                 flout.append(l)
             elif i == len(fl) - 1:
                 flout.append(l)
-                flout.append(f".end {func}\n")
-                flout.append(f".type {func}, @function\n")
+                # flout.append(f".end {func}\n")
+                flout.append(f"\n.type {func}, @function\n")
                 flout.append(f".size {func}, . - {func}\n")
             else:
                 flout.append(l)

@@ -102,3 +102,4 @@ glabel func_80220814_ovl19
 /* 2410A4 80220994 8FB40028 */  lw    $s4, 0x28($sp)
 /* 2410A8 80220998 03E00008 */  jr    $ra
 /* 2410AC 8022099C 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_80220814_ovl19, @function

@@ -8,3 +8,4 @@ glabel func_80111550
 /* 099FD8 80111568 3C018012 */  lui   $at, 0x8012
 /* 099FDC 8011156C 03E00008 */  jr    $ra
 /* 099FE0 80111570 AC2049A0 */   sw    $zero, 0x49a0($at)
+.type func_80111550, @function

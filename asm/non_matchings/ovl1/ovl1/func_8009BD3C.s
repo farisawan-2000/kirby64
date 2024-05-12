@@ -50,3 +50,4 @@ glabel func_8009BD3C
 /* 044048 8009BDF8 00801025 */  move  $v0, $a0
 /* 04404C 8009BDFC 03E00008 */  jr    $ra
 /* 044050 8009BE00 00000000 */   nop   
+.type func_8009BD3C, @function

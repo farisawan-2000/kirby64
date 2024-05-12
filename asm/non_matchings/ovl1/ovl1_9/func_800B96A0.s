@@ -283,6 +283,7 @@ glabel func_800B96A0
 /* 061D00 800B9AB0 24A50004 */   addiu $a1, $a1, 4
 /* 061D04 800B9AB4 03E00008 */  jr    $ra
 /* 061D08 800B9AB8 00000000 */   nop   
+.type func_800B96A0, @function
 
 .L800B9ABC_ovl1:
 /* 061D0C 800B9ABC 918D6C13 */  lbu   $t5, 0x6c13($t4)
@@ -387,3 +388,4 @@ glabel func_800B96A0
 /* 061E94 800B9C44 24A50004 */   addiu $a1, $a1, 4
 /* 061E98 800B9C48 03E00008 */  jr    $ra
 /* 061E9C 800B9C4C 00000000 */   nop   
+.type func_800B96A0, @function

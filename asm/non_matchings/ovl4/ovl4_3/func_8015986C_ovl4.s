@@ -22,3 +22,4 @@ glabel func_8015986C_ovl4
 /* 100DE8 801598B8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 100DEC 801598BC 03E00008 */  jr    $ra
 /* 100DF0 801598C0 00000000 */   nop   
+.type func_8015986C_ovl4, @function

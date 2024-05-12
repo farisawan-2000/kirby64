@@ -35,3 +35,4 @@ glabel func_80020998
 /* 021614 80020A14 AC206490 */ sw $zero, %lo(D_80096490)($at)
 /* 021618 80020A18 03E00008 */  jr    $ra
 /* 02161C 80020A1C 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_80020998, @function

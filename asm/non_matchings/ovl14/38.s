@@ -155,3 +155,4 @@ glabel func_801DE218_ovl14 # 38
 /* 201068 801DE478 27BD0028 */  addiu       $sp, $sp, 0x28
 /* 20106C 801DE47C 03E00008 */  jr          $ra
 /* 201070 801DE480 00000000 */   nop
+.type func_801DE218_ovl14, @function

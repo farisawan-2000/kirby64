@@ -11,10 +11,12 @@ glabel func_800F9F10
 /* 0829A4 800F9F34 46006301 */  sub.s $f12, $f12, $f0
 /* 0829A8 800F9F38 03E00008 */  jr    $ra
 /* 0829AC 800F9F3C 46006006 */   mov.s $f0, $f12
+.type func_800F9F10, @function
 
 .L800F9F40_ovl2:
 /* 0829B0 800F9F40 03E00008 */  jr    $ra
 /* 0829B4 800F9F44 00000000 */   nop   
+.type func_800F9F10, @function
 
 /* 0829B8 800F9F48 44801000 */  mtc1  $zero, $f2
 .L800F9F4C_ovl2:
@@ -28,8 +30,10 @@ glabel func_800F9F10
 /* 0829D8 800F9F68 46006300 */  add.s $f12, $f12, $f0
 /* 0829DC 800F9F6C 03E00008 */  jr    $ra
 /* 0829E0 800F9F70 46006006 */   mov.s $f0, $f12
+.type func_800F9F10, @function
 
 /* 0829E4 800F9F74 46001306 */  mov.s $f12, $f2
 .L800F9F78_ovl2:
 /* 0829E8 800F9F78 03E00008 */  jr    $ra
 /* 0829EC 800F9F7C 46006006 */   mov.s $f0, $f12
+.type func_800F9F10, @function

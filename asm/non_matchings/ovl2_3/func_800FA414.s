@@ -9,3 +9,4 @@ glabel func_800FA414
 .L800FA430_ovl2:
 /* 082EA0 800FA430 03E00008 */  jr    $ra
 /* 082EA4 800FA434 00000000 */   nop   
+.type func_800FA414, @function

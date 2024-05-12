@@ -8,7 +8,9 @@ glabel func_801531FC
 /* 1375A4 80153214 00000000 */   nop   
 /* 1375A8 80153218 03E00008 */  jr    $ra
 /* 1375AC 8015321C 00001025 */   move  $v0, $zero
+.type func_801531FC, @function
 
 .L80153220_ovl6:
 /* 1375B0 80153220 03E00008 */  jr    $ra
 /* 1375B4 80153224 00000000 */   nop   
+.type func_801531FC, @function

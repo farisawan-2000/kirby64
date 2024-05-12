@@ -213,3 +213,4 @@ glabel func_801DF314_ovl16
 .L801DF624_ovl16:
 /* 2158D4 801DF624 03E00008 */  jr    $ra
 /* 2158D8 801DF628 00000000 */   nop   
+.type func_801DF314_ovl16, @function

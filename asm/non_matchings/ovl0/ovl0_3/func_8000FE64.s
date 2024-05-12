@@ -629,3 +629,4 @@ glabel func_8000FE64
 /* 011340 80010740 8FBE0050 */  lw    $fp, 0x50($sp)
 /* 011344 80010744 03E00008 */  jr    $ra
 /* 011348 80010748 27BD00A8 */   addiu $sp, $sp, 0xa8
+.type func_8000FE64, @function

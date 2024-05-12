@@ -236,3 +236,4 @@ glabel func_801DDE60_ovl14 # 36
 /* 200DF4 801DE204 AC28DC50 */  sw          $t0, %lo(gEntityVtableIndexArray)($at)
 /* 200DF8 801DE208 03E00008 */  jr          $ra
 /* 200DFC 801DE20C 27BD0050 */   addiu      $sp, $sp, 0x50
+.type func_801DDE60_ovl14, @function

@@ -41,6 +41,7 @@ glabel func_800B3520
 /* 05B80C 800B35BC 00230821 */  addu  $at, $at, $v1
 /* 05B810 800B35C0 03E00008 */  jr    $ra
 /* 05B814 800B35C4 E4283C90 */ swc1 $f8, %lo(D_800E3C90)($at)
+.type func_800B3520, @function
 
 /* 05B818 800B35C8 00000000 */  nop   
 /* 05B81C 800B35CC 00000000 */  nop   
@@ -52,3 +53,4 @@ glabel func_800B3520
 /* 05B834 800B35E4 00000000 */  nop   
 /* 05B838 800B35E8 00000000 */  nop   
 /* 05B83C 800B35EC 00000000 */  nop   
+.type func_800B3520, @function

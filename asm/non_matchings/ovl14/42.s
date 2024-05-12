@@ -53,3 +53,4 @@ glabel func_801DE608_ovl14 # 42
 /* 2012AC 801DE6BC 8FB30028 */  lw          $s3, 0x28($sp)
 /* 2012B0 801DE6C0 03E00008 */  jr          $ra
 /* 2012B4 801DE6C4 27BD0030 */   addiu      $sp, $sp, 0x30
+.type func_801DE608_ovl14, @function

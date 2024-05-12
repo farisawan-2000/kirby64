@@ -569,3 +569,4 @@ glabel func_80000F78
 /* 002368 80001768 AC2F8C48 */  sw    $t7, %lo(D_80048C48)($at)
 /* 00236C 8000176C 03E00008 */  jr    $ra
 /* 002370 80001770 27BD0038 */   addiu $sp, $sp, 0x38
+.type func_80000F78, @function

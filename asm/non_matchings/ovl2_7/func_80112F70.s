@@ -45,3 +45,4 @@ glabel func_80112F70
 /* 09BA8C 8011301C 46089180 */  add.s $f6, $f18, $f8
 /* 09BA90 80113020 03E00008 */  jr    $ra
 /* 09BA94 80113024 E4A60008 */   swc1  $f6, 8($a1)
+.type func_80112F70, @function

@@ -325,3 +325,4 @@ glabel func_8017CF60_ovl3
 /* 0DDE64 8017D424 8FB10018 */  lw    $s1, 0x18($sp)
 /* 0DDE68 8017D428 03E00008 */  jr    $ra
 /* 0DDE6C 8017D42C 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_8017CF60_ovl3, @function

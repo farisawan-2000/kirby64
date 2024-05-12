@@ -38,3 +38,4 @@ glabel func_801DE840_ovl16
 /* 214B80 801DE8D0 C7280000 */  lwc1  $f8, ($t9)
 /* 214B84 801DE8D4 03E00008 */  jr    $ra
 /* 214B88 801DE8D8 E5080000 */   swc1  $f8, ($t0)
+.type func_801DE840_ovl16, @function

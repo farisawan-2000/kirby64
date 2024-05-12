@@ -33,3 +33,4 @@ glabel func_8001E3D4
 /* 01F044 8001E444 00801025 */  move  $v0, $a0
 /* 01F048 8001E448 03E00008 */  jr    $ra
 /* 01F04C 8001E44C 00000000 */   nop   
+.type func_8001E3D4, @function

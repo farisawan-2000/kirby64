@@ -88,3 +88,4 @@ glabel func_800A4F48
 .L800A5094_ovl1:
 /* 04D2E4 800A5094 03E00008 */  jr    $ra
 /* 04D2E8 800A5098 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800A4F48, @function

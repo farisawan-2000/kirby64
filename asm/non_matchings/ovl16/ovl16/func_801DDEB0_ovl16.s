@@ -100,3 +100,4 @@ glabel func_801DDEB0_ovl16
 /* 2142D4 801DE024 8FB40028 */  lw    $s4, 0x28($sp)
 /* 2142D8 801DE028 03E00008 */  jr    $ra
 /* 2142DC 801DE02C 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_801DDEB0_ovl16, @function

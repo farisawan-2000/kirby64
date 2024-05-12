@@ -161,6 +161,7 @@ glabel L801E1544_ovl13
 /* 1F9550 801E15D0 002C0821 */  addu        $at, $at, $t4
 /* 1F9554 801E15D4 03E00008 */  jr          $ra
 /* 1F9558 801E15D8 AC2EDC50 */   sw         $t6, %lo(gEntityVtableIndexArray)($at)
+.type func_801E135C_ovl13, @function
 
 .section .late_rodata
 glabel D_801E5D78_ovl13

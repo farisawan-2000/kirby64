@@ -120,6 +120,7 @@ glabel func_801E1890_ovl12 # 130
 /* 006854 801E1A54 27BD0020 */  addiu       $sp, $sp, 0x20
 /* 006858 801E1A58 03E00008 */  jr          $ra
 /* 00685C 801E1A5C 00000000 */   nop
+.type func_801E1890_ovl12, @function
 
 .section .late_rodata
 glabel D_801E2DE0_ovl12

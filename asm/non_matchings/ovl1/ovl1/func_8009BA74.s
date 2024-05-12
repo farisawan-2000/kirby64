@@ -8,6 +8,7 @@ glabel func_8009BA74
 /* 043CDC 8009BA8C AFA40000 */   sw    $a0, ($sp)
 /* 043CE0 8009BA90 03E00008 */  jr    $ra
 /* 043CE4 8009BA94 00001025 */   move  $v0, $zero
+.type func_8009BA74, @function
 
 .L8009BA98_ovl1:
 /* 043CE8 8009BA98 3C04800D */  lui   $a0, %hi(D_800D6AE0) # $a0, 0x800d
@@ -128,3 +129,4 @@ glabel func_8009BA74
 /* 043E90 8009BC40 00601025 */  move  $v0, $v1
 /* 043E94 8009BC44 03E00008 */  jr    $ra
 /* 043E98 8009BC48 00000000 */   nop   
+.type func_8009BA74, @function

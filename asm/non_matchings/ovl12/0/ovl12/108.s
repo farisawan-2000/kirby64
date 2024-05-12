@@ -78,3 +78,4 @@ glabel func_801E05E8_ovl12 # 108
 /* 005508 801E0708 27BD0020 */  addiu       $sp, $sp, 0x20
 /* 00550C 801E070C 03E00008 */  jr          $ra
 /* 005510 801E0710 00000000 */   nop
+.type func_801E05E8_ovl12, @function

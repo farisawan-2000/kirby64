@@ -4,3 +4,4 @@ glabel func_80022A44
 /* 02364C 80022A4C 3C018004 */  lui   $at, 0x8004
 /* 023650 80022A50 03E00008 */  jr    $ra
 /* 023654 80022A54 AC25F870 */   sw    $a1, -0x790($at)
+.type func_80022A44, @function

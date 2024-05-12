@@ -123,3 +123,4 @@ glabel func_80015BFC
 /* 0169B8 80015DB8 27BD0030 */  addiu $sp, $sp, 0x30
 /* 0169BC 80015DBC 03E00008 */  jr    $ra
 /* 0169C0 80015DC0 00000000 */   nop   
+.type func_80015BFC, @function

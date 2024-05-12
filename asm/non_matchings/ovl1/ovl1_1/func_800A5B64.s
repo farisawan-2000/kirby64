@@ -28,8 +28,10 @@ glabel func_800A5B64
 /* 04DE14 800A5BC4 46001006 */   mov.s $f0, $f2
 /* 04DE18 800A5BC8 03E00008 */  jr    $ra
 /* 04DE1C 800A5BCC 46001007 */   neg.s $f0, $f2
+.type func_800A5B64, @function
 
 /* 04DE20 800A5BD0 46001006 */  mov.s $f0, $f2
 .L800A5BD4_ovl1:
 /* 04DE24 800A5BD4 03E00008 */  jr    $ra
 /* 04DE28 800A5BD8 00000000 */   nop   
+.type func_800A5B64, @function

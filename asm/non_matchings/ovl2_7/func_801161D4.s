@@ -16,3 +16,4 @@ glabel func_801161D4
 /* 09EC7C 8011620C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 09EC80 80116210 03E00008 */  jr    $ra
 /* 09EC84 80116214 00000000 */   nop   
+.type func_801161D4, @function

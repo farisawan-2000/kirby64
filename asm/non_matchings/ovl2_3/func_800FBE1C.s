@@ -62,3 +62,4 @@ glabel func_800FBE1C
 /* 08497C 800FBF0C AD6D0014 */  sw    $t5, 0x14($t3)
 /* 084980 800FBF10 03E00008 */  jr    $ra
 /* 084984 800FBF14 AD6E0010 */   sw    $t6, 0x10($t3)
+.type func_800FBE1C, @function

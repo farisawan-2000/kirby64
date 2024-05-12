@@ -31,3 +31,4 @@ glabel func_801DECAC_ovl14 # 45
 /* 201908 801DED18 27BD0038 */  addiu       $sp, $sp, 0x38
 /* 20190C 801DED1C 03E00008 */  jr          $ra
 /* 201910 801DED20 00000000 */   nop
+.type func_801DECAC_ovl14, @function

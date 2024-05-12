@@ -262,3 +262,4 @@ glabel func_801DC314_ovl16
 /* 212988 801DC6D8 00601025 */  move  $v0, $v1
 /* 21298C 801DC6DC 03E00008 */  jr    $ra
 /* 212990 801DC6E0 00000000 */   nop   
+.type func_801DC314_ovl16, @function

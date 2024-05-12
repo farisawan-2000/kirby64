@@ -17,6 +17,7 @@ glabel func_8001E6B8
 /* 01F2F4 8001E6F4 00455021 */  addu  $t2, $v0, $a1
 /* 01F2F8 8001E6F8 03E00008 */  jr    $ra
 /* 01F2FC 8001E6FC AC8A000C */   sw    $t2, 0xc($a0)
+.type func_8001E6B8, @function
 
 .L8001E700_ovl0:
 /* 01F300 8001E700 24010001 */  li    $at, 1
@@ -29,3 +30,4 @@ glabel func_8001E6B8
 .L8001E71C_ovl0:
 /* 01F31C 8001E71C 03E00008 */  jr    $ra
 /* 01F320 8001E720 00000000 */   nop   
+.type func_8001E6B8, @function

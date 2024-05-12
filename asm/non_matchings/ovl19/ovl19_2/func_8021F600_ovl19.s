@@ -55,3 +55,4 @@ glabel func_8021F600_ovl19
 /* 23FDDC 8021F6CC 27BD0038 */  addiu $sp, $sp, 0x38
 /* 23FDE0 8021F6D0 03E00008 */  jr    $ra
 /* 23FDE4 8021F6D4 00000000 */   nop   
+.type func_8021F600_ovl19, @function

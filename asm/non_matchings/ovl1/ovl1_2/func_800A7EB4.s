@@ -11,3 +11,4 @@ glabel func_800A7EB4
 /* 050128 800A7ED8 0304C825 */  or    $t9, $t8, $a0
 /* 05012C 800A7EDC 03E00008 */  jr    $ra
 /* 050130 800A7EE0 AC790044 */   sw    $t9, 0x44($v1)
+.type func_800A7EB4, @function

@@ -22,6 +22,7 @@ glabel func_801E06AC_ovl16
 /* 2169AC 801E06FC 03214024 */  and   $t0, $t9, $at
 /* 2169B0 801E0700 03E00008 */  jr    $ra
 /* 2169B4 801E0704 AC680000 */   sw    $t0, ($v1)
+.type func_801E06AC_ovl16, @function
 
 .L801E0708_ovl16:
 /* 2169B8 801E0708 3C01800F */ lui $at, %hi(D_800EA6E0)
@@ -31,3 +32,4 @@ glabel func_801E06AC_ovl16
 /* 2169C8 801E0718 E468001C */  swc1  $f8, 0x1c($v1)
 /* 2169CC 801E071C 03E00008 */  jr    $ra
 /* 2169D0 801E0720 00000000 */   nop   
+.type func_801E06AC_ovl16, @function

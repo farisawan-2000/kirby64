@@ -10,3 +10,4 @@ glabel func_80154C38
 /* 138FE8 80154C58 3C018016 */  lui   $at, 0x8016
 /* 138FEC 80154C5C 03E00008 */  jr    $ra
 /* 138FF0 80154C60 AC39A560 */   sw    $t9, -0x5aa0($at)
+.type func_80154C38, @function

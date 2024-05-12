@@ -213,3 +213,4 @@ glabel func_800ADD14
 /* 05628C 800AE03C 8FB40030 */  lw    $s4, 0x30($sp)
 /* 056290 800AE040 03E00008 */  jr    $ra
 /* 056294 800AE044 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_800ADD14, @function

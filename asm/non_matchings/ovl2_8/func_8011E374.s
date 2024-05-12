@@ -49,3 +49,4 @@ glabel func_8011E374
 .L8011E430_ovl2:
 /* 0A6EA0 8011E430 03E00008 */  jr    $ra
 /* 0A6EA4 8011E434 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_8011E374, @function

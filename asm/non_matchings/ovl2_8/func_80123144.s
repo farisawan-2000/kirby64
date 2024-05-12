@@ -10,3 +10,4 @@ glabel func_80123144
 /* 0ABBD4 80123164 460C2002 */  mul.s $f0, $f4, $f12
 /* 0ABBD8 80123168 03E00008 */  jr    $ra
 /* 0ABBDC 8012316C 00000000 */   nop   
+.type func_80123144, @function

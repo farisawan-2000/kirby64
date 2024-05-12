@@ -222,4 +222,5 @@ glabel L801E3DAC_ovl13
 /* 1FBD34 801E3DB4 03E00008 */  jr          $ra
 /* 1FBD38 801E3DB8 00000000 */   nop
 /* 1FBD3C 801E3DBC 00000000 */  nop
+.type func_801E3A84_ovl13, @function
 

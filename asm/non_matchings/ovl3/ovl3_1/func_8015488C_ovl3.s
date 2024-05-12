@@ -19,3 +19,4 @@ glabel func_8015488C_ovl3
 /* 0B5310 801548D0 E4A00008 */  swc1  $f0, 8($a1)
 /* 0B5314 801548D4 03E00008 */  jr    $ra
 /* 0B5318 801548D8 E4A40018 */   swc1  $f4, 0x18($a1)
+.type func_8015488C_ovl3, @function

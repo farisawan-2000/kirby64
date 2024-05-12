@@ -9,7 +9,9 @@ glabel func_80020BB8
 /* 0217D4 80020BD4 00000000 */   nop   
 /* 0217D8 80020BD8 03E00008 */  jr    $ra
 /* 0217DC 80020BDC 00001025 */   move  $v0, $zero
+.type func_80020BB8, @function
 
 .L80020BE0_ovl0:
 /* 0217E0 80020BE0 03E00008 */  jr    $ra
 /* 0217E4 80020BE4 00000000 */   nop   
+.type func_80020BB8, @function

@@ -62,3 +62,4 @@ glabel func_800A9C78
 /* 051FA8 800A9D58 00E01025 */  move  $v0, $a3
 /* 051FAC 800A9D5C 03E00008 */  jr    $ra
 /* 051FB0 800A9D60 00000000 */   nop   
+.type func_800A9C78, @function

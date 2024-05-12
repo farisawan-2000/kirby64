@@ -28,3 +28,4 @@ glabel func_8012307C
 /* 0ABB4C 801230DC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0ABB50 801230E0 03E00008 */  jr    $ra
 /* 0ABB54 801230E4 00000000 */   nop   
+.type func_8012307C, @function

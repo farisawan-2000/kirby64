@@ -59,3 +59,4 @@ glabel func_800FC53C
 /* 085090 800FC620 27BD0020 */  addiu $sp, $sp, 0x20
 /* 085094 800FC624 03E00008 */  jr    $ra
 /* 085098 800FC628 00000000 */   nop   
+.type func_800FC53C, @function

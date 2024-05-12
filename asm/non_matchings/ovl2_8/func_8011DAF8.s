@@ -26,6 +26,7 @@ glabel func_8011DAF8
 /* 0A65C4 8011DB54 00220821 */  addu  $at, $at, $v0
 /* 0A65C8 8011DB58 03E00008 */  jr    $ra
 /* 0A65CC 8011DB5C E42441D0 */ swc1 $f4, %lo(gEntitiesAngleYArray)($at)
+.type func_8011DAF8, @function
 
 .L8011DB60_ovl2:
 /* 0A65D0 8011DB60 8F39A7C4 */ lw $t9, %lo(D_8004A7C4)($t9)
@@ -72,3 +73,4 @@ glabel func_8011DAF8
 .L8011DBFC_ovl2:
 /* 0A666C 8011DBFC 03E00008 */  jr    $ra
 /* 0A6670 8011DC00 00000000 */   nop   
+.type func_8011DAF8, @function

@@ -96,6 +96,7 @@ glabel L801DC9F4_ovl13
 /* 1F49B4 801DCA34 27BD0050 */  addiu       $sp, $sp, 0x50
 /* 1F49B8 801DCA38 03E00008 */  jr          $ra
 /* 1F49BC 801DCA3C 00601025 */   move       $v0, $v1
+.type func_801DC8CC_ovl13, @function
 
 .section .late_rodata
 glabel D_801E5CD4_ovl13

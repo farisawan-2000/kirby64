@@ -11,3 +11,4 @@ glabel func_800BB468
 /* 0636DC 800BB48C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0636E0 800BB490 03E00008 */  jr    $ra
 /* 0636E4 800BB494 00000000 */   nop   
+.type func_800BB468, @function

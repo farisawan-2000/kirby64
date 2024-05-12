@@ -154,3 +154,4 @@ glabel func_80111574
 /* 09A220 801117B0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 09A224 801117B4 03E00008 */  jr    $ra
 /* 09A228 801117B8 00A01025 */   move  $v0, $a1
+.type func_80111574, @function

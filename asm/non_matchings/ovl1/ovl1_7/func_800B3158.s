@@ -24,3 +24,4 @@ glabel func_800B3158
 .L800B31AC_ovl1:
 /* 05B3FC 800B31AC 03E00008 */  jr    $ra
 /* 05B400 800B31B0 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800B3158, @function

@@ -76,4 +76,5 @@ glabel L801E2010_ovl13
 /* 1F9FA8 801E2028 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1F9FAC 801E202C 03E00008 */  jr          $ra
 /* 1F9FB0 801E2030 AC2EDC50 */   sw         $t6, %lo(gEntityVtableIndexArray)($at)
+.type func_801E1F1C_ovl13, @function
 

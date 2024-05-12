@@ -124,3 +124,4 @@ glabel func_80109504
 /* 092154 801096E4 8FB10018 */  lw    $s1, 0x18($sp)
 /* 092158 801096E8 03E00008 */  jr    $ra
 /* 09215C 801096EC 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_80109504, @function

@@ -10,3 +10,4 @@ glabel func_80153644
 /* 1379F4 80153664 8D08E350 */  lw    $t0, -0x1cb0($t0)
 /* 1379F8 80153668 03E00008 */  jr    $ra
 /* 1379FC 8015366C AD0E002C */   sw    $t6, 0x2c($t0)
+.type func_80153644, @function

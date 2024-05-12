@@ -278,3 +278,4 @@ glabel func_801548DC_ovl3
 /* 0B5730 80154CF0 27BD0058 */  addiu $sp, $sp, 0x58
 /* 0B5734 80154CF4 03E00008 */  jr    $ra
 /* 0B5738 80154CF8 00000000 */   nop   
+.type func_801548DC_ovl3, @function

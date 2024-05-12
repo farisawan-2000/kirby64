@@ -104,3 +104,4 @@ glabel func_8021FCC0_ovl19
 /* 240560 8021FE50 8FB10018 */  lw    $s1, 0x18($sp)
 /* 240564 8021FE54 03E00008 */  jr    $ra
 /* 240568 8021FE58 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_8021FCC0_ovl19, @function

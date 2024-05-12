@@ -17,3 +17,4 @@ glabel func_8010EA20
 /* 0974CC 8010EA5C 27BD0020 */  addiu $sp, $sp, 0x20
 /* 0974D0 8010EA60 03E00008 */  jr    $ra
 /* 0974D4 8010EA64 00000000 */   nop   
+.type func_8010EA20, @function

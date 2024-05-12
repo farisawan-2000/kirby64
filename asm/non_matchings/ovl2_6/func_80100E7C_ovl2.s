@@ -13,10 +13,12 @@ glabel func_80100E7C
 /* 089918 80100EA8 00000000 */   nop   
 /* 08991C 80100EAC 03E00008 */  jr    $ra
 /* 089920 80100EB0 00001025 */   move  $v0, $zero
+.type func_80100E7C, @function
 
 .L80100EB4_ovl2:
 /* 089924 80100EB4 03E00008 */  jr    $ra
 /* 089928 80100EB8 24020001 */   li    $v0, 1
+.type func_80100E7C, @function
 
 .L80100EBC_ovl2:
 /* 08992C 80100EBC C4288A30 */  lwc1  $f8, -0x75d0($at)
@@ -27,7 +29,9 @@ glabel func_80100E7C
 /* 089940 80100ED0 00000000 */   nop   
 /* 089944 80100ED4 03E00008 */  jr    $ra
 /* 089948 80100ED8 24020003 */   li    $v0, 3
+.type func_80100E7C, @function
 
 .L80100EDC_ovl2:
 /* 08994C 80100EDC 03E00008 */  jr    $ra
 /* 089950 80100EE0 00000000 */   nop   
+.type func_80100E7C, @function

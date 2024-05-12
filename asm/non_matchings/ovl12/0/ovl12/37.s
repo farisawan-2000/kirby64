@@ -56,3 +56,4 @@ glabel func_801DD02C_ovl12 # 37
 /* 001F04 801DD104 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 001F08 801DD108 03E00008 */  jr          $ra
 /* 001F0C 801DD10C 00000000 */   nop
+.type func_801DD02C_ovl12, @function

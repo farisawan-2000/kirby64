@@ -65,6 +65,7 @@ glabel func_800B158C
 .L800B1688_ovl1:
 /* 0598D8 800B1688 03E00008 */  jr    $ra
 /* 0598DC 800B168C A444005A */   sh    $a0, 0x5a($v0)
+.type func_800B158C, @function
 
 /* 0598E0 800B1690 8CAE0000 */  lw    $t6, ($a1)
 /* 0598E4 800B1694 3C01800E */ lui $at, %hi(D_800E10D0)
@@ -120,3 +121,4 @@ glabel func_800B158C
 .L800B1754_ovl1:
 /* 0599A4 800B1754 03E00008 */  jr    $ra
 /* 0599A8 800B1758 00000000 */   nop   
+.type func_800B158C, @function

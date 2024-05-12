@@ -16,6 +16,7 @@ glabel func_8001E344
 /* 01EF7C 8001E37C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 01EF80 8001E380 03E00008 */  jr    $ra
 /* 01EF84 8001E384 00000000 */   nop   
+.type func_8001E344, @function
 
 /* 01EF88 8001E388 00000000 */  nop   
 /* 01EF8C 8001E38C 00000000 */  nop   
@@ -23,3 +24,4 @@ glabel func_8001E344
 /* 01EF94 8001E394 00000000 */  nop   
 /* 01EF98 8001E398 00000000 */  nop   
 /* 01EF9C 8001E39C 00000000 */  nop   
+.type func_8001E344, @function

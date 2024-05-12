@@ -112,9 +112,11 @@ glabel func_8022EE78_ovl19
 /* 24F738 8022F028 27BD0028 */  addiu $sp, $sp, 0x28
 /* 24F73C 8022F02C 03E00008 */  jr    $ra
 /* 24F740 8022F030 00000000 */   nop   
+.type func_8022EE78_ovl19, @function
 
 /* 24F744 8022F034 00000000 */  nop   
 /* 24F748 8022F038 00000000 */  nop   
 /* 24F74C 8022F03C 00000000 */  nop   
 # Unknown region 24F750-2501C0 [A70]
+.type func_8022EE78_ovl19, @function
 

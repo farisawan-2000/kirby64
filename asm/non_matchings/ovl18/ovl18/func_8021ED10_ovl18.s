@@ -10,3 +10,4 @@ glabel func_8021ED10_ovl18
 /* 2316D0 8021ED30 27BD0018 */  addiu $sp, $sp, 0x18
 /* 2316D4 8021ED34 03E00008 */  jr    $ra
 /* 2316D8 8021ED38 00000000 */   nop   
+.type func_8021ED10_ovl18, @function

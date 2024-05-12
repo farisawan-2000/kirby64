@@ -93,3 +93,4 @@ glabel func_801AB008_ovl7
 /* 1511D8 801AB168 46101480 */  add.s $f18, $f2, $f16
 /* 1511DC 801AB16C 03E00008 */  jr    $ra
 /* 1511E0 801AB170 E4920000 */   swc1  $f18, ($a0)
+.type func_801AB008_ovl7, @function

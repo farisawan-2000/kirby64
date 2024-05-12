@@ -51,3 +51,4 @@ glabel func_801DE484_ovl14 # 39
 /* 20112C 801DE53C 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 201130 801DE540 03E00008 */  jr          $ra
 /* 201134 801DE544 00000000 */   nop
+.type func_801DE484_ovl14, @function

@@ -86,3 +86,4 @@ glabel func_8022470C_ovl19
 /* 244F5C 8022484C 46003200 */  add.s $f8, $f6, $f0
 /* 244F60 80224850 03E00008 */  jr    $ra
 /* 244F64 80224854 E4880030 */   swc1  $f8, 0x30($a0)
+.type func_8022470C_ovl19, @function

@@ -321,3 +321,4 @@ glabel func_8015A44C_ovl3
 /* 0BB360 8015A920 8FB20020 */  lw    $s2, 0x20($sp)
 /* 0BB364 8015A924 03E00008 */  jr    $ra
 /* 0BB368 8015A928 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_8015A44C_ovl3, @function

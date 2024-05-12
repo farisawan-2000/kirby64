@@ -105,3 +105,4 @@ glabel func_8021F970_ovl18
 /* 2324AC 8021FB0C 27BD0020 */  addiu $sp, $sp, 0x20
 /* 2324B0 8021FB10 03E00008 */  jr    $ra
 /* 2324B4 8021FB14 00000000 */   nop   
+.type func_8021F970_ovl18, @function

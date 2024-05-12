@@ -64,3 +64,4 @@ glabel func_801DFC4C_ovl16
 /* 215FEC 801DFD3C 27BD0020 */  addiu $sp, $sp, 0x20
 /* 215FF0 801DFD40 03E00008 */  jr    $ra
 /* 215FF4 801DFD44 AC39DC50 */ sw $t9, %lo(gEntityVtableIndexArray)($at)
+.type func_801DFC4C_ovl16, @function

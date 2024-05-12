@@ -17,6 +17,7 @@ glabel func_8010E8F0
 .L8010E92C_ovl2:
 /* 09739C 8010E92C 03E00008 */  jr    $ra
 /* 0973A0 8010E930 00001025 */   move  $v0, $zero
+.type func_8010E8F0, @function
 
 /* 0973A4 8010E934 C4860004 */  lwc1  $f6, 4($a0)
 .L8010E938_ovl2:
@@ -33,6 +34,7 @@ glabel func_8010E8F0
 .L8010E960_ovl2:
 /* 0973D0 8010E960 03E00008 */  jr    $ra
 /* 0973D4 8010E964 00001025 */   move  $v0, $zero
+.type func_8010E8F0, @function
 
 /* 0973D8 8010E968 C48A0008 */  lwc1  $f10, 8($a0)
 .L8010E96C_ovl2:
@@ -49,6 +51,7 @@ glabel func_8010E8F0
 .L8010E994_ovl2:
 /* 097404 8010E994 03E00008 */  jr    $ra
 /* 097408 8010E998 00001025 */   move  $v0, $zero
+.type func_8010E8F0, @function
 
 .L8010E99C_ovl2:
 /* 09740C 8010E99C 46021002 */  mul.s $f0, $f2, $f2
@@ -83,7 +86,9 @@ glabel func_8010E8F0
 .L8010EA10_ovl2:
 /* 097480 8010EA10 03E00008 */  jr    $ra
 /* 097484 8010EA14 24020001 */   li    $v0, 1
+.type func_8010E8F0, @function
 
 .L8010EA18_ovl2:
 /* 097488 8010EA18 03E00008 */  jr    $ra
 /* 09748C 8010EA1C 00000000 */   nop   
+.type func_8010E8F0, @function

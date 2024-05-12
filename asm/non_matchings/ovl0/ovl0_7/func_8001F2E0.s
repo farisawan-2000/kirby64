@@ -349,3 +349,4 @@ glabel func_8001F2E0
 /* 020410 8001F810 8FB20028 */  lw    $s2, 0x28($sp)
 /* 020414 8001F814 03E00008 */  jr    $ra
 /* 020418 8001F818 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_8001F2E0, @function

@@ -66,3 +66,4 @@ glabel func_801DC2A0_ovl14 # 18
 /* 1FEF70 801DC380 8FB10018 */  lw          $s1, 0x18($sp)
 /* 1FEF74 801DC384 03E00008 */  jr          $ra
 /* 1FEF78 801DC388 27BD0020 */   addiu      $sp, $sp, 0x20
+.type func_801DC2A0_ovl14, @function

@@ -75,3 +75,4 @@ glabel func_80104FB8
 /* 08DB44 801050D4 E452002C */  swc1  $f18, 0x2c($v0)
 /* 08DB48 801050D8 03E00008 */  jr    $ra
 /* 08DB4C 801050DC E44A0030 */   swc1  $f10, 0x30($v0)
+.type func_80104FB8, @function

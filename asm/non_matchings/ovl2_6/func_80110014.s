@@ -70,3 +70,4 @@ glabel func_80110014
 /* 098B94 80110124 AC8E001C */  sw    $t6, 0x1c($a0)
 /* 098B98 80110128 03E00008 */  jr    $ra
 /* 098B9C 8011012C AC98003C */   sw    $t8, 0x3c($a0)
+.type func_80110014, @function

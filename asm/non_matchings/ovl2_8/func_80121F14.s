@@ -16,3 +16,4 @@ glabel func_80121F14
 /* 0AA9B4 80121F44 03214024 */  and   $t0, $t9, $at
 /* 0AA9B8 80121F48 03E00008 */  jr    $ra
 /* 0AA9BC 80121F4C AC68008C */   sw    $t0, 0x8c($v1)
+.type func_80121F14, @function

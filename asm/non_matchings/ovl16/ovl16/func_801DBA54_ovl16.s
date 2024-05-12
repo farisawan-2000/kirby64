@@ -16,3 +16,4 @@ glabel func_801DBA54_ovl16
 /* 211D3C 801DBA8C 8CAB000C */  lw    $t3, 0xc($a1)
 /* 211D40 801DBA90 03E00008 */  jr    $ra
 /* 211D44 801DBA94 A08B003A */   sb    $t3, 0x3a($a0)
+.type func_801DBA54_ovl16, @function

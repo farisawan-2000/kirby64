@@ -784,3 +784,4 @@ glabel L800ADC18
 /* 055F58 800ADD08 8FB70060 */  lw    $s7, 0x60($sp)
 /* 055F5C 800ADD0C 03E00008 */  jr    $ra
 /* 055F60 800ADD10 27BD0068 */   addiu $sp, $sp, 0x68
+.type func_800AD1A0, @function

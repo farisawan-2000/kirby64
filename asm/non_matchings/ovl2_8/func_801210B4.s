@@ -12,13 +12,16 @@ glabel func_801210B4
 /* 0A9B4C 801210DC 00000000 */   nop   
 /* 0A9B50 801210E0 03E00008 */  jr    $ra
 /* 0A9B54 801210E4 24020001 */   li    $v0, 1
+.type func_801210B4, @function
 
 .L801210E8_ovl2:
 /* 0A9B58 801210E8 03E00008 */  jr    $ra
 /* 0A9B5C 801210EC 2402FFFF */   li    $v0, -1
+.type func_801210B4, @function
 
 .L801210F0_ovl2:
 /* 0A9B60 801210F0 00001025 */  move  $v0, $zero
 .L801210F4_ovl2:
 /* 0A9B64 801210F4 03E00008 */  jr    $ra
 /* 0A9B68 801210F8 00000000 */   nop   
+.type func_801210B4, @function

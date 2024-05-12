@@ -18,6 +18,7 @@ glabel func_80208604_ovl9
 .L80208644_ovl9:
 /* 1B6694 80208644 03E00008 */  jr    $ra
 /* 1B6698 80208648 AC400034 */   sw    $zero, 0x34($v0)
+.type func_80208604_ovl9, @function
 
 .L8020864C_ovl9:
 /* 1B669C 8020864C C42CDAD8 */ lwc1 $f12, %lo(D_8021DAD8_ovl9)($at)
@@ -91,3 +92,4 @@ glabel func_80208604_ovl9
 .L80208750_ovl9:
 /* 1B67A0 80208750 03E00008 */  jr    $ra
 /* 1B67A4 80208754 00000000 */   nop   
+.type func_80208604_ovl9, @function

@@ -61,3 +61,4 @@ glabel func_800BC11C
 .L800BC1F4_ovl1:
 /* 064444 800BC1F4 03E00008 */  jr    $ra
 /* 064448 800BC1F8 8C620000 */   lw    $v0, ($v1)
+.type func_800BC11C, @function

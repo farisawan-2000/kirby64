@@ -10,3 +10,4 @@ glabel func_8001479C
 /* 0153BC 800147BC AC22ABB0 */  sw    $v0, %lo(D_8004ABB0)($at)
 /* 0153C0 800147C0 03E00008 */  jr    $ra
 /* 0153C4 800147C4 AC22ABB4 */   sw    $v0, -0x544c($at)
+.type func_8001479C, @function

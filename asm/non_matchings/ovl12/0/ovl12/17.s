@@ -57,3 +57,4 @@ glabel func_801DC094_ovl12 # 17
 /* 000F70 801DC170 C5E80000 */  lwc1        $f8, 0x0($t7)
 /* 000F74 801DC174 03E00008 */  jr          $ra
 /* 000F78 801DC178 E4C80024 */   swc1       $f8, 0x24($a2)
+.type func_801DC094_ovl12, @function

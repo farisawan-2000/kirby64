@@ -31,6 +31,7 @@ glabel func_800FB9B4
 /* 084498 800FBA28 3C018013 */  lui   $at, 0x8013
 /* 08449C 800FBA2C 03E00008 */  jr    $ra
 /* 0844A0 800FBA30 E4289400 */   swc1  $f8, -0x6c00($at)
+.type func_800FB9B4, @function
 
 .L800FBA34_ovl2:
 /* 0844A4 800FBA34 3C018013 */  lui   $at, %hi(D_8012882C) # $at, 0x8013
@@ -52,3 +53,4 @@ glabel func_800FB9B4
 .L800FBA70_ovl2:
 /* 0844E0 800FBA70 03E00008 */  jr    $ra
 /* 0844E4 800FBA74 00000000 */   nop   
+.type func_800FB9B4, @function

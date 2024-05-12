@@ -18,3 +18,4 @@ glabel func_800A99E4
 /* 051C70 800A9A20 AC580000 */  sw    $t8, ($v0)
 /* 051C74 800A9A24 03E00008 */  jr    $ra
 /* 051C78 800A9A28 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_800A99E4, @function

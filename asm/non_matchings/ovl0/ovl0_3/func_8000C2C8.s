@@ -75,3 +75,4 @@ glabel func_8000C2C8
 /* 00CFCC 8000C3CC 8FB50038 */  lw    $s5, 0x38($sp)
 /* 00CFD0 8000C3D0 03E00008 */  jr    $ra
 /* 00CFD4 8000C3D4 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_8000C2C8, @function

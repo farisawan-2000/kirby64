@@ -451,3 +451,4 @@ glabel func_801BE79C_ovl7
 /* 164EB8 801BEE48 27BD0040 */  addiu $sp, $sp, 0x40
 /* 164EBC 801BEE4C 03E00008 */  jr    $ra
 /* 164EC0 801BEE50 00000000 */   nop   
+.type func_801BE79C_ovl7, @function

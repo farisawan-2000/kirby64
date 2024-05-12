@@ -25,3 +25,4 @@ glabel func_801DE758_ovl11
 .L801DE7B4_ovl11:
 /* 1E9074 801DE7B4 03E00008 */  jr    $ra
 /* 1E9078 801DE7B8 00000000 */   nop   
+.type func_801DE758_ovl11, @function

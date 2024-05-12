@@ -44,3 +44,4 @@ glabel func_8000CE18
 /* 00DAC0 8000CEC0 46062282 */  mul.s $f10, $f4, $f6
 /* 00DAC4 8000CEC4 03E00008 */  jr    $ra
 /* 00DAC8 8000CEC8 460A4000 */   add.s $f0, $f8, $f10
+.type func_8000CE18, @function

@@ -60,4 +60,5 @@ glabel L801DCAE4_ovl13
 /* 1F4A9C 801DCB1C E4480000 */  swc1        $f8, 0x0($v0)
 /* 1F4AA0 801DCB20 03E00008 */  jr          $ra
 /* 1F4AA4 801DCB24 00001025 */   move       $v0, $zero
+.type func_801DCA40_ovl13, @function
 

@@ -85,3 +85,4 @@ glabel func_800FA7EC
 .L800FA924_ovl2:
 /* 083394 800FA924 03E00008 */  jr    $ra
 /* 083398 800FA928 00000000 */   nop   
+.type func_800FA7EC, @function

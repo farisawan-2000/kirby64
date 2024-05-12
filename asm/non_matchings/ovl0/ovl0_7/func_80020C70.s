@@ -5,3 +5,4 @@ glabel func_80020C70
 /* 02187C 80020C7C AFA7000C */  sw    $a3, 0xc($sp)
 /* 021880 80020C80 03E00008 */  jr    $ra
 /* 021884 80020C84 2402FFFF */   li    $v0, -1
+.type func_80020C70, @function

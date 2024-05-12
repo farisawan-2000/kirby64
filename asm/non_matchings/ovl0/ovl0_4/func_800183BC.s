@@ -128,3 +128,4 @@ glabel func_800183BC
 /* 0191A4 800185A4 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 0191A8 800185A8 03E00008 */  jr    $ra
 /* 0191AC 800185AC 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_800183BC, @function

@@ -69,3 +69,4 @@ glabel func_8011CFF4
 /* 0A5B60 8011D0F0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0A5B64 8011D0F4 03E00008 */  jr    $ra
 /* 0A5B68 8011D0F8 00000000 */   nop   
+.type func_8011CFF4, @function

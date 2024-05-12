@@ -56,4 +56,5 @@ glabel func_801E35F4_ovl13 # 45
 /* 1FB64C 801E36CC 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1FB650 801E36D0 03E00008 */  jr          $ra
 /* 1FB654 801E36D4 00000000 */   nop
+.type func_801E35F4_ovl13, @function
 

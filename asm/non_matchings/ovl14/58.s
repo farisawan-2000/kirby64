@@ -57,3 +57,4 @@ glabel func_801DFB48_ovl14 # 58
 /* 20280C 801DFC1C 8FB20020 */  lw          $s2, 0x20($sp)
 /* 202810 801DFC20 03E00008 */  jr          $ra
 /* 202814 801DFC24 27BD0028 */   addiu      $sp, $sp, 0x28
+.type func_801DFB48_ovl14, @function

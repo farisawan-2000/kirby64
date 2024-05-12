@@ -5,3 +5,4 @@ glabel func_801129AC
 /* 09B428 801129B8 35F80080 */  ori   $t8, $t7, 0x80
 /* 09B42C 801129BC 03E00008 */  jr    $ra
 /* 09B430 801129C0 A0580000 */   sb    $t8, ($v0)
+.type func_801129AC, @function

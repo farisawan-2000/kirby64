@@ -17,3 +17,4 @@ glabel func_80111ECC
 /* 09A974 80111F04 00000000 */   nop   
 /* 09A978 80111F08 00000000 */  nop   
 /* 09A97C 80111F0C 00000000 */  nop   
+.type func_80111ECC, @function

@@ -150,3 +150,4 @@ glabel func_800B113C
 /* 0595BC 800B136C 27BD0028 */  addiu $sp, $sp, 0x28
 /* 0595C0 800B1370 03E00008 */  jr    $ra
 /* 0595C4 800B1374 00000000 */   nop   
+.type func_800B113C, @function

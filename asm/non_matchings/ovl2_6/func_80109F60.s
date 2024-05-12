@@ -18,3 +18,4 @@ glabel func_80109F60
 /* 092A10 80109FA0 3328FF7F */  andi  $t0, $t9, 0xff7f
 /* 092A14 80109FA4 03E00008 */  jr    $ra
 /* 092A18 80109FA8 A0680000 */   sb    $t0, ($v1)
+.type func_80109F60, @function

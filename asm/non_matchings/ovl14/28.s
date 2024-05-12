@@ -306,3 +306,4 @@ glabel func_801DD018_ovl14 # 28
 /* 2000AC 801DD4BC 8FB10018 */  lw          $s1, 0x18($sp)
 /* 2000B0 801DD4C0 03E00008 */  jr          $ra
 /* 2000B4 801DD4C4 27BD0030 */   addiu      $sp, $sp, 0x30
+.type func_801DD018_ovl14, @function

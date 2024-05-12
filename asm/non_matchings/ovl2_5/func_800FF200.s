@@ -45,6 +45,7 @@ glabel func_800FF200
 /* 087D18 800FF2A8 312AFFFE */  andi  $t2, $t1, 0xfffe
 /* 087D1C 800FF2AC 03E00008 */  jr    $ra
 /* 087D20 800FF2B0 A08A0020 */   sb    $t2, 0x20($a0)
+.type func_800FF200, @function
 
 /* 087D24 800FF2B4 908B0020 */  lbu   $t3, 0x20($a0)
 .L800FF2B8_ovl2:
@@ -53,3 +54,4 @@ glabel func_800FF200
 .L800FF2C0_ovl2:
 /* 087D30 800FF2C0 03E00008 */  jr    $ra
 /* 087D34 800FF2C4 00000000 */   nop   
+.type func_800FF200, @function

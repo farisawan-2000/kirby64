@@ -151,3 +151,4 @@ glabel L800ACAF8
 /* 054DC0 800ACB70 8FB10018 */  lw    $s1, 0x18($sp)
 /* 054DC4 800ACB74 03E00008 */  jr    $ra
 /* 054DC8 800ACB78 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_800AC954, @function

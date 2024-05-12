@@ -9,3 +9,4 @@ glabel func_800AB0CC
 /* 053338 800AB0E8 C4245DFC */  lwc1  $f4, %lo(D_800D5DFC)($at)
 /* 05333C 800AB0EC 03E00008 */  jr    $ra
 /* 053340 800AB0F0 E4440074 */   swc1  $f4, 0x74($v0)
+.type func_800AB0CC, @function

@@ -200,3 +200,4 @@ glabel func_800FF2C8
 /* 088044 800FF5D4 00000000 */  nop   
 /* 088048 800FF5D8 00000000 */  nop   
 /* 08804C 800FF5DC 00000000 */  nop   
+.type func_800FF2C8, @function

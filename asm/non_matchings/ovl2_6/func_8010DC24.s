@@ -11,7 +11,9 @@ glabel func_8010DC24
 /* 0966B8 8010DC48 00581021 */  addu  $v0, $v0, $t8
 /* 0966BC 8010DC4C 03E00008 */  jr    $ra
 /* 0966C0 8010DC50 94424770 */   lhu   $v0, 0x4770($v0)
+.type func_8010DC24, @function
 
 .L8010DC54_ovl2:
 /* 0966C4 8010DC54 03E00008 */  jr    $ra
 /* 0966C8 8010DC58 00000000 */   nop   
+.type func_8010DC24, @function

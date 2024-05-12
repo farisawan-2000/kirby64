@@ -206,3 +206,4 @@ glabel L801DC4EC_ovl14
 /* 1FF258 801DC668 27BD0030 */  addiu       $sp, $sp, 0x30
 /* 1FF25C 801DC66C 03E00008 */  jr          $ra
 /* 1FF260 801DC670 00000000 */   nop
+.type func_801DC38C_ovl14, @function

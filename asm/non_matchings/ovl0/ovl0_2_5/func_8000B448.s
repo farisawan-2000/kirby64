@@ -37,3 +37,4 @@ glabel func_8000B448
 /* 00C0C8 8000B4C8 8FB50028 */  lw    $s5, 0x28($sp)
 /* 00C0CC 8000B4CC 03E00008 */  jr    $ra
 /* 00C0D0 8000B4D0 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_8000B448, @function

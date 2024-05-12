@@ -154,3 +154,4 @@ glabel func_80018170
 /* 018FB0 800183B0 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 018FB4 800183B4 03E00008 */  jr    $ra
 /* 018FB8 800183B8 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_80018170, @function

@@ -380,9 +380,11 @@ glabel func_8000385C
 /* 00499C 80003D9C 8FB30014 */  lw    $s3, 0x14($sp)
 /* 0049A0 80003DA0 03E00008 */  jr    $ra
 /* 0049A4 80003DA4 27BD0430 */   addiu $sp, $sp, 0x430
+.type func_8000385C, @function
 
 /* 0049A8 80003DA8 00000000 */  nop   
 /* 0049AC 80003DAC 00000000 */  nop   
 /* 0049B0 80003DB0 00000000 */  nop   
 /* 0049B4 80003DB4 00000000 */  nop   
 /* 0049B8 80003DB8 00000000 */  nop   
+.type func_8000385C, @function

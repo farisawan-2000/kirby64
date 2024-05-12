@@ -17,3 +17,4 @@ glabel func_800FA5C0
 /* 08306C 800FA5FC 46105480 */  add.s $f18, $f10, $f16
 /* 083070 800FA600 03E00008 */  jr    $ra
 /* 083074 800FA604 E4D20004 */   swc1  $f18, 4($a2)
+.type func_800FA5C0, @function

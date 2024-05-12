@@ -77,3 +77,4 @@ glabel func_800A2D68
 /* 04B0DC 800A2E8C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 04B0E0 800A2E90 03E00008 */  jr    $ra
 /* 04B0E4 800A2E94 AC2EE504 */ sw $t6, %lo(D_800BE504)($at)
+.type func_800A2D68, @function

@@ -171,3 +171,4 @@ glabel func_8021AD88_ovl9
 /* 1C906C 8021B01C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1C9070 8021B020 03E00008 */  jr    $ra
 /* 1C9074 8021B024 00000000 */   nop   
+.type func_8021AD88_ovl9, @function

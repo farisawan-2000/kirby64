@@ -75,6 +75,7 @@ glabel func_802079F4_ovl9
 /* 1B5B60 80207B10 39F80001 */  xori  $t8, $t7, 1
 /* 1B5B64 80207B14 03E00008 */  jr    $ra
 /* 1B5B68 80207B18 ACB80000 */   sw    $t8, ($a1)
+.type func_802079F4_ovl9, @function
 
 .L80207B1C_ovl9:
 /* 1B5B6C 80207B1C 9059003C */  lbu   $t9, 0x3c($v0)
@@ -83,3 +84,4 @@ glabel func_802079F4_ovl9
 .L80207B28_ovl9:
 /* 1B5B78 80207B28 03E00008 */  jr    $ra
 /* 1B5B7C 80207B2C 00000000 */   nop   
+.type func_802079F4_ovl9, @function

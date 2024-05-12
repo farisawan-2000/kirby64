@@ -238,3 +238,4 @@ glabel func_80154CFC_ovl3
 /* 0B5ABC 8015507C 27BD0048 */  addiu $sp, $sp, 0x48
 /* 0B5AC0 80155080 03E00008 */  jr    $ra
 /* 0B5AC4 80155084 00000000 */   nop   
+.type func_80154CFC_ovl3, @function

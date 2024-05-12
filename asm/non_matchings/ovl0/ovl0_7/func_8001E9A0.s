@@ -21,3 +21,4 @@ glabel func_8001E9A0
 .L8001E9E4_ovl0:
 /* 01F5E4 8001E9E4 03E00008 */  jr    $ra
 /* 01F5E8 8001E9E8 46001006 */   mov.s $f0, $f2
+.type func_8001E9A0, @function

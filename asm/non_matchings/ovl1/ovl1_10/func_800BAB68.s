@@ -45,3 +45,4 @@ glabel func_800BAB68
 /* 062E50 800BAC00 27BD0018 */  addiu $sp, $sp, 0x18
 /* 062E54 800BAC04 03E00008 */  jr    $ra
 /* 062E58 800BAC08 00000000 */   nop   
+.type func_800BAB68, @function

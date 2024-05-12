@@ -8,6 +8,7 @@ glabel func_800A194C
 /* 049BB4 800A1964 3C06800D */   lui   $a2, %hi(D_800D6AE8)
 /* 049BB8 800A1968 03E00008 */  jr    $ra
 /* 049BBC 800A196C 00001025 */   move  $v0, $zero
+.type func_800A194C, @function
 
 .L800A1970_ovl1:
 /* 049BC0 800A1970 94AE0000 */  lhu   $t6, ($a1)
@@ -43,3 +44,4 @@ glabel func_800A194C
 /* 049C30 800A19E0 AC60004C */  sw    $zero, 0x4c($v1)
 /* 049C34 800A19E4 03E00008 */  jr    $ra
 /* 049C38 800A19E8 00000000 */   nop   
+.type func_800A194C, @function

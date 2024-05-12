@@ -51,3 +51,4 @@ glabel func_800F7484
 /* 07FFA0 800F7530 ACC2FFFC */   sw    $v0, -4($a2)
 /* 07FFA4 800F7534 03E00008 */  jr    $ra
 /* 07FFA8 800F7538 00000000 */   nop   
+.type func_800F7484, @function

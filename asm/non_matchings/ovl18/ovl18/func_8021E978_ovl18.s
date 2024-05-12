@@ -245,3 +245,4 @@ glabel L8021ECB4_ovl18
 /* 2316A4 8021ED04 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 2316A8 8021ED08 03E00008 */  jr    $ra
 /* 2316AC 8021ED0C 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_8021E978_ovl18, @function

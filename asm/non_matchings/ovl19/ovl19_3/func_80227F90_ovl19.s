@@ -264,3 +264,4 @@ glabel func_80227F90_ovl19
 /* 248AAC 8022839C 8FB10018 */  lw    $s1, 0x18($sp)
 /* 248AB0 802283A0 03E00008 */  jr    $ra
 /* 248AB4 802283A4 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_80227F90_ovl19, @function

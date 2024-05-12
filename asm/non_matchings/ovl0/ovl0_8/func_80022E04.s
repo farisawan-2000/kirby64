@@ -148,3 +148,4 @@ glabel func_80022E04
 /* 023C3C 8002303C 8FB60030 */  lw    $s6, 0x30($sp)
 /* 023C40 80023040 03E00008 */  jr    $ra
 /* 023C44 80023044 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_80022E04, @function

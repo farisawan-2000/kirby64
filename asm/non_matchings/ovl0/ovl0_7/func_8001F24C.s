@@ -36,3 +36,4 @@ glabel func_8001F24C
 /* 01FED4 8001F2D4 27BD0018 */  addiu $sp, $sp, 0x18
 /* 01FED8 8001F2D8 03E00008 */  jr    $ra
 /* 01FEDC 8001F2DC 00000000 */   nop   
+.type func_8001F24C, @function

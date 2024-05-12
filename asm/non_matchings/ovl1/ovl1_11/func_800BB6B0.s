@@ -188,3 +188,4 @@ glabel L800BB874_ovl1
 /* 063BD0 800BB980 8FB00018 */  lw    $s0, 0x18($sp)
 /* 063BD4 800BB984 03E00008 */  jr    $ra
 /* 063BD8 800BB988 27BD0088 */   addiu $sp, $sp, 0x88
+.type func_800BB6B0, @function

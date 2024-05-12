@@ -17,9 +17,11 @@ glabel func_800AB680
 /* 05390C 800AB6BC 3C01800D */ lui $at, %hi(D_800D4E74)
 /* 053910 800AB6C0 03E00008 */  jr    $ra
 /* 053914 800AB6C4 A02D4E74 */ sb $t5, %lo(D_800D4E74)($at)
+.type func_800AB680, @function
 
 .L800AB6C8_ovl1:
 /* 053918 800AB6C8 3C01800D */  lui   $at, %hi(D_800D4E74) # $at, 0x800d
 /* 05391C 800AB6CC A0204E74 */  sb    $zero, %lo(D_800D4E74)($at)
 /* 053920 800AB6D0 03E00008 */  jr    $ra
 /* 053924 800AB6D4 00000000 */   nop   
+.type func_800AB680, @function

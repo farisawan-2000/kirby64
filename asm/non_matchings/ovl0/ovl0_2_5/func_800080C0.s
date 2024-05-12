@@ -63,3 +63,4 @@ glabel func_800080C0
 /* 008D8C 8000818C AC8D0004 */  sw    $t5, 4($a0)
 /* 008D90 80008190 03E00008 */  jr    $ra
 /* 008D94 80008194 AC44001C */   sw    $a0, 0x1c($v0)
+.type func_800080C0, @function

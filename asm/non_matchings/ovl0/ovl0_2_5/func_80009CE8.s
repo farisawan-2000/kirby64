@@ -29,3 +29,4 @@ glabel func_80009CE8
 /* 00A950 80009D50 27BD0020 */  addiu $sp, $sp, 0x20
 /* 00A954 80009D54 03E00008 */  jr    $ra
 /* 00A958 80009D58 00000000 */   nop   
+.type func_80009CE8, @function

@@ -59,6 +59,8 @@ glabel func_80151CEC_ovl4
 /* 0F92FC 80151DCC 8C426B74 */  lw    $v0, %lo(D_800D6B74)($v0)
 /* 0F9300 80151DD0 03E00008 */  jr    $ra
 /* 0F9304 80151DD4 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_80151CEC_ovl4, @function
 
 /* 0F9308 80151DD8 00000000 */  nop
 /* 0F930C 80151DDC 00000000 */  nop
+.type func_80151CEC_ovl4, @function

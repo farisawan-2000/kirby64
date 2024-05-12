@@ -149,3 +149,4 @@ glabel func_801DCBCC_ovl14 # 25
 /* 1FFA00 801DCE10 8FB10018 */  lw          $s1, 0x18($sp)
 /* 1FFA04 801DCE14 03E00008 */  jr          $ra
 /* 1FFA08 801DCE18 27BD0038 */   addiu      $sp, $sp, 0x38
+.type func_801DCBCC_ovl14, @function

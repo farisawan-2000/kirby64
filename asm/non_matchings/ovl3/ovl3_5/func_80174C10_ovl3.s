@@ -780,3 +780,4 @@ glabel func_80174C10_ovl3
 /* 0D6188 80175748 27BD0030 */  addiu $sp, $sp, 0x30
 /* 0D618C 8017574C 03E00008 */  jr    $ra
 /* 0D6190 80175750 00000000 */   nop   
+.type func_80174C10_ovl3, @function

@@ -4,3 +4,4 @@ glabel func_800A8564
 /* 0507BC 800A856C 01C57821 */  addu  $t7, $t6, $a1
 /* 0507C0 800A8570 03E00008 */  jr    $ra
 /* 0507C4 800A8574 AC4F000C */   sw    $t7, 0xc($v0)
+.type func_800A8564, @function

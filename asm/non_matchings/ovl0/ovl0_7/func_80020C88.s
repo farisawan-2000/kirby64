@@ -16,3 +16,4 @@ glabel func_80020C88
 .L80020CBC_ovl0:
 /* 0218BC 80020CBC 03E00008 */  jr    $ra
 /* 0218C0 80020CC0 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_80020C88, @function

@@ -242,3 +242,4 @@ glabel func_8011C8F8
 /* 0A571C 8011CCAC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0A5720 8011CCB0 03E00008 */  jr    $ra
 /* 0A5724 8011CCB4 E42817D0 */ swc1 $f8, %lo(D_800E17D0)($at)
+.type func_8011C8F8, @function

@@ -19,3 +19,4 @@ glabel func_8010E6F0
 /* 0971A4 8010E734 46062200 */  add.s $f8, $f4, $f6
 /* 0971A8 8010E738 03E00008 */  jr    $ra
 /* 0971AC 8010E73C E4880008 */   swc1  $f8, 8($a0)
+.type func_8010E6F0, @function

@@ -131,3 +131,4 @@ glabel func_800A34C8
 /* 04B904 800A36B4 AC38E4F0 */  sw    $t8, %lo(gGameState)($at)
 /* 04B908 800A36B8 03E00008 */  jr    $ra
 /* 04B90C 800A36BC 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_800A34C8, @function

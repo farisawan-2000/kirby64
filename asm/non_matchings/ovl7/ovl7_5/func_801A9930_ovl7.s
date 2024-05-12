@@ -448,3 +448,4 @@ glabel L801A9B54_ovl7
 /* 150028 801A9FB8 27BD0038 */  addiu $sp, $sp, 0x38
 /* 15002C 801A9FBC 03E00008 */  jr    $ra
 /* 150030 801A9FC0 00000000 */   nop   
+.type func_801A9930_ovl7, @function

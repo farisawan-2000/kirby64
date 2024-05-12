@@ -228,3 +228,4 @@ glabel func_80004250
 /* 0051B4 800045B4 A02092A1 */  sb    $zero, %lo(D_800492A1)($at)
 /* 0051B8 800045B8 03E00008 */  jr    $ra
 /* 0051BC 800045BC 27BD0048 */   addiu $sp, $sp, 0x48
+.type func_80004250, @function

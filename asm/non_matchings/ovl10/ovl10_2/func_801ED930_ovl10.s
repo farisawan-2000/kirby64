@@ -89,3 +89,4 @@ glabel func_801ED930_ovl10
 /* 1DE7FC 801EDA8C 002D0821 */  addu  $at, $at, $t5
 /* 1DE800 801EDA90 03E00008 */  jr    $ra
 /* 1DE804 801EDA94 AC2ADC50 */ sw $t2, %lo(gEntityVtableIndexArray)($at)
+.type func_801ED930_ovl10, @function

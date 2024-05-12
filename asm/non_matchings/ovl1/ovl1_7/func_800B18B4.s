@@ -19,3 +19,4 @@ glabel func_800B18B4
 .L800B18F8_ovl1:
 /* 059B48 800B18F8 03E00008 */  jr    $ra
 /* 059B4C 800B18FC 00000000 */   nop   
+.type func_800B18B4, @function

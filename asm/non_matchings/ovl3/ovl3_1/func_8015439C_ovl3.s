@@ -34,3 +34,4 @@ glabel func_8015439C_ovl3
 /* 0B4E5C 8015441C C42417D0 */ lwc1 $f4, %lo(D_800E17D0)($at)
 /* 0B4E60 80154420 03E00008 */  jr    $ra
 /* 0B4E64 80154424 E4640018 */   swc1  $f4, 0x18($v1)
+.type func_8015439C_ovl3, @function

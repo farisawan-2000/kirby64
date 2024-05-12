@@ -123,3 +123,4 @@ glabel func_801E3450_ovl10
 .L801E360C_ovl10:
 /* 1D437C 801E360C 03E00008 */  jr    $ra
 /* 1D4380 801E3610 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_801E3450_ovl10, @function

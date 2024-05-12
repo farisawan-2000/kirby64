@@ -11,6 +11,7 @@ glabel func_8015A31C_ovl3
 /* 0BAD80 8015A340 8C890030 */   lw    $t1, 0x30($a0)
 /* 0BAD84 8015A344 03E00008 */  jr    $ra
 /* 0BAD88 8015A348 00000000 */   nop   
+.type func_8015A31C_ovl3, @function
 
 .L8015A34C_ovl3:
 /* 0BAD8C 8015A34C 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
@@ -79,3 +80,4 @@ glabel func_8015A31C_ovl3
 .L8015A444_ovl3:
 /* 0BAE84 8015A444 03E00008 */  jr    $ra
 /* 0BAE88 8015A448 00000000 */   nop   
+.type func_8015A31C_ovl3, @function

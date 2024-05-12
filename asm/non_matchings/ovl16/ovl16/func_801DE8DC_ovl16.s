@@ -109,3 +109,4 @@ glabel func_801DE8DC_ovl16
 /* 214D38 801DEA88 AC22DC50 */ sw $v0, %lo(gEntityVtableIndexArray)($at)
 /* 214D3C 801DEA8C 03E00008 */  jr    $ra
 /* 214D40 801DEA90 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_801DE8DC_ovl16, @function

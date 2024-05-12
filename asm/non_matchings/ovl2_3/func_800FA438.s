@@ -97,3 +97,4 @@ glabel func_800FA438
 /* 083024 800FA5B4 46809120 */  cvt.s.w $f4, $f18
 /* 083028 800FA5B8 03E00008 */  jr    $ra
 /* 08302C 800FA5BC E4A4005C */   swc1  $f4, 0x5c($a1)
+.type func_800FA438, @function

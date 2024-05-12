@@ -66,3 +66,4 @@ glabel func_801E9DCC_ovl10
 /* 1DAC30 801E9EC0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1DAC34 801E9EC4 03E00008 */  jr    $ra
 /* 1DAC38 801E9EC8 00000000 */   nop   
+.type func_801E9DCC_ovl10, @function

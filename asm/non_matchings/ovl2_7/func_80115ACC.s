@@ -39,3 +39,4 @@ glabel func_80115ACC
 /* 09E5C8 80115B58 27BD0018 */  addiu $sp, $sp, 0x18
 /* 09E5CC 80115B5C 03E00008 */  jr    $ra
 /* 09E5D0 80115B60 00000000 */   nop   
+.type func_80115ACC, @function

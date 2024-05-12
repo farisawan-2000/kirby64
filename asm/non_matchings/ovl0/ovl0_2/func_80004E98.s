@@ -227,3 +227,4 @@ glabel L800051D0_ovl0
 /* 005DD4 800051D4 27BD0028 */  addiu $sp, $sp, 0x28
 /* 005DD8 800051D8 03E00008 */  jr    $ra
 /* 005DDC 800051DC 00000000 */   nop   
+.type func_80004E98, @function

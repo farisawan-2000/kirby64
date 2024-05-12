@@ -31,3 +31,4 @@ glabel func_80154088
 .L801540F8_ovl6:
 /* 138488 801540F8 03E00008 */  jr    $ra
 /* 13848C 801540FC E4500024 */   swc1  $f16, 0x24($v0)
+.type func_80154088, @function

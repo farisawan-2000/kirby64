@@ -47,3 +47,4 @@ glabel func_800A8358
 /* 050650 800A8400 ACA40008 */  sw    $a0, 8($a1)
 /* 050654 800A8404 03E00008 */  jr    $ra
 /* 050658 800A8408 ACB9000C */   sw    $t9, 0xc($a1)
+.type func_800A8358, @function

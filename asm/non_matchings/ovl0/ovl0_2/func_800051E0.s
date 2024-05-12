@@ -95,6 +95,8 @@ glabel func_800051E0
 /* 005F3C 8000533C 8FB60030 */  lw    $s6, 0x30($sp)
 /* 005F40 80005340 03E00008 */  jr    $ra
 /* 005F44 80005344 27BD0048 */   addiu $sp, $sp, 0x48
+.type func_800051E0, @function
 
 /* 005F48 80005348 00000000 */  nop   
 /* 005F4C 8000534C 00000000 */  nop   
+.type func_800051E0, @function

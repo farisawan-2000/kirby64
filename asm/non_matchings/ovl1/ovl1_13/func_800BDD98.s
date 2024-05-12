@@ -28,3 +28,4 @@ glabel func_800BDD98
 /* 066050 800BDE00 3C01800D */ lui $at, %hi(D_800D6EB4)
 /* 066054 800BDE04 03E00008 */  jr    $ra
 /* 066058 800BDE08 AC206EB4 */ sw $zero, %lo(D_800D6EB4)($at)
+.type func_800BDD98, @function

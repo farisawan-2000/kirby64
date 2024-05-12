@@ -20,3 +20,4 @@ glabel func_80122FB0
 /* 0ABA68 80122FF8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0ABA6C 80122FFC 03E00008 */  jr    $ra
 /* 0ABA70 80123000 00000000 */   nop   
+.type func_80122FB0, @function

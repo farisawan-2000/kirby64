@@ -54,3 +54,4 @@ glabel func_801DF910_ovl12 # 94
 .L801DF9D4:
 /* 0047D4 801DF9D4 03E00008 */  jr          $ra
 /* 0047D8 801DF9D8 00000000 */   nop
+.type func_801DF910_ovl12, @function

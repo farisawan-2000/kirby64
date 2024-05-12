@@ -144,3 +144,4 @@ glabel func_801DD270_ovl11
 /* 1E7D44 801DD484 8FBE0050 */  lw    $fp, 0x50($sp)
 /* 1E7D48 801DD488 03E00008 */  jr    $ra
 /* 1E7D4C 801DD48C 27BD0098 */   addiu $sp, $sp, 0x98
+.type func_801DD270_ovl11, @function

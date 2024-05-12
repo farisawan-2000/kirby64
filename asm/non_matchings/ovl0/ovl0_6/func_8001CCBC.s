@@ -15,3 +15,4 @@ glabel func_8001CCBC
 /* 01D8F0 8001CCF0 27BD0058 */  addiu $sp, $sp, 0x58
 /* 01D8F4 8001CCF4 03E00008 */  jr    $ra
 /* 01D8F8 8001CCF8 00000000 */   nop   
+.type func_8001CCBC, @function

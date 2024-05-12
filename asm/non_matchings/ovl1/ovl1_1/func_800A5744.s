@@ -22,3 +22,4 @@ glabel func_800A5744
 /* 04D9E4 800A5794 AFA60008 */  sw    $a2, 8($sp)
 /* 04D9E8 800A5798 03E00008 */  jr    $ra
 /* 04D9EC 800A579C A0266B2A */ sb $a2, %lo(D_800D6B2A)($at)
+.type func_800A5744, @function

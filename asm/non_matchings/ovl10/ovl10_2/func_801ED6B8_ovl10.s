@@ -10,3 +10,4 @@ glabel func_801ED6B8_ovl10
 /* 1DE448 801ED6D8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1DE44C 801ED6DC 03E00008 */  jr    $ra
 /* 1DE450 801ED6E0 00000000 */   nop   
+.type func_801ED6B8_ovl10, @function

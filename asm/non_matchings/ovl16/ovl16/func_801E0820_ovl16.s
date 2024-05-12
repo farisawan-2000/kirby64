@@ -307,3 +307,4 @@ glabel func_801E0820_ovl16
 /* 216F6C 801E0CBC AC2BDC50 */ sw $t3, %lo(gEntityVtableIndexArray)($at)
 /* 216F70 801E0CC0 03E00008 */  jr    $ra
 /* 216F74 801E0CC4 27BD0078 */   addiu $sp, $sp, 0x78
+.type func_801E0820_ovl16, @function

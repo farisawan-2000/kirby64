@@ -29,3 +29,4 @@ glabel func_80004C5C
 /* 0058C8 80004CC8 8C62001C */  lw    $v0, 0x1c($v1)
 /* 0058CC 80004CCC 03E00008 */  jr    $ra
 /* 0058D0 80004CD0 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_80004C5C, @function

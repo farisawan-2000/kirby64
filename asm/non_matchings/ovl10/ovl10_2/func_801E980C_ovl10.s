@@ -131,3 +131,4 @@ glabel func_801E980C_ovl10
 /* 1DA774 801E9A04 8FB50030 */  lw    $s5, 0x30($sp)
 /* 1DA778 801E9A08 03E00008 */  jr    $ra
 /* 1DA77C 801E9A0C 27BD0038 */   addiu $sp, $sp, 0x38
+.type func_801E980C_ovl10, @function

@@ -124,3 +124,4 @@ glabel func_800FC804
 /* 085424 800FC9B4 AC397B68 */  sw    $t9, %lo(D_800D7B68)($at)
 /* 085428 800FC9B8 03E00008 */  jr    $ra
 /* 08542C 800FC9BC 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800FC804, @function

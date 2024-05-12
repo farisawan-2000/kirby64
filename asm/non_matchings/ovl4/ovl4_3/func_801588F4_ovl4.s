@@ -275,4 +275,5 @@ glabel func_801588F4_ovl4
 /* 100220 80158CF0 8FB30020 */  lw    $s3, 0x20($sp)
 /* 100224 80158CF4 03E00008 */  jr    $ra
 /* 100228 80158CF8 27BD0058 */   addiu $sp, $sp, 0x58
+.type func_801588F4_ovl4, @function
 

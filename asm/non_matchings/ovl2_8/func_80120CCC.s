@@ -95,6 +95,7 @@ glabel func_80120CCC
 /* 0A98A0 80120E30 46002180 */  add.s $f6, $f4, $f0
 /* 0A98A4 80120E34 03E00008 */  jr    $ra
 /* 0A98A8 80120E38 E42641D0 */ swc1 $f6, %lo(gEntitiesAngleYArray)($at)
+.type func_80120CCC, @function
 
 .L80120E3C_ovl2:
 /* 0A98AC 80120E3C 8DEFA7C4 */ lw $t7, %lo(D_8004A7C4)($t7)
@@ -111,3 +112,4 @@ glabel func_80120CCC
 /* 0A98D8 80120E68 E43241D0 */ swc1 $f18, %lo(gEntitiesAngleYArray)($at)
 /* 0A98DC 80120E6C 03E00008 */  jr    $ra
 /* 0A98E0 80120E70 00000000 */   nop   
+.type func_80120CCC, @function

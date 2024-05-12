@@ -118,6 +118,7 @@ glabel func_801E0DF8_ovl12 # 117
 /* 005DBC 801E0FBC 8FB10018 */  lw          $s1, 0x18($sp)
 /* 005DC0 801E0FC0 03E00008 */  jr          $ra
 /* 005DC4 801E0FC4 27BD0020 */   addiu      $sp, $sp, 0x20
+.type func_801E0DF8_ovl12, @function
 
 .section .late_rodata
 glabel D_801E2DC4_ovl12

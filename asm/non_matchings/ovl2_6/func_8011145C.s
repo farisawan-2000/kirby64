@@ -25,6 +25,7 @@ glabel func_8011145C
 /* 099F24 801114B4 240B0006 */  li    $t3, 6
 /* 099F28 801114B8 03E00008 */  jr    $ra
 /* 099F2C 801114BC AC2B83E0 */   sw    $t3, -0x7c20($at)
+.type func_8011145C, @function
 
 .L801114C0_ovl2:
 /* 099F30 801114C0 908D000C */  lbu   $t5, 0xc($a0)
@@ -36,3 +37,4 @@ glabel func_8011145C
 .L801114D8_ovl2:
 /* 099F48 801114D8 03E00008 */  jr    $ra
 /* 099F4C 801114DC 00000000 */   nop   
+.type func_8011145C, @function

@@ -183,3 +183,4 @@ glabel func_80151E60
 /* 1364BC 8015212C 8FB00018 */  lw    $s0, 0x18($sp)
 /* 1364C0 80152130 03E00008 */  jr    $ra
 /* 1364C4 80152134 27BD0088 */   addiu $sp, $sp, 0x88
+.type func_80151E60, @function

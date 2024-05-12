@@ -325,3 +325,4 @@ glabel func_801DE030_ovl16
 /* 2147C8 801DE518 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 2147CC 801DE51C 03E00008 */  jr    $ra
 /* 2147D0 801DE520 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_801DE030_ovl16, @function

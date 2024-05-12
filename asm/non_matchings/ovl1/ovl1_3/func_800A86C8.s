@@ -24,3 +24,4 @@ glabel func_800A86C8
 /* 050968 800A8718 ACC30000 */  sw    $v1, ($a2)
 /* 05096C 800A871C 03E00008 */  jr    $ra
 /* 050970 800A8720 00E01025 */   move  $v0, $a3
+.type func_800A86C8, @function

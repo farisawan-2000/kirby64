@@ -52,3 +52,4 @@ glabel func_8000B57C
 /* 00C230 8000B630 8FB70030 */  lw    $s7, 0x30($sp)
 /* 00C234 8000B634 03E00008 */  jr    $ra
 /* 00C238 8000B638 27BD0038 */   addiu $sp, $sp, 0x38
+.type func_8000B57C, @function

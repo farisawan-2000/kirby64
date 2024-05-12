@@ -6,3 +6,4 @@ glabel func_800A7394
 /* 04F5F4 800A73A4 8F190068 */  lw    $t9, 0x68($t8)
 /* 04F5F8 800A73A8 03E00008 */  jr    $ra
 /* 04F5FC 800A73AC A32E0004 */   sb    $t6, 4($t9)
+.type func_800A7394, @function

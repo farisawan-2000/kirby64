@@ -228,3 +228,4 @@ glabel func_8011BF4C
 /* 0A4D04 8011C294 8FBE0080 */  lw    $fp, 0x80($sp)
 /* 0A4D08 8011C298 03E00008 */  jr    $ra
 /* 0A4D0C 8011C29C 27BD0100 */   addiu $sp, $sp, 0x100
+.type func_8011BF4C, @function

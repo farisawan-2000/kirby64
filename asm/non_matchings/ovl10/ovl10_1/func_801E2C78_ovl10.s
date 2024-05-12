@@ -46,6 +46,7 @@ glabel func_801E2C78_ovl10
 /* 1D3A88 801E2D18 27BD0020 */  addiu $sp, $sp, 0x20
 /* 1D3A8C 801E2D1C 03E00008 */  jr    $ra
 /* 1D3A90 801E2D20 00000000 */   nop   
+.type func_801E2C78_ovl10, @function
 
 /* 1D3A94 801E2D24 00000000 */  nop   
 /* 1D3A98 801E2D28 00000000 */  nop   
@@ -54,3 +55,4 @@ glabel func_801E2C78_ovl10
 /* 1D3AA4 801E2D34 00000000 */  nop   
 /* 1D3AA8 801E2D38 00000000 */  nop   
 /* 1D3AAC 801E2D3C 00000000 */  nop   
+.type func_801E2C78_ovl10, @function

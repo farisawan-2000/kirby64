@@ -80,3 +80,4 @@ glabel func_800A52F0
 .L800A53FC_ovl1:
 /* 04D64C 800A53FC 03E00008 */  jr    $ra
 /* 04D650 800A5400 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_800A52F0, @function

@@ -32,6 +32,7 @@ glabel func_8011253C
 /* 09B020 801125B0 C4680080 */   lwc1  $f8, 0x80($v1)
 /* 09B024 801125B4 03E00008 */  jr    $ra
 /* 09B028 801125B8 00001025 */   move  $v0, $zero
+.type func_8011253C, @function
 
 /* 09B02C 801125BC C4680080 */  lwc1  $f8, 0x80($v1)
 .L801125C0_ovl2:
@@ -51,3 +52,4 @@ glabel func_8011253C
 /* 09B064 801125F4 E48A000C */  swc1  $f10, 0xc($a0)
 /* 09B068 801125F8 03E00008 */  jr    $ra
 /* 09B06C 801125FC 00000000 */   nop   
+.type func_8011253C, @function

@@ -11,3 +11,4 @@ glabel func_80115EAC
 /* 09E940 80115ED0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 09E944 80115ED4 03E00008 */  jr    $ra
 /* 09E948 80115ED8 00000000 */   nop   
+.type func_80115EAC, @function

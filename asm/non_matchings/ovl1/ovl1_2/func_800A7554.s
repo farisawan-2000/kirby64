@@ -22,3 +22,4 @@ glabel func_800A7554
 /* 04F7F4 800A75A4 27BD0018 */  addiu $sp, $sp, 0x18
 /* 04F7F8 800A75A8 03E00008 */  jr    $ra
 /* 04F7FC 800A75AC AC386B50 */ sw $t8, %lo(sSoundCount)($at)
+.type func_800A7554, @function

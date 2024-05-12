@@ -14,10 +14,12 @@ glabel func_80123240
 /* 0ABCE0 80123270 00000000 */   nop   
 /* 0ABCE4 80123274 03E00008 */  jr    $ra
 /* 0ABCE8 80123278 24020006 */   li    $v0, 6
+.type func_80123240, @function
 
 .L8012327C_ovl2:
 /* 0ABCEC 8012327C 03E00008 */  jr    $ra
 /* 0ABCF0 80123280 2402FFFF */   li    $v0, -1
+.type func_80123240, @function
 
 .L80123284_ovl2:
 /* 0ABCF4 80123284 9508E8CA */ lhu $t0, %lo(D_8012E8CA)($t0)
@@ -29,3 +31,4 @@ glabel func_80123240
 /* 0ABD0C 8012329C 94638448 */ lhu $v1, %lo(D_80128448)($v1)
 /* 0ABD10 801232A0 03E00008 */  jr    $ra
 /* 0ABD14 801232A4 00601025 */   move  $v0, $v1
+.type func_80123240, @function

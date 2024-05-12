@@ -131,3 +131,4 @@ glabel func_800F8C70
 /* 0818D0 800F8E60 27BD0070 */  addiu $sp, $sp, 0x70
 /* 0818D4 800F8E64 03E00008 */  jr    $ra
 /* 0818D8 800F8E68 00000000 */   nop   
+.type func_800F8C70, @function

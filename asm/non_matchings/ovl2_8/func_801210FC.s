@@ -37,7 +37,9 @@ glabel func_801210FC
 .L80121184_ovl2:
 /* 0A9BF4 80121184 03E00008 */  jr    $ra
 /* 0A9BF8 80121188 24020001 */   li    $v0, 1
+.type func_801210FC, @function
 
 .L8012118C_ovl2:
 /* 0A9BFC 8012118C 03E00008 */  jr    $ra
 /* 0A9C00 80121190 00000000 */   nop   
+.type func_801210FC, @function

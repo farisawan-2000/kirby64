@@ -117,3 +117,4 @@ glabel func_801E13A0_ovl10
 .L801E1548_ovl10:
 /* 1D22B8 801E1548 03E00008 */  jr    $ra
 /* 1D22BC 801E154C 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_801E13A0_ovl10, @function

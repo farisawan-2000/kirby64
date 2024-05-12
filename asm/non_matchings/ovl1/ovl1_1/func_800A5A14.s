@@ -49,3 +49,4 @@ glabel func_800A5A14
 /* 04DD1C 800A5ACC 27BD0040 */  addiu $sp, $sp, 0x40
 /* 04DD20 800A5AD0 03E00008 */  jr    $ra
 /* 04DD24 800A5AD4 00000000 */   nop   
+.type func_800A5A14, @function

@@ -420,3 +420,4 @@ glabel func_800AE138
 /* 0569EC 800AE79C 00220821 */  addu  $at, $at, $v0
 /* 0569F0 800AE7A0 03E00008 */  jr    $ra
 /* 0569F4 800AE7A4 AC2093A0 */ sw $zero, %lo(D_800E93A0)($at)
+.type func_800AE138, @function

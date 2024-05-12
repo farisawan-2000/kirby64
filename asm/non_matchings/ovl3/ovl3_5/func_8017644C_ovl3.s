@@ -14,3 +14,4 @@ glabel func_8017644C_ovl3
 .L8017647C_ovl3:
 /* 0D6EBC 8017647C 03E00008 */  jr    $ra
 /* 0D6EC0 80176480 00000000 */   nop   
+.type func_8017644C_ovl3, @function

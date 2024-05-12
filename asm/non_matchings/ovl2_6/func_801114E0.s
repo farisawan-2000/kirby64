@@ -20,3 +20,4 @@ glabel func_801114E0
 /* 099F98 80111528 3C018013 */  lui   $at, 0x8013
 /* 099F9C 8011152C 03E00008 */  jr    $ra
 /* 099FA0 80111530 AC28D924 */   sw    $t0, -0x26dc($at)
+.type func_801114E0, @function

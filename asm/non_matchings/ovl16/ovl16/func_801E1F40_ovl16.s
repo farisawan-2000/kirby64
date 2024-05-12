@@ -105,3 +105,4 @@ glabel func_801E1F40_ovl16
 /* 21837C 801E20CC 8FB1000C */  lw    $s1, 0xc($sp)
 /* 218380 801E20D0 03E00008 */  jr    $ra
 /* 218384 801E20D4 27BD0010 */   addiu $sp, $sp, 0x10
+.type func_801E1F40_ovl16, @function

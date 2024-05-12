@@ -9,3 +9,4 @@ glabel func_800A5B14
 /* 04DD80 800A5B30 93AE0013 */  lbu   $t6, 0x13($sp)
 /* 04DD84 800A5B34 03E00008 */  jr    $ra
 /* 04DD88 800A5B38 A04E0017 */   sb    $t6, 0x17($v0)
+.type func_800A5B14, @function

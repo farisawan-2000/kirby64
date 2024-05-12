@@ -18,6 +18,7 @@ glabel func_80020ECC
 /* 021B0C 80020F0C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 021B10 80020F10 03E00008 */  jr    $ra
 /* 021B14 80020F14 00000000 */   nop   
+.type func_80020ECC, @function
 
 /* 021B18 80020F18 00000000 */  nop   
 /* 021B1C 80020F1C 00000000 */  nop   
@@ -28,3 +29,4 @@ glabel func_80020ECC
 /* 021B30 80020F30 00000000 */  nop   
 /* 021B34 80020F34 00000000 */  nop   
 /* 021B38 80020F38 00000000 */  nop   
+.type func_80020ECC, @function

@@ -44,6 +44,7 @@ glabel func_801023FC
 /* 08AF08 80102498 4600603C */   c.lt.s $f12, $f0
 /* 08AF0C 8010249C 03E00008 */  jr    $ra
 /* 08AF10 801024A0 00001025 */   move  $v0, $zero
+.type func_801023FC, @function
 
 /* 08AF14 801024A4 4600603C */  c.lt.s $f12, $f0
 .L801024A8_ovl2:
@@ -54,18 +55,22 @@ glabel func_801023FC
 /* 08AF28 801024B8 00001025 */   move  $v0, $zero
 /* 08AF2C 801024BC 03E00008 */  jr    $ra
 /* 08AF30 801024C0 24020001 */   li    $v0, 1
+.type func_801023FC, @function
 
 .L801024C4_ovl2:
 /* 08AF34 801024C4 50A00006 */  beql  $a1, $zero, .L801024E0_ovl2
 /* 08AF38 801024C8 00001025 */   move  $v0, $zero
 /* 08AF3C 801024CC 03E00008 */  jr    $ra
 /* 08AF40 801024D0 24020001 */   li    $v0, 1
+.type func_801023FC, @function
 
 .L801024D4_ovl2:
 /* 08AF44 801024D4 03E00008 */  jr    $ra
 /* 08AF48 801024D8 24020001 */   li    $v0, 1
+.type func_801023FC, @function
 
 /* 08AF4C 801024DC 00001025 */  move  $v0, $zero
 .L801024E0_ovl2:
 /* 08AF50 801024E0 03E00008 */  jr    $ra
 /* 08AF54 801024E4 00000000 */   nop   
+.type func_801023FC, @function

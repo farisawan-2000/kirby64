@@ -27,3 +27,4 @@ glabel func_80122C30
 /* 0AB704 80122C94 AC22E80C */  sw    $v0, %lo(D_8012E80C)($at)
 /* 0AB708 80122C98 03E00008 */  jr    $ra
 /* 0AB70C 80122C9C 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_80122C30, @function

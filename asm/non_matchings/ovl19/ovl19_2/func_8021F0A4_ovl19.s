@@ -43,10 +43,12 @@ glabel func_8021F0A4_ovl19
 /* 23F858 8021F148 344F0001 */   ori   $t7, $v0, 1
 /* 23F85C 8021F14C 03E00008 */  jr    $ra
 /* 23F860 8021F150 AC800020 */   sw    $zero, 0x20($a0)
+.type func_8021F0A4_ovl19, @function
 
 .L8021F154_ovl19:
 /* 23F864 8021F154 03E00008 */  jr    $ra
 /* 23F868 8021F158 AC8F0034 */   sw    $t7, 0x34($a0)
+.type func_8021F0A4_ovl19, @function
 
 /* 23F86C 8021F15C 8C980034 */  lw    $t8, 0x34($a0)
 .L8021F160_ovl19:
@@ -56,3 +58,4 @@ glabel func_8021F0A4_ovl19
 .L8021F16C_ovl19:
 /* 23F87C 8021F16C 03E00008 */  jr    $ra
 /* 23F880 8021F170 00000000 */   nop   
+.type func_8021F0A4_ovl19, @function

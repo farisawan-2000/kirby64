@@ -17,6 +17,7 @@ glabel func_800BAA64
 /* 062CEC 800BAA9C 00000000 */   nop   
 /* 062CF0 800BAAA0 03E00008 */  jr    $ra
 /* 062CF4 800BAAA4 24020001 */   li    $v0, 1
+.type func_800BAA64, @function
 
 /* 062CF8 800BAAA8 10000009 */  b     .L800BAAD0_ovl1
 /* 062CFC 800BAAAC 24030001 */   li    $v1, 1
@@ -35,3 +36,4 @@ glabel func_800BAA64
 .L800BAADC_ovl1:
 /* 062D2C 800BAADC 03E00008 */  jr    $ra
 /* 062D30 800BAAE0 00000000 */   nop   
+.type func_800BAA64, @function

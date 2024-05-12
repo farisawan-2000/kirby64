@@ -365,3 +365,4 @@ glabel L80226E48_ovl19
 /* 247700 80226FF0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 247704 80226FF4 03E00008 */  jr    $ra
 /* 247708 80226FF8 00000000 */   nop   
+.type func_80226AA8_ovl19, @function

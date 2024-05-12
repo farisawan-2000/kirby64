@@ -13,3 +13,4 @@ glabel func_800AFBEC
 /* 057E64 800AFC14 27BD0018 */  addiu $sp, $sp, 0x18
 /* 057E68 800AFC18 03E00008 */  jr    $ra
 /* 057E6C 800AFC1C 00000000 */   nop   
+.type func_800AFBEC, @function

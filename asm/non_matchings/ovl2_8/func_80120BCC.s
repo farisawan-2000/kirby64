@@ -59,6 +59,7 @@ glabel func_80120BCC
 /* 0A9714 80120CA4 254B002D */  addiu $t3, $t2, 0x2d
 /* 0A9718 80120CA8 03E00008 */  jr    $ra
 /* 0A971C 80120CAC A48B00DE */   sh    $t3, 0xde($a0)
+.type func_80120BCC, @function
 
 /* 0A9720 80120CB0 A08200DD */  sb    $v0, 0xdd($a0)
 .L80120CB4_ovl2:
@@ -69,3 +70,4 @@ glabel func_80120BCC
 .L80120CC4_ovl2:
 /* 0A9734 80120CC4 03E00008 */  jr    $ra
 /* 0A9738 80120CC8 00601025 */   move  $v0, $v1
+.type func_80120BCC, @function

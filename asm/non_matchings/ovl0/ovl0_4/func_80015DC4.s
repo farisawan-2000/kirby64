@@ -117,3 +117,4 @@ glabel func_80015DC4
 /* 016B6C 80015F6C 27BD0030 */  addiu $sp, $sp, 0x30
 /* 016B70 80015F70 03E00008 */  jr    $ra
 /* 016B74 80015F74 00000000 */   nop   
+.type func_80015DC4, @function

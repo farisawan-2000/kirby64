@@ -9,7 +9,9 @@ glabel func_800B9DC8
 /* 062034 800B9DE4 00000000 */   nop   
 /* 062038 800B9DE8 03E00008 */  jr    $ra
 /* 06203C 800B9DEC 24020001 */   li    $v0, 1
+.type func_800B9DC8, @function
 
 .L800B9DF0_ovl1:
 /* 062040 800B9DF0 03E00008 */  jr    $ra
 /* 062044 800B9DF4 00000000 */   nop   
+.type func_800B9DC8, @function

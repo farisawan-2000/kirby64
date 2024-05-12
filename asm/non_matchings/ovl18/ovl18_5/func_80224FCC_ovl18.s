@@ -75,3 +75,4 @@ glabel func_80224FCC_ovl18
 /* 237A80 802250E0 27BD0048 */  addiu $sp, $sp, 0x48
 /* 237A84 802250E4 03E00008 */  jr    $ra
 /* 237A88 802250E8 00000000 */   nop   
+.type func_80224FCC_ovl18, @function

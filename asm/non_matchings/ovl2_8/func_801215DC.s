@@ -33,3 +33,4 @@ glabel func_801215DC
 /* 0AA0BC 8012164C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0AA0C0 80121650 03E00008 */  jr    $ra
 /* 0AA0C4 80121654 00000000 */   nop   
+.type func_801215DC, @function

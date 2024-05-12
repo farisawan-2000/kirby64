@@ -95,6 +95,7 @@ glabel L801E3910_ovl13
 /* 1FB8CC 801E394C 8FBE0048 */  lw          $fp, 0x48($sp)
 /* 1FB8D0 801E3950 03E00008 */  jr          $ra
 /* 1FB8D4 801E3954 27BD0050 */   addiu      $sp, $sp, 0x50
+.type func_801E37E8_ovl13, @function
 
 .section .late_rodata
 glabel D_801E5DEC_ovl13

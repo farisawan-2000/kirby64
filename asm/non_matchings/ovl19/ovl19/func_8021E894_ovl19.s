@@ -105,3 +105,4 @@ glabel func_8021E894_ovl19
 /* 23F124 8021EA14 27BD0018 */  addiu $sp, $sp, 0x18
 /* 23F128 8021EA18 03E00008 */  jr    $ra
 /* 23F12C 8021EA1C 00000000 */   nop   
+.type func_8021E894_ovl19, @function

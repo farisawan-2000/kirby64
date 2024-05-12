@@ -10,3 +10,4 @@ glabel func_800B8BDC
 /* 060E4C 800B8BFC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 060E50 800B8C00 03E00008 */  jr    $ra
 /* 060E54 800B8C04 00000000 */   nop   
+.type func_800B8BDC, @function

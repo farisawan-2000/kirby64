@@ -50,3 +50,4 @@ glabel func_801DE038_ovl11
 /* 1E89AC 801DE0EC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1E89B0 801DE0F0 03E00008 */  jr    $ra
 /* 1E89B4 801DE0F4 00000000 */   nop   
+.type func_801DE038_ovl11, @function

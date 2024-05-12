@@ -98,3 +98,4 @@ glabel func_8001D514
 /* 01E294 8001D694 46043200 */  add.s $f8, $f6, $f4
 /* 01E298 8001D698 03E00008 */  jr    $ra
 /* 01E29C 8001D69C E4880008 */   swc1  $f8, 8($a0)
+.type func_8001D514, @function

@@ -23,6 +23,7 @@ glabel func_801EBF2C_ovl10
 /* 1DCCF0 801EBF80 00390821 */  addu  $at, $at, $t9
 /* 1DCCF4 801EBF84 03E00008 */  jr    $ra
 /* 1DCCF8 801EBF88 AC208920 */ sw $zero, %lo(D_800E8920)($at)
+.type func_801EBF2C_ovl10, @function
 
 .L801EBF8C_ovl10:
 /* 1DCCFC 801EBF8C C4880000 */  lwc1  $f8, ($a0)
@@ -45,3 +46,4 @@ glabel func_801EBF2C_ovl10
 /* 1DCD40 801EBFD0 AC208920 */ sw $zero, %lo(D_800E8920)($at)
 /* 1DCD44 801EBFD4 03E00008 */  jr    $ra
 /* 1DCD48 801EBFD8 00000000 */   nop   
+.type func_801EBF2C_ovl10, @function

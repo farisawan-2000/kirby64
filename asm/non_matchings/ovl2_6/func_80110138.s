@@ -5,3 +5,4 @@ glabel func_80110138
 /* 098BB4 80110144 03E00008 */  jr    $ra
 /* 098BB8 80110148 AFA7000C */   sw    $a3, 0xc($sp)
 /* 098BBC 8011014C 00000000 */  nop   
+.type func_80110138, @function

@@ -57,3 +57,4 @@ glabel func_801E16F8_ovl16
 /* 217A84 801E17D4 AC28DC50 */ sw $t0, %lo(gEntityVtableIndexArray)($at)
 /* 217A88 801E17D8 03E00008 */  jr    $ra
 /* 217A8C 801E17DC 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_801E16F8_ovl16, @function

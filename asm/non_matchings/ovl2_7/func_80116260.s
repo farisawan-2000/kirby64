@@ -36,3 +36,4 @@ glabel func_80116260
 /* 09ED58 801162E8 46105480 */  add.s $f18, $f10, $f16
 /* 09ED5C 801162EC 03E00008 */  jr    $ra
 /* 09ED60 801162F0 E4520044 */   swc1  $f18, 0x44($v0)
+.type func_80116260, @function

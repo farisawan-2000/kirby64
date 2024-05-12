@@ -53,3 +53,4 @@ glabel func_801AC840_ovl7
 /* 15296C 801AC8FC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 152970 801AC900 03E00008 */  jr    $ra
 /* 152974 801AC904 00000000 */   nop   
+.type func_801AC840_ovl7, @function

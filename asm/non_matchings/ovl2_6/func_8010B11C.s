@@ -74,3 +74,4 @@ glabel func_8010B11C
 /* 093C9C 8010B22C 00801025 */  move  $v0, $a0
 /* 093CA0 8010B230 03E00008 */  jr    $ra
 /* 093CA4 8010B234 00000000 */   nop   
+.type func_8010B11C, @function

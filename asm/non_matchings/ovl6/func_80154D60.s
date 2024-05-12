@@ -24,3 +24,4 @@ glabel func_80154D60
 /* 139148 80154DB8 03E00008 */  jr    $ra
 /* 13914C 80154DBC 27BD0018 */   addiu $sp, $sp, 0x18
 # Unknown region 139150-13E8F0 [57A0]
+.type func_80154D60, @function

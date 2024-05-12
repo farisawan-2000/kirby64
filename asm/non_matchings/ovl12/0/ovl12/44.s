@@ -69,3 +69,4 @@ glabel func_801DD400_ovl12 # 44
 /* 0022FC 801DD4FC 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 002300 801DD500 03E00008 */  jr          $ra
 /* 002304 801DD504 00000000 */   nop
+.type func_801DD400_ovl12, @function

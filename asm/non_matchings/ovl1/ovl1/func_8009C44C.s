@@ -37,3 +37,4 @@ glabel func_8009C44C
 .L8009C4D8_ovl1:
 /* 044728 8009C4D8 03E00008 */  jr    $ra
 /* 04472C 8009C4DC 00000000 */   nop   
+.type func_8009C44C, @function

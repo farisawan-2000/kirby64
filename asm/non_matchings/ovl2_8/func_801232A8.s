@@ -34,6 +34,7 @@ glabel func_801232A8
 /* 0ABD90 80123320 E4800004 */  swc1  $f0, 4($a0)
 /* 0ABD94 80123324 03E00008 */  jr    $ra
 /* 0ABD98 80123328 E4800000 */   swc1  $f0, ($a0)
+.type func_801232A8, @function
 
 .L8012332C_ovl2:
 /* 0ABD9C 8012332C 25298434 */  addiu $t1, $t1, %lo(D_80128434)
@@ -46,3 +47,4 @@ glabel func_801232A8
 /* 0ABDB8 80123348 E4900008 */  swc1  $f16, 8($a0)
 /* 0ABDBC 8012334C 03E00008 */  jr    $ra
 /* 0ABDC0 80123350 00000000 */   nop   
+.type func_801232A8, @function

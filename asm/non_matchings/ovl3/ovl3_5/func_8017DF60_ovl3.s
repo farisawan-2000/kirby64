@@ -36,6 +36,7 @@ glabel func_8017DF60_ovl3
 /* 0DEA20 8017DFE0 00000000 */   nop   
 /* 0DEA24 8017DFE4 03E00008 */  jr    $ra
 /* 0DEA28 8017DFE8 E4820000 */   swc1  $f2, ($a0)
+.type func_8017DF60_ovl3, @function
 
 .L8017DFEC_ovl3:
 /* 0DEA2C 8017DFEC 8C42A7C4 */ lw $v0, %lo(D_8004A7C4)($v0)
@@ -75,3 +76,4 @@ glabel func_8017DF60_ovl3
 .L8017E06C_ovl3:
 /* 0DEAAC 8017E06C 03E00008 */  jr    $ra
 /* 0DEAB0 8017E070 00000000 */   nop   
+.type func_8017DF60_ovl3, @function

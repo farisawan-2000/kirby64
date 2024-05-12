@@ -124,3 +124,4 @@ glabel func_80225958_ovl18
 /* 2384D8 80225B38 27BD0040 */  addiu $sp, $sp, 0x40
 /* 2384DC 80225B3C 03E00008 */  jr    $ra
 /* 2384E0 80225B40 E42A2950 */ swc1 $f10, %lo(gEntitiesNextPosZArray)($at)
+.type func_80225958_ovl18, @function

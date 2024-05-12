@@ -138,4 +138,5 @@ glabel L801DD36C_ovl13
 /* 1F531C 801DD39C AC2ADC50 */  sw          $t2, %lo(gEntityVtableIndexArray)($at)
 /* 1F5320 801DD3A0 03E00008 */  jr          $ra
 /* 1F5324 801DD3A4 27BD0028 */   addiu      $sp, $sp, 0x28
+.type func_801DD184_ovl13, @function
 

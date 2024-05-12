@@ -77,3 +77,4 @@ glabel func_80000A44
 /* 001758 80000B58 27BD0028 */  addiu $sp, $sp, 0x28
 /* 00175C 80000B5C 03E00008 */  jr    $ra
 /* 001760 80000B60 00000000 */   nop   
+.type func_80000A44, @function

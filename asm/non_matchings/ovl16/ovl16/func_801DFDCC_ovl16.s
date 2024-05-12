@@ -22,6 +22,7 @@ glabel func_801DFDCC_ovl16
 /* 2160CC 801DFE1C 03214024 */  and   $t0, $t9, $at
 /* 2160D0 801DFE20 03E00008 */  jr    $ra
 /* 2160D4 801DFE24 AC680000 */   sw    $t0, ($v1)
+.type func_801DFDCC_ovl16, @function
 
 .L801DFE28_ovl16:
 /* 2160D8 801DFE28 3C01800F */ lui $at, %hi(D_800EA6E0)
@@ -31,3 +32,4 @@ glabel func_801DFDCC_ovl16
 /* 2160E8 801DFE38 E4680020 */  swc1  $f8, 0x20($v1)
 /* 2160EC 801DFE3C 03E00008 */  jr    $ra
 /* 2160F0 801DFE40 00000000 */   nop   
+.type func_801DFDCC_ovl16, @function

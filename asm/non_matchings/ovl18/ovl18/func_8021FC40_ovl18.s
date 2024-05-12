@@ -68,3 +68,4 @@ glabel func_8021FC40_ovl18
 /* 2326DC 8021FD3C E43248D0 */ swc1 $f18, %lo(gEntitiesScaleZArray)($at)
 /* 2326E0 8021FD40 03E00008 */  jr    $ra
 /* 2326E4 8021FD44 ACA40004 */   sw    $a0, 4($a1)
+.type func_8021FC40_ovl18, @function

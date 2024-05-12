@@ -36,3 +36,4 @@ glabel func_800B922C
 .L800B92AC_ovl1:
 /* 0614FC 800B92AC 03E00008 */  jr    $ra
 /* 061500 800B92B0 00801025 */   move  $v0, $a0
+.type func_800B922C, @function

@@ -9,3 +9,4 @@ glabel func_80228874_ovl19
 /* 248FA0 80228890 27BD0018 */  addiu $sp, $sp, 0x18
 /* 248FA4 80228894 03E00008 */  jr    $ra
 /* 248FA8 80228898 00000000 */   nop   
+.type func_80228874_ovl19, @function

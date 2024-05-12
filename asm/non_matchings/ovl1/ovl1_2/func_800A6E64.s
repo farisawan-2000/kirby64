@@ -55,3 +55,4 @@ glabel func_800A6E64
 /* 04F184 800A6F34 AD200000 */   sw    $zero, ($t1)
 /* 04F188 800A6F38 03E00008 */  jr    $ra
 /* 04F18C 800A6F3C 00000000 */   nop   
+.type func_800A6E64, @function

@@ -23,6 +23,7 @@ glabel func_800BAEB0
 /* 063150 800BAF00 AC860008 */  sw    $a2, 8($a0)
 /* 063154 800BAF04 03E00008 */  jr    $ra
 /* 063158 800BAF08 24020001 */   li    $v0, 1
+.type func_800BAEB0, @function
 
 /* 06315C 800BAF0C 0005C880 */  sll   $t9, $a1, 2
 .L800BAF10_ovl1:
@@ -34,10 +35,12 @@ glabel func_800BAEB0
 /* 063174 800BAF24 24020001 */  li    $v0, 1
 /* 063178 800BAF28 03E00008 */  jr    $ra
 /* 06317C 800BAF2C AC880010 */   sw    $t0, 0x10($a0)
+.type func_800BAEB0, @function
 
 .L800BAF30_ovl1:
 /* 063180 800BAF30 03E00008 */  jr    $ra
 /* 063184 800BAF34 00001025 */   move  $v0, $zero
+.type func_800BAEB0, @function
 
 .L800BAF38_ovl1:
 /* 063188 800BAF38 8C420004 */  lw    $v0, 4($v0)
@@ -48,3 +51,4 @@ glabel func_800BAEB0
 .L800BAF48_ovl1:
 /* 063198 800BAF48 03E00008 */  jr    $ra
 /* 06319C 800BAF4C 00000000 */   nop   
+.type func_800BAEB0, @function

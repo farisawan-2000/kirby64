@@ -37,3 +37,4 @@ glabel func_800B21FC
 /* 05A4CC 800B227C 8FB20028 */  lw    $s2, 0x28($sp)
 /* 05A4D0 800B2280 03E00008 */  jr    $ra
 /* 05A4D4 800B2284 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_800B21FC, @function

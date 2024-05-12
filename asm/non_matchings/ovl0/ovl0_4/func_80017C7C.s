@@ -80,3 +80,4 @@ glabel func_80017C7C
 /* 0189A4 80017DA4 27BD0048 */  addiu $sp, $sp, 0x48
 /* 0189A8 80017DA8 03E00008 */  jr    $ra
 /* 0189AC 80017DAC A038A7F8 */   sb    $t8, -0x5808($at)
+.type func_80017C7C, @function

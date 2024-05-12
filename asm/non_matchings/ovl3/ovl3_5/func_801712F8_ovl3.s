@@ -324,3 +324,4 @@ glabel func_801712F8_ovl3
 /* 0D2224 801717E4 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0D2228 801717E8 03E00008 */  jr    $ra
 /* 0D222C 801717EC 00000000 */   nop   
+.type func_801712F8_ovl3, @function

@@ -143,6 +143,7 @@ glabel func_8011E978
 /* 0A75F8 8011EB88 00C84821 */  addu  $t1, $a2, $t0
 /* 0A75FC 8011EB8C 03E00008 */  jr    $ra
 /* 0A7600 8011EB90 E5220000 */   swc1  $f2, ($t1)
+.type func_8011E978, @function
 
 .L8011EB94_ovl2:
 /* 0A7604 8011EB94 ACA00020 */  sw    $zero, 0x20($a1)
@@ -162,3 +163,4 @@ glabel func_8011E978
 .L8011EBCC_ovl2:
 /* 0A763C 8011EBCC 03E00008 */  jr    $ra
 /* 0A7640 8011EBD0 00000000 */   nop   
+.type func_8011E978, @function

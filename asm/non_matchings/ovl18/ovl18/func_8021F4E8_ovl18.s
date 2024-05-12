@@ -60,3 +60,4 @@ glabel func_8021F4E8_ovl18
 /* 231F60 8021F5C0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 231F64 8021F5C4 03E00008 */  jr    $ra
 /* 231F68 8021F5C8 00000000 */   nop   
+.type func_8021F4E8_ovl18, @function

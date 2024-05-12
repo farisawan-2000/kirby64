@@ -1073,3 +1073,4 @@ glabel func_8018F368_ovl3
 /* 0F0D48 80190308 03E00008 */  jr    $ra
 /* 0F0D4C 8019030C 00000000 */   nop   
 # Unknown region 0F0D50-0F8630 [78E0]
+.type func_8018F368_ovl3, @function

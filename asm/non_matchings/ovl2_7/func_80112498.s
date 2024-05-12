@@ -35,6 +35,7 @@ glabel func_80112498
 /* 09AF88 80112518 24020001 */  li    $v0, 1
 /* 09AF8C 8011251C 03E00008 */  jr    $ra
 /* 09AF90 80112520 E5CE0080 */   swc1  $f14, 0x80($t6)
+.type func_80112498, @function
 
 /* 09AF94 80112524 24A50001 */  addiu $a1, $a1, 1
 .L80112528_ovl2:
@@ -43,3 +44,4 @@ glabel func_80112498
 /* 09AFA0 80112530 00001025 */  move  $v0, $zero
 /* 09AFA4 80112534 03E00008 */  jr    $ra
 /* 09AFA8 80112538 00000000 */   nop   
+.type func_80112498, @function

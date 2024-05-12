@@ -78,3 +78,4 @@ glabel func_8001E7A4
 /* 01F4C4 8001E8C4 27BD0030 */  addiu $sp, $sp, 0x30
 /* 01F4C8 8001E8C8 03E00008 */  jr    $ra
 /* 01F4CC 8001E8CC 004C1021 */   addu  $v0, $v0, $t4
+.type func_8001E7A4, @function

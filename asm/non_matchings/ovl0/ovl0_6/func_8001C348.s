@@ -258,3 +258,4 @@ glabel func_8001C348
 /* 01D330 8001C730 000E7C00 */  sll   $t7, $t6, 0x10
 /* 01D334 8001C734 03E00008 */  jr    $ra
 /* 01D338 8001C738 AC8F003C */   sw    $t7, 0x3c($a0)
+.type func_8001C348, @function

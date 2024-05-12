@@ -97,4 +97,5 @@ glabel func_801DD704_ovl17
 /* 228A6C 801DD87C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* 228A70 801DD880 27BD0018 */  addiu $sp, $sp, 0x18
 /* 228A74 801DD884 03E00008 */  jr    $ra
-/* 228A78 801DD888 00000000 */   nop   
+/* 228A78 801DD888 00000000 */   nop
+.type func_801DD704_ovl17, @function

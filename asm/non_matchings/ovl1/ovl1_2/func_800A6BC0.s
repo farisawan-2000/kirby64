@@ -178,3 +178,4 @@ glabel func_800A6BC0
 /* 04F0A8 800A6E58 8FBE0090 */  lw    $fp, 0x90($sp)
 /* 04F0AC 800A6E5C 03E00008 */  jr    $ra
 /* 04F0B0 800A6E60 27BD00A8 */   addiu $sp, $sp, 0xa8
+.type func_800A6BC0, @function

@@ -78,3 +78,4 @@ glabel func_8015C884_ovl5
 /* 103E18 8015C9A8 25080010 */   addiu $t0, $t0, 0x10
 /* 103E1C 8015C9AC 03E00008 */  jr    $ra
 /* 103E20 8015C9B0 00000000 */   nop   
+.type func_8015C884_ovl5, @function

@@ -15,3 +15,4 @@ glabel func_8009C18C
 /* 04440C 8009C1BC A4A80000 */  sh    $t0, ($a1)
 /* 044410 8009C1C0 03E00008 */  jr    $ra
 /* 044414 8009C1C4 00801025 */   move  $v0, $a0
+.type func_8009C18C, @function

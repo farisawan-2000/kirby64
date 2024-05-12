@@ -177,3 +177,4 @@ glabel L801D27DC_ovl8
 /* 1762F0 801D2810 8FB30020 */  lw    $s3, 0x20($sp)
 /* 1762F4 801D2814 03E00008 */  jr    $ra
 /* 1762F8 801D2818 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_801D2590_ovl8, @function

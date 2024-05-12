@@ -35,3 +35,4 @@ glabel func_800BDF2C
 /* 0661FC 800BDFAC AC284D14 */  sw    $t0, %lo(D_800F4D14)($at)
 /* 066200 800BDFB0 03E00008 */  jr    $ra
 /* 066204 800BDFB4 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800BDF2C, @function

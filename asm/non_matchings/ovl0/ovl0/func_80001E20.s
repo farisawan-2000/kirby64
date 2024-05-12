@@ -111,3 +111,4 @@ glabel func_80001E20
 /* 002BA0 80001FA0 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 002BA4 80001FA4 03E00008 */  jr    $ra
 /* 002BA8 80001FA8 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_80001E20, @function

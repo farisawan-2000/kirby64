@@ -27,6 +27,7 @@ glabel func_802244FC_ovl18
 /* 236EF8 80224558 27BD0018 */  addiu $sp, $sp, 0x18
 /* 236EFC 8022455C 03E00008 */  jr    $ra
 /* 236F00 80224560 00000000 */   nop   
+.type func_802244FC_ovl18, @function
 
 /* 236F04 80224564 00000000 */  nop   
 /* 236F08 80224568 00000000 */  nop   
@@ -35,3 +36,4 @@ glabel func_802244FC_ovl18
 /* 236F14 80224574 00000000 */  nop   
 /* 236F18 80224578 00000000 */  nop   
 /* 236F1C 8022457C 00000000 */  nop   
+.type func_802244FC_ovl18, @function

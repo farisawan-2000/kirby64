@@ -12,3 +12,4 @@ glabel func_800AC5E0
 /* 054854 800AC604 AC8F0000 */  sw    $t7, ($a0)
 /* 054858 800AC608 03E00008 */  jr    $ra
 /* 05485C 800AC60C AC440000 */   sw    $a0, ($v0)
+.type func_800AC5E0, @function

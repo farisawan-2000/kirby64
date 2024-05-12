@@ -19,3 +19,4 @@ glabel func_800A2024
 /* 04A2B0 800A2060 8FB10018 */  lw    $s1, 0x18($sp)
 /* 04A2B4 800A2064 03E00008 */  jr    $ra
 /* 04A2B8 800A2068 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_800A2024, @function

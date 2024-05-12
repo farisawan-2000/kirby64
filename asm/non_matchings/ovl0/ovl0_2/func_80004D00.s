@@ -12,3 +12,4 @@ glabel func_80004D00
 /* 005928 80004D28 27BD0018 */  addiu $sp, $sp, 0x18
 /* 00592C 80004D2C 03E00008 */  jr    $ra
 /* 005930 80004D30 00000000 */   nop   
+.type func_80004D00, @function

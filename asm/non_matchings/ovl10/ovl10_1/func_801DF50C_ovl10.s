@@ -462,3 +462,4 @@ glabel func_801DF50C_ovl10
 /* 1D0960 801DFBF0 AC2DDC50 */ sw $t5, %lo(gEntityVtableIndexArray)($at)
 /* 1D0964 801DFBF4 03E00008 */  jr    $ra
 /* 1D0968 801DFBF8 27BD0058 */   addiu $sp, $sp, 0x58
+.type func_801DF50C_ovl10, @function

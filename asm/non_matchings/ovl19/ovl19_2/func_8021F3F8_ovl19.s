@@ -132,3 +132,4 @@ glabel func_8021F3F8_ovl19
 /* 23FD04 8021F5F4 8FB10018 */  lw    $s1, 0x18($sp)
 /* 23FD08 8021F5F8 03E00008 */  jr    $ra
 /* 23FD0C 8021F5FC 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_8021F3F8_ovl19, @function

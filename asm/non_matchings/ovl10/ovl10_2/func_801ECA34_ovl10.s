@@ -180,3 +180,4 @@ glabel func_801ECA34_ovl10
 /* 1DDA48 801ECCD8 D7B40010 */  ldc1  $f20, 0x10($sp)
 /* 1DDA4C 801ECCDC 03E00008 */  jr    $ra
 /* 1DDA50 801ECCE0 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_801ECA34_ovl10, @function

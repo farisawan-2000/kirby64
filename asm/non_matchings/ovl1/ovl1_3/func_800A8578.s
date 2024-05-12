@@ -10,6 +10,7 @@ glabel func_800A8578
 /* 0507E8 800A8598 00601025 */   move  $v0, $v1
 /* 0507EC 800A859C 03E00008 */  jr    $ra
 /* 0507F0 800A85A0 00C01025 */   move  $v0, $a2
+.type func_800A8578, @function
 
 .L800A85A4_ovl1:
 /* 0507F4 800A85A4 2CA10002 */  sltiu $at, $a1, 2
@@ -18,6 +19,7 @@ glabel func_800A8578
 /* 050800 800A85B0 24A2FFFF */  addiu $v0, $a1, -1
 /* 050804 800A85B4 03E00008 */  jr    $ra
 /* 050808 800A85B8 AC62000C */   sw    $v0, 0xc($v1)
+.type func_800A8578, @function
 
 /* 05080C 800A85BC 8C650000 */  lw    $a1, ($v1)
 .L800A85C0_ovl1:
@@ -59,3 +61,4 @@ glabel func_800A8578
 .L800A8640_ovl1:
 /* 050890 800A8640 03E00008 */  jr    $ra
 /* 050894 800A8644 00000000 */   nop   
+.type func_800A8578, @function

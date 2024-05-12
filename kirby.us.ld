@@ -1,6 +1,9 @@
 
 OUTPUT_ARCH (mips)
 
+#define SYM(s, addr) s = DEFINED(s) ? s : addr
+#include "unnamed_syms.txt"
+
 #define BEGIN_SEG(name, addr) \
      _##name##SegmentStart = ADDR(.name); \
      _##name##SegmentRomStart = __romPos; \

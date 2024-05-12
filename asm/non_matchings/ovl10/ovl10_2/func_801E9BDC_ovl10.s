@@ -125,3 +125,4 @@ glabel func_801E9BDC_ovl10
 /* 1DAB30 801E9DC0 8FB10018 */  lw    $s1, 0x18($sp)
 /* 1DAB34 801E9DC4 03E00008 */  jr    $ra
 /* 1DAB38 801E9DC8 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_801E9BDC_ovl10, @function

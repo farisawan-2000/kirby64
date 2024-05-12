@@ -15,3 +15,4 @@ glabel func_801D1E58_ovl8
 /* 17596C 801D1E8C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 175970 801D1E90 03E00008 */  jr    $ra
 /* 175974 801D1E94 E4242790 */ swc1 $f4, %lo(gEntitiesNextPosYArray)($at)
+.type func_801D1E58_ovl8, @function

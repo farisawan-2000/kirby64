@@ -13,3 +13,4 @@ glabel func_801DE524_ovl16
 /* 214800 801DE550 8DF80004 */  lw    $t8, 4($t7)
 /* 214804 801DE554 03E00008 */  jr    $ra
 /* 214808 801DE558 E7040038 */   swc1  $f4, 0x38($t8)
+.type func_801DE524_ovl16, @function

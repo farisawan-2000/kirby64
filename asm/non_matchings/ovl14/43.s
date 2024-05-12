@@ -363,3 +363,4 @@ glabel func_801DE6C8_ovl14 # 43
 /* 201818 801DEC28 27BD0070 */  addiu       $sp, $sp, 0x70
 /* 20181C 801DEC2C 03E00008 */  jr          $ra
 /* 201820 801DEC30 00000000 */   nop
+.type func_801DE6C8_ovl14, @function

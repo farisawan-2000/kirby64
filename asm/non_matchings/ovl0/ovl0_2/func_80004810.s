@@ -112,3 +112,4 @@ glabel L80004970_ovl0
 /* 0055B0 800049B0 27BD0030 */  addiu $sp, $sp, 0x30
 /* 0055B4 800049B4 03E00008 */  jr    $ra
 /* 0055B8 800049B8 00000000 */   nop   
+.type func_80004810, @function

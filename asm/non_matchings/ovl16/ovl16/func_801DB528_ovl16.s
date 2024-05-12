@@ -95,3 +95,4 @@ glabel func_801DB528_ovl16
 /* 21193C 801DB68C 8FBE0048 */  lw    $fp, 0x48($sp)
 /* 211940 801DB690 03E00008 */  jr    $ra
 /* 211944 801DB694 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_801DB528_ovl16, @function

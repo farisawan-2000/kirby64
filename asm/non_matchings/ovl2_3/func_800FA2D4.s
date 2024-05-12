@@ -79,3 +79,4 @@ glabel func_800FA2D4
 /* 082E78 800FA408 C4900058 */  lwc1  $f16, 0x58($a0)
 /* 082E7C 800FA40C 03E00008 */  jr    $ra
 /* 082E80 800FA410 E450002C */   swc1  $f16, 0x2c($v0)
+.type func_800FA2D4, @function

@@ -72,3 +72,4 @@ glabel func_801DFE64_ovl10
 /* 1D0CEC 801DFF7C E4E00014 */  swc1  $f0, 0x14($a3)
 /* 1D0CF0 801DFF80 03E00008 */  jr    $ra
 /* 1D0CF4 801DFF84 E4E0000C */   swc1  $f0, 0xc($a3)
+.type func_801DFE64_ovl10, @function

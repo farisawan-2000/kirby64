@@ -20,3 +20,4 @@ glabel func_8011B050
 /* 0A3B08 8011B098 AC2FEF90 */ sw $t7, %lo(D_800DEF90)($at)
 /* 0A3B0C 8011B09C 03E00008 */  jr    $ra
 /* 0A3B10 8011B0A0 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_8011B050, @function

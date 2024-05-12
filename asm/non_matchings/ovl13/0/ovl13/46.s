@@ -39,4 +39,5 @@ glabel func_801E36D8_ovl13 # 46
 /* 1FB6EC 801E376C 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1FB6F0 801E3770 03E00008 */  jr          $ra
 /* 1FB6F4 801E3774 00000000 */   nop
+.type func_801E36D8_ovl13, @function
 

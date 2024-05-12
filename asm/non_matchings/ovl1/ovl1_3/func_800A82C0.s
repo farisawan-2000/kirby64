@@ -19,3 +19,4 @@ glabel func_800A82C0
 /* 050554 800A8304 3C0B8040 */  lui   $t3, 0x8040
 /* 050558 800A8308 03E00008 */  jr    $ra
 /* 05055C 800A830C AC2B7C10 */   sw    $t3, 0x7c10($at)
+.type func_800A82C0, @function

@@ -146,3 +146,4 @@ glabel func_801DEDE8_ovl14 # 47
 /* 201C00 801DF010 27BD0040 */  addiu       $sp, $sp, 0x40
 /* 201C04 801DF014 03E00008 */  jr          $ra
 /* 201C08 801DF018 00000000 */   nop
+.type func_801DEDE8_ovl14, @function

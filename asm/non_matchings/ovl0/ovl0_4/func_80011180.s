@@ -2290,3 +2290,4 @@ glabel func_80011180
 /* 013EF4 800132F4 8FA202CC */  lw    $v0, 0x2cc($sp)
 /* 013EF8 800132F8 03E00008 */  jr    $ra
 /* 013EFC 800132FC 27BD02D8 */   addiu $sp, $sp, 0x2d8
+.type func_80011180, @function

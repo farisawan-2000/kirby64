@@ -45,3 +45,4 @@ glabel func_8010DF9C
 /* 096AAC 8010E03C 8FB20020 */  lw    $s2, 0x20($sp)
 /* 096AB0 8010E040 03E00008 */  jr    $ra
 /* 096AB4 8010E044 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_8010DF9C, @function

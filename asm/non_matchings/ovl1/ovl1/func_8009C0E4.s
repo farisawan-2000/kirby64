@@ -30,3 +30,4 @@ glabel func_8009C0E4
 /* 044398 8009C148 8FB30020 */  lw    $s3, 0x20($sp)
 /* 04439C 8009C14C 03E00008 */  jr    $ra
 /* 0443A0 8009C150 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_8009C0E4, @function

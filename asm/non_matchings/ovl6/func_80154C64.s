@@ -67,3 +67,4 @@ glabel func_80154C64
 /* 1390E4 80154D54 27BD0020 */  addiu $sp, $sp, 0x20
 /* 1390E8 80154D58 03E00008 */  jr    $ra
 /* 1390EC 80154D5C 00000000 */   nop   
+.type func_80154C64, @function

@@ -45,3 +45,4 @@ glabel func_8000CECC
 /* 00DB78 8000CF78 46083282 */  mul.s $f10, $f6, $f8
 /* 00DB7C 8000CF7C 03E00008 */  jr    $ra
 /* 00DB80 8000CF80 460A2000 */   add.s $f0, $f4, $f10
+.type func_8000CECC, @function

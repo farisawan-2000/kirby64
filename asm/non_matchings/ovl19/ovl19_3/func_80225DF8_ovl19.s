@@ -15,3 +15,4 @@ glabel func_80225DF8_ovl19
 /* 24653C 80225E2C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 246540 80225E30 03E00008 */  jr    $ra
 /* 246544 80225E34 00000000 */   nop   
+.type func_80225DF8_ovl19, @function

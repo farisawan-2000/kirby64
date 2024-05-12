@@ -11,7 +11,9 @@ glabel func_800AA934
 /* 052BA8 800AA958 00000000 */   nop   
 /* 052BAC 800AA95C 03E00008 */  jr    $ra
 /* 052BB0 800AA960 24020001 */   li    $v0, 1
+.type func_800AA934, @function
 
 .L800AA964_ovl1:
 /* 052BB4 800AA964 03E00008 */  jr    $ra
 /* 052BB8 800AA968 00000000 */   nop   
+.type func_800AA934, @function

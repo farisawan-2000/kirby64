@@ -17,6 +17,7 @@ glabel func_8010EE24
 .L8010EE60_ovl2:
 /* 0978D0 8010EE60 03E00008 */  jr    $ra
 /* 0978D4 8010EE64 00001025 */   move  $v0, $zero
+.type func_8010EE24, @function
 
 /* 0978D8 8010EE68 C490001C */  lwc1  $f16, 0x1c($a0)
 .L8010EE6C_ovl2:
@@ -37,6 +38,7 @@ glabel func_8010EE24
 .L8010EEA4_ovl2:
 /* 097914 8010EEA4 03E00008 */  jr    $ra
 /* 097918 8010EEA8 00001025 */   move  $v0, $zero
+.type func_8010EE24, @function
 
 /* 09791C 8010EEAC C48A0014 */  lwc1  $f10, 0x14($a0)
 .L8010EEB0_ovl2:
@@ -53,7 +55,9 @@ glabel func_8010EE24
 .L8010EED8_ovl2:
 /* 097948 8010EED8 03E00008 */  jr    $ra
 /* 09794C 8010EEDC 00001025 */   move  $v0, $zero
+.type func_8010EE24, @function
 
 .L8010EEE0_ovl2:
 /* 097950 8010EEE0 03E00008 */  jr    $ra
 /* 097954 8010EEE4 00000000 */   nop   
+.type func_8010EE24, @function

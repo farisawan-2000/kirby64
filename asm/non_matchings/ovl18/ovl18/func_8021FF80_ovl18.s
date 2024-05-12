@@ -48,3 +48,4 @@ glabel func_8021FF80_ovl18
 /* 2329CC 8022002C E4324010 */ swc1 $f18, %lo(gEntitiesAngleXArray)($at)
 /* 2329D0 80220030 03E00008 */  jr    $ra
 /* 2329D4 80220034 ACA40004 */   sw    $a0, 4($a1)
+.type func_8021FF80_ovl18, @function

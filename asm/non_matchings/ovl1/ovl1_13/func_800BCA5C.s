@@ -314,3 +314,4 @@ glabel func_800BCA5C
 /* 065130 800BCEE0 8FB30030 */  lw    $s3, 0x30($sp)
 /* 065134 800BCEE4 03E00008 */  jr    $ra
 /* 065138 800BCEE8 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_800BCA5C, @function

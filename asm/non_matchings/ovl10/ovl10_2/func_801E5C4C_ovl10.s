@@ -41,3 +41,4 @@ glabel func_801E5C4C_ovl10
 /* 1D6A54 801E5CE4 002F0821 */  addu  $at, $at, $t7
 /* 1D6A58 801E5CE8 03E00008 */  jr    $ra
 /* 1D6A5C 801E5CEC E43233D0 */ swc1 $f18, %lo(D_800E33D0)($at)
+.type func_801E5C4C_ovl10, @function

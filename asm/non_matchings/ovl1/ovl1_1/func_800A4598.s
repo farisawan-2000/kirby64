@@ -46,6 +46,7 @@ glabel func_800A4598
 /* 04C880 800A4630 460C0400 */  add.s $f16, $f0, $f12
 /* 04C884 800A4634 03E00008 */  jr    $ra
 /* 04C888 800A4638 E4900008 */   swc1  $f16, 8($a0)
+.type func_800A4598, @function
 
 /* 04C88C 800A463C 4600603E */  c.le.s $f12, $f0
 .L800A4640_ovl1:
@@ -57,3 +58,4 @@ glabel func_800A4598
 .L800A4654_ovl1:
 /* 04C8A4 800A4654 03E00008 */  jr    $ra
 /* 04C8A8 800A4658 00000000 */   nop   
+.type func_800A4598, @function

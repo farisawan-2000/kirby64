@@ -123,3 +123,4 @@ glabel func_801A9FC4_ovl7
 /* 1501F4 801AA184 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 1501F8 801AA188 03E00008 */  jr    $ra
 /* 1501FC 801AA18C 27BD0040 */   addiu $sp, $sp, 0x40
+.type func_801A9FC4_ovl7, @function

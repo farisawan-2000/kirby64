@@ -29,6 +29,7 @@ glabel func_800BAF50
 /* 063208 800BAFB8 ACC30008 */  sw    $v1, 8($a2)
 /* 06320C 800BAFBC 03E00008 */  jr    $ra
 /* 063210 800BAFC0 8C620000 */   lw    $v0, ($v1)
+.type func_800BAF50, @function
 
 .L800BAFC4_ovl1:
 /* 063214 800BAFC4 10C3000E */  beq   $a2, $v1, .L800BB000_ovl1
@@ -46,14 +47,17 @@ glabel func_800BAF50
 /* 063244 800BAFF4 ACC30008 */  sw    $v1, 8($a2)
 /* 063248 800BAFF8 03E00008 */  jr    $ra
 /* 06324C 800BAFFC 8C620000 */   lw    $v0, ($v1)
+.type func_800BAF50, @function
 
 .L800BB000_ovl1:
 /* 063250 800BB000 03E00008 */  jr    $ra
 /* 063254 800BB004 8C620000 */   lw    $v0, ($v1)
+.type func_800BAF50, @function
 
 .L800BB008_ovl1:
 /* 063258 800BB008 03E00008 */  jr    $ra
 /* 06325C 800BB00C 00A01025 */   move  $v0, $a1
+.type func_800BAF50, @function
 
 /* 063260 800BB010 8CC60004 */  lw    $a2, 4($a2)
 .L800BB014_ovl1:
@@ -63,3 +67,4 @@ glabel func_800BAF50
 /* 06326C 800BB01C 00001025 */  move  $v0, $zero
 /* 063270 800BB020 03E00008 */  jr    $ra
 /* 063274 800BB024 00000000 */   nop   
+.type func_800BAF50, @function

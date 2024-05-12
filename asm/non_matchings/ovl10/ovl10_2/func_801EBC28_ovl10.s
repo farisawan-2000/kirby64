@@ -13,3 +13,4 @@ glabel func_801EBC28_ovl10
 /* 1DC9C4 801EBC54 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1DC9C8 801EBC58 03E00008 */  jr    $ra
 /* 1DC9CC 801EBC5C 00000000 */   nop   
+.type func_801EBC28_ovl10, @function

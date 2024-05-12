@@ -25,11 +25,14 @@ glabel func_801103C4
 .L80110420_ovl2:
 /* 098E90 80110420 03E00008 */  jr    $ra
 /* 098E94 80110424 24020001 */   li    $v0, 1
+.type func_801103C4, @function
 
 .L80110428_ovl2:
 /* 098E98 80110428 03E00008 */  jr    $ra
 /* 098E9C 8011042C 00001025 */   move  $v0, $zero
+.type func_801103C4, @function
 
 .L80110430_ovl2:
 /* 098EA0 80110430 03E00008 */  jr    $ra
 /* 098EA4 80110434 00000000 */   nop   
+.type func_801103C4, @function

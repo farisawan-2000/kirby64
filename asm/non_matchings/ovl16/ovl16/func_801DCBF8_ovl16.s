@@ -123,3 +123,4 @@ glabel func_801DCBF8_ovl16
 /* 21306C 801DCDBC 00380821 */  addu  $at, $at, $t8
 /* 213070 801DCDC0 03E00008 */  jr    $ra
 /* 213074 801DCDC4 AC20DC50 */ sw $zero, %lo(gEntityVtableIndexArray)($at)
+.type func_801DCBF8_ovl16, @function

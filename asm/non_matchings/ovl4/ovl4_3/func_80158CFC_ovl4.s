@@ -105,3 +105,4 @@ glabel func_80158CFC_ovl4
 /* 1003BC 80158E8C 27BD0050 */  addiu $sp, $sp, 0x50
 /* 1003C0 80158E90 03E00008 */  jr    $ra
 /* 1003C4 80158E94 00000000 */   nop   
+.type func_80158CFC_ovl4, @function

@@ -24,18 +24,22 @@ glabel func_801024E8
 /* 08AFB0 80102540 00001025 */   move  $v0, $zero
 /* 08AFB4 80102544 03E00008 */  jr    $ra
 /* 08AFB8 80102548 24020001 */   li    $v0, 1
+.type func_801024E8, @function
 
 .L8010254C_ovl2:
 /* 08AFBC 8010254C 50A00006 */  beql  $a1, $zero, .L80102568_ovl2
 /* 08AFC0 80102550 00001025 */   move  $v0, $zero
 /* 08AFC4 80102554 03E00008 */  jr    $ra
 /* 08AFC8 80102558 24020001 */   li    $v0, 1
+.type func_801024E8, @function
 
 .L8010255C_ovl2:
 /* 08AFCC 8010255C 03E00008 */  jr    $ra
 /* 08AFD0 80102560 24020001 */   li    $v0, 1
+.type func_801024E8, @function
 
 /* 08AFD4 80102564 00001025 */  move  $v0, $zero
 .L80102568_ovl2:
 /* 08AFD8 80102568 03E00008 */  jr    $ra
 /* 08AFDC 8010256C 00000000 */   nop   
+.type func_801024E8, @function

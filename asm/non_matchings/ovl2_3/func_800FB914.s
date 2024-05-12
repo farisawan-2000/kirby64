@@ -14,6 +14,7 @@ glabel func_800FB914
 /* 0843B4 800FB944 24020001 */  li    $v0, 1
 /* 0843B8 800FB948 03E00008 */  jr    $ra
 /* 0843BC 800FB94C E4269400 */   swc1  $f6, -0x6c00($at)
+.type func_800FB914, @function
 
 .L800FB950_ovl2:
 /* 0843C0 800FB950 308F8000 */  andi  $t7, $a0, 0x8000
@@ -39,8 +40,10 @@ glabel func_800FB914
 /* 08440C 800FB99C 24020001 */  li    $v0, 1
 /* 084410 800FB9A0 03E00008 */  jr    $ra
 /* 084414 800FB9A4 E42A9400 */   swc1  $f10, -0x6c00($at)
+.type func_800FB914, @function
 
 .L800FB9A8_ovl2:
 /* 084418 800FB9A8 00001025 */  move  $v0, $zero
 /* 08441C 800FB9AC 03E00008 */  jr    $ra
 /* 084420 800FB9B0 00000000 */   nop   
+.type func_800FB914, @function

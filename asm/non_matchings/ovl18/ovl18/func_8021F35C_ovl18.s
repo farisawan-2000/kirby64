@@ -38,8 +38,10 @@ glabel func_8021F35C_ovl18
 /* 231D88 8021F3E8 24020001 */   li    $v0, 1
 /* 231D8C 8021F3EC 03E00008 */  jr    $ra
 /* 231D90 8021F3F0 00001025 */   move  $v0, $zero
+.type func_8021F35C_ovl18, @function
 
 /* 231D94 8021F3F4 24020001 */  li    $v0, 1
 .L8021F3F8_ovl18:
 /* 231D98 8021F3F8 03E00008 */  jr    $ra
 /* 231D9C 8021F3FC 00000000 */   nop   
+.type func_8021F35C_ovl18, @function

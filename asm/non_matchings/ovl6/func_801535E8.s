@@ -22,3 +22,4 @@ glabel func_801535E8
 /* 1379C8 80153638 00380821 */  addu  $at, $at, $t8
 /* 1379CC 8015363C 03E00008 */  jr    $ra
 /* 1379D0 80153640 AC2DA570 */   sw    $t5, -0x5a90($at)
+.type func_801535E8, @function

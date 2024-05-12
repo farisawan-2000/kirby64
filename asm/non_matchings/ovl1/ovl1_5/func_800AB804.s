@@ -218,3 +218,4 @@ glabel func_800AB804
 /* 053D90 800ABB40 8FB30028 */  lw    $s3, 0x28($sp)
 /* 053D94 800ABB44 03E00008 */  jr    $ra
 /* 053D98 800ABB48 27BD0060 */   addiu $sp, $sp, 0x60
+.type func_800AB804, @function

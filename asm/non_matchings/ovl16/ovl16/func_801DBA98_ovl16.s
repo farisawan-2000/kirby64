@@ -83,3 +83,4 @@ glabel func_801DBA98_ovl16
 /* 211E70 801DBBC0 8C4283E0 */ lw $v0, %lo(D_800E83E0)($v0)
 /* 211E74 801DBBC4 03E00008 */  jr    $ra
 /* 211E78 801DBBC8 27BD0058 */   addiu $sp, $sp, 0x58
+.type func_801DBA98_ovl16, @function

@@ -62,6 +62,7 @@ glabel func_8000E324
 /* 00EFEC 8000E3EC 8FB20020 */  lw    $s2, 0x20($sp)
 /* 00EFF0 8000E3F0 03E00008 */  jr    $ra
 /* 00EFF4 8000E3F4 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_8000E324, @function
 
 /* 00EFF8 8000E3F8 AFA50004 */  sw    $a1, 4($sp)
 /* 00EFFC 8000E3FC 1080000A */  beqz  $a0, .L8000E428_ovl0
@@ -73,6 +74,7 @@ glabel func_8000E324
 /* 00F010 8000E410 8C840000 */   lw    $a0, ($a0)
 /* 00F014 8000E414 03E00008 */  jr    $ra
 /* 00F018 8000E418 00801025 */   move  $v0, $a0
+.type func_8000E324, @function
 
 /* 00F01C 8000E41C 8C840000 */  lw    $a0, ($a0)
 .L8000E420_ovl0:
@@ -82,3 +84,4 @@ glabel func_8000E324
 /* 00F028 8000E428 00001025 */  move  $v0, $zero
 /* 00F02C 8000E42C 03E00008 */  jr    $ra
 /* 00F030 8000E430 00000000 */   nop   
+.type func_8000E324, @function

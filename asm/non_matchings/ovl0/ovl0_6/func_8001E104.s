@@ -138,3 +138,4 @@ glabel func_8001E104
 /* 01EEF4 8001E2F4 460E5201 */  sub.s $f8, $f10, $f14
 /* 01EEF8 8001E2F8 03E00008 */  jr    $ra
 /* 01EEFC 8001E2FC 46082003 */   div.s $f0, $f4, $f8
+.type func_8001E104, @function

@@ -25,5 +25,7 @@ glabel func_800BE374
 .L800BE3D0_ovl1:
 /* 066620 800BE3D0 03E00008 */  jr    $ra
 /* 066624 800BE3D4 00000000 */   nop   
+.type func_800BE374, @function
 
 /* 066628 800BE3D8 00000000 */  nop   
+.type func_800BE374, @function

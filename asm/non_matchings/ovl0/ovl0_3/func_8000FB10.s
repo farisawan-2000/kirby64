@@ -127,3 +127,4 @@ glabel func_8000FB10
 /* 0108D8 8000FCD8 8FBE0040 */  lw    $fp, 0x40($sp)
 /* 0108DC 8000FCDC 03E00008 */  jr    $ra
 /* 0108E0 8000FCE0 27BD00B0 */   addiu $sp, $sp, 0xb0
+.type func_8000FB10, @function

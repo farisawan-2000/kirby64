@@ -772,6 +772,8 @@ glabel func_801BC978_ovl7
 /* 163568 801BD4F8 27BD0180 */  addiu $sp, $sp, 0x180
 /* 16356C 801BD4FC 03E00008 */  jr    $ra
 /* 163570 801BD500 00000000 */   nop   
+.type func_801BC978_ovl7, @function
 
 /* 163574 801BD504 00000000 */  nop   
 /* 163578 801BD508 00000000 */  nop   
+.type func_801BC978_ovl7, @function

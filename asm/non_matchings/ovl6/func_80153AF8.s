@@ -14,3 +14,4 @@ glabel func_80153AF8
 /* 137EB8 80153B28 27BD0018 */  addiu $sp, $sp, 0x18
 /* 137EBC 80153B2C 03E00008 */  jr    $ra
 /* 137EC0 80153B30 00000000 */   nop   
+.type func_80153AF8, @function

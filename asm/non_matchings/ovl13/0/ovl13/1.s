@@ -32,4 +32,5 @@ glabel L801DB30C_ovl13
 /* 1F32CC 801DB34C 8FB20020 */  lw          $s2, 0x20($sp)
 /* 1F32D0 801DB350 03E00008 */  jr          $ra
 /* 1F32D4 801DB354 27BD0028 */   addiu      $sp, $sp, 0x28
+.type func_801DB2D8_ovl13, @function
 

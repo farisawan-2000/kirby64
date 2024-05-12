@@ -27,3 +27,4 @@ glabel func_8001D2DC
 /* 01DF40 8001D340 27BD0028 */  addiu $sp, $sp, 0x28
 /* 01DF44 8001D344 03E00008 */  jr    $ra
 /* 01DF48 8001D348 00000000 */   nop   
+.type func_8001D2DC, @function

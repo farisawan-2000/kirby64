@@ -135,3 +135,4 @@ glabel func_8010DDA4
 .L8010DF94_ovl2:
 /* 096A04 8010DF94 03E00008 */  jr    $ra
 /* 096A08 8010DF98 27BD0008 */   addiu $sp, $sp, 8
+.type func_8010DDA4, @function

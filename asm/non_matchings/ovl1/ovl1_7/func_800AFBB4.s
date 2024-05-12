@@ -15,3 +15,4 @@ glabel func_800AFBB4
 /* 057E30 800AFBE0 2509FFFF */  addiu $t1, $t0, -1
 /* 057E34 800AFBE4 03E00008 */  jr    $ra
 /* 057E38 800AFBE8 A0A9000E */   sb    $t1, 0xe($a1)
+.type func_800AFBB4, @function

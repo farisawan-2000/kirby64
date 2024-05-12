@@ -204,3 +204,4 @@ glabel func_801DCFC4_ovl10
 /* 1CE030 801DD2C0 8FB40040 */  lw    $s4, 0x40($sp)
 /* 1CE034 801DD2C4 03E00008 */  jr    $ra
 /* 1CE038 801DD2C8 27BD0070 */   addiu $sp, $sp, 0x70
+.type func_801DCFC4_ovl10, @function

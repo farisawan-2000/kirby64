@@ -54,3 +54,4 @@ glabel func_801DED24_ovl14 # 46
 /* 2019CC 801DEDDC 8FB10018 */  lw          $s1, 0x18($sp)
 /* 2019D0 801DEDE0 03E00008 */  jr          $ra
 /* 2019D4 801DEDE4 27BD0020 */   addiu      $sp, $sp, 0x20
+.type func_801DED24_ovl14, @function

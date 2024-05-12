@@ -115,3 +115,4 @@ glabel func_801BDEB0_ovl7
 /* 1640CC 801BE05C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1640D0 801BE060 03E00008 */  jr    $ra
 /* 1640D4 801BE064 00000000 */   nop   
+.type func_801BDEB0_ovl7, @function

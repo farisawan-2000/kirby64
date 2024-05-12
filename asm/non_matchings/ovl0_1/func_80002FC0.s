@@ -69,6 +69,7 @@ glabel func_80002FC0
 /* 003CC0 800030C0 00000000 */  nop   
 /* 003CC4 800030C4 02802025 */  move  $a0, $s4
 /* 003CC8 800030C8 948C0000 */  lhu   $t4, ($a0)
+.type func_80002FC0, @function
 
 # split here
 .L800030CC_ovl0:
@@ -560,3 +561,4 @@ glabel func_80002FC0
 /* 00437C 8000377C 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 004380 80003780 03E00008 */  jr    $ra
 /* 004384 80003784 27BD0458 */   addiu $sp, $sp, 0x458
+.type func_80002FC0, @function

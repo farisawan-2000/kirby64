@@ -7,7 +7,9 @@ glabel func_800F88A0
 /* 081324 800F88B4 00000000 */   nop   
 /* 081328 800F88B8 03E00008 */  jr    $ra
 /* 08132C 800F88BC 24020001 */   li    $v0, 1
+.type func_800F88A0, @function
 
 .L800F88C0_ovl2:
 /* 081330 800F88C0 03E00008 */  jr    $ra
 /* 081334 800F88C4 00601025 */   move  $v0, $v1
+.type func_800F88A0, @function

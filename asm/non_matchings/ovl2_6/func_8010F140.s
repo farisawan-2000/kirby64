@@ -563,3 +563,4 @@ glabel func_8010F140
 .L8010F95C_ovl2:
 /* 0983CC 8010F95C 03E00008 */  jr    $ra
 /* 0983D0 8010F960 27BD00A0 */   addiu $sp, $sp, 0xa0
+.type func_8010F140, @function

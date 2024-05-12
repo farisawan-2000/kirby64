@@ -98,3 +98,4 @@ glabel func_80103B58
 /* 08C72C 80103CBC 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 08C730 80103CC0 03E00008 */  jr    $ra
 /* 08C734 80103CC4 27BD0058 */   addiu $sp, $sp, 0x58
+.type func_80103B58, @function

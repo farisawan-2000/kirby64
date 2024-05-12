@@ -521,3 +521,4 @@ glabel func_8016CA8C_ovl3
 /* 0CDC1C 8016D1DC 8FB50030 */  lw    $s5, 0x30($sp)
 /* 0CDC20 8016D1E0 03E00008 */  jr    $ra
 /* 0CDC24 8016D1E4 27BD0038 */   addiu $sp, $sp, 0x38
+.type func_8016CA8C_ovl3, @function

@@ -179,3 +179,4 @@ glabel func_800F9C94
 /* 082974 800F9F04 8FB20030 */  lw    $s2, 0x30($sp)
 /* 082978 800F9F08 03E00008 */  jr    $ra
 /* 08297C 800F9F0C 27BD0060 */   addiu $sp, $sp, 0x60
+.type func_800F9C94, @function

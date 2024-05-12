@@ -245,3 +245,4 @@ glabel func_800B2340
 /* 05A91C 800B26CC D7B40018 */  ldc1  $f20, 0x18($sp)
 /* 05A920 800B26D0 03E00008 */  jr    $ra
 /* 05A924 800B26D4 27BD00F8 */   addiu $sp, $sp, 0xf8
+.type func_800B2340, @function

@@ -15,3 +15,4 @@ glabel func_8000C10C
 /* 00CD38 8000C138 E48C007C */  swc1  $f12, 0x7c($a0)
 /* 00CD3C 8000C13C 03E00008 */  jr    $ra
 /* 00CD40 8000C140 E4840074 */   swc1  $f4, 0x74($a0)
+.type func_8000C10C, @function

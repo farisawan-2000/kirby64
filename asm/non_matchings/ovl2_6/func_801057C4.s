@@ -62,3 +62,4 @@ glabel func_801057C4
 .L801058B0_ovl2:
 /* 08E320 801058B0 03E00008 */  jr    $ra
 /* 08E324 801058B4 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_801057C4, @function

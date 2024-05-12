@@ -10,3 +10,4 @@ glabel func_8009BF7C
 /* 0441EC 8009BF9C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0441F0 8009BFA0 03E00008 */  jr    $ra
 /* 0441F4 8009BFA4 00000000 */   nop   
+.type func_8009BF7C, @function

@@ -8,3 +8,4 @@ glabel func_800B3070
 /* 05B2D8 800B3088 8C4279D8 */ lw $v0, %lo(D_800D79D8)($v0)
 /* 05B2DC 800B308C 03E00008 */  jr    $ra
 /* 05B2E0 800B3090 E44C0078 */   swc1  $f12, 0x78($v0)
+.type func_800B3070, @function

@@ -77,3 +77,4 @@ glabel func_8001C73C
 /* 01D468 8001C868 D7B40018 */  ldc1  $f20, 0x18($sp)
 /* 01D46C 8001C86C 03E00008 */  jr    $ra
 /* 01D470 8001C870 27BD0060 */   addiu $sp, $sp, 0x60
+.type func_8001C73C, @function

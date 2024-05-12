@@ -181,5 +181,7 @@ glabel func_8015A9F8_ovl3
 /* 0BB6C0 8015AC80 27BD0020 */  addiu $sp, $sp, 0x20
 /* 0BB6C4 8015AC84 03E00008 */  jr    $ra
 /* 0BB6C8 8015AC88 00000000 */   nop   
+.type func_8015A9F8_ovl3, @function
 
 /* 0BB6CC 8015AC8C 00000000 */  nop   
+.type func_8015A9F8_ovl3, @function

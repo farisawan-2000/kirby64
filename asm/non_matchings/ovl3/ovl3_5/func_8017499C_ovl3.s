@@ -39,3 +39,4 @@ glabel func_8017499C_ovl3
 /* 0D5464 80174A24 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0D5468 80174A28 03E00008 */  jr    $ra
 /* 0D546C 80174A2C 00000000 */   nop   
+.type func_8017499C_ovl3, @function

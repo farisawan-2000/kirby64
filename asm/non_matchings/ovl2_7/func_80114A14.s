@@ -181,3 +181,4 @@ glabel func_80114A14
 /* 09D730 80114CC0 AC6D0000 */  sw    $t5, ($v1)
 /* 09D734 80114CC4 03E00008 */  jr    $ra
 /* 09D738 80114CC8 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_80114A14, @function

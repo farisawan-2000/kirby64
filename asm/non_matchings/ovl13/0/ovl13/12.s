@@ -14,4 +14,5 @@ glabel func_801DD148_ovl13 # 12
 /* 1F50F8 801DD178 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1F50FC 801DD17C 03E00008 */  jr          $ra
 /* 1F5100 801DD180 00000000 */   nop
+.type func_801DD148_ovl13, @function
 

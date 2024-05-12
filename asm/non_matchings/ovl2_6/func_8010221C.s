@@ -37,6 +37,7 @@ glabel func_8010221C
 /* 08AD18 801022A8 00000000 */   nop   
 /* 08AD1C 801022AC 03E00008 */  jr    $ra
 /* 08AD20 801022B0 00001025 */   move  $v0, $zero
+.type func_8010221C, @function
 
 .L801022B4_ovl2:
 /* 08AD24 801022B4 10C00016 */  beqz  $a2, .L80102310_ovl2
@@ -62,12 +63,15 @@ glabel func_8010221C
 /* 08AD74 80102304 00000000 */   nop   
 /* 08AD78 80102308 03E00008 */  jr    $ra
 /* 08AD7C 8010230C 00001025 */   move  $v0, $zero
+.type func_8010221C, @function
 
 .L80102310_ovl2:
 /* 08AD80 80102310 03E00008 */  jr    $ra
 /* 08AD84 80102314 24020001 */   li    $v0, 1
+.type func_8010221C, @function
 
 /* 08AD88 80102318 00001025 */  move  $v0, $zero
 .L8010231C_ovl2:
 /* 08AD8C 8010231C 03E00008 */  jr    $ra
 /* 08AD90 80102320 00000000 */   nop   
+.type func_8010221C, @function

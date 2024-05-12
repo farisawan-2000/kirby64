@@ -73,3 +73,4 @@ glabel func_800FBA98
 /* 08461C 800FBBAC 8FB10018 */  lw    $s1, 0x18($sp)
 /* 084620 800FBBB0 03E00008 */  jr    $ra
 /* 084624 800FBBB4 27BD0020 */   addiu $sp, $sp, 0x20
+.type func_800FBA98, @function

@@ -63,3 +63,4 @@ glabel func_801DC2A0_ovl11
 /* 1E6C3C 801DC37C 002B0821 */  addu  $at, $at, $t3
 /* 1E6C40 801DC380 03E00008 */  jr    $ra
 /* 1E6C44 801DC384 AC23A520 */ sw $v1, %lo(D_800EA520)($at)
+.type func_801DC2A0_ovl11, @function

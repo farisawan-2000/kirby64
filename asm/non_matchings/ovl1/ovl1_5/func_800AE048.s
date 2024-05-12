@@ -42,7 +42,9 @@ glabel func_800AE048
 /* 056328 800AE0D8 AC20D6E4 */  sw    $zero, %lo(D_800DD6E4)($at)
 /* 05632C 800AE0DC 03E00008 */  jr    $ra
 /* 056330 800AE0E0 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800AE048, @function
 
 /* 056334 800AE0E4 00000000 */  nop   
 /* 056338 800AE0E8 00000000 */  nop   
 /* 05633C 800AE0EC 00000000 */  nop   
+.type func_800AE048, @function

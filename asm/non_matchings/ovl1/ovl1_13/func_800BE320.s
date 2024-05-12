@@ -20,3 +20,4 @@ glabel func_800BE320
 /* 0665B8 800BE368 F49E0060 */  sdc1  $f30, 0x60($a0)
 /* 0665BC 800BE36C 03E00008 */  jr    $ra
 /* 0665C0 800BE370 00001025 */   move  $v0, $zero
+.type func_800BE320, @function

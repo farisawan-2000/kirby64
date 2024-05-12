@@ -42,3 +42,4 @@ glabel func_800AEFFC
 /* 0572E0 800AF090 8FB40028 */  lw    $s4, 0x28($sp)
 /* 0572E4 800AF094 03E00008 */  jr    $ra
 /* 0572E8 800AF098 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_800AEFFC, @function

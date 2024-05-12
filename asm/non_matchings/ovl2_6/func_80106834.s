@@ -63,3 +63,4 @@ glabel func_80106834
 /* 08F394 80106924 8FB10028 */  lw    $s1, 0x28($sp)
 /* 08F398 80106928 03E00008 */  jr    $ra
 /* 08F39C 8010692C 27BD0060 */   addiu $sp, $sp, 0x60
+.type func_80106834, @function

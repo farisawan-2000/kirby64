@@ -8,3 +8,4 @@ glabel func_800B92B4
 /* 06151C 800B92CC AC22CBAC */  sw    $v0, %lo(D_800ECBAC)($at)
 /* 061520 800B92D0 03E00008 */  jr    $ra
 /* 061524 800B92D4 27BD0018 */   addiu $sp, $sp, 0x18
+.type func_800B92B4, @function

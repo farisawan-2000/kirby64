@@ -29,6 +29,7 @@ glabel func_8010DB64
 /* 096638 8010DBC8 C4680008 */  lwc1  $f8, 8($v1)
 /* 09663C 8010DBCC 03E00008 */  jr    $ra
 /* 096640 8010DBD0 E4C80008 */   swc1  $f8, 8($a2)
+.type func_8010DB64, @function
 
 .L8010DBD4_ovl2:
 /* 096644 8010DBD4 C46A0000 */  lwc1  $f10, ($v1)
@@ -43,3 +44,4 @@ glabel func_8010DB64
 .L8010DBF8_ovl2:
 /* 096668 8010DBF8 03E00008 */  jr    $ra
 /* 09666C 8010DBFC 00000000 */   nop   
+.type func_8010DB64, @function

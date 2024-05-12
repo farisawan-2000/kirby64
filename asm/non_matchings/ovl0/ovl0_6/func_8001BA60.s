@@ -24,3 +24,4 @@ glabel func_8001BA60
 /* 01C6B8 8001BAB8 27BD0068 */  addiu $sp, $sp, 0x68
 /* 01C6BC 8001BABC 03E00008 */  jr    $ra
 /* 01C6C0 8001BAC0 00000000 */   nop   
+.type func_8001BA60, @function

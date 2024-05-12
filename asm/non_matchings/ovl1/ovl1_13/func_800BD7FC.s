@@ -83,3 +83,4 @@ glabel func_800BD7FC
 /* 065B70 800BD920 8FB20020 */  lw    $s2, 0x20($sp)
 /* 065B74 800BD924 03E00008 */  jr    $ra
 /* 065B78 800BD928 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_800BD7FC, @function

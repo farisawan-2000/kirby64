@@ -77,3 +77,4 @@ glabel func_801A8BAC_ovl7
 .L801A8CD4_ovl7:
 /* 14ED44 801A8CD4 03E00008 */  jr    $ra
 /* 14ED48 801A8CD8 27BD0030 */   addiu $sp, $sp, 0x30
+.type func_801A8BAC_ovl7, @function

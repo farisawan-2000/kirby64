@@ -160,3 +160,4 @@ glabel func_800B26D8
 /* 05AB6C 800B291C 8FB50030 */  lw    $s5, 0x30($sp)
 /* 05AB70 800B2920 03E00008 */  jr    $ra
 /* 05AB74 800B2924 27BD00D0 */   addiu $sp, $sp, 0xd0
+.type func_800B26D8, @function

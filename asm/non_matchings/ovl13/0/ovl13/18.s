@@ -156,4 +156,5 @@ glabel L801DDAC4_ovl13
 /* 1F5A50 801DDAD0 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1F5A54 801DDAD4 03E00008 */  jr          $ra
 /* 1F5A58 801DDAD8 00000000 */   nop
+.type func_801DD888_ovl13, @function
 

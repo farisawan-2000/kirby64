@@ -88,3 +88,4 @@ glabel func_80220038_ovl18
 /* 232B18 80220178 E4282950 */ swc1 $f8, %lo(gEntitiesNextPosZArray)($at)
 /* 232B1C 8022017C 03E00008 */  jr    $ra
 /* 232B20 80220180 ACE50014 */   sw    $a1, 0x14($a3)
+.type func_80220038_ovl18, @function

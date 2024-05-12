@@ -72,4 +72,5 @@ glabel L801E301C_ovl13
 /* 1FAF9C 801E301C 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 1FAFA0 801E3020 03E00008 */  jr          $ra
 /* 1FAFA4 801E3024 00000000 */   nop
+.type func_801E2F0C_ovl13, @function
 

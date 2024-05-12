@@ -121,3 +121,4 @@ glabel func_80220280_ovl19
 /* 240B60 80220450 27BD0020 */  addiu $sp, $sp, 0x20
 /* 240B64 80220454 03E00008 */  jr    $ra
 /* 240B68 80220458 00000000 */   nop   
+.type func_80220280_ovl19, @function

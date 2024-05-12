@@ -117,3 +117,4 @@ glabel func_801DF758_ovl12 # 93
 /* 004704 801DF904 27BD0058 */  addiu       $sp, $sp, 0x58
 /* 004708 801DF908 03E00008 */  jr          $ra
 /* 00470C 801DF90C 00000000 */   nop
+.type func_801DF758_ovl12, @function

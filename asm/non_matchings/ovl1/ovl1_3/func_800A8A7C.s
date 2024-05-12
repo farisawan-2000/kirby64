@@ -37,3 +37,4 @@ glabel func_800A8A7C
 /* 050D50 800A8B00 8D820000 */  lw    $v0, ($t4)
 /* 050D54 800A8B04 03E00008 */  jr    $ra
 /* 050D58 800A8B08 27BD0028 */   addiu $sp, $sp, 0x28
+.type func_800A8A7C, @function

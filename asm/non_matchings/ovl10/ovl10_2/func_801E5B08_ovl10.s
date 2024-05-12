@@ -80,3 +80,4 @@ glabel func_801E5B08_ovl10
 /* 1D69B0 801E5C40 00280821 */  addu  $at, $at, $t0
 /* 1D69B4 801E5C44 03E00008 */  jr    $ra
 /* 1D69B8 801E5C48 E42A3750 */ swc1 $f10, %lo(D_800E3750)($at)
+.type func_801E5B08_ovl10, @function

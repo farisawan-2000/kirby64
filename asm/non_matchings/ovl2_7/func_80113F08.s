@@ -718,3 +718,4 @@ glabel func_80113F08
 /* 09D3D8 80114968 D7B40018 */  ldc1  $f20, 0x18($sp)
 /* 09D3DC 8011496C 03E00008 */  jr    $ra
 /* 09D3E0 80114970 27BD0118 */   addiu $sp, $sp, 0x118
+.type func_80113F08, @function

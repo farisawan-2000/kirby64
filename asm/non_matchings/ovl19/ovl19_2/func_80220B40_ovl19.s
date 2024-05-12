@@ -135,3 +135,4 @@ glabel func_80220B40_ovl19
 /* 241458 80220D48 8FB10038 */  lw    $s1, 0x38($sp)
 /* 24145C 80220D4C 03E00008 */  jr    $ra
 /* 241460 80220D50 27BD0068 */   addiu $sp, $sp, 0x68
+.type func_80220B40_ovl19, @function

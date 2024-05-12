@@ -139,3 +139,4 @@ glabel func_801DF18C_ovl12 # 89
 /* 004188 801DF388 27BD0018 */  addiu       $sp, $sp, 0x18
 /* 00418C 801DF38C 03E00008 */  jr          $ra
 /* 004190 801DF390 00000000 */   nop
+.type func_801DF18C_ovl12, @function

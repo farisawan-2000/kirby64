@@ -7,6 +7,7 @@ glabel func_800A5AD8
 /* 04DD3C 800A5AEC A4600000 */   sh    $zero, ($v1)
 /* 04DD40 800A5AF0 03E00008 */  jr    $ra
 /* 04DD44 800A5AF4 00001025 */   move  $v0, $zero
+.type func_800A5AD8, @function
 
 /* 04DD48 800A5AF8 A4600000 */  sh    $zero, ($v1)
 .L800A5AFC_ovl1:
@@ -16,3 +17,4 @@ glabel func_800A5AD8
 /* 04DD58 800A5B08 A42F6B2E */  sh    $t7, %lo(D_800D6B2E)($at)
 /* 04DD5C 800A5B0C 03E00008 */  jr    $ra
 /* 04DD60 800A5B10 00000000 */   nop   
+.type func_800A5AD8, @function

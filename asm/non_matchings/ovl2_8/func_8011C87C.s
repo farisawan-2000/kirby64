@@ -21,3 +21,4 @@ glabel func_8011C87C
 /* 0A5334 8011C8C4 3C01800D */ lui $at, %hi(D_800D6F10)
 /* 0A5338 8011C8C8 03E00008 */  jr    $ra
 /* 0A533C 8011C8CC AC206F10 */ sw $zero, %lo(D_800D6F10)($at)
+.type func_8011C87C, @function

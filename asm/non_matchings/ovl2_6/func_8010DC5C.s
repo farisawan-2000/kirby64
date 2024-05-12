@@ -6,6 +6,7 @@ glabel func_8010DC5C
 /* 0966DC 8010DC6C 8C6E0000 */   lw    $t6, ($v1)
 /* 0966E0 8010DC70 03E00008 */  jr    $ra
 /* 0966E4 8010DC74 00001025 */   move  $v0, $zero
+.type func_8010DC5C, @function
 
 /* 0966E8 8010DC78 8C6E0000 */  lw    $t6, ($v1)
 .L8010DC7C_ovl2:
@@ -13,3 +14,4 @@ glabel func_8010DC5C
 /* 0966F0 8010DC80 AC8E0000 */  sw    $t6, ($a0)
 /* 0966F4 8010DC84 03E00008 */  jr    $ra
 /* 0966F8 8010DC88 00000000 */   nop   
+.type func_8010DC5C, @function

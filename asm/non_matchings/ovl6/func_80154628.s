@@ -26,3 +26,4 @@ glabel func_80154628
 /* 138A14 80154684 3C018016 */  lui   $at, 0x8016
 /* 138A18 80154688 03E00008 */  jr    $ra
 /* 138A1C 8015468C AC20A698 */   sw    $zero, -0x5968($at)
+.type func_80154628, @function

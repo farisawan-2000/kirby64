@@ -9,6 +9,7 @@ glabel func_800A8310
 /* 05057C 800A832C AC4F0000 */   sw    $t7, ($v0)
 /* 050580 800A8330 03E00008 */  jr    $ra
 /* 050584 800A8334 00001025 */   move  $v0, $zero
+.type func_800A8310, @function
 
 .L800A8338_ovl1:
 /* 050588 800A8338 3C03800D */  lui   $v1, %hi(D_800D7BB4) # $v1, 0x800d
@@ -19,3 +20,4 @@ glabel func_800A8310
 /* 05059C 800A834C 01041023 */  subu  $v0, $t0, $a0
 /* 0505A0 800A8350 03E00008 */  jr    $ra
 /* 0505A4 800A8354 00000000 */   nop   
+.type func_800A8310, @function

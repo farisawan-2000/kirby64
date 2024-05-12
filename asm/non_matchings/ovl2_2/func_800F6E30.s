@@ -216,3 +216,4 @@ glabel func_800F6E30
 /* 07FBD0 800F7160 8FBE0040 */  lw    $fp, 0x40($sp)
 /* 07FBD4 800F7164 03E00008 */  jr    $ra
 /* 07FBD8 800F7168 27BD0048 */   addiu $sp, $sp, 0x48
+.type func_800F6E30, @function

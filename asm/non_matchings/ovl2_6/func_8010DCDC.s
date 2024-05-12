@@ -44,3 +44,4 @@ glabel func_8010DCDC
 /* 0967F0 8010DD80 24630170 */   addiu $v1, $v1, 0x170
 /* 0967F4 8010DD84 03E00008 */  jr    $ra
 /* 0967F8 8010DD88 AC600000 */   sw    $zero, ($v1)
+.type func_8010DCDC, @function

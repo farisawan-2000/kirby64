@@ -159,3 +159,4 @@ glabel func_800A5F94
 /* 04E44C 800A61FC D7B40010 */  ldc1  $f20, 0x10($sp)
 /* 04E450 800A6200 03E00008 */  jr    $ra
 /* 04E454 800A6204 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_800A5F94, @function

@@ -54,3 +54,4 @@ glabel func_800A5C60
 .L800A5D1C_ovl1:
 /* 04DF6C 800A5D1C 03E00008 */  jr    $ra
 /* 04DF70 800A5D20 460C1003 */   div.s $f0, $f2, $f12
+.type func_800A5C60, @function

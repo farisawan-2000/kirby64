@@ -153,3 +153,4 @@ glabel func_800AACC8
 /* 053148 800AAEF8 8FBE0048 */  lw    $fp, 0x48($sp)
 /* 05314C 800AAEFC 03E00008 */  jr    $ra
 /* 053150 800AAF00 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_800AACC8, @function

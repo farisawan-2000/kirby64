@@ -721,4 +721,5 @@ glabel func_80123354
 /* 0AC8F8 80123E88 27BD0040 */   addiu $sp, $sp, 0x40
 /* 0AC8FC 80123E8C 00000000 */  nop   
 # Unknown region 0AC900-0B1B40 [5240]
+.type func_80123354, @function
 

@@ -76,6 +76,7 @@ glabel func_800ACC68
 /* 054FC4 800ACD74 44815000 */   mtc1  $at, $f10
 /* 054FC8 800ACD78 03E00008 */  jr    $ra
 /* 054FCC 800ACD7C A4B90000 */   sh    $t9, ($a1)
+.type func_800ACC68, @function
 
 /* 054FD0 800ACD80 44815000 */  mtc1  $at, $f10
 .L800ACD84_ovl1:
@@ -120,3 +121,4 @@ glabel func_800ACC68
 /* 055060 800ACE10 00000000 */  nop   
 /* 055064 800ACE14 03E00008 */  jr    $ra
 /* 055068 800ACE18 00000000 */   nop   
+.type func_800ACC68, @function

@@ -65,3 +65,4 @@ glabel func_800BA90C
 .L800BA9FC_ovl1:
 /* 062C4C 800BA9FC 03E00008 */  jr    $ra
 /* 062C50 800BAA00 00000000 */   nop   
+.type func_800BA90C, @function

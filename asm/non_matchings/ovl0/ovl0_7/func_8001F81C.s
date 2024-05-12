@@ -346,3 +346,4 @@ glabel func_8001F81C
 /* 020958 8001FD58 8FBE0050 */  lw    $fp, 0x50($sp)
 /* 02095C 8001FD5C 03E00008 */  jr    $ra
 /* 020960 8001FD60 27BD0108 */   addiu $sp, $sp, 0x108
+.type func_8001F81C, @function

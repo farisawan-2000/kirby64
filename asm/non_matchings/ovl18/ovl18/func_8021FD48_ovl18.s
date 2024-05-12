@@ -27,6 +27,7 @@ glabel func_8021FD48_ovl18
 /* 23274C 8021FDAC 460A8481 */  sub.s $f18, $f16, $f10
 /* 232750 8021FDB0 03E00008 */  jr    $ra
 /* 232754 8021FDB4 E4324010 */ swc1 $f18, %lo(gEntitiesAngleXArray)($at)
+.type func_8021FD48_ovl18, @function
 
 /* 232758 8021FDB8 8C6B0004 */  lw    $t3, 4($v1)
 .L8021FDBC_ovl18:
@@ -44,3 +45,4 @@ glabel func_8021FD48_ovl18
 /* 232788 8021FDE8 E43241D0 */ swc1 $f18, %lo(gEntitiesAngleYArray)($at)
 /* 23278C 8021FDEC 03E00008 */  jr    $ra
 /* 232790 8021FDF0 00000000 */   nop   
+.type func_8021FD48_ovl18, @function

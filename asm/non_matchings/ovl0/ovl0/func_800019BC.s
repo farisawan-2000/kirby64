@@ -314,3 +314,4 @@ glabel L80001D9C_ovl0
 /* 002A14 80001E14 8FB00028 */  lw    $s0, 0x28($sp)
 /* 002A18 80001E18 03E00008 */  jr    $ra
 /* 002A1C 80001E1C 27BD0050 */   addiu $sp, $sp, 0x50
+.type func_800019BC, @function
