@@ -643,6 +643,10 @@ SECTIONS
         BUILD_DIR/asm/ovl15/ovl15.o(.text);
     }
     END_SEG(ovl15)
+    BEGIN_SEG(ovl15Data, _ovl15SegmentEnd) {
+        BUILD_DIR/data/ovl15/ovl15.o(.data);
+    }
+    END_SEG(ovl15Data)
 
     /* 0x801DB1E0 211490-225770 [142E0] */
     BEGIN_SEG(ovl16, 0x801DB1E0) SUBALIGN(16) {
