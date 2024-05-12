@@ -334,11 +334,10 @@ void func_801DBEAC_ovl14(GObj *arg0) {
             do {
 loop_5:
                 temp_v0_4 = random_soft_s32_range(4);
-                temp_v1_4 = D_8004A7C4->objId;
-                if (temp_v0_4 == D_800EBBE0[temp_v1_4]) {
+                if (temp_v0_4 == D_800EBBE0[D_8004A7C4->objId]) {
                     goto loop_5;
                 }
-            } while (temp_v0_4 == D_800EBDA0[temp_v1_4]);
+            } while (temp_v0_4 == D_800EBDA0[D_8004A7C4->objId]);
             sp34 = temp_v0_4;
             D_800EBF60[D_8004A7C4->objId] = func_801DC674_ovl14(2, temp_v0_4);
             temp_v1_5 = D_8004A7C4->objId;
@@ -347,17 +346,11 @@ loop_5:
                 finish_current_thread(random_soft_s32_range(0x1E) + 0x1E);
                 temp_v1_6 = D_8004A7C4->objId;
                 var_a2 = 0;
-loop_9:
-                if (var_a2 == D_800EBBE0[temp_v1_6]) {
-block_12:
+                while (var_a2 != D_800EBBE0[temp_v1_6]
+                 && var_a2 != D_800EBDA0[temp_v1_6]
+                 && var_a2 != D_800EBF60[temp_v1_6]
+                ) {
                     var_a2 += 1;
-                    goto loop_9;
-                }
-                if (var_a2 == D_800EBDA0[temp_v1_6]) {
-                    goto block_12;
-                }
-                if (var_a2 == D_800EBF60[temp_v1_6]) {
-                    goto block_12;
                 }
                 func_801DC674_ovl14(2, var_a2, var_a2);
             }
@@ -411,15 +404,9 @@ void func_801DC2A0_ovl14(void) {
     } while (D_800E98E0[D_8004A7C4->objId] == rand);
     
     switch (D_800E98E0[D_8004A7C4->objId] = rand) {
-        case 0:
-            gEntityVtableIndexArray[D_8004A7C4->objId] = 3;
-            break;
-        case 1:
-            gEntityVtableIndexArray[D_8004A7C4->objId] = 4;
-            break;
-        case 2:
-            gEntityVtableIndexArray[D_8004A7C4->objId] = 5;
-            break;
+        case 0: gEntityVtableIndexArray[D_8004A7C4->objId] = 3; break;
+        case 1: gEntityVtableIndexArray[D_8004A7C4->objId] = 4; break;
+        case 2: gEntityVtableIndexArray[D_8004A7C4->objId] = 5; break;
     }
 }
 #else
@@ -613,7 +600,6 @@ void func_801DCB84_ovl14(void) {
 }
 
 #ifdef MIPS_TO_C
-extern s32 D_800B6474;
 extern s32 D_800D70A8;
 void func_801DCBCC_ovl14(GObj *arg0) {
     f32 sp34;
@@ -622,7 +608,7 @@ void func_801DCBCC_ovl14(GObj *arg0) {
     struct Sub800E1B50_Unk84 *temp_s0;
 
     temp_s0 = temp_v0->unk84;
-    D_800DEF90[D_8004A7C4->objId] = D_800B6474;
+    D_800DEF90[D_8004A7C4->objId] = func_800B6474;
     func_801A0D50(func_801DCE1C_ovl14);
     func_800A9760(0x1006C);
     func_801AE7E0_ovl7(0xE);

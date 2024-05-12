@@ -12,6 +12,7 @@
 
 .section .text, "ax"
 glabel EntryPoint
+.ent EntryPoint
 /* 001000 80000400 3C088004 */  lui   $t0, %hi(gEntryStack) # $t0, 0x8004
 /* 001004 80000404 3C090005 */  lui   $t1, (_mainSegmentNoloadSizeHi) # lui $t1, 5
 /* 001008 80000408 25082B90 */  addiu $t0, %lo(gEntryStack) # addiu $t0, $t0, 0x2b90
@@ -37,3 +38,7 @@ glabel EntryPoint
 /* 001054 80000454 00000000 */  nop
 /* 001058 80000458 00000000 */  nop
 /* 00105C 8000045C 00000000 */  nop
+.type EntryPoint, @function
+.end EntryPoint
+.size EntryPoint, . - EntryPoint
+

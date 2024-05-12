@@ -222,7 +222,7 @@ void func_80221330_ovl18(s32 arg0) {
     gEntitiesScaleZArray[D_8004A7C4->objId] = 2.0f;
     gEntitiesScaleXArray[D_8004A7C4->objId] = gEntitiesScaleYArray[D_8004A7C4->objId] = gEntitiesScaleZArray[D_8004A7C4->objId];;
     gEntityVtableIndexArray[D_8004A7C4->objId] = 0;
-    func_801A0D50(&func_802212E8_ovl18, &gEntitiesScaleZArray);
+    func_801A0D50(&func_802212E8_ovl18);
     call_virtual_function(gEntityVtableIndexArray[D_8004A7C4->objId], 1, &D_8022AB80[9]);
 }
 
