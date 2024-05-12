@@ -108,7 +108,7 @@ glabel func_801DDEB8_ovl10
 /* 1CEDCC 801DE05C 8FA4003C */   lw    $a0, 0x3c($sp)
 /* 1CEDD0 801DE060 93A50030 */  lbu   $a1, 0x30($sp)
 /* 1CEDD4 801DE064 93A60031 */  lbu   $a2, 0x31($sp)
-/* 1CEDD8 801DE068 0C05A50C */  jal   func_80169430_ovl10
+/* 1CEDD8 801DE068 0C05A50C */  jal   func_80169430_ovl3
 /* 1CEDDC 801DE06C 24070001 */   li    $a3, 1
 /* 1CEDE0 801DE070 8E030000 */  lw    $v1, ($s0)
 /* 1CEDE4 801DE074 3C01800E */ lui $at, %hi(gEntityVtableIndexArray)

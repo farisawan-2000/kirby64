@@ -2470,7 +2470,7 @@ glabel func_8020BA70_ovl9
 /* 1B9B20 8020BAD0 8FA4002C */   lw    $a0, 0x2c($sp)
 /* 1B9B24 8020BAD4 93A50020 */  lbu   $a1, 0x20($sp)
 /* 1B9B28 8020BAD8 93A60021 */  lbu   $a2, 0x21($sp)
-/* 1B9B2C 8020BADC 0C05A50C */  jal   func_80169430_ovl9
+/* 1B9B2C 8020BADC 0C05A50C */  jal   func_80169430_ovl3
 /* 1B9B30 8020BAE0 00003825 */   move  $a3, $zero
 /* 1B9B34 8020BAE4 10000002 */  b     .L8020BAF0_ovl9
 /* 1B9B38 8020BAE8 24020001 */   li    $v0, 1

@@ -7,6 +7,16 @@ D_800E2E90 gEntitiesPosZArray
 D_800E4010 gEntitiesAngleXArray
 D_800E41D0 gEntitiesAngleYArray
 D_800E4390 gEntitiesAngleZArray
+D_FLT_800E25D0 gEntitiesNextPosXArray
+D_FLT_800E2790 gEntitiesNextPosYArray
+D_FLT_800E2950 gEntitiesNextPosZArray
+D_FLT_800E2B10 gEntitiesPosXArray
+D_FLT_800E2CD0 gEntitiesPosYArray
+D_FLT_800E2E90 gEntitiesPosZArray
+D_FLT_800E4010 gEntitiesAngleXArray
+D_FLT_800E41D0 gEntitiesAngleYArray
+D_FLT_800E4390 gEntitiesAngleZArray
+D_FLT_800E6690 D_800E6690
 D_800DF4D0 gSegment4StartArray
 D_800DE510 gEntityGObjProcessArray
 D_800DDC50 gEntityVtableIndexArray
@@ -45,4 +55,3 @@ func_801ACC34 func_801ACC34_ovl7
 func_801ACF84 func_801ACF84_ovl7
 func_801BA32C func_801BA32C_ovl7
 func_801BC794 func_801BC794_ovl7
-

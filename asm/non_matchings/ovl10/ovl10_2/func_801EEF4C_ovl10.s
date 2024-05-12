@@ -20,7 +20,7 @@ glabel func_801EEF4C_ovl10
 /* 1DFD04 801EEF94 8FA40024 */   lw    $a0, 0x24($sp)
 /* 1DFD08 801EEF98 93A50018 */  lbu   $a1, 0x18($sp)
 /* 1DFD0C 801EEF9C 93A60019 */  lbu   $a2, 0x19($sp)
-/* 1DFD10 801EEFA0 0C05A50C */  jal   func_80169430_ovl10
+/* 1DFD10 801EEFA0 0C05A50C */  jal   func_80169430_ovl3
 /* 1DFD14 801EEFA4 24070005 */   li    $a3, 5
 /* 1DFD18 801EEFA8 0C029D9E */  jal   play_sound
 /* 1DFD1C 801EEFAC 240401EE */   li    $a0, 494

@@ -1729,7 +1729,7 @@ glabel func_801DDF9C_ovl9
 /* 18C224 801DE1D4 8FA40038 */  lw    $a0, 0x38($sp)
 /* 18C228 801DE1D8 93A5002C */  lbu   $a1, 0x2c($sp)
 /* 18C22C 801DE1DC 93A6002D */  lbu   $a2, 0x2d($sp)
-/* 18C230 801DE1E0 0C05A50C */  jal   func_80169430_ovl9
+/* 18C230 801DE1E0 0C05A50C */  jal   func_80169430_ovl3
 /* 18C234 801DE1E4 24070007 */   li    $a3, 7
 /* 18C238 801DE1E8 3C088005 */ lui $t0, 0x8005
 /* 18C23C 801DE1EC 8D08A7C4 */ lw $t0, -0x583c($t0)
