@@ -50,3 +50,4 @@ glabel spawn_entity
 /* 0854E8 800FCA78 27BD0040 */  addiu $sp, $sp, 0x40
 /* 0854EC 800FCA7C 03E00008 */  jr    $ra
 /* 0854F0 800FCA80 00000000 */   nop   
+.size spawn_entity, . - spawn_entity

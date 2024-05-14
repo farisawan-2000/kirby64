@@ -754,3 +754,4 @@ glabel thread4_audio
 /* 02146C 8002086C 8FBE0048 */  lw    $fp, 0x48($sp)
 /* 021470 80020870 03E00008 */  jr    $ra
 /* 021474 80020874 27BD0080 */   addiu $sp, $sp, 0x80
+.size thread4_audio, . - thread4_audio

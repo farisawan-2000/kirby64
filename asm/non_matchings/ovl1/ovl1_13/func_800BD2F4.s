@@ -36,3 +36,4 @@ glabel draw_kirby_stars
 /* 0655B8 800BD368 8FB20020 */  lw    $s2, 0x20($sp)
 /* 0655BC 800BD36C 03E00008 */  jr    $ra
 /* 0655C0 800BD370 27BD0028 */   addiu $sp, $sp, 0x28
+.size draw_kirby_stars, . - draw_kirby_stars

@@ -236,6 +236,8 @@ glabel func_80030DF0
 /* 031D18 80031118 8FB70040 */  lw    $s7, 0x40($sp)
 /* 031D1C 8003111C 03E00008 */  jr    $ra
 /* 031D20 80031120 27BD0298 */   addiu $sp, $sp, 0x298
+.type func_80030DF0, @function
+.size func_80030DF0, . - func_80030DF0
 
 glabel func_80031124
 /* 031D24 80031124 27BDFFF0 */  addiu $sp, $sp, -0x10
@@ -335,3 +337,5 @@ glabel func_80031124
 /* 031E64 80031264 00000000 */  nop   
 /* 031E68 80031268 00000000 */  nop   
 /* 031E6C 8003126C 00000000 */  nop
+.type func_80031124, @function
+.size func_80031124, . - func_80031124

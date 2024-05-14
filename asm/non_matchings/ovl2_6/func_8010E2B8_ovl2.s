@@ -26,3 +26,4 @@ glabel mtx_create_translate_scale
 /* 096D88 8010E318 E490003C */  swc1  $f16, 0x3c($a0)
 /* 096D8C 8010E31C 03E00008 */  jr    $ra
 /* 096D90 8010E320 E48A0028 */   swc1  $f10, 0x28($a0)
+.size mtx_create_translate_scale, . - mtx_create_translate_scale

@@ -35,3 +35,4 @@ glabel create_z_rotation_matrix
 /* 01DA24 8001CE24 27BD0020 */  addiu $sp, $sp, 0x20
 /* 01DA28 8001CE28 03E00008 */  jr    $ra
 /* 01DA2C 8001CE2C 00000000 */   nop   
+.size create_z_rotation_matrix, . - create_z_rotation_matrix

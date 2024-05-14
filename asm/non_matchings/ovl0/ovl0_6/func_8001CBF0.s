@@ -50,3 +50,4 @@ glabel create_xy_rotation_matrix
 /* 01D8B0 8001CCB0 27BD0030 */  addiu $sp, $sp, 0x30
 /* 01D8B4 8001CCB4 03E00008 */  jr    $ra
 /* 01D8B8 8001CCB8 00000000 */   nop   
+.size create_xy_rotation_matrix, . - create_xy_rotation_matrix

@@ -234,8 +234,6 @@ glabel func_800A2550
 /* 04AAEC 800A289C 8FB40040 */  lw    $s4, 0x40($sp)
 /* 04AAF0 800A28A0 03E00008 */  jr    $ra
 /* 04AAF4 800A28A4 27BD00E8 */   addiu $sp, $sp, 0xe8
-.type func_800A2550, @function
-
 /* 04AAF8 800A28A8 00000000 */  nop   
 /* 04AAFC 800A28AC 00000000 */  nop   
 /* 04AB00 800A28B0 00000000 */  nop   
@@ -243,3 +241,4 @@ glabel func_800A2550
 /* 04AB08 800A28B8 00000000 */  nop   
 /* 04AB0C 800A28BC 00000000 */  nop   
 .type func_800A2550, @function
+.size func_800A2550, . - func_800A2550

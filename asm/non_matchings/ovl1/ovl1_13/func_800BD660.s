@@ -34,3 +34,4 @@ glabel draw_kirby_lives
 /* 065924 800BD6D4 27BD0020 */  addiu $sp, $sp, 0x20
 /* 065928 800BD6D8 03E00008 */  jr    $ra
 /* 06592C 800BD6DC 00000000 */   nop   
+.size draw_kirby_lives, . - draw_kirby_lives

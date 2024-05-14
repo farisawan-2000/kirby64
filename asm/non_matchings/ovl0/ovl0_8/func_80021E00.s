@@ -108,3 +108,4 @@ glabel crash_screen_draw_glyph
 /* 022B74 80021F74 27BD0030 */  addiu $sp, $sp, 0x30
 /* 022B78 80021F78 03E00008 */  jr    $ra
 /* 022B7C 80021F7C 00000000 */   nop   
+.size crash_screen_draw_glyph, . - crash_screen_draw_glyph

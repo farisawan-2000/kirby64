@@ -51,3 +51,4 @@ glabel omGAddCommon
 /* 00AD74 8000A174 27BD0020 */  addiu $sp, $sp, 0x20
 /* 00AD78 8000A178 03E00008 */  jr    $ra
 /* 00AD7C 8000A17C 00000000 */   nop   
+.size omGAddCommon, . - omGAddCommon

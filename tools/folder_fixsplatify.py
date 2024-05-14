@@ -7,8 +7,8 @@ fl = []
 with open(sys.argv[1]) as f:
     fl = f.readlines()
 
-flist = [i[:-1] for i in fl]
-# flist = [sys.argv[1]]
+# flist = [i[:-1] for i in fl]
+flist = [sys.argv[1]]
 
 print(flist)
 # sys.exit()
@@ -93,8 +93,8 @@ for fn in flist:
             if inFunc:
                 flout.append(f".size {func}, . - {func}\n")
             inFunc = False
-            # flout.append(l)
-            flout += fl[i:]
+            flout.append(l)
+            # flout += fl[i:]
             break
         elif "glabel " in l and inFunc == False:
             inFunc = True
