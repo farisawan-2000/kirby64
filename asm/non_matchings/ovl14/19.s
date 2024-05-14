@@ -207,3 +207,4 @@ glabel L801DC4EC_ovl14
 /* 1FF25C 801DC66C 03E00008 */  jr          $ra
 /* 1FF260 801DC670 00000000 */   nop
 .type func_801DC38C_ovl14, @function
+.size func_801DC38C_ovl14, . - func_801DC38C_ovl14

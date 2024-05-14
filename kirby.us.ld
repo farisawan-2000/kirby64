@@ -221,13 +221,13 @@ SECTIONS
         BUILD_DIR/libultra.a:spsetpc.o(.text);
     }
     END_SEG(ovl0)
-    BEGIN_SEG(ovl0Data1, _ovl0SegmentEnd) SUBALIGN(16) {
+    BEGIN_UCODE_TEXT(n_aspMain, _ovl0SegmentEnd) {
         BUILD_DIR/data/kirby.039DF0.o(.data*);
     }
-    END_SEG(ovl0Data1)
+    END_UCODE_TEXT(n_aspMain)
 
     /* RSP microcodes */
-    BEGIN_UCODE_TEXT(gspF3DEX2_fifo, _ovl0Data1SegmentEnd) {
+    BEGIN_UCODE_TEXT(gspF3DEX2_fifo, n_aspMainTextEnd) {
         BUILD_DIR/ucode/F3DEX2_2.04H/F3DEX2_2.04H.code.o;
     }
     END_UCODE_TEXT(gspF3DEX2_fifo)
@@ -290,11 +290,14 @@ SECTIONS
         BUILD_DIR/libultra.a:libm_vals.o(.rodata);
         BUILD_DIR/libultra.a:cents2ratio.o(.rodata);
         BUILD_DIR/libultra.a:xldtob.o(.rodata);
-        BUILD_DIR/data/kirby.039DF0.3.o(.data*);
     }
     END_SEG(ovl0Data2)
 
-    BEGIN_UCODE_DATA(gspF3DEX2_fifo, _ovl0Data2SegmentEnd) {
+    BEGIN_UCODE_DATA(n_aspMain, _ovl0Data2SegmentEnd) {
+        BUILD_DIR/data/kirby.039DF0.3.o(.data*);
+    }
+    END_UCODE_DATA(n_aspMain)
+    BEGIN_UCODE_DATA(gspF3DEX2_fifo, n_aspMainDataEnd) {
         BUILD_DIR/ucode/F3DEX2_2.04H/F3DEX2_2.04H.data.o(*);
     }
     END_UCODE_DATA(gspF3DEX2_fifo)

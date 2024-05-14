@@ -1,18 +1,23 @@
 .section .late_rodata
 glabel D_800D6830
 .float 0.1
+.size D_800D6830, . - D_800D6830
 .section .late_rodata
 glabel D_800D6834
 .float 1.28
+.size D_800D6834, . - D_800D6834
 .section .late_rodata
 glabel D_800D6838
 .float 1.14
+.size D_800D6838, . - D_800D6838
 .section .late_rodata
 glabel D_800D683C
 .float -10000.0
+.size D_800D683C, . - D_800D683C
 .section .late_rodata
 glabel D_800D6840
 .float 65535.0
+.size D_800D6840, . - D_800D6840
 .section .late_rodata
 glabel D_800D6844
 .float -10000.0
@@ -522,3 +527,4 @@ glabel func_800B531C
 /* 05DCC4 800B5A74 03E00008 */  jr    $ra
 /* 05DCC8 800B5A78 00000000 */   nop   
 .type func_800B531C, @function
+.size func_800B531C, . - func_800B531C

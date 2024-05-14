@@ -165,6 +165,7 @@ glabel func_801D2B90_ovl8
 /* 1768B4 801D2DD4 27BD0020 */  addiu $sp, $sp, 0x20
 /* 1768B8 801D2DD8 03E00008 */  jr    $ra
 /* 1768BC 801D2DDC 00000000 */   nop   
+.size func_801D2B90_ovl8, . - func_801D2B90_ovl8
 
 glabel func_801D2DE0_ovl8
 /* 1768C0 801D2DE0 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
@@ -339,6 +340,7 @@ glabel func_801D2DE0_ovl8
 /* 176B50 801D3070 27BD0050 */  addiu $sp, $sp, 0x50
 /* 176B54 801D3074 03E00008 */  jr    $ra
 /* 176B58 801D3078 00000000 */   nop   
+.size func_801D2DE0_ovl8, . - func_801D2DE0_ovl8
 
 glabel func_801D307C_ovl8
 /* 176B5C 801D307C 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
@@ -480,6 +482,7 @@ glabel func_801D307C_ovl8
 /* 176D70 801D3290 27BD0018 */  addiu $sp, $sp, 0x18
 /* 176D74 801D3294 03E00008 */  jr    $ra
 /* 176D78 801D3298 00000000 */   nop   
+.size func_801D307C_ovl8, . - func_801D307C_ovl8
 
 glabel func_801D329C_ovl8
 /* 176D7C 801D329C 27BDFFD0 */  addiu $sp, $sp, -0x30
@@ -626,6 +629,7 @@ glabel func_801D329C_ovl8
 /* 176F94 801D34B4 8FB10028 */  lw    $s1, 0x28($sp)
 /* 176F98 801D34B8 03E00008 */  jr    $ra
 /* 176F9C 801D34BC 27BD0030 */   addiu $sp, $sp, 0x30
+.size func_801D329C_ovl8, . - func_801D329C_ovl8
 
 glabel func_801D34C0_ovl8
 /* 176FA0 801D34C0 3C038005 */  lui   $v1, %hi(D_8004A7C4) # $v1, 0x8005
@@ -728,6 +732,7 @@ glabel func_801D34C0_ovl8
 /* 177118 801D3638 27BD0018 */  addiu $sp, $sp, 0x18
 /* 17711C 801D363C 03E00008 */  jr    $ra
 /* 177120 801D3640 00000000 */   nop   
+.size func_801D34C0_ovl8, . - func_801D34C0_ovl8
 
 glabel func_801D3644_ovl8
 /* 177124 801D3644 27BDFFC8 */  addiu $sp, $sp, -0x38
@@ -1049,6 +1054,7 @@ glabel func_801D3644_ovl8
 /* 1775E8 801D3B08 8FB20028 */  lw    $s2, 0x28($sp)
 /* 1775EC 801D3B0C 03E00008 */  jr    $ra
 /* 1775F0 801D3B10 27BD0038 */   addiu $sp, $sp, 0x38
+.size func_801D3644_ovl8, . - func_801D3644_ovl8
 
 glabel func_801D3B14_ovl8
 /* 1775F4 801D3B14 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
@@ -1089,6 +1095,7 @@ glabel func_801D3B14_ovl8
 /* 17767C 801D3B9C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177680 801D3BA0 03E00008 */  jr    $ra
 /* 177684 801D3BA4 00000000 */   nop   
+.size func_801D3B14_ovl8, . - func_801D3B14_ovl8
 
 glabel func_801D3BA8_ovl8
 /* 177688 801D3BA8 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
@@ -1226,6 +1233,7 @@ glabel func_801D3BA8_ovl8
 /* 177888 801D3DA8 27BD0018 */  addiu $sp, $sp, 0x18
 /* 17788C 801D3DAC 03E00008 */  jr    $ra
 /* 177890 801D3DB0 00000000 */   nop   
+.size func_801D3BA8_ovl8, . - func_801D3BA8_ovl8
 
 glabel func_801D3DB4_ovl8
 /* 177894 801D3DB4 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
@@ -1263,6 +1271,7 @@ glabel func_801D3DB4_ovl8
 /* 177910 801D3E30 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177914 801D3E34 03E00008 */  jr    $ra
 /* 177918 801D3E38 00000000 */   nop   
+.size func_801D3DB4_ovl8, . - func_801D3DB4_ovl8
 
 glabel func_801D3E3C_ovl8
 /* 17791C 801D3E3C 3C028005 */  lui   $v0, %hi(D_8004A7C4) # $v0, 0x8005
@@ -1397,6 +1406,7 @@ glabel func_801D3E3C_ovl8
 /* 177B0C 801D402C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177B10 801D4030 03E00008 */  jr    $ra
 /* 177B14 801D4034 00000000 */   nop   
+.size func_801D3E3C_ovl8, . - func_801D3E3C_ovl8
 
 glabel func_801D4038_ovl8
 /* 177B18 801D4038 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
@@ -1444,6 +1454,7 @@ glabel func_801D4038_ovl8
 /* 177BBC 801D40DC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177BC0 801D40E0 03E00008 */  jr    $ra
 /* 177BC4 801D40E4 00000000 */   nop   
+.size func_801D4038_ovl8, . - func_801D4038_ovl8
 
 glabel func_801D40E8_ovl8
 /* 177BC8 801D40E8 27BDFFC0 */  addiu $sp, $sp, -0x40
@@ -1633,6 +1644,7 @@ glabel func_801D40E8_ovl8
 /* 177E8C 801D43AC 8FB30038 */  lw    $s3, 0x38($sp)
 /* 177E90 801D43B0 03E00008 */  jr    $ra
 /* 177E94 801D43B4 27BD0040 */   addiu $sp, $sp, 0x40
+.size func_801D40E8_ovl8, . - func_801D40E8_ovl8
 
 glabel func_801D43B8_ovl8
 /* 177E98 801D43B8 3C0E8005 */  lui   $t6, %hi(D_8004A7C4) # $t6, 0x8005
@@ -1670,6 +1682,7 @@ glabel func_801D43B8_ovl8
 /* 177F14 801D4434 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177F18 801D4438 03E00008 */  jr    $ra
 /* 177F1C 801D443C 00000000 */   nop   
+.size func_801D43B8_ovl8, . - func_801D43B8_ovl8
 
 glabel func_801D4440_ovl8
 /* 177F20 801D4440 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -1687,6 +1700,7 @@ glabel func_801D4440_ovl8
 /* 177F50 801D4470 27BD0018 */  addiu $sp, $sp, 0x18
 /* 177F54 801D4474 03E00008 */  jr    $ra
 /* 177F58 801D4478 00000000 */   nop   
+.size func_801D4440_ovl8, . - func_801D4440_ovl8
 
 glabel func_801D447C_ovl8
 /* 177F5C 801D447C 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -1771,3 +1785,4 @@ glabel L801D4564_ovl8
 
 /* 17808C 801D45AC 00000000 */  nop
 
+.size func_801D447C_ovl8, . - func_801D447C_ovl8

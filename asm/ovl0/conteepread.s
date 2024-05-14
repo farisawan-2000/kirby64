@@ -129,6 +129,7 @@ glabel osEepromRead
 /* 039D18 80039118 8FB20020 */  lw    $s2, 0x20($sp)
 /* 039D1C 8003911C 03E00008 */  jr    $ra
 /* 039D20 80039120 27BD0050 */   addiu $sp, $sp, 0x50
+.size osEepromRead, . - osEepromRead
 
 glabel __osPackEepReadData
 /* 039D24 80039124 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -168,3 +169,4 @@ glabel __osPackEepReadData
 /* 039DAC 800391AC B841FFFF */   swr   $at, -1($v0)
 
 # Unknown region 039DF0-043790 [99A0]
+.size __osPackEepReadData, . - __osPackEepReadData

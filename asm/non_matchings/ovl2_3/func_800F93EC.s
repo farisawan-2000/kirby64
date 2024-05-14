@@ -16,13 +16,13 @@ glabel func_800F93EC
 /* 081E94 800F9424 00000000 */   nop   
 /* 081E98 800F9428 03E00008 */  jr    $ra
 /* 081E9C 800F942C 24020001 */   li    $v0, 1
-.type func_800F93EC, @function
-
 .L800F9430_ovl2:
 /* 081EA0 800F9430 03E00008 */  jr    $ra
 /* 081EA4 800F9434 00000000 */   nop   
 .type func_800F93EC, @function
+.size func_800F93EC, . - func_800F93EC
 
+glabel func_800F9438
 /* 081EA8 800F9438 3C0E800D */  lui   $t6, %hi(D_800D6F4C) # $t6, 0x800d
 /* 081EAC 800F943C 8DCE6F4C */  lw    $t6, %lo(D_800D6F4C)($t6)
 /* 081EB0 800F9440 3C0F800C */  lui   $t7, 0x800c
@@ -30,8 +30,6 @@ glabel func_800F93EC
 /* 081EB8 800F9448 00000000 */   nop   
 /* 081EBC 800F944C 03E00008 */  jr    $ra
 /* 081EC0 800F9450 00001025 */   move  $v0, $zero
-.type func_800F93EC, @function
-
 .L800F9454_ovl2:
 /* 081EC4 800F9454 8DEFE4F8 */  lw    $t7, -0x1b08($t7)
 /* 081EC8 800F9458 24010001 */  li    $at, 1
@@ -40,8 +38,6 @@ glabel func_800F93EC
 /* 081ED4 800F9464 00000000 */   nop   
 /* 081ED8 800F9468 03E00008 */  jr    $ra
 /* 081EDC 800F946C 00001025 */   move  $v0, $zero
-.type func_800F93EC, @function
-
 .L800F9470_ovl2:
 /* 081EE0 800F9470 8F189114 */  lw    $t8, -0x6eec($t8)
 /* 081EE4 800F9474 00044100 */  sll   $t0, $a0, 4
@@ -54,8 +50,6 @@ glabel func_800F93EC
 /* 081F00 800F9490 904C0007 */   lbu   $t4, 7($v0)
 /* 081F04 800F9494 03E00008 */  jr    $ra
 /* 081F08 800F9498 00001025 */   move  $v0, $zero
-.type func_800F93EC, @function
-
 /* 081F0C 800F949C 904C0007 */  lbu   $t4, 7($v0)
 .L800F94A0_ovl2:
 /* 081F10 800F94A0 2404001F */  li    $a0, 31
@@ -67,8 +61,6 @@ glabel func_800F93EC
 /* 081F28 800F94B8 904E0004 */   lbu   $t6, 4($v0)
 /* 081F2C 800F94BC 03E00008 */  jr    $ra
 /* 081F30 800F94C0 00001025 */   move  $v0, $zero
-.type func_800F93EC, @function
-
 .L800F94C4_ovl2:
 /* 081F34 800F94C4 904E0004 */  lbu   $t6, 4($v0)
 .L800F94C8_ovl2:
@@ -95,5 +87,5 @@ glabel func_800F93EC
 /* 081F80 800F9510 AC28E4FC */  sw    $t0, %lo(D_800BE4FC)($at)
 /* 081F84 800F9514 03E00008 */  jr    $ra
 /* 081F88 800F9518 00000000 */   nop   
-.type func_800F93EC, @function
-.size func_800F93EC, . - func_800F93EC
+.type func_800F9438, @function
+.size func_800F9438, . - func_800F9438

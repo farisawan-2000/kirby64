@@ -777,3 +777,4 @@ glabel func_801BC978_ovl7
 /* 163574 801BD504 00000000 */  nop   
 /* 163578 801BD508 00000000 */  nop   
 .type func_801BC978_ovl7, @function
+.size func_801BC978_ovl7, . - func_801BC978_ovl7

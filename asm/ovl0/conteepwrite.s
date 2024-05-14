@@ -109,6 +109,7 @@ glabel osEepromWrite
 /* 03057C 8002F97C 8FB10018 */  lw    $s1, 0x18($sp)
 /* 030580 8002F980 03E00008 */  jr    $ra
 /* 030584 8002F984 27BD0048 */   addiu $sp, $sp, 0x48
+.size osEepromWrite, . - osEepromWrite
 
 glabel func_8002F988
 /* 030588 8002F988 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -155,6 +156,7 @@ glabel func_8002F988
 /* 030628 8002FA28 A841FFFC */  swl   $at, -4($v0)
 /* 03062C 8002FA2C 03E00008 */  jr    $ra
 /* 030630 8002FA30 B841FFFF */   swr   $at, -1($v0)
+.size func_8002F988, . - func_8002F988
 
 glabel __osEepStatus
 /* 030634 8002FA34 27BDFFD0 */  addiu $sp, $sp, -0x30
@@ -267,3 +269,4 @@ glabel __osEepStatus
 /* 0307D0 8002FBD0 27BD0030 */  addiu $sp, $sp, 0x30
 /* 0307D4 8002FBD4 03E00008 */  jr    $ra
 /* 0307D8 8002FBD8 00000000 */   nop   
+.size __osEepStatus, . - __osEepStatus

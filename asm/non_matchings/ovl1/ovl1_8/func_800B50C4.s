@@ -171,3 +171,4 @@ glabel func_800B50C4
 /* 05D564 800B5314 03E00008 */  jr    $ra
 /* 05D568 800B5318 27BD0010 */   addiu $sp, $sp, 0x10
 .type func_800B50C4, @function
+.size func_800B50C4, . - func_800B50C4

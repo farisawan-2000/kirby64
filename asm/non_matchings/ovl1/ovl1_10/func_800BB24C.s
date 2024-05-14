@@ -48,10 +48,10 @@ glabel func_800BB24C
 /* 06354C 800BB2FC 2739D320 */  addiu $t9, %lo(D_800ED320) # addiu $t9, $t9, -0x2ce0
 /* 063550 800BB300 3C04800F */  lui   $a0, %hi(D_800ECD70) # $a0, 0x800f
 /* 063554 800BB304 3C0505F5 */  lui   $a1, (0x05F5E100 >> 16) # lui $a1, 0x5f5
-/* 063558 800BB308 3C06800C */  lui   $a2, %hi(D_800BAD0C) # $a2, 0x800c
+/* 063558 800BB308 3C06800C */  lui   $a2, %hi(func_800BAD0C) # $a2, 0x800c
 /* 06355C 800BB30C 240B0034 */  li    $t3, 52
 /* 063560 800BB310 AFAB0014 */  sw    $t3, 0x14($sp)
-/* 063564 800BB314 24C6AD0C */  addiu $a2, %lo(D_800BAD0C) # addiu $a2, $a2, -0x52f4
+/* 063564 800BB314 24C6AD0C */  addiu $a2, %lo(func_800BAD0C) # addiu $a2, $a2, -0x52f4
 /* 063568 800BB318 34A5E100 */  ori   $a1, (0x05F5E100 & 0xFFFF) # ori $a1, $a1, 0xe100
 /* 06356C 800BB31C 2484CD70 */  addiu $a0, %lo(D_800ECD70) # addiu $a0, $a0, -0x3290
 /* 063570 800BB320 AFB90010 */  sw    $t9, 0x10($sp)

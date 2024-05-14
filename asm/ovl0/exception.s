@@ -14,6 +14,7 @@ glabel __osExceptionPreamble
 /* 02EB64 8002DF64 275ADF70 */  addiu $k0, %lo(__osException) # addiu $k0, $k0, -0x2090
 /* 02EB68 8002DF68 03400008 */  jr    $k0
 /* 02EB6C 8002DF6C 00000000 */   nop
+.size __osExceptionPreamble, . - __osExceptionPreamble
 
 glabel __osException
 /* 02EB70 8002DF70 3C1A800A */  lui   $k0, %hi(__osThreadSave) # $k0, 0x800a
@@ -369,6 +370,7 @@ glabel __osException
 /* 02F098 8002E498 24040060 */   li    $a0, 96
 /* 02F09C 8002E49C 0800B9B9 */  j     __osDispatchThread
 /* 02F0A0 8002E4A0 00000000 */   nop   
+.size __osException, . - __osException
 
 glabel send_mesg
 /* 02F0A4 8002E4A4 3C0A800A */  lui   $t2, %hi(__osEventStateTab) # $t2, 0x800a
@@ -501,6 +503,7 @@ glabel send_mesg
 .L8002E684_ovl0:
 /* 02F284 8002E684 0800B9B9 */  j     __osDispatchThread
 /* 02F288 8002E688 00000000 */   nop   
+.size send_mesg, . - send_mesg
 
 glabel __osEnqueueThread
 /* 02F28C 8002E68C 8C980000 */  lw    $t8, ($a0)
@@ -523,12 +526,14 @@ glabel __osEnqueueThread
 /* 02F2C8 8002E6C8 AF250000 */  sw    $a1, ($t9)
 /* 02F2CC 8002E6CC 03E00008 */  jr    $ra
 /* 02F2D0 8002E6D0 ACA40008 */   sw    $a0, 8($a1)
+.size __osEnqueueThread, . - __osEnqueueThread
 
 glabel __osPopThread
 /* 02F2D4 8002E6D4 8C820000 */  lw    $v0, ($a0)
 /* 02F2D8 8002E6D8 8C590000 */  lw    $t9, ($v0)
 /* 02F2DC 8002E6DC 03E00008 */  jr    $ra
 /* 02F2E0 8002E6E0 AC990000 */   sw    $t9, ($a0)
+.size __osPopThread, . - __osPopThread
 
 glabel __osDispatchThread /* ASM */
 /* 02F2E4 8002E6E4 3C048004 */  lui   $a0, %hi(__osRunQueue) # $a0, 0x8004
@@ -627,6 +632,7 @@ glabel __osDispatchThread /* ASM */
 /* 02F454 8002E854 00000000 */  nop   
 /* 02F458 8002E858 00000000 */  nop   
 /* 02F45C 8002E85C 42000018 */  eret  
+.size __osDispatchThread, . - __osDispatchThread
 
 glabel __osCleanupThread
 /* 02F460 8002E860 0C00B6E4 */  jal   osDestroyThread
@@ -635,3 +641,4 @@ glabel __osCleanupThread
 /* 02F46C 8002E86C 00000000 */  nop  
 /*END OF ASM*/ 
 
+.size __osCleanupThread, . - __osCleanupThread

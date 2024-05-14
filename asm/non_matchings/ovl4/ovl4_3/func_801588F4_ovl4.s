@@ -277,3 +277,4 @@ glabel func_801588F4_ovl4
 /* 100228 80158CF8 27BD0058 */   addiu $sp, $sp, 0x58
 .type func_801588F4_ovl4, @function
 
+.size func_801588F4_ovl4, . - func_801588F4_ovl4

@@ -82,6 +82,7 @@ glabel func_801DB1E0_ovl10
 /* 1CC060 801DB2F0 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1CC064 801DB2F4 03E00008 */  jr    $ra
 /* 1CC068 801DB2F8 00000000 */   nop   
+.size func_801DB1E0_ovl10, . - func_801DB1E0_ovl10
 
 glabel func_801DB2FC_ovl10
 /* 1CC06C 801DB2FC 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -179,6 +180,7 @@ glabel func_801DB2FC_ovl10
 /* 1CC1DC 801DB46C 46104100 */  add.s $f4, $f8, $f16
 /* 1CC1E0 801DB470 03E00008 */  jr    $ra
 /* 1CC1E4 801DB474 E4E40000 */   swc1  $f4, ($a3)
+.size func_801DB2FC_ovl10, . - func_801DB2FC_ovl10
 
 glabel func_801DB478_ovl10
 /* 1CC1E8 801DB478 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -256,6 +258,7 @@ glabel func_801DB478_ovl10
 /* 1CC2F8 801DB588 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1CC2FC 801DB58C 03E00008 */  jr    $ra
 /* 1CC300 801DB590 00000000 */   nop   
+.size func_801DB478_ovl10, . - func_801DB478_ovl10
 
 glabel func_801DB594_ovl10
 /* 1CC304 801DB594 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -315,6 +318,7 @@ glabel func_801DB594_ovl10
 /* 1CC3DC 801DB66C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1CC3E0 801DB670 03E00008 */  jr    $ra
 /* 1CC3E4 801DB674 00000000 */   nop   
+.size func_801DB594_ovl10, . - func_801DB594_ovl10
 
 glabel func_801DB678_ovl10
 /* 1CC3E8 801DB678 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -383,6 +387,7 @@ glabel func_801DB678_ovl10
 /* 1CC4D4 801DB764 27BD0018 */  addiu $sp, $sp, 0x18
 /* 1CC4D8 801DB768 03E00008 */  jr    $ra
 /* 1CC4DC 801DB76C 00000000 */   nop   
+.size func_801DB678_ovl10, . - func_801DB678_ovl10
 
 glabel func_801DB770_ovl10
 /* 1CC4E0 801DB770 27BDFFD0 */  addiu $sp, $sp, -0x30
@@ -545,6 +550,7 @@ glabel func_801DB770_ovl10
 /* 1CC740 801DB9D0 8FB20028 */  lw    $s2, 0x28($sp)
 /* 1CC744 801DB9D4 03E00008 */  jr    $ra
 /* 1CC748 801DB9D8 27BD0030 */   addiu $sp, $sp, 0x30
+.size func_801DB770_ovl10, . - func_801DB770_ovl10
 
 glabel func_801DB9DC_ovl10
 /* 1CC74C 801DB9DC 27BDFFD0 */  addiu $sp, $sp, -0x30
@@ -689,3 +695,4 @@ glabel func_801DB9DC_ovl10
 /* 1CC968 801DBBF8 00000000 */  nop   
 /* 1CC96C 801DBBFC 00000000 */  nop   
 
+.size func_801DB9DC_ovl10, . - func_801DB9DC_ovl10

@@ -837,3 +837,4 @@ glabel __osPfsRWInode
 /* 032C4C 8003204C 8FB40030 */  lw    $s4, 0x30($sp)
 /* 032C50 80032050 03E00008 */  jr    $ra
 /* 032C54 80032054 27BD0058 */   addiu $sp, $sp, 0x58
+.size __osPfsRWInode, . - __osPfsRWInode

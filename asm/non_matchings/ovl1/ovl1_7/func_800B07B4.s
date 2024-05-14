@@ -1,6 +1,7 @@
 .late_rodata
 glabel D_800D672C
 .float 65535.0
+.size D_800D672C, . - D_800D672C
 
 glabel D_800D6730
 .float 65535.0
@@ -132,3 +133,4 @@ glabel func_800B07B4
 /* 058BBC 800B096C 03E00008 */  jr    $ra
 /* 058BC0 800B0970 00000000 */   nop   
 .type func_800B07B4, @function
+.size func_800B07B4, . - func_800B07B4
