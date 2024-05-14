@@ -224,3 +224,4 @@ glabel func_8001503C
 /* 015F60 80015360 03E00008 */  jr    $ra
 /* 015F64 80015364 27BD0050 */   addiu $sp, $sp, 0x50
 .type func_8001503C, @function
+.size func_8001503C, . - func_8001503C

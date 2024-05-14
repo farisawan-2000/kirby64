@@ -228,3 +228,4 @@ glabel L800051D0_ovl0
 /* 005DD8 800051D8 03E00008 */  jr    $ra
 /* 005DDC 800051DC 00000000 */   nop   
 .type func_80004E98, @function
+.size func_80004E98, . - func_80004E98

@@ -110,3 +110,4 @@ glabel func_801DE8DC_ovl16
 /* 214D3C 801DEA8C 03E00008 */  jr    $ra
 /* 214D40 801DEA90 27BD0018 */   addiu $sp, $sp, 0x18
 .type func_801DE8DC_ovl16, @function
+.size func_801DE8DC_ovl16, . - func_801DE8DC_ovl16

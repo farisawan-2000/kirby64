@@ -883,3 +883,4 @@ glabel L802253C4_ovl19
 /* 245D28 80225618 03E00008 */  jr    $ra
 /* 245D2C 8022561C 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_802248C0_ovl19, @function
+.size func_802248C0_ovl19, . - func_802248C0_ovl19

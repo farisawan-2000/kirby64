@@ -30,3 +30,4 @@ glabel func_80020ECC
 /* 021B34 80020F34 00000000 */  nop   
 /* 021B38 80020F38 00000000 */  nop   
 .type func_80020ECC, @function
+.size func_80020ECC, . - func_80020ECC

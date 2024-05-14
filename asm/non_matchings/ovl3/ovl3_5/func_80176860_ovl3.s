@@ -367,3 +367,4 @@ glabel func_80176860_ovl3
 /* 0D7818 80176DD8 03E00008 */  jr    $ra
 /* 0D781C 80176DDC 27BD0068 */   addiu $sp, $sp, 0x68
 .type func_80176860_ovl3, @function
+.size func_80176860_ovl3, . - func_80176860_ovl3

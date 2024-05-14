@@ -120,3 +120,4 @@ glabel func_8022EE78_ovl19
 # Unknown region 24F750-2501C0 [A70]
 .type func_8022EE78_ovl19, @function
 
+.size func_8022EE78_ovl19, . - func_8022EE78_ovl19

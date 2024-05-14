@@ -19,3 +19,4 @@ glabel func_801DECF4_ovl16
 /* 214FE8 801DED38 03E00008 */  jr    $ra
 /* 214FEC 801DED3C 00000000 */   nop   
 .type func_801DECF4_ovl16, @function
+.size func_801DECF4_ovl16, . - func_801DECF4_ovl16

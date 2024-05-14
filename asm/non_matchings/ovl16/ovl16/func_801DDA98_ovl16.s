@@ -247,3 +247,4 @@ glabel func_801DDA98_ovl16
 /* 2140FC 801DDE4C 03E00008 */  jr    $ra
 /* 214100 801DDE50 27BD0048 */   addiu $sp, $sp, 0x48
 .type func_801DDA98_ovl16, @function
+.size func_801DDA98_ovl16, . - func_801DDA98_ovl16

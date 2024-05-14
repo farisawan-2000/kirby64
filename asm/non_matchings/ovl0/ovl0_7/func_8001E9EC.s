@@ -194,3 +194,4 @@ glabel func_8001E9EC
 /* 01F8B8 8001ECB8 03E00008 */  jr    $ra
 /* 01F8BC 8001ECBC 27BD0030 */   addiu $sp, $sp, 0x30
 .type func_8001E9EC, @function
+.size func_8001E9EC, . - func_8001E9EC

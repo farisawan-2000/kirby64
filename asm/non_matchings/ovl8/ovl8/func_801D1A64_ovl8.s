@@ -83,3 +83,4 @@ glabel func_801D1A64_ovl8
 /* 175688 801D1BA8 03E00008 */  jr    $ra
 /* 17568C 801D1BAC E4C40000 */   swc1  $f4, ($a2)
 .type func_801D1A64_ovl8, @function
+.size func_801D1A64_ovl8, . - func_801D1A64_ovl8

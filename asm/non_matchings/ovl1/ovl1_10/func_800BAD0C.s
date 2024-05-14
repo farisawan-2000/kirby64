@@ -113,3 +113,4 @@ glabel func_800BAD0C
 /* 0630F8 800BAEA8 03E00008 */  jr    $ra
 /* 0630FC 800BAEAC 27BD0080 */   addiu $sp, $sp, 0x80
 .type func_800BAD0C, @function
+.size func_800BAD0C, . - func_800BAD0C

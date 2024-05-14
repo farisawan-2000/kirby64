@@ -59,3 +59,4 @@ glabel func_8021F0A4_ovl19
 /* 23F87C 8021F16C 03E00008 */  jr    $ra
 /* 23F880 8021F170 00000000 */   nop   
 .type func_8021F0A4_ovl19, @function
+.size func_8021F0A4_ovl19, . - func_8021F0A4_ovl19

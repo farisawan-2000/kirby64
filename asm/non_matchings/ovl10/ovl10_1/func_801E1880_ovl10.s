@@ -10,3 +10,4 @@ glabel func_801E1880_ovl10
 /* 1D2610 801E18A0 03E00008 */  jr    $ra
 /* 1D2614 801E18A4 AC2EA520 */ sw $t6, %lo(D_800EA520)($at)
 .type func_801E1880_ovl10, @function
+.size func_801E1880_ovl10, . - func_801E1880_ovl10

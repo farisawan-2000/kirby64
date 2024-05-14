@@ -78,3 +78,4 @@ glabel func_801DE9C4_ovl12 # 80
 /* 0038EC 801DEAEC 03E00008 */  jr          $ra
 /* 0038F0 801DEAF0 27BD0028 */   addiu      $sp, $sp, 0x28
 .type func_801DE9C4_ovl12, @function
+.size func_801DE9C4_ovl12, . - func_801DE9C4_ovl12

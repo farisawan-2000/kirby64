@@ -87,4 +87,5 @@ glabel func_801E1B90_ovl12 # 132
 /* 006AD0 801E1CD0 00000000 */   nop
 .type func_801E1B90_ovl12, @function
 
+.size func_801E1B90_ovl12, . - func_801E1B90_ovl12
 .section .late_rodata

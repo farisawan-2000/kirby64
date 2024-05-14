@@ -130,3 +130,4 @@ glabel func_80228EF4_ovl19
 /* 249804 802290F4 00000000 */  nop   
 /* 249808 802290F8 00000000 */  nop   
 .type func_80228EF4_ovl19, @function
+.size func_80228EF4_ovl19, . - func_80228EF4_ovl19

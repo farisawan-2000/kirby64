@@ -18,3 +18,4 @@ glabel func_801E1ED8_ovl13 # 37
 /* 1F9E98 801E1F18 E4660000 */   swc1       $f6, 0x0($v1)
 .type func_801E1ED8_ovl13, @function
 
+.size func_801E1ED8_ovl13, . - func_801E1ED8_ovl13

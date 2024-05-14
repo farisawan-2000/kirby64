@@ -159,3 +159,4 @@ glabel func_801DBC34_ovl14 # 12
 /* 1FEA8C 801DBE9C 03E00008 */  jr          $ra
 /* 1FEA90 801DBEA0 27BD0030 */   addiu      $sp, $sp, 0x30
 .type func_801DBC34_ovl14, @function
+.size func_801DBC34_ovl14, . - func_801DBC34_ovl14

@@ -163,6 +163,7 @@ glabel L801E1544_ovl13
 /* 1F9558 801E15D8 AC2EDC50 */   sw         $t6, %lo(gEntityVtableIndexArray)($at)
 .type func_801E135C_ovl13, @function
 
+.size func_801E135C_ovl13, . - func_801E135C_ovl13
 .section .late_rodata
 glabel D_801E5D78_ovl13
 /* 1FDCF8 801E5D78 */ .word 0xBFC90FDB

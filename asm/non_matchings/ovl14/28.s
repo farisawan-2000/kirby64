@@ -307,3 +307,4 @@ glabel func_801DD018_ovl14 # 28
 /* 2000B0 801DD4C0 03E00008 */  jr          $ra
 /* 2000B4 801DD4C4 27BD0030 */   addiu      $sp, $sp, 0x30
 .type func_801DD018_ovl14, @function
+.size func_801DD018_ovl14, . - func_801DD018_ovl14

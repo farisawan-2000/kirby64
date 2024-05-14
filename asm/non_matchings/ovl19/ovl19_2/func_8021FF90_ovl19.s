@@ -108,3 +108,4 @@ glabel func_8021FF90_ovl19
 /* 240840 80220130 03E00008 */  jr    $ra
 /* 240844 80220134 27BD0020 */   addiu $sp, $sp, 0x20
 .type func_8021FF90_ovl19, @function
+.size func_8021FF90_ovl19, . - func_8021FF90_ovl19

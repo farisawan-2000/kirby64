@@ -84,3 +84,4 @@ glabel func_801DCF70_ovl11
 /* 1E796C 801DD0AC 03E00008 */  jr    $ra
 /* 1E7970 801DD0B0 00000000 */   nop   
 .type func_801DCF70_ovl11, @function
+.size func_801DCF70_ovl11, . - func_801DCF70_ovl11

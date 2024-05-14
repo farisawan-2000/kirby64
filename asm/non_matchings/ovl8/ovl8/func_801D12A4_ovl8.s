@@ -36,3 +36,4 @@ glabel func_801D12A4_ovl8
 /* 174E0C 801D132C 03E00008 */  jr    $ra
 /* 174E10 801D1330 E4242250 */ swc1 $f4, %lo(D_800E2250)($at)
 .type func_801D12A4_ovl8, @function
+.size func_801D12A4_ovl8, . - func_801D12A4_ovl8

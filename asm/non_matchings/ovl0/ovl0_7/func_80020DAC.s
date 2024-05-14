@@ -23,3 +23,4 @@ glabel func_80020DAC
 /* 0219F8 80020DF8 03E00008 */  jr    $ra
 /* 0219FC 80020DFC 00000000 */   nop   
 .type func_80020DAC, @function
+.size func_80020DAC, . - func_80020DAC

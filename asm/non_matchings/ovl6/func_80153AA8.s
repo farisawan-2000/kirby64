@@ -20,3 +20,4 @@ glabel func_80153AA8
 /* 137E80 80153AF0 03E00008 */  jr    $ra
 /* 137E84 80153AF4 AC4C0080 */   sw    $t4, 0x80($v0)
 .type func_80153AA8, @function
+.size func_80153AA8, . - func_80153AA8

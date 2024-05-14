@@ -23,3 +23,4 @@ glabel func_801534D4
 /* 1378B8 80153528 03E00008 */  jr    $ra
 /* 1378BC 8015352C AC2DA570 */   sw    $t5, -0x5a90($at)
 .type func_801534D4, @function
+.size func_801534D4, . - func_801534D4

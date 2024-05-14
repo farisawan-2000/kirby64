@@ -83,3 +83,4 @@ glabel func_801DFC30_ovl14 # 60
 /* 202964 801DFD74 03E00008 */  jr          $ra
 /* 202968 801DFD78 00000000 */   nop
 .type func_801DFC30_ovl14, @function
+.size func_801DFC30_ovl14, . - func_801DFC30_ovl14

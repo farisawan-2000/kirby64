@@ -152,3 +152,4 @@ glabel func_801E6E0C_ovl16
 /* 21D2FC 801E704C 03E00008 */  jr    $ra
 /* 21D300 801E7050 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_801E6E0C_ovl16, @function
+.size func_801E6E0C_ovl16, . - func_801E6E0C_ovl16

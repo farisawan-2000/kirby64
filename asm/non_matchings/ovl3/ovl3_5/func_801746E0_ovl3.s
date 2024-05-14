@@ -73,3 +73,4 @@ glabel func_801746E0_ovl3
 /* 0D5228 801747E8 03E00008 */  jr    $ra
 /* 0D522C 801747EC 00000000 */   nop   
 .type func_801746E0_ovl3, @function
+.size func_801746E0_ovl3, . - func_801746E0_ovl3

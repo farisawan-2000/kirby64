@@ -636,3 +636,4 @@ glabel L80226A80_ovl19
 /* 2471B0 80226AA0 03E00008 */  jr    $ra
 /* 2471B4 80226AA4 27BD0030 */   addiu $sp, $sp, 0x30
 .type func_802260FC_ovl19, @function
+.size func_802260FC_ovl19, . - func_802260FC_ovl19

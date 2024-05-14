@@ -310,3 +310,4 @@ glabel func_801DE124_ovl10
 /* 1CF334 801DE5C4 03E00008 */  jr    $ra
 /* 1CF338 801DE5C8 27BD0048 */   addiu $sp, $sp, 0x48
 .type func_801DE124_ovl10, @function
+.size func_801DE124_ovl10, . - func_801DE124_ovl10

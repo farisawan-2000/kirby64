@@ -41,3 +41,4 @@ glabel func_801E36D8_ovl13 # 46
 /* 1FB6F4 801E3774 00000000 */   nop
 .type func_801E36D8_ovl13, @function
 
+.size func_801E36D8_ovl13, . - func_801E36D8_ovl13

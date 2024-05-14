@@ -164,3 +164,4 @@ glabel func_800A7BF4
 /* 050090 800A7E40 03E00008 */  jr    $ra
 /* 050094 800A7E44 A4880004 */   sh    $t0, 4($a0)
 .type func_800A7BF4, @function
+.size func_800A7BF4, . - func_800A7BF4

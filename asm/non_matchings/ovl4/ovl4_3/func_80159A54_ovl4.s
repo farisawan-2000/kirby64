@@ -44,3 +44,4 @@ glabel func_80159A54_ovl4
 /* 101028 80159AF8 03E00008 */  jr    $ra
 /* 10102C 80159AFC 00000000 */   nop   
 .type func_80159A54_ovl4, @function
+.size func_80159A54_ovl4, . - func_80159A54_ovl4

@@ -267,3 +267,4 @@ glabel func_80153FC8_ovl3
 /* 0B4DD4 80154394 03E00008 */  jr    $ra
 /* 0B4DD8 80154398 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_80153FC8_ovl3, @function
+.size func_80153FC8_ovl3, . - func_80153FC8_ovl3

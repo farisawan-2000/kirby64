@@ -97,3 +97,4 @@ glabel func_80177B40_ovl3
 /* 0D86F4 80177CB4 03E00008 */  jr    $ra
 /* 0D86F8 80177CB8 00000000 */   nop   
 .type func_80177B40_ovl3, @function
+.size func_80177B40_ovl3, . - func_80177B40_ovl3

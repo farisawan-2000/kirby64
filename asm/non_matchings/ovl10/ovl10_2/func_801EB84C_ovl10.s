@@ -103,3 +103,4 @@ glabel func_801EB84C_ovl10
 /* 1DC744 801EB9D4 03E00008 */  jr    $ra
 /* 1DC748 801EB9D8 E42664D0 */ swc1 $f6, %lo(D_800E64D0)($at)
 .type func_801EB84C_ovl10, @function
+.size func_801EB84C_ovl10, . - func_801EB84C_ovl10

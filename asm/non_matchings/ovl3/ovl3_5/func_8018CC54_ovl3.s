@@ -543,3 +543,4 @@ glabel func_8018CC54_ovl3
 /* 0EDE98 8018D458 03E00008 */  jr    $ra
 /* 0EDE9C 8018D45C 27BD0028 */   addiu $sp, $sp, 0x28
 .type func_8018CC54_ovl3, @function
+.size func_8018CC54_ovl3, . - func_8018CC54_ovl3

@@ -195,3 +195,4 @@ glabel L801DF570_ovl13
 /* 1F7504 801DF584 00000000 */   nop
 .type func_801DF294_ovl13, @function
 
+.size func_801DF294_ovl13, . - func_801DF294_ovl13

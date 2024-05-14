@@ -86,3 +86,4 @@ glabel L801E1960_ovl13
 /* 1F9928 801E19A8 27BD0020 */   addiu      $sp, $sp, 0x20
 .type func_801E185C_ovl13, @function
 
+.size func_801E185C_ovl13, . - func_801E185C_ovl13

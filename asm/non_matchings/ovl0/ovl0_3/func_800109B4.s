@@ -109,3 +109,4 @@ glabel func_800109B4
 /* 01171C 80010B1C 00000000 */  nop   
 .type func_800109B4, @function
 
+.size func_800109B4, . - func_800109B4

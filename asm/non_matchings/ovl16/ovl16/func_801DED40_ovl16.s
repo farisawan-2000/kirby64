@@ -393,3 +393,4 @@ glabel func_801DED40_ovl16
 /* 2155BC 801DF30C 03E00008 */  jr    $ra
 /* 2155C0 801DF310 AC2FDC50 */ sw $t7, %lo(gEntityVtableIndexArray)($at)
 .type func_801DED40_ovl16, @function
+.size func_801DED40_ovl16, . - func_801DED40_ovl16

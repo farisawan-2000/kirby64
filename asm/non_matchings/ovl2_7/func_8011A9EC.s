@@ -37,3 +37,4 @@ glabel func_8011A9EC
 /* 0A34E4 8011AA74 03E00008 */  jr    $ra
 /* 0A34E8 8011AA78 00000000 */   nop   
 .type func_8011A9EC, @function
+.size func_8011A9EC, . - func_8011A9EC

@@ -156,3 +156,4 @@ glabel func_801DE218_ovl14 # 38
 /* 20106C 801DE47C 03E00008 */  jr          $ra
 /* 201070 801DE480 00000000 */   nop
 .type func_801DE218_ovl14, @function
+.size func_801DE218_ovl14, . - func_801DE218_ovl14

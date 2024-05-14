@@ -33,3 +33,4 @@ glabel func_801DFDCC_ovl16
 /* 2160EC 801DFE3C 03E00008 */  jr    $ra
 /* 2160F0 801DFE40 00000000 */   nop   
 .type func_801DFDCC_ovl16, @function
+.size func_801DFDCC_ovl16, . - func_801DFDCC_ovl16

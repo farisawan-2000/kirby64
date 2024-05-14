@@ -112,3 +112,4 @@ glabel func_801D1648_ovl8
 /* 1752CC 801D17EC 03E00008 */  jr    $ra
 /* 1752D0 801D17F0 E4324390 */ swc1 $f18, %lo(gEntitiesAngleZArray)($at)
 .type func_801D1648_ovl8, @function
+.size func_801D1648_ovl8, . - func_801D1648_ovl8

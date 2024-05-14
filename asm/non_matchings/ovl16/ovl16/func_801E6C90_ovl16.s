@@ -99,3 +99,4 @@ glabel func_801E6C90_ovl16
 /* 21D0B4 801E6E04 03E00008 */  jr    $ra
 /* 21D0B8 801E6E08 27BD0008 */   addiu $sp, $sp, 8
 .type func_801E6C90_ovl16, @function
+.size func_801E6C90_ovl16, . - func_801E6C90_ovl16

@@ -19,3 +19,4 @@ glabel func_801DB358_ovl13 # 2
 /* 1F331C 801DB39C 00000000 */   nop
 .type func_801DB358_ovl13, @function
 
+.size func_801DB358_ovl13, . - func_801DB358_ovl13

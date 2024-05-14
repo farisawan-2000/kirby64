@@ -43,3 +43,4 @@ glabel func_801DD88C_ovl17
 
 .type func_801DD88C_ovl17, @function
 
+.size func_801DD88C_ovl17, . - func_801DD88C_ovl17

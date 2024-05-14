@@ -163,3 +163,4 @@ glabel L801DD85C_ovl13
 /* 1F5804 801DD884 27BD0038 */   addiu      $sp, $sp, 0x38
 .type func_801DD614_ovl13, @function
 
+.size func_801DD614_ovl13, . - func_801DD614_ovl13

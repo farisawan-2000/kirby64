@@ -189,3 +189,4 @@ glabel func_801DD390_ovl10
 /* 1CE3DC 801DD66C 03E00008 */  jr    $ra
 /* 1CE3E0 801DD670 27BD0048 */   addiu $sp, $sp, 0x48
 .type func_801DD390_ovl10, @function
+.size func_801DD390_ovl10, . - func_801DD390_ovl10

@@ -18,3 +18,4 @@ glabel func_801E7EE0_ovl16
 /* 21E1C8 801E7F18 00000000 */  nop   
 /* 21E1CC 801E7F1C 00000000 */  nop   
 .type func_801E7EE0_ovl16, @function
+.size func_801E7EE0_ovl16, . - func_801E7EE0_ovl16

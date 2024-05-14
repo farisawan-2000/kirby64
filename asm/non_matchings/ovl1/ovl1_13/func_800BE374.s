@@ -29,3 +29,4 @@ glabel func_800BE374
 
 /* 066628 800BE3D8 00000000 */  nop   
 .type func_800BE374, @function
+.size func_800BE374, . - func_800BE374

@@ -78,3 +78,4 @@ glabel func_801DE27C_ovl12 # 67
 /* 0031A4 801DE3A4 03E00008 */  jr          $ra
 /* 0031A8 801DE3A8 27BD0028 */   addiu      $sp, $sp, 0x28
 .type func_801DE27C_ovl12, @function
+.size func_801DE27C_ovl12, . - func_801DE27C_ovl12

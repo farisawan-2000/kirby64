@@ -54,3 +54,4 @@ glabel func_80159EFC_ovl4
 # Unknown region 1014F0-103BB0 [26C0]
 # .incbin "bin/kirby.u.1014F0.bin"
 .type func_80159EFC_ovl4, @function
+.size func_80159EFC_ovl4, . - func_80159EFC_ovl4

@@ -16,3 +16,4 @@ glabel func_801DD148_ovl13 # 12
 /* 1F5100 801DD180 00000000 */   nop
 .type func_801DD148_ovl13, @function
 
+.size func_801DD148_ovl13, . - func_801DD148_ovl13

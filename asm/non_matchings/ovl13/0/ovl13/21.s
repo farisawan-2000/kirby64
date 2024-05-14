@@ -79,6 +79,7 @@ glabel func_801DDC58_ovl13 # 21
 /* 1F5D0C 801DDD8C AC39DC50 */   sw         $t9, %lo(gEntityVtableIndexArray)($at)
 .type func_801DDC58_ovl13, @function
 
+.size func_801DDC58_ovl13, . - func_801DDC58_ovl13
 .section .late_rodata
 glabel D_801E5CDC_ovl13
 /* 1FDC5C 801E5CDC */ .word 0xBDCCCCCD

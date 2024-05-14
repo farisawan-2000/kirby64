@@ -237,3 +237,4 @@ glabel func_801DDE60_ovl14 # 36
 /* 200DF8 801DE208 03E00008 */  jr          $ra
 /* 200DFC 801DE20C 27BD0050 */   addiu      $sp, $sp, 0x50
 .type func_801DDE60_ovl14, @function
+.size func_801DDE60_ovl14, . - func_801DDE60_ovl14

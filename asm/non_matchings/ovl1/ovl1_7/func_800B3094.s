@@ -10,3 +10,4 @@ glabel func_800B3094
 /* 05B304 800B30B4 03E00008 */  jr    $ra
 /* 05B308 800B30B8 E4440074 */   swc1  $f4, 0x74($v0)
 .type func_800B3094, @function
+.size func_800B3094, . - func_800B3094

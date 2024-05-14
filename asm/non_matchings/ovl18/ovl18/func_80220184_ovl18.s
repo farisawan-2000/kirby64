@@ -16,3 +16,4 @@ glabel func_80220184_ovl18
 /* 232B54 802201B4 00000000 */  nop   
 /* 232B58 802201B8 00000000 */  nop   
 .type func_80220184_ovl18, @function
+.size func_80220184_ovl18, . - func_80220184_ovl18

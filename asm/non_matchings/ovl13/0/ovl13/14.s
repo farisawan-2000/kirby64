@@ -51,3 +51,4 @@ glabel L801DD454_ovl13
 /* 1F53E8 801DD468 00000000 */   nop
 .type func_801DD3A8_ovl13, @function
 
+.size func_801DD3A8_ovl13, . - func_801DD3A8_ovl13

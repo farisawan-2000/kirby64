@@ -163,3 +163,4 @@ glabel func_8010E324
 /* 097018 8010E5A8 27BD0100 */   addiu $sp, $sp, 0x100
 /* 09701C 8010E5AC 00000000 */  nop   
 .type func_8010E324, @function
+.size func_8010E324, . - func_8010E324

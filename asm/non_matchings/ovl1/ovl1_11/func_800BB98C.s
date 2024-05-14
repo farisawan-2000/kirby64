@@ -137,3 +137,4 @@ glabel func_800BB98C
 /* 063DE8 800BBB98 00000000 */  nop   
 /* 063DEC 800BBB9C 00000000 */  nop   
 .type func_800BB98C, @function
+.size func_800BB98C, . - func_800BB98C

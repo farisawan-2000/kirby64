@@ -388,3 +388,4 @@ glabel func_8000385C
 /* 0049B4 80003DB4 00000000 */  nop   
 /* 0049B8 80003DB8 00000000 */  nop   
 .type func_8000385C, @function
+.size func_8000385C, . - func_8000385C

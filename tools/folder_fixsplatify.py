@@ -7,8 +7,8 @@ fl = []
 with open(sys.argv[1]) as f:
     fl = f.readlines()
 
-# flist = [i[:-1] for i in fl]
-flist = [sys.argv[1]]
+flist = [i[:-1] for i in fl]
+# flist = [sys.argv[1]]
 
 print(flist)
 # sys.exit()
@@ -89,9 +89,13 @@ for fn in flist:
     func = ""
     for i, l in enumerate(fl):
         # print(l)
-        if ".section .late_rodata" in l:
+        if ".late_rodata" in l:
+            if inFunc:
+                flout.append(f".size {func}, . - {func}\n")
             inFunc = False
-            flout.append(l)
+            # flout.append(l)
+            flout += fl[i:]
+            break
         elif "glabel " in l and inFunc == False:
             inFunc = True
             func = l[:-1].split()[1]
@@ -100,14 +104,14 @@ for fn in flist:
         elif inFunc:
             if l == "\n" and "glabel" in lookahead(fl[i:]):
                 # flout.append(f".end {func}\n")
-                flout.append(f"\n.type {func}, @function\n")
+                # flout.append(f"\n.type {func}, @function\n")
                 flout.append(f".size {func}, . - {func}\n")
                 flout.append(l)
                 inFunc = False
             elif i == len(fl) - 1:
                 flout.append(l)
                 # flout.append(f".end {func}\n")
-                flout.append(f"\n.type {func}, @function\n")
+                # flout.append(f"\n.type {func}, @function\n")
                 flout.append(f".size {func}, . - {func}\n")
             else:
                 flout.append(l)

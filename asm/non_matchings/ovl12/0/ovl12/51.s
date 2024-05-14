@@ -78,3 +78,4 @@ glabel func_801DD7CC_ovl12 # 51
 /* 0026F4 801DD8F4 03E00008 */  jr          $ra
 /* 0026F8 801DD8F8 27BD0028 */   addiu      $sp, $sp, 0x28
 .type func_801DD7CC_ovl12, @function
+.size func_801DD7CC_ovl12, . - func_801DD7CC_ovl12

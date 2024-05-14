@@ -56,3 +56,4 @@ glabel func_801E2C78_ovl10
 /* 1D3AA8 801E2D38 00000000 */  nop   
 /* 1D3AAC 801E2D3C 00000000 */  nop   
 .type func_801E2C78_ovl10, @function
+.size func_801E2C78_ovl10, . - func_801E2C78_ovl10

@@ -17,3 +17,4 @@ glabel func_801DBA54_ovl16
 /* 211D40 801DBA90 03E00008 */  jr    $ra
 /* 211D44 801DBA94 A08B003A */   sb    $t3, 0x3a($a0)
 .type func_801DBA54_ovl16, @function
+.size func_801DBA54_ovl16, . - func_801DBA54_ovl16

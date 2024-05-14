@@ -63,3 +63,4 @@ glabel func_8022045C_ovl19
 /* 240C54 80220544 03E00008 */  jr    $ra
 /* 240C58 80220548 A0620010 */   sb    $v0, 0x10($v1)
 .type func_8022045C_ovl19, @function
+.size func_8022045C_ovl19, . - func_8022045C_ovl19

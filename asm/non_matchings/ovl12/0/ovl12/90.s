@@ -23,3 +23,4 @@ glabel func_801DF394_ovl12 # 90
 /* 0041E8 801DF3E8 03E00008 */  jr          $ra
 /* 0041EC 801DF3EC 00000000 */   nop
 .type func_801DF394_ovl12, @function
+.size func_801DF394_ovl12, . - func_801DF394_ovl12

@@ -135,3 +135,4 @@ glabel func_8021E5DC_ovl19
 /* 23EEE4 8021E7D4 03E00008 */  jr    $ra
 /* 23EEE8 8021E7D8 00000000 */   nop   
 .type func_8021E5DC_ovl19, @function
+.size func_8021E5DC_ovl19, . - func_8021E5DC_ovl19

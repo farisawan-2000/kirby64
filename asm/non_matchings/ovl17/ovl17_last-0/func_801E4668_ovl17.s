@@ -225,3 +225,4 @@ glabel func_801E4668_ovl17
 /* 22FBA0 801E49B0 03E00008 */  jr    $ra
 /* 22FBA4 801E49B4 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_801E4668_ovl17, @function
+.size func_801E4668_ovl17, . - func_801E4668_ovl17

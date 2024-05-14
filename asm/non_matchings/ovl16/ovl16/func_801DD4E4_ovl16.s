@@ -5,3 +5,4 @@ glabel func_801DD4E4_ovl16
 /* 2137A0 801DD4F0 03E00008 */  jr    $ra
 /* 2137A4 801DD4F4 B88F005B */   swr   $t7, 0x5b($a0)
 .type func_801DD4E4_ovl16, @function
+.size func_801DD4E4_ovl16, . - func_801DD4E4_ovl16

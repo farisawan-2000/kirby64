@@ -70,3 +70,4 @@ glabel func_801DD400_ovl12 # 44
 /* 002300 801DD500 03E00008 */  jr          $ra
 /* 002304 801DD504 00000000 */   nop
 .type func_801DD400_ovl12, @function
+.size func_801DD400_ovl12, . - func_801DD400_ovl12

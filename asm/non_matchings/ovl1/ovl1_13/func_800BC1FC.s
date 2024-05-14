@@ -17,3 +17,4 @@ glabel func_800BC1FC
 /* 064488 800BC238 03E00008 */  jr    $ra
 /* 06448C 800BC23C AC2F6E94 */ sw $t7, %lo(D_800D6E94)($at)
 .type func_800BC1FC, @function
+.size func_800BC1FC, . - func_800BC1FC

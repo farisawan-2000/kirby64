@@ -185,3 +185,4 @@ glabel func_8015A9F8_ovl3
 
 /* 0BB6CC 8015AC8C 00000000 */  nop   
 .type func_8015A9F8_ovl3, @function
+.size func_8015A9F8_ovl3, . - func_8015A9F8_ovl3

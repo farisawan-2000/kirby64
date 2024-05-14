@@ -164,3 +164,4 @@ glabel func_800FC164
 /* 084E40 800FC3D0 03E00008 */  jr    $ra
 /* 084E44 800FC3D4 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_800FC164, @function
+.size func_800FC164, . - func_800FC164

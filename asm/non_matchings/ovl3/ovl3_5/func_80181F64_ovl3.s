@@ -459,3 +459,4 @@ glabel func_80181F64_ovl3
 /* 0E3090 80182650 03E00008 */  jr    $ra
 /* 0E3094 80182654 27BD0020 */   addiu $sp, $sp, 0x20
 .type func_80181F64_ovl3, @function
+.size func_80181F64_ovl3, . - func_80181F64_ovl3

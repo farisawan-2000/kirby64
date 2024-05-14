@@ -98,6 +98,7 @@ glabel L801DC9F4_ovl13
 /* 1F49BC 801DCA3C 00601025 */   move       $v0, $v1
 .type func_801DC8CC_ovl13, @function
 
+.size func_801DC8CC_ovl13, . - func_801DC8CC_ovl13
 .section .late_rodata
 glabel D_801E5CD4_ovl13
 /* 1FDC54 801E5CD4 */ .word 0x461C3C00

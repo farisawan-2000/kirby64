@@ -113,3 +113,4 @@ glabel L801D292C_ovl8
 /* 1764A0 801D29C0 03E00008 */  jr    $ra
 /* 1764A4 801D29C4 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_801D281C_ovl8, @function
+.size func_801D281C_ovl8, . - func_801D281C_ovl8

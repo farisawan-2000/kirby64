@@ -357,6 +357,7 @@ glabel L801E1EC0_ovl13
 /* 1F9E54 801E1ED4 00000000 */   nop
 .type func_801E19AC_ovl13, @function
 
+.size func_801E19AC_ovl13, . - func_801E19AC_ovl13
 .section .late_rodata
 glabel D_801E5D90_ovl13
 /* 1FDD10 801E5D90 */ .word 0x40490FDB

@@ -23,3 +23,4 @@ glabel func_800A7554
 /* 04F7F8 800A75A8 03E00008 */  jr    $ra
 /* 04F7FC 800A75AC AC386B50 */ sw $t8, %lo(sSoundCount)($at)
 .type func_800A7554, @function
+.size func_800A7554, . - func_800A7554

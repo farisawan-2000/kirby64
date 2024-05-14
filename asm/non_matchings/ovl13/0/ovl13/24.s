@@ -51,3 +51,4 @@ glabel L801DE130_ovl13
 /* 1F60C4 801DE144 00000000 */   nop
 .type func_801DE084_ovl13, @function
 
+.size func_801DE084_ovl13, . - func_801DE084_ovl13

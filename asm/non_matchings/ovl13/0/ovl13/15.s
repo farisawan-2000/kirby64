@@ -58,3 +58,4 @@ glabel func_801DD46C_ovl13 # 15
 /* 1F54CC 801DD54C AC39DC50 */   sw         $t9, %lo(gEntityVtableIndexArray)($at)
 .type func_801DD46C_ovl13, @function
 
+.size func_801DD46C_ovl13, . - func_801DD46C_ovl13

@@ -222,3 +222,4 @@ glabel func_800FA92C
 /* 0836DC 800FAC6C 03E00008 */  jr    $ra
 /* 0836E0 800FAC70 00000000 */   nop   
 .type func_800FA92C, @function
+.size func_800FA92C, . - func_800FA92C

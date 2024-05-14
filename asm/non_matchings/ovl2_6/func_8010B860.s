@@ -125,3 +125,4 @@ glabel func_8010B860
 /* 0944AC 8010BA3C 03E00008 */  jr    $ra
 /* 0944B0 8010BA40 00000000 */   nop   
 .type func_8010B860, @function
+.size func_8010B860, . - func_8010B860

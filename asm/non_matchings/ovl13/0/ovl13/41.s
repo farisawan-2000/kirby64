@@ -79,3 +79,4 @@ glabel func_801E28A8_ovl13 # 41
 /* 1FA95C 801E29DC 27BD0020 */   addiu      $sp, $sp, 0x20
 .type func_801E28A8_ovl13, @function
 
+.size func_801E28A8_ovl13, . - func_801E28A8_ovl13

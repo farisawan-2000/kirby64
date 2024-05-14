@@ -123,3 +123,4 @@ glabel func_801AA914_ovl7
 /* 150B60 801AAAF0 03E00008 */  jr    $ra
 /* 150B64 801AAAF4 00000000 */   nop   
 .type func_801AA914_ovl7, @function
+.size func_801AA914_ovl7, . - func_801AA914_ovl7

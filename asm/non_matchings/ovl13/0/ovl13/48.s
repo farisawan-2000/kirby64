@@ -97,6 +97,7 @@ glabel L801E3910_ovl13
 /* 1FB8D4 801E3954 27BD0050 */   addiu      $sp, $sp, 0x50
 .type func_801E37E8_ovl13, @function
 
+.size func_801E37E8_ovl13, . - func_801E37E8_ovl13
 .section .late_rodata
 glabel D_801E5DEC_ovl13
 /* 1FDD6C 801E5DEC */ .word 0x461C3C00

@@ -105,3 +105,4 @@ glabel func_801DDDA8_ovl12 # 61
 /* 002D30 801DDF30 03E00008 */  jr          $ra
 /* 002D34 801DDF34 00000000 */   nop
 .type func_801DDDA8_ovl12, @function
+.size func_801DDDA8_ovl12, . - func_801DDDA8_ovl12

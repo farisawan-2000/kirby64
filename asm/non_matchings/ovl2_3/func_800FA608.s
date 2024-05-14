@@ -125,3 +125,4 @@ glabel func_800FA608
 /* 083254 800FA7E4 03E00008 */  jr    $ra
 /* 083258 800FA7E8 27BD0058 */   addiu $sp, $sp, 0x58
 .type func_800FA608, @function
+.size func_800FA608, . - func_800FA608

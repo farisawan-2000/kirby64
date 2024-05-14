@@ -150,3 +150,4 @@ glabel func_8021F174_ovl19
 /* 23FABC 8021F3AC 03E00008 */  jr    $ra
 /* 23FAC0 8021F3B0 27BD0028 */   addiu $sp, $sp, 0x28
 .type func_8021F174_ovl19, @function
+.size func_8021F174_ovl19, . - func_8021F174_ovl19

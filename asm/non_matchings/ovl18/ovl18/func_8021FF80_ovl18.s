@@ -49,3 +49,4 @@ glabel func_8021FF80_ovl18
 /* 2329D0 80220030 03E00008 */  jr    $ra
 /* 2329D4 80220034 ACA40004 */   sw    $a0, 4($a1)
 .type func_8021FF80_ovl18, @function
+.size func_8021FF80_ovl18, . - func_8021FF80_ovl18

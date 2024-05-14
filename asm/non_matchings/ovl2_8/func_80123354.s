@@ -723,3 +723,4 @@ glabel func_80123354
 # Unknown region 0AC900-0B1B40 [5240]
 .type func_80123354, @function
 
+.size func_80123354, . - func_80123354

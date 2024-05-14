@@ -111,3 +111,4 @@ glabel func_800A428C
 /* 04C65C 800A440C 03E00008 */  jr    $ra
 /* 04C660 800A4410 24020001 */   li    $v0, 1
 .type func_800A428C, @function
+.size func_800A428C, . - func_800A428C

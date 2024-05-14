@@ -40,3 +40,4 @@ glabel func_801DF5B8_ovl11
 
 /* 1E9F08 801DF648 00000000 */  nop   
 .type func_801DF5B8_ovl11, @function
+.size func_801DF5B8_ovl11, . - func_801DF5B8_ovl11

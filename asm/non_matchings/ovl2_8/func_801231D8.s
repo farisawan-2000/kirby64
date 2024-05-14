@@ -32,3 +32,4 @@ glabel func_801231D8
 /* 0ABCA8 80123238 03E00008 */  jr    $ra
 /* 0ABCAC 8012323C 00601025 */   move  $v0, $v1
 .type func_801231D8, @function
+.size func_801231D8, . - func_801231D8

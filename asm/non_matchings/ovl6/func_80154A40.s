@@ -61,3 +61,4 @@ glabel func_80154A40
 /* 138E9C 80154B0C 03E00008 */  jr    $ra
 /* 138EA0 80154B10 24A20001 */   addiu $v0, $a1, 1
 .type func_80154A40, @function
+.size func_80154A40, . - func_80154A40

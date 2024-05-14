@@ -283,3 +283,4 @@ glabel func_801736BC_ovl3
 /* 0D452C 80173AEC 03E00008 */  jr    $ra
 /* 0D4530 80173AF0 27BD0060 */   addiu $sp, $sp, 0x60
 .type func_801736BC_ovl3, @function
+.size func_801736BC_ovl3, . - func_801736BC_ovl3

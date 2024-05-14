@@ -62,3 +62,4 @@ glabel func_801DCDA8_ovl13 # 10
 /* 1F4E18 801DCE98 AC2ADC50 */   sw         $t2, %lo(gEntityVtableIndexArray)($at)
 .type func_801DCDA8_ovl13, @function
 
+.size func_801DCDA8_ovl13, . - func_801DCDA8_ovl13

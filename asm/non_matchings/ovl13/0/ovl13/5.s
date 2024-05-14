@@ -87,6 +87,7 @@ glabel L801DC8C0_ovl13
 /* 1F4848 801DC8C8 00000000 */   nop
 .type func_801DC788_ovl13, @function
 
+.size func_801DC788_ovl13, . - func_801DC788_ovl13
 .section .late_rodata
 glabel jtbl_801E5CB4_ovl13
 /* 1FDC34 801E5CB4 */ .word L801DC820_ovl13

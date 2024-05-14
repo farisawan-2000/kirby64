@@ -482,3 +482,4 @@ glabel func_801E0460_ovl10
 /* 1D18FC 801E0B8C 03E00008 */  jr    $ra
 /* 1D1900 801E0B90 27BD0050 */   addiu $sp, $sp, 0x50
 .type func_801E0460_ovl10, @function
+.size func_801E0460_ovl10, . - func_801E0460_ovl10

@@ -27,3 +27,4 @@ glabel func_80154628
 /* 138A18 80154688 03E00008 */  jr    $ra
 /* 138A1C 8015468C AC20A698 */   sw    $zero, -0x5968($at)
 .type func_80154628, @function
+.size func_80154628, . - func_80154628

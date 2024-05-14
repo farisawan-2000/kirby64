@@ -113,3 +113,4 @@ glabel func_801EBA74_ovl10
 /* 1DC990 801EBC20 03E00008 */  jr    $ra
 /* 1DC994 801EBC24 27BD0020 */   addiu $sp, $sp, 0x20
 .type func_801EBA74_ovl10, @function
+.size func_801EBA74_ovl10, . - func_801EBA74_ovl10

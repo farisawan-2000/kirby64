@@ -71,3 +71,4 @@ glabel func_801DCCB8_ovl10
 /* 1CDB3C 801DCDCC 03E00008 */  jr    $ra
 /* 1CDB40 801DCDD0 27BD0020 */   addiu $sp, $sp, 0x20
 .type func_801DCCB8_ovl10, @function
+.size func_801DCCB8_ovl10, . - func_801DCCB8_ovl10

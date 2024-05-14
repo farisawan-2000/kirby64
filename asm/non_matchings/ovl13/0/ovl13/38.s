@@ -78,3 +78,4 @@ glabel L801E2010_ovl13
 /* 1F9FB0 801E2030 AC2EDC50 */   sw         $t6, %lo(gEntityVtableIndexArray)($at)
 .type func_801E1F1C_ovl13, @function
 
+.size func_801E1F1C_ovl13, . - func_801E1F1C_ovl13

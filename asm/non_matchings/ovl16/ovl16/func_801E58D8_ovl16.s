@@ -55,3 +55,4 @@ glabel func_801E58D8_ovl16
 /* 21BC5C 801E59AC 03E00008 */  jr    $ra
 /* 21BC60 801E59B0 AC29DC50 */ sw $t1, %lo(gEntityVtableIndexArray)($at)
 .type func_801E58D8_ovl16, @function
+.size func_801E58D8_ovl16, . - func_801E58D8_ovl16

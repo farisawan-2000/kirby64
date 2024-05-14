@@ -347,3 +347,4 @@ glabel func_8001F81C
 /* 02095C 8001FD5C 03E00008 */  jr    $ra
 /* 020960 8001FD60 27BD0108 */   addiu $sp, $sp, 0x108
 .type func_8001F81C, @function
+.size func_8001F81C, . - func_8001F81C

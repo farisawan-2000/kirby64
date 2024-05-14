@@ -11,3 +11,4 @@ glabel func_800B9F64
 /* 0621D8 800B9F88 03E00008 */  jr    $ra
 /* 0621DC 800B9F8C 30420001 */   andi  $v0, $v0, 1
 .type func_800B9F64, @function
+.size func_800B9F64, . - func_800B9F64

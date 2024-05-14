@@ -95,3 +95,4 @@ glabel func_801DF5F0_ovl12 # 92
 /* 004550 801DF750 03E00008 */  jr          $ra
 /* 004554 801DF754 00000000 */   nop
 .type func_801DF5F0_ovl12, @function
+.size func_801DF5F0_ovl12, . - func_801DF5F0_ovl12

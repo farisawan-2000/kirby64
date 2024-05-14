@@ -28,3 +28,4 @@ glabel func_801DE548_ovl14 # 40
 /* 201190 801DE5A0 03E00008 */  jr          $ra
 /* 201194 801DE5A4 27BD0028 */   addiu      $sp, $sp, 0x28
 .type func_801DE548_ovl14, @function
+.size func_801DE548_ovl14, . - func_801DE548_ovl14

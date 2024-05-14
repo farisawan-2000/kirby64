@@ -22,3 +22,4 @@ glabel func_80227F38_ovl19
 /* 248698 80227F88 03E00008 */  jr    $ra
 /* 24869C 80227F8C AC39822C */ sw $t9, %lo(D_800E822C)($at)
 .type func_80227F38_ovl19, @function
+.size func_80227F38_ovl19, . - func_80227F38_ovl19

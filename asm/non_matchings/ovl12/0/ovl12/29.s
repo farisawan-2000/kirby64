@@ -70,3 +70,4 @@ glabel func_801DCAB0_ovl12 # 29
 /* 0019BC 801DCBBC 03E00008 */  jr          $ra
 /* 0019C0 801DCBC0 91A20003 */   lbu        $v0, 0x3($t5)
 .type func_801DCAB0_ovl12, @function
+.size func_801DCAB0_ovl12, . - func_801DCAB0_ovl12

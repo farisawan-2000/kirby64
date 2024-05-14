@@ -92,3 +92,4 @@ glabel func_801DB684_ovl11
 /* 1E6088 801DB7C8 03E00008 */  jr    $ra
 /* 1E608C 801DB7CC E4B00000 */   swc1  $f16, ($a1)
 .type func_801DB684_ovl11, @function
+.size func_801DB684_ovl11, . - func_801DB684_ovl11

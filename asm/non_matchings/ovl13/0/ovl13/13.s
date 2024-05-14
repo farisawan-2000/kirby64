@@ -140,3 +140,4 @@ glabel L801DD36C_ovl13
 /* 1F5324 801DD3A4 27BD0028 */   addiu      $sp, $sp, 0x28
 .type func_801DD184_ovl13, @function
 
+.size func_801DD184_ovl13, . - func_801DD184_ovl13

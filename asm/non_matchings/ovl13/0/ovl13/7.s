@@ -62,3 +62,4 @@ glabel L801DCAE4_ovl13
 /* 1F4AA4 801DCB24 00001025 */   move       $v0, $zero
 .type func_801DCA40_ovl13, @function
 
+.size func_801DCA40_ovl13, . - func_801DCA40_ovl13

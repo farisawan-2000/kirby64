@@ -24,3 +24,4 @@ glabel func_80114CF4
 /* 09D7BC 80114D4C 03E00008 */  jr    $ra
 /* 09D7C0 80114D50 00000000 */   nop   
 .type func_80114CF4, @function
+.size func_80114CF4, . - func_80114CF4

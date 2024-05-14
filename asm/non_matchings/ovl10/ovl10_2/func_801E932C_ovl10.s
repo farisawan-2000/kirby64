@@ -55,3 +55,4 @@ glabel func_801E932C_ovl10
 /* 1DA160 801E93F0 03E00008 */  jr    $ra
 /* 1DA164 801E93F4 00000000 */   nop   
 .type func_801E932C_ovl10, @function
+.size func_801E932C_ovl10, . - func_801E932C_ovl10

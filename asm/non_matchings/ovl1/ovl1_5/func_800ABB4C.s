@@ -720,3 +720,4 @@ glabel func_800ABB4C
 /* 0547F8 800AC5A8 03E00008 */  jr    $ra
 /* 0547FC 800AC5AC 27BD00E0 */   addiu $sp, $sp, 0xe0
 .type func_800ABB4C, @function
+.size func_800ABB4C, . - func_800ABB4C

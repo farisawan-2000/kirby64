@@ -125,3 +125,4 @@ glabel func_801EE050_ovl10
 /* 1DEFAC 801EE23C 03E00008 */  jr    $ra
 /* 1DEFB0 801EE240 AC2FDC50 */ sw $t7, %lo(gEntityVtableIndexArray)($at)
 .type func_801EE050_ovl10, @function
+.size func_801EE050_ovl10, . - func_801EE050_ovl10

@@ -14,3 +14,4 @@ glabel func_801DD484_ovl16
 /* 21375C 801DD4AC 03E00008 */  jr    $ra
 /* 213760 801DD4B0 00000000 */   nop   
 .type func_801DD484_ovl16, @function
+.size func_801DD484_ovl16, . - func_801DD484_ovl16

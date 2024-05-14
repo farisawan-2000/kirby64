@@ -23,3 +23,4 @@ glabel func_801DDE54_ovl16
 /* 214158 801DDEA8 03E00008 */  jr    $ra
 /* 21415C 801DDEAC E4262950 */ swc1 $f6, %lo(gEntitiesNextPosZArray)($at)
 .type func_801DDE54_ovl16, @function
+.size func_801DDE54_ovl16, . - func_801DDE54_ovl16

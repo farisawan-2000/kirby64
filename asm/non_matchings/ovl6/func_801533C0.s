@@ -25,3 +25,4 @@ glabel func_801533C0
 /* 1377AC 8015341C 03E00008 */  jr    $ra
 /* 1377B0 80153420 AC28A7C4 */   sw    $t0, -0x583c($at)
 .type func_801533C0, @function
+.size func_801533C0, . - func_801533C0

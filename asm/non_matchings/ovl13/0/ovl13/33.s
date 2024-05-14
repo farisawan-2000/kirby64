@@ -43,3 +43,4 @@ glabel L801E1668_ovl13
 /* 1F95FC 801E167C 00000000 */   nop
 .type func_801E15DC_ovl13, @function
 
+.size func_801E15DC_ovl13, . - func_801E15DC_ovl13

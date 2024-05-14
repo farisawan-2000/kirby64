@@ -32,3 +32,4 @@ glabel func_80155E58_ovl3
 /* 0B6910 80155ED0 03E00008 */  jr    $ra
 /* 0B6914 80155ED4 00001025 */   move  $v0, $zero
 .type func_80155E58_ovl3, @function
+.size func_80155E58_ovl3, . - func_80155E58_ovl3
