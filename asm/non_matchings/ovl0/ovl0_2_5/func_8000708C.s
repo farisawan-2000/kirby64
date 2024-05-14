@@ -175,3 +175,4 @@ glabel func_8000708C
 /* 007F20 80007320 03E00008 */  jr    $ra
 /* 007F24 80007324 27BD0088 */   addiu $sp, $sp, 0x88
 .type func_8000708C, @function
+.size func_8000708C, . - func_8000708C

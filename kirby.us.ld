@@ -442,10 +442,13 @@ SECTIONS
     BEGIN_SEG(ovl4, 0x80151100) SUBALIGN(16) {
         BUILD_DIR/src/ovl4/ovl4.o(.text);
         BUILD_DIR/asm/ovl4/ovl4_2.o(.text);
+        BUILD_DIR/asm/ovl4/ovl4_2_1.o(.text);
         BUILD_DIR/src/ovl4/ovl4_3.o(.text);
         BUILD_DIR/data/kirby.1014F0.o(.data*);
         BUILD_DIR/src/ovl4/ovl4.o(.rodata);
-        BUILD_DIR/data/ovl4/ovl4_rodata_2.o(.data*);
+        BUILD_DIR/asm/ovl4/ovl4_2.o(.rodata);
+        . = ALIGN(0x10);
+        BUILD_DIR/asm/ovl4/ovl4_2_1.o(.rodata);
         BUILD_DIR/src/ovl4/ovl4_3.o(.rodata*);
         BUILD_DIR/data/ovl4/ovl4_rodata_3.o(.data*);
         . = ALIGN(0x10);

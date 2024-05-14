@@ -170,6 +170,9 @@ glabel __osContRamWrite
 /* 037F14 80037314 03E00008 */  jr    $ra
 /* 037F18 80037318 27BD0068 */   addiu $sp, $sp, 0x68
 
+.type __osContRamWrite, @function
+.size __osContRamWrite, . - __osContRamWrite
+
 /* 037F1C 8003731C 00000000 */  nop   
 
 glabel __osContRamRead
@@ -322,6 +325,9 @@ glabel __osContRamRead
 /* 03813C 8003753C 03E00008 */  jr    $ra
 /* 038140 80037540 27BD0060 */   addiu $sp, $sp, 0x60
 
+.type __osContRamRead, @function
+.size __osContRamRead, . - __osContRamRead
+
 /* 038144 80037544 00000000 */  nop   
 /* 038148 80037548 00000000 */  nop   
 /* 03814C 8003754C 00000000 */  nop   
@@ -389,6 +395,9 @@ glabel func_80037550
 /* 038218 80037618 03E00008 */  jr    $ra
 /* 03821C 8003761C 03201025 */   move  $v0, $t9
 
+.type func_80037550, @function
+.size func_80037550, . - func_80037550
+
 
 glabel func_80037620
 /* 038220 80037620 00802825 */  move  $a1, $a0
@@ -435,6 +444,9 @@ glabel func_80037620
 /* 0382A8 800376A8 00035840 */   sll   $t3, $v1, 1
 /* 0382AC 800376AC 03E00008 */  jr    $ra
 /* 0382B0 800376B0 306200FF */   andi  $v0, $v1, 0xff
+
+.type func_80037620, @function
+.size func_80037620, . - func_80037620
 
 /* 0382B4 800376B4 00000000 */  nop   
 /* 0382B8 800376B8 00000000 */  nop   

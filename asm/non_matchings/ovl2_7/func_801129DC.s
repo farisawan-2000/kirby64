@@ -6,3 +6,4 @@ glabel func_801129DC
 /* 09B45C 801129EC 03E00008 */  jr    $ra
 /* 09B460 801129F0 A0580000 */   sb    $t8, ($v0)
 .type func_801129DC, @function
+.size func_801129DC, . - func_801129DC

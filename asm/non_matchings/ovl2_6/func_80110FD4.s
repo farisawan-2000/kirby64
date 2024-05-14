@@ -118,3 +118,4 @@ glabel func_80110FD4
 /* 099BEC 8011117C 03E00008 */  jr    $ra
 /* 099BF0 80111180 27BD0080 */   addiu $sp, $sp, 0x80
 .type func_80110FD4, @function
+.size func_80110FD4, . - func_80110FD4

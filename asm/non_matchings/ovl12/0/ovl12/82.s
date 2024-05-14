@@ -110,3 +110,4 @@ glabel func_801DEB1C_ovl12 # 82
 /* 003ACC 801DECCC 03E00008 */  jr          $ra
 /* 003AD0 801DECD0 00000000 */   nop
 .type func_801DEB1C_ovl12, @function
+.size func_801DEB1C_ovl12, . - func_801DEB1C_ovl12

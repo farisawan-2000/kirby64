@@ -117,3 +117,4 @@ glabel func_8021E528_ovl18
 /* 231078 8021E6D8 03E00008 */  jr    $ra
 /* 23107C 8021E6DC 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_8021E528_ovl18, @function
+.size func_8021E528_ovl18, . - func_8021E528_ovl18

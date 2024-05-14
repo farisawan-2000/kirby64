@@ -77,3 +77,4 @@ glabel func_800BD6E0
 /* 065A44 800BD7F4 03E00008 */  jr    $ra
 /* 065A48 800BD7F8 00000000 */   nop   
 .type func_800BD6E0, @function
+.size func_800BD6E0, . - func_800BD6E0

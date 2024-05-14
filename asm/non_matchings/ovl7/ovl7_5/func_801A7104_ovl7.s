@@ -268,3 +268,4 @@ glabel func_801A7104_ovl7
 /* 14D58C 801A751C 03E00008 */  jr    $ra
 /* 14D590 801A7520 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_801A7104_ovl7, @function
+.size func_801A7104_ovl7, . - func_801A7104_ovl7

@@ -59,3 +59,4 @@ glabel draw_star_segments
 /* 0656A4 800BD454 27BD0018 */  addiu $sp, $sp, 0x18
 /* 0656A8 800BD458 03E00008 */  jr    $ra
 /* 0656AC 800BD45C 00000000 */   nop   
+.size draw_star_segments, . - draw_star_segments

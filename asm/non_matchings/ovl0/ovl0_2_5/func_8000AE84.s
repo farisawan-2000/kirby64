@@ -385,3 +385,5 @@ glabel HS64_omInit
 /* 00BFD4 8000B3D4 AC20DE54 */  sw    $zero, %lo(D_8003DE54)($at)
 /* 00BFD8 8000B3D8 03E00008 */  jr    $ra
 /* 00BFDC 8000B3DC 27BD0018 */   addiu $sp, $sp, 0x18
+.type HS64_omInit, @function
+.size HS64_omInit, . - HS64_omInit

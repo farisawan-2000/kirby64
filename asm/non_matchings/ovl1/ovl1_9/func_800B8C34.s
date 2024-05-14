@@ -118,3 +118,4 @@ glabel init_save_file_maybe
 /* 061044 800B8DF4 27BD0038 */  addiu $sp, $sp, 0x38
 /* 061048 800B8DF8 03E00008 */  jr    $ra
 /* 06104C 800B8DFC 00000000 */   nop   
+.size init_save_file_maybe, . - init_save_file_maybe

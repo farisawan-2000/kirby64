@@ -201,3 +201,4 @@ glabel request_job
 /* 056CA8 800AEA58 27BD0038 */  addiu $sp, $sp, 0x38
 /* 056CAC 800AEA5C 03E00008 */  jr    $ra
 /* 056CB0 800AEA60 00000000 */   nop   
+.size request_job, . - request_job

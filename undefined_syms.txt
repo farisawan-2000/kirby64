@@ -10,7 +10,6 @@ _guRotateRPYF = 0x8001BBAC;
 
 alUnlink = 0x80025F74;
 alLink = 0x80025F50;
-_allocatePVoice = 0x8002AAE0;
 _n_timeToSamples = 0x8002983C;
 __osEnqueueAndYield = 0x8002E58C;
 __osThreadSave = 0x80098B50;

@@ -25,3 +25,4 @@ glabel func_8001E344
 /* 01EF98 8001E398 00000000 */  nop   
 /* 01EF9C 8001E39C 00000000 */  nop   
 .type func_8001E344, @function
+.size func_8001E344, . - func_8001E344

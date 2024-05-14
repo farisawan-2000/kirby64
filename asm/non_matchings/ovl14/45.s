@@ -32,3 +32,4 @@ glabel func_801DECAC_ovl14 # 45
 /* 20190C 801DED1C 03E00008 */  jr          $ra
 /* 201910 801DED20 00000000 */   nop
 .type func_801DECAC_ovl14, @function
+.size func_801DECAC_ovl14, . - func_801DECAC_ovl14

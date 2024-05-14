@@ -41,3 +41,4 @@ glabel func_80115578
 /* 09E080 80115610 03E00008 */  jr    $ra
 /* 09E084 80115614 AC29EF90 */ sw $t1, %lo(D_800DEF90)($at)
 .type func_80115578, @function
+.size func_80115578, . - func_80115578

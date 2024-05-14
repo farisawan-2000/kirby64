@@ -6,6 +6,7 @@
 
 .section .text, "ax"
 
+glabel _allocatePVoice
 /* 02B6E0 8002AAE0 3C028004 */  lui   $v0, %hi(n_syn) # $v0, 0x8004
 /* 02B6E4 8002AAE4 8C42FB14 */  lw    $v0, %lo(n_syn)($v0)
 /* 02B6E8 8002AAE8 27BDFFD8 */  addiu $sp, $sp, -0x28
@@ -72,6 +73,8 @@
 /* 02B7C4 8002ABC4 00601025 */  move  $v0, $v1
 /* 02B7C8 8002ABC8 03E00008 */  jr    $ra
 /* 02B7CC 8002ABCC 00000000 */   nop   
+.type _allocatePVoice, @function
+.size _allocatePVoice, . - _allocatePVoice
 
 glabel n_alSynAllocVoice
 /* 02B7D0 8002ABD0 27BDFFD0 */  addiu $sp, $sp, -0x30
@@ -156,7 +159,7 @@ glabel n_alSynAllocVoice
 /* 02B8FC 8002ACFC 27BD0030 */  addiu $sp, $sp, 0x30
 /* 02B900 8002AD00 03E00008 */  jr    $ra
 /* 02B904 8002AD04 0002102B */   sltu  $v0, $zero, $v0
-
-glabel func_8002AD08
 /* 02B908 8002AD08 00000000 */  nop   
 /* 02B90C 8002AD0C 00000000 */  nop   
+.type n_alSynAllocVoice, @function
+.size n_alSynAllocVoice, . - n_alSynAllocVoice

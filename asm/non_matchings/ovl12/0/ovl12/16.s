@@ -60,3 +60,4 @@ glabel func_801DBFAC_ovl12 # 16
 /* 000E8C 801DC08C 03E00008 */  jr          $ra
 /* 000E90 801DC090 E4640000 */   swc1       $f4, 0x0($v1)
 .type func_801DBFAC_ovl12, @function
+.size func_801DBFAC_ovl12, . - func_801DBFAC_ovl12

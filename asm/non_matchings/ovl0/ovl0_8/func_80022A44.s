@@ -5,3 +5,4 @@ glabel func_80022A44
 /* 023650 80022A50 03E00008 */  jr    $ra
 /* 023654 80022A54 AC25F870 */   sw    $a1, -0x790($at)
 .type func_80022A44, @function
+.size func_80022A44, . - func_80022A44

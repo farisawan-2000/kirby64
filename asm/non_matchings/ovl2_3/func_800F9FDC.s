@@ -133,3 +133,4 @@ glabel func_800F9FDC
 /* 082C3C 800FA1CC 03E00008 */  jr    $ra
 /* 082C40 800FA1D0 27BD00B0 */   addiu $sp, $sp, 0xb0
 .type func_800F9FDC, @function
+.size func_800F9FDC, . - func_800F9FDC

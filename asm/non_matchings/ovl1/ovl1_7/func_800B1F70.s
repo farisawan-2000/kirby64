@@ -37,3 +37,4 @@ glabel func_800B1F70
 /* 05A218 800B1FC8 03E00008 */  jr    $ra
 /* 05A21C 800B1FCC 00801025 */   move  $v0, $a0
 .type func_800B1F70, @function
+.size func_800B1F70, . - func_800B1F70

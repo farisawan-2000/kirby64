@@ -85,3 +85,4 @@ glabel fatal_printf
 /* 023DE4 800231E4 A020F688 */  sb    $zero, %lo(D_8003F688)($at)
 /* 023DE8 800231E8 03E00008 */  jr    $ra
 /* 023DEC 800231EC 27BD0028 */   addiu $sp, $sp, 0x28
+.size fatal_printf, . - fatal_printf

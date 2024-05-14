@@ -23,3 +23,4 @@ glabel func_8001BA04
 /* 01C658 8001BA58 03E00008 */  jr    $ra
 /* 01C65C 8001BA5C 00000000 */   nop   
 .type func_8001BA04, @function
+.size func_8001BA04, . - func_8001BA04

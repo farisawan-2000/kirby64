@@ -201,3 +201,4 @@ glabel func_801A8CDC_ovl7
 /* 14F064 801A8FF4 03E00008 */  jr    $ra
 /* 14F068 801A8FF8 00000000 */   nop   
 .type func_801A8CDC_ovl7, @function
+.size func_801A8CDC_ovl7, . - func_801A8CDC_ovl7

@@ -40,3 +40,4 @@ glabel func_800A336C
 /* 04B650 800A3400 03E00008 */  jr    $ra
 /* 04B654 800A3404 00000000 */   nop   
 .type func_800A336C, @function
+.size func_800A336C, . - func_800A336C

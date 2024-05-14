@@ -31,3 +31,4 @@ glabel func_8000BC34
 /* 00C89C 8000BC9C 03E00008 */  jr    $ra
 /* 00C8A0 8000BCA0 27BD0028 */   addiu $sp, $sp, 0x28
 .type func_8000BC34, @function
+.size func_8000BC34, . - func_8000BC34

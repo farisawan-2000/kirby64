@@ -53,3 +53,4 @@ glabel func_8011DA34
 /* 0A6560 8011DAF0 03E00008 */  jr    $ra
 /* 0A6564 8011DAF4 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_8011DA34, @function
+.size func_8011DA34, . - func_8011DA34

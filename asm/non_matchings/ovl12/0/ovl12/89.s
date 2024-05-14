@@ -140,3 +140,4 @@ glabel func_801DF18C_ovl12 # 89
 /* 00418C 801DF38C 03E00008 */  jr          $ra
 /* 004190 801DF390 00000000 */   nop
 .type func_801DF18C_ovl12, @function
+.size func_801DF18C_ovl12, . - func_801DF18C_ovl12

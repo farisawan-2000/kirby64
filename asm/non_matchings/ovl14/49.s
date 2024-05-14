@@ -166,3 +166,4 @@ glabel func_801DF290_ovl14 # 49
 /* 2020FC 801DF50C 03E00008 */  jr          $ra
 /* 202100 801DF510 00000000 */   nop
 .type func_801DF290_ovl14, @function
+.size func_801DF290_ovl14, . - func_801DF290_ovl14

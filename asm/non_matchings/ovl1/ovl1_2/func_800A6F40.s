@@ -10,3 +10,4 @@ glabel func_800A6F40
 /* 04F1B0 800A6F60 03E00008 */  jr    $ra
 /* 04F1B4 800A6F64 8C4279D8 */ lw $v0, %lo(D_800D79D8)($v0)
 .type func_800A6F40, @function
+.size func_800A6F40, . - func_800A6F40

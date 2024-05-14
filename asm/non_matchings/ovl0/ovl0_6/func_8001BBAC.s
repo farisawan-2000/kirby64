@@ -76,3 +76,4 @@ glabel HS64_MkRotationMtxF
 /* 01C8D4 8001BCD4 D7B40018 */  ldc1  $f20, 0x18($sp)
 /* 01C8D8 8001BCD8 03E00008 */  jr    $ra
 /* 01C8DC 8001BCDC 27BD0048 */   addiu $sp, $sp, 0x48
+.size HS64_MkRotationMtxF, . - HS64_MkRotationMtxF

@@ -49,3 +49,4 @@ glabel func_801DFA7C_ovl12 # 96
 /* 00492C 801DFB2C 03E00008 */  jr          $ra
 /* 004930 801DFB30 00000000 */   nop
 .type func_801DFA7C_ovl12, @function
+.size func_801DFA7C_ovl12, . - func_801DFA7C_ovl12

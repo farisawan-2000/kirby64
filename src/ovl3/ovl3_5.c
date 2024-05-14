@@ -1245,7 +1245,7 @@ void func_80176490_ovl3(struct GObj *arg0) {
     }
     func_8011DA34();
     func_80020998_ovl3(0, 0x7800);
-    func_800A75B0(0, 5);
+    play_music(0, 5);
     func_80176398_ovl3();
     func_800BB498();
     func_800BB468(2, 0);

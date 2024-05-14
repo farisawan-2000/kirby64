@@ -68,3 +68,4 @@ glabel draw_lives_digit
 /* 06532C 800BD0DC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 065330 800BD0E0 03E00008 */  jr    $ra
 /* 065334 800BD0E4 00000000 */   nop   
+.size draw_lives_digit, . - draw_lives_digit

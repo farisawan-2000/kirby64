@@ -18,4 +18,5 @@ glabel func_801ACF84_ovl7
 /* 153034 801ACFC4 00000000 */  nop   
 /* 153038 801ACFC8 00000000 */  nop   
 .type func_801ACF84_ovl7, @function
+.size func_801ACF84_ovl7, . - func_801ACF84_ovl7
 

@@ -46,3 +46,4 @@ glabel func_8009B5E8
 /* 0438E4 8009B694 03E00008 */  jr    $ra
 /* 0438E8 8009B698 00601025 */   move  $v0, $v1
 .type func_8009B5E8, @function
+.size func_8009B5E8, . - func_8009B5E8

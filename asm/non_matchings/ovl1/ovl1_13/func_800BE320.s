@@ -21,3 +21,4 @@ glabel func_800BE320
 /* 0665BC 800BE36C 03E00008 */  jr    $ra
 /* 0665C0 800BE370 00001025 */   move  $v0, $zero
 .type func_800BE320, @function
+.size func_800BE320, . - func_800BE320

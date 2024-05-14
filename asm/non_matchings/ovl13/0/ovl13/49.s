@@ -76,4 +76,5 @@ glabel L801E3A78_ovl13
 /* 1FB9FC 801E3A7C 03E00008 */  jr          $ra
 /* 1FBA00 801E3A80 00000000 */   nop
 .type func_801E3958_ovl13, @function
+.size func_801E3958_ovl13, . - func_801E3958_ovl13
 

@@ -22,3 +22,4 @@ glabel func_8011C87C
 /* 0A5338 8011C8C8 03E00008 */  jr    $ra
 /* 0A533C 8011C8CC AC206F10 */ sw $zero, %lo(D_800D6F10)($at)
 .type func_8011C87C, @function
+.size func_8011C87C, . - func_8011C87C

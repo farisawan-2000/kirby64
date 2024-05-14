@@ -16,3 +16,4 @@ glabel func_8000FE2C
 /* 010A5C 8000FE5C 03E00008 */  jr    $ra
 /* 010A60 8000FE60 E4840074 */   swc1  $f4, 0x74($a0)
 .type func_8000FE2C, @function
+.size func_8000FE2C, . - func_8000FE2C

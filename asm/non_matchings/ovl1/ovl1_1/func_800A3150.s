@@ -56,3 +56,4 @@ glabel func_800A3150
 /* 04B470 800A3220 03E00008 */  jr    $ra
 /* 04B474 800A3224 AC286B88 */ sw $t0, %lo(D_800D6B88)($at)
 .type func_800A3150, @function
+.size func_800A3150, . - func_800A3150

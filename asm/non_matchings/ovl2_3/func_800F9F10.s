@@ -37,3 +37,4 @@ glabel func_800F9F10
 /* 0829E8 800F9F78 03E00008 */  jr    $ra
 /* 0829EC 800F9F7C 46006006 */   mov.s $f0, $f12
 .type func_800F9F10, @function
+.size func_800F9F10, . - func_800F9F10

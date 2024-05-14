@@ -93,3 +93,4 @@ glabel omGMoveCommon
 /* 00B08C 8000A48C 8FB10018 */  lw    $s1, 0x18($sp)
 /* 00B090 8000A490 03E00008 */  jr    $ra
 /* 00B094 8000A494 27BD0028 */   addiu $sp, $sp, 0x28
+.size omGMoveCommon, . - omGMoveCommon

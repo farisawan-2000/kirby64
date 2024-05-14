@@ -160,3 +160,4 @@ glabel verify_save
 .L800B94F4_ovl1:
 /* 061744 800B94F4 03E00008 */  jr    $ra
 /* 061748 800B94F8 00000000 */   nop   
+.size verify_save, . - verify_save

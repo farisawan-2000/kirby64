@@ -121,3 +121,4 @@ glabel func_80022BC4
 /* 023990 80022D90 03E00008 */  jr    $ra
 /* 023994 80022D94 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_80022BC4, @function
+.size func_80022BC4, . - func_80022BC4

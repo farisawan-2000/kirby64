@@ -35,3 +35,4 @@ glabel create_y_rotation_matrix
 /* 01DB84 8001CF84 27BD0020 */  addiu $sp, $sp, 0x20
 /* 01DB88 8001CF88 03E00008 */  jr    $ra
 /* 01DB8C 8001CF8C 00000000 */   nop   
+.size create_y_rotation_matrix, . - create_y_rotation_matrix

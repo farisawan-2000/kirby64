@@ -17,3 +17,4 @@ glabel func_80118760
 /* 0A120C 8011879C 03E00008 */  jr    $ra
 /* 0A1210 801187A0 E4480008 */   swc1  $f8, 8($v0)
 .type func_80118760, @function
+.size func_80118760, . - func_80118760

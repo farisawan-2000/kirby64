@@ -40,3 +40,4 @@ glabel func_800A8234
 /* 050508 800A82B8 00000000 */  nop   
 /* 05050C 800A82BC 00000000 */  nop   
 .type func_800A8234, @function
+.size func_800A8234, . - func_800A8234

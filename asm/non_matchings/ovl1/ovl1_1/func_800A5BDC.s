@@ -31,10 +31,9 @@ glabel func_800A5BDC
 /* 04DE98 800A5C48 46001006 */   mov.s $f0, $f2
 /* 04DE9C 800A5C4C 03E00008 */  jr    $ra
 /* 04DEA0 800A5C50 46001007 */   neg.s $f0, $f2
-.type func_800A5BDC, @function
-
 /* 04DEA4 800A5C54 46001006 */  mov.s $f0, $f2
 .L800A5C58_ovl1:
 /* 04DEA8 800A5C58 03E00008 */  jr    $ra
 /* 04DEAC 800A5C5C 00000000 */   nop   
 .type func_800A5BDC, @function
+.size func_800A5BDC, . - func_800A5BDC

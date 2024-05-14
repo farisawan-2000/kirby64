@@ -103,8 +103,6 @@ glabel func_801D1E98_ovl8
 /* 175AF8 801D2018 27BD0040 */  addiu $sp, $sp, 0x40
 /* 175AFC 801D201C 03E00008 */  jr    $ra
 /* 175B00 801D2020 00000000 */   nop   
-.type func_801D1E98_ovl8, @function
-
 /* 175B04 801D2024 00000000 */  nop   
 /* 175B08 801D2028 00000000 */  nop   
 /* 175B0C 801D202C 00000000 */  nop   
@@ -113,3 +111,4 @@ glabel func_801D1E98_ovl8
 /* 175B18 801D2038 00000000 */  nop   
 /* 175B1C 801D203C 00000000 */  nop
 .type func_801D1E98_ovl8, @function
+.size func_801D1E98_ovl8, . - func_801D1E98_ovl8

@@ -155,3 +155,4 @@ glabel ovl3_process_command_string
 /* 0B2AA8 80152068 27BD0028 */   addiu $sp, $sp, 0x28
 
 /* 0B2AAC 8015206C 00000000 */  nop   
+.size ovl3_process_command_string, . - ovl3_process_command_string

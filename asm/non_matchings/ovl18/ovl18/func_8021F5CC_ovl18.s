@@ -38,3 +38,4 @@ glabel func_8021F5CC_ovl18
 /* 231FF0 8021F650 03E00008 */  jr    $ra
 /* 231FF4 8021F654 00000000 */   nop   
 .type func_8021F5CC_ovl18, @function
+.size func_8021F5CC_ovl18, . - func_8021F5CC_ovl18

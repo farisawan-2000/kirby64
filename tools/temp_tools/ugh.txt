@@ -55,3 +55,13 @@ func_801ACC34 func_801ACC34_ovl7
 func_801ACF84 func_801ACF84_ovl7
 func_801BA32C func_801BA32C_ovl7
 func_801BC794 func_801BC794_ovl7
+D_80048F20 gPlayerControllers
+func_800B90E0 calc_header_checksum
+func_80032B20 sqrtf
+func_800B9F50 check_cutscene_watched
+func_8001870C atan2f
+func_800AEC08 request_track_general
+D_803B6900 gFrameBuffer
+D_800EC9F8 gSaveBuffer1
+func_800A75B0 play_music
+func_800B8C34 init_save_file_maybe

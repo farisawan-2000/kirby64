@@ -71,3 +71,4 @@ glabel func_80120BCC
 /* 0A9734 80120CC4 03E00008 */  jr    $ra
 /* 0A9738 80120CC8 00601025 */   move  $v0, $v1
 .type func_80120BCC, @function
+.size func_80120BCC, . - func_80120BCC

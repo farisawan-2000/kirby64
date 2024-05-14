@@ -29,3 +29,4 @@ glabel func_8012307C
 /* 0ABB50 801230E0 03E00008 */  jr    $ra
 /* 0ABB54 801230E4 00000000 */   nop   
 .type func_8012307C, @function
+.size func_8012307C, . - func_8012307C

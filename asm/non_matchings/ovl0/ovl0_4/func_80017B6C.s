@@ -73,3 +73,4 @@ glabel func_80017B6C
 /* 018874 80017C74 03E00008 */  jr    $ra
 /* 018878 80017C78 27BD0040 */   addiu $sp, $sp, 0x40
 .type func_80017B6C, @function
+.size func_80017B6C, . - func_80017B6C

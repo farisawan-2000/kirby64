@@ -161,3 +161,4 @@ glabel func_8021F70C_ovl18
 /* 232308 8021F968 03E00008 */  jr    $ra
 /* 23230C 8021F96C 00000000 */   nop   
 .type func_8021F70C_ovl18, @function
+.size func_8021F70C_ovl18, . - func_8021F70C_ovl18

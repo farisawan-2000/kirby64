@@ -185,3 +185,4 @@ glabel func_8010AC1C
 /* 093948 8010AED8 03E00008 */  jr    $ra
 /* 09394C 8010AEDC 27BD0098 */   addiu $sp, $sp, 0x98
 .type func_8010AC1C, @function
+.size func_8010AC1C, . - func_8010AC1C

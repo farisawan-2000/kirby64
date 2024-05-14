@@ -772,3 +772,5 @@ glabel L800A4164_ovl1
 /* 04C3F4 800A41A4 8FBE0038 */  lw    $fp, 0x38($sp)
 /* 04C3F8 800A41A8 03E00008 */  jr    $ra
 /* 04C3FC 800A41AC 27BD0040 */   addiu $sp, $sp, 0x40
+.type game_tick, @function
+.size game_tick, . - game_tick

@@ -381,3 +381,4 @@ glabel func_8021ED3C_ovl18
 /* 231C9C 8021F2FC 03E00008 */  jr    $ra
 /* 231CA0 8021F300 27BD00C0 */   addiu $sp, $sp, 0xc0
 .type func_8021ED3C_ovl18, @function
+.size func_8021ED3C_ovl18, . - func_8021ED3C_ovl18

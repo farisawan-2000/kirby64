@@ -42,3 +42,4 @@ glabel func_8009B550
 /* 043830 8009B5E0 03E00008 */  jr    $ra
 /* 043834 8009B5E4 27BD0028 */   addiu $sp, $sp, 0x28
 .type func_8009B550, @function
+.size func_8009B550, . - func_8009B550

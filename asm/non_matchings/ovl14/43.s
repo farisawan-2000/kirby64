@@ -364,3 +364,4 @@ glabel func_801DE6C8_ovl14 # 43
 /* 20181C 801DEC2C 03E00008 */  jr          $ra
 /* 201820 801DEC30 00000000 */   nop
 .type func_801DE6C8_ovl14, @function
+.size func_801DE6C8_ovl14, . - func_801DE6C8_ovl14

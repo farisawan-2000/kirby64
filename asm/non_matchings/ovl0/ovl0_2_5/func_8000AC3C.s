@@ -93,3 +93,4 @@ glabel omGDispatchProc
 /* 00B97C 8000AD7C 00601025 */  move  $v0, $v1
 /* 00B980 8000AD80 03E00008 */  jr    $ra
 /* 00B984 8000AD84 00000000 */   nop   
+.size omGDispatchProc, . - omGDispatchProc

@@ -155,3 +155,4 @@ glabel func_80111A04
 /* 09A6B4 80111C44 03E00008 */  jr    $ra
 /* 09A6B8 80111C48 00A01025 */   move  $v0, $a1
 .type func_80111A04, @function
+.size func_80111A04, . - func_80111A04

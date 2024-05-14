@@ -57,3 +57,4 @@ glabel crash_screen_draw_rect
 /* 0229F4 80021DF4 27BD0020 */  addiu $sp, $sp, 0x20
 /* 0229F8 80021DF8 03E00008 */  jr    $ra
 /* 0229FC 80021DFC 00000000 */   nop   
+.size crash_screen_draw_rect, . - crash_screen_draw_rect

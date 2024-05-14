@@ -69,3 +69,4 @@ glabel func_8001D934
 /* 01E640 8001DA40 03E00008 */  jr    $ra
 /* 01E644 8001DA44 E4880008 */   swc1  $f8, 8($a0)
 .type func_8001D934, @function
+.size func_8001D934, . - func_8001D934

@@ -152,3 +152,4 @@ glabel L800ACAF8
 /* 054DC4 800ACB74 03E00008 */  jr    $ra
 /* 054DC8 800ACB78 27BD0020 */   addiu $sp, $sp, 0x20
 .type func_800AC954, @function
+.size func_800AC954, . - func_800AC954

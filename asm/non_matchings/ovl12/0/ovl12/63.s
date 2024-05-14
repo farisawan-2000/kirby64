@@ -76,6 +76,7 @@ glabel func_801DDFB4_ovl12 # 63
 /* 002EDC 801DE0DC 03E00008 */  jr          $ra
 /* 002EE0 801DE0E0 E42A6850 */   swc1       $f10, %lo(D_800E6850)($at)
 .type func_801DDFB4_ovl12, @function
+.size func_801DDFB4_ovl12, . - func_801DDFB4_ovl12
 
 .section .late_rodata
 
@@ -84,4 +85,3 @@ glabel D_801E2D88_ovl12
 
 glabel D_801E2D8C_ovl12
 /* 007B8C 801E2D8C */ .word 0x477FFF00
-

@@ -102,6 +102,8 @@ glabel func_8002F040
 /* 02FD9C 8002F19C 27BD0030 */  addiu $sp, $sp, 0x30
 /* 02FDA0 8002F1A0 03E00008 */  jr    $ra
 /* 02FDA4 8002F1A4 00000000 */   nop   
+.type func_8002F040, @function
+.size func_8002F040, . - func_8002F040
 
 /* motor:? */
 glabel func_8002F1A8
@@ -176,6 +178,8 @@ glabel func_8002F1A8
 /* 02FEA8 8002F2A8 27BD0050 */  addiu $sp, $sp, 0x50
 /* 02FEAC 8002F2AC 03E00008 */  jr    $ra
 /* 02FEB0 8002F2B0 00000000 */   nop   
+.type func_8002F1A8, @function
+.size func_8002F1A8, . - func_8002F1A8
 
 /* motor:? */
 glabel func_8002F2B4
@@ -278,3 +282,5 @@ glabel func_8002F2B4
 /* 030004 8002F404 27BD0048 */  addiu $sp, $sp, 0x48
 /* 030008 8002F408 03E00008 */  jr    $ra
 /* 03000C 8002F40C 00000000 */   nop   
+.type func_8002F2B4, @function
+.size func_8002F2B4, . - func_8002F2B4

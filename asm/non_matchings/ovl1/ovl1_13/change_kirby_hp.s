@@ -72,3 +72,4 @@ glabel change_kirby_hp
 /* 064334 800BC0E4 27BD0018 */  addiu $sp, $sp, 0x18
 /* 064338 800BC0E8 03E00008 */  jr    $ra
 /* 06433C 800BC0EC 00000000 */   nop   
+.size change_kirby_hp, . - change_kirby_hp

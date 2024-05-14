@@ -200,3 +200,4 @@ glabel func_8001BFDC
 /* 01CEDC 8001C2DC 03E00008 */  jr    $ra
 /* 01CEE0 8001C2E0 27BD0038 */   addiu $sp, $sp, 0x38
 .type func_8001BFDC, @function
+.size func_8001BFDC, . - func_8001BFDC

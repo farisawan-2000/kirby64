@@ -46,6 +46,7 @@ glabel func_801DFB34_ovl12 # 97
 /* 0049E4 801DFBE4 03E00008 */  jr          $ra
 /* 0049E8 801DFBE8 AC2A9560 */   sw         $t2, %lo(D_800E9560)($at)
 .type func_801DFB34_ovl12, @function
+.size func_801DFB34_ovl12, . - func_801DFB34_ovl12
 
 .section .late_rodata
 glabel D_801E2DAC_ovl12

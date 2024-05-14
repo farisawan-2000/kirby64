@@ -126,3 +126,4 @@ glabel save_file_set_to_full_completion
 /* 0629E4 800BA794 00000000 */  nop   
 /* 0629E8 800BA798 00000000 */  nop   
 /* 0629EC 800BA79C 00000000 */  nop   
+.size save_file_set_to_full_completion, . - save_file_set_to_full_completion

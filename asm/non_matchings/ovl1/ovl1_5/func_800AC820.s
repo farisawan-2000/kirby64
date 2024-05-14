@@ -50,3 +50,4 @@ glabel func_800AC820
 /* 054B28 800AC8D8 03E00008 */  jr    $ra
 /* 054B2C 800AC8DC AC8E0010 */   sw    $t6, 0x10($a0)
 .type func_800AC820, @function
+.size func_800AC820, . - func_800AC820

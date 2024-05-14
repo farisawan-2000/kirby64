@@ -47,3 +47,4 @@ glabel func_801DC930_ovl12 # 26
 /* 0017E0 801DC9E0 03E00008 */  jr          $ra
 /* 0017E4 801DC9E4 00000000 */   nop
 .type func_801DC930_ovl12, @function
+.size func_801DC930_ovl12, . - func_801DC930_ovl12

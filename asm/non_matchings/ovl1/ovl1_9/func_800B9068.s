@@ -32,3 +32,4 @@ glabel calc_save_header_checksum
 .L800B90D8_ovl1:
 /* 061328 800B90D8 03E00008 */  jr    $ra
 /* 06132C 800B90DC 00801025 */   move  $v0, $a0
+.size calc_save_header_checksum, . - calc_save_header_checksum

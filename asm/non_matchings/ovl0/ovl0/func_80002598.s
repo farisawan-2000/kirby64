@@ -363,3 +363,5 @@ glabel thread3_main
 /* 0036EC 80002AEC 8FB20020 */  lw    $s2, 0x20($sp)
 /* 0036F0 80002AF0 03E00008 */  jr    $ra
 /* 0036F4 80002AF4 27BD0088 */   addiu $sp, $sp, 0x88
+.type thread3_main, @function
+.size thread3_main, . - thread3_main

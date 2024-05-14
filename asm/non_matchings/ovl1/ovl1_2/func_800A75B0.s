@@ -57,3 +57,4 @@ glabel play_music
 /* 04F8BC 800A766C 27BD0018 */  addiu $sp, $sp, 0x18
 /* 04F8C0 800A7670 03E00008 */  jr    $ra
 /* 04F8C4 800A7674 00000000 */   nop   
+.size play_music, . - play_music

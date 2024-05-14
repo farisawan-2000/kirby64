@@ -125,3 +125,4 @@ glabel func_8021B8B0_ovl9
 /* 1C9AC8 8021BA78 03E00008 */  jr    $ra
 /* 1C9ACC 8021BA7C AC2793A0 */ sw $a3, %lo(D_800E93A0)($at)
 .type func_8021B8B0_ovl9, @function
+.size func_8021B8B0_ovl9, . - func_8021B8B0_ovl9

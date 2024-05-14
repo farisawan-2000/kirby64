@@ -64,3 +64,4 @@ glabel func_80151CEC_ovl4
 /* 0F9308 80151DD8 00000000 */  nop
 /* 0F930C 80151DDC 00000000 */  nop
 .type func_80151CEC_ovl4, @function
+.size func_80151CEC_ovl4, . - func_80151CEC_ovl4

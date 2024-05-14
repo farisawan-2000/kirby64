@@ -63,3 +63,4 @@ glabel L80225BD0_ovl18
 
 /* 23859C 80225BFC 00000000 */  nop   
 .type func_80225B44_ovl18, @function
+.size func_80225B44_ovl18, . - func_80225B44_ovl18

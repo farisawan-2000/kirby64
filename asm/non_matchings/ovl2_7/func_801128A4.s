@@ -71,3 +71,4 @@ glabel func_801128A4
 /* 09B414 801129A4 03E00008 */  jr    $ra
 /* 09B418 801129A8 27BD00B8 */   addiu $sp, $sp, 0xb8
 .type func_801128A4, @function
+.size func_801128A4, . - func_801128A4

@@ -72,3 +72,4 @@ glabel draw_hp_segment
 /* 06544C 800BD1FC 27BD0018 */  addiu $sp, $sp, 0x18
 /* 065450 800BD200 03E00008 */  jr    $ra
 /* 065454 800BD204 00000000 */   nop   
+.size draw_hp_segment, . - draw_hp_segment

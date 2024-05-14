@@ -56,3 +56,4 @@ glabel func_80227308_ovl18
 /* 239D7C 802273DC 27BD0018 */   addiu $sp, $sp, 0x18
 # Unknown region 239D80-23E630 [48B0]
 .type func_80227308_ovl18, @function
+.size func_80227308_ovl18, . - func_80227308_ovl18
