@@ -157,7 +157,7 @@ void thread1_idle(void *arg) {
     while (1);
 }
 
-void main(void) {
+void cboot(void) {
     gEntryStack[7] = STACK_TOP_MAGIC;
     osInitialize();
     osCreateThread(&gIdleThread, 1, thread1_idle, &D_80048B00, &idleThreadStack[IDLE_THREAD_STACK_LEN_U64], OS_PRIORITY_APPMAX);

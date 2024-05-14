@@ -23,9 +23,9 @@ glabel EntryPoint
 /* 001018 80000418 AD000004 */  sw    $zero, 4($t0)
 /* 00101C 8000041C 1520FFFC */  bnez  $t1, .L80000410_ovl0
 /* 001020 80000420 21080008 */   addi  $t0, $t0, 8
-/* 001024 80000424 3C0A8000 */  lui   $t2, %hi(main) # $t2, 0x8000
+/* 001024 80000424 3C0A8000 */  lui   $t2, %hi(cboot) # $t2, 0x8000
 /* 001028 80000428 3C1D8004 */  lui   $sp, %hi(gEntryStack + 0x200) # $sp, 0x8004
-/* 00102C 8000042C 254A0870 */  addiu $t2, %lo(main) # addiu $t2, $t2, 0x870
+/* 00102C 8000042C 254A0870 */  addiu $t2, %lo(cboot) # addiu $t2, $t2, 0x870
 /* 001030 80000430 01400008 */  jr    $t2
 /* 001034 80000434 27BD2D90 */   addiu $sp, %lo(gEntryStack + 0x200) # addiu $sp, $sp, 0x2d90
 /* 001038 80000438 00000000 */  nop
