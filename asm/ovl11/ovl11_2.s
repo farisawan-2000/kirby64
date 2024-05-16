@@ -910,7 +910,6 @@ glabel func_801E028C_ovl11
 /* 1EAC2C 801E036C 00290821 */  addu  $at, $at, $t1
 /* 1EAC30 801E0370 03E00008 */  jr    $ra
 /* 1EAC34 801E0374 E4243C90 */   swc1  $f4, 0x3c90($at)
-
 .L801E0378_ovl11:
 /* 1EAC38 801E0378 3C0A800E */  lui   $t2, %hi(D_800E3210) # $t2, 0x800e
 /* 1EAC3C 801E037C 254A3210 */  addiu $t2, %lo(D_800E3210) # addiu $t2, $t2, 0x3210

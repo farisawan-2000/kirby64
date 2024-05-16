@@ -376,7 +376,7 @@ SECTIONS
         BUILD_DIR/src/ovl1/ovl1_7.o(.rodata*);
         BUILD_DIR/data/ovl1/kirby.066630.4.o(.data*);
         BUILD_DIR/src/ovl1/ovl1_8.o(.rodata);
-        BUILD_DIR/data/ovl1/kirby.066630.5.o(.data*);
+        BUILD_DIR/src/ovl1/ovl1_10.o(.rodata);
         BUILD_DIR/src/ovl1/ovl1_11.o(.rodata);
         BUILD_DIR/data/ovl1/ovl1_11_rodata.o(.rodata);
         BUILD_DIR/src/ovl1/ovl1_12.o(.rodata);
@@ -480,9 +480,12 @@ SECTIONS
     /* 0x80151100 135490-139150 [3CC0] */
     BEGIN_SEG(ovl6, 0x80151100) SUBALIGN(16) {
         BUILD_DIR/src/ovl6/ovl6.o(.text);
-        BUILD_DIR/data/kirby.139150.o(.data*);
     }
     END_SEG(ovl6)
+    BEGIN_SEG(ovl6Data, _ovl6SegmentEnd) {
+        BUILD_DIR/data/kirby.139150.o(.data*);
+    }
+    END_SEG(ovl6Data)
 
     /* 0x80198880 13E8F0-168840 [29F50] */
     BEGIN_SEG(ovl7, 0x80198880) SUBALIGN(16) {
@@ -557,11 +560,14 @@ SECTIONS
         BUILD_DIR/src/ovl10/ovl10_2.o(.text);
         BUILD_DIR/src/ovl10/ovl10_3.o(.text);
         BUILD_DIR/asm/ovl10/ovl10_4.o(.text);
+    }
+    END_SEG(ovl10)
+    BEGIN_SEG(ovl10Data, _ovl10SegmentEnd) {
         BUILD_DIR/data/ovl10/data.o(.data*);
         BUILD_DIR/src/ovl10/ovl10_3.o(.rodata);
         BUILD_DIR/data/ovl10/data_after_ovl10_3.o(.rodata);
     }
-    END_SEG(ovl10)
+    END_SEG(ovl10Data)
     BEGIN_NOLOAD(ovl10) {
         BUILD_DIR/asm/ovl10/ovl10_bss.o(.bss);
     }
@@ -658,10 +664,13 @@ SECTIONS
     BEGIN_SEG(ovl16, 0x801DB1E0) SUBALIGN(16) {
         BUILD_DIR/src/ovl16/ovl16.o(.text);
         BUILD_DIR/asm/ovl16/ovl16_2.o(.text);
+    }
+    END_SEG(ovl16)
+    BEGIN_SEG(ovl16Data, _ovl16SegmentEnd) {
         BUILD_DIR/data/ovl16/data.o(.data);
         BUILD_DIR/data/ovl16/data_2.o(.rodata);
     }
-    END_SEG(ovl16)
+    END_SEG(ovl16Data)
 
     /* 0x801DB1E0 2263D0-230050 [9C80] */
     BEGIN_SEG(ovl17, 0x801DB1E0) SUBALIGN(16) {
