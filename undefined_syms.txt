@@ -32,6 +32,7 @@ gCollisionState = 0x8012BCF8;
 gFrameBuffers = 0x8015A678;
 
 /* why is this list getting bigger aaaaaaaaaaaaaa */
+D_80300170 = 0x80300170;
 gCrashScreen = 0x800966D8;
 __osPiTable = 0x8003FBDC;
 __osCurrentHandle = 0x8003FBE0;

@@ -13,7 +13,7 @@ options:
   build_path: build
   o_as_suffix: True
   do_c_func_detection: True
-  # symbol_addrs_path: tools/symbol_addrs.txt
+  symbol_addrs_path: tools/symbol_addrs.txt
   extensions_path: tools/splat_ext
   # reloc_addrs_path: reloc_addrs.txt
   ld_script_path: kirby.ld
@@ -23,13 +23,11 @@ options:
   segment_end_before_align: True
 segments:
   - [0x0, header]
+
   - name: boot
-    type: code
+    type: bin
     start: 0x0040
-    vram: 0xA4000040
-    subsegments:
-    - [0x0040, hasm, ipl3]
-    - [0x0B70, data, bootcode_font]
+
   - name: main
     type: code
     start: 0x1000
@@ -323,7 +321,7 @@ segments:
     symbol_name_format : $VRAM_ovl8
     start: 0x174740
     vram: 0x801D0C60
-    exclusive_ram_id: ovl8
+    exclusive_ram_id: ovl8_9
     bss_size: 0x10
     subsegments:
     - [0x174740, c, ovl8/code_174740]
@@ -340,7 +338,7 @@ segments:
     symbol_name_format : $VRAM_ovl9
     start: 0x17ECB0
     vram: 0x801D0C60
-    exclusive_ram_id: ovl9
+    exclusive_ram_id: ovl8_9
     bss_size: 0x10
     subsegments:
     - [0x17ECB0, c, ovl9/code_17ECB0]
@@ -372,7 +370,7 @@ segments:
     symbol_name_format : $VRAM_ovl10
     start: 0x1CBF50
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x80
     subsegments:
     - [0x1CBF50, c, ovl10/code_1CBF50]
@@ -389,7 +387,7 @@ segments:
     symbol_name_format : $VRAM_ovl11
     start: 0x1E5AA0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl11
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x30
     subsegments:
     - [0x1E5AA0, c, ovl11/code_1E5AA0]
@@ -403,7 +401,7 @@ segments:
     symbol_name_format : $VRAM_ovl12
     start: 0x1EB520
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl12
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x10
     subsegments:
     - [0x1EB520, c, ovl12/code_1EB520]
@@ -418,7 +416,7 @@ segments:
     symbol_name_format : $VRAM_ovl13
     start: 0x1F3160
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl13
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x10
     subsegments:
     - [0x1F3160, c, ovl13/code_1F3160]
@@ -434,7 +432,7 @@ segments:
     symbol_name_format : $VRAM_ovl14
     start: 0x1FDDD0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl14
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x10
     subsegments:
     - [0x1FDDD0, c, ovl14/code_1FDDD0]
@@ -449,7 +447,7 @@ segments:
     symbol_name_format : $VRAM_ovl15
     start: 0x205D40
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl15
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x10
     subsegments:
     - [0x205D40, c, ovl15/code_205D40]
@@ -464,7 +462,7 @@ segments:
     symbol_name_format : $VRAM_ovl16
     start: 0x211490
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl16
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x110
     subsegments:
     - [0x211490, c, ovl16/code_211490]
@@ -478,7 +476,7 @@ segments:
     symbol_name_format : $VRAM_ovl17
     start: 0x2263D0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl17
+    exclusive_ram_id: ovl10_to_ovl17
     bss_size: 0x70
     subsegments:
     - [0x2263D0, c, ovl17/code_2263D0]
@@ -495,7 +493,7 @@ segments:
     symbol_name_format : $VRAM_ovl18
     start: 0x2308C0
     vram: 0x8021DF20
-    exclusive_ram_id: ovl18
+    exclusive_ram_id: ovl18_19
     bss_size: 0xB0
     subsegments:
     - [0x2308C0, c, ovl18/code_2308C0]
@@ -516,7 +514,7 @@ segments:
     symbol_name_format : $VRAM_ovl19
     start: 0x23E630
     vram: 0x8021DF20
-    exclusive_ram_id: ovl19
+    exclusive_ram_id: ovl18_19
     bss_size: 0xa0
     subsegments:
     - [0x23E630, c, ovl19/code_23E630]

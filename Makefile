@@ -1,11 +1,11 @@
-# Makefile to rebuild Kirby 64 split image
+# New Makefile
 
 ################ Target Executable and Sources ###############
 
 # BUILD_DIR is location where all build artifacts are placed
 BUILD_DIR_BASE = build
 VERSION = us
-BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
+BUILD_DIR = $(BUILD_DIR_BASE)
 
 GRUCODE := F3DEX2_2.04H
 
@@ -55,7 +55,7 @@ TEXTURES_DIR := textures
 
 # UNNAMED_SYMS := -T unnamed_syms.txt
 
-INCLUDE_FLAGS := -I$(BUILD_DIR)
+INCLUDE_FLAGS := -I$(BUILD_DIR) -Iinclude
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
@@ -70,8 +70,6 @@ OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 TOOLS_DIR = tools
 N64CRC = tools/n64crc
 N64GRAPHICS = $(TOOLS_DIR)/n64graphics
-EMULATOR = ~/Downloads/mupen64plus/mupen64plus-gui
-EMU_FLAGS = # --noosd --gfx mupen64plus-video-glide64mk2
 LOADER = loader64
 LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
@@ -82,10 +80,9 @@ ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
               $(wildcard assets/geo/bank_7/**) \
               $(wildcard assets/geo/bank_3/**)
 
-ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib \
-            asm/data asm/banks $(wildcard data/ovl*)
+ASM_DIRS := asm asm/data $(wildcard asm/data/ovl*)
             
-SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
+SRC_DIRS := src src/main src/os $(wildcard src/ovl*)
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 
@@ -101,12 +98,12 @@ TEXTURES_DIR = textures
 
 MIPSISET := -mips2 -32
 
-GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(wildcard src/*/*.c)
-GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-# S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+
+GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(C_FILES)
+GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 MODEL_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/geo.bin))
 MODEL_C_FILES := $(foreach file,$(MODEL_FILES),$(file:.bin=.c))
@@ -126,7 +123,8 @@ BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
-           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o)) \
+           $(BUILD_DIR)/assets/boot.o
 
 ASSET_O_FILES := $(foreach file,$(MODEL_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
@@ -173,7 +171,7 @@ $(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) 
 default: all
 
 TARGET = kirby.us
-LD_SCRIPT = $(TARGET).ld
+LD_SCRIPT = kirby.ld
 # TEXTURE_DIR = textures
 # RAW_TEXTURE_FILES := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(wildcard $(TEXTURES_DIR)/raw/*.png)))
 
@@ -233,12 +231,15 @@ $(BUILD_DIR)/libn_audio.a: libreultra/build/2.0I/libn_audio.a
 $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
+$(BUILD_DIR)/%.o: %.bin
+	$(LD) -r -b binary -o $@ $<
+
 $(BUILD_DIR)/%.o: %.s
 	$(CPP) $(GCC_CFLAGS) -o $(@:.o=.i) $<
 	$(AS) $(ASFLAGS) -o $@ $(@:.o=.i)
 
 $(BUILD_DIR)/%.o: %.c
-	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
+	@$(CC_CHECK) -Wno-unknown-pragmas -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/data/%.o: data/%.c
@@ -284,18 +285,6 @@ $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 
 
 $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
-
-test: $(BUILD_DIR)/$(TARGET).z64
-	$(EMULATOR) $(EMU_FLAGS) $<
-
-test2: $(BUILD_DIR)/$(TARGET).z64
-	flatpak run --file-forwarding io.github.m64p.m64p @@ $< @@
-
-test-pj64: $(BUILD_DIR)/$(TARGET).z64
-	wine ~/Desktop/new64/Project64.exe $<
-
-load: $(BUILD_DIR)/$(TARGET).z64
-	$(LOADER) $(LOADER_FLAGS) $<
 
 setup:
 	$(MAKE) -C libreultra -j4
