@@ -1,5 +1,6 @@
 CC := gcc
-CFLAGS := -O2 -I . -Wall -Wextra -Wno-unused-parameter -pedantic
+IGNORED := -Wno-implicit-function-declaration
+CFLAGS := -O2 -I . $(IGNORED) -Wall -Wextra -Wno-unused-parameter -pedantic
 PROGRAMS := iplfontutil n64graphics n64crc patch_libultra_math gfxdis_f3dex2 rgb2c
 
 iplfontutil_SOURCES := iplfontutil.c

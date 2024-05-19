@@ -75,7 +75,7 @@ const uint8_t imgFormatPNGDepths[] = {
 void ci_raw2png(char *outpath, uint8_t *buf, int width, int height, unsigned fmt, uint8_t *pal) {
 	LodePNGState state;
 	char *final_pal;
-	char *png;
+	unsigned char *png;
 
 	uint8_t *rgba32 = NULL;
 

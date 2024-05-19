@@ -57,13 +57,13 @@ ia *raw2i(const uint8_t *raw, int width, int height, int depth);
 //---------------------------------------------------------
 
 // intermediate RGBA -> N64 raw RGBA16/RGBA32
-int rgba2raw(uint8_t *raw, const rgba *img, int width, int height, int depth);
+int rgba2raw(uint8_t *raw, void *imgp, int width, int height, int depth);
 
 // intermediate IA -> N64 raw IA1/IA4/IA8/IA16
-int ia2raw(uint8_t *raw, const ia *img, int width, int height, int depth);
+int ia2raw(uint8_t *raw, void *imgp, int width, int height, int depth);
 
 // intermediate IA -> N64 raw I4/I8
-int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth);
+int i2raw(uint8_t *raw, void *imgp, int width, int height, int depth);
 
 
 //---------------------------------------------------------

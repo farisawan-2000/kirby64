@@ -289,14 +289,15 @@ uint8_t *ci2raw(const uint8_t *rawci, const uint8_t *palette, int width, int hei
    return raw;
 }
 
-typedef int (*fptr)(uint8_t *raw, const ia *img, int width, int height, int depth);
+typedef int (*fptr)(uint8_t *raw, void *img, int width, int height, int depth);
 //---------------------------------------------------------
 // internal RGBA/IA -> N64 RGBA/IA/I/CI
 // returns length written to 'raw' used or -1 on error
 //---------------------------------------------------------
 
-int rgba2raw(uint8_t *raw, const rgba *img, int width, int height, int depth)
+int rgba2raw(uint8_t *raw, void *imgp, int width, int height, int depth)
 {
+   rgba *img = (rgba *)imgp;
    int size = width * height * depth / 8;
    INFO("Converting RGBA%d %dx%d to raw\n", depth, width, height);
 
@@ -325,8 +326,9 @@ int rgba2raw(uint8_t *raw, const rgba *img, int width, int height, int depth)
    return size;
 }
 
-int ia2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
+int ia2raw(uint8_t *raw, void *imgp, int width, int height, int depth)
 {
+   ia *img = (ia *)imgp;
    int size = width * height * depth / 8;
    INFO("Converting IA%d %dx%d to raw\n", depth, width, height);
 
@@ -377,8 +379,9 @@ int ia2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
    return size;
 }
 
-int i2raw(uint8_t *raw, const ia *img, int width, int height, int depth)
+int i2raw(uint8_t *raw, void *imgp, int width, int height, int depth)
 {
+   ia *img = (ia *)imgp;
    int size = width * height * depth / 8;
    INFO("Converting I%d %dx%d to raw\n", depth, width, height);
 
@@ -412,7 +415,7 @@ void ciFun(void) {
 
 }
 
-int img2bg(fptr fn, uint8_t *raw, const ia *img, int width, int height, int depth) {
+int img2bg(fptr fn, uint8_t *raw, void *img, int width, int height, int depth) {
    struct BGImageHeader *hd = (struct BGImageHeader *)raw;
    if (fn == ia2raw) {
       hd->fmt = 0x03; // G_IM_FMT_IA
