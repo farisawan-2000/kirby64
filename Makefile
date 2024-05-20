@@ -8,6 +8,7 @@ VERSION = us
 BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
 
 GRUCODE := F3DEX2_2.04H
+LOCAL_ARMIPS=tools/armips/build/armips
 
 VERBOSE := 1
 
@@ -302,7 +303,7 @@ setup:
 	$(MAKE) -C libreultra -j4
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
-	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=./f3dex2/
+	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=./f3dex2/ ARMIPS=$(_LOCAL_ARMIPS)
 	cp -R f3dex2/build/$(GRUCODE)/ f3dex2
 	tools/extract_assets baserom.$(VERSION).z64
 
