@@ -8,6 +8,7 @@ tools/rgb2c
 assets/*.bin
 assets/**/*.png
 assets/tools/__pycache__/*
+f3dex2/F3DEX2_2.04H/*
 *.z64
 textures/*
 bin/*

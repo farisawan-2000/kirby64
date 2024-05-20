@@ -197,6 +197,7 @@ distclean:
 	$(MAKE) -C tools clean
 	$(MAKE) -C libreultra clean
 	$(MAKE) -C f3dex2 clean
+	rm -rf f3dex2/$(GRUCODE)
 	# TODO: remove these
 	rm -rf assets/geo
 	rm -rf assets/image
@@ -230,7 +231,7 @@ $(BUILD_DIR)/libn_audio.a: libreultra/build/2.0I/libn_audio.a
 	cp $< $@
 	$(TOOLS_DIR)/patch_libultra_math $@
 
-$(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
+$(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/build/$(GRUCODE)/$(GRUCODE).%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
 $(BUILD_DIR)/%.o: %.s
@@ -301,7 +302,7 @@ setup:
 	$(MAKE) -C libreultra -j4
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
-	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=./f3dex2/
 	cp -R f3dex2/build/$(GRUCODE)/ f3dex2
 	tools/extract_assets baserom.$(VERSION).z64
 
