@@ -1,0 +1,6 @@
+glabel jtbl_800D6908
+.word L800BAAA0
+.word L800BAAA8
+.word L800BAAA8
+.word L800BAAB0
+.word L800BAAB8

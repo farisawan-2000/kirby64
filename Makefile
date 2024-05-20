@@ -59,10 +59,13 @@ INCLUDE_FLAGS := -I$(BUILD_DIR) -Iinclude
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
-					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt $(UNNAMED_SYMS) -T undefined_syms.txt -T rcp_syms.txt \
+					-T libultra_unused.txt $(UNNAMED_SYMS) -T rcp_syms.txt \
 					-Map $(BUILD_DIR)/$(TARGET).map \
-					-T undefined_funcs_auto.txt \
-					-T undefined_syms_auto.txt
+					-T $(BUILD_DIR)/$(LD_SCRIPT)
+# 					-T funcstodo.txt \
+# 					-T undefined_syms.txt \
+# 					-T undefined_funcs_auto.txt \
+# 					-T undefined_syms_auto.txt
 PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
