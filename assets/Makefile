@@ -1,6 +1,6 @@
 MATCHING ?= 1
 
-BUILD_DIR := ../build/us/assets
+BUILD_DIR := ../build/assets
 DUMMY != mkdir -p $(BUILD_DIR)
 TARGET = $(BUILD_DIR)/assets.marker
 
