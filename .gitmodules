@@ -10,3 +10,6 @@
 [submodule "tools/rgb2c"]
 	path = tools/modern_rgb2c
 	url = https://github.com/someone2639/modern_rgb2c
+[submodule "tools/armips"]
+	path = tools/armips
+	url = https://github.com/Kingcom/armips
