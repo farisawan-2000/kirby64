@@ -535,17 +535,18 @@ segments:
     bss_size: 0xd0
     subsegments:
     - [0x2501C0, c, tamper_check_ovl20]
-    - [0x2502A0, .data, tamper_check_ovl20]
+    - [0x2502A0, data, tamper_check_ovl20]
     - [0x250320]
     - {type: .bss, vram: 0x80300160, name: tamper_check_ovl20}
 
-  - [0x250320, bin, assets/sound/sound_250320]
-  - [0x2A8CB0, bin, assets/sound/sound_2A8CB0]
-  - [0x2B1510, bin, assets/sound/sound_2B1510]
-  - [0x3E1400, bin, assets/sound/sound_3E1400]
-  - [0x3E6BC0, bin, assets/sound/sound_3E6BC0]
-  - [0x49F590, bin, assets/sound/sound_49F590]
-  - [0x4A0340, bin, assets/sound/sound_4A0340]
-  - [0x4A3B60, bin, assets/sound/sound_4A3B60]
-  - [0x250320, bin, game_assets] # using a custom build system for this, no questions asked
+  - [0x250320, bin, sound/sound_250320]
+  - [0x2A8CB0, bin, sound/sound_2A8CB0]
+  - [0x2B1510, bin, sound/sound_2B1510]
+  - [0x3E1400, bin, sound/sound_3E1400]
+  - [0x3E6BC0, bin, sound/sound_3E6BC0]
+  - [0x49F590, bin, sound/sound_49F590]
+  - [0x4A0340, bin, sound/sound_4A0340]
+  - [0x4A3B60, bin, sound/sound_4A3B60]
+  - [0x4aa8f0, bin, game_assets] # using a custom build system for this, no questions asked
+  - [0x1e8bb50, bin, pad]
   - [0x2000000]

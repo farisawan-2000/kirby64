@@ -123,10 +123,15 @@ UCODE_DATA_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_DATA_FILES:.data=.data.o
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
+SOUND_BINS := $(wildcard assets/sound/*.bin)
+MISC_SPLAT_BINS := $(wildcard assets/*.bin)
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
            $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o)) \
-           $(BUILD_DIR)/assets/boot.o
+           $(BUILD_DIR)/assets/boot.o \
+           $(foreach file,$(SOUND_BINS),$(BUILD_DIR)/$(file:.bin=.o)) \
+           $(foreach file,$(MISC_SPLAT_BINS),$(BUILD_DIR)/$(file:.bin=.o))
+
 
 ASSET_O_FILES := $(foreach file,$(MODEL_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
@@ -152,7 +157,7 @@ CC_TEST := gcc -Wall
 NOEXTRACT ?= 0
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/, assets/sound $(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
 
 # Checking if submodules exist
@@ -216,8 +221,9 @@ $(BUILD_DIR)/src/ovl3/ovl3_1.o: OPT_FLAGS = -O2 -Wo,-loopunroll
 # $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 
 
-$(BUILD_DIR):
-	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+# $(BUILD_DIR):
+# 	@echo "Creating Build Folder Structure..."
+# 	mkdir -p $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS)) $(BUILD_DIR)/assets/sound
 
 # assets/misc/%.s: assets/misc/%.bin
 # 	python3 tools/level_settings/helper.py $<
