@@ -300,6 +300,7 @@ setup:
 	$(MAKE) -C tools -j4
 	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
 	tools/extract_assets baserom.$(VERSION).z64
+	./splat/split.py kirby64.yaml
 
 .PHONY: all clean default diff test distclean
 

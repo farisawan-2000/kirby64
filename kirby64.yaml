@@ -6,6 +6,7 @@ options:
   find_file_boundaries: True
   platform: n64
   compiler: ido
+  asm_emit_size_directive: True
   asm_path: asm
   src_path: src
   asset_path: assets
@@ -215,7 +216,7 @@ segments:
     overlay: yes
     start: 0xB1B40
     vram: 0x80151100
-    exclusive_ram_id: playable_chars
+    exclusive_ram_id: self_contained
     bss_size: 0xc80
     subsegments:
     - [0xB1B40, c, ovl3/code_B1B40]
@@ -235,7 +236,7 @@ segments:
     overlay: yes
     start: 0x0F8630
     vram: 0x80151100
-    exclusive_ram_id: playable_chars
+    exclusive_ram_id: self_contained
     bss_size: 0xb0
     subsegments:
     - [0xF8630, c, ovl4/code_F8630]
@@ -251,7 +252,7 @@ segments:
     overlay: yes
     start: 0x103BB0
     vram: 0x8015C740
-    exclusive_ram_id: ovl5
+    exclusive_ram_id: self_contained
     bss_size: 0xe40
     subsegments:
     - [0x103BB0, c, ovl5/code_103BB0]
@@ -275,7 +276,7 @@ segments:
     overlay: yes
     start: 0x135490
     vram: 0x80151100
-    exclusive_ram_id: playable_chars
+    exclusive_ram_id: self_contained
     bss_size: 0x270
     subsegments:
     - [0x135490, c]
@@ -289,7 +290,7 @@ segments:
     overlay: yes
     start: 0x13E8F0
     vram: 0x80198880
-    exclusive_ram_id: ovl7
+    exclusive_ram_id: self_contained
     bss_size: 0x2590
     subalign: 4
     subsegments:
@@ -321,7 +322,7 @@ segments:
     symbol_name_format : $VRAM_ovl8
     start: 0x174740
     vram: 0x801D0C60
-    exclusive_ram_id: ovl8_9
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x174740, c, ovl8/code_174740]
@@ -338,7 +339,7 @@ segments:
     symbol_name_format : $VRAM_ovl9
     start: 0x17ECB0
     vram: 0x801D0C60
-    exclusive_ram_id: ovl8_9
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x17ECB0, c, ovl9/code_17ECB0]
@@ -370,7 +371,7 @@ segments:
     symbol_name_format : $VRAM_ovl10
     start: 0x1CBF50
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x80
     subsegments:
     - [0x1CBF50, c, ovl10/code_1CBF50]
@@ -387,7 +388,7 @@ segments:
     symbol_name_format : $VRAM_ovl11
     start: 0x1E5AA0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x30
     subsegments:
     - [0x1E5AA0, c, ovl11/code_1E5AA0]
@@ -401,7 +402,7 @@ segments:
     symbol_name_format : $VRAM_ovl12
     start: 0x1EB520
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x1EB520, c, ovl12/code_1EB520]
@@ -416,7 +417,7 @@ segments:
     symbol_name_format : $VRAM_ovl13
     start: 0x1F3160
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x1F3160, c, ovl13/code_1F3160]
@@ -432,7 +433,7 @@ segments:
     symbol_name_format : $VRAM_ovl14
     start: 0x1FDDD0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x1FDDD0, c, ovl14/code_1FDDD0]
@@ -447,7 +448,7 @@ segments:
     symbol_name_format : $VRAM_ovl15
     start: 0x205D40
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x10
     subsegments:
     - [0x205D40, c, ovl15/code_205D40]
@@ -462,7 +463,7 @@ segments:
     symbol_name_format : $VRAM_ovl16
     start: 0x211490
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x110
     subsegments:
     - [0x211490, c, ovl16/code_211490]
@@ -476,7 +477,7 @@ segments:
     symbol_name_format : $VRAM_ovl17
     start: 0x2263D0
     vram: 0x801DB1E0
-    exclusive_ram_id: ovl10_to_ovl17
+    exclusive_ram_id: self_contained
     bss_size: 0x70
     subsegments:
     - [0x2263D0, c, ovl17/code_2263D0]
@@ -493,7 +494,7 @@ segments:
     symbol_name_format : $VRAM_ovl18
     start: 0x2308C0
     vram: 0x8021DF20
-    exclusive_ram_id: ovl18_19
+    exclusive_ram_id: self_contained
     bss_size: 0xB0
     subsegments:
     - [0x2308C0, c, ovl18/code_2308C0]
@@ -514,7 +515,7 @@ segments:
     symbol_name_format : $VRAM_ovl19
     start: 0x23E630
     vram: 0x8021DF20
-    exclusive_ram_id: ovl18_19
+    exclusive_ram_id: self_contained
     bss_size: 0xa0
     subsegments:
     - [0x23E630, c, ovl19/code_23E630]
@@ -531,7 +532,7 @@ segments:
     overlay: yes
     start: 0x2501C0
     vram: 0x80300000
-    exclusive_ram_id: ovl20
+    exclusive_ram_id: self_contained
     bss_size: 0xd0
     subsegments:
     - [0x2501C0, c, tamper_check_ovl20]
