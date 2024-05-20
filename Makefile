@@ -232,7 +232,7 @@ $(BUILD_DIR)/libn_audio.a: libreultra/build/2.0I/libn_audio.a
 	cp $< $@
 	$(TOOLS_DIR)/patch_libultra_math $@
 
-$(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/build/$(GRUCODE)/$(GRUCODE).%
+$(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
 $(BUILD_DIR)/%.o: %.s
@@ -303,8 +303,7 @@ setup:
 	$(MAKE) -C libreultra -j4
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
-	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=./f3dex2/ ARMIPS=../$(LOCAL_ARMIPS)
-	cp -R f3dex2/build/$(GRUCODE)/ f3dex2
+	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=../f3dex2/ ARMIPS=../$(LOCAL_ARMIPS)
 	tools/extract_assets baserom.$(VERSION).z64
 
 .PHONY: all clean default diff test distclean
