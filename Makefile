@@ -302,6 +302,7 @@ setup:
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
 	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	cp -R f3dex2/build/$(GRUCODE)/ f3dex2
 	tools/extract_assets baserom.$(VERSION).z64
 
 .PHONY: all clean default diff test distclean
