@@ -1,4 +1,12 @@
 ../*
+
+# NEW Splat Things
+asm/*
+undefined_syms_auto.txt
+undefined_funcs_auto.txt
+kirby.ld
+assets/boot.bin
+
 **/**/*.bin
 build/*
 tools/GeoFromBin*
