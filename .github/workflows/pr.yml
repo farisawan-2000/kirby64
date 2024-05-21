@@ -28,6 +28,8 @@ jobs:
         python-version: '3.10'
     - name: Install Python Dependencies
       run: pip3 install gitpython
+    - name: Install Splat Dependencies
+      run: pip3 install -r splat/requirements.txt
     - name: More Dependencies
       uses: actions/checkout@v2
       with:
