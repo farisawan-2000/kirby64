@@ -13,3 +13,7 @@
 [submodule "splat"]
 	path = splat
 	url = https://github.com/ethteck/splat/
+[submodule "tools/armips"]
+	path = tools/armips
+	url = https://github.com/Kingcom/armips
+

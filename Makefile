@@ -8,6 +8,7 @@ VERSION = us
 BUILD_DIR = $(BUILD_DIR_BASE)
 
 GRUCODE := F3DEX2_2.04H
+LOCAL_ARMIPS=tools/armips/build/armips
 
 VERBOSE := 1
 
@@ -205,6 +206,7 @@ distclean:
 	$(MAKE) -C tools clean
 	$(MAKE) -C libreultra clean
 	$(MAKE) -C f3dex2 clean
+	rm -rf f3dex2/$(GRUCODE)
 	# TODO: remove these
 	rm -rf assets/geo
 	rm -rf assets/image
@@ -301,7 +303,7 @@ setup:
 	$(MAKE) -C libreultra -j4
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
-	$(MAKE) -C f3dex2 VERSION=2.04H ARMIPS=../tools/armips
+	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=../f3dex2/ ARMIPS=../$(LOCAL_ARMIPS)
 	tools/extract_assets baserom.$(VERSION).z64
 	./splat/split.py kirby64.yaml
 
