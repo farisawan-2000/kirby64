@@ -50,15 +50,15 @@ typedef struct  {
 } Vector;
 
 struct Overlay {
-    void *startAddr;
-    void *endAddr;
-    void *RAMStart;
-    void *textStart;
-    void *textEnd;
-    void *dataStart;
-    void *dataEnd;
-    void *bssStart;
-    void *bssEnd;
+    /* 0x00 */ void *startAddr;
+    /* 0x04 */ void *endAddr;
+    /* 0x08 */ void *RAMStart;
+    /* 0x0C */ void *textStart;
+    /* 0x10 */ void *textEnd;
+    /* 0x14 */ void *dataStart;
+    /* 0x18 */ void *dataEnd;
+    /* 0x1C */ void *bssStart;
+    /* 0x20 */ void *bssEnd;
 };
 
 struct Entity {

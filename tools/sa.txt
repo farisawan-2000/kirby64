@@ -1,181 +1,192 @@
-sinf=0x8002d6e0; // type:func
-bzero=0x8002e8b0; // type:func
-__osSumcalc=0x800314e0;
-__osIdCheckSum=0x80031554;
-__osRepairPackId=0x80031650;
-__osCheckPackId=0x800319a0;
-__osGetId=0x80031b04;
-bcmp=0x800344f0; // type:func
-bcopy=0x80034d00; // type:func
-cosf=0x80035810; // type:func
-n_aspMainTextStart=0x80039230;
-gspF3DEX2_fifoTextStart=0x80039E90;
-gspL3DEX2_fifoTextStart=0x8003B220;
-gspS2DEX2_fifoTextStart=0x8003C3B0;
-mainSegOverlay=0x8003DC70;
-gScissorCallback=0x8003DD30;
-identityMatrix=0x8003DD38;
-resetRDPDisplayList=0x8003DD78;
-lbreflect_Int16SinTable=0x8003E330;
-crashScreenGlyphTable=0x8003F68C;
-gCrashScreenFont=0x8003F70C;
-gCPUExceptionCauses=0x8003F80C;
-gFPUExceptionCauses=0x8003F854;
-n_alGlobals=0x8003FB10;
-n_syn=0x8003FB14;
-__osHwIntTable=0x8003FB30;
-__osThreadTail=0x8003FB50;
-__osRunQueue=0x8003FB58;
-__osActiveQueue=0x8003FB5C;
-__osRunningThread=0x8003FB60;
-__osFaultedThread=0x8003FB64;
-__osSiAccessQueueEnabled=0x8003FB70;
-__osContinitialized=0x8003FB80;
-osClockRate=0x8003FB90;
-osViClock=0x8003FB98;
-__osShutdown=0x8003FB9C;
-__OSGlobalIntMask=0x8003FBA0;
-__osPfsInodeCacheBank=0x8003FBB4;
-__osPiDevMgr=0x8003FBC0;
-__osPiAccessQueueEnabled=0x8003FBF0;
-__osTimerList=0x8003FC50;
-osViModeNtscLan1=0x8003FC60;
-osViModeMpalLan1=0x8003FCB0;
-__osViCurr=0x8003FD60;
-__osViNext=0x8003FD64;
-osViModePalLan1=0x8003FD70;
-__osViDevMgr=0x8003FE50;
-__osRcpImTable=0x80041A30;
-__osIntOffTable=0x80041B00;
-__osIntTable=0x80041B20;
-__libm_qnan_f=0x80041CC0;
-n_aspMainDataStart=0x80041D40;
-gspF3DEX2_fifoDataStart=0x80041FF0;
-gspL3DEX2_fifoDataStart=0x80042410;
-gspS2DEX2_fifoDataStart=0x80042800;
-gEntryStack=0x80042B90;
-gIdleThread=0x80042D90;
-idleThreadStack=0x80042F40;
-gMainThread=0x80043040;
-gMainThreadStack=0x800431F0;
-gAudioThread=0x800435F0;
-gAudioThreadStack=0x800437A0;
-gGameThread=0x80043DA0;
-gGameThreadStack=0x80043F50;
-gControllerThread=0x80047F50;
-gThread6Stack=0x80048100;
-gRSPBootUcode=0x80048900;
-gSPImemOkay=0x80048A00;
-gSPDmemOkay=0x80048A01;
-gThreadInitializedMQ=0x80048A08;
-piMesgBuffer=0x80048A20;
-piMesgQueue=0x80048AE8;
-pad13=0x80048B08;
-gCurrentViMode=0x80048BF8;
-gCurrFrameBuffer=0x80048C68;
-gInterruptMesgQueue=0x80048CB8;
-gRomHandle=0x80048CF0;
-gDmaMessageQueue=0x80048D70;
-sSIMesgQueue=0x80048DA0;
-sControllerStatuses=0x80048E70;
-sContPads=0x80048E80;
-gValidControllerCount=0x80048E98;
-gControllers=0x80048EA0;
-gPlayerControllers=0x80048F20;
-gDLBuffers=0x8004A390;
-gDynamicBuffer2=0x8004A408;
-gDynamicBuffer3=0x8004A418;
-gZBuffer=0x8004A500;
-gCurrScreenWidth=0x8004A508;
-gCurrScreenHeight=0x8004A50C;
-gViewport=0x8004A530;
-gGObjThreadHead=0x8004A540;
-gGObjThreadCount=0x8004A544;
-gNewEntityStackSize=0x8004A54C;
-gGObjThreadStackHead=0x8004A554;
-gGObjProcessHead=0x8004A55C;
-gGObjProcessCount=0x8004A570;
-gGObjHead=0x8004A678;
-gHighestPrioDLLinkProcs=0x8004A680;
-gDLLinkProcs=0x8004A708;
-gGObjCount=0x8004A78C;
-gOMMtxHead=0x8004A790;
-gOMMtxCount=0x8004A794;
-gAObjHead=0x8004A79C;
-gAObjCount=0x8004A7A0;
-gMObjHead=0x8004A7A4;
-gMObjCount=0x8004A7A8;
-gDObjHead=0x8004A7AC;
-gDObjCount=0x8004A7B0;
-gCameraHead=0x8004A7BC;
-gCameraCount=0x8004A7C0;
-HS64_GObjProcMesgQ=0x8004A7E0;
-gCrashScreenFramebuffer=0x80096ef8;
-gCrashScreenThread=0x80096f28;
-leoDiskStack=0x80097990;
-__osSiAccessQueue=0x80098A98;
-__osContLastCmd=0x80098AF0;
-__osEepromTimer=0x80098AF8;
-__osEepromTimerQ=0x80098B18;
-__osEepromTimerMsg=0x80098B30;
-CartRomHandle2=0x80098E00;
-LeoDiskHandle80098E78=0x80098E78;
-__osPiAccessQueue=0x8009A0C8;
-__osEventStateTab=0x8009A0E0;
-LeoDiskHandle=0x8009A160;
-__osDiskHandle=0x8009A1D4;
-__osBaseTimer=0x8009A1E0;
-__osCurrentTime=0x8009A200;
-__osBaseCounter=0x8009A208;
-__osViIntrCount=0x8009A20C;
-__osTimerCounter=0x8009A210;
-CartRomHandle=0x8009A220;
-__osPfsPifRam=0x8009A2A0;
-viThread=0x8009A2E0;
-viThreadStack=0x8009A490;
-viEventQueue=0x8009B490;
-viEventBuf=0x8009B4A8;
-viRetraceMsg=0x8009B4C0;
-viCounterMsg=0x8009B4D8;
-gGameState=0x800BE4F0;
-sMusicNames=0x800C0534;
-sSoundNames=0x800C0B1C;
-sMusicCount=0x800d6b4c;
-sSoundCount=0x800d6b50;
-gCurrentWorld=0x800d6b90;
-gCurrentLevel=0x800d6b94;
-gCutscenesWatched=0x800d6ba0;
-gHudDisplayMode=0x800d6bb0;
-gKirbyLives=0x800d6e4c;
-gKirbyHp=0x800d6e50;
-gKirbyStars=0x800d6e60;
-gGameTampered=0x800d6ec8;
-gKirbyController=0x800d6fe8;
-sTextureImageCommand=0x800dd6f4;
-sSetTileCommand=0x800dd6f8;
-gEntityVtableIndexArray=0x800ddc50;
-gEntityGObjProcessArray=0x800DE510;
-gEntityGObjProcessArray2=0x800DE6D0;
-gEntityGObjProcessArray3=0x800DE890;
-gEntityGObjProcessArray4=0x800DEA50;
-gEntityGObjProcessArray5=0x800DEC10;
-gSegment4StartArray=0x800df4d0;
-gEntitiesNextPosXArray=0x800e25d0;
-gEntitiesNextPosYArray=0x800e2790;
-gEntitiesNextPosZArray=0x800e2950;
-gEntitiesPosXArray=0x800e2b10;
-gEntitiesPosYArray=0x800e2cd0;
-gEntitiesPosZArray=0x800e2e90;
-gEntitiesAngleXArray=0x800e4010;
-gEntitiesAngleYArray=0x800e41d0;
-gEntitiesAngleZArray=0x800e4390;
-gEntitiesScaleXArray=0x800e4550;
-gEntitiesScaleYArray=0x800e4710;
-gEntitiesScaleZArray=0x800e48d0;
-gSaveBuffer1=0x800ec9f8;
-gSaveBuffer2=0x800ecbb0;
-gKirbyState=0x8012e7c0;
-sKirbyHeadphoneModel=0x8018a104;
+         U __osLeoAbnormalResume
+         U __osLeoResume
+8002d6e0 W fsin
+8002d6e0 W sinf
+8002e8b0 W blkclr
+8002e8b0 W bzero
+800314e0 T __osSumcalc
+80031554 T __osIdCheckSum
+80031650 T __osRepairPackId
+800319a0 T __osCheckPackId
+80031b04 T __osGetId
+800344f0 W bcmp
+80034d00 W bcopy
+80035810 W cosf
+80035810 W fcos
+80039230 D n_aspMainTextStart
+80039e90 D gspF3DEX2_fifoTextStart
+8003b220 D gspF3DEX2_fifoTextEnd
+8003b220 D gspL3DEX2_fifoTextStart
+8003c3b0 D gspL3DEX2_fifoTextEnd
+8003c3b0 D gspS2DEX2_fifoTextStart
+8003dc70 00000024 D mainSegOverlay
+8003dc70 D gspS2DEX2_fifoTextEnd
+8003dd30 00000004 D gScissorCallback
+8003dd38 00000040 D identityMatrix
+8003dd78 000000d0 D resetRDPDisplayList
+8003e330 00001000 D lbreflect_Int16SinTable
+8003f68c 00000080 D crashScreenGlyphTable
+8003f70c 00000100 D gCrashScreenFont
+8003f80c 00000048 D gCPUExceptionCauses
+8003f854 00000018 D gFPUExceptionCauses
+8003fb10 00000004 D n_alGlobals
+8003fb14 00000004 D n_syn
+8003fb30 D __osHwIntTable
+8003fb50 00000008 D __osThreadTail
+8003fb58 00000004 D __osRunQueue
+8003fb5c 00000004 D __osActiveQueue
+8003fb60 00000004 D __osRunningThread
+8003fb64 00000004 D __osFaultedThread
+8003fb70 00000004 D __osSiAccessQueueEnabled
+8003fb80 00000004 D __osContinitialized
+8003fb90 00000008 D osClockRate
+8003fb98 00000004 D osViClock
+8003fb9c 00000004 D __osShutdown
+8003fba0 00000004 D __OSGlobalIntMask
+8003fbb4 00000004 D __osPfsInodeCacheBank
+8003fbc0 00000005 D __osPiDevMgr
+8003fbf0 00000004 D __osPiAccessQueueEnabled
+8003fc50 00000004 D __osTimerList
+8003fc60 0000004e D osViModeNtscLan1
+8003fcb0 0000004e D osViModeMpalLan1
+8003fd60 00000004 D __osViCurr
+8003fd64 00000004 D __osViNext
+8003fd70 0000004e D osViModePalLan1
+8003fe50 00000005 D __osViDevMgr
+80041a30 00000080 D __osRcpImTable
+80041b00 00000004 D __osIntOffTable
+80041b20 00000004 D __osIntTable
+80041cc0 00000004 D __libm_qnan_f
+80041d40 D n_aspMainDataStart
+80041ff0 D gspF3DEX2_fifoDataStart
+80042410 D gspF3DEX2_fifoDataEnd
+80042410 D gspL3DEX2_fifoDataStart
+80042800 D gspL3DEX2_fifoDataEnd
+80042800 D gspS2DEX2_fifoDataStart
+80042b90 00000200 B gEntryStack
+80042b90 D gspS2DEX2_fifoDataEnd
+80042d90 000001b0 B gIdleThread
+80042f40 00000100 B idleThreadStack
+80043040 000001b0 B gMainThread
+800431f0 00000400 B gMainThreadStack
+800435f0 000001b0 B gAudioThread
+800437a0 00000600 B gAudioThreadStack
+80043da0 000001b0 B gGameThread
+80043f50 00004000 B gGameThreadStack
+80047f50 000001b0 B gControllerThread
+80048100 00000800 B gThread6Stack
+80048900 00000100 B gRSPBootUcode
+80048a00 00000001 B gSPImemOkay
+80048a01 00000001 B gSPDmemOkay
+80048a08 00000018 B gThreadInitializedMQ
+80048a20 000000c8 B piMesgBuffer
+80048ae8 00000018 B piMesgQueue
+80048b08 00000070 B pad13
+80048bf8 00000050 B gCurrentViMode
+80048c68 00000004 B gCurrFrameBuffer
+80048cb8 00000018 B gInterruptMesgQueue
+80048cf0 00000004 B gRomHandle
+80048d70 00000018 B gDmaMessageQueue
+80048da0 00000018 B sSIMesgQueue
+80048e70 00000010 B sControllerStatuses
+80048e80 00000018 B sContPads
+80048e98 00000004 B gValidControllerCount
+80048ea0 00000080 B gControllers
+80048f20 00000028 B gPlayerControllers
+8004a390 00000040 B gDLBuffers
+8004a408 00000010 B gDynamicBuffer2
+8004a418 00000014 B gDynamicBuffer3
+8004a500 00000004 B gZBuffer
+8004a508 00000004 B gCurrScreenWidth
+8004a50c 00000004 B gCurrScreenHeight
+8004a530 00000010 B gViewport
+8004a540 00000004 B gGObjThreadHead
+8004a544 00000004 B gGObjThreadCount
+8004a54c 00000004 B gNewEntityStackSize
+8004a554 00000004 B gGObjThreadStackHead
+8004a55c 00000004 B gGObjProcessHead
+8004a570 00000004 B gGObjProcessCount
+8004a678 00000004 B gGObjHead
+8004a680 00000084 B gHighestPrioDLLinkProcs
+8004a708 00000084 B gDLLinkProcs
+8004a78c 00000004 B gGObjCount
+8004a790 00000004 B gOMMtxHead
+8004a794 00000004 B gOMMtxCount
+8004a79c 00000004 B gAObjHead
+8004a7a0 00000004 B gAObjCount
+8004a7a4 00000004 B gMObjHead
+8004a7a8 00000004 B gMObjCount
+8004a7ac 00000004 B gDObjHead
+8004a7b0 00000004 B gDObjCount
+8004a7bc 00000004 B gCameraHead
+8004a7c0 00000004 B gCameraCount
+8004a7e0 00000018 B HS64_GObjProcMesgQ
+80096ef8 B gCrashScreenFramebuffer
+80096f28 B gCrashScreenThread
+80097990 00001000 B leoDiskStack
+80098a98 00000004 B __osSiAccessQueue
+80098af0 00000004 B __osContLastCmd
+80098af8 00000004 B __osEepromTimer
+80098b18 00000004 B __osEepromTimerQ
+80098b30 00000004 B __osEepromTimerMsg
+80098e00 00000004 B CartRomHandle2
+80098e78 00000004 B LeoDiskHandle80098E78
+8009a0c8 00000018 B __osPiAccessQueue
+8009a0e0 00000078 B __osEventStateTab
+8009a160 00000074 B LeoDiskHandle
+8009a1d4 00000004 B __osDiskHandle
+8009a1e0 00000020 B __osBaseTimer
+8009a200 00000008 B __osCurrentTime
+8009a208 00000004 B __osBaseCounter
+8009a20c 00000004 B __osViIntrCount
+8009a210 00000004 B __osTimerCounter
+8009a220 00000074 B CartRomHandle
+8009a2a0 00000040 B __osPfsPifRam
+8009a2e0 000001b0 B viThread
+8009a490 00001000 B viThreadStack
+8009b490 00000018 B viEventQueue
+8009b4a8 00000014 B viEventBuf
+8009b4c0 00000018 B viRetraceMsg
+8009b4d8 00000018 B viCounterMsg
+800be4f0 00000004 D gGameState
+800c0534 000005e8 D sMusicNames
+800c0b1c 00003b10 D sSoundNames
+800d6b4c B sMusicCount
+800d6b50 B sSoundCount
+800d6b90 B gCurrentWorld
+800d6b94 B gCurrentLevel
+800d6ba0 B gCutscenesWatched
+800d6bb0 B gHudDisplayMode
+800d6e4c B gKirbyLives
+800d6e50 B gKirbyHp
+800d6e60 B gKirbyStars
+800d6ec8 B gGameTampered
+800d6fe8 B gKirbyController
+800dd6f4 B sTextureImageCommand
+800dd6f8 B sSetTileCommand
+800ddc50 B gEntityVtableIndexArray
+800de510 000001c0 B gEntityGObjProcessArray
+800de6d0 000001c0 B gEntityGObjProcessArray2
+800de890 000001c0 B gEntityGObjProcessArray3
+800dea50 000001c0 B gEntityGObjProcessArray4
+800dec10 000001c0 B gEntityGObjProcessArray5
+800df4d0 B gSegment4StartArray
+800e25d0 B gEntitiesNextPosXArray
+800e2790 B gEntitiesNextPosYArray
+800e2950 B gEntitiesNextPosZArray
+800e2b10 B gEntitiesPosXArray
+800e2cd0 B gEntitiesPosYArray
+800e2e90 B gEntitiesPosZArray
+800e4010 B gEntitiesAngleXArray
+800e41d0 B gEntitiesAngleYArray
+800e4390 B gEntitiesAngleZArray
+800e4550 B gEntitiesScaleXArray
+800e4710 B gEntitiesScaleYArray
+800e48d0 B gEntitiesScaleZArray
+800ec9f8 B gSaveBuffer1
+800ecbb0 B gSaveBuffer2
+8012e7c0 B gKirbyState
+8018a104 T sKirbyHeadphoneModel
 EntryPoint=0x80000400; // type:func
 HS64_AObjLinkToAnimation=0x80008830; // type:func
 HS64_AObjNew=0x800097e0; // type:func
@@ -206,7 +217,8 @@ HS64_omInit=0x8000ae84; // type:func
 _Ldtob=0x80037ea0; // type:func
 _Litob=0x80038590; // type:func
 _Printf=0x80033270; // type:func
-_Putfld=0x80032c00; // type:func
+_Putfld=0x80032c00;
+__cosf=0x80035810; // type:func
 __ll_div=0x8002ddac; // type:func
 __ll_lshift=0x8002dd44; // type:func
 __ll_mod=0x8002de98; // type:func
@@ -280,12 +292,28 @@ __osTimerServicesInit=0x800346a0; // type:func
 __osViGetCurrentContext=0x80038c90; // type:func
 __osViInit=0x800353a0; // type:func
 __osViSwapContext=0x800354e0; // type:func
+__romPos=0x01e8bb50;
+__sinf=0x8002d6e0; // type:func
 __ull_div=0x8002dd08; // type:func
 __ull_divremi=0x8002de38; // type:func
 __ull_rem=0x8002dccc; // type:func
 __ull_rshift=0x8002dca0; // type:func
 _allocatePVoice=0x8002aae0; // type:func
+_bcmp=0x800344f0; // type:func
+_bcopy=0x80034d00; // type:func
+_bzero=0x8002e8b0; // type:func
 _n_timeToSamples=0x8002983c;
+a4000040 T ipl3_entry
+a4000658 t func_A4000658
+a4000660 t func_A4000660
+a400076c t func_A400076C
+a4000874 t func_A4000874
+a4000900 t func_A4000900
+a4000974 t func_A4000974
+a4000a34 t func_A4000A34
+a4000ac4 t func_A4000AC4
+a4000b70 T rspboot
+a4000bf0 T ipl3_font
 acosf=0x80018890; // type:func
 alCents2Ratio=0x80037080; // type:func
 alCopy=0x80035010; // type:func
@@ -346,6 +374,10 @@ fatal_printf=0x8002309c; // type:func
 finish_current_thread=0x8000b6bc; // type:func
 gCollisionState=0x8012bcf8;
 gCrashScreen=0x800966d8;
+gDisplayListHead2=0x8004a3d4;
+gDisplayListHead3=0x8004a3d8;
+gDisplayListHead4=0x8004a3dc;
+gDisplayListHead=0x8004a3d0;
 gDisplayListHeads=0x8004a3d0;
 gDynamicBuffer1=0x8004a3f8;
 gFrameBuffer=0x803b6900;
@@ -357,15 +389,22 @@ get_music_id_from_index=0x800a7740; // type:func
 get_rng_seed=0x80018aa0; // type:func
 get_soft_rng_seed=0x800189a8; // type:func
 get_sound_id_from_index=0x800a7794; // type:func
+gspF3DEX2_fifoDataRomEnd=0x00043010;
 gspF3DEX2_fifoDataRomStart=0x00042bf0;
+gspF3DEX2_fifoTextRomEnd=0x0003be20;
 gspF3DEX2_fifoTextRomStart=0x0003aa90;
+gspL3DEX2_fifoDataRomEnd=0x00043400;
 gspL3DEX2_fifoDataRomStart=0x00043010;
+gspL3DEX2_fifoTextRomEnd=0x0003cfb0;
 gspL3DEX2_fifoTextRomStart=0x0003be20;
+gspS2DEX2_fifoDataRomEnd=0x00043790;
 gspS2DEX2_fifoDataRomStart=0x00043400;
+gspS2DEX2_fifoTextRomEnd=0x0003e870;
 gspS2DEX2_fifoTextRomStart=0x0003cfb0;
 guLookAt=0x8001a13c; // type:func
 guLookAtF=0x80019eb0; // type:func
 guLookAtF_2=0x8001a1b0; // type:func
+guLookAtF_2_ovl1=0x8001a1b0;
 guLookAtReflect=0x8001a8ec; // type:func
 guLookAtReflectF=0x8001a504; // type:func
 guLookAtReflectF_2=0x8001a964; // type:func
@@ -373,11 +412,14 @@ guMtxCatF=0x800340d0; // type:func
 guMtxF2L=0x80030b10; // type:func
 guMtxIdent=0x80030c98; // type:func
 guMtxIdentF=0x80030c10; // type:func
+guMtxIdentF_ovl17=0x80030c10;
+guMtxIdentF_ovl1=0x80030c10;
 guMtxL2F=0x80030cc8; // type:func
 guMtxXFMF=0x80034030; // type:func
 guNormalize=0x80034c50; // type:func
 guOrtho=0x8001afa4; // type:func
 guOrthoF=0x8001ae10; // type:func
+guOrthoF_ovl1=0x8001ae10;
 init_dma_message_queue=0x80002ba0; // type:func
 init_save_file_maybe=0x800b8c34; // type:func
 kirby_in_inactionable_state=0x8012122c; // type:func
@@ -523,6 +565,7 @@ request_job=0x800ae7a8; // type:func
 request_track=0x800aeadc; // type:func
 request_track_general=0x800aec08; // type:func
 reset_rdp_settings=0x80007cf4; // type:func
+restart_thread_with_new_function=0x800b1ec8;
 retrace=0x8009b4f0;
 sFileSelectBackgroundImage=0x8015ab50; // type:func
 sMenuLevelPercentImage=0x8015ab70; // type:func
@@ -558,6 +601,7 @@ unused_get_main_thread_stack_length=0x80000478; // type:func
 vec3_abs_angle_diff=0x800f89c0; // type:func
 vec3_compare_directions=0x800196d4; // type:func
 vec3_cross_product=0x8011c2d4; // type:func
+vec3_diff_mag=0x80019870;
 vec3_dist_square=0x800a455c; // type:func
 vec3_dot_product=0x800a44bc; // type:func
 vec3_mag_square=0x800a4534; // type:func
@@ -567,5 +611,3 @@ vec3_sub_normalize=0x80018e24; // type:func
 vec3_subtract_compare_directions=0x800197ec; // type:func
 verify_save=0x800b92d8; // type:func
 write_to_buf=0x80021f80; // type:func
-func_800109B4=0x800109B4; // type:func size:0x16C
-ovl1_VRAM=0x8009B540;
