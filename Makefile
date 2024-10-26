@@ -1,11 +1,11 @@
-# Makefile to rebuild Kirby 64 split image
+# New Makefile
 
 ################ Target Executable and Sources ###############
 
 # BUILD_DIR is location where all build artifacts are placed
 BUILD_DIR_BASE = build
 VERSION = us
-BUILD_DIR = $(BUILD_DIR_BASE)/$(VERSION)
+BUILD_DIR = $(BUILD_DIR_BASE)
 
 GRUCODE := F3DEX2_2.04H
 LOCAL_ARMIPS=tools/armips/build/armips
@@ -56,12 +56,19 @@ TEXTURES_DIR := textures
 
 # UNNAMED_SYMS := -T unnamed_syms.txt
 
-INCLUDE_FLAGS := -I$(BUILD_DIR)
+INCLUDE_FLAGS := -I$(BUILD_DIR) -Iinclude
 ASFLAGS = -mtune=vr4300 -march=vr4300 --no-pad-sections -mabi=32 -mips3 $(INCLUDE_FLAGS)
 # CFLAGS  = -Wall -O2 -mtune=vr4300 -march=vr4300 -G 0 -c -Wab,-r4300_mul
 LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
-					-T $(BUILD_DIR)/$(LD_SCRIPT) -T libultra_unused.txt $(UNNAMED_SYMS) -T undefined_syms.txt -T rcp_syms.txt \
-					-Map $(BUILD_DIR)/$(TARGET).map
+					-T libultra_unused.txt $(UNNAMED_SYMS) -T rcp_syms.txt \
+					-Map $(BUILD_DIR)/$(TARGET).map \
+					-T funcstodo.txt \
+					-T datatodo.txt \
+					-T ramvals.txt \
+					-T $(BUILD_DIR)/$(LD_SCRIPT)
+# 					-T undefined_syms.txt \
+# 					-T undefined_funcs_auto.txt \
+# 					-T undefined_syms_auto.txt
 PRELIM_OBJCOPY_FLAGS = --pad-to=0x101000 --gap-fill=0x00
 OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 
@@ -71,8 +78,6 @@ OBJCOPY_FLAGS = --pad-to=0x2000000 --gap-fill=0xFF
 TOOLS_DIR = tools
 N64CRC = tools/n64crc
 N64GRAPHICS = $(TOOLS_DIR)/n64graphics
-EMULATOR = ~/Downloads/mupen64plus/mupen64plus-gui
-EMU_FLAGS = # --noosd --gfx mupen64plus-video-glide64mk2
 LOADER = loader64
 LOADER_FLAGS = -vwf
 FixPath = $(subst /,/,$1)
@@ -83,10 +88,9 @@ ASSET_DIRS := $(wildcard assets/geo/bank_0/**) \
               $(wildcard assets/geo/bank_7/**) \
               $(wildcard assets/geo/bank_3/**)
 
-ASM_DIRS := asm data $(wildcard asm/ovl*) asm/ovl0/lib \
-            asm/data asm/banks $(wildcard data/ovl*)
+ASM_DIRS := asm asm/data $(wildcard asm/data/ovl*)
             
-SRC_DIRS := src $(wildcard src/ovl*) data $(wildcard data/ovl*)
+SRC_DIRS := src src/main src/os $(wildcard src/ovl*)
 
 BIN_DIRS := bin/geo bin/image bin/misc bin/anim
 
@@ -102,12 +106,12 @@ TEXTURES_DIR = textures
 
 MIPSISET := -mips2 -32
 
-GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(wildcard src/*/*.c)
-GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 S_FILES := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
-# S_FILES += $(LEVEL_S_FILES)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c))
+
+GLOBAL_ASM_C_FILES != grep -rl 'GLOBAL_ASM(' $(C_FILES)
+GLOBAL_ASM_O_FILES = $(foreach file,$(GLOBAL_ASM_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
 MODEL_FILES := $(foreach dir,$(ASSET_DIRS),$(wildcard $(dir)/geo.bin))
 MODEL_C_FILES := $(foreach file,$(MODEL_FILES),$(file:.bin=.c))
@@ -125,9 +129,15 @@ UCODE_DATA_O_FILES := $(addprefix $(BUILD_DIR)/,$(UCODE_DATA_FILES:.data=.data.o
 
 BUILD_ASM_DIRS := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/**/))
 
+SOUND_BINS := $(wildcard assets/sound/*.bin)
+MISC_SPLAT_BINS := $(wildcard assets/*.bin)
 # Object files
 O_FILES := $(foreach file,$(C_FILES),$(BUILD_DIR)/$(file:.c=.o)) \
-           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o))
+           $(foreach file,$(S_FILES),$(BUILD_DIR)/$(file:.s=.o)) \
+           $(BUILD_DIR)/assets/boot.o \
+           $(foreach file,$(SOUND_BINS),$(BUILD_DIR)/$(file:.bin=.o)) \
+           $(foreach file,$(MISC_SPLAT_BINS),$(BUILD_DIR)/$(file:.bin=.o))
+
 
 ASSET_O_FILES := $(foreach file,$(MODEL_C_FILES),$(BUILD_DIR)/$(file:.c=.o))
 
@@ -153,7 +163,7 @@ CC_TEST := gcc -Wall
 NOEXTRACT ?= 0
 
 
-ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
+ALL_DIRS = $(BUILD_DIR) $(addprefix $(BUILD_DIR)/, assets/sound $(LEVEL_DIRS) $(ASSET_DIRS) $(SRC_DIRS) $(INCLUDE_DIRS) $(ASM_DIRS) $(TEXTURES_DIR)/raw $(TEXTURES_DIR)/standalone $(UCODE_DIRS))
 DUMMY != mkdir -p $(ALL_DIRS)
 
 # Checking if submodules exist
@@ -174,7 +184,7 @@ $(BUILD_DIR)/src/ovl0/memory_layer.o: CC = $(QEMU_IRIX) -silent -L $(IRIX_ROOT) 
 default: all
 
 TARGET = kirby.us
-LD_SCRIPT = $(TARGET).ld
+LD_SCRIPT = kirby.ld
 # TEXTURE_DIR = textures
 # RAW_TEXTURE_FILES := $(addprefix $(BUILD_DIR)/,$(patsubst %.png,%,$(wildcard $(TEXTURES_DIR)/raw/*.png)))
 
@@ -218,8 +228,9 @@ $(BUILD_DIR)/src/ovl3/ovl3_1.o: OPT_FLAGS = -O2 -Wo,-loopunroll
 # $(BUILD_DIR)/src/ovl1/save_file.o: OPT_FLAGS += -Wo,-loopunroll,0
 
 
-$(BUILD_DIR):
-	mkdir $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS))
+# $(BUILD_DIR):
+# 	@echo "Creating Build Folder Structure..."
+# 	mkdir -p $(BUILD_DIR) $(addprefix $(BUILD_DIR)/,$(SRC_DIRS) $(ASM_DIRS)) $(BUILD_DIR)/assets/sound
 
 # assets/misc/%.s: assets/misc/%.bin
 # 	python3 tools/level_settings/helper.py $<
@@ -235,12 +246,15 @@ $(BUILD_DIR)/libn_audio.a: libreultra/build/2.0I/libn_audio.a
 $(BUILD_DIR)/$(UCODE_BASE_DIR)/$(GRUCODE)/$(GRUCODE).%.o: f3dex2/$(GRUCODE)/$(GRUCODE).%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
 
+$(BUILD_DIR)/%.o: %.bin
+	$(LD) -r -b binary -o $@ $<
+
 $(BUILD_DIR)/%.o: %.s
 	$(CPP) $(GCC_CFLAGS) -o $(@:.o=.i) $<
 	$(AS) $(ASFLAGS) -o $@ $(@:.o=.i)
 
 $(BUILD_DIR)/%.o: %.c
-	@$(CC_CHECK) -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
+	@$(CC_CHECK) -Wno-unknown-pragmas -MMD -MP -MT $@ -MF $(BUILD_DIR)/$*.d $<
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 $(BUILD_DIR)/data/%.o: data/%.c
@@ -273,8 +287,8 @@ $(BUILD_DIR)/$(LD_SCRIPT): $(LD_SCRIPT) $(UCODE_LD) rcp_syms.txt undefined_syms.
 	$(CPP) $(VERSION_CFLAGS) $(INCLUDE_CFLAGS) -MMD -MP -MT $@ -MF $@.d -o $@ $< \
 	-DBUILD_DIR=$(BUILD_DIR) -Umips
 
-$(BUILD_DIR)/$(TARGET).elf: $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
-	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -lultra -ln_audio
+$(BUILD_DIR)/$(TARGET).elf: $(BUILD_DIR)/assets/assets.marker $(O_FILES) $(BUILD_DIR)/$(LD_SCRIPT) $(BUILD_DIR)/libultra.a $(BUILD_DIR)/libn_audio.a $(UCODE_TEXT_O_FILES) $(UCODE_DATA_O_FILES)
+	$(V)$(LD) -L $(BUILD_DIR) $(LDFLAGS) -o $@ $(LIBS) -ln_audio
 
 # final z64 updates checksum
 $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
@@ -287,24 +301,13 @@ $(BUILD_DIR)/$(TARGET).z64: $(BUILD_DIR)/$(TARGET).elf
 
 $(GLOBAL_ASM_O_FILES): CC := $(PYTHON) tools/asm-processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
-test: $(BUILD_DIR)/$(TARGET).z64
-	$(EMULATOR) $(EMU_FLAGS) $<
-
-test2: $(BUILD_DIR)/$(TARGET).z64
-	flatpak run --file-forwarding io.github.m64p.m64p @@ $< @@
-
-test-pj64: $(BUILD_DIR)/$(TARGET).z64
-	wine ~/Desktop/new64/Project64.exe $<
-
-load: $(BUILD_DIR)/$(TARGET).z64
-	$(LOADER) $(LOADER_FLAGS) $<
-
 setup:
 	$(MAKE) -C libreultra -j4
 	$(MAKE) -C libreultra naudio -j4
 	$(MAKE) -C tools -j4
 	$(MAKE) -C f3dex2 $(GRUCODE) PARENT_OUTPUT_DIR=../f3dex2/ ARMIPS=../$(LOCAL_ARMIPS)
 	tools/extract_assets baserom.$(VERSION).z64
+	./splat/split.py kirby64.yaml
 
 .PHONY: all clean default diff test distclean
 
