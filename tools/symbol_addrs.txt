@@ -612,4 +612,9 @@ func_80227308_ovl18=0x80227308; // type:func
 
 func_801DC98C_ovl17=0x801DC98C; // type:func
 
-
+viMgrMain=0x80038B00; // type:func
+__osMotorAccess=0x8002F040; // type:func
+osPfsAllocateFile=0x80030DF0; // type:func
+__osLeoResume=0x8002EF84; // type:func
+__osLeoAbnormalResume=0x8002EED0; // type:func
+__osPfsGetNextPage=0x800306C0; // type:func
