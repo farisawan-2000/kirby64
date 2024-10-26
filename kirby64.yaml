@@ -295,7 +295,7 @@ segments:
     overlay: yes
     start: 0x13E8F0
     vram: 0x80198880
-    exclusive_ram_id: self_contained
+    exclusive_ram_id: ovl7
     bss_size: 0x2590
     subalign: 4
     subsegments:

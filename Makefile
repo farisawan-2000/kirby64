@@ -63,6 +63,7 @@ LDFLAGS = --no-check-sections -mips3 --accept-unknown-input-arch \
 					-T libultra_unused.txt $(UNNAMED_SYMS) -T rcp_syms.txt \
 					-Map $(BUILD_DIR)/$(TARGET).map \
 					-T funcstodo.txt \
+					-T datatodo.txt \
 					-T $(BUILD_DIR)/$(LD_SCRIPT)
 # 					-T undefined_syms.txt \
 # 					-T undefined_funcs_auto.txt \
